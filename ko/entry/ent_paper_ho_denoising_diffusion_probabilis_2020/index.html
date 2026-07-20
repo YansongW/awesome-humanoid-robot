@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>노이즈 제거 확산 확률 모델 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">노이즈 제거 확산 확률 모델</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>노이즈 제거 확산 확률 모델</h1>
+      <p class="entry-name-en">Denoising Diffusion Probabilistic Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">데이터 및 데이터셋</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2006.11239v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Ho, Jain, Abbeel(2020)는 단순화된 가중 변분 하한으로 학습된 노이즈 제거 확산 확률 모델을 제안하여 CIFAR-10 및 LSUN 데이터셋에서 고품질 이미지 합성을 달성했다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2006.11239" target="_blank" rel="noopener">Denoising Diffusion Probabilistic Models</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>우리는 비평형 열역학의 고려 사항에서 영감을 받은 잠재 변수 모델 클래스인 확산 확률적 모델을 사용하여 고품질 이미지 합성 결과를 제시합니다. 최고의 결과는 확산 확률적 모델과 Langevin 역학을 이용한 잡음 제거 점수 매칭 간의 새로운 연결에 따라 설계된 가중 변분 경계에서 훈련하여 얻었으며, 우리의 모델은 자연스럽게 자기회귀 디코딩의 일반화로 해석될 수 있는 점진적 손실 압축 해제 방식을 허용합니다. 비조건부 CIFAR10 데이터셋에서 Inception 점수 9.46과 최첨단 FID 점수 3.17을 달성했습니다. 256x256 LSUN에서는 ProgressiveGAN과 유사한 샘플 품질을 얻었습니다. 구현체는 https://github.com/hojonathanho/diffusion 에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>우리는 비평형 열역학의 고려 사항에서 영감을 받은 잠재 변수 모델 클래스인 확산 확률적 모델을 사용하여 고품질 이미지 합성 결과를 제시합니다. 최고의 결과는 확산 확률적 모델과 Langevin 역학을 이용한 잡음 제거 점수 매칭 간의 새로운 연결에 따라 설계된 가중 변분 경계에서 훈련하여 얻었으며, 우리의 모델은 자연스럽게 자기회귀 디코딩의 일반화로 해석될 수 있는 점진적 손실 압축 해제 방식을 허용합니다. 비조건부 CIFAR10 데이터셋에서 Inception 점수 9.46과 최첨단 FID 점수 3.17을 달성했습니다. 256x256 LSUN에서는 ProgressiveGAN과 유사한 샘플 품질을 얻었습니다. 구현체는 https://github.com/hojonathanho/diffusion 에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_score_matching/">점수 매칭</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_wam_survey_2026/">월드 액션 모델: 엠바디드 AI의 다음 프론티어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">디퓨전 정책: 행동 확산을 통한 시각운동 정책 학습</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_pi0_2024/">π0: 범용 로봇 제어를 위한 비전-언어-액션 플로우 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_robot_motion_diffusion_model_m_2026/">Robot Motion Diffusion Model: Motion Generation for Robotic Characters</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_nernst_planck_equation/">넬스트-플랑크 방정식</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">디퓨전 정책: 행동 확산을 통한 시각운동 정책 학습</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_tedi_temporally_entangled_diff_2023/">TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_ddpm_reverse_process/">DDPM 역 과정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ho_denoising_diffusion_probabilis_2020"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">
+          <span class="entry-type">논문</span>
+          <h3>REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</h3>
+          <p>REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_tedi_temporally_entangled_diff_2023/">
+          <span class="entry-type">논문</span>
+          <h3>TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis</h3>
+          <p>TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_score_matching/">
+          <span class="entry-type">알고리즘</span>
+          <h3>점수 매칭</h3>
+          <p>정규화된 확률 밀도 없이도 미지의 로그 확률 밀도의 기울기(점수)를 학습하는 매개변수 추정 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">
+          <span class="entry-type">논문</span>
+          <h3>CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</h3>
+          <p>본 논문은 Autodesk Inventor에서 경로를 그려 비전문 사용자가 산업용 로봇을 프로그래밍할 수 있는 CAD 기반 인간-로봇 인터페이스를 제안하며, 레이저 카메라와…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pi0_2024/">
+          <span class="entry-type">논문</span>
+          <h3>π0: 범용 로봇 제어를 위한 비전-언어-액션 플로우 모델</h3>
+          <p>사전 학습된 VLM 기반의 플로우 매칭 VLA로, 다양한 손재주 있는 로봇 데이터로 학습되어 빨래 개기, 상자 조립 등 언어 조건 작업을 수행함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">논문</span>
+          <h3>월드 액션 모델: 엠바디드 AI의 다음 프론티어</h3>
+          <p>2026년 서베이로, World Action Models(WAMs)를 예측적 월드 모델링과 액션 생성을 통합하는 엠바디드 파욍데이션 모델로 정의하고, 기존 방법을 Cascaded…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_nernst_planck_equation/">
+          <span class="entry-type">방정식</span>
+          <h3>넬스트-플랑크 방정식</h3>
+          <p>농도 기울기와 전기장이 함께 작용할 때 대전 입자의 선속을 기술하며 확산과 전기 이동을 결합한 수송 방정식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">
+          <span class="entry-type">논문</span>
+          <h3>디퓨전 정책: 행동 확산을 통한 시각운동 정책 학습</h3>
+          <p>디퓨전 정책은 로봇의 시각운동 정책을 동작 공간에 대한 조건부 노이즈 제거 확산 과정으로 모델링하여, 시각 관찰을 조건으로 행동 분포의 점수 기울기를 학습하고 확률적 랑주뱅…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_ddpm_reverse_process/">
+          <span class="entry-type">알고리즘</span>
+          <h3>DDPM 역 과정</h3>
+          <p>디노이징 확산 확률 모델(DDPM)에서 학습된 역방향 마르코프 체인으로, 점진적으로 가우시안 노이즈를 데이터와 유사한 샘플로 변환합니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_robot_motion_diffusion_model_m_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Robot Motion Diffusion Model: Motion Generation for Robotic Characters</h3>
+          <p>Robot Motion Diffusion Model 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

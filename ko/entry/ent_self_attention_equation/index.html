@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>스케일드 닷프로덕트 셀프 어텐션 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/equation/">방정식</a>
+    <span>/</span>
+    <span class="breadcrumb-current">스케일드 닷프로덕트 셀프 어텐션</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방정식</div>
+      <h1>스케일드 닷프로덕트 셀프 어텐션</h1>
+      <p class="entry-name-en">Scaled Dot-Product Self-Attention</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">기초 학문</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">기초 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Transformer의 핵심 방정식으로, Query와 Key의 유사도에 따라 Value를 가중합합니다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Vaswani et al., Attention Is All You Need, NeurIPS 2017</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>관련 개체</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">uses</span>
+            <a href="/ko/entry/ent_operator_softmax_function/">소프트맥스 함수</a>
+            
+              
+                
+              
+              <span class="rel-desc">셀프 어텐션은 어텐션 가중치를 정규화하기 위해 소프트맥스 연산자를 사용한다.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">derived_from</span>
+            <a href="/ko/entry/ent_principle_maximum_likelihood_estimation/">최대우도추정</a>
+            
+              
+                
+              
+              <span class="rel-desc">어텐션 메커니즘은 최대우도추정에서 유래한 목적 함수로 학습된다.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<h1 id="scaled-dot-product-self-attention">스케일링된 점곱 자기 주의(Scaled Dot-Product Self-Attention) 방정식</h1>
+<h2 id="_2">핵심 내용</h2>
+<h2 id="_3">추상</h2>
+<blockquote>
+<p><strong>생활 속 예시</strong>: 문장을 읽을 때, 각 단어는 전체 문장을 "되돌아보며" 관련성에 따라 어느 단어에 주의를 기울일지 결정합니다. 예를 들어 "나는 사과를 먹었다"에서 "먹었다"는 "나"보다 "사과"에 더 주목합니다. Self-attention은 모델이 이러한 "누가 누구를 봐야 하는지"에 대한 가중치 메커니즘을 자동으로 학습하게 합니다. 스케일링 인자 <span class="arithmatex">\(1/\sqrt{d_k}\)</span>는 너무 과도해지는 것을 방지합니다. Query와 Key의 차원이 높으면 점곱이 쉽게 매우 커져서 softmax가 "흑백 논리"가 되어 모델이 미묘한 주의 분포를 학습하지 못하게 됩니다.</p>
+<p><strong>자연어 논리</strong>: 입력 시퀀스를 각각 Query, Key, Value 세 개의 벡터 그룹으로 투영합니다. Query와 Key의 점곱으로 유사도를 구하고, softmax로 정규화하여 주의 가중치를 얻습니다. 가중치에 Value를 곱하여 출력을 얻습니다. <span class="arithmatex">\(QK^\top/\sqrt{d_k}\)</span> 단계는 "매칭"과 "스케일링"을 동시에 수행하여 훈련을 더 안정적으로 만듭니다.</p>
+</blockquote>
+<h2 id="_4">형식적 정의</h2>
+<p>입력 표현 행렬 <span class="arithmatex">\(X \in \mathbb{R}^{n \times d_{\text{model}}}\)</span>과 학습 가능한 투영 행렬 <span class="arithmatex">\(W_Q, W_K, W_V\)</span>가 주어졌을 때, 다음과 같이 계산합니다:</p>
+<div class="arithmatex">\[
+Q = X W_Q, \quad K = X W_K, \quad V = X W_V,
+\]</div>
+<div class="arithmatex">\[
+\text{Attention}(Q, K, V) = \operatorname{softmax}\!\left( \frac{Q K^\top}{\sqrt{d_k}} \right) V.
+\]</div>
+<p>여기서:</p>
+<ul>
+<li><span class="arithmatex">\(n\)</span>: 시퀀스 길이</li>
+<li><span class="arithmatex">\(d_k\)</span>: Query/Key의 차원</li>
+<li><span class="arithmatex">\(d_v\)</span>: Value의 차원 (보통 <span class="arithmatex">\(d_v = d_k\)</span>)</li>
+<li><span class="arithmatex">\(\operatorname{softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}\)</span></li>
+</ul>
+<p>Multi-head attention은 위 과정을 <span class="arithmatex">\(h\)</span>개의 서로 다른 부분 공간에서 병렬로 수행하고 연결합니다:</p>
+<div class="arithmatex">\[
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O,
+\]</div>
+<p>여기서 <span class="arithmatex">\(\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)\)</span>입니다.</p>
+<h2 id="_5">주요 기호와 직관적 대응</h2>
+<table>
+<thead>
+<tr>
+<th>기호</th>
+<th>이름</th>
+<th>직관적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(Q\)</span></td>
+<td>Query</td>
+<td>"내가 지금 묻는 질문"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K\)</span></td>
+<td>Key</td>
+<td>"각 위치가 답할 수 있는 질문 레이블"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(V\)</span></td>
+<td>Value</td>
+<td>"각 위치가 실제로 가진 정보"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(QK^\top\)</span></td>
+<td>점곱 유사도</td>
+<td>"질문과 레이블의 일치 정도"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(1/\sqrt{d_k}\)</span></td>
+<td>스케일링 인자</td>
+<td>고차원 점곱이 너무 커져 softmax가 포화되는 것을 방지</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\operatorname{softmax}\)</span></td>
+<td>정규화 지수 함수</td>
+<td>일치도를 "확률화된" 주의 가중치로 변환</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">다른 지식 포인트와의 관계</h2>
+<ul>
+<li><code>uses</code> → 행렬 곱셈, softmax 연산자</li>
+<li><code>has_prerequisite</code> → 선형대수학</li>
+<li><code>has_prerequisite</code> → 확률/측도론</li>
+<li><code>instantiates</code> → Transformer 아키텍처</li>
+<li><code>builds_on</code> → VLA 기반 모델 (GR00T N1, OpenVLA, π0 등)</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_formalism_transformer_action_decoder/">Transformer 액션 디코더 공식화</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">builds_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">파생</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_maximum_likelihood_estimation/">최대우도추정</a>
+              <span class="rel-desc">셀프 어텐션 방정식은 최대우도추정에서 유래한 목적 함수를 사용하여 학습된다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_operator_softmax_function/">소프트맥스 함수</a>
+              <span class="rel-desc">셀프 어텐션 방정식은 query-key 점수를 정규화하기 위해 소프트맥스 연산자를 사용한다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_from_language_to_locomotion_re_2025/">From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">당신의 비전-언어-액션 모델에는 이미 경로 편차 탐지를 위한 어텐션 헤드가 있다</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_holomotion_1_technical_report_2026/">HoloMotion-1 Technical Report</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_open_television_teleoperation_2024_2/">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_transformer_action_decoder/">Transformer 액션 디코더 공식화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">포함</span>
+              <span class="rel-desc">Transformer 액션 디코더는 핵심 방정식으로 스케일드 닷프로덕트 셀프 어텐션을 포함한다.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_versatile_humanoid_ma_2026/">Learning Versatile Humanoid Manipulation with Touch Dreaming</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_coordex_coordinating_body_and_2026/">CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_active_stereo_camera_outperfor_2026/">Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_self_attention_equation"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_transformer_action_decoder/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>Transformer 액션 디코더 공식화</h3>
+          <p>Transformer 아키텍처와 학습된 액션 토큰 어휘를 사용하여 시각-언어 맥락에서 로봇 동작을 디코딩하는 공식적 생성 프레임워크이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_active_stereo_camera_outperfor_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</h3>
+          <p>在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">논문</span>
+          <h3>당신의 비전-언어-액션 모델에는 이미 경로 편차 탐지를 위한 어텐션 헤드가 있다</h3>
+          <p>본 논문은 고정된 비전-언어-액션(VLA) 모델 내 어텐션 엔트로피 신호가 궤적 편차를 나타내는 소수의 &#39;네비게이션 헤드(Navigation Heads)&#39;를 식별하여, 학습 불필요…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_coordex_coordinating_body_and_2026/">
+          <span class="entry-type">논문</span>
+          <h3>CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</h3>
+          <p>CoorDex 把本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_maximum_likelihood_estimation/">
+          <span class="entry-type">원리</span>
+          <h3>최대우도추정</h3>
+          <p>훈련 데이터가 관측될 확률을 최대화하는 모델 매개변수를 선택하는 통계적 원리로, 교차 엔트로피와 다음 토큰 예측 손실의 기초가 된다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_from_language_to_locomotion_re_2025/">
+          <span class="entry-type">논문</span>
+          <h3>From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance</h3>
+          <p>这篇工作先从语言指令、相机图像/多视角观测、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_operator_softmax_function/">
+          <span class="entry-type">연산자</span>
+          <h3>소프트맥스 함수</h3>
+          <p>실수 값 점수 벡터를 확률 분포로 변환하여 가장 큰 값을 강조하면서도 모든 확률이 양수이고 합이 1이 되도록 하는 미분 가능한 연산자이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_holomotion_1_technical_report_2026/">
+          <span class="entry-type">논문</span>
+          <h3>HoloMotion-1 Technical Report</h3>
+          <p>HoloMotion 把人类视频/动捕轨迹转成可跟踪的身体目标，并通过异构动捕与合成平衡数据、扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_open_television_teleoperation_2024_2/">
+          <span class="entry-type">논문</span>
+          <h3>Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_versatile_humanoid_ma_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Versatile Humanoid Manipulation with Touch Dreaming</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">방법</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#scaled-dot-product-self-attention">스케일링된 점곱 자기 주의(Scaled Dot-Product Self-Attention) 방정식</a><ul>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#_3">추상</a></li>
+<li><a href="#_4">형식적 정의</a></li>
+<li><a href="#_5">주요 기호와 직관적 대응</a></li>
+<li><a href="#_6">다른 지식 포인트와의 관계</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

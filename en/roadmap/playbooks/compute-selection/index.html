@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Computing Platform Selection: Equipping a Robot with a &#34;Layered Brain&#34; · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Computing Platform Selection: Equipping a Robot with a &#34;Layered Brain&#34;</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="computing-platform-selection-equipping-a-robot-with-a-layered-brain">Computing Platform Selection: Equipping a Robot with a "Layered Brain"</h1>
+<blockquote>
+<p>⚠️ This roadmap content is compiled based on public information and theoretical knowledge, and has not been verified on actual hardware; please verify safety specifications yourself when involving electrical and mechanical operations.</p>
+</blockquote>
+<p>When many people build a humanoid robot, their first question is "Should I buy a Jetson or a NUC?" This is the wrong first question. The correct first question is: What types of computing tasks will your robot actually run, and what are the latency limits and failure consequences for each? The essence of platform selection is not comparing which board has higher TOPS, but rather layering the tasks and then allocating just enough computing power for each layer—too much wastes battery and budget, too little can cause gait instability at best or an immediate fall at worst. This page follows four steps: Layering → Platform Selection → Determining Real-Time Solutions → Evaluating On-Device VLA Inference. For theoretical background, see <a href="/wiki/chapters/chapter-06/">Chapter 6: Computing, Power, and Thermal Management</a> and <a href="/wiki/chapters/chapter-22/">Chapter 22: Software Middleware</a>.</p>
+<h2 id="step-1-divide-computing-demands-into-three-layers">Step 1: Divide Computing Demands into Three Layers</h2>
+<p><strong>【What to Do】</strong> Take a piece of paper, list all the computing tasks in your plan, and categorize them into three layers based on "control cycle × failure consequence":</p>
+<ul>
+<li><strong>L0 Bottom Real-Time Layer</strong>: Joint servo loops, force control, safety monitoring. Joint current loops, force control, and balance control typically require a hard real-time cycle of 0.5–2 ms (see <a href="/wiki/chapters/chapter-06/">Chapter 6</a> Section 6.4.7); timeout leads to instability. Safety-related functions (emergency stop, watchdog, overcurrent/overtemperature monitoring) must be placed on an independent <a href="/entry/ent_component_safety_mcu/">Safety MCU (Safety Microcontroller Unit)</a> separate from the main controller—it can cut power even when the main computing unit crashes.</li>
+<li><strong>L1 Middle Planning Layer</strong>: State estimation, gait generation, MPC (Model Predictive Control), Whole-Body Control (WBC). Typical frequency is 50–500 Hz, allowing microsecond to millisecond jitter, but requiring stable average throughput.</li>
+<li><strong>L2 Top Intelligence Layer</strong>: Visual perception, SLAM, voice, VLA (Vision-Language-Action) model inference. A frequency of 1–30 Hz is sufficient; a slightly higher single-frame latency only results in "slower reaction" and will not directly cause a fall.</li>
+</ul>
+<p><strong>【Why】</strong> The constraints for the three layers are completely different: L0 requires <strong>determinism</strong>, not computing power; L2 requires <strong>peak throughput</strong> (TOPS) and memory bandwidth, and precisely does not need real-time guarantees. Running a 1 kHz force control loop directly on an x86 host that does not guarantee real-time performance is equivalent to entrusting the robot's balance to the operating system's scheduling luck. Conversely, paying for unused TOPS directly eats into the battery budget—ToddlerBot's endurance test lasted only 19 minutes during on-device inference until "overheating and throttling" (source: data/roadmap/research/toddlerbot.md). The underlying principle of layering is the trend toward heterogeneous computing: future main controllers will be a heterogeneous combination of CPU + GPU + NPU + functional safety MCU (see the trend summary in the <a href="/entry/ent_component_safety_mcu/">Safety MCU</a> card).</p>
+<p><strong>【How to Analyze Your Situation】</strong> The key depends on your actuator solution:</p>
+<ul>
+<li>Using <strong>Dynamixel bus servos</strong> (position loop in the servo firmware): L0 is already outsourced; the main controller only needs to send position commands at tens of Hz. ToddlerBot uses an off-the-shelf communication board to achieve 50 Hz feedback for all 30 motors at 2 Mbps baud rate (source: data/roadmap/research/toddlerbot.md). In this case, you almost don't need dedicated hardware for the L0 layer.</li>
+<li>Using <strong>self-developed Quasi-Direct Drive (QDD) actuators</strong>: The current/torque loop is on the driver board, but the upper-level force control loop still requires 250 Hz–1 kHz. The Berkeley Humanoid Lite approach uses one CAN 2.0 bus (1 Mbps) per limb, with actuators and IMU communicating at 250 Hz (source: data/roadmap/research/berkeley-humanoid-lite.md); the main controller running a real-time Linux is sufficient.</li>
+<li>Building a <strong>full-size model or requiring functional safety certification</strong>: The safety MCU layer cannot be omitted, and functional safety standards such as ISO 13849, IEC 61508 must be considered (source: <a href="/entry/ent_component_safety_mcu/">Safety MCU</a> card).</li>
+</ul>
+<h2 id="step-2-candidate-platform-comparison-and-real-world-cases">Step 2: Candidate Platform Comparison and Real-World Cases</h2>
+<p><strong>【What to Do】</strong> Based on the layered results from Step 1, select the main controller for the L1+L2 layers (usually combined or split into two) from the four candidate categories below:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>AI Compute</th>
+<th>Power Consumption</th>
+<th>Price</th>
+<th>Ecosystem</th>
+<th>Real-time Positioning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">NVIDIA Jetson AGX Orin</a> 64GB</td>
+<td>Up to 275 TOPS (INT8)</td>
+<td>15–60 W configurable</td>
+<td>Developer kit approx. 1,999 USD (third-party reference price)</td>
+<td>Unified ecosystem: JetPack / Isaac ROS / Isaac Sim, 16-channel MIPI CSI-2</td>
+<td>Soft real-time (with PREEMPT_RT), handles L1+L2</td>
+</tr>
+<tr>
+<td>Jetson Orin NX 16GB</td>
+<td>Up to 157 TOPS</td>
+<td>10–40 W</td>
+<td>Must confirm with supplier</td>
+<td>Same ecosystem as AGX Orin, smaller form factor</td>
+<td>Soft real-time, primarily L2, also handles L1</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_nvidia_jetson_thor/">NVIDIA Jetson Thor</a></td>
+<td>Blackwell architecture, designed for edge VLA/VLM; specific TOPS must be confirmed with supplier</td>
+<td>75–120 W class (source: <a href="/entry/ent_component_safety_mcu/">Safety MCU</a> card)</td>
+<td>Must confirm with supplier</td>
+<td>Flagship ecosystem for "Physical AI"</td>
+<td>Dedicated to L2; L0/L1 require separate configuration</td>
+</tr>
+<tr>
+<td>Intel N95 Mini PC</td>
+<td>No dedicated NPU, AI compute primarily via CPU/integrated GPU (specific TOPS must be confirmed with supplier)</td>
+<td>Low-power x86 (specific TDP must be confirmed with supplier)</td>
+<td>Approx. 129 USD (source: data/roadmap/research/berkeley-humanoid-lite.md)</td>
+<td>Standard x86 Linux/ROS ecosystem</td>
+<td>Soft real-time, sufficient for L1, L2 limited to small models</td>
+</tr>
+<tr>
+<td>Intel NUC (Core i3 class)</td>
+<td>Same as above</td>
+<td>Same as above</td>
+<td>Full system price, must confirm with supplier</td>
+<td>Mature ROS/ROS2 ecosystem</td>
+<td>Soft real-time, teaching/development oriented</td>
+</tr>
+<tr>
+<td>Raspberry Pi 4</td>
+<td>No AI accelerator, CPU only</td>
+<td>Single-board low power (specific value must be confirmed with supplier)</td>
+<td>Must confirm with supplier</td>
+<td>Large community ecosystem, Python-friendly</td>
+<td>Soft real-time, only for L1 lightweight control</td>
+</tr>
+</tbody>
+</table>
+<p>(Orin series compute/power/price sources: <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a> card and its competitive comparison table.)</p>
+<p>Now, look at how five real open-source projects made their choices (all sources from data/roadmap/research/ survey files):</p>
+<ul>
+<li><strong>ToddlerBot (Stanford) → Jetson Orin NX 16GB</strong>: To run a 300M parameter diffusion policy (approx. 100 ms inference latency) and 10 Hz stereo depth estimation on-board, an on-board GPU is necessary. Orin NX is the balance point between performance and size.</li>
+<li><strong>Berkeley Humanoid Lite → Intel N95 Mini PC (approx. $129)</strong>: The RL walking policy network is very small; the N95 is sufficient to run both low-level control and the policy, allocating the entire budget to 22 actuators.</li>
+<li><strong>Upkie → Raspberry Pi 4 + mjbots pi3hat (CAN expansion board)</strong>: The PID/MPC/RL examples for wheel-legged balance control are all small models. Raspberry Pi + CAN expansion board is the most hassle-free combination.</li>
+<li><strong>ROBOTIS OP3 → Intel NUC (Core i3 dual-core, 8GB DDR4, 250GB M.2 SSD) + OpenCR sub-controller</strong>: A typical dual-board division where L1/L2 run on the x86 host and L0 runs on the microcontroller.</li>
+<li><strong>OpenLoong Qinglong → 400 TOPS high-compute controller + EtherCAT bus</strong>: A full-size 43-DOF reference platform. The upper-layer large model scheduling requires high compute power (announced at WAIC 2024; the primary page could not be directly verified, cite with caution).</li>
+</ul>
+<p><strong>【Why】</strong> The pattern is clear: <strong>The "dumber" the actuator (servo) and the smaller the policy, the cheaper the main controller; only when running large models on-board does the Jetson come into play.</strong> The core selling point of the Orin series is not the TOPS number itself, but the "unified ecosystem"—JetPack SDK, Isaac ROS, and Isaac Sim allow policies trained in simulation to be deployed almost identically on the robot (source: <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a> card). The <a href="/entry/ent_component_nvidia_jetson_thor/">Jetson Thor</a> goes a step further: its Blackwell architecture is specifically designed for running multimodal generative AI and VLA policies on-device, but its 75–120 W class power consumption means it's not a simple "board upgrade"; it's a platform generation requiring redesign of cooling, battery, and structure.</p>
+<p><strong>【How to Analyze Your Situation】</strong> Choose one of three based on budget and goals:</p>
+<ul>
+<li><strong>Budget &lt; $500, Goal: RL walking</strong>: Copy the BHL recipe (N95-class mini PC), spend the money on actuators. Prerequisite: your policy network is small (MLP-level) and vision requirements are low.</li>
+<li><strong>Budget <span class="arithmatex">\(1,000–\)</span>2,000, Goal: On-board perception/diffusion policy/VLA</strong>: Orin NX or AGX Orin. First, calculate VRAM: model parameters × quantization precision + activations. 16GB can fit a 300M parameter diffusion policy (proven by ToddlerBot); larger VLA models require the 64GB version.</li>
+<li><strong>Aiming for next-generation edge large models</strong>: Focus on Thor, but treat cooling (75–120 W class enters the discussion range for liquid cooling/phase change, source: <a href="/entry/ent_component_safety_mcu/">Safety MCU</a> card) and battery capacity as upfront design constraints, not problems to solve after purchase.</li>
+</ul>
+<h2 id="step-3-determine-the-real-time-solution">Step 3: Determine the Real-time Solution</h2>
+<p><strong>【What to Do】</strong> Choose a real-time path for the L0/L1 layers. There are four mainstream options:</p>
+<ol>
+<li><strong><a href="/entry/ent_software_rt_preempt_linux/">Linux RT-PREEMPT</a></strong>: Apply real-time patches to mainline Linux, making most kernel code preemptible and interrupt threads threaded, providing tens of microseconds scheduling latency (source: <a href="/entry/ent_software_qnx/">QNX</a> card comparison section). Retains the full Linux ecosystem; it's the default choice for individuals and labs. After patching, you must use <code>cyclictest</code> to measure maximum latency under real load (method in <a href="/wiki/chapters/chapter-06/">Chapter 6</a> Section 6.4.7).</li>
+<li><strong><a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a> Master</strong>: Real-time capability is pushed down to the bus. EtherCAT's "processing on the fly" allows slaves to read/write instantly as frames pass, and Distributed Clocks give all joints a shared time base (source: EtherCAT card). The main controller runs PREEMPT_RT + EtherCAT master protocol stack to drive 1 ms joint loops. OpenLoong Qinglong uses the EtherCAT bus (source: data/roadmap/research/openloong-qinglong.md).</li>
+<li><strong>Dual-kernel/Hard RTOS</strong>: Xenomai runs an independent real-time core alongside Linux, achieving microsecond-level scheduling latency but with complex configuration and maintenance; <a href="/entry/ent_software_qnx/">QNX</a> is a commercial microkernel RTOS where the filesystem and network stack run as user-space services, widely used in automotive and medical fields with complete reliability and certification systems, but requires licensing fees (source: QNX card).</li>
+<li><strong>MCU Hard Real-time</strong>: Offload current loops and safety logic entirely to a microcontroller (e.g., OP3's OpenCR sub-controller, source: data/roadmap/research/robotis-op3-darwin-op.md), leaving the main controller for soft real-time tasks. Resource-constrained nodes can use open-source RTOS like Zephyr (source: QNX card).</li>
+</ol>
+<p><strong>【Why】</strong> Standard Linux kernel critical sections can cause unpredictable delays for high-priority tasks. Jitter of tens to hundreds of microseconds is fatal for a 1 ms control loop (principle detailed in <a href="/wiki/chapters/chapter-06/">Chapter 6</a> Section 6.4.7). The choice of real-time solution essentially answers "where to place determinism": in the kernel (PREEMPT_RT), in the bus (EtherCAT), in a dedicated OS (QNX), or in a dedicated chip (MCU).</p>
+<p><strong>【How to Analyze Your Situation】</strong> Decision order:</p>
+<ul>
+<li>Servo solution → You can skip any real-time patches and just get the robot running first.</li>
+<li>Custom QDD + CAN bus (BHL route) → PREEMPT_RT is sufficient, low cost, abundant resources.</li>
+<li>Custom QDD + high multi-joint synchronization requirements (&gt;20 joints, 1 ms loop) → EtherCAT master. Higher initial investment, but this is the industry-proven path.</li>
+<li>Future automotive/medical grade certification → Start learning about QNX concepts now, but no need to pay for licensing during the personal prototype stage.</li>
+</ul>
+<h2 id="step-4-evaluate-on-device-vla-inference-requirements">Step 4: Evaluate On-Device VLA Inference Requirements</h2>
+<p><strong>【What to Do】</strong> If your roadmap states "robots understand commands and work autonomously," you must create a dedicated compute budget for <a href="/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a>: list the target VLA model's parameter count, quantization scheme (INT8/FP16), required action output frequency, and back-calculate VRAM and TOPS requirements. For VLA theoretical background, see <a href="/wiki/chapters/chapter-19/">Chapter 19</a>.</p>
+<p><strong>【Why】</strong> Placing VLA on-device rather than in the cloud is driven by three hard constraints: <strong>latency</strong> (action commands cannot tolerate network round trips), <strong>connectivity</strong> (robots must not become bricks without Wi-Fi), and <strong>privacy</strong> (home scene images should not leave the premises) (source: <a href="/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a> card). However, the cost of on-device deployment is that the model must fit within limited VRAM and power budgets, requiring compression techniques such as quantization, pruning, and distillation (source: <a href="/entry/ent_component_safety_mcu/">Safety MCU</a> card trend section). Existing empirical anchor: a 300M parameter diffusion policy achieves approximately 100 ms latency on Orin NX 16GB (source: data/roadmap/research/toddlerbot.md) — 100 ms is acceptable for manipulation tasks, but for dynamic balancing, it must be left to L1 layer small models.</p>
+<p><strong>【How to Analyze Your Situation】</strong> Honestly answer three questions: How large is your VLA model (below 1B parameters, consider Orin NX/AGX Orin; larger, directly look at Thor-class or accept a cloud-hybrid architecture)? What is the required action output frequency (5–10 Hz is typically sufficient for manipulation tasks; whole-body dynamic control cannot rely on direct VLA output)? What capabilities must the robot retain when offline (at least onboard safety small policies)? VLA inference performance is strongly correlated with model and quantization configuration; for specific latency data, refer to benchmark papers like VLA-Perf (source: <a href="/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a> card) and test on target hardware.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>You have a task layering table: each computing task is annotated with target frequency, tolerable latency, failure consequences, and all L0 tasks have independent fallback paths (safety MCU or drive local loop).</li>
+<li>Main controller selection has documented rationale: you can state "why this board" and compare with at least one open-source project of similar scale (e.g., "I do RL walking + small policy, choose N95-class, referencing BHL").</li>
+<li>If following the real-time Linux route: you have run <code>cyclictest</code> on target hardware, recording maximum scheduling latency under idle and stressed loads, with at least one order of magnitude margin relative to the control loop period.</li>
+<li>If planning VLA: you have written down the target model's parameter count, quantization scheme, expected VRAM usage, and confirmed that the selected platform's VRAM capacity has at least 30% headroom.</li>
+<li>Power and thermal calculations completed: main controller full-load power (e.g., AGX Orin 60 W, Thor 75–120 W class) has been accounted for in the total system power budget and thermal design.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Robot stable in simulation but shakes on real hardware</td>
+<td>Control loop period not met, scheduling latency jitter</td>
+<td><code>cyclictest</code> to measure maximum latency; check if PREEMPT_RT patch is applied, CPU isolation and memory locking are configured</td>
+</tr>
+<tr>
+<td>Performance drops sharply after a few minutes of inference</td>
+<td>Overheating throttling (ToddlerBot measured throttling after 19 minutes, source: its research archive)</td>
+<td>Monitor chip temperature and frequency curves; improve airflow/add heat spreader; lower power mode and recalibrate</td>
+</tr>
+<tr>
+<td>EtherCAT occasional frame loss, joint errors</td>
+<td>Master scheduling timeout or DC synchronization not configured</td>
+<td>Check Working Counter return values; confirm distributed clock is enabled; run master with PREEMPT_RT + dedicated CPU core</td>
+</tr>
+<tr>
+<td>VLA model cannot fit in VRAM or inference extremely slow</td>
+<td>Model too large, not quantized</td>
+<td>Quantize to INT8/FP16 first, then test; compare VRAM requirements with platform specs; consider action chunking to reduce inference frequency</td>
+</tr>
+<tr>
+<td>Occasional latency spikes in ROS nodes on NUC/mini PC</td>
+<td>Standard kernel scheduling jitter + USB device interrupt contention</td>
+<td>Apply real-time patch; bind IRQ affinity to non-real-time cores; move CAN/IMU USB adapters to a separate USB controller</td>
+</tr>
+<tr>
+<td>Robot loses control and falls after main controller crash</td>
+<td>Missing independent safety layer</td>
+<td>Add safety MCU watchdog and emergency stop circuit, ensuring drives automatically disable when main controller loses power</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li><a href="/roadmap/stage-2-biped/">Stage 2 · Biped Platform</a> — Main controller platform deployment in walking control</li>
+<li><a href="/roadmap/stage-3-humanoid/">Stage 3 · Full Humanoid</a> — Layered compute and on-device VLA inference</li>
+<li><a href="/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/playbooks/actuator-selection/">← Previous<span>Selection Guide: How to Choose an Actuator</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/playbooks/sensor-selection/">Next →<span>Selection Guide: How to Choose a Sensor</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#computing-platform-selection-equipping-a-robot-with-a-layered-brain">Computing Platform Selection: Equipping a Robot with a "Layered Brain"</a><ul>
+<li><a href="#step-1-divide-computing-demands-into-three-layers">Step 1: Divide Computing Demands into Three Layers</a></li>
+<li><a href="#step-2-candidate-platform-comparison-and-real-world-cases">Step 2: Candidate Platform Comparison and Real-World Cases</a></li>
+<li><a href="#step-3-determine-the-real-time-solution">Step 3: Determine the Real-time Solution</a></li>
+<li><a href="#step-4-evaluate-on-device-vla-inference-requirements">Step 4: Evaluate On-Device VLA Inference Requirements</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+</body>
+</html>

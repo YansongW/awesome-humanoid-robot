@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</h1>
+      <p class="entry-name-en">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">AI 모델 및 알고리즘</span><span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.16478v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 제트 동력 휴머노이드 iRonCub를 위한 다중 속도 모델 예측 제어 프레임워크를 제안하며, 질량 중심 운동량 역학과 2차 비선형 제트 엔진 역학을 통합하고 MuJoCo 시뮬레이션을 통해 검증하였다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.16478v2" target="_blank" rel="noopener">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 제트 추진 비행 휴머노이드 로봇을 위한 새로운 모델 예측 제어(MPC) 프레임워크를 제안합니다. 제어기는 비행 동역학을 표현하기 위해 선형화된 중심 운동량 모델을 기반으로 하며, 제트 추진의 느리고 비선형적인 동역학을 명시적으로 고려하기 위해 2차 비선형 모델이 추가되었습니다. 주요 기여는 로봇의 관절과 제트 엔진의 서로 다른 작동 속도를 처리하면서 제트 동역학을 예측 모델에 직접 포함시키는 다중 속도 MPC 공식을 도입한 것입니다. 우리는 제트 추진 휴머노이드 로봇 iRonCub을 사용하여 Mujoco에서 시뮬레이션을 수행함으로써 프레임워크를 검증했습니다. 시뮬레이션 결과는 로봇이 외부 교란으로부터 회복하고 안정적이고 급격하지 않은 비행 기동을 수행할 수 있음을 보여주며, 제안된 접근 방식의 효과성을 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>본 논문은 제트 추진 비행 휴머노이드 로봇을 위한 새로운 모델 예측 제어(MPC) 프레임워크를 제안합니다. 제어기는 비행 동역학을 표현하기 위해 선형화된 중심 운동량 모델을 기반으로 하며, 제트 추진의 느리고 비선형적인 동역학을 명시적으로 고려하기 위해 2차 비선형 모델이 추가되었습니다. 주요 기여는 로봇의 관절과 제트 엔진의 서로 다른 작동 속도를 처리하면서 제트 동역학을 예측 모델에 직접 포함시키는 다중 속도 MPC 공식을 도입한 것입니다. 우리는 제트 추진 휴머노이드 로봇 iRonCub을 사용하여 Mujoco에서 시뮬레이션을 수행함으로써 프레임워크를 검증했습니다. 시뮬레이션 결과는 로봇이 외부 교란으로부터 회복하고 안정적이고 급격하지 않은 비행 기동을 수행할 수 있음을 보여주며, 제안된 접근 방식의 효과성을 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">협력형 창고 자동화를 위한 다중 에이전트 강화학습: 희소 보상 조정을 위한 QMIX 가치 분해</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_mobile_television_predictive_m_2025/">Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_newton_euler_equations/">뉴턴-오일러 방정식</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">인간형 로봇의 견고한 보행을 위한 계층적 차수 축소 모델 예측 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">다계층 복잡 공급망에서의 자재 통합 트레이드오프 활용</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">리튬 이온 배터리 팩의 열 방출 종합 분석</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">당신의 비전-언어-액션 모델에는 이미 경로 편차 탐지를 위한 어텐션 헤드가 있다</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">다단계 강화학습을 통한 휴머노이드 전신 배드민턴</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_aljalbout_reality_gap_2025/">로보틱스의 현실 격차: 과제, 해결책 및 모범 사례</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">협력형 창고 자동화를 위한 다중 에이전트 강화학습: 희소 보상 조정을 위한 QMIX 가치 분해</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gorbani_unified_multi_rate_model_predi_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_newton_euler_equations/">
+          <span class="entry-type">방정식</span>
+          <h3>뉴턴-오일러 방정식</h3>
+          <p>강철 또는 관절 연결 다물체 시스템의 운전을 기술하는 결합된 힘 및 토크 평형 방정식 집합.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">
+          <span class="entry-type">논문</span>
+          <h3>다단계 강화학습을 통한 휴머노이드 전신 배드민턴</h3>
+          <p>통합된 전신 강화학습 제어기를 통해 21자유도 휴머노이드가 시뮬레이션 및 실제 환경에서 배드민턴을 칠 수 있으며, 시뮬레이션에서는 21회 연속 랠리를, 실제 테스트에서는 초당 최대…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">
+          <span class="entry-type">논문</span>
+          <h3>협력형 창고 자동화를 위한 다중 에이전트 강화학습: 희소 보상 조정을 위한 QMIX 가치 분해</h3>
+          <p>본 논문은 RWARE, MPE 및 사용자 정의 Unity 3D 시뮬레이션에서 창고 다중 에이전트 강화학습 작업에 대한 QMIX, IPPO 및 MASAC을 비교하며, QMIX의 가치…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">
+          <span class="entry-type">논문</span>
+          <h3>인간형 로봇의 견고한 보행을 위한 계층적 차수 축소 모델 예측 제어</h3>
+          <p>ALIP 보행 간 동역학에 기반한 40Hz 비선형 보행 계획기와 팔 및 몸통 동역학을 포함하는 500Hz 선형 MPC를 결합한 인간형 로봇 보행을 위한 계층적 차수 축소 MPC…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">논문</span>
+          <h3>당신의 비전-언어-액션 모델에는 이미 경로 편차 탐지를 위한 어텐션 헤드가 있다</h3>
+          <p>본 논문은 고정된 비전-언어-액션(VLA) 모델 내 어텐션 엔트로피 신호가 궤적 편차를 나타내는 소수의 &#39;네비게이션 헤드(Navigation Heads)&#39;를 식별하여, 학습 불필요…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_aljalbout_reality_gap_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로보틱스의 현실 격차: 과제, 해결책 및 모범 사례</h3>
+          <p>2025년 서베이로, 시뮬레이션-현실 간 현실 격차를 지각 및 동작 역학 불일치로 분류하고 도메인 랜덤화, 시스템 식별, 시뮬-현실 공동 학습 등 완화 전략을 검토함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">
+          <span class="entry-type">논문</span>
+          <h3>다계층 복잡 공급망에서의 자재 통합 트레이드오프 활용</h3>
+          <p>Chauhan 등은 공급망 계층 간 다대다 자재 관계를 활용하고 수량 할인, 재고 보유 및 운송 비용을 포함하는 혼합정수선형계획법 프레임워크를 제안하고, 항공우주 제조 테스트…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Model Predictive Control</h3>
+          <p>접촉이 풍부한 전신 동작을 생성하기 위한 온라인 최적 제어 접근법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">
+          <span class="entry-type">논문</span>
+          <h3>리튬 이온 배터리 팩의 열 방출 종합 분석</h3>
+          <p>이 2025년 arXiv 논문은 16셀 리튬 이온 배터리 팩에 대한 CFD 및 열 시뮬레이션을 통해 7가지 기하학적 배치와 기류 구성을 비교하였으며, 5개 인렛과 1개 아웃렛을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</h3>
+          <p>본 논문은 비선형 모델 예측 제어(MPC)와 푸아송 안전 함수를 통해 지각 데이터에서 합성된 제어 장벽 함수(CBF) 제약을 결합한 예측 안전 필터를 제안한다. 이동 경계 및…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">
+          <span class="entry-type">논문</span>
+          <h3>물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰</h3>
+          <p>고충실도 미시규모 모델에서 단일 입자 모델까지의 연속 전기화학 배터리 모델을 유도하는 통합적 환원 프레임워크를 제시하고, 가정들과 한계, 열-전기화학 결합 확장에 대해 비판적으로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_mobile_television_predictive_m_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control</h3>
+          <p>Mobile-TeleVision 把本体状态与关节序列、人类视频/动捕轨迹、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

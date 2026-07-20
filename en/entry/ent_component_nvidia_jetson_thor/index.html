@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NVIDIA Jetson Thor · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/component/">Component</a>
+    <span>/</span>
+    <span class="breadcrumb-current">NVIDIA Jetson Thor</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Component</div>
+      <h1>NVIDIA Jetson Thor</h1>
+      <p class="entry-name-en">NVIDIA Jetson Thor</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span><span class="tag">AI Models &amp; Algorithms</span><span class="tag">Software &amp; Middleware</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Upstream</span><span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="AI-extracted from NVIDIA official blog and VLA-Perf paper; detailed datasheet review pending. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">Stage 2 · Biped Platform</span>
+        <span class="roadmap-badge-role">Optional</span>
+      </a>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">Stage 3 · Full Humanoid</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>NVIDIA&#39;s flagship edge AI compute module for humanoid and physical AI robots, built on Blackwell architecture and designed to run multimodal generative AI, VLMs, and VLA policies on-device.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://developer.nvidia.com/blog/introducing-nvidia-jetson-thor-the-ultimate-platform-for-physical-ai/" target="_blank" rel="noopener">Introducing NVIDIA Jetson Thor, the Ultimate Platform for Physical AI</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.18397" target="_blank" rel="noopener">How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>NVIDIA's flagship edge AI computing module for humanoid robots and physical AI robots, based on the Blackwell architecture, supports running multimodal generative AI, vision-language models, and VLA policies on-device.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-nvidia-jetson-thor">Definition and Positioning of NVIDIA Jetson Thor</h3>
+<p>NVIDIA Jetson Thor belongs to the <strong>component</strong> category. Its fields include: components, AI models and algorithms, and software middleware. Value chain level: upstream, intelligence. NVIDIA's flagship edge AI computing module for humanoid robots and physical AI robots, based on the Blackwell architecture, supports running multimodal generative AI, vision-language models, and VLA policies on-device. English name: <em>NVIDIA Jetson Thor</em>. Korean name: <em>NVIDIA Jetson Thor</em>.</p>
+<h3 id="working-principle-and-technical-architecture-of-nvidia-jetson-thor">Working Principle and Technical Architecture of NVIDIA Jetson Thor</h3>
+<p>The core mechanism of NVIDIA Jetson Thor defines its performance boundaries in humanoid robot systems. Understanding its internal structure, signal flow, and control interfaces aids in system integration and optimization.
+During selection and integration, attention must be paid to its compatibility with controllers, communication buses, power systems, and mechanical structures.</p>
+<h3 id="key-parameters-and-selection-points">Key Parameters and Selection Points</h3>
+<p>In engineering practice, selecting NVIDIA Jetson Thor requires comprehensive consideration of performance metrics, reliability, cost, supply chain maturity, and compatibility with the overall system.
+Key parameters typically include precision, bandwidth, torque, power consumption, weight, interface protocols, and environmental adaptability.
+For different application scenarios, trade-offs between performance and cost may be necessary, with appropriate redundancy and safety margins reserved.</p>
+<h3 id="typical-applications-and-development-trends">Typical Applications and Development Trends</h3>
+<p>NVIDIA Jetson Thor has been widely used in prototype validation, academic research, and early commercial products for humanoid robots.
+In the future, as the industry chain matures, its integration level, intelligence, and cost-effectiveness are expected to continue improving.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>nvidia</li>
+<li>jetson</li>
+<li>edge_compute</li>
+<li>vla</li>
+<li>on_device_inference</li>
+<li>blackwell</li>
+<li>humanoid</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As a key component in the humanoid robot industry chain, NVIDIA Jetson Thor plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, execution, energy, structure, and validation, collectively determining overall system performance. Related research and applications are ongoing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_manufacturer_nvidia/">NVIDIA</a>
+              <span class="rel-desc">NVIDIA Jetson Thor mentions NVIDIA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_tech_robogen/">RoboGen</a>
+              <span class="rel-desc">NVIDIA Jetson Thor uses or builds on RoboGen.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">enables</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a>
+              <span class="rel-desc">Jetson Thor&#39;s on-robot AI compute enables real-time VLA inference without relying on external servers.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a>
+              <span class="rel-desc">Jetson Thor-class compute is targeted for next-generation humanoids such as Tesla Optimus.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_nvidia_jetson_agx_orin_2024/">NVIDIA Jetson AGX Orin</a>
+              <span class="rel-desc">NVIDIA Jetson Thor has prerequisite NVIDIA Jetson AGX Orin.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_tech_mimicgen/">MimicGen</a>
+              <span class="rel-desc">NVIDIA Jetson Thor uses or builds on MimicGen.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_sonic_supersizing_motion_track_2026/">SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_motionwam_towards_foundation_w_2026/">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_trajbooster_boosting_humanoid_2026/">TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hex_humanoid_aligned_experts_f_2026/">HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_roboomni_2025/">RoboOmni: Proactive Robot Manipulation in Omni-modal Context</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">RoboOmni: Proactive Robot Manipulation in Omni-modal Context uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nvidia_gr00t_n1_2025/">NVIDIA GR00T N1</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">GR00T N1 requires Jetson Thor-class compute for real-time onboard inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_thor_towards_human_level_whole_2025/">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_unitree_unitree_announces_h2_plus_an_n_2026/">Unitree Announces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot for Academic Research</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses_hardware_from</span>
+              <span class="rel-desc">Unitree Announces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot for Academic Research uses hardware from NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_manufacturer_nvidia/">NVIDIA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">produces</span>
+              <span class="rel-desc">NVIDIA designs and manufactures the Jetson Thor edge AI compute module.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">On-Device VLA Inference cites NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sonic_supersizing_motion_track_2026_1/">SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egohumanoid_unlocking_in_the_w_2026/">EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System uses or builds on NVIDIA Jetson Thor.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_nvidia_jetson_thor"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egohumanoid_unlocking_in_the_w_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration</h3>
+          <p>The implementation path of EgoHumanoid is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_unitree_unitree_announces_h2_plus_an_n_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Unitree Announces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot for Academic Research</h3>
+          <p>News Summary: ●&amp;nbsp;Unitree Robotics introduces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_thor_towards_human_level_whole_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</h3>
+          <p>Thor converts camera images/multi-view observations, body state and joint sequences, contact…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_tech_mimicgen/">
+          <span class="entry-type">Technology</span>
+          <h3>MimicGen</h3>
+          <p>A demonstration augmentation framework that scales a small set of human seed demonstrations in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_nvidia_jetson_agx_orin_2024/">
+          <span class="entry-type">Component</span>
+          <h3>NVIDIA Jetson AGX Orin</h3>
+          <p>Onboard GPU/ARM SoC widely used for VLA inference and perception in humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_tesla_optimus/">
+          <span class="entry-type">Robot System</span>
+          <h3>Tesla Optimus</h3>
+          <p>Tesla&#39;s general-purpose humanoid robot program, with stated goals of factory deployment and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_tech_robogen/">
+          <span class="entry-type">Technology</span>
+          <h3>RoboGen</h3>
+          <p>An LLM-driven automatic task-generation framework for robotics that proposes tasks and generates…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_tech_on_device_vla_inference/">
+          <span class="entry-type">Technology</span>
+          <h3>On-Device VLA Inference</h3>
+          <p>The practice of running Vision-Language-Action models directly on robot-embedded edge compute rather…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sonic_supersizing_motion_track_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control</h3>
+          <p>The implementation path of SONIC is to first encode human video/motion capture trajectories and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>NVIDIA</h3>
+          <p>American semiconductor and software company supplying GPUs, edge AI compute modules, simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hex_humanoid_aligned_experts_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation</h3>
+          <p>The implementation path of HEX is to first encode the ontology state and joint sequence into…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_motionwam_towards_foundation_w_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</h3>
+          <p>The implementation path of MotionWAM is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_trajbooster_boosting_humanoid_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning</h3>
+          <p>The implementation path of TrajBooster is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_roboomni_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboOmni: Proactive Robot Manipulation in Omni-modal Context</h3>
+          <p>A 2025 VLA system that fuses vision, speech, and environmental sounds to infer user intentions…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sonic_supersizing_motion_track_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control</h3>
+          <p>The implementation path of SONIC is to first encode human video/motion capture trajectories and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nvidia_gr00t_n1_2025/">
+          <span class="entry-type">Method</span>
+          <h3>NVIDIA GR00T N1</h3>
+          <p>Open foundation model for generalist humanoid robots with VLA plus diffusion-transformer action…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-nvidia-jetson-thor">Definition and Positioning of NVIDIA Jetson Thor</a></li>
+<li><a href="#working-principle-and-technical-architecture-of-nvidia-jetson-thor">Working Principle and Technical Architecture of NVIDIA Jetson Thor</a></li>
+<li><a href="#key-parameters-and-selection-points">Key Parameters and Selection Points</a></li>
+<li><a href="#typical-applications-and-development-trends">Typical Applications and Development Trends</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

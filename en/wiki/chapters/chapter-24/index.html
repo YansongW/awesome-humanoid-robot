@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 24: End-to-End Software Stack · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 24: End-to-End Software Stack</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-24-end-to-end-software-stack">Chapter 24: End-to-End Software Stack</h1>
+<h2 id="abstract">Abstract</h2>
+<p>The intelligence of a humanoid robot is ultimately embodied in a complete data pathway that begins with the entry of photons and force signals and ends with current flowing into the motors. This chapter takes the "end-to-end software stack" as its subject, connecting the algorithms and hardware from previous chapters into a deployable system: it first presents a five-layer architecture of perception, decision-making, planning, control, and execution, along with a frequency hierarchy spanning milliseconds to seconds, and discusses the two paradigms of the modular stack and the end-to-end learning stack, as well as their convergence trends. It then analyzes layer by layer the engineering implementation of multi-sensor integration and time synchronization, state estimation, task planning and motion planning, whole-body control and joint servoing, as well as the hierarchical inference approach for integrating vision-language-action models such as RT-1/RT-2, Octo, OpenVLA, π0, and GR00T N1 into the stack. The focus of this chapter falls on <strong>edge deployment</strong>: the power and compute constraints of onboard computing platforms, quantization and compilation optimization for on-device VLA inference, real-time operating systems like Linux RT-PREEMPT and QNX, and methods for decomposing the end-to-end latency budget. Finally, it discusses the post-deployment operational closed loop formed by the ROS 2 middleware, the LeRobot open-source stack, OTA software updates, fleet management platforms, and the vehicle data flywheel. This chapter deeply connects with Chapter 14 (Control), Chapter 19 (VLA), Chapter 21 (Data), and Chapter 22 (Middleware), and provides a software perspective analysis framework for the complete system case study in Chapter 26.</p>
+<p><strong>Keywords</strong>: End-to-End Software Stack; System Architecture; Frequency Hierarchy; State Estimation; Task Planning; Whole-Body Control; VLA Hierarchical Inference; On-Device VLA Inference; Real-Time Operating System; OTA Software Update; Fleet Management; Data Flywheel</p>
+<hr />
+<h2 id="241-overall-architecture-of-the-end-to-end-software-stack">24.1 Overall Architecture of the End-to-End Software Stack</h2>
+<h3 id="2411-data-pathway-from-perception-to-action">24.1.1 Data Pathway from Perception to Action</h3>
+<p>The "end-to-end" nature of a humanoid robot software stack has two meanings: <strong>signal pathway end-to-end</strong> in the systems engineering sense (from sensor sampling to motor torque output), and <strong>model end-to-end</strong> in the machine learning sense (a differentiable model that directly maps observations to actions). This chapter covers both, with the latter's integration into the former as the main thread. A typical real-time data pathway is as follows:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Sensor Array&lt;br/&gt;Camera / IMU / Encoder / Torque"] --&gt; B["Driver &amp; Synchronization Layer&lt;br/&gt;Timestamp Alignment / Extrinsic Calibration"]
+    B --&gt; C["Perception &amp; State Estimation&lt;br/&gt;Fused Localization / Scene Understanding"]
+    C --&gt; D["Decision Layer&lt;br/&gt;Task Planning / Behavior Scheduling"]
+    D --&gt; E["Planning Layer&lt;br/&gt;Motion Planning / Trajectory Generation"]
+    E --&gt; F["Control Layer&lt;br/&gt;WBC / MPC / Learned Policy"]
+    F --&gt; G["Servo Layer&lt;br/&gt;Joint Torque Closed Loop"]
+    G --&gt; H["Bus &amp; Driver&lt;br/&gt;EtherCAT / CAN"]
+    H --&gt; I["Motor &amp; Mechanism"]
+    I -.-&gt;|"Physical World Feedback"| A</code></pre>
+<p>Any delay, jitter, or frame loss in any link of the pathway will be amplified along the chain. Therefore, the first principle of end-to-end stack design is <strong>full-link budgeting</strong>: allocate delay, bandwidth, and compute budgets for each link, while retaining margins (see Section 24.6.4 for details).</p>
+<h3 id="2412-layered-architecture-and-frequency-hierarchy">24.1.2 Layered Architecture and Frequency Hierarchy</h3>
+<p>The humanoid robot software stack is naturally layered according to time scales, with frequencies differing by several orders of magnitude between layers:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Function</th>
+<th>Typical Frequency</th>
+<th>Typical Latency Budget</th>
+<th>Typical Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Task Layer</td>
+<td>Instruction understanding, task decomposition</td>
+<td>Event-triggered (seconds or more)</td>
+<td>Hundreds of ms</td>
+<td>LLM / PDDL Planner / Behavior Tree</td>
+</tr>
+<tr>
+<td>Planning Layer</td>
+<td>Path and trajectory generation</td>
+<td>1–20 Hz</td>
+<td>Tens of ms</td>
+<td>MoveIt / OMPL / MPC</td>
+</tr>
+<tr>
+<td>Policy Layer</td>
+<td>Visuomotor policy inference</td>
+<td>5–50 Hz</td>
+<td>20–200 ms</td>
+<td>VLA / Diffusion Policy / RL Policy</td>
+</tr>
+<tr>
+<td>Control Layer</td>
+<td>Whole-body control, state estimation</td>
+<td>100–1000 Hz</td>
+<td>1–10 ms</td>
+<td>WBC / Hierarchical QP / Kalman Filter</td>
+</tr>
+<tr>
+<td>Servo Layer</td>
+<td>Joint torque/position closed loop</td>
+<td>1–10 kHz</td>
+<td>&lt; 1 ms</td>
+<td>Driver Firmware / FOC</td>
+</tr>
+</tbody>
+</table>
+<p>This "slow thinking, fast reaction" frequency hierarchy is not accidental: higher layers process large amounts of information but tolerate latency, while lower layers process less information but are intolerant of jitter. Layers are decoupled through <strong>well-defined state interfaces</strong> (task goals, reference trajectories, desired torques), allowing the implementation of any layer to be replaced—for example, replacing a hand-crafted planner with a learned policy—without perturbing other layers.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Frequency Hierarchy, State Interface, Latency Budget, Jitter, Watchdog</p>
+<ul>
+<li><strong>Frequency hierarchy</strong>: An architecture where layers of the software stack operate at different control bandwidths, with output downsampled layer by layer.</li>
+<li><strong>State interface</strong>: A clearly defined data contract passed between layers, such as "desired joint position + velocity + feedforward torque".</li>
+<li><strong>Latency budget</strong>: The sum of the maximum allowed processing times allocated to each link in the chain, which must be less than the response time limit required by the upper layer.</li>
+<li><strong>Jitter</strong>: The deviation of the actual execution time of a periodic task from its ideal time; jitter in the servo layer directly translates into torque noise.</li>
+<li><strong>Watchdog</strong>: A hardware or software timer that monitors task heartbeats; if not fed (reset) before timeout, it triggers a safe shutdown.</li>
+</ul>
+</div>
+<h3 id="2413-two-paradigms-modular-stack-vs-end-to-end-learning-stack">24.1.3 Two Paradigms: Modular Stack vs. End-to-End Learning Stack</h3>
+<p>The <strong>modular stack</strong> decomposes perception, localization, planning, and control into independent modules, each implementable with the most mature technologies (geometric vision + model-based control). Its advantages are that each module can be independently verified, faults can be isolated, and behavior is interpretable, making it the mainstream for industrial deployment. Its disadvantages are error cascading between modules and the difficulty of covering long-tail scenarios with hand-crafted rules. The <strong>end-to-end learning stack</strong> uses a single differentiable model (e.g., VLA) to map observations directly to actions. Its advantages are a high upper bound and scalability with data; its disadvantages are weak interpretability and verifiability, and a lack of guarantees for out-of-distribution scenarios.</p>
+<p>The current practice in the humanoid robot industry is a <strong>hybrid architecture</strong>: learning and model-based methods complement each other by layer—low-level balancing and joint servoing are still guaranteed by model-based control for real-time performance and stability, while high-level skills and semantic understanding are provided by learned models for generalization. A comparison of the two paradigms and the hybrid approach is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Modular Stack</th>
+<th>End-to-End Learning Stack</th>
+<th>Layered Hybrid (Mainstream Practice)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verifiability</td>
+<td>High, module-by-module certification</td>
+<td>Low, black box</td>
+<td>Safety layer verifiable, intelligence layer statistically evaluated</td>
+</tr>
+<tr>
+<td>Long-tail Generalization</td>
+<td>Weak, relies on rule enumeration</td>
+<td>Strong, scales with data</td>
+<td>Relatively strong, learning layer handles it</td>
+</tr>
+<tr>
+<td>Real-time Guarantee</td>
+<td>Strong</td>
+<td>Limited by inference latency</td>
+<td>Strong, safety closed loop does not depend on large models</td>
+</tr>
+<tr>
+<td>Failure Interpretability</td>
+<td>High</td>
+<td>Low</td>
+<td>Medium, attribution by layer</td>
+</tr>
+<tr>
+<td>Data Requirement</td>
+<td>Low</td>
+<td>Extremely high</td>
+<td>Medium-high</td>
+</tr>
+</tbody>
+</table>
+<p>Section 24.5 of this chapter will discuss this "layered hybrid" integration approach in detail.</p>
+<h2 id="242-perception-and-state-estimation-layer">24.2 Perception and State Estimation Layer</h2>
+<h3 id="2421-multi-sensor-integration-and-time-synchronization">24.2.1 Multi-Sensor Integration and Time Synchronization</h3>
+<p>Humanoid robots are typically equipped with multi-camera systems, depth cameras, IMUs, joint encoders, foot force/torque sensors, and joint torque sensors, with data rates ranging from hundreds of Hz (cameras) to kHz (encoders). Typical sensor integration specifications are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Typical Data Rate</th>
+<th>Typical Interface</th>
+<th>Synchronization Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global shutter cameras ×2–4</td>
+<td>30–120 Hz</td>
+<td>MIPI / GMSL / USB3</td>
+<td>Frame-level hardware trigger, exposure synchronization</td>
+</tr>
+<tr>
+<td>Depth camera</td>
+<td>30–90 Hz</td>
+<td>USB3 / Ethernet</td>
+<td>Alignment with RGB frames</td>
+</tr>
+<tr>
+<td>IMU (pelvis/head)</td>
+<td>200–1000 Hz</td>
+<td>SPI / UART</td>
+<td>Common clock domain with encoders</td>
+</tr>
+<tr>
+<td>Joint encoders ×30+</td>
+<td>1–10 kHz</td>
+<td>Embedded bus (EtherCAT/CAN)</td>
+<td>Distributed clock synchronization</td>
+</tr>
+<tr>
+<td>Foot force/torque sensors</td>
+<td>500–2000 Hz</td>
+<td>EtherCAT / Analog acquisition</td>
+<td>Alignment with control cycle</td>
+</tr>
+</tbody>
+</table>
+<p>The first major engineering challenge at the integration layer is <strong>time synchronization</strong>: the sampling instants of different sensors must be aligned to a unified clock, with errors controlled to the millisecond level (sub-millisecond required for vision and IMU fusion). Common methods include hardware triggers, PTP (Precision Time Protocol) network time synchronization, and software timestamp interpolation compensation. The second challenge is <strong>consistency of extrinsic calibration</strong>: if the extrinsics of the camera-IMU-joint chain (see the corresponding method entry in this knowledge graph for joint camera-IMU calibration methods) drift due to collision, temperature changes, or assembly loosening, all downstream fusion results will exhibit systematic bias. Therefore, the stack must include built-in online self-checking and alarming for extrinsic parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Time Synchronization, Hardware Trigger, PTP, Extrinsic Parameters, Timestamp Interpolation</p>
+<ul>
+<li><strong>Time synchronization</strong>: The process of aligning the sampling instants of multiple sensors to a unified time reference.</li>
+<li><strong>Hardware trigger</strong>: Using physical signal lines to simultaneously trigger sampling across multiple sensors, offering the highest synchronization accuracy.</li>
+<li><strong>PTP (IEEE 1588)</strong>: A protocol achieving sub-microsecond time synchronization by exchanging messages with hardware timestamps over a network.</li>
+<li><strong>Extrinsic parameters</strong>: The relative pose between sensor coordinate systems (or between a sensor and a robot link).</li>
+<li><strong>Timestamp interpolation</strong>: A software method to compensate for asynchronous sampling by linearly interpolating poses between two sampling points.</li>
+</ul>
+</div>
+<h3 id="2422-state-estimation-proprioceptive-fusion">24.2.2 State Estimation: Proprioceptive Fusion</h3>
+<p>State estimation serves as the "source of truth" connecting the physical world to all decision-making layers. The core estimated quantities for a humanoid robot are the floating base's pose and velocity, typically fused using an Extended Kalman Filter (EKF) or factor graph from the following information:</p>
+<ul>
+<li><strong>Legged odometry</strong>: Utilizing the constraint that the supporting foot's velocity is zero under contact assumptions, the base motion is inferred from joint encoders and forward kinematics.</li>
+<li><strong>IMU</strong>: Provides high-frequency angular velocity and acceleration, compensating for the low rate and transmission flexibility of encoders.</li>
+<li><strong>Contact state</strong>: Determined by foot force/torque sensors or joint torque residuals, indicating whether the odometry update is reliable.</li>
+<li><strong>External observations</strong>: Low-frequency corrections to the base pose from visual or laser features, suppressing drift.</li>
+</ul>
+<p>Key engineering points lie in <strong>robustness of contact detection</strong>: misclassifying a slip as stationary directly contaminates the odometry; and <strong>upper bound on estimation latency</strong>: state estimation must be completed before the WBC cycle, with a typical budget of a few milliseconds.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Extended Kalman Filter, Factor Graph, Legged Odometry, Contact Detection, Zero-Velocity Update</p>
+<ul>
+<li><strong>Extended Kalman Filter (EKF)</strong>: A recursive state estimator that locally linearizes nonlinear systems, computationally efficient and a mainstay for embedded fusion.</li>
+<li><strong>Factor graph</strong>: A graph structure representing the estimation problem with variable nodes and constraint factor nodes, solved via batch optimization for high accuracy and smooth historical trajectories.</li>
+<li><strong>Legged odometry</strong>: An estimation method that uses the no-slip constraint between the supporting foot and the ground to infer base motion from joint encoders.</li>
+<li><strong>Contact detection</strong>: Determining whether each foot is in a supporting state, a prerequisite for the reliability of legged odometry.</li>
+<li><strong>Zero-velocity update (ZUPT)</strong>: Forcing the velocity observation of a confirmed stationary supporting foot to zero to suppress IMU integration drift.</li>
+</ul>
+</div>
+<h3 id="2423-scene-understanding-from-geometry-to-semantics">24.2.3 Scene Understanding: From Geometry to Semantics</h3>
+<p>Scene understanding for manipulation outputs three types of products: <strong>Geometric layer</strong> (occupancy grids, depth point clouds, traversable areas), serving obstacle avoidance and foothold selection; <strong>Object layer</strong> (object detection, 6D pose, open/close state of articulated objects), serving grasping and manipulation planning; <strong>Semantic layer</strong> (scene graphs, affordance annotations), serving task planning and language conditioning for VLA. In end-to-end learning stacks, these three types of products are often not explicit intermediate representations but are compressed into features of the visual encoder; however, even in hybrid architectures, explicit occupancy and pose estimation remain trusted sources for safety-critical functions (collision avoidance).</p>
+<h2 id="243-decision-and-planning-layer">24.3 Decision and Planning Layer</h2>
+<h3 id="2431-task-planning-from-symbolic-planning-to-llm-planning">24.3.1 Task Planning: From Symbolic Planning to LLM Planning</h3>
+<p><strong>Task Planning</strong> is the process of generating a high-level action sequence to achieve a goal. It commonly uses symbolic representations like PDDL (Planning Domain Definition Language): abstracting actions like "grasp-transport-place" into operators with preconditions and effects, and a planner searches for a solution sequence. In engineering deployment, Behavior Trees are widely adopted for their maintainability and reactive execution: they organize skills into selector, sequence, parallel, and condition nodes, allowing interruption by external events and local retries during runtime, making them more suitable for dynamic workshop environments than one-shot planned sequences. In recent years, Large Language Models (LLMs) have emerged as task planners: decomposing natural language instructions into sequences of skill invocations. Their open-vocabulary capability mitigates the bottleneck of manual knowledge encoding in symbolic planning, but requires integration with execution feedback verification and failure replanning mechanisms (neural-symbolic reasoning approach) to suppress hallucinations.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: PDDL, Behavior Tree, Skill Primitive, Reactive Execution, Replanning on Failure</p>
+<ul>
+<li><strong>PDDL (Planning Domain Definition Language)</strong>: A language for describing planning problems using predicates, action operators, preconditions, and effects.</li>
+<li><strong>Behavior Tree (BT)</strong>: A task scheduling form that organizes control flow in a tree structure, with nodes returning success/failure/running states.</li>
+<li><strong>Skill primitive</strong>: The smallest encapsulated capability callable by the task layer, e.g., "grasp object X" or "walk to point Y".</li>
+<li><strong>Reactive execution</strong>: Adapting subsequent actions in real-time based on the latest perception during execution, rather than blindly following a predetermined plan.</li>
+<li><strong>Replanning on failure</strong>: A mechanism that feeds failure reasons back to the planning layer to regenerate a sequence when a skill execution fails.</li>
+</ul>
+</div>
+<h3 id="2432-motion-planning-moveit-and-sampling-based-planners">24.3.2 Motion Planning: MoveIt and Sampling-Based Planners</h3>
+<p>Motion planning refines the discrete goals from the task layer into continuous, collision-free trajectories. <strong>MoveIt Motion Planning</strong> is a commonly used motion planning framework in the ROS ecosystem, integrating planners like <strong>OMPL (Open Motion Planning Library)</strong>, inverse kinematics solvers, and collision detection. It is widely used for whole-body motion planning of robotic arms and humanoid robots; OMPL provides sampling-based motion planning algorithms such as RRT<em>, PRM, and BIT</em>, which are probabilistically complete in high-dimensional configuration spaces. For humanoid robots, special constraints in motion planning include: a large number of whole-body collision checks (including self-collision), balance constraints that need coordination with the control layer, and the plan-execute asynchrony problem (the environment changes during planning). Engineering practice often uses a two-level structure: "planning on a coarse model, online obstacle avoidance during execution".</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Probabilistic Completeness, Self-Collision, Configuration Space, Plan-Execute Asynchrony, Online Obstacle Avoidance</p>
+<ul>
+<li><strong>Probabilistic completeness</strong>: The property of a sampling-based planner that, as the number of samples approaches infinity, it will find a feasible solution with probability 1 (if one exists).</li>
+<li><strong>Self-collision</strong>: Collision between the robot's own links, which must be explicitly checked for humanoid robots due to dense limb configurations.</li>
+<li><strong>Configuration space (C-space)</strong>: The space whose coordinates are all joint angles; planning involves searching for a collision-free path from start to goal within this space.</li>
+<li><strong>Plan-execute asynchrony</strong>: The problem where the environment has deviated from the planning assumptions by the time the plan is completed, rendering the trajectory outdated.</li>
+<li><strong>Online obstacle avoidance</strong>: The ability of the execution layer to locally modify a reference trajectory based on the latest perception.</li>
+</ul>
+</div>
+<h3 id="2433-interface-design-between-planning-and-control">24.3.3 Interface Design Between Planning and Control</h3>
+<p>The interface form between the planning layer's output and the control layer's input determines the system's composability. Three common forms: <strong>Trajectory interface</strong> (time-parameterized joint/end-effector trajectories, pure tracking by the control layer), simple but loses online adjustment capability; <strong>Goal interface</strong> (footholds, end-effector target poses, motion autonomously generated by the control layer), good real-time performance but weak controllability; <strong>Reference + constraint interface</strong> (reference trajectory with feasible region and contact timing), the standard approach for whole-body MPC, balancing performance and online adaptability. The correspondence between interface selection and the overall control architecture is discussed in Chapters 14 and 15.</p>
+<h2 id="244-control-execution-layer">24.4 Control Execution Layer</h2>
+<h3 id="2441-whole-body-control-and-model-based-control-family">24.4.1 Whole-Body Control and Model-Based Control Family</h3>
+<p>The control layer coordinates all joints and contact points of a humanoid robot in a unified manner. <strong>Whole-Body Control (WBC)</strong> coordinates all joints and contact points to simultaneously achieve multiple tasks such as balance, gaze, and manipulation; its common implementation, <strong>Hierarchical QP Whole-Body Control (Hierarchical QP WBC)</strong>, stacks multiple tasks by priority and solves them via cascaded quadratic programming, ensuring that high-priority tasks (e.g., not falling) are satisfied before low-priority tasks (e.g., arm posture). <strong>Model Predictive Control (MPC)</strong> repeatedly solves a finite-horizon optimal control problem based on a predictive model and executes only the first control step, making it the mainstream approach for centroid trajectory and contact force planning. Interaction compliance is provided by <strong>Impedance Control</strong> and <strong>Admittance Control</strong>: the former adjusts the mass-damper-spring characteristics at the end-effector, while the latter converts measured external forces into desired motion trajectories. Mathematical details of these methods are given in Chapter 14; this chapter focuses on their integration constraints within the stack: WBC/MPC must complete a single solution within 1–10 ms and is sensitive to state estimation delays.</p>
+<p>Integration acceptance for the control layer typically includes four hard metrics: <strong>solution time</strong> (worst-case, not average, must be less than a certain proportion of the cycle to leave margin for other real-time tasks), <strong>constraint feasibility</strong> (relaxation and degradation behavior when QP is infeasible must be clearly defined), <strong>contact switching transients</strong> (torque impacts at foot landing/lifting must be limited within actuator bandwidth), and <strong>failure injection tests</strong> (artificially delay state estimation or lose bus frames to verify the controller's safe response). These metrics directly connect to the HIL test matrix in Chapter 23.</p>
+<h3 id="2442-joint-servo-and-fieldbus">24.4.2 Joint Servo and Fieldbus</h3>
+<p>The desired joint torques/positions output by the control layer are sent to each joint drive via the fieldbus. <strong>EtherCAT</strong> is a high-performance industrial fieldbus based on standard Ethernet frames; its "processing on the fly" mechanism allows slave stations to read and write data instantly as the frame passes, and together with Distributed Clocks (DC), it achieves microsecond-level synchronization, making it the mainstream choice for supporting 1 kHz-level whole-body torque control. <strong>CAN bus</strong> (including CAN FD), with its low cost, reduced wiring, and strong anti-interference capability, is widely used for upper-body joints and dexterous hands with lower bandwidth requirements. The division of labor between the two buses within the stack is compared as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>EtherCAT</th>
+<th>CAN / CAN FD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Typical control frequency</td>
+<td>1–4 kHz</td>
+<td>0.1–1 kHz</td>
+</tr>
+<tr>
+<td>Synchronization mechanism</td>
+<td>Distributed Clocks (DC), microsecond-level</td>
+<td>No native synchronization, relies on message timestamps</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>100 Mbit/s shared</td>
+<td>1 Mbit/s (higher for FD data segment)</td>
+</tr>
+<tr>
+<td>Topology</td>
+<td>Primarily line/daisy chain</td>
+<td>Bus type, multi-master arbitration</td>
+</tr>
+<tr>
+<td>Typical installation location</td>
+<td>Lower limb large joints, whole-body backbone</td>
+<td>Wrist, dexterous hand, sensor nodes</td>
+</tr>
+<tr>
+<td>Cost and wiring</td>
+<td>Higher</td>
+<td>Low, twisted pair sufficient</td>
+</tr>
+</tbody>
+</table>
+<p>The key metric for the servo layer is <strong>cycle jitter</strong>: at a 1 kHz control cycle, jitter should be controlled within tens of microseconds; otherwise, time-discretization errors in torque commands can excite joint vibrations. In engineering implementation, the EtherCAT master thread must be bound to a dedicated CPU core and run under a real-time scheduling class (see Section 24.6.3). Electromechanical details such as bus topology (daisy chain/star), cable strain relief, and connector locking are covered in Chapters 6 and 9.</p>
+<h3 id="2443-safety-monitoring-and-degradation-strategies">24.4.3 Safety Monitoring and Degradation Strategies</h3>
+<p>The end-to-end stack must assume that any module can fail and incorporate an independent safety monitoring path:</p>
+<ul>
+<li><strong>Limit monitoring</strong>: Hard limits on joint position/velocity/torque, motor temperature, and bus current; triggering cuts power (STO, Safe Torque Off);</li>
+<li><strong>Heartbeat monitoring</strong>: Watchdog heartbeats for policy inference, state estimation, and bus communication; timeout leads to maintaining posture or controlled squatting;</li>
+<li><strong>Behavioral plausibility monitoring</strong>: An independent channel compares commanded and estimated states for consistency (e.g., commanded walking but IMU shows a tipping trend), triggering emergency braking;</li>
+<li><strong>Degradation strategies</strong>: When computing power or sensors partially fail, the system degrades from full autonomous mode to low-speed remote control or stationary hold mode.</li>
+</ul>
+<p>The safety path should be independent of the intelligent main path in terms of power supply and computation. This is a fundamental requirement of functional safety standards such as IEC 61508 for safety-related systems (standard compliance details are in Chapter 12).</p>
+<h2 id="245-integration-of-learning-based-strategies-vla-and-the-end-to-end-stack">24.5 Integration of Learning-Based Strategies: VLA and the End-to-End Stack</h2>
+<h3 id="2451-position-of-imitation-learning-strategies-in-the-stack">24.5.1 Position of Imitation Learning Strategies in the Stack</h3>
+<p>Imitation learning methods compress expert demonstrations into policy networks, typically occupying the "policy layer" position within the stack. <strong>Behavior Cloning (BC)</strong> trains a policy via supervised learning to replicate expert demonstrations, serving as a baseline for skill learning; <strong>Action Chunking with Transformers (ACT)</strong> uses a transformer in a CVAE form to predict a sequence of future actions in one go, smoothed via temporal ensemble for execution, significantly reducing error accumulation in long-horizon fine manipulation tasks. Its combination with the ALOHA low-cost bimanual teleoperation platform pioneered the paradigm of "low-cost data collection + end-to-end policy"; <strong>Diffusion Policy</strong> models the action distribution as a conditional denoising diffusion process, capable of generating multimodal and smooth robot actions, excelling in fine manipulation tasks. The in-stack characteristics of these three are compared below:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Behavior Cloning (BC)</th>
+<th>ACT</th>
+<th>Diffusion Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action Representation</td>
+<td>Single-step regression</td>
+<td>Action chunk (CVAE+Transformer)</td>
+<td>Conditional denoising diffusion process</td>
+</tr>
+<tr>
+<td>Multimodal Distribution Modeling</td>
+<td>Weak</td>
+<td>Medium</td>
+<td>Strong</td>
+</tr>
+<tr>
+<td>Long-horizon Error Accumulation</td>
+<td>Severe</td>
+<td>Significantly mitigated</td>
+<td>Mitigated</td>
+</tr>
+<tr>
+<td>Single Inference Latency</td>
+<td>Very low</td>
+<td>Low</td>
+<td>Relatively high (multi-step denoising)</td>
+</tr>
+<tr>
+<td>Typical Output Frequency</td>
+<td>10–50 Hz</td>
+<td>5–50 Hz (chunking + ensemble)</td>
+<td>5–20 Hz</td>
+</tr>
+</tbody>
+</table>
+<p>The action output frequencies of these three (5–50 Hz) naturally fall between the planning layer and the control layer, requiring a high-speed tracking controller at the lower level to take over—this is the first integration point of the hybrid architecture.</p>
+<h3 id="2452-vla-model-lineage">24.5.2 VLA Model Lineage</h3>
+<p>Vision-Language-Action (VLA) models combine large-scale vision-language pre-training with robot action heads, representing the current mainstream candidate for the "intelligent core" of the end-to-end stack. The representative lineage included in this knowledge graph is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Institution</th>
+<th>Architecture Highlights</th>
+<th>Data Foundation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RT-1</td>
+<td>Google DeepMind</td>
+<td>Transformer-based scaled real-world robot control model</td>
+<td>~130,000 real robot demonstrations (publicly reported)</td>
+</tr>
+<tr>
+<td>RT-2</td>
+<td>Google DeepMind</td>
+<td>VLA transferring web-scale vision-language knowledge to robot control</td>
+<td>Web images + robot data joint fine-tuning</td>
+</tr>
+<tr>
+<td>Octo</td>
+<td>UC Berkeley et al.</td>
+<td>Open-source generalist robot policy trained on heterogeneous cross-embodiment data</td>
+<td>Open X-Embodiment</td>
+</tr>
+<tr>
+<td>OpenVLA</td>
+<td>Stanford et al.</td>
+<td>7B parameter open-source VLA</td>
+<td>970,000 episodes from Open X-Embodiment</td>
+</tr>
+<tr>
+<td>π0</td>
+<td>Physical Intelligence</td>
+<td>VLA flow model for general control and open-world generalization</td>
+<td>Cross-embodiment multi-task data</td>
+</tr>
+<tr>
+<td>GR00T N1</td>
+<td>NVIDIA</td>
+<td>Open foundation model for humanoid robots with VLA + diffusion transformer action head</td>
+<td>Real robot + simulated synthetic data (Isaac Sim pipeline)</td>
+</tr>
+</tbody>
+</table>
+<p>The evolutionary trajectory of this lineage is clear: from the single-arm, single-task RT-1, to RT-2 incorporating web knowledge transfer, to the cross-embodiment open-source Octo and OpenVLA, and finally to GR00T N1 targeting humanoid robots, integrating diffusion action heads and synthetic data pipelines. The internal structure and training methods of VLA models are detailed in Chapter 19; this chapter focuses on their <strong>system integration issues</strong>.</p>
+<h3 id="2453-hierarchical-inference-hybrid-architecture-of-high-level-vla-and-low-level-control">24.5.3 Hierarchical Inference: Hybrid Architecture of High-Level VLA and Low-Level Control</h3>
+<p>Directly connecting VLA output to motors is infeasible: VLA inference frequency (typically 5–30 Hz) is far lower than the 500 Hz+ required for balance control. The mainstream industrial solution is <strong>hierarchical inference</strong>:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Language Instruction + Visual Observation"] --&gt; B["High-Level: VLA / Foundation Model&lt;br/&gt;5–30 Hz Semantic Decision &amp; Action Chunk"]
+    B --&gt; C["Mid-Level: Skill Executor&lt;br/&gt;Trajectory Interpolation / Action Chunk Smoothing"]
+    C --&gt; D["Low-Level: WBC / MPC / RL Motion Policy&lt;br/&gt;100–1000 Hz Balance &amp; Tracking"]
+    D --&gt; E["Servo Layer: Joint Torque Closed-Loop&lt;br/&gt;1–10 kHz"]
+    F["Safety Monitoring Channel&lt;br/&gt;Independent Limits &amp; Heartbeat"] -.-&gt;|"Cut off on violation"| E
+    G["State Estimation&lt;br/&gt;kHz-level Fusion"] --&gt; B
+    G --&gt; D</code></pre>
+<p>Taking GR00T N1's dual-system design as a typical example: the slow system (vision-language reasoning) generates intentions and action chunks, the fast system (diffusion transformer action head) refines them into smooth joint commands, which are then executed by the lower-level whole-body control. This "semantically slow, reflexively fast" structure is homologous to biological nervous systems and is an inevitable choice under edge-side computational constraints—large models cannot run at kilohertz, and kilohertz loops do not require large models.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Action Chunk, Temporal Ensemble, Dual-System Architecture, Skill Executor, Asymmetric Frequency</p>
+<ul>
+<li><strong>Action Chunk</strong>: A sequence of k future action steps predicted by the policy in one go, originating from ACT, now a mainstream design for VLA action heads.</li>
+<li><strong>Temporal Ensemble</strong>: Weighted averaging of multiple action chunk predictions for overlapping time steps to suppress execution jitter.</li>
+<li><strong>Dual-System Architecture</strong>: An architecture where a slow semantic reasoning system collaborates with a fast action generation system, exemplified by GR00T N1.</li>
+<li><strong>Skill Executor</strong>: Middleware that translates high-level skill invocations into low-level control interfaces (trajectories, goals, constraints).</li>
+<li><strong>Asymmetric Frequency</strong>: An architectural feature where the high-level large model infers at a low frequency, the low-level controller runs at a high frequency, and a buffer queue bridges the two.</li>
+</ul>
+</div>
+<h3 id="2454-boundaries-of-on-device-edge-and-cloud-inference">24.5.4 Boundaries of On-Device, Edge, and Cloud Inference</h3>
+<p>Where to place VLA inference is a top-level architectural decision for the end-to-end stack. The trade-offs among the three are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>On-Device (Onboard)</th>
+<th>Edge (Site Server)</th>
+<th>Cloud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latency</td>
+<td>Lowest and deterministic (tens of ms)</td>
+<td>Affected by LAN quality</td>
+<td>Highly affected by WAN fluctuations</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>Operable offline</td>
+<td>Depends on site network</td>
+<td>Depends on continuous connectivity</td>
+</tr>
+<tr>
+<td>Privacy &amp; Compliance</td>
+<td>Data stays on robot</td>
+<td>Data stays on site</td>
+<td>May require cross-border/desensitization processing</td>
+</tr>
+<tr>
+<td>Upper Model Size Limit</td>
+<td>Limited by memory &amp; power (7B requires quantization)</td>
+<td>Medium</td>
+<td>Virtually unlimited</td>
+</tr>
+<tr>
+<td>Update Frequency</td>
+<td>Via OTA</td>
+<td>Flexible</td>
+<td>Most flexible</td>
+</tr>
+</tbody>
+</table>
+<p>The industry trend is <strong>on-device by default, cloud on demand</strong>: safety-related and reactive capabilities must be closed-loop on-device (which is why the on-device VLA inference entry emphasizes the triple constraints of latency, connectivity, and privacy), while slow, non-safety-critical semantic reasoning (e.g., daily report generation, post-task analysis) can be offloaded to the cloud. Hybrid solutions require the stack to implement <strong>inference-location-agnostic interfaces</strong>: the same policy service can be provided by either a local model or a remote model, dynamically switching based on network status, and any switch must not interrupt the underlying safety closed loop.</p>
+<h2 id="246-edge-deployment-and-on-device-inference">24.6 Edge Deployment and On-Device Inference</h2>
+<h3 id="2461-power-and-compute-constraints-of-onboard-computing-platforms">24.6.1 Power and Compute Constraints of Onboard Computing Platforms</h3>
+<p>Humanoid robot on-device computing faces hard constraints: limited battery capacity (typically 0.5–2 kWh for the whole machine), where every 100 W increase in compute load directly reduces endurance; additionally, computing units must withstand continuous vibration and temperature cycles from walking. A typical configuration is a "heterogeneous dual-zone": the safety zone runs servo and safety monitoring on low-power real-time controllers (MCU/real-time SoC); the intelligent zone runs perception, policy, and planning on GPU SoCs (e.g., Jetson series embedded modules), with available compute typically ranging from tens to hundreds of TOPS (INT8) and a power budget of 15–60 W. The division of responsibilities between the two compute zones is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Compute Zone</th>
+<th>Hardware Form</th>
+<th>Running Content</th>
+<th>Key Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safety/Real-Time Zone</td>
+<td>MCU, Real-Time SoC</td>
+<td>Joint servo, bus master, safety monitoring</td>
+<td>Hard real-time, determinism, functional safety</td>
+</tr>
+<tr>
+<td>Intelligent Zone</td>
+<td>GPU SoC (Embedded)</td>
+<td>Perception, state estimation, policy inference, planning</td>
+<td>Compute/power ratio, memory bandwidth</td>
+</tr>
+<tr>
+<td>Gateway Zone (Optional)</td>
+<td>Communication Module</td>
+<td>Cloud link, OTA, log upload</td>
+<td>Offline degradation, data compression</td>
+</tr>
+</tbody>
+</table>
+<p>For compute selection methodology and power integrity design, see Chapter 6. This chapter focuses on <strong>software-side optimization</strong> given a fixed compute budget.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: TOPS, Memory Bandwidth, Power Budget, Thermal Design Power, Thermal Throttling</p>
+<ul>
+<li><strong>TOPS (Tera Operations Per Second)</strong>: Trillions of integer operations per second, a common nominal metric for edge AI chip compute (typically referring to INT8).</li>
+<li><strong>Memory Bandwidth</strong>: The amount of memory data that can be transferred per unit time; for large model inference, it often becomes a bottleneck earlier than compute power.</li>
+<li><strong>Power Budget</strong>: The maximum power allocated to the computing subsystem; exceeding it reduces endurance or triggers thermal protection.</li>
+<li><strong>Thermal Design Power (TDP)</strong>: The thermal power that the cooling system can continuously dissipate, determining the sustained availability of compute performance.</li>
+<li><strong>Thermal Throttling</strong>: The chip automatically reduces its frequency when temperature exceeds limits, making nominal compute power unavailable; a hidden risk in high-temperature environments.</li>
+</ul>
+</div>
+<h3 id="2462-on-device-vla-inference-quantization-compilation-optimization-and-latency-decomposition">24.6.2 On-Device VLA Inference: Quantization, Compilation Optimization, and Latency Decomposition</h3>
+<p><strong>On-Device VLA Inference</strong> refers to deploying vision-language-action models directly on the robot's built-in edge computing device, rather than offloading to edge or cloud servers, to meet latency, connectivity, and privacy constraints. Its engineering toolchain includes:</p>
+<ul>
+<li><strong>Quantization</strong>: Compressing weights and activations from FP16 to INT8/INT4, reducing memory footprint and memory bandwidth approximately proportionally, at the cost of accuracy loss that must be controlled with a calibration set; a 7-billion-parameter model is about 14 GB in FP16, 7 GB in INT8, and 3.5 GB in INT4; quantization is a key method for fitting 7B-level VLA models into onboard memory;</li>
+<li><strong>Compilation Optimization</strong>: Using inference compilers like TensorRT for operator fusion, kernel selection, and memory reuse, typically yielding significant additional speedup;</li>
+<li><strong>Action Head Restructuring</strong>: Multi-step denoising in diffusion/flow-matching action heads is a major latency contributor; can be compressed using distillation (consistency methods) or few-step sampling;</li>
+<li><strong>Speculation and Asynchrony</strong>: Visual encoding and language encoding can be reused across cycles (not recomputed if the scene is unchanged); action chunk prediction and execution can be pipelined.</li>
+</ul>
+<p>Research on on-device inference benchmarks like VLA-Perf shows that VLA inference latency is highly sensitive to model size, quantization configuration, and action head design; selection must be based on actual measurements. Taking a model with parameter count <span class="arithmatex">\(N_p\)</span> as an example, the weight memory footprint is approximately</p>
+<div class="arithmatex">\[
+M_{\text{weights}} \approx N_p \times b, \qquad b \in \{2\,\text{B (FP16)},\ 1\,\text{B (INT8)},\ 0.5\,\text{B (INT4)}\}
+\]</div>
+<p>Inference latency can be decomposed as</p>
+<div class="arithmatex">\[
+T_{\text{VLA}} = T_{\text{vision}} + T_{\text{lang}} + T_{\text{action-head}} + T_{\text{pre/post}}
+\]</div>
+<p>and each term should be optimized against the budget; when a single term exceeds the budget and cannot be resolved, the architectural option is to downgrade high-level inference to "event-triggered" (running only on new instructions or scene changes) rather than at a fixed period.</p>
+<h3 id="2463-real-time-operating-systems-and-scheduling">24.6.3 Real-Time Operating Systems and Scheduling</h3>
+<p>General-purpose operating systems are not designed for hard real-time; Real-Time Operating Systems (RTOS) meet microsecond-level timing requirements through kernel preemption, priority scheduling, and deterministic interrupt response. Common options for humanoid robots include:</p>
+<ul>
+<li><strong>Linux RT-PREEMPT</strong>: A patch set that makes most of the Linux kernel preemptible and interrupts threaded, retaining the rich Linux ecosystem while providing scheduling latency on the order of tens of microseconds; a common choice for the main controller;</li>
+<li><strong>Xenomai</strong>: A dual-kernel solution where real-time tasks run on the Cobalt real-time core, with latency as low as microseconds, but with higher maintenance complexity;</li>
+<li><strong>QNX</strong>: A commercial microkernel RTOS where the file system and network stack are user-space services, offering excellent reliability and determinism, widely used in automotive and safety-critical systems;</li>
+<li><strong>Zephyr</strong>: An open-source RTOS for resource-constrained embedded devices, commonly used for sensor nodes and motor controllers.</li>
+</ul>
+<p>An engineering comparison of the four is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Linux RT-PREEMPT</th>
+<th>Xenomai</th>
+<th>QNX</th>
+<th>Zephyr</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scheduling Latency Magnitude</td>
+<td>Tens of microseconds</td>
+<td>Microsecond-level</td>
+<td>Microsecond-level</td>
+<td>Microsecond-level</td>
+</tr>
+<tr>
+<td>Ecosystem Richness</td>
+<td>Very high (full Linux)</td>
+<td>High (reuses Linux user-space)</td>
+<td>Medium</td>
+<td>Low (embedded)</td>
+</tr>
+<tr>
+<td>Maintenance Cost</td>
+<td>Low</td>
+<td>High</td>
+<td>Medium (commercial license)</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Safety Certification Foundation</td>
+<td>Requires self-build</td>
+<td>Requires self-build</td>
+<td>Has mature certification cases</td>
+<td>Partial</td>
+</tr>
+<tr>
+<td>Typical Installation Location</td>
+<td>Main control computer</td>
+<td>Main control computer</td>
+<td>Safety domain controller</td>
+<td>Joint/sensor nodes</td>
+</tr>
+</tbody>
+</table>
+<p>A typical scheduling design is: bind the EtherCAT master and WBC tasks to a dedicated CPU core with the highest SCHED_FIFO priority and lock memory (mlockall); policy inference and normal processes share the remaining cores, with cgroups limiting their preemption interference; all real-time threads disable dynamic memory allocation and non-deterministic system calls. More details on kernel and driver aspects can be found in Chapters 6 and 22.</p>
+<h3 id="2464-python-example-end-to-end-latency-budget-decomposition">24.6.4 Python Example: End-to-End Latency Budget Decomposition</h3>
+<p>The following example demonstrates how to perform a latency budget decomposition for a "camera input to torque output" control chain, and calculate the worst-case total latency and effective control frequency.</p>
+<pre class="highlight"><code class="language-python"># End-to-end latency budget: camera exposure -&gt; perception -&gt; VLA -&gt; WBC -&gt; bus -&gt; driver
+# Goal: worst-case total latency &lt;= response time limit required by higher-level tasks
+stages = {
+    # Stage: (typical latency ms, worst-case jitter ms)
+    "Camera exposure + transfer":      (12.0, 3.0),
+    "Preprocessing + perception":      ( 8.0, 2.0),
+    "VLA inference (INT8)":            (45.0, 8.0),
+    "Action chunk interpolation + WBC": ( 2.0, 0.3),
+    "EtherCAT transfer":               ( 0.5, 0.1),
+    "Driver response + motor time constant": ( 5.0, 1.0),
+}
+
+typ = sum(v[0] for v in stages.values())
+worst = sum(v[0] + v[1] for v in stages.values())
+print(f"Typical end-to-end latency: {typ:.1f} ms")
+print(f"Worst-case end-to-end latency: {worst:.1f} ms  (≈ effective response frequency {1000/worst:.0f} Hz)")
+print("\nWorst-case latency breakdown by stage:")
+for name, (t, j) in sorted(stages.items(), key=lambda x: -(x[1][0]+x[1][1])):
+    print(f"  {name:&lt;24s} {t+j:6.1f} ms  ({100*(t+j)/worst:.0f}%)")
+
+budget = 100.0  # Response time limit allowed by higher-level tasks (ms)
+slack = budget - worst
+print(f"\nMargin under budget {budget:.0f} ms: {slack:+.1f} ms")
+if slack &lt; 0:
+    print("Conclusion: Budget exceeded; need to compress the largest latency term (VLA inference in this case)")</code></pre>
+<p>In this example, VLA inference accounts for more than half of the worst-case latency, confirming the assertion in Section 24.6.2: on-device large model inference is the primary optimization target in the end-to-end latency budget; when quantization and compilation optimization are still insufficient, reducing the policy layer frequency (trading action chunks for execution smoothness) is the final system-level measure.</p>
+<h2 id="247-middleware-and-system-integration">24.7 Middleware and System Integration</h2>
+<h3 id="2471-ros-2-and-communication-backbone">24.7.1 ROS 2 and Communication Backbone</h3>
+<p><strong>ROS 2 Middleware</strong> is the de facto standard robotic middleware based on DDS for publish/subscribe and real-time support, providing node management, topic/service/action communication, parameter and lifecycle management. In the end-to-end stack, ROS 2 serves as the integration skeleton for non-real-time or soft real-time domains (perception, planning, human-robot interaction, logging); hard real-time domains (WBC, EtherCAT master) typically run as independent real-time processes, bridged to ROS 2 via shared memory or real-time safe publishers. DDS QoS policies (reliability, deadline, durability) require per-topic tuning: high-frequency topics like state estimation use "best-effort + keep-last" for low latency, while command and parameter updates use "reliable + persistent" to guarantee delivery. Middleware architecture, DDS selection, and message definition specifications are detailed in Chapter 22 and are not expanded upon here.</p>
+<h3 id="2472-dynamics-libraries-and-algorithm-components">24.7.2 Dynamics Libraries and Algorithm Components</h3>
+<p>Model computation within the stack relies on mature components: <strong>Pinocchio</strong> provides efficient rigid body dynamics, kinematics, and analytical derivatives, serving as the shared dynamics kernel for WBC/MPC and simulators; <strong>OMPL</strong> and <strong>MoveIt</strong> provide planning capabilities (see Section 24.3.2); MJCF/URDF models are loaded at runtime via a model parser into a unified dynamics data structure. A key engineering discipline for component reuse is the <strong>single source of truth</strong>: simulation, planning, and control must consume the same robot model and calibration data. Any divergence where "control uses one model, simulation uses another" artificially amplifies the Sim-to-Real gap.</p>
+<h3 id="2473-open-source-end-to-end-stack-lerobot">24.7.3 Open-Source End-to-End Stack: LeRobot</h3>
+<p><strong>LeRobot</strong> is an end-to-end PyTorch library covering dataset formats, teleoperation, training, and deployment, maintained by Hugging Face. It unifies four stages of the policy learning stack—standardized dataset format (LeRobotDataset), teleoperation acquisition interface, mainstream policy implementations (ACT, Diffusion Policy, etc.), and deployment inference—within a single framework, significantly reducing the integration cost "from data to deployment." For humanoid robot teams, the value of frameworks like LeRobot lies in providing validated end-to-end reference implementations: enterprises can build proprietary pipelines on its data format and policy interfaces, focusing engineering effort on platform adaptation and safety layers rather than rebuilding infrastructure. A systematic discussion of related data infrastructure is found in Chapter 21.</p>
+<h3 id="2474-logging-replay-and-debugging-toolchain">24.7.4 Logging, Replay, and Debugging Toolchain</h3>
+<p>The maintainability of an end-to-end stack depends on <strong>observability</strong>. Engineering requires full-chain logging to meet three criteria: First, <strong>unified time base</strong>—all topics, bus frames, and internal events carry synchronized timestamps; otherwise, cross-process causal analysis is impossible. Second, <strong>replayability</strong>—raw sensor streams recorded in formats like rosbag should be re-injectable into the stack to reproduce any real-world anomaly. Third, <strong>deterministic replay</strong>—in debug mode, fix random seeds and scheduling order so that "recorded bugs" can be stably reproduced; this is a prerequisite for locating issues like occasional falls or occasional grasp failures. Log data also serves as raw material for the accident-driven scenario library in Chapter 23 and the data flywheel in Section 24.8.3. Therefore, the storage quota, ring buffer, and selective upload strategy of the logging system must be designed during the architecture phase, not as a post-hoc patch.</p>
+<h2 id="248-post-deployment-operations-ota-fleet-and-data-loop">24.8 Post-Deployment Operations: OTA, Fleet, and Data Loop</h2>
+<h3 id="2481-ota-software-update">24.8.1 OTA Software Update</h3>
+<p><strong>OTA Software Update</strong> is the technology for wirelessly deploying control policies, firmware, and system software to a deployed fleet of humanoid robots. Robot OTA is more sensitive than phone/car OTA: a single defective control policy update can directly cause physical accidents. Engineering requirements include: A/B dual partitions with automatic rollback on failure; staged rollout of updates; signature verification and version-hardware compatibility matrix for update packages; and mandatory simulation regression before updates (linked with the scenario library in Chapter 23)—any control-related update must first pass full simulation regression and HIL validation. A typical staged rollout pipeline is as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Scope</th>
+<th>Pass Criteria</th>
+<th>Failure Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulation Regression</td>
+<td>Full scenario library</td>
+<td>100% pass</td>
+<td>Block release, return for fix</td>
+</tr>
+<tr>
+<td>HIL Bench</td>
+<td>Representative configurations</td>
+<td>Real-time and safety cases pass</td>
+<td>Block release</td>
+</tr>
+<tr>
+<td>Single-Unit Canary</td>
+<td>1–2 internal test units</td>
+<td>Continuous accident-free operation for several hours</td>
+<td>Automatic rollback</td>
+</tr>
+<tr>
+<td>Small Batch</td>
+<td>5%–10% of fleet</td>
+<td>KPIs not worse than current version</td>
+<td>Automatic rollback and alert</td>
+</tr>
+<tr>
+<td>Full Rollout</td>
+<td>Entire fleet</td>
+<td>Stable KPIs during canary period</td>
+<td>Continuous monitoring</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2482-fleet-management-platform">24.8.2 Fleet Management Platform</h3>
+<p><strong>Fleet Management Platform</strong> is a cloud platform for task orchestration, charging, health monitoring, and analysis across multiple deployed humanoid robots. Its core functions include: task scheduling and work order dispatch (integrating with factory WMS/MES); battery and charging orchestration (ensuring availability while extending battery life); health monitoring (anomaly detection for joint temperature, torque residuals, vibration spectra, supporting predictive maintenance); and KPI analysis (task success rate, mean time between failures, intervention count). The availability target of the fleet platform directly determines the viability of the business model—no matter how capable a single robot is, a fleet that cannot be orchestrated into stable operational capacity cannot generate revenue.</p>
+<h3 id="2483-data-flywheel-and-continuous-learning">24.8.3 Data Flywheel and Continuous Learning</h3>
+<p><strong>Fleet Data Flywheel</strong> is a closed-loop system where data generated by a deployed robot fleet continuously improves models, and models in turn enhance fleet performance, generating more data. Its operational mechanism is:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Fleet Deployment&lt;br/&gt;Execute Tasks"] --&gt; B["Data Collection &amp; Filtering&lt;br/&gt;Failure Segments / Human Intervention Segments"]
+    B --&gt; C["Cloud Annotation &amp; Retraining&lt;br/&gt;Simulation Augmentation + Real Data"]
+    C --&gt; D["Candidate Policy Evaluation&lt;br/&gt;Simulation Regression + Benchmark"]
+    D --&gt; E["OTA Canary Release"]
+    E --&gt; A</code></pre>
+<p>Two engineering points for the flywheel: First, <strong>collection strategy should favor information gain</strong>—full upload is infeasible; trigger collection based on "failure, low confidence, human takeover." Second, <strong>evaluation threshold must be higher than the current version</strong>—candidate policies are allowed into canary only if they outperform the current version in both simulation regression and controlled real-world evaluation. The storage, annotation, and compliance infrastructure for the data loop is detailed in Chapter 21.</p>
+<p>It is crucial to recognize that the data flywheel has a <strong>cold start problem</strong>: when the fleet size is insufficient, the diversity of collected data is limited, and the rate of model improvement is constrained by deployment scale rather than algorithmic capability. Therefore, the flywheel design must form a three-way complementary data supply with synthetic simulation data (Chapter 23) and human teleoperation demonstrations (Chapter 17); no single source is sufficient to sustain continuous evolution.</p>
+<h2 id="249-chapter-summary">24.9 Chapter Summary</h2>
+<p>This chapter organizes humanoid robot software from a "collection of algorithms" into a "deployable system." Architecturally, the end-to-end stack is frequency-layered by task layer, planning layer, policy layer, control layer, and servo layer, with state interfaces decoupling layers and a safety monitoring path forming an independent chain; modular stacks and end-to-end learning stacks converge under the "layered hybrid" paradigm—learning models like ACT, Diffusion Policy, OpenVLA, π0, and GR00T N1 occupy the semantic and skill layers, while WBC, MPC, and impedance/admittance control secure the real-time and stability layers.</p>
+<p>In deployment, the power and compute constraints of edge computing make on-device VLA inference (quantization, compilation optimization, action head reconstruction) the primary battleground for latency budgets. Linux RT-PREEMPT, Xenomai, QNX, and Zephyr form the real-time foundation, while ROS 2, Pinocchio, MoveIt/OMPL, and LeRobot provide the integration skeleton. In operations, OTA software updates, fleet management platforms, and fleet data flywheels extend single robots into a continuously evolving operational capacity network. Thus, this book completes the technical chain from materials and hardware (Chapters 1–9), manufacturing and testing (Chapters 10–13), control and intelligence (Chapters 14–22), to simulation and software systems (Chapters 23–24). Subsequent chapters transition to evaluation, case studies, and industry perspectives.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-23/">← Previous<span>Chapter 23: Simulation and Physics Engines</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-25/">Next →<span>Chapter 25: Humanoid Robot Evaluation System</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-24-end-to-end-software-stack">Chapter 24: End-to-End Software Stack</a><ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#241-overall-architecture-of-the-end-to-end-software-stack">24.1 Overall Architecture of the End-to-End Software Stack</a><ul>
+<li><a href="#2411-data-pathway-from-perception-to-action">24.1.1 Data Pathway from Perception to Action</a></li>
+<li><a href="#2412-layered-architecture-and-frequency-hierarchy">24.1.2 Layered Architecture and Frequency Hierarchy</a></li>
+<li><a href="#2413-two-paradigms-modular-stack-vs-end-to-end-learning-stack">24.1.3 Two Paradigms: Modular Stack vs. End-to-End Learning Stack</a></li>
+</ul>
+</li>
+<li><a href="#242-perception-and-state-estimation-layer">24.2 Perception and State Estimation Layer</a><ul>
+<li><a href="#2421-multi-sensor-integration-and-time-synchronization">24.2.1 Multi-Sensor Integration and Time Synchronization</a></li>
+<li><a href="#2422-state-estimation-proprioceptive-fusion">24.2.2 State Estimation: Proprioceptive Fusion</a></li>
+<li><a href="#2423-scene-understanding-from-geometry-to-semantics">24.2.3 Scene Understanding: From Geometry to Semantics</a></li>
+</ul>
+</li>
+<li><a href="#243-decision-and-planning-layer">24.3 Decision and Planning Layer</a><ul>
+<li><a href="#2431-task-planning-from-symbolic-planning-to-llm-planning">24.3.1 Task Planning: From Symbolic Planning to LLM Planning</a></li>
+<li><a href="#2432-motion-planning-moveit-and-sampling-based-planners">24.3.2 Motion Planning: MoveIt and Sampling-Based Planners</a></li>
+<li><a href="#2433-interface-design-between-planning-and-control">24.3.3 Interface Design Between Planning and Control</a></li>
+</ul>
+</li>
+<li><a href="#244-control-execution-layer">24.4 Control Execution Layer</a><ul>
+<li><a href="#2441-whole-body-control-and-model-based-control-family">24.4.1 Whole-Body Control and Model-Based Control Family</a></li>
+<li><a href="#2442-joint-servo-and-fieldbus">24.4.2 Joint Servo and Fieldbus</a></li>
+<li><a href="#2443-safety-monitoring-and-degradation-strategies">24.4.3 Safety Monitoring and Degradation Strategies</a></li>
+</ul>
+</li>
+<li><a href="#245-integration-of-learning-based-strategies-vla-and-the-end-to-end-stack">24.5 Integration of Learning-Based Strategies: VLA and the End-to-End Stack</a><ul>
+<li><a href="#2451-position-of-imitation-learning-strategies-in-the-stack">24.5.1 Position of Imitation Learning Strategies in the Stack</a></li>
+<li><a href="#2452-vla-model-lineage">24.5.2 VLA Model Lineage</a></li>
+<li><a href="#2453-hierarchical-inference-hybrid-architecture-of-high-level-vla-and-low-level-control">24.5.3 Hierarchical Inference: Hybrid Architecture of High-Level VLA and Low-Level Control</a></li>
+<li><a href="#2454-boundaries-of-on-device-edge-and-cloud-inference">24.5.4 Boundaries of On-Device, Edge, and Cloud Inference</a></li>
+</ul>
+</li>
+<li><a href="#246-edge-deployment-and-on-device-inference">24.6 Edge Deployment and On-Device Inference</a><ul>
+<li><a href="#2461-power-and-compute-constraints-of-onboard-computing-platforms">24.6.1 Power and Compute Constraints of Onboard Computing Platforms</a></li>
+<li><a href="#2462-on-device-vla-inference-quantization-compilation-optimization-and-latency-decomposition">24.6.2 On-Device VLA Inference: Quantization, Compilation Optimization, and Latency Decomposition</a></li>
+<li><a href="#2463-real-time-operating-systems-and-scheduling">24.6.3 Real-Time Operating Systems and Scheduling</a></li>
+<li><a href="#2464-python-example-end-to-end-latency-budget-decomposition">24.6.4 Python Example: End-to-End Latency Budget Decomposition</a></li>
+</ul>
+</li>
+<li><a href="#247-middleware-and-system-integration">24.7 Middleware and System Integration</a><ul>
+<li><a href="#2471-ros-2-and-communication-backbone">24.7.1 ROS 2 and Communication Backbone</a></li>
+<li><a href="#2472-dynamics-libraries-and-algorithm-components">24.7.2 Dynamics Libraries and Algorithm Components</a></li>
+<li><a href="#2473-open-source-end-to-end-stack-lerobot">24.7.3 Open-Source End-to-End Stack: LeRobot</a></li>
+<li><a href="#2474-logging-replay-and-debugging-toolchain">24.7.4 Logging, Replay, and Debugging Toolchain</a></li>
+</ul>
+</li>
+<li><a href="#248-post-deployment-operations-ota-fleet-and-data-loop">24.8 Post-Deployment Operations: OTA, Fleet, and Data Loop</a><ul>
+<li><a href="#2481-ota-software-update">24.8.1 OTA Software Update</a></li>
+<li><a href="#2482-fleet-management-platform">24.8.2 Fleet Management Platform</a></li>
+<li><a href="#2483-data-flywheel-and-continuous-learning">24.8.3 Data Flywheel and Continuous Learning</a></li>
+</ul>
+</li>
+<li><a href="#249-chapter-summary">24.9 Chapter Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

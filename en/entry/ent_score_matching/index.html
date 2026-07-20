@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Score matching · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/algorithm/">Algorithm</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Score matching</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Algorithm</div>
+      <h1>Score matching</h1>
+      <p class="entry-name-en">Score matching</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A parameter-estimation technique that learns the gradient of an unknown log-probability density, called the score, without requiring normalized probability densities.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://jmlr.org/papers/v6/hyvarinen05a.html" target="_blank" rel="noopener">A. Hyvärinen, &#39;Estimation of Non-Normalized Statistical Models by Score Matching&#39;, J. Machine Learning Research, vol. 6, pp. 695–709, 2005</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">is_prerequisite_for</span>
+            <a href="/en/entry/ent_ddpm_reverse_process/">DDPM reverse process</a>
+            
+              
+                
+              
+              <span class="rel-desc">DDPM trains a score-like noise model via denoising score matching and uses it to reverse the diffusion process.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">builds_on</span>
+            <a href="/en/entry/ent_flow_matching/">Flow matching</a>
+            
+              
+                
+              
+              <span class="rel-desc">Both score matching and flow matching learn vector fields that guide samples between distributions, but flow matching directly regresses a velocity field.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>A parameter estimation technique that learns the gradient of an unknown log probability density (referred to as the score) without requiring a normalized probability density.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-score-matching">Definition and Positioning of Score Matching</h3>
+<p>Score matching belongs to the <strong>algorithm</strong> type. Its domains include: foundational disciplines. Value chain level: foundational layer. A parameter estimation technique that learns the gradient of an unknown log probability density (referred to as the score) without requiring a normalized probability density. English name: <em>Score matching</em>. Korean name: <em>점수 매칭</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-score-matching">Mathematical and Theoretical Foundations of Score Matching</h3>
+<p>Score matching is built upon relevant mathematical theories and physical principles. Understanding its assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In humanoid robots, which are high-dimensional, underactuated, and strongly coupled systems, score matching typically requires balancing real-time performance, accuracy, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>When implementing score matching in practice, it is necessary to clarify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly enhance computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable algorithm operation on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>Score matching can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptation capability remain key issues to address in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>generative_modeling</li>
+<li>score_estimation</li>
+<li>score_matching</li>
+<li>diffusion</li>
+<li>hyvarinen</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key algorithms in the humanoid robot industry chain, score matching plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">builds_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_flow_matching/">Flow matching</a>
+              <span class="rel-desc">Score matching builds on Flow matching.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_ddpm_reverse_process/">DDPM reverse process</a>
+              <span class="rel-desc">Score matching is prerequisite for DDPM reverse process.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_ho_denoising_diffusion_probabilis_2020/">Denoising Diffusion Probabilistic Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models is based on or uses Score matching.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_ddpm_reverse_process/">DDPM reverse process</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">DDPM reverse process uses Score matching.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_flow_matching/">Flow matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">builds_on</span>
+              <span class="rel-desc">Flow matching builds on Score matching.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tong_improving_and_generalizing_flo_2024/">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport is based on or uses Score matching.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_score_matching"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tong_improving_and_generalizing_flo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport</h3>
+          <p>This paper introduces generalized conditional flow matching (CFM), a simulation-free regression…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_ddpm_reverse_process/">
+          <span class="entry-type">Algorithm</span>
+          <h3>DDPM reverse process</h3>
+          <p>The learned backward Markov chain in Denoising Diffusion Probabilistic Models that gradually…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ho_denoising_diffusion_probabilis_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Denoising Diffusion Probabilistic Models</h3>
+          <p>Ho, Jain, and Abbeel (2020) introduce a denoising diffusion probabilistic model trained with a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_flow_matching/">
+          <span class="entry-type">Method</span>
+          <h3>Flow matching</h3>
+          <p>A generative modeling method that directly regresses a vector field whose flow maps a simple source…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-score-matching">Definition and Positioning of Score Matching</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-score-matching">Mathematical and Theoretical Foundations of Score Matching</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

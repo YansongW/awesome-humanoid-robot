@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admittance Control · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Admittance Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Admittance Control</h1>
+      <p class="entry-name-en">Admittance Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A control approach that converts measured external forces into desired position or velocity trajectories, complementary to impedance control.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The physical foundation of impedance control: from mass-spring-damper to port characteristics. The relevant content is as follows.</p>
+<h2 id="content">Content</h2>
+<h4 id="the-physical-foundation-of-impedance-control-from-mass-spring-damper-to-port-characteristics">The Physical Foundation of Impedance Control: From Mass-Spring-Damper to Port Characteristics</h4>
+<p>Abstracting the robot end-effector as a mass-spring-damper unit, its dynamic equation can be directly written using Newton's second law:</p>
+<div class="arithmatex">\[
+M_d \, \ddot{x} + B_d \, \dot{x} + K_d \, (x - x_d) = F_{ext}
+\]</div>
+<p>where:
+- <span class="arithmatex">\(M_d\)</span>: Desired equivalent mass (kg), determining the acceleration response during collision;
+- <span class="arithmatex">\(B_d\)</span>: Desired equivalent damping (N·s/m or kg/s), determining the energy dissipation rate;
+- <span class="arithmatex">\(K_d\)</span>: Desired equivalent stiffness (N/m), determining the relationship between position deviation and restoring force;
+- <span class="arithmatex">\(x_d\)</span>: Desired trajectory position (m);
+- <span class="arithmatex">\(F_{ext}\)</span>: External force (N) exerted by the environment on the robot end-effector.</p>
+<p>In the Laplace domain, this equation can be expressed as the <strong>mechanical impedance</strong> of the robot port:</p>
+<div class="arithmatex">\[
+Z(s) = \frac{F_{ext}(s)}{\dot{X}(s)} = M_d s + B_d + \frac{K_d}{s}
+\]</div>
+<p>Its physical meaning is: when the external world "pushes" the robot port at velocity <span class="arithmatex">\(\dot{x}\)</span>, the robot responds with force <span class="arithmatex">\(F_{ext}\)</span>; the impedance <span class="arithmatex">\(Z(s)\)</span> is the dynamic transfer function between force and velocity. The larger the impedance, the greater the reaction force generated by the same velocity disturbance, and the "stiffer" the robot behaves; the smaller the impedance, the smaller the reaction force, and the "softer" the behavior.</p>
+<p><strong>Numerical Example</strong>: Assume the desired parameters are <span class="arithmatex">\(M_d=2\ \text{kg}\)</span>, <span class="arithmatex">\(B_d=50\ \text{N·s/m}\)</span>, <span class="arithmatex">\(K_d=2000\ \text{N/m}\)</span>. When the robot end-effector is pushed by the external world at a constant velocity of <span class="arithmatex">\(0.01\ \text{m/s}\)</span>, the spring term dominates in steady state, and the contact force is:</p>
+<div class="arithmatex">\[
+F_{ext} \approx K_d \Delta x
+\]</div>
+<p>If pushed for 0.1 s, the displacement increment <span class="arithmatex">\(\Delta x \approx 0.001\ \text{m}\)</span>, then:</p>
+<div class="arithmatex">\[
+F_{ext} \approx 2000 \times 0.001 = 2\ \text{N}
+\]</div>
+<p>Without impedance control, if the robot's rigid position loop stiffness is as high as <span class="arithmatex">\(K_{pos}=10^5\ \text{N/m}\)</span>, the same displacement would generate:</p>
+<div class="arithmatex">\[
+F_{ext} \approx 10^5 \times 0.001 = 100\ \text{N}
+\]</div>
+<p>This shows that impedance control can reduce potential collision forces by approximately two orders of magnitude. For a deeper discussion of impedance control implementation and passivity analysis, see Section 4.5.6; for its relationship with whole-body balance/contact force planning, see Chapter 6.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["External Velocity ẋ"] --&gt; B["Mechanical Impedance Z(s)"]
+    B --&gt; C["Reaction Force F_ext"]
+    D["Md, Bd, Kd"] --&gt; B
+    E["Desired Trajectory xd"] --&gt; B</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Mechanical Impedance, Laplace Domain, Equivalent Mass, Equivalent Damping, Equivalent Stiffness</p>
+<ul>
+<li><strong>Mechanical Impedance</strong>: The dynamic transfer function between force and velocity, unit N·s/m.</li>
+<li><strong>Laplace Domain</strong>: The frequency/operator domain describing the dynamics of linear time-invariant systems using the complex variable <span class="arithmatex">\(s\)</span>.</li>
+<li><strong>Equivalent Mass</strong>: The virtual mass exhibited by the robot port in impedance control.</li>
+<li><strong>Equivalent Damping</strong>: The virtual damping exhibited by the robot port in impedance control, determining energy dissipation.</li>
+<li><strong>Equivalent Stiffness</strong>: The virtual spring stiffness exhibited by the robot port in impedance control.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Compliance, Impedance, Admittance, Human-Robot Interaction Safety</p>
+<ul>
+<li><strong>Compliance</strong>: The ability of a mechanism to deform under external force. Compliance should be understood as "low stiffness," e.g., a spring is more compliant than a steel rod.</li>
+<li><strong>Impedance</strong>: The "resistance characteristic" exerted by the robot on the external world, i.e., the relationship between force and displacement/velocity. Impedance control makes the robot behave externally as a set mass-spring-damper system.</li>
+<li><strong>Admittance</strong>: The inverse of impedance, representing the motion response to external force. Systems primarily using position control often employ admittance control for force regulation.</li>
+<li><strong>Human-Robot Interaction Safety</strong>: Reducing potential collision injuries to an acceptable level through mechanical compliance, force limitation, collision detection, and low-inertia design.</li>
+</ul>
+</div>
+<p>In summary, an excellent humanoid robot joint needs to achieve a compromise in the multi-dimensional space shown in Figure 4.1.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Humanoid Robot Joint Design Goals"] --&gt; B["High Torque Density"]
+    A --&gt; C["High Power Density"]
+    A --&gt; D["High Bandwidth/Low Latency"]
+    A --&gt; E["High Transparency/Backdrivability"]
+    A --&gt; F["High Efficiency/Low Heat Dissipation"]
+    A --&gt; G["Impact Safety/Compliance"]
+    B --&gt; H["Requires High Reduction Ratio"]
+    C --&gt; I["Requires High-Speed Motor"]
+    D --&gt; J["Requires Low Inertia"]
+    E --&gt; K["Requires Low Reduction Ratio"]
+    F --&gt; L["Requires Low-Loss Transmission"]
+    G --&gt; M["Requires Elastic Elements or Force Control"]
+    H -.Conflict.-&gt; K
+    I -.Conflict.-&gt; H
+
+## 개요
+임피던스 제어의 물리적 기초: 질점-스프링-댐퍼에서 포트 특성까지의 관련 내용입니다.
+## 핵심 내용
+#### 임피던스 제어의 물리적 기초: 질점-스프링-댐퍼에서 포트 특성까지
+로봇 말단을 질량-스프링-댐퍼 유닛으로 추상화하면, 그 동역학 방정식은 뉴턴 제2법칙으로 직접 쓸 수 있습니다:
+
+\[
+M_d \, \ddot{x} + B_d \, \dot{x} + K_d \, (x - x_d) = F_{ext}
+\]
+
+여기서:
+- \(M_d\): 기대 등가 질량 (kg), 충돌 시 가속도 응답을 결정합니다;
+- \(B_d\): 기대 등가 감쇠 (N·s/m 또는 kg/s), 에너지 소산 속도를 결정합니다;
+- \(K_d\): 기대 등가 강성 (N/m), 위치 편차와 복원력의 관계를 결정합니다;
+- \(x_d\): 기대 궤적 위치 (m);
+- \(F_{ext}\): 환경이 로봇 말단에 작용하는 외력 (N).
+
+라플라스 영역에서 이 방정식은 로봇 포트의 **기계적 임피던스**로 쓸 수 있습니다:
+
+\[
+Z(s) = \frac{F_{ext}(s)}{\dot{X}(s)} = M_d s + B_d + \frac{K_d}{s}
+\]
+
+그 물리적 의미는: 외부가 속도 \(\dot{x}\)로 로봇 포트를 "밀 때", 로봇은 힘 \(F_{ext}\)로 응답합니다; 임피던스 \(Z(s)\)는 힘과 속도 사이의 동적 전달 함수입니다. 임피던스가 클수록, 동일한 속도 섭동에 대해 발생하는 반력이 커져 로봇이 더 "강성"하게 보입니다; 임피던스가 작을수록 반력이 작아져 더 "유연"하게 보입니다.
+
+**수치 예시**: 기대 파라미터를 \(M_d=2\ \text{kg}\), \(B_d=50\ \text{N·s/m}\), \(K_d=2000\ \text{N/m}\)로 설정합니다. 로봇 말단이 외부에 의해 \(0.01\ \text{m/s}\)의 일정 속도로 밀릴 때, 정상 상태에서는 스프링 항이 지배적이며 접촉력은:
+
+\[
+F_{ext} \approx K_d \Delta x
+\]
+
+0.1초 동안 밀면 변위 증가분 \(\Delta x \approx 0.001\ \text{m}\)이므로:
+
+\[
+F_{ext} \approx 2000 \times 0.001 = 2\ \text{N}
+\]
+
+반면, 임피던스 제어가 없을 때 로봇의 강성 위치 루프 강성이 \(K_{pos}=10^5\ \text{N/m}\)에 달하면, 동일한 변위에서:
+
+\[
+F_{ext} \approx 10^5 \times 0.001 = 100\ \text{N}
+\]
+
+이는 임피던스 제어가 잠재적 충돌력을 약 두 자릿수 낮출 수 있음을 보여줍니다. 더 깊은 임피던스 제어 구현과 수동성 분석은 4.5.6절을 참조하십시오; 전체 로봇 균형/접촉력 계획과의 관계는 6장을 참조하십시오.
+
+```mermaid
+flowchart LR
+    A["외부 속도 ẋ"] --&gt; B["기계적 임피던스 Z(s)"]
+    B --&gt; C["반력 F_ext"]
+    D["Md, Bd, Kd"] --&gt; B
+    E["기대 궤적 xd"] --&gt; B</code></pre>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 기계적 임피던스, 라플라스 영역, 등가 질량, 등가 감쇠, 등가 강성</p>
+<ul>
+<li><strong>기계적 임피던스 (mechanical impedance)</strong>: 힘과 속도 사이의 동적 전달 함수, 단위 N·s/m.</li>
+<li><strong>라플라스 영역 (Laplace domain)</strong>: 복소 변수 <span class="arithmatex">\(s\)</span>로 선형 시불변 시스템 동역학을 설명하는 주파수/연산자 영역.</li>
+<li><strong>등가 질량 (equivalent mass)</strong>: 임피던스 제어에서 로봇 포트가 나타내는 가상 질량.</li>
+<li><strong>등가 감쇠 (equivalent damping)</strong>: 임피던스 제어에서 로봇 포트가 나타내는 가상 감쇠, 에너지 소산을 결정합니다.</li>
+<li><strong>등가 강성 (equivalent stiffness)</strong>: 임피던스 제어에서 로봇 포트가 나타내는 가상 스프링 강성.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 유연성, 임피던스, 어드미턴스, 인간-로봇 상호작용 안전</p>
+<ul>
+<li><strong>유연성 (compliance)</strong>: 기구가 외력作用下 변형을 생성하는 능력. 유연성은 "강성이 낮다"로 이해해야 하며, 예를 들어 스프링이 강철 막대보다 더 유연합니다.</li>
+<li><strong>임피던스 (impedance)</strong>: 로봇이 외부에 가하는 "저항 특성", 즉 힘과 변위/속도 사이의 관계. 임피던스 제어는 로봇이 외부에 대해 설정된 질량-스프링-댐퍼 시스템처럼 동작하게 합니다.</li>
+<li><strong>어드미턴스 (admittance)</strong>: 임피던스의 역수, 외력에 대한 운동의 응답을 나타냅니다. 위치 제어 위주의 시스템은 종종 어드미턴스 제어를 사용하여 힘 조절을 구현합니다.</li>
+<li><strong>인간-로봇 상호작용 안전 (human-robot interaction safety)</strong>: 기계적 유연성, 힘 제한, 충돌 감지 및 저관성 설계를 통해 잠재적 충돌로 인한 피해를 허용 가능한 범위로 줄입니다.</li>
+</ul>
+</div>
+<p>종합적으로, 우수한 휴머노이드 로봇 관절은 그림 4.1에 표시된 다차원 공간에서 절충점을 찾아야 합니다.</p>
+<p>```mermaid
+flowchart TD
+    A["휴머노이드 로봇 관절 설계 목표"] --&gt; B["높은 토크 밀도"]
+    A --&gt; C["높은 출력 밀도"]
+    A --&gt; D["높은 대역폭/낮은 지연"]
+    A --&gt; E["높은 투명성/역구동성"]
+    A --&gt; F["높은 효율/낮은 열 손실"]
+    A --&gt; G["충격 안전/유연성"]
+    B --&gt; H["높은 감속비 필요"]
+    C --&gt; I["고속 모터 필요"]
+    D --&gt; J["낮은 관성 필요"]
+    E --&gt; K["낮은 감속비 필요"]
+    F --&gt; L["낮은 손실 전동 필요"]
+    G --&gt; M["탄성 요소 또는 힘 제어 필요"]
+    H -.충돌.-&gt; K
+    I -.충돌.-&gt; H</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_series_elastic_actuator_2024/">Series Elastic Actuator</a>
+              <span class="rel-desc">Admittance Control mentions Series Elastic Actuator.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              <span class="rel-desc">Admittance Control mentions Mobile ALOHA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_impedance_control/">Impedance Control</a>
+              <span class="rel-desc">Admittance Control mentions Impedance Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_force_position_hybrid_control/">Force/Position Hybrid Control</a>
+              <span class="rel-desc">Admittance Control mentions Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              <span class="rel-desc">Admittance Control mentions Model Predictive Control.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_towards_adaptable_humanoid_con_2025/">Towards Adaptable Humanoid Control via Adaptive Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Towards Adaptable Humanoid Control via Adaptive Motion Tracking uses Admittance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_human_aware_physical_human_rob_2024/">Human-Aware Physical Human-Robot Collaborative Transportation and Manipulation with Multiple Aerial Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Human-Aware Physical Human-Robot Collaborative Transportation and Manipulation with Multiple Aerial Robots proposes Admittance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_effects_of_robotic_touch_on_ol_2026/">Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot uses Admittance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_current_as_touch_proprioceptiv_2026/">Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation discusses Admittance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_subsystem_ankle_compliance/">Ankle Compliance Mechanism</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Ankle Compliance Mechanism mentions Admittance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_euler_lagrange_equations/">Euler-Lagrange Equations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">formalizes</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_planetary_roller_screw/">Planetary Roller Screw</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_inverse_dynamics_qp/">Inverse-Dynamics QP Formulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_newton_euler_equations/">Newton-Euler equations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_admittance_control"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_newton_euler_equations/">
+          <span class="entry-type">Equation</span>
+          <h3>Newton-Euler equations</h3>
+          <p>A set of coupled force and torque balance equations that describe the motion of a rigid body or…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_towards_adaptable_humanoid_con_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Adaptable Humanoid Control via Adaptive Motion Tracking</h3>
+          <p>Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_series_elastic_actuator_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Series Elastic Actuator</h3>
+          <p>Actuator with an elastic element in series with the motor and load, enabling accurate force control…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control (FOC)</h3>
+          <p>A motor-control method that transforms three-phase currents into a rotating dq reference frame to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_subsystem_ankle_compliance/">
+          <span class="entry-type">Component</span>
+          <h3>Ankle Compliance Mechanism</h3>
+          <p>A mechanical or control-based compliance design at the ankle that improves shock absorption, terrain…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_current_as_touch_proprioceptiv_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</h3>
+          <p>arXiv:2607.03529v1 Announce Type: new Abstract: Compliance is essential for dexterous manipulation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">Component</span>
+          <h3>Planetary Roller Screw</h3>
+          <p>A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_effects_of_robotic_touch_on_ol_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot</h3>
+          <p>arXiv:2607.09323v1 Announce Type: new Abstract: The shortage of healthcare staff is a challenge in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control</h3>
+          <p>Online optimal-control approach for generating contact-rich whole-body motion.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">Formalism</span>
+          <h3>Euler-Lagrange Equations</h3>
+          <p>Second-order differential equations derived from the stationarity of the action integral, giving the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">Formalism</span>
+          <h3>Inverse-Dynamics QP Formulation</h3>
+          <p>A quadratic-program formulation that computes generalized accelerations, contact forces, and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_human_aware_physical_human_rob_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Human-Aware Physical Human-Robot Collaborative Transportation and Manipulation with Multiple Aerial Robots</h3>
+          <p>Proposes a hierarchical control framework in which a team of quadrotors carrying a cable-suspended…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_impedance_control/">
+          <span class="entry-type">Method</span>
+          <h3>Impedance Control</h3>
+          <p>A control approach that regulates the dynamic relationship between interaction force and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Mobile ALOHA</h3>
+          <p>Whole-body mobile bimanual teleoperation platform for collecting home and warehouse manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_force_position_hybrid_control/">
+          <span class="entry-type">Method</span>
+          <h3>Force/Position Hybrid Control</h3>
+          <p>A control strategy that simultaneously regulates force along constrained directions and position…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#the-physical-foundation-of-impedance-control-from-mass-spring-damper-to-port-characteristics">The Physical Foundation of Impedance Control: From Mass-Spring-Damper to Port Characteristics</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

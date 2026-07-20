@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rational Inverse Reasoning: Few-Shot Imitation by Inferring Intent through Planning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Rational Inverse Reasoning: Few-Shot Imitation by Inferring Intent through Planning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Rational Inverse Reasoning: Few-Shot Imitation by Inferring Intent through Planning</h1>
+      <p class="entry-name-en">Rational Inverse Reasoning: Few-Shot Imitation by Inferring Intent through Planning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.08983v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2508.08983v2 Announce Type: replace Abstract: Humans can learn a new manipulation task from one or two demonstrations and then perform it in a new room, with new objects, under new constraints. Modern robot imitation learning, in contrast, typically needs hundreds to thousands of demonstrations and still degrades under modest shifts in layout, geometry, object set or task constraints. We argue this gap is not just about data, but also about the level of abstraction at which learning occurs; generalization requires inferring the latent intent underlying why a demonstrator behaved in a certain way, rather than reproducing how they moved. We present Rational Inverse Reasoning (RIR), which casts few-shot imitation as inference over latent explanation programs: compact, executable descriptions of intent that map an object-centric scene to a structured task-and-motion-planning (TAMP) specification of goals, subgoals and constraints. A vision-language model proposes candidate programs, and a hierarchical planner supplies a bounded-rational likelihood. By combining VLM program proposals, and planner-grounded feedback, RIR iteratively refines the candidate set to approximate a posterior over concise, executable programs. On a 2D reasoning benchmark and a real Franka FR3, RIR recovers transferable task structure from as little as one demonstration. Generalizing to substantially new layouts and object sets, RIR outperforms VLM-planning baselines that lack explicit rationality and planning-grounded inference, increasing downstream success rate by $34$ and $28$ percentage points in the one- and three-shot settings.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.08983" target="_blank" rel="noopener">Rational Inverse Reasoning: Few-Shot Imitation by Inferring Intent through Planning (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>인간은 한두 번의 시연을 통해 새로운 조작 작업을 학습하고, 새로운 방, 새로운 물체, 새로운 제약 조건 하에서 이를 수행할 수 있습니다. 반면, 현대 로봇 모방 학습은 일반적으로 수백에서 수천 번의 시연이 필요하며, 레이아웃, 기하학, 물체 세트 또는 작업 제약 조건의 약간의 변화에도 성능이 저하됩니다. 우리는 이러한 격차가 단순히 데이터의 문제가 아니라 학습이 이루어지는 추상화 수준의 문제라고 주장합니다. 일반화를 위해서는 시연자가 특정 방식으로 행동한 이유에 대한 잠재적 의도를 추론해야 하며, 단순히 움직임을 재현하는 것이 아닙니다. 우리는 합리적 역추론(RIR)을 제안합니다. 이는 소수 샷 모방을 잠재적 설명 프로그램에 대한 추론으로 간주합니다. 즉, 객체 중심 장면을 목표, 하위 목표 및 제약 조건의 구조화된 작업 및 동작 계획(TAMP) 사양으로 매핑하는 간결하고 실행 가능한 의도 설명입니다. 비전-언어 모델이 후보 프로그램을 제안하고, 계층적 계획자가 제한된 합리적 가능성을 제공합니다. VLM 프로그램 제안과 계획 기반 피드백을 결합하여 RIR은 후보 세트를 반복적으로 정제하여 간결하고 실행 가능한 프로그램에 대한 사후 분포를 근사화합니다. 2D 추론 벤치마크와 실제 Franka FR3에서 RIR은 단 한 번의 시연으로도 전이 가능한 작업 구조를 복구합니다. 새로운 레이아웃과 물체 세트로 일반화할 때, RIR은 명시적 합리성과 계획 기반 추론이 부족한 VLM 계획 기준선을 능가하며, 1회 및 3회 설정에서 하류 성공률을 각각 <span class="arithmatex">\(34\)</span> 및 <span class="arithmatex">\(28\)</span> 퍼센트 포인트 향상시킵니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>인간은 한두 번의 시연을 통해 새로운 조작 작업을 학습하고, 새로운 방, 새로운 물체, 새로운 제약 조건 하에서 이를 수행할 수 있습니다. 반면, 현대 로봇 모방 학습은 일반적으로 수백에서 수천 번의 시연이 필요하며, 레이아웃, 기하학, 물체 세트 또는 작업 제약 조건의 약간의 변화에도 성능이 저하됩니다. 우리는 이러한 격차가 단순히 데이터의 문제가 아니라 학습이 이루어지는 추상화 수준의 문제라고 주장합니다. 일반화를 위해서는 시연자가 특정 방식으로 행동한 이유에 대한 잠재적 의도를 추론해야 하며, 단순히 움직임을 재현하는 것이 아닙니다. 우리는 합리적 역추론(RIR)을 제안합니다. 이는 소수 샷 모방을 잠재적 설명 프로그램에 대한 추론으로 간주합니다. 즉, 객체 중심 장면을 목표, 하위 목표 및 제약 조건의 구조화된 작업 및 동작 계획(TAMP) 사양으로 매핑하는 간결하고 실행 가능한 의도 설명입니다. 비전-언어 모델이 후보 프로그램을 제안하고, 계층적 계획자가 제한된 합리적 가능성을 제공합니다. VLM 프로그램 제안과 계획 기반 피드백을 결합하여 RIR은 후보 세트를 반복적으로 정제하여 간결하고 실행 가능한 프로그램에 대한 사후 분포를 근사화합니다. 2D 추론 벤치마크와 실제 Franka FR3에서 RIR은 단 한 번의 시연으로도 전이 가능한 작업 구조를 복구합니다. 새로운 레이아웃과 물체 세트로 일반화할 때, RIR은 명시적 합리성과 계획 기반 추론이 부족한 VLM 계획 기준선을 능가하며, 1회 및 3회 설정에서 하류 성공률을 각각 <span class="arithmatex">\(34\)</span> 및 <span class="arithmatex">\(28\)</span> 퍼센트 포인트 향상시킵니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rational_inverse_reasoning_few_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

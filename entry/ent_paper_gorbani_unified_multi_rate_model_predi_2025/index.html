@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>喷气动力人形机器人的统一多速率模型预测控制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">喷气动力人形机器人的统一多速率模型预测控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>喷气动力人形机器人的统一多速率模型预测控制</h1>
+      <p class="entry-name-en">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">设计工程</span><span class="tag">AI 模型与算法</span><span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.16478v2.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出了一种用于喷气动力人形机器人iRonCub的多速率模型预测控制框架，将质心动量动力学与二阶非线性喷气发动机动力学相结合，并通过MuJoCo仿真进行了验证。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.16478v2" target="_blank" rel="noopener">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>We propose a novel Model Predictive Control (MPC) framework for a jet-powered flying humanoid robot. The controller is based on a linearised centroidal momentum model to represent the flight dynamics, augmented with a second-order nonlinear model to explicitly account for the slow and nonlinear dynamics of jet propulsion. A key contribution is the introduction of a multi-rate MPC formulation that handles the different actuation rates of the robot's joints and jet engines while embedding the jet dynamics directly into the predictive model. We validated the framework using the jet-powered humanoid robot iRonCub, performing simulations in Mujoco; the simulation results demonstrate the robot's ability to recover from external disturbances and perform stable, non-abrupt flight manoeuvres, validating the effectiveness of the proposed approach.</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2505.16478v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">面向协同仓库自动化的多智能体强化学习：面向稀疏奖励协调的QMIX值分解</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_mobile_television_predictive_m_2025/">Mobile-TeleVision｜用于人形全身控制的预测运动先验</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_model_predictive_control_2024/">模型预测控制</a>
+              <span class="rel-desc">喷气动力人形机器人的统一多速率模型预测控制develops模型预测控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_newton_euler_equations/">牛顿-欧拉方程</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-desc">喷气动力人形机器人的统一多速率模型预测控制develops模型预测控制（MPC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">面向人形机器人稳健运动的层级化降阶模型预测控制</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">多层级复杂供应网络中的物料整合权衡利用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">锂离子电池组热耗散综合分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">你的视觉-语言-动作模型已具备路径偏离检测的注意力头</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">基于物理的锂离子电池模型连续谱综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">基于多阶段强化学习的人形全身羽毛球运动</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_aljalbout_reality_gap_2025/">机器人中的现实鸿沟：挑战、解决方案与最佳实践</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">面向协同仓库自动化的多智能体强化学习：面向稀疏奖励协调的QMIX值分解</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gorbani_unified_multi_rate_model_predi_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_newton_euler_equations/">
+          <span class="entry-type">方程</span>
+          <h3>牛顿-欧拉方程</h3>
+          <p>描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于多阶段强化学习的人形全身羽毛球运动</h3>
+          <p>Humanoid robots have demonstrated strong capabilities for interacting with static scenes across…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向协同仓库自动化的多智能体强化学习：面向稀疏奖励协调的QMIX值分解</h3>
+          <p>该论文在RWARE、MPE和自定义Unity…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向人形机器人稳健运动的层级化降阶模型预测控制</h3>
+          <p>提出了一种面向人形机器人行走的层级化降阶模型预测控制框架，将基于ALIP步间动力学的40 Hz非线性步态规划器与包含手臂和躯干动态的500 Hz线性MPC相结合，并在Unitree…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">论文</span>
+          <h3>你的视觉-语言-动作模型已具备路径偏离检测的注意力头</h3>
+          <p>本文在冻结的视觉-语言-动作模型中识别出稀疏的“导航头”，其注意力熵信号可指示轨迹偏离，从而实现了无需训练的异常检测器和轻量强化学习回退机制。在VLN-CE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_aljalbout_reality_gap_2025/">
+          <span class="entry-type">论文</span>
+          <h3>机器人中的现实鸿沟：挑战、解决方案与最佳实践</h3>
+          <p>Machine learning has facilitated significant advancements across various robotics domains, including…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">
+          <span class="entry-type">论文</span>
+          <h3>多层级复杂供应网络中的物料整合权衡利用</h3>
+          <p>Chauhan等人提出了一种混合整数线性规划框架，用于利用供应链层级间的多对多物料关系，纳入数量折扣、库存持有和运输成本，并在航空航天制造测试问题上进行了验证。研究表明，尽管存在层级间的成本权衡，整体…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制</h3>
+          <p>用于生成接触丰富的全身运动的在线最优控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">
+          <span class="entry-type">论文</span>
+          <h3>锂离子电池组热耗散综合分析</h3>
+          <p>该2025年arXiv论文通过对16节锂离子电池组进行计算流体力学与热仿真，比较了七种几何布局与气流配置；研究发现宽底梯形结构配合五个进口和一个出口最为均衡，并表明纳米碳基相变材料集成可将相变持续时间…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制</h3>
+          <p>本文提出了一种预测安全滤波器，将非线性模型预测控制（MPC）与通过泊松安全函数从感知数据中合成的控制障碍函数（CBF）约束相结合。该方法通过移动边界和闵可夫斯基集合运算将泊松安全函数扩展到时变域和机器…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">
+          <span class="entry-type">论文</span>
+          <h3>基于物理的锂离子电池模型连续谱综述</h3>
+          <p>Physics-based electrochemical battery models derived from porous electrode theory are a very…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mobile_television_predictive_m_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Mobile-TeleVision｜用于人形全身控制的预测运动先验</h3>
+          <p>Mobile-TeleVision 把本体状态与关节序列、人类视频/动捕轨迹、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

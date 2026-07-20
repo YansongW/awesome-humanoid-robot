@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leg Mechanism · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/component/">Component</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Leg Mechanism</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Component</div>
+      <h1>Leg Mechanism</h1>
+      <p class="entry-name-en">Leg Mechanism</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-09.md#9.2.13 下肢关键尺寸与公差 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The kinematic and structural design of the leg linkage, including hip, knee, and ankle joints, that supports weight, absorbs impact, and enables locomotion.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Leg mechanisms are critical components in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>The length of lower limb links, joint axis offsets, and fit tolerances directly determine kinematic accuracy, assembly feasibility, and dynamic performance.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Link Length, Joint Axis Offset, Bearing Housing Tolerance, Coaxiality, H7/g6, GD&amp;T</p>
+<ul>
+<li><strong>Link length</strong>: The perpendicular distance between adjacent joint axes.</li>
+<li><strong>Joint axis offset</strong>: The positional deviation between the actual rotation axis and the nominal axis.</li>
+<li><strong>Bearing housing tolerance</strong>: The allowable variation range for the diameter of the hole where the bearing is installed.</li>
+<li><strong>Coaxiality</strong>: A geometric tolerance that controls the degree of alignment between the axes of two shafts or holes.</li>
+<li><strong>H7/g6</strong>: Fit designation for a hole of H7 and a shaft of g6, indicating a clearance fit.</li>
+<li><strong>Geometric dimensioning and tolerancing (GD&amp;T)</strong>: Controls the allowable variation of a part's geometric features relative to its ideal shape, orientation, position, and runout.</li>
+</ul>
+</div>
+<p><strong>Typical Link Length Ranges</strong>: For a humanoid robot with a height of 1.6–1.8 m:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Range</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Thigh length <span class="arithmatex">\(l_{\text{thigh}}\)</span></td>
+<td>0.38–0.45 m</td>
+<td>Hip-knee axis distance</td>
+</tr>
+<tr>
+<td>Shank length <span class="arithmatex">\(l_{\text{shank}}\)</span></td>
+<td>0.38–0.45 m</td>
+<td>Knee-ankle axis distance</td>
+</tr>
+<tr>
+<td>Foot length</td>
+<td>0.22–0.28 m</td>
+<td>Heel-toe distance</td>
+</tr>
+<tr>
+<td>Foot width</td>
+<td>0.08–0.12 m</td>
+<td>Affects roll stability</td>
+</tr>
+<tr>
+<td>Hip width</td>
+<td>0.16–0.22 m</td>
+<td>Distance between hip joint axes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Joint Axis Offset</strong>: The coplanarity error of the hip, knee, and ankle axes in the sagittal plane should be controlled within <span class="arithmatex">\(\pm 0.3\,\text{mm}\)</span>; otherwise, lateral sway torque will occur during gait. The orthogonality between the hip yaw axis and the pitch/roll axes is recommended to be <span class="arithmatex">\(\le 0.05°\)</span>.</p>
+<p><strong>Bearing Housing Tolerance</strong>: For rolling bearings, the outer ring and housing bore commonly use H7/k6 (transition fit) or H7/g6 (clearance fit for easier assembly). The joint output shaft and bearing inner ring commonly use k6/m6 (slight interference). The cylindricity of the bearing housing bore is required to be <span class="arithmatex">\(\le 0.01\,\text{mm}\)</span>, and the coaxiality relative to the assembly datum is <span class="arithmatex">\(\le 0.02\,\text{mm}\)</span>.</p>
+<p><strong>Fit Example</strong>: For a deep groove ball bearing 6206 installed in an aluminum alloy housing, with an outer ring diameter <span class="arithmatex">\(D=62\,\text{mm}\)</span>: the housing bore is selected as H7 (<span class="arithmatex">\(+0.030/0\)</span>), resulting in a slight clearance or transition fit with the outer ring; the shaft journal is selected as k6 (<span class="arithmatex">\(+0.021/+0.002\)</span>) to ensure the inner ring rotates with the shaft.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Lower Limb Links"] --&gt; B["Thigh L1"]
+    A --&gt; C["Shank L2"]
+    A --&gt; D["Foot L3"]
+    B --&gt; E["Hip-Knee Coaxiality ≤0.02 mm"]
+    C --&gt; E
+    D --&gt; F["Ankle-Foot Flatness ≤0.02 mm"]
+    E --&gt; G["Bearing Housing Bore H7/k6"]</code></pre>
+<p><strong>GD&amp;T Application Example in Lower Limb</strong>: Taking the knee joint output flange as an example:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Tolerance</th>
+<th>Datum</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flange end face flatness</td>
+<td><span class="arithmatex">\(0.02\,\text{mm}\)</span></td>
+<td>—</td>
+<td>Mating with shank end face</td>
+</tr>
+<tr>
+<td>End face perpendicularity to journal</td>
+<td><span class="arithmatex">\(0.03\,\text{mm}\)</span></td>
+<td>A</td>
+<td>Ensures shank axis orthogonality</td>
+</tr>
+<tr>
+<td>Journal cylindricity</td>
+<td><span class="arithmatex">\(0.01\,\text{mm}\)</span></td>
+<td>A</td>
+<td>Bearing fit precision</td>
+</tr>
+<tr>
+<td>Bolt hole position</td>
+<td><span class="arithmatex">\(\phi 0.1\,\text{mm}\)</span></td>
+<td>A</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tolerance Chain Example</strong>: The coaxiality tolerance chain from the hip joint to the ankle joint includes: hip housing bearing bore coaxiality, coaxiality of both flanges of the thigh tube, knee housing coaxiality, shank tube coaxiality, and ankle housing coaxiality. If each item is controlled to <span class="arithmatex">\(\pm 0.02\,\text{mm}\)</span>, the worst-case accumulation is <span class="arithmatex">\(\pm 0.10\,\text{mm}\)</span>, which requires compensation through selective assembly or adjustment shims.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Hip Housing"] --&gt;|"±0.02"| B["Thigh Tube"]
+    B --&gt;|"±0.02"| C["Knee Housing"]
+    C --&gt;|"±0.02"| D["Shank Tube"]
+    D --&gt;|"±0.02"| E["Ankle Housing"]
+    E --&gt; F["Coaxiality Accumulation ±0.10"]
+
+## 개요
+다리 기구는 휴머노이드 로봇 분야의 중요한 부품입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
+
+## 핵심 내용
+하체 링크 길이, 관절 축 오프셋 및 조립 공차는 운동학 정밀도, 조립 가능성 및 동적 성능을 직접적으로 결정합니다.
+
+!!! note "용어 설명: 링크 길이, 관절 축 오프셋, 베어링 하우징 공차, 동축도, H7/g6, 형상 공차"
+    - **링크 길이(link length)**: 인접한 관절 축 사이의 수직 거리.
+    - **관절 축 오프셋(joint axis offset)**: 실제 회전 축과 공칭 축 사이의 위치 편차.
+    - **베어링 하우징 공차(bearing housing tolerance)**: 베어링을 설치하는 구멍의 직경 허용 변동 범위.
+    - **동축도(coaxiality)**: 두 축 또는 구멍의 축이 일치하는 정도를 나타내는 형상 공차.
+    - **H7/g6**: 구멍 H7, 축 g6의 끼워맞춤 기호로, 헐거운 끼워맞춤을 나타냄.
+    - **형상 공차(geometric dimensioning and tolerancing, GD&amp;T)**: 부품의 기하학적 특징이 이상적인 형상, 방향, 위치 및 흔들림에 대해 허용되는 변동량을 제어하는 것.
+
+**일반적인 링크 길이 범위**: 키 1.6–1.8 m의 휴머노이드 로봇을 예로 들면:
+
+| 치수 | 범위 | 설명 |
+|---|---|---|
+| 대퇴 길이 \(l_{\text{thigh}}\) | 0.38–0.45 m | 고관절-무릎 축 거리 |
+| 하퇴 길이 \(l_{\text{shank}}\) | 0.38–0.45 m | 무릎-발목 축 거리 |
+| 발 길이 | 0.22–0.28 m | 발뒤꿈치-발끝 |
+| 발 너비 | 0.08–0.12 m | 측면 기울기 안정성에 영향 |
+| 고관절 간격 | 0.16–0.22 m | 양쪽 고관절 축 거리 |
+
+**관절 축 오프셋**: 고관절, 무릎, 발목의 세 축이 시상면에서 동일 평면에 있어야 하는 오차는 \(\pm 0.3\,\text{mm}\) 이내로 제어해야 하며, 그렇지 않으면 보행 중 측면 흔들림 모멘트가 발생합니다. 고관절 yaw 축과 pitch/roll 축의 직각도는 \(\le 0.05°\)를 권장합니다.
+
+**베어링 하우징 공차**: 구름 베어링의 외륜과 하우징 구멍에는 일반적으로 H7/k6(중간 끼워맞춤) 또는 H7/g6(조립이 용이한 헐거운 끼워맞춤)이 사용됩니다. 관절 출력 축과 베어링 내륜에는 일반적으로 k6/m6(약간의 억지 끼워맞춤)이 사용됩니다. 베어링 하우징 구멍의 원통도는 \(\le 0.01\,\text{mm}\), 조립 기준에 대한 동축도는 \(\le 0.02\,\text{mm}\)를 요구합니다.
+
+**끼워맞춤 예시**: 알루미늄 합금 하우징에 깊은 홈 볼 베어링 6206 설치 시, 외륜 직경 \(D=62\,\text{mm}\): 하우징 구멍은 H7(\(+0.030/0\))을 선택하여 외륜과의 끼워맞춤이 약간의 헐거움 또는 중간 상태가 되도록 함; 축 저널은 k6(\(+0.021/+0.002\))를 선택하여 내륜이 축과 함께 회전하도록 보장.
+
+```mermaid
+flowchart TD
+    A["하체 링크"] --&gt; B["대퇴 L1"]
+    A --&gt; C["하퇴 L2"]
+    A --&gt; D["발 L3"]
+    B --&gt; E["고관절-무릎 동축도 ≤0.02 mm"]
+    C --&gt; E
+    D --&gt; F["발목-발 평면도 ≤0.02 mm"]
+    E --&gt; G["베어링 하우징 구멍 H7/k6"]</code></pre>
+<p><strong>GD&amp;T의 하체 적용 예시</strong>: 무릎 관절 출력 플랜지를 예로 들면:</p>
+<table>
+<thead>
+<tr>
+<th>특징</th>
+<th>공차</th>
+<th>기준</th>
+<th>기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>플랜지 끝면 평면도</td>
+<td><span class="arithmatex">\(0.02\,\text{mm}\)</span></td>
+<td>—</td>
+<td>하퇴 끝면과의 밀착</td>
+</tr>
+<tr>
+<td>끝면의 저널에 대한 직각도</td>
+<td><span class="arithmatex">\(0.03\,\text{mm}\)</span></td>
+<td>A</td>
+<td>하퇴 축의 직각도 보장</td>
+</tr>
+<tr>
+<td>저널 원통도</td>
+<td><span class="arithmatex">\(0.01\,\text{mm}\)</span></td>
+<td>A</td>
+<td>베어링 끼워맞춤 정밀도</td>
+</tr>
+<tr>
+<td>볼트 구멍 위치도</td>
+<td><span class="arithmatex">\(\phi 0.1\,\text{mm}\)</span></td>
+<td>A</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>공차 체인 예시</strong>: 고관절에서 발목 관절까지의 동축도 공차 체인은 다음을 포함: 고관절 하우징 베어링 시트 동축도, 대퇴관 양단 플랜지 동축도, 무릎 하우징 동축도, 하퇴관 동축도, 발목 하우징 동축도. 각 항목을 <span class="arithmatex">\(\pm 0.02\,\text{mm}\)</span>로 제어하면 최악의 경우 누적은 <span class="arithmatex">\(\pm 0.10\,\text{mm}\)</span>가 되며, 선별 조립 또는 조정 심(shim)을 통해 보상해야 합니다.</p>
+<p>```mermaid
+flowchart LR
+    A["고관절 하우징"] --&gt;|"±0.02"| B["대퇴관"]
+    B --&gt;|"±0.02"| C["무릎 하우징"]
+    C --&gt;|"±0.02"| D["하퇴관"]
+    D --&gt;|"±0.02"| E["발목 하우징"]
+    E --&gt; F["동축도 누적 ±0.10"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a>
+              <span class="rel-desc">Leg Mechanism uses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_inverse_kinematics/">Inverse Kinematics</a>
+              <span class="rel-desc">Leg Mechanism uses Inverse Kinematics.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_forward_kinematics/">Forward Kinematics</a>
+              <span class="rel-desc">Leg Mechanism uses Forward Kinematics.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_subsystem_leg_mechanism"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Inverse Kinematics</h3>
+          <p>The computation of joint angles that realize a desired end-effector pose, often solved numerically…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Zero Moment Point (ZMP)</h3>
+          <p>A point on the ground where the horizontal moment of the ground reaction force about it is zero;…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Forward Kinematics</h3>
+          <p>The computation of end-effector position and orientation from given joint angles, using a chain of…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

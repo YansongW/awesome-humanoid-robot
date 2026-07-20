@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI</h1>
+      <p class="entry-name-en">ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span><span class="tag">평가 및 벤치마크</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.00425v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2410.00425" target="_blank" rel="noopener">ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://www.maniskill.ai/home" target="_blank" rel="noopener">ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>시뮬레이션은 로봇 학습에 전례 없는 계산 확장 가능 접근 방식을 가능하게 했습니다. 그러나 기존의 많은 시뮬레이션 프레임워크는 일반적으로 제한된 범위의 장면/작업만 지원하며, 일반화 가능한 로봇공학과 sim2real 확장에 중요한 기능이 부족합니다. 우리는 일반화 가능한 조작을 목표로 하는 접촉이 풍부한 물리 엔진을 갖춘 가장 빠른 상태-시각 GPU 병렬 로봇공학 시뮬레이터인 ManiSkill3를 소개하고 오픈소스로 공개합니다. ManiSkill3는 시뮬레이션+렌더링, 이기종 시뮬레이션, 포인트클라우드/복셀 시각 입력 등 다양한 측면의 GPU 병렬화를 지원합니다. ManiSkill3에서 렌더링을 포함한 시뮬레이션은 다른 플랫폼보다 10-1000배 빠르게 실행되며 GPU 메모리 사용량은 2-3배 적습니다. 이는 시스템 내 최소한의 python/pytorch 오버헤드, GPU 상의 시뮬레이션, SAPIEN 병렬 렌더링 시스템 사용 덕분에 벤치마크 환경에서 최대 30,000+ FPS를 달성합니다. 훈련에 몇 시간이 걸리던 작업이 이제는 몇 분 만에 가능해졌습니다. 또한 우리는 드로잉, 휴머노이드, 아티스트가 디자인한 현실적인 장면이나 실제 세계 디지털 트윈에서의 정밀 조작 등 모바일 조작을 포함한 12개의 다양한 도메인에 걸쳐 가장 포괄적인 GPU 병렬 환경/작업 범위를 제공합니다. 추가로 모션 플래닝, 강화학습, 원격 조작에서 얻은 수백만 개의 데모 프레임이 제공됩니다. ManiSkill3는 또한 인기 있는 강화학습 및 데모 학습 알고리즘을 포괄하는 포괄적인 베이스라인 세트를 제공합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>시뮬레이션은 로봇 학습에 전례 없는 계산 확장 가능 접근 방식을 가능하게 했습니다. 그러나 기존의 많은 시뮬레이션 프레임워크는 일반적으로 제한된 범위의 장면/작업만 지원하며, 일반화 가능한 로봇공학과 sim2real 확장에 중요한 기능이 부족합니다. 우리는 일반화 가능한 조작을 목표로 하는 접촉이 풍부한 물리 엔진을 갖춘 가장 빠른 상태-시각 GPU 병렬 로봇공학 시뮬레이터인 ManiSkill3를 소개하고 오픈소스로 공개합니다. ManiSkill3는 시뮬레이션+렌더링, 이기종 시뮬레이션, 포인트클라우드/복셀 시각 입력 등 다양한 측면의 GPU 병렬화를 지원합니다. ManiSkill3에서 렌더링을 포함한 시뮬레이션은 다른 플랫폼보다 10-1000배 빠르게 실행되며 GPU 메모리 사용량은 2-3배 적습니다. 이는 시스템 내 최소한의 python/pytorch 오버헤드, GPU 상의 시뮬레이션, SAPIEN 병렬 렌더링 시스템 사용 덕분에 벤치마크 환경에서 최대 30,000+ FPS를 달성합니다. 훈련에 몇 시간이 걸리던 작업이 이제는 몇 분 만에 가능해졌습니다. 또한 우리는 드로잉, 휴머노이드, 아티스트가 디자인한 현실적인 장면이나 실제 세계 디지털 트윈에서의 정밀 조작 등 모바일 조작을 포함한 12개의 다양한 도메인에 걸쳐 가장 포괄적인 GPU 병렬 환경/작업 범위를 제공합니다. 추가로 모션 플래닝, 강화학습, 원격 조작에서 얻은 수백만 개의 데모 프레임이 제공됩니다. ManiSkill3는 또한 인기 있는 강화학습 및 데모 학습 알고리즘을 포괄하는 포괄적인 베이스라인 세트를 제공합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_maniskill3_2024/">ManiSkill3</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_maniskill3_gpu_parallelized_ro_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_software_maniskill3_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>ManiSkill3</h3>
+          <p>구현 AI를 위한 GPU 병렬 로봇 시뮬레이션 및 렌더링 벤치마크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">벤치마크</span>
+          <h3>ManiSkill</h3>
+          <p>일반화 가능한 조작 기술을 위한 통합 벤치마크로, 표준화된 과제·시뮬레이션 환경·평가 프로토콜을 제공.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

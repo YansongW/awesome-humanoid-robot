@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>선정 핸드북: 액추에이터(Actuator) 선정 방법 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">선정 핸드북: 액추에이터(Actuator) 선정 방법</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="actuator">선정 핸드북: 액추에이터(Actuator) 선정 방법</h1>
+<blockquote>
+<p>⚠️ 본 로드맵의 내용은 공개 자료와 이론적 지식을 바탕으로 정리되었으며, 실제 기기로 검증되지 않았습니다. 전기 및 기계 작업 시 안전 규정을 직접 확인하시기 바랍니다.</p>
+</blockquote>
+<p>액추에이터는 휴머노이드 로봇 BOM에서 가장 "예산 낭비와 방향성 실수"가 발생하기 쉬운 부분입니다. 같은 다리라도 스마트 서보(Servo)로는 수천 원에 구동할 수 있지만, 하모닉 드라이브(Harmonic Drive) + 프레임리스 모터(Frameless Motor)를 사용하면 한 자릿수 더 비쌀 수 있으며, 성능 차이는 "무엇을 원하는지" 명확히 할 때만 의미가 있습니다. 본 핸드북은 의사 결정 프레임워크를 제공합니다. 먼저 요구 사항을 네 가지 정량화된 숫자로 변환한 후, 기술 로드맵 비교표와 제조사 계층표를 대조하여 2~3개의 후보로 좁히고, 마지막으로 벤치 테스트로 마무리합니다. 원리적 배경은 <a href="/wiki/chapters/chapter-04/">제 4 장 액추에이터</a>를 참조하십시오.</p>
+<h2 id="1">1. 요구 사항 네 가지 질문: "로봇을 만들겠다"는 것을 선정 파라미터로 변환</h2>
+<h3 id="1-peak-torque">질문 1: 피크 토크(Peak Torque)는 얼마나 필요한가?</h3>
+<p>【무엇을 할 것인가】대상 관절에 대해 최악의 조건에서 정역학적 추정을 수행합니다. 최악의 자세(무릎 관절의 최대 스쿼트 지점, 엉덩이 피치(pitch)의 한쪽 다리 지지 + 상체 전방 경사)를 취하고, <code>τ = m·g·d</code>(d는 질량 중심에서 관절 축까지의 모멘트 암)로 대략 계산한 후, 1.5~2의 동적 여유를 곱합니다. 이 숫자는 데이터시트를 선별하는 첫 번째 기준입니다.</p>
+<p>【이유】피크 토크는 감속기/모터의 "사양 번호"를 결정합니다. 예를 들어 <a href="/entry/ent_component_harmonic_drive_reducer/">하모닉 드라이브 감속기 Harmonic Drive</a> CSF-32-100의 반복 피크 토크는 333 N·m, 순간 피크는 647 N·m입니다(출처: 카드에서 Tradebearings 사양 페이지 인용). 참고로 <a href="/entry/ent_oem_unitree_robotics/">Unitree</a> H1의 무릎 관절 피크 토크는 360 N·m입니다(출처: Unitree 카드). 추정값이 어느 정도 수준에 속하는지에 따라 비교표의 몇 번째 행에서 선택할지가 직접 결정됩니다.</p>
+<p>【상황 분석 방법】데스크탑급(팔 길이 &lt; 0.5 m, 자체 중량 &lt; 5 kg) 관절 피크는 일반적으로 5~40 N·m이며, 서보와 소형 준직구동(Quasi-Direct Drive) 모두 충분합니다. 풀사이즈 이족보행(키 &gt; 1.2 m) 엉덩이/무릎은 일반적으로 100~400 N·m이며, "하모닉/RV + 프레임리스 모터"와 "고토크 준직구동" 두 가지 경로만 남습니다. 평지 보행은 정적 값 × 1.5; 달리기/점프가 필요하면 × 2 이상으로 하고 순간 피크 토크를 확인하십시오.</p>
+<h3 id="2-continuousrated-torque">질문 2: 지속 토크(Continuous/Rated Torque)와 열</h3>
+<p>【무엇을 할 것인가】일반적인 작업 주기(예: 10분 연속 보행)를 RMS 토크로 환산하여, 이 값이 액추에이터의 정격/지속 토크(피크 토크가 아님)보다 낮아야 합니다.</p>
+<p>【이유】액추에이터가 소손되는 것은 거의 항상 열적 파손(순간 과부하가 아님) 때문입니다. 피크 토크는 수 초 동안만 유지 가능하며, 지속 출력은 권선 온도 상승에 의해 제한됩니다. CSF-32-100의 정격 토크 L10은 137 N·m으로, 반복 피크 토크 333 N·m의 약 40%에 불과합니다(출처: 하모닉 드라이브 감속기 카드). Maxon EC-i 40의 정격은 224 mN·m, 구속(Stall) 토크는 2080 mN·m으로 약 10배 차이입니다(출처: <a href="/entry/ent_company_maxon_group_2024/">Maxon 카드</a>). 모터 측에서는 이 비율이 더욱 극명하므로, 연속 운전 시 구속 토크를 기준으로 선정하지 마십시오.</p>
+<p>【상황 분석 방법】교육 시연(매번 몇 분)은 정격 값에 가깝게 선택할 수 있습니다. 장시간 보행 또는 상업용 전시의 경우, RMS는 정격 값의 70% 이내로 유지하는 것이 좋으며, 정격 값에 해당하는 환경 온도와 방열 조건을 확인하십시오. 명시되지 않은 경우, 공급업체에 직접 확인해야 합니다.</p>
+<h3 id="3">질문 3: 중량 예산은 얼마인가?</h3>
+<p>【무엇을 할 것인가】각 관절에 중량 상한을 할당합니다. 다리 액추에이터는 전체 기계 중량의 40~50%를 초과하지 않는 것이 좋으며(업계 경험치), 무거운 액추에이터는 엉덩이/몸통 쪽으로 집중시켜 종아리 관성 모멘트를 줄입니다.</p>
+<p>【이유】액추에이터 자체 중량은 다음 단계 관절의 부하가 됩니다. 발목 관절이 1 kg 무거우면 무릎과 엉덩이의 토크 요구 사항이 모두 증가하여 "무거울수록 더 큰 토크가 필요"한 악순환이 발생합니다. 규모 참고: CSF-32-100 하모닉 드라이브 감속기 중량 3.2 kg(출처: 하모닉 드라이브 감속기 카드); 동일 규격 32의 국산 LHS-32-100은 2.5 kg(출처: <a href="/entry/ent_company_leaderdrive_2024/">Leaderdrive 카드</a>). 준직구동은 현저히 가볍게 만들 수 있습니다. Berkeley Humanoid Lite의 6512 액추에이터 단일 BOM은 약 $188(미국) / $157(중국)입니다(출처: 조사 파일 berkeley-humanoid-lite.md).</p>
+<p>【상황 분석 방법】데스크탑 기계는 중량에 민감하지 않으므로 저렴하고 사용하기 쉬운 것을 우선합니다. 풀사이즈 이족보행은 액추에이터 중량 1kg당 "그것이 가져오는 토크 이득"(토크 밀도)을 계산해야 합니다. <a href="/entry/ent_technology_quasi_direct_drive_actuator_2024_">준직구동 액추에이터 QDD</a>와 Unitree 자체 개발 M107 모터(공칭 토크 밀도 189 N·m/kg, 출처: Unitree 카드)는 모두 이 사고 방식의 산물입니다.</p>
+<h3 id="4-force-control-back-drivability">질문 4: 힘 제어(Force Control)와 역구동성(Back-drivability)이 필요한가?</h3>
+<p>【무엇을 할 것인가】명확히 답변하십시오. 이 관절이 "자신이 얼마나 무거운 것을 밀고 있는지 알고, 충돌 시 물러날 수 있어야 하는지"(힘 제어/컴플라이언스), 아니면 단순히 "특정 각도에 정확히 도달하는 것"(위치 제어)만 필요한지?</p>
+<p>【이유】이것이 경로 분기점입니다. 높은 감속비 방식(하모닉/RV/고비율 서보)은 전동 마찰이 크고 역구동이 불가능하므로, 힘 제어는 출력단에 토크 센서를 추가해야만 가능합니다. 낮은 감속비의 준직구동은 전류 루프로 직접 토크를 추정할 수 있고 본질적으로 역구동이 가능하며, 고유 감각 힘 제어(proprioceptive force control)의 주류 경로입니다. Open Dynamic Robot Initiative의 자체 개발 BLMC 액추에이터는 "저감속비 + 이중 엔코더 + 높은 토크 투명성"의 전형입니다(출처: 조사 파일 open-dynamic-robot-initiative.md). 반례: ROBOTIS OP3의 XM430-W350-R 서보(감속비 353.5:1, 실속 토크 4.1 N·m, 출처: robotis-op3 조사 파일)는 위치 정밀도가 높고 플러그 앤 플레이이지만, 파일은 "고유 감각 힘 제어 능력이 없어 고동적 운동 제어 연구에 부적합"하다고 명확히 평가합니다.</p>
+<p>【상황 분석 방법】고정 시연/교시만 하는 경우 → 위치 제어로 충분하며, 서보 또는 하모닉 방식이 간편합니다. 보행 균형, 외란 대응, 인간-로봇 공존이 필요한 경우 → 힘 제어는 필수이며, 준직구동 또는 "하모닉 + 관절 토크 센서"를 선택하고, 전자는 토크 밀도가 낮고 후자는 비용이 높다는 대가를 감수해야 합니다.</p>
+<h2 id="2">2. 기술 로드맵 비교표</h2>
+<p>아래 표는 로드맵별로 정성적으로 비교합니다(구체적인 수치는 각 엔터티 카드와 제조사 데이터시트 기준).</p>
+<table>
+<thead>
+<tr>
+<th>로드맵</th>
+<th>백래시(Backlash)</th>
+<th>토크 밀도</th>
+<th>효율</th>
+<th>역구동 가능성</th>
+<th>비용 규모</th>
+<th>일반적인 용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_component_harmonic_drive_reducer/">하모닉 드라이브 감속기 Harmonic Drive</a></td>
+<td>거의 제로(CSF ≤1 arcmin; SHF 10–20 arcsec)</td>
+<td>높음(CSF-32-100 정격 137 N·m / 3.2 kg)</td>
+<td>80%–90%</td>
+<td>기본 불가</td>
+<td>높음(가격 미공개, 문의 필요)</td>
+<td>어깨/팔꿈치/엉덩이/손목 정밀 관절</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_rv_reducer/">RV 감속기</a></td>
+<td>낮음(arcmin 수준, 구체적 사항은 공급업체 확인 필요)</td>
+<td>매우 높음, 내충격성 우수</td>
+<td>중간</td>
+<td>불가</td>
+<td>높음(문의 필요)</td>
+<td>중하중 로봇 허리/엉덩이, 풀사이즈 휴머노이드는 신중(무거움)</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_planetary_roller_screw/">행성 롤러 나사 Planetary Roller Screw</a></td>
+<td>리드 정밀도에 따라 다름</td>
+<td>직선 추력 밀도 매우 높음(동일 크기 동하중 볼 나사의 3~5배)</td>
+<td>~90%(볼 나사 90–95%)</td>
+<td>큰 리드에서 역구동 가능</td>
+<td>매우 높음(Optimus급 방식)</td>
+<td>직선 관절(무릎/발목 푸시로드)</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">준직구동 QDD</a></td>
+<td>낮음(6–10:1 저감속비, 백래시는 기어 품질에 따라 다름)</td>
+<td>중간(동일 중량 토크는 하모닉보다 낮음)</td>
+<td>높음(동력 전달 체인 짧음)</td>
+<td>좋음</td>
+<td>중저(BHL 단일 BOM $157–188)</td>
+<td>4족/2족 보행 동적 다리</td>
+</tr>
+<tr>
+<td>스마트 서보 Servo</td>
+<td>비교적 높음(플라스틱/금속 기어 다단 감속)</td>
+<td>낮음(XM430 실속 4.1 N·m)</td>
+<td>낮음-중간</td>
+<td>나쁨</td>
+<td>낮음(모델별 문의 필요)</td>
+<td>데스크탑 교육용 기계, 머리/손 소형 관절</td>
+</tr>
+</tbody>
+</table>
+<p>두 가지 추가 설명:</p>
+<ul>
+<li>하모닉 vs RV의 역할 분담: 하모닉은 제로 백래시, 경량, 중공 배선(SHF-32 중공형 1.665 kg, 출처: <a href="/entry/ent_company_harmonic_drive_systems_2024/">Harmonic Drive Systems 카드</a>)에서 우수합니다. RV는 강성과 내충격성에서 우수합니다. 풀사이즈 휴머노이드 엉덩이 관절에는 두 경로 모두 선례가 있으며, "중량"과 "내충격 수명"을 저울에 올리면 됩니다.</li>
+<li>나사 경로의 역학적 환산은 직접 계산해야 합니다. 추력 <code>F = 2π·η·τ / l</code>(l은 리드). 계산 예: F=8000 N, l=5 mm, η=0.90일 때 모터 측 필요 지속 토크는 약 7.07 N·m입니다(출처: 행성 롤러 나사 카드). 리드 각이 마찰 각보다 크면 역구동 가능, 작으면 자체 잠금(self-locking)됩니다. 힘 제어가 필요하면 큰 리드를 선택하고, 사다리꼴 자체 잠금 나사를 선택하지 마십시오.</li>
+</ul>
+<h2 id="_1">三、제조사 속성 조회 (계층별)</h2>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>제조사</th>
+<th>구매 품목</th>
+<th>본 저장소 자료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>고급 수입</td>
+<td><a href="/entry/ent_company_harmonic_drive_systems_2024/">Harmonic Drive Systems (하모닉 드라이브 시스템즈)</a></td>
+<td>CSF/CSG 컴포넌트형, SHF/SHG 중공형 하모닉 감속기, FHA-C 일체형 액추에이터</td>
+<td>✅ 카드에 CSF-32-50, SHF-32-120 상세 파라미터 포함</td>
+</tr>
+<tr>
+<td>고급 수입</td>
+<td>Nabtesco</td>
+<td>RV 감속기</td>
+<td>⚠️ 본 저장소에 카드 없음, 파라미터는 공급업체에 직접 확인 필요</td>
+</tr>
+<tr>
+<td>고급 수입</td>
+<td><a href="/entry/ent_company_maxon_group_2024/">Maxon</a></td>
+<td>EC-i / EC 브러시리스 모터, 기어박스, 드라이버 (정교한 손과 소형 관절에 주로 사용)</td>
+<td>✅ 카드에 EC-i 40, EC 40 상세 파라미터 포함</td>
+</tr>
+<tr>
+<td>고급 수입</td>
+<td>Kollmorgen</td>
+<td>프레임리스 토크 모터 (RBE/TBM 시리즈, 자체 개발 관절의 모터 측 옵션)</td>
+<td>⚠️ 카드 없음, 가격 문의 필요</td>
+</tr>
+<tr>
+<td>국산 대체</td>
+<td><a href="/entry/ent_company_leaderdrive_2024/">Leaderdrive (녹스 하모닉)</a></td>
+<td>LHS/LCS 하모닉 감속기, LCD 초박형 시리즈 (손목/손가락), KGM 일체형 관절 모듈</td>
+<td>✅ 카드에 LHS-32-100, LCD-14-100 상세 파라미터 포함; 하모닉 드라이브 대체 시작점으로 적합</td>
+</tr>
+<tr>
+<td>국산 완제품/모듈</td>
+<td><a href="/entry/ent_oem_unitree_robotics/">Unitree (위니트리)</a></td>
+<td>자체 개발 M107 고토크 밀도 모터, 관절 모듈</td>
+<td>✅ 카드에 M107 토크 밀도, H1/G1 관절 파라미터 포함</td>
+</tr>
+<tr>
+<td>메이커급</td>
+<td>CubeMars (큐브마스)</td>
+<td>AK 시리즈 QDD 관절 모듈 (MIT Mini Cheetah 계열)</td>
+<td>⚠️ 카드 없음, 파라미터는 공급업체에 직접 확인 필요</td>
+</tr>
+<tr>
+<td>메이커급</td>
+<td>자체 개발 3D 프린팅 QDD</td>
+<td>드론 모터 + 사이클로이드/유성 감속기</td>
+<td>조사 파일: Berkeley Humanoid Lite (BOM 투명, 60시간 내구 테스트)</td>
+</tr>
+</tbody>
+</table>
+<p>계층 선택 한마디 원칙: 연구는 재현성과 공급 안정성을 추구하므로 고급 수입 또는 국산 대체 선택; 예산이 빠듯하고, 직접动手할 의지가 있으며, 관절 수가 많다면 메이커급 QDD 또는 자체 개발로 액추에이터 비용을 고급 솔루션의 몇 분의 일로 낮출 수 있지만, 일관성과 수명 검증은 본인이 부담해야 합니다.</p>
+<h2 id="_2">四, 세 가지 시나리오별 선정 예시</h2>
+<h3 id="a-0305-m-1-kg">시나리오 A: 데스크탑 교육용 팔 관절 (팔 길이 0.3–0.5 m, 하중 &lt; 1 kg)</h3>
+<p>요구사항 답변: 피크 5–15 N·m; 지속 부하 낮음; 무게 민감하지 않음; 위치 제어만 가능, 힘 제어는 선택 사항.</p>
+<ul>
+<li>보수적方案: 스마트 서보 버스 (Dynamixel 계열). OP3의 XM430-W350-R 참조: 정지 토크 4.1 N·m, 전류 루프 지원, 버스 데이지 체인 (출처: robotis-op3 조사 파일). SDK와 문서가 매우 완벽하지만, 백래시가 크고 힘 제어 연구는 불가능.</li>
+<li>고급方案: 소형 하모닉. Leaderdrive LCD-14-100: 정격 5.1 N·m, 순간 피크 33 N·m, 무게 0.48–0.68 kg, 백래시 ≤20 arcsec (출처: Leaderdrive 카드) — 초박형 컵 플렉스 스플라인은 손목/소팔처럼 축 방향 공간이 제한된 곳에 설계됨.</li>
+<li>당신의 상황 분석: 예산 우선, 강의 기간 짧음 → 서보; 논문 발표, 순응 제어 필요 → 소형 하모닉 + 프레임리스 모터, 또는 자체 개발 QDD로 연습.</li>
+</ul>
+<h3 id="b-1m">시나리오 B: 이족 보행 엉덩이/무릎 관절 (전신 또는 1m급)</h3>
+<p>요구사항 답변: 피크 100–400 N·m (1번 질문에 따라 실제 계산); 지속 부하는 보행 RMS 기준; 무게 민감; 힘 제어 필수.</p>
+<ul>
+<li>경로 1 (준직구동): MIT Cheetah 계열, Unitree H1 무릎 관절 피크 360 N·m이 이 경로 (출처: Unitree 카드). 장점은 역구동성, 충격 저항, 높은 대역폭; 단점은 기립 시 전력 소모 큼 (모터가 지속적으로 자체 중량을 지탱).</li>
+<li>경로 2 (하모닉 + 프레임리스 모터): THORMANG3의 접근 방식 — 하모닉 감속 + 고전력 밀도 서보 (해당 플랫폼은 PH54 시리즈 100W 모듈 × 11 사용, 출처: thormang3 조사 파일), 토크는 충분하지만 "전체 기계 비용이 여기에 집중됨" (파일 원문).</li>
+<li>경로 3 (직선 구동): <a href="/entry/ent_component_planetary_roller_screw/">유성 롤러 나사</a> 푸시 로드식 무릎/발목 (Optimus 방식), 추력 밀도 최고, 충격 흡수 가능하지만 설계 및 가공 난이도가 가장 높고 가격은 공급업체에 직접 확인 필요 (SKF 자료: 동일 크기 동하중이 볼 나사의 3–5배, 수명 10–15배, 출처: 나사 카드).</li>
+<li>당신의 상황 분석: 첫 이족 보행 제작, 제어 배경 강함 → QDD (BHL 파일은 $157 BOM 수준에서도 제로샷 sim-to-real 가능함을 입증); 기계 배경 강함, 소형화 및 긴 작동 시간 추구 → 하모닉 + 프레임리스 모터; 나사 경로는 두 번째 로봇에 권장.</li>
+</ul>
+<h3 id="c">시나리오 C: 정교한 손 손가락</h3>
+<p>요구사항 답변: 피크 매우 작음 (mN·m급); 공간 극도로 제한됨; 응답 속도 빨라야 함; 비용 × 손가락 수.
+- 주류方案: <a href="/entry/ent_component_hollow_cup_motor_2024/">코어리스 모터 (Hollow Cup Motor)</a> (무철심) + 초소형 감속기/나사/텐던. Dingzhi 시리즈 외경 Ø10–Ø42 mm, 무게 5–60 g, 정격 토크 예시 1.5 mN·m, 스톨 토크 범위 1–50 mN·m, 기계적 시정수 &lt;5 ms (출처: 코어리스 모터 카드) — 무철심은 코깅 토크가 없고 관성이 낮아 손가락이 빠르게 굽힘/폄 가능.
+- 대체方案: Maxon ECX SPEED 등 고속 브러시리스 (출처: Maxon 카드), 또는 리니어 모터/텐던 구동 외부 전완.
+- 당신의 상황 분석: 먼저 손끝 힘 목표를 계산하여 텐던 장력과 모터 스톨 토크를 역산; 코어리스 모터 단가는 비공개이므로 가격 문의 필요, "손당 6–20대" 규모로 구매 시 협상 여지와 일관성 모두 논의 필요.</p>
+<h2 id="_3">五, 검증 방법: 데이터시트 읽는 법, 테스트 벤치 측정법</h2>
+<h3 id="_4">데이터시트 읽는 다섯 가지 규칙</h3>
+<ol>
+<li>네 가지 토크 구분: 정격 (연속), 시동/정지 허용, 반복 피크, 순간 피크, 각각을 당신의 RMS/피크 요구사항과 대조 (네 가지 차이는 Leaderdrive LHS-32-100 카드 참조: 시동/정지 허용 221 N·m은 정격 91 N·m의 약 2.4배).</li>
+<li>정격 토크는 종종 회전 속도 조건을 동반 (예: "2000 rpm 입력 시"), 제조사 간 비교 시 동일 회전 속도로 통일.</li>
+<li>백래시 단위 확인: arcmin vs arcsec (1 arcmin = 60 arcsec), Harmonic Drive SHF는 10–20 arcsec, Leaderdrive는 ≤20 arcsec으로 동일 수준.</li>
+<li>비틀림 강성은 구간별 값 사용 (하모닉 K1/K2/K3), 힘 제어 대역폭 추정 시 저토크 구간의 K1 사용, K3로 자기기만 금지.</li>
+<li>효율, 수명 (L10)은 윤활과 연동, 윤활유 교체 또는 저온 환경 시 값은 공급업체에 직접 확인 필요.</li>
+</ol>
+<h3 id="_5">테스트 벤치 실측 체크리스트 (입고 후 필수)</h3>
+<ul>
+<li>백래시 실측: 입력단 고정, ±정격 5% 토크 내에서 부하, 다이얼 게이지/엔코더로 역행 오차 측정, 데이터시트와 대조.</li>
+<li>역구동 토크: QDD 관절 전원 차단 후 수동으로 회전시켜 기동 토크 측정; 너무 크면 마찰 또는 관성 과다, 힘 제어 투명성 저하.</li>
+<li>온도 상승 곡선: 정격 RMS 토크로 30분 연속 운전하며 케이스 온도 기록, 임무 주기 상한 역산.</li>
+<li>전류-토크 보정: 추 레버로 점진적 부하, <code>τ = K_t·I</code> 실제 기울기 피팅, 전류 루프 힘 제어 정밀도는 이 표에 달려 있음.</li>
+<li>토크 리플: 저속 등속 회전 시 전류 리플 기록, 저속 힘 제어 하한 평가.</li>
+</ul>
+<h2 id="_6">합격 기준</h2>
+<ul>
+<li>각 목표 관절에 대해 서면 "요구사항 4문" 답변 존재: 피크/지속 토크 (계산 과정 포함), 무게 상한, 힘 제어 필요 여부 (부울 값).</li>
+<li>후보가 ≤3개의 "모터+감속기" 조합으로 좁혀지고, 각각 실제 데이터시트로 뒷받침되며, 정격 토크 &gt; RMS 요구사항, 순간 피크 &gt; 최악 조건 추정치.</li>
+<li>핵심 파라미터 (토크, 백래시, 무게) 모두 카드, 데이터시트 또는 조사 파일로 추적 가능; 확인 불가능한 것은 "공급업체에 직접 확인 필요"로 표시.</li>
+<li>최소 1대의 시제품 테스트 벤치 실측 완료 (백래시 + 온도 상승 + 전류-토크 보정), 실측값과 데이터시트의 편차에 대한 서면 설명 존재.</li>
+</ul>
+<h2 id="_7">일반적인 문제점 및 점검</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능 원인</th>
+<th>점검 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>몇 분 연속 작동 후 관절 힘 빠짐/과열</td>
+<td>피크 토크로 선정, RMS가 정격 초과</td>
+<td>임무 RMS 토크 vs 정격값 확인; 방열 추가 또는 듀티 사이클 감소</td>
+</tr>
+<tr>
+<td>정지 상태에서 모터 윙윙거리며 발열</td>
+<td>QDD 기립 전력 소모 과소평가</td>
+<td>기립 상 전류 측정; 병렬 탄성 요소 고려 또는 경로 변경</td>
+</tr>
+<tr>
+<td>위치 추적에 데드존/떨림</td>
+<td>감속기 백래시 큼 (서보에 흔함)</td>
+<td>다이얼 게이지로 백래시 실측; 저백래시方案으로 교체 또는 제어 측 보상</td>
+</tr>
+<tr>
+<td>힘 제어 추정 토크와 외력계 불일치</td>
+<td>K_t 이론값 사용, 미보정</td>
+<td>추 레버로 전류-토크 보정, K_t 및 마찰 보상 업데이트</td>
+</tr>
+<tr>
+<td>하모닉 관절 충돌 후 정밀도 저하</td>
+<td>순간 토크 초과로 플렉스 스플라인 손상</td>
+<td>충돌 조건 vs 순간 피크 한계 대조; 백래시 재측정</td>
+</tr>
+<tr>
+<td>나사 관절 역구동 불가, 힘 제어失灵</td>
+<td>리드각 &lt; 마찰각, 자체 잠금</td>
+<td>리드각/마찰각 계산; 큰 리드 나사로 교체</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">관련 자료</h2>
+<ul>
+<li><a href="/roadmap/stage-1-actuator/">1단계 · 관절 만들기</a> —— 선정 후 조립, 구동 및 디버깅 전체 프로세스</li>
+<li><a href="/roadmap/index/">로드맵 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/stage-3-humanoid/">← 이전<span>3단계: 완전한 휴머노이드 로봇 – 이족 보행 플랫폼에서 &#34;듣고, 걸어가고, 집어 올리기&#34;까지</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/playbooks/compute-selection/">다음 →<span>계산 플랫폼 선정: 로봇에 &#34;계층형 두뇌&#34; 장착하기</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#actuator">선정 핸드북: 액추에이터(Actuator) 선정 방법</a><ul>
+<li><a href="#1">1. 요구 사항 네 가지 질문: "로봇을 만들겠다"는 것을 선정 파라미터로 변환</a><ul>
+<li><a href="#1-peak-torque">질문 1: 피크 토크(Peak Torque)는 얼마나 필요한가?</a></li>
+<li><a href="#2-continuousrated-torque">질문 2: 지속 토크(Continuous/Rated Torque)와 열</a></li>
+<li><a href="#3">질문 3: 중량 예산은 얼마인가?</a></li>
+<li><a href="#4-force-control-back-drivability">질문 4: 힘 제어(Force Control)와 역구동성(Back-drivability)이 필요한가?</a></li>
+</ul>
+</li>
+<li><a href="#2">2. 기술 로드맵 비교표</a></li>
+<li><a href="#_1">三、제조사 속성 조회 (계층별)</a></li>
+<li><a href="#_2">四, 세 가지 시나리오별 선정 예시</a><ul>
+<li><a href="#a-0305-m-1-kg">시나리오 A: 데스크탑 교육용 팔 관절 (팔 길이 0.3–0.5 m, 하중 &lt; 1 kg)</a></li>
+<li><a href="#b-1m">시나리오 B: 이족 보행 엉덩이/무릎 관절 (전신 또는 1m급)</a></li>
+<li><a href="#c">시나리오 C: 정교한 손 손가락</a></li>
+</ul>
+</li>
+<li><a href="#_3">五, 검증 방법: 데이터시트 읽는 법, 테스트 벤치 측정법</a><ul>
+<li><a href="#_4">데이터시트 읽는 다섯 가지 규칙</a></li>
+<li><a href="#_5">테스트 벤치 실측 체크리스트 (입고 후 필수)</a></li>
+</ul>
+</li>
+<li><a href="#_6">합격 기준</a></li>
+<li><a href="#_7">일반적인 문제점 및 점검</a></li>
+<li><a href="#_8">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

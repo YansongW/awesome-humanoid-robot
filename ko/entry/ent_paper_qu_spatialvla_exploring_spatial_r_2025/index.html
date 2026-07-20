@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model</h1>
+      <p class="entry-name-en">SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.15830v5.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model (SpatialVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, ShanghaiTech, TeleAI.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2501.15830" target="_blank" rel="noopener">SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2501.15830" target="_blank" rel="noopener">SpatialVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문에서는 공간 이해가 로봇 조작의 핵심이라고 주장하며, 로봇 기초 모델을 위한 효과적인 공간 표현을 탐구하기 위해 SpatialVLA를 제안합니다. 구체적으로, Ego3D Position Encoding을 도입하여 시각-언어-행동 모델의 입력 관측값에 3D 정보를 주입하고, Adaptive Action Grids를 제안하여 적응형 이산화된 행동 그리드로 공간 로봇 움직임 행동을 표현함으로써, 로봇 간 제어를 위한 일반화 가능하고 전이 가능한 공간 행동 지식을 학습하는 것을 용이하게 합니다. SpatialVLA는 먼저 110만 개의 실제 로봇 에피소드를 사용하여 시각-언어 모델 위에서 사전 학습되어, 다양한 로봇 환경과 작업에 걸친 일반주의 조작 정책을 학습합니다. 사전 학습 후, SpatialVLA는 제로샷 방식으로 수많은 작업을 직접 수행합니다. 시뮬레이션과 실제 로봇 모두에서의 우수한 결과는 복잡한 로봇 움직임 궤적을 추론하는 장점과 강력한 도메인 내 다중 작업 일반화 능력을 입증합니다. 또한, 제안된 Adaptive Action Grids는 사전 학습된 SpatialVLA 모델을 새로운 시뮬레이션 및 실제 설정에 미세 조정하는 새롭고 효과적인 방법을 제공하며, 여기서 사전 학습된 행동 그리드는 새로운 설정의 로봇 특정 공간 행동 움직임을 포착하기 위해 재이산화됩니다. 광범위한 평가를 통한 우수한 결과는 탁월한 분포 내 일반화 및 분포 외 적응 능력을 보여주며, 일반주의 로봇 정책 학습을 위한 제안된 공간 인식 표현의 중요한 이점을 강조합니다. 모든 세부 사항과 코드는 오픈소스로 공개될 예정입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>본 논문에서는 공간 이해가 로봇 조작의 핵심이라고 주장하며, 로봇 기초 모델을 위한 효과적인 공간 표현을 탐구하기 위해 SpatialVLA를 제안합니다. 구체적으로, Ego3D Position Encoding을 도입하여 시각-언어-행동 모델의 입력 관측값에 3D 정보를 주입하고, Adaptive Action Grids를 제안하여 적응형 이산화된 행동 그리드로 공간 로봇 움직임 행동을 표현함으로써, 로봇 간 제어를 위한 일반화 가능하고 전이 가능한 공간 행동 지식을 학습하는 것을 용이하게 합니다. SpatialVLA는 먼저 110만 개의 실제 로봇 에피소드를 사용하여 시각-언어 모델 위에서 사전 학습되어, 다양한 로봇 환경과 작업에 걸친 일반주의 조작 정책을 학습합니다. 사전 학습 후, SpatialVLA는 제로샷 방식으로 수많은 작업을 직접 수행합니다. 시뮬레이션과 실제 로봇 모두에서의 우수한 결과는 복잡한 로봇 움직임 궤적을 추론하는 장점과 강력한 도메인 내 다중 작업 일반화 능력을 입증합니다. 또한, 제안된 Adaptive Action Grids는 사전 학습된 SpatialVLA 모델을 새로운 시뮬레이션 및 실제 설정에 미세 조정하는 새롭고 효과적인 방법을 제공하며, 여기서 사전 학습된 행동 그리드는 새로운 설정의 로봇 특정 공간 행동 움직임을 포착하기 위해 재이산화됩니다. 광범위한 평가를 통한 우수한 결과는 탁월한 분포 내 일반화 및 분포 외 적응 능력을 보여주며, 일반주의 로봇 정책 학습을 위한 제안된 공간 인식 표현의 중요한 이점을 강조합니다. 모든 세부 사항과 코드는 오픈소스로 공개될 예정입니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_yang_instructvla_vision_language_ac_2025/">InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_qu_spatialvla_exploring_spatial_r_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_yang_instructvla_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to Manipulation</h3>
+          <p>InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to Manipulation…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

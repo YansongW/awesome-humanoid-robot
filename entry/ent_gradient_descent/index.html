@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>梯度下降法 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/algorithm/">算法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">梯度下降法</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">算法</div>
+      <h1>梯度下降法</h1>
+      <p class="entry-name-en">Gradient Descent</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">基础学科</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">基础层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>&gt; 生活实例：想象你在山上蒙着眼睛找最低点。你伸出手感受脚下哪个方向最陡，然后朝相反方向（下坡）迈一小步；走完之后再次感受，再迈一步。只要你每次步长合适，最终就会走到山谷底部。梯度下降就是这个过程的数学化：损失函数相当于山的高度，梯度相当于“最陡方向”，负梯度方向就是“下坡方向”。 &gt; &gt; 自然语言逻辑：要最小化一个可微函数，我们先算出当前位置的梯度（函数增长最快的方向），然后朝相反方向移动一小段距离。移动的距离由学习率控制。如果学习率太大，会在山谷两边来回震荡；如果太小，收敛会很慢。对凸且光滑的函数，梯度下降在合适步长下能保证收敛到全局最小值。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://web.stanford.edu/~boyd/cvxbook/" target="_blank" rel="noopener">S. Boyd and L. Vandenberghe, Convex Optimization, Cambridge University Press, 2004</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<h1 id="_2">梯度下降法</h1>
+<h2 id="_3">核心内容</h2>
+<h2 id="_4">抽象</h2>
+<blockquote>
+<p><strong>生活实例</strong>：想象你在山上蒙着眼睛找最低点。你伸出手感受脚下哪个方向最陡，然后朝相反方向（下坡）迈一小步；走完之后再次感受，再迈一步。只要你每次步长合适，最终就会走到山谷底部。梯度下降就是这个过程的数学化：损失函数相当于山的高度，梯度相当于“最陡方向”，负梯度方向就是“下坡方向”。</p>
+<p><strong>自然语言逻辑</strong>：要最小化一个可微函数，我们先算出当前位置的梯度（函数增长最快的方向），然后朝相反方向移动一小段距离。移动的距离由学习率控制。如果学习率太大，会在山谷两边来回震荡；如果太小，收敛会很慢。对凸且光滑的函数，梯度下降在合适步长下能保证收敛到全局最小值。</p>
+</blockquote>
+<h2 id="_5">形式化定义</h2>
+<p>给定可微目标函数 <span class="arithmatex">\(L(\theta)\)</span>，梯度下降迭代为：</p>
+<div class="arithmatex">\[
+\theta_{t+1} = \theta_t - \eta \nabla_\theta L(\theta_t),
+\]</div>
+<p>其中：</p>
+<ul>
+<li><span class="arithmatex">\(\theta_t\)</span>：第 <span class="arithmatex">\(t\)</span> 步的参数</li>
+<li><span class="arithmatex">\(\eta &gt; 0\)</span>：学习率（步长）</li>
+<li><span class="arithmatex">\(\nabla_\theta L(\theta_t)\)</span>：损失函数关于参数的梯度</li>
+</ul>
+<p>对于凸且 <span class="arithmatex">\(L\)</span>-光滑（梯度 Lipschitz 连续）的函数，若取固定步长 <span class="arithmatex">\(\eta \le 1/L\)</span>，则收敛速率为 <span class="arithmatex">\(O(1/T)\)</span>：</p>
+<div class="arithmatex">\[
+L(\theta_T) - L(\theta^\star) \le \frac{\|\theta_0 - \theta^\star\|^2}{2 \eta T}.
+\]</div>
+<h2 id="_6">关键符号与直觉对应</h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>名称</th>
+<th>直觉含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\theta\)</span></td>
+<td>参数</td>
+<td>我们在山上所处的位置</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L(\theta)\)</span></td>
+<td>损失/目标函数</td>
+<td>山的高度</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\nabla_\theta L\)</span></td>
+<td>梯度</td>
+<td>最陡上升方向</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(-\nabla_\theta L\)</span></td>
+<td>负梯度</td>
+<td>最陡下降方向</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta\)</span></td>
+<td>学习率</td>
+<td>每一步迈多大</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T\)</span></td>
+<td>迭代次数</td>
+<td>走了多少步</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_7">与其他知识点的关系</h2>
+<ul>
+<li><code>uses</code> → Chain rule（链式法则，通过 backpropagation 计算梯度）</li>
+<li><code>uses</code> → Automatic differentiation（自动微分实现）</li>
+<li><code>builds_on</code> → Stochastic gradient descent（随机梯度下降）</li>
+<li><code>builds_on</code> → Adam optimizer（带动量的改进版）</li>
+<li><code>minimizes</code> → Behavior cloning objective, cross-entropy loss, MSE loss</li>
+<li><code>has_prerequisite</code> → Multivariable calculus</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li><a href="https://web.stanford.edu/~boyd/cvxbook/">S. Boyd and L. Vandenberghe, Convex Optimization, Cambridge University Press, 2004</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_convex_optimization/">凸优化</a>
+              <span class="rel-desc">梯度下降法引用凸优化。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_chain_rule/">链式法则</a>
+              <span class="rel-desc">梯度下降法使用链式法则。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_predictive_sampling_real_time_2022/">Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_gradient_descent"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_foundation_convex_optimization/">
+          <span class="entry-type">基础学科</span>
+          <h3>凸优化</h3>
+          <p>在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_predictive_sampling_real_time_2022/">
+          <span class="entry-type">论文</span>
+          <h3>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</h3>
+          <p>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_chain_rule/">
+          <span class="entry-type">定理</span>
+          <h3>链式法则</h3>
+          <p>一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">梯度下降法</a><ul>
+<li><a href="#_3">核心内容</a></li>
+<li><a href="#_4">抽象</a></li>
+<li><a href="#_5">形式化定义</a></li>
+<li><a href="#_6">关键符号与直觉对应</a></li>
+<li><a href="#_7">与其他知识点的关系</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

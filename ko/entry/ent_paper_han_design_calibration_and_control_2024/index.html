@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>휴머노이드 로봇을 위한 순응형 힘 감지 그리핑 패드의 설계, 보정 및 제어 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">휴머노이드 로봇을 위한 순응형 힘 감지 그리핑 패드의 설계, 보정 및 제어</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>휴머노이드 로봇을 위한 순응형 힘 감지 그리핑 패드의 설계, 보정 및 제어</h1>
+      <p class="entry-name-en">Design, Calibration, and Control of Compliant Force-sensing Gripping Pads for Humanoid Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.20969v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>이 2024년 논문은 저렴하고 가벼운 순응형 힘 감지 그리핑 패드를 제안하며, 법선 방향 그리핑 힘과 압력 중심을 측정하고 비선형 보정 절차와 극한 표면 이론을 활용한 미끄러짐 방지 하이브리드 힘-정렬-위치 제어기를 개발하여 NAO 휴머노이드 로봇의 상자형 물체 조작에서 입증하였다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2405.20969" target="_blank" rel="noopener">Design, Calibration, and Control of Compliant Force-sensing Gripping Pads for Humanoid Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 소형 휴머노이드 로봇을 이용해 상자 형태의 물체를 조작하기 위한 저비용, 경량 및 유연한 힘 감지 그리핑 패드 한 쌍을 소개합니다. 이 패드는 수직 그리핑 힘과 압력 중심(CoP)을 측정합니다. CoP 측정 정확도를 향상시키기 위한 캘리브레이션 방법이 개발되었습니다. 그리핑 힘을 조절하고 그리퍼와 물체 간의 표면 정렬을 보장하기 위해 하이브리드 힘-정렬-위치 제어 프레임워크가 제안됩니다. 미끄러짐 방지를 위한 그리핑 힘의 크기를 결정하기 위해 접촉 마찰 모델링 접근법으로 한계 표면 이론이 통합되었습니다. 통합된 하드웨어 및 소프트웨어 시스템은 NAO 휴머노이드 로봇으로 시연됩니다. 실험을 통해 전체 접근법의 효과가 입증되었습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>본 논문은 소형 휴머노이드 로봇을 이용해 상자 형태의 물체를 조작하기 위한 저비용, 경량 및 유연한 힘 감지 그리핑 패드 한 쌍을 소개합니다. 이 패드는 수직 그리핑 힘과 압력 중심(CoP)을 측정합니다. CoP 측정 정확도를 향상시키기 위한 캘리브레이션 방법이 개발되었습니다. 그리핑 힘을 조절하고 그리퍼와 물체 간의 표면 정렬을 보장하기 위해 하이브리드 힘-정렬-위치 제어 프레임워크가 제안됩니다. 미끄러짐 방지를 위한 그리핑 힘의 크기를 결정하기 위해 접촉 마찰 모델링 접근법으로 한계 표면 이론이 통합되었습니다. 통합된 하드웨어 및 소프트웨어 시스템은 NAO 휴머노이드 로봇으로 시연됩니다. 실험을 통해 전체 접근법의 효과가 입증되었습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_inertial_measurement_unit_2024/">Inertial Measurement Unit</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_han_design_calibration_and_control_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_inertial_measurement_unit_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Inertial Measurement Unit</h3>
+          <p>몸통/엉덩이에 장착된 가속도계 및 자이로스코프를 융합한 균형 및 상태 추정 센서.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

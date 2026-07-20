@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>모터 프리미티브를 이용한 모듈형 로봇 제어 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">모터 프리미티브를 이용한 모듈형 로봇 제어</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>모터 프리미티브를 이용한 모듈형 로봇 제어</h1>
+      <p class="entry-name-en">Modular Robot Control with Motor Primitives</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span><span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.10694v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 가상 궤적과 기계적 임피던스의 중첩을 통해 기본 동작 요소(EDA)와 동적 운동 프리미티브(DMP)를 결합하는 모듈형 로봇 제어 프레임워크를 제안하며, 모듈의 독립성과 안정성 폐쇄성을 필수 요건으로 형식화한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.10694" target="_blank" rel="noopener">Modular Robot Control with Motor Primitives</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>느린 신경근육계에도 불구하고, 인간은 특히 물리적 접촉 작업에서 현대 로봇 기술을 쉽게 능가합니다. 어떻게 이것이 가능할까요? 생물학적 증거는 생물계의 운동 제어가 운동 행동의 기본 구성 요소인 운동 프리미티브의 모듈식 조직화를 통해 이루어짐을 나타냅니다. 신경-운동 제어 연구에서 영감을 받아, 더 단순한 구성 요소를 사용하는 아이디어는 로봇 공학에서 성공적으로 사용되어 왔습니다. 그럼에도 불구하고, 로봇 제어를 위한 모듈성에 대한 포괄적인 정식화는 아직 확립되지 않았습니다. 본 논문에서는 운동 프리미티브를 사용한 로봇 제어를 위한 모듈식 프레임워크를 소개합니다. 모듈식 로봇 제어를 달성하기 위한 두 가지 필수 요구 사항, 즉 모듈의 독립성과 안정성의 폐쇄성을 제시합니다. 주요 제어 모듈을 설명하고, 이 작은 모듈 집합과 그 조합으로부터 광범위한 복잡한 로봇 행동이 생성될 수 있음을 보여줍니다. 제시된 모듈식 제어 프레임워크는 역기구학을 풀지 않고도 작업 공간 제어, 기구학적 특이점 및 기구학적 중복성 문제 해결, 접촉 및 물리적 상호작용을 위한 수동성 유지 등 로봇 제어에 여러 유용한 특성을 보여줍니다. 추가적인 장점으로는 낮은 토크 보상으로 높은 외부 하중을 유지하기 위해 기구학적 특이점을 활용하는 것과, 엔드 이펙터를 넘어 외부 물체까지 로봇을 제어하는 것이 포함됩니다. 모듈식 프레임워크의 효과를 검증하기 위해 시뮬레이션과 실제 로봇 실험을 모두 제시합니다. 우리는 모듈성이 인간 수준의 성능에 필적하는 로봇 행동을 달성하기 위한 효과적인 구성적 프레임워크가 될 수 있다고 결론짓습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>느린 신경근육계에도 불구하고, 인간은 특히 물리적 접촉 작업에서 현대 로봇 기술을 쉽게 능가합니다. 어떻게 이것이 가능할까요? 생물학적 증거는 생물계의 운동 제어가 운동 행동의 기본 구성 요소인 운동 프리미티브의 모듈식 조직화를 통해 이루어짐을 나타냅니다. 신경-운동 제어 연구에서 영감을 받아, 더 단순한 구성 요소를 사용하는 아이디어는 로봇 공학에서 성공적으로 사용되어 왔습니다. 그럼에도 불구하고, 로봇 제어를 위한 모듈성에 대한 포괄적인 정식화는 아직 확립되지 않았습니다. 본 논문에서는 운동 프리미티브를 사용한 로봇 제어를 위한 모듈식 프레임워크를 소개합니다. 모듈식 로봇 제어를 달성하기 위한 두 가지 필수 요구 사항, 즉 모듈의 독립성과 안정성의 폐쇄성을 제시합니다. 주요 제어 모듈을 설명하고, 이 작은 모듈 집합과 그 조합으로부터 광범위한 복잡한 로봇 행동이 생성될 수 있음을 보여줍니다. 제시된 모듈식 제어 프레임워크는 역기구학을 풀지 않고도 작업 공간 제어, 기구학적 특이점 및 기구학적 중복성 문제 해결, 접촉 및 물리적 상호작용을 위한 수동성 유지 등 로봇 제어에 여러 유용한 특성을 보여줍니다. 추가적인 장점으로는 낮은 토크 보상으로 높은 외부 하중을 유지하기 위해 기구학적 특이점을 활용하는 것과, 엔드 이펙터를 넘어 외부 물체까지 로봇을 제어하는 것이 포함됩니다. 모듈식 프레임워크의 효과를 검증하기 위해 시뮬레이션과 실제 로봇 실험을 모두 제시합니다. 우리는 모듈성이 인간 수준의 성능에 필적하는 로봇 행동을 달성하기 위한 효과적인 구성적 프레임워크가 될 수 있다고 결론짓습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_agility_meets_stability_versat_2026/">Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_whole_body_dynamic_throwing_wi_2025/">Whole-Body Dynamic Throwing with Legged Manipulators</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_aljalbout_reality_gap_2025/">로보틱스의 현실 격차: 과제, 해결책 및 모범 사례</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_nah_modular_robot_control_with_mot_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_aljalbout_reality_gap_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로보틱스의 현실 격차: 과제, 해결책 및 모범 사례</h3>
+          <p>2025년 서베이로, 시뮬레이션-현실 간 현실 격차를 지각 및 동작 역학 불일치로 분류하고 도메인 랜덤화, 시스템 식별, 시뮬-현실 공동 학습 등 완화 전략을 검토함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_agility_meets_stability_versat_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data</h3>
+          <p>Agility Meets Stability…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_whole_body_dynamic_throwing_wi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Whole-Body Dynamic Throwing with Legged Manipulators</h3>
+          <p>这篇工作先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用扩散策略/流匹配生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</h3>
+          <p>Sumo…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

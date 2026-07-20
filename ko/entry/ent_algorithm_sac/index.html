@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>소프트 액터-크리틱(SAC) · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/algorithm/">알고리즘</a>
+    <span>/</span>
+    <span class="breadcrumb-current">소프트 액터-크리틱(SAC)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">알고리즘</div>
+      <h1>소프트 액터-크리틱(SAC)</h1>
+      <p class="entry-name-en">Soft Actor-Critic (SAC)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#Python 示例：八点法 + RANSAC + 三角测量 by scripts/backfill_nonpaper_entries.py. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기대 보상을 최대화하면서 정책 엔트로피를 최대화하여 탐색을 촉진하는 오프폴리시 액터-크리틱 강화 학습 알고리즘.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="-sac">소프트 액터-크리틱(SAC)의 정의와 위치</h3>
+<p>소프트 액터-크리틱(SAC)은 <strong>알고리즘</strong> 유형에 속합니다. 관련 분야는 AI 모델 및 알고리즘입니다. 가치 사슬 계층: 지능 계층. 기대 보상을 최대화하면서 정책 엔트로피를 최대화하여 탐색을 촉진하는 오프폴리시 액터-크리틱 강화 학습 알고리즘입니다. 영어 명칭은 <em>Soft Actor-Critic (SAC)</em>입니다. 한국어 명칭은 <em>소프트 액터-크리틱(SAC)</em>입니다.</p>
+<h3 id="-sac_1">소프트 액터-크리틱(SAC)의 수학적 및 원리적 기초</h3>
+<p>소프트 액터-크리틱(SAC)은 관련 수학 이론과 물리 법칙에 기반합니다. 그 전제 조건, 제약 사항 및 유도 과정을 이해하는 것이 이 방법을 올바르게 적용하기 위한 전제입니다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수 및 수렴성 또는 안정성 보장에 주목해야 합니다.
+휴머노이드 로봇이라는 고차원, 저구동, 강결합 시스템에서 소프트 액터-크리틱(SAC)은 일반적으로 실시간성, 정밀도 및 강건성 사이에서 균형을 맞춰야 합니다.</p>
+<h3 id="_3">알고리즘 단계 및 구현 요점</h3>
+<p>소프트 액터-크리틱(SAC)을 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 합니다.
+수치 방법, 선형 대수 솔버 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있습니다.
+동시에 모델 오차, 센서 잡음 및 액추에이터 포화와 같은 공학적 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 해야 합니다.</p>
+<h3 id="_4">전형적인 응용 및 한계</h3>
+<p>소프트 액터-크리틱(SAC)은 휴머노이드 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 부분에 적용될 수 있습니다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제입니다.</p>
+<h3 id="_5">관련 태그</h3>
+<ul>
+<li>algorithm</li>
+<li>chapter_15</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_6">휴머노이드 로봇 시스템에서의 역할</h3>
+<p>휴머노이드 로봇 산업 체인에서 핵심 알고리즘 중 하나로서 소프트 액터-크리틱(SAC)은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_quantum_deep_reinforcement_lea_2025/">Quantum deep reinforcement learning for humanoid robot navigation task</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">강화학습 에이전트와 로봇의 감정: 서베이</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_shortcut_trajectory_planning_f_2026/">Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_kasaura_benchmarking_actor_critic_deep_2023/">동작 제약 조건 하의 로봇 제어를 위한 액터-크리틱 심층 강화학습 알고리즘 벤치마킹</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_add_adversarial_disentanglemen_2026/">ADD: Adversarial Disentanglement and Distillation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_reduced_order_model_guided_rl_2025/">Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_huang_hyperparameter_auto_tuning_in_2021/">자기지도 로봇 학습의 하이퍼파라미터 자동 튜닝</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_seo_learning_sim_to_real_humanoid_2025/">15분 만에 학습하는 시뮬레이션-현실 간 휴머노이드 보행</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">이종 다중 로봇의 작업 적응형 팀 구성을 위한 로봇 내부 주의 모델링</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_residual_off_policy_rl_for_fin_2025/">Residual Off-Policy RL for Finetuning Behavior Cloning Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chebotar_q_transformer_scalable_offline_2023/">Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_adapting_generalist_robot_poli_2026/">Adapting Generalist Robot Policies with Semantic Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">강화학습 탐색을 위한 앙상블 오류 기반 가치 보너스</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_lift_towards_bridging_the_gap_2026/">LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_freeform_preference_learning_f_2026/">Freeform Preference Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_algorithm_sac"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_huang_hyperparameter_auto_tuning_in_2021/">
+          <span class="entry-type">논문</span>
+          <h3>자기지도 로봇 학습의 하이퍼파라미터 자동 튜닝</h3>
+          <p>자기지도 강화학습(RIG+SAC)을 위해 VAE ELBO에 기반한 온라인 하이퍼파라미터 자동 튜닝 기법을 제안하며, 재생 버퍼 크기·에폭당 정책 그래디언트 업데이트 횟수·탐색 스텝…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_quantum_deep_reinforcement_lea_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Quantum deep reinforcement learning for humanoid robot navigation task</h3>
+          <p>Quantum deep reinforcement learning for humanoid robot navigation task is a 2025 work on navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chebotar_q_transformer_scalable_offline_2023/">
+          <span class="entry-type">논문</span>
+          <h3>Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions</h3>
+          <p>Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_reduced_order_model_guided_rl_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</h3>
+          <p>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shortcut_trajectory_planning_f_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</h3>
+          <p>arXiv:2607.09336v1 Announce Type: cross Abstract: Diffusion-based trajectory planners have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">
+          <span class="entry-type">논문</span>
+          <h3>강화학습 에이전트와 로봇의 감정: 서베이</h3>
+          <p>2017년에 발표된 서베이로, 강화학습 에이전트와 로봇에서 감정의 계산 모델을 체계적으로 정리하며 감정 유발, 감정 유형, 학습 및 사회적 신호 전달에서 감정의 기능을 중심으로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_freeform_preference_learning_f_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Freeform Preference Learning for Robotic Manipulation</h3>
+          <p>arXiv:2606.32027v1 Announce Type: new Abstract: Reward design remains a central bottleneck for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_seo_learning_sim_to_real_humanoid_2025/">
+          <span class="entry-type">논문</span>
+          <h3>15분 만에 학습하는 시뮬레이션-현실 간 휴머노이드 보행</h3>
+          <p>본 논문은 대규모 병렬 시뮬레이션과 FastSAC 및 FastTD3를 활용한 실용적인 방법론을 제안하여 단일 RTX 4090 GPU에서 15분 만에 강건한 전신 휴머노이드 보행…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_add_adversarial_disentanglemen_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ADD: Adversarial Disentanglement and Distillation</h3>
+          <p>ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid robotics. 对抗解耦与蒸馏.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">
+          <span class="entry-type">논문</span>
+          <h3>VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</h3>
+          <p>arXiv:2607.00483v1 Announce Type: new Abstract: Designing effective reward functions remains a major…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lift_towards_bridging_the_gap_2026/">
+          <span class="entry-type">논문</span>
+          <h3>LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</h3>
+          <p>LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">
+          <span class="entry-type">논문</span>
+          <h3>From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</h3>
+          <p>arXiv:2603.10263v2 Announce Type: replace Abstract: We introduce Distribution Contractive…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kasaura_benchmarking_actor_critic_deep_2023/">
+          <span class="entry-type">논문</span>
+          <h3>동작 제약 조건 하의 로봇 제어를 위한 액터-크리틱 심층 강화학습 알고리즘 벤치마킹</h3>
+          <p>본 연구는 선형, 볼록, 박스, 타원형 동작 제약 조건 하에서 MuJoCo 및 PyBullet-Gym 작업의 기존 알고리즘과 새로운 TD3/SAC 변형을 비교하고 벤치마크 코드를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</h3>
+          <p>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">
+          <span class="entry-type">논문</span>
+          <h3>이종 다중 로봇의 작업 적응형 팀 구성을 위한 로봇 내부 주의 모델링</h3>
+          <p>변화하는 작업 요구를 충족하고 자원 비용을 제한하면서 이종 로봇 팀을 동적으로 구성하기 위한 주의 메커니즘 기반 다중 에이전트 actor-critic 방법인 innerATT를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_residual_off_policy_rl_for_fin_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Residual Off-Policy RL for Finetuning Behavior Cloning Policies</h3>
+          <p>Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work on manipulation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">
+          <span class="entry-type">논문</span>
+          <h3>강화학습 탐색을 위한 앙상블 오류 기반 가치 보너스</h3>
+          <p>본 논문은 강화학습에서 첫 방문 낙관성과 깊은 탐색을 제공하기 위해 무작위 행동-가치 함수의 앙상블을 유지하고 최대 예측 오차를 추가 가치 보너스로 사용하는 플러그인 탐색 방법인…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_adapting_generalist_robot_poli_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Adapting Generalist Robot Policies with Semantic Reinforcement Learning</h3>
+          <p>arXiv:2606.31958v1 Announce Type: new Abstract: Generalist robot policies learn a diverse repertoire…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#-sac">소프트 액터-크리틱(SAC)의 정의와 위치</a></li>
+<li><a href="#-sac_1">소프트 액터-크리틱(SAC)의 수학적 및 원리적 기초</a></li>
+<li><a href="#_3">알고리즘 단계 및 구현 요점</a></li>
+<li><a href="#_4">전형적인 응용 및 한계</a></li>
+<li><a href="#_5">관련 태그</a></li>
+<li><a href="#_6">휴머노이드 로봇 시스템에서의 역할</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

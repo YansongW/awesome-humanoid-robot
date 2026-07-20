@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thermal Management simulation and iteration · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Thermal Management simulation and iteration</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Thermal Management simulation and iteration</h1>
+      <p class="entry-name-en">Thermal Management simulation and iteration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Thermal Management simulation and iteration-phase 9 of the entire Android product development process, covering conceptual design, implementation verification, and document delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Thermal Management Simulation and Iteration is the 9th stage in the full humanoid robot product development process, expanded into several Level-3 subtasks in WBS V3.</p>
+<h2 id="content">Content</h2>
+<p>This stage covers complete engineering actions such as input review, solution design, implementation/prototyping, verification closure, and documentation delivery, serving as a critical milestone to ensure downstream dependents receive qualified inputs.</p>
+<h2 id="key-subtasks-and-technical-content">Key Subtasks and Technical Content</h2>
+<h4 id="thermal-requirements-and-models">Thermal Requirements and Models</h4>
+<h5 id="heat-source-and-power-consumption-list">Heat Source and Power Consumption List</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Motor losses (copper loss + iron loss), driver losses, computing platform power consumption, sensor power consumption statistics</li>
+<li><strong>Design Logic</strong>: Calculate total heat generation power under continuous operating conditions, identify main heat sources</li>
+<li><strong>Key Constraints</strong>: Duty cycle, ambient temperature, duty cycle</li>
+<li><strong>Completion Criteria / Deliverable</strong>: "Heat Source List": Power consumption, heat generation power, and proportion of each component
+<strong>Level-3 Subtasks:</strong></li>
+<li><strong>P9.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for the "Heat Source and Power Consumption List," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P9.1.1.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for the "Heat Source and Power Consumption List," using "Motor losses (copper loss + iron loss), driver losses, computing platform power consumption, sensor power consumption statistics" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and quantify scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P9.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for the "Heat Source and Power Consumption List" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P9.1.1.4 Verification and Issue Closure</strong>: Verify the output of the "Heat Source and Power Consumption List," check if it meets completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P9.1.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for the "Heat Source and Power Consumption List," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="thermal-network-cfd-model">Thermal Network / CFD Model</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Fluent / Star-CCM+ / Icepak / Lumped Parameter Thermal Network</li>
+<li><strong>Design Logic</strong>: Perform temperature rise simulation for enclosed cavities, joint interiors, and computing compartments</li>
+<li><strong>Key Constraints</strong>: Convection boundaries, material thermal conductivity, contact thermal resistance</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Thermal simulation model, boundary conditions, mesh/node list
+<strong>Level-3 Subtasks:</strong></li>
+<li><strong>P9.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for the "Thermal Network / CFD Model," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P9.1.2.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for the "Thermal Network / CFD Model," using "Fluent / Star-CCM+ / Icepak / Lumped Parameter Thermal Network" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and quantify scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P9.1.2.3 Modeling/Simulation and Prototype Realization</strong>: Build simulation/mathematical models or prototypes for the "Thermal Network / CFD Model," using "Fluent / Star-CCM+ / Icepak / Lumped Parameter Thermal Network" to perform calculations or experiments, and record key parameters and boundary conditions.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P9.1.2.4 Simulation Result Verification and Optimization</strong>: Verify consistency of "Thermal Network / CFD Model" simulation results with theoretical/experimental data, identify weak points, and iterate for optimization.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P9.1.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for the "Thermal Network / CFD Model," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="material-and-interface-thermal-resistance-calibration">Material and Interface Thermal Resistance Calibration</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Thermal conductivity testing, contact thermal resistance testing, TIM selection</li>
+<li><strong>Design Logic</strong>: Simulation accuracy highly depends on material and interface thermal parameters</li>
+<li><strong>Key Constraints</strong>: Testing cost, sample preparation</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Material thermal parameter table, contact thermal resistance database
+<strong>Level-3 Subtasks:</strong></li>
+<li><strong>P9.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Material and Interface Thermal Resistance Calibration," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P9.1.3.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Material and Interface Thermal Resistance Calibration," using "Thermal conductivity testing, contact thermal resistance testing, TIM selection" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and quantify scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P9.1.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Material and Interface Thermal Resistance Calibration" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P9.1.3.4 Verification and Issue Closure</strong>: Verify the output of "Material and Interface Thermal Resistance Calibration," check if it meets completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P9.1.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Material and Interface Thermal Resistance Calibration," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="thermal-solution-and-verification">Thermal Solution and Verification</h4>
+<h5 id="thermal-solution-design">Thermal Solution Design</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Natural cooling, heat pipes, fans, liquid cooling, phase change materials, thermal interface materials</li>
+<li><strong>Design Logic</strong>: Prioritize conduction + local fans inside joints; heat pipes/liquid cooling for torso computing compartment</li>
+<li><strong>Key Constraints</strong>: Space, noise, reliability, maintainability</li>
+<li><strong>Completion Criteria / Deliverable</strong>: "Thermal Solution": Cooling method for each component, key dimensions, fan/pump selection
+<strong>Level-3 Subtasks:</strong></li>
+<li><strong>P9.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Thermal Solution Design," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P9.2.1.2 Conceptual and Detailed Design</strong>: Complete conceptual design, detailed design, and interface definition for "Thermal Solution Design," using "Natural cooling, heat pipes, fans, liquid cooling, phase change materials, thermal interface materials" to verify feasibility, and output drawings/algorithms/logic frameworks.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and quantify scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P9.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Thermal Solution Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P9.2.1.4 Verification and Issue Closure</strong>: Verify the output of "Thermal Solution Design," check if it meets completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P9.2.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Thermal Solution Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="continuous-operation-temperature-rise-simulation">Continuous Operation Temperature Rise Simulation</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Transient thermal analysis, key node temperature curves, derating verification</li>
+<li><strong>Design Logic</strong>: Verify that motor windings, drivers, batteries, and computing platforms do not exceed maximum operating temperature within the target operating cycle</li>
+<li><strong>Key Constraints</strong>: Ambient temperature, cooling capacity degradation, dust clogging</li>
+<li><strong>Completion Criteria / Deliverable</strong>: "Temperature Rise Simulation Report": Key node temperatures, meeting derating requirements
+<strong>Level-3 Subtasks:</strong></li>
+<li><strong>P9.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Continuous Operation Temperature Rise Simulation," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P9.2.2.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Continuous Operation Temperature Rise Simulation," using "Transient thermal analysis, key node temperature curves, derating verification" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and quantify scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P9.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Continuous Operation Temperature Rise Simulation" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P9.2.2.4 Verification and Issue Closure</strong>: Verify the output of "Continuous Operation Temperature Rise Simulation," check if it meets completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P9.2.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Continuous Operation Temperature Rise Simulation," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="thermal-testing-and-iteration">Thermal Testing and Iteration</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Thermocouples/infrared thermography, accelerated temperature rise tests, comparative simulation correction</li>
+<li><strong>Design Logic</strong>: Compare simulation with measurements, correct thermal resistance/contact thermal resistance parameters</li>
+<li><strong>Key Constraints</strong>: Sensor placement, ambient temperature control</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Thermal test report, simulation-measurement error &lt; 20%, design iteration records
+<strong>Level-3 Subtasks:</strong></li>
+<li><strong>P9.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Thermal Testing and Iteration," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P9.2.3.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Thermal Testing and Iteration," using "Thermocouples/infrared thermography, accelerated temperature rise tests, comparative simulation correction" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and quantify scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P9.2.3.3 Modeling/Simulation and Prototype Realization</strong>: Build simulation/mathematical models or prototypes for "Thermal Testing and Iteration," using "Thermocouples/infrared thermography, accelerated temperature rise tests, comparative simulation correction" to perform calculations or experiments, and record key parameters and boundary conditions.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P9.2.3.4 Test Execution and Result Analysis</strong>: Execute tests for "Thermal Testing and Iteration" according to acceptance criteria, calculate pass rate/error/deviation, perform root cause analysis, and form an improvement list.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P9.2.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Thermal Testing and Iteration," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h2 id="completion-criteria">Completion Criteria</h2>
+<p>All Level-3 subtasks in this stage have passed acceptance review, and key deliverables are version-controlled and formally delivered to downstream dependents.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5/">Ontological Structure Engineering and Prototyping (Mechanical Structure)</a>
+              <span class="rel-desc">P9 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4/">Design of Joint Module and Actuator &amp; Drive</a>
+              <span class="rel-desc">P9 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p13/">Electronics &amp; Power Systems</a>
+              <span class="rel-desc">P9 依赖 P13 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p9_1_2/">Thermal Network/CFD model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Thermal Network/CFD model is part of Thermal Management simulation and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p9_1_1/">List of heat sources and power consumption</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">List of heat sources and power consumption is part of Thermal Management simulation and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p9_2_1/">Heat dissipation scheme design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Heat dissipation scheme design is part of Thermal Management simulation and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p9_2_2/">Continuous temperature rise simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Continuous temperature rise simulation is part of Thermal Management simulation and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p9_2_3/">Thermal testing and iteration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Thermal testing and iteration is part of Thermal Management simulation and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p9_1_3/">Calibration of thermal resistance of materials and interfaces</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Calibration of thermal resistance of materials and interfaces is part of Thermal Management simulation and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15/">Integration &amp; V &amp; V testing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P15 依赖 P9 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p9"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Thermal Network/CFD model</h3>
+          <p>Thermal simulation model, boundary conditions, grid/node list</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>List of heat sources and power consumption</h3>
+          <p>“Heat source list”: the components of power consumption, heat power, accounted for</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Heat dissipation scheme design</h3>
+          <p>Heat dissipation plan: heat dissipation methods for each component, key dimensions, fan/pump…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Calibration of thermal resistance of materials and interfaces</h3>
+          <p>Database of material thermal parameters and thermal contact resistance</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4/">
+          <span class="entry-type">Method</span>
+          <h3>Design of Joint Module and Actuator &amp; Drive</h3>
+          <p>Design of Actuator &amp; Drive-phase 4 of the entire product development process for Android, covering…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p13/">
+          <span class="entry-type">Method</span>
+          <h3>Electronics &amp; Power Systems</h3>
+          <p>Electronics &amp; Power Systems—Phase 13 of the full lifecycle for humanoid robot product development,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15/">
+          <span class="entry-type">Method</span>
+          <h3>Integration &amp; V &amp; V testing</h3>
+          <p>Integration &amp; V &amp; v-phase 15 of the Android product development process, covering solution design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Thermal testing and iteration</h3>
+          <p>Thermal test reports, simulation-test errors &lt; 20%, design iteration records</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5/">
+          <span class="entry-type">Method</span>
+          <h3>Ontological Structure Engineering and Prototyping (Mechanical Structure)</h3>
+          <p>Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Continuous temperature rise simulation</h3>
+          <p>Temperature Rise Simulation Report: Key Node Temperatures and Met Derating Requirements</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#key-subtasks-and-technical-content">Key Subtasks and Technical Content</a><ul>
+<li><a href="#thermal-requirements-and-models">Thermal Requirements and Models</a><ul>
+<li><a href="#heat-source-and-power-consumption-list">Heat Source and Power Consumption List</a></li>
+<li><a href="#thermal-network-cfd-model">Thermal Network / CFD Model</a></li>
+<li><a href="#material-and-interface-thermal-resistance-calibration">Material and Interface Thermal Resistance Calibration</a></li>
+</ul>
+</li>
+<li><a href="#thermal-solution-and-verification">Thermal Solution and Verification</a><ul>
+<li><a href="#thermal-solution-design">Thermal Solution Design</a></li>
+<li><a href="#continuous-operation-temperature-rise-simulation">Continuous Operation Temperature Rise Simulation</a></li>
+<li><a href="#thermal-testing-and-iteration">Thermal Testing and Iteration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#completion-criteria">Completion Criteria</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 30: Future Outlook · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 30: Future Outlook</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-30-future-outlook">Chapter 30: Future Outlook</h1>
+<h2 id="summary">Summary</h2>
+<p>This chapter concludes the book. The preceding 29 chapters systematically deconstructed humanoid robots along the main thread of "Physics Foundation – Design Engineering – Manufacturing &amp; Mass Production – Motion Control – AI &amp; Data – Software &amp; Simulation – Evaluation &amp; Verification – Complete Machine Market – Policy &amp; Ethics," covering materials, actuators, sensing, computing, supply chains, subsystems, processes, algorithms, and markets. This chapter builds upon this foundation to provide a comprehensive outlook: it first reviews the book's structure and uses the Technology Readiness Level (TRL) framework to assess the position of each technology layer; it then discusses the four ongoing technological convergences—hardware morphology, motion control, intelligent architecture, and data pipelines—and the possibility of the World Model as the next convergence point; next, it delves into four unresolved fundamental challenges—Generalization, Safety, Cost, and Energy—providing quantitative constraint analyses; it then outlines the evolutionary direction of the industry landscape, including the debate between vertical integration and horizontal specialization, rare earth and supply chain constraints, and new competitive barriers formed by the Data Flywheel; finally, it presents a five-to-ten-year roadmap for 2026–2035, specifying key milestones, metrics, and variables that could alter the roadmap for each phase, concluding the book with the concept of "Embodied General Intelligence (EGI)." The stance of this chapter is one of engineering prudence: all predictions are accompanied by their assumptions and uncertainties; industry-common numbers are phrased as "typically" or "generally"; analyst forecasts are strictly distinguished from verified facts.</p>
+<p><strong>Keywords:</strong> Technological Convergence; Generalization; Functional Safety; BOM Cost; Energy Endurance; World Model; Data Flywheel; Robotics as a Service; Industry Landscape; Roadmap; Embodied General Intelligence</p>
+<hr />
+<h2 id="301-concluding-perspective-book-structure-and-technology-readiness-level-assessment">30.1 Concluding Perspective: Book Structure and Technology Readiness Level Assessment</h2>
+<h3 id="3011-the-logical-main-thread-of-the-books-ten-parts">30.1.1 The Logical Main Thread of the Book's Ten Parts</h3>
+<p>A humanoid robot is a quintessential "full-stack" engineering object: its upper performance limit is determined by material physics, its lower limit by manufacturing processes, and its ability to realize value is determined by the market and policy. The ten-part structure of this book is essentially a bottom-up, layer-by-layer analysis of this object.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    P1["Part 1: Overview and Methodology&lt;br/&gt;Chapters 1–2: Definition, History, Knowledge Graph"] --&gt; P2["Part 2: Physical Foundation Layer&lt;br/&gt;Chapters 3–7: Materials, Actuators, Sensing, Computing Power, Supply Chain"]
+    P2 --&gt; P3["Part 3: Design Engineering Layer&lt;br/&gt;Chapters 8–9: Design Principles, Key Subsystems"]
+    P3 --&gt; P4["Part 4: Manufacturing and Mass Production Layer&lt;br/&gt;Chapters 10–13: Processes, Assembly &amp; Testing, Certification, Scaling"]
+    P4 --&gt; P5["Part 5: Control and Motion Layer&lt;br/&gt;Chapters 14–17: Control Fundamentals, Locomotion, Manipulation, Teleoperation"]
+    P5 --&gt; P6["Part 6: AI, Model, and Data Layer&lt;br/&gt;Chapters 18–21: Imitation Learning, VLA, World Models, Data Infrastructure"]
+    P6 --&gt; P7["Part 7: Software and Simulation Layer&lt;br/&gt;Chapters 22–24: Middleware, Physics Engines, End-to-End Software Stack"]
+    P7 --&gt; P8["Parts 8 to 10&lt;br/&gt;Chapters 25–30: Evaluation, Complete Machine Cases, Market, Policy, Future"]</code></pre>
+<p>This structure corresponds to an important fact: <strong>A bottleneck in any single layer becomes a bottleneck for the entire machine</strong>. The coercivity of NdFeB magnets determines the peak torque density of joint motors (Chapter 3), the backlash and stiffness of joint modules determine the bandwidth ceiling of Whole-Body Control (WBC) (Chapters 9, 14), battery energy density determines endurance and the duration of executable tasks (Chapter 6), and the scale and diversity of data determine the generalization boundary of Vision-Language-Action (VLA) models (Chapters 19, 21). Technological progress over the next five years will likely continue to be characterized by this "multi-layer collaborative advancement" rather than breakthroughs in isolated areas.</p>
+<h3 id="3012-from-prototype-to-product-re-examining-the-seven-transitions">30.1.2 From Prototype to Product: Re-examining the Seven Transitions</h3>
+<p>Chapter 1 introduced the "Seven Transitions from 0 to 1" framework: for a humanoid robot to move from a lab prototype to a sellable product, it must sequentially complete transitions across seven dimensions: <strong>Technology, System, Supply Chain, Manufacturing, Cost, Verification, and Market</strong>. Looking back from the end of the book, the value of this framework lies in explaining why the "demo boom" of 2023–2026 does not directly equate to industry maturity.</p>
+<ul>
+<li><strong>Technology Transition</strong>: Single skills (walking, grasping) are usable under controlled conditions—already demonstrated extensively by Atlas, Optimus, Figure 02, Unitree H1/G1, etc.</li>
+<li><strong>System Transition</strong>: Perception, decision-making, execution, energy, and thermal management operate collaboratively without failure on the complete machine for extended periods—the current industry average Mean Time Between Failures (MTBF) remains a core pain point, typically measured in "days" rather than "months."</li>
+<li><strong>Supply Chain Transition</strong>: Key components like harmonic drives, planetary roller screws, and torque sensors shift from "custom parts" to "off-the-shelf parts"—this is currently happening (Chapter 7).</li>
+<li><strong>Manufacturing Transition &amp; Cost Transition</strong>: Moving from manual assembly to production line cycle manufacturing, with BOM costs entering a downward trajectory (see Section 30.5).</li>
+<li><strong>Verification Transition</strong>: Moving from having no standards to forming a certifiable safety and performance system—this has the largest gap (see Section 30.4).</li>
+<li><strong>Market Transition</strong>: Moving from government and research procurement to real paying industrial and commercial customers—Figure AI's 11-month deployment at a BMW plant and UBTECH's Walker S orders from automotive factories are early signals.</li>
+</ul>
+<p>The concept of the "Demo-to-Product Gap" from the knowledge graph accurately characterizes this reality: there is a systematic gap between metrics optimized for demonstrations (single-attempt success rate, visual appeal) and metrics optimized for products (MTBF, maintainability, certification compliance, unit economics). Bridging this gap is the main task for the industry over the next five to ten years.</p>
+<h3 id="3013-technology-readiness-level-assessment-where-each-technology-layer-currently-stands">30.1.3 Technology Readiness Level Assessment: Where Each Technology Layer Currently Stands</h3>
+<p>The following table provides a prudent assessment of the technology layers covered in this book, using the common TRL 1–9 semantics (TRL 4 = laboratory validation, TRL 6 = demonstration in relevant environment, TRL 9 = long-term operation in actual environment). The ratings represent the editor's comprehensive judgment, intended for trend reference rather than precise measurement.</p>
+<table>
+<thead>
+<tr>
+<th>Technology Layer</th>
+<th>Representative Technology</th>
+<th>Current TRL (approx.)</th>
+<th>Key Constraints to Reaching TRL 9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structural &amp; Functional Materials</td>
+<td>NdFeB, Aluminum Alloys, Engineering Plastics</td>
+<td>9</td>
+<td>Rare earth supply &amp; heavy rare earth reduction</td>
+</tr>
+<tr>
+<td>Actuators</td>
+<td>Frameless Torque Motors + Harmonic/Planetary, Quasi-Direct Drive (QDD)</td>
+<td>7–8</td>
+<td>Lifespan, backlash consistency, cost</td>
+</tr>
+<tr>
+<td>Dexterous Hands</td>
+<td>Tendon-driven/Linkage-driven Multi-fingered Hands</td>
+<td>5–7</td>
+<td>Durability, tactile feedback loop, cost</td>
+</tr>
+<tr>
+<td>Sensing &amp; Perception Hardware</td>
+<td>Depth Cameras, IMUs, 6-axis Force Sensors</td>
+<td>8</td>
+<td>Robustness &amp; standardization of tactile arrays</td>
+</tr>
+<tr>
+<td>Computing &amp; Power</td>
+<td>Jetson Thor-class Edge Computing, Li-ion Battery Packs</td>
+<td>7–8</td>
+<td>Compute-to-power ratio, energy density</td>
+</tr>
+<tr>
+<td>Bipedal Locomotion Control</td>
+<td>MPC+WBC, Reinforcement Learning Gaits</td>
+<td>7–8</td>
+<td>Robustness on complex terrain, fall recovery</td>
+</tr>
+<tr>
+<td>Loco-Manipulation</td>
+<td>Whole-body policies like HOVER, ASAP, ExBody2</td>
+<td>5–6</td>
+<td>Reliability in contact-rich tasks</td>
+</tr>
+<tr>
+<td>Task-level Intelligence</td>
+<td>VLA (RT-2, OpenVLA, π0, GR00T N1)</td>
+<td>4–6</td>
+<td>Generalization, long-horizon tasks, success rate</td>
+</tr>
+<tr>
+<td>World Models</td>
+<td>Video Generative World Models, 1X/Humanoid World Models</td>
+<td>3–5</td>
+<td>Physical consistency, long-range prediction</td>
+</tr>
+<tr>
+<td>Mass Production Processes</td>
+<td>Joint Module Lines, Complete Machine Assembly</td>
+<td>5–7</td>
+<td>Yield rate, cycle time, test fixtures</td>
+</tr>
+<tr>
+<td>Safety Certification System</td>
+<td>Adaptation of ISO 13482, ISO/TS 15066</td>
+<td>3–5</td>
+<td>Lack of humanoid-specific standards</td>
+</tr>
+</tbody>
+</table>
+<p>This table reveals one of the book's conclusions: <strong>The bottleneck for the humanoid robot industry is not "whether it can move," but "whether it can work reliably, safely, and cheaply over the long term."</strong> Technological evolution over the next decade will primarily revolve around the entries in this table with TRL ≤ 6.</p>
+<h2 id="302-technology-convergence-trends">30.2 Technology Convergence Trends</h2>
+<p>When an industry transitions from the exploration phase to the engineering phase, the most significant signal is the convergence of technology roadmaps: competitors no longer go their separate ways but reach a consensus on several key architectural choices. From 2024 to 2026, the humanoid robot field has seen four clear convergences, with one more currently forming.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    H["Hardware Convergence&lt;br/&gt;Electrification + QDD/Harmonic&lt;br/&gt;Joint Module Standardization"] --&gt; X["General-Purpose Humanoid Robot Platform&lt;br/&gt;(Mass-Producible Hardware × Generalizable Intelligence)"]
+    C["Control Convergence&lt;br/&gt;MPC/WBC and RL Fusion&lt;br/&gt;Learned Whole-Body Control"] --&gt; X
+    A["Intelligence Convergence&lt;br/&gt;VLA + Dual-System Architecture&lt;br/&gt;(Fast System/Slow System)"] --&gt; X
+    D["Data Convergence&lt;br/&gt;Teleoperation + Simulation Synthesis&lt;br/&gt;+ Real Robot Data"] --&gt; X
+    W["World Model (Emerging)&lt;br/&gt;Predictive Internal Model&lt;br/&gt;Unified Planning and Evaluation"] -.-&gt; X</code></pre>
+<h3 id="3021-hardware-morphology-convergence-electrification-quasi-direct-drive-and-joint-modularization">30.2.1 Hardware Morphology Convergence: Electrification, Quasi-Direct Drive, and Joint Modularization</h3>
+<p>The hydraulic route (represented by early Atlas) has largely exited the new generation of humanoid robots; electric drive has become the consensus. Within electric drive, the industry has further converged on two mainstream technical routes:</p>
+<ul>
+<li><strong>High Reduction Ratio Route</strong>: Frameless Torque Motor + Harmonic Reducer or Precision Planetary Reducer, with encoders and torque sensors at the output end. The Bank of America Institute's April 2025 report "Humanoid Robots 101" notes that harmonic reducers are currently a mainstream choice for rotary actuators in humanoid robots, while linear actuators commonly use Planetary Roller Screws.</li>
+<li><strong>Quasi-Direct Drive (QDD) Route</strong>: Low reduction ratio (typically 6–10:1) + high-torque outer rotor motor, relying on the current loop for inherent compliance and transparent force control. Representative solutions can be found in the knowledge graph entry for "Quasi-Direct Drive Actuator" and its proliferation in quadruped and humanoid platforms. Series Elastic Actuators (SEA) serve as an intermediate route, still adopted in joints requiring precise force control and impact resistance.</li>
+</ul>
+<p>A deeper convergence occurs at the <strong>integration level</strong>: motors, reducers, dual encoders, torque sensors, drivers, and brakes are integrated into standardized "Joint Modules" (Chapter 9), allowing OEMs to build robots of different configurations like building blocks. This "modularization" trend is highly analogous to the "camera module" trend in the smartphone industry, shifting the competitive focus from individual components to system integration and software.</p>
+<h3 id="3022-motion-control-convergence-from-model-based-control-to-learned-whole-body-control">30.2.2 Motion Control Convergence: From Model-Based Control to Learned Whole-Body Control</h3>
+<p>Bipedal control has evolved through three generations of paradigms: simplified model planning represented by Zero-Moment Point (ZMP) and Capture Point (Chapters 14, 15); optimal control represented by Model Predictive Control (MPC) + Hierarchical Quadratic Programming Whole-Body Control (Hierarchical QP WBC); and learned control represented by Reinforcement Learning (RL). The current convergence direction is not "one replacing the other," but <strong>hierarchical fusion</strong>:</p>
+<ul>
+<li><strong>Low Level (1 kHz class)</strong>: Joint servo and force control, still the domain of classical control;</li>
+<li><strong>Mid Level (50–500 Hz)</strong>: RL-trained whole-body policies responsible for gait, balance recovery, and whole-body coordination. Works like the HOVER general-purpose humanoid controller, the ASAP framework, and ExBody2 demonstrate that a single policy network can simultaneously support walking, running, jumping, whole-body teleoperation tracking, and other modes;</li>
+<li><strong>High Level (1–10 Hz)</strong>: Model-based planning or learned high-level policies responsible for task decomposition and contact sequencing.</li>
+</ul>
+<p>A 2025 survey, "A Survey of Behavior Foundation Model," further summarizes this trend as a "Behavior Foundation Model": using a single large-scale pre-trained whole-body control model to replace individually trained policies for each skill, enabling motor capabilities to be transferred via prompting and fine-tuning, much like language models. This naturally connects with the policy learning context described in Chapters 18–19. It can be said that <strong>the "GPT moment" for the motion layer—the emergence of general-purpose motion policies—is one of the most noteworthy convergence events in the next five years</strong>.</p>
+<h3 id="3023-intelligence-architecture-convergence-vla-and-the-dual-system-paradigm">30.2.3 Intelligence Architecture Convergence: VLA and the Dual-System Paradigm</h3>
+<p>The architectural convergence for task-level intelligence has been more rapid. Since RT-1 (Robotics Transformer) and RT-2 directly extended Vision-Language Models to output actions as VLAs, works like OpenVLA, the Octo generalist policy, Physical Intelligence's π0, NVIDIA GR00T N1, and Google's Gemini Robotics have emerged densely within two years, quickly forming a de facto architectural consensus:</p>
+<ol>
+<li><strong>Backbone Network Reuse</strong>: Utilizing internet-scale vision-language pre-trained models as the backbone, inheriting their semantic priors;</li>
+<li><strong>Action Chunking</strong>: Predicting a sequence of actions at once (adopted by ACT, Diffusion Policy), balancing reactivity and smoothness;</li>
+<li><strong>Dual System (System 1 / System 2)</strong>: A low-frequency "Slow System" responsible for language understanding, task planning, and reasoning, and a high-frequency "Fast System" responsible for converting intentions into continuous actions—GR00T N1 explicitly adopts this division, and systems like Gemini Robotics exhibit a similar structure;</li>
+<li><strong>Cross-Embodiment Pre-training + Embodiment Adaptation</strong>: Pre-training on multi-embodiment datasets like Open X-Embodiment, then transferring to specific humanoid embodiments.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: VLA, Action Chunking, Dual System, Cross-Embodiment Transfer</p>
+<ul>
+<li><strong>VLA (Vision-Language-Action)</strong>: A large model mapping visual observations and language instructions to robot actions, extending the "Vision-Language Model (VLM)" into the action space.</li>
+<li><strong>Action Chunking</strong>: The policy outputs a future sequence of <span class="arithmatex">\(H\)</span> actions <span class="arithmatex">\(\{a_t,\dots,a_{t+H-1}\}\)</span> instead of a single action step, reducing cumulative errors and decision frequency.</li>
+<li><strong>Dual System (System 1/System 2)</strong>: A metaphor borrowed from cognitive science, where System 2 is slow and deliberate, and System 1 is fast and reactive. In robotics, this corresponds to a cascade of "planning model + reactive policy."</li>
+<li><strong>Cross-Embodiment Transfer</strong>: Joint training on data from different robotic arms/humanoid robots, allowing the policy to acquire operation priors that are weakly correlated with specific hardware.</li>
+</ul>
+</div>
+<h3 id="3024-data-pipeline-convergence-the-ratio-of-teleoperation-simulation-and-real-data">30.2.4 Data Pipeline Convergence: The Ratio of Teleoperation, Simulation, and Real Data</h3>
+<p>Convergence on the data side is manifested in the standardization of a "three-source hybrid" pipeline (detailed in Chapter 21):</p>
+<ul>
+<li><strong>Teleoperation Collection</strong>: Low-cost dual-arm teleoperation platforms like ALOHA and Mobile ALOHA, the UMI handheld gripper interface, and HumanPlus's Shadowing system have reduced the cost of collecting human demonstration data by 1–2 orders of magnitude;</li>
+<li><strong>Simulation Synthesis</strong>: NVIDIA Isaac Sim/Isaac Lab, MuJoCo and its Playground, and the Genesis generative physics engine provide large-scale parallel data generation and Domain Randomization. Systems like MimicGen demonstrate an amplification path of "few human demonstrations + procedural augmentation";</li>
+<li><strong>Real Robot Data Feedback</strong>: "In-the-wild" operation datasets like DROID and multi-embodiment collections like Open X-Embodiment provide anchors for the real-world distribution. AgiBot World Colosseo showcases the direction for OEMs to build their own million-scale real trajectory data factories.</li>
+</ul>
+<p>Generally, the ratio of real to synthetic data in current mainstream VLA training is heavily skewed (synthetic data dominates), but the upper limit of generalization is often determined by the <strong>diversity</strong> of that real data, not its quantity. This "art of ratio" will likely remain a core know-how for various players in the foreseeable future.</p>
+<h3 id="3025-world-models-the-next-convergence-point">30.2.5 World Models: The Next Convergence Point</h3>
+<p>If VLA addresses "how to act given an instruction," then World Models address "what the world will be like after an action." Efforts like 1X's World Model Challenge and Humanoid World Models explore using video generation models to predict action consequences. NVIDIA's released Cosmos 3 open-world foundation model combines visual reasoning, multimodal generation, and action prediction, aiming to enable physical AI to "think before acting."</p>
+<p>The strategic significance of World Models lies in their potential to <strong>unify three currently separate aspects</strong>:</p>
+<ol>
+<li><strong>Planning</strong>: "Imagining" the consequences of multiple action sequences within an internal model and executing the best one (i.e., model-based policy evaluation);</li>
+<li><strong>Evaluation</strong>: Conducting safe, low-cost closed-loop testing of policies in a simulation-like generative environment, mitigating the expense and danger of real-world evaluation (Chapter 25);</li>
+<li><strong>Data</strong>: Generating physically plausible training data that complements real data.</li>
+</ol>
+<p>Current video-generation-based World Models still suffer from insufficient physical consistency in contact-rich manipulation tasks (e.g., difficulty in precisely predicting object pose after grasping). Their maturation likely requires further integration of 3D representations, tactile modalities, and differentiable physics (Chapter 20). However, judging from industry signals, major players have all designated World Models as a must-win battleground for the next-generation platform.</p>
+<h2 id="303-one-of-the-unsolved-challenges-generalization">30.3 One of the Unsolved Challenges: Generalization</h2>
+<h3 id="3031-four-levels-of-generalization">30.3.1 Four Levels of Generalization</h3>
+<p>Generalization is the first deep chasm between "demonstrations" and "products." The generalization required for humanoid robots encompasses at least four levels, with increasing difficulty:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Meaning</th>
+<th>Current Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object Generalization</td>
+<td>Grasping and manipulating unseen objects</td>
+<td>Partially achieved: effective for common object categories with large-scale data</td>
+</tr>
+<tr>
+<td>Pose/Layout Generalization</td>
+<td>Success despite changes in object position, lighting, and background</td>
+<td>Basically usable, but high failure rate in edge cases</td>
+</tr>
+<tr>
+<td>Task Generalization</td>
+<td>Composing reasonable action sequences for new tasks described in language</td>
+<td>Preliminary implementation: VLAs can combine seen skills, but long-horizon task success rates are low</td>
+</tr>
+<tr>
+<td>Environment/Embodiment Generalization</td>
+<td>Transferring to new sites and new robot embodiments</td>
+<td>Research frontier: cross-embodiment transfer remains an open problem</td>
+</tr>
+</tbody>
+</table>
+<p>An empirical rule is: <strong>Each increase in generalization level roughly requires an order of magnitude more data.</strong> This explains why a "pour a glass of water" demonstration is common, while "cook a meal in an unfamiliar kitchen" remains distant—the latter requires all four levels of generalization to hold simultaneously, and failures accumulate multiplicatively: if the single-step success rate is <span class="arithmatex">\(p\)</span>, the overall success rate for an <span class="arithmatex">\(n\)</span>-step task is approximately <span class="arithmatex">\(p^n\)</span>. When <span class="arithmatex">\(p=0.95\)</span> and <span class="arithmatex">\(n=50\)</span>, the overall success rate is less than 8%; to achieve a 90% overall success rate, the single-step success rate must exceed 99.8%. This simple multiplicative law is the first key to understanding the phenomenon of "impressive demonstrations, unreliable products."</p>
+<h3 id="3032-data-scale-and-compositional-generalization-a-quantitative-perspective">30.3.2 Data Scale and Compositional Generalization: A Quantitative Perspective</h3>
+<p>From a learning theory perspective, the error of a policy on out-of-distribution (OOD) data can be formally decomposed as:</p>
+<div class="arithmatex">\[
+\mathbb{E}_{\mathcal{D}_{test}}[\ell(\pi)] \;\le\; \mathbb{E}_{\mathcal{D}_{train}}[\ell(\pi)] \;+\; d\big(\mathcal{D}_{train}, \mathcal{D}_{test}\big) \;+\; \mathcal{O}\!\left(\sqrt{\frac{\log |\Pi|}{N}}\right)
+\]</div>
+<p>where <span class="arithmatex">\(\mathcal{D}_{train}\)</span> and <span class="arithmatex">\(\mathcal{D}_{test}\)</span> are the training and deployment distributions, <span class="arithmatex">\(d(\cdot,\cdot)\)</span> is some measure of discrepancy between the two distributions, <span class="arithmatex">\(|\Pi|\)</span> is the effective capacity of the policy class, and <span class="arithmatex">\(N\)</span> is the number of samples. This inequality provides three complementary paths for error reduction: <strong>expanding real data coverage</strong> (reducing <span class="arithmatex">\(d\)</span>), <strong>increasing sample size</strong> (reducing the third term), and <strong>introducing structured priors</strong> (reducing <span class="arithmatex">\(|\Pi|\)</span>, e.g., using hierarchical policies, skill primitives, or symbolic planning to constrain the search space). The resurgence of neuro-symbolic reasoning and task planning essentially embodies the third path.</p>
+<p>Unlike language models, the "tokens" of robot data must be generated through physical interaction and cannot be infinitely scraped from the internet. Therefore, "whether a Scaling Law exists for robotics and what its exponent is" remains an open question; most empirical observations support the judgment that "performance grows logarithmically with data volume and saturates prematurely when real-world diversity is insufficient."</p>
+<h3 id="3033-the-long-term-nature-of-the-sim-to-real-gap">30.3.3 The Long-Term Nature of the Sim-to-Real Gap</h3>
+<p>Sim-to-Real transfer, through domain randomization, domain adaptation, and system identification, has achieved engineering-level success in bipedal locomotion control—primarily because errors in dynamics simulation can be absorbed through randomization and online adaptation. However, for manipulation tasks, residuals in contact mechanics, friction, deformable objects, and visual rendering make it difficult to directly deploy purely simulated policies. Works like VIRAL demonstrate progress in large-scale visual Sim-to-Real for mobile manipulation, but the industry consensus is: <strong>Simulation will continue to serve as a "data amplifier" and "safe testbed," not a substitute for real data.</strong> The long-term solution to bridging the gap may come from a combination of three elements: more realistic differentiable physics, visual priors provided by generative world models, and simulation parameter calibration driven by real data feedback (Digital Twin).</p>
+<h3 id="3034-list-of-open-problems">30.3.4 List of Open Problems</h3>
+<p>In the direction of generalization, open problems worth tracking over the next five to ten years include:</p>
+<ul>
+<li>The debate between <strong>hierarchical</strong> (skill library + planning) and <strong>end-to-end</strong> (single network + scaling) approaches for long-horizon tasks: which will achieve product-level reliability first;</li>
+<li>Failure detection and recovery: whether policies can "realize they are failing" like humans and abort or seek help;</li>
+<li>Continual learning: absorbing new tasks after deployment without catastrophic forgetting;</li>
+<li>The <strong>metric</strong> of generalization itself: benchmarks like HumanoidBench, LIBERO/LIBERO-Plus, ManiSkill, and the "Humanoid Robot Foundation Model Benchmark" are standardizing evaluation protocols, but "high benchmark score = good real-world deployment" is far from established.</li>
+</ul>
+<h2 id="304-unsolved-challenges-part-ii-safety">30.4 Unsolved Challenges Part II: Safety</h2>
+<h3 id="3041-the-specificity-of-humanoid-robot-safety-issues">30.4.1 The Specificity of Humanoid Robot Safety Issues</h3>
+<p>The safety challenges of humanoid robots differ structurally from those of industrial robotic arms and collaborative robots (Cobots):</p>
+<ol>
+<li><strong>Dynamic Instability</strong>: Bipedal platforms are inherently under continuous balance control. Controller failure, ground disturbances, or power interruptions can cause the entire machine to topple—a typical full-size humanoid robot weighs between 50–90 kg, and the impact of a fall far exceeds the contact injury magnitude of a collaborative arm;</li>
+<li><strong>Shared Workspace</strong>: Their design value lies precisely in entering unstructured spaces built for humans, making it impossible to isolate them with fences like industrial robots;</li>
+<li><strong>Full-Body Contact</strong>: Mobile manipulation means that hands, arms, torso, and legs may all come into unintended contact with humans. Limiting power and force only at the end-effector is insufficient;</li>
+<li><strong>AI Uncertainty</strong>: The behavior of learning-based strategies is difficult to exhaustively verify, posing a fundamental challenge to traditional "fault tree + deterministic testing" certification methodologies.</li>
+</ol>
+<p>The "Human-Equivalence Envelope" and "Human-Level Actuation Score" in the knowledge graph offer another perspective: when a robot's joint torque, speed, and mass approach human levels, its danger also approaches that of "a strong person"—this shifts safety design from "limiting capability" to "managing behavior."</p>
+<h3 id="3042-standards-system-current-status-and-gaps">30.4.2 Standards System: Current Status and Gaps</h3>
+<p>The existing referenceable standards system (detailed in Chapters 12 and 29) is shown in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Scope</th>
+<th>Limitations for Humanoid Robots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IEC 61508</td>
+<td>General functional safety framework for electrical/electronic programmable systems</td>
+<td>Does not cover dynamic balance and AI decision-making</td>
+</tr>
+<tr>
+<td>ISO 13849</td>
+<td>Performance Level (PL) for safety-related control systems in machinery</td>
+<td>Geared toward deterministic control, difficult to evaluate learning strategies</td>
+</tr>
+<tr>
+<td>ISO/TS 15066</td>
+<td>Collaborative robots: power and force limiting, speed and separation monitoring</td>
+<td>Contact limits designed for fixed-base robotic arms, not applicable to mobile bipedal platforms</td>
+</tr>
+<tr>
+<td>ISO 13482</td>
+<td>Safety of personal care robots</td>
+<td>Closest match but published in 2014, does not address capabilities of the VLA/RL era</td>
+</tr>
+<tr>
+<td>UL / FCC / CE</td>
+<td>Regional market access (electrical, EMC, machinery directives)</td>
+<td>Lacks specific humanoid provisions required for compliance demonstration</td>
+</tr>
+</tbody>
+</table>
+<p>The conclusion is clear: <strong>There is currently no dedicated safety standard for dynamically balanced humanoid robots.</strong> The industry generally expects that standards organizations and major manufacturers will drive the development of humanoid-specific provisions in the coming years; until then, OEMs can only self-certify safety through a combination of "risk analysis + referencing multiple standards + third-party assessment," which directly raises the barrier to entering the consumer market.</p>
+<h3 id="3043-engineering-approach-layered-safety-architecture">30.4.3 Engineering Approach: Layered Safety Architecture</h3>
+<p>During the period of standard absence, engineering practice is converging on a "Layered Safety" architecture:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    S1["Perception &amp; Prediction Layer&lt;br/&gt;3D environment perception, human detection, intent prediction"] --&gt; S2["Monitoring &amp; Arbitration Layer&lt;br/&gt;Independent safety MCU, watchdog, behavior envelope verification"]
+    S2 --&gt; S3["Control Execution Layer&lt;br/&gt;Force/speed limiting, compliant control, fall protection strategies"]
+    S3 --&gt; S4["Hardware Protection Layer&lt;br/&gt;STO safe torque off, emergency stop, mechanical limits, power-off brakes"]
+    EXT["External Infrastructure&lt;br/&gt;Area monitoring, fleet supervision, OTA safety updates"] -.-&gt; S2</code></pre>
+<ul>
+<li><strong>Perception Layer</strong>: Safety-certified 3D sensing is emerging—for example, Sonair's safety-certified 3D ultrasonic sensor for reliable human detection in human-robot collaboration spaces;</li>
+<li><strong>Monitoring Layer</strong>: A safety microcontroller (Safety MCU) independent of the main computing stack continuously verifies whether AI decisions stay within the "behavior envelope" (speed, force, workspace). The collaboration between FORT Robotics and NVIDIA Halos demonstrates an "Outside-In" safety monitoring approach—safety conclusions do not depend on the AI's internal state but are observed and arbitrated via an independent channel;</li>
+<li><strong>Control Layer</strong>: Impedance Control and Admittance Control provide contact compliance; specialized fall protection strategies (e.g., arm retraction, knee bending, sideways falling) are becoming research topics;</li>
+<li><strong>Hardware Layer</strong>: Safe Torque Off (STO), power-off brakes, and mechanical limits serve as the final line of defense.</li>
+</ul>
+<p>The core idea of this architecture is the classic "<strong>Defense in Depth</strong>": it does not assume that any single component (especially AI) is always correct.</p>
+<h3 id="3044-liability-insurance-and-social-acceptance">30.4.4 Liability, Insurance, and Social Acceptance</h3>
+<p>Beyond technical safety, the absence of a product liability framework also constrains commercialization: when a learning robot causes harm, is the liability with the OEM, the model provider, or the deployer? Chapter 29 has systematically discussed policy and ethics; here, only one point is noted: actuarial insurance requires quantifiable failure rate data, which in turn demands large-scale real-world deployment—creating a cycle of "no deployment without insurance, no insurance data without deployment." The RaaS model (see 30.5.4), by keeping robots on the manufacturer's balance sheet and having the manufacturer assume operation, maintenance, and liability, is a practical path to breaking this cycle. Governance of privacy and biometric data (home cameras, voice) is another unavoidable hurdle for household scenarios.</p>
+<h2 id="305-unsolved-problem-three-cost">30.5 Unsolved Problem Three: Cost</h2>
+<h3 id="3051-bom-cost-trajectory-and-learning-objectives">30.5.1 BOM Cost Trajectory and Learning Objectives</h3>
+<p>Cost is the decisive variable for humanoid robots to transition from "thousand-unit pilot projects" to "million-unit industries." Analyst estimates from <em>Humanoid Robots 101</em> suggest that by the end of 2025, the typical BOM (Bill of Materials) cost for a humanoid robot is approximately $35,000 per unit (assuming 16 rotary actuators, 14 linear actuators, harmonic drives, planetary roller screws, a 6-DOF dexterous hand, one depth camera and one LiDAR, primarily using Chinese-made components). It is projected that driven by economies of scale and component design improvements, this cost will decrease to <span class="arithmatex">\(13,000–\)</span>17,000 per unit by 2030–2035, implying an average annual reduction of about 14%. Market price signals are more aggressive: Unitree G1 directly targets the scientific research and light commercial market with a starting price of $16,000.</p>
+<p>It is important to distinguish between three price concepts to avoid being misled by promotional figures:</p>
+<ul>
+<li><strong>BOM Cost</strong>: The procurement cost of components, excluding manufacturing, R&amp;D amortization, and profit.</li>
+<li><strong>Factory Price/Selling Price</strong>: Includes manufacturing and gross margin. Low-priced versions for scientific research typically sacrifice torque, battery life, and durability.</li>
+<li><strong>TCO (Total Cost of Ownership)</strong>: Includes maintenance, energy consumption, insurance, and downtime losses. This is the true basis for customer decision-making.</li>
+</ul>
+<h3 id="3052-learning-curve-a-quantitative-model-for-cost-reduction">30.5.2 Learning Curve: A Quantitative Model for Cost Reduction</h3>
+<p>The law of manufacturing cost decreasing with cumulative production volume is typically characterized by Wright's Law:</p>
+<div class="arithmatex">\[
+C(N) = C_1 \left(\frac{N}{N_1}\right)^{-b}
+\]</div>
+<p>Where <span class="arithmatex">\(N\)</span> is the cumulative production volume, <span class="arithmatex">\(C_1\)</span> is the unit cost at cumulative production volume <span class="arithmatex">\(N_1\)</span>, and <span class="arithmatex">\(b&gt;0\)</span> is the learning index. For each doubling of cumulative production, the cost decreases to <span class="arithmatex">\(2^{-b}\)</span> of its previous value (known as the progress ratio). For mature categories like lithium batteries, <span class="arithmatex">\(b\)</span> is typically between 0.2 and 0.3. For early-stage complex electromechanical products, a conservative estimate of <span class="arithmatex">\(b\approx0.15\)</span> (i.e., approximately 10% cost reduction per doubling) is more prudent. The Python example below demonstrates the cumulative production volume required to reach a target BOM cost of $15,000, starting from a 2025 BOM of $35,000 and a cumulative installed base of approximately 16,000 units.</p>
+<pre class="highlight"><code class="language-python"># Wright's Law: Cumulative production required for humanoid robot BOM cost reduction (illustrative estimate)
+C1, N1 = 35_000, 16_000      # 2025: BOM ≈ $35,000, cumulative installations ≈ 16,000 units
+b = 0.15                     # Learning index (conservative estimate)
+
+def cost(N):
+    return C1 * (N / N1) ** (-b)
+
+for target in (25_000, 20_000, 15_000):
+    N_target = N1 * (C1 / target) ** (1 / b)
+    print(f"Target BOM {target:&gt;6,} USD -&gt; Requires cumulative production of approx. {N_target:,.0f} units")</code></pre>
+<p>The results roughly indicate that reducing the BOM to $15,000 requires cumulative production on the order of millions of units. This means that <strong>the arrival of the cost inflection point essentially depends on whether the demand side can support sustained doubling of production volume</strong>, rather than being a purely engineering or technical problem. This estimate is highly sensitive to <span class="arithmatex">\(b\)</span> and the starting data, and should only be considered as an order-of-magnitude reference.</p>
+<h3 id="3053-cost-reduction-levers-and-supply-chain-constraints">30.5.3 Cost Reduction Levers and Supply Chain Constraints</h3>
+<p>From an engineering perspective, the levers for cost reduction have been systematically discussed in Chapters 10–13. Here, their priorities are summarized:</p>
+<ol>
+<li><strong>Design Phase</strong>: Design for Manufacturing (DFM), Design for Assembly (DFA), and Value Analysis/Value Engineering (VA/VE) eliminate costs at the drawing stage. Generally speaking, over 70% of a product's cost is locked in once the design is finalized.</li>
+<li><strong>Component Phase</strong>: Localization and multi-sourcing of high-cost components like joint modules and dexterous hands, along with BOM Cost Engineering to reduce costs item by item.</li>
+<li><strong>Manufacturing Phase</strong>: Production line automation, test fixtures, and yield ramp-up.</li>
+<li><strong>Scale Phase</strong>: Shared platforms and cross-model reuse to amortize R&amp;D and tooling costs.</li>
+</ol>
+<p>Constraints are equally clear: High-performance rare earth permanent magnets (NdFeB) rely on heavy rare earth grain boundary diffusion processes. The OceanWall report <em>Robotics and The Rare Earth Bottleneck</em> suggests that rare earth magnet supply could become an upstream bottleneck for the scaling of humanoid robots. Precision reducers and planetary roller screws depend on high-end machine tool capacity (Chapter 7). In other words, <strong>the cost curve is not a pure function; it is simultaneously a function of supply chain geopolitics</strong>.</p>
+<h3 id="3054-business-model-innovation-raas-and-the-data-flywheel">30.5.4 Business Model Innovation: RaaS and the Data Flywheel</h3>
+<p>When per-unit costs are difficult to reduce to consumer levels in the short term, business model innovation becomes key to a smooth transition. Robot-as-a-Service (RaaS) replaces outright purchase with leasing or subscription, bundling maintenance, software updates, and fleet management. For customers, this converts capital expenditure into operating expenditure, lowering the adoption barrier. For manufacturers, retaining asset ownership also retains <strong>data ownership</strong>, thereby initiating the Fleet Data Flywheel: every deployed robot continuously feeds back real-world data, improving models, enhancing performance and reliability, and supporting further large-scale deployment. RaaS is therefore not just a financial arrangement but also an organizational form for data strategy (see 30.7.4).</p>
+<h2 id="306-unsolved-problem-four-energy">30.6 Unsolved Problem Four: Energy</h2>
+<h3 id="3061-quantitative-analysis-of-battery-life-constraints">30.6.1 Quantitative Analysis of Battery Life Constraints</h3>
+<p>Energy is the most physically constrained of the four unsolved problems. Battery life is directly determined by battery energy and average power consumption:</p>
+<div class="arithmatex">\[
+T_{run} \approx \frac{\rho_e \cdot m_b \cdot \eta_{sys}}{\bar{P}}
+\]</div>
+<p>Where <span class="arithmatex">\(\rho_e\)</span> is the specific energy of the battery, <span class="arithmatex">\(m_b\)</span> is the battery mass, <span class="arithmatex">\(\eta_{sys}\)</span> is the system-level discharge efficiency (including BMS losses, voltage conversion, and depth-of-discharge limits), and <span class="arithmatex">\(\bar P\)</span> is the average power of the entire robot. Taking the NCR18650B-grade NCA cell from Chapter 6 as an example, its specific energy is approximately 243 Wh/kg. If the battery pack mass is 3 kg, the usable coefficient is 0.85, and the average robot power is 350 W (typical for walking plus light-load operation in the 300–500 W range), the battery life is approximately 1.8 hours. This is consistent with the typical nominal battery life of around 2 hours for current commercially available full-size humanoid robots, indicating <strong>an energy gap of approximately 4 times compared to the desired usage expectation of one factory shift (8 hours) or one day of home use</strong>.</p>
+<h3 id="3062-energy-efficiency-cost-of-transport">30.6.2 Energy Efficiency: Cost of Transport</h3>
+<p>A common dimensionless metric for evaluating locomotion efficiency is the Cost of Transport (CoT):</p>
+<div class="arithmatex">\[
+\mathrm{CoT} = \frac{P}{m g v}
+\]</div>
+<p>This represents the power consumption per unit body weight and per unit speed. The CoT for human walking is typically on the order of 0.2, while the walking CoT for current bipedal robots is generally several times higher than that of humans. The main reasons include reducer friction, motor copper losses, continuous work for posture control, and the lack of tendon-like elastic energy recovery. Three known paths to reduce CoT are: quasi-direct drive at the actuator level (lower reduction ratio to reduce transmission losses), utilization of passive dynamics in gait, and temporary energy storage using series elastic actuators. These paths also serve to reduce <span class="arithmatex">\(\bar P\)</span>, indirectly extending battery life.</p>
+<h3 id="3063-battery-technology-roadmap-high-nickel-solid-state-and-quick-swap">30.6.3 Battery Technology Roadmap: High-Nickel, Solid-State, and Quick-Swap</h3>
+<p>Candidate routes to bridge the 4x energy gap include:</p>
+<ul>
+<li><strong>Incremental Improvement with High-Nickel/Silicon-Carbon</strong>: Within the existing liquid lithium-ion system, specific energy increases slowly at an average rate of about 3–5% per year. This is reliable but insufficient to bridge the gap on its own.</li>
+<li><strong>Solid-State Batteries</strong>: Replacing liquid electrolyte with a solid electrolyte theoretically allows for significantly higher specific energy than existing systems and improves safety (Chapter 3). Industry analysis generally expects these to gradually enter high-end applications like robotics in the 2030s, but current costs and mass production processes are not yet mature.</li>
+<li><strong>Quick-Swap Batteries and Automatic Charging</strong>: Instead of increasing energy density, this changes the "energy replenishment method"—a 3-minute battery swap or autonomous recharging during task intervals transforms the "single-charge battery life" problem into an "energy replenishment infrastructure" problem. For factory scenarios, this is often a more practical engineering solution than waiting for a battery revolution.</li>
+</ul>
+<h3 id="3064-system-level-energy-saving-design">30.6.4 System-Level Energy-Saving Design</h3>
+<p>The energy problem is ultimately a systems engineering problem: increasing battery capacity increases the robot's overall mass, which in turn raises walking power consumption, creating a clear <strong>mass-energy vicious cycle</strong>. System-level optimization must therefore be performed at the whole-robot level (Chapters 8, 9): structural lightweighting (magnesium alloys, topology optimization), low-power computing platforms (next-generation edge computing like Jetson Thor increases computing power while controlling power budgets), on-device VLA inference to avoid the communication energy and latency of cloud round trips, and task-level energy planning (explicitly incorporating "energy consumption" into the cost function of task planning). Generally speaking, the overall robot energy budget should be frozen and decomposed to subsystems early in the design phase, just like the mass budget and cost budget.</p>
+<h2 id="307-evolution-of-the-industry-landscape">30.7 Evolution of the Industry Landscape</h2>
+<h3 id="3071-current-landscape-three-types-of-players-complete-machines-components-and-computing-power">30.7.1 Current Landscape: Three Types of Players – Complete Machines, Components, and Computing Power</h3>
+<p>As of 2026, industry participants can be roughly divided into three categories (detailed in Chapters 26 and 28):</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Representatives</th>
+<th>Key Competitive Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OEMs</td>
+<td>Tesla (Optimus), Figure AI, Boston Dynamics (Atlas), Agility (Digit), Apptronik (Apollo), 1X (NEO), Unitree (G1/H1), Zhiyuan Robot (Yuanzheng A1), UBTECH (Walker S), Fourier Intelligence (GR-1)</td>
+<td>Complete machine integration, AI models, data assets, mass production capabilities</td>
+</tr>
+<tr>
+<td>Core Components</td>
+<td>Harmonic Drive Systems, Nabtesco, maxon, Sanhua Intelligent Controls, Tuopu Group, Leaderdrive, Inovance Technology, etc.</td>
+<td>Consistency and cost of reducers, ball screws, motors, sensors</td>
+</tr>
+<tr>
+<td>Computing Power &amp; Platforms</td>
+<td>NVIDIA (Jetson Thor, Isaac, GR00T), Simulation &amp; data toolchain vendors</td>
+<td>Chips, simulation, foundation models, developer ecosystem</td>
+</tr>
+</tbody>
+</table>
+<p>Market data (consistent with Chapter 1): In 2025, the global humanoid robot market size was approximately $2.9–3.2 billion, with installations around 16,000 units, of which China accounted for over 80%; Unitree's 2025 revenue was 1.708 billion RMB and it has advanced its IPO on the STAR Market; according to Omdia, Zhiyuan Robot shipped 5,168 units in 2025; UBTECH's humanoid robot orders in 2025 were nearly 1.4 billion RMB; Tesla's Optimus Gen 3 began mass production in Fremont in January 2026; Figure AI completed a $1 billion Series C funding round and completed an 11-month real-world deployment at a BMW factory, handling over 90,000 parts. These signals collectively indicate: <strong>The main battlefield of industrial competition has shifted from "whose demo is cooler" to "who can ramp up mass production and real-world deployment faster."</strong></p>
+<h3 id="3072-the-debate-between-vertical-integration-and-horizontal-specialization">30.7.2 The Debate Between Vertical Integration and Horizontal Specialization</h3>
+<p>The core tension in the future landscape lies in the debate between <strong>Vertical Integration</strong> and <strong>Horizontal Specialization</strong>:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    subgraph Vertical Integration Path
+        V1["In-house motors/reducers/dexterous hands&lt;br/&gt;In-house chip adaptation, in-house models&lt;br/&gt;Self-built data factories and production lines"] --&gt; V2["Representatives: Tesla, Figure&lt;br/&gt;Advantage: Optimized hardware-software integration&lt;br/&gt;Risk: Huge capital expenditure"]
+    end
+    subgraph Horizontal Specialization Path
+        H1["Procure standardized joint modules&lt;br/&gt;Use third-party computing power and foundation models&lt;br/&gt;Focus on scenarios and complete machine integration"] --&gt; H2["Representatives: Most Chinese OEMs and startups&lt;br/&gt;Advantage: Asset-light, fast iteration&lt;br/&gt;Risk: Homogenization, profits squeezed by upstream"]
+    end
+    V2 --&gt; F["Endgame Judgment: Both will coexist long-term&lt;br/&gt;Today's automotive industry is tomorrow's humanoid robot industry"]
+    H2 --&gt; F</code></pre>
+<p>Historical experience (automotive, smartphone industries) shows: During periods of rapid technological change, vertical integration dominates (the iteration speed of hardware-software synergy overrides everything); during periods of technological maturity, horizontal specialization dominates (scale and specialization lower costs). Humanoid robots are currently in the former stage – this explains why leading manufacturers generally develop their own actuators and models; however, as joint modules and foundation models become commoditized, the seeds for the latter stage have already been planted.</p>
+<h3 id="3073-geopolitics-and-supply-chain-revisiting-the-rare-earth-bottleneck">30.7.3 Geopolitics and Supply Chain: Revisiting the Rare Earth Bottleneck</h3>
+<p>The supply chain governance analysis from Chapter 7 requires a geopolitical dimension in this outlook: The "muscles" of humanoid robots rely on rare earth permanent magnets, and global production capacity for high-performance NdFeB is highly concentrated; reports like OceanWall have identified rare earth magnetic materials as a potential bottleneck for robot scaling. Concurrently, export controls on high-end chips, the distribution of precision machine tool production capacity, and various countries' policy support for "robot industry sovereignty" are reshaping the geographic layout of supply chains. For OEMs, the keywords for supply chain strategy over the next decade will be: <strong>Dual Sourcing, in-house production/strategic binding of key components, and multi-location production layouts for different markets.</strong></p>
+<h3 id="3074-data-flywheel-a-new-competitive-moat">30.7.4 Data Flywheel: A New Competitive Moat</h3>
+<p>Hardware can be disassembled and copied, model architectures are published in papers, but <strong>the data assets accumulated through large-scale real-world deployment are irreplicable</strong>. The Data Flywheel – deployment generates data, data improves models, models enhance performance, performance promotes deployment – is becoming the true moat for leading companies:</p>
+<ul>
+<li>The flywheel requires a "minimum viable scenario" to start: structured tasks like factory handling and logistics sorting provide the first real data soil;</li>
+<li>The flywheel's speed depends on data infrastructure: auto-labeling, failure case mining, simulation replay, and retraining pipelines (Chapter 21);</li>
+<li>The moat effect of the flywheel exhibits a Matthew effect: the models of leaders continuously improve on the real distribution, while followers, even with equivalent algorithms, lack data from the same distribution.</li>
+</ul>
+<p>It can be expected that in the next five years, "who owns the largest real-world robot data loop" will be a better predictor of industry ranking than "who has higher paper scores."</p>
+<h3 id="3075-consensus-and-divergence-in-market-forecasts">30.7.5 Consensus and Divergence in Market Forecasts</h3>
+<p>Summarizing forecasts from multiple institutions compiled in Chapter 1: The market size in 2025 is approximately $3 billion, potentially exceeding $10–15 billion by 2030 (implying a CAGR of ~35–43%); the adoption phases outlined in <em>Humanoid Robots 101</em> are: 2025–2027 small-scale industrial/logistics pilots, 2028–2034 commercial service and semi-structured environment scaling, and mass consumer adoption from 2035 onwards, with extremely optimistic long-term stock projections. The correct attitude towards such forecasts is: <strong>Treat them as "conditional probability statements" rather than "promises"</strong> – the conditions for their realization (cost reduction curves, safety certification progress, AI generalization breakthroughs) are precisely the unresolved challenges discussed in Sections 30.3–30.6 of this chapter. The divergence in forecasts themselves (the $1.9–3.2 billion range for 2025) also indicates that this industry lacks a unified metric; transparency in definitions (factory gate price vs. end-user price, including services or not) is more important than point estimates.</p>
+<h2 id="308-five-to-ten-year-roadmap-20262035">30.8 Five-to-Ten-Year Roadmap (2026–2035)</h2>
+<h3 id="3081-methodology-statement-for-the-roadmap">30.8.1 Methodology Statement for the Roadmap</h3>
+<p>This section’s roadmap synthesizes the aforementioned technology convergence trends, the resolution pace of the four major unsolved challenges, and the intersection of mainstream institutional forecasts. It satisfies three methodological principles: First, <strong>capability milestones, not calendar years, serve as the main axis</strong>—years are merely expectations, capabilities are the logic. Second, <strong>distinguish between high-confidence and low-confidence judgments</strong>—structural trends (cost decline, modularization) have high confidence, while specific timings (which year it enters homes) have low confidence. Third, <strong>acknowledge unpredictability</strong>—nonlinear progress in foundation models and geopolitical events can shift the entire timeline.</p>
+<h3 id="3082-near-term-20262028-large-scale-validation-in-structured-scenarios">30.8.2 Near Term (2026–2028): Large-Scale Validation in Structured Scenarios</h3>
+<ul>
+<li><strong>Scenarios</strong>: Automotive and 3C factories, warehousing logistics (sorting, handling, machine tending)—structured environments, repetitive tasks, high fault tolerance, clear willingness to pay.</li>
+<li><strong>Technical Focus</strong>: Engineering mobile manipulation success rates (from 95% to 99%+), fault recovery and remote takeover systems, production line cycle time matching.</li>
+<li><strong>Industry Focus</strong>: Ramping up to tens of thousands of units annual production capacity, BOM decreasing toward the $20,000 range, achieving unit economics in RaaS models.</li>
+<li><strong>Milestone Events (Candidate Criteria)</strong>: A single customer deploys over 100 units with contract renewals; emergence of specialized insurance actuarial products for humanoid robots; VLA models achieve "boringly reliable" performance on a defined task family.</li>
+</ul>
+<h3 id="3083-mid-term-20282031-semi-structured-scenarios-and-cost-inflection-point">30.8.3 Mid Term (2028–2031): Semi-Structured Scenarios and Cost Inflection Point</h3>
+<ul>
+<li><strong>Scenarios</strong>: Commercial services (retail restocking, hotels, hospital logistics), security patrols, hazardous environment operations—spaces designed for humans but tasks are enumerable.</li>
+<li><strong>Technical Focus</strong>: Unified motor skill library in behavioral foundation models; task-level generalization covering task families rather than single tasks; initial formation of safety certification systems (humanoid-specific standards entering approval).</li>
+<li><strong>Industry Focus</strong>: BOM approaching the <span class="arithmatex">\(13,000–\)</span>17,000 range; cumulative production reaching hundreds of thousands of units, learning curve effects becoming apparent; formation of a horizontal division of labor ecosystem (modules, toolchains, integrators).</li>
+<li><strong>Milestone Events (Candidate Criteria)</strong>: TCO matches or falls below labor costs in several scenarios; emergence of a single model with annual shipments exceeding 100,000 units.</li>
+</ul>
+<h3 id="3084-long-term-20312035-early-exploration-of-open-environments-and-home-scenarios">30.8.4 Long Term (2031–2035): Early Exploration of Open Environments and Home Scenarios</h3>
+<ul>
+<li><strong>Scenarios</strong>: Early high-end market for home services and elderly care companionship—open environments, long-tail tasks, highest sensitivity to safety and privacy.</li>
+<li><strong>Technical Focus</strong>: Planning and self-assessment supported by world models, continuous learning, natural human-robot interaction; if next-generation energy sources like solid-state batteries mature on schedule, they will push endurance to "shift-level."</li>
+<li><strong>Industry Focus</strong>: Definition of consumer-grade products and implementation of regulatory frameworks; data privacy governance becoming a component of product competitiveness.</li>
+<li><strong>Milestone Events (Candidate Criteria)</strong>: Emergence of home humanoid robots that pass full safety certification and are sold via subscription; installed base crossing the one-million-unit threshold.</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["2026–2028&lt;br/&gt;Structured Scenario Scaling&lt;br/&gt;Factory/Logistics, 10k Unit Capacity&lt;br/&gt;Success Rate Engineering 95%→99%+"] --&gt; B["2028–2031&lt;br/&gt;Semi-Structured Scenario Volume&lt;br/&gt;Commercial Services/Patrols&lt;br/&gt;BOM $13k–$17k, Standards Formed"]
+    B --&gt; C["2031–2035&lt;br/&gt;Early Open Environment Exploration&lt;br/&gt;Home/Elderly High-End Market&lt;br/&gt;World Models, Shift-Level Endurance, Million Unit Installed Base"]
+    R["Throughout: Data Flywheel Acceleration&lt;br/&gt;Safety Certification Perfection&lt;br/&gt;Dual-Source Supply Chain"] -.-&gt; A
+    R -.-&gt; B
+    R -.-&gt; C</code></pre>
+<h3 id="3085-key-milestones-and-metrics">30.8.5 Key Milestones and Metrics</h3>
+<p>The roadmap should be testable by observable indicators. It is recommended to continuously track the following KPIs:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Metric</th>
+<th>2026 Baseline (Approx.)</th>
+<th>2030 Target (Approx.)</th>
+<th>2035 Outlook</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reliability</td>
+<td>Task Success Rate (Limited Task Family)</td>
+<td>90–98%</td>
+<td>≥99.5%</td>
+<td>≥99.9%</td>
+</tr>
+<tr>
+<td>Reliability</td>
+<td>Mean Time Between Failures</td>
+<td>Days</td>
+<td>Weeks–Months</td>
+<td>&gt;Months</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>Typical BOM</td>
+<td>~$35,000</td>
+<td>≤$20,000</td>
+<td>≤$15,000</td>
+</tr>
+<tr>
+<td>Energy</td>
+<td>Actual Task Endurance</td>
+<td>~2 hours</td>
+<td>4–6 hours</td>
+<td>Shift-Level (8 hours)</td>
+</tr>
+<tr>
+<td>Intelligence</td>
+<td>Task Family Generalization (Success Rate for New Tasks in Same Family)</td>
+<td>&lt;70%</td>
+<td>≥90%</td>
+<td>≥95% (Including Long-Horizon)</td>
+</tr>
+<tr>
+<td>Industry</td>
+<td>Global Annual Shipments</td>
+<td>Tens of Thousands</td>
+<td>Hundreds of Thousands</td>
+<td>Millions</td>
+</tr>
+<tr>
+<td>Standards</td>
+<td>Humanoid-Specific Safety Standards</td>
+<td>None</td>
+<td>Submitted for Approval/First Edition</td>
+<td>Mature Certification System</td>
+</tr>
+</tbody>
+</table>
+<p>The numbers in the table are <strong>target ranges</strong> synthesized from industry analyst estimates and engineering extrapolations, intended to depict magnitudes rather than precise commitments.</p>
+<h3 id="3086-variables-that-could-rewrite-the-roadmap">30.8.6 Variables That Could Rewrite the Roadmap</h3>
+<p>Finally, the main risks and upside variables for the roadmap must be honestly listed:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Direction</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nonlinear breakthroughs in foundation models (e.g., world model maturity, cross-embodiment generalization solved)</td>
+<td>Upside</td>
+<td>Intelligence-related milestones advance by 2–3 years overall</td>
+</tr>
+<tr>
+<td>Early mass production of energy storage technologies like solid-state batteries</td>
+<td>Upside</td>
+<td>Home and mobile scenarios unlocked earlier</td>
+</tr>
+<tr>
+<td>Severe safety incident triggers regulatory tightening</td>
+<td>Downside</td>
+<td>Shared-space deployment frozen for 1–3 years</td>
+</tr>
+<tr>
+<td>Rare earth/chip supply chain disruption</td>
+<td>Downside</td>
+<td>Cost inflection point delayed, regional market fragmentation</td>
+</tr>
+<tr>
+<td>Macroeconomic and labor market changes</td>
+<td>Bidirectional</td>
+<td>Affects willingness to pay and capital expenditure</td>
+</tr>
+<tr>
+<td>Stricter data privacy regulations</td>
+<td>Downside (Short-term)</td>
+<td>Home scenario data collection limited, flywheel slows</td>
+</tr>
+</tbody>
+</table>
+<h2 id="309-conclusion-toward-embodied-general-intelligence">30.9 Conclusion: Toward Embodied General Intelligence</h2>
+<h3 id="3091-embodied-general-intelligence-the-ultimate-question-of-this-book">30.9.1 Embodied General Intelligence: The Ultimate Question of This Book</h3>
+<p>The knowledge graph defines Embodied General Intelligence (EGI) as the long-term goal of building intelligent agents capable of flexibly learning, reasoning, and acting through a physical body in diverse physical environments. Looking back at the entire book, every piece of the EGI puzzle already exists independently: materials and actuators provide a "body" approaching human capability (the human-equivalent envelope is converging year by year), VLA provides preliminary "task understanding," world models point toward "imagination," and the data flywheel provides a "mechanism for accumulating experience." <strong>What has not yet happened is the closed-loop integration of these pieces within a single system, on the same timescale</strong>—allowing body, perception, imagination, and action to form a continuously self-improving whole.</p>
+<p>This is precisely why humanoid robots deserve to be written about as an independent discipline: it is not an extension of mechanical engineering, nor a branch of AI applications, but the first engineering object that demands "intelligence must sustain itself through a physical body in an open world." Every one of its unsolved challenges—generalization, safety, cost, energy—is essentially a tension at the intersection of "intelligence" and "physics."</p>
+<h3 id="3092-a-word-to-the-reader">30.9.2 A Word to the Reader</h3>
+<p>For engineers, the 29 preceding chapters of this book are your toolbox, and the four major challenges in this chapter are your problem list. For researchers, the open questions in Sections 30.3–30.6 are worth investing in on a five-year scale. For entrepreneurs and investors, the landscape and roadmap in Sections 30.7–30.8 suggest: in the long race of humanoid robots, <strong>the real risk is not technological immaturity, but allocating resources based on incorrect maturity assumptions</strong>. Humanoid robots will not arrive suddenly one morning; like electricity, automobiles, and the internet, they will first become indispensable in edge scenarios, then quietly become part of daily life. The mission of this book is to help you see their full structure before that day arrives.</p>
+<h2 id="3010-chapter-summary">30.10 Chapter Summary</h2>
+<ul>
+<li>The ten parts of the book constitute a complete stack of "Physical Foundation → Design → Manufacturing → Control → Intelligence → Software → Evaluation → Market → Policy"; a bottleneck at any layer is a bottleneck for the whole system. Current shortcomings are concentrated in reliability, safety certification, and unit economics, rather than in locomotion capability itself.</li>
+<li>Technology is converging along four paths: hardware toward electrification and joint modularization; motion control toward a layered fusion of "classical servo + learned whole-body strategies"; task intelligence toward the VLA + dual-system paradigm; data engineering toward a triple-source mix of teleoperation/simulation/real-world data; world models are the most likely next convergence point.</li>
+<li>The four major unsolved challenges each have quantitative constraints: generalization is constrained by the <span class="arithmatex">\(p^n\)</span> success rate multiplicative law and distributional shift; safety lacks humanoid-specific standards, with layered defense-in-depth as a transitional engineering approach; cost follows Wright’s Law, requiring cumulative production of millions of units for BOM to fall to the $15,000 range; energy has an approximately 4x endurance gap that must be closed through a combination of battery technology, efficiency improvements, and replenishment mode innovation.</li>
+<li>The industry landscape features a three-layer competition of "complete machines—components—computing platforms," with vertical integration and horizontal division of labor coexisting long-term; the data flywheel replaces algorithms as the deepest moat; market forecasts should be used cautiously as conditional probability statements.</li>
+<li>The 2026–2035 roadmap progresses along three phases of "Structured → Semi-Structured → Open Environments," with capability milestones as the main axis, continuously validated by seven KPIs, and remains sensitive to bidirectional variables such as foundation model breakthroughs, safety incidents, and supply chain disruptions.</li>
+</ul>
+<h2 id="references">References</h2>
+<ol>
+<li>Bank of America Institute. (2025-04-29). <em>Humanoid Robots 101</em>. https://institute.bankofamerica.com/content/dam/transformation/humanoid-robots.pdf</li>
+<li>OceanWall. (2025). <em>Robotics and The Rare Earth Bottleneck</em>. https://oceanwall.com/wp-content/uploads/2025/10/Robotics-Market-and-Rare-Earth-Magnet-Supply-Chain_.pdf</li>
+<li>Chi, C., et al. (2023). Diffusion Policy: Visuomotor Policy Learning via Action Diffusion. https://arxiv.org/abs/2303.04137</li>
+<li>Brohan, A., et al. (2022). RT-1: Robotics Transformer for Real-World Control at Scale. https://arxiv.org/abs/2212.06817</li>
+<li>Brohan, A., et al. (2023). RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control. https://arxiv.org/abs/2307.15818</li>
+<li>Open X-Embodiment Collaboration. (2023). Open X-Embodiment: Robotic Learning Datasets and RT-X Models. https://arxiv.org/abs/2310.08864</li>
+<li>Octo Model Team. (2024). Octo: An Open-Source Generalist Robot Policy. https://github.com/octo-models/octo</li>
+<li>Kim, M. J., et al. (2024). OpenVLA: An Open-Source Vision-Language-Action Model. https://github.com/openvla/openvla</li>
+<li>Physical Intelligence. (2024). π0: A Vision-Language-Action Flow Model for General Robot Control (openpi codebase). https://github.com/Physical-Intelligence/openpi</li>
+<li>NVIDIA. (2025). GR00T N1: An Open Foundation Model for Generalist Humanoid Robots (Data and Model Resources). https://huggingface.co/datasets/nvidia/PhysicalAI-Robotics-GR00T-X-Embodiment-Sim</li>
+<li>Abeyruwan, S., et al. (2025). Gemini Robotics: Bringing AI into the Physical World. https://arxiv.org/abs/2503.20020</li>
+<li>Ψ₀ Team. (2026). Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation. https://arxiv.org/abs/2603.12263</li>
+<li>Khazatsky, A., et al. (2024). DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset. https://arxiv.org/abs/2403.12945</li>
+<li>Sferrazza, C., et al. (2024). HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation. https://arxiv.org/abs/2403.10506</li>
+<li>Liu, R., et al. (2025). A Survey of Behavior Foundation Model: Next-Generation Whole-Body Control System of Humanoid Robots. https://arxiv.org/abs/2506.20487</li>
+<li>Humanoid World Models Team. (2025). Humanoid World Models: Open World Foundation Models for Humanoid Robotics. https://arxiv.org/abs/2506.01182</li>
+<li>1X Technologies. (2025). Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report. https://arxiv.org/abs/2510.07092</li>
+<li>Mandlekar, A., et al. (2023). MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations. https://arxiv.org/abs/2310.17596</li>
+<li>Fu, Z., et al. (2024). Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation. https://mobile-aloha.github.io/</li>
+<li>Chi, C., et al. (2024). Universal Manipulation Interface (UMI). https://umi-gripper.github.io/</li>
+<li>Fu, Z., et al. (2024). HumanPlus: Humanoid Shadowing and Imitation from Humans. https://humanoid-ai.github.io/</li>
+<li>He, T., et al. (2024). HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots. https://hover-versatile-humanoid.github.io/</li>
+<li>He, T., et al. (2025). ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills. https://agile.human2humanoid.com/</li>
+<li>ExBody2 Team. (2024). ExBody2: Advanced Expressive Humanoid Whole-Body Control. https://exbody2.github.io/</li>
+<li>NVIDIA. Isaac Sim. https://developer.nvidia.com/isaac-sim</li>
+<li>NVIDIA. Isaac Lab. https://developer.nvidia.com/isaac-lab</li>
+<li>Todorov, E., et al. MuJoCo Physics Engine. https://mujoco.org/</li>
+<li>MuJoCo Playground. (2025). https://playground.mujoco.org/</li>
+<li>Genesis Authors. (2024). Genesis: A Generative and Universal Physics Engine for Robotics and Beyond. https://genesis-world.readthedocs.io/</li>
+<li>Hugging Face. LeRobot: Making AI for Robotics More Accessible. https://github.com/huggingface/lerobot</li>
+<li>Grauman, K., et al. (2022). Ego4D: Around the World in 3,000 Hours of Egocentric Video. https://ego4d-data.org/</li>
+<li>NVIDIA. (2025). Introducing NVIDIA Jetson Thor, the Ultimate Platform for Physical AI. https://developer.nvidia.com/blog/introducing-nvidia-jetson-thor-the-ultimate-platform-for-physical-ai/</li>
+<li>NVIDIA. (2026). How Cosmos 3 Helps Physical AI Think Before It Acts. https://blogs.nvidia.com/blog/cosmos-3-physical-ai-open-world-foundation-model/</li>
+<li>Unitree Robotics. (2024). Unitree G1 Humanoid Agent | Price from $16K. https://www.unitree.com/mobile/news</li>
+<li>Robotics Tomorrow. (2026-06-22). FORT Robotics Extends Its Trust Layer for Physical AI by Adding Outside-In Safety in Collaboration with NVIDIA Halos. http://www.RoboticsTomorrow.com/news/2026/06/22/fort-robotics-extends-its-trust-layer-for-physical-ai-by-adding-outside-in-safety-in-collaboration-with-nvidia-halos-for-robotics-/26752</li>
+<li>Robotics Tomorrow. (2026-06-30). Robot Safety Is Now 3D: Sonair Unveils World's First Safety-Certified 3D Ultrasonic Sensor for Human-Robot Collaboration. http://www.RoboticsTomorrow.com/news/2026/06/30/robot-safety-is-now-3d-sonair-unveils-worlds-first-safety-certified-3d-ultrasonic-sensor-for-human-robot-collaboration/26791</li>
+<li>IEC 61508:2010. <em>Functional safety of electrical/electronic/programmable electronic safety-related systems</em>. International Electrotechnical Commission.</li>
+<li>ISO 13849-1:2015. <em>Safety of machinery — Safety-related parts of control systems</em>. International Organization for Standardization.</li>
+<li>ISO/TS 15066:2016. <em>Robots and robotic devices — Collaborative robots</em>. International Organization for Standardization.</li>
+<li>ISO 13482:2014. <em>Robots and robotic devices — Safety requirements for personal care robots</em>. International Organization for Standardization.</li>
+</ol>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-29/">← Previous<span>Chapter 29: Policy, Regulation, and Ethics</span></a>
+      
+      
+      <a class="next" href="/en/wiki/appendices/appendix-a/">Next →<span>Appendix A Entity and Relationship Quick Reference</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-30-future-outlook">Chapter 30: Future Outlook</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#301-concluding-perspective-book-structure-and-technology-readiness-level-assessment">30.1 Concluding Perspective: Book Structure and Technology Readiness Level Assessment</a><ul>
+<li><a href="#3011-the-logical-main-thread-of-the-books-ten-parts">30.1.1 The Logical Main Thread of the Book's Ten Parts</a></li>
+<li><a href="#3012-from-prototype-to-product-re-examining-the-seven-transitions">30.1.2 From Prototype to Product: Re-examining the Seven Transitions</a></li>
+<li><a href="#3013-technology-readiness-level-assessment-where-each-technology-layer-currently-stands">30.1.3 Technology Readiness Level Assessment: Where Each Technology Layer Currently Stands</a></li>
+</ul>
+</li>
+<li><a href="#302-technology-convergence-trends">30.2 Technology Convergence Trends</a><ul>
+<li><a href="#3021-hardware-morphology-convergence-electrification-quasi-direct-drive-and-joint-modularization">30.2.1 Hardware Morphology Convergence: Electrification, Quasi-Direct Drive, and Joint Modularization</a></li>
+<li><a href="#3022-motion-control-convergence-from-model-based-control-to-learned-whole-body-control">30.2.2 Motion Control Convergence: From Model-Based Control to Learned Whole-Body Control</a></li>
+<li><a href="#3023-intelligence-architecture-convergence-vla-and-the-dual-system-paradigm">30.2.3 Intelligence Architecture Convergence: VLA and the Dual-System Paradigm</a></li>
+<li><a href="#3024-data-pipeline-convergence-the-ratio-of-teleoperation-simulation-and-real-data">30.2.4 Data Pipeline Convergence: The Ratio of Teleoperation, Simulation, and Real Data</a></li>
+<li><a href="#3025-world-models-the-next-convergence-point">30.2.5 World Models: The Next Convergence Point</a></li>
+</ul>
+</li>
+<li><a href="#303-one-of-the-unsolved-challenges-generalization">30.3 One of the Unsolved Challenges: Generalization</a><ul>
+<li><a href="#3031-four-levels-of-generalization">30.3.1 Four Levels of Generalization</a></li>
+<li><a href="#3032-data-scale-and-compositional-generalization-a-quantitative-perspective">30.3.2 Data Scale and Compositional Generalization: A Quantitative Perspective</a></li>
+<li><a href="#3033-the-long-term-nature-of-the-sim-to-real-gap">30.3.3 The Long-Term Nature of the Sim-to-Real Gap</a></li>
+<li><a href="#3034-list-of-open-problems">30.3.4 List of Open Problems</a></li>
+</ul>
+</li>
+<li><a href="#304-unsolved-challenges-part-ii-safety">30.4 Unsolved Challenges Part II: Safety</a><ul>
+<li><a href="#3041-the-specificity-of-humanoid-robot-safety-issues">30.4.1 The Specificity of Humanoid Robot Safety Issues</a></li>
+<li><a href="#3042-standards-system-current-status-and-gaps">30.4.2 Standards System: Current Status and Gaps</a></li>
+<li><a href="#3043-engineering-approach-layered-safety-architecture">30.4.3 Engineering Approach: Layered Safety Architecture</a></li>
+<li><a href="#3044-liability-insurance-and-social-acceptance">30.4.4 Liability, Insurance, and Social Acceptance</a></li>
+</ul>
+</li>
+<li><a href="#305-unsolved-problem-three-cost">30.5 Unsolved Problem Three: Cost</a><ul>
+<li><a href="#3051-bom-cost-trajectory-and-learning-objectives">30.5.1 BOM Cost Trajectory and Learning Objectives</a></li>
+<li><a href="#3052-learning-curve-a-quantitative-model-for-cost-reduction">30.5.2 Learning Curve: A Quantitative Model for Cost Reduction</a></li>
+<li><a href="#3053-cost-reduction-levers-and-supply-chain-constraints">30.5.3 Cost Reduction Levers and Supply Chain Constraints</a></li>
+<li><a href="#3054-business-model-innovation-raas-and-the-data-flywheel">30.5.4 Business Model Innovation: RaaS and the Data Flywheel</a></li>
+</ul>
+</li>
+<li><a href="#306-unsolved-problem-four-energy">30.6 Unsolved Problem Four: Energy</a><ul>
+<li><a href="#3061-quantitative-analysis-of-battery-life-constraints">30.6.1 Quantitative Analysis of Battery Life Constraints</a></li>
+<li><a href="#3062-energy-efficiency-cost-of-transport">30.6.2 Energy Efficiency: Cost of Transport</a></li>
+<li><a href="#3063-battery-technology-roadmap-high-nickel-solid-state-and-quick-swap">30.6.3 Battery Technology Roadmap: High-Nickel, Solid-State, and Quick-Swap</a></li>
+<li><a href="#3064-system-level-energy-saving-design">30.6.4 System-Level Energy-Saving Design</a></li>
+</ul>
+</li>
+<li><a href="#307-evolution-of-the-industry-landscape">30.7 Evolution of the Industry Landscape</a><ul>
+<li><a href="#3071-current-landscape-three-types-of-players-complete-machines-components-and-computing-power">30.7.1 Current Landscape: Three Types of Players – Complete Machines, Components, and Computing Power</a></li>
+<li><a href="#3072-the-debate-between-vertical-integration-and-horizontal-specialization">30.7.2 The Debate Between Vertical Integration and Horizontal Specialization</a></li>
+<li><a href="#3073-geopolitics-and-supply-chain-revisiting-the-rare-earth-bottleneck">30.7.3 Geopolitics and Supply Chain: Revisiting the Rare Earth Bottleneck</a></li>
+<li><a href="#3074-data-flywheel-a-new-competitive-moat">30.7.4 Data Flywheel: A New Competitive Moat</a></li>
+<li><a href="#3075-consensus-and-divergence-in-market-forecasts">30.7.5 Consensus and Divergence in Market Forecasts</a></li>
+</ul>
+</li>
+<li><a href="#308-five-to-ten-year-roadmap-20262035">30.8 Five-to-Ten-Year Roadmap (2026–2035)</a><ul>
+<li><a href="#3081-methodology-statement-for-the-roadmap">30.8.1 Methodology Statement for the Roadmap</a></li>
+<li><a href="#3082-near-term-20262028-large-scale-validation-in-structured-scenarios">30.8.2 Near Term (2026–2028): Large-Scale Validation in Structured Scenarios</a></li>
+<li><a href="#3083-mid-term-20282031-semi-structured-scenarios-and-cost-inflection-point">30.8.3 Mid Term (2028–2031): Semi-Structured Scenarios and Cost Inflection Point</a></li>
+<li><a href="#3084-long-term-20312035-early-exploration-of-open-environments-and-home-scenarios">30.8.4 Long Term (2031–2035): Early Exploration of Open Environments and Home Scenarios</a></li>
+<li><a href="#3085-key-milestones-and-metrics">30.8.5 Key Milestones and Metrics</a></li>
+<li><a href="#3086-variables-that-could-rewrite-the-roadmap">30.8.6 Variables That Could Rewrite the Roadmap</a></li>
+</ul>
+</li>
+<li><a href="#309-conclusion-toward-embodied-general-intelligence">30.9 Conclusion: Toward Embodied General Intelligence</a><ul>
+<li><a href="#3091-embodied-general-intelligence-the-ultimate-question-of-this-book">30.9.1 Embodied General Intelligence: The Ultimate Question of This Book</a></li>
+<li><a href="#3092-a-word-to-the-reader">30.9.2 A Word to the Reader</a></li>
+</ul>
+</li>
+<li><a href="#3010-chapter-summary">30.10 Chapter Summary</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

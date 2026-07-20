@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selection Guide: How to Choose an Actuator · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Selection Guide: How to Choose an Actuator</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="selection-guide-how-to-choose-an-actuator">Selection Guide: How to Choose an Actuator</h1>
+<blockquote>
+<p>⚠️ This roadmap is compiled based on public information and theoretical knowledge, and has not been verified on actual hardware; please verify safety specifications yourself when involving electrical and mechanical operations.</p>
+</blockquote>
+<p>The actuator is the part of a humanoid robot BOM where it's easiest to "burn money in the wrong direction": the same leg can run for a few thousand yuan with smart servos, but might cost an order of magnitude more with a harmonic drive + frameless motor, and the performance difference only matters once you know exactly "what you want." This guide provides a decision framework: first translate your requirements into four quantifiable numbers, then narrow down to 2–3 candidates using the technology comparison table and manufacturer tier table, and finally conclude with bench testing. For theoretical background, see <a href="/wiki/chapters/chapter-04/">Chapter 4: Actuators</a>.</p>
+<h2 id="1-four-key-questions-translating-i-want-to-build-a-robot-into-selection-parameters">1. Four Key Questions: Translating "I want to build a robot" into Selection Parameters</h2>
+<h3 id="question-1-what-peak-torque-is-needed">Question 1: What Peak Torque is needed?</h3>
+<p>[What to do] Perform a worst-case static estimation for the target joint: take the worst posture (knee at the lowest point of a squat, hip pitch during single-leg support with torso leaning forward), roughly calculate using <code>τ = m·g·d</code> (d is the moment arm from the center of mass to the joint axis), then multiply by a dynamic margin of 1.5–2. This number is the first filter for screening datasheets.</p>
+<p>[Why] Peak torque determines the "specification size" of the reducer/motor. For example, the <a href="/entry/ent_component_harmonic_drive_reducer/">Harmonic Drive reducer</a> CSF-32-100 has a repeated peak torque of 333 N·m and an instantaneous peak of 647 N·m (source: card citing Tradebearings spec page); as a reference, the <a href="/entry/ent_oem_unitree_robotics/">Unitree</a> H1 knee joint peak torque is 360 N·m (source: Unitree card). The order of magnitude your estimate falls into directly determines which rows of the comparison table you should look at.</p>
+<p>[How to analyze your situation] Desktop-level (arm span &lt; 0.5 m, self-weight &lt; 5 kg) joint peaks are typically 5–40 N·m, sufficient for servos and small quasi-direct drives; full-size bipedal (height &gt; 1.2 m) hip/knee joints are typically 100–400 N·m, leaving only two paths: "harmonic/RV + frameless motor" and "high-torque quasi-direct drive." For walking on flat ground, use static value × 1.5; for running and jumping, use × 2 or more and verify the instantaneous peak torque.</p>
+<h3 id="question-2-what-continuousrated-torque-and-thermal-considerations">Question 2: What Continuous/Rated Torque and Thermal Considerations?</h3>
+<p>[What to do] Convert a typical duty cycle (e.g., continuous walking for 10 minutes) into an RMS torque, and ensure it is below the actuator's rated/continuous torque, not the peak torque.</p>
+<p>[Why] Actuator burnout is almost always due to thermal failure, not instantaneous overload: peak torque can only be sustained for seconds, while continuous output is limited by winding temperature rise. The CSF-32-100 rated torque L10 is 137 N·m, only about 40% of its repeated peak torque of 333 N·m (source: harmonic reducer card); the Maxon EC-i 40 has a rated torque of 224 mN·m and a stall torque of 2080 mN·m, a difference of nearly 10 times (source: <a href="/entry/ent_company_maxon_group_2024/">Maxon card</a>) — this ratio is even more extreme on the motor side, so don't select based on stall torque for continuous operation.</p>
+<p>[How to analyze your situation] For teaching demonstrations (a few minutes each time), you can select close to the rated value; for long-duration walking or commercial exhibitions, it is recommended to keep the RMS within 70% of the rated value, and confirm the ambient temperature and cooling conditions corresponding to the rated value — if not specified, you must confirm with the supplier yourself.</p>
+<h3 id="question-3-what-is-the-weight-budget">Question 3: What is the Weight Budget?</h3>
+<p>[What to do] Assign a weight limit to each joint: leg actuators should not exceed 40–50% of the total robot weight (industry rule of thumb), and concentrate heavy actuators near the hip/torso to reduce lower leg inertia.</p>
+<p>[Why] The weight of an actuator becomes a load for the next joint: a 1 kg ankle joint increases the torque requirements for both the knee and hip, creating a cycle of "heavier requires more torque." For reference: the CSF-32-100 harmonic reducer weighs 3.2 kg (source: harmonic reducer card); the same size 32 domestic LHS-32-100 weighs 2.5 kg (source: <a href="/entry/ent_company_leaderdrive_2024/">Leaderdrive card</a>); quasi-direct drives can be significantly lighter — the Berkeley Humanoid Lite's 6512 actuator has a single-unit BOM of approximately $188 (US) / $157 (China) (source: research file berkeley-humanoid-lite.md).</p>
+<p>[How to analyze your situation] Desktop machines are not sensitive to weight; prioritize low cost and ease of use. For full-size bipedal robots, calculate the "torque benefit per kilogram" (torque density) for each actuator weight. <a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi-direct drive actuators (QDD)</a> and Unitree's self-developed M107 motor (nominal torque density 189 N·m/kg, source: Unitree card) are products of this line of thinking.</p>
+<h3 id="question-4-is-force-control-and-back-drivability-needed">Question 4: Is Force Control and Back-drivability Needed?</h3>
+<p>[What to do] Clearly answer: does this joint need to "know how much force it is applying and yield when bumped" (force control/compliance), or does it only need to "precisely reach a certain angle" (position control)?</p>
+<p>[Why] This is a branching point. High reduction ratio solutions (harmonic/RV/high-ratio servo) have high transmission friction and are not back-drivable; force control requires adding a torque sensor at the output. Low reduction ratio quasi-direct drives can directly estimate torque using the current loop and are naturally back-drivable, making them the mainstream route for proprioceptive force control — the Open Dynamic Robot Initiative's self-developed BLMC actuator is a typical example of "low reduction ratio + dual encoders + high torque transparency" (source: research file open-dynamic-robot-initiative.md). Counterexample: the ROBOTIS OP3's XM430-W350-R servo (reduction ratio 353.5:1, stall torque 4.1 N·m, source: robotis-op3 research file) has high positional accuracy and is plug-and-play, but the file explicitly states it "lacks proprioceptive force control capability and is unsuitable for high-dynamic motion control research."</p>
+<p>[How to analyze your situation] Only for fixed-point demonstrations/teaching → position control is sufficient; servos or harmonic solutions are hassle-free. For walking balance, disturbance rejection, or human-robot collaboration → force control is a must; choose quasi-direct drive or "harmonic + joint torque sensor," accepting the trade-off of lower torque density for the former or higher cost for the latter.</p>
+<h2 id="2-technology-route-comparison-table">2. Technology Route Comparison Table</h2>
+<p>The table below provides a qualitative comparison by route (specific values should be based on individual entity cards and manufacturer datasheets):</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Backlash</th>
+<th>Torque Density</th>
+<th>Efficiency</th>
+<th>Back-drivable</th>
+<th>Cost Level</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_component_harmonic_drive_reducer/">Harmonic Drive</a></td>
+<td>Near zero (CSF ≤1 arcmin; SHF 10–20 arcsec)</td>
+<td>High (CSF-32-100 rated 137 N·m / 3.2 kg)</td>
+<td>80%–90%</td>
+<td>Essentially no</td>
+<td>High (price not public, requires inquiry)</td>
+<td>Precision joints: shoulder/elbow/hip/wrist</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_rv_reducer/">RV Reducer</a></td>
+<td>Low (arcmin level, confirm with supplier)</td>
+<td>Very high, good impact resistance</td>
+<td>Medium</td>
+<td>No</td>
+<td>High (requires inquiry)</td>
+<td>Heavy-duty robot waist/hip; use with caution for full-size humanoids (heavy)</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_planetary_roller_screw/">Planetary Roller Screw</a></td>
+<td>Depends on lead accuracy</td>
+<td>Extremely high linear thrust density (dynamic load 3–5 times that of ball screw for same size)</td>
+<td>~90% (ball screw 90–95%)</td>
+<td>Back-drivable with large lead</td>
+<td>Very high (Optimus-level solution)</td>
+<td>Linear joints (knee/ankle push rods)</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi-Direct Drive (QDD)</a></td>
+<td>Low (6–10:1 low reduction ratio, backlash depends on gear quality)</td>
+<td>Medium (lower torque than harmonic for same weight)</td>
+<td>High (short transmission chain)</td>
+<td>Good</td>
+<td>Low-Medium (BHL single unit BOM $157–188)</td>
+<td>Dynamic legs for quadrupeds/bipeds</td>
+</tr>
+<tr>
+<td>Smart Servo</td>
+<td>Higher (multi-stage plastic/metal gear reduction)</td>
+<td>Low (XM430 stall 4.1 N·m)</td>
+<td>Low-Medium</td>
+<td>Poor</td>
+<td>Low (requires inquiry by model)</td>
+<td>Desktop teaching machines, small joints for head/hands</td>
+</tr>
+</tbody>
+</table>
+<p>Two additional notes:</p>
+<ul>
+<li>Harmonic vs. RV division: Harmonic wins in zero backlash, light weight, and hollow shaft wiring (SHF-32 hollow type 1.665 kg, source: <a href="/entry/ent_company_harmonic_drive_systems_2024/">Harmonic Drive Systems card</a>); RV wins in rigidity and impact resistance. Both routes have precedents for full-size humanoid hips; simply weigh "weight" against "impact life."</li>
+<li>For the screw route, you must perform the mechanical conversion yourself: thrust <code>F = 2π·η·τ / l</code> (l is the lead). Example calculation: with F=8000 N, l=5 mm, η=0.90, the motor-side continuous torque required is approximately 7.07 N·m (source: planetary roller screw card). When the lead angle is greater than the friction angle, it is back-drivable; when smaller, it is self-locking — choose a large lead for force control, and avoid trapezoidal self-locking screws.</li>
+</ul>
+<h2 id="3-manufacturer-quick-reference-by-tier">3. Manufacturer Quick Reference (By Tier)</h2>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Manufacturer</th>
+<th>What to Buy</th>
+<th>Repository Materials</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High-End Import</td>
+<td><a href="/entry/ent_company_harmonic_drive_systems_2024/">Harmonic Drive Systems</a></td>
+<td>CSF/CSG Component Type, SHF/SHG Hollow Shaft Harmonic Drives, FHA-C Integrated Actuators</td>
+<td>✅ Card includes detailed parameters for CSF-32-50, SHF-32-120</td>
+</tr>
+<tr>
+<td>High-End Import</td>
+<td>Nabtesco</td>
+<td>RV Reducers</td>
+<td>⚠️ No card in this repository; parameters need to be confirmed with the supplier</td>
+</tr>
+<tr>
+<td>High-End Import</td>
+<td><a href="/entry/ent_company_maxon_group_2024/">Maxon</a></td>
+<td>EC-i / EC Brushless Motors, Gearboxes, Drives (Common for Dexterous Hands and Small Joints)</td>
+<td>✅ Card includes detailed parameters for EC-i 40, EC 40</td>
+</tr>
+<tr>
+<td>High-End Import</td>
+<td>Kollmorgen</td>
+<td>Frameless Torque Motors (RBE/TBM Series, motor-side option for custom joints)</td>
+<td>⚠️ No card yet; requires price inquiry</td>
+</tr>
+<tr>
+<td>Domestic Alternative</td>
+<td><a href="/entry/ent_company_leaderdrive_2024/">Leaderdrive</a></td>
+<td>LHS/LCS Harmonic Drives, LCD Ultra-Thin Series (Wrist/Finger), KGM Integrated Joint Modules</td>
+<td>✅ Card includes detailed parameters for LHS-32-100, LCD-14-100; can serve as a starting point for Harmonic Drive replacement</td>
+</tr>
+<tr>
+<td>Domestic Complete Machine/Module</td>
+<td><a href="/entry/ent_oem_unitree_robotics/">Unitree</a></td>
+<td>Self-developed M107 High Torque Density Motor, Joint Modules</td>
+<td>✅ Card includes M107 torque density, H1/G1 joint parameters</td>
+</tr>
+<tr>
+<td>Maker-Grade</td>
+<td>CubeMars</td>
+<td>AK Series QDD Joint Modules (MIT Mini Cheetah lineage)</td>
+<td>⚠️ No card yet; parameters need to be confirmed with the supplier</td>
+</tr>
+<tr>
+<td>Maker-Grade</td>
+<td>Custom 3D Printed QDD</td>
+<td>Drone Motor + Cycloidal/Planetary 3D Printed Reducer</td>
+<td>Research Archive: Berkeley Humanoid Lite (BOM transparent, 60 h durability test)</td>
+</tr>
+</tbody>
+</table>
+<p>One-sentence principle for tier selection: For research reproducibility and stable supply, choose high-end import or domestic alternatives; if budget is tight, you are willing to tinker, and you have many joints, maker-grade QDD or custom development can reduce actuator costs to a fraction of high-end solutions, at the cost of consistency and lifespan validation being your own responsibility.</p>
+<h2 id="4-three-scenario-based-selection-examples">4. Three Scenario-Based Selection Examples</h2>
+<h3 id="scenario-a-desktop-teaching-arm-joint-reach-0305-m-payload-1-kg">Scenario A: Desktop Teaching Arm Joint (Reach 0.3–0.5 m, Payload &lt; 1 kg)</h3>
+<p>Requirement Answer: Peak 5–15 N·m; Continuous low; Weight insensitive; Position control sufficient, force control optional.</p>
+<ul>
+<li>Conservative Solution: Smart servo bus (Dynamixel lineage). Refer to OP3's XM430-W350-R: Stall torque 4.1 N·m, supports current control, bus daisy-chain (Source: robotis-op3 research archive). SDK and documentation are extremely comprehensive, but backlash is large, unsuitable for force control research.</li>
+<li>Advanced Solution: Small harmonic drive. Leaderdrive LCD-14-100: Rated 5.1 N·m, instantaneous peak 33 N·m, weight 0.48–0.68 kg, backlash ≤20 arcsec (Source: Leaderdrive card) – The ultra-thin cup flexspline is designed for tight axial spaces like wrists/forearms.</li>
+<li>How to Analyze Your Situation: Budget priority, short course cycle → Servo motor; Need to publish papers, do compliant control → Small harmonic drive + frameless motor, or practice with custom QDD.</li>
+</ul>
+<h3 id="scenario-b-biped-hipknee-joint-full-size-or-1-m-class">Scenario B: Biped Hip/Knee Joint (Full-size or 1 m class)</h3>
+<p>Requirement Answer: Peak 100–400 N·m (calculated per Question 1); Continuous based on walking RMS; Weight sensitive; Force control mandatory.</p>
+<ul>
+<li>Route 1 (Quasi-Direct Drive): MIT Cheetah lineage, Unitree H1 knee peak 360 N·m follows this route (Source: Unitree card). Advantages: back-drivability, impact resistance, high bandwidth; Cost: high standing power consumption (motor continuously outputs torque to support weight).</li>
+<li>Route 2 (Harmonic Drive + Frameless Motor): THORMANG3 approach – Harmonic reduction + high power density servo (its platform uses PH54 series 100 W modules × 11, Source: thormang3 research archive), ample torque but "the main cost of the whole machine is here" (archive quote).</li>
+<li>Route 3 (Linear Drive): <a href="/entry/ent_component_planetary_roller_screw/">Planetary Roller Screw</a> push-rod knee/ankle (Optimus approach), highest thrust density, can absorb impact, but highest design and manufacturing threshold, price needs to be confirmed with the supplier (SKF data: dynamic load 3–5 times that of ball screw at same size, lifespan 10–15 times, Source: screw card).</li>
+<li>How to Analyze Your Situation: First biped build, strong control background → QDD (BHL archive proves $157 BOM level can also achieve zero-shot sim-to-real); Strong mechanical background, pursuing compactness and long endurance → Harmonic drive + frameless motor; Screw route recommended for the second robot.</li>
+</ul>
+<h3 id="scenario-c-dexterous-hand-finger">Scenario C: Dexterous Hand Finger</h3>
+<p>Requirement Answer: Very small peak (mN·m level); Extremely space-constrained; Fast response required; Cost × number of fingers.
+- Mainstream Solution: <a href="/entry/ent_component_hollow_cup_motor_2024/">Hollow Cup Motor</a> (Ironless) + Micro reducer/leadscrew/tendon. Dingsi series outer diameter Ø10–Ø42 mm, weight 5–60 g, example rated torque 1.5 mN·m, stall torque range 1–50 mN·m, mechanical time constant &lt;5 ms (Source: Hollow Cup Motor card) – Ironless means no cogging torque, low inertia, enabling fast finger flexion/extension.
+- Alternative Solution: Maxon ECX SPEED and other high-speed brushless motors (Source: Maxon card), or linear motors/tendon drive external to forearm.
+- How to Analyze Your Situation: First calculate fingertip force target to back-calculate tendon tension and motor stall torque; Hollow cup motor unit price is not public, requires price inquiry, and for procurement scales of "6–20 units per hand", both bargaining power and consistency need to be discussed.</p>
+<h2 id="5-validation-methods-how-to-read-datasheets-how-to-test-on-a-bench">5. Validation Methods: How to Read Datasheets, How to Test on a Bench</h2>
+<h3 id="five-disciplines-for-reading-datasheets">Five Disciplines for Reading Datasheets</h3>
+<ol>
+<li>Distinguish Four Torque Ratings: Rated (continuous), Starting/Stopping Allowable, Repeated Peak, Instantaneous Peak. Compare each against your RMS/Peak requirements (See Leaderdrive LHS-32-100 card for differences: Starting/Stopping Allowable 221 N·m is approx. 2.4 times the Rated 91 N·m).</li>
+<li>Rated torque often comes with a speed condition (e.g., "at 2000 rpm input"). Standardize to the same speed when comparing across manufacturers.</li>
+<li>Check Backlash Units Carefully: arcmin vs arcsec (1 arcmin = 60 arcsec). Harmonic Drive SHF specifies 10–20 arcsec, Leaderdrive specifies ≤20 arcsec – same order of magnitude.</li>
+<li>Torsional Stiffness uses segmented values (Harmonic K1/K2/K3). Use K1 from the low-torque segment for force control bandwidth estimation, don't fool yourself with K3.</li>
+<li>Efficiency, lifespan (L10) are tied to lubrication. If changing grease or operating in low-temperature environments, values need to be confirmed with the supplier.</li>
+</ol>
+<h3 id="bench-test-checklist-mandatory-after-receiving">Bench Test Checklist (Mandatory After Receiving)</h3>
+<ul>
+<li>Backlash Measurement: Lock input, apply ±5% rated torque, measure return difference with dial indicator/encoder, compare with datasheet.</li>
+<li>Back-drive Torque: Manually push and rotate the QDD joint when powered off to measure starting torque; excessive values indicate high friction or inertia, compromising force control transparency.</li>
+<li>Temperature Rise Curve: Run at rated RMS torque continuously for 30 min, record housing temperature, back-calculate duty cycle limits.</li>
+<li>Current-Torque Calibration: Hang weight lever arm, load point by point, fit the actual slope of <code>τ = K_t·I</code>. The accuracy of current-based force control depends entirely on this table.</li>
+<li>Torque Ripple: Rotate slowly at constant speed, record current ripple, evaluate low-speed force control limits.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>Each target joint has a written "Four-Question Requirement" answer: Peak/Continuous torque (with calculation process), weight limit, force control requirement boolean.</li>
+<li>Candidates are narrowed down to ≤3 "Motor + Reducer" combinations, each supported by a real datasheet, with rated torque &gt; RMS requirement and instantaneous peak &gt; worst-case scenario estimate.</li>
+<li>Key parameters (torque, backlash, weight) are all traceable to cards, datasheets, or research archives; any unverifiable parameters are marked "needs confirmation with supplier".</li>
+<li>At least one prototype has undergone bench testing (backlash + temperature rise + current-torque calibration), with a written explanation for any deviation between measured values and datasheet.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joint loses torque/overheats after a few minutes of continuous operation</td>
+<td>Selected based on peak torque, RMS exceeds rated</td>
+<td>Check task RMS torque vs rated value; add cooling or reduce duty cycle</td>
+</tr>
+<tr>
+<td>Motor hums and heats up during static standing</td>
+<td>QDD standing power consumption underestimated</td>
+<td>Measure standing phase current; consider parallel elastic elements or change route</td>
+</tr>
+<tr>
+<td>Position tracking has dead zone/jitter</td>
+<td>Large reducer backlash (common with servos)</td>
+<td>Measure backlash with dial indicator; switch to low-backlash solution or compensate in control</td>
+</tr>
+<tr>
+<td>Force control estimated torque doesn't match external force sensor</td>
+<td>K_t value is theoretical, not calibrated</td>
+<td>Perform current-torque calibration with weight lever; update K_t and friction compensation</td>
+</tr>
+<tr>
+<td>Harmonic joint precision degrades after impact</td>
+<td>Instantaneous torque exceeded limit, damaging flexspline</td>
+<td>Compare impact scenario vs instantaneous peak limit; re-measure backlash</td>
+</tr>
+<tr>
+<td>Screw joint cannot be back-driven, force control fails</td>
+<td>Lead angle &lt; friction angle, self-locking</td>
+<td>Calculate lead angle/friction angle; switch to larger lead screw</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li><a href="/roadmap/stage-1-actuator/">Phase 1 · Build an Actuator</a> – Full process of assembly, driving, and debugging after selection</li>
+<li><a href="/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/stage-3-humanoid/">← Previous<span>Phase 3: Full Humanoid Robot – From Bipedal Platform to &#34;Hear, Walk, Grasp&#34;</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/playbooks/compute-selection/">Next →<span>Computing Platform Selection: Equipping a Robot with a &#34;Layered Brain&#34;</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#selection-guide-how-to-choose-an-actuator">Selection Guide: How to Choose an Actuator</a><ul>
+<li><a href="#1-four-key-questions-translating-i-want-to-build-a-robot-into-selection-parameters">1. Four Key Questions: Translating "I want to build a robot" into Selection Parameters</a><ul>
+<li><a href="#question-1-what-peak-torque-is-needed">Question 1: What Peak Torque is needed?</a></li>
+<li><a href="#question-2-what-continuousrated-torque-and-thermal-considerations">Question 2: What Continuous/Rated Torque and Thermal Considerations?</a></li>
+<li><a href="#question-3-what-is-the-weight-budget">Question 3: What is the Weight Budget?</a></li>
+<li><a href="#question-4-is-force-control-and-back-drivability-needed">Question 4: Is Force Control and Back-drivability Needed?</a></li>
+</ul>
+</li>
+<li><a href="#2-technology-route-comparison-table">2. Technology Route Comparison Table</a></li>
+<li><a href="#3-manufacturer-quick-reference-by-tier">3. Manufacturer Quick Reference (By Tier)</a></li>
+<li><a href="#4-three-scenario-based-selection-examples">4. Three Scenario-Based Selection Examples</a><ul>
+<li><a href="#scenario-a-desktop-teaching-arm-joint-reach-0305-m-payload-1-kg">Scenario A: Desktop Teaching Arm Joint (Reach 0.3–0.5 m, Payload &lt; 1 kg)</a></li>
+<li><a href="#scenario-b-biped-hipknee-joint-full-size-or-1-m-class">Scenario B: Biped Hip/Knee Joint (Full-size or 1 m class)</a></li>
+<li><a href="#scenario-c-dexterous-hand-finger">Scenario C: Dexterous Hand Finger</a></li>
+</ul>
+</li>
+<li><a href="#5-validation-methods-how-to-read-datasheets-how-to-test-on-a-bench">5. Validation Methods: How to Read Datasheets, How to Test on a Bench</a><ul>
+<li><a href="#five-disciplines-for-reading-datasheets">Five Disciplines for Reading Datasheets</a></li>
+<li><a href="#bench-test-checklist-mandatory-after-receiving">Bench Test Checklist (Mandatory After Receiving)</a></li>
+</ul>
+</li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

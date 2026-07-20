@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Denoising Diffusion Probabilistic Models · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Denoising Diffusion Probabilistic Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Denoising Diffusion Probabilistic Models</h1>
+      <p class="entry-name-en">Denoising Diffusion Probabilistic Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Data &amp; Datasets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2006.11239v2.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Ho, Jain, and Abbeel (2020) introduce a denoising diffusion probabilistic model trained with a simplified weighted variational bound, achieving high-quality image synthesis on CIFAR-10 and LSUN datasets.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2006.11239" target="_blank" rel="noopener">Denoising Diffusion Probabilistic Models</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>We present high quality image synthesis results using diffusion probabilistic models, a class of latent variable models inspired by considerations from nonequilibrium thermodynamics. Our best results are obtained by training on a weighted variational bound designed according to a novel connection between diffusion probabilistic models and denoising score matching with Langevin dynamics, and our models naturally admit a progressive lossy decompression scheme that can be interpreted as a generalization of autoregressive decoding. On the unconditional CIFAR10 dataset, we obtain an Inception score of 9.46 and a state-of-the-art FID score of 3.17. On 256x256 LSUN, we obtain sample quality similar to ProgressiveGAN. Our implementation is available at https://github.com/hojonathanho/diffusion</p>
+<h2 id="content">Content</h2>
+<p>We present high quality image synthesis results using diffusion probabilistic models, a class of latent variable models inspired by considerations from nonequilibrium thermodynamics. Our best results are obtained by training on a weighted variational bound designed according to a novel connection between diffusion probabilistic models and denoising score matching with Langevin dynamics, and our models naturally admit a progressive lossy decompression scheme that can be interpreted as a generalization of autoregressive decoding. On the unconditional CIFAR10 dataset, we obtain an Inception score of 9.46 and a state-of-the-art FID score of 3.17. On 256x256 LSUN, we obtain sample quality similar to ProgressiveGAN. Our implementation is available at https://github.com/hojonathanho/diffusion</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_score_matching/">Score matching</a>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models is based on or uses Score matching.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_wang_wam_survey_2026/">World Action Models: The Next Frontier in Embodied AI</a>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models cites or references World Action Models: The Next Frontier in Embodied AI.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</a>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models cites or references REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</a>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models cites or references Diffusion Policy: Visuomotor Policy Learning via Action Diffusion.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_pi0_2024/">π0: A Vision-Language-Action Flow Model for General Robot Control</a>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models cites or references π0: A Vision-Language-Action Flow Model for General Robot Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_robot_motion_diffusion_model_m_2026/">Robot Motion Diffusion Model: Motion Generation for Robotic Characters</a>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models cites or references Robot Motion Diffusion Model: Motion Generation for Robotic Characters.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_neto_high_level_robot_programming_b_2013/">High-level robot programming based on CAD: dealing with unpredictable environments</a>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models cites or references High-level robot programming based on CAD: dealing with unpredictable environments.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_nernst_planck_equation/">Nernst-Planck equation</a>
+              <span class="rel-desc">Denoising Diffusion Probabilistic Models uses or builds on Nernst-Planck equation.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Diffusion Policy: Visuomotor Policy Learning via Action Diffusion cites or references Denoising Diffusion Probabilistic Models.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tedi_temporally_entangled_diff_2023/">TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is based on Denoising Diffusion Probabilistic Models.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_ddpm_reverse_process/">DDPM reverse process</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">DDPM reverse process is based on Denoising Diffusion Probabilistic Models.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ho_denoising_diffusion_probabilis_2020"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</h3>
+          <p>The implementation path of REFINE-DP is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tedi_temporally_entangled_diff_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis</h3>
+          <p>TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_score_matching/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Score matching</h3>
+          <p>A parameter-estimation technique that learns the gradient of an unknown log-probability density,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_neto_high_level_robot_programming_b_2013/">
+          <span class="entry-type">Paper</span>
+          <h3>High-level robot programming based on CAD: dealing with unpredictable environments</h3>
+          <p>This paper presents a CAD-based human-robot interface that lets non-expert users program industrial…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pi0_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>π0: A Vision-Language-Action Flow Model for General Robot Control</h3>
+          <p>A flow-matching VLA built on a pretrained VLM, trained on diverse dexterous robot data to perform…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>World Action Models: The Next Frontier in Embodied AI</h3>
+          <p>A 2026 survey that defines World Action Models (WAMs) as embodied foundation models unifying…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_nernst_planck_equation/">
+          <span class="entry-type">Equation</span>
+          <h3>Nernst-Planck equation</h3>
+          <p>A transport equation describing the flux of charged species under combined concentration gradients…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</h3>
+          <p>Diffusion Policy represents robot visuomotor policies as conditional denoising diffusion processes…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_ddpm_reverse_process/">
+          <span class="entry-type">Algorithm</span>
+          <h3>DDPM reverse process</h3>
+          <p>The learned backward Markov chain in Denoising Diffusion Probabilistic Models that gradually…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robot_motion_diffusion_model_m_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Motion Diffusion Model: Motion Generation for Robotic Characters</h3>
+          <p>The Robot Motion Diffusion Model first recovers the scene, target, or Motion representation from the…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

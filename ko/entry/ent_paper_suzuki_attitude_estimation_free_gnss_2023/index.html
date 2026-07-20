@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>자세 추정 없는 GNSS/IMU 통합 위치 추정 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">자세 추정 없는 GNSS/IMU 통합 위치 추정</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>자세 추정 없는 GNSS/IMU 통합 위치 추정</h1>
+      <p class="entry-name-en">Attitude-Estimation-Free GNSS and IMU Integration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">부품</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.10142v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>가속도계 크기와 속도 벡터 각도 변화 제약만을 사용하여 자세 추정 없이 GNSS/IMU를 융합하는 최적화 기반 위치 추정 방법을 제안하여 IMU 장착 오차에 둔감하고 다중경로·GNSS 단절에 강건함을 보였다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2304.10142" target="_blank" rel="noopener">Attitude-Estimation-Free GNSS and IMU Integration</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>GNSS(Global Navigation Satellite System)는 지구 고정 좌표계에서 3차원 위치와 속도를 획득할 수 있는 센서로, 로봇 및 차량의 실외 위치 추정에 널리 사용됩니다. GNSS 측위의 정확도와 가용성을 향상시키기 위해 다양한 GNSS/관성 측정 장치(IMU) 통합 방법이 제안되었습니다. 그러나 이러한 모든 방법은 IMU 데이터를 융합하기 위해 추정 상태에 3차원 자세를 추가해야 합니다. 본 연구에서는 자세 추정이 필요 없는 GNSS와 IMU 결합을 위한 새로운 최적화 기반 측위 방법을 제안합니다. 제안된 방법은 두 가지 유형의 제약 조건을 사용합니다. 하나는 가속도계에서 관찰된 3차원 가속도의 크기만을 사용하는 상태 간 제약 조건이고, 다른 하나는 자이로스코프로 측정된 각도 변화를 이용한 속도 벡터 간 각도 제약 조건입니다. 시뮬레이션 데이터를 통한 평가 결과, 제안된 방법은 IMU 장착 위치 오차가 증가하더라도 위치 추정 정확도를 유지하며, GNSS 관측값에 다중 경로 오차나 데이터 누락이 있을 때 정확도를 향상시킵니다. 제안된 방법은 실제 환경에서 획득한 IMU를 사용한 실험에서 측위 정확도를 개선할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>GNSS(Global Navigation Satellite System)는 지구 고정 좌표계에서 3차원 위치와 속도를 획득할 수 있는 센서로, 로봇 및 차량의 실외 위치 추정에 널리 사용됩니다. GNSS 측위의 정확도와 가용성을 향상시키기 위해 다양한 GNSS/관성 측정 장치(IMU) 통합 방법이 제안되었습니다. 그러나 이러한 모든 방법은 IMU 데이터를 융합하기 위해 추정 상태에 3차원 자세를 추가해야 합니다. 본 연구에서는 자세 추정이 필요 없는 GNSS와 IMU 결합을 위한 새로운 최적화 기반 측위 방법을 제안합니다. 제안된 방법은 두 가지 유형의 제약 조건을 사용합니다. 하나는 가속도계에서 관찰된 3차원 가속도의 크기만을 사용하는 상태 간 제약 조건이고, 다른 하나는 자이로스코프로 측정된 각도 변화를 이용한 속도 벡터 간 각도 제약 조건입니다. 시뮬레이션 데이터를 통한 평가 결과, 제안된 방법은 IMU 장착 위치 오차가 증가하더라도 위치 추정 정확도를 유지하며, GNSS 관측값에 다중 경로 오차나 데이터 누락이 있을 때 정확도를 향상시킵니다. 제안된 방법은 실제 환경에서 획득한 IMU를 사용한 실험에서 측위 정확도를 개선할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p10_1_1/">IMU 与关节编码器融合</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_system_identification/">시스템 동정</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_suzuki_attitude_estimation_free_gnss_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>IMU 与关节编码器融合</h3>
+          <p>状态估计器、实测轨迹误差 &lt; 目标、站立漂移可控</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_system_identification/">
+          <span class="entry-type">방법</span>
+          <h3>시스템 동정</h3>
+          <p>측정된 입출력 데이터로부터 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</h1>
+      <p class="entry-name-en">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01844v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Hugging Face, Sorbonne University, valeo.ai, École Normale Supérieure Paris-Saclay.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2506.01844" target="_blank" rel="noopener">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2506.01844" target="_blank" rel="noopener">SmolVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>대규모 멀티모달 데이터셋으로 사전 학습된 비전-언어 모델(VLM)은 풍부한 시각 및 언어 지식을 인코딩하여 로봇 공학의 강력한 기반이 됩니다. 최근 접근법은 로봇 정책을 처음부터 학습하는 대신 VLM을 비전-언어-행동(VLA) 모델로 변환하여 자연어 기반의 인식 및 제어를 가능하게 합니다. 그러나 기존 VLA는 일반적으로 수십억 개의 매개변수를 가진 거대한 모델로, 높은 학습 비용과 제한된 실제 배포 가능성을 초래합니다. 또한 학술 및 산업 데이터셋에 의존하며, 저렴한 로봇 플랫폼에서 수집된 커뮤니티 데이터의 증가하는 가용성을 간과합니다. 본 연구에서는 경쟁력 있는 성능을 유지하면서 학습 및 추론 비용을 획기적으로 줄인 소형, 효율적, 커뮤니티 기반 VLA인 SmolVLA를 제시합니다. SmolVLA는 단일 GPU에서 학습되고 소비자용 GPU 또는 CPU에서 배포되도록 설계되었습니다. 응답성을 더욱 개선하기 위해 인식 및 행동 예측을 행동 실행에서 분리하는 비동기 추론 스택을 도입하여 청크 단위 행동 생성으로 더 높은 제어 속도를 가능하게 합니다. 작은 크기에도 불구하고 SmolVLA는 10배 더 큰 VLA와 비교할 수 있는 성능을 달성합니다. 우리는 시뮬레이션 및 실제 로봇 벤치마크에서 SmolVLA를 평가하고 모든 코드, 사전 학습된 모델 및 학습 데이터를 공개합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>대규모 멀티모달 데이터셋으로 사전 학습된 비전-언어 모델(VLM)은 풍부한 시각 및 언어 지식을 인코딩하여 로봇 공학의 강력한 기반이 됩니다. 최근 접근법은 로봇 정책을 처음부터 학습하는 대신 VLM을 비전-언어-행동(VLA) 모델로 변환하여 자연어 기반의 인식 및 제어를 가능하게 합니다. 그러나 기존 VLA는 일반적으로 수십억 개의 매개변수를 가진 거대한 모델로, 높은 학습 비용과 제한된 실제 배포 가능성을 초래합니다. 또한 학술 및 산업 데이터셋에 의존하며, 저렴한 로봇 플랫폼에서 수집된 커뮤니티 데이터의 증가하는 가용성을 간과합니다. 본 연구에서는 경쟁력 있는 성능을 유지하면서 학습 및 추론 비용을 획기적으로 줄인 소형, 효율적, 커뮤니티 기반 VLA인 SmolVLA를 제시합니다. SmolVLA는 단일 GPU에서 학습되고 소비자용 GPU 또는 CPU에서 배포되도록 설계되었습니다. 응답성을 더욱 개선하기 위해 인식 및 행동 예측을 행동 실행에서 분리하는 비동기 추론 스택을 도입하여 청크 단위 행동 생성으로 더 높은 제어 속도를 가능하게 합니다. 작은 크기에도 불구하고 SmolVLA는 10배 더 큰 VLA와 비교할 수 있는 성능을 달성합니다. 우리는 시뮬레이션 및 실제 로봇 벤치마크에서 SmolVLA를 평가하고 모든 코드, 사전 학습된 모델 및 학습 데이터를 공개합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">VLA-0: Building State-of-the-Art VLAs with Zero Modification</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_guided_action_flow_q_guided_in_2092/">Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_xs_vla_coupling_coarse_grained_2026/">XS-VLA: Coupling Coarse-grained Spatial Distillation with Latent Flow Matching for Lightweight Robotic Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_corridorvla_explicit_spatial_c_2026/">CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bioprovla_agent_an_affordable_2026/">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_dynawm_a_base_vla_guided_world_2026/">DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_shukor_smolvla_a_vision_language_acti_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bioprovla_agent_an_affordable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</h3>
+          <p>arXiv:2605.07306v3 Announce Type: replace Abstract: Biological laboratory automation can reduce…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_guided_action_flow_q_guided_in_2092/">
+          <span class="entry-type">논문</span>
+          <h3>Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies</h3>
+          <p>arXiv:2607.02092v2 Announce Type: replace Abstract: Flow-matching vision-language-action policies…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_xs_vla_coupling_coarse_grained_2026/">
+          <span class="entry-type">논문</span>
+          <h3>XS-VLA: Coupling Coarse-grained Spatial Distillation with Latent Flow Matching for Lightweight Robotic Control</h3>
+          <p>arXiv:2607.04171v1 Announce Type: new Abstract: Large Vision-Language Models (LVLMs) have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dynawm_a_base_vla_guided_world_2026/">
+          <span class="entry-type">논문</span>
+          <h3>DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</h3>
+          <p>arXiv:2607.02604v1 Announce Type: cross Abstract: Although vision-language-action (VLA) models have…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_corridorvla_explicit_spatial_c_2026/">
+          <span class="entry-type">논문</span>
+          <h3>CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors</h3>
+          <p>arXiv:2604.21241v2 Announce Type: replace Abstract: Vision--Language--Action (VLA) models often use…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLA-0: Building State-of-the-Art VLAs with Zero Modification</h3>
+          <p>VLA-0: Building State-of-the-Art VLAs with Zero Modification (VLA-0), is a 2025 large…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

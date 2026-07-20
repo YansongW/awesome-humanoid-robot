@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>운동학적 제약을 고려한 로봇 그룹 경로 계획 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">운동학적 제약을 고려한 로봇 그룹 경로 계획</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>운동학적 제약을 고려한 로봇 그룹 경로 계획</h1>
+      <p class="entry-name-en">Path Planning With Kinematic Constraints For Robot Groups</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1704.07538v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>이산화된 MAPF/TAPF 계획을 운동학적으로 실행 가능한 궤적으로 변환하면서 로봇 간 최소 안전 거리를 보장하는 단순 시간 네트워크 기반 후처리 프레임워크를 제시하고 시뮬레이션 및 실제 로봇으로 검증한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1704.07538" target="_blank" rel="noopener">Path Planning With Kinematic Constraints For Robot Groups</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>다중 로봇의 경로 계획은 AI 및 로봇 공학 커뮤니티에서 널리 연구되어 왔습니다. 주어진 이산화된 환경에서 로봇은 지정된 목표 위치 집합까지 충돌 없는 경로를 찾아야 합니다. 로봇은 완전히 익명일 수도, 비익명일 수도, 또는 그룹으로 조직될 수도 있습니다. 이 추상적인 문제에 대한 강력한 솔버가 존재하지만, 운동학적 제약을 무시하는 단순화 가정을 하여 실제 로봇에서 결과 계획을 사용하기 어렵게 만듭니다. 본 논문에서는 최대 속도와 같은 운동학적 제약을 고려하면서 사용자가 지정한 최소 안전 거리를 보장하는 솔루션을 제시합니다. 우리는 2D 및 3D 환경에서 시뮬레이션과 실제 로봇을 통해 접근 방식을 시연합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>다중 로봇의 경로 계획은 AI 및 로봇 공학 커뮤니티에서 널리 연구되어 왔습니다. 주어진 이산화된 환경에서 로봇은 지정된 목표 위치 집합까지 충돌 없는 경로를 찾아야 합니다. 로봇은 완전히 익명일 수도, 비익명일 수도, 또는 그룹으로 조직될 수도 있습니다. 이 추상적인 문제에 대한 강력한 솔버가 존재하지만, 운동학적 제약을 무시하는 단순화 가정을 하여 실제 로봇에서 결과 계획을 사용하기 어렵게 만듭니다. 본 논문에서는 최대 속도와 같은 운동학적 제약을 고려하면서 사용자가 지정한 최소 안전 거리를 보장하는 솔루션을 제시합니다. 우리는 2D 및 3D 환경에서 시뮬레이션과 실제 로봇을 통해 접근 방식을 시연합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_direct_collocation/">직접 배치법</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_honig_path_planning_with_kinematic_c_2017"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_direct_collocation/">
+          <span class="entry-type">방법</span>
+          <h3>직접 배치법</h3>
+          <p>상태와 제어 입력을 배치점에서 이산화하고 결과 비선형 계획법을 직접 푸는 궤적 최적화 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

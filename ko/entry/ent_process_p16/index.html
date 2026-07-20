@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小批量试产与量产准备（Pilot &amp; Production Ramp） · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">小批量试产与量产准备（Pilot &amp; Production Ramp）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>小批量试产与量产准备（Pilot &amp; Production Ramp）</h1>
+      <p class="entry-name-en">Pilot &amp; Production Ramp</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">대량 생산</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>小批量试产与量产准备（Pilot &amp; Production Ramp）</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>소량 시제품 생산 및 양산 준비(Pilot &amp; Production Ramp)는 휴머노이드 로봇 제품 개발 전 과정 중 16번째 단계로, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>이 단계는 입력 정리,方案 설계, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 확보할 수 있도록 하는 핵심 노드입니다.</p>
+<h2 id="_3">주요 하위 작업 및 기술 내용</h2>
+<h4 id="_4">제조 가능성 설계</h4>
+<h5 id="dfmdfa">DFM/DFA 검토</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 설계 제조 가능성/조립 가능성 분석, 조립 공수 추정</li>
+<li><strong>설계 사고 논리</strong>: 3D 프린팅/CNC 프로토타입을 다이캐스팅, 사출 성형, 판금 등 양산 공정으로 전환</li>
+<li><strong>핵심 제약 조건</strong>: 금형 비용, 수율, 택트 타임</li>
+<li><strong>완료 기준 / 산출물</strong>: DFM/DFA 보고서, 엔지니어링 변경 목록, 비용 영향 평가
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P16.1.1.1 입력 정리 및 목표 정량화</strong>: 「DFM/DFA 검토」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P16.1.1.2方案/방법 설계</strong>: 「DFM/DFA 검토」에 대한 구현 방법 또는 후보方案을 수립하고, 「설계 제조 가능성/조립 가능성 분석, 조립 공수 추정」을 사용하여论证하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보方案 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및方案 확정</li>
+<li><strong>P16.1.1.3 구현/프로토타입/시제품 제작</strong>: 설계方案에 따라 「DFM/DFA 검토」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 실행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P16.1.1.4 테스트 실행 및 결과 분석</strong>: 검수 기준에 따라 「DFM/DFA 검토」 테스트를 실행하고, 통과율/오차/편차를 통계하며, 근본 원인 분석을 수행하고 개선 목록을 작성합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 실행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P16.1.1.5 문서 출력 및 하위 인도</strong>: 「DFM/DFA 검토」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_5">금형 및 지그 설계</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 다이캐스팅 금형, 사출 금형, 프레스 금형, 지그,治具, 검사 지그</li>
+<li><strong>설계 사고 논리</strong>: 배치 일관성 및 조립 정밀도 보장</li>
+<li><strong>핵심 제약 조건</strong>: 금형周期, 비용, 수정 난이도</li>
+<li><strong>완료 기준 / 산출물</strong>: 금형/지그 도면, FAI 계획, 검수 기준
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P16.1.2.1 입력 정리 및 목표 정량화</strong>: 「금형 및 지그 설계」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P16.1.2.2 개념 및 상세 설계</strong>: 「금형 및 지그 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「다이캐스팅 금형, 사출 금형, 프레스 금형, 지그,治具, 검사 지그」를 사용하여 타당성을 검증하며, 도면/알고리즘/논리 프레임워크를 출력합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보方案 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및方案 확정</li>
+<li><strong>P16.1.2.3 구현/프로토타입/시제품 제작</strong>: 설계方案에 따라 「금형 및 지그 설계」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 실행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P16.1.2.4 검증 및 문제 폐쇄</strong>: 「금형 및 지그 설계」 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 실행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P16.1.2.5 문서 출력 및 하위 인도</strong>: 「금형 및 지그 설계」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="sop">조립 라인 계획 및 SOP</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 공정 설계, 지그治具, 표준 작업, 택트 타임 밸런싱</li>
+<li><strong>설계 사고 논리</strong>: 단일 수동 조립에서 소량 라인 생산으로 전환</li>
+<li><strong>핵심 제약 조건</strong>: 택트 타임, 인력 교육, 공간</li>
+<li><strong>완료 기준 / 산출물</strong>: 조립 흐름도, 지그 목록, SOP, 택트 타임 산출
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P16.1.3.1 입력 정리 및 목표 정량화</strong>: 「조립 라인 계획 및 SOP」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P16.1.3.2 알고리즘/제어方案 설계</strong>: 「공정 설계, 지그治具, 표준 작업, 택트 타임 밸런싱」을 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보方案을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보方案 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및方案 확정</li>
+<li><strong>P16.1.3.3 알고리즘 구현 및 시뮬레이션 검증</strong>: 「조립 라인 계획 및 SOP」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 실행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P16.1.3.4 알고리즘 튜닝 및 성능 검증</strong>: 「조립 라인 계획 및 SOP」 알고리즘의 파라미터 최적화 및 경계 테스트를 수행하고, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 실행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P16.1.3.5 문서 출력 및 하위 인도</strong>: 「조립 라인 계획 및 SOP」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_6">공급망 및 품질 관리</h4>
+<h5 id="_7">공급업체 선정 및 심사</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 공급업체 심사, 샘플 승인, IQC, 2차 공급업체 개발</li>
+<li><strong>설계 사고 논리</strong>: 핵심 부품(모터, 감속기, 배터리, 컴퓨팅 보드)은 다중 공급처 확보 필요</li>
+<li><strong>핵심 제약 조건</strong>: 납기, 품질 일관성, 가격</li>
+<li><strong>완료 기준 / 산출물</strong>: 공급업체 목록, 샘플 테스트 보고서, 적격 공급업체 명단
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P16.2.1.1 입력 정리 및 목표 정량화</strong>: 「공급업체 선정 및 심사」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P16.2.1.2 후보方案 수립 및 평가</strong>: 「공급업체 선정 및 심사」에 대한 후보方案 라이브러리를 구축하고, 「공급업체 심사, 샘플 승인, IQC, 2차 공급업체 개발」을 사용하여 정량적 평가를 수행하며, 비용, 성능, 공급망, 유지보수성을 고려하여 최종方案을 결정합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보方案 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및方案 확정</li>
+<li><strong>P16.2.1.3 구현/프로토타입/시제품 제작</strong>: 설계方案에 따라 「공급업체 선정 및 심사」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 실행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P16.2.1.4 검증 및 문제 폐쇄</strong>: 「공급업체 선정 및 심사」 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 실행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P16.2.1.5 문서 출력 및 하위 인도</strong>: 「공급업체 선정 및 심사」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_8">품질 관리 체계 구축</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: SPC, FAI, 입고 검사, 공정 검사, 출하 검사, MSA</li>
+<li><strong>설계 사고 논리</strong>: 핵심 치수 및 성능 모니터링 구축, 배치 불량 방지</li>
+<li><strong>핵심 제약 조건</strong>: AQL 기준, 검사 능력, 인력 교육</li>
+<li><strong>완료 기준 / 산출물</strong>: 품질 계획, 검사 규격, SPC 관리도
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P16.2.2.1 입력 정리 및 목표 정량화</strong>: 「품질 관리 체계 구축」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P16.2.2.2 알고리즘/제어方案 설계</strong>: 「SPC, FAI, 입고 검사, 공정 검사, 출하 검사, MSA」를 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보方案을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보方案 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및方案 확정</li>
+<li><strong>P16.2.2.3 알고리즘 구현 및 시뮬레이션 검증</strong>: 「품질 관리 체계 구축」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 실행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P16.2.2.4 알고리즘 튜닝 및 성능 검증</strong>: 「품질 관리 체계 구축」 알고리즘의 파라미터 최적화 및 경계 테스트를 수행하고, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 실행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P16.2.2.5 문서 출력 및 하위 인도</strong>: 「품질 관리 체계 구축」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_9">입고 및 공정 이상 처리</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 8D, CAPA, 공급업체 품질 개선</li>
+<li><strong>설계 사고 논리</strong>: 품질 문제 신속 폐쇄, 하위 단계 유입 방지</li>
+<li><strong>핵심 제약 조건</strong>: 대응 시간, 근본 원인 분석 능력</li>
+<li><strong>완료 기준 / 산출물</strong>: 8D 보고서, 개선 검증, 불량률 감소
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P16.2.3.1 입력 정리 및 목표 정량화</strong>: 「입고 및 공정 이상 처리」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P16.2.3.2方案/방법 설계</strong>: 「입고 및 공정 이상 처리」에 대한 구현 방법 또는 후보方案을 수립하고, 「8D, CAPA, 공급업체 품질 개선」을 사용하여论证하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보方案 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및方案 확정</li>
+<li><strong>P16.2.3.3 구현/프로토타입/시제품 제작</strong>: 설계方案에 따라 「입고 및 공정 이상 처리」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 실행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P16.2.3.4 검증 및 문제 폐쇄</strong>: 「입고 및 공정 이상 처리」 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 실행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P16.2.3.5 문서 출력 및 하위 인도</strong>: 「입고 및 공정 이상 처리」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_10">시제품 생산 및 양산 램프업</h4>
+<h5 id="pilot-run">소량 시제품 생산(Pilot Run)</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 10–50대 시제품 생산, 문제 추적, ECN, 첫품 검사</li>
+<li><strong>설계 사고 논리</strong>: 공급망, 조립, 테스트, 소프트웨어 전체 링크 검증</li>
+<li><strong>핵심 제약 조건</strong>: 시간, 자원, 시제품 비용</li>
+<li><strong>완료 기준 / 산출물</strong>: 시제품 생산 요약 보고서, 직통율, 문제 폐쇄율
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P16.3.1.1 입력 정리 및 목표 정량화</strong>: 「소량 시제품 생산(Pilot Run)」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P16.3.1.2方案/방법 설계</strong>: 「소량 시제품 생산(Pilot Run)」에 대한 구현 방법 또는 후보方案을 수립하고, 「10–50대 시제품 생산, 문제 추적, ECN, 첫품 검사」를 사용하여论证하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보方案 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및方案 확정</li>
+<li><strong>P16.3.1.3 구현/프로토타입/시제품 제작</strong>: 설계方案에 따라 「소량 시제품 생산(Pilot Run)」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 실행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P16.3.1.4 검증 및 문제 폐쇄</strong>: 「소량 시제품 생산(Pilot Run)」 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 실행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P16.3.1.5 문서 출력 및 하위 인도</strong>: 「소량 시제품 생산(Pilot Run)」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_2_3/">来料与过程异常处理</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5_1_2/">关节安装接口与壳体设计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_2_1/">供应商选择与审核</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_2_2/">质量控制体系建立</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_design_for_manufacturing/">제조 용이성 설계(DFM)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_design_for_manufacturing_2024/">Design for Manufacturing</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_1_3/">装配线规划与 SOP</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5/">本体结构工程与原型（Mechanical Structure）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5_1_1/">中心骨架与四肢连杆设计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_1_1/">DFM/DFA 评审</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_design_for_assembly/">조립 용이성 설계(DFA)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_3_1/">小批量试产（Pilot Run）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_3_3/">PPAP / 量产 readiness 评估</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15/">整机集成与验证测试（Integration &amp; V&amp;V）</a>
+              <span class="rel-desc">P16 依赖 P15 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_1_1/">腿部系统集成与调试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_3_1/">小批量试产（Pilot Run）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1/">需求定义与系统方案（Concept / Pre-A）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ejsing_near_optimal_task_graph_schedu_2020/">Priced Timed Automata 및 Priced Timed Markov Decision Processes를 이용한 근사 최적 작업 그래프 스케줄링</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_1_3/">装配线规划与 SOP</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_3_2/">软件稳定性与回归测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_1_2/">模具与工装设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_1_3/">感知-规划-控制闭环集成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_1_1/">DFM/DFA 评审</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_3_4/">服务手册与培训</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_2_2/">质量控制体系建立</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_2_1/">供应商选择与审核</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_3_2/">成本核算与降本</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_3_3/">PPAP / 量产 readiness 评估</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_2_3/">来料与过程异常处理</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p16"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>软件稳定性与回归测试</h3>
+          <p>长时运行无崩溃、关键故障注入恢复通过</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>中心骨架与四肢连杆设计</h3>
+          <p>3D 结构模型、关键截面设计、BOM 初稿</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>成本核算与降本</h3>
+          <p>小批量成本分析报告、降本项目清单</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_3_3/">
+          <span class="entry-type">방법</span>
+          <h3>PPAP / 量产 readiness 评估</h3>
+          <p>PPAP 批准、量产 readiness 评估通过</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>来料与过程异常处理</h3>
+          <p>8D 报告、改善验证、不良率下降</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_design_for_manufacturing/">
+          <span class="entry-type">방법</span>
+          <h3>제조 용이성 설계(DFM)</h3>
+          <p>부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5/">
+          <span class="entry-type">방법</span>
+          <h3>本体结构工程与原型（Mechanical Structure）</h3>
+          <p>本体结构工程与原型（Mechanical Structure）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">개념</span>
+          <h3>Production Ramp</h3>
+          <p>파일럿 라인에서 볼륨 제조로 전환하면서 수율, 사이클 타임 및 비용을 개선하는 과정.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>供应商选择与审核</h3>
+          <p>供应商清单、样品测试报告、合格供方名录</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_3_4/">
+          <span class="entry-type">방법</span>
+          <h3>服务手册与培训</h3>
+          <p>服务手册、备件策略、培训计划</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>DFM/DFA 评审</h3>
+          <p>DFM/DFA 报告、工程变更清单、成本影响评估</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>感知-规划-控制闭环集成</h3>
+          <p>典型任务端到端成功率 &gt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1/">
+          <span class="entry-type">방법</span>
+          <h3>需求定义与系统方案（Concept / Pre-A）</h3>
+          <p>需求定义与系统方案（Concept / Pre-A）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ejsing_near_optimal_task_graph_schedu_2020/">
+          <span class="entry-type">논문</span>
+          <h3>Priced Timed Automata 및 Priced Timed Markov Decision Processes를 이용한 근사 최적 작업 그래프 스케줄링</h3>
+          <p>본 논문은 선점형 및 비선점형 작업 그래프 스케줄링을 Priced Timed Automata와 Priced Timed Markov Decision Processes에서의 최단 경로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>关节安装接口与壳体设计</h3>
+          <p>关节接口图纸、壳体 3D、密封方案</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>模具与工装设计</h3>
+          <p>模具/工装图纸、FAI 计划、验收标准</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_design_for_assembly/">
+          <span class="entry-type">방법</span>
+          <h3>조립 용이성 설계(DFA)</h3>
+          <p>부품 수를 줄이고 결합을 단순화하며 조립 시간을 단축하여 생산 비용을 낮추고 신뢰성을 높이는 설계 방법론.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_3_1/">
+          <span class="entry-type">방법</span>
+          <h3>小批量试产（Pilot Run）</h3>
+          <p>试产总结报告、直通率、问题闭环率</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15/">
+          <span class="entry-type">방법</span>
+          <h3>整机集成与验证测试（Integration &amp; V&amp;V）</h3>
+          <p>整机集成与验证测试（Integration &amp; V&amp;V）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>腿部系统集成与调试</h3>
+          <p>单腿/双腿站立稳定、关节跟随误差 &lt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8/">
+          <span class="entry-type">방법</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>质量控制体系建立</h3>
+          <p>质量计划、检验规范、SPC 控制图</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_design_for_manufacturing_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Design for Manufacturing</h3>
+          <p>휨로봇의 생산 비용 절감, 수율 향상 및 조립 단순화를 위한 부품 및 어셈블리 설계 관행.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>装配线规划与 SOP</h3>
+          <p>装配流程图、工装清单、SOP、节拍测算</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#_3">주요 하위 작업 및 기술 내용</a><ul>
+<li><a href="#_4">제조 가능성 설계</a><ul>
+<li><a href="#dfmdfa">DFM/DFA 검토</a></li>
+<li><a href="#_5">금형 및 지그 설계</a></li>
+<li><a href="#sop">조립 라인 계획 및 SOP</a></li>
+</ul>
+</li>
+<li><a href="#_6">공급망 및 품질 관리</a><ul>
+<li><a href="#_7">공급업체 선정 및 심사</a></li>
+<li><a href="#_8">품질 관리 체계 구축</a></li>
+<li><a href="#_9">입고 및 공정 이상 처리</a></li>
+</ul>
+</li>
+<li><a href="#_10">시제품 생산 및 양산 램프업</a><ul>
+<li><a href="#pilot-run">소량 시제품 생산(Pilot Run)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

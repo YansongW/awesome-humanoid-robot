@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>磁场定向控制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">磁场定向控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>磁场定向控制</h1>
+      <p class="entry-name-en">Field-Oriented Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Body backfilled from chapter-04.md#4.5.2 磁场定向控制（FOC）的数学结构 by scripts/backfill_nonpaper_entries.py. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1002/9781118704810" target="_blank" rel="noopener">N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1002/9781118526030" target="_blank" rel="noopener">P. C. Krause, O. Wasynczuk, and S. D. Sudhoff, Analysis of Electric Machinery and Drive Systems, 3rd ed., IEEE Press/Wiley, 2013</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">applies_to</span>
+            <a href="/entry/ent_component_rotary_actuator_2024/">旋转执行器</a>
+            
+              
+                
+              
+              <span class="rel-desc">FOC 广泛用于人形机器人关节旋转执行器中的 PMSM/BLDC 伺服驱动。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">requires</span>
+            <a href="/entry/ent_method_pid_control/">PID控制</a>
+            
+              
+                
+              
+              <span class="rel-desc">FOC 通常在 d-q 坐标系中使用 PI/PID 电流控制器调节磁链电流与转矩电流。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="_2">磁场定向控制的定义与定位</h3>
+<p>磁场定向控制属于 <strong>方法</strong> 类型。 所属领域包括：零部件, AI 模型与算法。 价值链层级：上游。 一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。 英文名称为 <em>Field-Oriented Control</em>。 韩文名称为 <em>전계 지향 제어</em>。</p>
+<h3 id="_3">磁场定向控制的数学与原理基础</h3>
+<p>磁场定向控制建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，磁场定向控制通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_4">算法步骤与实现要点</h3>
+<p>在实际实现磁场定向控制时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_5">典型应用与局限性</h3>
+<p>磁场定向控制可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_6">相关标签</h3>
+<ul>
+<li>motor</li>
+<li>pmsm</li>
+<li>bldc</li>
+<li>servo</li>
+<li>current_control</li>
+<li>actuator</li>
+</ul>
+<h3 id="_7">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，磁场定向控制在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li><a href="https://doi.org/10.1002/9781118704810">N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013</a></li>
+<li><a href="https://doi.org/10.1002/9781118526030">P. C. Krause, O. Wasynczuk, and S. D. Sudhoff, Analysis of Electric Machinery and Drive Systems, 3rd ed., IEEE Press/Wiley, 2013</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使能</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_rotary_actuator_2024/">旋转执行器</a>
+              <span class="rel-desc">FOC 广泛用于人形机器人关节旋转执行器中的 PMSM/BLDC 伺服驱动。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_principle_current_velocity_position_loops/">电流环/速度环/位置环</a>
+              <span class="rel-desc">磁场定向控制提及电流环/速度环/位置环。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p10_2_3/">全身控制 WBC</a>
+              <span class="rel-desc">磁场定向控制提及全身控制 WBC。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_pid_control/">PID控制</a>
+              <span class="rel-desc">FOC 通常在 d-q 坐标系中使用 PI/PID 电流控制器调节磁链电流与转矩电流。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              <span class="rel-desc">磁场定向控制提及全身控制（WBC）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_comp_servo_motor/">高性能伺服电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">高性能伺服电机使用磁场定向控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_frameless_torque_motor_2024/">无框力矩电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">无框力矩电机前置依赖磁场定向控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yigit_kinematic_analysis_and_design_2023/">一种具有固定执行器的新型（6+3）自由度并联机器人的运动学分析与设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">一种具有固定执行器的新型（6+3）自由度并联机器人的运动学分析与设计提及磁场定向控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_bldc_motor/">无刷直流电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">无刷直流电机使用磁场定向控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_metric_torque_density/">转矩密度</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_field_oriented_control"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_rotary_actuator_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>旋转执行器</h3>
+          <p>产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_frameless_torque_motor_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>无框力矩电机</h3>
+          <p>人形机器人髋关节、肩关节往往需要几十到上百 N·m 的输出扭矩。若采用普通伺服电机加高减速比，虽可放大扭矩，但会牺牲透明度和带宽。一种方案是使用 无框力矩电机（frameless torque…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_bldc_motor/">
+          <span class="entry-type">零部件</span>
+          <h3>无刷直流电机</h3>
+          <p>无刷直流电机（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_metric_torque_density/">
+          <span class="entry-type">概念</span>
+          <h3>转矩密度</h3>
+          <p>1. 扭矩密度 \(\tau_d = \tau_{\text{peak}} / m\)（单位：N·m/kg）或 N·m/L，衡量单位质量/体积能产生多大扭矩。 2. 功率密度 \(P_d =…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_pid_control/">
+          <span class="entry-type">方法</span>
+          <h3>PID控制</h3>
+          <p>一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_comp_servo_motor/">
+          <span class="entry-type">零部件</span>
+          <h3>高性能伺服电机</h3>
+          <p>伺服电机（Servo Motor）是一种与专用伺服驱动器配套、具备闭环位置、速度与转矩控制能力的高性能电机，广泛应用于工业机器人、数控机床、人形机器人关节、AGV…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制 WBC</h3>
+          <p>- P10.2.3.1 输入梳理与目标量化 - 整理「全身控制 WBC」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制（FOC）</h3>
+          <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yigit_kinematic_analysis_and_design_2023/">
+          <span class="entry-type">论文</span>
+          <h3>一种具有固定执行器的新型（6+3）自由度并联机器人的运动学分析与设计</h3>
+          <p>提出了一种运动学冗余的（6+3）自由度并联机器人，该机器人由三个相同的基座安装式3自由度RU/2-RUS支腿构成，利用螺旋理论推导逆运动学和雅可比矩阵，对奇异性进行分类，并优化支腿几何结构以获得2g加…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_current_velocity_position_loops/">
+          <span class="entry-type">原理</span>
+          <h3>电流环/速度环/位置环</h3>
+          <p>4.5.5 电流环、速度环、位置环的级联控制 实际关节驱动通常采用三级级联控制：最内层 电流环（力矩环），中间 速度环，最外层 位置环。每一层带宽约为下一层的 5-10 倍，以保证稳定性。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#_2">磁场定向控制的定义与定位</a></li>
+<li><a href="#_3">磁场定向控制的数学与原理基础</a></li>
+<li><a href="#_4">算法步骤与实现要点</a></li>
+<li><a href="#_5">典型应用与局限性</a></li>
+<li><a href="#_6">相关标签</a></li>
+<li><a href="#_7">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

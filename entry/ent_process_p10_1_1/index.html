@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IMU 与关节编码器融合 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">IMU 与关节编码器融合</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>IMU 与关节编码器融合</h1>
+      <p class="entry-name-en">IMU and joint encoder fusion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>- P10.1.1.1 输入梳理与目标量化 - 整理「IMU 与关节编码器融合」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化 KPI - 建立任务 Owner、时间节点与风险登记</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p><strong>所属阶段/工作包</strong>：运动控制算法开发与验证（Motion Control）</p>
+<h2 id="_2">核心内容</h2>
+<p><strong>方法 / 工具</strong>：EKF/UKF/Madgwick、零速修正、关节运动学积分</p>
+<p><strong>设计思考逻辑</strong>：实时估计质心位置、速度、姿态；是平衡控制的基础</p>
+<p><strong>关键约束</strong>：传感器延迟、协方差调参、足端打滑</p>
+<p><strong>完成标准 / 输出物</strong>：状态估计器、实测轨迹误差 &lt; 目标、站立漂移可控</p>
+<p><strong>三级子任务与四级关键动作：</strong></p>
+<ul>
+<li>P10.1.1.1 输入梳理与目标量化</li>
+<li>
+<p>整理「IMU 与关节编码器融合」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。</p>
+<ul>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+</ul>
+</li>
+<li>
+<p>P10.1.1.2 方案/方法设计</p>
+</li>
+<li>
+<p>针对「IMU 与关节编码器融合」制定实施方法或候选方案，使用「EKF/UKF/Madgwick、零速修正、关节运动学积分」进行论证，明确技术路线与资源需求。</p>
+<ul>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+</ul>
+</li>
+<li>
+<p>P10.1.1.3 实施/原型/样件制作</p>
+</li>
+<li>
+<p>根据设计方案执行「IMU 与关节编码器融合」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。</p>
+<ul>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+</ul>
+</li>
+<li>
+<p>P10.1.1.4 验证与问题闭环</p>
+</li>
+<li>
+<p>对「IMU 与关节编码器融合」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。</p>
+<ul>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+</ul>
+</li>
+<li>
+<p>P10.1.1.5 文档输出与下游交付</p>
+</li>
+<li>输出「IMU 与关节编码器融合」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。<ul>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">参考</h2>
+<ul>
+<li>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_joint_encoder_2024/">关节编码器</a>
+              <span class="rel-desc">IMU 与关节编码器融合使用关节编码器。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-desc">IMU 与关节编码器融合is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_adaptive_invariant_extended_ka_2026/">Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_inekformer_a_hybrid_state_esti_2025/">InEKFormer: A Hybrid State Estimator for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_suzuki_attitude_estimation_free_gnss_2023/">无需姿态估计的GNSS/IMU融合定位</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">无需姿态估计的GNSS/IMU融合定位discussesIMU 与关节编码器融合。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_contact_aided_invariant_extend_2019/">Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion: An optimization-based multi-sensor state estimator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_the_invariant_extended_kalman_2014/">The invariant extended Kalman filter as a stable observer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_autoodom_learning_auto_regress_2025/">AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lee_attention_based_neural_augment_2026/">基于注意力机制的神经增强卡尔曼滤波用于足式机器人状态估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于注意力机制的神经增强卡尔曼滤波用于足式机器人状态估计discussesIMU 与关节编码器融合。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_contact_aided_invariant_extend_2026/">Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_contact_representatio_2026/">Learning Contact Representation for Leg Odometry</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">人形机器人凝视稳定：一个综合框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">人形机器人凝视稳定：一个综合框架使用IMU 与关节编码器融合。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p10_1_1"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人凝视稳定：一个综合框架</h3>
+          <p>本文提出了一种人形机器人凝视稳定框架，该框架将关节速度指令得到的运动学前馈项与头部陀螺仪的惯性反馈项相结合，以补偿自运动和外部扰动引起的相机扰动，并在 iCub 机器人上通过残余光流进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_inekformer_a_hybrid_state_esti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>InEKFormer: A Hybrid State Estimator for Humanoid Robots</h3>
+          <p>InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on state estimation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10/">
+          <span class="entry-type">方法</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM</h3>
+          <p>ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_autoodom_learning_auto_regress_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</h3>
+          <p>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_contact_representatio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Contact Representation for Leg Odometry</h3>
+          <p>Learning Contact Representation for Leg Odometry is a paper on State Estimation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VINS-Fusion: An optimization-based multi-sensor state estimator</h3>
+          <p>VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_the_invariant_extended_kalman_2014/">
+          <span class="entry-type">论文</span>
+          <h3>The invariant extended Kalman filter as a stable observer</h3>
+          <p>The invariant extended Kalman filter as a stable observer is a 2014 work on state estimation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_contact_aided_invariant_extend_2019/">
+          <span class="entry-type">论文</span>
+          <h3>Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation</h3>
+          <p>Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation is a 2019 work on state…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_suzuki_attitude_estimation_free_gnss_2023/">
+          <span class="entry-type">论文</span>
+          <h3>无需姿态估计的GNSS/IMU融合定位</h3>
+          <p>提出了一种基于优化的GNSS/IMU融合定位方法，仅利用加速度计幅值与速度矢量角度变化约束来避免姿态估计，从而降低对IMU安装标定的敏感性，并提升多路径与GNSS中断时的鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">
+          <span class="entry-type">论文</span>
+          <h3>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</h3>
+          <p>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">
+          <span class="entry-type">论文</span>
+          <h3>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</h3>
+          <p>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_adaptive_invariant_extended_ka_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</h3>
+          <p>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation is a paper on State…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_contact_aided_invariant_extend_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation</h3>
+          <p>Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation is a paper on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_joint_encoder_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>关节编码器</h3>
+          <p>安装于机器人关节的位置或速度传感器，为电机控制提供高分辨率反馈。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lee_attention_based_neural_augment_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于注意力机制的神经增强卡尔曼滤波用于足式机器人状态估计</h3>
+          <p>提出 AttenNKF，一种用交叉注意力神经补偿器增强的不变扩展卡尔曼滤波器；该补偿器根据连续足端打滑程度估计打滑引起的误差，并在滤波更新后作为补偿量施加，以改善打滑条件下足式机器人的状态估计。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

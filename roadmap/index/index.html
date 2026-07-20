@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>0→1 造人形机器人：路线图总览 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">0→1 造人形机器人：路线图总览</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="01">0→1 造人形机器人：路线图总览</h1>
+<blockquote>
+<p>⚠️ 本路线图内容基于公开资料与理论知识整理，未经实机验证；涉及电气与机械操作时请自行核实安全规范。</p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">先读这个，再谈造机器人</p>
+<p>这是一条涉及<strong>真实硬件</strong>的路线：锂电池、24–48 V 母线、kg 级摆动的金属结构件、堵转时足以夹伤手指的关节扭矩。本路线图的任何一页都不是安全手册的替代品。上电前请自行核实电气与机械安全规范；没有把握的操作，找有硬件经验的人在场再看一次。所有价格、交期、供应商信息以你下单时的实际情况为准。</p>
+</div>
+<h2 id="_1">这个仓库的三种用法：查、学、造</h2>
+<p>本仓库同时是一本"图谱"、一本"书"和一条"施工图"。同一个概念在三层里各出现一次，职责不同：</p>
+<table>
+<thead>
+<tr>
+<th>用法</th>
+<th>入口</th>
+<th>什么时候用</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>查</strong>：知识图谱</td>
+<td><a href="/search/">/search/</a> 与卡片页</td>
+<td>遇到陌生名词、要某个实体的参数/来源/上下游关系时</td>
+<td>查 <a href="/entry/ent_technology_can_bus_2024/">CAN 总线</a> 是什么、用在哪</td>
+</tr>
+<tr>
+<td><strong>学</strong>：Wiki 专著</td>
+<td><a href="/wiki/">/wiki/</a></td>
+<td>需要系统性理解某个领域（30 章 + 附录，按研究论文标准撰写）时</td>
+<td>读<a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a>搞懂 WBC</td>
+</tr>
+<tr>
+<td><strong>造</strong>：本路线图</td>
+<td>你正在看的这一层</td>
+<td>想动手把一台人形机器人从 0 造到 1 时</td>
+<td>按<a href="/roadmap/stage-0-foundations/">阶段 0</a> 的验收标准逐项过关</td>
+</tr>
+</tbody>
+</table>
+<p>三层的典型联动方式：在路线图里做到某一步 → 卡住的概念去卡片页查参数与来源 → 想彻底搞懂再去 Wiki 对应章节系统学。路线图不复述 Wiki 的长篇推导，只告诉你"这一步做什么、为什么、怎么判断做没做到位"。</p>
+<h2 id="_2">路线图页面的读法：三段式与数据纪律</h2>
+<p>本路线图的每个实操步骤都是三段式，这是它和普通教程的区别：</p>
+<ol>
+<li><strong>【做什么】</strong> 具体、可执行、有完成标志的动作；</li>
+<li><strong>【为什么】</strong> 这一步背后的原理，并链接到对应知识卡片与 Wiki 章节，想深挖有入口；</li>
+<li><strong>【你的情况怎么分析】</strong> 引导你按自己的预算、场景、技能背景做取舍——同样的目标，纯软件背景和机械背景的走法不一样。</li>
+</ol>
+<p>数据纪律：文中出现的具体参数（价格、扭矩、自由度、功耗等）一律就近标注来源（实体卡片或 <code>data/roadmap/research/</code> 调研档案）；查不到可靠来源的，写明"需自行向供应商确认"，不编数。</p>
+<h2 id="_3">四阶段地图</h2>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>目标</th>
+<th>预计时间（业余投入）</th>
+<th>预算量级</th>
+<th>验收（判据摘要）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stage 0 基础筑基</strong><a href="/roadmap/stage-0-foundations/">→ 页面</a></td>
+<td>拿到入场券：数学四件套、Python/C++ 与 ROS 2、电路概念、读懂 URDF</td>
+<td>6–10 周（每周 8–10 h）</td>
+<td>≈ ¥0：软件全部开源；可选 3D 打印打样体验，费用需自行向供应商确认</td>
+<td>读懂一份双足 URDF；在 MuJoCo 里让双足模型站立 ≥ 10 s</td>
+</tr>
+<tr>
+<td><strong>Stage 1 造一个关节</strong><a href="/roadmap/stage-1-actuator/">→ 页面</a></td>
+<td>在台架上造出一个通过验收的执行器模组：电机 + 减速 + 传感 + 驱动 + 控制全链路吃透</td>
+<td>4–8 周（估计）</td>
+<td>单关节数百至数千元量级：准直驱（QDD）方案单台 BOM 约 $157–188（Berkeley 6512，来源：<code>data/roadmap/research/berkeley-humanoid-lite.md</code>）；舵机/谐波方案价格需自行向供应商确认</td>
+<td>指标表书面化；30° 阶跃超调 &lt; 10%；1 Hz 正弦跟踪幅值衰减 &lt; 10%；通信链路连续 1 h 无掉线</td>
+</tr>
+<tr>
+<td><strong>Stage 2 双足平台</strong><a href="/roadmap/stage-2-biped/">→ 页面</a></td>
+<td>仿真先行跑通控制栈，再复刻一台开源双足/轮足平台，实现平地稳定行走</td>
+<td>3–6 个月（估计）</td>
+<td>平台决定预算：Upkie 约 $3,000、Berkeley Humanoid Lite 约 $3,236–4,312、ToddlerBot 约 $6,000（来源：<code>data/roadmap/research/</code> 对应档案）；约 ¥2 万–5 万量级，汇率与采购渠道浮动需自行核算</td>
+<td>仿真连续行走 10 min 不摔倒；实机站立 ≥ 5 min、平地连续行走 ≥ 10 min、轻推可恢复、急停可演示</td>
+</tr>
+<tr>
+<td><strong>Stage 3 完整人形</strong><a href="/roadmap/stage-3-humanoid/">→ 页面</a></td>
+<td>在双足之上长出上半身：手臂、末端执行器、感知栈与智能层，完成端到端任务</td>
+<td>6 个月以上，持续迭代</td>
+<td>增量数千至数万元（臂/手/相机/算力板，按所选方案自行核算）</td>
+<td>听到口头指令 → 自主走到桌边 → 识别并抓起杯子；IK 随机抽样求解成功率 ≥ 95%、末端到位误差 ≤ 2 cm</td>
+</tr>
+</tbody>
+</table>
+<p>两点说明：</p>
+<ul>
+<li><strong>时间是估计值</strong>，按每周 8–10 小时业余投入折算；脱产做约可压缩到 1/3。它受你的背景影响极大，见下一节。</li>
+<li><strong>预算不含</strong>你已有的通用设备（电脑、万用表、烙铁）。商用成品平台是另一个价位世界：ROBOTIS OP3 售价 $13,764.35（来源：<code>data/roadmap/research/robotis-op3-darwin-op.md</code>，2026 年页面快照），这也是本路线图 Stage 2 推荐开源平台而非成品机的原因之一。</li>
+</ul>
+<h2 id="_4">这条路线图的边界</h2>
+<p>说清楚"不做什么"，比许诺"做什么"更能保护你的时间：</p>
+<ul>
+<li><strong>不是论文导读清单</strong>。前沿算法（VLA、世界模型等）在 Wiki 第 18–20 章有系统论述，路线图只在"造机需要时"指向它们。先让机器站起来，再谈聪明。</li>
+<li><strong>不是从零自研一切的路线</strong>。Stage 2 明确建议站在成熟开源平台上做首机：自己从零设计 20+ 自由度的结构与驱动，是团队级、多机迭代级的工作量，不是个人首机的合理目标。调研档案 <code>data/roadmap/research/</code> 里对 Berkeley Humanoid Lite、ToddlerBot、Poppy、ROBOTIS OP3 等候选平台有逐一的成本与门槛分析，选型时直接读。</li>
+<li><strong>不是购买建议与安全手册</strong>。所有平台对比只陈述来源可查的事实与 trade-off；下单前自行核实最新价格、许可（部分开源设计文件为非商业许可，如 ToddlerBot，来源：<code>data/roadmap/research/toddlerbot.md</code>）与合规要求。</li>
+<li><strong>不保证直线前进</strong>。实际情况常是 Stage 1 烧了一个驱动器回 Stage 0 步骤 3 重学电气、Stage 2 仿真调不通回步骤 1 补力学。路线图的价值是让你知道自己在哪、下一步去哪，而不是禁止回头。</li>
+</ul>
+<h2 id="_5">按你的背景选入口</h2>
+<h3 id="cs-ai">纯软件背景（CS / AI / 算法工程师）</h3>
+<p>你的短板不在代码，在<strong>物理直觉和电气常识</strong>。建议：</p>
+<ol>
+<li>数学四件套里只补<a href="/entry/ent_foundation_classical_mechanics/">经典力学</a>，其余用 Stage 0 的判据自检，过了就跳；</li>
+<li>把省下的时间投给 Stage 0 的步骤 3（电路与 CAN）和步骤 4（仿真站立）——前者是你 Stage 1 上真硬件不烧板的保险，后者是你的力学直觉训练场；</li>
+<li>3D 打印常识不要跳过，Stage 2 的结构件高度依赖打印（Berkeley Humanoid Lite 连摆线减速器都是打印的，来源：<code>data/roadmap/research/berkeley-humanoid-lite.md</code>）。</li>
+</ol>
+<h3 id="_6">硬件背景（机械 / 电子 / 自动化工程师）</h3>
+<p>你的短板在<strong>软件工程和现代控制/学习算法</strong>。建议：</p>
+<ol>
+<li>Stage 0 步骤 1 里重点补<a href="/entry/ent_foundation_probability_theory/">概率论</a>与<a href="/entry/ent_foundation_convex_optimization/">凸优化</a>；步骤 3 电路部分 30 分钟过完概念即可；</li>
+<li>Python/ROS 2/git 必须达到判据，不要"看得懂就行"——Stage 1 起所有工作都在代码里；</li>
+<li>你对公差、装配、安全的直觉是宝贵资产，Stage 1（台架关节）和 Stage 2（整机复刻）会兑现。</li>
+</ol>
+<h3 id="_7">零基础学生</h3>
+<p>按 Stage 0 顺序老老实实走，但<strong>给每一步设死线</strong>：对照每节的"学到什么程度算够"判据，达标即走，不许回头刷题。建议：</p>
+<ol>
+<li>先读 Wiki <a href="/wiki/chapters/chapter-01/">第 1 章 绪论</a>建立全局图景，知道自己在造一个什么系统；</li>
+<li>全部时间预算 ×1.5，预算表里的金额对你不变（Stage 0 本来就约等于免费）;</li>
+<li>最大的风险是"无限打基础"——Stage 0 的验收标准就是防这个的，逐项过，过完立刻进 Stage 1，缺的东西 Stage 1 会告诉你。</li>
+</ol>
+<h2 id="_8">卡片页上的阶段徽章</h2>
+<p>在本仓库的卡片页（<code>/entry/...</code>）上，你可能会看到形如 <code>Stage 0 · 基础筑基</code> 的徽章。含义约定如下：</p>
+<ul>
+<li><strong>徽章 = 学习时机提示</strong>：该实体在路线图中"最先非懂不可"的阶段。例如 <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF 机器人描述格式</a> 标 Stage 0，因为读懂它是仿真入门的前提。</li>
+<li><strong>一张卡片可带多枚徽章</strong>：跨越多个阶段反复用到的实体（如 <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 中间件</a>）会标出它每次变得关键的阶段。</li>
+<li><strong>徽章不是难度或重要性评级</strong>：Stage 0 实体不等于"简单"，Stage 3 实体不等于"高级"，只表示它在造机流程中出现的位置。</li>
+</ul>
+<h2 id="_9">下一步</h2>
+<p>打开 <a href="/roadmap/stage-0-foundations/">Stage 0 基础筑基</a>，对照验收标准开始。之后依次进入 <a href="/roadmap/stage-1-actuator/">Stage 1 造一个关节</a>、<a href="/roadmap/stage-2-biped/">Stage 2 双足平台</a>、<a href="/roadmap/stage-3-humanoid/">Stage 3 完整人形机器人</a>。</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      <span></span>
+      
+      <a class="next" href="/roadmap/stage-0-foundations/">下一页 →<span>Stage 0 基础筑基：拿到造人形机器人的入场券</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#01">0→1 造人形机器人：路线图总览</a><ul>
+<li><a href="#_1">这个仓库的三种用法：查、学、造</a></li>
+<li><a href="#_2">路线图页面的读法：三段式与数据纪律</a></li>
+<li><a href="#_3">四阶段地图</a></li>
+<li><a href="#_4">这条路线图的边界</a></li>
+<li><a href="#_5">按你的背景选入口</a><ul>
+<li><a href="#cs-ai">纯软件背景（CS / AI / 算法工程师）</a></li>
+<li><a href="#_6">硬件背景（机械 / 电子 / 自动化工程师）</a></li>
+<li><a href="#_7">零基础学生</a></li>
+</ul>
+</li>
+<li><a href="#_8">卡片页上的阶段徽章</a></li>
+<li><a href="#_9">下一步</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

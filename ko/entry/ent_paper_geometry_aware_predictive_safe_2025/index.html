@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geometry-Aware Predictive Safety Filters on Humanoids · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Geometry-Aware Predictive Safety Filters on Humanoids</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Geometry-Aware Predictive Safety Filters on Humanoids</h1>
+      <p class="entry-name-en">Geometry-Aware Predictive Safety Filters on Humanoids</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.11129v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.11129" target="_blank" rel="noopener">Geometry-Aware Predictive Safety Filters on Humanoids (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>구조화되지 않고 동적으로 변화하는 환경에서의 자율 주행은 현대 로봇 공학자들에게 많은 도전 과제를 제시하는 복잡한 작업입니다. 특히, 보행 로봇은 일반적으로 조작 가능한 비대칭 형상을 가지며, 이는 안전이 중요한 궤적 계획 중에 고려되어야 합니다. 본 연구는 제어 장벽 함수(CBF)를 기반으로 형상을 인식하는 안전 제약 조건을 갖춘 온라인 궤적 생성을 위한 비선형 모델 예측 제어(MPC) 알고리즘인 예측 안전 필터를 제안합니다. 중요한 점은, 우리의 방법이 푸아송 안전 함수를 활용하여 인식 데이터로부터 직접 CBF 제약 조건을 수치적으로 합성한다는 것입니다. 우리는 푸아송 방정식에 대한 정적 디리클레 문제를 매개변수화된 이동 경계값 문제로 재구성하여 도메인의 시간적 변화를 통합하도록 푸아송 안전 함수의 이론적 프레임워크를 확장합니다. 또한, 민코프스키 집합 연산을 사용하여 로봇 형상을 고려한 구성 공간으로 도메인을 확장합니다. 마지막으로, 다양한 안전이 중요한 시나리오에서 인간형 및 사족 로봇에 실시간 예측 안전 필터를 구현합니다. 결과는 푸아송 안전 함수의 다용성과 CBF 제약 조건이 적용된 모델 예측 안전 중요 제어기의 이점을 강조합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>구조화되지 않고 동적으로 변화하는 환경에서의 자율 주행은 현대 로봇 공학자들에게 많은 도전 과제를 제시하는 복잡한 작업입니다. 특히, 보행 로봇은 일반적으로 조작 가능한 비대칭 형상을 가지며, 이는 안전이 중요한 궤적 계획 중에 고려되어야 합니다. 본 연구는 제어 장벽 함수(CBF)를 기반으로 형상을 인식하는 안전 제약 조건을 갖춘 온라인 궤적 생성을 위한 비선형 모델 예측 제어(MPC) 알고리즘인 예측 안전 필터를 제안합니다. 중요한 점은, 우리의 방법이 푸아송 안전 함수를 활용하여 인식 데이터로부터 직접 CBF 제약 조건을 수치적으로 합성한다는 것입니다. 우리는 푸아송 방정식에 대한 정적 디리클레 문제를 매개변수화된 이동 경계값 문제로 재구성하여 도메인의 시간적 변화를 통합하도록 푸아송 안전 함수의 이론적 프레임워크를 확장합니다. 또한, 민코프스키 집합 연산을 사용하여 로봇 형상을 고려한 구성 공간으로 도메인을 확장합니다. 마지막으로, 다양한 안전이 중요한 시나리오에서 인간형 및 사족 로봇에 실시간 예측 안전 필터를 구현합니다. 결과는 푸아송 안전 함수의 다용성과 CBF 제약 조건이 적용된 모델 예측 안전 중요 제어기의 이점을 강조합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_geometry_aware_predictive_safe_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</h3>
+          <p>본 논문은 비선형 모델 예측 제어(MPC)와 푸아송 안전 함수를 통해 지각 데이터에서 합성된 제어 장벽 함수(CBF) 제약을 결합한 예측 안전 필터를 제안한다. 이동 경계 및…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

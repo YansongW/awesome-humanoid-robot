@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLA / WAM / AI 算法集成（AI &amp; Perception） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VLA / WAM / AI 算法集成（AI &amp; Perception）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>VLA / WAM / AI 算法集成（AI &amp; Perception）</h1>
+      <p class="entry-name-en">VLA / WAM / AI algorithm integration (AI &amp; Perception)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>VLA / WAM / AI 算法集成（AI &amp; Perception）是人形机器人产品开发全流程中的第 12 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">感知栈</h4>
+<h5 id="_4">传感器选型与标定</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：RGB-D 相机、LiDAR、IMU、麦克风阵列、触觉阵列</li>
+<li><strong>设计思考逻辑</strong>：提供语义理解、深度估计、SLAM、人体/物体检测</li>
+<li><strong>关键约束</strong>：算力、延迟、光照鲁棒性、成本</li>
+<li><strong>完成标准 / 输出物</strong>：感知模块架构、标定结果、精度指标
+<strong>三级子任务：</strong></li>
+<li><strong>P12.1.1.1 输入梳理与目标量化</strong>：整理「传感器选型与标定」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P12.1.1.2 候选方案建立与评估</strong>：针对「传感器选型与标定」建立候选方案库，使用「RGB-D 相机、LiDAR、IMU、麦克风阵列、触觉阵列」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「传感器选型与标定」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.1.1.4 验证与问题闭环</strong>：对「传感器选型与标定」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P12.1.1.5 文档输出与下游交付</strong>：输出「传感器选型与标定」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="slam">SLAM 与场景理解</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：视觉/激光 SLAM、语义分割、3D 场景图</li>
+<li><strong>设计思考逻辑</strong>：机器人需知道自己在哪、周围有什么、如何到达目标</li>
+<li><strong>关键约束</strong>：动态环境、计算资源、地图更新</li>
+<li><strong>完成标准 / 输出物</strong>：定位精度、地图一致性、语义标注准确率
+<strong>三级子任务：</strong></li>
+<li><strong>P12.1.2.1 输入梳理与目标量化</strong>：整理「SLAM 与场景理解」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P12.1.2.2 方案/方法设计</strong>：针对「SLAM 与场景理解」制定实施方法或候选方案，使用「视觉/激光 SLAM、语义分割、3D 场景图」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.1.2.3 实施/原型/样件制作</strong>：根据设计方案执行「SLAM 与场景理解」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.1.2.4 验证与问题闭环</strong>：对「SLAM 与场景理解」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P12.1.2.5 文档输出与下游交付</strong>：输出「SLAM 与场景理解」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_5">人体/物体检测与跟踪</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：2D/3D 检测、多目标跟踪、人体姿态估计</li>
+<li><strong>设计思考逻辑</strong>：为人机交互、避障、操作提供感知输入</li>
+<li><strong>关键约束</strong>：遮挡、光照变化、实时性</li>
+<li><strong>完成标准 / 输出物</strong>：检测准确率、跟踪 ID 稳定性、延迟
+<strong>三级子任务：</strong></li>
+<li><strong>P12.1.3.1 输入梳理与目标量化</strong>：整理「人体/物体检测与跟踪」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P12.1.3.2 方案/方法设计</strong>：针对「人体/物体检测与跟踪」制定实施方法或候选方案，使用「2D/3D 检测、多目标跟踪、人体姿态估计」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.1.3.3 实施/原型/样件制作</strong>：根据设计方案执行「人体/物体检测与跟踪」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.1.3.4 验证与问题闭环</strong>：对「人体/物体检测与跟踪」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P12.1.3.5 文档输出与下游交付</strong>：输出「人体/物体检测与跟踪」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="vla">VLA 与操作策略</h4>
+<h5 id="vla_1">VLA 模型选型与微调</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：OpenVLA、RT-X、π0、Diffusion Policy、自研模型</li>
+<li><strong>设计思考逻辑</strong>：将视觉-语言指令映射到机器人动作；需针对本机本体微调</li>
+<li><strong>关键约束</strong>：数据量、sim-to-real、安全性、算力</li>
+<li><strong>完成标准 / 输出物</strong>：可执行自然语言指令的端到端 demo、成功率指标
+<strong>三级子任务：</strong></li>
+<li><strong>P12.2.1.1 输入梳理与目标量化</strong>：整理「VLA 模型选型与微调」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P12.2.1.2 算法/控制方案设计</strong>：基于「OpenVLA、RT-X、π0、Diffusion Policy、自研模型」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.2.1.3 算法实现与仿真验证</strong>：将「VLA 模型选型与微调」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.2.1.4 算法调参与性能验证</strong>：对「VLA 模型选型与微调」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P12.2.1.5 文档输出与下游交付</strong>：输出「VLA 模型选型与微调」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_6">数据收集与数据流水线</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：遥操作、仿真数据、互联网视频、数据清洗与增强</li>
+<li><strong>设计思考逻辑</strong>：VLA/WAM 依赖高质量、多样化的机器人数据</li>
+<li><strong>关键约束</strong>：数据采集成本、隐私、标注质量</li>
+<li><strong>完成标准 / 输出物</strong>：数据集规模、数据质量检查、版本管理
+<strong>三级子任务：</strong></li>
+<li><strong>P12.2.2.1 输入梳理与目标量化</strong>：整理「数据收集与数据流水线」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P12.2.2.2 方案/方法设计</strong>：针对「数据收集与数据流水线」制定实施方法或候选方案，使用「遥操作、仿真数据、互联网视频、数据清洗与增强」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.2.2.3 建模/仿真与样机实现</strong>：建立「数据收集与数据流水线」的仿真/数学模型或原型样机，使用「遥操作、仿真数据、互联网视频、数据清洗与增强」执行计算或实验，记录关键参数与边界条件。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.2.2.4 仿真结果校核与优化</strong>：校核「数据收集与数据流水线」仿真结果与理论/试验数据的一致性，识别薄弱点并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.2.2.5 文档输出与下游交付</strong>：输出「数据收集与数据流水线」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_7">技能库与任务规划</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：LLM+PDDL、Behavior Trees、Skill Library、失败恢复</li>
+<li><strong>设计思考逻辑</strong>：高层任务分解为可复用技能；低层由 VLA/控制执行</li>
+<li><strong>关键约束</strong>：技能覆盖度、失败恢复、实时性</li>
+<li><strong>完成标准 / 输出物</strong>：多步骤任务执行视频、技能库清单、失败恢复率
+<strong>三级子任务：</strong></li>
+<li><strong>P12.2.3.1 输入梳理与目标量化</strong>：整理「技能库与任务规划」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P12.2.3.2 算法/控制方案设计</strong>：基于「LLM+PDDL、Behavior Trees、Skill Library、失败恢复」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.2.3.3 算法实现与仿真验证</strong>：将「技能库与任务规划」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.2.3.4 算法调参与性能验证</strong>：对「技能库与任务规划」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P12.2.3.5 文档输出与下游交付</strong>：输出「技能库与任务规划」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_8">世界模型与人机交互</h4>
+<h5 id="wam">世界模型 / WAM 构建</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：视频生成模型、动力学模型、神经辐射场、MPC 结合</li>
+<li><strong>设计思考逻辑</strong>：预测动作后果，支持长程规划与风险预判</li>
+<li><strong>关键约束</strong>：模型幻觉、计算开销、预测时域</li>
+<li><strong>完成标准 / 输出物</strong>：世界模型预测能力演示、预测误差指标
+<strong>三级子任务：</strong></li>
+<li><strong>P12.3.1.1 输入梳理与目标量化</strong>：整理「世界模型 / WAM 构建」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P12.3.1.2 算法/控制方案设计</strong>：基于「视频生成模型、动力学模型、神经辐射场、MPC 结合」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.3.1.3 算法实现与仿真验证</strong>：将「世界模型 / WAM 构建」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.3.1.4 算法调参与性能验证</strong>：对「世界模型 / WAM 构建」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P12.3.1.5 文档输出与下游交付</strong>：输出「世界模型 / WAM 构建」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_9">人机交互与可解释性</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：语音/手势/凝视、状态显示、意图解释、信任校准</li>
+<li><strong>设计思考逻辑</strong>：降低用户使用门槛，建立信任与可预测性</li>
+<li><strong>关键约束</strong>：多模态一致性、响应延迟、误触发、文化差异</li>
+<li><strong>完成标准 / 输出物</strong>：HMI 设计、交互原型、可用性测试报告
+<strong>三级子任务：</strong></li>
+<li><strong>P12.3.2.1 输入梳理与目标量化</strong>：整理「人机交互与可解释性」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P12.3.2.2 方案/方法设计</strong>：针对「人机交互与可解释性」制定实施方法或候选方案，使用「语音/手势/凝视、状态显示、意图解释、信任校准」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.3.2.3 实施/原型/样件制作</strong>：根据设计方案执行「人机交互与可解释性」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P12.3.2.4 验证与问题闭环</strong>：对「人机交互与可解释性」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P12.3.2.5 文档输出与下游交付</strong>：输出「人机交互与可解释性」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_10">数据与模型版本管理</h4>
+<h5 id="_11">数据集与模型版本管理</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：DVC/MLflow、数据集版本、模型版本、A/B 测试、回滚策略</li>
+<li><strong>设计思考逻辑</strong>：AI 系统迭代快，必须可追溯、可回滚、可复现</li>
+<li><strong>关键约束</strong>：存储成本、版本冲突、隐私</li>
+<li><strong>完成标准 / 输出物</strong>：版本管理规范、A/B 测试流程、回滚机制
+<strong>三级子任务：</strong></li>
+<li><strong>P12.4.1.1 输入梳理与目标量化</strong>：整理「数据集与模型版本管理」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P12.4.1.2 方案/方法设计</strong>：针对「数据集与模型版本管理」制定实施方法或候选方案，使用「DVC/MLflow、数据集版本、模型版本、A/B 测试、回滚策略」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P12.4.1.3 实施/建模/实验</strong>：根据方案执行「数据集与模型版本管理」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P12.4.1.4 验证与优化</strong>：对「数据集与模型版本管理」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P12.4.1.5 文档输出与下游交付</strong>：输出「数据集与模型版本管理」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h2 id="_12">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_collaboration_open_x_embodiment_robotic_lear_2023/">RT-X</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及RT-X。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p11/">灵巧手选型/设计与集成（Dexterous Hand）</a>
+              <span class="rel-desc">P12 依赖 P11 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p2_2_2/">人机交互（HMI）设计</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及人机交互（HMI）设计。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及模型预测控制（MPC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-desc">P12 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p7/">仿真平台搭建与验证（Simulation）</a>
+              <span class="rel-desc">P12 依赖 P7 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12_1_2/">SLAM 与场景理解</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及SLAM 与场景理解。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及OpenVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12_1_1/">传感器选型与标定</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）requires传感器选型与标定。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12_1_3/">人体/物体检测与跟踪</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及人体/物体检测与跟踪。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12_2_1/">VLA 模型选型与微调</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及VLA 模型选型与微调。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及OpenVLA。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p12_1_3/">人体/物体检测与跟踪</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">人体/物体检测与跟踪is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12_2_1/">VLA 模型选型与微调</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">VLA 模型选型与微调is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_robouniview_visual_language_mo_2024/">RoboUniView</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_unified_embodied_vlm_reasoning_2025/">ERIQ</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_robomamba_efficient_vision_lan_2024/">RoboMamba</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12_3_2/">人机交互与可解释性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">人机交互与可解释性is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12_2_2/">数据收集与数据流水线</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">数据收集与数据流水线is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14/">软件中间件与系统集成（Software &amp; Integration）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P14 依赖 P12 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12_1_1/">传感器选型与标定</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">传感器选型与标定is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12_2_3/">技能库与任务规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">技能库与任务规划is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_trivla_a_triple_system_based_u_0/">TriVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12_1_2/">SLAM 与场景理解</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">SLAM 与场景理解is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12_3_1/">世界模型 / WAM 构建</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">世界模型 / WAM 构建is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_abot_m05_unified_mobility_and_2026/">ABot-M0.5: Unified Mobility-and-Manipulation World Action Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p12"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_unified_embodied_vlm_reasoning_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ERIQ</h3>
+          <p>Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized Pre-training…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>技能库与任务规划</h3>
+          <p>- P12.2.3.1 输入梳理与目标量化 - 整理「技能库与任务规划」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p7/">
+          <span class="entry-type">方法</span>
+          <h3>仿真平台搭建与验证（Simulation）</h3>
+          <p>搭建仿真平台并在仿真环境中验证感知、规划与控制算法，覆盖仿真场景配置、模型标定、域随机化与 sim-to-real 迁移评估，降低实机调试成本与风险。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p2_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>人机交互（HMI）设计</h3>
+          <p>- P2.2.2.1 输入梳理与目标量化 - 整理「人机交互（HMI）设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>传感器选型与标定</h3>
+          <p>- P12.1.1.1 输入梳理与目标量化 - 整理「传感器选型与标定」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_abot_m05_unified_mobility_and_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ABot-M0.5: Unified Mobility-and-Manipulation World Action Model</h3>
+          <p>arXiv:2607.00678v1 Announce Type: cross Abstract: Mobile manipulation is a key capability for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_trivla_a_triple_system_based_u_0/">
+          <span class="entry-type">论文</span>
+          <h3>TriVLA</h3>
+          <p>TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General Robot Control…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>人机交互与可解释性</h3>
+          <p>- P12.3.2.1 输入梳理与目标量化 - 整理「人机交互与可解释性」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10/">
+          <span class="entry-type">方法</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_collaboration_open_x_embodiment_robotic_lear_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-X</h3>
+          <p>Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_robouniview_visual_language_mo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RoboUniView</h3>
+          <p>RoboUniView: Visual-Language Model with Unified View Representation for Robotic Manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14/">
+          <span class="entry-type">方法</span>
+          <h3>软件中间件与系统集成（Software &amp; Integration）</h3>
+          <p>软件中间件与系统集成（Software &amp; Integration）是人形机器人产品开发全流程中的第 14 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_robomamba_efficient_vision_lan_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RoboMamba</h3>
+          <p>RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>SLAM 与场景理解</h3>
+          <p>- P12.1.2.1 输入梳理与目标量化 - 整理「SLAM 与场景理解」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>数据收集与数据流水线</h3>
+          <p>- P12.2.2.1 输入梳理与目标量化 - 整理「数据收集与数据流水线」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p11/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧手选型/设计与集成（Dexterous Hand）</h3>
+          <p>灵巧手选型/设计与集成（Dexterous Hand）是人形机器人产品开发全流程中的第 11 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>VLA 模型选型与微调</h3>
+          <p>- P12.2.1.1 输入梳理与目标量化 - 整理「VLA 模型选型与微调」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>人体/物体检测与跟踪</h3>
+          <p>- P12.1.3.1 输入梳理与目标量化 - 整理「人体/物体检测与跟踪」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>世界模型 / WAM 构建</h3>
+          <p>- P12.3.1.1 输入梳理与目标量化 - 整理「世界模型 / WAM 构建」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">感知栈</a><ul>
+<li><a href="#_4">传感器选型与标定</a></li>
+<li><a href="#slam">SLAM 与场景理解</a></li>
+<li><a href="#_5">人体/物体检测与跟踪</a></li>
+</ul>
+</li>
+<li><a href="#vla">VLA 与操作策略</a><ul>
+<li><a href="#vla_1">VLA 模型选型与微调</a></li>
+<li><a href="#_6">数据收集与数据流水线</a></li>
+<li><a href="#_7">技能库与任务规划</a></li>
+</ul>
+</li>
+<li><a href="#_8">世界模型与人机交互</a><ul>
+<li><a href="#wam">世界模型 / WAM 构建</a></li>
+<li><a href="#_9">人机交互与可解释性</a></li>
+</ul>
+</li>
+<li><a href="#_10">数据与模型版本管理</a><ul>
+<li><a href="#_11">数据集与模型版本管理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_12">完成标准</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

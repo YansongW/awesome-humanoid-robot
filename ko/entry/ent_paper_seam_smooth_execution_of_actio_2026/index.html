@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies</h1>
+      <p class="entry-name-en">SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04609v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.04609v1 Announce Type: new Abstract: Vision-Language-Action (VLA) policies that execute fixed-length action chunks can exhibit multimodal bifurcation: a cross-chunk inconsistency in which adjacent chunks generated from independent Gaussian latents can converge to incompatible trajectory modes, producing abrupt discontinuities at chunk boundaries. Existing remedies either require backpropagation through the policy at each denoising step, rely on rejection sampling, or require retraining, each trading computational cost or task reliability for smoother transitions. We propose SEAM (Smooth Execution of Action-Chunked Motion), a training-free inference-time method for flow matching VLAs. SEAM exploits a simple synchronous-execution insight: after the robot consumes the executed prefix, the previous chunk&#39;s unexecuted tail is already available as an analytic consistency reference. Its core mechanism, Velocity-guided Loss Steering (VLS), derives a time-dependent target from this tail and applies a closed-form correction after each Euler step without backpropagating through the policy network. On LIBERO-10 with pi_0.5, SEAM reduces boundary jerk by 28%, reduces chunk transition discontinuity by 27%, preserves baseline-level task success, and keeps denoising-loop cost near the unguided baseline.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.04609" target="_blank" rel="noopener">SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>고정 길이의 액션 청크를 실행하는 Vision-Language-Action (VLA) 정책은 다중 모드 분기(multimodal bifurcation)를 나타낼 수 있습니다. 이는 독립적인 가우시안 잠재 변수에서 생성된 인접 청크가 호환되지 않는 궤적 모드로 수렴하여 청크 경계에서 급격한 불연속성을 초래하는 청크 간 불일치입니다. 기존의 해결 방법은 각 디노이징 단계에서 정책을 통한 역전파를 필요로 하거나, 리젝션 샘플링에 의존하거나, 재학습을 요구하며, 각각 계산 비용이나 작업 신뢰성을 더 부드러운 전환과 맞바꿉니다. 우리는 SEAM (Smooth Execution of Action-Chunked Motion)을 제안합니다. 이는 플로우 매칭 VLA를 위한 학습 없이 추론 시간에 적용되는 방법입니다. SEAM은 간단한 동기 실행 통찰력을 활용합니다: 로봇이 실행된 접두사를 소비한 후, 이전 청크의 실행되지 않은 꼬리 부분이 이미 분석적 일관성 참조로 사용 가능합니다. 그 핵심 메커니즘인 Velocity-guided Loss Steering (VLS)은 이 꼬리에서 시간 의존적 목표를 도출하고, 정책 네트워크를 통한 역전파 없이 각 오일러 단계 후에 폐쇄형 보정을 적용합니다. LIBERO-10에서 pi_0.5를 사용한 실험에서 SEAM은 경계 저크를 28% 감소시키고, 청크 전환 불연속성을 27% 감소시키며, 기준선 수준의 작업 성공률을 유지하고, 디노이징 루프 비용을 비유도 기준선에 가깝게 유지합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>고정 길이의 액션 청크를 실행하는 Vision-Language-Action (VLA) 정책은 다중 모드 분기(multimodal bifurcation)를 나타낼 수 있습니다. 이는 독립적인 가우시안 잠재 변수에서 생성된 인접 청크가 호환되지 않는 궤적 모드로 수렴하여 청크 경계에서 급격한 불연속성을 초래하는 청크 간 불일치입니다. 기존의 해결 방법은 각 디노이징 단계에서 정책을 통한 역전파를 필요로 하거나, 리젝션 샘플링에 의존하거나, 재학습을 요구하며, 각각 계산 비용이나 작업 신뢰성을 더 부드러운 전환과 맞바꿉니다. 우리는 SEAM (Smooth Execution of Action-Chunked Motion)을 제안합니다. 이는 플로우 매칭 VLA를 위한 학습 없이 추론 시간에 적용되는 방법입니다. SEAM은 간단한 동기 실행 통찰력을 활용합니다: 로봇이 실행된 접두사를 소비한 후, 이전 청크의 실행되지 않은 꼬리 부분이 이미 분석적 일관성 참조로 사용 가능합니다. 그 핵심 메커니즘인 Velocity-guided Loss Steering (VLS)은 이 꼬리에서 시간 의존적 목표를 도출하고, 정책 네트워크를 통한 역전파 없이 각 오일러 단계 후에 폐쇄형 보정을 적용합니다. LIBERO-10에서 pi_0.5를 사용한 실험에서 SEAM은 경계 저크를 28% 감소시키고, 청크 전환 불연속성을 27% 감소시키며, 기준선 수준의 작업 성공률을 유지하고, 디노이징 루프 비용을 비유도 기준선에 가깝게 유지합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_seam_smooth_execution_of_actio_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

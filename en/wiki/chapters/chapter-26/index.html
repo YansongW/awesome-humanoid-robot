@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 26: Complete System Case Studies · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 26: Complete System Case Studies</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-26-complete-system-case-studies">Chapter 26: Complete System Case Studies</h1>
+<h2 id="summary">Summary</h2>
+<p>The preceding chapters analyzed humanoid robots from a "bottom-up" perspective, covering materials, components, subsystems, and algorithms. This chapter shifts to a "top-down" whole-system perspective, examining how real products achieve system integration and engineering trade-offs under constraints through eight representative complete system case studies. The cases cover four main technical routes: the high-dynamic open platform route represented by Unitree H1/G1, the "AI-first" general-purpose route represented by Tesla Optimus Gen 3 and Figure 02, the heavy-load/industrial deployment route represented by Boston Dynamics Atlas (electric version) and UBTECH Walker S2, the scenario-focused route represented by Agility Digit and Fourier GR series, and also discusses XPeng Iron's automotive ecosystem route and Galbot G1's wheeled chassis alternative route. Each case is examined from five dimensions: positioning and evolution, system architecture, key parameters, deployment progress, and engineering trade-offs. Finally, a cross-case horizontal comparison and design pattern summary are provided. All parameters in this chapter are sourced from the product entity cards (Appendix D) in this Knowledge Graph (KG); missing items are marked as "Not disclosed" without speculation.</p>
+<p><strong>Keywords</strong>: Complete system integration; Unitree H1/G1; Tesla Optimus; Figure 02; Atlas (electric version); Agility Digit; Walker S2; Fourier GR; Design trade-offs; Technical routes</p>
+<hr />
+<h2 id="261-complete-system-integration-from-components-to-system">26.1 Complete System Integration: From Components to System</h2>
+<h3 id="2611-the-complete-system-as-a-product-of-system-trade-offs-under-constraints">26.1.1 The Complete System as a Product of System Trade-offs Under Constraints</h3>
+<p>The engineering design of a humanoid robot system is essentially about finding feasible solutions within a multi-objective space constrained by five factors: mass, power, cost, computational power, and safety. Chapters 4–6 discussed component-level technologies such as actuators, sensing, and computing power supplies, but component performance cannot be simply summed: the final performance of a complete system depends on the <strong>interface matching</strong> and <strong>budget allocation</strong> between subsystems. Typical complete system budgets include:</p>
+<ul>
+<li><strong>Mass Budget</strong>: Allocation among structural components, actuators, batteries, computing, and wiring. Generally, actuators account for 30%–45% of the total mass, batteries 8%–15%, and structural components 25%–35%.</li>
+<li><strong>Power Budget</strong>: Distinction between peak motion power and sustained power. The instantaneous electrical power for bipedal dynamic walking can reach the kilowatt level, while the sustained power consumption for computing and sensing is typically on the order of hundreds of watts.</li>
+<li><strong>Degrees of Freedom (DOF) Budget</strong>: Trade-offs between legs (6–7 DOF/leg), waist (1–3 DOF), arms (4–7 DOF/arm), and dexterous hands (6–22 DOF/hand) directly determine cost and reliability.</li>
+<li><strong>Data Budget</strong>: Bandwidth of perception sensors, TOPS and storage of the computing platform, and real-time requirements of the control loop (typical whole-body control loop is 500 Hz–1 kHz).</li>
+</ul>
+<p>The dynamics of a complete system can be uniformly described by floating-base rigid body dynamics (see Chapter 14):</p>
+<div class="arithmatex">\[
+\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}} + \mathbf{C}(\mathbf{q},\dot{\mathbf{q}})\dot{\mathbf{q}} + \mathbf{g}(\mathbf{q}) = \mathbf{S}^{\top}\boldsymbol{\tau} + \mathbf{J}_c^{\top}\mathbf{f}_c
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{q}\in\mathbb{R}^{n+6}\)</span> represents the generalized coordinates including the floating base pose, <span class="arithmatex">\(\mathbf{M}\)</span> is the mass matrix, <span class="arithmatex">\(\mathbf{S}\)</span> is the actuated joint selection matrix, <span class="arithmatex">\(\mathbf{J}_c\)</span> is the contact Jacobian, and <span class="arithmatex">\(\mathbf{f}_c\)</span> is the contact force. Many trade-offs in complete system design—such as the impact of foot mass on swing inertia, or the coupling between battery capacity, endurance, and total system mass—can find corresponding physical quantities in this equation.</p>
+<h3 id="2612-key-indicators-for-complete-system-evaluation">26.1.2 Key Indicators for Complete System Evaluation</h3>
+<p>For cross-case comparison, this chapter adopts the following indicator family:</p>
+<table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>Definition</th>
+<th>Engineering Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peak Torque Density</td>
+<td>Joint peak torque / Joint module mass (N·m/kg)</td>
+<td>Determines upper limit of dynamic motion capability</td>
+</tr>
+<tr>
+<td>Power-to-Weight Ratio-like Indicator</td>
+<td>Payload capacity / Total system mass</td>
+<td>Determines practical handling capability</td>
+</tr>
+<tr>
+<td>Energy Autonomy</td>
+<td>Battery capacity / Typical task average power</td>
+<td>Determines single operation duration</td>
+</tr>
+<tr>
+<td>DOF Structure</td>
+<td>Leg/Waist/Arm/Hand DOF allocation</td>
+<td>Determines task coverage and cost</td>
+</tr>
+<tr>
+<td>Perception-Computing Configuration</td>
+<td>Sensor suite × Onboard computing power</td>
+<td>Determines autonomy and AI deployment capability</td>
+</tr>
+<tr>
+<td>Openness</td>
+<td>SDK, ROS2 support, secondary development documentation</td>
+<td>Determines ecosystem and research value</td>
+</tr>
+<tr>
+<td>Deployment Maturity</td>
+<td>Runtime and scale in real customer scenarios</td>
+<td>Distinguishes "demonstration" from "product"</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: The Demo-to-Product Gap</p>
+<p>The concept entity <code>ent_concept_demo_to_product_gap</code> in this Knowledge Graph points out: there is a systematic gap between the single-task success rate in demonstration videos, motion performance in ideal environments, and the <strong>Mean Time Between Failures (MTBF)</strong> required in real scenarios, stability with task success rate ≥99%, and the ability to sustain continuous operation for several hours daily. When evaluating each case, this chapter uses "whether there is a record of continuous deployment in third-party customer scenarios" as a key criterion to distinguish demonstrations from products.</p>
+</div>
+<h3 id="2613-hierarchical-architecture-view-of-the-complete-system">26.1.3 Hierarchical Architecture View of the Complete System</h3>
+<p>Although the technical routes of various manufacturers differ significantly, the functional hierarchy of complete systems is highly isomorphic. The following hierarchical view can serve as a unified framework for analyzing each case later:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    subgraph L4[Task and Scheduling Layer]
+        A1[Task Planning / Work Order System&lt;br/&gt;MES · WMS Integration]
+        A2[Fleet Management &amp; Remote O&amp;M&lt;br/&gt;Orbit · Arc · ROSA]
+    end
+    subgraph L3[Intelligent Decision Layer]
+        B1[VLA / Large Model Inference&lt;br/&gt;Helix · FSD Derived Network · AstraBrain]
+        B2[Skill Library &amp; Behavior Planning]
+    end
+    subgraph L2[Real-time Control Layer]
+        C1[Whole-Body Control WBC / MPC&lt;br/&gt;500 Hz–1 kHz]
+        C2[Joint Servo Loop&lt;br/&gt;Current-Velocity-Position Three Loops]
+    end
+    subgraph L1[Mechatronic Physical Layer]
+        D1[Actuators &amp; Transmission]
+        D2[Sensor Suite&lt;br/&gt;Vision · LiDAR · Force Sensing · IMU]
+        D3[Computing Platform &amp; Battery]
+        D4[Structure &amp; Thermal Management]
+    end
+    A1 --&gt; B1
+    A2 --&gt; B2
+    B1 --&gt; C1
+    B2 --&gt; C1
+    C1 --&gt; C2
+    C2 --&gt; D1
+    D2 --&gt; C1
+    D3 --&gt; B1
+    D3 --&gt; C1</code></pre>
+<p>When reading each complete system case, an effective analytical question is: <strong>At which layer does the manufacturer's differentiation occur?</strong> Unitree's differentiation lies in L1 (self-developed high-torque-density joints) and ecosystem openness, Figure's differentiation is in L3 (Helix VLA), Walker S2's differentiation is in L4 (battery swapping, multi-robot coordination, and MES integration), while Digit's differentiation spans L1 morphology and L4's RaaS business model. The essence of complete system competition is to form barriers in one or two layers while achieving industry baseline standards in the remaining layers.</p>
+<h3 id="2614-selection-logic-for-cases-in-this-chapter">26.1.4 Selection Logic for Cases in This Chapter</h3>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    A[Complete System Technical Routes] --&gt; B[High-Dynamic Open Platform&lt;br/&gt;Unitree H1 / G1]
+    A --&gt; C[AI-First General-Purpose Route&lt;br/&gt;Tesla Optimus Gen 3&lt;br/&gt;Figure 02]
+    A --&gt; D[Industrial Deployment Route&lt;br/&gt;Atlas Electric Version / Walker S2]
+    A --&gt; E[Scenario-Focused Route&lt;br/&gt;Agility Digit / Fourier GR]
+    A --&gt; F[Ecosystem Extension &amp; Alternative Morphology&lt;br/&gt;XPeng Iron / Galbot G1]
+    B --&gt; G[Section 26.2]
+    C --&gt; G2[Sections 26.3 / 26.4]
+    D --&gt; G3[Sections 26.5 / 26.7]
+    E --&gt; G4[Sections 26.6 / 26.8]
+    F --&gt; G5[Section 26.9]</code></pre>
+<p>Case selection follows three criteria: First, there is a product entity card (Appendix D) in the KG that has undergone dual manual and AI review; second, there is a verifiable record of deployment or mass production in real scenarios; third, together they cover the main technical routes and business models of the current industry. A total of eight cases correspond to the <code>ent_product_*</code> entity family in the KG.</p>
+<h2 id="262-case-1-unitree-h1-and-g1-high-dynamic-electric-drive-platform-and-open-ecosystem">26.2 Case 1: Unitree H1 and G1 – High-Dynamic Electric Drive Platform and Open Ecosystem</h2>
+<h3 id="2621-positioning-and-evolution">26.2.1 Positioning and Evolution</h3>
+<p>Unitree Robotics started with electric drive joints for quadruped robots and migrated its high-torque-density quasi-direct drive (QDD) joint technology to humanoid platforms. The KG entity <code>ent_product_unitree_h1</code> (Unitree H1) was released in 2023, positioned as a full-size high-dynamic research platform; <code>ent_product_unitree_g1</code> (Unitree G1) was released in 2024, with an aggressive price of approximately 16,000 USD, becoming an entry-level platform for developers and the education market.</p>
+<h3 id="2622-system-architecture-and-key-parameters">26.2.2 System Architecture and Key Parameters</h3>
+<p>The H1 uses Unitree's self-developed M107 permanent magnet synchronous motor joints, with a peak knee torque of 360 N·m and a peak torque density of approximately 189 N·m/kg. It once set a running speed record of 3.3 m/s for a full-size humanoid robot. The basic version has a 4 DOF arm, with an optional H1-2 upgrade to a 7 DOF arm. The G1 is approximately 127 cm tall and weighs about 35 kg, with 23 DOF in the basic version and expandable to 43 DOF in the EDU version, which can also be optionally equipped with the Dex3-1 five-finger dexterous hand and an NVIDIA Jetson Orin computing module.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Unitree H1</th>
+<th>Unitree G1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Height / Weight</td>
+<td>Approx. 180 cm / Approx. 47 kg</td>
+<td>Approx. 127 cm / Approx. 35 kg</td>
+</tr>
+<tr>
+<td>Total DOF</td>
+<td>26–27 DOF</td>
+<td>23–43 DOF (Basic/EDU version)</td>
+</tr>
+<tr>
+<td>Peak Joint Torque</td>
+<td>Knee 360 N·m (M107 motor)</td>
+<td>90–120 N·m</td>
+</tr>
+<tr>
+<td>Movement Speed</td>
+<td>Walking approx. 1.5 m/s; Running 3.3 m/s</td>
+<td>Approx. 2 m/s</td>
+</tr>
+<tr>
+<td>Battery Life</td>
+<td>Approx. 1.5–2 h (864 Wh)</td>
+<td>Approx. 1.5–2 h (9,000 mAh quick-release battery)</td>
+</tr>
+<tr>
+<td>Computing Platform</td>
+<td>Intel Core / Jetson Orin NX (optional)</td>
+<td>8-core CPU; EDU version optional Jetson Orin</td>
+</tr>
+<tr>
+<td>Openness</td>
+<td>ROS2 + Unitree SDK</td>
+<td>ROS2 + Python/C++ SDK + OTA</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Approx. 90,000 USD</td>
+<td>Starting from approx. 16,000 USD</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2623-engineering-highlights-and-limitations">26.2.3 Engineering Highlights and Limitations</h3>
+<p><strong>Highlights</strong> are threefold. First, the cost structure and dynamic performance brought by self-developed joints: the QDD scheme eliminates the cost and backlash issues of high-reduction-ratio harmonic drives, and combined with low-reduction-ratio transmission, achieves high-bandwidth force control, which is the physical basis for the 3.3 m/s running capability. Second, the price stratification strategy of the product matrix: the G1 lowers the entry barrier for the entire machine to a consumer level, making it one of the world's leading humanoid development platforms in terms of shipment volume, widely adopted by university labs and embodied intelligence research teams. Third, the open ecosystem: support for ROS2 and SDK makes it a mainstream hardware carrier for research areas such as reinforcement learning-based motion control and VLA deployment verification.</p>
+<p><strong>Limitations</strong> are equally clear: the basic version of the H1 has only a 4 DOF arm, unable to perform dexterous operations requiring wrist posture adjustment; the G1 has a payload of only about 2 kg, unsuitable for industrial handling; the battery life of both is approximately 1.5–2 hours, insufficient to support full-day operational scenarios. Therefore, Unitree's positioning is clear—<strong>motion capability and development platform</strong>, rather than an end-to-end industrial operation product.</p>
+<hr />
+<h2 id="263-case-2-tesla-optimus-gen-3-manufacturing-vertical-integration-and-data-closed-loop">26.3 Case 2: Tesla Optimus Gen 3 – Manufacturing Vertical Integration and Data Closed Loop</h2>
+<h3 id="2631-positioning-and-evolution">26.3.1 Positioning and Evolution</h3>
+<p>The Tesla Optimus (KG entity family <code>ent_product_tesla_optimus_gen1/gen2/gen3</code>) represents an automaker's transfer of electrification, perception, and manufacturing capabilities to humanoid robots. The core upgrade of Gen 3 lies in the hands: the degrees of freedom per hand increased from 11 DOF in Gen 2 to 22 DOF, with approximately 25 actuators per hand and a total of about 50 actuators for both hands. The new body designed for mass production is called Optimus V3. As of mid-2026, Optimus is mainly undergoing internal testing and task learning at Tesla factories in Fremont, Austin, etc., and has not been publicly sold.</p>
+<h3 id="2632-system-architecture-robotization-of-the-fsd-methodology">26.3.2 System Architecture: Robotization of the FSD Methodology</h3>
+<p>Optimus's technical approach can be summarized as "the embodiment of the FSD methodology":</p>
+<ol>
+<li><strong>Pure Vision Perception</strong>: The head integrates multiple Autopilot cameras, building an environmental model using Occupancy Network and Bird's Eye View (BEV) representations, without using LiDAR.</li>
+<li><strong>End-to-End Policy Learning</strong>: Full-body motion and manipulation policies are trained using imitation learning and reinforcement learning, with Whole-Body Control (WBC) at the lower level ensuring balance and contact safety.</li>
+<li><strong>High-DOF Dexterous Hand</strong>: 22 DOF/hand + approx. 50 hand actuators, targeting tool use and flexible assembly-level manipulation capabilities.</li>
+<li><strong>Self-Developed Computing</strong>: Equipped with Tesla's self-developed AI5 chip, designed for local large model inference.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optimus Gen 3 / V3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Height / Weight</td>
+<td>Approx. 173 cm / Approx. 57 kg (Gen 2 baseline, V3 TBD)</td>
+</tr>
+<tr>
+<td>Total DOF</td>
+<td>Torso 28+; Hands 22×2</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>Two-hand carrying approx. 20 kg</td>
+</tr>
+<tr>
+<td>Walking Speed</td>
+<td>Approx. 1.2 m/s (V3 reported)</td>
+</tr>
+<tr>
+<td>Main Control Chip</td>
+<td>Tesla AI5</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Target 20,000–30,000 USD (long-term target, not officially for sale)</td>
+</tr>
+<tr>
+<td>Deployment Status</td>
+<td>Internal testing and task learning at Tesla factories</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2633-engineering-highlights-and-limitations">26.3.3 Engineering Highlights and Limitations</h3>
+<p><strong>Highlights</strong>: First is <strong>manufacturing vertical integration</strong> – Tesla develops its own linear/rotary actuators, battery packs, and power management, and leverages the automotive-grade supply chain, which underpins its confidence in the long-term price target of 20,000–30,000 USD; second is the <strong>data flywheel</strong> – data generated by robots performing tasks in its own factories flows directly back into training, forming the self-reinforcing cycle described by the KG concept entity <code>ent_concept_data_flywheel</code>, and Tesla does not need to pay customers for data acquisition costs. <strong>Limitations</strong>: As of mid-2026, Optimus has no record of sustained deployment in third-party customer scenarios; most performance figures come from official demonstrations and third-party analyses; the robustness of the pure vision solution in industrial environments with strong light or dust still needs verification; the high-DOF hand design places extremely high demands on actuator miniaturization and reliability, with mass production consistency being a major risk.</p>
+<hr />
+<h2 id="264-case-3-figure-02-vla-first-general-purpose-humanoid">26.4 Case 3: Figure 02 – VLA-First General-Purpose Humanoid</h2>
+<h3 id="2641-positioning-and-evolution">26.4.1 Positioning and Evolution</h3>
+<p>Figure AI's Figure 02 (KG entity <code>ent_product_figure_ai_figure_02</code>, succeeded by <code>ent_product_figure_ai_figure_03</code>) was released in August 2024, targeting industrial manufacturing and logistics scenarios. Its most notable architectural feature is "AI-first": the entire machine is designed around the self-developed Helix VLA (Vision-Language-Action) model, rather than building hardware first and adding intelligence later.</p>
+<h3 id="2642-system-architecture-and-key-parameters">26.4.2 System Architecture and Key Parameters</h3>
+<p>The Figure 02 is equipped with the Helix VLA model, capable of controlling the upper body at 200 Hz, enabling zero-shot grasping of thousands of unseen objects; dual NVIDIA RTX GPU modules provide approximately 3 times the on-device inference capability of Figure 01; 6 RGB cameras and multimodal sensors support environmental perception. The entire machine features integrated cable routing, with a 2.25 kWh battery integrated into the torso.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Figure 02</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Height / Weight</td>
+<td>Approx. 168 cm / Approx. 70 kg</td>
+</tr>
+<tr>
+<td>Total DOF</td>
+<td>28 DOF (Hands 16 DOF/pair)</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>Hand 25 kg; Whole-body carrying 20 kg</td>
+</tr>
+<tr>
+<td>Walking Speed</td>
+<td>Approx. 1.2 m/s</td>
+</tr>
+<tr>
+<td>Battery Life</td>
+<td>Approx. 5 h (2.25 kWh torso battery)</td>
+</tr>
+<tr>
+<td>Computing Platform</td>
+<td>Dual NVIDIA RTX GPU modules</td>
+</tr>
+<tr>
+<td>AI Architecture</td>
+<td>Helix VLA (Vision-Language-Action)</td>
+</tr>
+<tr>
+<td>Deployment Record</td>
+<td>Verified in real tasks at BMW Spartanburg factory</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2643-engineering-highlights-and-limitations">26.4.3 Engineering Highlights and Limitations</h3>
+<p><strong>Highlights</strong>: Helix VLA represents the "end-to-end general manipulation policy" approach – a single neural network simultaneously handles visual understanding, language instructions, and action output. The 200 Hz upper body control frequency indicates that VLA inference can be coupled with real-time control loops, rather than only performing high-level planning at the second level. Its deployment at the BMW Spartanburg factory for tasks like chassis assembly and material handling in collaboration with humans marks a milestone for general-purpose humanoid robots entering real automotive production lines. <strong>Limitations</strong>: The scale of the single-site pilot is limited, and the task types remain concentrated on structured handling and assembly assistance; the generalization capability of the VLA model is still sensitive to changes in target workpieces and station layouts, requiring new data collection and fine-tuning for new customer deployments, and the marginal deployment cost has not yet reached a "plug-and-play" level.</p>
+<h2 id="265-case-4-boston-dynamics-atlas-electric-version-from-hydraulic-to-all-electric-heavy-duty-platform">26.5 Case 4: Boston Dynamics Atlas (Electric Version) – From Hydraulic to All-Electric Heavy-Duty Platform</h2>
+<h3 id="2651-positioning-and-evolution">26.5.1 Positioning and Evolution</h3>
+<p>Boston Dynamics retired its hydraulic Atlas in April 2024 and launched an all-electric version (KG entity <code>ent_product_boston_dynamics_atlas_electric</code>, product card <code>product_atlas_electric</code>), positioning it for heavy-duty industrial tasks. This transition itself is an important case study: while the hydraulic solution offered outstanding power density and impact resistance, it suffered from leakage maintenance, noise, and energy efficiency issues; the all-electric solution, paired with custom high-power electric actuators, retains dynamic capabilities while significantly improving maintainability and mass-production feasibility.</p>
+<h3 id="2652-system-architecture-and-key-parameters">26.5.2 System Architecture and Key Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Atlas (Electric Version)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Height / Weight</td>
+<td>Approx. 190 cm / Approx. 90 kg</td>
+</tr>
+<tr>
+<td>Total Degrees of Freedom</td>
+<td>56 DOF</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>Instantaneous 50 kg; Continuous 30 kg</td>
+</tr>
+<tr>
+<td>Range of Motion</td>
+<td>Hip, waist, neck 360° continuous rotation; Maximum arm span 2.3 m</td>
+</tr>
+<tr>
+<td>Walking Speed</td>
+<td>Approx. 9 km/h (third-party evaluation)</td>
+</tr>
+<tr>
+<td>Battery Life</td>
+<td>Approx. 4 h (typical tasks), supports autonomous hot-swap battery</td>
+</tr>
+<tr>
+<td>Protection Rating</td>
+<td>IP67; -20°C to 40°C</td>
+</tr>
+<tr>
+<td>Software Platform</td>
+<td>Proprietary real-time control stack + Orbit fleet management</td>
+</tr>
+<tr>
+<td>Deployment Direction</td>
+<td>Hyundai manufacturing bases, Google DeepMind research scenarios</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2653-engineering-highlights-and-limitations">26.5.3 Engineering Highlights and Limitations</h3>
+<p><strong>Highlights</strong>: The 56 DOF and multiple 360° continuous rotation joints represent a unique morphological design—the full-range rotation of the waist and hips allows Atlas to "turn without changing footsteps," reducing repositioning steps in confined workspaces. This kinematic advantage was inherited and enhanced from the hydraulic era. The 30 kg continuous payload is among the highest in current electric humanoids. Combined with IP67 protection and a wide operating temperature range, it targets harsh industrial environments rather than laboratories. The autonomous hot-swap battery, coupled with Orbit fleet management, aims for near-continuous operation. <strong>Limitations</strong>: The total mass of approx. 90 kg imposes higher requirements on floor load-bearing and human-robot collaboration safety; the price is undisclosed (third-party estimates around 150,000 USD); the control complexity corresponding to its high dynamic capabilities makes the secondary development ecosystem far less mature than open platforms like Unitree, with customers primarily relying on complete solutions delivered by the manufacturer.</p>
+<hr />
+<h2 id="266-case-5-agility-robotics-digit-a-productization-sample-for-logistics-scenarios">26.6 Case 5: Agility Robotics Digit – A Productization Sample for Logistics Scenarios</h2>
+<h3 id="2661-positioning-and-evolution">26.6.1 Positioning and Evolution</h3>
+<p>Agility Robotics' Digit (KG entity <code>ent_product_agility_robotics_digit</code> and its iteration <code>ent_product_agility_robotics_digit_next_gen</code>) originates from the research lineage of the bipedal robot Cassie and is one of the most widely deployed humanoid robots in the warehousing and logistics sector. Unlike the "general-purpose" approach, Digit's morphology has been optimized from the start for a single task family—moving totes in human-built environments.</p>
+<h3 id="2662-task-oriented-morphological-design">26.6.2 Task-Oriented Morphological Design</h3>
+<p>Digit's design reflects task-driven principles throughout: the integrated head and torso reduces the complexity of perception-control coupling; the reverse knee (crouched leg) configuration prevents leg interference when carrying totes while facilitating squatting and stair climbing; the perception system uses 4 Intel RealSense depth cameras + LiDAR + IMU + force sensors, enabling autonomous navigation without external infrastructure.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Digit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Height / Weight</td>
+<td>Approx. 175 cm / Approx. 63.5–65 kg</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>16 kg (continuous carrying of 35 lb)</td>
+</tr>
+<tr>
+<td>Walking Speed</td>
+<td>Approx. 5.4 km/h</td>
+</tr>
+<tr>
+<td>Battery Life</td>
+<td>Approx. 4 h (typical tasks), autonomous docking for charging</td>
+</tr>
+<tr>
+<td>Perception</td>
+<td>4× Intel RealSense + LiDAR + IMU + Force Sensing</td>
+</tr>
+<tr>
+<td>Manufacturing</td>
+<td>RoboFab factory, designed annual capacity of 10,000 units</td>
+</tr>
+<tr>
+<td>Business Model</td>
+<td>Direct sales + RaaS (Robot-as-a-Service)</td>
+</tr>
+<tr>
+<td>Customers</td>
+<td>Warehousing clients such as Amazon, GXO, Spanx</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2663-engineering-highlights-and-limitations">26.6.3 Engineering Highlights and Limitations</h3>
+<p><strong>Highlights</strong>: First is <strong>commercial deployment maturity</strong>—real-world warehouse operation records from third-party customers like Amazon and GXO make it one of the few samples to cross the "demo-product gap"; second is <strong>business model innovation</strong>, where RaaS (KG concept entity <code>ent_concept_robot_as_a_service</code>) replaces outright purchase with a subscription, converting customer CapEx into OpEx and bundling maintenance, software updates, and fleet management, lowering the initial procurement barrier; third is the mass-production readiness represented by the dedicated RoboFab factory. <strong>Limitations</strong>: The task spectrum is narrow; upper limb manipulation is limited to tote-level handling, lacking five-finger dexterous manipulation; while the reverse knee configuration is advantageous for carrying, its kinematic difference from the human forward knee makes it less advantageous in anthropomorphic tasks (e.g., seated driving operations).</p>
+<hr />
+<h2 id="267-case-6-ubtech-walker-s2-systematic-delivery-of-industrial-humanoids">26.7 Case 6: UBTECH Walker S2 – Systematic Delivery of Industrial Humanoids</h2>
+<h3 id="2671-positioning-and-evolution">26.7.1 Positioning and Evolution</h3>
+<p>UBTECH's Walker series is the most complete humanoid product line from Chinese manufacturers in terms of industrial delivery records. The Walker S1 (KG entity <code>ent_product_ubtech_walker_s1</code>, released in October 2024) has entered training in automotive factories such as BYD, Dongfeng Liuzhou Motor, Geely Auto, and Audi FAW; the Walker S2 (KG entity <code>ent_product_ubtech_walker_s2</code>, product card <code>product_walker_s2</code>) is the second-generation industrial model, targeting automotive manufacturing, 3C electronics, and logistics warehousing.</p>
+<h3 id="2672-system-architecture-and-key-parameters">26.7.2 System Architecture and Key Parameters</h3>
+<p>The Walker S2 features 52 DOF, a maximum dual-arm payload of 15 kg, a fourth-generation five-finger dexterous hand, and ±162° waist rotation, enabling tasks such as unpacking, material loading, quality inspection, and spraying. Its core engineering highlight is the <strong>autonomous battery hot-swap system</strong>: battery replacement in approximately 3 minutes supports nearly 24-hour continuous operation. The perception system includes binocular stereo vision, depth LiDAR, six-axis force sensors, and IMU; the software stack comprises the ROSA 2.0 operating system and a multimodal large model, supporting multi-robot coordination and MES system integration.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Walker S1</th>
+<th>Walker S2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Height / Weight</td>
+<td>172 cm / 76 kg</td>
+<td>Approx. 176 cm / Approx. 70–75 kg</td>
+</tr>
+<tr>
+<td>Total Degrees of Freedom</td>
+<td>41 DOF</td>
+<td>52 DOF</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>15 kg while walking</td>
+<td>Max 15 kg (dual arms)</td>
+</tr>
+<tr>
+<td>Dexterous Hand</td>
+<td>Third generation (6-array tactile)</td>
+<td>Fourth-generation five-finger dexterous hand</td>
+</tr>
+<tr>
+<td>Walking Speed</td>
+<td>Not disclosed</td>
+<td>Approx. 2 m/s</td>
+</tr>
+<tr>
+<td>Battery Life / Swap</td>
+<td>Not disclosed</td>
+<td>Approx. 2 h + 3 min autonomous hot-swap</td>
+</tr>
+<tr>
+<td>Computing Platform</td>
+<td>Not disclosed</td>
+<td>X86 + NVIDIA Jetson Orin</td>
+</tr>
+<tr>
+<td>Customer Validation</td>
+<td>BYD, Geely, Audi FAW, etc.</td>
+<td>NIO, BYD, Airbus, etc.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2673-engineering-highlights-and-limitations">26.7.3 Engineering Highlights and Limitations</h3>
+<p><strong>Highlights</strong>: The Walker S2 embodies the "systematization of industrial humanoids"—it delivers not just single-machine performance but integrates battery swap automation, multi-robot coordination scheduling, and MES (Manufacturing Execution System) connectivity as part of the complete product. This is precisely the "uptime" that industrial customers truly purchase, rather than the difficulty of actions in demo videos. Its multi-automaker training records also indicate that automotive assembly logistics is currently the most realistic entry point for industrial humanoids (see Chapter 27 for details). <strong>Limitations</strong>: The single-battery life of approx. 2 hours dictates reliance on battery swap infrastructure; the unit cost (third-party estimates 68,000–120,000 USD) relative to the labor cost of the workstations it could replace still results in a relatively long payback period; special processes like spraying require explosion-proof and protection-level modifications, which currently necessitate customization.</p>
+<h2 id="268-case-7-fourier-gr-1-and-gr-3-scene-migration-from-medical-rehabilitation">26.8 Case 7: Fourier GR-1 and GR-3 — Scene Migration from Medical Rehabilitation</h2>
+<h3 id="2681-positioning-and-evolution">26.8.1 Positioning and Evolution</h3>
+<p>Fourier Intelligence started with rehabilitation exoskeletons and medical robots, and its humanoid product line shows a clear "force control technology migration" path: The GR-1 (KG entity <code>ent_product_fourier_gr1</code>, released in July 2023) is one of the earliest mass-produced and delivered bipedal humanoid platforms in China; the GR-3 (KG entity <code>ent_product_fourier_gr3</code>, released in August 2025, internal codename Care-bot) has clearly shifted towards interactive companionship and elderly care scenarios.</p>
+<h3 id="2682-system-architecture-and-key-parameters">26.8.2 System Architecture and Key Parameters</h3>
+<p>The GR-1 uses self-developed FSA (Fourier Self-Actuator) integrated actuators, combining motors, drivers, reducers, and encoders. The force control technology migrated from rehabilitation exoskeletons enables compliant control in contact tasks, and it has been deployed in the rehabilitation departments of several top-tier hospitals for gait training and rehabilitation assistance. The GR-3 represents a different design philosophy: Morandi warm-toned exterior, soft-covered interior, 55 DOF with a 12 DOF dexterous hand, dual hot-swappable batteries providing approximately 3 hours of battery life, and an integrated "full-sense interaction system" combining hearing, vision, and touch. Its target scenarios include companionship for the elderly living alone, child interaction, and rehabilitation assistance.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Fourier GR-1</th>
+<th>Fourier GR-3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positioning</td>
+<td>General-purpose/Rehabilitation humanoid platform</td>
+<td>Interactive companion (Care-bot)</td>
+</tr>
+<tr>
+<td>Height / Weight</td>
+<td>165 cm / 55 kg</td>
+<td>165 cm / 71 kg</td>
+</tr>
+<tr>
+<td>Total DOF</td>
+<td>44 DOF</td>
+<td>55 DOF</td>
+</tr>
+<tr>
+<td>Key Metrics</td>
+<td>Max joint torque 230 N·m; Dual-arm payload 10 kg</td>
+<td>12 DOF dexterous hand; Full-sense interaction</td>
+</tr>
+<tr>
+<td>Walking Speed</td>
+<td>5 km/h</td>
+<td>Not disclosed</td>
+</tr>
+<tr>
+<td>Battery Life</td>
+<td>Not disclosed</td>
+<td>Approx. 3 h (dual hot-swappable batteries)</td>
+</tr>
+<tr>
+<td>Typical Customers</td>
+<td>Top-tier hospital rehab dept., research</td>
+<td>Elderly care, home (pre-sale)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2683-engineering-highlights-and-limitations">26.8.3 Engineering Highlights and Limitations</h3>
+<p><strong>Highlights</strong>: The Fourier case demonstrates that "scenario know-how can inversely define the whole machine." The stringent requirements for force control safety and contact compliance in rehabilitation scenarios are precisely the entry barriers for medical-grade products. The GR-3's soft covering and friendly appearance design directly address the non-technical constraint of "human psychological acceptance of machines" in home scenarios. <strong>Limitations</strong>: The requirements for task success rate and safety certification (e.g., ISO 13482 personal care robot standard) in rehabilitation and companionship scenarios are far higher than in demonstration scenarios. The pace of large-scale deployment is constrained by the clinical validation cycle. The business model for companionship scenarios (unit price, renewal rate) has not yet been proven, making it a long-cycle track.</p>
+<hr />
+<h2 id="269-case-8-ecosystem-extension-and-form-substitution-xpeng-iron-and-galbot-g1">26.9 Case 8: Ecosystem Extension and Form Substitution — XPENG Iron and Galbot G1</h2>
+<h3 id="2691-xpeng-iron-automotive-ecosystem-route">26.9.1 XPENG Iron: Automotive Ecosystem Route</h3>
+<p>The XPENG Iron (KG entity <code>ent_product_xpeng_iron</code>, product card <code>product_xpeng_iron</code>) is a Chinese example of the "automaker builds humanoid" route, forming a cross-market comparison with Tesla Optimus. Its technical foundation reuses the XPENG automotive ecosystem: self-developed Turing AI chip (40 cores, 3000 TOPS-level computing power), 720° eagle-eye vision, Tianji AIOS, and end-to-end large model + reinforcement learning. The first-generation Iron stands 178 cm tall, weighs 70 kg, has 62 active DOF, and a 15 DOF hand with tactile feedback. It has been undergoing training tasks like screw tightening, material sorting, and production form inspection on the P7 production line at the Guangzhou factory. Mass production is planned for the end of 2026, with future applications in store navigation and commercial services.</p>
+<p>The strategic logic of this route is consistent with Optimus: automakers possess ready-made capabilities in motors, batteries, perception, chips, and final assembly manufacturing. Humanoid robots are a "re-packaging" of these capabilities. The risks are also the same: a lack of real third-party customer data and limited breadth of training tasks within the factory.</p>
+<h3 id="2692-galbot-g1-a-pragmatic-alternative-with-a-wheeled-base">26.9.2 Galbot G1: A Pragmatic Alternative with a Wheeled Base</h3>
+<p>Galaxy General's Galbot G1 (KG entity <code>ent_product_galbot_g1</code>) represents a rethinking of the assumption that "humanoids must be bipedal." The G1 uses a 360° omnidirectional wheeled base instead of bipedal walking. Through torso lifting (65 cm stroke) and folding leg structures, it covers a vertical working range, with a maximum working height of approximately 240 cm. It stands 173 cm tall and weighs about 85 kg. Its AI system, AstraBrain, uses pure visual navigation (no QR codes or LiDAR required) and has achieved 24/7 commercial deployment in scenarios like pharmacies, convenience stores, and warehouse logistics.</p>
+<p>The engineering benefits of the wheeled solution can be directly quantified: bipedal robots continuously consume energy to maintain posture, whereas a wheeled base concentrates energy on upper-body manipulation and computation, significantly extending battery life. It also eliminates the failure modes of dynamic balance control, resulting in inherently higher reliability. The trade-off is an inability to navigate unstructured terrain like stairs or steps—but in flat commercial environments like pharmacies and convenience stores, this constraint is almost non-existent.</p>
+<div class="admonition note">
+<p class="admonition-title">Design Insight: Form Follows Task, Not the Other Way Around</p>
+<p>Galbot G1 and Digit illustrate the same principle from opposite directions: Digit retains bipedal legs for carrying totes in narrow corridors and stair environments, while Galbot G1 abandons bipedal legs for all-day operation in flat commercial environments. The rationality of a "humanoid form" does not come from the form itself, but from the fact that <strong>the environment is designed for humans</strong>; when the target environment happens to be flat and regular, a wheeled humanoid upper body is the superior solution.</p>
+</div>
+<h2 id="2610-cross-case-horizontal-comparison">26.10 Cross-Case Horizontal Comparison</h2>
+<h3 id="26101-key-parameter-summary-table">26.10.1 Key Parameter Summary Table</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Height/Weight</th>
+<th>Total DOF</th>
+<th>Payload</th>
+<th>Speed</th>
+<th>Battery Life</th>
+<th>AI/Computing</th>
+<th>Price/Mode</th>
+<th>Deployment Maturity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unitree H1</td>
+<td>180 cm / 47 kg</td>
+<td>26–27</td>
+<td>Not disclosed</td>
+<td>Run 3.3 m/s</td>
+<td>1.5–2 h</td>
+<td>Jetson Orin NX optional</td>
+<td>~90,000 USD</td>
+<td>Leading research platform shipments</td>
+</tr>
+<tr>
+<td>Unitree G1</td>
+<td>127 cm / 35 kg</td>
+<td>23–43</td>
+<td>~2 kg</td>
+<td>2 m/s</td>
+<td>1.5–2 h</td>
+<td>8-core CPU + Orin optional</td>
+<td>~16,000 USD</td>
+<td>Leading developer ecosystem</td>
+</tr>
+<tr>
+<td>Optimus Gen 3</td>
+<td>173 cm / ~57 kg</td>
+<td>28+ + 22×2 hands</td>
+<td>~20 kg</td>
+<td>~1.2 m/s</td>
+<td>2–4 h (estimated)</td>
+<td>Tesla AI5</td>
+<td>Target 20–30k USD</td>
+<td>Internal factory only</td>
+</tr>
+<tr>
+<td>Figure 02</td>
+<td>168 cm / 70 kg</td>
+<td>28 (hands 16/pair)</td>
+<td>Hand 25 kg</td>
+<td>1.2 m/s</td>
+<td>~5 h</td>
+<td>Dual RTX GPU + Helix VLA</td>
+<td>Not disclosed</td>
+<td>BMW production line pilot</td>
+</tr>
+<tr>
+<td>Atlas Electric</td>
+<td>190 cm / 90 kg</td>
+<td>56</td>
+<td>Continuous 30 kg</td>
+<td>~9 km/h</td>
+<td>~4 h, hot-swappable</td>
+<td>Custom real-time stack + Orbit</td>
+<td>Not disclosed</td>
+<td>Hyundai early deployment</td>
+</tr>
+<tr>
+<td>Agility Digit</td>
+<td>175 cm / ~65 kg</td>
+<td>16–28</td>
+<td>16 kg</td>
+<td>5.4 km/h</td>
+<td>~4 h, autonomous charging</td>
+<td>RealSense + LiDAR</td>
+<td>RaaS</td>
+<td>Amazon/GXO warehouse</td>
+</tr>
+<tr>
+<td>Walker S2</td>
+<td>176 cm / ~72 kg</td>
+<td>52</td>
+<td>Dual arms 15 kg</td>
+<td>~2 m/s</td>
+<td>2 h + 3 min battery swap</td>
+<td>X86 + Orin + ROSA 2.0</td>
+<td>Not disclosed</td>
+<td>Multi-automaker training</td>
+</tr>
+<tr>
+<td>Fourier GR-1</td>
+<td>165 cm / 55 kg</td>
+<td>44</td>
+<td>Dual arms 10 kg</td>
+<td>5 km/h</td>
+<td>Not disclosed</td>
+<td>Not disclosed</td>
+<td>Not disclosed</td>
+<td>Tertiary hospital rehabilitation</td>
+</tr>
+<tr>
+<td>XPeng Iron</td>
+<td>178 cm / 70 kg</td>
+<td>62</td>
+<td>Not disclosed</td>
+<td>Not disclosed</td>
+<td>Not disclosed</td>
+<td>Turing chip + Tianji AIOS</td>
+<td>Not disclosed</td>
+<td>Own factory training</td>
+</tr>
+<tr>
+<td>Galbot G1</td>
+<td>173 cm / 85 kg</td>
+<td>Not disclosed</td>
+<td>Not disclosed</td>
+<td>Not disclosed</td>
+<td>Long (wheeled)</td>
+<td>AstraBrain pure vision</td>
+<td>Not disclosed</td>
+<td>Pharmacy/convenience store 24h</td>
+</tr>
+</tbody>
+</table>
+<h3 id="26102-two-dimensional-distribution-of-technical-routes">26.10.2 Two-Dimensional Distribution of Technical Routes</h3>
+<pre class="highlight"><code class="language-mermaid">quadrantChart
+    title Technical Route Distribution of Whole-Machine Cases (Qualitative)
+    x-axis Scenario Focus --&gt; General Purpose
+    y-axis Research/Demo Oriented --&gt; Deployment/Product Oriented
+    quadrant-1 General Product
+    quadrant-2 Scenario Product
+    quadrant-3 Scenario Platform
+    quadrant-4 General Platform
+    Unitree G1: [0.35, 0.35]
+    Unitree H1: [0.55, 0.30]
+    Galbot G1: [0.15, 0.80]
+    Agility Digit: [0.25, 0.85]
+    Fourier GR-3: [0.30, 0.55]
+    Walker S2: [0.45, 0.70]
+    Atlas Electric: [0.55, 0.65]
+    Figure 02: [0.75, 0.70]
+    Optimus Gen3: [0.85, 0.50]
+    XPeng Iron: [0.70, 0.40]</code></pre>
+<h3 id="26103-cross-case-design-principles">26.10.3 Cross-Case Design Principles</h3>
+<p>Synthesizing the eight cases, the following whole-machine design principles can be distilled:</p>
+<ol>
+<li><strong>Battery Life–Mass–Battery Swap Triangular Trade-off</strong>: Battery energy density (Chapters 3, 6) determines that "increasing battery size" simultaneously raises total machine mass and joint power requirements. Atlas and Walker S2 opt for autonomous hot-swappable battery exchange, while Digit chooses autonomous docking charging. The essence is trading infrastructure for uptime, rather than blindly increasing battery capacity. If the average task power is <span class="arithmatex">\(P_{avg}\)</span>, the usable battery energy is <span class="arithmatex">\(E_{bat}\)</span>, and the battery swap/charging interruption time is <span class="arithmatex">\(t_{int}\)</span>, then the effective operation ratio is</li>
+</ol>
+<div class="arithmatex">\[
+\eta_{uptime} = \frac{E_{bat}/P_{avg}}{E_{bat}/P_{avg} + t_{int}} = \frac{1}{1 + t_{int}\,P_{avg}/E_{bat}}
+\]</div>
+<p>Taking Walker S2 as an example, approximately 2 h battery life and 3 min battery swap imply a theoretical uptime ceiling of about 97.5%. This is the arithmetic essence of "near 24-hour continuous operation." The Python example below compares theoretical uptime under three energy replenishment strategies:</p>
+<pre class="highlight"><code class="language-python"># Whole-machine uptime comparison: battery expansion vs autonomous charging vs hot-swap battery exchange
+# Convention: average task power P_avg (W), usable battery energy E_bat (Wh)
+P_avg = 400.0  # W, typical average power magnitude for industrial handling tasks
+
+def uptime(E_bat_wh, t_interrupt_min):
+    """Returns theoretical effective operation ratio η"""
+    t_run = E_bat_wh / P_avg * 60.0   # Single operation duration (min)
+    return t_run / (t_run + t_interrupt_min)
+
+strategies = {
+    "Base battery (500 Wh, autonomous charging 60 min)": (500.0, 60.0),
+    "Doubled battery (1000 Wh, autonomous charging 60 min)": (1000.0, 60.0),
+    "Hot-swap battery exchange (equivalent 800 Wh, swap 3 min)": (800.0, 3.0),
+}
+for name, (e, t) in strategies.items():
+    print(f"{name}: single operation {e/P_avg:.2f} h, uptime = {uptime(e, t)*100:.1f}%")</code></pre>
+<p>The conclusion of the example is counterintuitive: doubling battery capacity only increases uptime from about 55% to about 71%, while a 3-minute hot-swap battery exchange can directly exceed 96%. This explains why Atlas, Walker S2, and GR-3 all design automated battery swapping as a whole-machine-level function rather than a post-sale accessory.</p>
+<ol>
+<li>
+<p><strong>Degrees of Freedom Concentrated in Hands</strong>: In 2023, the competitive focus of whole machines was on leg dynamic capability (H1's 3.3 m/s). After 2025, the focus shifted to hands (Optimus 22 DOF/hand, Figure 16 DOF/pair, Walker S2 fourth-generation dexterous hand). The reason is that "being able to walk" is already a baseline, while "being able to work" with hands is the customer's paying point; miniaturization of hand actuators has thus become the fastest-growing part of the whole-machine BOM.</p>
+</li>
+<li>
+<p><strong>Two-Polarized Computing Architecture</strong>: Research platforms (G1, H1) use general-purpose Jetson/x86 combinations in exchange for development ecosystem; productized whole machines (Optimus, Figure, XPeng) move toward custom or high-compute custom chips, because the edge inference of VLA models is more sensitive to memory bandwidth and power consumption than absolute TOPS.</p>
+</li>
+<li>
+<p><strong>Negative Correlation Between Deployment Maturity and Openness</strong>: The most maturely deployed Digit and Walker S2 offer closed turnkey solutions; the most open-ecosystem G1/H1 primarily serve research. This negative correlation reflects the current industry reality—real-world deployment requires deep vendor involvement, and a division of labor of "general platform + third-party applications" has not yet formed.</p>
+</li>
+<li>
+<p><strong>Scenario Focus Precedes Generalization</strong>: Digit (logistics boxes), Galbot G1 (pharmacies/convenience stores), and GR-3 (healthcare companionship) all narrow the task domain to achieve reliability metrics. This aligns with the judgment of the KG concept <code>ent_concept_demo_to_product_gap</code>: the shortest path to bridge the demo-to-product gap is to narrow the scenario, not to improve generality.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2611-chapter-summary">26.11 Chapter Summary</h2>
+<p>This chapter, through eight whole-machine system cases, demonstrates the main technical routes and design trade-offs in humanoid robot system integration. Unitree H1/G1 proves the platform value of self-developed high-dynamic electric joint actuation plus an open ecosystem; Tesla Optimus and Figure 02 showcase two forms of the "AI-first" route—manufacturing vertical integration and VLA end-to-end architecture; Electric Atlas and Walker S2 represent directions of form innovation and systematic delivery in heavy-load/industrial deployment; Digit and Fourier GR series validate the commercial feasibility of the scenario-focused route; XPeng Iron and Galbot G1 respectively suggest two "atypical" paths: automotive ecosystem migration and wheeled form substitution. These cases collectively point to a conclusion: the quality of whole-machine design cannot be ranked by a single parameter but should be evaluated within a three-dimensional coordinate system of "target scenario × business model × technology foundation." Chapter 27 will follow this line of thought to systematically expand the application scenario analysis of humanoid robots.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-25/">← Previous<span>Chapter 25: Humanoid Robot Evaluation System</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-27/">Next →<span>Chapter 27 Application Scenarios</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-26-complete-system-case-studies">Chapter 26: Complete System Case Studies</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#261-complete-system-integration-from-components-to-system">26.1 Complete System Integration: From Components to System</a><ul>
+<li><a href="#2611-the-complete-system-as-a-product-of-system-trade-offs-under-constraints">26.1.1 The Complete System as a Product of System Trade-offs Under Constraints</a></li>
+<li><a href="#2612-key-indicators-for-complete-system-evaluation">26.1.2 Key Indicators for Complete System Evaluation</a></li>
+<li><a href="#2613-hierarchical-architecture-view-of-the-complete-system">26.1.3 Hierarchical Architecture View of the Complete System</a></li>
+<li><a href="#2614-selection-logic-for-cases-in-this-chapter">26.1.4 Selection Logic for Cases in This Chapter</a></li>
+</ul>
+</li>
+<li><a href="#262-case-1-unitree-h1-and-g1-high-dynamic-electric-drive-platform-and-open-ecosystem">26.2 Case 1: Unitree H1 and G1 – High-Dynamic Electric Drive Platform and Open Ecosystem</a><ul>
+<li><a href="#2621-positioning-and-evolution">26.2.1 Positioning and Evolution</a></li>
+<li><a href="#2622-system-architecture-and-key-parameters">26.2.2 System Architecture and Key Parameters</a></li>
+<li><a href="#2623-engineering-highlights-and-limitations">26.2.3 Engineering Highlights and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#263-case-2-tesla-optimus-gen-3-manufacturing-vertical-integration-and-data-closed-loop">26.3 Case 2: Tesla Optimus Gen 3 – Manufacturing Vertical Integration and Data Closed Loop</a><ul>
+<li><a href="#2631-positioning-and-evolution">26.3.1 Positioning and Evolution</a></li>
+<li><a href="#2632-system-architecture-robotization-of-the-fsd-methodology">26.3.2 System Architecture: Robotization of the FSD Methodology</a></li>
+<li><a href="#2633-engineering-highlights-and-limitations">26.3.3 Engineering Highlights and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#264-case-3-figure-02-vla-first-general-purpose-humanoid">26.4 Case 3: Figure 02 – VLA-First General-Purpose Humanoid</a><ul>
+<li><a href="#2641-positioning-and-evolution">26.4.1 Positioning and Evolution</a></li>
+<li><a href="#2642-system-architecture-and-key-parameters">26.4.2 System Architecture and Key Parameters</a></li>
+<li><a href="#2643-engineering-highlights-and-limitations">26.4.3 Engineering Highlights and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#265-case-4-boston-dynamics-atlas-electric-version-from-hydraulic-to-all-electric-heavy-duty-platform">26.5 Case 4: Boston Dynamics Atlas (Electric Version) – From Hydraulic to All-Electric Heavy-Duty Platform</a><ul>
+<li><a href="#2651-positioning-and-evolution">26.5.1 Positioning and Evolution</a></li>
+<li><a href="#2652-system-architecture-and-key-parameters">26.5.2 System Architecture and Key Parameters</a></li>
+<li><a href="#2653-engineering-highlights-and-limitations">26.5.3 Engineering Highlights and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#266-case-5-agility-robotics-digit-a-productization-sample-for-logistics-scenarios">26.6 Case 5: Agility Robotics Digit – A Productization Sample for Logistics Scenarios</a><ul>
+<li><a href="#2661-positioning-and-evolution">26.6.1 Positioning and Evolution</a></li>
+<li><a href="#2662-task-oriented-morphological-design">26.6.2 Task-Oriented Morphological Design</a></li>
+<li><a href="#2663-engineering-highlights-and-limitations">26.6.3 Engineering Highlights and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#267-case-6-ubtech-walker-s2-systematic-delivery-of-industrial-humanoids">26.7 Case 6: UBTECH Walker S2 – Systematic Delivery of Industrial Humanoids</a><ul>
+<li><a href="#2671-positioning-and-evolution">26.7.1 Positioning and Evolution</a></li>
+<li><a href="#2672-system-architecture-and-key-parameters">26.7.2 System Architecture and Key Parameters</a></li>
+<li><a href="#2673-engineering-highlights-and-limitations">26.7.3 Engineering Highlights and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#268-case-7-fourier-gr-1-and-gr-3-scene-migration-from-medical-rehabilitation">26.8 Case 7: Fourier GR-1 and GR-3 — Scene Migration from Medical Rehabilitation</a><ul>
+<li><a href="#2681-positioning-and-evolution">26.8.1 Positioning and Evolution</a></li>
+<li><a href="#2682-system-architecture-and-key-parameters">26.8.2 System Architecture and Key Parameters</a></li>
+<li><a href="#2683-engineering-highlights-and-limitations">26.8.3 Engineering Highlights and Limitations</a></li>
+</ul>
+</li>
+<li><a href="#269-case-8-ecosystem-extension-and-form-substitution-xpeng-iron-and-galbot-g1">26.9 Case 8: Ecosystem Extension and Form Substitution — XPENG Iron and Galbot G1</a><ul>
+<li><a href="#2691-xpeng-iron-automotive-ecosystem-route">26.9.1 XPENG Iron: Automotive Ecosystem Route</a></li>
+<li><a href="#2692-galbot-g1-a-pragmatic-alternative-with-a-wheeled-base">26.9.2 Galbot G1: A Pragmatic Alternative with a Wheeled Base</a></li>
+</ul>
+</li>
+<li><a href="#2610-cross-case-horizontal-comparison">26.10 Cross-Case Horizontal Comparison</a><ul>
+<li><a href="#26101-key-parameter-summary-table">26.10.1 Key Parameter Summary Table</a></li>
+<li><a href="#26102-two-dimensional-distribution-of-technical-routes">26.10.2 Two-Dimensional Distribution of Technical Routes</a></li>
+<li><a href="#26103-cross-case-design-principles">26.10.3 Cross-Case Design Principles</a></li>
+</ul>
+</li>
+<li><a href="#2611-chapter-summary">26.11 Chapter Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

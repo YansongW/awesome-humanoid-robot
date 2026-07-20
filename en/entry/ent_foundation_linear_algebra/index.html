@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linear Algebra · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/foundation/">Foundation</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Linear Algebra</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Foundation</div>
+      <h1>Linear Algebra</h1>
+      <p class="entry-name-en">Linear Algebra</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Foundational for robotics and machine learning. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-0-foundations/">
+        <span class="roadmap-badge-stage">Stage 0 · Foundations</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The branch of mathematics concerning vector spaces, linear transformations, matrices, and systems of linear equations.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://math.mit.edu/~gs/linearalgebra/" target="_blank" rel="noopener">Strang, Introduction to Linear Algebra</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>A branch of mathematics that studies vector spaces, linear transformations, matrices, and systems of linear equations.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-linear-algebra">Definition and Positioning of Linear Algebra</h3>
+<p>Linear algebra belongs to the <strong>fundamental discipline</strong> category. Its field includes: fundamental disciplines. Its value chain level: foundational layer. It is a branch of mathematics that studies vector spaces, linear transformations, matrices, and systems of linear equations. The English name is <em>Linear Algebra</em>. The Korean name is <em>선형대수학</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-linear-algebra">Mathematical and Theoretical Foundations of Linear Algebra</h3>
+<p>Linear algebra is built upon related mathematical theories and physical laws. Understanding its underlying assumptions, constraints, and derivation processes is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In humanoid robots—a high-dimensional, underactuated, and strongly coupled system—linear algebra typically requires a balance between real-time performance, accuracy, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>In practical implementation of linear algebra, it is necessary to clarify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable operation of the algorithm on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>Linear algebra can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptability remain key issues that need to be addressed in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>linear_algebra</li>
+<li>matrices</li>
+<li>vector_spaces</li>
+<li>jacobian</li>
+<li>humanoid_robot</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key fundamental disciplines in the humanoid robot industry chain, linear algebra plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_component_bldc_motor/">Brushless DC Motor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Brushless DC Motor has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_six_axis_force_torque_sensor_2024/">Six Axis Force Torque Sensor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Six Axis Force Torque Sensor has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_transformer_action_decoder/">Transformer Action Decoder Formalism</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">The Transformer action-decoder formalism has linear algebra as a prerequisite foundation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_zed_stereo_camera_2024/">ZED Stereo Camera</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ZED Stereo Camera has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_foundation_convex_optimization/">Convex Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Convex Optimization has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ManiSkill has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_dataset_droid/">DROID</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">DROID has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_servo_drive_2024/">Servo Drive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Servo Drive has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_ati_force_torque_sensor_2024/">ATI Force Torque Sensor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ATI Force Torque Sensor has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_tactile_sensor_array_2024/">Tactile Sensor Array</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Tactile Sensor Array has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_algorithm_ppo/">Proximal Policy Optimization (PPO)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Proximal Policy Optimization (PPO) has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_software_pinocchio/">Pinocchio</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Pinocchio has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_software_drake_systems_toolbox_2024/">Drake Systems Toolbox</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Drake Systems Toolbox has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_operator_task_jacobian/">Task Jacobian</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ent_operator_task_jacobian has_prerequisite ent_foundation_linear_algebra</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_imu_2024/">Inertial Measurement Unit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Inertial Measurement Unit has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_action_token_prediction/">Action Token Prediction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Action token prediction has linear algebra as a prerequisite foundation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_foundation_probability_theory/">Probability Theory</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Probability Theory has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo Physics Engine</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">MuJoCo Physics Engine has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_system_identification/">System Identification</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">System Identification has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zero_moment_point_2024/">Zero Moment Point</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Zero Moment Point has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment Dataset</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Open X-Embodiment Dataset has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_foundation_linear_algebra"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_algorithm_ppo/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Proximal Policy Optimization (PPO)</h3>
+          <p>A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_pinocchio/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Pinocchio</h3>
+          <p>An open-source C++ library for efficient rigid-body dynamics, kinematics, and analytical…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_operator_task_jacobian/">
+          <span class="entry-type">Operator</span>
+          <h3>Task Jacobian</h3>
+          <p>The matrix that maps joint-space velocities and accelerations to the velocity/acceleration of a task…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_six_axis_force_torque_sensor_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Six Axis Force Torque Sensor</h3>
+          <p>Sensor measuring forces and torques in all six degrees of freedom, critical for force-controlled…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_dataset_open_x_embodiment/">
+          <span class="entry-type">Dataset</span>
+          <h3>Open X-Embodiment Dataset</h3>
+          <p>A large-scale aggregated robot-learning dataset combining demonstrations from diverse real-world…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zero_moment_point_2024/">
+          <span class="entry-type">Method</span>
+          <h3>Zero Moment Point</h3>
+          <p>Foundational stability criterion for bipedal walking and balance control.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_servo_drive_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Servo Drive</h3>
+          <p>Electronic amplifier that converts low-power command signals into high-current motor control for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_imu_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Inertial Measurement Unit</h3>
+          <p>Sensor package combining accelerometers and gyroscopes to estimate orientation, angular velocity,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_dataset_droid/">
+          <span class="entry-type">Dataset</span>
+          <h3>DROID</h3>
+          <p>A distributed, diverse real-world robot manipulation dataset collected across multiple labs and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_mujoco_physics_engine_2022/">
+          <span class="entry-type">Software Platform</span>
+          <h3>MuJoCo Physics Engine</h3>
+          <p>High-fidelity physics engine with rich contact dynamics, widely used for humanoid control research.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_tactile_sensor_array_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Tactile Sensor Array</h3>
+          <p>Distributed tactile sensing surface that measures contact pressure, shear, or texture to support…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_transformer_action_decoder/">
+          <span class="entry-type">Formalism</span>
+          <h3>Transformer Action Decoder Formalism</h3>
+          <p>A formal generative framework that decodes robot actions from visual-language context using a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">Benchmark</span>
+          <h3>ManiSkill</h3>
+          <p>A unified benchmark for generalizable manipulation skills, providing standardized tasks, simulated…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">Foundation</span>
+          <h3>Probability Theory</h3>
+          <p>The mathematical foundation for reasoning about uncertainty, random variables, distributions, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_bldc_motor/">
+          <span class="entry-type">Component</span>
+          <h3>Brushless DC Motor</h3>
+          <p>An electric motor driven by electronic commutation rather than mechanical brushes, offering high…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">Method</span>
+          <h3>Action Token Prediction</h3>
+          <p>A method that frames robot action generation as an autoregressive next-token prediction problem,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_system_identification/">
+          <span class="entry-type">Method</span>
+          <h3>System Identification</h3>
+          <p>The process of building mathematical models of dynamical systems from measured input-output data,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_convex_optimization/">
+          <span class="entry-type">Foundation</span>
+          <h3>Convex Optimization</h3>
+          <p>The mathematical discipline of minimizing convex functions over convex sets, guaranteeing that any…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_ati_force_torque_sensor_2024/">
+          <span class="entry-type">Component</span>
+          <h3>ATI Force Torque Sensor</h3>
+          <p>Wrist and ankle force/torque sensor for contact control and interaction.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_zed_stereo_camera_2024/">
+          <span class="entry-type">Component</span>
+          <h3>ZED Stereo Camera</h3>
+          <p>Stereo vision camera with onboard depth estimation and spatial AI used in robot navigation.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_drake_systems_toolbox_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Drake Systems Toolbox</h3>
+          <p>MIT systems-modeling toolbox for optimization-based control and analysis.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">Method</span>
+          <h3>Finite Element Analysis (FEA)</h3>
+          <p>A numerical method for predicting stress, deformation, vibration modes, and thermal behavior by…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-linear-algebra">Definition and Positioning of Linear Algebra</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-linear-algebra">Mathematical and Theoretical Foundations of Linear Algebra</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

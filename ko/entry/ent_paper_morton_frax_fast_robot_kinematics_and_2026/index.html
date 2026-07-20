@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>frax: JAX 기반의 고속 로봇 운동학 및 동역학 라이브러리 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">frax: JAX 기반의 고속 로봇 운동학 및 동역학 라이브러리</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>frax: JAX 기반의 고속 로봇 운동학 및 동역학 라이브러리</h1>
+      <p class="entry-name-en">frax: Fast Robot Kinematics and Dynamics in JAX</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">소프트웨어 미들웨어</span><span class="tag">AI 모델 및 알고리즘</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.04310v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>frax는 CPU, GPU, TPU에서 동작하는 완전히 벡터화된 로봇 운동학 및 동역학을 위한 순수 Python JAX 라이브러리로, CPU에서는 마이크로초 단위 지연을, GPU에서는 초당 1억 번 이상의 동역학 평가를 달성한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2604.04310" target="_blank" rel="noopener">frax: Fast Robot Kinematics and Dynamics in JAX</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇 제어, 계획 및 학습 분야에서는 높은 성능, 사용 편의성, CPU 및 가속기 호환성을 갖춘 강체 동역학 라이브러리가 필요합니다. 기존 라이브러리는 종종 저지연 CPU 실행 또는 고처리량 GPU 워크로드 중 하나에 특화되어 있지만, 성능이나 사용 편의성을 저하시키지 않으면서 여러 아키텍처를 지원하는 통합 프레임워크를 제공하는 경우는 드뭅니다. 이를 해결하기 위해, 우리는 JAX 기반의 로봇 기구학 및 동역학 라이브러리인 frax를 소개합니다. frax는 CPU, GPU, TPU에서 고성능 순수 Python 인터페이스를 제공합니다. 완전 벡터화된 로봇 동역학 접근 방식을 통해 frax는 효율적인 실시간 제어 및 병렬화를 가능하게 하며, 최적화 기반 방법을 위한 자동 미분을 지원합니다. CPU에서 frax는 킬로헤르츠 제어 속도에 적합한 마이크로초 단위의 낮은 계산 시간을 달성하여 Python의 일반적인 라이브러리를 능가하고 최적화된 C++ 구현에 근접합니다. GPU에서는 동일한 코드가 수천 개의 인스턴스로 확장되어 초당 1억 회 이상의 동역학 평가를 수행합니다. 우리는 Franka Panda 매니퓰레이터와 Unitree G1 휴머노이드에서 성능을 검증하고, frax를 오픈소스 라이브러리로 공개합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>로봇 제어, 계획 및 학습 분야에서는 높은 성능, 사용 편의성, CPU 및 가속기 호환성을 갖춘 강체 동역학 라이브러리가 필요합니다. 기존 라이브러리는 종종 저지연 CPU 실행 또는 고처리량 GPU 워크로드 중 하나에 특화되어 있지만, 성능이나 사용 편의성을 저하시키지 않으면서 여러 아키텍처를 지원하는 통합 프레임워크를 제공하는 경우는 드뭅니다. 이를 해결하기 위해, 우리는 JAX 기반의 로봇 기구학 및 동역학 라이브러리인 frax를 소개합니다. frax는 CPU, GPU, TPU에서 고성능 순수 Python 인터페이스를 제공합니다. 완전 벡터화된 로봇 동역학 접근 방식을 통해 frax는 효율적인 실시간 제어 및 병렬화를 가능하게 하며, 최적화 기반 방법을 위한 자동 미분을 지원합니다. CPU에서 frax는 킬로헤르츠 제어 속도에 적합한 마이크로초 단위의 낮은 계산 시간을 달성하여 Python의 일반적인 라이브러리를 능가하고 최적화된 C++ 구현에 근접합니다. GPU에서는 동일한 코드가 수천 개의 인스턴스로 확장되어 초당 1억 회 이상의 동역학 평가를 수행합니다. 우리는 Franka Panda 매니퓰레이터와 Unitree G1 휴머노이드에서 성능을 검증하고, frax를 오픈소스 라이브러리로 공개합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_digital_twin/">디지털 트윈</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo 물리 엔진</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_pinocchio/">Pinocchio</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_morton_frax_fast_robot_kinematics_and_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_software_pinocchio/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>Pinocchio</h3>
+          <p>효율적인 강체 동역학·운동학·해석적 미분을 위한 오픈소스 C++ 라이브러리로, 로보틱스 연구 및 모델 기반 제어에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_mujoco_physics_engine_2022/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>MuJoCo 물리 엔진</h3>
+          <p>풍부한 접촉 역학을 가진 고충실도 물리 엔진, 휨로봇 제어 연구에 널리 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_digital_twin/">
+          <span class="entry-type">개념</span>
+          <h3>디지털 트윈</h3>
+          <p>물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

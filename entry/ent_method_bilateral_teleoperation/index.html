@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>双边遥操作 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">双边遥操作</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>双边遥操作</h1>
+      <p class="entry-name-en">Bilateral Teleoperation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="_2">双边遥操作的定义与定位</h3>
+<p>双边遥操作属于 <strong>方法</strong> 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。 英文名称为 <em>Bilateral Teleoperation</em>。 韩文名称为 <em>양방향 원격 조작</em>。</p>
+<h3 id="_3">双边遥操作的数学与原理基础</h3>
+<p>双边遥操作建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，双边遥操作通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_4">算法步骤与实现要点</h3>
+<p>在实际实现双边遥操作时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_5">典型应用与局限性</h3>
+<p>双边遥操作可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_6">相关标签</h3>
+<ul>
+<li>method</li>
+<li>chapter_17</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_7">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，双边遥操作在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_tech_mimicgen/">MimicGen</a>
+              <span class="rel-desc">双边遥操作提及MimicGen。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_umi_gripper_interface_2024/">UMI 夹爪接口</a>
+              <span class="rel-desc">双边遥操作提及UMI 夹爪接口。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              <span class="rel-desc">双边遥操作提及Mobile ALOHA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_humanplus_shadowing_system_2024/">HumanPlus 影子系统</a>
+              <span class="rel-desc">双边遥操作提及HumanPlus 影子系统。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA 遥操作系统</a>
+              <span class="rel-desc">双边遥操作提及ALOHA 遥操作系统。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_a_closed_form_geometric_retarg_2026/">A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_development_of_an_intuitive_gu_2025/">Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_look_around_enhanc_2024/">Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egoposer_robust_real_time_egoc_2024_1/">EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egoposer_robust_real_time_egoc_2024/">EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_teleopbench_a_simulator_centri_2025/">TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_swamy_scaled_autonomy_enabling_human_2019/">可扩展自主：使人类操作员能够控制机器人群</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">可扩展自主：使人类操作员能够控制机器人群discusses双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_extremcontrol_low_latency_huma_2026/">ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lapsurgie_humanoid_robots_perf_2025/">LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_everyday_a_comprehens_2026/">Humanoid｜Everyday 用于开放世界人形操作的综合机器人数据集</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Humanoid｜Everyday 用于开放世界人形操作的综合机器人数据集使用双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deep_imitation_learning_for_hu_2023/">Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_child_a_whole_body_humanoid_te_2025/">CHILD: a Whole-Body Humanoid Teleoperation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robot_trajectron_v3_a_probabil_2026/">Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_telegate_whole_body_humanoid_t_2026/">TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dexcap_scalable_and_portable_m_2024/">DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sensorless_four_channel_contro_2026/">Sensorless Four-Channel Control Architecture Using Inverse Dynamics Modeling for Human-Scale Bilateral Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_enhancing_the_llm_based_robot_2024/">通过人机协作增强基于大语言模型的机器人操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">通过人机协作增强基于大语言模型的机器人操作使用双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_clot_closed_loop_global_motion_2026/">CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_heft_heavy_payload_full_size_h_2026/">HEFT：面向重载全尺寸人形的全身遥操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">HEFT：面向重载全尺寸人形的全身遥操作提出双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yuan_motiontrans_human_vr_data_enab_2025/">MotionTrans</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">MotionTrans使用双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_icub3_avatar_system_enabling_r_2022/">iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_darvish_whole_body_geometric_retargeti_2019/">面向人形机器人的全身几何重定向</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向人形机器人的全身几何重定向discusses双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_stability_aware_retargeting_fo_2025/">Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_whole_body_bilateral_teleopera_2025/">Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_policy_human_policy_2025/">Humanoid Policy ~ Human Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cui_end_to_end_dexterous_arm_hand_2025/">DexGrasp-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">DexGrasp-VLA使用双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_concept_demo_to_product_gap/">演示指标与产品指标的鸿沟</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">演示指标与产品指标的鸿沟提及双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_from_technical_metrics_to_user_2026/">From Technical Metrics to User Perception: A User Study of a Multimodal Human-Robot Interaction System for Object Detection and Grasping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_high_speed_and_impact_resilien_2024/">High-Speed and Impact Resilient Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_przystupa_learning_state_conditioned_lin_2024/">学习状态条件线性映射用于机械臂低维控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">学习状态条件线性映射用于机械臂低维控制discusses双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_visualizing_impedance_control_2026/">Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_omnih2o_universal_and_dexterou_2026/">把遥操作升级成通用身体接口</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">把遥操作升级成通用身体接口使用双边遥操作。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_spark_a_toolbox_for_safe_human_2025/">SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_teleoperation_of_humanoid_robo_2023/">Teleoperation of Humanoid Robots: A Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_bilateral_teleoperation"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_icub3_avatar_system_enabling_r_2022/">
+          <span class="entry-type">论文</span>
+          <h3>iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots</h3>
+          <p>iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots is a 2022 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_development_of_an_intuitive_gu_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots</h3>
+          <p>Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_child_a_whole_body_humanoid_te_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CHILD: a Whole-Body Humanoid Teleoperation System</h3>
+          <p>CHILD: a Whole-Body Humanoid Teleoperation System is a 2025 work on teleoperation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_closed_form_geometric_retarg_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation</h3>
+          <p>A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_enhancing_the_llm_based_robot_2024/">
+          <span class="entry-type">论文</span>
+          <h3>通过人机协作增强基于大语言模型的机器人操作</h3>
+          <p>Large Language Models (LLMs) are gaining popularity in the field of robotics. However, LLM-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_whole_body_bilateral_teleopera_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation</h3>
+          <p>Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deep_imitation_learning_for_hu_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation</h3>
+          <p>Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation is a 2023 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_heft_heavy_payload_full_size_h_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HEFT：面向重载全尺寸人形的全身遥操作</h3>
+          <p>HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion Guidance and Windowed…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yuan_motiontrans_human_vr_data_enab_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MotionTrans</h3>
+          <p>MotionTrans: Human VR Data Enable Motion-Level Learning for Robotic Manipulation Policies…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_look_around_enhanc_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck</h3>
+          <p>Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_humanplus_shadowing_system_2024/">
+          <span class="entry-type">技术</span>
+          <h3>HumanPlus 影子系统</h3>
+          <p>基于RGB相机的人体姿态估计加仿真训练的低层策略，实现全身人形机器人遥操作和数据采集。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_stability_aware_retargeting_fo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation</h3>
+          <p>Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation is a 2025 work on teleoperation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">技术</span>
+          <h3>Mobile ALOHA</h3>
+          <p>全身移动双臂遥操作平台，用于采集家庭和仓库操作数据。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_visualizing_impedance_control_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</h3>
+          <p>arXiv:2603.25418v2 Announce Type: replace Abstract: Teleoperation for contact-rich manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_teleopbench_a_simulator_centri_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation</h3>
+          <p>TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sensorless_four_channel_contro_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Sensorless Four-Channel Control Architecture Using Inverse Dynamics Modeling for Human-Scale Bilateral Teleoperation</h3>
+          <p>arXiv:2607.01201v1 Announce Type: new Abstract: The four-channel teleoperation architecture is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cui_end_to_end_dexterous_arm_hand_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DexGrasp-VLA</h3>
+          <p>End-to-End Dexterous Arm-Hand VLA Policies via Shared Autonomy: VR Teleoperation Augmented by…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_clot_closed_loop_global_motion_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation</h3>
+          <p>CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_policy_human_policy_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid Policy ~ Human Policy</h3>
+          <p>Humanoid Policy ~ Human Policy is a 2025 work on manipulation for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_technical_metrics_to_user_2026/">
+          <span class="entry-type">论文</span>
+          <h3>From Technical Metrics to User Perception: A User Study of a Multimodal Human-Robot Interaction System for Object Detection and Grasping</h3>
+          <p>arXiv:2607.00530v1 Announce Type: new Abstract: Improvements in the technical performance of…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">
+          <span class="entry-type">论文</span>
+          <h3>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</h3>
+          <p>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_extremcontrol_low_latency_huma_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control</h3>
+          <p>ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_darvish_whole_body_geometric_retargeti_2019/">
+          <span class="entry-type">论文</span>
+          <h3>面向人形机器人的全身几何重定向</h3>
+          <p>一种可扩展的人形机器人全身遥操作框架，通过恒定相对旋转将测量的人体连杆朝向和角速度映射到对应机器人连杆，并利用动态优化二次规划在机器人URDF模型上直接求解逆运动学。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_przystupa_learning_state_conditioned_lin_2024/">
+          <span class="entry-type">论文</span>
+          <h3>学习状态条件线性映射用于机械臂低维控制</h3>
+          <p>本文提出状态条件线性映射（SCL映射），利用神经网络预测状态相关的线性基，以低自由度输入控制高自由度机械臂，并在Kinova Gen-3 lite机械臂上通过用户研究验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_swamy_scaled_autonomy_enabling_human_2019/">
+          <span class="entry-type">论文</span>
+          <h3>可扩展自主：使人类操作员能够控制机器人群</h3>
+          <p>Autonomous robots often encounter challenging situations where their control policies fail and an…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egoposer_robust_real_time_egoc_2024/">
+          <span class="entry-type">论文</span>
+          <h3>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</h3>
+          <p>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egoposer_robust_real_time_egoc_2024_1/">
+          <span class="entry-type">论文</span>
+          <h3>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</h3>
+          <p>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_omnih2o_universal_and_dexterou_2026/">
+          <span class="entry-type">论文</span>
+          <h3>把遥操作升级成通用身体接口</h3>
+          <p>We present OmniH2O (Omni Human-to-Humanoid), a learning-based system for whole-body humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">
+          <span class="entry-type">论文</span>
+          <h3>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</h3>
+          <p>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lapsurgie_humanoid_robots_perf_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy</h3>
+          <p>LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_everyday_a_comprehens_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid｜Everyday 用于开放世界人形操作的综合机器人数据集</h3>
+          <p>Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robot_trajectron_v3_a_probabil_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation</h3>
+          <p>arXiv:2607.09315v1 Announce Type: new Abstract: We aim to address the challenge of teleoperating…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_teleoperation_of_humanoid_robo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Teleoperation of Humanoid Robots: A Survey</h3>
+          <p>Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_umi_gripper_interface_2024/">
+          <span class="entry-type">技术</span>
+          <h3>UMI 夹爪接口</h3>
+          <p>手持夹爪接口，无需机器人即可采集野外操作演示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_tech_mimicgen/">
+          <span class="entry-type">技术</span>
+          <h3>MimicGen</h3>
+          <p>一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_aloha_teleoperation_system_2023/">
+          <span class="entry-type">技术</span>
+          <h3>ALOHA 遥操作系统</h3>
+          <p>低成本双臂主从遥操作硬件，用于采集人类演示数据以进行模仿学习。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_telegate_whole_body_humanoid_t_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior</h3>
+          <p>TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dexcap_scalable_and_portable_m_2024/">
+          <span class="entry-type">论文</span>
+          <h3>DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation</h3>
+          <p>DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation is a 2024 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_spark_a_toolbox_for_safe_human_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation</h3>
+          <p>SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_high_speed_and_impact_resilien_2024/">
+          <span class="entry-type">论文</span>
+          <h3>High-Speed and Impact Resilient Teleoperation of Humanoid Robots</h3>
+          <p>High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_demo_to_product_gap/">
+          <span class="entry-type">概念</span>
+          <h3>演示指标与产品指标的鸿沟</h3>
+          <p>与 ASIMO 和早期 Atlas 不同，2025–2026 年的新浪潮强调真实场景中的长期部署和量产可行性：</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#_2">双边遥操作的定义与定位</a></li>
+<li><a href="#_3">双边遥操作的数学与原理基础</a></li>
+<li><a href="#_4">算法步骤与实现要点</a></li>
+<li><a href="#_5">典型应用与局限性</a></li>
+<li><a href="#_6">相关标签</a></li>
+<li><a href="#_7">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

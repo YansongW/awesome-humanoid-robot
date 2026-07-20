@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基于关节力矩传感器和力/力矩传感器的腿式机器人接触感知 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">基于关节力矩传感器和力/力矩传感器的腿式机器人接触感知</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>基于关节力矩传感器和力/力矩传感器的腿式机器人接触感知</h1>
+      <p class="entry-name-en">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">设计工程</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span><span class="tag tag-layer">上游</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10843v1.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出了一种广义动量观测器框架，融合低成本应变片关节力矩传感器和单个髋部安装的力/力矩传感器，以检测、定位并估计机器人腿部沿线的接触力，硬件实验实现了亚厘米级定位精度和低于0.2 N的力误差。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.10843" target="_blank" rel="noopener">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>This paper presents a method for detecting and localizing contact along robot legs using distributed joint torque sensors and a single hip-mounted force-torque (FT) sensor using a generalized momentum-based observer framework. We designed a low-cost strain-gauge-based joint torque sensor that can be installed on every joint to provide direct torque measurements, eliminating the need for complex friction models and providing more accurate torque readings than estimation based on motor current. Simulation studies on a floating-based 2-DoF robot leg verified that the proposed framework accurately recovers contact force and location along the thigh and shin links. Through a calibration procedure, our torque sensor achieved an average 96.4% accuracy relative to ground truth measurements. Building upon the torque sensor, we performed hardware experiments on a 2-DoF manipulator, which showed sub-centimeter contact localization accuracy and force errors below 0.2 N.</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2510.10843v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_human_level_actuation_score/">类人驱动评分</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_gallant_voxel_grid_based_human_2025/">Gallant｜跨3D约束地形的基于体素网格的人形运动和本地导航</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">基于物理的锂离子电池模型连续谱综述</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">探索基于GPT的大语言模型在虚拟现实人机团队协作仿真中的可变自主性</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">基于ROS的NimbRo-OP人形开放平台软件框架</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_falcon_learning_force_adaptive_2025/">FALCON｜学习力自适应人形移动操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">满足 ISO/TS 15066 约束的能量罐控制框架</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">基于无迹卡尔曼滤波的仿人机器人无关节力矩传感器力矩估计</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">人形机器人在线平衡运动生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">锂离子电池组热耗散综合分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">探索基于GPT的大语言模型在虚拟现实人机团队协作仿真中的可变自主性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">满足 ISO/TS 15066 约束的能量罐控制框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">机器人与稀土瓶颈</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_bofa_humanoid_robots_101_2025/">美国银行研究所——人形机器人入门</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_meng_expert_insight_based_modeling_2025/">基于专家洞见的稀土供应中断非动能战略威慑建模：一种仿真驱动的系统化框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">机器人训练机器人：人形机器人的自动现实世界策略适应与学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_grinberg_contact_sensing_via_joint_torq_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_meng_expert_insight_based_modeling_2025/">
+          <span class="entry-type">论文</span>
+          <h3>基于专家洞见的稀土供应中断非动能战略威慑建模：一种仿真驱动的系统化框架</h3>
+          <p>Wei Meng 于 2025 年在 arXiv 发表本文，提出一种仿真驱动的 REG-CAP 框架，将稀土资源依赖映射至军事装备、技术代际与作战能力，并结合…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">
+          <span class="entry-type">论文</span>
+          <h3>满足 ISO/TS 15066 约束的能量罐控制框架</h3>
+          <p>该论文提出了一种基于能量罐的被动控制框架，可直接执行 ISO/TS 15066 为协作机器人规定的能量边界，避免保守速度限制，同时在自由运动和人体接触期间保持稳定。该方法在 KUKA LWR 4+…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>机器人训练机器人：人形机器人的自动现实世界策略适应与学习</h3>
+          <p>本文提出了机器人训练机器人（RTR）框架，其中一个机器臂教师通过柔顺接触、课程调度、扰动、故障检测和自动重置来支持和引导人形学生，从而实现最少人工干预的高效现实世界强化学习。作者还介绍了使用 FiLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于无迹卡尔曼滤波的仿人机器人无关节力矩传感器力矩估计</h3>
+          <p>提出一种基于无迹卡尔曼滤波的多传感器融合方法，用于无关节力矩传感器的仿人机器人在线关节力矩估计，并在ergoCub仿人机器人的双层力矩控制架构中进行了实验验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">
+          <span class="entry-type">报告</span>
+          <h3>机器人与稀土瓶颈</h3>
+          <p>&gt; 生活实例：它就像一份提醒电动车行业的报告——如果制造高效电机所需的稀土材料高度依赖少数国家，那么供应链中断会让整车生产面临巨大风险。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_bofa_humanoid_robots_101_2025/">
+          <span class="entry-type">报告</span>
+          <h3>美国银行研究所——人形机器人入门</h3>
+          <p>&gt; 生活实例：它就像给投资者写的《人形机器人入门手册》——拆解了机器人由哪些“器官”组成、每台成本大概多少、未来几十年可能怎么普及。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人在线平衡运动生成</h3>
+          <p>提出了一种面向低成本、位置控制关节且传感能力有限的人形机器人的解析全身运动生成方法，该方法用三角形质心质量近似身体和肢体，并将全身姿态表示为五个质点的倒立摆；在 igus 人形开放平台（igus…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_human_level_actuation_score/">
+          <span class="entry-type">评测基准</span>
+          <h3>类人驱动评分</h3>
+          <p>一种标量、可分解的基准指标，综合工作空间覆盖、扭矩-功率需求、带宽、效率和热可持续性，以量化人形机器人驱动能力接近类人水平的程度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gallant_voxel_grid_based_human_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Gallant｜跨3D约束地形的基于体素网格的人形运动和本地导航</h3>
+          <p>Gallant…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">
+          <span class="entry-type">论文</span>
+          <h3>探索基于GPT的大语言模型在虚拟现实人机团队协作仿真中的可变自主性</h3>
+          <p>本文提出了一个基于Unity的虚拟现实仿真框架，用户可通过自然语言与由独立GPT-4实例驱动的多个仿真机器人对话，并利用OpenAI的函数调用API将非结构化语音转换为结构化机器人动作。一项包含12名…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_falcon_learning_force_adaptive_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FALCON｜学习力自适应人形移动操作</h3>
+          <p>FALCON…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">
+          <span class="entry-type">论文</span>
+          <h3>基于物理的锂离子电池模型连续谱综述</h3>
+          <p>Physics-based electrochemical battery models derived from porous electrode theory are a very…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">
+          <span class="entry-type">论文</span>
+          <h3>锂离子电池组热耗散综合分析</h3>
+          <p>该2025年arXiv论文通过对16节锂离子电池组进行计算流体力学与热仿真，比较了七种几何布局与气流配置；研究发现宽底梯形结构配合五个进口和一个出口最为均衡，并表明纳米碳基相变材料集成可将相变持续时间…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制</h3>
+          <p>本文提出了一种预测安全滤波器，将非线性模型预测控制（MPC）与通过泊松安全函数从感知数据中合成的控制障碍函数（CBF）约束相结合。该方法通过移动边界和闵可夫斯基集合运算将泊松安全函数扩展到时变域和机器…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</h3>
+          <p>本文比较了 ISO 10218-1/2:2011 与其 2025 年修订版，并分析了 ISO/TS 15066 的规范性整合，重点阐述了功能安全、网络安全、软件验证以及新型机器人分类要求的扩展。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">
+          <span class="entry-type">论文</span>
+          <h3>基于ROS的NimbRo-OP人形开放平台软件框架</h3>
+          <p>本文介绍了面向NimbRo-OP人形机器人的模块化ROS软件框架，提供硬件抽象、视觉感知、运动控制和行为生成功能，并用于实现2013年RoboCup中展示的基本足球技能。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase 2: Bipedal Platform – From Simulation to the First Walking Robot · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Phase 2: Bipedal Platform – From Simulation to the First Walking Robot</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="phase-2-bipedal-platform-from-simulation-to-the-first-walking-robot">Phase 2: Bipedal Platform – From Simulation to the First Walking Robot</h1>
+<blockquote>
+<p>⚠️ The content of this roadmap is compiled based on public information and theoretical knowledge, and has not been verified on actual hardware; please verify safety specifications yourself when performing electrical and mechanical operations.</p>
+</blockquote>
+<p>Bipedal locomotion is the soul of "humanoid" and also the stage with the highest crash rate from 0→1. The goal of this phase: choose an open-source bipedal/wheeled-legged platform, first run the control stack in simulation, then spend money to replicate it, and finally achieve stable walking on flat ground. All solution data comes from the research files in <code>data/roadmap/research/</code> (accessed 2026-07-01, with sources annotated item by item).</p>
+<hr />
+<h2 id="1-simulation-first-run-the-control-stack-with-zero-hardware">1. Simulation First: Run the Control Stack with Zero Hardware</h2>
+<p><strong>What to do</strong>: Before buying any motor, first install a physics simulator on your computer and get the standing and walking of a bipedal model working. Two main routes:</p>
+<ul>
+<li><a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a>: Lightweight and free, runs on a laptop. OpenLoong's <a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">OpenLoong-Dyn-Control</a> is an MPC + WBC whole-body control framework deployed on MuJoCo, with built-in walking/jumping/blind obstacle stepping examples—learn the classic control pipeline for a full-size humanoid without writing a single line of hardware code (source: openloong-qinglong.md).</li>
+<li><a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a>: GPU-based massively parallel simulation, suitable for reinforcement learning training, requires an NVIDIA GPU. The directory of Berkeley Humanoid Lite is organized according to Isaac Lab, with URDF/MJCF/USD formats all available (source: berkeley-humanoid-lite.md).</li>
+</ul>
+<p><strong>Why</strong>: The biggest reason for failed bipedal replication is not assembly, but "the hardware is built, the control doesn't work, and it falls over as soon as it's turned on." Simulation isolates "algorithm errors" from "hardware errors," so when you move to the real robot, you only need to debug the hardware dimension. For simulator selection, see also <a href="/wiki/chapters/chapter-23/">Chapter 23: Simulation and Physics Engines</a>.</p>
+<p><strong>How to analyze your situation</strong>: No NVIDIA GPU, zero budget → MuJoCo + OpenLoong-Dyn-Control, learn the full MPC+WBC meal without spending a cent. Have an RTX GPU, going the RL route → Install Isaac Lab, and the training environment will seamlessly connect when you later choose Berkeley. Pure Python background → <code>pip install upkie</code> to run balancing examples in PyBullet (source: upkie.md), get positive feedback on the same day.</p>
+<hr />
+<h2 id="2-balance-theory-ladder-chew-in-order-dont-skip-levels">2. Balance Theory Ladder: Chew in Order, Don't Skip Levels</h2>
+<p>Bipedal balance is a ladder, with a card at each level. Validate one level in simulation before moving up.</p>
+<p><strong>Level 1: ZMP (Zero Moment Point)</strong>
+- What to do: Understand <a href="/entry/ent_paper_zero_moment_point_2024/">Zero Moment Point</a>—the necessary and sufficient condition for a robot not to tip over is that the equivalent point of ground reaction force falls within the support polygon. Observe in simulation when the ZMP runs outside the support region and when the robot falls.
+- Why: ZMP is the most classic criterion for bipedal stability; subsequent gait planning revolves around "controlling the ZMP." For background, see <a href="/wiki/chapters/chapter-14/">Chapter 14: Fundamentals of Robot Control</a> and <a href="/wiki/chapters/chapter-15/">Chapter 15: Motion Generation and Locomotion</a>.
+- How to analyze your situation: The wheeled-legged (Upkie) route also requires learning this—just replace the support polygon with the line connecting the two wheel ground contact points.</p>
+<p><strong>Level 2: Gait Planning</strong>
+- What to do: Learn <a href="/entry/ent_method_gait_planning/">Gait Planning</a>: Given a target velocity, how to generate the swing foot landing point, the switching timing between support and swing phases, and the center of mass trajectory. The classic entry point is LIPM (Linear Inverted Pendulum Model) + Capture Point analysis.
+- Why: Gait planning is the decision layer (where to step), while MPC/WBC is the execution layer (how to generate joint torques); layering allows you to pinpoint whether "walking crooked" is due to a wrong landing point or insufficient force control.
+- How to analyze your situation: For the RL route, just understand the concepts—the policy learns the landing point itself; for the MPC route, you must master it thoroughly.</p>
+<p><strong>Level 3: MPC (Model Predictive Control)</strong>
+- What to do: Understand <a href="/entry/ent_method_model_predictive_control/">Model Predictive Control</a>: At each step, use simplified dynamics to predict forward over a time horizon, solve an optimization problem, execute only the first step, and roll forward. In OpenLoong's MuJoCo example, modify the weights and observe the change in walking quality.
+- Why: MPC explicitly handles constraints (no foot slip, limited torque) and is the mainstream real-robot solution for high-dynamic bipeds—BRUCE uses variable-period MPC to achieve walking/running/jumping (source: bruce-westwood.md).
+- How to analyze your situation: Solid math foundation → MPC has the highest ceiling; average math → skip hand-coding MPC and go directly with the RL route.</p>
+<p><strong>Level 4: WBC (Whole-Body Control)</strong>
+- What to do: Understand <a href="/entry/ent_method_whole_body_control/">Whole-Body Control</a>: Treat the joint torques of the whole body as a quadratic programming (QP) problem with task priorities—first ensure no falling and no foot slip, then allocate the remaining capacity to secondary tasks like arm movement.
+- Why: For a humanoid with dozens of degrees of freedom, single-joint PID cannot manage the coupled dynamics; the output of MPC is precisely distributed to each joint by WBC (OpenLoong uses the MPC+WBC architecture).
+- How to analyze your situation: The RL route can postpone deep dives into derivations, but during sim-to-real debugging, the difference between expected and actual torque is an important diagnostic signal.</p>
+<p><strong>Level 5: RL Route</strong>
+- What to do: Combine <a href="/entry/ent_algorithm_ppo/">PPO</a> + <a href="/entry/ent_method_domain_randomization/">Domain Randomization</a> + <a href="/entry/ent_method_sim_to_real/">Sim-to-Real</a>: Train a walking policy using PPO in simulation, randomizing parameters like friction, mass, and motor delay during training, then deploy zero-shot on the real robot. ToddlerBot (MuJoCo/MJX + PPO) and Berkeley Humanoid Lite (Isaac Lab) are both complete open-source implementations of this route (source: respective research files).
+- Why: RL bypasses the heavy labor of manual modeling and tuning, and has been verified by these two robots as "reproducible by an individual." The sim2real gap is essentially "the physics you didn't model," and domain randomization makes the policy insensitive to it.
+- How to analyze your situation: Have a GPU, ML background → your home turf, prioritize ToddlerBot or Berkeley; no GPU → rent cloud computing for training, or fall back to the MPC route (OpenLoong examples run on CPU).</p>
+<h2 id="3-solution-selection-comparison-and-decision-tree">3. Solution Selection Comparison and Decision Tree</h2>
+<p>All parameters are from research files; items marked "unknown" in the files are retained as-is.</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Cost (BOM)</th>
+<th>Height/Weight</th>
+<th>DoF</th>
+<th>Actuator</th>
+<th>Main Controller</th>
+<th>Replication Difficulty</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ToddlerBot</td>
+<td>~$6,000 (90% spent on motors and computer)</td>
+<td>0.56 m / 3.4 kg</td>
+<td>30 (arm 7×2, leg 6×2, neck 2, waist 2)</td>
+<td>ROBOTIS Dynamixel bus servo</td>
+<td>Jetson Orin NX 16GB</td>
+<td>Low – Pure Python/pip install, digital twin zero-shot sim2real; inexperienced users can assemble in 3 days (paper verified)</td>
+<td><a href="https://arxiv.org/html/2502.00893v2">Paper</a>, toddlerbot.md</td>
+</tr>
+<tr>
+<td>Berkeley Humanoid Lite</td>
+<td>US $4,312 / China $3,236</td>
+<td>0.8 m / 16 kg</td>
+<td>22 (leg 6×2, arm 5×2)</td>
+<td>Self-developed 6512/5010 quasi-direct drive, 3D printed cycloidal reducer</td>
+<td>Intel N95</td>
+<td>Medium – Isaac Lab training + C low-level deployment; requires building 22 actuators and soldering CAN</td>
+<td><a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf">Technical Report</a>, berkeley-humanoid-lite.md</td>
+</tr>
+<tr>
+<td>Upkie (Wheeled Biped)</td>
+<td>~$3,000 + 60 hours printing</td>
+<td>Unknown (varies by configuration)</td>
+<td>6 (per leg: hip, knee, wheel)</td>
+<td>mjbots qdd100 ×4 + moteus</td>
+<td>Raspberry Pi 4 + pi3hat</td>
+<td>Low – Built-in PID/MPC/RL balance examples; wheeled biped avoids pure walking tuning hell</td>
+<td><a href="https://hackaday.io/project/185729-upkie-wheeled-biped-robots">Project Page</a>, upkie.md</td>
+</tr>
+<tr>
+<td>BRUCE</td>
+<td>~$6.5K (third-party paper estimate, official pricing upon inquiry)</td>
+<td>70 cm / 4.8 kg</td>
+<td>16 (leg 5×2, arm 3×2)</td>
+<td>Koala BEAR quasi-direct drive (250 g, peak 10.5 N·m, liquid-cooled knee)</td>
+<td>6 TOPS compute board</td>
+<td>High – Variable-cycle MPC can run and jump, but the full robot framework is not public; only commercial procurement</td>
+<td><a href="https://arxiv.org/html/2502.00893v2">Comparison Table</a>, bruce-westwood.md</td>
+</tr>
+<tr>
+<td>OpenLoong Qinglong</td>
+<td>Unknown (public version not sold separately)</td>
+<td>185 cm / 80 kg+</td>
+<td>43 (including five-fingered dexterous hand)</td>
+<td>Primarily rotary actuators (specific model unknown)</td>
+<td>400 TOPS controller</td>
+<td>Not suitable for personal replication (institutional-level conditions) – but MPC+WBC full-stack open source, MuJoCo allows zero-hardware learning</td>
+<td><a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">Framework README</a>, openloong-qinglong.md</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision Tree</strong>:</p>
+<ol>
+<li>**Budget &lt; <span class="arithmatex">\(3.5k?** Yes → Upkie (~\)</span>3,000): Highest success rate for learning balance control on real hardware, minimal crash damage, good practice before pure biped. No → Question 2.</li>
+<li><strong>Want a walking humanoid; what's your hands-on ability?</strong> Zero experience/pure software background → ToddlerBot: Bus servos eliminate FOC tuning, comprehensive documentation/assembly videos/jigs, but BOM is most expensive. Have 3D printing + soldering + embedded experience → Berkeley: ~$3,236 in China gets a 22 DoF humanoid capable of RL walking, but requires building 22 actuators yourself.</li>
+<li><strong>Need high dynamics or full size?</strong> High dynamics research (institutional) → BRUCE, but open-source level of the full robot is questionable; confirm software licensing with supplier before purchase. Full size → Individuals should not attempt to replicate Qinglong; only use OpenLoong-Dyn-Control as free educational material. Domestic teams can watch for the lightweight model NanoLoong open-sourced in 2025-08.</li>
+</ol>
+<p><strong>How to analyze your situation</strong>: List five items: "budget, weekly available hours, have 3D printer, have GPU, have used a soldering iron." Check them against the table above. The row with all checks is your choice – the core KPI for the first biped is "walking," not getting it perfect in one go.</p>
+<hr />
+<h2 id="4-replication-process-breakdown">4. Replication Process Breakdown</h2>
+<p>Using well-documented platforms (ToddlerBot / Berkeley) as templates, there are eight steps. Each step: "Action → Principle → Self-Analysis."</p>
+<p><strong>Step 1 BOM Verification</strong>: Order from the official BOM and record the landed cost and lead time (Berkeley's technical report provides US and China BOMs; for domestic procurement, use the China version). Motors and computer account for the bulk of the cost (90% for ToddlerBot); cut budget in the right places. For BOM items without specified specifications, confirm parameters with the supplier.</p>
+<p><strong>Step 2 3D Printing Structural Parts</strong>: Print according to official files (ToddlerBot via MakerWorld, Berkeley via GitHub Releases); cycloidal gears can use standard desktop FDM + PLA (official 60-hour durability test) – structural precision determines backlash, large backlash causes force control jitter; do not change materials yourself. Without a printer, use online printing services; specify the same infill rate/material as the official for functional parts.</p>
+<p><strong>Step 3 Mechanical Assembly</strong>: Assemble in modules (single leg → single arm → torso → final assembly). After each module, manually check smoothness and interference to avoid multiple reworks after final assembly. With little hands-on experience, choose a bus servo platform (mainly screwing and plugging wires); if tackling self-developed actuators, first test a single 6512 unloaded, then replicate 22 units.</p>
+<p><strong>Step 4 Zero Calibration and System Identification (sysID)</strong>: Use printed jigs to position each joint at mechanical zero and write offsets; perform sysID once for the same motor model, backfill parameters into the simulation model. This is the foundation of sim-to-real – ToddlerBot's digital twin approach (1-minute jig calibration + single sysID per motor model) is key to its zero-shot transfer. A typical symptom of skipping sysID is "stable in simulation, shaking on real hardware."</p>
+<p><strong>Step 5 Simulation Alignment</strong>: Backfill actual mass, center of mass, zero points, and motor parameters into URDF/MJCF. Re-run walking policies to ensure stability in simulation (re-tune MPC weights / retrain RL if necessary) – machining errors mean the real robot is not the one in the drawing; alignment acknowledges and makes this explicit. RL is less sensitive to ±10% mass errors; MPC requires more careful alignment.</p>
+<p><strong>Step 6 First Power-On (Smoke Test)</strong>: Suspension rig (feet off ground) → verify emergency stop chain → enable each joint for small amplitude sinusoidal swings → check temperature, current, communication. Electrical errors are exposed here; any loss of control under suspension does not crash the robot; the emergency stop must be verified now. Two-person operation: one monitors the interface, one guards the emergency stop.</p>
+<p><strong>Step 7 Standing</strong>: Gradually reduce suspension load → static standing on both feet → add small center-of-mass swings and light push recovery. Standing is a subset of walking – once the standing control loop (ankle/hip strategy) is tuned, walking is just periodically shifting the balance point out of the support polygon and recapturing it. If this step fails for the RL route, return to Step 4/5 to check calibration alignment; do not hard-tune reward functions on the real robot.</p>
+<p><strong>Step 8 Walking</strong>: Mark time → straight line → turns → timed continuous walking. Record battery voltage, motor temperature, and fall count. Manage endurance expectations according to file data: ToddlerBot RL walking measured 19 minutes (until thermal throttling), Berkeley's 6S 4000 mAh LiPo ~30 minutes, BRUCE ~20 minutes – reaching the same order of magnitude is normal.</p>
+<hr />
+<h2 id="5-acceptance-criteria">5. Acceptance Criteria</h2>
+<p>All must be passed to proceed to the next stage:</p>
+<ol>
+<li><strong>Simulation Check</strong>: The selected platform's official example (or self-trained policy) walks continuously for 10 minutes of simulation time in MuJoCo/Isaac Lab without falling, and can recover after random external force perturbations.</li>
+<li><strong>Standing Check</strong>: Real robot stands statically under full load without suspension for ≥ 5 minutes, with all joint motor temperatures below the official limit (for unspecified models, confirm with the supplier).</li>
+<li><strong>Walking Check</strong>: Continuous walking on a flat, hard surface for ≥ 10 minutes, no falls, no significant drift (cumulative yaw &lt; 90°).</li>
+<li><strong>Disturbance Check</strong>: During walking/standing, withstand a light one-hand push (~5–10 N, within 0.5 s) and recover balance without falling or entering protective shutdown.</li>
+<li><strong>Protection Check</strong>: Under suspension protection, artificially trigger a fall scenario; the emergency stop and fall protection must activate – joint force unloading or entering damping mode before ground contact, with no structural fractures (reference: ToddlerBot can withstand ~7 falls, repair requires only 21 minutes printing + 14 minutes assembly).</li>
+<li><strong>Safety Check</strong>: The response time from pressing the emergency stop to power cutoff must be demonstrable; battery charging and storage must comply with lithium battery safety regulations.</li>
+</ol>
+<hr />
+<h2 id="6-safety-red-lines">6. Safety Red Lines</h2>
+<p>If any of the following is not met, do NOT power on the physical robot:</p>
+<ul>
+<li><strong>Emergency Stop (E-Stop)</strong>: A hardware-level <a href="/entry/ent_component_emergency_stop_system_2024/">emergency stop system</a> independent of the software chain is mandatory—pressing it must physically cut motor power without going through the main controller. BRUCE comes with a dedicated wireless E-stop (source: bruce-westwood.md); self-replicated platforms must at least have a wired E-stop within the operator's reach.</li>
+<li><strong>Gantry/Safety Harness</strong>: The first power-on, standing, and walking tests must be conducted under a gantry or overhead safety rope—a 3.4 kg ToddlerBot can still break from a fall, and a 16 kg Berkeley tipping over can injure people and damage the robot. During debugging, keep fingers away from gear meshing zones and joint ranges of motion; confirm no one is touching the robot before enabling motors.</li>
+<li><strong>Lithium Battery Safety</strong>: LiPo batteries are the biggest fire hazard for desktop humanoids. Charging must be attended and done in a fireproof bag/container; batteries that are over-discharged, swollen, or dropped must be retired immediately. See the <a href="/entry/ent_tech_li_battery_humanoid/">Lithium Battery Technical Card</a> for specifications. A short circuit in a large-capacity battery like a 6S 4000 mAh can generate enough energy to ignite desktop clutter—double-check polarity before wiring.</li>
+</ul>
+<hr />
+<h2 id="7-common-pitfalls-and-troubleshooting">7. Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stable in simulation but shaky or falling on the real robot (sim-to-real gap)</td>
+<td>Zero-point calibration error; sysID not performed; mass/friction modeling deviation</td>
+<td>Re-do fixture calibration and system identification; verify URDF/MJCF mass against actual measured values; for RL approaches, increase <a href="/entry/ent_method_domain_randomization/">domain randomization</a> range and retrain</td>
+</tr>
+<tr>
+<td>Gait softens and performance degrades after a few minutes of walking</td>
+<td>Actuator thermal throttling (ToddlerBot measured thermal throttling after 19 minutes)</td>
+<td>Read motor temperature telemetry; shorten continuous operation or add cooling; check if operating near peak torque for extended periods</td>
+</tr>
+<tr>
+<td>Slowly tilting to one side while standing still</td>
+<td><a href="/entry/ent_component_imu_2024/">IMU</a> zero-bias drift; attitude filter divergence</td>
+<td>Let it rest for 30 s and check if attitude readings drift; redo zero-bias calibration; check filter covariance parameters</td>
+</tr>
+<tr>
+<td>High-frequency joint jitter and buzzing</td>
+<td>Gain too high; large backlash; bus packet loss causing feedback delay</td>
+<td>Lower gain and retest; manually move the joint to feel backlash; check packet loss rate (baseline: ToddlerBot 50 Hz, Berkeley 250 Hz CAN)</td>
+</tr>
+<tr>
+<td>Nose-dives immediately upon receiving a walking command</td>
+<td>Footstep planning lags behind CoM; support/swing phase transition timing error</td>
+<td>First reproduce the same command in simulation; check if footstep and ZMP trajectories are synchronized against <a href="/entry/ent_method_gait_planning/">gait planning</a></td>
+</tr>
+<tr>
+<td>Repeated breakage of the same structural part after a fall; battery life far below claimed specs</td>
+<td>Using old version printed parts; battery aging; sustained high current in a joint</td>
+<td>Check the latest printed parts and changelog in the repository; measure battery internal resistance; examine current distribution across joints to find the abnormal one—usually due to over-tight assembly or calibration error</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-reading">Related Reading</h2>
+<ul>
+<li><a href="/roadmap/playbooks/sim-setup/">Simulation Environment Setup Guide</a> — Complete implementation workflow for the simulation-first principle</li>
+<li><a href="/roadmap/playbooks/compute-selection/">Compute Platform Selection Guide</a> — Main controller and real-time solutions</li>
+<li><a href="/roadmap/playbooks/sensor-selection/">Sensor Selection Guide</a> — IMU, encoder, and force sensing</li>
+<li><a href="/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/stage-1-actuator/">← Previous<span>Phase 1: Build a Joint (Actuator)</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/stage-3-humanoid/">Next →<span>Phase 3: Full Humanoid Robot – From Bipedal Platform to &#34;Hear, Walk, Grasp&#34;</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#phase-2-bipedal-platform-from-simulation-to-the-first-walking-robot">Phase 2: Bipedal Platform – From Simulation to the First Walking Robot</a><ul>
+<li><a href="#1-simulation-first-run-the-control-stack-with-zero-hardware">1. Simulation First: Run the Control Stack with Zero Hardware</a></li>
+<li><a href="#2-balance-theory-ladder-chew-in-order-dont-skip-levels">2. Balance Theory Ladder: Chew in Order, Don't Skip Levels</a></li>
+<li><a href="#3-solution-selection-comparison-and-decision-tree">3. Solution Selection Comparison and Decision Tree</a></li>
+<li><a href="#4-replication-process-breakdown">4. Replication Process Breakdown</a></li>
+<li><a href="#5-acceptance-criteria">5. Acceptance Criteria</a></li>
+<li><a href="#6-safety-red-lines">6. Safety Red Lines</a></li>
+<li><a href="#7-common-pitfalls-and-troubleshooting">7. Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#related-reading">Related Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+</body>
+</html>

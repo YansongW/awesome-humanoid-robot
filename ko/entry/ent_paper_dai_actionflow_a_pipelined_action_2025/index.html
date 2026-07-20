@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge</h1>
+      <p class="entry-name-en">ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.20276v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge (ActionFlow), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science and Technology, University of Science and Technology of China, Suzhou Institute for Advanced Research, University of Science and Technology of China, IEIT SYSTEMS Co., Ltd..</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.20276" target="_blank" rel="noopener">ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2512.20276" target="_blank" rel="noopener">ActionFlow source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Vision-Language-Action (VLA) 모델은 로봇 인식 및 제어를 위한 통합 패러다임으로 등장하여, 창발적 일반화와 장기 작업 실행을 가능하게 합니다. 그러나 동적이고 실제 환경에서의 배포는 높은 추론 지연 시간으로 인해 심각하게 제한됩니다. 원활한 로봇 상호작용을 위해서는 20~30Hz의 제어 주파수가 필요한 반면, 현재 VLA 모델은 자동회귀 디코딩의 메모리 바운드 특성으로 인해 엣지 디바이스에서 일반적으로 3~5Hz로만 작동합니다. 기존 최적화는 종종 광범위한 재학습이 필요하거나 모델 정확도를 저하시킵니다. 이러한 격차를 해소하기 위해, 우리는 자원이 제한된 엣지 플랫폼에 특화된 시스템 수준 추론 프레임워크인 ActionFlow를 소개합니다. ActionFlow의 핵심은 Cross-Request Pipelining 전략으로, VLA 추론을 마이크로 요청의 매크로 파이프라인으로 재정의하는 새로운 스케줄러입니다. 이 전략은 연속적인 시간 단계에서 메모리 바운드인 Decode 단계와 계산 바운드인 Prefill 단계를 지능적으로 배치하여 하드웨어 활용도를 극대화합니다. 또한, 이 스케줄링을 지원하기 위해 Cross Request State Packed Forward 연산자와 Unified KV Ring Buffer를 제안하여, 단편화된 메모리 연산을 효율적인 밀집 계산으로 통합합니다. 실험 결과, ActionFlow는 재학습 없이 OpenVLA-7B 모델에서 FPS를 2.55배 향상시켜 엣지 하드웨어에서 실시간 동적 조작을 가능하게 합니다. 본 연구는 https://anonymous.4open.science/r/ActionFlow-1D47에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Vision-Language-Action (VLA) 모델은 로봇 인식 및 제어를 위한 통합 패러다임으로 등장하여, 창발적 일반화와 장기 작업 실행을 가능하게 합니다. 그러나 동적이고 실제 환경에서의 배포는 높은 추론 지연 시간으로 인해 심각하게 제한됩니다. 원활한 로봇 상호작용을 위해서는 20~30Hz의 제어 주파수가 필요한 반면, 현재 VLA 모델은 자동회귀 디코딩의 메모리 바운드 특성으로 인해 엣지 디바이스에서 일반적으로 3~5Hz로만 작동합니다. 기존 최적화는 종종 광범위한 재학습이 필요하거나 모델 정확도를 저하시킵니다. 이러한 격차를 해소하기 위해, 우리는 자원이 제한된 엣지 플랫폼에 특화된 시스템 수준 추론 프레임워크인 ActionFlow를 소개합니다. ActionFlow의 핵심은 Cross-Request Pipelining 전략으로, VLA 추론을 마이크로 요청의 매크로 파이프라인으로 재정의하는 새로운 스케줄러입니다. 이 전략은 연속적인 시간 단계에서 메모리 바운드인 Decode 단계와 계산 바운드인 Prefill 단계를 지능적으로 배치하여 하드웨어 활용도를 극대화합니다. 또한, 이 스케줄링을 지원하기 위해 Cross Request State Packed Forward 연산자와 Unified KV Ring Buffer를 제안하여, 단편화된 메모리 연산을 효율적인 밀집 계산으로 통합합니다. 실험 결과, ActionFlow는 재학습 없이 OpenVLA-7B 모델에서 FPS를 2.55배 향상시켜 엣지 하드웨어에서 실시간 동적 조작을 가능하게 합니다. 본 연구는 https://anonymous.4open.science/r/ActionFlow-1D47에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dai_actionflow_a_pipelined_action_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

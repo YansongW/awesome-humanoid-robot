@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>π0: 범용 로봇 제어를 위한 비전-언어-액션 플로우 모델 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">π0: 범용 로봇 제어를 위한 비전-언어-액션 플로우 모델</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>π0: 범용 로봇 제어를 위한 비전-언어-액션 플로우 모델</h1>
+      <p class="entry-name-en">π0: A Vision-Language-Action Flow Model for General Robot Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">데이터 및 데이터셋</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.24164v4.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>사전 학습된 VLM 기반의 플로우 매칭 VLA로, 다양한 손재주 있는 로봇 데이터로 학습되어 빨래 개기, 상자 조립 등 언어 조건 작업을 수행함.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2410.24164" target="_blank" rel="noopener">π0: A Vision-Language-Action Flow Model for General Robot Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>관련 개체</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/ko/entry/ent_paper_openvla_2024/">OpenVLA: 오픈소스 비전-언어-액션 모델</a>
+            
+              
+                
+              
+              <span class="rel-desc">π0 논문은 자신을 오픈 VLA 환경에 위치시키고 동시대 오픈소스 VLA인 OpenVLA를 인용함.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇 학습은 유연하고 일반적이며 정교한 로봇 시스템의 완전한 잠재력을 발휘하고 인공지능의 가장 심오한 질문 중 일부를 해결하는 데 큰 가능성을 지니고 있습니다. 그러나 로봇 학습을 효과적인 실제 시스템에 필요한 일반성 수준으로 끌어올리는 것은 데이터, 일반화 및 견고성 측면에서 주요 장애물에 직면합니다. 본 논문에서는 범용 로봇 정책(즉, 로봇 기반 모델)이 이러한 문제를 어떻게 해결할 수 있는지, 그리고 복잡하고 고도로 정교한 작업을 위한 효과적인 범용 로봇 정책을 어떻게 설계할 수 있는지 논의합니다. 우리는 사전 훈련된 시각-언어 모델(VLM) 위에 구축된 새로운 흐름 매칭 아키텍처를 제안하여 인터넷 규모의 의미론적 지식을 상속받습니다. 그런 다음 이 모델이 단일 암 로봇, 이중 암 로봇 및 이동형 조작기를 포함한 여러 정교한 로봇 플랫폼의 크고 다양한 데이터셋으로 훈련될 수 있는 방법을 논의합니다. 우리는 사전 훈련 후 제로 샷으로 작업을 수행하는 능력, 사람 및 고수준 VLM 정책의 언어 명령을 따르는 능력, 미세 조정을 통해 새로운 기술을 습득하는 능력 측면에서 모델을 평가합니다. 우리의 결과는 세탁물 접기, 테이블 청소, 상자 조립과 같은 다양한 작업을 포함합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>로봇 학습은 유연하고 일반적이며 정교한 로봇 시스템의 완전한 잠재력을 발휘하고 인공지능의 가장 심오한 질문 중 일부를 해결하는 데 큰 가능성을 지니고 있습니다. 그러나 로봇 학습을 효과적인 실제 시스템에 필요한 일반성 수준으로 끌어올리는 것은 데이터, 일반화 및 견고성 측면에서 주요 장애물에 직면합니다. 본 논문에서는 범용 로봇 정책(즉, 로봇 기반 모델)이 이러한 문제를 어떻게 해결할 수 있는지, 그리고 복잡하고 고도로 정교한 작업을 위한 효과적인 범용 로봇 정책을 어떻게 설계할 수 있는지 논의합니다. 우리는 사전 훈련된 시각-언어 모델(VLM) 위에 구축된 새로운 흐름 매칭 아키텍처를 제안하여 인터넷 규모의 의미론적 지식을 상속받습니다. 그런 다음 이 모델이 단일 암 로봇, 이중 암 로봇 및 이동형 조작기를 포함한 여러 정교한 로봇 플랫폼의 크고 다양한 데이터셋으로 훈련될 수 있는 방법을 논의합니다. 우리는 사전 훈련 후 제로 샷으로 작업을 수행하는 능력, 사람 및 고수준 VLM 정책의 언어 명령을 따르는 능력, 미세 조정을 통해 새로운 기술을 습득하는 능력 측면에서 모델을 평가합니다. 우리의 결과는 세탁물 접기, 테이블 청소, 상자 조립과 같은 다양한 작업을 포함합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_vla_survey_2026/">로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_dial_decoupling_intent_and_act_2026/">DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024/">OpenVLA: 오픈소스 비전-언어-액션 모델</a>
+              <span class="rel-desc">π0 논문은 관련 연구 부분에서 OpenVLA를 동시대 오픈소스 VLA로 인용함.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_roboomni_2025/">RoboOmni: 옴니모달 맥락에서의 주도적 로봇 조작</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">당신의 비전-언어-액션 모델에는 이미 경로 편차 탐지를 위한 어텐션 헤드가 있다</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_wam_survey_2026/">월드 액션 모델: 엠바디드 AI의 다음 프론티어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">A Pragmatic VLA Foundation Model</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_benchmark_humanoid_foundation_model/">휴리노이드 파울데이션 모델 벤치마크</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">평가</span>
+              <span class="rel-desc">휴리노이드 파울데이션 모델 벤치마크 디렉토리는 π0를 평가된 VLA 모델 중 하나로 나열하고 등급을 매김.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ho_denoising_diffusion_probabilis_2020/">노이즈 제거 확산 확률 모델</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_openvla_2024/">OpenVLA: 오픈소스 비전-언어-액션 모델</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_pi0_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_egovla_learning_vision_languag_2025/">
+          <span class="entry-type">논문</span>
+          <h3>EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</h3>
+          <p>EgoVLA 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、潜变量/动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ho_denoising_diffusion_probabilis_2020/">
+          <span class="entry-type">논문</span>
+          <h3>노이즈 제거 확산 확률 모델</h3>
+          <p>Ho, Jain, Abbeel(2020)는 단순화된 가중 변분 하한으로 학습된 노이즈 제거 확산 확률 모델을 제안하여 CIFAR-10 및 LSUN 데이터셋에서 고품질 이미지 합성을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dial_decoupling_intent_and_act_2026/">
+          <span class="entry-type">논문</span>
+          <h3>DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA</h3>
+          <p>DIAL 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">논문</span>
+          <h3>OpenVLA: 오픈소스 비전-언어-액션 모델</h3>
+          <p>Open X-Embodiment 데이터셋의 97만 개 실제 로봇 데모로 사전 학습된 70억 개 매개변수의 오픈소스 VLA 모델로, Llama 2, DINOv2, SigLIP을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">논문</span>
+          <h3>당신의 비전-언어-액션 모델에는 이미 경로 편차 탐지를 위한 어텐션 헤드가 있다</h3>
+          <p>본 논문은 고정된 비전-언어-액션(VLA) 모델 내 어텐션 엔트로피 신호가 궤적 편차를 나타내는 소수의 &#39;네비게이션 헤드(Navigation Heads)&#39;를 식별하여, 학습 불필요…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">
+          <span class="entry-type">논문</span>
+          <h3>A Pragmatic VLA Foundation Model</h3>
+          <p>LingBot-VLA 的实现路径是先把语言指令、相机图像/多视角观测编码成多模态表征，再用VLA 多模态动作模型、VLM 语义规划/路由预测可执行动作命令。关键点是保留 VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">논문</span>
+          <h3>월드 액션 모델: 엠바디드 AI의 다음 프론티어</h3>
+          <p>2026년 서베이로, World Action Models(WAMs)를 예측적 월드 모델링과 액션 생성을 통합하는 엠바디드 파욍데이션 모델로 정의하고, 기존 방법을 Cascaded…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_humanoid_foundation_model/">
+          <span class="entry-type">벤치마크</span>
+          <h3>휴리노이드 파울데이션 모델 벤치마크</h3>
+          <p>휴리노이드 로봇을 위한 AI 파울데이션 모델을 이동, 조작, 추론, 시뮬레이션-투-리얼 전이 등 10가지 역량 차원에서 평가하고 비교하는 독립적이고 공개적으로 접근 가능한…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_agibot_world_colosseo_a_large_2025/">
+          <span class="entry-type">논문</span>
+          <h3>AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems</h3>
+          <p>AgiBot World Colosseo 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用VLM 语义规划/路由、潜变量/动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_roboomni_2025/">
+          <span class="entry-type">논문</span>
+          <h3>RoboOmni: 옴니모달 맥락에서의 주도적 로봇 조작</h3>
+          <p>2025년 VLA 시스템으로, 시각, 음성, 환경 소리를 융합하여 사용자 의도를 주도적으로 추론하고 명시적 텍스트 지시 없이 액션을 실행함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">논문</span>
+          <h3>로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</h3>
+          <p>2026년 서베이로, VLA의 발전은 모델 아키텍처보다 데이터 인프라와 평가 공동 설계에 더 많이 의존하고 있으며, 데이터셋, 벤치마크, 데이터 엔진 세 축으로 구성됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

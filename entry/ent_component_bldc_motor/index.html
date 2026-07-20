@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>无刷直流电机 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/component/">零部件</a>
+    <span>/</span>
+    <span class="breadcrumb-current">无刷直流电机</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">零部件</div>
+      <h1>无刷直流电机</h1>
+      <p class="entry-name-en">Brushless DC Motor</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#4.2.4 无刷直流电机与正弦永磁同步电机的换相及 FOC by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>无刷直流电机（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC 可获得更小转矩脉动、更高效率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.15915" target="_blank" rel="noopener">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>无刷直流电机是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p><strong>无刷直流电机</strong>（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC 可获得更小转矩脉动、更高效率。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：无刷直流电机、梯形反电动势、六步换相、霍尔传感器、正弦反电动势</p>
+<ul>
+<li><strong>无刷直流电机（brushless DC motor, BLDC）</strong>：用电子换相替代机械电刷的直流电机，通常反电动势为梯形波，控制简单、成本较低。</li>
+<li><strong>梯形反电动势 / 正弦反电动势</strong>：分别指电机绕组中感应电压随转子位置呈梯形或正弦变化。正弦电机配合正弦电流可实现零转矩脉动。</li>
+<li><strong>六步换相（six-step commutation）</strong>：BLDC 每 60° 电角度切换一次导通相，任一时刻两相导通、一相悬空。</li>
+<li><strong>霍尔传感器（Hall sensor）</strong>：检测转子磁极位置的磁性开关，常用于 BLDC 换相。</li>
+</ul>
+</div>
+<p><strong>磁场定向控制</strong> 的核心思想是把三相静止坐标系下的电流通过 <strong>Clark 变换</strong> 变到两相静止 <span class="arithmatex">\(\alpha\beta\)</span> 坐标系，再通过 <strong>Park 变换</strong> 变到随转子旋转的 <span class="arithmatex">\(dq\)</span> 坐标系，从而使交流量变成直流量，用 PI 控制器分别控制 <span class="arithmatex">\(i_d\)</span> 和 <span class="arithmatex">\(i_q\)</span>。最后通过 <strong>空间矢量脉宽调制</strong>（SVPWM）生成三相逆变器开关信号。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：磁场定向控制、Clark 变换、Park 变换、空间矢量脉宽调制、逆变器</p>
+<ul>
+<li><strong>磁场定向控制（field-oriented control, FOC）</strong>：把定子电流矢量分解到转子旋转坐标系进行独立控制，使交流电机像直流电机一样易于控制转矩。</li>
+<li><strong>Clark 变换</strong>：把三相静止坐标系 <span class="arithmatex">\(abc\)</span> 转换为两相静止坐标系 <span class="arithmatex">\(\alpha\beta\)</span>。</li>
+<li><strong>Park 变换</strong>：把两相静止坐标系 <span class="arithmatex">\(\alpha\beta\)</span> 转换为随转子旋转的 <span class="arithmatex">\(dq\)</span> 坐标系。</li>
+<li><strong>空间矢量脉宽调制（SVPWM）</strong>：一种让三相逆变器输出最接近目标电压矢量的 PWM 方法，比正弦 PWM 电压利用率高约 15%。</li>
+<li><strong>逆变器（inverter）</strong>：把直流电变换为交流电的功率电子电路，通常由六个开关管组成三相桥。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["三相电流 ia ib ic"] --&gt; B["Clark 变换&lt;br/&gt;alpha beta"]
+    B --&gt; C["Park 变换&lt;br/&gt;d q"]
+    C --&gt; D["PI 控制器&lt;br/&gt;id=0 iq=torque_cmd"]
+    D --&gt; E["反 Park 变换"]
+    E --&gt; F["SVPWM"]
+    F --&gt; G["三相逆变器"]
+    G --&gt; H["PMSM 电机"]
+    H --&gt; I["转子位置 theta"]
+    I --&gt; C
+    I --&gt; E</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2606.15915">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a></li>
+<li>项目 Wiki：chapter-04.md#4.2.4 无刷直流电机与正弦永磁同步电机的换相及 FOC</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_pid_control/">PID控制</a>
+              <span class="rel-desc">无刷直流电机前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</a>
+              <span class="rel-desc">无刷直流电机引用Unitree G1人形机器人手臂基于物理的电力消耗模型辨识。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-desc">无刷直流电机使用磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+              <span class="rel-desc">无刷直流电机前置依赖线性代数。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_classical_mechanics/">经典力学</a>
+              <span class="rel-desc">无刷直流电机前置依赖经典力学。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_field_oriented_control/">磁场定向控制</a>
+              <span class="rel-desc">无刷直流电机使用磁场定向控制。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">集成</span>
+              <span class="rel-desc">无刷直流电机是所建模损耗执行器链的一部分。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yu_quasi_direct_drive_actuation_f_2020/">用于高反驱性和高带宽轻量化髋关节外骨骼的准直驱驱动</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">高扭矩密度外转子无刷直流电机是执行器的核心电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_bonfiglioli_2024/">邦飞利</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">邦飞利使用无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">使机器人智能化的材料</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">使机器人智能化的材料discusses无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_oem_unitree_robotics/">宇树科技</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">宇树科技前置依赖无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_maxon_group_2024/">Maxon</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">Maxon前置依赖无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器提及无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_dynamixel_xm430_w210_t/">ROBOTIS DYNAMIXEL XM430-W210-T 舵机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">ROBOTIS DYNAMIXEL XM430-W210-T 舵机前置依赖无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yousefi_koma_surena_iv_towards_a_cost_effec_2021/">SURENA IV：面向真实场景的成本效益型全尺寸人形机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">SURENA IV 在紧凑型关节驱动中使用 BLDC 无刷电机套件，以获得高功率重量比。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">基于内环力矩与速度反馈的机器人阻抗控制及无源性分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">基于内环力矩与速度反馈的机器人阻抗控制及无源性分析提及无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_harmonic_drive_advances_surgic_2026/">Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">供应</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_zeroerr_2024/">ZeroErr</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">供应</span>
+              <span class="rel-desc">ZeroErrsupplies无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_techrobots_2024/">Techrobots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">供应</span>
+              <span class="rel-desc">Techrobotssupplies无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_robot_system_odri_bolt/">ODRI Bolt 开源双足机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ODRI 的 BLMC 执行器以现成无框无刷电机为基础，结合双编码器与自研 MicroDriver 驱动卡构成。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_dynamixel_xl330_m288_t/">ROBOTIS DYNAMIXEL XL330-M288-T 舵机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">ROBOTIS DYNAMIXEL XL330-M288-T 舵机前置依赖无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_harmonic_drive_reducer/">谐波减速器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">谐波减速器前置依赖无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_manufacturer_nidec_drive_technology/">尼得科传动技术</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">生产</span>
+              <span class="rel-desc">尼得科传动技术生产无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_frameless_torque_motor_2024/">无框力矩电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">无框力矩电机前置依赖无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sapkota_harmonic_content_analysis_of_a_2023/">基于FPGA的软启动变频电机驱动的谐波含量分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于FPGA的软启动变频电机驱动的谐波含量分析discusses无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">基于LabVIEW的电机实时状态监测与故障诊断系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">基于LabVIEW的电机实时状态监测与故障诊断系统提及无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_wittenstein_2024/">Wittenstein</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">供应</span>
+              <span class="rel-desc">Wittensteinsupplies无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">准直驱执行器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">准直驱执行器前置依赖无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_comp_servo_motor/">高性能伺服电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">高性能伺服电机前置依赖无刷直流电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_bldc_motor"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_yu_quasi_direct_drive_actuation_f_2020/">
+          <span class="entry-type">论文</span>
+          <h3>用于高反驱性和高带宽轻量化髋关节外骨骼的准直驱驱动</h3>
+          <p>本文介绍了一种定制准直驱执行器和一个3.4公斤的双侧髋关节外骨骼，实现了17.5牛·米额定扭矩、0.4牛·米反驱扭矩、62.4赫兹带宽，并在行走和蹲起中验证了简单的控制器。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_dynamixel_xm430_w210_t/">
+          <span class="entry-type">零部件</span>
+          <h3>ROBOTIS DYNAMIXEL XM430-W210-T 舵机</h3>
+          <p>ROBOTIS X 系列的中型智能舵机执行器，具有 TTL 通信、3.0 N·m 堵转扭矩、绝对编码器反馈和多种控制模式，适用于机器人关节。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_wittenstein_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>Wittenstein</h3>
+          <p>Wittenstein是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_harmonic_drive_reducer/">
+          <span class="entry-type">零部件</span>
+          <h3>谐波减速器</h3>
+          <p>谐波减速器（Harmonic Drive）是一种基于柔性齿轮弹性变形原理的精密减速装置，由波发生器（Wave Generator）、柔性齿轮（Flexspline）和刚性内齿圈（Circular…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_dynamixel_xl330_m288_t/">
+          <span class="entry-type">零部件</span>
+          <h3>ROBOTIS DYNAMIXEL XL330-M288-T 舵机</h3>
+          <p>ROBOTIS X 系列的小型低成本智能舵机执行器，具有 TTL 通信、0.52 N·m 堵转扭矩和 288.4:1 减速比，适用于小型机器人关节和手指。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nidec_drive_technology/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>尼得科传动技术</h3>
+          <p>概述 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_comp_servo_motor/">
+          <span class="entry-type">零部件</span>
+          <h3>高性能伺服电机</h3>
+          <p>伺服电机（Servo Motor）是一种与专用伺服驱动器配套、具备闭环位置、速度与转矩控制能力的高性能电机，广泛应用于工业机器人、数控机床、人形机器人关节、AGV…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_odri_bolt/">
+          <span class="entry-type">机器人系统</span>
+          <h3>ODRI Bolt 开源双足机器人</h3>
+          <p>Bolt 是 Open Dynamic Robot Initiative（ODRI，开放动态机器人计划）的开源双足平台，由 NYU、马克斯·普朗克智能系统研究所、LAAS-CNRS…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制（FOC）</h3>
+          <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_harmonic_drive_advances_surgic_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component</h3>
+          <p>Harmonic Drive&#39;s launch of the LPA 20 integrated servo actuator strengthens the company&#39;s position…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sapkota_harmonic_content_analysis_of_a_2023/">
+          <span class="entry-type">论文</span>
+          <h3>基于FPGA的软启动变频电机驱动的谐波含量分析</h3>
+          <p>本文提出了一种基于FPGA的三相感应电机变频软启动驱动器，采用直接数字频率合成技术，比较了正弦脉宽调制、三次谐波注入脉宽调制和空间矢量脉宽调制的谐波性能与启动涌流抑制效果。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">整机厂商</span>
+          <h3>宇树科技</h3>
+          <p>&gt; 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 &gt; 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">
+          <span class="entry-type">论文</span>
+          <h3>基于LabVIEW的电机实时状态监测与故障诊断系统</h3>
+          <p>提出了一种基于LabVIEW的三相电机实时状态监测与多故障预诊断系统，利用NI cDAQ硬件采集振动、转速、温度、电流和电压信号，并采用阶次分析算法，实现本地与云端MySQL存储。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制</h3>
+          <p>一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_techrobots_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>Techrobots</h3>
+          <p>机器人关节执行器和模块化机器人部件供应商。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_pid_control/">
+          <span class="entry-type">方法</span>
+          <h3>PID控制</h3>
+          <p>一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">
+          <span class="entry-type">论文</span>
+          <h3>基于内环力矩与速度反馈的机器人阻抗控制及无源性分析</h3>
+          <p>本文分析了内环力矩带宽、速度滤波和采样频率如何限制阻抗控制电动关节的稳定刚度与阻尼范围（Z-width），并提出一种利用正速度反馈扩大力矩环带宽而无需复杂控制器的设计方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</h3>
+          <p>本文提出了一个基于物理的、参数线性的Unitree G1人形机器人七自由度左臂电力消耗模型，结合了执行器损耗项、基线扭矩修正和成对关节速度交互项，并在943条物理机器人轨迹上进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">
+          <span class="entry-type">论文</span>
+          <h3>用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器</h3>
+          <p>提出了一种可打印的自持续柔顺振荡器，该振荡器由两个机械耦合的自打开开关构成，每个开关将双稳态屈曲梁与导电超螺旋聚合物（CSCP）热驱动器相结合，可在无需离散电子元件或控制硬件的情况下，由恒定电流产生周…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">
+          <span class="entry-type">论文</span>
+          <h3>使机器人智能化的材料</h3>
+          <p>本文提出具身人工智能也是一个材料问题，将“机器人材料”定义为紧密集成结构、传感、驱动、计算和通信的复合材料，综述了现有原型，并指出了制造、网络、材料科学和控制领域的跨学科挑战。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_frameless_torque_motor_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>无框力矩电机</h3>
+          <p>人形机器人髋关节、肩关节往往需要几十到上百 N·m 的输出扭矩。若采用普通伺服电机加高减速比，虽可放大扭矩，但会牺牲透明度和带宽。一种方案是使用 无框力矩电机（frameless torque…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_classical_mechanics/">
+          <span class="entry-type">基础学科</span>
+          <h3>经典力学</h3>
+          <p>描述宏观物体在力作用下运动的物理学分支，包括牛顿定律、守恒原理和刚体动力学。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_zeroerr_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>ZeroErr</h3>
+          <p>ZeroErr 是高精度机器人关节模组和伺服系统制造商，产品覆盖机器人核心执行部件，面向人形机器人等高端装备提供关节级解决方案。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_maxon_group_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>Maxon</h3>
+          <p>Maxon是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">基础学科</span>
+          <h3>线性代数</h3>
+          <p>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_bonfiglioli_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>邦飞利</h3>
+          <p>概述 邦飞利是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yousefi_koma_surena_iv_towards_a_cost_effec_2021/">
+          <span class="entry-type">论文</span>
+          <h3>SURENA IV：面向真实场景的成本效益型全尺寸人形机器人</h3>
+          <p>SURENA IV 是德黑兰大学开发的 43 自由度、170 cm、68 kg…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">技术</span>
+          <h3>准直驱执行器</h3>
+          <p>采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

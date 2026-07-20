@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>动作 token 预测 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">动作 token 预测</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>动作 token 预测</h1>
+      <p class="entry-name-en">Action Token Prediction</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Core mechanism in modern VLAs such as OpenVLA and RT-2. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2406.09246" target="_blank" rel="noopener">OpenVLA: An Open-Source Vision-Language-Action Model</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">formalizes</span>
+            <a href="/entry/ent_formalism_transformer_action_decoder/">Transformer 动作解码器形式化</a>
+            
+              
+                
+              
+              <span class="rel-desc">动作 token 预测实例化了 Transformer 动作解码器的形式化。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">has_prerequisite</span>
+            <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+            
+              
+                
+              
+              <span class="rel-desc">动作 token 预测依赖 Transformer 内部的线性代数运算。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="token">动作 token 预测的定义与定位</h3>
+<p>动作 token 预测属于 <strong>方法</strong> 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。 英文名称为 <em>Action Token Prediction</em>。 韩文名称为 <em>액션 토큰 예측</em>。</p>
+<h3 id="token_1">动作 token 预测的数学与原理基础</h3>
+<p>动作 token 预测建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，动作 token 预测通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_2">算法步骤与实现要点</h3>
+<p>在实际实现动作 token 预测时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_3">典型应用与局限性</h3>
+<p>动作 token 预测可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>vla</li>
+<li>action_token</li>
+<li>autoregressive_modeling</li>
+<li>next_token_prediction</li>
+<li>humanoid_robot</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，动作 token 预测在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2406.09246">OpenVLA: An Open-Source Vision-Language-Action Model</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">动作 token 预测引用OpenVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+              <span class="rel-desc">动作 token 预测引用OpenVLA：一个开源的视觉-语言-动作模型。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">形式化</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_formalism_transformer_action_decoder/">Transformer 动作解码器形式化</a>
+              <span class="rel-desc">动作 token 预测形式化了 Transformer 动作解码器生成框架。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+              <span class="rel-desc">动作 token 预测以线性代数为前置基础。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">动作 token 预测引用OpenVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">实例化</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_system_identification/">系统辨识</a>
+              <span class="rel-desc">Wiki 第18章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">VLASH使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lyu_omnisat_compact_action_token_f_2025/">OmniSAT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">OmniSAT提出动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gao_vla_os_structuring_and_dissect_2025/">VLA-OS</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">VLA-OSintroduces动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wam4d_fast_4d_world_action_mod_2026/">WAM4D: Fast 4D World Action Model via Spatial Register Tokens</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rhinovla_technical_report_2026/">RhinoVLA Technical Report</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">RhinoVLA Technical Report使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_intelligence_05_a_vision_language_action_mo_2025/">π0.5</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">π0.5使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_unicod_enhancing_robot_policy_2025/">UniCoD</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">UniCoDintroduces动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhao_vla_rail_a_real_time_asynchron_2025/">VLA-RAIL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">VLA-RAIL使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sentinel_a_fully_end_to_end_la_2026/">端到端语言动作模型也绕不开机器人动力学数据</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">端到端语言动作模型也绕不开机器人动力学数据使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_seong_vla_r_vision_language_action_r_2025/">VLA-R</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">VLA-R使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_unified_embodied_vlm_reasoning_2025/">ERIQ</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ERIQdiscusses动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lin_showui_one_vision_language_act_2024/">ShowUI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ShowUI使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_spatial_forcing_implicit_spati_2025/">Spatial Forcing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Spatial Forcing使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">VLA-Pruner</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">VLA-Pruner使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_tech_on_device_vla_inference/">端侧 VLA 推理</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">端侧 VLA 推理将动作 token 预测作为其核心动作生成方法。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_internvla_a15_unifying_underst_2026/">InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_psi_0_an_open_foundation_model_2026/">Psi0｜面向通用人形移动操作的开放基础模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Psi0｜面向通用人形移动操作的开放基础模型使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_qdepth_vla_quantized_depth_pre_2025/">QDepth-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">QDepth-VLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_being_m05_a_real_time_controll_2025/">Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_cot4ad_a_vision_language_actio_2025/">CoT4AD</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">CoT4AD使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_high_fidelity_one_step_generat_2026/">High-Fidelity One-Step Generative Visuomotor Policy via Recursive Correction, Frequency Consistency, and Contrastive Flow Matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fang_dualvla_building_a_generalizab_2025/">DualVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">DualVLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_posa_vla_enhancing_action_gene_2025/">PosA-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">PosA-VLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jang_verifier_free_test_time_sampli_2025/">MG-Select</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">MG-Select使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_combatvla_an_efficient_vision_2025/">CombatVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">CombatVLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dc_motion_decoupling_structure_2026/">DC-Motion: Decoupling Structure and Details via Discrete-Continuous Tokens for Human Motion Generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nvidia_alpamayo_r1_bridging_reasoning_2025/">Alpamayo-R1</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Alpamayo-R1提出动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cvpr_2025_oral_tokenhsi_unifie_2025/">CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cao_fastdrivevla_efficient_end_to_2025/">FastDriveVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">FastDriveVLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_anchorvla_bridging_discrete_de_2026/">AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_song_avi_action_from_volumetric_inf_2025/">Avi</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Avi使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_up_vla_a_unified_understanding_2025/">UP-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">UP-VLAintroduces动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_annie_be_careful_of_your_robot_2025/">ANNIE</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ANNIE使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_otter_a_vision_language_action_2025/">OTTER</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">OTTER使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_scalemogen_autoregressive_next_2026/">用下一尺度自回归把文本生成的人体动作做成由粗到细</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">用下一尺度自回归把文本生成的人体动作做成由粗到细introduces动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_reinforcing_action_policies_by_2025/">Prophet</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">Prophetintroduces动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hu_deead_dynamic_early_exit_of_vi_2025/">DeeAD</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">DeeAD使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ace_brain_05_a_unified_embodie_2026/">ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_sigma_the_key_for_vision_langu_2025/">Sigma</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Sigma使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_locomotion_as_next_to_2024/">Humanoid Locomotion as Next Token Prediction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_williams_lite_vla_efficient_vision_lang_2025/">Lite VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Lite VLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_intelligence_06_a_vla_that_learns_from_expe_2025/">π0.6*</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">π0.6*使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_kv_efficient_vla_a_method_to_s_2025/">KV-Efficient VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">KV-Efficient VLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_song_germ_a_generalist_robotic_mode_2024/">GeRM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">GeRM使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_humanoid_end_effector_2026/">Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_omnijarvis_unified_vision_lang_2024/">OmniJARVIS</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">OmniJARVIS使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_jarvis_vla_post_training_large_2025/">JARVIS-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">JARVIS-VLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cen_worldvla_towards_autoregressiv_2025/">WorldVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">WorldVLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_spiridonov_generalist_robot_manipulation_2025/">MotoVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">MotoVLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_scaling_large_motion_models_wi_2024/">Scaling Large Motion Models with Million-Level Human Motions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tan_latent_chain_of_thought_world_2025/">LCDrive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">LCDrivediscusses动作 token 预测。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_action_token_prediction"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_scaling_large_motion_models_wi_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Scaling Large Motion Models with Million-Level Human Motions</h3>
+          <p>Scaling Large Motion Models with Million-Level Human Motions is a 2024 work on human motion analysis…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_unified_embodied_vlm_reasoning_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ERIQ</h3>
+          <p>Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized Pre-training…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gao_vla_os_structuring_and_dissect_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-OS</h3>
+          <p>VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_otter_a_vision_language_action_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OTTER</h3>
+          <p>OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction (OTTER), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nvidia_alpamayo_r1_bridging_reasoning_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Alpamayo-R1</h3>
+          <p>Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous Driving in the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lyu_omnisat_compact_action_token_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OmniSAT</h3>
+          <p>OmniSAT: Compact Action Token, Faster Auto Regression (OmniSAT), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_posa_vla_enhancing_action_gene_2025/">
+          <span class="entry-type">论文</span>
+          <h3>PosA-VLA</h3>
+          <p>PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention (PosA-VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA：一个开源的视觉-语言-动作模型</h3>
+          <p>一个 70 亿参数的开源 VLA 模型，基于 Open X-Embodiment 数据集的 97 万条真实机器人演示进行预训练，融合 Llama 2、DINOv2 和 SigLIP 以实现通用操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_omnijarvis_unified_vision_lang_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OmniJARVIS</h3>
+          <p>OmniJARVIS: Unified Vision-Language-Action Tokenization Enables Open-World Instruction Following…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_cot4ad_a_vision_language_actio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CoT4AD</h3>
+          <p>CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Pruner</h3>
+          <p>VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rhinovla_technical_report_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RhinoVLA Technical Report</h3>
+          <p>arXiv:2606.07383v2 Announce Type: replace Abstract: Vision-Language-Action (VLA) models have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_anchorvla_bridging_discrete_de_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning</h3>
+          <p>arXiv:2607.03182v1 Announce Type: new Abstract: Autonomous driving planning requires translating…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cvpr_2025_oral_tokenhsi_unifie_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization</h3>
+          <p>CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_spiridonov_generalist_robot_manipulation_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MotoVLA</h3>
+          <p>Generalist Robot Manipulation beyond Action Labeled Data (MotoVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_annie_be_careful_of_your_robot_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ANNIE</h3>
+          <p>ANNIE: Be Careful of Your Robots (ANNIE), is a 2025 large vision-language-action model for robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fang_dualvla_building_a_generalizab_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DualVLA</h3>
+          <p>DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_song_avi_action_from_volumetric_inf_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Avi</h3>
+          <p>Avi: Action from Volumetric Inference (Avi), is a 2025 large vision-language-action model for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_williams_lite_vla_efficient_vision_lang_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Lite VLA</h3>
+          <p>Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots (Lite VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tan_latent_chain_of_thought_world_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LCDrive</h3>
+          <p>Latent Chain-of-Thought World Modeling for End-to-End Driving (LCDrive), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_intelligence_05_a_vision_language_action_mo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>π0.5</h3>
+          <p>π0.5: a Vision-Language-Action Model with Open-World Generalization (π0.5), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_unicod_enhancing_robot_policy_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UniCoD</h3>
+          <p>UniCoD: Enhancing Robot Policy via Unified Continuous and Discrete Representation Learning (UniCoD),…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jang_verifier_free_test_time_sampli_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MG-Select</h3>
+          <p>Verifier-free Test-Time Sampling for Vision Language Action Models (MG-Select), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_combatvla_an_efficient_vision_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CombatVLA</h3>
+          <p>CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dc_motion_decoupling_structure_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DC-Motion: Decoupling Structure and Details via Discrete-Continuous Tokens for Human Motion Generation</h3>
+          <p>arXiv:2606.14721v2 Announce Type: replace-cross Abstract: Text-to-motion generation requires…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_kv_efficient_vla_a_method_to_s_2025/">
+          <span class="entry-type">论文</span>
+          <h3>KV-Efficient VLA</h3>
+          <p>KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_high_fidelity_one_step_generat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>High-Fidelity One-Step Generative Visuomotor Policy via Recursive Correction, Frequency Consistency, and Contrastive Flow Matching</h3>
+          <p>arXiv:2607.03865v1 Announce Type: new Abstract: Generative models such as diffusion and flow…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ace_brain_05_a_unified_embodie_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI</h3>
+          <p>arXiv:2607.04426v1 Announce Type: new Abstract: Embodied AI is moving from isolated perception or…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_humanoid_end_effector_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation</h3>
+          <p>Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation is a 2026 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_qdepth_vla_quantized_depth_pre_2025/">
+          <span class="entry-type">论文</span>
+          <h3>QDepth-VLA</h3>
+          <p>QDepth-VLA: Quantized Depth Prediction as Auxiliary Supervision for Vision-Language-Action Models…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_scalemogen_autoregressive_next_2026/">
+          <span class="entry-type">论文</span>
+          <h3>用下一尺度自回归把文本生成的人体动作做成由粗到细</h3>
+          <p>ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation is a paper on 人体动作 for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_transformer_action_decoder/">
+          <span class="entry-type">形式化方法</span>
+          <h3>Transformer 动作解码器形式化</h3>
+          <p>一种使用 Transformer 架构和学习的动作 token 词表，从视觉-语言上下文解码机器人动作的形式化生成框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_vla_rail_a_real_time_asynchron_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-RAIL</h3>
+          <p>VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots (VLA-RAIL), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_locomotion_as_next_to_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid Locomotion as Next Token Prediction</h3>
+          <p>Humanoid Locomotion as Next Token Prediction is a 2024 work on locomotion for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_seong_vla_r_vision_language_action_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-R</h3>
+          <p>VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous Driving (VLA-R), is…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_reinforcing_action_policies_by_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Prophet</h3>
+          <p>Reinforcing Action Policies by Prophesying (Prophet), is a 2025 large vision-language-action model…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_spatial_forcing_implicit_spati_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Spatial Forcing</h3>
+          <p>Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model (Spatial…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_sigma_the_key_for_vision_langu_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Sigma</h3>
+          <p>Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment (Sigma), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_intelligence_06_a_vla_that_learns_from_expe_2025/">
+          <span class="entry-type">论文</span>
+          <h3>π0.6*</h3>
+          <p>π0.6*: a VLA That Learns From Experience (π0.6*), is a 2025 large vision-language-action model for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cen_worldvla_towards_autoregressiv_2025/">
+          <span class="entry-type">论文</span>
+          <h3>WorldVLA</h3>
+          <p>WorldVLA: Towards Autoregressive Action World Model (WorldVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_tech_on_device_vla_inference/">
+          <span class="entry-type">技术</span>
+          <h3>端侧 VLA 推理</h3>
+          <p>概述 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cao_fastdrivevla_efficient_end_to_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FastDriveVLA</h3>
+          <p>FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_song_germ_a_generalist_robotic_mode_2024/">
+          <span class="entry-type">论文</span>
+          <h3>GeRM</h3>
+          <p>GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot (GeRM), is a 2024 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_psi_0_an_open_foundation_model_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Psi0｜面向通用人形移动操作的开放基础模型</h3>
+          <p>Psi0 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用异构动捕与合成平衡数据、VLM 语义规划/路由、潜变量/动作 token预测动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sentinel_a_fully_end_to_end_la_2026/">
+          <span class="entry-type">论文</span>
+          <h3>端到端语言动作模型也绕不开机器人动力学数据</h3>
+          <p>Existing humanoid control systems often rely on teleoperation or modular generation pipelines that…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_being_m05_a_real_time_controll_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model</h3>
+          <p>Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model is a 2025 work on human motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_deead_dynamic_early_exit_of_vi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DeeAD</h3>
+          <p>DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving (DeeAD), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLASH</h3>
+          <p>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_jarvis_vla_post_training_large_2025/">
+          <span class="entry-type">论文</span>
+          <h3>JARVIS-VLA</h3>
+          <p>JARVIS-VLA: Post-Training Large-Scale Vision Language Models to Play Visual Games with Keyboards and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_system_identification/">
+          <span class="entry-type">方法</span>
+          <h3>系统辨识</h3>
+          <p>根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lin_showui_one_vision_language_act_2024/">
+          <span class="entry-type">论文</span>
+          <h3>ShowUI</h3>
+          <p>ShowUI: One Vision-Language-Action Model for GUI Visual Agent (ShowUI), is a 2024 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_up_vla_a_unified_understanding_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UP-VLA</h3>
+          <p>UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent (UP-VLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wam4d_fast_4d_world_action_mod_2026/">
+          <span class="entry-type">论文</span>
+          <h3>WAM4D: Fast 4D World Action Model via Spatial Register Tokens</h3>
+          <p>arXiv:2606.14048v2 Announce Type: replace-cross Abstract: World action models (WAMs) have recently…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_internvla_a15_unifying_underst_2026/">
+          <span class="entry-type">论文</span>
+          <h3>InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization</h3>
+          <p>arXiv:2607.04988v1 Announce Type: new Abstract: Unified models for robot manipulation aim to equip…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">基础学科</span>
+          <h3>线性代数</h3>
+          <p>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#token">动作 token 预测的定义与定位</a></li>
+<li><a href="#token_1">动作 token 预测的数学与原理基础</a></li>
+<li><a href="#_2">算法步骤与实现要点</a></li>
+<li><a href="#_3">典型应用与局限性</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,1381 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gait Planning · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Gait Planning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Gait Planning</h1>
+      <p class="entry-name-en">Gait Planning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#运动范围与人类步态需求 by scripts/backfill_nonpaper_entries.py. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">Stage 2 · Biped Platform</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The generation of footstep sequences, timing, and phase transitions that produce stable and efficient locomotion for legged robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Generating stable and efficient footstep sequences, timing, and phase transitions for legged robot locomotion.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-gait-planning">Definition and Positioning of Gait Planning</h3>
+<p>Gait planning belongs to the <strong>method</strong> category. Its domains include: AI models and algorithms. Value chain level: intelligence layer. It generates stable and efficient footstep sequences, timing, and phase transitions for legged robot locomotion. The English term is <em>Gait Planning</em>. The Korean term is <em>보행 패턴 계획</em>.</p>
+<h3 id="mathematical-and-physical-foundations-of-gait-planning">Mathematical and Physical Foundations of Gait Planning</h3>
+<p>Gait planning is built upon relevant mathematical theories and physical laws. Understanding its assumptions, constraints, and derivation processes is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In humanoid robots, which are high-dimensional, underactuated, and strongly coupled systems, gait planning typically requires balancing real-time performance, precision, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>When implementing gait planning in practice, it is necessary to clarify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable algorithm operation on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>Gait planning can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptation capabilities remain key issues to address in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>method</li>
+<li>chapter_15</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key methods in the humanoid robot industry chain, gait planning plays an important role in system design, performance optimization, and industrial application. It couples with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall robot performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_sim_to_real/">Sim-to-Real Transfer</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 15. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_kimodo_scaling_controllable_hu_2026/">Kimodo: Scaling Controllable Human Motion Generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Kimodo: Scaling Controllable Human Motion Generation mentions Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_let_humanoids_hike_integrative_2025/">Let Humanoids Hike! Integrative Skill Development on Complex Trails</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Let Humanoids Hike! Integrative Skill Development on Complex Trails studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lookout_real_world_humanoid_eg_2025/">LookOut: Real-World Humanoid Egocentric Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">LookOut: Real-World Humanoid Egocentric Navigation discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_prasad_geometric_mechanics_of_contact_2023/">Geometric Mechanics of Contact-Switching Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Geometric Mechanics of Contact-Switching Systems studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_soccerdiffusion_toward_learnin_2025/">SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_symphony_a_heuristic_normalize_2025/">Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_architecture_is_all_you_need_d_2025/">Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cmr_contractive_mapping_embedd_2026/">CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains proposes Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deep_reinforcement_learning_fo_2024/">Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_do_you_have_freestyle_expressi_2025/">Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_optimizing_bipedal_locomotion_2025/">Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bin_real_time_polygonal_semantic_m_2024/">Real-Time Polygonal Semantic Mapping for Humanoid Robot Stair Climbing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Real-Time Polygonal Semantic Mapping for Humanoid Robot Stair Climbing discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_task_and_motion_planning_for_h_2025/">Task and Motion Planning for Humanoid Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Task and Motion Planning for Humanoid Loco-manipulation discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_styleloco_generative_adversari_2025/">StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_implicit_bezier_motion_model_f_2025/">Implicit Bézier Motion Model for Precise Spatial and Temporal Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">Implicit Bézier Motion Model for Precise Spatial and Temporal Control introduces Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_reinforcement_learning_of_cpg_2022/">Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_climbingcap_multi_modal_datase_2025/">ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_phuma_physically_grounded_huma_2025/">PHUMA: Physically-Grounded Humanoid Locomotion Dataset</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">PHUMA: Physically-Grounded Humanoid Locomotion Dataset discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robomirror_understand_before_y_2025/">RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_biomechanical_comparisons_reve_2026/">Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_whole_body_humanoid_robot_loco_2024/">Whole-body Humanoid Robot Locomotion with Human Reference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Whole-body Humanoid Robot Locomotion with Human Reference studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gaussgym_an_open_source_real_t_2025/">GaussGym: An open-source real-to-sim framework for learning locomotion from pixels</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">GaussGym: An open-source real-to-sim framework for learning locomotion from pixels discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_videomimic_visual_imitation_en_2025/">VideoMimic: Visual imitation enables contextual humanoid control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">VideoMimic: Visual imitation enables contextual humanoid control studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fahmi_vital_vision_based_terrain_awa_2022/">ViTAL: Vision-Based Terrain-Aware Locomotion for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ViTAL: Vision-Based Terrain-Aware Locomotion for Legged Robots discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_toddlerbot/">ToddlerBot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ToddlerBot has prerequisite Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chan_angle_constrained_formation_co_2020/">Angle-Constrained Formation Control for Circular Mobile Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Angle-Constrained Formation Control for Circular Mobile Robots discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_traversing_narrow_paths_a_two_2025/">Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_parkour_learning_2024/">Humanoid Parkour Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Humanoid Parkour Learning discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_walk_in_costume_ad_2025/">Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_behavior_architecture_for_fa_2024/">A Behavior Architecture for Fast Humanoid Robot Door Traversals</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Behavior Architecture for Fast Humanoid Robot Door Traversals discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bi_level_motion_imitation_for_2024/">Bi-Level Motion Imitation for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Bi-Level Motion Imitation for Humanoid Robots uses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pyroki_a_modular_toolkit_for_r_2025/">PyRoki: A Modular Toolkit for Robot Kinematic Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">PyRoki: A Modular Toolkit for Robot Kinematic Optimization discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_anymal_parkour_robust_percepti_2026/">ANYmal Parkour: Robust Perceptive Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">ANYmal Parkour: Robust Perceptive Locomotion proposes Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pdf_hr_pose_distance_fields_fo_2026/">PDF-HR: Pose Distance Fields for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">PDF-HR: Pose Distance Fields for Humanoid Robots discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dpl_depth_only_perceptive_huma_2025/">DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">Extreme Parkour with Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Extreme Parkour with Legged Robots discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_spatial_relationship_preservin_2010/">Spatial relationship preserving character motion adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Spatial relationship preserving character motion adaptation uses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vb_com_learning_vision_blind_c_2025/">VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deep_whole_body_parkour_2026/">Deep Whole-body Parkour</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Deep Whole-body Parkour mentions Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sakurai_bipedal_robot_running_human_li_2024/">Bipedal Robot Running: Human-like Actuation Timing Using Fast and Slow Adaptations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Bipedal Robot Running: Human-like Actuation Timing Using Fast and Slow Adaptations proposes Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_whole_body_humanoid_l_2026/">Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_taming_diffusion_probabilistic_2024/">Taming Diffusion Probabilistic Models for Character Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Taming Diffusion Probabilistic Models for Character Control discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_example_based_motion_synthesis_2023/">Example-based Motion Synthesis via Generative Motion Matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Example-based Motion Synthesis via Generative Motion Matching discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_vision_driven_reactiv_2026/">Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wiedebach_walking_on_partial_footholds_i_2016/">Walking on Partial Footholds Including Line Contacts with the Humanoid Robot Atlas</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Walking on Partial Footholds Including Line Contacts with the Humanoid Robot Atlas studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_gait_driven_rl_framework_for_2025/">A Gait Driven RL Framework for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">A Gait Driven RL Framework for Humanoid Robots proposes Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dribble_master_learning_agile_2025/">Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion uses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_stabilizing_humanoid_robot_tra_2025/">Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning uses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learned_motion_matching_2020/">Learned motion matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Learned motion matching discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_hierarchical_framework_for_h_2025/">A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_physhsi_towards_a_real_world_g_2025/">PhysHSI: Towards a Real-World Generalizable and Natural Humanoid-Scene Interaction System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">PhysHSI: Towards a Real-World Generalizable and Natural Humanoid-Scene Interaction System discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vmp_versatile_motion_priors_fo_2024/">VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_hierarchical_model_based_sys_2025/">A Hierarchical, Model-Based System for High-Performance Humanoid Soccer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Hierarchical, Model-Based System for High-Performance Humanoid Soccer discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omni_perception_omnidirectiona_2025/">Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zheng_model_based_control_of_planar_2022/">Model-Based Control of Planar Piezoelectric Inchworm Soft Robot for Crawling in Constrained Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Model-Based Control of Planar Piezoelectric Inchworm Soft Robot for Crawling in Constrained Environments discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_no_more_marching_learning_huma_2025/">No More Marching: Learning Humanoid Locomotion for Short-Range SE(2) Targets</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">No More Marching: Learning Humanoid Locomotion for Short-Range SE(2) Targets discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mixture_of_experts_rl_for_faul_2026/">Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hierarchical_intention_aware_e_2025/">Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_effects_of_robotic_touch_on_ol_2026/">Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egonav_learning_humanoid_navig_2026/">EgoNav: Learning Humanoid Navigation from Human Data</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">EgoNav: Learning Humanoid Navigation from Human Data discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator proposes Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vigor_visual_goal_in_context_i_2026/">VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sim_to_real_of_humanoid_locomo_2025/">Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_motion_to_behavior_hierar_2025/">From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior Control discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omnixtreme_breaking_the_genera_2026/">OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_skater_synthesized_kinematics_2026/">SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hierarchical_visuomotor_contro_2018/">Hierarchical visuomotor control of humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Hierarchical visuomotor control of humanoids discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_a_vision_based_footst_2025/">Learning a Vision-Based Footstep Planner for Hierarchical Walking Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Learning a Vision-Based Footstep Planner for Hierarchical Walking Control proposes Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_adaptive_invariant_extended_ka_2026/">Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation mentions Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_natural_humanoid_robot_locomot_2025/">Natural Humanoid Robot Locomotion with Generative Motion Prior</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Natural Humanoid Robot Locomotion with Generative Motion Prior studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hiking_in_the_wild_a_scalable_2026/">Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids proposes Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_coordinated_humanoid_robot_loc_2025/">Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_locoformer_generalist_locomoti_2025/">LocoFormer: Generalist Locomotion via Long-Context Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">LocoFormer: Generalist Locomotion via Long-Context Adaptation discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_toward_reliable_sim_to_real_pr_2026/">Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_perceptive_humanoid_parkour_ch_2026/">Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_run_residual_policy_for_natura_2025/">RuN: Residual Policy for Natural Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RuN: Residual Policy for Natural Humanoid Locomotion discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_symmetric_and_low_ene_2018/">Learning Symmetric and Low-energy Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Learning Symmetric and Low-energy Locomotion studies Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gait_conditioned_rl_with_multi_2025/">Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion discusses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_principle_capture_point/">Capture Point</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Capture Point mentions Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_gentle_humanoid_locom_2025/">Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control uses Gait Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_gait_planning"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vb_com_learning_vision_blind_c_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception</h3>
+          <p>VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_toward_reliable_sim_to_real_pr_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion</h3>
+          <p>Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kimodo_scaling_controllable_hu_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Kimodo: Scaling Controllable Human Motion Generation</h3>
+          <p>Kimodo: Scaling Controllable Human Motion Generation is a 2026 work on human motion analysis and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_a_vision_based_footst_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning a Vision-Based Footstep Planner for Hierarchical Walking Control</h3>
+          <p>Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_symphony_a_heuristic_normalize_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots</h3>
+          <p>Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_stabilizing_humanoid_robot_tra_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning</h3>
+          <p>Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wiedebach_walking_on_partial_footholds_i_2016/">
+          <span class="entry-type">Paper</span>
+          <h3>Walking on Partial Footholds Including Line Contacts with the Humanoid Robot Atlas</h3>
+          <p>Presents a momentum-based control method that lets the Atlas humanoid walk and balance on partial,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_spatial_relationship_preservin_2010/">
+          <span class="entry-type">Paper</span>
+          <h3>Spatial relationship preserving character motion adaptation</h3>
+          <p>Spatial relationship preserving character motion adaptation is a 2010 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sakurai_bipedal_robot_running_human_li_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Bipedal Robot Running: Human-like Actuation Timing Using Fast and Slow Adaptations</h3>
+          <p>This paper proposes a central-pattern-generator-based controller that combines fast phase resetting…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dpl_depth_only_perceptive_huma_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction</h3>
+          <p>DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_implicit_bezier_motion_model_f_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Implicit Bézier Motion Model for Precise Spatial and Temporal Control</h3>
+          <p>Implicit Bézier Motion Model for Precise Spatial and Temporal Control is a 2025 work on human motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_toddlerbot/">
+          <span class="entry-type">Robot System</span>
+          <h3>ToddlerBot</h3>
+          <p>An open-source child-size humanoid robot from Stanford University, 0.56 m tall and 3.4 kg, with 30…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cmr_contractive_mapping_embedd_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains</h3>
+          <p>CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bi_level_motion_imitation_for_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Bi-Level Motion Imitation for Humanoid Robots</h3>
+          <p>Bi-Level Motion Imitation for Humanoid Robots is a 2024 work on locomotion for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_skater_synthesized_kinematics_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles</h3>
+          <p>SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vmp_versatile_motion_priors_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters</h3>
+          <p>VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_whole_body_humanoid_l_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking</h3>
+          <p>Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking is a knowledge…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omni_perception_omnidirectiona_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments</h3>
+          <p>Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_gentle_humanoid_locom_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control</h3>
+          <p>Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zheng_model_based_control_of_planar_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Model-Based Control of Planar Piezoelectric Inchworm Soft Robot for Crawling in Constrained Environments</h3>
+          <p>Zheng et al. present a model-based full-shape controller for a five-actuator planar piezoelectric…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pyroki_a_modular_toolkit_for_r_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>PyRoki: A Modular Toolkit for Robot Kinematic Optimization</h3>
+          <p>PyRoki: A Modular Toolkit for Robot Kinematic Optimization is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_physhsi_towards_a_real_world_g_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>PhysHSI: Towards a Real-World Generalizable and Natural Humanoid-Scene Interaction System</h3>
+          <p>Physhsi first recovers the scene, object, or motion representation from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_no_more_marching_learning_huma_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>No More Marching: Learning Humanoid Locomotion for Short-Range SE(2) Targets</h3>
+          <p>No More Marching: Learning Humanoid Locomotion for Short-Range SE(2) Targets is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_architecture_is_all_you_need_d_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion</h3>
+          <p>Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hierarchical_intention_aware_e_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots</h3>
+          <p>Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deep_whole_body_parkour_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Deep Whole-body Parkour</h3>
+          <p>Deep Whole-body Parkour is a knowledge node related to paper in the humanoid robot value chain.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robomirror_understand_before_y_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion</h3>
+          <p>RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egonav_learning_humanoid_navig_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoNav: Learning Humanoid Navigation from Human Data</h3>
+          <p>EgoNav: Learning Humanoid Navigation from Human Data is a paper on navigation tasks for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</h3>
+          <p>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_coordinated_humanoid_robot_loc_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy</h3>
+          <p>Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_natural_humanoid_robot_locomot_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Natural Humanoid Robot Locomotion with Generative Motion Prior</h3>
+          <p>Natural Humanoid Robot Locomotion with Generative Motion Prior is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_vision_driven_reactiv_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots</h3>
+          <p>Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge node related to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_run_residual_policy_for_natura_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RuN: Residual Policy for Natural Humanoid Locomotion</h3>
+          <p>RuN: Residual Policy for Natural Humanoid Locomotion is a 2025 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_taming_diffusion_probabilistic_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Taming Diffusion Probabilistic Models for Character Control</h3>
+          <p>Taming Diffusion Probabilistic Models for Character Control is a 2024 work on human motion analysis…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_task_and_motion_planning_for_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Task and Motion Planning for Humanoid Loco-manipulation</h3>
+          <p>Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mixture_of_experts_rl_for_faul_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion</h3>
+          <p>arXiv:2606.25965v2 Announce Type: replace Abstract: Legged robots deployed in planetary exploration…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hiking_in_the_wild_a_scalable_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids</h3>
+          <p>Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_prasad_geometric_mechanics_of_contact_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometric Mechanics of Contact-Switching Systems</h3>
+          <p>This paper introduces a geometric-mechanics framework for legged locomotion that combines continuous…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_videomimic_visual_imitation_en_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VideoMimic: Visual imitation enables contextual humanoid control</h3>
+          <p>VideoMimic: Visual imitation enables contextual humanoid control is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_traversing_narrow_paths_a_two_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking</h3>
+          <p>Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_motion_to_behavior_hierar_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior Control</h3>
+          <p>From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior Control is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hierarchical_visuomotor_contro_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical visuomotor control of humanoids</h3>
+          <p>Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_locoformer_generalist_locomoti_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LocoFormer: Generalist Locomotion via Long-Context Adaptation</h3>
+          <p>LocoFormer: Generalist Locomotion via Long-Context Adaptation is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_gait_driven_rl_framework_for_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Gait Driven RL Framework for Humanoid Robots</h3>
+          <p>A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_capture_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Capture Point</h3>
+          <p>A point on the ground where the robot must step to bring itself to a complete stop, used as a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_reinforcement_learning_of_cpg_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot</h3>
+          <p>This paper presents a bio-inspired cascade controller for a soft snake robot that combines…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gaussgym_an_open_source_real_t_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GaussGym: An open-source real-to-sim framework for learning locomotion from pixels</h3>
+          <p>GaussGym: An open-source real-to-sim framework for learning locomotion from pixels is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_climbingcap_multi_modal_datase_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate</h3>
+          <p>ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_anymal_parkour_robust_percepti_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ANYmal Parkour: Robust Perceptive Locomotion</h3>
+          <p>ANYmal Parkour: Robust Perceptive Locomotion is a paper on walking Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bin_real_time_polygonal_semantic_m_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Real-Time Polygonal Semantic Mapping for Humanoid Robot Stair Climbing</h3>
+          <p>This paper proposes a real-time polygonal planar semantic mapping system for humanoid robot stair…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_whole_body_humanoid_robot_loco_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Whole-body Humanoid Robot Locomotion with Human Reference</h3>
+          <p>Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_do_you_have_freestyle_expressi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control</h3>
+          <p>Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fahmi_vital_vision_based_terrain_awa_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>ViTAL: Vision-Based Terrain-Aware Locomotion for Legged Robots</h3>
+          <p>ViTAL proposes an online vision-based locomotion planning strategy that jointly plans body poses and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_symmetric_and_low_ene_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Symmetric and Low-energy Locomotion</h3>
+          <p>Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_let_humanoids_hike_integrative_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Let Humanoids Hike! Integrative Skill Development on Complex Trails</h3>
+          <p>Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_perceptive_humanoid_parkour_ch_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching</h3>
+          <p>Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_hierarchical_framework_for_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs</h3>
+          <p>A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_biomechanical_comparisons_reve_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits</h3>
+          <p>Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a 2026 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dribble_master_learning_agile_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion</h3>
+          <p>Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learned_motion_matching_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Learned motion matching</h3>
+          <p>Learned motion matching is a 2020 work on human motion analysis and synthesis for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Extreme Parkour with Legged Robots</h3>
+          <p>Extreme Parkour with Legged Robots is a paper on Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vigor_visual_goal_in_context_i_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</h3>
+          <p>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adaptive_invariant_extended_ka_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</h3>
+          <p>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation is a paper on State…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_example_based_motion_synthesis_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Example-based Motion Synthesis via Generative Motion Matching</h3>
+          <p>Example-based Motion Synthesis via Generative Motion Matching is a 2023 work on human motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pdf_hr_pose_distance_fields_fo_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PDF-HR: Pose Distance Fields for Humanoid Robots</h3>
+          <p>PDF-HR: Pose Distance Fields for Humanoid Robots is a 2026 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_styleloco_generative_adversari_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion</h3>
+          <p>StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omnixtreme_breaking_the_genera_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control</h3>
+          <p>OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deep_reinforcement_learning_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey</h3>
+          <p>Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gait_conditioned_rl_with_multi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion</h3>
+          <p>Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_walk_in_costume_ad_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids</h3>
+          <p>Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</h3>
+          <p>arXiv:2607.00569v1 Announce Type: new Abstract: In this article, we present dynamic modeling, gait…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sim_to_real_of_humanoid_locomo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection</h3>
+          <p>Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</h3>
+          <p>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_soccerdiffusion_toward_learnin_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings</h3>
+          <p>SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lookout_real_world_humanoid_eg_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LookOut: Real-World Humanoid Egocentric Navigation</h3>
+          <p>LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_parkour_learning_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Parkour Learning</h3>
+          <p>Humanoid Parkour Learning is a 2024 work on locomotion for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_sim_to_real/">
+          <span class="entry-type">Method</span>
+          <h3>Sim-to-Real Transfer</h3>
+          <p>Techniques for transferring policies or controllers trained in simulation to physical robots,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chan_angle_constrained_formation_co_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Angle-Constrained Formation Control for Circular Mobile Robots</h3>
+          <p>Proposes a gradient-based distributed control law for planar circular mobile robots that uses only…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_optimizing_bipedal_locomotion_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running</h3>
+          <p>Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_phuma_physically_grounded_huma_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>PHUMA: Physically-Grounded Humanoid Locomotion Dataset</h3>
+          <p>PHUMA: Physically-Grounded Humanoid Locomotion Dataset is a 2025 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_effects_of_robotic_touch_on_ol_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot</h3>
+          <p>arXiv:2607.09323v1 Announce Type: new Abstract: The shortage of healthcare staff is a challenge in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_hierarchical_model_based_sys_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Hierarchical, Model-Based System for High-Performance Humanoid Soccer</h3>
+          <p>A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Zero Moment Point (ZMP)</h3>
+          <p>A point on the ground where the horizontal moment of the ground reaction force about it is zero;…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_behavior_architecture_for_fa_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>A Behavior Architecture for Fast Humanoid Robot Door Traversals</h3>
+          <p>A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work on loco-manipulation…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-gait-planning">Definition and Positioning of Gait Planning</a></li>
+<li><a href="#mathematical-and-physical-foundations-of-gait-planning">Mathematical and Physical Foundations of Gait Planning</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

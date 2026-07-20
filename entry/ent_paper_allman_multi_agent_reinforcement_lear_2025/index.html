@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>面向协同仓库自动化的多智能体强化学习：面向稀疏奖励协调的QMIX值分解 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">面向协同仓库自动化的多智能体强化学习：面向稀疏奖励协调的QMIX值分解</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>面向协同仓库自动化的多智能体强化学习：面向稀疏奖励协调的QMIX值分解</h1>
+      <p class="entry-name-en">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">应用与市场</span><span class="tag">评测基准</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.04463v2.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>该论文在RWARE、MPE和自定义Unity 3D仿真环境中对比了QMIX、IPPO和MASAC在仓库多智能体强化学习任务上的表现，表明QMIX的值分解方法优于独立学习器，但在稀疏奖励场景下需要大量超参数调优，尤其是扩展的epsilon退火策略。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.04463" target="_blank" rel="noopener">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>We present a comparative study of multi-agent reinforcement learning (MARL) algorithms for cooperative warehouse robotics. We evaluate QMIX and IPPO on the Robotic Warehouse (RWARE) environment and a custom Unity 3D simulation. Our experiments reveal that QMIX's value decomposition significantly outperforms independent learning approaches (achieving 3.25 mean return vs. 0.38 for advanced IPPO), but requires extensive hyperparameter tuning -- particularly extended epsilon annealing (5M+ steps) for sparse reward discovery. We demonstrate successful deployment in Unity ML-Agents, achieving consistent package delivery after 1M training steps. While MARL shows promise for small-scale deployments (2-4 robots), significant scaling challenges remain. Code and analyses: https://pallman14.github.io/MARL-QMIX-Warehouse-Robots/</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2512.04463v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_pucci_automatic_gain_tuning_of_a_mom_2016/">人形机器人基于动量平衡控制器的自动增益调节</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">LEGS｜微调无TeleopVLA，用于体现高斯泼溅世界中的人形移动操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">喷气动力人形机器人的统一多速率模型预测控制</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">喷气动力人形机器人的统一多速率模型预测控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">通过主动空间脑和可泛化动作小脑实现人形全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">机器人训练机器人：人形机器人的自动现实世界策略适应与学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">Drive-WM：面向自动驾驶的多视角视觉预测与世界模型规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_bofa_humanoid_robots_101_2025/">美国银行研究所——人形机器人入门</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">机器人与稀土瓶颈</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">基于多阶段强化学习的人形全身羽毛球运动</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_allman_multi_agent_reinforcement_lear_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于多阶段强化学习的人形全身羽毛球运动</h3>
+          <p>Humanoid robots have demonstrated strong capabilities for interacting with static scenes across…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>机器人训练机器人：人形机器人的自动现实世界策略适应与学习</h3>
+          <p>本文提出了机器人训练机器人（RTR）框架，其中一个机器臂教师通过柔顺接触、课程调度、扰动、故障检测和自动重置来支持和引导人形学生，从而实现最少人工干预的高效现实世界强化学习。作者还介绍了使用 FiLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">
+          <span class="entry-type">论文</span>
+          <h3>LEGS｜微调无TeleopVLA，用于体现高斯泼溅世界中的人形移动操作</h3>
+          <p>LEGS 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">
+          <span class="entry-type">论文</span>
+          <h3>在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性</h3>
+          <p>这篇2024年arXiv论文介绍了一个Unity…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>通过主动空间脑和可泛化动作小脑实现人形全身操作</h3>
+          <p>本文提出了一种多智能体框架——主动空间脑负责主动空间感知与规划，可泛化动作小脑负责解耦的下肢移动与上肢灵巧操作——无需任务特定的真实机器人数据即可实现空间感知的人形全身操作，并在空间智能基准与真实Un…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_bofa_humanoid_robots_101_2025/">
+          <span class="entry-type">报告</span>
+          <h3>美国银行研究所——人形机器人入门</h3>
+          <p>&gt; 生活实例：它就像给投资者写的《人形机器人入门手册》——拆解了机器人由哪些“器官”组成、每台成本大概多少、未来几十年可能怎么普及。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">
+          <span class="entry-type">报告</span>
+          <h3>机器人与稀土瓶颈</h3>
+          <p>&gt; 生活实例：它就像一份提醒电动车行业的报告——如果制造高效电机所需的稀土材料高度依赖少数国家，那么供应链中断会让整车生产面临巨大风险。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pucci_automatic_gain_tuning_of_a_mom_2016/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人基于动量平衡控制器的自动增益调节</h3>
+          <p>提出了一种针对人形机器人基于动量的平衡控制器的自动增益调节方法，通过线性化闭环约束关节空间动力学并优化增益以匹配期望的刚度和阻尼，在iCub人形机器人仿真中进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>喷气动力人形机器人的统一多速率模型预测控制</h3>
+          <p>本文提出了一种用于喷气动力人形机器人iRonCub的多速率模型预测控制框架，将质心动量动力学与二阶非线性喷气发动机动力学相结合，并通过MuJoCo仿真进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</h3>
+          <p>本文比较了 ISO 10218-1/2:2011 与其 2025 年修订版，并分析了 ISO/TS 15066 的规范性整合，重点阐述了功能安全、网络安全、软件验证以及新型机器人分类要求的扩展。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Drive-WM：面向自动驾驶的多视角视觉预测与世界模型规划</h3>
+          <p>Drive-WM是一个用于自动驾驶的隐式视频扩散世界模型，通过视图分解的时空建模生成高保真多视角视频，支持来自图像、文本、布局和自车动作的统一条件输入，并应用于基于图像奖励的树状轨迹规划。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

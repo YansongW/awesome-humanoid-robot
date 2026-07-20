@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control</h1>
+      <p class="entry-name-en">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Data &amp; Datasets</span><span class="tag">Applications &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.01349v1.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper studies how dataset diversity and size affect Diffusion Policies for whole-body humanoid locomotion by generating synthetic demonstrations with AMP RL agents under various Domain Randomization conditions in IsaacGym. It finds that Diffusion Policies require substantially larger and more diverse datasets than manipulation tasks to achieve robust walking, with perturbation and terrain randomization being especially important.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2411.01349" target="_blank" rel="noopener">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Humanoids have the potential to be the ideal embodiment in environments designed for humans. Thanks to the structural similarity to the human body, they benefit from rich sources of demonstration data, e.g., collected via teleoperation, motion capture, or even using videos of humans performing tasks. However, distilling a policy from demonstrations is still a challenging problem. While Diffusion Policies (DPs) have shown impressive results in robotic manipulation, their applicability to locomotion and humanoid control remains underexplored. In this paper, we investigate how dataset diversity and size affect the performance of DPs for humanoid whole-body control. In a simulated IsaacGym environment, we generate synthetic demonstrations by training Adversarial Motion Prior (AMP) agents under various Domain Randomization (DR) conditions, and we compare DPs fitted to datasets of different size and diversity. Our findings show that, although DPs can achieve stable walking behavior, successful training of locomotion policies requires significantly larger and more diverse datasets compared to manipulation tasks, even in simple scenarios.</p>
+<h2 id="content">Content</h2>
+<p>Humanoids have the potential to be the ideal embodiment in environments designed for humans. Thanks to the structural similarity to the human body, they benefit from rich sources of demonstration data, e.g., collected via teleoperation, motion capture, or even using videos of humans performing tasks. However, distilling a policy from demonstrations is still a challenging problem. While Diffusion Policies (DPs) have shown impressive results in robotic manipulation, their applicability to locomotion and humanoid control remains underexplored. In this paper, we investigate how dataset diversity and size affect the performance of DPs for humanoid whole-body control. In a simulated IsaacGym environment, we generate synthetic demonstrations by training Adversarial Motion Prior (AMP) agents under various Domain Randomization (DR) conditions, and we compare DPs fitted to datasets of different size and diversity. Our findings show that, although DPs can achieve stable walking behavior, successful training of locomotion policies requires significantly larger and more diverse datasets compared to manipulation tasks, even in simple scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_adversarial_locomotion_and_mot_2025/">Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references Diffusion Policy: Visuomotor Policy Learning via Action Diffusion.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_domain_randomization/">Domain Randomization</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control uses Domain Randomization.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_wang_wam_survey_2026/">World Action Models: The Next Frontier in Embodied AI</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references World Action Models: The Next Frontier in Embodied AI.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">evaluates on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control evaluates or benchmarks HumanoidBench.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</a>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids cites or references The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation cites or references The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_kaidanov_the_role_of_domain_randomizati_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_method_domain_randomization/">
+          <span class="entry-type">Method</span>
+          <h3>Domain Randomization</h3>
+          <p>A sim-to-real technique that randomizes simulation parameters during training to improve policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</h3>
+          <p>Vision-language-action (VLA) models have demonstrated strong semantic understanding and zero-shot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</h3>
+          <p>A unified whole-body reinforcement-learning controller enables a 21-DoF humanoid to play badminton…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids</h3>
+          <p>This paper proposes Robot-Trains-Robot (RTR), a framework in which a robot-arm teacher supports and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</h3>
+          <p>This paper proposes a multi-agent framework—Active Spatial Brain for active spatial perception and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</h3>
+          <p>This 2024 arXiv paper presents a Unity VR simulation in which multiple simulated robot agents, each…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>World Action Models: The Next Frontier in Embodied AI</h3>
+          <p>A 2026 survey that defines World Action Models (WAMs) as embodied foundation models unifying…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">Benchmark</span>
+          <h3>HumanoidBench</h3>
+          <p>A simulated benchmark for whole-body humanoid locomotion and manipulation based on the Unitree H1…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</h3>
+          <p>Diffusion Policy represents robot visuomotor policies as conditional denoising diffusion processes…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</h3>
+          <p>HuMI is a portable, robot-free data-collection and hierarchical-learning framework that translates…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adversarial_locomotion_and_mot_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning</h3>
+          <p>This work mainly addresses the data closed loop: collecting human operation and robot states using…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

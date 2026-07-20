@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</h1>
+      <p class="entry-name-en">Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">부품</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">상위</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2009.00210v5.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 다수의 웨어러블 센서 모달리티에서 RGB 비디오 학생 네트워크로 지식을 증류하여 동작 인식을 수행하는 SAKDN 프레임워크를 제안하며, Gramian Angular Field 가상 이미지와 적응형 교사 융합 및 그래프 기반 의미 전이 모듈을 활용한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2009.00210" target="_blank" rel="noopener">Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존의 비전 기반 동작 인식은 폐색 및 외형 변화에 취약한 반면, 웨어러블 센서는 1차원 시계열 신호로 인간의 움직임을 포착하여 이러한 문제를 완화할 수 있습니다. 동일한 동작에 대해 비전 센서와 웨어러블 센서로부터 학습된 지식은 서로 연관되고 상호 보완적일 수 있습니다. 그러나 웨어러블 센서와 비전 센서로 포착된 동작 데이터 간에는 데이터 차원, 데이터 분포 및 내재된 정보 내용에서 상당히 큰 모달리티 차이가 존재합니다. 본 논문에서는 여러 웨어러블 센서의 지식을 적응적으로 전이 및 증류하여 비전 센서 모달리티(비디오)에서의 동작 인식을 향상시키는 새로운 프레임워크인 의미 인식 적응형 지식 증류 네트워크(SAKDN)를 제안합니다. SAKDN은 여러 웨어러블 센서를 교사 모달리티로 사용하고 RGB 비디오를 학생 모달리티로 사용합니다. 국소적 시간 관계를 보존하고 시각적 딥러닝 모델 적용을 용이하게 하기 위해, 그라미안 각도 필드 기반 가상 이미지 생성 모델을 설계하여 웨어러블 센서의 1차원 시계열 신호를 2차원 이미지로 변환합니다. 그런 다음, 새로운 유사성 보존 적응형 다중 모달 융합 모듈을 구축하여 서로 다른 교사 네트워크의 중간 표현 지식을 적응적으로 융합합니다. 마지막으로, 여러 잘 훈련된 교사 네트워크의 지식을 학생 네트워크로 완전히 활용 및 전이하기 위해, 그래프 기반 절제 분석을 활용하여 모달리티 간 중요한 영역을 강조하고 원본 데이터의 상호 관계를 동시에 보존하는 좋은 시각적 설명을 생성하는 새로운 그래프 유도 의미 판별 매핑 손실을 제안합니다. Berkeley-MHAD, UTD-MHAD 및 MMAct 데이터셋에 대한 실험 결과는 제안된 SAKDN의 효과성을 잘 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>기존의 비전 기반 동작 인식은 폐색 및 외형 변화에 취약한 반면, 웨어러블 센서는 1차원 시계열 신호로 인간의 움직임을 포착하여 이러한 문제를 완화할 수 있습니다. 동일한 동작에 대해 비전 센서와 웨어러블 센서로부터 학습된 지식은 서로 연관되고 상호 보완적일 수 있습니다. 그러나 웨어러블 센서와 비전 센서로 포착된 동작 데이터 간에는 데이터 차원, 데이터 분포 및 내재된 정보 내용에서 상당히 큰 모달리티 차이가 존재합니다. 본 논문에서는 여러 웨어러블 센서의 지식을 적응적으로 전이 및 증류하여 비전 센서 모달리티(비디오)에서의 동작 인식을 향상시키는 새로운 프레임워크인 의미 인식 적응형 지식 증류 네트워크(SAKDN)를 제안합니다. SAKDN은 여러 웨어러블 센서를 교사 모달리티로 사용하고 RGB 비디오를 학생 모달리티로 사용합니다. 국소적 시간 관계를 보존하고 시각적 딥러닝 모델 적용을 용이하게 하기 위해, 그라미안 각도 필드 기반 가상 이미지 생성 모델을 설계하여 웨어러블 센서의 1차원 시계열 신호를 2차원 이미지로 변환합니다. 그런 다음, 새로운 유사성 보존 적응형 다중 모달 융합 모듈을 구축하여 서로 다른 교사 네트워크의 중간 표현 지식을 적응적으로 융합합니다. 마지막으로, 여러 잘 훈련된 교사 네트워크의 지식을 학생 네트워크로 완전히 활용 및 전이하기 위해, 그래프 기반 절제 분석을 활용하여 모달리티 간 중요한 영역을 강조하고 원본 데이터의 상호 관계를 동시에 보존하는 좋은 시각적 설명을 생성하는 새로운 그래프 유도 의미 판별 매핑 손실을 제안합니다. Berkeley-MHAD, UTD-MHAD 및 MMAct 데이터셋에 대한 실험 결과는 제안된 SAKDN의 효과성을 잘 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_chip_adaptive_compliance_for_h_2026/">CHIP: Adaptive Compliance for Humanoid Control through Hindsight Perturbation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">UKF 기반 관절 토크 센서가 없는 휴머노이드 로봇을 위한 센서 융합</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">Drive-WM: 자율주행을 위한 다중 시각 예측 및 세계 모델 기반 계획</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025_1/">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">당신의 비전-언어-액션 모델에는 이미 경로 편차 탐지를 위한 어텐션 헤드가 있다</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">MIT 휴머노이드 로봇: 곡예 동작을 위한 설계, 운동 계획 및 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">능동 공간 뇌와 일반화 가능한 동작 소뇌를 통한 휴머노이드 전신 조작</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_liu_semantics_aware_adaptive_knowl_2021"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">
+          <span class="entry-type">논문</span>
+          <h3>AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</h3>
+          <p>AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</h3>
+          <p>본 논문은 로봇 팔 교사가 순응적 접촉, 커리큘럼 스케줄링, 섭동, 실패 감지 및 자동 리셋을 통해 휴머노이드 학생을 지지하고 안내하여 최소한의 인간 개입으로 효율적인 실제 세계…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">
+          <span class="entry-type">논문</span>
+          <h3>BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</h3>
+          <p>BeyondMimic…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">
+          <span class="entry-type">논문</span>
+          <h3>UKF 기반 관절 토크 센서가 없는 휴머노이드 로봇을 위한 센서 융합</h3>
+          <p>관절 토크 센서가 없는 휴머노이드 로봇의 온라인 관절 토크 추정을 위한 무향 칼만 필터 기반 센서 융합법을 제안하고, ergoCub 휴머노이드의 이중 토크 제어 아키텍처에서…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">논문</span>
+          <h3>당신의 비전-언어-액션 모델에는 이미 경로 편차 탐지를 위한 어텐션 헤드가 있다</h3>
+          <p>본 논문은 고정된 비전-언어-액션(VLA) 모델 내 어텐션 엔트로피 신호가 궤적 편차를 나타내는 소수의 &#39;네비게이션 헤드(Navigation Heads)&#39;를 식별하여, 학습 불필요…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">논문</span>
+          <h3>능동 공간 뇌와 일반화 가능한 동작 소뇌를 통한 휴머노이드 전신 조작</h3>
+          <p>본 논문은 능동 공간 지각 및 계획을 담당하는 능동 공간 뇌와 하지 이동·상지 정교 조작으로 분리된 일반화 가능한 동작 소뇌를 결합한 다중 에이전트 프레임워크를 제안하여, 작업별…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</h3>
+          <p>AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chip_adaptive_compliance_for_h_2026/">
+          <span class="entry-type">논문</span>
+          <h3>CHIP: Adaptive Compliance for Humanoid Control through Hindsight Perturbation</h3>
+          <p>CHIP…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">
+          <span class="entry-type">논문</span>
+          <h3>Drive-WM: 자율주행을 위한 다중 시각 예측 및 세계 모델 기반 계획</h3>
+          <p>Drive-WM은 자율주행을 위한 잠재 비디오 확산 세계 모델로, 뷰 분해를 통한 시공간 모델링으로 고화질 다중 뷰 영상을 생성하고 이미지, 텍스트, 레이아웃, 자차 행동 등의…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">
+          <span class="entry-type">논문</span>
+          <h3>MIT 휴머노이드 로봇: 곡예 동작을 위한 설계, 운동 계획 및 제어</h3>
+          <p>본 논문은 MIT 휴머노이드 로봇의 설계, 액추에이터 인식 키노다이나믹 계획법 및 착륙 제어를 제시하며, 경험적으로 검증된 액추에이터 및 배터리 모델을 포함한 사실적인 동역학…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

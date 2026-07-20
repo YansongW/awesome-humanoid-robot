@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制</h1>
+      <p class="entry-name-en">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.11129v1.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出了一种预测安全滤波器，将非线性模型预测控制（MPC）与通过泊松安全函数从感知数据中合成的控制障碍函数（CBF）约束相结合。该方法通过移动边界和闵可夫斯基集合运算将泊松安全函数扩展到时变域和机器人构型空间，并在 Unitree Go2 四足机器人和 G1 人形机器人的动态避障与环境导航任务中进行了验证。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.11129" target="_blank" rel="noopener">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">evaluates_on</span>
+            <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+            
+              
+                
+              
+              <span class="rel-desc">预测安全滤波器在 Unitree G1 人形机器人的动态避障和环境导航场景下进行了实验验证。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_oem_unitree_robotics/">宇树科技</a>
+            
+              
+                
+              
+              <span class="rel-desc">论文通过型号名称将 Unitree 认定为实验中使用的 Go2 四足机器人和 G1 人形机器人平台的制造商。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Autonomous navigation through unstructured and dynamically-changing environments is a complex task that continues to present many challenges for modern roboticists. In particular, legged robots typically possess manipulable asymmetric geometries which must be considered during safety-critical trajectory planning. This work proposes a predictive safety filter: a nonlinear model predictive control (MPC) algorithm for online trajectory generation with geometry-aware safety constraints based on control barrier functions (CBFs). Critically, our method leverages Poisson safety functions to numerically synthesize CBF constraints directly from perception data. We extend the theoretical framework for Poisson safety functions to incorporate temporal changes in the domain by reformulating the static Dirichlet problem for Poisson's equation as a parameterized moving boundary value problem. Furthermore, we employ Minkowski set operations to lift the domain into a configuration space that accounts for robot geometry. Finally, we implement our real-time predictive safety filter on humanoid and quadruped robots in various safety-critical scenarios. The results highlight the versatility of Poisson safety functions, as well as the benefit of CBF constrained model predictive safety-critical controllers.</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2508.11129v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">基于关节力矩传感器和力/力矩传感器的腿式机器人接触感知</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_from_experts_to_a_generalist_t_2025/">从专家到通用：走向人形机器人的通用全身控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_from_language_to_locomotion_re_2025/">从语言到运动｜通过动作潜变量指导实现免重定向人形控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_demohlm_from_one_demonstration_2025/">DemoHLM｜从单一示范到通用人形移动操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_unitree_dex3_1_hand/">Unitree Dex3-1 灵巧手</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-desc">面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制提及模型预测控制（MPC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_oem_unitree_robotics/">宇树科技</a>
+              <span class="rel-desc">论文通过型号名称将 Unitree 认定为实验中使用的 Go2 四足机器人和 G1 人形机器人平台的制造商。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">MIT人形机器人：面向杂技行为的设计、运动规划与控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">机器人训练机器人：人形机器人的自动现实世界策略适应与学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">通过主动空间脑和可泛化动作小脑实现人形全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_bofa_humanoid_robots_101_2025/">美国银行研究所——人形机器人入门</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">机器人与稀土瓶颈</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">面向人形机器人稳健运动的层级化降阶模型预测控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">面向人机工效协作负载提升的人形机器人设计优化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">喷气动力人形机器人的统一多速率模型预测控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">Geometry-Aware Predictive Safety Filters on Humanoids引用面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bena_geometry_aware_predictive_safe_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向人形机器人稳健运动的层级化降阶模型预测控制</h3>
+          <p>提出了一种面向人形机器人行走的层级化降阶模型预测控制框架，将基于ALIP步间动力学的40 Hz非线性步态规划器与包含手臂和躯干动态的500 Hz线性MPC相结合，并在Unitree…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_unitree_dex3_1_hand/">
+          <span class="entry-type">零部件</span>
+          <h3>Unitree Dex3-1 灵巧手</h3>
+          <p>Unitree Dex3-1 灵巧手是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">
+          <span class="entry-type">论文</span>
+          <h3>MIT人形机器人：面向杂技行为的设计、运动规划与控制</h3>
+          <p>Demonstrating acrobatic behavior of a humanoid robot such as flips and spinning jumps requires…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_experts_to_a_generalist_t_2025/">
+          <span class="entry-type">论文</span>
+          <h3>从专家到通用：走向人形机器人的通用全身控制</h3>
+          <p>这篇工作把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过世界模型/视频预测、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">
+          <span class="entry-type">论文</span>
+          <h3>BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制</h3>
+          <p>BeyondMimic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_bofa_humanoid_robots_101_2025/">
+          <span class="entry-type">报告</span>
+          <h3>美国银行研究所——人形机器人入门</h3>
+          <p>&gt; 生活实例：它就像给投资者写的《人形机器人入门手册》——拆解了机器人由哪些“器官”组成、每台成本大概多少、未来几十年可能怎么普及。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">
+          <span class="entry-type">论文</span>
+          <h3>面向人机工效协作负载提升的人形机器人设计优化</h3>
+          <p>Sartore、Rapetti和Pucci将人形机器人连杆几何与密度作为设计变量，建立考虑人体模型的非线性优化问题以最小化协同搬运中的能量消耗，并将该方法应用于从iCub到ergoCub的设计，扩展了…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Unitree G1 人形机器人</h3>
+          <p>Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_demohlm_from_one_demonstration_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DemoHLM｜从单一示范到通用人形移动操作</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>喷气动力人形机器人的统一多速率模型预测控制</h3>
+          <p>本文提出了一种用于喷气动力人形机器人iRonCub的多速率模型预测控制框架，将质心动量动力学与二阶非线性喷气发动机动力学相结合，并通过MuJoCo仿真进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</h3>
+          <p>本文比较了 ISO 10218-1/2:2011 与其 2025 年修订版，并分析了 ISO/TS 15066 的规范性整合，重点阐述了功能安全、网络安全、软件验证以及新型机器人分类要求的扩展。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids</h3>
+          <p>Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>机器人训练机器人：人形机器人的自动现实世界策略适应与学习</h3>
+          <p>本文提出了机器人训练机器人（RTR）框架，其中一个机器臂教师通过柔顺接触、课程调度、扰动、故障检测和自动重置来支持和引导人形学生，从而实现最少人工干预的高效现实世界强化学习。作者还介绍了使用 FiLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">整机厂商</span>
+          <h3>宇树科技</h3>
+          <p>&gt; 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 &gt; 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>通过主动空间脑和可泛化动作小脑实现人形全身操作</h3>
+          <p>本文提出了一种多智能体框架——主动空间脑负责主动空间感知与规划，可泛化动作小脑负责解耦的下肢移动与上肢灵巧操作——无需任务特定的真实机器人数据即可实现空间感知的人形全身操作，并在空间智能基准与真实Un…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">
+          <span class="entry-type">论文</span>
+          <h3>基于关节力矩传感器和力/力矩传感器的腿式机器人接触感知</h3>
+          <p>本文提出了一种广义动量观测器框架，融合低成本应变片关节力矩传感器和单个髋部安装的力/力矩传感器，以检测、定位并估计机器人腿部沿线的接触力，硬件实验实现了亚厘米级定位精度和低于0.2 N的力误差。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_language_to_locomotion_re_2025/">
+          <span class="entry-type">论文</span>
+          <h3>从语言到运动｜通过动作潜变量指导实现免重定向人形控制</h3>
+          <p>这篇工作先从语言指令、相机图像/多视角观测、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">
+          <span class="entry-type">报告</span>
+          <h3>机器人与稀土瓶颈</h3>
+          <p>&gt; 生活实例：它就像一份提醒电动车行业的报告——如果制造高效电机所需的稀土材料高度依赖少数国家，那么供应链中断会让整车生产面临巨大风险。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

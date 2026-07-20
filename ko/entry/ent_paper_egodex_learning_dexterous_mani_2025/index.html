@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video</h1>
+      <p class="entry-name-en">EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11709v3.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video is a 2025 work on manipulation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.11709" target="_blank" rel="noopener">EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>조작을 위한 모방 학습은 잘 알려진 데이터 부족 문제를 겪고 있습니다. 자연어 및 2D 컴퓨터 비전과 달리, 정교한 조작을 위한 인터넷 규모의 데이터 코퍼스는 존재하지 않습니다. 한 가지 매력적인 대안은 수동적으로 확장 가능한 데이터 소스인 자기중심적 인간 비디오입니다. 그러나 Ego4D와 같은 기존의 대규모 데이터셋은 기본적인 손 자세 주석이 없으며 객체 조작에 초점을 맞추지 않습니다. 이에 따라, 우리는 Apple Vision Pro를 사용하여 EgoDex를 수집했습니다: 현재까지 가장 크고 다양한 정교한 인간 조작 데이터셋입니다. EgoDex는 829시간의 자기중심적 비디오와 녹화 시점에 수집된 3D 손 및 손가락 추적 데이터를 포함하며, 여러 보정된 카메라와 기기 내 SLAM을 사용하여 각 손의 모든 관절 자세를 정밀하게 추적할 수 있습니다. 이 데이터셋은 신발 끈 묶기부터 빨래 개기까지 194가지 다양한 탁상 작업에서 일상적인 가정용 물체를 사용한 다양한 조작 행동을 포괄합니다. 또한, 우리는 데이터셋에서 손 궤적 예측을 위한 모방 학습 정책을 훈련하고 체계적으로 평가하며, 이 점점 더 중요해지는 분야의 진전을 측정하기 위한 지표와 벤치마크를 도입합니다. 이 대규모 데이터셋을 공개함으로써 로봇 공학, 컴퓨터 비전 및 기초 모델의 경계를 넓히기를 희망합니다. EgoDex는 https://github.com/apple/ml-egodex에서 공개적으로 다운로드 가능합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>조작을 위한 모방 학습은 잘 알려진 데이터 부족 문제를 겪고 있습니다. 자연어 및 2D 컴퓨터 비전과 달리, 정교한 조작을 위한 인터넷 규모의 데이터 코퍼스는 존재하지 않습니다. 한 가지 매력적인 대안은 수동적으로 확장 가능한 데이터 소스인 자기중심적 인간 비디오입니다. 그러나 Ego4D와 같은 기존의 대규모 데이터셋은 기본적인 손 자세 주석이 없으며 객체 조작에 초점을 맞추지 않습니다. 이에 따라, 우리는 Apple Vision Pro를 사용하여 EgoDex를 수집했습니다: 현재까지 가장 크고 다양한 정교한 인간 조작 데이터셋입니다. EgoDex는 829시간의 자기중심적 비디오와 녹화 시점에 수집된 3D 손 및 손가락 추적 데이터를 포함하며, 여러 보정된 카메라와 기기 내 SLAM을 사용하여 각 손의 모든 관절 자세를 정밀하게 추적할 수 있습니다. 이 데이터셋은 신발 끈 묶기부터 빨래 개기까지 194가지 다양한 탁상 작업에서 일상적인 가정용 물체를 사용한 다양한 조작 행동을 포괄합니다. 또한, 우리는 데이터셋에서 손 궤적 예측을 위한 모방 학습 정책을 훈련하고 체계적으로 평가하며, 이 점점 더 중요해지는 분야의 진전을 측정하기 위한 지표와 벤치마크를 도입합니다. 이 대규모 데이터셋을 공개함으로써 로봇 공학, 컴퓨터 비전 및 기초 모델의 경계를 넓히기를 희망합니다. EgoDex는 https://github.com/apple/ml-egodex에서 공개적으로 다운로드 가능합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_dexterous_manipulation/">손재주 있는 조작</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_egodex_learning_dexterous_mani_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">방법</span>
+          <h3>손재주 있는 조작</h3>
+          <p>다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

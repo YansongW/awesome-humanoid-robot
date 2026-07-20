@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy</h1>
+      <p class="entry-name-en">InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.13778v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.13778" target="_blank" rel="noopener">InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2510.13778" target="_blank" rel="noopener">InternVLA-M1 source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>우리는 InternVLA-M1을 소개합니다. 이는 공간적 근거(grounding)와 로봇 제어를 위한 통합 프레임워크로, 명령 수행 로봇을 확장 가능한 범용 지능으로 발전시킵니다. 핵심 아이디어는 공간적으로 유도된 시각-언어-행동 훈련으로, 공간적 근거가 명령과 로봇 행동 사이의 중요한 연결고리 역할을 합니다. InternVLA-M1은 두 단계 파이프라인을 사용합니다: (i) 230만 개 이상의 공간 추론 데이터에 대한 공간적 근거 사전 훈련을 통해 명령을 시각적, 구현체에 구애받지 않는 위치와 정렬하여 "어디에서 행동할지" 결정하고, (ii) 플러그 앤 플레이 공간 프롬프팅을 통해 구현체 인식 행동을 생성하여 "어떻게 행동할지" 결정하는 공간적으로 유도된 행동 후속 훈련입니다. 이 공간적으로 유도된 훈련 방식은 일관된 성능 향상을 가져옵니다: InternVLA-M1은 공간적 유도가 없는 변형 모델보다 SimplerEnv Google Robot에서 +14.6%, WidowX에서 +17%, LIBERO Franka에서 +4.3% 더 뛰어난 성능을 보이며, 상자, 점, 궤적 예측에서 더 강력한 공간 추론 능력을 입증합니다. 명령 수행을 더욱 확장하기 위해, 우리는 244K개의 일반화 가능한 집어 옮기기(pick-and-place) 에피소드를 수집하는 시뮬레이션 엔진을 구축하여 200개 작업과 3000개 이상의 객체에서 평균 6.2%의 개선을 가능하게 했습니다. 실제 환경의 군집 집어 옮기기에서 InternVLA-M1은 7.3% 향상되었으며, 합성 공동 훈련을 통해 보지 못한 객체와 새로운 구성에서 +20.6%를 달성했습니다. 또한, 장기적이고 추론 집약적인 시나리오에서는 기존 연구보다 10% 이상 뛰어난 성능을 보였습니다. 이러한 결과는 공간적으로 유도된 훈련이 확장 가능하고 탄력적인 범용 로봇을 위한 통합 원리임을 강조합니다. 코드와 모델은 https://github.com/InternRobotics/InternVLA-M1에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>우리는 InternVLA-M1을 소개합니다. 이는 공간적 근거(grounding)와 로봇 제어를 위한 통합 프레임워크로, 명령 수행 로봇을 확장 가능한 범용 지능으로 발전시킵니다. 핵심 아이디어는 공간적으로 유도된 시각-언어-행동 훈련으로, 공간적 근거가 명령과 로봇 행동 사이의 중요한 연결고리 역할을 합니다. InternVLA-M1은 두 단계 파이프라인을 사용합니다: (i) 230만 개 이상의 공간 추론 데이터에 대한 공간적 근거 사전 훈련을 통해 명령을 시각적, 구현체에 구애받지 않는 위치와 정렬하여 "어디에서 행동할지" 결정하고, (ii) 플러그 앤 플레이 공간 프롬프팅을 통해 구현체 인식 행동을 생성하여 "어떻게 행동할지" 결정하는 공간적으로 유도된 행동 후속 훈련입니다. 이 공간적으로 유도된 훈련 방식은 일관된 성능 향상을 가져옵니다: InternVLA-M1은 공간적 유도가 없는 변형 모델보다 SimplerEnv Google Robot에서 +14.6%, WidowX에서 +17%, LIBERO Franka에서 +4.3% 더 뛰어난 성능을 보이며, 상자, 점, 궤적 예측에서 더 강력한 공간 추론 능력을 입증합니다. 명령 수행을 더욱 확장하기 위해, 우리는 244K개의 일반화 가능한 집어 옮기기(pick-and-place) 에피소드를 수집하는 시뮬레이션 엔진을 구축하여 200개 작업과 3000개 이상의 객체에서 평균 6.2%의 개선을 가능하게 했습니다. 실제 환경의 군집 집어 옮기기에서 InternVLA-M1은 7.3% 향상되었으며, 합성 공동 훈련을 통해 보지 못한 객체와 새로운 구성에서 +20.6%를 달성했습니다. 또한, 장기적이고 추론 집약적인 시나리오에서는 기존 연구보다 10% 이상 뛰어난 성능을 보였습니다. 이러한 결과는 공간적으로 유도된 훈련이 확장 가능하고 탄력적인 범용 로봇을 위한 통합 원리임을 강조합니다. 코드와 모델은 https://github.com/InternRobotics/InternVLA-M1에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chen_internvla_m1_a_spatially_guide_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

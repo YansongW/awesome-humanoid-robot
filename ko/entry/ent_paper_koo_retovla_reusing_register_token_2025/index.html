@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models</h1>
+      <p class="entry-name-en">RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.21243v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models (RetoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computing, Gachon University.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.21243" target="_blank" rel="noopener">RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.21243" target="_blank" rel="noopener">RetoVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Vision-Language-Action (VLA) 모델은 다양한 로봇 작업에서 강력한 성능을 입증했습니다. 그러나 높은 메모리 및 계산 요구로 인해 실시간 배포가 제한되는 경우가 많습니다. 기존 모델 압축 기술은 파라미터 크기를 줄이지만, 3D 공간 추론 및 장면 레이아웃 이해에서 성능 저하가 자주 발생합니다. 본 연구는 Register Tokens(비전 트랜스포머에서 주의 아티팩트를 완화하기 위해 도입된 학습 가능한 파라미터)을 재활용하여 경량 모델에서 공간 인식을 유지하도록 설계된 아키텍처인 RetoVLA를 소개합니다. 이러한 토큰은 일반적으로 사용 후 폐기되지만, 우리는 이를 전역 공간 컨텍스트의 밀집 표현을 위해 재활용합니다. RetoVLA는 전용 공간 컨텍스트 주입 경로를 통해 이러한 재활용 토큰을 행동 계획 모듈에 직접 통합합니다. 제안된 설계는 총 파라미터 수를 증가시키지 않으면서 전역 컨텍스트를 복구할 수 있게 합니다. 7-DOF 매니퓰레이터를 사용한 실제 실험에서 기준선 대비 평균 성공률이 17.1%p 향상되었습니다. 본 결과는 내부 레지스터 토큰을 활용하는 것이 효율적이고 공간 인식이 가능한 로봇 에이전트를 개발하는 데 매우 효과적인 메커니즘을 제공함을 보여줍니다. 비디오 데모는 다음에서 확인할 수 있습니다: https://youtu.be/2CseBR-snZg</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Vision-Language-Action (VLA) 모델은 다양한 로봇 작업에서 강력한 성능을 입증했습니다. 그러나 높은 메모리 및 계산 요구로 인해 실시간 배포가 제한되는 경우가 많습니다. 기존 모델 압축 기술은 파라미터 크기를 줄이지만, 3D 공간 추론 및 장면 레이아웃 이해에서 성능 저하가 자주 발생합니다. 본 연구는 Register Tokens(비전 트랜스포머에서 주의 아티팩트를 완화하기 위해 도입된 학습 가능한 파라미터)을 재활용하여 경량 모델에서 공간 인식을 유지하도록 설계된 아키텍처인 RetoVLA를 소개합니다. 이러한 토큰은 일반적으로 사용 후 폐기되지만, 우리는 이를 전역 공간 컨텍스트의 밀집 표현을 위해 재활용합니다. RetoVLA는 전용 공간 컨텍스트 주입 경로를 통해 이러한 재활용 토큰을 행동 계획 모듈에 직접 통합합니다. 제안된 설계는 총 파라미터 수를 증가시키지 않으면서 전역 컨텍스트를 복구할 수 있게 합니다. 7-DOF 매니퓰레이터를 사용한 실제 실험에서 기준선 대비 평균 성공률이 17.1%p 향상되었습니다. 본 결과는 내부 레지스터 토큰을 활용하는 것이 효율적이고 공간 인식이 가능한 로봇 에이전트를 개발하는 데 매우 효과적인 메커니즘을 제공함을 보여줍니다. 비디오 데모는 다음에서 확인할 수 있습니다: https://youtu.be/2CseBR-snZg</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_koo_retovla_reusing_register_token_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

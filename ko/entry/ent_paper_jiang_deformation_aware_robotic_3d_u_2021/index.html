@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>변형 인식 로봇 3D 초음파 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">변형 인식 로봇 3D 초음파</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>변형 인식 로봇 3D 초음파</h1>
+      <p class="entry-name-en">Deformation-Aware Robotic 3D Ultrasound</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.08411v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>로봇 촉진, 광류 알고리즘 및 결합 2차 회귀를 통해 픽셀 변위를 추정하고 두 가지 혈관 팬텀에서 검증된 환자 지정 강성 기반 변형 보정 방법을 제안한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2107.08411" target="_blank" rel="noopener">Deformation-Aware Robotic 3D Ultrasound</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>초음파(US) 영상에서의 조직 변형은 프로브가 가하는 압력으로 인해 조직을 측정할 때 기하학적 오류를 초래합니다. 이러한 변형은 3D US 볼륨에 훨씬 더 큰 영향을 미치는데, 이는 일관되지 않은 위치와 기하학적 구조로 인해 올바른 합성이 제한되기 때문입니다. 본 연구는 로봇 3D US 획득 과정에서 조직 변형을 보정하기 위해 환자 특화 강성 기반 방법을 제안합니다. 환자 특화 모델을 얻기 위해 조직의 샘플링 위치에서 로봇 촉진(palpation)을 수행합니다. 촉진 과정의 접촉력, US 이미지 및 프로브 자세가 기록됩니다. 접촉력과 프로브 자세는 비선형 조직 강성을 추정하는 데 사용됩니다. 이미지는 광학 흐름(optical flow) 알고리즘에 입력되어 픽셀 변위를 계산합니다. 그런 다음 다양한 힘 하에서의 픽셀 단위 조직 변형은 결합 이차 회귀(coupled quadratic regression)로 특성화됩니다. 3D 볼륨 구축을 위한 궤적 상의 보이지 않는 위치에서 변형을 보정하기 위해 샘플링 위치에서 계산된 강성 값을 기반으로 보간(interpolation)이 수행됩니다. 강성과 기록된 힘을 통해 조직 변위를 보정할 수 있습니다. 이 방법은 서로 다른 강성을 가진 두 개의 혈관 팬텀(phantom)에서 검증되었습니다. 결과는 이 방법이 힘으로 인한 변형을 효과적으로 보정하고 최종적으로 3D 조직 기하학적 구조를 생성할 수 있음을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>초음파(US) 영상에서의 조직 변형은 프로브가 가하는 압력으로 인해 조직을 측정할 때 기하학적 오류를 초래합니다. 이러한 변형은 3D US 볼륨에 훨씬 더 큰 영향을 미치는데, 이는 일관되지 않은 위치와 기하학적 구조로 인해 올바른 합성이 제한되기 때문입니다. 본 연구는 로봇 3D US 획득 과정에서 조직 변형을 보정하기 위해 환자 특화 강성 기반 방법을 제안합니다. 환자 특화 모델을 얻기 위해 조직의 샘플링 위치에서 로봇 촉진을 수행합니다. 촉진 과정의 접촉력, US 이미지 및 프로브 자세가 기록됩니다. 접촉력과 프로브 자세는 비선형 조직 강성을 추정하는 데 사용됩니다. 이미지는 광학 흐름 알고리즘에 입력되어 픽셀 변위를 계산합니다. 그런 다음 다양한 힘 하에서의 픽셀 단위 조직 변형은 결합 이차 회귀로 특성화됩니다. 3D 볼륨 구축을 위한 궤적 상의 보이지 않는 위치에서 변형을 보정하기 위해 샘플링 위치에서 계산된 강성 값을 기반으로 보간이 수행됩니다. 강성과 기록된 힘을 통해 조직 변위를 보정할 수 있습니다. 이 방법은 서로 다른 강성을 가진 두 개의 혈관 팬텀에서 검증되었습니다. 결과는 이 방법이 힘으로 인한 변형을 효과적으로 보정하고 최종적으로 3D 조직 기하학적 구조를 생성할 수 있음을 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_force_position_hybrid_control/">힘/위치 하이브리드 제어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_pid_control/">PID 제어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_impedance_control/">임피던스 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_jiang_deformation_aware_robotic_3d_u_2021"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_impedance_control/">
+          <span class="entry-type">방법</span>
+          <h3>임피던스 제어</h3>
+          <p>상호작용 힘과 변위 간의 동적 관계를 제어하여 로봇이 가상의 기계적 임피던스처럼 동작하도록 하는 제어 방식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_pid_control/">
+          <span class="entry-type">방법</span>
+          <h3>PID 제어</h3>
+          <p>추적 오차의 비례·적분·미분 항의 선형 조합으로 제어 신호를 계산하는 기초 피드백 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_force_position_hybrid_control/">
+          <span class="entry-type">방법</span>
+          <h3>힘/위치 하이브리드 제어</h3>
+          <p>접촉 작업에서 제약 방향으로는 힘을, 자유 방향으로는 위치를 동시에 제어하는 전략.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

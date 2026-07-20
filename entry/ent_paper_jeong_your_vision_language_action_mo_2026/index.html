@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>你的视觉-语言-动作模型已具备路径偏离检测的注意力头 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">你的视觉-语言-动作模型已具备路径偏离检测的注意力头</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>你的视觉-语言-动作模型已具备路径偏离检测的注意力头</h1>
+      <p class="entry-name-en">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.13782v1.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文在冻结的视觉-语言-动作模型中识别出稀疏的“导航头”，其注意力熵信号可指示轨迹偏离，从而实现了无需训练的异常检测器和轻量强化学习回退机制。在VLN-CE R2R与RxR上达到44.6%的偏离检测率和11.7%的误检率，并在AgileX Scout 2.0移动机器人上验证了完整的检测-恢复流程。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2603.13782" target="_blank" rel="noopener">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Vision-Language-Action (VLA) models have demonstrated strong potential for predicting semantic actions in navigation tasks, demonstrating the ability to reason over complex linguistic instructions and visual contexts. However, they are fundamentally hindered by visual-reasoning hallucinations that lead to trajectory deviations. Addressing this issue has conventionally required training external critic modules or relying on complex uncertainty heuristics. In this work, we discover that monitoring a few attention heads within a frozen VLA model can accurately detect path deviations without incurring additional computational overhead. We refer to these heads, which inherently capture the spatiotemporal causality between historical visual sequences and linguistic instructions, as Navigation Heads. Using these heads, we propose an intuitive, training-free anomaly-detection framework that monitors their signals to detect hallucinations in real time. Surprisingly, among over a thousand attention heads, a combination of just three is sufficient to achieve a 44.6 % deviation detection rate with a low false-positive rate of 11.7 %. Furthermore, upon detecting a deviation, we bypass the heavy VLA model and trigger a lightweight Reinforcement Learning (RL) policy to safely execute a shortest-path rollback. By integrating this entire detection-to-recovery pipeline onto a physical robot, we demonstrate its practical robustness. All source code will be publicly available.</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2603.13782v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">用于人形接触规划的自我视觉世界模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_self_attention_equation/">缩放点积自注意力</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_material_al_mg_alloy_humanoid/">人形机器人轻量化结构用铝镁合金</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">喷气动力人形机器人的统一多速率模型预测控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">LEGS｜微调无TeleopVLA，用于体现高斯泼溅世界中的人形移动操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_world_action_models_are_zero_s_2026/">世界行动模型是零样本策略</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_vla_towards_universal_2025/">Humanoid-VLA｜通过视觉集成实现通用人形控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">LeVERB｜具有潜在视觉语言指令的人形全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">探索基于GPT的大语言模型在虚拟现实人机团队协作仿真中的可变自主性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mishra_does_elderly_enjoy_playing_bin_2021/">老年人是否喜欢与机器人玩宾果？——以人形机器人Nadine为例的案例研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">通过主动空间脑和可泛化动作小脑实现人形全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pi0_2024/">π0：用于通用机器人控制的视觉-语言-动作流模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评估</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">面向传感器到视觉动作识别的语义感知自适应知识蒸馏</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">扩散策略：通过动作扩散实现视觉运动策略学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_jeong_your_vision_language_action_mo_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LeVERB｜具有潜在视觉语言指令的人形全身控制</h3>
+          <p>LeVERB 的实现路径是先把语言指令、相机图像/多视角观测、仿真交互数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、潜变量/动作 token预测全身轨迹/动作序列、动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_vla_towards_universal_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid-VLA｜通过视觉集成实现通用人形控制</h3>
+          <p>Humanoid-VLA 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹编码成多模态表征，再用扩散策略/流匹配、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">
+          <span class="entry-type">论文</span>
+          <h3>面向传感器到视觉动作识别的语义感知自适应知识蒸馏</h3>
+          <p>本文提出SAKDN框架，通过将多个可穿戴传感器模态的知识蒸馏到RGB视频学生网络中实现动作识别，并利用格拉姆角场虚拟图像以及自适应教师融合和图引导语义迁移模块完成跨模态知识传递。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mishra_does_elderly_enjoy_playing_bin_2021/">
+          <span class="entry-type">论文</span>
+          <h3>老年人是否喜欢与机器人玩宾果？——以人形机器人Nadine为例的案例研究</h3>
+          <p>本文报告了将人形社交机器人Nadine作为自主宾果游戏主持人部署在疗养院的案例，通过计算机视觉分析表明，在机器人主持的活动期间，老年居民笑得更多，工作人员活动减少。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">
+          <span class="entry-type">论文</span>
+          <h3>扩散策略：通过动作扩散实现视觉运动策略学习</h3>
+          <p>扩散策略将机器人视觉运动策略表示为动作空间上的条件去噪扩散过程，学习动作分布的分数梯度，并在视觉观测条件下通过随机朗之万动力学迭代去噪生成动作。该文在四个操作基准的15项任务以及真实机器人系统上进行了…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_action_models_are_zero_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界行动模型是零样本策略</h3>
+          <p>这篇工作先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>机器人视觉-语言-动作：数据集、基准与数据引擎综述</h3>
+          <p>Despite remarkable progress in Vision--Language--Action (VLA) models, a central bottleneck remains…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egovla_learning_vision_languag_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型</h3>
+          <p>EgoVLA 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、潜变量/动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">
+          <span class="entry-type">论文</span>
+          <h3>探索基于GPT的大语言模型在虚拟现实人机团队协作仿真中的可变自主性</h3>
+          <p>本文提出了一个基于Unity的虚拟现实仿真框架，用户可通过自然语言与由独立GPT-4实例驱动的多个仿真机器人对话，并利用OpenAI的函数调用API将非结构化语音转换为结构化机器人动作。一项包含12名…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_material_al_mg_alloy_humanoid/">
+          <span class="entry-type">材料</span>
+          <h3>人形机器人轻量化结构用铝镁合金</h3>
+          <p>概述 一种将高强度铝合金与镁合金结合的轻量化结构材料体系，广泛用于人形机器人框架、关节和外壳，在保持刚度的同时减轻重量。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>喷气动力人形机器人的统一多速率模型预测控制</h3>
+          <p>本文提出了一种用于喷气动力人形机器人iRonCub的多速率模型预测控制框架，将质心动量动力学与二阶非线性喷气发动机动力学相结合，并通过MuJoCo仿真进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">
+          <span class="entry-type">论文</span>
+          <h3>LEGS｜微调无TeleopVLA，用于体现高斯泼溅世界中的人形移动操作</h3>
+          <p>LEGS 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>通过主动空间脑和可泛化动作小脑实现人形全身操作</h3>
+          <p>本文提出了一种多智能体框架——主动空间脑负责主动空间感知与规划，可泛化动作小脑负责解耦的下肢移动与上肢灵巧操作——无需任务特定的真实机器人数据即可实现空间感知的人形全身操作，并在空间智能基准与真实Un…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_self_attention_equation/">
+          <span class="entry-type">方程</span>
+          <h3>缩放点积自注意力</h3>
+          <p>&gt; 生活实例：你在读一句话时，每个字都会“回头看”整句话，并根据相关性决定把注意力放在哪些字上。例如“我把苹果吃了”中，“吃”更关注“苹果”而不是“我”。Self-attention…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">
+          <span class="entry-type">论文</span>
+          <h3>在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性</h3>
+          <p>这篇2024年arXiv论文介绍了一个Unity…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pi0_2024/">
+          <span class="entry-type">论文</span>
+          <h3>π0：用于通用机器人控制的视觉-语言-动作流模型</h3>
+          <p>Robot learning holds tremendous promise to unlock the full potential of flexible, general, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界动作模型：具身智能的下一个前沿</h3>
+          <p>2026 年综述，将 World Action Models（WAMs）定义为统一预测性世界建模与动作生成的具身基础模型，并将现有方法组织为级联式（Cascaded）与联合式（Joint）架构。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>用于人形接触规划的自我视觉世界模型</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

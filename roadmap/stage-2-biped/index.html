@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>阶段 2：双足平台——从仿真到第一台会走的机器人 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">阶段 2：双足平台——从仿真到第一台会走的机器人</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="2">阶段 2：双足平台——从仿真到第一台会走的机器人</h1>
+<blockquote>
+<p>⚠️ 本路线图内容基于公开资料与理论知识整理，未经实机验证；涉及电气与机械操作时请自行核实安全规范。</p>
+</blockquote>
+<p>双足（biped）是"人形"的灵魂，也是 0→1 摔机率最高的环节。本阶段目标：选一台开源双足/轮足平台，先在仿真跑通控制栈，再花钱复刻，最终在平地稳定行走。所有方案数据均来自 <code>data/roadmap/research/</code> 调研档案（访问日期 2026-07-01，逐条标注来源）。</p>
+<hr />
+<h2 id="1">1. 仿真先行：零硬件把控制栈跑通</h2>
+<p><strong>做什么</strong>：在买任何一颗电机之前，先在电脑上装物理仿真器，把双足模型的站立和行走跑通。两条主流路线：</p>
+<ul>
+<li><a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a>：轻量免费，笔记本即可跑。OpenLoong 的 <a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">OpenLoong-Dyn-Control</a> 就是部署在 MuJoCo 上的 MPC + WBC 全身控制框架，自带行走/跳跃/盲踩障碍示例——不写一行硬件代码就能学完全尺寸人形的经典控制管线（来源：openloong-qinglong.md）。</li>
+<li><a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a>：GPU 大规模并行仿真，适合强化学习训练，需 NVIDIA 显卡。Berkeley Humanoid Lite 的目录即按 Isaac Lab 组织，URDF/MJCF/USD 三种格式齐全（来源：berkeley-humanoid-lite.md）。</li>
+</ul>
+<p><strong>为什么</strong>：双足复刻失败的最大原因不是装配，而是"硬件装好了，控制没跑通，一开机就摔"。仿真把"算法错"与"硬件错"隔离，上实机后就只剩硬件维度要排查。仿真器选型另见 <a href="/wiki/chapters/chapter-23/">第 23 章 仿真与物理引擎</a>。</p>
+<p><strong>你的情况怎么分析</strong>：无 NVIDIA 显卡、零预算 → MuJoCo + OpenLoong-Dyn-Control，一分钱不花学到 MPC+WBC 正餐。有 RTX 显卡、走 RL 路线 → 装 Isaac Lab，后续选 Berkeley 时训练环境无缝衔接。纯 Python 背景 → <code>pip install upkie</code> 在 PyBullet 里跑平衡示例（来源：upkie.md），当天就有正反馈。</p>
+<hr />
+<h2 id="2_1">2. 平衡理论阶梯：按顺序啃，别跳级</h2>
+<p>双足平衡是一架梯子，每级一张卡片，在仿真里验证一级再往上走。</p>
+<p><strong>第一级：ZMP（零力矩点）</strong>
+- 做什么：理解 <a href="/entry/ent_paper_zero_moment_point_2024/">Zero Moment Point</a>——机器人不倾倒的充要条件是地面反力等效作用点落在支撑多边形内。在仿真里观察 ZMP 何时跑出支撑域、机器人何时倒。
+- 为什么：ZMP 是双足稳定性最经典的判据，后续步态规划都在"控制 ZMP"上做文章。背景见 <a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a> 与 <a href="/wiki/chapters/chapter-15/">第 15 章 运动生成与 Locomotion</a>。
+- 你的情况怎么分析：轮足（Upkie）路线同样要学——支撑多边形换成两轮接地点连线即可。</p>
+<p><strong>第二级：步态规划（Gait Planning）</strong>
+- 做什么：学习 <a href="/entry/ent_method_gait_planning/">步态规划</a>：给定目标速度，如何生成摆动脚落点、支撑/摆动相切换时序和质心轨迹。入门经典是 LIPM（线性倒立摆模型）+ 捕获点分析。
+- 为什么：步态规划是决策层（脚往哪儿踩），MPC/WBC 是执行层（关节怎么出力）；分层才能定位"走歪了"是落点错还是力控没跟上。
+- 你的情况怎么分析：RL 路线理解概念即可——策略自己学落点；MPC 路线必须吃透。</p>
+<p><strong>第三级：MPC（模型预测控制）</strong>
+- 做什么：理解 <a href="/entry/ent_method_model_predictive_control/">模型预测控制</a>：每步用简化动力学向前预测一个时间窗、解优化问题、只执行第一步，滚动前进。在 OpenLoong 的 MuJoCo 示例里改权重观察行走质量变化。
+- 为什么：MPC 显式处理约束（脚不打滑、力矩有限），是高动态双足的主流实机方案——BRUCE 用可变周期 MPC 实现行走/跑步/跳跃（来源：bruce-westwood.md）。
+- 你的情况怎么分析：数学基础够 → MPC 上限最高；数学一般 → 跳过手写 MPC，直接用 RL 路线。</p>
+<p><strong>第四级：全身控制 WBC（Whole-Body Control）</strong>
+- 做什么：理解 <a href="/entry/ent_method_whole_body_control/">全身控制</a>：把全身关节力矩当作带任务优先级的二次规划（QP）求解——先保证不摔倒和脚不打滑，余量再分给手臂等次要任务。
+- 为什么：几十自由度的人形，单关节 PID 管不住耦合动力学；MPC 的输出正是由 WBC 分配到各关节的（OpenLoong 即 MPC+WBC 架构）。
+- 你的情况怎么分析：RL 路线可暂缓深挖推导，但 sim-to-real 排查时，期望与实际力矩的差异是重要诊断信号。</p>
+<p><strong>第五级：RL 路线</strong>
+- 做什么：<a href="/entry/ent_algorithm_ppo/">PPO</a> + <a href="/entry/ent_method_domain_randomization/">域随机化</a> + <a href="/entry/ent_method_sim_to_real/">sim-to-real</a> 组合：仿真里用 PPO 训行走策略，训练时随机化摩擦、质量、电机延迟等参数，再零样本部署实机。ToddlerBot（MuJoCo/MJX + PPO）与 Berkeley Humanoid Lite（Isaac Lab）都是该路线的开源完整实现（来源：各自调研档案）。
+- 为什么：RL 绕开手工建模调参的重劳动，且已被这两台机器验证"个人可复现"。sim2real 差距本质是"你没建模的那部分物理"，域随机化让策略对它不敏感。
+- 你的情况怎么分析：有 GPU、ML 背景 → 主场，优先 ToddlerBot 或 Berkeley；无 GPU → 租云算力训练，或退回 MPC 路线（OpenLoong 示例 CPU 即可跑）。</p>
+<hr />
+<h2 id="3">3. 方案选型对比与决策树</h2>
+<p>全部参数来自调研档案，档案标"未知"的项如实保留。</p>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>成本（BOM）</th>
+<th>身高/重量</th>
+<th>DoF</th>
+<th>执行器</th>
+<th>主控</th>
+<th>复刻难度</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ToddlerBot</td>
+<td>约 $6,000（90% 花在电机与电脑）</td>
+<td>0.56 m / 3.4 kg</td>
+<td>30（臂 7×2、腿 6×2、颈 2、腰 2）</td>
+<td>ROBOTIS Dynamixel 总线舵机</td>
+<td>Jetson Orin NX 16GB</td>
+<td>低——纯 Python/pip 安装，数字孪生零样本 sim2real；无经验者 3 天装完（论文验证）</td>
+<td><a href="https://arxiv.org/html/2502.00893v2">论文</a>，toddlerbot.md</td>
+</tr>
+<tr>
+<td>Berkeley Humanoid Lite</td>
+<td>美国 $4,312 / 中国 $3,236</td>
+<td>0.8 m / 16 kg</td>
+<td>22（腿 6×2、臂 5×2）</td>
+<td>自研 6512/5010 准直驱，3D 打印摆线减速器</td>
+<td>Intel N95</td>
+<td>中——Isaac Lab 训练 + C 底层部署；需自制 22 台执行器、焊 CAN</td>
+<td><a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf">技术报告</a>，berkeley-humanoid-lite.md</td>
+</tr>
+<tr>
+<td>Upkie（轮足）</td>
+<td>约 $3,000 + 60 小时打印</td>
+<td>未知（因构型而异）</td>
+<td>6（每腿：髋、膝、轮）</td>
+<td>mjbots qdd100 ×4 + moteus</td>
+<td>Raspberry Pi 4 + pi3hat</td>
+<td>低——自带 PID/MPC/RL 三种平衡示例；轮足避开纯步行调参地狱</td>
+<td><a href="https://hackaday.io/project/185729-upkie-wheeled-biped-robots">项目页</a>，upkie.md</td>
+</tr>
+<tr>
+<td>BRUCE</td>
+<td>约 $6.5K（第三方论文口径，官方询价制）</td>
+<td>70 cm / 4.8 kg</td>
+<td>16（腿 5×2、臂 3×2）</td>
+<td>Koala BEAR 准直驱（250 g，峰值 10.5 N·m，膝部液冷）</td>
+<td>6 TOPS 算力板</td>
+<td>高——可变周期 MPC 能跑能跳，但整机框架未公开，只能商务采购</td>
+<td><a href="https://arxiv.org/html/2502.00893v2">对比表</a>，bruce-westwood.md</td>
+</tr>
+<tr>
+<td>OpenLoong 青龙</td>
+<td>未知（公版机不自售）</td>
+<td>185 cm / 80 kg+</td>
+<td>43（含五指灵巧手）</td>
+<td>旋转执行器为主（具体型号未知）</td>
+<td>400 TOPS 控制器</td>
+<td>不适合个人复刻（机构级条件）——但 MPC+WBC 全栈开源，MuJoCo 可零硬件学习</td>
+<td><a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">框架 README</a>，openloong-qinglong.md</td>
+</tr>
+</tbody>
+</table>
+<p><strong>决策树</strong>：</p>
+<ol>
+<li><strong>预算 &lt; $3.5k？</strong> 是 → Upkie（约 $3,000）：真实硬件上学平衡控制成功率最高、摔机代价最小，可作纯双足前的练兵。否 → 问题 2。</li>
+<li><strong>要走路的人形，动手能力如何？</strong> 零基础/纯软件背景 → ToddlerBot：总线舵机免调 FOC、文档/装配视频/治具齐全，代价是 BOM 最贵。有 3D 打印 + 焊接 + 嵌入式经验 → Berkeley：中国采购约 $3,236 拿到 22 DoF 能跑 RL 行走的人形，代价是自己造 22 台执行器。</li>
+<li><strong>要高动态或全尺寸？</strong> 高动态研究（机构）→ BRUCE，但整机开源程度存疑，采购前需向供应商确认软件授权。全尺寸 → 个人不要想复刻青龙，只把 OpenLoong-Dyn-Control 当免费教材；国内团队可关注 2025-08 开源的轻量机型 NanoLoong。</li>
+</ol>
+<p><strong>你的情况怎么分析</strong>：列出"预算、每周可投入小时数、有无 3D 打印机、有无 GPU、摸没摸过电烙铁"五项，对照上表逐项打勾，哪行全勾就是哪台——第一台双足的核心 KPI 是"走起来"，不是一步到位。</p>
+<hr />
+<h2 id="4">4. 复刻流程分解</h2>
+<p>以文档齐全的平台（ToddlerBot / Berkeley）为模板，共八步，每步"动作→原理→自我分析"。</p>
+<p><strong>Step 1 采购清单（BOM）核对</strong>：从官方 BOM 下单并记录到手价与货期（Berkeley 技术报告给了美中两套 BOM，国内按中国口径采购）。电机与电脑占成本大头（ToddlerBot 的 90%），砍预算先砍对地方。BOM 未列明规格的替代品，需自行向供应商确认参数。</p>
+<p><strong>Step 2 3D 打印结构件</strong>：按官方文件打印（ToddlerBot 走 MakerWorld，Berkeley 走 GitHub Releases）；摆线齿轮用普通桌面 FDM + PLA 即可（官方做过 60 小时耐久测试）——结构精度决定背隙，背隙大则力控抖动，不要自行换材料。没打印机就用在线打印服务，功能件指定与官方一致的填充率/材料。</p>
+<p><strong>Step 3 机械装配</strong>：分模块装（单腿→单臂→躯干→总装），每装完一个模块手动检查顺畅度与干涉，避免总装后数倍返工。动手经验少就选舵机总线平台（拧螺丝插线为主）；敢上自研执行器的，先单装一台 6512 空载测试通过，再批量复制 22 台。</p>
+<p><strong>Step 4 零点标定与系统辨识（sysID）</strong>：用打印治具把各关节摆到机械零点写入偏移；同型号电机做一次 sysID，参数回填仿真模型。这是 sim-to-real 的地基——ToddlerBot 的数字孪生方案（治具 1 分钟校准 + 同型号电机只做 1 次 sysID）正是其零样本迁移的关键。跳过 sysID 的典型症状是"仿真很稳、实机发抖"。</p>
+<p><strong>Step 5 仿真对齐</strong>：把实测质量、质心、零点、电机参数全部回填 URDF/MJCF，重跑行走策略确认仿真里依然稳定（MPC 重调权重 / RL 必要时重训）——加工误差让真机不是图纸上的那台，对齐就是承认并显性化它。RL 路线对 ±10% 质量误差不敏感，MPC 路线要更仔细。</p>
+<p><strong>Step 6 首次通电（Smoke Test）</strong>：吊架悬挂（双脚离地）→ 验证急停链路 → 逐关节使能做小幅度正弦摆动 → 查温度、电流、通信。电气错误在这一步集中暴露，悬挂状态下任何失控都不摔机；急停必须在此时验证有效。两人操作：一人盯界面，一人守急停。</p>
+<p><strong>Step 7 站立</strong>：吊架逐渐减载 → 双足着地静态站立 → 加质心小幅摆动与轻推恢复。站立是行走的子集——站立控制回路（踝/髋策略）调通，行走只是把平衡点周期性移出支撑域再捕获。RL 路线这步若不成就回 Step 4/5 查标定对齐，别在实机硬调奖励函数。</p>
+<p><strong>Step 8 行走</strong>：原地踏步 → 直线 → 转弯 → 定时长连续行走，记录电池电压、电机温度、摔倒次数。续航预期按档案口径管理：ToddlerBot RL 行走实测 19 分钟（过热降频为止）、Berkeley 的 6S 4000 mAh LiPo 约 30 分钟、BRUCE 约 20 分钟——达到同量级即正常。</p>
+<hr />
+<h2 id="5">5. 验收标准</h2>
+<p>全部通过方可进入下一阶段：</p>
+<ol>
+<li><strong>仿真关</strong>：所选平台官方示例（或自训策略）在 MuJoCo/Isaac Lab 连续行走 10 分钟仿真时间不摔倒，施加随机外力扰动后能恢复。</li>
+<li><strong>站立关</strong>：实机脱离吊架全负重静态站立 ≥ 5 分钟，各关节电机温度低于官方限值（未标注的型号需自行向供应商确认）。</li>
+<li><strong>行走关</strong>：平整硬质地面连续行走 ≥ 10 分钟，无摔倒、无明显跑偏（累计偏航 &lt; 90°）。</li>
+<li><strong>抗扰关</strong>：行走/站立中经受单手轻推（约 5–10 N、0.5 s 内）后恢复平衡，不倒地、不进入保护性关机。</li>
+<li><strong>保护关</strong>：吊架保护下人为触发摔倒场景，急停与跌落保护生效——触地前关节卸力或进入阻尼模式，结构件无断裂（参照：ToddlerBot 可承受约 7 次摔倒，修复仅需 21 分钟打印 + 14 分钟装配）。</li>
+<li><strong>安全关</strong>：急停从按下到切断动力的响应可演示验证；电池充电存放全程符合锂电池安全规范。</li>
+</ol>
+<hr />
+<h2 id="6">6. 安全红线</h2>
+<p>任一不满足，禁止实机通电：</p>
+<ul>
+<li><strong>急停（E-Stop）</strong>：必须有独立于软件链路的硬件级 <a href="/entry/ent_component_emergency_stop_system_2024/">急停系统</a>——按下即物理切断电机动力，不经过主控。BRUCE 即配独立无线急停（来源：bruce-westwood.md）；自复刻平台至少要有线急停放操作员手边。</li>
+<li><strong>吊架/保护架</strong>：首次通电、站立、行走三关必须在吊架或顶部保护绳下进行——3.4 kg 的 ToddlerBot 摔一下尚且要修，16 kg 的 Berkeley 倾倒足以伤人伤机。调试时手指远离齿轮啮合区与关节活动范围，使能电机前确认无人接触机器人。</li>
+<li><strong>锂电池安全</strong>：LiPo 是桌面级人形最大的火灾隐患。充电必须有人值守、用防爆袋/防火容器；过放、鼓包、摔过的电池立即退役，规范见 <a href="/entry/ent_tech_li_battery_humanoid/">锂电池技术卡片</a>。6S 4000 mAh 这类大容量电池短路能量足以点燃桌面杂物，接线前再查一遍极性。</li>
+</ul>
+<hr />
+<h2 id="7">7. 常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仿真里稳、实机上抖或摔倒（sim-to-real gap）</td>
+<td>零点标定误差；sysID 未做；质量/摩擦建模偏差</td>
+<td>重做治具校准与系统辨识；核对 URDF/MJCF 质量与实称值；RL 路线加大 <a href="/entry/ent_method_domain_randomization/">域随机化</a> 范围重训</td>
+</tr>
+<tr>
+<td>行走几分钟后步态变软、性能下降</td>
+<td>执行器过热降频（ToddlerBot 实测 19 分钟即过热降频）</td>
+<td>读电机温度遥测；缩短连续运行或加散热；检查是否长期贴着峰值扭矩工作</td>
+</tr>
+<tr>
+<td>静止站立缓慢向一侧倾倒</td>
+<td><a href="/entry/ent_component_imu_2024/">IMU</a> 零偏漂移；姿态滤波发散</td>
+<td>静置 30 s 看姿态读数是否漂移；重做零偏校准；查滤波器协方差参数</td>
+</tr>
+<tr>
+<td>关节高频抖动、嗡嗡作响</td>
+<td>增益过高；背隙大；总线丢包致反馈延迟</td>
+<td>降增益复测；手摇关节感受背隙；统计丢包率（基准：ToddlerBot 50 Hz、Berkeley 250 Hz CAN）</td>
+</tr>
+<tr>
+<td>一给行走指令就向前栽</td>
+<td>落点规划滞后于质心；支撑/摆动相切换时序错</td>
+<td>先在仿真复现同一指令；对照 <a href="/entry/ent_method_gait_planning/">步态规划</a> 检查落点与 ZMP 轨迹是否同步</td>
+</tr>
+<tr>
+<td>摔倒后同一结构件反复断裂；续航远低于档案口径</td>
+<td>打的是旧版打印件；电池老化；某关节持续大电流</td>
+<td>核对仓库最新打印件与 changelog；测电池内阻；看各关节电流分布找异常关节——通常是装配过紧或标定错</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">配套阅读</h2>
+<ul>
+<li><a href="/roadmap/playbooks/sim-setup/">仿真环境搭建手册</a> —— 仿真先行原则的完整落地流程</li>
+<li><a href="/roadmap/playbooks/compute-selection/">计算平台选型手册</a> —— 主控与实时性方案</li>
+<li><a href="/roadmap/playbooks/sensor-selection/">传感器选型手册</a> —— IMU、编码器与力觉传感</li>
+<li><a href="/roadmap/index/">路线图总览</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/stage-1-actuator/">← 上一页<span>阶段一：造一个关节（执行器）</span></a>
+      
+      
+      <a class="next" href="/roadmap/stage-3-humanoid/">下一页 →<span>阶段 3：完整人形机器人——从双足平台到&#34;听得懂、走得过去、抓得起来&#34;</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#2">阶段 2：双足平台——从仿真到第一台会走的机器人</a><ul>
+<li><a href="#1">1. 仿真先行：零硬件把控制栈跑通</a></li>
+<li><a href="#2_1">2. 平衡理论阶梯：按顺序啃，别跳级</a></li>
+<li><a href="#3">3. 方案选型对比与决策树</a></li>
+<li><a href="#4">4. 复刻流程分解</a></li>
+<li><a href="#5">5. 验收标准</a></li>
+<li><a href="#6">6. 安全红线</a></li>
+<li><a href="#7">7. 常见坑与排查</a></li>
+<li><a href="#_1">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

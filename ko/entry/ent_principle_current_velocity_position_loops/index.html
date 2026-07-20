@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>전류·속도·위치 제어 루프 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/principle/">원리</a>
+    <span>/</span>
+    <span class="breadcrumb-current">전류·속도·위치 제어 루프</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">원리</div>
+      <h1>전류·속도·위치 제어 루프</h1>
+      <p class="entry-name-en">Current / Velocity / Position Control Loops</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#4.5.5 电流环、速度环、位置环的级联控制 by scripts/backfill_nonpaper_entries.py. Body backfilled from chapter-04.md section &#39;4.5.5 电流环、速度环、位置环的级联控制&#39; by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">1단계 · 관절 하나 만들기</span>
+        <span class="roadmap-badge-role">핵심</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>서보 드라이브의 중첩 피드백 제어 계층: 내측 전류 루프는 토크, 속도 루프는 속도, 외측 위치 루프는 관절 각도를 제어.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>서보 드라이브의 캐스케이드 피드백 제어 계층: 내부 전류 루프는 토크를 제어하고, 중간 속도 루프는 회전 속도를 제어하며, 외부 위치 루프는 관절 각도를 제어합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="455">4.5.5 전류 루프, 속도 루프, 위치 루프의 캐스케이드 제어</h3>
+<p>실제 관절 구동은 일반적으로 3단계 캐스케이드 제어를 사용합니다: 최내층 <strong>전류 루프</strong>(토크 루프), 중간 <strong>속도 루프</strong>, 최외층 <strong>위치 루프</strong>. 각 계층의 대역폭은 안정성을 보장하기 위해 다음 계층의 약 5-10배입니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 전류 루프, 속도 루프, 위치 루프, PI 제어기, 피드포워드, 안티와인드업, 대역폭 캐스케이드</p>
+<ul>
+<li><strong>전류 루프(current loop)</strong>: 모터 상전류를 제어 대상으로 하는 가장 빠른 내부 루프로, 출력 토크를 직접 결정합니다.</li>
+<li><strong>속도 루프(velocity loop)</strong>: 모터 회전 속도를 제어 대상으로 하며, 전류 명령을 출력합니다.</li>
+<li><strong>위치 루프(position loop)</strong>: 관절 각도를 제어 대상으로 하며, 속도 명령을 출력합니다.</li>
+<li><strong>PI 제어기(proportional-integral controller)</strong>: 비례항과 적분항으로 구성된 고전적인 제어기로, 정상 상태 오차를 제거하는 데 사용됩니다.</li>
+<li><strong>피드포워드(feedforward)</strong>: 예상 궤적에 따라 제어량을 미리 계산하여 추가함으로써 추종 성능을 향상시킵니다.</li>
+<li><strong>안티와인드업(anti-windup)</strong>: 포화 상태에서 적분기가 과도하게 누적되는 것을 방지하여, 포화 해제 후 큰 오버슈트를 피합니다.</li>
+<li><strong>대역폭 캐스케이드(bandwidth cascade)</strong>: 내부 루프의 대역폭이 외부 루프보다 훨씬 높아, 외부 루프 명령이 내부 루프에 의해 빠르게 추종되도록 보장합니다.</li>
+</ul>
+</div>
+<p>전류 루프의 대역폭은 일반적으로 1-5 kHz에 도달할 수 있으며, 속도 루프는 50-500 Hz, 위치 루프는 5-100 Hz입니다. 구체적인 값은 부하 관성, 강성 및 샘플링 속도에 따라 달라집니다.</p>
+<h3 id="_3">휴머노이드 로봇 관절 제어에서의 중요성</h3>
+<p>휴머노이드 로봇의 관절은 일반적으로 높은 동적 응답과 정밀한 위치 추종을 동시에 실현해야 합니다. 3단계 캐스케이드 제어는 계층적 대역폭 설계를 통해 내부 루프가 전류 교란을 빠르게 억제하고, 중간 루프가 속도 평활성을 보장하며, 외부 루프가 궤적 추종을 실현하도록 합니다. 이는 다자유도 휴머노이드 로봇의 안정적인 움직임의 기초입니다. 세 루프의 파라미터를 적절히 조정하고 피드포워드 및 안티와인드업 메커니즘을 추가하면 보행, 조작 및 충돌 회복 능력을 크게 향상시킬 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p10_2_3/">全身控制 WBC</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_servo_drive_2024/">Servo Drive</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_pid_control/">PID 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">내부 토크 및 속도 피드백 루프를 갖춘 로봇 임피던스 제어 및 수동성 분석</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_servo_drive_2024/">Servo Drive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_field_oriented_control/">전계 지향 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_oem_unitree_robotics/">유닛리 로보틱스</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_principle_current_velocity_position_loops"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">완제품 업체</span>
+          <h3>유닛리 로보틱스</h3>
+          <p>중국 로봇 기업으로, 고토크 액추에이터와 비용 중심 설계에 초점을 맞춘 Unitree H1 및 G1 휴인oid 플랫폼을 개발하고 있습니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_servo_drive_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Servo Drive</h3>
+          <p>로봇 관절용 모터 제어를 위한 고전류로 저전력 명령 신호를 변환하는 전자 증폭기.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">방법</span>
+          <h3>전계 지향 제어</h3>
+          <p>3상 정자 전류를 회전자 자속에 맞춘 d-q 좌표계로 변환하여 토크와 자속을 독립적으로 제어하는 모터 제어 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_pid_control/">
+          <span class="entry-type">방법</span>
+          <h3>PID 제어</h3>
+          <p>추적 오차의 비례·적분·미분 항의 선형 조합으로 제어 신호를 계산하는 기초 피드백 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">
+          <span class="entry-type">논문</span>
+          <h3>내부 토크 및 속도 피드백 루프를 갖춘 로봇 임피던스 제어 및 수동성 분석</h3>
+          <p>본 논문은 내륜 토크 대역폭, 속도 필터링 및 샘플링 주파수가 임피던스 제어 전기 관절의 안정적인 강성과 감쇠 범위(Z-width)를 제한하는 방식을 분석하고, 복잡한 제어기 없이…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>全身控制 WBC</h3>
+          <p>WBC 控制器、多任务协调演示、求解时间 &lt; 1 ms</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#455">4.5.5 전류 루프, 속도 루프, 위치 루프의 캐스케이드 제어</a></li>
+<li><a href="#_3">휴머노이드 로봇 관절 제어에서의 중요성</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

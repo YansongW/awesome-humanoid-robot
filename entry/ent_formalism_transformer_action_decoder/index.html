@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transformer 动作解码器形式化 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/formalism/">形式化方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Transformer 动作解码器形式化</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">形式化方法</div>
+      <h1>Transformer 动作解码器形式化</h1>
+      <p class="entry-name-en">Transformer Action Decoder Formalism</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">基础学科</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">基础层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Common abstraction across VLAs such as OpenVLA, RT-2, and π0. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>一种使用 Transformer 架构和学习的动作 token 词表，从视觉-语言上下文解码机器人动作的形式化生成框架。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Vaswani et al., Attention Is All You Need, NeurIPS 2017</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2406.09246" target="_blank" rel="noopener">OpenVLA: An Open-Source Vision-Language-Action Model</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">includes</span>
+            <a href="/entry/ent_self_attention_equation/">缩放点积自注意力</a>
+            
+              
+                
+              
+              <span class="rel-desc">Transformer 动作解码器包含缩放点积自注意力。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">has_prerequisite</span>
+            <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+            
+              
+                
+              
+              <span class="rel-desc">解码器的矩阵运算和注意力机制以线性代数为基础。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="transformer">Transformer 动作解码器形式化的定义与定位</h3>
+<p>Transformer 动作解码器形式化属于 <strong>形式化方法</strong> 类型。 所属领域包括：AI 模型与算法, 基础学科。 价值链层级：智能层, foundations。 一种使用 Transformer 架构和学习的动作 token 词表，从视觉-语言上下文解码机器人动作的形式化生成框架。 英文名称为 <em>Transformer Action Decoder Formalism</em>。 韩文名称为 <em>Transformer 액션 디코더 공식화</em>。</p>
+<h3 id="transformer_1">Transformer 动作解码器形式化的数学与原理基础</h3>
+<p>Transformer 动作解码器形式化建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，Transformer 动作解码器形式化通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_2">算法步骤与实现要点</h3>
+<p>在实际实现Transformer 动作解码器形式化时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_3">典型应用与局限性</h3>
+<p>Transformer 动作解码器形式化可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>vla</li>
+<li>transformer</li>
+<li>action_decoder</li>
+<li>autoregressive_generation</li>
+<li>humanoid_robot</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键形式化方法之一，Transformer 动作解码器形式化在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/1706.03762">Vaswani et al., Attention Is All You Need, NeurIPS 2017</a></li>
+<li><a href="https://arxiv.org/abs/2406.09246">OpenVLA: An Open-Source Vision-Language-Action Model</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+              <span class="rel-desc">Transformer 动作解码器形式化以线性代数为前置基础。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">Transformer 动作解码器形式化引用OpenVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">包含</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_self_attention_equation/">缩放点积自注意力</a>
+              <span class="rel-desc">Transformer 动作解码器包含缩放点积自注意力作为核心方程。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+              <span class="rel-desc">Transformer 动作解码器形式化引用OpenVLA：一个开源的视觉-语言-动作模型。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">Transformer 动作解码器形式化引用OpenVLA。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_self_attention_equation/">缩放点积自注意力</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">缩放点积自注意力引用Transformer 动作解码器形式化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_scalemogen_autoregressive_next_2026/">用下一尺度自回归把文本生成的人体动作做成由粗到细</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">用下一尺度自回归把文本生成的人体动作做成由粗到细使用Transformer 动作解码器形式化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_combatvla_an_efficient_vision_2025/">CombatVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">CombatVLA使用Transformer 动作解码器形式化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_action_token_prediction/">动作 token 预测</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">形式化</span>
+              <span class="rel-desc">动作 token 预测形式化了 Transformer 动作解码器生成框架。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wam4d_fast_4d_world_action_mod_2026/">WAM4D: Fast 4D World Action Model via Spatial Register Tokens</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_formalism_transformer_action_decoder"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_scalemogen_autoregressive_next_2026/">
+          <span class="entry-type">论文</span>
+          <h3>用下一尺度自回归把文本生成的人体动作做成由粗到细</h3>
+          <p>ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation is a paper on 人体动作 for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA：一个开源的视觉-语言-动作模型</h3>
+          <p>一个 70 亿参数的开源 VLA 模型，基于 Open X-Embodiment 数据集的 97 万条真实机器人演示进行预训练，融合 Llama 2、DINOv2 和 SigLIP 以实现通用操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wam4d_fast_4d_world_action_mod_2026/">
+          <span class="entry-type">论文</span>
+          <h3>WAM4D: Fast 4D World Action Model via Spatial Register Tokens</h3>
+          <p>arXiv:2606.14048v2 Announce Type: replace-cross Abstract: World action models (WAMs) have recently…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_self_attention_equation/">
+          <span class="entry-type">方程</span>
+          <h3>缩放点积自注意力</h3>
+          <p>&gt; 生活实例：你在读一句话时，每个字都会“回头看”整句话，并根据相关性决定把注意力放在哪些字上。例如“我把苹果吃了”中，“吃”更关注“苹果”而不是“我”。Self-attention…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">基础学科</span>
+          <h3>线性代数</h3>
+          <p>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_combatvla_an_efficient_vision_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CombatVLA</h3>
+          <p>CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">方法</span>
+          <h3>动作 token 预测</h3>
+          <p>一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#transformer">Transformer 动作解码器形式化的定义与定位</a></li>
+<li><a href="#transformer_1">Transformer 动作解码器形式化的数学与原理基础</a></li>
+<li><a href="#_2">算法步骤与实现要点</a></li>
+<li><a href="#_3">典型应用与局限性</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

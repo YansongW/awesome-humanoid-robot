@@ -1,0 +1,1533 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Planning · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Task Planning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Task Planning</h1>
+      <p class="entry-name-en">Task Planning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The process of generating a sequence of high-level actions to achieve a goal, often using symbolic representations such as PDDL.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The process of generating high-level action sequences to achieve goals, commonly represented using symbols such as PDDL.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-task-planning">Definition and Positioning of Task Planning</h3>
+<p>Task planning belongs to the <strong>method</strong> type. Its domain includes: AI models and algorithms. Value chain level: intelligence layer. It is the process of generating high-level action sequences to achieve goals, commonly represented using symbols such as PDDL. The English term is <em>Task Planning</em>. The Korean term is <em>작업 계획</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-task-planning">Mathematical and Theoretical Foundations of Task Planning</h3>
+<p>Task planning is built upon relevant mathematical theories and physical laws. Understanding its assumptions, constraints, and derivation processes is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and guarantees of convergence or stability.
+In humanoid robots, which are high-dimensional, underactuated, and strongly coupled systems, task planning typically requires balancing real-time performance, precision, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>When implementing task planning in practice, it is necessary to clarify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable algorithm operation on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>Task planning can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptability remain key issues that need to be addressed in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>method</li>
+<li>chapter_20</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key methods in the humanoid robot industry chain, task planning plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, execution, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_task_adaptive_design_of_modula_2026/">Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yao_3d_visual_illusion_depth_estim_2025/">3D Visual Illusion Depth Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">3D Visual Illusion Depth Estimation mentions Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_schneider_ce_mrs_contrastive_explanation_2024/">CE-MRS: Contrastive Explanations for Multi-Robot Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CE-MRS: Contrastive Explanations for Multi-Robot Systems discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">A Novel Assistive Controller Based on Differential Geometry for Users of the Differential-Drive Wheeled Mobile Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Novel Assistive Controller Based on Differential Geometry for Users of the Differential-Drive Wheeled Mobile Robots discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_enhancing_the_llm_based_robot_2024/">Enhancing the LLM-Based Robot Manipulation Through Human-Robot Collaboration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Enhancing the LLM-Based Robot Manipulation Through Human-Robot Collaboration proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_human_like_badminton_2026/">Learning Human-Like Badminton Skills for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Learning Human-Like Badminton Skills for Humanoid Robots discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_aerial_manipulation_contact_me_2026/">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness mentions Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_3d_affordances_for_bl_2026/">Learning 3D Affordances for Blade Insertion in Cluttered Stowing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Learning 3D Affordances for Blade Insertion in Cluttered Stowing discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ace_agentic_control_for_embodi_2026/">ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pellier_hddl_21_towards_defining_a_for_2023/">HDDL 2.1: Towards Defining a Formalism and a Semantics for Temporal HTN Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">HDDL 2.1: Towards Defining a Formalism and a Semantics for Temporal HTN Planning proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_walker_desiderata_for_planning_system_2019/">Desiderata for Planning Systems in General-Purpose Service Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Desiderata for Planning Systems in General-Purpose Service Robots proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple Quadrupedal Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple Quadrupedal Robots discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_category_level_last_m_2026/">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_joglekar_towards_natural_language_drive_2024/">Towards Natural Language-Driven Assembly Using Foundation Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Towards Natural Language-Driven Assembly Using Foundation Models discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_taniguchi_autonomous_planning_based_on_s_2021/">Autonomous Planning Based on Spatial Concepts to Tidy Up Home Environments with Service Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Autonomous Planning Based on Spatial Concepts to Tidy Up Home Environments with Service Robots proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_codex_learning_compositional_d_2026/">CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations studies Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vinanzi_casper_cognitive_architecture_2022/">CASPER: Cognitive Architecture for Social Perception and Engagement in Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">CASPER: Cognitive Architecture for Social Perception and Engagement in Robots proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lin_onetwovla_a_unified_vision_lan_2025/">OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhang_uni_navid_a_video_based_vision_2024/">Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lu_uniugp_unifying_understanding_2025/">UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robocycle_autonomous_dual_arm_2026/">ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robostriker_hierarchical_decis_2026/">RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jamieson_active_reward_learning_for_co_2020/">Active Reward Learning for Co-Robotic Vision Based Exploration in Bandwidth Limited Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Active Reward Learning for Co-Robotic Vision Based Exploration in Bandwidth Limited Environments discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_thinking_in_360_humanoid_visua_2025/">Thinking in 360: Humanoid Visual Search in the Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Thinking in 360: Humanoid Visual Search in the Wild discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reinforcegen_hybrid_skill_poli_2026/">ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_suriani_play_everywhere_a_temporal_log_2024/">Play Everywhere: A Temporal Logic based Game Environment Independent Approach for Playing Soccer with Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Play Everywhere: A Temporal Logic based Game Environment Independent Approach for Playing Soccer with Robots proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_vlm_see_robot_do_human_demo_vi_2025/">VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tan_roboos_next_a_unified_memory_b_2025/">RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot Collaboration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot Collaboration discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jenamani_robotic_motion_planning_using_2020/">Robotic Motion Planning using Learned Critical Sources and Local Sampling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Robotic Motion Planning using Learned Critical Sources and Local Sampling proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_garg_semantics_for_robotic_mapping_2020/">Semantics for Robotic Mapping, Perception and Interaction: A Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Semantics for Robotic Mapping, Perception and Interaction: A Survey discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_intention_inferring_tendencies_2025/">INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_task_and_motion_planning_for_h_2025/">Task and Motion Planning for Humanoid Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Task and Motion Planning for Humanoid Loco-manipulation proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_huang_graphcot_vla_a_3d_spatial_awar_2025/">GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for Robotic Manipulation with Ambiguous Instructions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for Robotic Manipulation with Ambiguous Instructions discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_senbaslar_rlss_real_time_decentralized_c_2023/">RLSS: Real-time, Decentralized, Cooperative, Networkless Multi-Robot Trajectory Planning using Linear Spatial Separations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RLSS: Real-time, Decentralized, Cooperative, Networkless Multi-Robot Trajectory Planning using Linear Spatial Separations discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lamon_a_unified_architecture_for_dyn_2023/">A Unified Architecture for Dynamic Role Allocation and Collaborative Task Planning in Mixed Human-Robot Teams</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">A Unified Architecture for Dynamic Role Allocation and Collaborative Task Planning in Mixed Human-Robot Teams proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hierarchical_vision_language_p_2025/">Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fang_automated_task_updates_of_temp_2022/">Automated Task Updates of Temporal Logic Specifications for Heterogeneous Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Automated Task Updates of Temporal Logic Specifications for Heterogeneous Robots discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hemken_how_to_raise_a_robot_a_case_fo_2023/">How to Raise a Robot — A Case for Neuro-Symbolic AI in Constrained Task Planning for Humanoid Assistive Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">How to Raise a Robot — A Case for Neuro-Symbolic AI in Constrained Task Planning for Humanoid Assistive Robots discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_occluding_the_solution_space_p_2026/">Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation mentions Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chae_multi_robot_motion_planning_fr_2026/">Multi-Robot Motion Planning from Vision and Language using Heat-inspired Diffusion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Multi-Robot Motion Planning from Vision and Language using Heat-inspired Diffusion proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_ball_composing_pol_2025/">Learning to Ball: Composing Policies for Long-Horizon Basketball Moves</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Learning to Ball: Composing Policies for Long-Horizon Basketball Moves proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_large_video_planner_enables_ge_2025/">Large Video Planner Enables Generalizable Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Large Video Planner Enables Generalizable Robot Control discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_openha_a_series_of_open_source_2025/">OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deng_mqa_answering_the_question_via_2020/">MQA: Answering the Question via Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MQA: Answering the Question via Robotic Manipulation uses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cabto_context_aware_behavior_t_2026/">CABTO: Context-Aware Behavior Tree Grounding for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">CABTO: Context-Aware Behavior Tree Grounding for Robot Manipulation proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_xu_wam_flow_parallel_coarse_to_fi_2025/">WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_macktoobian_learning_optimal_topology_for_2023/">Learning Optimal Topology for Ad-hoc Robot Networks</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Learning Optimal Topology for Ad-hoc Robot Networks discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_composite_motion_learning_with_2023/">Composite Motion Learning with Task Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Composite Motion Learning with Task Control mentions Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sarkar_planning_robot_motion_using_de_2019/">Planning Robot Motion using Deep Visual Prediction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Planning Robot Motion using Deep Visual Prediction discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_behavior_architecture_for_fa_2024/">A Behavior Architecture for Fast Humanoid Robot Door Traversals</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Behavior Architecture for Fast Humanoid Robot Door Traversals discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_saad_coalitional_game_theory_for_co_2009/">Coalitional Game Theory for Communication Networks: A Tutorial</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Coalitional Game Theory for Communication Networks: A Tutorial mentions Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shree_exploiting_natural_language_fo_2021/">Exploiting Natural Language for Efficient Risk-Aware Multi-robot SaR Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Exploiting Natural Language for Efficient Risk-Aware Multi-robot SaR Planning uses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_structured_4d_latent_predictiv_2026/">Structured 4D Latent Predictive Model for Robot Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Structured 4D Latent Predictive Model for Robot Planning discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">Multi-robot Implicit Control of Massive Herds</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Multi-robot Implicit Control of Massive Herds discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hierarchical_planning_and_cont_2023/">Hierarchical Planning and Control for Box Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Hierarchical Planning and Control for Box Loco-Manipulation discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_neuro_symbolic_reasoning/">Neuro-Symbolic Reasoning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Neuro-Symbolic Reasoning mentions Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_neau_grasp_vla_graph_based_symbolic_2025/">GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning with VLA Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning with VLA Policies proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dualthor_a_dual_arm_humanoid_s_2025/">DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cvpr_2025_oral_tokenhsi_unifie_2025/">CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_saccon_automated_generation_of_mdps_u_2025/">Automated Generation of MDPs Using Logic Programming and LLMs for Robotic Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Automated Generation of MDPs Using Logic Programming and LLMs for Robotic Applications studies Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mao_robomatrix_a_skill_centric_hie_2024/">RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task Planning and Execution in Open-World</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task Planning and Execution in Open-World proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_murai_a_robot_web_for_distributed_ma_2022/">A Robot Web for Distributed Many-Device Localisation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Robot Web for Distributed Many-Device Localisation discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tang_collaborative_planar_pushing_o_2024/">Collaborative Planar Pushing of Polytopic Objects with Multiple Robots in Complex Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Collaborative Planar Pushing of Polytopic Objects with Multiple Robots in Complex Scenes discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_a_backbone_for_long_horizon_ro_2024/">A Backbone for Long-Horizon Robot Task Understanding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">A Backbone for Long-Horizon Robot Task Understanding proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_thinking_in_360_humanoid_visua_2026/">Thinking in 360°: Humanoid Visual Search in the Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Thinking in 360°: Humanoid Visual Search in the Wild discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_social_navigation_fro_2025/">Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications studies Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lallement_hatp_an_htn_planner_for_roboti_2014/">HATP: An HTN Planner for Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">HATP: An HTN Planner for Robotics proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_huang_instruct2act_mapping_multi_mod_2023/">Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_armor_egocentric_perception_fo_2024/">ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nomad_goal_masked_diffusion_po_2023/">NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_focusnav_spatial_selective_att_2026/">FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egoactor_grounding_task_planni_2026/">EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_beyond_point_attached_semantic_2026/">Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation mentions Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_greedy_heuristics_for_sampling_2026/">Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_automating_the_design_of_embod_2026/">Automating the Design of Embodied Agent Architectures</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Automating the Design of Embodied Agent Architectures discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">A Comparative Study on Machine Learning Algorithms for the Control of a Wall Following Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">A Comparative Study on Machine Learning Algorithms for the Control of a Wall Following Robot mentions Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ldhp_library_driven_hierarchic_2026/">LDHP: Library-Driven Hierarchical Planning for Non-prehensile Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">LDHP: Library-Driven Hierarchical Planning for Non-prehensile Dexterous Manipulation discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bian_large_language_model_based_tas_2025/">Large language model-based task planning for service robots: A review</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Large language model-based task planning for service robots: A review studies Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_joint_discovery_of_object_and_2026/">Joint Discovery of Object and Action Symbols through Effect Prediction for Robotic Manipulation Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Joint Discovery of Object and Action Symbols through Effect Prediction for Robotic Manipulation Planning discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_websiteembodied_chain_of_actio_2025/">[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dec_marvel_decentralized_multi_2026/">Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">Improving Visual Place Recognition Based Robot Navigation By Verifying Localization Estimates</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Improving Visual Place Recognition Based Robot Navigation By Verifying Localization Estimates discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_corelin_constraint_based_reaso_2026/">CoReLIN: Constraint-based Reasoning for Zero-shot Lifelong Interactive Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CoReLIN: Constraint-based Reasoning for Zero-shot Lifelong Interactive Navigation discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chiang_mobility_vla_multimodal_instru_2024/">Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_team_gemini_robotics_15_pushing_the_2025/">Gemini Robotics 1.5: Pushing the Frontier of Generalist Robots with Advanced Embodied Reasoning, Thinking, and Motion Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Gemini Robotics 1.5: Pushing the Frontier of Generalist Robots with Advanced Embodied Reasoning, Thinking, and Motion Transfer discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yang_maniagent_an_agentic_framework_2025/">ManiAgent: An Agentic Framework for General Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ManiAgent: An Agentic Framework for General Robotic Manipulation uses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_momagen_generating_demonstrati_2025/">MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_modular_vision_language_acti_2026/">A Modular Vision-Language-Action Robotics Framework for Indoor Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">A Modular Vision-Language-Action Robotics Framework for Indoor Environments uses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hu_deploying_and_evaluating_llms_2023/">Deploying and Evaluating LLMs to Program Service Mobile Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Deploying and Evaluating LLMs to Program Service Mobile Robots discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_honig_path_planning_with_kinematic_c_2017/">Path Planning With Kinematic Constraints For Robot Groups</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Path Planning With Kinematic Constraints For Robot Groups proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_cot4ad_a_vision_language_actio_2025/">CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous Driving discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_being_0_a_humanoid_robotic_age_2025/">Being-0: A Humanoid Robotic Agent with Vision-Language Models and Modular Skills</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Being-0: A Humanoid Robotic Agent with Vision-Language Models and Modular Skills proposes Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cortex_a_bidirectionally_align_2026/">Cortex: A Bidirectionally Aligned Embodied Agent Framework for Long-horizon Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Cortex: A Bidirectionally Aligned Embodied Agent Framework for Long-horizon Manipulation discusses Task Planning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_concept_world_model/">World Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">enables</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 20. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_task_planning"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tang_collaborative_planar_pushing_o_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Collaborative Planar Pushing of Polytopic Objects with Multiple Robots in Complex Scenes</h3>
+          <p>This 2024 arXiv paper proposes a hybrid optimization framework in which a team of mobile robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ldhp_library_driven_hierarchic_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>LDHP: Library-Driven Hierarchical Planning for Non-prehensile Dexterous Manipulation</h3>
+          <p>arXiv:2603.13844v2 Announce Type: replace Abstract: Non-prehensile manipulation is essential for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_neuro_symbolic_reasoning/">
+          <span class="entry-type">Method</span>
+          <h3>Neuro-Symbolic Reasoning</h3>
+          <p>An AI approach that combines neural perception and learning with symbolic reasoning to obtain…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tan_roboos_next_a_unified_memory_b_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot Collaboration</h3>
+          <p>RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_task_adaptive_design_of_modula_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</h3>
+          <p>arXiv:2607.09548v1 Announce Type: new Abstract: Aerial manipulation with multirotor platforms…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_thinking_in_360_humanoid_visua_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Thinking in 360°: Humanoid Visual Search in the Wild</h3>
+          <p>Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_garg_semantics_for_robotic_mapping_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Semantics for Robotic Mapping, Perception and Interaction: A Survey</h3>
+          <p>A 2020 survey that proposes a four-category taxonomy for semantics research in robotics and reviews…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_murai_a_robot_web_for_distributed_ma_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>A Robot Web for Distributed Many-Device Localisation</h3>
+          <p>We show that a distributed network of robots or devices can collaboratively estimate global poses by…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_joint_discovery_of_object_and_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Joint Discovery of Object and Action Symbols through Effect Prediction for Robotic Manipulation Planning</h3>
+          <p>arXiv:2607.00031v1 Announce Type: new Abstract: To perform complex manipulation planning, autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chae_multi_robot_motion_planning_fr_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-Robot Motion Planning from Vision and Language using Heat-inspired Diffusion</h3>
+          <p>Language-conditioned Heat-inspired Diffusion (LHD) is an end-to-end vision-language planner that…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hemken_how_to_raise_a_robot_a_case_fo_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>How to Raise a Robot — A Case for Neuro-Symbolic AI in Constrained Task Planning for Humanoid Assistive Robots</h3>
+          <p>This paper argues that humanoid assistive robots require a neuro-symbolic hybrid approach to task…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_huang_instruct2act_mapping_multi_mod_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model</h3>
+          <p>Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_saccon_automated_generation_of_mdps_u_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Automated Generation of MDPs Using Logic Programming and LLMs for Robotic Applications</h3>
+          <p>This paper presents a framework that combines few-shot-prompted large language models with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_taniguchi_autonomous_planning_based_on_s_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Autonomous Planning Based on Spatial Concepts to Tidy Up Home Environments with Service Robots</h3>
+          <p>This paper proposes a likelihood-ratio planning method that learns 3D object-place co-occurrence…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bian_large_language_model_based_tas_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Large language model-based task planning for service robots: A review</h3>
+          <p>A 2025 arXiv review that surveys how large language models are integrated into service-robot task…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hu_deploying_and_evaluating_llms_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Deploying and Evaluating LLMs to Program Service Mobile Robots</h3>
+          <p>Introduces CODEBOTLER, an open-source, robot-agnostic tool that few-shot prompts LLMs to generate…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shree_exploiting_natural_language_fo_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Exploiting Natural Language for Efficient Risk-Aware Multi-robot SaR Planning</h3>
+          <p>This paper fine-tunes a ViLBERT visio-linguistic model on a synthetic disaster image-description…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation</h3>
+          <p>MAPS-X introduces meta-algorithms that integrate disjoint trajectory segmentation into centralized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jenamani_robotic_motion_planning_using_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Robotic Motion Planning using Learned Critical Sources and Local Sampling</h3>
+          <p>Proposes GenerateCriticalSources, LCS-RRT, and CS-RRT, which preprocess a low-resolution occupancy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_momagen_generating_demonstrati_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation</h3>
+          <p>MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_schneider_ce_mrs_contrastive_explanation_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>CE-MRS: Contrastive Explanations for Multi-Robot Systems</h3>
+          <p>Introduces CE-MRS, a method that generates natural-language contrastive explanations by comparing a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_huang_graphcot_vla_a_3d_spatial_awar_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for Robotic Manipulation with Ambiguous Instructions</h3>
+          <p>GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for Robotic Manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_composite_motion_learning_with_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Composite Motion Learning with Task Control</h3>
+          <p>Composite Motion Learning with Task Control is a 2023 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_saad_coalitional_game_theory_for_co_2009/">
+          <span class="entry-type">Paper</span>
+          <h3>Coalitional Game Theory for Communication Networks: A Tutorial</h3>
+          <p>A tutorial that classifies coalitional games into canonical, coalition-formation, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nomad_goal_masked_diffusion_po_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration</h3>
+          <p>NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023 work on navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_intention_inferring_tendencies_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM</h3>
+          <p>INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deng_mqa_answering_the_question_via_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>MQA: Answering the Question via Robotic Manipulation</h3>
+          <p>Proposes Manipulation Question Answering (MQA), where a robot actively pushes objects in a cluttered…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple Quadrupedal Robots</h3>
+          <p>This paper proposes an online cascaded planning framework in which multiple quadrupedal robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_openha_a_series_of_open_source_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft</h3>
+          <p>OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft (OpenHA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_automating_the_design_of_embod_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Automating the Design of Embodied Agent Architectures</h3>
+          <p>arXiv:2606.30111v2 Announce Type: replace Abstract: Embodied agents are typically built as…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_modular_vision_language_acti_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>A Modular Vision-Language-Action Robotics Framework for Indoor Environments</h3>
+          <p>arXiv:2606.31144v1 Announce Type: new Abstract: This paper presents an integrated system for the CMU…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_cot4ad_a_vision_language_actio_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous Driving</h3>
+          <p>CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_enhancing_the_llm_based_robot_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Enhancing the LLM-Based Robot Manipulation Through Human-Robot Collaboration</h3>
+          <p>Proposes a GPT-4-based hierarchical planning framework integrated with YOLOv5 visual perception and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_human_like_badminton_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Human-Like Badminton Skills for Humanoid Robots</h3>
+          <p>Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lu_uniugp_unifying_understanding_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving</h3>
+          <p>UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving (UniUGP),…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fang_automated_task_updates_of_temp_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Automated Task Updates of Temporal Logic Specifications for Heterogeneous Robots</h3>
+          <p>This paper defines the task update problem for heterogeneous robots executing existing Linear…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reinforcegen_hybrid_skill_poli_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</h3>
+          <p>arXiv:2512.16861v2 Announce Type: replace Abstract: Long-horizon manipulation has been a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_honig_path_planning_with_kinematic_c_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Path Planning With Kinematic Constraints For Robot Groups</h3>
+          <p>Presents a Simple Temporal Network postprocessing framework that converts discrete MAPF/TAPF plans…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_world_model/">
+          <span class="entry-type">Concept</span>
+          <h3>World Model</h3>
+          <p>A learned or hand-crafted internal model that predicts future states of the environment, enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ace_agentic_control_for_embodi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning</h3>
+          <p>arXiv:2607.04162v1 Announce Type: new Abstract: Open-ended tabletop manipulation requires agents to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egoactor_grounding_task_planni_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models</h3>
+          <p>EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_category_level_last_m_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</h3>
+          <p>arXiv:2512.11173v4 Announce Type: replace Abstract: Achieving precise positioning of the mobile…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_neau_grasp_vla_graph_based_symbolic_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning with VLA Policies</h3>
+          <p>GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning with VLA Policies…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhang_uni_navid_a_video_based_vision_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks</h3>
+          <p>Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_ball_composing_pol_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Ball: Composing Policies for Long-Horizon Basketball Moves</h3>
+          <p>Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hierarchical_vision_language_p_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation</h3>
+          <p>Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_beyond_point_attached_semantic_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation</h3>
+          <p>arXiv:2607.03163v1 Announce Type: new Abstract: Generalizable robot manipulation requires stable 3D…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chiang_mobility_vla_multimodal_instru_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs</h3>
+          <p>Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_task_and_motion_planning_for_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Task and Motion Planning for Humanoid Loco-manipulation</h3>
+          <p>Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lin_onetwovla_a_unified_vision_lan_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning</h3>
+          <p>OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning (OneTwoVLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_macktoobian_learning_optimal_topology_for_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Optimal Topology for Ad-hoc Robot Networks</h3>
+          <p>Proposes OpTopNET, a stacked ensemble learning framework that predicts optimal communication…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robocycle_autonomous_dual_arm_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications</h3>
+          <p>arXiv:2607.03616v1 Announce Type: new Abstract: As urban waste volumes escalate and labor shortages…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dualthor_a_dual_arm_humanoid_s_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning</h3>
+          <p>DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yao_3d_visual_illusion_depth_estim_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>3D Visual Illusion Depth Estimation</h3>
+          <p>This paper reveals that state-of-the-art monocular, binocular, and multi-view depth estimation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lamon_a_unified_architecture_for_dyn_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>A Unified Architecture for Dynamic Role Allocation and Collaborative Task Planning in Mixed Human-Robot Teams</h3>
+          <p>This paper proposes a unified architecture that combines a centralized Behavior Tree planner for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_vlm_see_robot_do_human_demo_vi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model</h3>
+          <p>VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model (SeeDo), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</h3>
+          <p>arXiv:2504.16738v3 Announce Type: replace Abstract: Planning long-horizon manipulation motions using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cvpr_2025_oral_tokenhsi_unifie_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization</h3>
+          <p>CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_aerial_manipulation_contact_me_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</h3>
+          <p>arXiv:2607.04719v1 Announce Type: new Abstract: Aerial robots are increasingly moving from remote…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_armor_egocentric_perception_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</h3>
+          <p>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jamieson_active_reward_learning_for_co_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Active Reward Learning for Co-Robotic Vision Based Exploration in Bandwidth Limited Environments</h3>
+          <p>A POMDP-based framework for autonomous visual exploration that uses regret-minimizing active reward…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-robot Implicit Control of Massive Herds</h3>
+          <p>This paper proposes a multi-robot herding method that combines Implicit Control with a dynamic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robostriker_hierarchical_decis_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing</h3>
+          <p>RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning</h3>
+          <p>RoboBallet trains a graph neural network policy via deep reinforcement learning to jointly allocate,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_walker_desiderata_for_planning_system_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Desiderata for Planning Systems in General-Purpose Service Robots</h3>
+          <p>Proposes desiderata for planning and reasoning systems to support general-purpose service robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_large_video_planner_enables_ge_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Large Video Planner Enables Generalizable Robot Control</h3>
+          <p>Large Video Planner Enables Generalizable Robot Control (LVP), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dec_marvel_decentralized_multi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints</h3>
+          <p>arXiv:2607.09060v1 Announce Type: new Abstract: Multi-UAV exploration is often constrained by…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cabto_context_aware_behavior_t_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CABTO: Context-Aware Behavior Tree Grounding for Robot Manipulation</h3>
+          <p>arXiv:2603.16809v2 Announce Type: replace Abstract: Behavior Trees (BTs) offer a powerful paradigm…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_suriani_play_everywhere_a_temporal_log_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Play Everywhere: A Temporal Logic based Game Environment Independent Approach for Playing Soccer with Robots</h3>
+          <p>Proposes a temporal-logic-based hierarchical representation that lets NAO humanoid robots adapt…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vinanzi_casper_cognitive_architecture_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>CASPER: Cognitive Architecture for Social Perception and Engagement in Robots</h3>
+          <p>CASPER is a symbolic cognitive architecture that uses Qualitative Spatial Relations to recognize…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yang_maniagent_an_agentic_framework_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ManiAgent: An Agentic Framework for General Robotic Manipulation</h3>
+          <p>ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Improving Visual Place Recognition Based Robot Navigation By Verifying Localization Estimates</h3>
+          <p>This paper introduces a Multi-Layer Perceptron (MLP) integrity monitor for Visual Place Recognition…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>A Comparative Study on Machine Learning Algorithms for the Control of a Wall Following Robot</h3>
+          <p>This 2019 ROBIO paper compares classical machine learning and deep learning classifiers for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_joglekar_towards_natural_language_drive_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Natural Language-Driven Assembly Using Foundation Models</h3>
+          <p>Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural Language-Driven…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_corelin_constraint_based_reaso_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CoReLIN: Constraint-based Reasoning for Zero-shot Lifelong Interactive Navigation</h3>
+          <p>arXiv:2602.20055v2 Announce Type: replace Abstract: Robot navigation typically assumes an…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_xu_wam_flow_parallel_coarse_to_fi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving</h3>
+          <p>WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_being_0_a_humanoid_robotic_age_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Being-0: A Humanoid Robotic Agent with Vision-Language Models and Modular Skills</h3>
+          <p>Being-0 first recovers scene, target, or motion representations from language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>A Novel Assistive Controller Based on Differential Geometry for Users of the Differential-Drive Wheeled Mobile Robots</h3>
+          <p>This 2022 arXiv paper presents a differential-geometry-based assistive controller that helps users…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_3d_affordances_for_bl_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning 3D Affordances for Blade Insertion in Cluttered Stowing</h3>
+          <p>arXiv:2607.02549v1 Announce Type: cross Abstract: Many manipulation tasks require reasoning about…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lallement_hatp_an_htn_planner_for_roboti_2014/">
+          <span class="entry-type">Paper</span>
+          <h3>HATP: An HTN Planner for Robotics</h3>
+          <p>HATP is a robotics-specific Hierarchical Task Network planning framework that introduces an…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hierarchical_planning_and_cont_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical Planning and Control for Box Loco-Manipulation</h3>
+          <p>Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_a_backbone_for_long_horizon_ro_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>A Backbone for Long-Horizon Robot Task Understanding</h3>
+          <p>This paper proposes the Therblig-Based Backbone Framework (TBBF), which decomposes long-horizon…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_senbaslar_rlss_real_time_decentralized_c_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>RLSS: Real-time, Decentralized, Cooperative, Networkless Multi-Robot Trajectory Planning using Linear Spatial Separations</h3>
+          <p>RLSS is a decentralized, communication-free, receding-horizon trajectory planner for multiple robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_codex_learning_compositional_d_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations</h3>
+          <p>arXiv:2606.31909v1 Announce Type: new Abstract: In this work, we study Compositional Dexterous…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_thinking_in_360_humanoid_visua_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Thinking in 360: Humanoid Visual Search in the Wild</h3>
+          <p>Thinking in 360: Humanoid Visual Search in the Wild is a 2025 work on navigation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_structured_4d_latent_predictiv_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Structured 4D Latent Predictive Model for Robot Planning</h3>
+          <p>arXiv:2607.01166v1 Announce Type: new Abstract: Video predictive models are emerging as a powerful…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_greedy_heuristics_for_sampling_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces</h3>
+          <p>arXiv:2405.03411v4 Announce Type: replace Abstract: Informed sampling techniques accelerate the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_team_gemini_robotics_15_pushing_the_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Gemini Robotics 1.5: Pushing the Frontier of Generalist Robots with Advanced Embodied Reasoning, Thinking, and Motion Transfer</h3>
+          <p>Gemini Robotics 1.5 introduces a multi-embodiment Vision-Language-Action model with Motion Transfer…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pellier_hddl_21_towards_defining_a_for_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>HDDL 2.1: Towards Defining a Formalism and a Semantics for Temporal HTN Planning</h3>
+          <p>Proposes a lifted temporal HTN planning formalism and execution semantics that extends HDDL with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mao_robomatrix_a_skill_centric_hie_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task Planning and Execution in Open-World</h3>
+          <p>RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task Planning and Execution in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cortex_a_bidirectionally_align_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Cortex: A Bidirectionally Aligned Embodied Agent Framework for Long-horizon Manipulation</h3>
+          <p>arXiv:2607.05377v1 Announce Type: new Abstract: While recent Vision-Language-Action (VLA) models…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_focusnav_spatial_selective_att_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation</h3>
+          <p>FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_websiteembodied_chain_of_actio_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation</h3>
+          <p>[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_social_navigation_fro_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications</h3>
+          <p>Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_occluding_the_solution_space_p_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation</h3>
+          <p>arXiv:2607.03758v1 Announce Type: new Abstract: Adversarial attacks on motion planning are crucial…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sarkar_planning_robot_motion_using_de_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Planning Robot Motion using Deep Visual Prediction</h3>
+          <p>Introduces PROM-Net, a lightweight unsupervised encoder-decoder convolutional LSTM network that…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_behavior_architecture_for_fa_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>A Behavior Architecture for Fast Humanoid Robot Door Traversals</h3>
+          <p>A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work on loco-manipulation…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-task-planning">Definition and Positioning of Task Planning</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-task-planning">Mathematical and Theoretical Foundations of Task Planning</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

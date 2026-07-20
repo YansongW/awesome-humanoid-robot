@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电池管理系统 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/component/">零部件</a>
+    <span>/</span>
+    <span class="breadcrumb-current">电池管理系统</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">零部件</div>
+      <h1>电池管理系统</h1>
+      <p class="entry-name-en">Battery Management System</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">设计工程</span><span class="tag">组装集成测试</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">上游</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#6.5.2 电池管理系统 BMS：SOC/SOH 估计、均衡、过充过放保护、热失控 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>!!! note &#34;术语解释：BMS、SOC、SOH、均衡、热失控、过充、过放&#34; - BMS（Battery Management System）：电池管理系统，负责监测、保护和控制电池组。 - SOC（State of Charge）：荷电状态，表示剩余电量百分比。 - SOH（State of Health）：健康状态，反映电池当前最大容量与初始容量的比值。 - 均衡（balancing）：让串联电池单体间电压/容量趋于一致，防止个别单体过充或过放。 - 热失控（thermal runaway）：电池内部放热反应自我加速，导致温度急剧上升的现象。 - 过充 / 过放：充电电压超过上限或放电电压低于下限，可能损害电池或引发安全事故。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.15915" target="_blank" rel="noopener">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>电池管理系统是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>电池管理系统（BMS）监控并保护电池组，确保其在安全、高效和长寿命的窗口内工作。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：BMS、SOC、SOH、均衡、热失控、过充、过放</p>
+<ul>
+<li><strong>BMS（Battery Management System）</strong>：电池管理系统，负责监测、保护和控制电池组。</li>
+<li><strong>SOC（State of Charge）</strong>：荷电状态，表示剩余电量百分比。</li>
+<li><strong>SOH（State of Health）</strong>：健康状态，反映电池当前最大容量与初始容量的比值。</li>
+<li><strong>均衡（balancing）</strong>：让串联电池单体间电压/容量趋于一致，防止个别单体过充或过放。</li>
+<li><strong>热失控（thermal runaway）</strong>：电池内部放热反应自我加速，导致温度急剧上升的现象。</li>
+<li><strong>过充 / 过放</strong>：充电电压超过上限或放电电压低于下限，可能损害电池或引发安全事故。</li>
+</ul>
+</div>
+<p><strong>热失控机理</strong>。锂离子电池热失控通常由过充、过放、短路、机械损伤或高温引发。过程包括：SEI 膜分解（约 80–120 °C）、隔膜收缩（约 130 °C）、正极释氧与电解液氧化（约 150–250 °C），最终导致内部短路和剧烈放热。BMS 通过电压、温度和气体传感器（如 CO、HF）进行多级预警，并在检测到异常时切断主继电器、启动灭火或排气装置。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：SEI 膜、隔膜、电解液、正极释氧、气体传感器</p>
+<ul>
+<li><strong>SEI 膜（Solid Electrolyte Interphase）</strong>：负极表面形成的固态电解质界面膜，对电池性能和安全性至关重要。</li>
+<li><strong>正极释氧（cathode oxygen release）</strong>：高温下正极材料释放氧气，加剧电解液燃烧风险。</li>
+<li><strong>气体传感器（gas sensor）</strong>：检测电池异常产气（CO、HF、烃类）的传感器。</li>
+</ul>
+</div>
+<p><strong>SOC 估计</strong>。库仑计数法通过积分电流估计 SOC：</p>
+<div class="arithmatex">\[
+SOC(t) = SOC(t_0) + \frac{1}{Q_{nom}} \int_{t_0}^{t} \eta \, I(\tau) \, d\tau
+\]</div>
+<p>其中 <span class="arithmatex">\(Q_{nom}\)</span> 为标称容量，<span class="arithmatex">\(\eta\)</span> 为充放电效率，<span class="arithmatex">\(I\)</span> 为电流（充电为正）。库仑计数会累积误差，常与开路电压（OCV）查表或卡尔曼滤波结合。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：库仑计数、开路电压、卡尔曼滤波、内阻</p>
+<ul>
+<li><strong>库仑计数（coulomb counting）</strong>：通过积分电流估计电池充放电量的方法。</li>
+<li><strong>开路电压（OCV）</strong>：电池在无负载时的端电压，与 SOC 存在单调关系。</li>
+<li><strong>卡尔曼滤波（Kalman filter）</strong>：利用模型和测量递归估计状态的算法。</li>
+<li><strong>内阻（internal resistance）</strong>：电池内部的等效电阻，导致充放电时端电压偏离 OCV。</li>
+</ul>
+</div>
+<p><strong>SOH 估计</strong>。常用方法包括：容量衰减法、内阻增长法、增量容量分析（ICA）和差分电压分析（DVA）。</p>
+<p><strong>扩展卡尔曼滤波（EKF）SOC 估计</strong>。电池可建模为一阶 RC 等效电路：</p>
+<div class="arithmatex">\[
+U_t = U_{OCV}(SOC) - I R_0 - U_1
+$$
+$$
+\dot{U}_1 = -\frac{U_1}{R_1 C_1} + \frac{I}{C_1}
+$$
+$$
+\dot{SOC} = -\frac{\eta I}{Q_{nom}}
+\]</div>
+<p>状态向量取 <span class="arithmatex">\([SOC, U_1]^T\)</span>，观测量为端电压 <span class="arithmatex">\(U_t\)</span>。EKF 在每个采样时刻先通过模型预测状态，再用电压测量更新状态，从而同时抑制电流积分漂移和电压测量噪声。更先进的无迹卡尔曼滤波（UKF）和粒子滤波（PF）可处理强非线性，但计算量更大。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：等效电路模型、一阶 RC、极化电压、扩展卡尔曼滤波、无迹卡尔曼滤波</p>
+<ul>
+<li><strong>等效电路模型（equivalent circuit model, ECM）</strong>：用电压源、电阻、电容模拟电池电气行为的简化模型。</li>
+<li><strong>一阶 RC 模型</strong>：包含一个欧姆内阻 <span class="arithmatex">\(R_0\)</span> 和一个 RC 并联极化支路的电池模型。</li>
+<li><strong>极化电压（polarization voltage）</strong>：电池充放电过程中由于电化学极化和浓差极化产生的额外压降。</li>
+<li><strong>无迹卡尔曼滤波（UKF）</strong>：通过无迹变换处理非线性系统的卡尔曼滤波变体。</li>
+<li><strong>粒子滤波（PF）</strong>：基于蒙特卡洛采样的非线性/非高斯状态估计方法。</li>
+</ul>
+</div>
+<p><strong>均衡</strong>。被动均衡通过电阻消耗高电压单体的能量；主动均衡通过电感、电容或变压器把能量从高压单体转移到低压单体，效率更高但成本更高。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["电池组"] --&gt; B["电压 / 电流 / 温度采样"]
+    B --&gt; C["SOC / SOH 估计"]
+    C --&gt; D["均衡控制"]
+    D --&gt; E["被动均衡"]
+    D --&gt; F["主动均衡"]
+    B --&gt; G["安全保护"]
+    G --&gt; H["过充 / 过放 / 过温切断"]</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2606.15915">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a></li>
+<li>项目 Wiki：chapter-06.md#6.5.2 电池管理系统 BMS：SOC/SOH 估计、均衡、过充过放保护、热失控</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</a>
+              <span class="rel-desc">电池管理系统引用Unitree G1人形机器人手臂基于物理的电力消耗模型辨识。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a>
+              <span class="rel-desc">BMS管理Tesla Optimus的躯干电池包。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">锂离子电池剩余使用寿命与SOH估计（面向电动汽车）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">锂离子电池剩余使用寿命与SOH估计（面向电动汽车）discusses电池管理系统。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_tech_li_battery_humanoid/">人形机器人锂离子电池系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">集成</span>
+              <span class="rel-desc">ent_tech_li_battery_humanoid 集成 ent_component_battery_management_system 以实现监测、保护和电池均衡。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">锂离子电池老化轨迹中的“拐点”</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">锂离子电池老化轨迹中的“拐点”discusses电池管理系统。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mckay_learning_the_p2d_model_for_lit_2025/">具有SOH检测的锂离子电池P2D模型学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">应对</span>
+              <span class="rel-desc">该代理模型旨在电池管理系统内部运行，用于实时预测和SOH检测。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">当前锂离子电池技术与潜在固态电池技术简要综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">当前锂离子电池技术与潜在固态电池技术简要综述discusses电池管理系统。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">基于高导电性石墨纸集流体的超薄柔性锂离子电池</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于高导电性石墨纸集流体的超薄柔性锂离子电池discusses电池管理系统。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">集成</span>
+              <span class="rel-desc">电池管理系统是车载功率测量链的一部分。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_tech_li_battery_humanoid/">人形机器人锂离子电池系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">人形机器人用锂离子电池组需要电池管理系统来维持电芯健康、优化性能并防止故障状态。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_battery_management_system"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_tech_li_battery_humanoid/">
+          <span class="entry-type">技术</span>
+          <h3>人形机器人锂离子电池系统</h3>
+          <p>概述 人形机器人锂离子电池系统是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">
+          <span class="entry-type">论文</span>
+          <h3>基于高导电性石墨纸集流体的超薄柔性锂离子电池</h3>
+          <p>该论文报道了一种超薄（包括封装层小于250微米）、轻质、柔性的锂离子电池，其采用纳米铝或铜层涂覆的石墨纸作为集流体，并配以磷酸铁锂正极、钛酸锂负极和浸润六氟磷酸锂的聚乙烯隔膜。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mckay_learning_the_p2d_model_for_lit_2025/">
+          <span class="entry-type">论文</span>
+          <h3>具有SOH检测的锂离子电池P2D模型学习</h3>
+          <p>本文提出了一种在合成P2D电池模拟数据上训练的卷积神经网络代理模型，用于替代计算昂贵的伪二维电化学模型，实现未来100秒的状态预测，并引入了一种通过电压差异网格搜索估计的单参数健康状态调整方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">
+          <span class="entry-type">论文</span>
+          <h3>当前锂离子电池技术与潜在固态电池技术简要综述</h3>
+          <p>Andrew Ulvestad于2018年发表的综述，将最先进的锂离子电池与采用锂金属负极的新兴固态电池进行基准比较，比较了硫化物、聚合物和氧化物固态电解质，并调研了商用固态电池项目。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">
+          <span class="entry-type">论文</span>
+          <h3>锂离子电池剩余使用寿命与SOH估计（面向电动汽车）</h3>
+          <p>这篇2023年arXiv论文综述了经验、物理和数据驱动的锂离子电池剩余使用寿命（RUL）估计方法，并提出了一种基于TensorFlow…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_tesla_optimus/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Tesla Optimus</h3>
+          <p>概述 Tesla Optimus是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>工业机器人安全要求的演进：ISO 10218-1/2（2011 vs. 2025）比较分析及 ISO/TS 15066 的整合</h3>
+          <p>本文比较了 ISO 10218-1/2:2011 与其 2025 年修订版，并分析了 ISO/TS 15066 的规范性整合，重点阐述了功能安全、网络安全、软件验证以及新型机器人分类要求的扩展。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</h3>
+          <p>本文提出了一个基于物理的、参数线性的Unitree G1人形机器人七自由度左臂电力消耗模型，结合了执行器损耗项、基线扭矩修正和成对关节速度交互项，并在943条物理机器人轨迹上进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">
+          <span class="entry-type">论文</span>
+          <h3>锂离子电池老化轨迹中的“拐点”</h3>
+          <p>Lithium-ion batteries can last many years but sometimes exhibit rapid, nonlinear degradation that…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

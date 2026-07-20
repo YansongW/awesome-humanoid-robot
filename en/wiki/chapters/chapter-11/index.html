@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 11 Assembly, Integration, and Testing · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 11 Assembly, Integration, and Testing</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-11-assembly-integration-and-testing">Chapter 11 Assembly, Integration, and Testing</h1>
+<h2 id="summary">Summary</h2>
+<p>Assembly, Integration, and Testing represent the final stage in the humanoid robot engineering chain, transforming "qualified components into a qualified complete machine," and are the ultimate convergence point of design intent and manufacturing variation. Building upon the manufacturing process system from Chapter 10, this chapter revolves around four main themes: First, <strong>Assembly Process Engineering</strong>, discussing core processes such as threaded connections and tightening control, press-fitting and adhesive bonding, reducer and bearing assembly, and harness engineering, along with their error-proofing designs; Second, <strong>Assembly Line Planning and Complete Machine Integration</strong>, covering assembly sequence and fixture planning, takt time and line balancing, and a hierarchical integration strategy for joint module sub-assembly and complete machine final assembly; Third, <strong>Calibration and Parameter Configuration</strong>, including joint zero-position calibration, kinematic parameter compensation, multi-sensor joint calibration, and system identification; Fourth, <strong>Testing and Validation System</strong>, ranging from Design Verification (DV) and Production Validation (PV), Hardware-in-the-Loop (HIL) testing, to End-of-Line (EOL) testing, Statistical Process Control (SPC), and production ramp-up. The content of this chapter corresponds to two major stages in the WBS of the knowledge graph: P15 (Complete Machine Integration and Validation Testing) and P16 (Pilot Run and Production Preparation), serving as an operational manual for transitioning from engineering prototypes to batch delivery.</p>
+<p><strong>Keywords</strong>: Assembly Process; Tightening Control; Complete Machine Integration; Joint Calibration; System Identification; DV/PV; HIL; EOL Testing; SPC; First Pass Yield; Production Ramp-up</p>
+<hr />
+<h2 id="111-the-position-of-assembly-integration-and-testing-in-the-production-chain">11.1 The Position of Assembly, Integration, and Testing in the Production Chain</h2>
+<h3 id="1111-from-components-to-complete-machine-assembly-hierarchy">11.1.1 From Components to Complete Machine: Assembly Hierarchy</h3>
+<p>The assembly of a humanoid robot is a typical multi-level aggregation process: Part → Component → Subassembly → Subsystem → System. Taking the leg as an example, frameless torque motors, harmonic reducers, encoders, and torque sensors are first integrated into a joint module (subassembly). The joint module is then integrated with linkages and harnesses into a single leg (subsystem). Finally, the left and right legs are integrated with the pelvis and torso into the complete machine. Each level corresponds to its own <strong>Standard Operating Procedure (SOP)</strong> , fixtures, and inspection points. The division of levels directly determines the number of production line stations and work-in-progress inventory.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Purchased/In-house Parts"] --&gt; B["Joint Module Sub-assembly&lt;br/&gt;Motor+Reducer+Encoder"]
+    A --&gt; C["Harness Assembly&lt;br/&gt;Crimping+Continuity Test"]
+    A --&gt; D["Torso Frame&lt;br/&gt;Battery+Computing Platform"]
+    B --&gt; E["Single Leg/Arm Subsystem Assembly"]
+    C --&gt; E
+    E --&gt; F["Complete Machine Final Assembly&lt;br/&gt;Pelvis+Torso+Head/Neck"]
+    D --&gt; F
+    F --&gt; G["Calibration and Parameter Configuration"]
+    G --&gt; H["EOL End-of-Line Test"]
+    H --&gt; I["Packaging &amp; Storage / Reliability Sampling"]</code></pre>
+<h3 id="1112-the-right-side-of-the-v-model-roles-of-dv-and-pv">11.1.2 The Right Side of the V-Model: Roles of DV and PV</h3>
+<p>Section 9.1.3 of Chapter 9 introduced the concepts of V&amp;V, DV (Design Verification), and PV (Production Validation) within the design process. This chapter further clarifies the division of labor between the two from an execution perspective:</p>
+<ul>
+<li><strong>DV</strong> answers "Is the design correct?": It uses engineering prototypes (typically soft tooling or machined parts) to verify that the product meets all design specifications. Methods include environmental testing, durability testing, EMC testing, and safety function testing.</li>
+<li><strong>PV</strong> answers "Is the manufacturing process correct?": It uses products manufactured with <strong>production tooling, production processes, and production takt time</strong> to verify that the manufacturing process can consistently produce conforming products. Its evidence package feeds into the PPAP/Production Readiness Assessment (WBS P16.3.3).</li>
+</ul>
+<p>In other words, DV freezes the design, and PV freezes the process. Only after both are passed does the product meet the conditions for SOP (Start of Production).</p>
+<h3 id="1113-wbs-perspective-task-mapping-for-p15-and-p16">11.1.3 WBS Perspective: Task Mapping for P15 and P16</h3>
+<p>The WBS in the knowledge graph decomposes the tasks of this stage into two primary phases:</p>
+<ul>
+<li><strong>P15 Complete Machine Integration and Validation Testing (Integration &amp; V&amp;V)</strong> : Leg system integration and debugging (P15.1.1), Arm and hand integration (P15.1.2), Perception-Planning-Control closed-loop integration (P15.1.3); Safety function testing (P15.2.1), Performance benchmark testing (P15.2.2), Environmental adaptability testing (P15.2.3); Joint and complete machine durability testing (P15.3.1), Software stability and regression testing (P15.3.2), Certification preparation and pre-audit (P15.3.3).</li>
+<li><strong>P16 Pilot Run and Production Ramp-up (Pilot &amp; Production Ramp)</strong> : Assembly line planning and SOP (P16.1.3), Quality control system establishment (P16.2.2), Incoming material and process anomaly handling (P16.2.3), Pilot run (P16.3.1), Cost accounting and cost reduction (P16.3.2), PPAP/Production Readiness Assessment (P16.3.3), Service manual and training (P16.3.4).</li>
+</ul>
+<p>Sections 11.2–11.3 of this chapter correspond to the assembly engineering tasks of P5.3.2/P16.1.3, Section 11.4 corresponds to calibration tasks, Sections 11.5–11.6 correspond to the testing tasks of P15, and Sections 11.7–11.8 correspond to the quality and ramp-up tasks of P16.</p>
+<hr />
+<h2 id="112-assembly-process-engineering">11.2 Assembly Process Engineering</h2>
+<h3 id="1121-threaded-connections-and-tightening-control">11.2.1 Threaded Connections and Tightening Control</h3>
+<p>Threaded connections are the most numerous type of connection in humanoid robot assembly. Their quality is determined by preload: insufficient preload can lead to loosening under vibration, while excessive preload can damage threads or crush the joined parts. The engineering relationship between tightening torque <span class="arithmatex">\(T\)</span> and preload <span class="arithmatex">\(F\)</span> is:</p>
+<div class="arithmatex">\[
+T = K \cdot F \cdot d
+\]</div>
+<p>where <span class="arithmatex">\(d\)</span> is the nominal thread diameter, and <span class="arithmatex">\(K\)</span> is the torque coefficient (typical range 0.15–0.25). <span class="arithmatex">\(K\)</span> is highly dependent on the friction state—batch variations in lubrication, coating, and gasket material can cause the preload at the same torque to scatter by ±30%. Therefore, critical connections (joint module mounting, reducer flange) should use the <strong>torque-plus-angle method</strong>: first tighten to the snug torque, then rotate by a specified angle. This uses the elastic elongation of the bolt to directly control the preload, compressing the scatter to the ±10% level.</p>
+<p>On the production line, critical stations should use servo tightening spindles with curve monitoring, recording the "torque-angle" curve and determining anomalies at the snug point (stripped threads, foreign objects, missing gaskets). Curve data is archived with the product serial number, forming part of traceability.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Preload, Torque Coefficient, Torque-Plus-Angle Method, Snug Torque</p>
+<ul>
+<li><strong>Preload</strong>: The axial clamping force generated after tightening a bolt, which is the basis for the joint's resistance to loosening and external loads.</li>
+<li><strong>Torque Coefficient (<span class="arithmatex">\(K\)</span>)</strong>: The proportionality coefficient between tightening torque and preload, comprehensively reflecting thread friction and bearing surface friction.</li>
+<li><strong>Torque-Plus-Angle Method (Torque-to-yield / Torque-plus-angle)</strong>: Tightening to the snug point followed by an additional angle rotation, using bolt elongation to directly control preload.</li>
+<li><strong>Snug Torque</strong>: The torque at which the joint surfaces just make contact, serving as the starting point for the angle phase.</li>
+</ul>
+</div>
+<h3 id="1122-press-fitting-riveting-and-adhesive-bonding">11.2.2 Press Fitting, Riveting, and Adhesive Bonding</h3>
+<ul>
+<li><strong>Press Fitting</strong>: Interference fits for bearings and bearing seats, pins and holes, use press fitting. The press force-displacement curve must be controlled: a sudden drop in press force indicates dimensional deviation or misalignment. The curve is archived with the serial number. Crossed roller bearings in humanoid robot joints are particularly sensitive to press-fit coaxiality.</li>
+<li><strong>Riveting and Snapping</strong>: Cover panels and lightweight structures often use blind rivets or snap fits, aligning with the DFA part count reduction strategy from Chapter 10.</li>
+<li><strong>Adhesive Bonding</strong>: Magnet bonding (motor rotor), structural adhesives (carbon fiber link joints), and thread-locking adhesives are three typical applications. Adhesive quality depends on surface cleanliness, adhesive layer thickness, and curing schedule. The production line requires batch validation using shear test specimens.</li>
+</ul>
+<h3 id="1123-reducer-and-bearing-assembly-where-final-precision-is-formed">11.2.3 Reducer and Bearing Assembly: Where Final Precision is Formed</h3>
+<p>The complete machine assembly process for harmonic reducers (connecting the flexspline to the output flange, inserting the wave generator, positioning the circular spline) directly determines the final values of backlash and transmission error. Generally, assembly should use a torque wrench to tighten multiple screws in a diagonal, step-by-step pattern to avoid additional deformation of the flexspline cup. The wave generator bearing and the inner wall of the flexspline require lubrication grease of a specified grade and fill volume; overfilling increases churning losses and temperature rise. After assembly, <strong>backlash</strong> and <strong>transmission error</strong> are measured on a dedicated test stand. Non-conforming units are reworked rather than flowing to the next process—this is the logic of outgoing inspection at reducer manufacturers like Harmonic Drive and Leaderdrive, as mentioned in Chapter 10, and is equally necessary for OEMs developing their own joints.</p>
+<p>The key points for bearing assembly are cleanliness and preload. Particulate contamination is the primary cause of premature bearing failure. Cleanroom conditions, dust-free clothing, and ionizing air blowers for static elimination should be included in the SOP. The preload amount for angular contact bearing pairs is achieved through spacer grinding or shim grouping, and the grouping data must also be traceable.</p>
+<h3 id="1124-harness-engineering-routing-crimping-and-continuity-testing">11.2.4 Harness Engineering: Routing, Crimping, and Continuity Testing</h3>
+<p>Humanoid robot harnesses traverse multiple moving joints and are among the most fragile links in complete machine reliability. WBS task P5.3.1 "Cable and Tube Routing Design" requires the output of a "Routing Design Specification," defining cable types, fixing points, bend radii, and routing paths. Key control items on the assembly side include:</p>
+<ol>
+<li><strong>Minimum Bend Radius</strong>: Harnesses in moving parts generally require a bend radius no less than 7–10 times the cable outer diameter. High-flex drag chain cables are used for torsional sections.</li>
+<li><strong>Strain Relief</strong>: Fixing points must be provided at both ends of connectors so that motion stress is borne by the harness body, not the terminals.</li>
+<li><strong>Crimping Quality</strong>: Terminal crimping is controlled by dual indicators: crimp height and pull-off force. Samples undergo metallographic cross-section analysis.</li>
+<li><strong>Continuity and Insulation Testing</strong>: 100% of harnesses pass through a continuity tester to check for opens, shorts, and miswiring. Power harnesses additionally undergo insulation resistance and dielectric strength testing.</li>
+</ol>
+<h3 id="1125-error-proofing-design-and-electrostatic-protection">11.2.5 Error-Proofing Design and Electrostatic Protection</h3>
+<p><strong>Poka-Yoke (Error-Proofing)</strong> shifts the responsibility for "assembly correctness" from operator attention to tooling and processes: asymmetric locating pins prevent reverse installation, sensors confirm part presence, tightening programs are automatically invoked per station, and photoelectric sensors on bins prevent missed parts. Electronic workstations (motor drivers, computing platforms, battery BMS) must be managed according to an Electrostatic Discharge (ESD) protection system (EPA area, anti-static wrist straps and mats, ionizing blowers) to prevent ESD damage that might only be discovered during EOL testing or even in the field.</p>
+<h2 id="113-assembly-line-planning-and-system-integration">11.3 Assembly Line Planning and System Integration</h2>
+<h3 id="1131-assembly-sequence-and-fixture-planning">11.3.1 Assembly Sequence and Fixture Planning</h3>
+<p>WBS P5.3.2 "Assembly Sequence and Fixture Planning" requires outputting an assembly sequence diagram, a fixture list, and a draft SOP. The principles for assembly sequence planning are: from inside to outside (install internal skeleton and wiring harness first, then cover panels), heavy parts first, difficult tasks first (processes with tight operating space should be performed early), and critical precision processes should be arranged early with inspection points. Fixtures must meet three requirements: unified positioning datum (coinciding with design datum and inspection datum), error-proofing, and quick changeover. The complete assembly of humanoid robots typically requires dedicated turnover fixtures to support switching between horizontal assembly and vertical posture testing.</p>
+<h3 id="1132-takt-time-line-balancing-and-sop">11.3.2 Takt Time, Line Balancing, and SOP</h3>
+<p>Assembly line planning (WBS P16.1.3) is centered on <strong>takt time</strong>: given a market demand rate of <span class="arithmatex">\(D\)</span> units per shift and effective working time <span class="arithmatex">\(T_{\text{avail}}\)</span>, then</p>
+<div class="arithmatex">\[
+\text{Takt} = \frac{T_{\text{avail}}}{D}
+\]</div>
+<p>The operation time of all stations should be balanced close to the takt time, with line balancing efficiency defined as</p>
+<div class="arithmatex">\[
+\eta_{\text{LB}} = \frac{\sum_{i} t_i}{n_{\text{stations}} \cdot t_{\max}}
+\]</div>
+<p>where <span class="arithmatex">\(t_i\)</span> is the operation time of the <span class="arithmatex">\(i\)</span>-th station, and <span class="arithmatex">\(t_{\max}\)</span> is the bottleneck station time. Humanoid robots are currently mostly in the stage of hundreds to thousands of units per year, with the production line form mainly being <strong>cell assembly</strong>: a small number of multi-functional stations plus skilled technicians, rather than an automotive assembly line. However, components like joint modules, whose demand is tens of times that of the complete robot, warrant the initial construction of semi-automatic sub-assembly lines. SOP documents must include task breakdown, key point illustrations, CTQ (Critical-to-Quality) identification, and abnormal handling guidelines, and should be maintained together with time study data.</p>
+<h3 id="1133-joint-module-sub-assembly-and-system-integration-test-bench">11.3.3 Joint Module Sub-Assembly and System Integration Test Bench</h3>
+<p>Joint modules are the most numerous and highest-value sub-assemblies in a humanoid robot (typically 28–50 per complete robot). Their sub-assembly line should be organized as "Assembly → Burn-in → Performance Test": after module assembly, a loaded burn-in run-in is performed to evenly distribute lubricant and stabilize mating surfaces; subsequently, performance verification is completed on the <strong>System Integration Test Bench</strong> – these test benches verify joint performance, communication bus, control loop, and safety system before complete robot assembly. Typical test items include peak torque, continuous torque-temperature rise curve, backlash, torque sensor zero drift, and communication packet loss rate. Test-passed modules receive a unique serial number and are bound with a test archive, serving as leaf nodes for the complete robot BOM traceability.</p>
+<h3 id="1134-complete-robot-final-assembly-process">11.3.4 Complete Robot Final Assembly Process</h3>
+<p>The typical sequence for complete robot final assembly is: Pelvis skeleton → Legs → Torso (battery, computing platform, power distribution) → Arms → Head/neck and perception mast → Final wiring harness connection → Cover panels. After each subsystem is completed, a local power-on check (communication scan, emergency stop circuit, insulation check) is performed to prevent faults from being covered by subsequent assembly. After complete robot assembly, it proceeds to the calibration and configuration process in Section 11.4, and then to EOL.</p>
+<hr />
+<h2 id="114-calibration-and-parameter-configuration">11.4 Calibration and Parameter Configuration</h2>
+<h3 id="1141-joint-calibration-procedure">11.4.1 Joint Calibration Procedure</h3>
+<p>The first batch of "personalized data" after assembly comes from the <strong>Joint Calibration Procedure</strong>: determining the absolute zero position, encoder offset, and direction flag for each actuator. A typical implementation is: control the joint to slowly touch a mechanical limit or a dedicated calibration block, record the encoder reading, compare it with a reference posture (e.g., standing upright with legs together), solve for the zero offset, and write it to the drive's non-volatile memory. This procedure must be performed independently for each joint and verified bidirectionally (approaching the limit from both directions to assess the impact of backlash on the zero position).</p>
+<h3 id="1142-kinematic-calibration-and-link-parameter-compensation">11.4.2 Kinematic Calibration and Link Parameter Compensation</h3>
+<p>Manufacturing and assembly errors cause actual link lengths and joint axes to deviate from nominal values, directly impairing the absolute positioning accuracy of the foot and hand ends. Kinematic calibration uses external measurements (laser tracker, photogrammetry, or calibration fixtures) to collect end-effector poses under various postures, performing a least-squares identification of DH/PoE parameters:</p>
+<div class="arithmatex">\[
+\min_{\Delta \boldsymbol{\theta}} \sum_{k} \left\| \mathbf{p}_k^{\text{meas}} - f(\boldsymbol{q}_k, \boldsymbol{\theta}_0 + \Delta \boldsymbol{\theta}) \right\|^2
+\]</div>
+<p>where <span class="arithmatex">\(\boldsymbol{\theta}\)</span> is the kinematic parameter vector. The compensated parameters are written into the controller, linking with the kinematic calibration method from Chapter 8; in mass production, a strategy of "full parameter calibration for the first unit + batch sampling of key parameters" is typically adopted to control labor hours.</p>
+<h3 id="1143-multi-sensor-joint-calibration">11.4.3 Multi-Sensor Joint Calibration</h3>
+<p>The perception-control closed loop requires consistent extrinsic parameters between cameras, depth cameras/LiDAR, IMU, and the joint coordinate system. <strong>Joint-Camera-IMU Calibration</strong> estimates the intrinsic parameters, extrinsic parameters, and time offsets of each sensor: camera intrinsic parameters are calibrated using a checkerboard/dot target; camera-LiDAR extrinsic parameters are solved by minimizing reprojection error; spatiotemporal calibration of IMU and camera can be performed using continuous-time trajectory estimation methods. Sensors on the head/neck mast can introduce additional errors due to structural deformation when the complete robot posture changes, so calibration should be performed on a complete robot horizontal posture reference (e.g., a horizontal base in the calibration room) and verified by re-measuring features during EOL.</p>
+<h3 id="1144-system-identification-and-dynamics-parameter-tuning">11.4.4 System Identification and Dynamics Parameter Tuning</h3>
+<p>The complete robot controller (balancing, whole-body control) relies on accurate mass, center of mass, and inertia parameters. <strong>System Identification</strong> uses joint torque and motion data under excitation trajectories to regress the base parameters in the rigid body dynamics equations:</p>
+<div class="arithmatex">\[
+\boldsymbol{\tau} = \mathbf{Y}(\mathbf{q}, \dot{\mathbf{q}}, \ddot{\mathbf{q}})\, \boldsymbol{\pi}
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{Y}\)</span> is the regression matrix and <span class="arithmatex">\(\boldsymbol{\pi}\)</span> is the vector of parameters to be identified. In engineering, this is advanced in three steps: "CAD prior + joint-level friction identification + whole-arm/whole-leg excitation identification"; the per-joint identification results of the friction model (Coulomb + viscous + static friction) are simultaneously used for feedforward compensation and the friction consistency criterion in EOL.</p>
+<h3 id="1145-software-flashing-parameter-partitioning-and-traceability">11.4.5 Software Flashing, Parameter Partitioning, and Traceability</h3>
+<p>After calibration, the complete robot undergoes a unified software installation: firmware (drives, BMS, safety MCU), operating system image, middleware (ROS 2, etc.), and application software are flashed according to the version baseline; calibration parameters and serial numbers are written into the parameter partition. The <strong>OTA (Over-The-Air) software update</strong> system requires initial registration and secure channel establishment before shipment, reserving a path for after-sales upgrades and software iterations after Chapter 12. All flashing records (version number, checksum, station, time) enter the MES and are bound to the serial number, forming a "one robot, one file" system.</p>
+<h2 id="115-test-and-verification-system-dv-and-pv">11.5 Test and Verification System: DV and PV</h2>
+<h3 id="1151-test-pyramid-and-hierarchical-responsibilities">11.5.1 Test Pyramid and Hierarchical Responsibilities</h3>
+<p>The complete machine test system has a pyramid structure: the bottom layer consists of component and PCBA-level tests (incoming inspection, ICT in-circuit testing), the middle layer comprises module/subsystem tests (joint test bench, battery pack charge/discharge cabinet, HIL), and the top layer involves complete machine and field tests. The lower the level, the lower the cost of finding defects; the goal of test planning is to intercept the vast majority of defects before the module level, with the complete machine level only exposing integration issues (interfaces, interference, system dynamics).</p>
+<h3 id="1152-dv-design-verification-test-matrix">11.5.2 DV: Design Verification Test Matrix</h3>
+<p>DV uses engineering prototypes to verify design specifications, corresponding to WBS tasks P15.2 and P15.3:</p>
+<table>
+<thead>
+<tr>
+<th>Test Category</th>
+<th>Typical Items</th>
+<th>Purpose</th>
+<th>WBS Anchor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safety Function Test</td>
+<td>Emergency stop chain, safety MCU monitoring, power-off braking hold, collision detection</td>
+<td>Verify safety functions operate as designed</td>
+<td>P15.2.1</td>
+</tr>
+<tr>
+<td>Performance Benchmark Test</td>
+<td>Walking speed, endurance, payload, grasping success rate, joint tracking error</td>
+<td>Verify KPI achievement</td>
+<td>P15.2.2</td>
+</tr>
+<tr>
+<td>Environmental Adaptability Test</td>
+<td>High/low temperature operation/storage, humidity, vibration, shock, dust/water ingress protection</td>
+<td>Expose environmentally sensitive defects</td>
+<td>P15.2.3</td>
+</tr>
+<tr>
+<td>Durability Test</td>
+<td>Joint cycle life, complete machine walking distance, cover opening/closing life</td>
+<td>Verify design life</td>
+<td>P15.3.1</td>
+</tr>
+<tr>
+<td>EMC Test</td>
+<td>Conducted/radiated emissions, ESD/RF immunity</td>
+<td>Meet regulations and ensure self-compatibility</td>
+<td>P13.3.2</td>
+</tr>
+<tr>
+<td>Software Stability</td>
+<td>Long-duration operation, fault injection recovery, regression testing</td>
+<td>Verify software robustness</td>
+<td>P15.3.2</td>
+</tr>
+</tbody>
+</table>
+<p>Section 9.9 of Chapter 9 has detailed HALT/HASS and individual environmental test methods. This section emphasizes their orchestration logic within the DV matrix: design test profiles indexed by failure modes identified in the FMEA, ensuring each test can be traced back to a specific risk.</p>
+<h3 id="1153-hil-role-of-hardware-in-the-loop-in-the-integration-phase">11.5.3 HIL: Role of Hardware-in-the-Loop in the Integration Phase</h3>
+<p><strong>Hardware-in-the-Loop (HIL) testing</strong> allows a real controller to interact with a real-time simulated plant, enabling safe and repeatable verification of control software before complete machine integration. There are two typical forms of HIL for humanoid robots:</p>
+<ol>
+<li><strong>Controller HIL</strong>: The real main controller/joint drive runs the control software, while a real-time simulator emulates the complete machine dynamics, sensors, and fault scenarios (e.g., encoder disconnection, bus frame loss) to verify fault response and degradation strategies.</li>
+<li><strong>Actuator HIL</strong>: Physical actuators interface with the controller and a real-time simulation model, simulating the complete machine load spectrum on a test bench to proactively expose issues like torque saturation, thermal overload, and control bandwidth problems.</li>
+</ol>
+<p>HIL shifts a large number of "complete machine level" risks earlier to the bench phase. Together with SiL (Software-in-the-Loop), it forms the verification gradient described in Chapter 9 and serves as a pre-safety net for the "Perception-Planning-Control closed-loop integration" (P15.1.3).</p>
+<h3 id="1154-pv-production-validation-and-ppap">11.5.4 PV: Production Validation and PPAP</h3>
+<p>The core proposition of PV is: "Is the product produced under mass production conditions still qualified?" Its input is production molds, production process parameters, and production line operators. Its output is the PPAP evidence package (see Section 10.9.2 of Chapter 10) and the production readiness assessment conclusion (WBS P16.3.3). The sample size and test items for the PV batch should cover: full dimensional measurement (sampling), initial process capability study (critical characteristics Cpk ≥ 1.67, general characteristics Cpk ≥ 1.33 as common automotive industry thresholds), complete machine EOL full pass, and at least one complete round of packaging and transportation validation. After PV is passed, the process parameter window is frozen. Any subsequent changes (4M changes: Man, Machine, Material, Method) must go through the change management process.</p>
+<hr />
+<h2 id="116-end-of-line-testing-eol">11.6 End-of-Line Testing (EOL)</h2>
+<h3 id="1161-eol-test-item-design-principles">11.6.1 EOL Test Item Design Principles</h3>
+<p>End-of-Line (EOL) testing is performed on every complete machine. Its design principles are: <strong>Short cycle time, Full coverage, Traceable</strong>. Test items only verify "whether manufacturing is correct" rather than "whether the design is reasonable" (the latter belongs to DV/PV). The typical cycle time is controlled on the order of tens of minutes per complete machine. All EOL data is bound to the serial number and uploaded to the MES, serving both as a release criterion and as a starting point for tracing post-sales issues.</p>
+<h3 id="1162-joint-module-eol">11.6.2 Joint Module EOL</h3>
+<p>Joint modules undergo module-level EOL at the end of the sub-assembly line. Typical items include:</p>
+<table>
+<thead>
+<tr>
+<th>Test Item</th>
+<th>Method</th>
+<th>Criterion Example (Typical)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Insulation Resistance/Dielectric Strength</td>
+<td>Megohmmeter, Dielectric Strength Tester</td>
+<td>Insulation resistance ≥ specified threshold</td>
+</tr>
+<tr>
+<td>Back EMF Constant</td>
+<td>Drag method to measure line back EMF</td>
+<td>Deviation from nominal value ≤ ±5%</td>
+</tr>
+<tr>
+<td>No-Load Friction Torque</td>
+<td>Low-speed forward/reverse rotation</td>
+<td>Friction-speed curve within template</td>
+</tr>
+<tr>
+<td>Backlash</td>
+<td>Bidirectional reciprocating loading</td>
+<td>≤ Specification value (e.g., 1 arcmin level)</td>
+</tr>
+<tr>
+<td>Torque Sensor Zero Point</td>
+<td>No-load reading</td>
+<td>Zero drift ≤ threshold</td>
+</tr>
+<tr>
+<td>Communication &amp; Encoder</td>
+<td>Bus scan, multi-turn count</td>
+<td>No frame loss, multi-turn position correct</td>
+</tr>
+<tr>
+<td>Noise &amp; Vibration</td>
+<td>Microphone/Accelerometer (optional)</td>
+<td>Abnormal spectrum alarm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1163-complete-machine-eol">11.6.3 Complete Machine EOL</h3>
+<p>The typical flow for complete machine EOL is: Visual &amp; Fastener Check → Power-On Self-Test (Sensors, Drives, Battery BMS Communication) → Emergency Stop &amp; Safety Link Test → Joint Zero Position Verification → Static Standing &amp; Center of Mass Alignment → Stationary Marching/Short Step Walking → Upper Limb Typical Actions &amp; Grasping Smoke Test → Charging Function Check → Data Archiving &amp; Release. Walking tests are typically performed under speed limits and gantry protection; criteria are primarily based on "action completion + key signal envelope within template" to avoid turning EOL into a time-consuming performance test.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Visual/Fastener Check"] --&gt; B["Power-On Self-Test&lt;br/&gt;Sensor/Drive/BMS"]
+    B --&gt; C["Safety Link&lt;br/&gt;Emergency Stop/Safety MCU"]
+    C --&gt; D["Zero Position Verification&lt;br/&gt;Calibration Parameters"]
+    D --&gt; E["Static Standing&lt;br/&gt;Center of Mass Alignment"]
+    E --&gt; F["Walking Smoke Test&lt;br/&gt;Gantry Protection"]
+    F --&gt; G["Upper Limb/Grasping&lt;br/&gt;Typical Actions"]
+    G --&gt; H["Charging Check&lt;br/&gt;Data Archiving &amp; Release"]</code></pre>
+<hr />
+<h2 id="117-quality-and-process-control">11.7 Quality and Process Control</h2>
+<h3 id="1171-spc-and-process-capability-indices">11.7.1 SPC and Process Capability Indices</h3>
+<p><strong>Statistical Process Control (SPC)</strong> uses control charts to monitor process variation of key characteristics, distinguishing between common cause and special cause variation. The process capability indices are defined as:</p>
+<div class="arithmatex">\[
+C_p = \frac{USL - LSL}{6\sigma}, \qquad C_{pk} = \min\!\left(\frac{USL-\mu}{3\sigma}, \frac{\mu-LSL}{3\sigma}\right)
+\]</div>
+<p>Where <span class="arithmatex">\(USL/LSL\)</span> are the upper/lower specification limits, and <span class="arithmatex">\(\mu,\sigma\)</span> are the process mean and standard deviation. WBS task P16.2.2 "Quality Control System Establishment" requires the output of a quality plan, inspection specifications, and SPC control charts. Key SPC focus areas for humanoid robot production lines include: machined bearing seat dimensions, tightening torque/angle curves, press-fit force curves, critical mating dimensions of injection-molded covers, and friction and backlash data from module EOL.</p>
+<h3 id="1172-first-pass-yield-and-pilot-run-closure">11.7.2 First Pass Yield and Pilot Run Closure</h3>
+<p><strong>First Pass Yield (FPY)</strong> is the proportion of products that pass all processes without rework. For multiple stations, it is the product of each station's yield:</p>
+<div class="arithmatex">\[
+FPY = \prod_{i=1}^{n} y_i
+\]</div>
+<p>Humanoid robots have many processes. Even with a single station yield of 98%, the cumulative FPY over thirty stations is only about 55% – this is precisely why WBS P16.3.1 "Small Batch Pilot Run" requires outputting a pilot run summary report, FPY, and issue closure rate: the purpose of a pilot run is not just to build a few usable prototypes, but to raise and lock the conditions for each station's <span class="arithmatex">\(y_i\)</span>. Pilot run batches progress through "EVT → DVT → PVT" (Engineering/Design/Production Verification), with batch sizes increasing stepwise. The issue closure rate and FPY trend are the core gate criteria for entering the next phase.</p>
+<h3 id="1173-anomaly-handling-and-8d">11.7.3 Anomaly Handling and 8D</h3>
+<p>Anomaly handling for incoming materials and processes (WBS P16.2.3) adopts the <strong>8D Report</strong> framework: Form the Team (D1), Describe the Problem (D2), Implement Interim Containment Actions (D3), Determine Root Cause (D4, commonly using 5Whys/Fishbone diagram), Choose Permanent Corrective Actions (D5), Implement and Validate (D6), Prevent Recurrence (D7, horizontal deployment to similar processes), and Recognize Team &amp; Standardize (D8). For safety-related defects, containment actions should include tracing and screening delivered products – this relies on the "One Machine, One File" system established in Section 11.4.5.</p>
+<h3 id="1174-traceability-system-and-mes">11.7.4 Traceability System and MES</h3>
+<p>The Manufacturing Execution System (MES) manages serial number management, process parameter binding, test data archiving, and reverse traceability queries. The recommended traceability granularity for humanoid robots includes: joint module serial number, reducer/motor batch, tightening curve, calibration parameter version, and software version baseline. When batch failures occur in the field, the impact scope can be delineated by batch number, minimizing after-sales costs and reputational damage.</p>
+<h2 id="118-volume-production-ramp-up-and-delivery-preparation">11.8 Volume Production Ramp-Up and Delivery Preparation</h2>
+<h3 id="1181-from-pilot-run-to-sop-the-ramp-up-curve">11.8.1 From Pilot Run to SOP: The Ramp-Up Curve</h3>
+<p>Volume production ramp-up follows the learning curve principle: as cumulative production doubles, the assembly time per unit decreases at a fixed rate (typical learning rate 80%–90%), while FPY and capacity increase in tandem. Key management points during the ramp-up phase are: fixing the front-line team to reduce human variables, holding daily quality meetings to track top defects, and implementing "cut-in" management for engineering changes to distinguish products before and after the change. Tesla Optimus has factory deployment and high-volume manufacturing as its public goals, Unitree G1 achieves batch delivery at a relatively low price, and Figure AI is planning dedicated production facilities for Figure 02. The public paths of these leading manufacturers all indicate that the core competitiveness of humanoid robot mass production lies in successfully implementing the manufacturing and assembly system described in Chapters 10–11, rather than in individual technological breakthroughs.</p>
+<h3 id="1182-cost-accounting-and-cost-reduction-closed-loop">11.8.2 Cost Accounting and Cost Reduction Closed Loop</h3>
+<p>P16.3.2 "Cost Accounting and Cost Reduction" uses actual data from small batches to calibrate the should-cost model from Chapter 10: it distinguishes five cost lines—materials, processes, tooling amortization, yield loss, and assembly labor hours—prioritizes projects (VA/VE projects) based on potential reduction magnitude, and forms a quarterly closed loop of "accounting → project initiation → verification → switchover." The main cost reduction levers on the assembly side are DFA redesign (reducing fastening and adjustment operations), modular procurement (transferring assembly complexity), and EOL cycle time optimization.</p>
+<h3 id="1183-service-manuals-spare-parts-and-training">11.8.3 Service Manuals, Spare Parts, and Training</h3>
+<p>Delivery preparation (WBS P16.3.4) outputs service manuals, spare parts strategies, and training plans: the service manual organizes disassembly/assembly paths according to MTTR (Mean Time To Repair) targets, translating the results of WBS P5.3.3 "Maintainability and Serviceability Design" into executable maintenance tasks; the spare parts strategy classifies parts by failure rate and downtime cost (joint modules, battery packs, and wiring harnesses are high-priority spare parts); training covers three levels: production line operators, quality inspectors, and after-sales engineers. These contents will connect to subsequent chapters on operations and lifecycle management.</p>
+<h3 id="1184-production-readiness-review-and-release-gate">11.8.4 Production Readiness Review and Release Gate</h3>
+<p>After PPAP approval (WBS P16.3.3) and before SOP, a cross-functional production readiness review should be held, with sign-off on the following gate items one by one:</p>
+<table>
+<thead>
+<tr>
+<th>Gate Item</th>
+<th>Responsible Party</th>
+<th>Pass Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design and Process Freeze</td>
+<td>R&amp;D/Process</td>
+<td>DV/PV reports closed, change channels controlled</td>
+</tr>
+<tr>
+<td>Production Line and Tooling</td>
+<td>Manufacturing Engineering</td>
+<td>Cycle time measured and meets target, tooling acceptance completed</td>
+</tr>
+<tr>
+<td>Quality System</td>
+<td>Quality</td>
+<td>Control plan effective, key characteristics Cpk meets target</td>
+</tr>
+<tr>
+<td>Supply Chain</td>
+<td>Procurement</td>
+<td>Approved supplier list locked, PPAP evidence complete</td>
+</tr>
+<tr>
+<td>After-Sales Preparation</td>
+<td>Service</td>
+<td>Service manual, spare parts, and training in place</td>
+</tr>
+</tbody>
+</table>
+<p>Items that do not meet the gate criteria must have a clear closure plan and responsible person before release, to avoid introducing unresolved manufacturing risks into the ramp-up phase.</p>
+<hr />
+<h2 id="119-chapter-summary">11.9 Chapter Summary</h2>
+<p>This chapter systematically elaborates on the humanoid robot assembly, integration, and testing system. The main conclusions are as follows:</p>
+<ol>
+<li>
+<p><strong>Assembly is a multi-level aggregation process:</strong> Parts → Joint Modules → Subsystems → Complete Machine. Each level corresponds to an independent SOP, tooling, and inspection point. Modular sub-assembly + final assembly of the complete machine is the current mainstream organization method.</p>
+</li>
+<li>
+<p><strong>Assembly quality is built into the process:</strong> Torque-angle control for tightening, constant torque step-by-step assembly and lubrication management for reducers, bending radius and stress relief for wiring harnesses, and curve monitoring for press-fitting and bonding collectively determine the initial precision and long-term reliability of the complete machine. Poka-yoke and ESD protection transfer correctness from people to the process.</p>
+</li>
+<li>
+<p><strong>Calibration and identification are sources of personalized data:</strong> Joint zero position, kinematic compensation, multi-sensor extrinsic parameters, and dynamic baseline parameters give each complete machine a consistent starting point for precision. Software flashing and parameter partitioning via MES create a "one machine, one file" record.</p>
+</li>
+<li>
+<p><strong>DV freezes the design, PV freezes the process:</strong> DV uses FMEA as an index to arrange the test matrix, and HIL shifts the complete machine risk forward to the test bench. PV uses production conditions to generate PPAP evidence, and the process window is frozen after the initial process capability meets the target.</p>
+</li>
+<li>
+<p><strong>EOL and SPC form the mass production quality closed loop:</strong> Module-level EOL intercepts the vast majority of defects; complete machine EOL only verifies integration correctness. Cpk, FPY, and 8D drive continuous improvement. The pilot run closed loop and the ramp-up learning curve determine the rate of decline of the mass production cost curve.</p>
+</li>
+</ol>
+<hr />
+<h2 id="1191-chapter-symbol-table">11.9.1 Chapter Symbol Table</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Unit</th>
+<th>First Appearance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(T, F, d, K\)</span></td>
+<td>Tightening torque, preload force, thread diameter, torque coefficient</td>
+<td>N·m, N, mm, dimensionless</td>
+<td>11.2.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\text{Takt}\)</span></td>
+<td>Production cycle time</td>
+<td>s/unit</td>
+<td>11.3.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta_{\text{LB}}\)</span></td>
+<td>Line balance rate</td>
+<td>dimensionless</td>
+<td>11.3.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathbf{Y}, \boldsymbol{\pi}\)</span></td>
+<td>Dynamic regression matrix, baseline parameter vector</td>
+<td>—</td>
+<td>11.4.4</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(USL, LSL, \mu, \sigma\)</span></td>
+<td>Upper/lower specification limits, process mean and standard deviation</td>
+<td>Depends on characteristic</td>
+<td>11.7.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_p, C_{pk}\)</span></td>
+<td>Process capability indices</td>
+<td>dimensionless</td>
+<td>11.7.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(FPY, y_i\)</span></td>
+<td>First pass yield, station yield</td>
+<td>dimensionless</td>
+<td>11.7.2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1110-chapter-knowledge-graph-anchors">11.10 Chapter Knowledge Graph Anchors</h2>
+<h3 id="11101-core-entities-and-relationship-table">11.10.1 Core Entities and Relationship Table</h3>
+<table>
+<thead>
+<tr>
+<th>Entity Type</th>
+<th>Representative Entity (KG Entry)</th>
+<th>Attribute Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WBS Process</td>
+<td>P15 Complete Machine Integration and Verification Testing, P16 Small Batch Pilot Run and Mass Production Preparation</td>
+<td>Level 3 tasks, deliverables</td>
+</tr>
+<tr>
+<td>Assembly Process</td>
+<td>Tightening control, press-fitting, bonding, wire harness crimping, poka-yoke</td>
+<td>Curve criteria, CTQ</td>
+</tr>
+<tr>
+<td>Calibration Method</td>
+<td>Joint calibration process, joint calibration (camera-IMU-joint), system identification</td>
+<td>Zero offset, extrinsic parameters, baseline parameters</td>
+</tr>
+<tr>
+<td>Test Method</td>
+<td>Hardware-in-the-loop HIL, DV/PV, EOL, Environmental/Durability/EMC tests</td>
+<td>Test items, criteria</td>
+</tr>
+<tr>
+<td>Test Equipment</td>
+<td>System integration test bench, joint module EOL station</td>
+<td>Test capability</td>
+</tr>
+<tr>
+<td>Quality Method</td>
+<td>SPC, FPY, 8D, PPAP, MES traceability</td>
+<td>Control chart, gate indicator</td>
+</tr>
+<tr>
+<td>Complete Machine Case</td>
+<td>Tesla Optimus, Unitree G1, Figure 02</td>
+<td>Mass production path</td>
+</tr>
+</tbody>
+</table>
+<p>Relationship Example:</p>
+<table>
+<thead>
+<tr>
+<th>Head Entity</th>
+<th>Relationship</th>
+<th>Tail Entity</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joint Module Sub-assembly</td>
+<td>Passes through</td>
+<td>System Integration Test Bench</td>
+<td>Verify performance and safety before assembly</td>
+</tr>
+<tr>
+<td>Complete Machine Final Assembly</td>
+<td>Depends on</td>
+<td>Assembly Sequence Diagram / SOP</td>
+<td>Output of P5.3.2, P16.1.3</td>
+</tr>
+<tr>
+<td>Joint Calibration</td>
+<td>Writes to</td>
+<td>Drive Parameter Partition</td>
+<td>One machine, one file traceability</td>
+</tr>
+<tr>
+<td>HIL</td>
+<td>Precedes</td>
+<td>Closed-loop Integration Risk</td>
+<td>P15.1.3 Safety Net</td>
+</tr>
+<tr>
+<td>PV</td>
+<td>Feeds into</td>
+<td>PPAP Evidence Package</td>
+<td>Mass production readiness gate</td>
+</tr>
+<tr>
+<td>SPC Control Chart</td>
+<td>Monitors</td>
+<td>Tightening/Press-fitting Curve</td>
+<td>Special cause variation alarm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="11102-cross-layer-connection-example-from-process-window-to-complete-machine-release">11.10.2 Cross-layer Connection Example: From Process Window to Complete Machine Release</h3>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Chapter 10&lt;br/&gt;Process Window + FAI/PPAP"] --&gt; B["Module Sub-assembly&lt;br/&gt;Burn-in + Module EOL"]
+    B --&gt; C["Complete Machine Final Assembly&lt;br/&gt;SOP + Poka-yoke"]
+    C --&gt; D["Calibration &amp; Identification&lt;br/&gt;Zero/Extrinsic/Dynamics"]
+    D --&gt; E["Complete Machine EOL&lt;br/&gt;Safety Chain + Walk/Smoke Test"]
+    E --&gt; F["MES One Machine One File&lt;br/&gt;Release &amp; Traceability"]
+    F --&gt; G["After-sales Data Feedback&lt;br/&gt;8D Continuous Improvement"]
+    G --&gt; A</code></pre>
+<h3 id="11103-five-key-questions-for-this-chapter">11.10.3 Five Key Questions for This Chapter</h3>
+<ol>
+<li>
+<p><strong>Why use the torque-angle method instead of the fixed torque method for critical bolted connections?</strong> The preload force of the fixed torque method can vary by ±30% due to friction coefficient dispersion; the torque-angle method directly controls the preload force based on bolt elongation, compressing the dispersion to the order of ±10%, which is crucial for critical connections like joints and reducer flanges.</p>
+</li>
+<li>
+<p><strong>What is the essential difference between DV and PV?</strong> DV uses engineering prototypes to verify if the design meets specifications, answering "Is the design correct?"; PV uses production tooling, processes, and personnel to verify the stability of the manufacturing process, answering "Is the process correct?" The former freezes the design, the latter freezes the process.</p>
+</li>
+<li>
+<p><strong>Why can't EOL replace DV?</strong> EOL has a short cycle time and a limited number of test items, only verifying "Is this unit built correctly?"; design defects (e.g., insufficient lifespan, EMC non-compliance) are not visible in EOL and must be covered by the systematic test matrix of DV/PV.</p>
+</li>
+<li>
+<p><strong>Why is FPY the core indicator for small batch pilot runs instead of output?</strong> In a multi-station setup, FPY is the product of the yields of each station; the task of the pilot run is to increase the yield of each station and lock down the conditions, otherwise scaling up the batch will only magnify rework and scrap costs.</p>
+</li>
+<li>
+<p><strong>Why must calibration data be bound and archived with the serial number?</strong> Zero offsets, extrinsic parameters, and dynamic parameters are the "personalized fingerprints" of each complete machine. They are not only a prerequisite for the normal operation of the controller but also a key data asset for after-sales fault tracing and identifying batch-level defects.</p>
+</li>
+</ol>
+<h2 id="references-and-data-sources">References and Data Sources</h2>
+<ol>
+<li>Groover M P. <em>Fundamentals of Modern Manufacturing: Materials, Processes, and Systems</em> (7th ed.). Wiley, 2018. (Manufacturing and Assembly Systems)</li>
+<li>Boothroyd G, Dewhurst P, Knight W A. <em>Product Design for Manufacture and Assembly</em> (3rd ed.). CRC Press, 2010. (DFA and Assembly Analysis)</li>
+<li>Shigley J E, Mischke C R, Budynas R G. <em>Mechanical Engineering Design</em> (7th ed.). McGraw-Hill, 2004. (Threaded Connection Design)</li>
+<li>Bickford J H. <em>Handbook of Bolts and Bolted Joints</em>. CRC Press, 1998. (Bolt Connection Engineering)</li>
+<li>Montgomery D C. <em>Introduction to Statistical Quality Control</em> (8th ed.). Wiley, 2019. (SPC and Process Capability)</li>
+<li>AIAG. <em>Statistical Process Control (SPC)</em> (2nd ed.). AIAG, 2005. (SPC Manual)</li>
+<li>AIAG. <em>Measurement Systems Analysis (MSA)</em> (4th ed.). AIAG, 2010. (Measurement Systems Analysis)</li>
+<li>AIAG. <em>Production Part Approval Process (PPAP)</em> (4th ed.). AIAG, 2006. (PPAP Manual)</li>
+<li>AIAG. <em>Potential Failure Mode and Effects Analysis (FMEA)</em> (4th ed.). AIAG, 2008. (FMEA Manual)</li>
+<li>IATF 16949:2016. <em>Quality management system requirements for automotive production and relevant service parts organizations</em>. IATF, 2016. (Quality System)</li>
+<li>ISO 10218-1:2011. <em>Robots and robotic devices — Safety requirements for industrial robots</em>. ISO, 2011. (Robot Safety)</li>
+<li>ISO/TS 15066:2016. <em>Robots and robotic devices — Collaborative robots</em>. ISO, 2016. (Collaborative Safety)</li>
+<li>ISO 13849-1:2015. <em>Safety of machinery — Safety-related parts of control systems</em>. ISO, 2015. (Functional Safety)</li>
+<li>Siciliano B, Khatib O. <em>Springer Handbook of Robotics</em> (2nd ed.). Springer, 2016. (Calibration and Identification Methods)</li>
+<li>Khalil W, Dombre E. <em>Modeling, Identification and Control of Robots</em>. Butterworth-Heinemann, 2002. (Classic Robot Identification)</li>
+<li>Featherstone R. <em>Rigid Body Dynamics Algorithms</em>. Springer, 2008. (Fundamentals of Dynamic Parameter Identification)</li>
+<li>Harmonic Drive Systems Inc. <em>Product and engineering information</em>. https://www.hds.co.jp/. (Public Information on Harmonic Drive Assembly and Performance)</li>
+<li>Tesla. <em>AI Day 2022: Optimus Robot</em>. 2022. https://www.tesla.com/AI/. (Public Introduction to Optimus Manufacturing and Mass Production)</li>
+<li>Figure AI. <em>Figure 02 and BotQ manufacturing</em>. https://www.figure.ai/. (Public Information on Figure Mass Production)</li>
+<li>Unitree Robotics. <em>G1 Humanoid Robot</em>. https://www.unitree.com/. (Public Information on G1 Batch Delivery)</li>
+</ol>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-10/">← Previous<span>Chapter 10: Manufacturing Process System</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-12/">Next →<span>Chapter 12: Certification, Compliance, and Quality Standards</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-11-assembly-integration-and-testing">Chapter 11 Assembly, Integration, and Testing</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#111-the-position-of-assembly-integration-and-testing-in-the-production-chain">11.1 The Position of Assembly, Integration, and Testing in the Production Chain</a><ul>
+<li><a href="#1111-from-components-to-complete-machine-assembly-hierarchy">11.1.1 From Components to Complete Machine: Assembly Hierarchy</a></li>
+<li><a href="#1112-the-right-side-of-the-v-model-roles-of-dv-and-pv">11.1.2 The Right Side of the V-Model: Roles of DV and PV</a></li>
+<li><a href="#1113-wbs-perspective-task-mapping-for-p15-and-p16">11.1.3 WBS Perspective: Task Mapping for P15 and P16</a></li>
+</ul>
+</li>
+<li><a href="#112-assembly-process-engineering">11.2 Assembly Process Engineering</a><ul>
+<li><a href="#1121-threaded-connections-and-tightening-control">11.2.1 Threaded Connections and Tightening Control</a></li>
+<li><a href="#1122-press-fitting-riveting-and-adhesive-bonding">11.2.2 Press Fitting, Riveting, and Adhesive Bonding</a></li>
+<li><a href="#1123-reducer-and-bearing-assembly-where-final-precision-is-formed">11.2.3 Reducer and Bearing Assembly: Where Final Precision is Formed</a></li>
+<li><a href="#1124-harness-engineering-routing-crimping-and-continuity-testing">11.2.4 Harness Engineering: Routing, Crimping, and Continuity Testing</a></li>
+<li><a href="#1125-error-proofing-design-and-electrostatic-protection">11.2.5 Error-Proofing Design and Electrostatic Protection</a></li>
+</ul>
+</li>
+<li><a href="#113-assembly-line-planning-and-system-integration">11.3 Assembly Line Planning and System Integration</a><ul>
+<li><a href="#1131-assembly-sequence-and-fixture-planning">11.3.1 Assembly Sequence and Fixture Planning</a></li>
+<li><a href="#1132-takt-time-line-balancing-and-sop">11.3.2 Takt Time, Line Balancing, and SOP</a></li>
+<li><a href="#1133-joint-module-sub-assembly-and-system-integration-test-bench">11.3.3 Joint Module Sub-Assembly and System Integration Test Bench</a></li>
+<li><a href="#1134-complete-robot-final-assembly-process">11.3.4 Complete Robot Final Assembly Process</a></li>
+</ul>
+</li>
+<li><a href="#114-calibration-and-parameter-configuration">11.4 Calibration and Parameter Configuration</a><ul>
+<li><a href="#1141-joint-calibration-procedure">11.4.1 Joint Calibration Procedure</a></li>
+<li><a href="#1142-kinematic-calibration-and-link-parameter-compensation">11.4.2 Kinematic Calibration and Link Parameter Compensation</a></li>
+<li><a href="#1143-multi-sensor-joint-calibration">11.4.3 Multi-Sensor Joint Calibration</a></li>
+<li><a href="#1144-system-identification-and-dynamics-parameter-tuning">11.4.4 System Identification and Dynamics Parameter Tuning</a></li>
+<li><a href="#1145-software-flashing-parameter-partitioning-and-traceability">11.4.5 Software Flashing, Parameter Partitioning, and Traceability</a></li>
+</ul>
+</li>
+<li><a href="#115-test-and-verification-system-dv-and-pv">11.5 Test and Verification System: DV and PV</a><ul>
+<li><a href="#1151-test-pyramid-and-hierarchical-responsibilities">11.5.1 Test Pyramid and Hierarchical Responsibilities</a></li>
+<li><a href="#1152-dv-design-verification-test-matrix">11.5.2 DV: Design Verification Test Matrix</a></li>
+<li><a href="#1153-hil-role-of-hardware-in-the-loop-in-the-integration-phase">11.5.3 HIL: Role of Hardware-in-the-Loop in the Integration Phase</a></li>
+<li><a href="#1154-pv-production-validation-and-ppap">11.5.4 PV: Production Validation and PPAP</a></li>
+</ul>
+</li>
+<li><a href="#116-end-of-line-testing-eol">11.6 End-of-Line Testing (EOL)</a><ul>
+<li><a href="#1161-eol-test-item-design-principles">11.6.1 EOL Test Item Design Principles</a></li>
+<li><a href="#1162-joint-module-eol">11.6.2 Joint Module EOL</a></li>
+<li><a href="#1163-complete-machine-eol">11.6.3 Complete Machine EOL</a></li>
+</ul>
+</li>
+<li><a href="#117-quality-and-process-control">11.7 Quality and Process Control</a><ul>
+<li><a href="#1171-spc-and-process-capability-indices">11.7.1 SPC and Process Capability Indices</a></li>
+<li><a href="#1172-first-pass-yield-and-pilot-run-closure">11.7.2 First Pass Yield and Pilot Run Closure</a></li>
+<li><a href="#1173-anomaly-handling-and-8d">11.7.3 Anomaly Handling and 8D</a></li>
+<li><a href="#1174-traceability-system-and-mes">11.7.4 Traceability System and MES</a></li>
+</ul>
+</li>
+<li><a href="#118-volume-production-ramp-up-and-delivery-preparation">11.8 Volume Production Ramp-Up and Delivery Preparation</a><ul>
+<li><a href="#1181-from-pilot-run-to-sop-the-ramp-up-curve">11.8.1 From Pilot Run to SOP: The Ramp-Up Curve</a></li>
+<li><a href="#1182-cost-accounting-and-cost-reduction-closed-loop">11.8.2 Cost Accounting and Cost Reduction Closed Loop</a></li>
+<li><a href="#1183-service-manuals-spare-parts-and-training">11.8.3 Service Manuals, Spare Parts, and Training</a></li>
+<li><a href="#1184-production-readiness-review-and-release-gate">11.8.4 Production Readiness Review and Release Gate</a></li>
+</ul>
+</li>
+<li><a href="#119-chapter-summary">11.9 Chapter Summary</a></li>
+<li><a href="#1191-chapter-symbol-table">11.9.1 Chapter Symbol Table</a></li>
+<li><a href="#1110-chapter-knowledge-graph-anchors">11.10 Chapter Knowledge Graph Anchors</a><ul>
+<li><a href="#11101-core-entities-and-relationship-table">11.10.1 Core Entities and Relationship Table</a></li>
+<li><a href="#11102-cross-layer-connection-example-from-process-window-to-complete-machine-release">11.10.2 Cross-layer Connection Example: From Process Window to Complete Machine Release</a></li>
+<li><a href="#11103-five-key-questions-for-this-chapter">11.10.3 Five Key Questions for This Chapter</a></li>
+</ul>
+</li>
+<li><a href="#references-and-data-sources">References and Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

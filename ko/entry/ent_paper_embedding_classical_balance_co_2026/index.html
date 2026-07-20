@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</h1>
+      <p class="entry-name-en">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.08619v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2603.08619" target="_blank" rel="noopener">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>휴머노이드 로봇은 여전히 넘어짐과 복구 불가능한 실패 상태에 취약하여, 비정형 환경에서의 실용적 유용성을 제한합니다. 강화 학습이 일어서기 행동을 입증했지만, 기존 접근법은 균형 상태에 대한 명시적 표현 없이 복구를 순수 작업-보상 문제로만 다룹니다. 우리는 이러한 한계를 해결하기 위해 고전적 균형 지표(포착점, 질량 중심 상태, 중심 운동량)를 특권 비평가 입력으로 내장하고, 훈련 중 이러한 양을 중심으로 직접 보상을 형성하는 통합 RL 정책을 제시합니다. 행위자는 제로샷 하드웨어 전이를 위해 고유 감각에만 의존합니다. 참조 궤적이나 스크립트된 접촉 없이, 단일 정책이 전체 복구 스펙트럼(작은 교란에 대한 발목 및 엉덩이 전략, 큰 밀림에 대한 교정 스텝, 손, 팔꿈치, 무릎을 사용한 다중 접촉 일어서기를 포함한 순응적 넘어짐)을 포괄합니다. Isaac Lab에서 Unitree H1-2로 훈련된 이 정책은 무작위 초기 자세와 스크립트되지 않은 넘어짐 구성에서 93.4%의 복구율을 달성합니다. 절제 연구는 균형 정보 구조를 제거하면 일어서기 학습이 완전히 실패함을 보여주며, 이 지표가 우연한 구조가 아닌 의미 있는 학습 신호를 제공함을 확인합니다. MuJoCo로의 시뮬-시뮬 전이와 예비 하드웨어 실험은 추가로 환경 간 일반화를 입증합니다. 이러한 결과는 해석 가능한 균형 구조를 학습 프레임워크에 내장하면 실패 상태에서 소요되는 시간을 크게 줄이고 자율 복구의 범위를 확장함을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>휴머노이드 로봇은 여전히 넘어짐과 복구 불가능한 실패 상태에 취약하여, 비정형 환경에서의 실용적 유용성을 제한합니다. 강화 학습이 일어서기 행동을 입증했지만, 기존 접근법은 균형 상태에 대한 명시적 표현 없이 복구를 순수 작업-보상 문제로만 다룹니다. 우리는 이러한 한계를 해결하기 위해 고전적 균형 지표(포착점, 질량 중심 상태, 중심 운동량)를 특권 비평가 입력으로 내장하고, 훈련 중 이러한 양을 중심으로 직접 보상을 형성하는 통합 RL 정책을 제시합니다. 행위자는 제로샷 하드웨어 전이를 위해 고유 감각에만 의존합니다. 참조 궤적이나 스크립트된 접촉 없이, 단일 정책이 전체 복구 스펙트럼(작은 교란에 대한 발목 및 엉덩이 전략, 큰 밀림에 대한 교정 스텝, 손, 팔꿈치, 무릎을 사용한 다중 접촉 일어서기를 포함한 순응적 넘어짐)을 포괄합니다. Isaac Lab에서 Unitree H1-2로 훈련된 이 정책은 무작위 초기 자세와 스크립트되지 않은 넘어짐 구성에서 93.4%의 복구율을 달성합니다. 절제 연구는 균형 정보 구조를 제거하면 일어서기 학습이 완전히 실패함을 보여주며, 이 지표가 우연한 구조가 아닌 의미 있는 학습 신호를 제공함을 확인합니다. MuJoCo로의 시뮬-시뮬 전이와 예비 하드웨어 실험은 추가로 환경 간 일반화를 입증합니다. 이러한 결과는 해석 가능한 균형 구조를 학습 프레임워크에 내장하면 실패 상태에서 소요되는 시간을 크게 줄이고 자율 복구의 범위를 확장함을 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_capture_point/">캡처 포인트</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_embedding_classical_balance_co_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_capture_point/">
+          <span class="entry-type">원리</span>
+          <h3>캡처 포인트</h3>
+          <p>로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

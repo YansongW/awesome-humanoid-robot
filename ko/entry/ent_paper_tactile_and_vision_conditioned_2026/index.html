@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</h1>
+      <p class="entry-name-en">Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09218v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.09218v1 Announce Type: new Abstract: Whole-arm manipulation involves direct contact with the environment while the robot completes a task by distributing contact across multiple links as contacts form, slide, and break. This setting breaks common implicit assumptions in many learning-based manipulation pipelines: arm configuration tightly couples motion and contact forces, contact state is partially observed under occlusion, and purely learned rollouts can become physically inconsistent under distribution shift because many multi-link contact configurations are sparsely represented in the data. To address this, we propose TACTIC (Tactile and Vision Conditioned Contact-Centric Control), a receding-horizon controller for whole-arm manipulation. TACTIC uses a contact-centric hybrid predictive model that combines RGB-D, distributed tactile sensing, and a compact 2D proximity representation. The model couples a learned, action-conditioned latent dynamics model with analytical kinematics through contact Jacobians, enabling rollouts of future contact configurations and interaction forces. TACTIC integrates these rollouts into a sampling-based MPC planner with contact-aware action sampling: contact Jacobian-based projections steer sampled action sequences toward force-modulating directions, and objectives defined over predicted proximity and interaction forces trade task progress against whole-arm force regulation. We evaluate TACTIC in simulation against state-of-the-art model-based and model-free methods, and perform ablations that isolate the contribution of each design choice. TACTIC consistently outperforms other methods. We further demonstrate real-world performance on a robot with distributed tactile sensing across three whole-arm manipulation tasks that require multi-contact trajectories: turning over and repositioning a manikin, and goal-reaching in a 3D dynamic maze. Website: https://emprise.cs.cornell.edu/tactic</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.09218" target="_blank" rel="noopener">Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전완 조작(Whole-arm manipulation)은 로봇이 접촉이 형성, 미끄러짐, 분리됨에 따라 여러 링크에 접촉을 분산시키면서 작업을 완료하기 위해 환경과 직접 접촉하는 것을 포함합니다. 이러한 설정은 많은 학습 기반 조작 파이프라인에서 일반적으로 암묵적으로 가정되는 가정들을 깨뜨립니다: 팔 구성이 운동과 접촉 힘을 밀접하게 결합하고, 접촉 상태가 폐색 하에서 부분적으로 관찰되며, 순수 학습된 롤아웃은 분포 이동 하에서 물리적으로 일관성이 없어질 수 있는데, 이는 많은 다중 링크 접촉 구성이 데이터에서 드물게 표현되기 때문입니다. 이를 해결하기 위해, 우리는 TACTIC(Tactile and Vision Conditioned Contact-Centric Control)을 제안합니다. 이는 전완 조작을 위한 후퇴 수평 제어기입니다. TACTIC은 RGB-D, 분산 촉각 센싱, 그리고 컴팩트한 2D 근접 표현을 결합한 접촉 중심 하이브리드 예측 모델을 사용합니다. 이 모델은 학습된, 행동 조건화된 잠재 역학 모델을 접촉 야코비안을 통해 해석적 운동학과 결합하여, 미래 접촉 구성과 상호작용 힘의 롤아웃을 가능하게 합니다. TACTIC은 이러한 롤아웃을 접촉 인식 행동 샘플링을 갖춘 샘플링 기반 MPC 계획기에 통합합니다: 접촉 야코비안 기반 투영은 샘플링된 행동 시퀀스를 힘 조절 방향으로 유도하고, 예측된 근접성과 상호작용 힘에 대해 정의된 목표는 작업 진행과 전완 힘 조절 간의 균형을 맞춥니다. 우리는 TACTIC을 시뮬레이션에서 최신 모델 기반 및 모델 프리 방법과 비교 평가하고, 각 설계 선택의 기여도를 분리하는 절제 연구를 수행합니다. TACTIC은 다른 방법들보다 일관되게 우수한 성능을 보입니다. 또한, 다중 접촉 궤적을 필요로 하는 세 가지 전완 조작 작업(마네킹 뒤집기 및 재배치, 3D 동적 미로에서 목표 도달)에서 분산 촉각 센싱을 갖춘 로봇으로 실제 세계 성능을 입증합니다. 웹사이트: https://emprise.cs.cornell.edu/tactic</p>
+<h2 id="_2">핵심 내용</h2>
+<p>전완 조작(Whole-arm manipulation)은 로봇이 접촉이 형성, 미끄러짐, 분리됨에 따라 여러 링크에 접촉을 분산시키면서 작업을 완료하기 위해 환경과 직접 접촉하는 것을 포함합니다. 이러한 설정은 많은 학습 기반 조작 파이프라인에서 일반적으로 암묵적으로 가정되는 가정들을 깨뜨립니다: 팔 구성이 운동과 접촉 힘을 밀접하게 결합하고, 접촉 상태가 폐색 하에서 부분적으로 관찰되며, 순수 학습된 롤아웃은 분포 이동 하에서 물리적으로 일관성이 없어질 수 있는데, 이는 많은 다중 링크 접촉 구성이 데이터에서 드물게 표현되기 때문입니다. 이를 해결하기 위해, 우리는 TACTIC(Tactile and Vision Conditioned Contact-Centric Control)을 제안합니다. 이는 전완 조작을 위한 후퇴 수평 제어기입니다. TACTIC은 RGB-D, 분산 촉각 센싱, 그리고 컴팩트한 2D 근접 표현을 결합한 접촉 중심 하이브리드 예측 모델을 사용합니다. 이 모델은 학습된, 행동 조건화된 잠재 역학 모델을 접촉 야코비안을 통해 해석적 운동학과 결합하여, 미래 접촉 구성과 상호작용 힘의 롤아웃을 가능하게 합니다. TACTIC은 이러한 롤아웃을 접촉 인식 행동 샘플링을 갖춘 샘플링 기반 MPC 계획기에 통합합니다: 접촉 야코비안 기반 투영은 샘플링된 행동 시퀀스를 힘 조절 방향으로 유도하고, 예측된 근접성과 상호작용 힘에 대해 정의된 목표는 작업 진행과 전완 힘 조절 간의 균형을 맞춥니다. 우리는 TACTIC을 시뮬레이션에서 최신 모델 기반 및 모델 프리 방법과 비교 평가하고, 각 설계 선택의 기여도를 분리하는 절제 연구를 수행합니다. TACTIC은 다른 방법들보다 일관되게 우수한 성능을 보입니다. 또한, 다중 접촉 궤적을 필요로 하는 세 가지 전완 조작 작업(마네킹 뒤집기 및 재배치, 3D 동적 미로에서 목표 도달)에서 분산 촉각 센싱을 갖춘 로봇으로 실제 세계 성능을 입증합니다. 웹사이트: https://emprise.cs.cornell.edu/tactic</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_tactile_and_vision_conditioned_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

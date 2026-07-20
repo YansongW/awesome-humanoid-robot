@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Robot Control and Autonomy Through Collaborative Simulation Twin · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</h1>
+      <p class="entry-name-en">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Software &amp; Middleware</span><span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="AI-extracted from the arXiv abstract; hardware and algorithm details taken from supplied metadata and require human verification against the full paper.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Proposes a collaborative Simulation Twin (ST) framework that offloads SLAM-based path planning to a remote simulated agent and synchronizes velocity commands with predicted force feedback from a physical robot, evaluated in constrained indoor environments.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2303.06172" target="_blank" rel="noopener">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper introduces a collaborative Simulation Twin (ST) strategy that splits a mobile robot system into a cyber (simulated) space and a physical (real) space connected over a communication channel. The physical robot remains at the operational site while a simulated autonomous agent at a remote location performs high-level autonomy. The simulated twin runs autonomous navigation using a SLAM-based path planner and sends velocity commands to the physical robot, which tracks those velocities and returns feedback from its interactions with the environment.</p>
+<p>The framework is positioned as an extension of the digital-twin concept, but with an emphasis on collaborative control rather than pure mirroring. It also supports optional human-in-the-loop teleoperation, where the simulated twin’s autonomous planner and the human operator’s commands are multiplexed according to priority rules for safe obstacle avoidance. Experiments compare the ST approach against conventional remote computing/offloading, manual teleoperation, and digital-twin baselines, reporting gains in computational and network performance.</p>
+<p>Evaluation was carried out in small indoor arenas (3 m × 3 m and 6 m × 6 m) using a low-cost mobile robot. The results demonstrate that the simulation-physical twinning approach is practical for resource-constrained robots, although obstructed scenarios showed a success rate of 64 % and goal accuracy was lower than direct remote offloading due to state-mapping delay.</p>
+<h2 id="key-contributions">Key Contributions</h2>
+<ul>
+<li>{'en': 'A simulated-physical robot collaboration framework that allows optional human-in-the-loop control.', 'zh': '允许可选人在回路控制的虚实机器人协同框架。', 'ko': '선택적 인간 개입 제어를 가능하게 하는 실제-가상 로봇 협업 프레임워크.'}</li>
+<li>{'en': 'Prioritized switching-based control using a velocity multiplexer for safe obstacle avoidance.', 'zh': '使用速度多路复用器进行优先级切换控制，实现安全避障。', 'ko': '속도 멀티플렉서를 활용한 우선순위 기반 전환 제어를 통한 안전한 장애물 회피.'}</li>
+<li>{'en': 'A feedback mechanism applied to the remote simulated autonomous agent rather than to a joystick.', 'zh': '将反馈机制应用于远程仿真自主智能体而非操纵杆。', 'ko': '조이스틱이 아닌 원격 시뮬레이션 자율 에이전트에 피드백 메커니즘 적용.'}</li>
+<li>{'en': 'Experimental comparison of task, network, and computing performance against remote offloading, manual teleoperation, and digital-twin baselines.', 'zh': '与远程卸载、手动遥操作及数字孪生基线进行任务、网络和计算性能对比。', 'ko': '원격 오프로딩, 수동 텔레오퍼레이션, 디지털 트윈 기준과의 작업·네트워크·계산 성능 비교.'}</li>
+</ul>
+<h2 id="relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</h2>
+<p>{'en': 'The ST framework is directly relevant to humanoid robotics because it offloads compute-intensive autonomy algorithms to a remote simulated twin, reducing the onboard processing and networking burden on the physical robot. This can lower hardware costs and enable scalable deployment of humanoids with limited payload or battery capacity. However, the paper’s experiments use a small wheeled robot; whether the same latency, balance, and safety guarantees transfer to bipedal locomotion remains to be validated.', 'zh': 'ST框架对人形机器人具有直接相关性，因为它将计算密集型的自主算法卸载到远程仿真孪生体，从而减轻物理机器人的机载处理与网络负担。这有助于降低硬件成本，并支持载荷或电池容量有限的人形机器人规模化部署。但论文实验仅使用小型轮式机器人，该方法能否迁移到双足行走并保证相同的延迟、平衡与安全性仍需验证。', 'ko': 'ST 프레임워크는 연산 집약적인 자율 알고리즘을 원격 시뮬레이션 트윈에 오프로드하여 물리 로봇의 온보드 처리 및 네트워크 부담을 줄이므로 인간형 로봇과 직접적으로 관련이 있다. 이는 하드웨어 비용을 낮추고 탑재 하중이나 배터리 용량이 제한된 인간형 로봇의 확장 가능한 배포를 가능하게 한다. 그러나 논문의 실험은 소형 휠 로봇을 사용하였으므로, 동일한 지연 시간, 균형 및 안전성 보장이 이족 보행에도 적용되는지는 추가 검증이 필요하다.'}</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2303.06172">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</a> (accessed 2026-07-01)</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_concept_digital_twin/">Digital Twin</a>
+              <span class="rel-desc">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin proposes Digital Twin.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_ros_2_middleware_2024/">ROS 2 Middleware</a>
+              <span class="rel-desc">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_gazebo/">Gazebo</a>
+              <span class="rel-desc">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin uses Gazebo.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_tahir_mobile_robot_control_and_auton_2023"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>ROS 2 Middleware</h3>
+          <p>De facto robot middleware with DDS-based pub/sub and real-time support.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_gazebo/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Gazebo</h3>
+          <p>An open-source 3D robotics simulator that provides physics engines, sensor models, and scene…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_digital_twin/">
+          <span class="entry-type">Concept</span>
+          <h3>Digital Twin</h3>
+          <p>A virtual replica of a physical asset or process that is continuously synchronized with real-world…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#key-contributions">Key Contributions</a></li>
+<li><a href="#relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,1465 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人机协作安全 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/concept/">概念</a>
+    <span>/</span>
+    <span class="breadcrumb-current">人机协作安全</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">概念</div>
+      <h1>人机协作安全</h1>
+      <p class="entry-name-en">Human-Robot Collaboration Safety</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-01.md#1.4.4 合规性：从“实验室自由”到“市场准入” by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及 CE、UL、FCC、CR、CCC 等区域市场准入要求。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>人机协作安全是人形机器人领域的重要概念。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>人形机器人在工作环境中与人密切互动，必须符合功能安全、电气安全、电磁兼容、机械安全等相关标准。主要标准包括：</p>
+<table>
+<thead>
+<tr>
+<th>标准</th>
+<th>适用范围</th>
+<th>核心要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ISO 13482:2014</td>
+<td>个人护理机器人</td>
+<td>速度、力、接触压力限制</td>
+</tr>
+<tr>
+<td>ISO/TS 15066</td>
+<td>协作机器人</td>
+<td>人机协作安全要求</td>
+</tr>
+<tr>
+<td>IEC 61508</td>
+<td>功能安全</td>
+<td>控制系统安全完整性等级（SIL）</td>
+</tr>
+<tr>
+<td>ISO 13849</td>
+<td>机械安全控制系统</td>
+<td>控制系统安全相关部件</td>
+</tr>
+<tr>
+<td>IEC 62368</td>
+<td>音视频与信息技术设备安全</td>
+<td>电气安全、火灾风险</td>
+</tr>
+</tbody>
+</table>
+<p>不同地区还有不同的市场准入要求：</p>
+<ul>
+<li><strong>欧盟</strong>：CE 标志</li>
+<li><strong>美国</strong>：UL 认证、FCC 电磁兼容</li>
+<li><strong>中国</strong>：CR 认证（中国机器人认证）、CCC 等</li>
+</ul>
+<p>合规性不仅影响设计选择（如最大运动速度、外壳材料、急停按钮位置），还直接影响测试成本和时间。一个完整的安全认证周期可能需要 6–18 个月，费用从数万美元到数十万美元不等。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：功能安全（Functional Safety）</p>
+<p>功能安全是指系统在故障条件下仍能保持安全状态的能力。IEC 61508 定义了安全完整性等级 SIL 1–4，SIL 4 为最高等级。实现功能安全需要危险分析、冗余设计、故障检测、安全关断机制和系统验证。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：EMC（Electromagnetic Compatibility）</p>
+<p>电磁兼容性指设备在电磁环境中正常工作且不对其他设备产生不可接受电磁干扰的能力。EMC 测试包括辐射发射（RE）、传导发射（CE）、静电放电（ESD）、电快速瞬变脉冲群（EFT）等。</p>
+</div>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+<li>项目 Wiki：chapter-01.md#1.4.4 合规性：从“实验室自由”到“市场准入”</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_standard_iso_13849/">ISO 13849</a>
+              <span class="rel-desc">人机协作安全提及ISO 13849。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_standard_iec_61508/">IEC 61508</a>
+              <span class="rel-desc">人机协作安全提及IEC 61508。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_habit_human_aware_behavior_and_2026/">HABIT: Human-Aware Behavior and Interaction Training Dataset for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lamon_a_unified_architecture_for_dyn_2023/">混合人机团队中动态角色分配与协作任务规划的统一架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">混合人机团队中动态角色分配与协作任务规划的统一架构discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_green_using_physiological_measures_g_2025/">利用生理指标、注视和面部表情建模人类对机器人伙伴的信任</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">利用生理指标、注视和面部表情建模人类对机器人伙伴的信任discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_robonurse_vla_robotic_scrub_nu_2024/">RoboNurse-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboNurse-VLAdiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_walker_desiderata_for_planning_system_2019/">通用服务机器人规划系统的期望特性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">通用服务机器人规划系统的期望特性discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_schneider_ce_mrs_contrastive_explanation_2024/">CE-MRS：多机器人系统的对比解释</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">CE-MRS：多机器人系统的对比解释提及人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_human_aware_physical_human_rob_2024/">基于多架空中机器人的人类感知物理人机协作搬运与操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于多架空中机器人的人类感知物理人机协作搬运与操作discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_whole_body_human_huma_2026/">Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_h2_compact_human_humanoid_co_m_2025/">H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_robot_learning_on_the_job_huma_2022/">机器人在岗学习：部署过程中的人机协同自治与学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人在岗学习：部署过程中的人机协同自治与学习discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_garg_semantics_for_robotic_mapping_2020/">机器人建图、感知与交互中的语义研究综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人建图、感知与交互中的语义研究综述discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_annie_be_careful_of_your_robot_2025/">ANNIE</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ANNIEdiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_look_around_enhanc_2024/">Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_safevla_towards_safety_alignme_2025/">SafeVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">SafeVLAdiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ask_to_clarify_resolving_instr_2026/">Ask-to-Clarify: Resolving Instruction Ambiguity through Multi-turn Dialogue</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hemken_how_to_raise_a_robot_a_case_fo_2023/">如何培养机器人——面向人形辅助机器人约束任务规划的神经符号人工智能案例</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">如何培养机器人——面向人形辅助机器人约束任务规划的神经符号人工智能案例discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_inoue_dialogue_system_with_humanoid_2022/">人形机器人对话系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">人形机器人对话系统discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_effects_of_robotic_touch_on_ol_2026/">Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_intention_inferring_tendencies_2025/">INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_teleoperation_of_humanoid_robo_2023/">Teleoperation of Humanoid Robots: A Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_from_technical_metrics_to_user_2026/">From Technical Metrics to User Perception: A User Study of a Multimodal Human-Robot Interaction System for Object Detection and Grasping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">大规模集群的多机器人隐式控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">大规模集群的多机器人隐式控制提及人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vinanzi_casper_cognitive_architecture_2022/">CASPER：面向机器人社会感知与参与的认知架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">CASPER：面向机器人社会感知与参与的认知架构studies人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mobileh2r_learning_generalizab_2025/">MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">通过验证定位估计改进基于视觉地点识别的机器人导航</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">通过验证定位估计改进基于视觉地点识别的机器人导航discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_armor_egocentric_perception_fo_2024/">ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_safehumanoid_vlm_rag_driven_co_2025/">SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_swamy_scaled_autonomy_enabling_human_2019/">可扩展自主：使人类操作员能够控制机器人群</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">可扩展自主：使人类操作员能够控制机器人群discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_oopsieverse_a_safety_benchmark_2026/">OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_granados_dance_teaching_by_a_robot_comb_2017/">机器人舞蹈教学：结合认知与物理人机交互以支持技能学习过程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人舞蹈教学：结合认知与物理人机交互以支持技能学习过程discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">MAPS-X：基于轨迹分段的可解释多机器人运动规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MAPS-X：基于轨迹分段的可解释多机器人运动规划提及人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_glance_say_multimodal_human_ro_2026/">Glance-Say: Multimodal Human-Robot Collaboration and Intent Recognition via Sticky Glance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_semantic_co_speech_gesture_syn_2025/">Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lanza_multi_sensory_integration_in_a_2020/">类量子机器人感知模型中的多感官融合</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">类量子机器人感知模型中的多感官融合提及人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_development_of_an_intuitive_gu_2025/">Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_visualizing_impedance_control_2026/">Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_grassi_knowledge_triggering_extractio_2021/">基于人机语音交互的知识触发、抽取与存储</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于人机语音交互的知识触发、抽取与存储discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fang_automated_task_updates_of_temp_2022/">异构机器人时序逻辑规范的自动任务更新</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">异构机器人时序逻辑规范的自动任务更新提及人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bian_large_language_model_based_tas_2025/">基于大语言模型的服务机器人任务规划：综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">基于大语言模型的服务机器人任务规划：综述提及人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robust_operational_space_contr_2026/">Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egoposer_robust_real_time_egoc_2024_1/">EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_thananjeyan_safety_augmented_value_estimat_2020/">基于演示的安全增强价值估计（SAVED）：面向稀疏代价机器人任务的安全深度模型强化学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于演示的安全增强价值估计（SAVED）：面向稀疏代价机器人任务的安全深度模型强化学习discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_underwater_ribbon_cutting_ushe_2026/">Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_human_centric_transferable_tac_2026/">Human-Centric Transferable Tactile Pre-Training for Dexterous Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hossen_care_finding_root_causes_of_co_2023/">CARE：在高度可配置机器人中查找配置问题的根本原因</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CARE：在高度可配置机器人中查找配置问题的根本原因discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">面向任务自适应异构多机器人协作的机器人内部注意力建模</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向任务自适应异构多机器人协作的机器人内部注意力建模discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deng_mqa_answering_the_question_via_2020/">MQA：通过机器人操作回答问题</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MQA：通过机器人操作回答问题discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_freezevla_action_freezing_atta_2025/">FreezeVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">FreezeVLAdiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_park_towards_embedding_dynamic_pers_2024/">面向交互式机器人中动态人格嵌入：Masquerading Animated Social Kinematic (MASK)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向交互式机器人中动态人格嵌入：Masquerading Animated Social Kinematic (MASK)discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_safefall_learning_protective_c_2026/">失败不可避免，但不能灾难化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">失败不可避免，但不能灾难化discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egoposer_robust_real_time_egoc_2024/">EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fallenstein_reflective_oracles_a_foundatio_2015/">反射预言机：经典博弈论的基础</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">反射预言机：经典博弈论的基础提及人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_saad_coalitional_game_theory_for_co_2009/">通信网络中的联盟博弈论：教程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">通信网络中的联盟博弈论：教程discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_it_takes_two_learning_interact_2025/">It Takes Two: Learning Interactive Whole-Body Control Between Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_taniguchi_autonomous_planning_based_on_s_2021/">基于空间概念的服务机器人家庭整理自主规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于空间概念的服务机器人家庭整理自主规划discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_an_robotic_assistant_completing_c_2025/">Robotic Assistant</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Robotic Assistantdiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_dexterous_manipulatio_2026/">Learning Dexterous Manipulation Using Contact Wrench Guidance From Human Demonstration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hu_deploying_and_evaluating_llms_2023/">部署与评估用于服务移动机器人编程的大语言模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">部署与评估用于服务移动机器人编程的大语言模型discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sun_transforming_monolithic_founda_2025/">InteractGen</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">InteractGendiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_eiffert_predicting_responses_to_a_robo_2020/">利用生成式循环神经网络预测机器人未来运动的响应</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">利用生成式循环神经网络预测机器人未来运动的响应discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_3d_cal_an_open_source_software_2026/">3D Cal: An Open-Source Software Library for Depth Reconstruction on Vision-Based Tactile Sensors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yin_mivla_towards_generalizable_vi_2025/">MiVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MiVLAdiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_schreiter_multimodal_interaction_and_int_2025/">工业机器人的多模态交互与意图通信</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">工业机器人的多模态交互与意图通信discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_navarro_guerrero_visuo_haptic_object_perception_2023/">机器人视触觉物体感知综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人视触觉物体感知综述discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pico_reconstructing_3d_people_2025/">PICO: Reconstructing 3D People In Contact with Objects</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tan_roboos_next_a_unified_memory_b_2025/">RoboOS-NeXT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboOS-NeXTdiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lapsurgie_humanoid_robots_perf_2025/">LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_softvtbench_a_safety_aware_vis_2026/">SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_social_navigation_fro_2025/">Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ayub_interactive_continual_learning_2024/">面向家庭服务机器人长期个性化的交互式持续学习架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向家庭服务机器人长期个性化的交互式持续学习架构discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robocycle_autonomous_dual_arm_2026/">ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">强化学习智能体与机器人中的情绪：综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">强化学习智能体与机器人中的情绪：综述discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_honig_path_planning_with_kinematic_c_2017/">机器人群组运动学约束路径规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人群组运动学约束路径规划discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lallement_hatp_an_htn_planner_for_roboti_2014/">HATP：面向机器人学的HTN规划器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">HATP：面向机器人学的HTN规划器discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pellier_hddl_21_towards_defining_a_for_2023/">HDDL 2.1：面向时序HTN规划的形式化与语义定义</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">HDDL 2.1：面向时序HTN规划的形式化与语义定义discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_clabaugh_long_term_personalization_of_a_2019/">面向自闭症谱系障碍儿童的居家社交辅助机器人长期个性化研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向自闭症谱系障碍儿童的居家社交辅助机器人长期个性化研究discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_icub3_avatar_system_enabling_r_2022/">iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robot_trajectron_v3_a_probabil_2026/">Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shi_hi_robot_open_ended_instructio_2025/">Hi Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Hi Robotdiscusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jamieson_active_reward_learning_for_co_2020/">带宽受限环境下协同机器人视觉探索的主动奖励学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">带宽受限环境下协同机器人视觉探索的主动奖励学习discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_enhancing_the_llm_based_robot_2024/">通过人机协作增强基于大语言模型的机器人操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">通过人机协作增强基于大语言模型的机器人操作discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">多四足机器人协同牵引缆绳负载的导航与操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">多四足机器人协同牵引缆绳负载的导航与操作discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shree_exploiting_natural_language_fo_2021/">利用自然语言实现高效风险感知多机器人搜索救援规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">利用自然语言实现高效风险感知多机器人搜索救援规划discusses人机协作安全。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_manifold_constrained_hamilton_2026/">Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humblot_renaux_navigation_oriented_scene_unde_2022/">面向导航的场景理解：以自我中心图像学习可驾驶区域分割</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向导航的场景理解：以自我中心图像学习可驾驶区域分割discusses人机协作安全。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_concept_human_robot_collaboration_safety"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_development_of_an_intuitive_gu_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots</h3>
+          <p>Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_whole_body_human_huma_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations</h3>
+          <p>Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_freezevla_action_freezing_atta_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FreezeVLA</h3>
+          <p>FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models (FreezeVLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tan_roboos_next_a_unified_memory_b_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboOS-NeXT</h3>
+          <p>RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_glance_say_multimodal_human_ro_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Glance-Say: Multimodal Human-Robot Collaboration and Intent Recognition via Sticky Glance</h3>
+          <p>arXiv:2603.06121v2 Announce Type: replace Abstract: Gaze and speech are promising interaction…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_garg_semantics_for_robotic_mapping_2020/">
+          <span class="entry-type">论文</span>
+          <h3>机器人建图、感知与交互中的语义研究综述</h3>
+          <p>For robots to navigate and interact more richly with the world around them, they will likely require…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_oopsieverse_a_safety_benchmark_2026/">
+          <span class="entry-type">论文</span>
+          <h3>OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation</h3>
+          <p>arXiv:2606.31993v1 Announce Type: new Abstract: While robotic manipulation capabilities have…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_an_robotic_assistant_completing_c_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Robotic Assistant</h3>
+          <p>Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action Models…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">
+          <span class="entry-type">论文</span>
+          <h3>面向任务自适应异构多机器人协作的机器人内部注意力建模</h3>
+          <p>提出了innerATT，一种基于注意力机制的多智能体actor-critic方法，用于动态组建异构机器人团队以满足变化的任务需求并限制资源消耗，并在Multi-Agent Particle…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humblot_renaux_navigation_oriented_scene_unde_2022/">
+          <span class="entry-type">论文</span>
+          <h3>面向导航的场景理解：以自我中心图像学习可驾驶区域分割</h3>
+          <p>该论文提出一种监督式分割框架，以自我中心户外图像为输入，使用三个有序可驾驶等级、软有序标签以及面向安全关键像素的损失加权，提升跨城市场景与越野场景数据集的泛化能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_robonurse_vla_robotic_scrub_nu_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RoboNurse-VLA</h3>
+          <p>RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model (RoboNurse-VLA), is…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_annie_be_careful_of_your_robot_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ANNIE</h3>
+          <p>ANNIE: Be Careful of Your Robots (ANNIE), is a 2025 large vision-language-action model for robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_safevla_towards_safety_alignme_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SafeVLA</h3>
+          <p>SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hemken_how_to_raise_a_robot_a_case_fo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>如何培养机器人——面向人形辅助机器人约束任务规划的神经符号人工智能案例</h3>
+          <p>Humanoid robots will be able to assist humans in their daily life, in particular due to their…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_it_takes_two_learning_interact_2025/">
+          <span class="entry-type">论文</span>
+          <h3>It Takes Two: Learning Interactive Whole-Body Control Between Humanoid Robots</h3>
+          <p>It Takes Two: Learning Interactive Whole-Body Control Between Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_grassi_knowledge_triggering_extractio_2021/">
+          <span class="entry-type">论文</span>
+          <h3>基于人机语音交互的知识触发、抽取与存储</h3>
+          <p>本文提出了一种面向人工对话代理的运行时知识库扩展流程，该流程利用 Dialogflow 和 Google Cloud Natural Language…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_taniguchi_autonomous_planning_based_on_s_2021/">
+          <span class="entry-type">论文</span>
+          <h3>基于空间概念的服务机器人家庭整理自主规划</h3>
+          <p>本文提出一种基于似然比的规划方法，从整理后环境的多模态观测中学习三维物品-位置共现分布，使服务机器人能够决定家庭物品的整理顺序和目标位置。该基于ROS的集成系统在模拟环境中复现了WRS 2018…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_clabaugh_long_term_personalization_of_a_2019/">
+          <span class="entry-type">论文</span>
+          <h3>面向自闭症谱系障碍儿童的居家社交辅助机器人长期个性化研究</h3>
+          <p>Socially assistive robots (SAR) have shown great potential to augment the social and educational…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_safehumanoid_vlm_rag_driven_co_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot</h3>
+          <p>SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bian_large_language_model_based_tas_2025/">
+          <span class="entry-type">论文</span>
+          <h3>基于大语言模型的服务机器人任务规划：综述</h3>
+          <p>With the rapid advancement of large language models (LLMs) and robotics, service robots are…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lapsurgie_humanoid_robots_perf_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy</h3>
+          <p>LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_deploying_and_evaluating_llms_2023/">
+          <span class="entry-type">论文</span>
+          <h3>部署与评估用于服务移动机器人编程的大语言模型</h3>
+          <p>提出 CODEBOTLER，一个开源且与机器人无关的工具，通过少样本提示大语言模型，使用基于技能抽象的 Python 嵌入式领域特定语言为服务移动机器人生成程序；并提出…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shree_exploiting_natural_language_fo_2021/">
+          <span class="entry-type">论文</span>
+          <h3>利用自然语言实现高效风险感知多机器人搜索救援规划</h3>
+          <p>本文在合成灾难图像-描述数据集上微调ViLBERT视觉-语言模型，根据自然语言指令和机器人图像估计场景危险程度，并将危险估计嵌入到分布式风险感知混合整数线性规划多机器人搜索救援路径规划中。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">
+          <span class="entry-type">论文</span>
+          <h3>MAPS-X：基于轨迹分段的可解释多机器人运动规划</h3>
+          <p>Traditional multi-robot motion planning (MMP) focuses on computing trajectories for multiple robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_schneider_ce_mrs_contrastive_explanation_2024/">
+          <span class="entry-type">论文</span>
+          <h3>CE-MRS：多机器人系统的对比解释</h3>
+          <p>As the complexity of multi-robot systems grows to incorporate a greater number of robots, more…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_dexterous_manipulatio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Dexterous Manipulation Using Contact Wrench Guidance From Human Demonstration</h3>
+          <p>arXiv:2607.00033v1 Announce Type: new Abstract: Dexterous robot manipulation can benefit from the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_saad_coalitional_game_theory_for_co_2009/">
+          <span class="entry-type">论文</span>
+          <h3>通信网络中的联盟博弈论：教程</h3>
+          <p>Game theoretical techniques have recently become prevalent in many engineering applications, notably…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_intention_inferring_tendencies_2025/">
+          <span class="entry-type">论文</span>
+          <h3>INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM</h3>
+          <p>INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deng_mqa_answering_the_question_via_2020/">
+          <span class="entry-type">论文</span>
+          <h3>MQA：通过机器人操作回答问题</h3>
+          <p>提出操作问答（MQA）任务：机器人通过在杂乱料箱中主动推动物体来改变场景，直到能够回答自然语言计数问题；框架包含基于视觉问答（VQA）的问答模块和基于深度Q网络（DQN）的操作模块。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">
+          <span class="entry-type">论文</span>
+          <h3>多四足机器人协同牵引缆绳负载的导航与操作</h3>
+          <p>This paper tackles the problem of robots collaboratively towing a load with cables to a specified…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_green_using_physiological_measures_g_2025/">
+          <span class="entry-type">论文</span>
+          <h3>利用生理指标、注视和面部表情建模人类对机器人伙伴的信任</h3>
+          <p>本文开展了一项面对面的人机监督交互研究，采集多模态生理、注视和面部表情数据，训练机器学习分类器以预测人类对Franka Emika Panda机器人伙伴的信任度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_enhancing_the_llm_based_robot_2024/">
+          <span class="entry-type">论文</span>
+          <h3>通过人机协作增强基于大语言模型的机器人操作</h3>
+          <p>Large Language Models (LLMs) are gaining popularity in the field of robotics. However, LLM-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fang_automated_task_updates_of_temp_2022/">
+          <span class="entry-type">论文</span>
+          <h3>异构机器人时序逻辑规范的自动任务更新</h3>
+          <p>本文针对执行现有线性时序逻辑（LTL）任务的异构机器人定义了任务更新问题，并提出了一种框架：通过将剩余当前任务 Büchi 自动机与新任务 Büchi…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_honig_path_planning_with_kinematic_c_2017/">
+          <span class="entry-type">论文</span>
+          <h3>机器人群组运动学约束路径规划</h3>
+          <p>Path planning for multiple robots is well studied in the AI and robotics communities. For a given…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_underwater_ribbon_cutting_ushe_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory</h3>
+          <p>Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory的定义与定位 UnderwateEvent marked…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_granados_dance_teaching_by_a_robot_comb_2017/">
+          <span class="entry-type">论文</span>
+          <h3>机器人舞蹈教学：结合认知与物理人机交互以支持技能学习过程</h3>
+          <p>本研究提出了一种1.8米高的移动人形舞蹈教学机器人，通过自适应阻抗控制器在紧密接触的社交舞场景中引导人类学习者；其渐进式教学评分系统根据累积表现调整任务难度和控制增益，实验表明相比恒定控制器，渐进式教…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egoposer_robust_real_time_egoc_2024/">
+          <span class="entry-type">论文</span>
+          <h3>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</h3>
+          <p>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egoposer_robust_real_time_egoc_2024_1/">
+          <span class="entry-type">论文</span>
+          <h3>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</h3>
+          <p>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_standard_iec_61508/">
+          <span class="entry-type">标准</span>
+          <h3>IEC 61508</h3>
+          <p>人形机器人在人机共融环境中运行，其安全相关控制系统必须满足功能安全（functional safety）要求：当发生故障时，系统仍能将机器人带入安全状态。功能安全等级通常用 IEC 61508 的…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mobileh2r_learning_generalizab_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data</h3>
+          <p>MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_thananjeyan_safety_augmented_value_estimat_2020/">
+          <span class="entry-type">论文</span>
+          <h3>基于演示的安全增强价值估计（SAVED）：面向稀疏代价机器人任务的安全深度模型强化学习</h3>
+          <p>SAVED是一种深度模型强化学习算法，仅利用稀疏的任务完成监督信号和少量次优演示，结合学习到的价值函数、核密度安全集以及集成动力学模型上的概率机会约束，安全且高效地学习机器人控制任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robocycle_autonomous_dual_arm_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications</h3>
+          <p>arXiv:2607.03616v1 Announce Type: new Abstract: As urban waste volumes escalate and labor shortages…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fallenstein_reflective_oracles_a_foundatio_2015/">
+          <span class="entry-type">论文</span>
+          <h3>反射预言机：经典博弈论的基础</h3>
+          <p>经典博弈论把玩家当作特殊存在，本文引入“反射型”预言机，使带相同预言机的图灵机智能体可在共享环境中把对手建模为环境的普通部分，从而用因果决策理论定义理性智能体，并证明这些智能体交互时会形成纳什均衡。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lamon_a_unified_architecture_for_dyn_2023/">
+          <span class="entry-type">论文</span>
+          <h3>混合人机团队中动态角色分配与协作任务规划的统一架构</h3>
+          <p>The growing deployment of human-robot collaborative processes in several industrial applications,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_schreiter_multimodal_interaction_and_int_2025/">
+          <span class="entry-type">论文</span>
+          <h3>工业机器人的多模态交互与意图通信</h3>
+          <p>本文提出设计、增强和评估非人形工业机器人表达性人机交互的方法，引入拟人机器人模拟驾驶员（ARMoD）作为小型拟人化代理，代表宿主机器人通过结合语音、注视和手势的多模态、大语言模型增强框架进行沟通，并在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_look_around_enhanc_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck</h3>
+          <p>Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_human_aware_physical_human_rob_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于多架空中机器人的人类感知物理人机协作搬运与操作</h3>
+          <p>提出了一种分层控制框架，使多架携带缆绳悬挂刚性负载的四旋翼飞行器与人类协作，在6自由度下搬运与操作负载；该方法利用无 force…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_visualizing_impedance_control_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</h3>
+          <p>arXiv:2603.25418v2 Announce Type: replace Abstract: Teleoperation for contact-rich manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_inoue_dialogue_system_with_humanoid_2022/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人对话系统</h3>
+          <p>开发了一种用于人形机器人的多模态对话系统，该系统同时控制语音内容、面部表情和视线，以实现自然面对面的客户服务交互，并报告了该系统参加2022年对话机器人竞赛的情况。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ayub_interactive_continual_learning_2024/">
+          <span class="entry-type">论文</span>
+          <h3>面向家庭服务机器人长期个性化的交互式持续学习架构</h3>
+          <p>For robots to perform assistive tasks in unstructured home environments, they must learn and reason…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_armor_egocentric_perception_fo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</h3>
+          <p>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shi_hi_robot_open_ended_instructio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Hi Robot</h3>
+          <p>Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models (Hi…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jamieson_active_reward_learning_for_co_2020/">
+          <span class="entry-type">论文</span>
+          <h3>带宽受限环境下协同机器人视觉探索的主动奖励学习</h3>
+          <p>一种基于POMDP的自主视觉探索框架，利用后悔最小化的主动奖励学习来决定带宽受限机器人何时查询人类操作员，并在合成Voronoi主题图和珊瑚礁照片镶嵌图上进行了评估。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">
+          <span class="entry-type">论文</span>
+          <h3>大规模集群的多机器人隐式控制</h3>
+          <p>This paper solves the problem of herding countless evaders by means of a few robots. The objective…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ask_to_clarify_resolving_instr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Ask-to-Clarify: Resolving Instruction Ambiguity through Multi-turn Dialogue</h3>
+          <p>arXiv:2509.15061v3 Announce Type: replace Abstract: Embodied agents are intelligent systems designed…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划</h3>
+          <p>RoboBallet 通过深度强化学习训练图神经网络策略，在共享的、充满障碍的工作单元中联合为多台机器人分配任务、调度并规划无碰撞运动，展现出对未见过布局的零样本泛化能力与实时推理能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_walker_desiderata_for_planning_system_2019/">
+          <span class="entry-type">论文</span>
+          <h3>通用服务机器人规划系统的期望特性</h3>
+          <p>General-purpose service robots are expected to undertake a broad range of tasks at the request of…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_habit_human_aware_behavior_and_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HABIT: Human-Aware Behavior and Interaction Training Dataset for Robot Manipulation</h3>
+          <p>arXiv:2606.31682v1 Announce Type: new Abstract: Large-scale demonstration datasets have been central…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vinanzi_casper_cognitive_architecture_2022/">
+          <span class="entry-type">论文</span>
+          <h3>CASPER：面向机器人社会感知与参与的认知架构</h3>
+          <p>CASPER是一个符号化认知架构，利用定性空间关系识别低层动作、推断高层目标，并为社交机器人生成协作辅助计划。作者在Webots厨房仿真环境中使用TIAGo++机器人进行评估，结果表明机器人能够预测人…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">
+          <span class="entry-type">论文</span>
+          <h3>通过验证定位估计改进基于视觉地点识别的机器人导航</h3>
+          <p>本文提出了一种用于视觉地点识别（VPR）的多层感知器（MLP）完整性监控器，将匹配分类为容差内或容差外，并将其集成到两种实时机器人导航方法中，在室内和室外环境中使用Clearpath…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yin_mivla_towards_generalizable_vi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MiVLA</h3>
+          <p>MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot Mutual Imitation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_robot_learning_on_the_job_huma_2022/">
+          <span class="entry-type">论文</span>
+          <h3>机器人在岗学习：部署过程中的人机协同自治与学习</h3>
+          <p>With the rapid growth of computing powers and recent advances in deep learning, we have witnessed…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_eiffert_predicting_responses_to_a_robo_2020/">
+          <span class="entry-type">论文</span>
+          <h3>利用生成式循环神经网络预测机器人未来运动的响应</h3>
+          <p>提出 ResponseRNN，一种将周围行人或牲畜的未来轨迹预测条件于机器人规划动作之上的时空图循环神经网络，提升了近距离交互预测精度，并能在无需手工交互规则的情况下模拟周围智能体对机器人动作的响应。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_park_towards_embedding_dynamic_pers_2024/">
+          <span class="entry-type">论文</span>
+          <h3>面向交互式机器人中动态人格嵌入：Masquerading Animated Social Kinematic (MASK)</h3>
+          <p>本文提出了MASK交互式机器人系统，通过面部表情和手势等非言语行为，将基于人格和电影角色的动态角色形象嵌入类人机器人；该系统基于大语言模型的角色注入器和有限状态机行为选择实现实时自主交互，162名参与…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">
+          <span class="entry-type">论文</span>
+          <h3>强化学习智能体与机器人中的情绪：综述</h3>
+          <p>This article provides the first survey of computational models of emotion in reinforcement learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_manifold_constrained_hamilton_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning</h3>
+          <p>arXiv:2511.03591v2 Announce Type: replace Abstract: Safe multi-agent motion planning (MAMP) under…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_icub3_avatar_system_enabling_r_2022/">
+          <span class="entry-type">论文</span>
+          <h3>iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots</h3>
+          <p>iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots is a 2022 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">
+          <span class="entry-type">论文</span>
+          <h3>面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器</h3>
+          <p>本2022年arXiv论文提出了一种基于微分几何的辅助控制器，仅利用操纵杆输入和当前车辆状态，帮助用户操控差动轮式移动机器人（尤其是电动轮椅），无需预先指定期望状态。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_human_centric_transferable_tac_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Human-Centric Transferable Tactile Pre-Training for Dexterous Robotic Manipulation</h3>
+          <p>arXiv:2607.01067v1 Announce Type: new Abstract: As an essential modality for dexterous and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lallement_hatp_an_htn_planner_for_roboti_2014/">
+          <span class="entry-type">论文</span>
+          <h3>HATP：面向机器人学的HTN规划器</h3>
+          <p>HATP是一个面向机器人学的层次任务网络规划框架，引入了以智能体为中心的领域语言、基于社会规则的计划过滤、用户自定义代价函数，以及在三維环境中验证的符号-几何交错规划。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_standard_iso_13849/">
+          <span class="entry-type">标准</span>
+          <h3>ISO 13849</h3>
+          <p>人形机器人在人机共融环境中运行，其安全相关控制系统必须满足功能安全（functional safety）要求：当发生故障时，系统仍能将机器人带入安全状态。功能安全等级通常用 IEC 61508 的…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robust_operational_space_contr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation</h3>
+          <p>arXiv:2607.00424v1 Announce Type: new Abstract: Redundant robotic manipulators operating in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_softvtbench_a_safety_aware_vis_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects</h3>
+          <p>arXiv:2607.04234v1 Announce Type: new Abstract: Deformable object manipulation poses challenges…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hossen_care_finding_root_causes_of_co_2023/">
+          <span class="entry-type">论文</span>
+          <h3>CARE：在高度可配置机器人中查找配置问题的根本原因</h3>
+          <p>CARE 是一种基于因果推理的方法，从观测机器人轨迹中学习因果图模型，以诊断由错误配置导致的功能故障的根本原因，并在 Husky、Turtlebot 3 和 Gazebo 上进行了评估。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_technical_metrics_to_user_2026/">
+          <span class="entry-type">论文</span>
+          <h3>From Technical Metrics to User Perception: A User Study of a Multimodal Human-Robot Interaction System for Object Detection and Grasping</h3>
+          <p>arXiv:2607.00530v1 Announce Type: new Abstract: Improvements in the technical performance of…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_semantic_co_speech_gesture_syn_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots</h3>
+          <p>Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_navarro_guerrero_visuo_haptic_object_perception_2023/">
+          <span class="entry-type">论文</span>
+          <h3>机器人视触觉物体感知综述</h3>
+          <p>The object perception capabilities of humans are impressive, and this becomes even more evident when…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lanza_multi_sensory_integration_in_a_2020/">
+          <span class="entry-type">论文</span>
+          <h3>类量子机器人感知模型中的多感官融合</h3>
+          <p>Formalisms inspired by Quantum theory have been used in Cognitive Science for decades. Indeed,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_swamy_scaled_autonomy_enabling_human_2019/">
+          <span class="entry-type">论文</span>
+          <h3>可扩展自主：使人类操作员能够控制机器人群</h3>
+          <p>Autonomous robots often encounter challenging situations where their control policies fail and an…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_h2_compact_human_humanoid_co_m_2025/">
+          <span class="entry-type">论文</span>
+          <h3>H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies</h3>
+          <p>H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pico_reconstructing_3d_people_2025/">
+          <span class="entry-type">论文</span>
+          <h3>PICO: Reconstructing 3D People In Contact with Objects</h3>
+          <p>PICO: Reconstructing 3D People In Contact with Objects is a 2025 work on human motion analysis and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pellier_hddl_21_towards_defining_a_for_2023/">
+          <span class="entry-type">论文</span>
+          <h3>HDDL 2.1：面向时序HTN规划的形式化与语义定义</h3>
+          <p>提出一种 lifted 时序 HTN 规划形式化及执行语义，通过借鉴 PDDL 2.1 与 ANML，将 HDDL 扩展为支持持续动作、时序任务网络与分解约束。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_3d_cal_an_open_source_software_2026/">
+          <span class="entry-type">论文</span>
+          <h3>3D Cal: An Open-Source Software Library for Depth Reconstruction on Vision-Based Tactile Sensors</h3>
+          <p>arXiv:2511.03078v3 Announce Type: replace Abstract: Tactile sensing plays a key role in enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sun_transforming_monolithic_founda_2025/">
+          <span class="entry-type">论文</span>
+          <h3>InteractGen</h3>
+          <p>Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robot_trajectron_v3_a_probabil_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation</h3>
+          <p>arXiv:2607.09315v1 Announce Type: new Abstract: We aim to address the challenge of teleoperating…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_teleoperation_of_humanoid_robo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Teleoperation of Humanoid Robots: A Survey</h3>
+          <p>Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_social_navigation_fro_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications</h3>
+          <p>Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_effects_of_robotic_touch_on_ol_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot</h3>
+          <p>arXiv:2607.09323v1 Announce Type: new Abstract: The shortage of healthcare staff is a challenge in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_safefall_learning_protective_c_2026/">
+          <span class="entry-type">论文</span>
+          <h3>失败不可避免，但不能灾难化</h3>
+          <p>Bipedal locomotion makes humanoid robots inherently prone to falls, causing catastrophic damage to…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,1501 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>扩散策略 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">扩散策略</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>扩散策略</h1>
+      <p class="entry-name-en">Diffusion Policy</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">数据与数据集</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">阶段 3 · 完整人形</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="_2">扩散策略的定义与定位</h3>
+<p>扩散策略属于 <strong>方法</strong> 类型。 所属领域包括：AI 模型与算法, 数据与数据集。 价值链层级：智能层。 将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。 英文名称为 <em>Diffusion Policy</em>。 韩文名称为 <em>디퓨전 정책</em>。</p>
+<h3 id="_3">扩散策略的数学与原理基础</h3>
+<p>扩散策略建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，扩散策略通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_4">算法步骤与实现要点</h3>
+<p>在实际实现扩散策略时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_5">典型应用与局限性</h3>
+<p>扩散策略可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_6">相关标签</h3>
+<ul>
+<li>method</li>
+<li>chapter_18</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_7">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，扩散策略在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              <span class="rel-desc">扩散策略提及GR00T N1。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              <span class="rel-desc">扩散策略提及Mobile ALOHA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              <span class="rel-desc">扩散策略前置依赖行为克隆。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_nvidia_gr00t_n1_2025/">NVIDIA GR00T N1</a>
+              <span class="rel-desc">扩散策略提及NVIDIA GR00T N1。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_tech_mimicgen/">MimicGen</a>
+              <span class="rel-desc">扩散策略提及MimicGen。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              <span class="rel-desc">扩散策略提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+              <span class="rel-desc">扩散策略提及域随机化。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_action_chunking_with_transform_2023/">基于Transformer的动作分块</a>
+              <span class="rel-desc">扩散策略提及基于Transformer的动作分块。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">实现于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_system_identification/">系统辨识</a>
+              <span class="rel-desc">Wiki 第18章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_jiang_galaxea_open_world_dataset_and_2025/">G0</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">G0基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_motion_planning_in_compressed_2026/">Motion Planning in Compressed Representation Spaces</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_worldscape_moe_a_unified_mixtu_2026/">Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physdiff_physics_guided_human_2022/">PhysDiff: Physics-Guided Human Motion Diffusion Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pakdamansavoji_improving_robotic_manipulation_2025/">NICE</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">NICE引用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_park_hierarchical_vision_language_a_2025/">VINE</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">VINE引用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_h2_compact_humanhumanoid_co_ma_2025/">H2-COMPACT｜通过自适应接触轨迹策略进行人机协同操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">H2-COMPACT｜通过自适应接触轨迹策略进行人机协同操作使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jiang_solami_social_vision_language_2024/">SOLAMI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">SOLAMI基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gmt_general_motion_tracking_fo_2025/">GMT｜用于人形全身控制的通用运动跟踪</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">GMT｜用于人形全身控制的通用运动跟踪使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_octo_generalist_robot_policy_2024/">Octo 通才机器人策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Octo 通才机器人策略提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jang_verifier_free_test_time_sampli_2025/">MG-Select</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">MG-Select引用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_won_dual_stream_diffusion_for_worl_2025/">Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">行为克隆提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_gevrm_goal_expressive_video_ge_2025/">GEVRM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">GEVRM使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egonav_learning_humanoid_navig_2026/">只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走提出扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fabrivla_a_lightweight_vision_2026/">FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_funding_award_winning_researcher_train_2026/">Award-Winning Researcher Trains Robots to Make Educated Guesses</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lu_imaginationpolicy_towards_gene_2025/">ImaginationPolicy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ImaginationPolicy使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_pi0/">π0</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">π0前置依赖扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_b_spline_policy_accelerating_m_2026/">B-spline Policy: Accelerating Manipulation Policies via B-spline Action Representations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chae_multi_robot_motion_planning_fr_2026/">基于热启发扩散的视觉语言多机器人运动规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">基于热启发扩散的视觉语言多机器人运动规划基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egomimic_scaling_imitation_lea_2024/">EgoMimic: Scaling Imitation Learning via Egocentric Video</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xie_dexbotic_open_source_vision_la_2025/">Dexbotic</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Dexbotic使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_soccerdiffusion_toward_learnin_2025/">SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_rl_online_rl_fine_tuning_for_f_2025/">π_RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">π_RL基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_beyond_monotonic_progress_retr_2026/">Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shen_videovla_video_generators_can_2025/">VideoVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">VideoVLA引用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ke_3d_diffuser_actor_policy_diffu_2024/">3D Diffuser Actor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">3D Diffuser Actor提出扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">OpenVLA：一个开源的视觉-语言-动作模型compares_with扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jiang_rynnvla_001_using_human_demons_2025/">RynnVLA-001</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">RynnVLA-001基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pan_vision_language_action_model_a_2024/">Vision-Language-Action Model and Diffusion Policy Switching Enables Dexterous Control of an Anthropomorphic Hand</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_aispo_enhancing_depth_reliabil_2026/">AISPO：基于仿射不变形状先验的非朗伯物体机器人操作深度可靠性增强</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">AISPO：基于仿射不变形状先验的非朗伯物体机器人操作深度可靠性增强使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rgmp_recurrent_geometric_prior_2025/">RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wen_dexvla_vision_language_model_w_2025/">DexVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">DexVLAcompares_with扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_flexible_motion_in_betweening_2024/">Flexible Motion In-betweening with Diffusion Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_systematic_study_of_data_mod_2026/">A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_towards_deploying_vla_without_2025/">VLA-Pilot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">VLA-Pilot使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhu_scaling_diffusion_policy_in_tr_2024/">ScaleDP</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ScaleDP使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_unified_video_action_model_2025/">Unified Video Action Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liang_dichotomous_diffusion_policy_o_2025/">DIPOLE</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">extends</span>
+              <span class="rel-desc">DIPOLEextends扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bansal_thermaldiffusion_visual_to_the_2025/">ThermalDiffusion：用于自主导航的视觉到热成像图像转换</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ThermalDiffusion：用于自主导航的视觉到热成像图像转换使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper__2025/">人形机器人运动与操作｜控制规划和学习的进展与挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">人形机器人运动与操作｜控制规划和学习的进展与挑战使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dc_motion_decoupling_structure_2026/">DC-Motion: Decoupling Structure and Details via Discrete-Continuous Tokens for Human Motion Generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhu_unified_world_models_coupling_2025/">UWM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">UWM基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">GR00T N1前置依赖扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physv2a_reachability_gated_and_2026/">PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wen_diffusion_vla_scaling_robot_fo_2024/">Diffusion-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Diffusion-VLA使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_high_fidelity_one_step_generat_2026/">High-Fidelity One-Step Generative Visuomotor Policy via Recursive Correction, Frequency Consistency, and Contrastive Flow Matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_generalizable_humanoid_manipul_2025/">使用3D扩散策略的通用人形操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">使用3D扩散策略的通用人形操作使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physmodpo_physically_plausible_2026/">用偏好优化把文本生成的动作磨成物理可执行的人形动作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">用偏好优化把文本生成的动作磨成物理可执行的人形动作discusses扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_agentworld_an_interactive_simu_2025/">AgentWorld</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AgentWorlddiscusses扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">OpenVLA-OFT使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界模型提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shortcut_trajectory_planning_f_2026/">Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_concept_data_flywheel/">数据飞轮</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">数据飞轮提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ze_generalizable_humanoid_manipul_2024/">基于3D扩散策略的可泛化人形机器人操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于3D扩散策略的可泛化人形机器人操作使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xie_textop_real_time_interactive_t_2026/">TextOp：实时交互式文本驱动人形机器人运动生成与控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">TextOp：实时交互式文本驱动人形机器人运动生成与控制使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_davies_ebt_policy_energy_unlocks_emer_2025/">EBT-Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">EBT-Policy提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">通过真实部署就绪的技能空间释放人形机器人的潜力</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">通过真实部署就绪的技能空间释放人形机器人的潜力使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">DP3</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">DP3基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hancock_actions_as_language_fine_tunin_2025/">VLM2VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VLM2VLA提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nomad_goal_masked_diffusion_po_2023/">NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mobi_mobilizing_your_robot_lea_2025/">Mobi-π: Mobilizing Your Robot Learning Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Mobi-π: Mobilizing Your Robot Learning Policy使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pai_mimic_video_video_action_model_2025/">VAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">VAM引用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_elastic_efficiently_learning_t_2026/">ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cola_flow_policy_temporally_co_2026/">CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent Action Flow Matching for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_hybridvla_collaborative_diffus_2025/">HybridVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">HybridVLA提出扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jing_learning_action_priors_for_cro_2026/">跨实体机器人操作的动作先验学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">跨实体机器人操作的动作先验学习使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jiang_asyncvla_asynchronous_flow_mat_2025/">AsyncVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">AsyncVLA基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_flow_multi_support_flow_matchi_2024/">Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shapegrasp_simultaneous_visuo_2026/">ShapeGrasp: Simultaneous Visuo-Haptic Shape Completion and Grasping for Improved Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chronoflow_policy_unifying_pas_2026/">ChronoFlow-Policy: Unifying Past-Current-Future Interaction Flow in Visuomotor Policy Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_guided_motion_diffusion_for_co_2023/">Guided Motion Diffusion for Controllable Human Motion Synthesis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_generalizable_humanoid_manipul_2024/">Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_navdp_learning_sim_to_real_nav_2025/">NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gao_diffvla_bridging_cognitive_rea_2025/">DiffVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">DiffVLA使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zeng_diagnose_correct_and_learn_fro_2025/">Diagnose Correct and Learn from Manipulation Failures via Visual Symbols</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_flowdagger_human_in_the_loop_a_2026/">FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">extends</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HumanoidBench提及扩散策略。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_taming_diffusion_probabilistic_2024/">Taming Diffusion Probabilistic Models for Character Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_closd_closing_the_loop_between_2024/">CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_everyday_a_comprehens_2026/">Humanoid｜Everyday 用于开放世界人形操作的综合机器人数据集</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Humanoid｜Everyday 用于开放世界人形操作的综合机器人数据集使用扩散策略。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_diffusion_policy"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_davies_ebt_policy_energy_unlocks_emer_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EBT-Policy</h3>
+          <p>EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities (EBT-Policy), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_b_spline_policy_accelerating_m_2026/">
+          <span class="entry-type">论文</span>
+          <h3>B-spline Policy: Accelerating Manipulation Policies via B-spline Action Representations</h3>
+          <p>arXiv:2607.09648v1 Announce Type: new Abstract: In this work, we present B-spline Policy (BSP), an…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_flexible_motion_in_betweening_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Flexible Motion In-betweening with Diffusion Models</h3>
+          <p>Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_aispo_enhancing_depth_reliabil_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AISPO：基于仿射不变形状先验的非朗伯物体机器人操作深度可靠性增强</h3>
+          <p>Reliable depth perception is critical for robotic manipulation, especially for non-Lambertian…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jiang_solami_social_vision_language_2024/">
+          <span class="entry-type">论文</span>
+          <h3>SOLAMI</h3>
+          <p>SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with 3D Autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cola_flow_policy_temporally_co_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent Action Flow Matching for Robotic Manipulation</h3>
+          <p>arXiv:2601.23087v5 Announce Type: replace Abstract: Learning long-horizon robotic manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jiang_asyncvla_asynchronous_flow_mat_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AsyncVLA</h3>
+          <p>AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models (AsyncVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chae_multi_robot_motion_planning_fr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于热启发扩散的视觉语言多机器人运动规划</h3>
+          <p>语言条件热启发扩散（LHD）是一种端到端视觉语言规划器，仅利用原始RGB图像和自然语言指令生成无碰撞的多机器人轨迹；它通过热方程扩散核将静态避障成本摊入训练阶段，并采用轻量级机器人间引导项实现安全协调…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physmodpo_physically_plausible_2026/">
+          <span class="entry-type">论文</span>
+          <h3>用偏好优化把文本生成的动作磨成物理可执行的人形动作</h3>
+          <p>PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization is a paper on 物理动画 for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_worldscape_moe_a_unified_mixtu_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control</h3>
+          <p>arXiv:2607.03964v1 Announce Type: new Abstract: World models are rapidly becoming a core…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper__2025/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人运动与操作｜控制规划和学习的进展与挑战</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、全身控制器/WBC/MPC生成可执行动作命令。关键点是把…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_octo_generalist_robot_policy_2024/">
+          <span class="entry-type">方法</span>
+          <h3>Octo 通才机器人策略</h3>
+          <p>在异构跨具身数据上训练的开源通才机器人策略。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_won_dual_stream_diffusion_for_worl_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model</h3>
+          <p>Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model (Dual-Stream Diffusion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_everyday_a_comprehens_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid｜Everyday 用于开放世界人形操作的综合机器人数据集</h3>
+          <p>Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">
+          <span class="entry-type">论文</span>
+          <h3>REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调</h3>
+          <p>REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_system_identification/">
+          <span class="entry-type">方法</span>
+          <h3>系统辨识</h3>
+          <p>根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shen_videovla_video_generators_can_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VideoVLA</h3>
+          <p>VideoVLA: Video Generators Can Be Generalizable Robot Manipulators (VideoVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_gevrm_goal_expressive_video_ge_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GEVRM</h3>
+          <p>GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation (GEVRM), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_action_chunking_with_transform_2023/">
+          <span class="entry-type">方法</span>
+          <h3>基于Transformer的动作分块</h3>
+          <p>基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nomad_goal_masked_diffusion_po_2023/">
+          <span class="entry-type">论文</span>
+          <h3>NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration</h3>
+          <p>NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023 work on navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA：一个开源的视觉-语言-动作模型</h3>
+          <p>一个 70 亿参数的开源 VLA 模型，基于 Open X-Embodiment 数据集的 97 万条真实机器人演示进行预训练，融合 Llama 2、DINOv2 和 SigLIP 以实现通用操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_agentworld_an_interactive_simu_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AgentWorld</h3>
+          <p>AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile Robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_rl_online_rl_fine_tuning_for_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>π_RL</h3>
+          <p>πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_flow_multi_support_flow_matchi_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation</h3>
+          <p>Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation is a 2024 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ze_generalizable_humanoid_manipul_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于3D扩散策略的可泛化人形机器人操作</h3>
+          <p>本文提出了一个真实世界的模仿学习系统，使全尺寸人形机器人仅利用单一场景采集的数据，就能够在多种未见过场景中完成抓取放置、倾倒和擦拭任务；系统结合了上半身全身遥操作、带可调高度推车和头戴LiDAR的25…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gmt_general_motion_tracking_fo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GMT｜用于人形全身控制的通用运动跟踪</h3>
+          <p>GMT…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jing_learning_action_priors_for_cro_2026/">
+          <span class="entry-type">论文</span>
+          <h3>跨实体机器人操作的动作先验学习</h3>
+          <p>Most Vision-Language-Action (VLA) models build on a Vision-Language Model (VLM) backbone by…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jang_verifier_free_test_time_sampli_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MG-Select</h3>
+          <p>Verifier-free Test-Time Sampling for Vision Language Action Models (MG-Select), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ke_3d_diffuser_actor_policy_diffu_2024/">
+          <span class="entry-type">论文</span>
+          <h3>3D Diffuser Actor</h3>
+          <p>3D Diffuser Actor: Policy Diffusion with 3D Scene Representations (3D Diffuser Actor), is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_high_fidelity_one_step_generat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>High-Fidelity One-Step Generative Visuomotor Policy via Recursive Correction, Frequency Consistency, and Contrastive Flow Matching</h3>
+          <p>arXiv:2607.03865v1 Announce Type: new Abstract: Generative models such as diffusion and flow…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jiang_rynnvla_001_using_human_demons_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RynnVLA-001</h3>
+          <p>RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">方法</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_guided_motion_diffusion_for_co_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Guided Motion Diffusion for Controllable Human Motion Synthesis</h3>
+          <p>Guided Motion Diffusion for Controllable Human Motion Synthesis is a 2023 work on human motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_elastic_efficiently_learning_t_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies</h3>
+          <p>arXiv:2606.31132v1 Announce Type: new Abstract: Generative control policies (GCPs), such as…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egonav_learning_humanoid_navig_2026/">
+          <span class="entry-type">论文</span>
+          <h3>只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走</h3>
+          <p>EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for humanoid robotics. 只用 5…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fabrivla_a_lightweight_vision_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation</h3>
+          <p>arXiv:2607.08575v2 Announce Type: replace Abstract: We present FabriVLA, a lightweight…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chronoflow_policy_unifying_pas_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ChronoFlow-Policy: Unifying Past-Current-Future Interaction Flow in Visuomotor Policy Learning</h3>
+          <p>arXiv:2606.31493v1 Announce Type: new Abstract: Visual signals play a crucial role in policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">
+          <span class="entry-type">论文</span>
+          <h3>DP3</h3>
+          <p>3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations (DP3),…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pakdamansavoji_improving_robotic_manipulation_2025/">
+          <span class="entry-type">论文</span>
+          <h3>NICE</h3>
+          <p>Improving Robotic Manipulation Robustness via NICE Scene Surgery (NICE), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_systematic_study_of_data_mod_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation</h3>
+          <p>A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liang_dichotomous_diffusion_policy_o_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DIPOLE</h3>
+          <p>Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action model for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nvidia_gr00t_n1_2025/">
+          <span class="entry-type">方法</span>
+          <h3>NVIDIA GR00T N1</h3>
+          <p>面向通用人形机器人的开放基础模型，结合VLA与扩散Transformer动作头。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wen_dexvla_vision_language_model_w_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DexVLA</h3>
+          <p>DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot Control (DexVLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hancock_actions_as_language_fine_tunin_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLM2VLA</h3>
+          <p>Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pai_mimic_video_video_action_model_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VAM</h3>
+          <p>mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs (VAM), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_tech_mimicgen/">
+          <span class="entry-type">技术</span>
+          <h3>MimicGen</h3>
+          <p>一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_taming_diffusion_probabilistic_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Taming Diffusion Probabilistic Models for Character Control</h3>
+          <p>Taming Diffusion Probabilistic Models for Character Control is a 2024 work on human motion analysis…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physv2a_reachability_gated_and_2026/">
+          <span class="entry-type">论文</span>
+          <h3>PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation</h3>
+          <p>arXiv:2607.09365v1 Announce Type: new Abstract: Video-based manipulation provides object-centric…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_towards_deploying_vla_without_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Pilot</h3>
+          <p>Towards Deploying VLA without Fine-Tuning: Plug-and-Play Inference-Time VLA Policy Steering via…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pan_vision_language_action_model_a_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Vision-Language-Action Model and Diffusion Policy Switching Enables Dexterous Control of an Anthropomorphic Hand</h3>
+          <p>Vision-Language-Action Model and Diffusion Policy Switching Enables Dexterous Control of an…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhu_scaling_diffusion_policy_in_tr_2024/">
+          <span class="entry-type">论文</span>
+          <h3>ScaleDP</h3>
+          <p>Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic Manipulation (ScaleDP),…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rgmp_recurrent_geometric_prior_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation</h3>
+          <p>RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_beyond_monotonic_progress_retr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation</h3>
+          <p>arXiv:2606.24633v2 Announce Type: replace Abstract: Human demonstrations for robot imitation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_closd_closing_the_loop_between_2024/">
+          <span class="entry-type">论文</span>
+          <h3>CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control</h3>
+          <p>CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_navdp_learning_sim_to_real_nav_2025/">
+          <span class="entry-type">论文</span>
+          <h3>NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance</h3>
+          <p>NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</h3>
+          <p>arXiv:2504.16738v3 Announce Type: replace Abstract: Planning long-horizon manipulation motions using…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_h2_compact_humanhumanoid_co_ma_2025/">
+          <span class="entry-type">论文</span>
+          <h3>H2-COMPACT｜通过自适应接触轨迹策略进行人机协同操作</h3>
+          <p>H2-COMPACT…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">技术</span>
+          <h3>Mobile ALOHA</h3>
+          <p>全身移动双臂遥操作平台，用于采集家庭和仓库操作数据。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_data_flywheel/">
+          <span class="entry-type">概念</span>
+          <h3>数据飞轮</h3>
+          <p>部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bansal_thermaldiffusion_visual_to_the_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ThermalDiffusion：用于自主导航的视觉到热成像图像转换</h3>
+          <p>Autonomous systems rely on sensors to estimate the environment around them. However, cameras,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lu_imaginationpolicy_towards_gene_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ImaginationPolicy</h3>
+          <p>ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy for Robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_funding_award_winning_researcher_train_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Award-Winning Researcher Trains Robots to Make Educated Guesses</h3>
+          <p>Yen-Ling Kuo always wanted to understand how things worked. When she was growing up in Taiwan,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_pi0/">
+          <span class="entry-type">方法</span>
+          <h3>π0</h3>
+          <p>在多样化机器人数据上预训练并针对灵巧、语言条件操作任务微调的多面手视觉运动策略。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_flowdagger_human_in_the_loop_a_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space</h3>
+          <p>arXiv:2607.08877v1 Announce Type: new Abstract: Pretrained generative robot policies based on flow…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhu_unified_world_models_coupling_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UWM</h3>
+          <p>Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shortcut_trajectory_planning_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</h3>
+          <p>arXiv:2607.09336v1 Announce Type: cross Abstract: Diffusion-based trajectory planners have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_generalizable_humanoid_manipul_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies</h3>
+          <p>Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_unified_video_action_model_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Unified Video Action Model</h3>
+          <p>A unified video and action model holds significant promise for robotics, where videos provide rich…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_hybridvla_collaborative_diffus_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HybridVLA</h3>
+          <p>HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shapegrasp_simultaneous_visuo_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ShapeGrasp: Simultaneous Visuo-Haptic Shape Completion and Grasping for Improved Robot Manipulation</h3>
+          <p>arXiv:2605.02347v2 Announce Type: replace Abstract: Humans grasp unfamiliar objects by combining an…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physdiff_physics_guided_human_2022/">
+          <span class="entry-type">论文</span>
+          <h3>PhysDiff: Physics-Guided Human Motion Diffusion Model</h3>
+          <p>PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human motion analysis and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gao_diffvla_bridging_cognitive_rea_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DiffVLA</h3>
+          <p>DiffVLA++: Bridging Cognitive Reasoning and End-to-End Driving through Metric-Guided Alignment…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">
+          <span class="entry-type">论文</span>
+          <h3>通过真实部署就绪的技能空间释放人形机器人的潜力</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略转成可训练、可复用的低…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wen_diffusion_vla_scaling_robot_fo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Diffusion-VLA</h3>
+          <p>Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12/">
+          <span class="entry-type">方法</span>
+          <h3>VLA / WAM / AI 算法集成（AI &amp; Perception）</h3>
+          <p>VLA / WAM / AI 算法集成（AI &amp; Perception）是人形机器人产品开发全流程中的第 12 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dc_motion_decoupling_structure_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DC-Motion: Decoupling Structure and Details via Discrete-Continuous Tokens for Human Motion Generation</h3>
+          <p>arXiv:2606.14721v2 Announce Type: replace-cross Abstract: Text-to-motion generation requires…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_soccerdiffusion_toward_learnin_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings</h3>
+          <p>SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egomimic_scaling_imitation_lea_2024/">
+          <span class="entry-type">论文</span>
+          <h3>EgoMimic: Scaling Imitation Learning via Egocentric Video</h3>
+          <p>EgoMimic: Scaling Imitation Learning via Egocentric Video is a 2024 work on manipulation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jiang_galaxea_open_world_dataset_and_2025/">
+          <span class="entry-type">论文</span>
+          <h3>G0</h3>
+          <p>Galaxea Open-World Dataset and G0 Dual-System VLA Model (G0), is a 2025 large vision-language-action…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_park_hierarchical_vision_language_a_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VINE</h3>
+          <p>Hierarchical Vision Language Action Model Using Success and Failure Demonstrations (VINE), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_generalizable_humanoid_manipul_2025/">
+          <span class="entry-type">论文</span>
+          <h3>使用3D扩散策略的通用人形操作</h3>
+          <p>使用3D扩散策略的通用人形操作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mobi_mobilizing_your_robot_lea_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Mobi-π: Mobilizing Your Robot Learning Policy</h3>
+          <p>Mobi-π: Mobilizing Your Robot Learning Policy is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xie_textop_real_time_interactive_t_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TextOp：实时交互式文本驱动人形机器人运动生成与控制</h3>
+          <p>TextOp是一种实时文本驱动的人形机器人运动生成与控制框架，利用高层自回归潜在扩散模型从流式语言命令生成短期运动学参考轨迹，并由低层基于强化学习的全身跟踪策略在物理Unitree G1机器人上执行。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_motion_planning_in_compressed_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Motion Planning in Compressed Representation Spaces</h3>
+          <p>arXiv:2606.30940v1 Announce Type: new Abstract: Deep learning methods have vastly expanded the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zeng_diagnose_correct_and_learn_fro_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Diagnose Correct and Learn from Manipulation Failures via Visual Symbols</h3>
+          <p>Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose Correct and Learn…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xie_dexbotic_open_source_vision_la_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Dexbotic</h3>
+          <p>Dexbotic: Open-Source Vision-Language-Action Toolbox (Dexbotic), is a 2025 large…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#_2">扩散策略的定义与定位</a></li>
+<li><a href="#_3">扩散策略的数学与原理基础</a></li>
+<li><a href="#_4">算法步骤与实现要点</a></li>
+<li><a href="#_5">典型应用与局限性</a></li>
+<li><a href="#_6">相关标签</a></li>
+<li><a href="#_7">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,1741 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>域随机化 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">域随机化</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>域随机化</h1>
+      <p class="entry-name-en">Domain Randomization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">数据与数据集</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">阶段 2 · 双足平台</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="_2">域随机化的定义与定位</h3>
+<p>域随机化属于 <strong>方法</strong> 类型。 所属领域包括：AI 模型与算法, 数据与数据集。 价值链层级：智能层。 训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。 英文名称为 <em>Domain Randomization</em>。 韩文名称为 <em>도메인 랜덤화</em>。</p>
+<h3 id="_3">域随机化的数学与原理基础</h3>
+<p>域随机化建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，域随机化通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_4">算法步骤与实现要点</h3>
+<p>在实际实现域随机化时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_5">典型应用与局限性</h3>
+<p>域随机化可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_6">相关标签</h3>
+<ul>
+<li>method</li>
+<li>chapter_18</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_7">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，域随机化在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              <span class="rel-desc">域随机化提及Sim-to-Real迁移。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              <span class="rel-desc">域随机化提及GR00T N1。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              <span class="rel-desc">域随机化提及Mobile ALOHA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_action_chunking_with_transform_2023/">基于Transformer的动作分块</a>
+              <span class="rel-desc">域随机化提及基于Transformer的动作分块。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_tech_mimicgen/">MimicGen</a>
+              <span class="rel-desc">域随机化提及MimicGen。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              <span class="rel-desc">域随机化提及扩散策略。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_learning_locomotion_on_discret_2026/">Learning Locomotion on Discrete Terrain via Minimal Proximity Sensing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_simfoundry_modular_and_automat_2026/">SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_smith_legged_robots_that_keep_on_lea_2021/">持续学习的腿式机器人：在现实世界中微调运动策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">持续学习的腿式机器人：在现实世界中微调运动策略使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cao_learning_sim_to_real_dense_obj_2023/">面向机器人操作的仿真到现实稠密物体描述符学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">面向机器人操作的仿真到现实稠密物体描述符学习使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_domain_adaptation/">域适应</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">域适应提及域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_walk_in_minutes_us_2026/">Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hifar_multi_stage_curriculum_l_2025/">HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_in_context_world_modeling_for_2026/">In-Context World Modeling for Robotic Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mimickit_a_reinforcement_learn_2026/">MimicKit：运动模仿与控制的强化学习框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">MimicKit：运动模仿与控制的强化学习框架使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physics_models_for_sim_to_real_2026/">Physics Models for Sim-to-Real Transfer in Professional-Level Robot Table Tennis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dexhub_and_dart_towards_intern_2026/">DexHub and DART: Towards Internet Scale Robot Data Collection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_beamdojo_learning_agile_humano_2025/">BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_contrastive_representation_lea_2025/">Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robust_and_versatile_bipedal_j_2023/">Robust and Versatile Bipedal Jumping Control through Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sim_and_real_co_training_a_sim_2025/">Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_all_terrain_locomotio_2026/">Learning All-Terrain Locomotion for a Planetary Rover with Actively Articulated Suspension</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">行为克隆提及域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ase_adversarial_skill_embeddin_2026/">对抗技能嵌入：大规模运动控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">对抗技能嵌入：大规模运动控制使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_diffcotune_differentiable_co_t_2025/">DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_silo_simulation_in_the_loop_si_2026/">SILO: Simulation-in-the-Loop Sim-to-Real Transfer for Multi-Stage Cable Routing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_re3sim_generating_high_fidelit_2026/">Re$^3$Sim: Generating High-Fidelity Simulation Data via 3D-Photorealistic Real-to-Sim for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_anymal_parkour_robust_percepti_2026/">ANYmal Parkour: Robust Perceptive Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gait_conditioned_rl_with_multi_2025/">Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_walk_and_fly_with_2023/">Learning to Walk and Fly with Adversarial Motion Priors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robustness_of_robotic_manipula_2026/">Robustness of Robotic Manipulation: Foundations and Frontiers</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_202501_mujoco_playground_2025/">2025.01, MuJoCo Playground</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">2025.01, MuJoCo Playground使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_agile_and_dynamic_mot_2019/">Learning Agile and Dynamic Motor Skills for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_katayama_learning_bipedal_locomotion_on_2025/">使用足部惯性测量单元在齿轮驱动人形机器人上学习双足行走</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">使用足部惯性测量单元在齿轮驱动人形机器人上学习双足行走使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_renet_fault_tolerant_motion_co_2025/">RENet：视觉崩溃下基于冗余估计器网络的四足机器人容错运动控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">RENet：视觉崩溃下基于冗余估计器网络的四足机器人容错运动控制使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bao_sim_to_real_transfer_in_deep_r_2025/">双足运动深度强化学习中的仿真到现实迁移</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">双足运动深度强化学习中的仿真到现实迁移discusses域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_seo_learning_sim_to_real_humanoid_2025/">在15分钟内学习从仿真到现实的人形机器人运动</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">在15分钟内学习从仿真到现实的人形机器人运动使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dong_emma_generalizing_real_world_r_2025/">EMMA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">EMMAdiscusses域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bousmalis_robocat_a_self_improving_gener_2023/">RoboCat</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">RoboCat使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_get_up_across_morp_2025/">Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">运动控制算法开发与验证（Motion Control）使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fu_load_aware_locomotion_control_2026/">面向工业搬运任务的人形机器人负载感知 locomotion 控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">面向工业搬运任务的人形机器人负载感知 locomotion 控制使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_spectral_normalization_for_lip_2025/">Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bridging_the_sim_to_real_gap_f_2025/">Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ceola_fast_object_segmentation_learn_2021/">基于核方法的机器人快速目标分割学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">基于核方法的机器人快速目标分割学习提及域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_x_humanoid_robotize_human_vide_2025/">X-Humanoid</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">X-Humanoid使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yu_real2render2real_scaling_robot_2025/">R2R2R</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">R2R2R使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ttt_parkour_rapid_test_time_tr_2026/">TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egodemogen_egocentric_demonstr_2026/">EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization in Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_petit_bayesian_optimization_for_deve_2020/">基于参数边界缩减的元学习与贝叶斯优化在发展机器人学中的应用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于参数边界缩减的元学习与贝叶斯优化在发展机器人学中的应用discusses域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sim_to_real_learning_for_human_2023/">Sim-to-Real Learning for Humanoid Box Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_robot_fleet_learning_via_polic_2024/">通过策略融合的机器人车队学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">通过策略融合的机器人车队学习discusses域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hou_robust_fall_recovery_for_armle_2026/">基于力引导学习的无臂双轮足机器人鲁棒跌倒恢复</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于力引导学习的无臂双轮足机器人鲁棒跌倒恢复使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_efficient_sim_to_real_transfer_2026/">Efficient Sim-to-Real Transfer of World-Action Models from Synthetic Priors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vb_com_learning_vision_blind_c_2025/">VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_genie_sim_30_a_high_fidelity_c_2026/">Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ase_large_scale_reusable_adver_2022/">ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_muratore_robot_learning_from_randomized_2021/">基于随机化仿真的机器人学习：综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">surveys</span>
+              <span class="rel-desc">该论文将域随机化作为从随机化仿真中学习鲁棒策略的核心技术进行综述。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_hybrid_autoencoder_for_robus_2026/">A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_grasp_anything_by_2026/">Learning to Grasp Anything by Playing with Random Toys</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egodemogen_novel_egocentric_de_2025/">EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">ManiSkill提及域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hord_robust_humanoid_control_v_2026/">HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rma_rapid_motor_adaptation_for_2026/">RMA: Rapid Motor Adaptation for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_closing_sim_to_real_gap_for_he_2026/">带负载的人形机器人不是同一个系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">带负载的人形机器人不是同一个系统使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sampling_based_system_identifi_2025/">Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mobileh2r_learning_generalizab_2025/">MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_marco_robot_learning_with_crash_cons_2021/">具有碰撞约束的机器人学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">具有碰撞约束的机器人学习discusses域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lips_large_scale_humanoid_robo_2025/">LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kaidanov_the_role_of_domain_randomizati_2024/">领域随机化在训练全身人形机器人控制扩散策略中的作用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">领域随机化在训练全身人形机器人控制扩散策略中的作用使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_combined_constrained_sampling_2026/">Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cg_mutra_continuously_gated_mu_2026/">CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_e_sds_environment_aware_see_it_2025/">E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_h_zero_cross_humanoid_locomoti_2025/">H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_anchordream_repurposing_video_2026/">AnchorDream: Repurposing Video Diffusion for Embodiment-Aware Robot Data Synthesis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_3_2/">域随机化与鲁棒训练</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">域随机化与鲁棒训练使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ppf_pre_training_and_preservat_2025/">PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_with_pycub_a_simulati_2025/">Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mixture_of_experts_rl_for_faul_2026/">Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_benchmarking_potential_based_r_2023/">Benchmarking Potential Based Rewards for Learning Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_he_viral_visual_sim_to_real_at_sc_2025/">VIRAL：面向人形机器人移动操作的大规模视觉仿真到现实迁移</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">VIRAL：面向人形机器人移动操作的大规模视觉仿真到现实迁移使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mash_cooperative_heterogeneous_2025/">MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_toward_reliable_sim_to_real_pr_2026/">Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reinforcement_learning_for_ver_2024/">Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gu_usim_and_u0_a_vision_language_2025/">USIM &amp; U0</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">USIM &amp; U0使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dhakate_carosac_a_reinforcement_learni_2025/">CaRoSaC：通过仿真解决电缆下垂问题的基于强化学习的缆索驱动并联机器人运动学控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">CaRoSaC：通过仿真解决电缆下垂问题的基于强化学习的缆索驱动并联机器人运动学控制使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_berscheid_robot_learning_of_6_dof_graspi_2021/">基于模型自适应原语的机器人六自由度抓取学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于模型自适应原语的机器人六自由度抓取学习使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_robot_learning_on_the_job_huma_2022/">机器人在岗学习：部署过程中的人机协同自治与学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人在岗学习：部署过程中的人机协同自治与学习discusses域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robust_humanoid_walking_on_com_2025/">Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_towards_bridging_the_gap_syste_2025/">Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rational_inverse_reasoning_few_2026/">Rational Inverse Reasoning: Few-Shot Imitation by Inferring Intent through Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_arxiv_202412_genesis_a_generat_2024/">arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics and Beyond</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_omnitactune_policy_agnostic_re_2026/">OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robocasa365_a_large_scale_simu_2026/">RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_genie_sim_30_a_high_fidelity_c_2026_1/">Genie Sim 3.0: A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sim_to_real_of_humanoid_locomo_2025/">Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lu_pose_estimation_for_robot_mani_2020/">基于关键点优化与仿真到现实迁移的机器人操纵臂姿态估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于关键点优化与仿真到现实迁移的机器人操纵臂姿态估计使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_apex_learning_adaptive_high_pl_2026/">APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_booster_gym_an_end_to_end_rl_f_2025/">Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shree_exploiting_natural_language_fo_2021/">利用自然语言实现高效风险感知多机器人搜索救援规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">利用自然语言实现高效风险感知多机器人搜索救援规划使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_e_vla_event_augmented_vision_l_2026/">E-VLA: Event-Augmented Vision-Language-Action Model for Dark and Blurred Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_domain_randomization_for_trans_2026/">域随机化：从仿真到真实世界的深度神经网络迁移</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">域随机化：从仿真到真实世界的深度神经网络迁移使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nie_ermv_editing_4d_robotic_multi_2025/">ERMV</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ERMV使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_understanding_domain_randomiza_2026/">Understanding Domain Randomization for Sim-to-real Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_smooth_humanoid_locom_2024/">Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_feature_based_vs_gan_based_lea_2025/">Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">扩散策略提及域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_radosavovic_learning_humanoid_locomotion_o_2024/">挑战性地形上的人形机器人运动学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">挑战性地形上的人形机器人运动学习使用域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_software_genesis_generative_physics_eng_2024/">Genesis 生成式物理引擎</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">Genesis 生成式物理引擎前置依赖域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">Sim-to-Real迁移前置依赖域随机化。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gaussgym_an_open_source_real_t_2025/">GaussGym: An open-source real-to-sim framework for learning locomotion from pixels</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_domain_randomization"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p10_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化与鲁棒训练</h3>
+          <p>- P10.3.2.1 输入梳理与目标量化 - 整理「域随机化与鲁棒训练」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vb_com_learning_vision_blind_c_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception</h3>
+          <p>VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_toward_reliable_sim_to_real_pr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion</h3>
+          <p>Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mash_cooperative_heterogeneous_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion</h3>
+          <p>MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_walk_and_fly_with_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Walk and Fly with Adversarial Motion Priors</h3>
+          <p>Learning to Walk and Fly with Adversarial Motion Priors is a 2023 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bousmalis_robocat_a_self_improving_gener_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RoboCat</h3>
+          <p>RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation (RoboCat), is a 2023 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_x_humanoid_robotize_human_vide_2025/">
+          <span class="entry-type">论文</span>
+          <h3>X-Humanoid</h3>
+          <p>X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale (X-Humanoid), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_feature_based_vs_gan_based_lea_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why</h3>
+          <p>Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_silo_simulation_in_the_loop_si_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SILO: Simulation-in-the-Loop Sim-to-Real Transfer for Multi-Stage Cable Routing</h3>
+          <p>arXiv:2607.04616v1 Announce Type: new Abstract: Linear-deformable manipulation remains challenging…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</h3>
+          <p>arXiv:2607.09557v1 Announce Type: new Abstract: Fine grain control and positioning of autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_smith_legged_robots_that_keep_on_lea_2021/">
+          <span class="entry-type">论文</span>
+          <h3>持续学习的腿式机器人：在现实世界中微调运动策略</h3>
+          <p>提出了一种实用的现实世界强化学习系统：在仿真中通过动作模仿预训练运动策略，然后在真实的宇树A1四足机器人上使用样本高效的离策略REDQ算法、机载状态估计和学习得到的复位策略进行微调，以实现自主恢复。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gu_usim_and_u0_a_vision_language_2025/">
+          <span class="entry-type">论文</span>
+          <h3>USIM &amp; U0</h3>
+          <p>USIM and U0: A Vision-Language-Action Dataset and Model for General Underwater Robots (USIM &amp; U0),…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nie_ermv_editing_4d_robotic_multi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ERMV</h3>
+          <p>ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents (ERMV), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sampling_based_system_identifi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning</h3>
+          <p>Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_omnitactune_policy_agnostic_re_2026/">
+          <span class="entry-type">论文</span>
+          <h3>OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies</h3>
+          <p>arXiv:2607.03723v1 Announce Type: new Abstract: Visual policies learned from human videos,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10/">
+          <span class="entry-type">方法</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_efficient_sim_to_real_transfer_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Efficient Sim-to-Real Transfer of World-Action Models from Synthetic Priors</h3>
+          <p>arXiv:2606.31101v1 Announce Type: new Abstract: Bridging the sim-to-real gap is a core challenge in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_in_context_world_modeling_for_2026/">
+          <span class="entry-type">论文</span>
+          <h3>In-Context World Modeling for Robotic Control</h3>
+          <p>arXiv:2606.26025v3 Announce Type: replace Abstract: Modern Vision-Language-Action (VLA) models often…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dhakate_carosac_a_reinforcement_learni_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CaRoSaC：通过仿真解决电缆下垂问题的基于强化学习的缆索驱动并联机器人运动学控制</h3>
+          <p>本文提出了CaRoSaC框架，将基于Unity3D/Obi…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hou_robust_fall_recovery_for_armle_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于力引导学习的无臂双轮足机器人鲁棒跌倒恢复</h3>
+          <p>本文提出FTSR框架，将高度相关的外部辅助力构建为可优化约束，并采用高度递进的分阶段奖励训练无臂双轮足机器人实现跌倒恢复，在JiaRan机器人上完成仿真到现实部署，并泛化至23自由度Unitree人形…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_marco_robot_learning_with_crash_cons_2021/">
+          <span class="entry-type">论文</span>
+          <h3>具有碰撞约束的机器人学习</h3>
+          <p>本文提出了EIC2，一种用于具有碰撞约束的机器人学习的约束贝叶斯优化框架：失败实验不产生数据；它使用高斯过程分类回归（GPCR）对约束建模，将离散的成功/失败标签与连续观测结合，并将约束阈值作为超参数…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ppf_pre_training_and_preservat_2025/">
+          <span class="entry-type">论文</span>
+          <h3>PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion</h3>
+          <p>PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shree_exploiting_natural_language_fo_2021/">
+          <span class="entry-type">论文</span>
+          <h3>利用自然语言实现高效风险感知多机器人搜索救援规划</h3>
+          <p>本文在合成灾难图像-描述数据集上微调ViLBERT视觉-语言模型，根据自然语言指令和机器人图像估计场景危险程度，并将危险估计嵌入到分布式风险感知混合整数线性规划多机器人搜索救援路径规划中。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_smooth_humanoid_locom_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies</h3>
+          <p>Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sim_to_real_learning_for_human_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Sim-to-Real Learning for Humanoid Box Loco-Manipulation</h3>
+          <p>Sim-to-Real Learning for Humanoid Box Loco-Manipulation is a 2023 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physics_models_for_sim_to_real_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Physics Models for Sim-to-Real Transfer in Professional-Level Robot Table Tennis</h3>
+          <p>arXiv:2606.28805v2 Announce Type: replace Abstract: At competitive speeds and spins, a table tennis…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_benchmarking_potential_based_r_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Benchmarking Potential Based Rewards for Learning Humanoid Locomotion</h3>
+          <p>Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_action_chunking_with_transform_2023/">
+          <span class="entry-type">方法</span>
+          <h3>基于Transformer的动作分块</h3>
+          <p>基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_walk_in_minutes_us_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning</h3>
+          <p>Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning is a paper on 行走运动…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ase_adversarial_skill_embeddin_2026/">
+          <span class="entry-type">论文</span>
+          <h3>对抗技能嵌入：大规模运动控制</h3>
+          <p>ASE: Adversarial Skill Embeddings for Large-Scale Motion Control is a paper on 技能组合 for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_get_up_across_morp_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy</h3>
+          <p>Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_he_viral_visual_sim_to_real_at_sc_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VIRAL：面向人形机器人移动操作的大规模视觉仿真到现实迁移</h3>
+          <p>VIRAL 是一种视觉仿真到现实迁移框架，仅在仿真中训练特权强化学习教师策略，并将其蒸馏为仅依赖 RGB 图像的学生策略，从而实现宇树 G1 人形机器人移动操作技能的零样本真实部署。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rational_inverse_reasoning_few_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Rational Inverse Reasoning: Few-Shot Imitation by Inferring Intent through Planning</h3>
+          <p>arXiv:2508.08983v2 Announce Type: replace Abstract: Humans can learn a new manipulation task from…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cao_learning_sim_to_real_dense_obj_2023/">
+          <span class="entry-type">论文</span>
+          <h3>面向机器人操作的仿真到现实稠密物体描述符学习</h3>
+          <p>本文提出仿真到现实稠密物体网络（SRDONs），一种将仿真与真实视觉数据映射到具有像素级一致性的统一特征空间的稠密物体描述符表示，使机器人操作任务能够在零真实世界训练的情况下实现迁移。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_apex_learning_adaptive_high_pl_2026/">
+          <span class="entry-type">论文</span>
+          <h3>APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots</h3>
+          <p>APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots is a 2026 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lu_pose_estimation_for_robot_mani_2020/">
+          <span class="entry-type">论文</span>
+          <h3>基于关键点优化与仿真到现实迁移的机器人操纵臂姿态估计</h3>
+          <p>本文提出了一种迭代式关键点优化算法，用于在机器人操作臂上选择能最大化二维检测和三维定位精度的三维关键点；该算法在 CoppeliaSim 合成数据上训练基于 DeepLabCut…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robust_and_versatile_bipedal_j_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Robust and Versatile Bipedal Jumping Control through Reinforcement Learning</h3>
+          <p>Robust and Versatile Bipedal Jumping Control through Reinforcement Learning is a 2023 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">方法</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cg_mutra_continuously_gated_mu_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion</h3>
+          <p>arXiv:2606.08922v2 Announce Type: replace Abstract: Falling is an inherent risk for humanoid robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">评测基准</span>
+          <h3>ManiSkill</h3>
+          <p>面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_locomotion_on_discret_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Locomotion on Discrete Terrain via Minimal Proximity Sensing</h3>
+          <p>arXiv:2606.31912v1 Announce Type: new Abstract: Learning-based control has revolutionized dynamic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_katayama_learning_bipedal_locomotion_on_2025/">
+          <span class="entry-type">论文</span>
+          <h3>使用足部惯性测量单元在齿轮驱动人形机器人上学习双足行走</h3>
+          <p>该论文提出了一种强化学习框架，通过足部惯性测量单元（IMU）与躯干IMU相结合，在采用高减速比执行器且无扭矩传感器的微型人形机器人EVAL-03上实现稳健的仿真到现实双足行走。论文引入了针对观测空间的…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_booster_gym_an_end_to_end_rl_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion</h3>
+          <p>Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_petit_bayesian_optimization_for_deve_2020/">
+          <span class="entry-type">论文</span>
+          <h3>基于参数边界缩减的元学习与贝叶斯优化在发展机器人学中的应用</h3>
+          <p>本文提出了一种发展型机器人框架，该框架结合了长期记忆与推理模块——贝叶斯优化、三维视觉相似度和参数边界缩减——利用来自相似历史任务最佳迭代的缩减边界来热启动新任务的连续约束超参数优化。作者在7个仿真对…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_e_sds_environment_aware_see_it_2025/">
+          <span class="entry-type">论文</span>
+          <h3>E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion</h3>
+          <p>E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_agile_and_dynamic_mot_2019/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Agile and Dynamic Motor Skills for Legged Robots</h3>
+          <p>Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on sim-to-real for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_tech_mimicgen/">
+          <span class="entry-type">技术</span>
+          <h3>MimicGen</h3>
+          <p>一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robust_humanoid_walking_on_com_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</h3>
+          <p>Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mixture_of_experts_rl_for_faul_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion</h3>
+          <p>arXiv:2606.25965v2 Announce Type: replace Abstract: Legged robots deployed in planetary exploration…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_grasp_anything_by_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Grasp Anything by Playing with Random Toys</h3>
+          <p>Learning to Grasp Anything by Playing with Random Toys is a 2026 work on manipulation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mobileh2r_learning_generalizab_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data</h3>
+          <p>MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_genie_sim_30_a_high_fidelity_c_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot</h3>
+          <p>Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot is a 2026 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_closing_sim_to_real_gap_for_he_2026/">
+          <span class="entry-type">论文</span>
+          <h3>带负载的人形机器人不是同一个系统</h3>
+          <p>Humanoid robots deployed in real-world scenarios often need to carry unknown payloads, which…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_genesis_generative_physics_eng_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>Genesis 生成式物理引擎</h3>
+          <p>面向机器人等领域的新兴生成式通用物理引擎。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hord_robust_humanoid_control_v_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation</h3>
+          <p>HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_berscheid_robot_learning_of_6_dof_graspi_2021/">
+          <span class="entry-type">论文</span>
+          <h3>基于模型自适应原语的机器人六自由度抓取学习</h3>
+          <p>本文提出了一种混合六自由度料箱拣选方法，将用于平面抓取奖励估计的全卷积神经网络与用于侧向朝向自适应的基于模型控制器相结合，在 27,000 次自监督真实世界抓取尝试后，于密集 clutter…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dexhub_and_dart_towards_intern_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DexHub and DART: Towards Internet Scale Robot Data Collection</h3>
+          <p>DexHub and DART: Towards Internet Scale Robot Data Collection is a paper on Manipulation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kaidanov_the_role_of_domain_randomizati_2024/">
+          <span class="entry-type">论文</span>
+          <h3>领域随机化在训练全身人形机器人控制扩散策略中的作用</h3>
+          <p>本文通过在 IsaacGym 中使用 AMP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robocasa365_a_large_scale_simu_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots</h3>
+          <p>RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">技术</span>
+          <h3>Mobile ALOHA</h3>
+          <p>全身移动双臂遥操作平台，用于采集家庭和仓库操作数据。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bridging_the_sim_to_real_gap_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation</h3>
+          <p>Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation is a 2025 work on sim-to-real for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_muratore_robot_learning_from_randomized_2021/">
+          <span class="entry-type">论文</span>
+          <h3>基于随机化仿真的机器人学习：综述</h3>
+          <p>一篇关于机器人仿真到现实迁移的综合综述，重点讨论域随机化，并将现有方法分为静态、自适应和对抗性三类。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_e_vla_event_augmented_vision_l_2026/">
+          <span class="entry-type">论文</span>
+          <h3>E-VLA: Event-Augmented Vision-Language-Action Model for Dark and Blurred Scenes</h3>
+          <p>arXiv:2604.04834v2 Announce Type: replace-cross Abstract: Robotic Vision-Language-Action (VLA)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_understanding_domain_randomiza_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Understanding Domain Randomization for Sim-to-real Transfer</h3>
+          <p>Understanding Domain Randomization for Sim-to-real Transfer is a paper on 仿真到现实 for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mimickit_a_reinforcement_learn_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MimicKit：运动模仿与控制的强化学习框架</h3>
+          <p>MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control is a paper on 工程框架 for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gaussgym_an_open_source_real_t_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GaussGym: An open-source real-to-sim framework for learning locomotion from pixels</h3>
+          <p>GaussGym: An open-source real-to-sim framework for learning locomotion from pixels is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_anymal_parkour_robust_percepti_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ANYmal Parkour: Robust Perceptive Locomotion</h3>
+          <p>ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_anchordream_repurposing_video_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AnchorDream: Repurposing Video Diffusion for Embodiment-Aware Robot Data Synthesis</h3>
+          <p>arXiv:2512.11797v2 Announce Type: replace Abstract: The collection of large-scale and diverse robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_combined_constrained_sampling_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation</h3>
+          <p>arXiv:2602.08557v2 Announce Type: replace Abstract: Training non-prehensile manipulation policies in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hifar_multi_stage_curriculum_l_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery</h3>
+          <p>HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_arxiv_202412_genesis_a_generat_2024/">
+          <span class="entry-type">论文</span>
+          <h3>arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics and Beyond</h3>
+          <p>arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics and Beyond is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_hybrid_autoencoder_for_robus_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion</h3>
+          <p>A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egodemogen_novel_egocentric_de_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust Manipulation</h3>
+          <p>EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust Manipulation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_robot_learning_on_the_job_huma_2022/">
+          <span class="entry-type">论文</span>
+          <h3>机器人在岗学习：部署过程中的人机协同自治与学习</h3>
+          <p>With the rapid growth of computing powers and recent advances in deep learning, we have witnessed…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lips_large_scale_humanoid_robo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures</h3>
+          <p>LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reinforcement_learning_for_ver_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control</h3>
+          <p>Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control is a 2024 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sim_and_real_co_training_a_sim_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation</h3>
+          <p>Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">方法</span>
+          <h3>域适应</h3>
+          <p>将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffcotune_differentiable_co_t_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control</h3>
+          <p>DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control is a 2025 work on sim-to-real…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_radosavovic_learning_humanoid_locomotion_o_2024/">
+          <span class="entry-type">论文</span>
+          <h3>挑战性地形上的人形机器人运动学习</h3>
+          <p>提出一种基于Transformer的Digit人形机器人盲态运动控制器，先通过序列建模在平地轨迹上预训练，再通过强化学习在不平坦地形上微调，实现从仿真到现实的零样本迁移，跨越自然与城市环境。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_spectral_normalization_for_lip_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</h3>
+          <p>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_domain_randomization_for_trans_2026/">
+          <span class="entry-type">论文</span>
+          <h3>域随机化：从仿真到真实世界的深度神经网络迁移</h3>
+          <p>Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fu_load_aware_locomotion_control_2026/">
+          <span class="entry-type">论文</span>
+          <h3>面向工业搬运任务的人形机器人负载感知 locomotion 控制</h3>
+          <p>本文提出了一种基于强化学习的负载感知 locomotion 框架，用于执行工业搬运与箱体操作任务的全尺寸人形机器人；该框架采用解耦的 loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_h_zero_cross_humanoid_locomoti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer</h3>
+          <p>H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_re3sim_generating_high_fidelit_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Re$^3$Sim: Generating High-Fidelity Simulation Data via 3D-Photorealistic Real-to-Sim for Robotic Manipulation</h3>
+          <p>arXiv:2502.08645v4 Announce Type: replace Abstract: Real-world data collection for robotics is…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yu_real2render2real_scaling_robot_2025/">
+          <span class="entry-type">论文</span>
+          <h3>R2R2R</h3>
+          <p>Real2Render2Real: Scaling Robot Data Without Dynamics Simulation or Robot Hardware (R2R2R), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_towards_bridging_the_gap_syste_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots</h3>
+          <p>Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gait_conditioned_rl_with_multi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion</h3>
+          <p>Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ceola_fast_object_segmentation_learn_2021/">
+          <span class="entry-type">论文</span>
+          <h3>基于核方法的机器人快速目标分割学习</h3>
+          <p>2021年发表的论文，提出了一种混合目标分割架构，使用FALKON核分类器和RLS回归器替换预训练Mask R-CNN的输出层，以实现机器人视觉的快速在线训练。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_contrastive_representation_lea_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive Humanoid Locomotion</h3>
+          <p>Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive Humanoid Locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sim_to_real_of_humanoid_locomo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection</h3>
+          <p>Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robustness_of_robotic_manipula_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Robustness of Robotic Manipulation: Foundations and Frontiers</h3>
+          <p>arXiv:2606.31494v1 Announce Type: new Abstract: Humans and animals exhibit remarkable robustness in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egodemogen_egocentric_demonstr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization in Robotic Manipulation</h3>
+          <p>EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization in Robotic Manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_genie_sim_30_a_high_fidelity_c_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>Genie Sim 3.0: A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot</h3>
+          <p>Genie Sim 3.0: A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot is a paper on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ase_large_scale_reusable_adver_2022/">
+          <span class="entry-type">论文</span>
+          <h3>ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</h3>
+          <p>ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_beamdojo_learning_agile_humano_2025/">
+          <span class="entry-type">论文</span>
+          <h3>BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds</h3>
+          <p>BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_renet_fault_tolerant_motion_co_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RENet：视觉崩溃下基于冗余估计器网络的四足机器人容错运动控制</h3>
+          <p>本文提出RENet，一种单阶段端到端框架，联合训练视觉-本体感知估计器与纯本体感知估计器及底层策略，并通过CNN自编码器异常检测器在深度图像不可靠时在线切换估计器。在Unitree…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_simfoundry_modular_and_automat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation</h3>
+          <p>arXiv:2606.28276v2 Announce Type: replace Abstract: Training and evaluating robot policies in the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dong_emma_generalizing_real_world_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EMMA</h3>
+          <p>EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer (EMMA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_all_terrain_locomotio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning All-Terrain Locomotion for a Planetary Rover with Actively Articulated Suspension</h3>
+          <p>arXiv:2606.06790v2 Announce Type: replace Abstract: This paper presents ERNEST, a four-wheeled…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_robot_fleet_learning_via_polic_2024/">
+          <span class="entry-type">论文</span>
+          <h3>通过策略融合的机器人车队学习</h3>
+          <p>提出了FLEET-MERGE，一种分布式策略融合方法，能够在不集中原始数据的情况下整合在异构本地机器人数据上训练得到的循环神经网络策略，并引入了FLEET-TOOLS工具使用基准测试。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_202501_mujoco_playground_2025/">
+          <span class="entry-type">论文</span>
+          <h3>2025.01, MuJoCo Playground</h3>
+          <p>2025.01, MuJoCo Playground is a 2025 work on simulation benchmark for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ttt_parkour_rapid_test_time_tr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour</h3>
+          <p>TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rma_rapid_motor_adaptation_for_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RMA: Rapid Motor Adaptation for Legged Robots</h3>
+          <p>RMA: Rapid Motor Adaptation for Legged Robots is a paper on 仿真到真实 for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_with_pycub_a_simulati_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics</h3>
+          <p>Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bao_sim_to_real_transfer_in_deep_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>双足运动深度强化学习中的仿真到现实迁移</h3>
+          <p>本综述章节研究如何将双足运动的深度强化学习策略从仿真迁移到真实机器人。它梳理了仿真-现实差距的来源，并从模型中心的保真度提升以及通过鲁棒性训练和在线自适应强化策略两个角度组织缓解方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_seo_learning_sim_to_real_humanoid_2025/">
+          <span class="entry-type">论文</span>
+          <h3>在15分钟内学习从仿真到现实的人形机器人运动</h3>
+          <p>本文提出了一种基于 FastSAC 和 FastTD3 的实用方案，结合大规模并行仿真，在单张 RTX 4090 GPU 上仅用 15 分钟即可训练出鲁棒的全尺寸人形机器人运动策略，并在…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#_2">域随机化的定义与定位</a></li>
+<li><a href="#_3">域随机化的数学与原理基础</a></li>
+<li><a href="#_4">算法步骤与实现要点</a></li>
+<li><a href="#_5">典型应用与局限性</a></li>
+<li><a href="#_6">相关标签</a></li>
+<li><a href="#_7">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

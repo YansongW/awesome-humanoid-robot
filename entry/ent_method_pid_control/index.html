@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PID控制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PID控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>PID控制</h1>
+      <p class="entry-name-en">PID Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://www.ieeectl.org/awards/astrom-hagglund-advanced-pid-control/" target="_blank" rel="noopener">K. J. Åström and T. Hägglund, Advanced PID Control, ISA, 2006</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1002/9780470544162" target="_blank" rel="noopener">K. Ogata, Modern Control Engineering, 5th ed., Prentice Hall, 2010</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">mentions</span>
+            <a href="/entry/ent_method_impedance_control/">阻抗控制</a>
+            
+              
+                
+              
+              <span class="rel-desc">PID 控制调节位置或速度；阻抗控制进一步调节与环境的动态交互力。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="pid">PID控制的定义与定位</h3>
+<p>PID控制属于 <strong>方法</strong> 类型。 所属领域包括：AI 模型与算法, 零部件。 价值链层级：智能层。 一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。 英文名称为 <em>PID Control</em>。 韩文名称为 <em>PID 제어</em>。</p>
+<h3 id="pid_1">PID控制的数学与原理基础</h3>
+<p>PID控制建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，PID控制通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_2">算法步骤与实现要点</h3>
+<p>在实际实现PID控制时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_3">典型应用与局限性</h3>
+<p>PID控制可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>control</li>
+<li>feedback</li>
+<li>joint_control</li>
+<li>actuator</li>
+<li>classical_control</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，PID控制在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li><a href="https://www.ieeectl.org/awards/astrom-hagglund-advanced-pid-control/">K. J. Åström and T. Hägglund, Advanced PID Control, ISA, 2006</a></li>
+<li><a href="https://doi.org/10.1002/9780470544162">K. Ogata, Modern Control Engineering, 5th ed., Prentice Hall, 2010</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_impedance_control/">阻抗控制</a>
+              <span class="rel-desc">PID控制提及阻抗控制。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_component_bldc_motor/">无刷直流电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">无刷直流电机前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">用于机器人控制的自适应核贝叶斯优化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">用于机器人控制的自适应核贝叶斯优化discussesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器discussesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">人形机器人凝视稳定：一个综合框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">人形机器人凝视稳定：一个综合框架使用PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chan_angle_constrained_formation_co_2020/">圆形移动机器人的角度约束编队控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">圆形移动机器人的角度约束编队控制discussesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">具有侧向有界输入力的空中机器人系统的全位姿跟踪控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">具有侧向有界输入力的空中机器人系统的全位姿跟踪控制discussesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_comp_servo_motor/">高性能伺服电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">高性能伺服电机前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_sampled_data_control_based_con_2020/">基于采样数据控制的分数阶多智能体系统一致性研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于采样数据控制的分数阶多智能体系统一致性研究discussesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">通过验证定位估计改进基于视觉地点识别的机器人导航</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">通过验证定位估计改进基于视觉地点识别的机器人导航使用PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_dynamixel_xm430_w210_t/">ROBOTIS DYNAMIXEL XM430-W210-T 舵机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">ROBOTIS DYNAMIXEL XM430-W210-T 舵机前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">模型预测控制（MPC）前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_oem_unitree_robotics/">宇树科技</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">宇树科技前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_maxon_group_2024/">Maxon</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">Maxon前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">壁面跟随机器人控制的机器学习算法比较研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">壁面跟随机器人控制的机器学习算法比较研究studiesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ribeiro_real_time_deep_learning_approa_2021/">面向自主机器人操作的视觉伺服控制与抓取检测的实时深度学习方法</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向自主机器人操作的视觉伺服控制与抓取检测的实时深度学习方法discussesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_robot_system_odri_bolt/">ODRI Bolt 开源双足机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">ODRI Bolt 开源双足机器人前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">准直驱执行器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">准直驱执行器前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">喷气动力飞行人形机器人的故障检测与容错控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">喷气动力飞行人形机器人的故障检测与容错控制使用PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_field_oriented_control/">磁场定向控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">FOC 通常在 d-q 坐标系中使用 PI/PID 电流控制器调节磁链电流与转矩电流。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_impedance_control/">阻抗控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">阻抗控制前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_principle_current_velocity_position_loops/">电流环/速度环/位置环</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">电流环/速度环/位置环前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">变形感知机器人三维超声</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">变形感知机器人三维超声使用PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_source_seeking_control_of_unic_2021/">基于3D打印柔性压阻传感器的独轮机器人源搜索控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于3D打印柔性压阻传感器的独轮机器人源搜索控制discussesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_dynamixel_xl330_m288_t/">ROBOTIS DYNAMIXEL XL330-M288-T 舵机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">ROBOTIS DYNAMIXEL XL330-M288-T 舵机前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">具有不确定运动学和动力学的机器人机械臂自适应控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">具有不确定运动学和动力学的机器人机械臂自适应控制discussesPID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_hollow_cup_motor_2024/">空心杯电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">空心杯电机前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_inverse_dynamics_qp/">逆动力学二次规划形式化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_euler_lagrange_equations/">欧拉-拉格朗日方程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_newton_euler_equations/">牛顿-欧拉方程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_pid_control"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_newton_euler_equations/">
+          <span class="entry-type">方程</span>
+          <h3>牛顿-欧拉方程</h3>
+          <p>描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ribeiro_real_time_deep_learning_approa_2021/">
+          <span class="entry-type">论文</span>
+          <h3>面向自主机器人操作的视觉伺服控制与抓取检测的实时深度学习方法</h3>
+          <p>提出两个轻量级卷积神经网络用于机器人操作：一个基于Cornell抓取数据集从单张RGB图像预测五维抓取矩形，另一个基于自采集的Kinova…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">
+          <span class="entry-type">论文</span>
+          <h3>面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器</h3>
+          <p>本2022年arXiv论文提出了一种基于微分几何的辅助控制器，仅利用操纵杆输入和当前车辆状态，帮助用户操控差动轮式移动机器人（尤其是电动轮椅），无需预先指定期望状态。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_dynamixel_xm430_w210_t/">
+          <span class="entry-type">零部件</span>
+          <h3>ROBOTIS DYNAMIXEL XM430-W210-T 舵机</h3>
+          <p>ROBOTIS X 系列的中型智能舵机执行器，具有 TTL 通信、3.0 N·m 堵转扭矩、绝对编码器反馈和多种控制模式，适用于机器人关节。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">形式化方法</span>
+          <h3>欧拉-拉格朗日方程</h3>
+          <p>由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">
+          <span class="entry-type">论文</span>
+          <h3>喷气动力飞行人形机器人的故障检测与容错控制</h3>
+          <p>该论文为喷气动力人形机器人 iRonCub 提出了一种基于 RPM 的故障检测器、基于动量的飞行控制器以及离线参考轨迹生成器，用于在仿真飞行中检测并恢复单台涡轮机的完全失效。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_source_seeking_control_of_unic_2021/">
+          <span class="entry-type">论文</span>
+          <h3>基于3D打印柔性压阻传感器的独轮机器人源搜索控制</h3>
+          <p>We present the design and experimental validation of source seeking control algorithms for a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_impedance_control/">
+          <span class="entry-type">方法</span>
+          <h3>阻抗控制</h3>
+          <p>阻抗控制（impedance control）不把位置与力分开控制，而是调节机器人末端表现出的机械阻抗（mechanical…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_hollow_cup_motor_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>空心杯电机</h3>
+          <p>鼎智空心杯电机（Dingzhi Coreless…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">
+          <span class="entry-type">论文</span>
+          <h3>具有侧向有界输入力的空中机器人系统的全位姿跟踪控制</h3>
+          <p>本文提出了侧向有界力（LBF）飞行器类，其主要控制力沿主推力方向而侧向力受限，并给出了一种SE(3)几何控制器，在可行时实现位置与姿态的独立跟踪，否则保证位置跟踪。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">
+          <span class="entry-type">论文</span>
+          <h3>具有不确定运动学和动力学的机器人机械臂自适应控制</h3>
+          <p>In this paper, we investigate the adaptive control problem for robot manipulators with both the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_dynamixel_xl330_m288_t/">
+          <span class="entry-type">零部件</span>
+          <h3>ROBOTIS DYNAMIXEL XL330-M288-T 舵机</h3>
+          <p>ROBOTIS X 系列的小型低成本智能舵机执行器，具有 TTL 通信、0.52 N·m 堵转扭矩和 288.4:1 减速比，适用于小型机器人关节和手指。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">形式化方法</span>
+          <h3>逆动力学二次规划形式化</h3>
+          <p>一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_comp_servo_motor/">
+          <span class="entry-type">零部件</span>
+          <h3>高性能伺服电机</h3>
+          <p>伺服电机（Servo Motor）是一种与专用伺服驱动器配套、具备闭环位置、速度与转矩控制能力的高性能电机，广泛应用于工业机器人、数控机床、人形机器人关节、AGV…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_odri_bolt/">
+          <span class="entry-type">机器人系统</span>
+          <h3>ODRI Bolt 开源双足机器人</h3>
+          <p>Bolt 是 Open Dynamic Robot Initiative（ODRI，开放动态机器人计划）的开源双足平台，由 NYU、马克斯·普朗克智能系统研究所、LAAS-CNRS…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">
+          <span class="entry-type">论文</span>
+          <h3>用于机器人控制的自适应核贝叶斯优化</h3>
+          <p>本文提出了斯巴达贝叶斯优化（SBO），一种利用自适应局部/全局斯巴达核在无需先验知识的情况下对非平稳成本函数进行建模的高斯过程贝叶斯优化方法，并在优化基准、强化学习控制任务和无人机机翼设计上进行了评估…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人凝视稳定：一个综合框架</h3>
+          <p>本文提出了一种人形机器人凝视稳定框架，该框架将关节速度指令得到的运动学前馈项与头部陀螺仪的惯性反馈项相结合，以补偿自运动和外部扰动引起的相机扰动，并在 iCub 机器人上通过残余光流进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">整机厂商</span>
+          <h3>宇树科技</h3>
+          <p>&gt; 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 &gt; 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_sampled_data_control_based_con_2020/">
+          <span class="entry-type">论文</span>
+          <h3>基于采样数据控制的分数阶多智能体系统一致性研究</h3>
+          <p>本文提出了一种面向分数阶多智能体系统的分布式采样数据控制器，通过补偿历史控制输入来体现分数阶微积分的遗传性与无限记忆特性，并证明了闭环信号全局有界性与渐近平均一致性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制</h3>
+          <p>一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chan_angle_constrained_formation_co_2020/">
+          <span class="entry-type">论文</span>
+          <h3>圆形移动机器人的角度约束编队控制</h3>
+          <p>提出了一种基于梯度的分布式控制律，仅利用视觉传感器获取的相邻机器人圆盘内角/方位测量，使平面圆形移动机器人形成刚性编队并保证相邻机器人之间的避碰，并证明了误差动态的局部指数收敛性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_bldc_motor/">
+          <span class="entry-type">零部件</span>
+          <h3>无刷直流电机</h3>
+          <p>无刷直流电机（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">
+          <span class="entry-type">论文</span>
+          <h3>变形感知机器人三维超声</h3>
+          <p>Tissue deformation in ultrasound (US) imaging leads to geometrical errors when measuring tissues due…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">
+          <span class="entry-type">论文</span>
+          <h3>通过验证定位估计改进基于视觉地点识别的机器人导航</h3>
+          <p>本文提出了一种用于视觉地点识别（VPR）的多层感知器（MLP）完整性监控器，将匹配分类为容差内或容差外，并将其集成到两种实时机器人导航方法中，在室内和室外环境中使用Clearpath…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">
+          <span class="entry-type">论文</span>
+          <h3>壁面跟随机器人控制的机器学习算法比较研究</h3>
+          <p>这篇2019年ROBIO论文使用UCI壁面跟随机器人导航数据集的24、4和2传感器格式，比较了经典机器学习和深度学习分类器在预测壁面跟随机器人方向上的性能，其中决策树在简化格式上达到100%平均准确率…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_maxon_group_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>Maxon</h3>
+          <p>Maxon是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">技术</span>
+          <h3>准直驱执行器</h3>
+          <p>采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_current_velocity_position_loops/">
+          <span class="entry-type">原理</span>
+          <h3>电流环/速度环/位置环</h3>
+          <p>4.5.5 电流环、速度环、位置环的级联控制 实际关节驱动通常采用三级级联控制：最内层 电流环（力矩环），中间 速度环，最外层 位置环。每一层带宽约为下一层的 5-10 倍，以保证稳定性。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#pid">PID控制的定义与定位</a></li>
+<li><a href="#pid_1">PID控制的数学与原理基础</a></li>
+<li><a href="#_2">算法步骤与实现要点</a></li>
+<li><a href="#_3">典型应用与局限性</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

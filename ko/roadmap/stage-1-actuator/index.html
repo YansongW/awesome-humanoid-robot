@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1단계: 관절(액추에이터) 만들기 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">1단계: 관절(액추에이터) 만들기</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="1">1단계: 관절(액추에이터) 만들기</h1>
+<blockquote>
+<p>⚠️ 이 로드맵 내용은 공개 자료와 이론적 지식을 바탕으로 정리되었으며, 실제 기기 검증을 거치지 않았습니다. 전기 및 기계 작업 시 안전 규정을 직접 확인하시기 바랍니다.</p>
+</blockquote>
+<p>휴머노이드 로봇 전체는 보통 20~50 자유도를 가지지만, 각 자유도를 분해하면 결국 같은 문제입니다: <strong>모터 + 감속기 + 센서 + 드라이버 + 제어기</strong>를 하나의 하우징에 넣고 제어 가능한 토크와 각도를 출력하는 것입니다. 이 단계의 목표: 테스트 벤치에서 검증을 통과한 관절 모듈을 만드는 것입니다. 이를 완전히 이해하면, 다리와 팔 전체는 복사와 엔지니어링 문제일 뿐입니다.</p>
+<p>공개적으로 검증된 두 가지 경로가 이 페이지 전체에 걸쳐 있으므로, 전체 과정에서 참조하시기 바랍니다:</p>
+<ul>
+<li><strong>ODRI(Open Dynamic Robot Initiative) BLMC 힘 제어 액추에이터</strong>: 기성 프레임리스 모터 + 이중 엔코더 + 자체 개발 MicroDriver 드라이버 카드, 낮은 감속비, 높은 토크 투명성, 전체 링크 BSD 오픈소스 (출처: <code>data/roadmap/research/open-dynamic-robot-initiative.md</code>, 조사 접속 2026-07-01).</li>
+<li><strong>Berkeley Humanoid Lite 6512/5010 사이클로이드 준직구동 액추에이터</strong>: 3D 프린팅 사이클로이드 핀 휠 감속기 + 드론용 브러시리스 모터, 6512 단일 BOM 약 $188(미국) / $157(중국) (출처: <code>data/roadmap/research/berkeley-humanoid-lite.md</code>, arXiv:2504.17249 및 EECS-2025-207 기술 보고서).</li>
+</ul>
+<p>이론적 배경은 먼저 <a href="/wiki/chapters/chapter-04/">제4장 액추에이터: 휴머노이드 로봇의 "근육"</a>을 읽고, 제어 이론은 <a href="/wiki/chapters/chapter-14/">제14장 로봇 제어 기초</a>를 참조하세요.</p>
+<h2 id="1_1">1단계: 관절 사양 명확히 하기</h2>
+<p>【무엇을 할까】무엇이든 구매하기 전에 다섯 가지 숫자를 적으세요: 최대 토크(peak torque), 정격 속도, 질량 예산, 백래시(backlash) 상한, 단일 관절 비용 상한. 데스크탑급 단일 관절의 일반적인 범위 (앵커 데이터는 출처를 명시하고, 나머지는 엔지니어링 권장값이며, 설계에 따라 검증 필요):</p>
+<table>
+<thead>
+<tr>
+<th>사양</th>
+<th>데스크탑급 일반 범위</th>
+<th>근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>최대 토크</td>
+<td>0.5–3 N·m 급</td>
+<td><a href="/entry/ent_component_dynamixel_xl330_m288_t/">Dynamixel XL330-M288-T</a> 스톨 토크 0.52 N·m, <a href="/entry/ent_component_dynamixel_xm430_w210_t/">Dynamixel XM430-W210-T</a> 스톨 토크 3.0 N·m (출처: 실물 카드/ROBOTIS e-Manual)</td>
+</tr>
+<tr>
+<td>출력 속도</td>
+<td>모터 속도 ÷ 감속비</td>
+<td>산술 예시: 특정 50 W <a href="/entry/ent_comp_servo_motor/">서보 모터</a> 최대 6000 rpm (실물 카드), 288:1 감속 (XL330 감속비 288.4:1) 시 약 20 rpm 출력; 선택한 모터에 따라 재계산</td>
+</tr>
+<tr>
+<td>질량 예산</td>
+<td>권장 ≤ 전체 기체 질량 예산의 3–5%/관절</td>
+<td>엔지니어링 경험 기반 권장값, 공급업체 데이터 아님; 구체적인 모델 질량은 공급업체에 직접 확인 필요</td>
+</tr>
+<tr>
+<td>백래시</td>
+<td>정밀급은 0에 가까움, 서보급은 확연히 느껴짐</td>
+<td><a href="/entry/ent_component_harmonic_drive_reducer/">하모닉 드라이브 감속기</a>의 핵심 장점은 제로 백래시 (실물 카드); 플라스틱 기어 서보는 백래시가 크며, 구체적인 각도 값은 공급업체에 직접 확인 필요</td>
+</tr>
+<tr>
+<td>단일 관절 비용</td>
+<td>$157–188 로 QDD 제작 가능</td>
+<td>Berkeley 6512 액추에이터 BOM: 모터 $129 + 드라이버 보드 $19 + 엔코더 $3 + 구조 부품 (berkeley-humanoid-lite 조사 파일)</td>
+</tr>
+</tbody>
+</table>
+<p>【왜 하는가】사양 간에는 상충 관계가 있습니다: 토크는 감속비로 얻지만, 감속비가 높으면 속도와 역구동성이 사라집니다. 토크 밀도는 큰 직경의 모터로 얻지만, 질량 예산이 초과됩니다. 물리적 근원은 <a href="/entry/ent_component_frameless_torque_motor_2024/">프레임리스 토크 모터</a> 카드의 공식 τ = 2πr²l·B_gap·J_s에서 확인할 수 있습니다. 토크는 반지름의 제곱에 비례하므로 관절 모터는 모두 "팬케이크" 형태가 됩니다. 엉덩이, 어깨 주요 관절은 보통 수십에서 수백 N·m이 필요하며 (프레임리스 토크 모터 실물 카드), 데스크탑급 로봇은 체중을 줄여 관절 사양의 부담을 덜어줍니다.</p>
+<p>【당신의 상황 분석】세 가지 질문에 먼저 답하세요: ① 관절이 얼마나 무거운 것을 들어 올리고, 얼마나 빠르게 움직여야 합니까? 레버 암 길이 × 말단 하중에 1.5–2배 안전 계수를 더하면 최대 토크 하한이 됩니다. ② 총 예산 ÷ 자유도 수 = 단일 관절 비용 상한 — $160 미만이면 기본적으로 Berkeley식 자체 개발 QDD 또는 서보 모터만 가능합니다. ③ 힘 제어가 필요합니까? 필요하다면 "역구동성, 낮은 감속비"를 하드 사양에 포함시키세요. 필요하지 않다면 높은 감속비 방식의 선택 폭이 훨씬 넓습니다.</p>
+<h2 id="2">2단계: 액추에이터 토폴로지 선정</h2>
+<p>【무엇을 할까】네 가지 주요 토폴로지 중 하나를 선택하고, 먼저 단일 관절 검증을 수행하세요:</p>
+<table>
+<thead>
+<tr>
+<th>토폴로지</th>
+<th>백래시</th>
+<th>토크 밀도</th>
+<th>역구동성</th>
+<th>비용</th>
+<th>적합한 대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>스마트 서보 (<a href="/entry/ent_component_dynamixel_xl330_m288_t/">XL330</a> / <a href="/entry/ent_component_dynamixel_xm430_w210_t/">XM430</a>)</td>
+<td>큼</td>
+<td>낮음-중간</td>
+<td>나쁨 (288:1 등 높은 감속비)</td>
+<td>공급업체에 직접 확인 필요</td>
+<td>초보자, 전체 기체 우선 구동</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_harmonic_drive_reducer/">하모닉 드라이브 감속기</a> + 모터</td>
+<td>제로 백래시 (실물 카드)</td>
+<td>높음</td>
+<td>나쁨-중간</td>
+<td>공급업체에 직접 확인 필요</td>
+<td>정밀도 우선 상체 솔루션</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">준직구동 QDD</a></td>
+<td>작음</td>
+<td>중간</td>
+<td>좋음 (힘 투명성)</td>
+<td>$157–188 (Berkeley 파일)</td>
+<td>힘 제어 필요, RL 운동 연구</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_frameless_torque_motor_2024/">프레임리스 토크 모터</a> 직접 구동</td>
+<td>제로 (감속기 없음)</td>
+<td>높음</td>
+<td>최고</td>
+<td>공급업체에 직접 확인 필요</td>
+<td>기계 가공 능력 보유</td>
+</tr>
+</tbody>
+</table>
+<p>【왜 하는가】토폴로지 선택은 본질적으로 "정밀도-투명성-비용" 삼각형에서 선택하는 것입니다. 높은 감속비 (서보, 하모닉)는 작은 모터로 큰 토크를 얻지만, 출력단에서 모터 전류를 "느낄" 수 없어 힘은 추정만 가능합니다. QDD는 낮은 감속비로 대역폭과 힘 투명성을 보장하며 (QDD 실물 카드), 대가로 모터 자체가 커야 합니다 — Berkeley는 150 KV 드론 모터 (MAD M6C12, $129, berkeley-humanoid-lite 파일)를 직접 사용합니다. ODRI의 BLMC는 이 경로의 연구 벤치마크입니다: 기성 프레임리스 모터 + 낮은 감속비, 이중 엔코더로 본체 감지 힘 제어 수행 (odri 조사 파일).</p>
+<p>【당신의 상황 분석】기술과 예산에 따라 맞춰 선택하세요: 초보자, 관절을 빨리 움직이고 싶다면 — XM430급 서보, 명령 하나로 회전합니다. FDM 프린팅 가능, 펌웨어 플래싱 가능, RL 보행이 목표라면 — Berkeley 6512를 그대로 따라 하고, 구조 부품은 데스크탑 FDM 프린터로 PLA를 출력하면 됩니다 (berkeley-humanoid-lite 파일). 운동 제어/전력 전자功底이 있다면 — ODRI의 <code>open_robot_actuator_hardware</code> 저장소 (BSD 라이선스)를 연구하세요. 산업용 정밀도가 필요하고 예산이 넉넉하다면 — 하모닉 경로, 가격과 납기는 공급업체에 직접 확인해야 합니다.</p>
+<h2 id="3">3단계: 모터 본체와 드라이버</h2>
+<p>【무엇을 할까】모터는 두 가지 중 하나를 선택하세요: <a href="/entry/ent_component_bldc_motor/">브러시리스 DC 모터 (BLDC)</a> 또는 AC 영구자석 동기 <a href="/entry/ent_comp_servo_motor/">서보 모터</a> (PMSM 계열); 드라이버는 완제품 <a href="/entry/ent_component_servo_drive_2024/">서보 드라이버</a>를 구매하거나, <a href="/entry/ent_method_foc_motor_control/">FOC (자계 방향 제어)</a>를 지원하는 오픈소스 드라이버 보드 (Berkeley는 ST B-G431B-ESC1, $19 사용, Moteus / ODrive / VESC와도 호환 — berkeley-humanoid-lite 파일)를 사용하세요.</p>
+<p>【왜 하는가】BLDC 역기전력은 사다리꼴파이며, 6-step 정류 (60° 전기각마다 통전 상 전환)와 함께 사용되어 제어가 간단하고 비용이 저렴합니다. PMSM 역기전력은 정현파이며, FOC와 함께 사용하면 토크 리플이 더 작고 효율이 더 높습니다 (BLDC 실물 카드). <a href="/entry/ent_method_field_oriented_control/">FOC</a>는 3상 전류를 회전자와 함께 회전하는 d-q 좌표계로 변환하여 토크와 자속을 분리, AC 모터가 DC 모터와 유사한 속도 제어 성능을 얻도록 합니다 (FOC 실물 카드). 관절 드라이버는 일반적으로 "FOC + 전류/속도/위치 3중 루프"이며, 부피, 방열, EMI 및 전류 루프 대역폭에 대한 요구사항이 높습니다 (서보 드라이버 실물 카드).</p>
+<p>【당신의 상황 분석】예산이 빠듯하고, 실습 능력이 있다면: 항공 모델 BLDC + 오픈소스 FOC 보드가 가장 저렴한 입문 방법이며, Berkeley는 "$129 모터 + $19 드라이버 보드" 조합으로 제로샷 sim-to-real RL 보행을 실행할 수 있음을 검증했습니다. 전력 전자에 전혀 손대고 싶지 않다면: 일체형 서보 또는 스마트 서보를 구매하여 제어 알고리즘에 집중하세요. 드라이버 보드를 직접 개발하려면: 먼저 ODRI MicroDriver 설계 파일을 읽고 결정하세요 — 진입 장벽이 높으며, odri 파일은 초보자 친화도를 2/5로 평가합니다.</p>
+<h2 id="4">4단계: 위치 감지 – 관절 엔코더</h2>
+<p><strong>【할 일】</strong> 출력단 <a href="/entry/ent_component_joint_encoder_2024/">관절 엔코더</a>를 최소 하나 장착하십시오. 힘 제어를 한다면 듀얼 엔코더를 사용하십시오: 모터 측(FOC 정류 및 속도 루프용) 하나, 출력 측(실제 관절 각도용) 하나. 저렴한 자기 엔코더로 시작할 수 있습니다 – Berkeley는 AS5600을 사용하며, 단가는 $3입니다(berkeley-humanoid-lite 문서).</p>
+<p><strong>【이유】</strong> 엔코더 분해능은 속도 루프의 제어 가능 대역폭과 위치 정밀도를 직접 결정합니다 – 산업용 서보의 기준점은 Yaskawa Sigma-7에 내장된 24비트 직렬 엔코더(서보 모터 실물 카드)입니다. 듀얼 엔코더의 가치는 감속기를 "꿰뚫어 보는" 데 있습니다: 출력 측 엔코더는 감속기의 변형과 백래시를 측정할 수 있으며, ODRI는 바로 모터 측/출력 측 듀얼 엔코더를 통해 본체 감지 힘 제어를 구현합니다(odri 조사 문서). 고감속비 방식에서 모터 측 엔코더만 장착하면 정밀도를 체계적으로 과대평가하게 됩니다.</p>
+<p><strong>【당신의 상황 분석】</strong> 서보 모터 방식: 자체 피드백으로 충분하니 건드리지 마십시오. QDD 힘 제어 방식: 모터 측 엔코더는 FOC의 핵심이므로 반드시 안정적이고 정확하게 장착해야 합니다. 출력 측 엔코더는 예산이 허락한다면 추가하십시오(자기 엔코더 방식 = 몇 달러짜리 칩 + 반경 방향 자석 + 3D 프린팅 브래킷). 자기 엔코더는 설치 동축도와 상선 전자기 간섭에 민감하므로, 배선 시 대전류 상선에서 멀리 떨어뜨리십시오.</p>
+<h2 id="5-can-vs-ethercat">5단계: 통신 버스 – CAN vs EtherCAT</h2>
+<p><strong>【할 일】</strong> 데스크톱급은 기본적으로 <a href="/entry/ent_technology_can_bus_2024/">CAN 버스</a>를 선택하십시오: Berkeley Humanoid Lite는 사지마다 하나의 CAN 2.0 버스(1 Mbps, USB-CAN 어댑터를 통해 메인 컨트롤러 연결)를 사용하며, 액추에이터와 IMU는 250 Hz로 통신하고, 단일 버스에 최대 64대의 장치를 연결할 수 있습니다(berkeley-humanoid-lite 문서). 고급 단계에서 <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>을 평가하십시오.</p>
+<p><strong>【이유】</strong> CAN은 저렴하고, 내간섭성이 뛰어나며, 생태계가 성숙했습니다. 1 Mbps로 10여 개의 관절을 250–500 Hz로 구동하기에 충분합니다. 단점은 대역폭과 결정성입니다. EtherCAT의 강점은 "processing on the fly" – 슬레이브 스테이션이 프레임이 통과할 때 즉시 읽고 쓰며, 전체 프레임을 수신한 후 재전송하지 않으므로 결정성이 CAN보다 훨씬 뛰어납니다(EtherCAT 실물 카드).代价는 슬레이브 칩이 비싸고, 마스터 스테이션에 실시간 시스템이 필요하다는 점입니다. 서보 모터 방식은 TTL 반이중 직렬 포트(XL330/XM430 모두 TTL 통신, 실물 카드)를 사용하며, 가장 간편하지만 속도와 토폴로지가 제한적입니다.</p>
+<p><strong>【당신의 상황 분석】</strong> 관절 수 ≤ 12개, 제어 주파수 ≤ 500 Hz: CAN, 망설이지 마십시오. USB-CAN 어댑터는 수십 위안이면 작업을 시작할 수 있습니다. 다관절 고대역폭 힘 제어(≥ 1 kHz)가 필요하다면: EtherCAT을 평가하되, 먼저 실시간 Linux 마스터 스테이션을 구축할 수 있는지 확인하십시오(ODRI Master Board의 접근 방식 참조, odri 조사 문서). 더 자세한 논의는 <a href="/wiki/chapters/chapter-06/">6장: 컴퓨팅, 전원 및 열 관리</a>를 참조하십시오.</p>
+<h2 id="6">6단계: 폐루프 제어 단계</h2>
+<p><strong>【할 일】</strong> 단계별로 차근차근 진행하며, 각 단계 검증 통과 후 다음 단계로 넘어가십시오:</p>
+<ol>
+<li><strong><a href="/entry/ent_method_pid_control/">PID 제어</a></strong> : 위치 루프 PID, 축이 지정된 각도로 회전하도록 합니다. 비례-적분-미분 세 항목으로 추적 오차를 조정하며, 이후 모든 것의 기초입니다.</li>
+<li><strong><a href="/entry/ent_principle_current_velocity_position_loops/">전류-속도-위치 3중 루프 캐스케이드</a></strong> : 가장 안쪽 전류 루프(토크 루프), 중간 속도 루프, 가장 바깥쪽 위치 루프; 각 계층의 대역폭은 안정성을 보장하기 위해 다음 계층의 약 5–10배입니다(3중 루프 실물 카드).</li>
+<li><strong><a href="/entry/ent_method_impedance_control/">임피던스 제어</a></strong> : 더 이상 위치/힘을 구분하지 않고, 관절이 원하는 "질량-댐퍼-스프링" 특성을 나타내도록 합니다: F = M_d(ẍ_d−ẍ) + D_d(ẋ_d−ẋ) + K_d(x_d−x) (공식 출처: 임피던스 제어 실물 카드).</li>
+</ol>
+<p><strong>【이유】</strong> 단일 루프 PID는 위치를 제어할 수 있지만, "촉감"은 제어할 수 없습니다 – 충돌 시 모터는 계속해서 강하게 밀어붙입니다. 3중 루프 캐스케이드는 토크(전류)를 독립적으로 할당 가능한 명령으로 만들어 임피던스 제어의 전제 조건이 됩니다. 임피던스 제어는 관절이 외란을 받을 때 원하는 동적 순응 응답을 하도록 하며, 이것이 바로 QDD/ODRI 유형 액추에이터가 존재하는 이유입니다. 이론적 세부 사항은 <a href="/wiki/chapters/chapter-14/">14장: 로봇 제어 기초</a> 및 <a href="/wiki/chapters/chapter-08/">8장: 휴머노이드 로봇 설계 원리</a>를 참조하십시오.</p>
+<p><strong>【당신의 상황 분석】</strong> 서보 모터 방식: 3중 루프는 서보 모터 내부에 캡슐화되어 있으며, 위치 명령 인터페이스만 있으므로 궤적 계획에 집중하십시오. 자체 개발 QDD: FOC 보드(B-G431B / ODrive 등)는 일반적으로 전류 루프와 속도 루프를 내장하고 있으므로, 외부 위치 루프 + 피드포워드만 작성하면 됩니다. 임피던스 제어는 전류 루프 대역폭이 높고 통신 지연이 낮아야 하므로, 먼저 "가상 스프링" 실험(K_d 설정, 출력축을 손으로 밀어 복원력 느끼기)을 수행한 후 복잡한 제어로 넘어가십시오.</p>
+<h2 id="7">7단계: 벤치 테스트 및 검수</h2>
+<p><strong>【할 일】</strong> 관절을 벤치(프로파일 + 고정구, 출력축에 알려진 질량의 추봉을 부하로 장착)에 고정하고, 다음 네 가지 테스트를 순서대로 수행하십시오. 판정 기준은 엔지니어링 권장값이며, 사용자 지표표에 따라 수정하십시오:</p>
+<ol>
+<li><strong>계단 응답</strong>: 30° 계단, 각도 곡선 기록. 판정 기준: 상승 시간 &lt; 0.2초, 오버슈트 &lt; 10%, 정상 상태 오차 &lt; 0.5°.</li>
+<li><strong>정현파 추종</strong>: 1 Hz, ±20° 정현파 명령. 판정 기준: 진폭 감쇠 &lt; 10%, 위상 지연 &lt; 15°; −3 dB까지 주파수 스윕하여 대역폭 정량화 가능.</li>
+<li><strong>역구동 촉감</strong>(QDD/직결 구동만 해당): 전원 차단 시 쉽게 움직여야 함; 전원 공급 시 강성 0으로 설정하면 "무중력" 상태로 드래그 가능해야 함. 고감속비 서보 모터는 이 항목에서 직접 불합격 – 토폴로지에 의해 결정되며, 매개변수 조정으로 해결 불가능.</li>
+<li><strong>온도 상승</strong>: 정격 부하로 30분 연속 운전, 모터 케이스 온도는 60 °C 미만 권장(절연 등급 상한은 모터 공급업체에 확인 필요). 내구성 참고: Berkeley는 60시간 내구성 테스트로 3D 프린팅 사이클로이드 기어의 신뢰성을 검증했습니다(berkeley-humanoid-lite 문서). 자체 개발 감속기도 이 정도 규모로 샘플 테스트하십시오.</li>
+</ol>
+<p><strong>【이유】</strong> 계단 응답은 강성과 댐핑을, 정현파는 대역폭을, 역구동은 투명성을, 온도 상승은 열 설계 여유를 봅니다 – 이 네 가지를 합치면 "다리에 장착할 수 있는지 여부"에 대한 모든 핵심 정보가 됩니다. 벤치 단계에서 문제를 발견하면 모터 하나만 분해하면 되지만, 완제품에 장착한 후 발견하면 다리 하나를 분해해야 합니다. 테스트 방법은 <a href="/wiki/chapters/chapter-11/">11장: 조립, 통합 및 테스트</a>를 참조하십시오.</p>
+<p><strong>【당신의 상황 분석】</strong> 오실로스코프가 없습니까? 드라이버의 USB 상위 프로그램(ODrive Tool, Dynamixel Wizard 등)으로 곡선을 기록해도 충분합니다. 부하 추는 "피크 토크 ÷ 로드 길이"로 질량을 역산하십시오. 시간이 부족하면 계단 응답과 온도 상승 테스트를 확실히 수행하고, 정현파 주파수 스윕은 완제품 단계에서 보충하십시오.</p>
+<h2 id="_1">검수 기준</h2>
+<ul>
+<li>[ ] 지표표 문서화: 피크 토크/회전 속도/질량/백래시/비용 다섯 항목에 숫자와 출처가 있거나(또는 "공급업체에 확인 필요" 표시).</li>
+<li>[ ] 토폴로지 선정에 문서화된 이유: "정밀도-투명성-비용" 삼각형에서 어떤 변을 선택했는지, 왜 다른 방식을 선택하지 않았는지 설명.</li>
+<li>[ ] 통신 링크 구축: 메인 컨트롤러가 목표 주파수(CAN 권장 ≥ 250 Hz, Berkeley 방식 참조)로 안정적으로 송수신하며, 1시간 연속 무장애.</li>
+<li>[ ] 계단 응답: 30° 계단, 오버슈트 &lt; 10%, 정상 상태 오차 &lt; 0.5°(또는 지표표 자체 설정값).</li>
+<li>[ ] 정현파 추종: 1 Hz ±20°, 진폭 감쇠 &lt; 10%(또는 자체 설정값), 곡선 기록 보관.</li>
+<li>[ ] QDD/직결 구동 방식: 맨손 역구동이 부드러움; 듀얼 엔코더 방식의 경우 모터 측과 출력 측 판독값 편차가 정량화됨.</li>
+<li>[ ] 온도 상승: 정격 부하 30분, 케이스 온도 &lt; 60 °C 또는 공급업체 제공 상한 이내.</li>
+<li>[ ] 감속기 조립: 전 과정에서 걸림, 이상 소음 없음, 무부하 전류가 첫 번째 제품 실측 기준선과 일치.</li>
+</ul>
+<h2 id="_2">일반적인 문제점 및 점검</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>점검 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAN 버스 프레임 손실, 다중 노드 통신 무작위 중단</td>
+<td>종단 저항 누락 또는 중복</td>
+<td>전원 차단 후 CANH-CANL 간 저항 측정: 양단 각각 120Ω이면 약 60Ω이어야 함; 무한대 = 미연결, 60Ω보다 훨씬 낮음 = 과다 연결</td>
+</tr>
+<tr>
+<td>엔코더 판독값 튐, 속도 루프 떨림</td>
+<td>접지 루프 / 차폐 접지 부적절 / 자기 엔코더 상선 간섭</td>
+<td>신호 접지는 단일 지점 접지; 엔코더 선은 꼬임 쌍 차폐, 상선에서 이격</td>
+</tr>
+<tr>
+<td>FOC 자동 튜닝 실패, 모터 윙윙거리며 회전 안 함</td>
+<td>극수 오기입 / 상순서 오류 / 엔코더 전기각 오프셋 미보정</td>
+<td>극수 확인; 개루프 소전류 회전 테스트로 상순서 확인; 엔코더 오프셋 재보정</td>
+</tr>
+<tr>
+<td>감속기 조립 후 걸림, 발열, 무부하 전류 큼</td>
+<td>베어링/기어 예압 과도, 축 비동심, 3D 프린팅 부품 휨</td>
+<td>분할 교차 체결 및 단계별 수동 회전; 동축도 분해 점검; 조립 전후 무부하 전류 비교</td>
+</tr>
+<tr>
+<td>계단 응답 오버슈트 크고, 링잉</td>
+<td>위치 루프 게인 과다, 속도 피드포워드 부족, 부하 관성 예상 초과</td>
+<td>P 낮추고 D 높이거나 피드포워드 추가; 부하 관성 실측 후 재튜닝</td>
+</tr>
+<tr>
+<td>로크 후 몇 분 만에 모터 뜨거움</td>
+<td>지속 전류가 정격 초과, 열 보호 없음</td>
+<td>상전류(전원 전류 아님)와 모터 정격값 확인; 전류 제한 및 I²t 열 보호 추가</td>
+</tr>
+<tr>
+<td>여러 액추에이터 동시 전원 켜기 후 버스 혼란</td>
+<td>출고 시 기본 노드 ID 중복</td>
+<td>각각 단독 전원 켜서 ID 변경 및 라벨 부착 후 네트워크 구성</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li><a href="/roadmap/playbooks/actuator-selection/">액추에이터 선정 핸드북</a> – 더 완전한 경로 비교, 제조사 빠른 확인 및 검증 방법</li>
+<li><a href="/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선정 핸드북</a> – 하위 레벨 실시간 제어 계층의 보드 선택</li>
+<li><a href="/roadmap/index/">로드맵 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/stage-0-foundations/">← 이전<span>Stage 0 기초 기반 다지기: 휴머노이드 로봇 제작의 입장권 획득</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/stage-2-biped/">다음 →<span>단계 2: 이족 보행 플랫폼 – 시뮬레이션에서 첫 번째로 걷는 로봇까지</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#1">1단계: 관절(액추에이터) 만들기</a><ul>
+<li><a href="#1_1">1단계: 관절 사양 명확히 하기</a></li>
+<li><a href="#2">2단계: 액추에이터 토폴로지 선정</a></li>
+<li><a href="#3">3단계: 모터 본체와 드라이버</a></li>
+<li><a href="#4">4단계: 위치 감지 – 관절 엔코더</a></li>
+<li><a href="#5-can-vs-ethercat">5단계: 통신 버스 – CAN vs EtherCAT</a></li>
+<li><a href="#6">6단계: 폐루프 제어 단계</a></li>
+<li><a href="#7">7단계: 벤치 테스트 및 검수</a></li>
+<li><a href="#_1">검수 기준</a></li>
+<li><a href="#_2">일반적인 문제점 및 점검</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport</h1>
+      <p class="entry-name-en">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Software &amp; Middleware</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.00482v4.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper introduces generalized conditional flow matching (CFM), a simulation-free regression objective for training continuous normalizing flows (CNFs), and proposes optimal transport CFM (OT-CFM), which uses minibatch optimal transport couplings to produce straighter flows and faster inference.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2302.00482" target="_blank" rel="noopener">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Continuous normalizing flows (CNFs) are an attractive generative modeling technique, but they have been held back by limitations in their simulation-based maximum likelihood training. We introduce the generalized conditional flow matching (CFM) technique, a family of simulation-free training objectives for CNFs. CFM features a stable regression objective like that used to train the stochastic flow in diffusion models but enjoys the efficient inference of deterministic flow models. In contrast to both diffusion models and prior CNF training algorithms, CFM does not require the source distribution to be Gaussian or require evaluation of its density. A variant of our objective is optimal transport CFM (OT-CFM), which creates simpler flows that are more stable to train and lead to faster inference, as evaluated in our experiments. Furthermore, we show that when the true OT plan is available, our OT-CFM method approximates dynamic OT. Training CNFs with CFM improves results on a variety of conditional and unconditional generation tasks, such as inferring single cell dynamics, unsupervised image translation, and Schrödinger bridge inference.</p>
+<h2 id="content">Content</h2>
+<p>Continuous normalizing flows (CNFs) are an attractive generative modeling technique, but they have been held back by limitations in their simulation-based maximum likelihood training. We introduce the generalized conditional flow matching (CFM) technique, a family of simulation-free training objectives for CNFs. CFM features a stable regression objective like that used to train the stochastic flow in diffusion models but enjoys the efficient inference of deterministic flow models. In contrast to both diffusion models and prior CNF training algorithms, CFM does not require the source distribution to be Gaussian or require evaluation of its density. A variant of our objective is optimal transport CFM (OT-CFM), which creates simpler flows that are more stable to train and lead to faster inference, as evaluated in our experiments. Furthermore, we show that when the true OT plan is available, our OT-CFM method approximates dynamic OT. Training CNFs with CFM improves results on a variety of conditional and unconditional generation tasks, such as inferring single cell dynamics, unsupervised image translation, and Schrödinger bridge inference.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_bifrostumi_bridging_robot_free_2026/">BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation</a>
+              <span class="rel-desc">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport cites or references BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_robust_and_generalized_humanoi_2026/">Robust and Generalized Humanoid Motion Tracking</a>
+              <span class="rel-desc">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport cites or references Robust and Generalized Humanoid Motion Tracking.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_flow_matching/">Flow matching</a>
+              <span class="rel-desc">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport is based on or uses Flow matching.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World</a>
+              <span class="rel-desc">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport cites or references LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_score_matching/">Score matching</a>
+              <span class="rel-desc">Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport is based on or uses Score matching.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation cites or references Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_tong_improving_and_generalizing_flo_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robust_and_generalized_humanoi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Robust and Generalized Humanoid Motion Tracking</h3>
+          <p>This work mainly addresses data closed-loop: acquisition of human operation and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_score_matching/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Score matching</h3>
+          <p>A parameter-estimation technique that learns the gradient of an unknown log-probability density,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World</h3>
+          <p>The implementation path of LEGS is to first encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bifrostumi_bridging_robot_free_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation</h3>
+          <p>BifrostUMI mainly solves the data closed loop: using camera images/multi-view observations, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</h3>
+          <p>This 2024 arXiv paper presents a Unity VR simulation in which multiple simulated robot agents, each…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_flow_matching/">
+          <span class="entry-type">Method</span>
+          <h3>Flow matching</h3>
+          <p>A generative modeling method that directly regresses a vector field whose flow maps a simple source…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

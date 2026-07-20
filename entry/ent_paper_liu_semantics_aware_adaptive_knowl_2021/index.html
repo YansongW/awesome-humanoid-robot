@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>面向传感器到视觉动作识别的语义感知自适应知识蒸馏 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">面向传感器到视觉动作识别的语义感知自适应知识蒸馏</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>面向传感器到视觉动作识别的语义感知自适应知识蒸馏</h1>
+      <p class="entry-name-en">Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">零部件</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">上游</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2009.00210v5.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出SAKDN框架，通过将多个可穿戴传感器模态的知识蒸馏到RGB视频学生网络中实现动作识别，并利用格拉姆角场虚拟图像以及自适应教师融合和图引导语义迁移模块完成跨模态知识传递。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2009.00210" target="_blank" rel="noopener">Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Existing vision-based action recognition is susceptible to occlusion and appearance variations, while wearable sensors can alleviate these challenges by capturing human motion with one-dimensional time-series signal. For the same action, the knowledge learned from vision sensors and wearable sensors, may be related and complementary. However, there exists significantly large modality difference between action data captured by wearable-sensor and vision-sensor in data dimension, data distribution and inherent information content. In this paper, we propose a novel framework, named Semantics-aware Adaptive Knowledge Distillation Networks (SAKDN), to enhance action recognition in vision-sensor modality (videos) by adaptively transferring and distilling the knowledge from multiple wearable sensors. The SAKDN uses multiple wearable-sensors as teacher modalities and uses RGB videos as student modality. To preserve local temporal relationship and facilitate employing visual deep learning model, we transform one-dimensional time-series signals of wearable sensors to two-dimensional images by designing a gramian angular field based virtual image generation model. Then, we build a novel Similarity-Preserving Adaptive Multi-modal Fusion Module to adaptively fuse intermediate representation knowledge from different teacher networks. Finally, to fully exploit and transfer the knowledge of multiple well-trained teacher networks to the student network, we propose a novel Graph-guided Semantically Discriminative Mapping loss, which utilizes graph-guided ablation analysis to produce a good visual explanation highlighting the important regions across modalities and concurrently preserving the interrelations of original data. Experimental results on Berkeley-MHAD, UTD-MHAD and MMAct datasets well demonstrate the effectiveness of our proposed SAKDN.</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2009.00210v5</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_chip_adaptive_compliance_for_h_2026/">CHIP｜通过事后扰动实现人形控制的自适应合规性</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">基于无迹卡尔曼滤波的仿人机器人无关节力矩传感器力矩估计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">AMO｜超灵巧人形全身控制的自适应运动优化</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">Drive-WM：面向自动驾驶的多视角视觉预测与世界模型规划</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_amo_adaptive_motion_optimizati_2025_1/">AMO｜超灵巧人形全身控制的自适应运动优化</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">你的视觉-语言-动作模型已具备路径偏离检测的注意力头</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">MIT人形机器人：面向杂技行为的设计、运动规划与控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">机器人训练机器人：人形机器人的自动现实世界策略适应与学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">通过主动空间脑和可泛化动作小脑实现人形全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_liu_semantics_aware_adaptive_knowl_2021"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AMO｜超灵巧人形全身控制的自适应运动优化</h3>
+          <p>AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>机器人训练机器人：人形机器人的自动现实世界策略适应与学习</h3>
+          <p>本文提出了机器人训练机器人（RTR）框架，其中一个机器臂教师通过柔顺接触、课程调度、扰动、故障检测和自动重置来支持和引导人形学生，从而实现最少人工干预的高效现实世界强化学习。作者还介绍了使用 FiLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">
+          <span class="entry-type">论文</span>
+          <h3>BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制</h3>
+          <p>BeyondMimic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于无迹卡尔曼滤波的仿人机器人无关节力矩传感器力矩估计</h3>
+          <p>提出一种基于无迹卡尔曼滤波的多传感器融合方法，用于无关节力矩传感器的仿人机器人在线关节力矩估计，并在ergoCub仿人机器人的双层力矩控制架构中进行了实验验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">论文</span>
+          <h3>你的视觉-语言-动作模型已具备路径偏离检测的注意力头</h3>
+          <p>本文在冻结的视觉-语言-动作模型中识别出稀疏的“导航头”，其注意力熵信号可指示轨迹偏离，从而实现了无需训练的异常检测器和轻量强化学习回退机制。在VLN-CE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>通过主动空间脑和可泛化动作小脑实现人形全身操作</h3>
+          <p>本文提出了一种多智能体框架——主动空间脑负责主动空间感知与规划，可泛化动作小脑负责解耦的下肢移动与上肢灵巧操作——无需任务特定的真实机器人数据即可实现空间感知的人形全身操作，并在空间智能基准与真实Un…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_amo_adaptive_motion_optimizati_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>AMO｜超灵巧人形全身控制的自适应运动优化</h3>
+          <p>AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chip_adaptive_compliance_for_h_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CHIP｜通过事后扰动实现人形控制的自适应合规性</h3>
+          <p>CHIP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Drive-WM：面向自动驾驶的多视角视觉预测与世界模型规划</h3>
+          <p>Drive-WM是一个用于自动驾驶的隐式视频扩散世界模型，通过视图分解的时空建模生成高保真多视角视频，支持来自图像、文本、布局和自车动作的统一条件输入，并应用于基于图像奖励的树状轨迹规划。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">
+          <span class="entry-type">论文</span>
+          <h3>MIT人形机器人：面向杂技行为的设计、运动规划与控制</h3>
+          <p>Demonstrating acrobatic behavior of a humanoid robot such as flips and spinning jumps requires…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

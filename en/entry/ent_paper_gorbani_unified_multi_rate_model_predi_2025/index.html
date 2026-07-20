@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</h1>
+      <p class="entry-name-en">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">AI Models &amp; Algorithms</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.16478v2.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper presents a multi-rate Model Predictive Control framework for the jet-powered humanoid iRonCub that jointly embeds centroidal momentum dynamics and second-order nonlinear jet-engine dynamics, validated through MuJoCo simulations.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.16478v2" target="_blank" rel="noopener">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>We propose a novel Model Predictive Control (MPC) framework for a jet-powered flying humanoid robot. The controller is based on a linearised centroidal momentum model to represent the flight dynamics, augmented with a second-order nonlinear model to explicitly account for the slow and nonlinear dynamics of jet propulsion. A key contribution is the introduction of a multi-rate MPC formulation that handles the different actuation rates of the robot's joints and jet engines while embedding the jet dynamics directly into the predictive model. We validated the framework using the jet-powered humanoid robot iRonCub, performing simulations in Mujoco; the simulation results demonstrate the robot's ability to recover from external disturbances and perform stable, non-abrupt flight manoeuvres, validating the effectiveness of the proposed approach.</p>
+<h2 id="content">Content</h2>
+<p>We propose a novel Model Predictive Control (MPC) framework for a jet-powered flying humanoid robot. The controller is based on a linearised centroidal momentum model to represent the flight dynamics, augmented with a second-order nonlinear model to explicitly account for the slow and nonlinear dynamics of jet propulsion. A key contribution is the introduction of a multi-rate MPC formulation that handles the different actuation rates of the robot's joints and jet engines while embedding the jet dynamics directly into the predictive model. We validated the framework using the jet-powered humanoid robot iRonCub, performing simulations in Mujoco; the simulation results demonstrate the robot's ability to recover from external disturbances and perform stable, non-abrupt flight manoeuvres, validating the effectiveness of the proposed approach.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</a>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_mobile_television_predictive_m_2025/">Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control</a>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot cites or references Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot develops Model Predictive Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_newton_euler_equations/">Newton-Euler equations</a>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot uses or builds on Newton-Euler equations.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot develops Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</a>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot cites or references Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">Hierarchical Reduced-Order Model Predictive Control for Robust Locomotion on Humanoid Robots</a>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot cites or references Hierarchical Reduced-Order Model Predictive Control for Robust Locomotion on Humanoid Robots.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">Exploitation of material consolidation trade-offs in multi-tier complex supply networks</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Exploitation of material consolidation trade-offs in multi-tier complex supply networks cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">Comprehensive Analysis of Thermal Dissipation in Lithium-Ion Battery Packs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Comprehensive Analysis of Thermal Dissipation in Lithium-Ion Battery Packs cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_aljalbout_reality_gap_2025/">The Reality Gap in Robotics: Challenges, Solutions, and Best Practices</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">The Reality Gap in Robotics: Challenges, Solutions, and Best Practices cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gorbani_unified_multi_rate_model_predi_2025"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_newton_euler_equations/">
+          <span class="entry-type">Equation</span>
+          <h3>Newton-Euler equations</h3>
+          <p>A set of coupled force and torque balance equations that describe the motion of a rigid body or…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</h3>
+          <p>A unified whole-body reinforcement-learning controller enables a 21-DoF humanoid to play badminton…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</h3>
+          <p>This paper compares QMIX, IPPO, and MASAC on warehouse multi-agent reinforcement learning tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical Reduced-Order Model Predictive Control for Robust Locomotion on Humanoid Robots</h3>
+          <p>Presents a hierarchical reduced-order model predictive control framework for humanoid locomotion,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</h3>
+          <p>This paper identifies sparse &#39;Navigation Heads&#39; in a frozen Vision-Language-Action model whose…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_aljalbout_reality_gap_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>The Reality Gap in Robotics: Challenges, Solutions, and Best Practices</h3>
+          <p>A 2025 survey that maps the sim-to-real reality gap into perception and action-dynamics…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Exploitation of material consolidation trade-offs in multi-tier complex supply networks</h3>
+          <p>Chauhan et al. propose a mixed integer linear programming framework for exploiting multi-to-multi…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control</h3>
+          <p>Online optimal-control approach for generating contact-rich whole-body motion.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Comprehensive Analysis of Thermal Dissipation in Lithium-Ion Battery Packs</h3>
+          <p>This 2025 arXiv paper presents CFD and thermal simulations of a 16-cell lithium-ion battery pack,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</h3>
+          <p>This paper proposes a predictive safety filter that combines nonlinear model predictive control…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed</h3>
+          <p>A review that presents a unified reductive framework deriving continuum electrochemical battery…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mobile_television_predictive_m_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control</h3>
+          <p>Mobile-TeleVision converts body states and joint sequences, human video/motion capture trajectories,…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

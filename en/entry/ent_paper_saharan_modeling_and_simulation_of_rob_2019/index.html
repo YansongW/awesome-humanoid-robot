@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modeling and Simulation of Robotic Finger Powered by Nylon Artificial Muscles — Equations with Simulink Model · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Modeling and Simulation of Robotic Finger Powered by Nylon Artificial Muscles — Equations with Simulink Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Modeling and Simulation of Robotic Finger Powered by Nylon Artificial Muscles — Equations with Simulink Model</h1>
+      <p class="entry-name-en">Modeling and Simulation of Robotic Finger Powered by Nylon Artificial Muscles — Equations with Simulink Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="AI-extracted from provided metadata and abstract; requires human review of the full text before verification.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Presents a detailed Euler-Lagrangian dynamic model and a MATLAB/Simulink simulation of a three-link robotic finger actuated by twisted-and-coiled polymer (TCP) artificial muscles.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1901.09486" target="_blank" rel="noopener">Modeling and Simulation of Robotic Finger Powered by Nylon Artificial Muscles- Equations with Simulink model</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper develops a detailed dynamic model of a three-link robotic finger driven by twisted-and-coiled polymer (TCP) artificial muscles and implements the model in MATLAB/Simulink for numerical study. The prototype hand is a 3D-printed, lightweight and compact design actuated by silver-coated nylon TCP muscles, which are thermal actuators that contract when heated. The authors derive the finger dynamics using an Euler-Lagrangian formulation with velocity Jacobians, simplify the coupled equations by neglecting small Coriolis and off-diagonal inertia terms, and add velocity-proportional joint damping to improve numerical tractability.</p>
+<p>The actuator force from a TCP muscle is distributed as joint torques across the metacarpophalangeal (MCP), proximal interphalangeal (PIP) and distal interphalangeal (DIP) joints through a tendon/cable transmission. The resulting Simulink block model allows simulation of finger joint motion for given input force and temperature profiles of the TCP actuator. The work is intended as a reusable modeling and simulation framework to support the design and control of low-cost, 3D-printed humanoid hands.</p>
+<h2 id="key-contributions">Key Contributions</h2>
+<ul>
+<li>Three-link robotic finger dynamic model based on Euler-Lagrangian equations.</li>
+<li>Simplified coupled equations by neglecting negligible Coriolis/off-diagonal inertia terms and adding joint damping.</li>
+<li>Torque distribution formulation linking TCP muscle force to MCP, PIP and DIP joint torques.</li>
+<li>MATLAB/Simulink block model for simulating finger joint motion driven by TCP actuators.</li>
+</ul>
+<h2 id="relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</h2>
+<p>The paper directly supports scalable design and control of humanoid robot hands by providing a reusable dynamic modeling and simulation framework for low-cost, 3D-printed fingers actuated by artificial muscles. TCP muscles offer a lightweight and inexpensive alternative to conventional motors and pneumatic actuators, making them attractive for compact humanoid manipulation hardware. The Simulink implementation enables rapid numerical exploration of design parameters and control strategies before physical prototyping.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/1901.09486">Modeling and Simulation of Robotic Finger Powered by Nylon Artificial Muscles- Equations with Simulink model</a> (accessed 2026-07-01)</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_lagrangian/">Lagrangian</a>
+              <span class="rel-desc">Modeling and Simulation of Robotic Finger Powered by Nylon Artificial Muscles — Equations with Simulink Model uses Lagrangian.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_saharan_modeling_and_simulation_of_rob_2019"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_lagrangian/">
+          <span class="entry-type">Formalism</span>
+          <h3>Lagrangian</h3>
+          <p>A scalar function that encodes the dynamics of a system through the difference (or generalized…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#key-contributions">Key Contributions</a></li>
+<li><a href="#relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

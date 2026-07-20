@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Embodied General Intelligence · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/concept/">Concept</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Embodied General Intelligence</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Concept</div>
+      <h1>Embodied General Intelligence</h1>
+      <p class="entry-name-en">Embodied General Intelligence</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Applications &amp; Markets</span><span class="tag">Policy, Regulation &amp; Ethics</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-01.md#1.1.5 机器人的形式化定义 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The long-term goal of building agents that can learn, reason, and act flexibly in diverse physical environments through a body.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Embodied general intelligence is a key concept in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>From the perspective of control theory and systems science, a robot can be formalized as a <strong>dynamical system</strong>:</p>
+<div class="arithmatex">\[
+\dot{x}(t) = f\big(x(t), u(t)\big), \quad y(t) = h\big(x(t), u(t)\big)
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(x(t) \in \mathbb{R}^n\)</span> is the system state vector, e.g., joint angles, angular velocities, center of mass position, orientation quaternions, etc.;</li>
+<li><span class="arithmatex">\(u(t) \in \mathbb{R}^m\)</span> is the control input, e.g., motor current, torque, or voltage;</li>
+<li><span class="arithmatex">\(y(t) \in \mathbb{R}^p\)</span> is the system output, i.e., sensor measurements;</li>
+<li><span class="arithmatex">\(f\)</span> is the state transition function, describing system dynamics;</li>
+<li><span class="arithmatex">\(h\)</span> is the observation function, describing the sensor model.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: State Space</p>
+<p>State space is the mathematical space in control theory that describes all possible states of a dynamical system. The future evolution of the system depends only on the current state and future inputs, independent of the past—a property known as "Markov property." The state space dimension of a humanoid robot is typically above 30–100 dimensions, leading to the so-called "curse of dimensionality."</p>
+</div>
+<p>For humanoid robots, <span class="arithmatex">\(f\)</span> is usually given by rigid body dynamics equations. Taking the Lagrangian equation as an example:</p>
+<div class="arithmatex">\[
+M(q)\ddot{q} + C(q, \dot{q})\dot{q} + G(q) = S^T \tau + J_c^T F_c
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(q \in \mathbb{R}^n\)</span> are the generalized coordinates;</li>
+<li><span class="arithmatex">\(M(q)\)</span> is the mass matrix;</li>
+<li><span class="arithmatex">\(C(q, \dot{q})\)</span> is the Coriolis and centrifugal force term;</li>
+<li><span class="arithmatex">\(G(q)\)</span> is the gravity term;</li>
+<li><span class="arithmatex">\(\tau\)</span> is the joint torque;</li>
+<li><span class="arithmatex">\(S\)</span> is the selection matrix;</li>
+<li><span class="arithmatex">\(J_c\)</span> is the contact point Jacobian matrix;</li>
+<li><span class="arithmatex">\(F_c\)</span> is the ground contact force.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Jacobian Matrix</p>
+<p>The Jacobian matrix <span class="arithmatex">\(J\)</span> describes the linear mapping from joint space velocity to operational space (e.g., end-effector or center of mass) velocity: <span class="arithmatex">\(v = J(q)\dot{q}\)</span>. In force control, its transpose <span class="arithmatex">\(J^T\)</span> maps operational space forces to joint torques: <span class="arithmatex">\(\tau = J^T F\)</span>. The Jacobian matrix is a core tool in robot kinematics and statics analysis.</p>
+</div>
+<p>From the perspective of an <strong>agent</strong>, a robot is an autonomous entity interacting with the environment, following the <strong>Sense-Decide-Act Loop</strong>:</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    E[Environment] --&gt; |Sensors| S[Sense]
+    S --&gt; |State Estimation| D[Decide]
+    D --&gt; |Control Commands| A[Act]
+    A --&gt; |Physical Interaction| E</code></pre>
+<p>Within the framework of Embodied AI, intelligence is not solely in algorithms but is <strong>embedded in body morphology, sensor configuration, and dynamic interaction</strong>. This idea is closely related to morphological computation: the physical properties of the robot's body (e.g., compliance, mass distribution, elastic feet) can themselves assume part of the computational load, thereby reducing the burden on the controller.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Embodied AI</p>
+<p>Embodied AI emphasizes that intelligent behavior must arise from the interaction of an agent with a physical body in a real environment, rather than solely through symbolic reasoning or offline data learning. Its philosophical roots can be traced back to Merleau-Ponty's concept of the "body subject" and Piaget's theory of cognitive development. For humanoid robots, embodied AI means that motion control, perception, reasoning, and social interaction must be unified within a body-environment coupling framework.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Morphological Computation</p>
+<p>Morphological computation refers to using the physical structure and material properties of an agent's own body to perform part of the "computation" tasks, thereby reducing the complexity of explicit controllers. For example, the feathers and bone structure of birds, the spinal elasticity of cheetahs, and the compliant joints of humanoid robots can, to some extent, "pre-solve" dynamic stability issues, making high-level control simpler.</p>
+</div>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_concept_world_model/">World Model</a>
+              <span class="rel-desc">Embodied General Intelligence mentions World Model.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_lagrangian/">Lagrangian</a>
+              <span class="rel-desc">Embodied General Intelligence mentions Lagrangian.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_report_industry_primebot_brings_personal_robot_2026/">PrimeBOT Brings Personal Robotics to the UN&#39;s AI for Good Summit in Geneva</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">PrimeBOT Brings Personal Robotics to the UN&#39;s AI for Good Summit in Geneva discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_application_home_service/">Home Service</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Home Service mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_unitree_unitree_teases_new_h1_humanoid_2024/">Unitree teases new H1 humanoid robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Unitree teases new H1 humanoid robot mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_actuator_video_friday_who_wins_in_robot_2026/">Video Friday: Who Wins in Robot vs. Pro Ping-Pong Player?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Video Friday: Who Wins in Robot vs. Pro Ping-Pong Player? discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_unitree_unitree_g1_humanoid_agent_pric_2024/">Unitree G1 Humanoid Agent | Price from $16K</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">Unitree G1 Humanoid Agent | Price from $16K introduces Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_battery_ground_robots_inherit_the_kill_2026/">Ground Robots Inherit the Kill Zone</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Ground Robots Inherit the Kill Zone discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_application_healthcare/">Healthcare Assistance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Healthcare Assistance mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_ieee_agentic_ai_for_robot_teams_2026/">Agentic AI for Robot Teams</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Agentic AI for Robot Teams discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_unitree_kung_fu_meets_spring_unitree_s_2026/">Kung Fu Meets Spring, Unitree SFG Robots Present &#34;Cyber Real Kung Fu&#34; in the Year of the Horse</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-desc">Kung Fu Meets Spring, Unitree SFG Robots Present &#34;Cyber Real Kung Fu&#34; in the Year of the Horse demonstrates on Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_video_friday_an_earthbound_mar_2026/">Video Friday: An Earthbound Mars Rover for the Moon</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Video Friday: An Earthbound Mars Rover for the Moon mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_unitree_the_industrys_first_ultra_wide_2024/">The Industry&#39;s First Ultra-wide-angle 4D LiDAR</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">The Industry&#39;s First Ultra-wide-angle 4D LiDAR mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_neura_robotics_showcases_full_2026/">NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026 mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_cobot_announces_second_generat_2026/">Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical AI to Real Operations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical AI to Real Operations mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_ieee_defining_autonomy_for_wellness_2026/">Defining Autonomy for Wellness Robots in Senior Care</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Defining Autonomy for Wellness Robots in Senior Care discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_deepx_and_sixfab_launch_deepx_2026/">DEEPX and Sixfab Launch &#39;DEEPX AI HAT&#39; to Drive Edge Physical AI on Raspberry Pi</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">DEEPX and Sixfab Launch &#39;DEEPX AI HAT&#39; to Drive Edge Physical AI on Raspberry Pi discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_nvidia_how_cosmos_3_helps_physical_ai_2026/">How Cosmos 3 Helps Physical AI Think Before It Acts</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">How Cosmos 3 Helps Physical AI Think Before It Acts discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_orbbec_unveils_robot_free_data_2026/">Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_actuator_video_friday_robotic_motion_di_2026/">Video Friday: Robotic Motion Discovery Reveals Unusual Behaviors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Video Friday: Robotic Motion Discovery Reveals Unusual Behaviors discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_actuator_will_robotics_have_a_chatgpt_m_2026/">Will Robotics Have a ChatGPT Moment?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Will Robotics Have a ChatGPT Moment? discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_verisilicon_introduces_cpp2000_2000/">VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics and Mobile Vision Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics and Mobile Vision Applications discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_market_humanoid_global_forecast/">Global Humanoid Robot Market Forecast</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Global Humanoid Robot Market Forecast mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_application_logistics_warehouse/">Logistics and Warehouse Automation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Logistics and Warehouse Automation mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_realbotix_to_deploy_first_huma_2026/">Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_ieee_honors_robotics_pioneer_t_2026/">IEEE Honors Robotics Pioneer Toshio Fukuda</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">IEEE Honors Robotics Pioneer Toshio Fukuda discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_industry_inorbitai_demonstrates_the_fut_2026/">InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical AI at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical AI at Automate 2026 mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_actuator_irobot_founder_wants_to_put_a_2026/">iRobot Founder Wants to Put a Robotic Familiar Into Your Home</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">iRobot Founder Wants to Put a Robotic Familiar Into Your Home discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_ieee_video_friday_do_robots_even_ne_2026/">Video Friday: Do Robots Even Need Legs?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Video Friday: Do Robots Even Need Legs? discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_actuator_video_friday_ai_gives_robot_ha_2026/">Video Friday: AI Gives Robot Hands Humanlike Dexterity</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Video Friday: AI Gives Robot Hands Humanlike Dexterity discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_video_friday_extreme_omnidirec_2026/">Video Friday: Extreme Omnidirectional Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Video Friday: Extreme Omnidirectional Robot mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_video_friday_figure_1x_ramp_up_2026/">Video Friday: Figure, 1X Ramp Up Humanoid Robot Production</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Video Friday: Figure, 1X Ramp Up Humanoid Robot Production discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_the_secret_to_marathon_winning_2026/">The Secret to Marathon-Winning Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">The Secret to Marathon-Winning Humanoid Robots discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_video_friday_a_world_cup_for_r_2026/">Video Friday: A World Cup for Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Video Friday: A World Cup for Robots mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_ieee_visual_language_models_train_r_2026/">Visual Language Models Train Robots to Read Human Emotions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Visual Language Models Train Robots to Read Human Emotions discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_german_economy_calls_for_faste_2026/">German Economy Calls for Faster Humanoid Robotics Adoption</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">German Economy Calls for Faster Humanoid Robotics Adoption mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_concept_data_flywheel/">Data Flywheel</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Data Flywheel mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_nvidia_nvidia_research_unlocks_advanc_2026/">NVIDIA Research Unlocks Advanced Grasping, Smarter Autonomous Driving and Agent Training at Scale</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">NVIDIA Research Unlocks Advanced Grasping, Smarter Autonomous Driving and Agent Training at Scale discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_x_square_robot_secures_four_co_2026/">X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion Valuation in Push for Physical AI Foundation Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">develops</span>
+              <span class="rel-desc">X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion Valuation in Push for Physical AI Foundation Models develops Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_new_indro_cortex_controller_si_2026/">NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION proposes Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_unitree_unitree_h1_15_yrs_old_debuted_2025/">Unitree H1: 1.5 Yrs Old &#34;Debuted&#34; at the SFG</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Unitree H1: 1.5 Yrs Old &#34;Debuted&#34; at the SFG mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_wirobotics_begins_building_a_p_2026/">WIRobotics Begins Building a Physical AI Development Ecosystem: The First Technology Release Features the ALLEX Simulation Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">WIRobotics Begins Building a Physical AI Development Ecosystem: The First Technology Release Features the ALLEX Simulation Model discusses Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_unitree_unitree_go2_quadruped_robot_of_2024/">Unitree Go2 - Quadruped Robot of Embodied AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">Unitree Go2 - Quadruped Robot of Embodied AI introduces Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_tech_mahindra_and_viam_partner_2026/">Tech Mahindra and Viam partner to scale advanced robotics and automation solutions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Tech Mahindra and Viam partner to scale advanced robotics and automation solutions mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_industry_abb_robotics_collaborates_with_2026/">ABB Robotics collaborates with Roche to bring physical AI to laboratories</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">ABB Robotics collaborates with Roche to bring physical AI to laboratories mentions Embodied General Intelligence.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_daimon_robotics_wants_to_give_2026/">DAIMON Robotics Wants to Give Robot Hands a Sense of Touch</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">DAIMON Robotics Wants to Give Robot Hands a Sense of Touch discusses Embodied General Intelligence.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_concept_embodied_general_intelligence"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_report_unitree_the_industrys_first_ultra_wide_2024/">
+          <span class="entry-type">Report</span>
+          <h3>The Industry&#39;s First Ultra-wide-angle 4D LiDAR</h3>
+          <p>The Industry&#39;s First Ultra-wide-angle 4D LiDAR is a knowledge node related to report in the humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_neura_robotics_showcases_full_2026/">
+          <span class="entry-type">Technology</span>
+          <h3>NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026</h3>
+          <p>NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_industry_abb_robotics_collaborates_with_2026/">
+          <span class="entry-type">Report</span>
+          <h3>ABB Robotics collaborates with Roche to bring physical AI to laboratories</h3>
+          <p>• Agreement lays the foundation for a new era of digitally connected labs enabled by intelligent…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_new_indro_cortex_controller_si_2026/">
+          <span class="entry-type">Component</span>
+          <h3>NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION</h3>
+          <p>InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_actuator_video_friday_robotic_motion_di_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: Robotic Motion Discovery Reveals Unusual Behaviors</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_wirobotics_begins_building_a_p_2026/">
+          <span class="entry-type">Technology</span>
+          <h3>WIRobotics Begins Building a Physical AI Development Ecosystem: The First Technology Release Features the ALLEX Simulation Model</h3>
+          <p>-Additional core ALLEX technologies to be released sequentially -Expanding the Physical AI…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_tech_mahindra_and_viam_partner_2026/">
+          <span class="entry-type">Technology</span>
+          <h3>Tech Mahindra and Viam partner to scale advanced robotics and automation solutions</h3>
+          <p>Tech Mahindra&#39;s global enterprise clients can harness the power of physical AI with direct access to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_actuator_irobot_founder_wants_to_put_a_2026/">
+          <span class="entry-type">Report</span>
+          <h3>iRobot Founder Wants to Put a Robotic Familiar Into Your Home</h3>
+          <p>Two years ago, Colin Angle stepped down as CEO of iRobot , the company that he cofounded and the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_unitree_unitree_g1_humanoid_agent_pric_2024/">
+          <span class="entry-type">Report</span>
+          <h3>Unitree G1 Humanoid Agent | Price from $16K</h3>
+          <p>Unitree G1, Humanoid Agent, AI avatar, Price from $16K!</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_video_friday_extreme_omnidirec_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: Extreme Omnidirectional Robot</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_data_flywheel/">
+          <span class="entry-type">Concept</span>
+          <h3>Data Flywheel</h3>
+          <p>A self-reinforcing cycle in which deployed robots generate data that improves AI models, which…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_ieee_honors_robotics_pioneer_t_2026/">
+          <span class="entry-type">Report</span>
+          <h3>IEEE Honors Robotics Pioneer Toshio Fukuda</h3>
+          <p>Toshio Fukuda has been blazing trails for most of his career. He is considered to be one of the most…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_application_healthcare/">
+          <span class="entry-type">Application Scenario</span>
+          <h3>Healthcare Assistance</h3>
+          <p>The deployment of humanoid robots in hospitals, eldercare, and rehabilitation settings for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_ieee_visual_language_models_train_r_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Visual Language Models Train Robots to Read Human Emotions</h3>
+          <p>This article is part of our exclusive IEEE Journal Watch series in partnership with IEEE Xplore. As…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_battery_ground_robots_inherit_the_kill_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Ground Robots Inherit the Kill Zone</h3>
+          <p>Borys Drozhak has a vision: a frontline almost free of humans, patrolled by flying drones and ground…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_unitree_unitree_go2_quadruped_robot_of_2024/">
+          <span class="entry-type">Report</span>
+          <h3>Unitree Go2 - Quadruped Robot of Embodied AI</h3>
+          <p>Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to report in the humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_realbotix_to_deploy_first_huma_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District</h3>
+          <p>Pilot program with Salamanca City Central School District marks major step for education technology</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_actuator_video_friday_ai_gives_robot_ha_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: AI Gives Robot Hands Humanlike Dexterity</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_world_model/">
+          <span class="entry-type">Concept</span>
+          <h3>World Model</h3>
+          <p>A learned or hand-crafted internal model that predicts future states of the environment, enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_video_friday_a_world_cup_for_r_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: A World Cup for Robots</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos , collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_actuator_will_robotics_have_a_chatgpt_m_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Will Robotics Have a ChatGPT Moment?</h3>
+          <p>Over the next few decades, billions of autonomous, AI-powered robots will work alongside people in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_actuator_video_friday_who_wins_in_robot_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: Who Wins in Robot vs. Pro Ping-Pong Player?</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_verisilicon_introduces_cpp2000_2000/">
+          <span class="entry-type">Component</span>
+          <h3>VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics and Mobile Vision Applications</h3>
+          <p>Enhancing image quality and visual perception for moving-camera systems</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_nvidia_how_cosmos_3_helps_physical_ai_2026/">
+          <span class="entry-type">Report</span>
+          <h3>How Cosmos 3 Helps Physical AI Think Before It Acts</h3>
+          <p>How Cosmos 3 Helps Physical AI Think Before It Acts</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_ieee_defining_autonomy_for_wellness_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Defining Autonomy for Wellness Robots in Senior Care</h3>
+          <p>An examination of how socially assistive wellness robots could support the seven dimensions of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_unitree_unitree_h1_15_yrs_old_debuted_2025/">
+          <span class="entry-type">Report</span>
+          <h3>Unitree H1: 1.5 Yrs Old &#34;Debuted&#34; at the SFG</h3>
+          <p>Unitree H1: 1.5 Yrs Old &#34;Debuted&#34; at the SFG is a knowledge node related to report in the humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_nvidia_nvidia_research_unlocks_advanc_2026/">
+          <span class="entry-type">Report</span>
+          <h3>NVIDIA Research Unlocks Advanced Grasping, Smarter Autonomous Driving and Agent Training at Scale</h3>
+          <p>What makes a robot gripper useful isn’t that it can pick up one object — it’s that it can pick up…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_unitree_unitree_teases_new_h1_humanoid_2024/">
+          <span class="entry-type">Report</span>
+          <h3>Unitree teases new H1 humanoid robot</h3>
+          <p>Unitree teases new H1 humanoid robot is a knowledge node related to report in the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_the_secret_to_marathon_winning_2026/">
+          <span class="entry-type">Report</span>
+          <h3>The Secret to Marathon-Winning Humanoid Robots</h3>
+          <p>On 19 April 2026, the Honor Lightning humanoid robot ran a half-marathon in 50 minutes and 26…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_application_home_service/">
+          <span class="entry-type">Application Scenario</span>
+          <h3>Home Service</h3>
+          <p>The use of humanoid robots for domestic chores, security, entertainment, and eldercare within…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_video_friday_an_earthbound_mar_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: An Earthbound Mars Rover for the Moon</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_daimon_robotics_wants_to_give_2026/">
+          <span class="entry-type">Report</span>
+          <h3>DAIMON Robotics Wants to Give Robot Hands a Sense of Touch</h3>
+          <p>This article is brought to you by DAIMON Robotics . This April, Hong Kong-based DAIMON Robotics has…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_industry_primebot_brings_personal_robot_2026/">
+          <span class="entry-type">Report</span>
+          <h3>PrimeBOT Brings Personal Robotics to the UN&#39;s AI for Good Summit in Geneva</h3>
+          <p>PrimeBOT defines a new category: the Personal Robot – robots designed for homes and daily life, not…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_orbbec_unveils_robot_free_data_2026/">
+          <span class="entry-type">Component</span>
+          <h3>Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale</h3>
+          <p>Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_market_humanoid_global_forecast/">
+          <span class="entry-type">Market Segment</span>
+          <h3>Global Humanoid Robot Market Forecast</h3>
+          <p>Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_cobot_announces_second_generat_2026/">
+          <span class="entry-type">Technology</span>
+          <h3>Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical AI to Real Operations</h3>
+          <p>One production-tested platform combines mobility, bimanual manipulation, and self-directed task…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_lagrangian/">
+          <span class="entry-type">Formalism</span>
+          <h3>Lagrangian</h3>
+          <p>A scalar function that encodes the dynamics of a system through the difference (or generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_ieee_agentic_ai_for_robot_teams_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Agentic AI for Robot Teams</h3>
+          <p>This presentation highlights recent efforts at the Johns Hopkins Applied Physics Laboratory to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_deepx_and_sixfab_launch_deepx_2026/">
+          <span class="entry-type">Report</span>
+          <h3>DEEPX and Sixfab Launch &#39;DEEPX AI HAT&#39; to Drive Edge Physical AI on Raspberry Pi</h3>
+          <p>-Partnership delivers high-performance, low-power AI acceleration directly to the global Raspberry…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_ieee_video_friday_do_robots_even_ne_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: Do Robots Even Need Legs?</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_application_logistics_warehouse/">
+          <span class="entry-type">Application Scenario</span>
+          <h3>Logistics and Warehouse Automation</h3>
+          <p>The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_industry_inorbitai_demonstrates_the_fut_2026/">
+          <span class="entry-type">Report</span>
+          <h3>InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical AI at Automate 2026</h3>
+          <p>Experience the future of the sentient enterprise as InOrbit.AI orchestrates a groundbreaking…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_x_square_robot_secures_four_co_2026/">
+          <span class="entry-type">Report</span>
+          <h3>X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion Valuation in Push for Physical AI Foundation Models</h3>
+          <p>New funding supports development of embodied AI foundation models, commercial deployments and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_unitree_kung_fu_meets_spring_unitree_s_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Kung Fu Meets Spring, Unitree SFG Robots Present &#34;Cyber Real Kung Fu&#34; in the Year of the Horse</h3>
+          <p>Kung Fu Meets Spring, Unitree SFG Robots Present &#34;Cyber Real Kung Fu&#34; in the Year of the Horse is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_video_friday_figure_1x_ramp_up_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: Figure, 1X Ramp Up Humanoid Robot Production</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_german_economy_calls_for_faste_2026/">
+          <span class="entry-type">Report</span>
+          <h3>German Economy Calls for Faster Humanoid Robotics Adoption</h3>
+          <p>82 % consider humanoid robots drivers of future innovation</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

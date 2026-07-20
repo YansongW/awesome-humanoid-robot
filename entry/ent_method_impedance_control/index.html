@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>阻抗控制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">阻抗控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>阻抗控制</h1>
+      <p class="entry-name-en">Impedance Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#阻抗控制 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>阻抗控制（impedance control）不把位置与力分开控制，而是调节机器人末端表现出的机械阻抗（mechanical impedance）——即质量-阻尼-弹簧特性。它把力与位置/速度关系定义为：</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>阻抗控制是人形机器人领域的重要方法。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p><strong>阻抗控制（impedance control）</strong>不把位置与力分开控制，而是调节机器人末端表现出的<strong>机械阻抗（mechanical impedance）</strong>——即质量-阻尼-弹簧特性。它把力与位置/速度关系定义为：</p>
+<div class="arithmatex">\[
+\mathbf{F} = \mathbf{M}_d (\ddot{\mathbf{x}}_d - \ddot{\mathbf{x}}) + \mathbf{D}_d (\dot{\mathbf{x}}_d - \dot{\mathbf{x}}) + \mathbf{K}_d (\mathbf{x}_d - \mathbf{x})
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathbf{M}_d\)</span>、<span class="arithmatex">\(\mathbf{D}_d\)</span>、<span class="arithmatex">\(\mathbf{K}_d\)</span> 分别为期望惯性、阻尼与刚度矩阵。该方程表明：当末端偏离期望轨迹时，机器人会产生与偏离量成比例的恢复力；当受到外部扰动时，机器人会按期望动态响应。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：阻抗控制、机械阻抗、期望惯性、期望阻尼、期望刚度</p>
+<ul>
+<li><strong>阻抗控制（impedance control）</strong>：控制机器人端表现出的质量-阻尼-弹簧特性的方法。</li>
+<li><strong>机械阻抗（mechanical impedance）</strong>：力与运动（位移、速度、加速度）之间的动态关系。</li>
+<li><strong>期望惯性（desired inertia）<span class="arithmatex">\(\mathbf{M}_d\)</span></strong>：期望的惯性特性矩阵。</li>
+<li><strong>期望阻尼（desired damping）<span class="arithmatex">\(\mathbf{D}_d\)</span></strong>：期望的阻尼特性矩阵。</li>
+<li><strong>期望刚度（desired stiffness）<span class="arithmatex">\(\mathbf{K}_d\)</span></strong>：期望的刚度特性矩阵。</li>
+</ul>
+</div>
+<p>阻抗控制可分为两类：</p>
+<ol>
+<li><strong>力矩级阻抗控制（torque-level impedance）</strong>：直接根据阻抗方程计算期望任务力，再通过 <span class="arithmatex">\(\boldsymbol{\tau} = \mathbf{J}^T \mathbf{F}\)</span> 映射到关节力矩。需要力矩控制内环。</li>
+<li><strong>位置级阻抗控制（position-level impedance）</strong>：在位置控制外环中加入力-位置关系，通过位置指令间接实现柔顺。实现简单但带宽受限。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：力矩级阻抗、位置级阻抗、力矩控制内环、位置控制外环</p>
+<ul>
+<li><strong>力矩级阻抗（torque-level impedance）</strong>：直接输出关节力矩的阻抗控制。</li>
+<li><strong>位置级阻抗（position-level impedance）</strong>：通过位置指令实现柔顺的阻抗控制。</li>
+<li><strong>力矩控制内环（torque control inner loop）</strong>：快速控制关节力矩的内部回路。</li>
+<li><strong>位置控制外环（position control outer loop）</strong>：生成位置指令的外部回路。</li>
+</ul>
+</div>
+<p>在人形机器人中，阻抗控制可用于：</p>
+<ul>
+<li><strong>落地缓冲</strong>：脚触地时表现为低刚度-高阻尼，吸收冲击。</li>
+<li><strong>人机交互</strong>：手臂低刚度保证接触安全。</li>
+<li><strong>工具使用</strong>：根据任务调整末端阻抗，如拧螺丝时高刚度，开门时中等刚度。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：落地缓冲、人机交互安全、工具使用、刚度调节</p>
+<ul>
+<li><strong>落地缓冲（landing buffering）</strong>：通过柔顺性减小触地冲击。</li>
+<li><strong>人机交互安全（HRI safety）</strong>：在人机接触中降低伤害风险。</li>
+<li><strong>工具使用（tool use）</strong>：机器人使用工具完成任务。</li>
+<li><strong>刚度调节（stiffness regulation）</strong>：根据任务调整系统刚度。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["期望轨迹 x_d, v_d, a_d"] --&gt; B["实际状态 x, v, a"]
+    B --&gt; C["阻抗方程"]
+    C --&gt; D["F = Md e_ddot + Dd e_dot + Kd e"]
+    D --&gt; E["任务力 F"]
+    E --&gt; F["tau = J^T F"]
+    F --&gt; G["关节力矩控制"]</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+<li>项目 Wiki：chapter-08.md#阻抗控制</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_series_elastic_actuator_2024/">串联弹性执行器</a>
+              <span class="rel-desc">阻抗控制提及串联弹性执行器。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_model_predictive_control_2024/">模型预测控制</a>
+              <span class="rel-desc">阻抗控制提及模型预测控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              <span class="rel-desc">阻抗控制提及Mobile ALOHA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_pid_control/">PID控制</a>
+              <span class="rel-desc">阻抗控制前置依赖PID控制。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">接触式机器人操作综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">接触式机器人操作综述discusses阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">TA-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">TA-VLAdiscusses阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_aerial_manipulation_contact_me_2026/">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_one_shot_multimodal_learning_f_2026/">One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_marconi_structured_prediction_for_cris_2021/">针对模型误设机器人的CRiSP逆运动学学习的结构化预测</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">针对模型误设机器人的CRiSP逆运动学学习的结构化预测discusses阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">全身控制（WBC）前置依赖阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_morphquad_morphable_quadrotor_2026/">MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">准直驱执行器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">准直驱执行器使用阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_towards_adaptable_humanoid_con_2025/">Towards Adaptable Humanoid Control via Adaptive Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robot_crash_course_learning_so_2025/">Robot Crash Course: Learning Soft and Stylized Falling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_extremcontrol_low_latency_huma_2026/">ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_h2_compact_human_humanoid_co_m_2025/">H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_safehumanoid_vlm_rag_driven_co_2025/">SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_the_quadruped_soft_tail_compli_2026/">The Quadruped Soft Tail: Compliant Grasping and Swabbing for Contamination Surveys in Harsh Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_current_as_touch_proprioceptiv_2026/">Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_high_speed_and_impact_resilien_2024/">High-Speed and Impact Resilient Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_preference_conditioned_multi_o_2025/">Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_u_joint_caams_experimental_eva_2026/">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_luo_ceer_compliant_end_effector_an_2026/">CEER：作为分层人形机器人移动操作统一接口的柔顺末端执行器与根控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">CEER：作为分层人形机器人移动操作统一接口的柔顺末端执行器与根控制使用阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_granados_dance_teaching_by_a_robot_comb_2017/">机器人舞蹈教学：结合认知与物理人机交互以支持技能学习过程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">机器人舞蹈教学：结合认知与物理人机交互以支持技能学习过程使用阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_visualizing_impedance_control_2026/">Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_admittance_control/">导纳控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">导纳控制提及阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_subsystem_ankle_compliance/">脚踝柔顺机构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">脚踝柔顺机构提及阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_force_position_hybrid_control/">力位混合控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">力位混合控制提及阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_unified_structural_hydrodynami_2026/">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_pid_control/">PID控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">PID控制提及阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_amor_adaptive_character_contro_2025/">AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_tacrefinenet_tactile_only_gras_2025/">TacRefineNet</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">TacRefineNetdiscusses阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_spatial_relationship_preservin_2010/">Spatial relationship preserving character motion adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_human_like_badminton_2026/">Learning Human-Like Badminton Skills for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robust_operational_space_contr_2026/">Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_softmimic_learning_compliant_w_2025/">SoftMimic: Learning Compliant Whole-body Control from Examples</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_murooka_whole_body_multi_contact_motio_2024/">基于分布式触觉传感器的人形机器人全身多接触运动控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于分布式触觉传感器的人形机器人全身多接触运动控制使用阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoidvlm_vision_language_gu_2026/">HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">变形感知机器人三维超声</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">变形感知机器人三维超声使用阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_johns_coarse_to_fine_imitation_learn_2021/">从粗到精的模仿学习：单演示下的机器人操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">从粗到精的模仿学习：单演示下的机器人操作使用阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_impedance_guided_programmable_2026/">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physics_based_motion_tracking_2026/">Physics-Based Motion Tracking of Contact-Rich Interacting Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_float_drone_for_physical_inter_2026/">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">具有不确定运动学和动力学的机器人机械臂自适应控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">具有不确定运动学和动力学的机器人机械臂自适应控制discusses阻抗控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_newton_euler_equations/">牛顿-欧拉方程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_inverse_dynamics_qp/">逆动力学二次规划形式化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_planetary_roller_screw/">行星滚柱丝杠</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_euler_lagrange_equations/">欧拉-拉格朗日方程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">形式化</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_impedance_control"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_newton_euler_equations/">
+          <span class="entry-type">方程</span>
+          <h3>牛顿-欧拉方程</h3>
+          <p>描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_amor_adaptive_character_contro_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</h3>
+          <p>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_morphquad_morphable_quadrotor_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</h3>
+          <p>arXiv:2607.02764v1 Announce Type: new Abstract: Infrastructure maintenance, contact-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_current_as_touch_proprioceptiv_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</h3>
+          <p>arXiv:2607.03529v1 Announce Type: new Abstract: Compliance is essential for dexterous manipulation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">零部件</span>
+          <h3>行星滚柱丝杠</h3>
+          <p>- Tesla Optimus：据 Tesla AI Day 2022 与后续公开信息，Optimus 躯干采用 28 个执行器（14 个旋转 + 14 个线性），旋转关节使用无框力矩电机 +…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_preference_conditioned_multi_o_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</h3>
+          <p>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_human_like_badminton_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Human-Like Badminton Skills for Humanoid Robots</h3>
+          <p>Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">形式化方法</span>
+          <h3>欧拉-拉格朗日方程</h3>
+          <p>由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_towards_adaptable_humanoid_con_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Adaptable Humanoid Control via Adaptive Motion Tracking</h3>
+          <p>Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_marconi_structured_prediction_for_cris_2021/">
+          <span class="entry-type">论文</span>
+          <h3>针对模型误设机器人的CRiSP逆运动学学习的结构化预测</h3>
+          <p>提出CRiSP-FK结构化预测算法，将非参数核回归与可能不准确的正运动学模型相结合，通过约束L-BFGS-B优化前向运动学损失，学习冗余机械臂的约束逆运动学；并给出泛化保证，在5自由度平面与7自由度F…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">技术</span>
+          <h3>Mobile ALOHA</h3>
+          <p>全身移动双臂遥操作平台，用于采集家庭和仓库操作数据。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">
+          <span class="entry-type">论文</span>
+          <h3>具有不确定运动学和动力学的机器人机械臂自适应控制</h3>
+          <p>In this paper, we investigate the adaptive control problem for robot manipulators with both the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_visualizing_impedance_control_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</h3>
+          <p>arXiv:2603.25418v2 Announce Type: replace Abstract: Teleoperation for contact-rich manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robust_operational_space_contr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation</h3>
+          <p>arXiv:2607.00424v1 Announce Type: new Abstract: Redundant robotic manipulators operating in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_one_shot_multimodal_learning_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps</h3>
+          <p>arXiv:2607.09515v1 Announce Type: new Abstract: Robotic manipulation tasks often require…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_aerial_manipulation_contact_me_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</h3>
+          <p>arXiv:2607.04719v1 Announce Type: new Abstract: Aerial robots are increasingly moving from remote…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">
+          <span class="entry-type">论文</span>
+          <h3>接触式机器人操作综述</h3>
+          <p>本综述回顾了需要与环境保持持续或受控接触的机器人操作任务，对接触式任务、底层控制策略、技能表示以及规划或学习方法进行了分类，并指出了可变形物体、异常处理和仿真到现实迁移中的开放挑战。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_luo_ceer_compliant_end_effector_an_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CEER：作为分层人形机器人移动操作统一接口的柔顺末端执行器与根控制</h3>
+          <p>CEER提出了一种用于人形机器人移动操作的柔顺末端执行器-根（EE-root）控制抽象，通过教师-学生蒸馏从全身运动追踪器训练底层策略，使异构高层规划器无需重新训练即可控制机器人。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_murooka_whole_body_multi_contact_motio_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于分布式触觉传感器的人形机器人全身多接触运动控制</h3>
+          <p>本文提出了一种全身多接触控制方法，利用分布式触觉传感器反馈稳定膝盖、肘部、前臂和大腿等中间肢体区域的接触，并在仿真和RHP Kaleido人形机器人上进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">
+          <span class="entry-type">论文</span>
+          <h3>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</h3>
+          <p>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">形式化方法</span>
+          <h3>逆动力学二次规划形式化</h3>
+          <p>一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_extremcontrol_low_latency_huma_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control</h3>
+          <p>ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoidvlm_vision_language_gu_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation</h3>
+          <p>HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制（FOC）</h3>
+          <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physics_based_motion_tracking_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Physics-Based Motion Tracking of Contact-Rich Interacting Characters</h3>
+          <p>Physics-Based Motion Tracking of Contact-Rich Interacting Characters is a paper on 物理动画 for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TA-VLA</h3>
+          <p>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_u_joint_caams_experimental_eva_2026/">
+          <span class="entry-type">论文</span>
+          <h3>U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</h3>
+          <p>arXiv:2607.03321v1 Announce Type: new Abstract: Continuum manipulators mounted on multi-rotor UAVs…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_h2_compact_human_humanoid_co_m_2025/">
+          <span class="entry-type">论文</span>
+          <h3>H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies</h3>
+          <p>H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_granados_dance_teaching_by_a_robot_comb_2017/">
+          <span class="entry-type">论文</span>
+          <h3>机器人舞蹈教学：结合认知与物理人机交互以支持技能学习过程</h3>
+          <p>本研究提出了一种1.8米高的移动人形舞蹈教学机器人，通过自适应阻抗控制器在紧密接触的社交舞场景中引导人类学习者；其渐进式教学评分系统根据累积表现调整任务难度和控制增益，实验表明相比恒定控制器，渐进式教…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robot_crash_course_learning_so_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Robot Crash Course: Learning Soft and Stylized Falling</h3>
+          <p>Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_spatial_relationship_preservin_2010/">
+          <span class="entry-type">论文</span>
+          <h3>Spatial relationship preserving character motion adaptation</h3>
+          <p>Spatial relationship preserving character motion adaptation is a 2010 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_softmimic_learning_compliant_w_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SoftMimic: Learning Compliant Whole-body Control from Examples</h3>
+          <p>SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_unified_structural_hydrodynami_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</h3>
+          <p>arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_safehumanoid_vlm_rag_driven_co_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot</h3>
+          <p>SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_tacrefinenet_tactile_only_gras_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TacRefineNet</h3>
+          <p>TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses (TacRefineNet),…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_admittance_control/">
+          <span class="entry-type">方法</span>
+          <h3>导纳控制</h3>
+          <p>概述 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。 ## 核心内容 #### 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_pid_control/">
+          <span class="entry-type">方法</span>
+          <h3>PID控制</h3>
+          <p>一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">
+          <span class="entry-type">论文</span>
+          <h3>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</h3>
+          <p>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">
+          <span class="entry-type">论文</span>
+          <h3>变形感知机器人三维超声</h3>
+          <p>Tissue deformation in ultrasound (US) imaging leads to geometrical errors when measuring tissues due…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_johns_coarse_to_fine_imitation_learn_2021/">
+          <span class="entry-type">论文</span>
+          <h3>从粗到精的模仿学习：单演示下的机器人操作</h3>
+          <p>We introduce a simple new method for visual imitation learning, which allows a novel robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_impedance_guided_programmable_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</h3>
+          <p>arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_force_position_hybrid_control/">
+          <span class="entry-type">方法</span>
+          <h3>力位混合控制</h3>
+          <p>在许多任务中，某些方向需要控制位置，而另一些方向需要控制力。例如，沿桌面推动物体时，水平方向控制位置，垂直方向控制接触力。混合力/位置控制（hybrid force/position…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_series_elastic_actuator_2024/">
+          <span class="entry-type">技术</span>
+          <h3>串联弹性执行器</h3>
+          <p>在电机和负载之间串联弹性元件的执行器，可实现精确的力控和抗冲击能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_float_drone_for_physical_inter_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</h3>
+          <p>arXiv:2607.04260v1 Announce Type: new Abstract: Aerial physical interaction represents a promising…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_subsystem_ankle_compliance/">
+          <span class="entry-type">零部件</span>
+          <h3>脚踝柔顺机构</h3>
+          <p>人形机器人在人机共融环境中无法避免与人或物体发生意外接触。碰撞检测（collision detection）与柔顺控制（compliance…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制</h3>
+          <p>用于生成接触丰富的全身运动的在线最优控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_high_speed_and_impact_resilien_2024/">
+          <span class="entry-type">论文</span>
+          <h3>High-Speed and Impact Resilient Teleoperation of Humanoid Robots</h3>
+          <p>High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">技术</span>
+          <h3>准直驱执行器</h3>
+          <p>采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_the_quadruped_soft_tail_compli_2026/">
+          <span class="entry-type">论文</span>
+          <h3>The Quadruped Soft Tail: Compliant Grasping and Swabbing for Contamination Surveys in Harsh Environments</h3>
+          <p>arXiv:2606.30900v1 Announce Type: new Abstract: Beryllium contamination surveys in radioactive areas…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

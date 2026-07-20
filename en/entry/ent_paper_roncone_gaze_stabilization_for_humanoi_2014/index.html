@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gaze Stabilization for Humanoid Robots: a Comprehensive Framework · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Gaze Stabilization for Humanoid Robots: a Comprehensive Framework</h1>
+      <p class="entry-name-en">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1411.3525v1.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper proposes a gaze stabilization framework for humanoid robots that combines a kinematic feedforward term derived from joint velocity commands with an inertial feedback term from a head-mounted gyroscope to compensate for camera disturbances caused by self-generated motion and external perturbations, validated on the iCub robot using residual optical flow.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1411.3525" target="_blank" rel="noopener">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Gaze stabilization is an important requisite for humanoid robots. Previous work on this topic has focused on the integration of inertial and visual information. Little attention has been given to a third component, which is the knowledge that the robot has about its own movement. In this work we propose a comprehensive framework for gaze stabilization in a humanoid robot. We focus on the problem of compensating for disturbances induced in the cameras due to self-generated movements of the robot. In this work we employ two separate signals for stabilization: (1) an anticipatory term obtained from the velocity commands sent to the joints while the robot moves autonomously; (2) a feedback term from the on board gyroscope, which compensates unpredicted external disturbances. We first provide the mathematical formulation to derive the forward and the differential kinematics of the fixation point of the stereo system. We finally test our method on the iCub robot. We show that the stabilization consistently reduces the residual optical flow during the movement of the robot and in presence of external disturbances. We also demonstrate that proper integration of the neck DoF is crucial to achieve correct stabilization.</p>
+<h2 id="content">Content</h2>
+<p>Gaze stabilization is an important requisite for humanoid robots. Previous work on this topic has focused on the integration of inertial and visual information. Little attention has been given to a third component, which is the knowledge that the robot has about its own movement. In this work we propose a comprehensive framework for gaze stabilization in a humanoid robot. We focus on the problem of compensating for disturbances induced in the cameras due to self-generated movements of the robot. In this work we employ two separate signals for stabilization: (1) an anticipatory term obtained from the velocity commands sent to the joints while the robot moves autonomously; (2) a feedback term from the on board gyroscope, which compensates unpredicted external disturbances. We first provide the mathematical formulation to derive the forward and the differential kinematics of the fixation point of the stereo system. We finally test our method on the iCub robot. We show that the stabilization consistently reduces the residual optical flow during the movement of the robot and in presence of external disturbances. We also demonstrate that proper integration of the neck DoF is crucial to achieve correct stabilization.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_pid_control/">PID Control</a>
+              <span class="rel-desc">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework uses PID Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p10_2_1/">Standing and Anti-Interference Balance Control</a>
+              <span class="rel-desc">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework discusses Standing and Anti-Interference Balance Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p10_1_1/">IMU and joint encoder fusion</a>
+              <span class="rel-desc">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework uses IMU and joint encoder fusion.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_roncone_gaze_stabilization_for_humanoi_2014"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>IMU and joint encoder fusion</h3>
+          <p>State estimator, measured trajectory error &amp;lt;target, standing drift controllable</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_pid_control/">
+          <span class="entry-type">Method</span>
+          <h3>PID Control</h3>
+          <p>A foundational feedback control method that computes a control signal as a linear combination of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Standing and Anti-Interference Balance Control</h3>
+          <p>Video of the standing anti-interference physical prototype; its recovery capability meets the…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

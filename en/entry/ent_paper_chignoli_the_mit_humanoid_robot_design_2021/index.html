@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors</h1>
+      <p class="entry-name-en">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Components</span><span class="tag">AI Models &amp; Algorithms</span><span class="tag">Software &amp; Middleware</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.09025v1.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper presents the design, actuator-aware kino-dynamic planning, and landing control of the MIT Humanoid robot, demonstrating back flips, front flips, and spinning jumps in a realistic dynamics simulation that includes validated actuator and battery models.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2104.09025" target="_blank" rel="noopener">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Demonstrating acrobatic behavior of a humanoid robot such as flips and spinning jumps requires systematic approaches across hardware design, motion planning, and control. In this paper, we present a new humanoid robot design, an actuator-aware kino-dynamic motion planner, and a landing controller as part of a practical system design for highly dynamic motion control of the humanoid robot. To achieve the impulsive motions, we develop two new proprioceptive actuators and experimentally evaluate their performance using our custom-designed dynamometer. The actuator's torque, velocity, and power limits are reflected in our kino-dynamic motion planner by approximating the configuration-dependent reaction force limits and in our dynamics simulator by including actuator dynamics along with the robot's full-body dynamics. For the landing control, we effectively integrate model-predictive control and whole-body impulse control by connecting them in a dynamically consistent way to accomplish both the long-time horizon optimal control and high-bandwidth full-body dynamics-based feedback. Actuators' torque output over the entire motion are validated based on the velocity-torque model including battery voltage droop and back-EMF voltage. With the carefully designed hardware and control framework, we successfully demonstrate dynamic behaviors such as back flips, front flips, and spinning jumps in our realistic dynamics simulation.</p>
+<h2 id="content">Content</h2>
+<p>Demonstrating acrobatic behavior of a humanoid robot such as flips and spinning jumps requires systematic approaches across hardware design, motion planning, and control. In this paper, we present a new humanoid robot design, an actuator-aware kino-dynamic motion planner, and a landing controller as part of a practical system design for highly dynamic motion control of the humanoid robot. To achieve the impulsive motions, we develop two new proprioceptive actuators and experimentally evaluate their performance using our custom-designed dynamometer. The actuator's torque, velocity, and power limits are reflected in our kino-dynamic motion planner by approximating the configuration-dependent reaction force limits and in our dynamics simulator by including actuator dynamics along with the robot's full-body dynamics. For the landing control, we effectively integrate model-predictive control and whole-body impulse control by connecting them in a dynamically consistent way to accomplish both the long-time horizon optimal control and high-bandwidth full-body dynamics-based feedback. Actuators' torque output over the entire motion are validated based on the velocity-torque model including battery voltage droop and back-EMF voltage. With the carefully designed hardware and control framework, we successfully demonstrate dynamic behaviors such as back flips, front flips, and spinning jumps in our realistic dynamics simulation.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</a>
+              <span class="rel-desc">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors cites or references Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</a>
+              <span class="rel-desc">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors cites or references Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_splitadapter_load_aware_humano_2026/">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</a>
+              <span class="rel-desc">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors cites or references SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_newton_euler_equations/">Newton-Euler equations</a>
+              <span class="rel-desc">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors uses or builds on Newton-Euler equations.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</a>
+              <span class="rel-desc">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors cites or references Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_physiflow_physics_aware_humano_2026/">PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking</a>
+              <span class="rel-desc">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors cites or references PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_whole_body_dynamic_throwing_wi_2025/">Whole-Body Dynamic Throwing with Legged Manipulators</a>
+              <span class="rel-desc">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors cites or references Whole-Body Dynamic Throwing with Legged Manipulators.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chignoli_the_mit_humanoid_robot_design_2021"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_newton_euler_equations/">
+          <span class="entry-type">Equation</span>
+          <h3>Newton-Euler equations</h3>
+          <p>A set of coupled force and torque balance equations that describe the motion of a rigid body or…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_physiflow_physics_aware_humano_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking</h3>
+          <p>The implementation path of PhysiFlow is to encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</h3>
+          <p>This paper proposes SAKDN, a framework that distills knowledge from multiple wearable-sensor…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_splitadapter_load_aware_humano_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</h3>
+          <p>SplitAdapter converts simulated interaction data into trackable body targets and uses PPO/RL policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</h3>
+          <p>This paper proposes a predictive safety filter that combines nonlinear model predictive control…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_whole_body_dynamic_throwing_wi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Whole-Body Dynamic Throwing with Legged Manipulators</h3>
+          <p>This work first recovers scene, target, or motion representations from ontology states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</h3>
+          <p>Sumo transforms the body state, joint sequence, and simulation interaction data into a trackable…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

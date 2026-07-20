@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>系统架构与机电总体设计（System / Preliminary Design） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">系统架构与机电总体设计（System / Preliminary Design）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>系统架构与机电总体设计（System / Preliminary Design）</h1>
+      <p class="entry-name-en">System Architecture and Electromechanical Master Design (System / Preliminary Design)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">设计工程</span><span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>系统架构与机电总体设计（System / Preliminary Design）是人形机器人产品开发全流程中的第 3 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>系统架构与机电总体设计（System / Preliminary Design）是人形机器人产品开发全流程中的第 3 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">机械总体设计</h4>
+<h5 id="dof">DOF 配置与关节布局</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：仿生分析、任务驱动 DOF 分析、冗余度评估</li>
+<li><strong>设计思考逻辑</strong>：腿部 6×2、手臂 7×2、躯干 1–3、头部 2–3、手部 11–22；在满足任务前提下减少复杂度和重量</li>
+<li><strong>关键约束</strong>：重量、成本、控制实时性、线束数量</li>
+<li><strong>完成标准 / 输出物</strong>：DOF 配置表、关节运动范围、关节速度/扭矩需求 v1
+<strong>三级子任务：</strong></li>
+<li><strong>P3.1.1.1 输入梳理与目标量化</strong>：整理「DOF 配置与关节布局」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.1.1.2 方案/方法设计</strong>：针对「DOF 配置与关节布局」制定实施方法或候选方案，使用「仿生分析、任务驱动 DOF 分析、冗余度评估」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「DOF 配置与关节布局」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.1.1.4 验证与问题闭环</strong>：对「DOF 配置与关节布局」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P3.1.1.5 文档输出与下游交付</strong>：输出「DOF 配置与关节布局」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_4">整机质量属性预算</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：自顶向下质量分配、 bottoms-up 核算、CoM 与惯量追踪</li>
+<li><strong>设计思考逻辑</strong>：质量和惯量直接影响能耗、动态响应与稳定性；需在早期锁定</li>
+<li><strong>关键约束</strong>：总重目标、电池能量密度、结构材料</li>
+<li><strong>完成标准 / 输出物</strong>：《质量预算表》、整机 CoM 范围、主惯量上限
+<strong>三级子任务：</strong></li>
+<li><strong>P3.1.2.1 输入梳理与目标量化</strong>：整理「整机质量属性预算」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.1.2.2 方案/方法设计</strong>：针对「整机质量属性预算」制定实施方法或候选方案，使用「自顶向下质量分配、 bottoms-up 核算、CoM 与惯量追踪」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.1.2.3 实施/原型/样件制作</strong>：根据设计方案执行「整机质量属性预算」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.1.2.4 验证与问题闭环</strong>：对「整机质量属性预算」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P3.1.2.5 文档输出与下游交付</strong>：输出「整机质量属性预算」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_5">运动学与动力学初步分析</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：解析法、Matlab/Python、Pinocchio/RBDL、典型动作仿真</li>
+<li><strong>设计思考逻辑</strong>：估算站立、蹲起、行走、抓取时各关节峰值扭矩和速度</li>
+<li><strong>关键约束</strong>：载荷假设保守性、接触模型简化</li>
+<li><strong>完成标准 / 输出物</strong>：关节需求规格 v1、峰值/连续扭矩表、关键动作反力
+<strong>三级子任务：</strong></li>
+<li><strong>P3.1.3.1 输入梳理与目标量化</strong>：整理「运动学与动力学初步分析」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.1.3.2 方案/方法设计</strong>：针对「运动学与动力学初步分析」制定实施方法或候选方案，使用「解析法、Matlab/Python、Pinocchio/RBDL、典型动作仿真」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.1.3.3 建模/仿真与样机实现</strong>：建立「运动学与动力学初步分析」的仿真/数学模型或原型样机，使用「解析法、Matlab/Python、Pinocchio/RBDL、典型动作仿真」执行计算或实验，记录关键参数与边界条件。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.1.3.4 仿真结果校核与优化</strong>：校核「运动学与动力学初步分析」仿真结果与理论/试验数据的一致性，识别薄弱点并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.1.3.5 文档输出与下游交付</strong>：输出「运动学与动力学初步分析」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_6">结构拓扑与传力路径设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：拓扑优化、受力路径草图、模块化划分</li>
+<li><strong>设计思考逻辑</strong>：采用中心骨架 + 可拆卸四肢模块，便于装配、维护与升级</li>
+<li><strong>关键约束</strong>：刚度、强度、重量、可维护性</li>
+<li><strong>完成标准 / 输出物</strong>：结构拓扑方案、传力路径图、模块接口定义
+<strong>三级子任务：</strong></li>
+<li><strong>P3.1.4.1 输入梳理与目标量化</strong>：整理「结构拓扑与传力路径设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.1.4.2 概念与详细设计</strong>：完成「结构拓扑与传力路径设计」的概念设计、详细设计与接口定义，使用「拓扑优化、受力路径草图、模块化划分」验证可行性，输出图纸/算法/逻辑框架。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.1.4.3 实施/原型/样件制作</strong>：根据设计方案执行「结构拓扑与传力路径设计」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.1.4.4 验证与问题闭环</strong>：对「结构拓扑与传力路径设计」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P3.1.4.5 文档输出与下游交付</strong>：输出「结构拓扑与传力路径设计」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_7">电气与计算架构</h4>
+<h5 id="_8">计算架构与节点分布</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：算力需求估算、集中式 vs 分布式对比、安全分区</li>
+<li><strong>设计思考逻辑</strong>：AI 任务（GPU）、实时控制（MCU/FPGA）、安全监控分离，降低互相干扰</li>
+<li><strong>关键约束</strong>：功耗、散热、重量、实时性</li>
+<li><strong>完成标准 / 输出物</strong>：计算架构图、各节点算力/功耗预算、通信接口
+<strong>三级子任务：</strong></li>
+<li><strong>P3.2.1.1 输入梳理与目标量化</strong>：整理「计算架构与节点分布」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.2.1.2 方案/方法设计</strong>：针对「计算架构与节点分布」制定实施方法或候选方案，使用「算力需求估算、集中式 vs 分布式对比、安全分区」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.2.1.3 实施/原型/样件制作</strong>：根据设计方案执行「计算架构与节点分布」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.2.1.4 验证与问题闭环</strong>：对「计算架构与节点分布」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P3.2.1.5 文档输出与下游交付</strong>：输出「计算架构与节点分布」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_9">通信网络架构</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：CAN-FD / EtherCAT / Ethernet / TSN 带宽与时延分析</li>
+<li><strong>设计思考逻辑</strong>：关节控制需要高实时性，视觉/AI 需要高带宽；必要时双总线</li>
+<li><strong>关键约束</strong>：线缆数量、EMC、成本、可扩展性</li>
+<li><strong>完成标准 / 输出物</strong>：通信拓扑图、协议分配表、带宽/延迟预算
+<strong>三级子任务：</strong></li>
+<li><strong>P3.2.2.1 输入梳理与目标量化</strong>：整理「通信网络架构」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.2.2.2 方案/方法设计</strong>：针对「通信网络架构」制定实施方法或候选方案，使用「CAN-FD / EtherCAT / Ethernet / TSN 带宽与时延分析」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.2.2.3 实施/原型/样件制作</strong>：根据设计方案执行「通信网络架构」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.2.2.4 验证与问题闭环</strong>：对「通信网络架构」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P3.2.2.5 文档输出与下游交付</strong>：输出「通信网络架构」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_10">电源架构初步设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：母线电压选择、功率流分析、安全分区</li>
+<li><strong>设计思考逻辑</strong>：电机母线（48 V/60 V/72 V）与逻辑电源隔离；故障时安全断电</li>
+<li><strong>关键约束</strong>：压降、效率、EMI、安全标准</li>
+<li><strong>完成标准 / 输出物</strong>：电源架构图、母线电压选择理由、功率预算 v1
+<strong>三级子任务：</strong></li>
+<li><strong>P3.2.3.1 输入梳理与目标量化</strong>：整理「电源架构初步设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.2.3.2 概念与详细设计</strong>：完成「电源架构初步设计」的概念设计、详细设计与接口定义，使用「母线电压选择、功率流分析、安全分区」验证可行性，输出图纸/算法/逻辑框架。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.2.3.3 实施/原型/样件制作</strong>：根据设计方案执行「电源架构初步设计」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.2.3.4 验证与问题闭环</strong>：对「电源架构初步设计」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P3.2.3.5 文档输出与下游交付</strong>：输出「电源架构初步设计」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_11">安全与可靠性架构</h4>
+<h5 id="_12">功能安全概念设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：HARA、STPA、安全目标分解、冗余策略</li>
+<li><strong>设计思考逻辑</strong>：识别与人接触、跌倒、夹持、电气相关的危害，定义安全功能</li>
+<li><strong>关键约束</strong>：SIL/PL 等级、成本、复杂度</li>
+<li><strong>完成标准 / 输出物</strong>：安全概念文档、安全目标、功能安全架构
+<strong>三级子任务：</strong></li>
+<li><strong>P3.3.1.1 输入梳理与目标量化</strong>：整理「功能安全概念设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.3.1.2 概念与详细设计</strong>：完成「功能安全概念设计」的概念设计、详细设计与接口定义，使用「HARA、STPA、安全目标分解、冗余策略」验证可行性，输出图纸/算法/逻辑框架。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.3.1.3 实施/原型/样件制作</strong>：根据设计方案执行「功能安全概念设计」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.3.1.4 验证与问题闭环</strong>：对「功能安全概念设计」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P3.3.1.5 文档输出与下游交付</strong>：输出「功能安全概念设计」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_13">可靠性目标与分配</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：可靠性框图（RBD）、FMEA、MTBF 分配</li>
+<li><strong>设计思考逻辑</strong>：整机可靠性目标分解到关节、电池、计算等关键部件</li>
+<li><strong>关键约束</strong>：测试时间、加速试验能力、数据有限</li>
+<li><strong>完成标准 / 输出物</strong>：可靠性目标分配表、关键件 MTBF 目标
+<strong>三级子任务：</strong></li>
+<li><strong>P3.3.2.1 输入梳理与目标量化</strong>：整理「可靠性目标与分配」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P3.3.2.2 方案/方法设计</strong>：针对「可靠性目标与分配」制定实施方法或候选方案，使用「可靠性框图（RBD）、FMEA、MTBF 分配」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.3.2.3 实施/原型/样件制作</strong>：根据设计方案执行「可靠性目标与分配」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P3.3.2.4 验证与问题闭环</strong>：对「可靠性目标与分配」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P3.3.2.5 文档输出与下游交付</strong>：输出「可靠性目标与分配」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_14">系统辨识与校准</h4>
+<h5 id="_15">关节零点与传感器标定</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：编码器零点标定、IMU 六位置标定、力/力矩传感器加载标定、标定夹具</li>
+<li><strong>设计思考逻辑</strong>：传感器读数与实际控制输入的准确性直接决定状态估计与力控精度</li>
+<li><strong>关键约束</strong>：标定精度、温度漂移、重复性、现场可维护性</li>
+<li><strong>完成标准 / 输出物</strong>：关节零点误差 &lt; 目标、IMU 偏差 &lt; 目标、力传感器线性度达标
+<strong>三级子任务：</strong></li>
+<li><strong>P3.4.1.1 输入梳理与目标量化</strong>：整理「关节零点与传感器标定」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P3.4.1.2 方案/方法设计</strong>：针对「关节零点与传感器标定」制定实施方法或候选方案，使用「编码器零点标定、IMU 六位置标定、力/力矩传感器加载标定、标定夹具」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.4.1.3 实施/建模/实验</strong>：根据方案执行「关节零点与传感器标定」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P3.4.1.4 验证与优化</strong>：对「关节零点与传感器标定」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P3.4.1.5 文档输出与下游交付</strong>：输出「关节零点与传感器标定」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_16">手眼标定与外部参数标定</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：相机-机器人标定板、ArUco/AprilTag、Eye-in-Hand/Eye-to-Hand 算法</li>
+<li><strong>设计思考逻辑</strong>：视觉感知结果必须准确映射到机器人基座或工具坐标系</li>
+<li><strong>关键约束</strong>：标定板精度、相机畸变、遮挡</li>
+<li><strong>完成标准 / 输出物</strong>：手眼标定重投影误差 &lt; 目标、外参稳定
+<strong>三级子任务：</strong></li>
+<li><strong>P3.4.2.1 输入梳理与目标量化</strong>：整理「手眼标定与外部参数标定」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P3.4.2.2 方案/方法设计</strong>：针对「手眼标定与外部参数标定」制定实施方法或候选方案，使用「相机-机器人标定板、ArUco/AprilTag、Eye-in-Hand/Eye-to-Hand 算法」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.4.2.3 实施/建模/实验</strong>：根据方案执行「手眼标定与外部参数标定」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P3.4.2.4 验证与优化</strong>：对「手眼标定与外部参数标定」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P3.4.2.5 文档输出与下游交付</strong>：输出「手眼标定与外部参数标定」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_17">质心/惯量参数辨识</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：摆动实验、悬挂法、力台测量、最小二乘/最大似然辨识</li>
+<li><strong>设计思考逻辑</strong>：URDF 中的质心与惯量参数需与实物一致，才能进行准确动力学控制</li>
+<li><strong>关键约束</strong>：激励充分性、测量噪声、参数可辨识性</li>
+<li><strong>完成标准 / 输出物</strong>：辨识后整机质量/CoM/惯量与实测误差 &lt; 5%
+<strong>三级子任务：</strong></li>
+<li><strong>P3.4.3.1 输入梳理与目标量化</strong>：整理「质心/惯量参数辨识」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P3.4.3.2 方案/方法设计</strong>：针对「质心/惯量参数辨识」制定实施方法或候选方案，使用「摆动实验、悬挂法、力台测量、最小二乘/最大似然辨识」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.4.3.3 实施/建模/实验</strong>：根据方案执行「质心/惯量参数辨识」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P3.4.3.4 验证与优化</strong>：对「质心/惯量参数辨识」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P3.4.3.5 文档输出与下游交付</strong>：输出「质心/惯量参数辨识」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="dh">连杆加工误差与DH参数现场修正</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：三坐标测量/激光跟踪仪、运动学误差模型、DH 参数优化</li>
+<li><strong>设计思考逻辑</strong>：实际连杆长度、关节轴线偏差会导致末端定位误差，需要现场修正</li>
+<li><strong>关键约束</strong>：测量设备可达性、修正模型不引入奇异</li>
+<li><strong>完成标准 / 输出物</strong>：末端定位精度提升 &gt; 30%、DH 修正表发布
+<strong>三级子任务：</strong></li>
+<li><strong>P3.4.4.1 输入梳理与目标量化</strong>：整理「连杆加工误差与DH参数现场修正」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P3.4.4.2 方案/方法设计</strong>：针对「连杆加工误差与DH参数现场修正」制定实施方法或候选方案，使用「三坐标测量/激光跟踪仪、运动学误差模型、DH 参数优化」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.4.4.3 实施/建模/实验</strong>：根据方案执行「连杆加工误差与DH参数现场修正」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P3.4.4.4 验证与优化</strong>：对「连杆加工误差与DH参数现场修正」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P3.4.4.5 文档输出与下游交付</strong>：输出「连杆加工误差与DH参数现场修正」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="urdf">动力学参数辨识与URDF更新</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：激励轨迹设计、关节力矩/位置数据采集、摩擦/惯量辨识、URDF 回归</li>
+<li><strong>设计思考逻辑</strong>：将辨识得到的摩擦、惯量、质心参数反馈更新 URDF，提高仿真与实际控制精度</li>
+<li><strong>关键约束</strong>：安全激励边界、关节速度/扭矩限制</li>
+<li><strong>完成标准 / 输出物</strong>：辨识 URDF 与实测扭矩误差 &lt; 目标、版本更新
+<strong>三级子任务：</strong></li>
+<li><strong>P3.4.5.1 输入梳理与目标量化</strong>：整理「动力学参数辨识与URDF更新」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P3.4.5.2 方案/方法设计</strong>：针对「动力学参数辨识与URDF更新」制定实施方法或候选方案，使用「激励轨迹设计、关节力矩/位置数据采集、摩擦/惯量辨识、URDF 回归」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P3.4.5.3 实施/建模/实验</strong>：根据方案执行「动力学参数辨识与URDF更新」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P3.4.5.4 验证与优化</strong>：对「动力学参数辨识与URDF更新」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P3.4.5.5 文档输出与下游交付</strong>：输出「动力学参数辨识与URDF更新」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h2 id="_18">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_19">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p2/">工业设计与外观工程（ID / A-Surface）</a>
+              <span class="rel-desc">P3 依赖 P2 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">系统架构与机电总体设计（System / Preliminary Design）使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_pinocchio/">Pinocchio</a>
+              <span class="rel-desc">系统架构与机电总体设计（System / Preliminary Design）使用Pinocchio。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_fmea/">失效模式与影响分析（FMEA）</a>
+              <span class="rel-desc">系统架构与机电总体设计（System / Preliminary Design）提及失效模式与影响分析（FMEA）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p1/">需求定义与系统方案（Concept / Pre-A）</a>
+              <span class="rel-desc">P3 依赖 P1 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p3_2_2/">通信网络架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">通信网络架构is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4/">关节模组与驱动系统设计（Actuator &amp; Drive）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P4 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_1_4/">结构拓扑与传力路径设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">结构拓扑与传力路径设计is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p5/">本体结构工程与原型（Mechanical Structure）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P5 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_2_3/">电源架构初步设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">电源架构初步设计is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_1_3/">运动学与动力学初步分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">运动学与动力学初步分析is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p11/">灵巧手选型/设计与集成（Dexterous Hand）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P11 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_2_1/">计算架构与节点分布</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">计算架构与节点分布is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13/">电子电气与能源系统（Electronics &amp; Power）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P13 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_1_2/">整机质量属性预算</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">整机质量属性预算is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_1_1/">DOF 配置与关节布局</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">DOF 配置与关节布局is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P8 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_3_1/">功能安全概念设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">功能安全概念设计is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_3_2/">可靠性目标与分配</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">可靠性目标与分配is_part_of系统架构与机电总体设计（System / Preliminary Design）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p3"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p2/">
+          <span class="entry-type">方法</span>
+          <h3>工业设计与外观工程（ID / A-Surface）</h3>
+          <p>工业设计与外观工程（ID / A-Surface）是人形机器人产品开发全流程中的第 2 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_pinocchio/">
+          <span class="entry-type">软件平台</span>
+          <h3>Pinocchio</h3>
+          <p>用于高效刚体动力学、运动学与解析导数计算的开源C++库，广泛应用于机器人研究与基于模型的控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>功能安全概念设计</h3>
+          <p>- P3.3.1.1 输入梳理与目标量化 - 整理「功能安全概念设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p5/">
+          <span class="entry-type">方法</span>
+          <h3>本体结构工程与原型（Mechanical Structure）</h3>
+          <p>本体结构工程与原型（Mechanical Structure）是人形机器人产品开发全流程中的第 5 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>通信网络架构</h3>
+          <p>- P3.2.2.1 输入梳理与目标量化 - 整理「通信网络架构」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>DOF 配置与关节布局</h3>
+          <p>设计思考逻辑：腿部 6×2、手臂 7×2、躯干 1–3、头部 2–3、手部 11–22；在满足任务前提下减少复杂度和重量</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">技术</span>
+          <h3>EtherCAT</h3>
+          <p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>计算架构与节点分布</h3>
+          <p>- P3.2.1.1 输入梳理与目标量化 - 整理「计算架构与节点分布」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>运动学与动力学初步分析</h3>
+          <p>- P3.1.3.1 输入梳理与目标量化 - 整理「运动学与动力学初步分析」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1/">
+          <span class="entry-type">方法</span>
+          <h3>需求定义与系统方案（Concept / Pre-A）</h3>
+          <p>需求定义与系统方案（Concept / Pre-A）是人形机器人产品开发全流程中的第 1 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4/">
+          <span class="entry-type">方法</span>
+          <h3>关节模组与驱动系统设计（Actuator &amp; Drive）</h3>
+          <p>关节模组与驱动系统设计（Actuator &amp; Drive）是人形机器人产品开发全流程中的第 4 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_fmea/">
+          <span class="entry-type">方法</span>
+          <h3>失效模式与影响分析（FMEA）</h3>
+          <p>概述 8.6.6 可靠性工程与失效模式分析相关内容如下。 ## 核心内容 #### 8.6.6 可靠性工程与失效模式分析…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p8/">
+          <span class="entry-type">方法</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）是人形机器人产品开发全流程中的第 8 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>电源架构初步设计</h3>
+          <p>- P3.2.3.1 输入梳理与目标量化 - 整理「电源架构初步设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_1_4/">
+          <span class="entry-type">方法</span>
+          <h3>结构拓扑与传力路径设计</h3>
+          <p>- P3.1.4.1 输入梳理与目标量化 - 整理「结构拓扑与传力路径设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>可靠性目标与分配</h3>
+          <p>- P3.3.2.1 输入梳理与目标量化 - 整理「可靠性目标与分配」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p11/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧手选型/设计与集成（Dexterous Hand）</h3>
+          <p>灵巧手选型/设计与集成（Dexterous Hand）是人形机器人产品开发全流程中的第 11 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>整机质量属性预算</h3>
+          <p>- P3.1.2.1 输入梳理与目标量化 - 整理「整机质量属性预算」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13/">
+          <span class="entry-type">方法</span>
+          <h3>电子电气与能源系统（Electronics &amp; Power）</h3>
+          <p>电子电气与能源系统（Electronics &amp; Power）是人形机器人产品开发全流程中的第 13 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">机械总体设计</a><ul>
+<li><a href="#dof">DOF 配置与关节布局</a></li>
+<li><a href="#_4">整机质量属性预算</a></li>
+<li><a href="#_5">运动学与动力学初步分析</a></li>
+<li><a href="#_6">结构拓扑与传力路径设计</a></li>
+</ul>
+</li>
+<li><a href="#_7">电气与计算架构</a><ul>
+<li><a href="#_8">计算架构与节点分布</a></li>
+<li><a href="#_9">通信网络架构</a></li>
+<li><a href="#_10">电源架构初步设计</a></li>
+</ul>
+</li>
+<li><a href="#_11">安全与可靠性架构</a><ul>
+<li><a href="#_12">功能安全概念设计</a></li>
+<li><a href="#_13">可靠性目标与分配</a></li>
+</ul>
+</li>
+<li><a href="#_14">系统辨识与校准</a><ul>
+<li><a href="#_15">关节零点与传感器标定</a></li>
+<li><a href="#_16">手眼标定与外部参数标定</a></li>
+<li><a href="#_17">质心/惯量参数辨识</a></li>
+<li><a href="#dh">连杆加工误差与DH参数现场修正</a></li>
+<li><a href="#urdf">动力学参数辨识与URDF更新</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_18">完成标准</a></li>
+<li><a href="#_19">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

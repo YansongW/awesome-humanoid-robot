@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해</h1>
+      <p class="entry-name-en">Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">대량 생산</span><span class="tag">부품</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11624v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>대규모 카탈로그에서 제약 프로그래밍을 사용해 파레토 최적 부품 선택을 계산하고, 일관성 조건 하에서 서브시스템 파레토 전면이 전체 시스템의 전역 최적 파레토 전면을 결정함을 증명하는 단조 부시스템 분해 방법을 제안한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.11624" target="_blank" rel="noopener">Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>설계 자동화는 오류를 최소화하고 설계 프로세스를 가속화하며 비용을 절감합니다. 그러나 로봇 설계 자동화는 재귀적 제약 조건, 다중 설계 목표, 그리고 여러 추상화 계층에 걸칠 수 있는 교차 도메인 설계 복잡성으로 인해 어렵습니다. 여기서 우리는 부품 선택 문제, 즉 설계자가 로봇 모델이 주어졌을 때 방대한 카탈로그에서 호환 가능한 부품을 선택해야 하는 조합 최적화 문제를 다룹니다. 목표는 경쟁하는 설계 목표 간의 균형을 최적으로 조정하면서 상위 수준의 작업 사양을 충족하는 것입니다. 본 논문에서는 이전의 제약 프로그래밍 접근 방식을 다중 목표 설계 문제로 확장하고, 대규모 문제에 대한 파레토 최적해 집합을 효율적으로 계산하기 위한 새로운 기법인 단조 부분 시스템 분해를 제안합니다. 우리는 부분 시스템이 자체 파레토 최적해 집합에 대해 최적화될 수 있으며, 특정 조건에서 이러한 결과를 사용하여 전역적으로 최적의 파레토 최적해 집합을 결정할 수 있음을 증명합니다. 또한 부분 시스템은 직관적인 설계 추상화 역할을 하며 다양한 설계 문제에 걸쳐 재사용될 수 있습니다. 쿼드콥터 설계 문제 예시를 통해 우리의 방법을 선형 프로그래밍 접근 방식과 비교하고, 대규모 카탈로그에서 더 잘 확장되어 10^25개의 부품 조합으로 구성된 다중 목표 문제를 몇 초 만에 해결함을 보여줍니다. 그런 다음 원래 문제를 확장하여 패키지를 배송할 쿼드콥터 함대를 구축하기 위한 작업 지향적 다중 목표 설계 문제를 해결합니다. 각 솔루션이 각 쿼드콥터에 대한 최적의 부품 수준 설계와 최적의 패키지 배송 일정을 포함하는 파레토 최적해 집합을 몇 초 만에 계산합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>설계 자동화는 오류를 최소화하고 설계 프로세스를 가속화하며 비용을 절감합니다. 그러나 로봇 설계 자동화는 재귀적 제약 조건, 다중 설계 목표, 그리고 여러 추상화 계층에 걸칠 수 있는 교차 도메인 설계 복잡성으로 인해 어렵습니다. 여기서 우리는 부품 선택 문제, 즉 설계자가 로봇 모델이 주어졌을 때 방대한 카탈로그에서 호환 가능한 부품을 선택해야 하는 조합 최적화 문제를 다룹니다. 목표는 경쟁하는 설계 목표 간의 균형을 최적으로 조정하면서 상위 수준의 작업 사양을 충족하는 것입니다. 본 논문에서는 이전의 제약 프로그래밍 접근 방식을 다중 목표 설계 문제로 확장하고, 대규모 문제에 대한 파레토 최적해 집합을 효율적으로 계산하기 위한 새로운 기법인 단조 부분 시스템 분해를 제안합니다. 우리는 부분 시스템이 자체 파레토 최적해 집합에 대해 최적화될 수 있으며, 특정 조건에서 이러한 결과를 사용하여 전역적으로 최적의 파레토 최적해 집합을 결정할 수 있음을 증명합니다. 또한 부분 시스템은 직관적인 설계 추상화 역할을 하며 다양한 설계 문제에 걸쳐 재사용될 수 있습니다. 쿼드콥터 설계 문제 예시를 통해 우리의 방법을 선형 프로그래밍 접근 방식과 비교하고, 대규모 카탈로그에서 더 잘 확장되어 10^25개의 부품 조합으로 구성된 다중 목표 문제를 몇 초 만에 해결함을 보여줍니다. 그런 다음 원래 문제를 확장하여 패키지를 배송할 쿼드콥터 함대를 구축하기 위한 작업 지향적 다중 목표 설계 문제를 해결합니다. 각 솔루션이 각 쿼드콥터에 대한 최적의 부품 수준 설계와 최적의 패키지 배송 일정을 포함하는 파레토 최적해 집합을 몇 초 만에 계산합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5/">本体结构工程与原型（Mechanical Structure）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p1/">需求定义与系统方案（Concept / Pre-A）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wilhelm_monotone_subsystem_decompositi_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8/">
+          <span class="entry-type">방법</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5/">
+          <span class="entry-type">방법</span>
+          <h3>本体结构工程与原型（Mechanical Structure）</h3>
+          <p>本体结构工程与原型（Mechanical Structure）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1/">
+          <span class="entry-type">방법</span>
+          <h3>需求定义与系统方案（Concept / Pre-A）</h3>
+          <p>需求定义与系统方案（Concept / Pre-A）</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

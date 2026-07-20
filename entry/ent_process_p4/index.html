@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>关节模组与驱动系统设计（Actuator &amp; Drive） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">关节模组与驱动系统设计（Actuator &amp; Drive）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>关节模组与驱动系统设计（Actuator &amp; Drive）</h1>
+      <p class="entry-name-en">Design of Joint Module and Actuator &amp; Drive</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>关节模组与驱动系统设计（Actuator &amp; Drive）是人形机器人产品开发全流程中的第 4 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">关节需求与拓扑</h4>
+<h5 id="_4">关节性能需求精化</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：P3.1.3 输出 + 安全系数、热裕量、带宽需求</li>
+<li><strong>设计思考逻辑</strong>：峰值扭矩 = 动力学峰值 × 1.5–2.0 安全系数；连续扭矩按持续行走工况</li>
+<li><strong>关键约束</strong>：电机热时间常数、散热能力、反向驱动透明度</li>
+<li><strong>完成标准 / 输出物</strong>：各关节最终扭矩/速度/带宽需求表 v2
+<strong>三级子任务：</strong></li>
+<li><strong>P4.1.1.1 输入梳理与目标量化</strong>：整理「关节性能需求精化」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.1.1.2 方案/方法设计</strong>：针对「关节性能需求精化」制定实施方法或候选方案，使用「P3.1.3 输出 + 安全系数、热裕量、带宽需求」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「关节性能需求精化」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.1.1.4 验证与问题闭环</strong>：对「关节性能需求精化」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.1.1.5 文档输出与下游交付</strong>：输出「关节性能需求精化」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_5">执行器拓扑选择</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：QDD、谐波减速、行星+无框电机、直驱对比表</li>
+<li><strong>设计思考逻辑</strong>：高动态关节（髋/踝）倾向 QDD；高扭矩小体积（肩/腕）倾向谐波</li>
+<li><strong>关键约束</strong>：反驱透明度、刚度、背隙、效率、噪音</li>
+<li><strong>完成标准 / 输出物</strong>：《执行器拓扑决策矩阵》：每关节选型、理由、备份方案
+<strong>三级子任务：</strong></li>
+<li><strong>P4.1.2.1 输入梳理与目标量化</strong>：整理「执行器拓扑选择」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.1.2.2 候选方案建立与评估</strong>：针对「执行器拓扑选择」建立候选方案库，使用「QDD、谐波减速、行星+无框电机、直驱对比表」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.1.2.3 实施/原型/样件制作</strong>：根据设计方案执行「执行器拓扑选择」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.1.2.4 验证与问题闭环</strong>：对「执行器拓扑选择」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.1.2.5 文档输出与下游交付</strong>：输出「执行器拓扑选择」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_6">电机与减速器</h4>
+<h5 id="_7">电机选型</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：转矩密度、热阻、编码器分辨率、峰值电流、效率图对比</li>
+<li><strong>设计思考逻辑</strong>：优先高转矩密度无框/集成电机；校核绕组温升与退磁</li>
+<li><strong>关键约束</strong>：驱动器母线电压、电流能力、供货周期</li>
+<li><strong>完成标准 / 输出物</strong>：电机规格书、选型对比表、热校核
+<strong>三级子任务：</strong></li>
+<li><strong>P4.2.1.1 输入梳理与目标量化</strong>：整理「电机选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.2.1.2 候选方案建立与评估</strong>：针对「电机选型」建立候选方案库，使用「转矩密度、热阻、编码器分辨率、峰值电流、效率图对比」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.2.1.3 实施/原型/样件制作</strong>：根据设计方案执行「电机选型」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.2.1.4 验证与问题闭环</strong>：对「电机选型」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.2.1.5 文档输出与下游交付</strong>：输出「电机选型」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_8">减速器与传动选型</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：谐波、行星、摆线、同步带、丝杠对比；背隙/刚度/寿命测试</li>
+<li><strong>设计思考逻辑</strong>：输出端力矩/位置传感器配置决定控制精度；传动链刚度影响带宽</li>
+<li><strong>关键约束</strong>：谐波柔轮疲劳、行星磨损、噪音、成本</li>
+<li><strong>完成标准 / 输出物</strong>：减速器规格、传动链图纸、刚度/背隙预算
+<strong>三级子任务：</strong></li>
+<li><strong>P4.2.2.1 输入梳理与目标量化</strong>：整理「减速器与传动选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.2.2.2 候选方案建立与评估</strong>：针对「减速器与传动选型」建立候选方案库，使用「谐波、行星、摆线、同步带、丝杠对比；背隙/刚度/寿命测试」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.2.2.3 实施/原型/样件制作</strong>：根据设计方案执行「减速器与传动选型」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.2.2.4 验证与问题闭环</strong>：对「减速器与传动选型」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.2.2.5 文档输出与下游交付</strong>：输出「减速器与传动选型」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_9">轴承与输出接口设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：轴承寿命计算、交叉滚子/角接触组合、配合公差分析</li>
+<li><strong>设计思考逻辑</strong>：关节输出端承受径向/轴向/力矩复合载荷，轴承布置决定寿命</li>
+<li><strong>关键约束</strong>：加工精度、装配顺序、维护性</li>
+<li><strong>完成标准 / 输出物</strong>：轴承选型表、接口图纸、寿命校核
+<strong>三级子任务：</strong></li>
+<li><strong>P4.2.3.1 输入梳理与目标量化</strong>：整理「轴承与输出接口设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.2.3.2 概念与详细设计</strong>：完成「轴承与输出接口设计」的概念设计、详细设计与接口定义，使用「轴承寿命计算、交叉滚子/角接触组合、配合公差分析」验证可行性，输出图纸/算法/逻辑框架。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.2.3.3 实施/原型/样件制作</strong>：根据设计方案执行「轴承与输出接口设计」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.2.3.4 验证与问题闭环</strong>：对「轴承与输出接口设计」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.2.3.5 文档输出与下游交付</strong>：输出「轴承与输出接口设计」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_10">驱动器与传感器集成</h4>
+<h5 id="_11">电机驱动器设计/选型</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：FOC 驱动器、SiC/GaN 方案、峰值/连续电流、热设计</li>
+<li><strong>设计思考逻辑</strong>：关节内部集成驱动器可缩短线缆、降低 EMI；需考虑散热</li>
+<li><strong>关键约束</strong>：空间、散热、EMI、功能安全</li>
+<li><strong>完成标准 / 输出物</strong>：驱动器规格、电气原理图、热仿真/测试
+<strong>三级子任务：</strong></li>
+<li><strong>P4.3.1.1 输入梳理与目标量化</strong>：整理「电机驱动器设计/选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.3.1.2 候选方案建立与评估</strong>：针对「电机驱动器设计/选型」建立候选方案库，使用「FOC 驱动器、SiC/GaN 方案、峰值/连续电流、热设计」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.3.1.3 实施/原型/样件制作</strong>：根据设计方案执行「电机驱动器设计/选型」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.3.1.4 验证与问题闭环</strong>：对「电机驱动器设计/选型」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.3.1.5 文档输出与下游交付</strong>：输出「电机驱动器设计/选型」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_12">位置/力矩传感器方案</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：绝对/增量编码器、磁编/光编、力矩传感器、双编码器方案</li>
+<li><strong>设计思考逻辑</strong>：双编码器提升控制精度；力矩传感器实现柔顺控制</li>
+<li><strong>关键约束</strong>：成本、精度、抗油污振动、布线</li>
+<li><strong>完成标准 / 输出物</strong>：传感器方案、精度预算、安装图纸
+<strong>三级子任务：</strong></li>
+<li><strong>P4.3.2.1 输入梳理与目标量化</strong>：整理「位置/力矩传感器方案」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.3.2.2 方案/方法设计</strong>：针对「位置/力矩传感器方案」制定实施方法或候选方案，使用「绝对/增量编码器、磁编/光编、力矩传感器、双编码器方案」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.3.2.3 实施/原型/样件制作</strong>：根据设计方案执行「位置/力矩传感器方案」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.3.2.4 验证与问题闭环</strong>：对「位置/力矩传感器方案」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.3.2.5 文档输出与下游交付</strong>：输出「位置/力矩传感器方案」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_13">关节模组集成与台架测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：扭矩传感器、功率分析仪、温升/刚度/带宽测试</li>
+<li><strong>设计思考逻辑</strong>：台架验证峰值扭矩、连续扭矩、刚度、效率、温升是否达标</li>
+<li><strong>关键约束</strong>：测试夹具刚性、测量精度</li>
+<li><strong>完成标准 / 输出物</strong>：《关节测试报告》：扭矩-电流、效率图、温升曲线、带宽
+<strong>三级子任务：</strong></li>
+<li><strong>P4.3.3.1 输入梳理与目标量化</strong>：整理「关节模组集成与台架测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.3.3.2 接口与集成策略设计</strong>：梳理「关节模组集成与台架测试」涉及的子系统接口、数据流与时序，制定集成顺序、回退策略与异常处理机制。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.3.3.3 实施/原型/样件制作</strong>：根据设计方案执行「关节模组集成与台架测试」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.3.3.4 测试执行与结果分析</strong>：按照验收标准执行「关节模组集成与台架测试」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.3.3.5 文档输出与下游交付</strong>：输出「关节模组集成与台架测试」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_14">关节可靠性</h4>
+<h5 id="_15">关节寿命与失效分析</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：加速寿命试验、振动试验、磨损分析、FMEA</li>
+<li><strong>设计思考逻辑</strong>：预估关节在目标寿命内的磨损与失效模式，指导维护策略</li>
+<li><strong>关键约束</strong>：MTBF 目标、维护周期、测试成本</li>
+<li><strong>完成标准 / 输出物</strong>：寿命测试计划、失效模式分析、维护周期建议
+<strong>三级子任务：</strong></li>
+<li><strong>P4.4.1.1 输入梳理与目标量化</strong>：整理「关节寿命与失效分析」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.4.1.2 方案/方法设计</strong>：针对「关节寿命与失效分析」制定实施方法或候选方案，使用「加速寿命试验、振动试验、磨损分析、FMEA」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.4.1.3 实施/原型/样件制作</strong>：根据设计方案执行「关节寿命与失效分析」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.4.1.4 验证与问题闭环</strong>：对「关节寿命与失效分析」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.4.1.5 文档输出与下游交付</strong>：输出「关节寿命与失效分析」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_16">关节安全与故障保护</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：过流/过温/过压保护、刹车、limp-home 模式</li>
+<li><strong>设计思考逻辑</strong>：关节失效不能导致整机失控；需有故障安全状态</li>
+<li><strong>关键约束</strong>：响应时间、额外重量、成本</li>
+<li><strong>完成标准 / 输出物</strong>：故障保护策略、FMEA 更新、安全测试
+<strong>三级子任务：</strong></li>
+<li><strong>P4.4.2.1 输入梳理与目标量化</strong>：整理「关节安全与故障保护」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P4.4.2.2 方案/方法设计</strong>：针对「关节安全与故障保护」制定实施方法或候选方案，使用「过流/过温/过压保护、刹车、limp-home 模式」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.4.2.3 实施/原型/样件制作</strong>：根据设计方案执行「关节安全与故障保护」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P4.4.2.4 验证与问题闭环</strong>：对「关节安全与故障保护」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P4.4.2.5 文档输出与下游交付</strong>：输出「关节安全与故障保护」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="nvh">NVH 与声学设计</h4>
+<h5 id="_17">电机/减速器噪声源分析</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：声功率测量、频谱分析、阶次分析、结构模态测试</li>
+<li><strong>设计思考逻辑</strong>：识别主要噪声源（齿槽转矩、换向、齿轮啮合）以针对性降噪</li>
+<li><strong>关键约束</strong>：测试环境本底噪声、传感器布置</li>
+<li><strong>完成标准 / 输出物</strong>：噪声源频谱图、主要贡献频段识别
+<strong>三级子任务：</strong></li>
+<li><strong>P4.5.1.1 输入梳理与目标量化</strong>：整理「电机/减速器噪声源分析」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P4.5.1.2 方案/方法设计</strong>：针对「电机/减速器噪声源分析」制定实施方法或候选方案，使用「声功率测量、频谱分析、阶次分析、结构模态测试」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.5.1.3 实施/建模/实验</strong>：根据方案执行「电机/减速器噪声源分析」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P4.5.1.4 验证与优化</strong>：对「电机/减速器噪声源分析」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P4.5.1.5 文档输出与下游交付</strong>：输出「电机/减速器噪声源分析」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="nvh_1">整机 NVH 测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：半消声室/现场声压测量、振动加速度、声强扫描</li>
+<li><strong>设计思考逻辑</strong>：评估整机在站立、行走、操作时的噪声与振动水平</li>
+<li><strong>关键约束</strong>：测试场地、背景噪声、运行工况</li>
+<li><strong>完成标准 / 输出物</strong>：整机噪音 dB(A) 满足目标、振动幅值满足目标
+<strong>三级子任务：</strong></li>
+<li><strong>P4.5.2.1 输入梳理与目标量化</strong>：整理「整机 NVH 测试」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P4.5.2.2 方案/方法设计</strong>：针对「整机 NVH 测试」制定实施方法或候选方案，使用「半消声室/现场声压测量、振动加速度、声强扫描」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.5.2.3 实施/建模/实验</strong>：根据方案执行「整机 NVH 测试」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P4.5.2.4 验证与优化</strong>：对「整机 NVH 测试」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P4.5.2.5 文档输出与下游交付</strong>：输出「整机 NVH 测试」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_18">降噪设计与验证</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：阻尼材料、隔振垫、齿形优化、控制降噪（电流谐波抑制）</li>
+<li><strong>设计思考逻辑</strong>：从结构与控制两方面降低噪声，满足人机共融场景要求</li>
+<li><strong>关键约束</strong>：重量、散热、成本</li>
+<li><strong>完成标准 / 输出物</strong>：降噪方案、验证前后对比、满足法规/场景要求
+<strong>三级子任务：</strong></li>
+<li><strong>P4.5.3.1 输入梳理与目标量化</strong>：整理「降噪设计与验证」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P4.5.3.2 方案/方法设计</strong>：针对「降噪设计与验证」制定实施方法或候选方案，使用「阻尼材料、隔振垫、齿形优化、控制降噪（电流谐波抑制）」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P4.5.3.3 实施/建模/实验</strong>：根据方案执行「降噪设计与验证」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P4.5.3.4 验证与优化</strong>：对「降噪设计与验证」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P4.5.3.5 文档输出与下游交付</strong>：输出「降噪设计与验证」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h2 id="_19">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_20">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4_4_1/">关节寿命与失效分析</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）is_part_of关节寿命与失效分析。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4_2_3/">轴承与输出接口设计</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）is_part_of轴承与输出接口设计。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-desc">P4 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4_3_3/">关节模组集成与台架测试</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）is_part_of关节模组集成与台架测试。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_fmea/">失效模式与影响分析（FMEA）</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）提及失效模式与影响分析（FMEA）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4_1_1/">关节性能需求精化</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）前置依赖关节性能需求精化。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4_4_2/">关节安全与故障保护</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）is_part_of关节安全与故障保护。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4_3_1/">电机驱动器设计/选型</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）is_part_of电机驱动器设计/选型。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）提及磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4_3_2/">位置/力矩传感器方案</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）is_part_of位置/力矩传感器方案。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4_2_2/">减速器与传动选型</a>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）前置依赖减速器与传动选型。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p4_1_2/">执行器拓扑选择</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">执行器拓扑选择is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13/">电子电气与能源系统（Electronics &amp; Power）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P13 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_3_3/">关节模组集成与台架测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">关节模组集成与台架测试is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_4_1/">关节寿命与失效分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">关节寿命与失效分析is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_4_2/">关节安全与故障保护</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">关节安全与故障保护is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_2_2/">减速器与传动选型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">减速器与传动选型is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">软体机器人服：现状、核心技术与开放挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">软体机器人服：现状、核心技术与开放挑战discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p5/">本体结构工程与原型（Mechanical Structure）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P5 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mahapatra_3d_printed_cable_driven_contin_2020/">具有一般布线方式的3D打印缆索驱动连续体机器人：建模与实验</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">具有一般布线方式的3D打印缆索驱动连续体机器人：建模与实验discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p9/">热管理仿真与迭代（Thermal Management）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P9 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">基于LabVIEW的电机实时状态监测与故障诊断系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于LabVIEW的电机实时状态监测与故障诊断系统discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_1_1/">关节性能需求精化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">关节性能需求精化is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P10 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_bonfiglioli_2024/">邦飞利</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">邦飞利discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_abdolmalaki_geometric_jacobians_derivation_2017/">Smokie机器人操作臂与Barrett WAM的几何雅可比推导及运动学奇异性分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Smokie机器人操作臂与Barrett WAM的几何雅可比推导及运动学奇异性分析discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_3_2/">位置/力矩传感器方案</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">位置/力矩传感器方案is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_abdolmalaki_development_of_direct_kinemati_2017/">Smokie机器人机械臂与Barrett WAM的直接运动学与工作空间表示研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Smokie机器人机械臂与Barrett WAM的直接运动学与工作空间表示研究discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_avery_shape_sensing_of_variable_stif_2019/">基于电阻抗断层扫描的变刚度软体机器人形状感知</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于电阻抗断层扫描的变刚度软体机器人形状感知discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_modal_based_kinematics_and_con_2019/">基于模态的软体机器人运动学与接触检测</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于模态的软体机器人运动学与接触检测discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_2_1/">电机选型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">电机选型is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_2_3/">轴承与输出接口设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">轴承与输出接口设计is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yigit_kinematic_analysis_and_design_2023/">一种具有固定执行器的新型（6+3）自由度并联机器人的运动学分析与设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">一种具有固定执行器的新型（6+3）自由度并联机器人的运动学分析与设计discusses关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_3_1/">电机驱动器设计/选型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">电机驱动器设计/选型is_part_of关节模组与驱动系统设计（Actuator &amp; Drive）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p4"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p4_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>电机驱动器设计/选型</h3>
+          <p>- P4.3.1.1 输入梳理与目标量化 - 整理「电机驱动器设计/选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_4_2/">
+          <span class="entry-type">方法</span>
+          <h3>关节安全与故障保护</h3>
+          <p>- P4.4.2.1 输入梳理与目标量化 - 整理「关节安全与故障保护」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>执行器拓扑选择</h3>
+          <p>- P4.1.2.1 输入梳理与目标量化 - 整理「执行器拓扑选择」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_3_3/">
+          <span class="entry-type">方法</span>
+          <h3>关节模组集成与台架测试</h3>
+          <p>- P4.3.3.1 输入梳理与目标量化 - 整理「关节模组集成与台架测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p9/">
+          <span class="entry-type">方法</span>
+          <h3>热管理仿真与迭代（Thermal Management）</h3>
+          <p>热管理仿真与迭代（Thermal Management）是人形机器人产品开发全流程中的第 9 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p5/">
+          <span class="entry-type">方法</span>
+          <h3>本体结构工程与原型（Mechanical Structure）</h3>
+          <p>本体结构工程与原型（Mechanical Structure）是人形机器人产品开发全流程中的第 5 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>电机选型</h3>
+          <p>- P4.2.1.1 输入梳理与目标量化 - 整理「电机选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3/">
+          <span class="entry-type">方法</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）是人形机器人产品开发全流程中的第 3 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>减速器与传动选型</h3>
+          <p>- P4.2.2.1 输入梳理与目标量化 - 整理「减速器与传动选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mahapatra_3d_printed_cable_driven_contin_2020/">
+          <span class="entry-type">论文</span>
+          <h3>具有一般布线方式的3D打印缆索驱动连续体机器人：建模与实验</h3>
+          <p>对3D打印连续体机器人的六种一般缆索布线方式，比较基于离散优化的运动学模型与Cosserat杆静力学模型，验证理论预测误差在机器人长度的2%以内，并展示了三指夹持器。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制（FOC）</h3>
+          <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yigit_kinematic_analysis_and_design_2023/">
+          <span class="entry-type">论文</span>
+          <h3>一种具有固定执行器的新型（6+3）自由度并联机器人的运动学分析与设计</h3>
+          <p>提出了一种运动学冗余的（6+3）自由度并联机器人，该机器人由三个相同的基座安装式3自由度RU/2-RUS支腿构成，利用螺旋理论推导逆运动学和雅可比矩阵，对奇异性进行分类，并优化支腿几何结构以获得2g加…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10/">
+          <span class="entry-type">方法</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">
+          <span class="entry-type">论文</span>
+          <h3>基于LabVIEW的电机实时状态监测与故障诊断系统</h3>
+          <p>提出了一种基于LabVIEW的三相电机实时状态监测与多故障预诊断系统，利用NI cDAQ硬件采集振动、转速、温度、电流和电压信号，并采用阶次分析算法，实现本地与云端MySQL存储。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>轴承与输出接口设计</h3>
+          <p>- P4.2.3.1 输入梳理与目标量化 - 整理「轴承与输出接口设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_fmea/">
+          <span class="entry-type">方法</span>
+          <h3>失效模式与影响分析（FMEA）</h3>
+          <p>概述 8.6.6 可靠性工程与失效模式分析相关内容如下。 ## 核心内容 #### 8.6.6 可靠性工程与失效模式分析…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_abdolmalaki_geometric_jacobians_derivation_2017/">
+          <span class="entry-type">论文</span>
+          <h3>Smokie机器人操作臂与Barrett WAM的几何雅可比推导及运动学奇异性分析</h3>
+          <p>基于D-H参数和正运动学，推导6自由度Smokie OUR与Barrett WAM机械臂的6×6几何雅可比矩阵和运动学奇异性，并综述7自由度Barrett WAM的冗余运动学分配方案。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_avery_shape_sensing_of_variable_stif_2019/">
+          <span class="entry-type">论文</span>
+          <h3>基于电阻抗断层扫描的变刚度软体机器人形状感知</h3>
+          <p>Soft robotic systems offer benefits over traditional rigid systems through reduced contact trauma…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">
+          <span class="entry-type">论文</span>
+          <h3>软体机器人服：现状、核心技术与开放挑战</h3>
+          <p>Wearable robots are undergoing a disruptive transition, from the rigid machines that populated the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_modal_based_kinematics_and_con_2019/">
+          <span class="entry-type">论文</span>
+          <h3>基于模态的软体机器人运动学与接触检测</h3>
+          <p>Soft robots offer an alternative approach to manipulate inside the constrained space while…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">
+          <span class="entry-type">论文</span>
+          <h3>用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器</h3>
+          <p>提出了一种可打印的自持续柔顺振荡器，该振荡器由两个机械耦合的自打开开关构成，每个开关将双稳态屈曲梁与导电超螺旋聚合物（CSCP）热驱动器相结合，可在无需离散电子元件或控制硬件的情况下，由恒定电流产生周…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>关节性能需求精化</h3>
+          <p>- P4.1.1.1 输入梳理与目标量化 - 整理「关节性能需求精化」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_4_1/">
+          <span class="entry-type">方法</span>
+          <h3>关节寿命与失效分析</h3>
+          <p>- P4.4.1.1 输入梳理与目标量化 - 整理「关节寿命与失效分析」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_abdolmalaki_development_of_direct_kinemati_2017/">
+          <span class="entry-type">论文</span>
+          <h3>Smokie机器人机械臂与Barrett WAM的直接运动学与工作空间表示研究</h3>
+          <p>本文推导了6自由度Smokie机器人和6自由度Barrett WAM构型的Denavit-Hartenberg参数与直接运动学变换矩阵，并使用MATLAB蒙特卡洛采样器从多个视角可视化其三维工作空间。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13/">
+          <span class="entry-type">方法</span>
+          <h3>电子电气与能源系统（Electronics &amp; Power）</h3>
+          <p>电子电气与能源系统（Electronics &amp; Power）是人形机器人产品开发全流程中的第 13 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_bonfiglioli_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>邦飞利</h3>
+          <p>概述 邦飞利是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>位置/力矩传感器方案</h3>
+          <p>- P4.3.2.1 输入梳理与目标量化 - 整理「位置/力矩传感器方案」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">关节需求与拓扑</a><ul>
+<li><a href="#_4">关节性能需求精化</a></li>
+<li><a href="#_5">执行器拓扑选择</a></li>
+</ul>
+</li>
+<li><a href="#_6">电机与减速器</a><ul>
+<li><a href="#_7">电机选型</a></li>
+<li><a href="#_8">减速器与传动选型</a></li>
+<li><a href="#_9">轴承与输出接口设计</a></li>
+</ul>
+</li>
+<li><a href="#_10">驱动器与传感器集成</a><ul>
+<li><a href="#_11">电机驱动器设计/选型</a></li>
+<li><a href="#_12">位置/力矩传感器方案</a></li>
+<li><a href="#_13">关节模组集成与台架测试</a></li>
+</ul>
+</li>
+<li><a href="#_14">关节可靠性</a><ul>
+<li><a href="#_15">关节寿命与失效分析</a></li>
+<li><a href="#_16">关节安全与故障保护</a></li>
+</ul>
+</li>
+<li><a href="#nvh">NVH 与声学设计</a><ul>
+<li><a href="#_17">电机/减速器噪声源分析</a></li>
+<li><a href="#nvh_1">整机 NVH 测试</a></li>
+<li><a href="#_18">降噪设计与验证</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_19">完成标准</a></li>
+<li><a href="#_20">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

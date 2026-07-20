@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Constraint qualification · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/concept/">Concept</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Constraint qualification</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Concept</div>
+      <h1>Constraint qualification</h1>
+      <p class="entry-name-en">Constraint qualification</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A regularity condition on the constraints of an optimization problem that guarantees the validity of the Karush-Kuhn-Tucker necessary optimality conditions at a local optimum.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1007/978-0-387-40065-5" target="_blank" rel="noopener">J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">is_prerequisite_for</span>
+            <a href="/en/entry/ent_active_set_method/">Active-set method</a>
+            
+              
+                
+              
+              <span class="rel-desc">Active-set methods exploit the set of active constraints whose gradients must satisfy a constraint qualification for reliable iteration.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">is_prerequisite_for</span>
+            <a href="/en/entry/ent_interior_point_method/">Interior-point method</a>
+            
+              
+                
+              
+              <span class="rel-desc">Interior-point methods maintain strict inequality feasibility and therefore rely implicitly on constraint qualifications to guarantee convergence to KKT points.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>A regularity condition for constraints in optimization problems, ensuring the validity of the Karush-Kuhn-Tucker necessary optimality conditions at a local optimum.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-constraint-qualification">Definition and Positioning of Constraint Qualification</h3>
+<p>Constraint qualification belongs to the <strong>concept</strong> type. Its domain includes: basic disciplines. Value chain level: foundational layer. It is a regularity condition for constraints in optimization problems, ensuring the validity of the Karush-Kuhn-Tucker necessary optimality conditions at a local optimum. The English term is <em>Constraint qualification</em>. The Korean term is <em>제약 자격</em>.</p>
+<h3 id="key-dimensions-of-constraint-qualification">Key Dimensions of Constraint Qualification</h3>
+<p>Understanding constraint qualification requires a systematic approach from multiple dimensions, including definition, boundary conditions, related entities, and typical application scenarios.
+This entity serves as a bridge connecting fundamental theory and engineering practice in the knowledge graph of humanoid robots.</p>
+<h3 id="practical-significance">Practical Significance</h3>
+<p>In the context of humanoid robot industrialization, constraint qualification holds reference value for technical research, product development, investment decisions, and ecosystem construction.
+Accurately grasping its connotation and extension helps avoid conceptual confusion and promotes interdisciplinary collaboration.</p>
+<h3 id="research-and-development-directions">Research and Development Directions</h3>
+<p>As humanoid robot technology continues to evolve, the theory and practice related to constraint qualification will also be continuously updated, requiring ongoing tracking and review.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>optimization</li>
+<li>constrained_optimization</li>
+<li>regularity</li>
+<li>licq</li>
+<li>slater</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key concepts in the humanoid robot industry chain, constraint qualification plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are being continuously advanced to further improve its reliability, efficiency, and cost-effectiveness in practical scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_interior_point_method/">Interior-point method</a>
+              <span class="rel-desc">Constraint qualification is prerequisite for Interior-point method.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_active_set_method/">Active-set method</a>
+              <span class="rel-desc">Constraint qualification is prerequisite for Active-set method.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_baek_toward_control_of_wheeled_huma_2024/">Toward Control of Wheeled Humanoid Robots with Unknown Payloads: Equilibrium Point Estimation via Real-to-Sim Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Toward Control of Wheeled Humanoid Robots with Unknown Payloads: Equilibrium Point Estimation via Real-to-Sim Adaptation is based on or uses Constraint qualification.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_active_set_method/">Active-set method</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">Active-set method requires Constraint qualification.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_kkt_conditions/">Karush-Kuhn-Tucker (KKT) Conditions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">Karush-Kuhn-Tucker (KKT) Conditions requires Constraint qualification.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_interior_point_method/">Interior-point method</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">Interior-point method requires Constraint qualification.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_constraint_qualification"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_baek_toward_control_of_wheeled_huma_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Toward Control of Wheeled Humanoid Robots with Unknown Payloads: Equilibrium Point Estimation via Real-to-Sim Adaptation</h3>
+          <p>This paper presents a framework that estimates the total mass and center of mass of a wheeled-legged…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_interior_point_method/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Interior-point method</h3>
+          <p>A family of optimization algorithms that solve constrained problems by following a smooth central…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_kkt_conditions/">
+          <span class="entry-type">Theorem</span>
+          <h3>Karush-Kuhn-Tucker (KKT) Conditions</h3>
+          <p>Necessary (and sufficient under convexity/constraint qualification) optimality conditions for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_active_set_method/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Active-set method</h3>
+          <p>An iterative optimization algorithm that tracks the set of constraints that are active at the…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-constraint-qualification">Definition and Positioning of Constraint Qualification</a></li>
+<li><a href="#key-dimensions-of-constraint-qualification">Key Dimensions of Constraint Qualification</a></li>
+<li><a href="#practical-significance">Practical Significance</a></li>
+<li><a href="#research-and-development-directions">Research and Development Directions</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EtherCAT · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/technology/">技术</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EtherCAT</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">技术</div>
+      <h1>EtherCAT</h1>
+      <p class="entry-name-en">EtherCAT</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#EtherCAT 协议深度 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">阶段 2 · 双足平台</span>
+        <span class="roadmap-badge-role">拓展</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the fly”：从站在帧经过时立即读写数据，无需完整接收帧再转发。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/EtherCAT" target="_blank" rel="noopener">EtherCAT</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>EtherCAT是人形机器人领域的重要技术。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the fly”：从站在帧经过时立即读写数据，无需完整接收帧再转发。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：EtherCAT、主站、从站、飞读飞写、工作计数器、分布式时钟</p>
+<ul>
+<li><strong>EtherCAT（Ethernet for Control Automation Technology）</strong>：基于以太网的高速工业现场总线。</li>
+<li><strong>主站（master）</strong>：发起和控制 EtherCAT 通信的节点。</li>
+<li><strong>从站（slave）</strong>：响应主站命令的节点，如伺服驱动器、I/O 模块。</li>
+<li><strong>飞读飞写（processing on the fly）</strong>：从站在数据帧经过时即时读写。</li>
+<li><strong>工作计数器（Working Counter, WC）</strong>：每个 EtherCAT 帧末尾的计数器，用于确认从站是否成功处理。</li>
+<li><strong>分布式时钟（Distributed Clocks, DC）</strong>：EtherCAT 的同步机制，让所有从站共享统一时间基准。</li>
+</ul>
+</div>
+<p><strong>EtherCAT 帧结构</strong>。标准以太网帧的 EtherType 为 <code>0x88A4</code>，其后紧跟 EtherCAT 头和若干 datagram：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>长度</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>以太网头</td>
+<td>14 B</td>
+<td>目的 MAC、源 MAC、EtherType=0x88A4</td>
+</tr>
+<tr>
+<td>EtherCAT 头</td>
+<td>2 B</td>
+<td>数据长度、保留位</td>
+</tr>
+<tr>
+<td>Datagram 1</td>
+<td>变长</td>
+<td>命令、索引、地址、数据、WC</td>
+</tr>
+<tr>
+<td>...</td>
+<td>变长</td>
+<td>多个 datagram</td>
+</tr>
+<tr>
+<td>FCS</td>
+<td>4 B</td>
+<td>以太网帧校验</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">术语解释：EtherType、Datagram、FCS、MAC 地址</p>
+<ul>
+<li><strong>EtherType</strong>：以太网帧中标识上层协议的字段。</li>
+<li><strong>Datagram</strong>：EtherCAT 帧中的独立数据单元。</li>
+<li><strong>FCS（Frame Check Sequence）</strong>：以太网帧尾部的校验序列，用于检测传输错误。</li>
+<li><strong>MAC 地址（Media Access Control address）</strong>：以太网设备的物理地址。</li>
+</ul>
+</div>
+<p>每个 datagram 的命令包括 <code>APRD</code>（自动增量物理读）、 <code>APWR</code>（自动增量物理写）、 <code>FPRD</code>（固定地址读）、 <code>FPWR</code>（固定地址写）、 <code>LRW</code>（逻辑读写）等。主站通过逻辑地址把过程数据映射到从站的内存映射区。</p>
+<p><strong>分布式时钟（DC）</strong>。DC 通过测量报文在每个从站的到达和离开时间，计算并补偿传播延迟和时钟偏移：</p>
+<ol>
+<li>主站发送特殊同步帧，各从站记录本地时间戳 <span class="arithmatex">\(t_{\text{in}}\)</span> 和 <span class="arithmatex">\(t_{\text{out}}\)</span>。</li>
+<li>通过往返测量计算每个从站到参考时钟的 <strong>传播延迟</strong> <span class="arithmatex">\(t_{\text{prop}}\)</span>。</li>
+<li>从站根据 <span class="arithmatex">\(t_{\text{prop}}\)</span> 和周期偏移调整本地时钟。</li>
+<li>每个周期，主站发送 ARMW（Auto Repeat Read/Write）报文，从站在同步事件（如 SYNC0）触发时锁存数据。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：传播延迟、时钟偏移、漂移补偿、SYNC0、ARMW</p>
+<ul>
+<li><strong>传播延迟（propagation delay）</strong>：信号从发送端到接收端所需时间。</li>
+<li><strong>时钟偏移（clock offset）</strong>：两个时钟之间的时间差。</li>
+<li><strong>漂移补偿（drift compensation）</strong>：对时钟频率差异进行修正。</li>
+<li><strong>SYNC0</strong>：EtherCAT 从站的硬件同步信号。</li>
+<li><strong>ARMW</strong>：EtherCAT 中用于时钟同步的自动重复读写命令。</li>
+</ul>
+</div>
+<p>DC 同步精度通常可达 100 ns 以内，足以支持多轴伺服在同一微秒级时刻采样和更新。</p>
+<p><strong>PDO 与 SDO</strong>。PDO（Process Data Object）是周期性过程数据，映射到 EtherCAT 帧的逻辑内存区，每个周期自动读写；SDO（Service Data Object）用于非周期性参数配置，通过邮箱（mailbox）协议访问对象字典。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：PDO、SDO、对象字典、邮箱、过程数据</p>
+<ul>
+<li><strong>PDO（Process Data Object）</strong>：周期性过程数据对象。</li>
+<li><strong>SDO（Service Data Object）</strong>：服务数据对象，用于参数配置。</li>
+<li><strong>对象字典（object dictionary）</strong>：CANopen/EtherCAT 设备中参数的索引表。</li>
+<li><strong>邮箱（mailbox）</strong>：用于非周期性通信的缓冲机制。</li>
+<li><strong>过程数据（process data）</strong>：控制循环中周期性交换的数据。</li>
+</ul>
+</div>
+<p><strong>拓扑</strong>。EtherCAT 支持线型、树型、环型拓扑。环型拓扑提供电缆冗余：当某段电缆断开时，从站可自动回环，主站检测到断点并继续与剩余从站通信。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["EtherCAT 主站"] --&gt; B["从站 1"]
+    B --&gt; C["从站 2"]
+    C --&gt; D["..."]
+    D --&gt; E["从站 N"]
+    E --&gt;|"回环"| A
+    B -.-&gt;|"冗余回环"| E</code></pre>
+<p><strong>周期时间计算</strong>。EtherCAT 周期时间由帧传输时间和从站处理时间决定：</p>
+<div class="arithmatex">\[
+T_{\text{cycle}} \geq T_{\text{frame}} + N \times T_{\text{slave}} + T_{\text{margin}}
+\]</div>
+<p>其中帧传输时间：</p>
+<div class="arithmatex">\[
+T_{\text{frame}} = \frac{L_{\text{frame}} \times 8}{R}
+\]</div>
+<p>例如，100 个从站、每站 16 B 输入 + 16 B 输出，总数据量约 3200 B，加上帧头约 3240 B，在 100 Mb/s 下：</p>
+<div class="arithmatex">\[
+T_{\text{frame}} = \frac{3240 \times 8}{100 \times 10^6} \approx 260\ \mu\text{s}
+\]</div>
+<p>若每从站处理时间 1 μs，则理论最小周期约 360 μs。实际工程中常取 500 μs–1 ms 以留余量。</p>
+<h2 id="_3">参考</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/EtherCAT">EtherCAT</a></li>
+<li>项目 Wiki：chapter-06.md#EtherCAT 协议深度</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_can_bus_2024/">CAN 总线</a>
+              <span class="rel-desc">EtherCAT前置依赖CAN 总线。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ota_software_update_2024/">OTA 软件更新</a>
+              <span class="rel-desc">EtherCAT提及OTA 软件更新。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_technology_can_bus_2024/">CAN 总线</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">CAN 总线提及EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_inovance_technology_2024/">汇川技术</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">汇川技术提及EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">系统架构与机电总体设计（System / Preliminary Design）使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_robot_system_openloong/">OpenLoong / 青龙开源人形机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">OpenLoong / 青龙人形机器人采用 EtherCAT 总线，行业分析文章与 loong_driver_sdk 仓库均可佐证。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_servo_drive_2024/">伺服驱动器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">伺服驱动器使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_concept_digital_twin/">数字孪生</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">数字孪生使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_application_industrial_manufacturing/">工业制造</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">工业制造使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">全身控制（WBC）提及EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hardware_in_the_loop_2024/">硬件在环仿真</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">硬件在环仿真提及EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13_1_3/">通信网络与同步</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">通信网络与同步提及EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA 遥操作系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">ALOHA 遥操作系统前置依赖EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14/">软件中间件与系统集成（Software &amp; Integration）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">软件中间件与系统集成（Software &amp; Integration）使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14_1_2/">实时控制框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">实时控制框架使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">模型预测控制（MPC）提及EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3_2_2/">通信网络架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">通信网络架构使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_operator_task_jacobian/">任务 Jacobian</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">任务 Jacobian提及EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_ati_force_torque_sensor_2024/">ATI 力/力矩传感器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ATI 力/力矩传感器使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13/">电子电气与能源系统（Electronics &amp; Power）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_2_3/">全身控制 WBC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">全身控制 WBC提及EtherCAT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_thermal_simulation/">热仿真</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_technology_ethercat_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_operator_task_jacobian/">
+          <span class="entry-type">算子</span>
+          <h3>任务 Jacobian</h3>
+          <p>将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_application_industrial_manufacturing/">
+          <span class="entry-type">应用场景</span>
+          <h3>工业制造</h3>
+          <p>概述 工业制造是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_digital_twin/">
+          <span class="entry-type">概念</span>
+          <h3>数字孪生</h3>
+          <p>数字孪生（digital twin）是物理实体在数字空间的实时映射，可用于设计验证、虚拟调试、健康监测与预测性维护。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3/">
+          <span class="entry-type">方法</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）是人形机器人产品开发全流程中的第 3 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>通信网络架构</h3>
+          <p>- P3.2.2.1 输入梳理与目标量化 - 整理「通信网络架构」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_servo_drive_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>伺服驱动器</h3>
+          <p>伺服驱动器把控制器指令转换为电机功率输出，通常采用 FOC 控制，包含电流环、速度环和位置环。关节驱动器对体积、散热、EMI 和电流环带宽要求较高，是国产替代的重点环节。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制 WBC</h3>
+          <p>- P10.2.3.1 输入梳理与目标量化 - 整理「全身控制 WBC」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_can_bus_2024/">
+          <span class="entry-type">技术</span>
+          <h3>CAN 总线</h3>
+          <p>连接人形机器人关节电机驱动与中央控制器的现场总线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hardware_in_the_loop_2024/">
+          <span class="entry-type">方法</span>
+          <h3>硬件在环仿真</h3>
+          <p>在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>实时控制框架</h3>
+          <p>- P14.1.2.1 输入梳理与目标量化 - 整理「实时控制框架」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>通信网络与同步</h3>
+          <p>- P13.1.3.1 输入梳理与目标量化 - 整理「通信网络与同步」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14/">
+          <span class="entry-type">方法</span>
+          <h3>软件中间件与系统集成（Software &amp; Integration）</h3>
+          <p>软件中间件与系统集成（Software &amp; Integration）是人形机器人产品开发全流程中的第 14 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ota_software_update_2024/">
+          <span class="entry-type">技术</span>
+          <h3>OTA 软件更新</h3>
+          <p>向已部署的人形机器人机群无线部署控制策略、固件和系统软件。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_thermal_simulation/">
+          <span class="entry-type">方法</span>
+          <h3>热仿真</h3>
+          <p>1. 建立功耗模型：列出各组件的稳态功耗、峰值功耗和占空比。 2. 构建几何模型：用 CAD 模型或简化几何表示机器人外壳、散热器、风道。 3. 设置材料属性：导热系数、比热容、密度、发射率。 4.…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_openloong/">
+          <span class="entry-type">机器人系统</span>
+          <h3>OpenLoong / 青龙开源人形机器人</h3>
+          <p>OpenLoong（开放龙）/ 青龙是国家地方共建人形机器人创新中心推出的全尺寸开源人形机器人公版机，身高超 185 cm、体重超 80 kg，全身 43…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_aloha_teleoperation_system_2023/">
+          <span class="entry-type">技术</span>
+          <h3>ALOHA 遥操作系统</h3>
+          <p>低成本双臂主从遥操作硬件，用于采集人类演示数据以进行模仿学习。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13/">
+          <span class="entry-type">方法</span>
+          <h3>电子电气与能源系统（Electronics &amp; Power）</h3>
+          <p>电子电气与能源系统（Electronics &amp; Power）是人形机器人产品开发全流程中的第 13 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_ati_force_torque_sensor_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>ATI 力/力矩传感器</h3>
+          <p>OnRobot HEX-E QC 六维力/力矩传感器 / OnRobot HEX-E QC 6-Axis Force/Torque Sensor</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_inovance_technology_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>汇川技术</h3>
+          <p>概述 汇川技术是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

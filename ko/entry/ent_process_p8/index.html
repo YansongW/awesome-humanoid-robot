@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>结构强度仿真与迭代（Structural FEA） · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">结构强度仿真与迭代（Structural FEA）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>结构强度仿真与迭代（Structural FEA）</h1>
+      <p class="entry-name-en">Structural FEA and iteration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">제조 공정</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>结构强度仿真与迭代（Structural FEA）</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>구조 강도 시뮬레이션 및 반복(Structural FEA)은 휴머노이드 로봇 제품 개발 전 과정 중 8번째 단계이며, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>이 단계는 입력 검토, 설계, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 확보하는 중요한 지점입니다.</p>
+<h2 id="_3">주요 하위 작업 및 기술 내용</h2>
+<h4 id="_4">하중 및 시뮬레이션 모델</h4>
+<h5 id="_5">하중 조건 정의</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 정역학, 동적 충격, 낙하, 대표 운동 반력, 피로 하중 스펙트럼</li>
+<li><strong>설계 사고 논리</strong>: 가장 엄격한 조건이 구조 설계를 결정함; 한쪽 다리 지지, 넘어짐 충격, 최대 하중 파지를 포함</li>
+<li><strong>주요 제약</strong>: 하중 전달 경로, 안전 계수, 테스트 검증</li>
+<li><strong>완료 기준 / 산출물</strong>: 《하중 조건표》: 하중 크기, 방향, 작용점, 발생 확률
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P8.1.1.1 입력 검토 및 목표 정량화</strong>: 「하중 조건 정의」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록을 설정</li>
+<li><strong>P8.1.1.2 설계/방법 설계</strong>: 「하중 조건 정의」에 대한 구현 방법 또는 후보 설계를 수립하고, 「정역학, 동적 충격, 낙하, 대표 운동 반력, 피로 하중 스펙트럼」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>최소 2개의 후보 설계를 도출</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 설계를 확정</li>
+<li><strong>P8.1.1.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「하중 조건 정의」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모델/시제품을 구축하고 주요 매개변수를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P8.1.1.4 검증 및 문제 폐쇄</strong>: 「하중 조건 정의」의 출력을 검증하여 완료 기준을 충족하는지 확인하고, 문제를 기록하여 종료될 때까지 추적.
+<strong>4레벨 주요 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P8.1.1.5 문서 출력 및 하위 인도</strong>: 「하중 조건 정의」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료.
+<strong>4레벨 주요 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 참조</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="fea">FEA 모델 준비</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: HyperMesh / ANSA / Abaqus / ANSYS, 메쉬 수렴 분석</li>
+<li><strong>설계 사고 논리</strong>: 비하중 지지 특징 단순화, 적절한 메쉬 분할, 재료 속성, 접촉/구속 설정</li>
+<li><strong>주요 제약</strong>: 메쉬 품질, 계산 시간, 자원</li>
+<li><strong>완료 기준 / 산출물</strong>: 고품질 FEA 모델, 메쉬 품질 보고서, 경계 조건 목록
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P8.1.2.1 입력 검토 및 목표 정량화</strong>: 「FEA 모델 준비」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록을 설정</li>
+<li><strong>P8.1.2.2 설계/방법 설계</strong>: 「FEA 모델 준비」에 대한 구현 방법 또는 후보 설계를 수립하고, 「HyperMesh / ANSA / Abaqus / ANSYS, 메쉬 수렴 분석」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>최소 2개의 후보 설계를 도출</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 설계를 확정</li>
+<li><strong>P8.1.2.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「FEA 모델 준비」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모델/시제품을 구축하고 주요 매개변수를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P8.1.2.4 검증 및 문제 폐쇄</strong>: 「FEA 모델 준비」의 출력을 검증하여 완료 기준을 충족하는지 확인하고, 문제를 기록하여 종료될 때까지 추적.
+<strong>4레벨 주요 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P8.1.2.5 문서 출력 및 하위 인도</strong>: 「FEA 모델 준비」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료.
+<strong>4레벨 주요 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 참조</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_6">비선형 해석 및 안정성</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 접촉 비선형, 기하 비선형, 좌굴 해석</li>
+<li><strong>설계 사고 논리</strong>: 얇은 벽 구조는 충격 시 좌굴이 발생할 수 있음; 큰 변형은 기하 비선형을 고려해야 함</li>
+<li><strong>주요 제약</strong>: 수렴 난이도, 계산 비용</li>
+<li><strong>완료 기준 / 산출물</strong>: 좌굴 모드, 큰 변형 하의 응력/변형률
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P8.1.3.1 입력 검토 및 목표 정량화</strong>: 「비선형 해석 및 안정성」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록을 설정</li>
+<li><strong>P8.1.3.2 설계/방법 설계</strong>: 「비선형 해석 및 안정성」에 대한 구현 방법 또는 후보 설계를 수립하고, 「접촉 비선형, 기하 비선형, 좌굴 해석」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>최소 2개의 후보 설계를 도출</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 설계를 확정</li>
+<li><strong>P8.1.3.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「비선형 해석 및 안정성」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모델/시제품을 구축하고 주요 매개변수를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P8.1.3.4 검증 및 문제 폐쇄</strong>: 「비선형 해석 및 안정성」의 출력을 검증하여 완료 기준을 충족하는지 확인하고, 문제를 기록하여 종료될 때까지 추적.
+<strong>4레벨 주요 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P8.1.3.5 문서 출력 및 하위 인도</strong>: 「비선형 해석 및 안정성」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료.
+<strong>4레벨 주요 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 참조</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_7">강도, 피로 및 최적화</h4>
+<h5 id="_8">정적 및 동적 응력과 변형 해석</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 선형 탄성/탄소성 해석, von Mises, 변형 분포도</li>
+<li><strong>설계 사고 논리</strong>: 주요 부품의 응력이 재료 항복/피로 한계 미만인지, 변형이 운동에 영향을 미치는지 검증</li>
+<li><strong>주요 제약</strong>: 국부 응력 집중, 용접/볼트 연결 시뮬레이션</li>
+<li><strong>완료 기준 / 산출물</strong>: 《FEA 응력 보고서》: 응력, 변형, 안전 계수
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P8.2.1.1 입력 검토 및 목표 정량화</strong>: 「정적 및 동적 응력과 변형 해석」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록을 설정</li>
+<li><strong>P8.2.1.2 설계/방법 설계</strong>: 「정적 및 동적 응력과 변형 해석」에 대한 구현 방법 또는 후보 설계를 수립하고, 「선형 탄성/탄소성 해석, von Mises, 변형 분포도」를 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>최소 2개의 후보 설계를 도출</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 설계를 확정</li>
+<li><strong>P8.2.1.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「정적 및 동적 응력과 변형 해석」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모델/시제품을 구축하고 주요 매개변수를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P8.2.1.4 검증 및 문제 폐쇄</strong>: 「정적 및 동적 응력과 변형 해석」의 출력을 검증하여 완료 기준을 충족하는지 확인하고, 문제를 기록하여 종료될 때까지 추적.
+<strong>4레벨 주요 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P8.2.1.5 문서 출력 및 하위 인도</strong>: 「정적 및 동적 응력과 변형 해석」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료.
+<strong>4레벨 주요 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 참조</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_9">피로 및 수명 예측</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: S-N 곡선, Miner 누적 손상, 레인플로우 카운팅</li>
+<li><strong>설계 사고 논리</strong>: 고주기 피로 부위(관절 러그, 커넥팅 로드 구멍 가장자리)에 대한 수명 평가 수행</li>
+<li><strong>주요 제약</strong>: 하중 스펙트럼 불확실성, 재료 피로 데이터</li>
+<li><strong>완료 기준 / 산출물</strong>: 피로 분석 보고서, 주요 부품의 반복 수명 &gt; 목표
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P8.2.2.1 입력 검토 및 목표 정량화</strong>: 「피로 및 수명 예측」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록을 설정</li>
+<li><strong>P8.2.2.2 설계/방법 설계</strong>: 「피로 및 수명 예측」에 대한 구현 방법 또는 후보 설계를 수립하고, 「S-N 곡선, Miner 누적 손상, 레인플로우 카운팅」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>최소 2개의 후보 설계를 도출</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 설계를 확정</li>
+<li><strong>P8.2.2.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「피로 및 수명 예측」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모델/시제품을 구축하고 주요 매개변수를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P8.2.2.4 검증 및 문제 폐쇄</strong>: 「피로 및 수명 예측」의 출력을 검증하여 완료 기준을 충족하는지 확인하고, 문제를 기록하여 종료될 때까지 추적.
+<strong>4레벨 주요 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P8.2.2.5 문서 출력 및 하위 인도</strong>: 「피로 및 수명 예측」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료.
+<strong>4레벨 주요 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 참조</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_10">경량화 및 위상 최적화</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 위상 최적화, 치수 최적화, 리브/보강재 배치, 복합재 대체</li>
+<li><strong>설계 사고 논리</strong>: 응력 여유가 충분한 조건에서 중량을 줄여, 전체 기계의 관성과 에너지 소비를 낮춤</li>
+<li><strong>주요 제약</strong>: 제조 공정 제한, 비용</li>
+<li><strong>완료 기준 / 산출물</strong>: 최적화된 CAD, 중량 감소 비율 &gt; 목표, 강도 여전히 충족
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P8.2.3.1 입력 검토 및 목표 정량화</strong>: 「경량화 및 위상 최적화」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록을 설정</li>
+<li><strong>P8.2.3.2 설계/방법 설계</strong>: 「경량화 및 위상 최적화」에 대한 구현 방법 또는 후보 설계를 수립하고, 「위상 최적화, 치수 최적화, 리브/보강재 배치, 복합재 대체」를 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>최소 2개의 후보 설계를 도출</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 설계를 확정</li>
+<li><strong>P8.2.3.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「경량화 및 위상 최적화」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모델/시제품을 구축하고 주요 매개변수를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P8.2.3.4 검증 및 문제 폐쇄</strong>: 「경량화 및 위상 최적화」의 출력을 검증하여 완료 기준을 충족하는지 확인하고, 문제를 기록하여 종료될 때까지 추적.
+<strong>4레벨 주요 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P8.2.3.5 문서 출력 및 하위 인도</strong>: 「경량화 및 위상 최적화」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료.
+<strong>4레벨 주요 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 참조</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="-">시뮬레이션-실험 폐쇄 반복</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 프로토타입 하중 시험, 스트레인 게이지, 변위 센서, FEA와 비교</li>
+<li><strong>설계 사고 논리</strong>: 실험을 통해 시뮬레이션 경계 조건과 재료 매개변수를 수정하여 폐쇄 루프 형성</li>
+<li><strong>주요 제약</strong>: 시험 지그, 하중 정밀도</li>
+<li><strong>완료 기준 / 산출물</strong>: 시뮬레이션과 실험 오차 &lt; 15%, 설계 반복 기록
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P8.2.4.1 입력 검토 및 목표 정량화</strong>: 「시뮬레이션-실험 폐쇄 반복」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록을 설정</li>
+<li><strong>P8.2.4.2 인터페이스 및 통합 전략 설계</strong>: 「시뮬레이션-실험 폐쇄 반복」과 관련된 하위 시스템 인터페이스, 데이터 흐름 및 시퀀스를 정리하고, 통합 순서, 롤백 전략 및 이상 처리 메커니즘을 수립.
+<strong>4레벨 주요 작업:</strong></li>
+<li>최소 2개의 후보 설계를 도출</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 설계를 확정</li>
+<li><strong>P8.2.4.3 모델링/시뮬레이션 및 시제품 구현</strong>: 「시뮬레이션-실험 폐쇄 반복」의 시뮬레이션/수학적 모델 또는 프로토타입 시제품을 구축하고, 「프로토타입 하중 시험, 스트레인 게이지, 변위 센서, FEA와 비교」를 사용하여 계산 또는 실험을 수행하며, 주요 매개변수와 경계 조건을 기록.
+<strong>4레벨 주요 작업:</strong></li>
+<li>모델/시제품을 구축하고 주요 매개변수를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P8.2.4.4 테스트 수행 및 결과 분석</strong>: 검수 기준에 따라 「시뮬레이션-실험 폐쇄 반복」 테스트를 수행하고, 통과율/오차/편차를 통계하며, 근본 원인 분석을 수행하고 개선 목록을 작성.
+<strong>4레벨 주요 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P8.2.4.5 문서 출력 및 하위 인도</strong>: 「시뮬레이션-실험 폐쇄 반복」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료.
+<strong>4레벨 주요 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 참조</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h2 id="_11">완료 기준</h2>
+<p>본 단계의 모든 3레벨 하위 작업이 검수 심사를 통과하고, 주요 산출물의 버전이 관리되며 공식적으로 하위 의존 부서에 인도됩니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8_1_2/">FEA 模型准备</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8_2_3/">轻量化与拓扑优化</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8_1_3/">非线性分析与稳定性</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5/">本体结构工程与原型（Mechanical Structure）</a>
+              <span class="rel-desc">P8 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8_2_1/">静动态应力与变形分析</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-desc">P8 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_finite_element_analysis_2024/">Finite Element Analysis</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_1_3/">非线性分析与稳定性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_2_2/">疲劳与寿命预估</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_2_3/">轻量化与拓扑优化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_aero_hand_open_2026/">Aero Hand Open</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_1_2/">关节安装接口与壳体设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_3_1/">小批量试产（Pilot Run）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_1_2/">FEA 模型准备</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_2_1/">静动态应力与变形分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_vouga_asynchronous_variational_integ_2009/">접촉 역학을 위한 상호작용 포텐셜의 비동기 변분 적분법</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_1_1/">载荷工况定义</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_2_4/">仿真-试验闭环迭代</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15/">整机集成与验证测试（Integration &amp; V&amp;V）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P15 依赖 P8 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_olaf_bringing_an_animated_char_2025/">Olaf: Bringing an Animated Character to Life in the Physical World</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_1_1/">中心骨架与四肢连杆设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16/">小批量试产与量产准备（Pilot &amp; Production Ramp）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p8"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>中心骨架与四肢连杆设计</h3>
+          <p>3D 结构模型、关键截面设计、BOM 初稿</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>静动态应力与变形分析</h3>
+          <p>《FEA 应力报告》：应力、变形、安全系数</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>轻量化与拓扑优化</h3>
+          <p>优化后 CAD、减重比例 &gt; 目标、强度仍满足</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_vouga_asynchronous_variational_integ_2009/">
+          <span class="entry-type">논문</span>
+          <h3>접촉 역학을 위한 상호작용 포텐셜의 비동기 변분 적분법</h3>
+          <p>비동기 변분 적분기(AVI)를 페널티 접촉력과 같은 상호작용 포텐셜로 확장하고, 완화된 가정 하에서 다중심플렉틱성을 증명하며, 비동기 접촉 역학(ACM) 프레임워크를 통해 얇은…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5/">
+          <span class="entry-type">방법</span>
+          <h3>本体结构工程与原型（Mechanical Structure）</h3>
+          <p>本体结构工程与原型（Mechanical Structure）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_2_4/">
+          <span class="entry-type">방법</span>
+          <h3>仿真-试验闭环迭代</h3>
+          <p>仿真与试验误差 &lt; 15%、设计迭代记录</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">개념</span>
+          <h3>Production Ramp</h3>
+          <p>파일럿 라인에서 볼륨 제조로 전환하면서 수율, 사이클 타임 및 비용을 개선하는 과정.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p3/">
+          <span class="entry-type">방법</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>疲劳与寿命预估</h3>
+          <p>疲劳分析报告、关键件循环寿命 &gt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_aero_hand_open_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Aero Hand Open</h3>
+          <p>Aero Hand Open is a 2026 work on hardware design for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_olaf_bringing_an_animated_char_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Olaf: Bringing an Animated Character to Life in the Physical World</h3>
+          <p>Olaf: Bringing an Animated Character to Life in the Physical World is a 2025 work on hardware design…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_finite_element_analysis_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Finite Element Analysis</h3>
+          <p>프로토타입 전 로봇 링크, 브래킷 및 기어박스의 구조, 열 및 모달 분석을 위한 수치 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해</h3>
+          <p>대규모 카탈로그에서 제약 프로그래밍을 사용해 파레토 최적 부품 선택을 계산하고, 일관성 조건 하에서 서브시스템 파레토 전면이 전체 시스템의 전역 최적 파레토 전면을 결정함을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>载荷工况定义</h3>
+          <p>《载荷工况表》：载荷大小、方向、作用点、发生概率</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>非线性分析与稳定性</h3>
+          <p>屈曲模态、大变形下的应力/应变</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>关节安装接口与壳体设计</h3>
+          <p>关节接口图纸、壳体 3D、密封方案</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_3_1/">
+          <span class="entry-type">방법</span>
+          <h3>小批量试产（Pilot Run）</h3>
+          <p>试产总结报告、直通率、问题闭环率</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15/">
+          <span class="entry-type">방법</span>
+          <h3>整机集成与验证测试（Integration &amp; V&amp;V）</h3>
+          <p>整机集成与验证测试（Integration &amp; V&amp;V）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>FEA 模型准备</h3>
+          <p>高质量 FEA 模型、网格质量报告、边界条件清单</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16/">
+          <span class="entry-type">방법</span>
+          <h3>小批量试产与量产准备（Pilot &amp; Production Ramp）</h3>
+          <p>小批量试产与量产准备（Pilot &amp; Production Ramp）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">방법</span>
+          <h3>유한요소해석(FEA)</h3>
+          <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#_3">주요 하위 작업 및 기술 내용</a><ul>
+<li><a href="#_4">하중 및 시뮬레이션 모델</a><ul>
+<li><a href="#_5">하중 조건 정의</a></li>
+<li><a href="#fea">FEA 모델 준비</a></li>
+<li><a href="#_6">비선형 해석 및 안정성</a></li>
+</ul>
+</li>
+<li><a href="#_7">강도, 피로 및 최적화</a><ul>
+<li><a href="#_8">정적 및 동적 응력과 변형 해석</a></li>
+<li><a href="#_9">피로 및 수명 예측</a></li>
+<li><a href="#_10">경량화 및 위상 최적화</a></li>
+<li><a href="#-">시뮬레이션-실험 폐쇄 반복</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_11">완료 기준</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

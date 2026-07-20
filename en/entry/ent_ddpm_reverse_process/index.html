@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DDPM reverse process · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/algorithm/">Algorithm</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DDPM reverse process</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Algorithm</div>
+      <h1>DDPM reverse process</h1>
+      <p class="entry-name-en">DDPM reverse process</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The learned backward Markov chain in Denoising Diffusion Probabilistic Models that gradually transforms Gaussian noise into data-like samples.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html" target="_blank" rel="noopener">J. Ho, A. Jain, and P. Abbeel, &#39;Denoising Diffusion Probabilistic Models&#39;, NeurIPS, 2020</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">uses</span>
+            <a href="/en/entry/ent_score_matching/">Score matching</a>
+            
+              
+                
+              
+              <span class="rel-desc">DDPM trains its noise-prediction network using a denoising score-matching objective.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">is_prerequisite_for</span>
+            <a href="/en/entry/ent_continuity_equation/">Continuity equation</a>
+            
+              
+                
+              
+              <span class="rel-desc">The continuous-time limit of DDPM is described by a reverse-time stochastic differential equation whose probability flow obeys a continuity equation.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">is_alternative_to</span>
+            <a href="/en/entry/ent_flow_matching/">Flow matching</a>
+            
+              
+                
+              
+              <span class="rel-desc">Flow matching provides an alternative generative framework that directly learns a deterministic probability flow instead of a stochastic reverse diffusion chain.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The reverse Markov chain learned in Denoising Diffusion Probabilistic Models (DDPM) progressively transforms Gaussian noise into data-like samples.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-the-ddpm-reverse-process">Definition and Positioning of the DDPM Reverse Process</h3>
+<p>The DDPM reverse process belongs to the <strong>algorithm</strong> category. Its domain includes fundamental disciplines. At the value chain level, it resides in the foundational layer. The reverse Markov chain learned in Denoising Diffusion Probabilistic Models (DDPM) progressively transforms Gaussian noise into data-like samples. Its English name is <em>DDPM reverse process</em>. Its Korean name is <em>DDPM 역 과정</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-the-ddpm-reverse-process">Mathematical and Theoretical Foundations of the DDPM Reverse Process</h3>
+<p>The DDPM reverse process is built upon relevant mathematical theories and physical principles. Understanding its underlying assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and guarantees of convergence or stability.
+In humanoid robots—a high-dimensional, underactuated, and strongly coupled system—the DDPM reverse process typically requires balancing real-time performance, precision, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>When implementing the DDPM reverse process in practice, it is necessary to define initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Reasonable selection of numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable operation of the algorithm on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>The DDPM reverse process can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptability remain key issues to address in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>generative_modeling</li>
+<li>diffusion_model</li>
+<li>ddpm</li>
+<li>reverse_process</li>
+<li>score_estimation</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key algorithms in the humanoid robot industry chain, the DDPM reverse process plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_ho_denoising_diffusion_probabilis_2020/">Denoising Diffusion Probabilistic Models</a>
+              <span class="rel-desc">DDPM reverse process is based on Denoising Diffusion Probabilistic Models.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">alternative to</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_flow_matching/">Flow matching</a>
+              <span class="rel-desc">DDPM reverse process is alternative to Flow matching.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_continuity_equation/">Continuity equation</a>
+              <span class="rel-desc">DDPM reverse process is prerequisite for Continuity equation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_score_matching/">Score matching</a>
+              <span class="rel-desc">DDPM reverse process uses Score matching.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_bayesian_filtering/">Bayesian filtering</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">builds_on</span>
+              <span class="rel-desc">Bayesian filtering builds on DDPM reverse process.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_flow_matching/">Flow matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">alternative to</span>
+              <span class="rel-desc">Flow matching is alternative to DDPM reverse process.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_score_matching/">Score matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-desc">Score matching is prerequisite for DDPM reverse process.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_continuity_equation/">Continuity equation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-desc">Continuity equation is prerequisite for DDPM reverse process.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_ddpm_reverse_process"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_score_matching/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Score matching</h3>
+          <p>A parameter-estimation technique that learns the gradient of an unknown log-probability density,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ho_denoising_diffusion_probabilis_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Denoising Diffusion Probabilistic Models</h3>
+          <p>Ho, Jain, and Abbeel (2020) introduce a denoising diffusion probabilistic model trained with a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_bayesian_filtering/">
+          <span class="entry-type">Formalism</span>
+          <h3>Bayesian filtering</h3>
+          <p>A recursive probabilistic framework that maintains and updates a belief distribution over a hidden…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_flow_matching/">
+          <span class="entry-type">Method</span>
+          <h3>Flow matching</h3>
+          <p>A generative modeling method that directly regresses a vector field whose flow maps a simple source…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_continuity_equation/">
+          <span class="entry-type">Equation</span>
+          <h3>Continuity equation</h3>
+          <p>A partial differential equation expressing local conservation of a quantity by equating its rate of…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-the-ddpm-reverse-process">Definition and Positioning of the DDPM Reverse Process</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-the-ddpm-reverse-process">Mathematical and Theoretical Foundations of the DDPM Reverse Process</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

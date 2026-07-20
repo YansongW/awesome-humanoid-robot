@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thermal Simulation · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Thermal Simulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Thermal Simulation</h1>
+      <p class="entry-name-en">Thermal Simulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span><span class="tag">Software &amp; Middleware</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#两节点热网络模型 by scripts/backfill_nonpaper_entries.py. Body backfilled from chapter-06.md section &#39;6.7.3 整机功率与热仿真思路&#39; by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A computational method that predicts temperature distribution, heat flux, and cooling requirements of electronic and mechanical systems under operating loads.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Computational methods for predicting temperature distribution, heat flux density, and heat dissipation requirements of electronic and mechanical systems under operational loads.</p>
+<h2 id="content">Content</h2>
+<h3 id="673-system-power-and-thermal-simulation-approach">6.7.3 System Power and Thermal Simulation Approach</h3>
+<p>System-level thermal simulation typically follows these steps:</p>
+<ol>
+<li><strong>Establish power consumption model</strong>: List the steady-state power, peak power, and duty cycle of each component.</li>
+<li><strong>Construct geometric model</strong>: Use CAD models or simplified geometries to represent the robot casing, heat sinks, and air ducts.</li>
+<li><strong>Set material properties</strong>: Thermal conductivity, specific heat capacity, density, and emissivity.</li>
+<li><strong>Mesh generation</strong>: Refine the mesh in critical regions and coarsen it in distant areas.</li>
+<li><strong>Define boundary conditions</strong>: Ambient temperature, convection coefficients, fan curves, and contact thermal resistance.</li>
+<li><strong>Solve steady-state/transient temperature field</strong>: Evaluate critical chip junction temperatures and casing temperatures.</li>
+<li><strong>Iterative optimization</strong>: Adjust heat sinks, air ducts, TIM (Thermal Interface Material), and power distribution until thermal targets are met.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Duty Cycle, CAD, Boundary Conditions, Mesh Convergence, Fan Curve</p>
+<ul>
+<li><strong>Duty cycle</strong>: The proportion of time a component operates at high power.</li>
+<li><strong>CAD (Computer-Aided Design)</strong>: Computer-aided design.</li>
+<li><strong>Boundary condition</strong>: Physical constraints on the boundaries of the solution domain, such as temperature, heat flux, and convection.</li>
+<li><strong>Mesh convergence</strong>: When results no longer change significantly after mesh refinement, indicating the numerical solution is reliable.</li>
+<li><strong>Fan curve</strong>: The relationship between fan flow rate and pressure drop.</li>
+</ul>
+</div>
+<h3 id="engineering-significance-of-thermal-simulation-in-humanoid-robots">Engineering Significance of Thermal Simulation in Humanoid Robots</h3>
+<p>Humanoid robots integrate computing units, motor drives, batteries, and power electronics, resulting in high heat density within confined spaces. Thermal simulation is used to predict critical chip junction temperatures, motor winding temperature rises, and casing surface temperatures, guiding the design of heat sinks, air ducts, thermal interface materials, and power management strategies to avoid overheating-induced throttling or lifespan degradation. Through thermal-mechanical-electrical co-simulation, thermal bottlenecks can be identified and layout optimized early in the system design phase.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_electrochemistry/">Electrochemistry</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_silva_plata_model_based_capacitive_touch_s_2025/">Model-Based Capacitive Touch Sensing in Soft Robotics: Achieving Robust Tactile Interactions for Artistic Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Model-Based Capacitive Touch Sensing in Soft Robotics: Achieving Robust Tactile Interactions for Artistic Applications mentions Thermal Simulation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">&#34;Knees&#34; in lithium-ion battery aging trajectories</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">&#34;Knees&#34; in lithium-ion battery aging trajectories discusses Thermal Simulation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">Estimation of Remaining Useful Life and SOH of Lithium Ion Batteries (For EV Vehicles)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Estimation of Remaining Useful Life and SOH of Lithium Ion Batteries (For EV Vehicles) discusses Thermal Simulation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">Thin Flexible Lithium Ion Battery Featuring Graphite Paper Based Current Collectors with Enhanced Conductivity</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Thin Flexible Lithium Ion Battery Featuring Graphite Paper Based Current Collectors with Enhanced Conductivity uses Thermal Simulation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">A Brief Review of Current Lithium Ion Battery Technology and Potential Solid State Battery Technologies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Brief Review of Current Lithium Ion Battery Technology and Potential Solid State Battery Technologies discusses Thermal Simulation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots discusses Thermal Simulation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_nvidia_jetson_agx_orin_2024/">NVIDIA Jetson AGX Orin</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">constrains</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 6. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_safety_mcu/">Safety Microcontroller Unit (Safety MCU)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">constrains</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 6. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_thermal_simulation"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots</h3>
+          <p>Presents a printable self-sustained compliant oscillator built from two mechanically coupled…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_safety_mcu/">
+          <span class="entry-type">Component</span>
+          <h3>Safety Microcontroller Unit (Safety MCU)</h3>
+          <p>A functionally-safe microcontroller that monitors critical signals, handles watchdogs, and executes…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">
+          <span class="entry-type">Paper</span>
+          <h3>Thin Flexible Lithium Ion Battery Featuring Graphite Paper Based Current Collectors with Enhanced Conductivity</h3>
+          <p>This paper reports an ultrathin (&lt;250 μm including encapsulation), lightweight, flexible lithium-ion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>A Brief Review of Current Lithium Ion Battery Technology and Potential Solid State Battery Technologies</h3>
+          <p>A 2018 review by Andrew Ulvestad that benchmarks state-of-the-art lithium-ion batteries against…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Estimation of Remaining Useful Life and SOH of Lithium Ion Batteries (For EV Vehicles)</h3>
+          <p>This 2023 arXiv paper reviews empirical, physics-based, and data-driven approaches for lithium-ion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_nvidia_jetson_agx_orin_2024/">
+          <span class="entry-type">Component</span>
+          <h3>NVIDIA Jetson AGX Orin</h3>
+          <p>Onboard GPU/ARM SoC widely used for VLA inference and perception in humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_electrochemistry/">
+          <span class="entry-type">Foundation</span>
+          <h3>Electrochemistry</h3>
+          <p>The foundational science of electron and ion transport across interfaces, governing reactions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_silva_plata_model_based_capacitive_touch_s_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Model-Based Capacitive Touch Sensing in Soft Robotics: Achieving Robust Tactile Interactions for Artistic Applications</h3>
+          <p>Presents a deformation-robust capacitive touch skin for soft robots that couples mutual-capacitance…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>EtherCAT</h3>
+          <p>High-performance industrial Ethernet field bus for deterministic joint control.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>&#34;Knees&#34; in lithium-ion battery aging trajectories</h3>
+          <p>A 2022 review that defines capacity-fade &#39;knees&#39; in lithium-ion batteries, classifies six…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#673-system-power-and-thermal-simulation-approach">6.7.3 System Power and Thermal Simulation Approach</a></li>
+<li><a href="#engineering-significance-of-thermal-simulation-in-humanoid-robots">Engineering Significance of Thermal Simulation in Humanoid Robots</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

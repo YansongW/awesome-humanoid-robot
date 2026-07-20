@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inertial Measurement Unit · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/component/">부품</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Inertial Measurement Unit</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">부품</div>
+      <h1>Inertial Measurement Unit</h1>
+      <p class="entry-name-en">Inertial Measurement Unit</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from kg/entities/ent_component_analog_devices_adis16475.md by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>몸통/엉덩이에 장착된 가속도계 및 자이로스코프를 융합한 균형 및 상태 추정 센서.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit" target="_blank" rel="noopener">Inertial Measurement Unit</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>관성 측정 장치는 휴머노이드 로봇 분야의 중요한 부품입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h2 id="analog-devices-adis16475-mems-analog-devices-adis16475-miniature-mems-imu">Analog Devices ADIS16475 초소형 MEMS 관성 측정 장치 / Analog Devices ADIS16475 Miniature MEMS IMU</h2>
+<h3 id="_3">개요</h3>
+<p>ADIS16475는 Analog Devices에서 출시한 정밀 초소형 MEMS 관성 측정 장치(IMU)로, 3축 자이로스코프와 3축 가속도계를 통합하고 온도 센서, 신호 조정, 보정 및 디지털 필터링 기능을 내장하고 있습니다. 이 장치는 출하 전에 각 센서의 감도, 바이어스, 축 정렬, 선형 가속도(자이로 바이어스) 및 충격 중심(가속도계 위치)을 보정하여 넓은 온도 범위에서 고정밀 6자유도 관성 측정을 제공하며, 로봇, 드론, 자율 주행, 산업용 안정화 플랫폼 및 항법 시스템 등에 적용됩니다.</p>
+<h3 id="_4">작동 원리 및 기술 아키텍처</h3>
+<p>ADIS16475는 ADI iSensor 기술 플랫폼을 기반으로 하며, 핵심 아키텍처는 다음과 같습니다:</p>
+<ol>
+<li><strong>MEMS 관성 감지 소자</strong>: 3축 자이로스코프와 3축 가속도계가 동일한 패키지에 통합되어 정밀 미세 기계 구조를 통해 각속도와 비력을 감지합니다.</li>
+<li><strong>신호 조정 및 동적 보상</strong>: 각 센서 채널에는 저잡음 증폭, 필터링 및 A/D 변환이 통합되어 있으며, 공장 보정 데이터는 온도, 비선형성, 축 간 결합 및 <span class="arithmatex">\(g\)</span> 민감도 보상에 사용됩니다.</li>
+<li><strong>내부 프로세서 및 레지스터</strong>: SPI 인터페이스를 통해 각속도, 가속도, 온도, 델타 각도 및 델타 속도 등의 데이터를 출력합니다.</li>
+<li><strong>자체 테스트 및 동기화</strong>: 온디맨드 자체 테스트, 플래시 자체 테스트, 데이터 준비 표시 및 외부 동기화 모드(direct/pulse/scaled/output)를 지원합니다.</li>
+</ol>
+<p>주요 정밀도 지표:</p>
+<ul>
+<li><strong>각 랜덤 워크(ARW)</strong>: <span class="arithmatex">\(0.15°/\sqrt{\text{hr}}\)</span>로, 자이로 각도 적분 잡음을 나타냅니다:
+  $$
+  \sigma_\theta(t) = \text{ARW} \cdot \sqrt{t}
+  $$</li>
+<li><strong>동작 중 바이어스 안정성</strong>: 자이로스코프 일반값 <span class="arithmatex">\(2°/\text{hr}\)</span>, 가속도계 <span class="arithmatex">\(3.6~\mu g\)</span>.</li>
+<li><strong>축 간 정렬 오차</strong>: <span class="arithmatex">\(\pm 0.1°\)</span>로, 다중 센서 융합 시 설치 정렬 작업량을 크게 줄입니다.</li>
+</ul>
+<h3 id="_5">주요 파라미터</h3>
+<table>
+<thead>
+<tr>
+<th>파라미터 항목</th>
+<th>값</th>
+<th>비고/출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>센서 유형</td>
+<td>6축 IMU(3축 자이로스코프 + 3축 가속도계)</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>패키지</td>
+<td>44볼 BGA, 약 11 mm × 15 mm × 11 mm</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>자이로스코프 범위</td>
+<td>±125 °/s, ±500 °/s, ±2000 °/s(선택 가능)</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>가속도계 범위</td>
+<td>±8 g</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>동작 중 자이로 바이어스 안정성</td>
+<td>2 °/hr(일반)</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>각 랜덤 워크</td>
+<td>0.15 °/√hr</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>가속도계 동작 바이어스 안정성</td>
+<td>3.6 μg</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>축 간 정렬 오차</td>
+<td>±0.1°</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>출력 데이터</td>
+<td>각속도, 가속도, 온도, 델타 각도, 델타 속도</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>인터페이스</td>
+<td>SPI</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>공급 전압</td>
+<td>3.0 V – 3.6 V</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>동작 전류</td>
+<td>약 44 mA(일반)</td>
+<td>유통업체</td>
+</tr>
+<tr>
+<td>동작 온도</td>
+<td>−40 °C ~ +105 °C</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>보정 온도 범위</td>
+<td>−40 °C ~ +85 °C</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>내충격성</td>
+<td>2000 g</td>
+<td>ADI 데이터시트</td>
+</tr>
+<tr>
+<td>가격</td>
+<td>비공개</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">적용 시나리오</h3>
+<ul>
+<li><strong>휴머노이드 로봇 자세 추정</strong>: 몸통, 발 또는 머리에 고주파 관성 기준을 제공하여 비전, 관절 엔코더와 융합하여 안정적인 자세 추정 구현.</li>
+<li><strong>드론 비행 제어</strong>: 자세 안정화, 방향 유지 및 항법 계산에 사용.</li>
+<li><strong>자율 주행 및 로봇 항법</strong>: GNSS/LiDAR/비전과 융합하여 고동적 환경에서의 위치 추정 제공.</li>
+<li><strong>산업용 안정화 플랫폼</strong>: 카메라, 안테나, 로봇 팔 끝단의 능동 진동 감쇠 및 안정화 제어.</li>
+<li><strong>정밀 기기 및 측량</strong>: 관성 측정, 진동 분석 및 모션 캡처.</li>
+</ul>
+<h3 id="_7">공급망 관계</h3>
+<ul>
+<li><strong>상류</strong>: MEMS 웨이퍼, ASIC 칩, BGA 패키지 기판, 정밀 저항 및 커패시터, 온도 보상 알고리즘 IP.</li>
+<li><strong>제조사</strong>: Analog Devices는 관계 <code>ent_company_analog_devices -- manufactures --&gt; ent_component_analog_devices_adis16475</code>를 통해 지식 그래프에 기록됨.</li>
+<li><strong>하류</strong>: 로봇 OEM, 드론, 자율 주행 플랫폼, 산업 자동화, 항공 우주, 의료 기기. 주요 경쟁사로는 Bosch Sensortec, STMicroelectronics, TDK InvenSense, Honeywell 등이 있음.</li>
+</ul>
+<h3 id="_8">출처 및 검증</h3>
+<p>주요 파라미터는 Analog Devices 공식 ADIS16475 데이터시트(Rev. C) 및 DigiKey 공인 유통업체 페이지에서 가져왔습니다. 자이로스코프 범위, 바이어스 안정성, ARW, 축 간 정렬 오차, 공급 전압 및 온도 범위 등 주요 지표는 공식 데이터시트에 명확히 명시되어 있습니다. 가격은 비공개입니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_unitree_h1_humanoid_robot_2024/">Unitree H1 휨로봇</a>
+              <span class="rel-desc">IMU는 Unitree H1 몸통에 장착되어 균형 추정에 사용됩니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_imu_2024/">관성 측정 장치</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chen_design_of_an_adaptive_lightwei_2023/">로봇-카메라 기하학을 분리하는 적응형 경량 LiDAR 설계</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">소프트 로봇 슈트: 최신 기술, 핵심 기술 및 열린 과제</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_imu_2024/">관성 측정 장치</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_han_design_calibration_and_control_2024/">휴머노이드 로봇을 위한 순응형 힘 감지 그리핑 패드의 설계, 보정 및 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_park_multimodal_sensing_and_interac_2018/">로봇 손 보조기의 다중 감각 및 상호작용</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_razmi_event_driven_on_sensor_locomot_2026/">임베디드 머신러닝을 활용한 경골 장착 IMU의 사건 기반 보행 모드 인식 및 외골격 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_mukherjee_how_imu_drift_influences_multi_2026/">지하 지형에서 지상 로봇을 위한 다중 레이더 관성 주행거리측정에 IMU 드리프트가 미치는 영향</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_legged_robot_state_estimation_2017/">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">MPC는 상태 추정을 위해 IMU 피드백이 필요합니다.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_andreasson_sensors_for_mobile_robots_2023/">모바일 로봇 센서</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gait_legged_robot_propriocepti_2026/">GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg Tokens</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">로봇을 스마트하게 만드는 재료</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chen_design_and_visual_servoing_con_2024/">뇌실 생검을 위한 하이브리드 이중 세그먼트 유연한 신경외과 로봇 MicroNeuro의 설계 및 시각 서보 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_inertial_measurement_unit_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_mukherjee_how_imu_drift_influences_multi_2026/">
+          <span class="entry-type">논문</span>
+          <h3>지하 지형에서 지상 로봇을 위한 다중 레이더 관성 주행거리측정에 IMU 드리프트가 미치는 영향</h3>
+          <p>본 논문은 최소자승법을 통해 레이더 자차 속도를 추정하고, EKF를 사용해 IMU 바이어스를 온라인으로 보정하며, 보정된 IMU 가속도를 여러 개의 TI IWR6843AOP EVM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chen_design_of_an_adaptive_lightwei_2023/">
+          <span class="entry-type">논문</span>
+          <h3>로봇-카메라 기하학을 분리하는 적응형 경량 LiDAR 설계</h3>
+          <p>본 논문은 IMU 또는 외부 포즈 피드백을 사용하여 시야를 능동적으로 재조향하는 경량 MEMS 미러 LiDAR를 제안하여, 소형 로봇과 UAV에서 센서 기하학과 로봇 동작을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_razmi_event_driven_on_sensor_locomot_2026/">
+          <span class="entry-type">논문</span>
+          <h3>임베디드 머신러닝을 활용한 경골 장착 IMU의 사건 기반 보행 모드 인식 및 외골격 제어</h3>
+          <p>본 논문은 경골에 장착된 LSM6DSV16X IMU의 임베디드 머신러닝 코어에서 직접 실시간으로 보행 모드(서기, 평지 보행, 계단 상승)를 인식하여, 원시 센서 데이터를 호스트…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_andreasson_sensors_for_mobile_robots_2023/">
+          <span class="entry-type">논문</span>
+          <h3>모바일 로봇 센서</h3>
+          <p>모바일 로봇에 사용되는 센서의 분류법, 주요 사양 및 하향식 개요를 제시하는 서베이 챕터로 촉각, 근접, 비전 기반 및 거리 측정 센서를 다룬다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">
+          <span class="entry-type">논문</span>
+          <h3>로봇을 스마트하게 만드는 재료</h3>
+          <p>본 논문은 구체화된 인공지능 역시 재료 문제이며, 구조, 센싱, 구동, 계산, 통신을 긴밀히 통합한 복합 재료인 “로봇 재료”를 정의하고, 기존 프로토타입을 조사하며 제조,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_legged_robot_state_estimation_2017/">
+          <span class="entry-type">논문</span>
+          <h3>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</h3>
+          <p>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gait_legged_robot_propriocepti_2026/">
+          <span class="entry-type">논문</span>
+          <h3>GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg Tokens</h3>
+          <p>GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg Tokens is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_han_design_calibration_and_control_2024/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 로봇을 위한 순응형 힘 감지 그리핑 패드의 설계, 보정 및 제어</h3>
+          <p>이 2024년 논문은 저렴하고 가벼운 순응형 힘 감지 그리핑 패드를 제안하며, 법선 방향 그리핑 힘과 압력 중심을 측정하고 비선형 보정 절차와 극한 표면 이론을 활용한 미끄러짐…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_park_multimodal_sensing_and_interac_2018/">
+          <span class="entry-type">논문</span>
+          <h3>로봇 손 보조기의 다중 감각 및 상호작용</h3>
+          <p>Park 등은 전완근전도, 손가락 굽힘, 엄지 압력 감지를 결합한 능동형 손 보조기를 제시하고 다양한 손상 패턴을 가진 뇌졸중 생존자를 대상으로 두 가지 다중 감각 제어 방식을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Model Predictive Control</h3>
+          <p>접촉이 풍부한 전신 동작을 생성하기 위한 온라인 최적 제어 접근법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chen_design_and_visual_servoing_con_2024/">
+          <span class="entry-type">논문</span>
+          <h3>뇌실 생검을 위한 하이브리드 이중 세그먼트 유연한 신경외과 로봇 MicroNeuro의 설계 및 시각 서보 제어</h3>
+          <p>본 논문은 뇌실 내 뇌종양 생검을 위한 케이블 구동 하이브리드 이중 세그먼트 유연한 로봇 내시경 MicroNeuro와 온라인 자코비안 추정 및 제약 조건이 있는 모델 예측 제어를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_imu_2024/">
+          <span class="entry-type">부품</span>
+          <h3>관성 측정 장치</h3>
+          <p>가속도계와 자이로스코프를 결합하여 로봇의 자세, 각속도, 선가속도를 추정하는 센서 패키지.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_unitree_h1_humanoid_robot_2024/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Unitree H1 휨로봇</h3>
+          <p>25-27자유도를 가진 전기식 휨로봇, 최대 360 N·m 다리 관절 토크 및 약 189 N·m/kg 토크 밀도.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">
+          <span class="entry-type">논문</span>
+          <h3>소프트 로봇 슈트: 최신 기술, 핵심 기술 및 열린 과제</h3>
+          <p>2021년 arXiv에 발표된 종합 논문으로, 소프트 로봇 슈트를 정의하고 분류 체계를 제안하며 구동 방식, 물리적 인간-로봇 인터페이스, 의도 검출 전략 및 인간 움직임에 대한…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#analog-devices-adis16475-mems-analog-devices-adis16475-miniature-mems-imu">Analog Devices ADIS16475 초소형 MEMS 관성 측정 장치 / Analog Devices ADIS16475 Miniature MEMS IMU</a><ul>
+<li><a href="#_3">개요</a></li>
+<li><a href="#_4">작동 원리 및 기술 아키텍처</a></li>
+<li><a href="#_5">주요 파라미터</a></li>
+<li><a href="#_6">적용 시나리오</a></li>
+<li><a href="#_7">공급망 관계</a></li>
+<li><a href="#_8">출처 및 검증</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

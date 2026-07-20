@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software &amp; Integration · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Software &amp; Integration</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Software &amp; Integration</h1>
+      <p class="entry-name-en">Software &amp; Integration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Software &amp; Middleware</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Software &amp; Integration-the 14th stage of the entire Android product development process, covering solution design, implementation verification, and document delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Software Middleware and System Integration (Software &amp; Integration) is the 14th stage in the full-process development of humanoid robot products, expanded into several Level-3 sub-tasks in WBS V3.</p>
+<h2 id="content">Content</h2>
+<p>This stage covers complete engineering actions such as input review, solution design, implementation/prototyping, verification closure, and documentation delivery, serving as a critical node to ensure downstream dependents receive qualified inputs.</p>
+<h2 id="key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</h2>
+<h4 id="middleware-and-real-time-framework">Middleware and Real-time Framework</h4>
+<h5 id="middleware-selection-and-adaptation">Middleware Selection and Adaptation</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: ROS2 / DDS / Custom Middleware / LCM</li>
+<li><strong>Design Rationale</strong>: ROS2 is suitable for rapid algorithm iteration; DDS provides QoS; hard real-time control can be offloaded to RTOS</li>
+<li><strong>Key Constraints</strong>: Real-time performance, message latency, ecosystem, License</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Middleware architecture diagram, node list, QoS strategy
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P14.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Middleware Selection and Adaptation," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P14.1.1.2 Candidate Solution Establishment and Evaluation</strong>: Establish a candidate solution library for "Middleware Selection and Adaptation," conduct quantitative evaluation using "ROS2 / DDS / Custom Middleware / LCM," and determine the final solution after considering cost, performance, supply chain, and maintainability.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P14.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Middleware Selection and Adaptation" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P14.1.1.4 Verification and Issue Closure</strong>: Verify the output of "Middleware Selection and Adaptation," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P14.1.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Middleware Selection and Adaptation," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation according to template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="real-time-control-framework">Real-time Control Framework</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: EtherCAT Master, RTOS, Control Cycle Guarantee, Jitter Analysis</li>
+<li><strong>Design Rationale</strong>: Ensure the control loop (≥1 kHz) is not disturbed by AI tasks</li>
+<li><strong>Key Constraints</strong>: Jitter, scheduling strategy, core isolation</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Real-time performance test report, maximum jitter &lt; target
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P14.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Real-time Control Framework," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P14.1.2.2 Algorithm/Control Solution Design</strong>: Establish a mathematical model or algorithm framework based on "EtherCAT Master, RTOS, Control Cycle Guarantee, Jitter Analysis," form candidate solutions, evaluate stability, real-time performance, and scalability, and freeze the implementation path.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P14.1.2.3 Algorithm Implementation and Simulation Verification</strong>: Implement the algorithm for "Real-time Control Framework" in a simulation environment or with offline data, verifying functional correctness, real-time performance, and robustness.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P14.1.2.4 Algorithm Tuning and Performance Verification</strong>: Perform parameter tuning and boundary testing for the "Real-time Control Framework" algorithm, verifying performance under typical/extreme operating conditions meets indicators.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P14.1.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Real-time Control Framework," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation according to template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="hardware-abstraction-and-driver-layer">Hardware Abstraction and Driver Layer</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Unified Joint Interface, Sensor HAL, Board-level Drivers</li>
+<li><strong>Design Rationale</strong>: Shield different hardware implementations to facilitate algorithm porting and replacement</li>
+<li><strong>Key Constraints</strong>: Compatibility, real-time performance, maintainability</li>
+<li><strong>Completion Criteria/Deliverables</strong>: HAL interface specification, driver coverage list, unit tests
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P14.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Hardware Abstraction and Driver Layer," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P14.1.3.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Hardware Abstraction and Driver Layer," demonstrate using "Unified Joint Interface, Sensor HAL, Board-level Drivers," and clarify the technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P14.1.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Hardware Abstraction and Driver Layer" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P14.1.3.4 Verification and Issue Closure</strong>: Verify the output of "Hardware Abstraction and Driver Layer," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P14.1.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Hardware Abstraction and Driver Layer," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation according to template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="toolchain-and-devops">Toolchain and DevOps</h4>
+<h5 id="data-recording-and-playback">Data Recording and Playback</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: rosbag2, Structured Logging, Data Lake, Data Version Management</li>
+<li><strong>Design Rationale</strong>: Facilitate issue reproduction, model training, and performance analysis</li>
+<li><strong>Key Constraints</strong>: Storage capacity, bandwidth, privacy</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Data recording plan, playback consistency verification
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P14.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Data Recording and Playback," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P14.2.1.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Data Recording and Playback," demonstrate using "rosbag2, Structured Logging, Data Lake, Data Version Management," and clarify the technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P14.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Data Recording and Playback" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P14.2.1.4 Verification and Issue Closure</strong>: Verify the output of "Data Recording and Playback," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P14.2.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Data Recording and Playback," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation according to template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="ota-diagnostics-and-health-management">OTA, Diagnostics, and Health Management</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Remote Upgrade, Health Monitoring, Fault Codes, Predictive Maintenance</li>
+<li><strong>Design Rationale</strong>: Enable rapid software iteration during small batch and mass production; reduce on-site maintenance costs</li>
+<li><strong>Key Constraints</strong>: Security, rollback mechanism, bandwidth</li>
+<li><strong>Completion Criteria/Deliverables</strong>: OTA plan, diagnostic protocol, health management interface
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P14.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "OTA, Diagnostics, and Health Management," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P14.2.2.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "OTA, Diagnostics, and Health Management," demonstrate using "Remote Upgrade, Health Monitoring, Fault Codes, Predictive Maintenance," and clarify the technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P14.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "OTA, Diagnostics, and Health Management" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P14.2.2.4 Verification and Issue Closure</strong>: Verify the output of "OTA, Diagnostics, and Health Management," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P14.2.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "OTA, Diagnostics, and Health Management," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation according to template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="cicd-and-simulation-test-chain">CI/CD and Simulation Test Chain</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: GitLab CI, Docker, SIL/HIL Automated Testing, Code Coverage</li>
+<li><strong>Design Rationale</strong>: Continuous integration ensures software quality and reduces regression issues</li>
+<li><strong>Key Constraints</strong>: Computing power, test environment maintenance</li>
+<li><strong>Completion Criteria/Deliverables</strong>: CI pipeline, automated test pass rate, coverage metrics
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P14.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "CI/CD and Simulation Test Chain," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P14.2.3.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "CI/CD and Simulation Test Chain," demonstrate using "GitLab CI, Docker, SIL/HIL Automated Testing, Code Coverage," and clarify the technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P14.2.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "CI/CD and Simulation Test Chain" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P14.2.3.4 Test Execution and Result Analysis</strong>: Execute tests for "CI/CD and Simulation Test Chain" according to acceptance criteria, calculate pass rate/error/deviation, conduct root cause analysis, and form an improvement list.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P14.2.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "CI/CD and Simulation Test Chain," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation according to template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="system-integration-and-interface-testing">System Integration and Interface Testing</h4>
+<h5 id="end-to-end-data-flow-integration">End-to-End Data Flow Integration</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Sensor → Perception → Planning → Control → Actuator Link Testing</li>
+<li><strong>Design Rationale</strong>: Verify module interfaces, timing, and exception handling</li>
+<li><strong>Key Constraints</strong>: Real-time performance, message loss, node failure</li>
+<li><strong>Completion Criteria/Deliverables</strong>: End-to-end latency &lt; target, fault injection test pass
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P14.3.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "End-to-End Data Flow Integration," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P14.3.1.2 Interface and Integration Strategy Design</strong>: Review the subsystem interfaces, data flow, and timing involved in "End-to-End Data Flow Integration," and develop integration sequence, rollback strategy, and exception handling mechanisms.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P14.3.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "End-to-End Data Flow Integration" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P14.3.1.4 Verification and Issue Closure</strong>: Verify the output of "End-to-End Data Flow Integration," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P14.3.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "End-to-End Data Flow Integration," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation according to template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p14_1_3/">Hardware abstraction and driver layer</a>
+              <span class="rel-desc">Software &amp; Integration has prerequisite Hardware abstraction and driver layer.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p12/">VLA / WAM / AI algorithm integration (AI &amp; Perception)</a>
+              <span class="rel-desc">P14 依赖 P12 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p14_1_1/">Selection and adaptation of middleware</a>
+              <span class="rel-desc">Software &amp; Integration has prerequisite Selection and adaptation of middleware.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">Software &amp; Integration uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p14_2_3/">CI/CD and simulation test chain</a>
+              <span class="rel-desc">Software &amp; Integration is part of CI/CD and simulation test chain.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p14_3_2/">Hardware/software in the loop testing (HIL/SIL)</a>
+              <span class="rel-desc">Software &amp; Integration is part of Hardware/software in the loop testing (HIL/SIL).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_hardware_in_the_loop/">Hardware-in-the-Loop (HIL)</a>
+              <span class="rel-desc">Software &amp; Integration mentions Hardware-in-the-Loop (HIL).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p14_2_2/">Ota, diagnosis and health management</a>
+              <span class="rel-desc">Software &amp; Integration mentions Ota, diagnosis and health management.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p13/">Electronics &amp; Power Systems</a>
+              <span class="rel-desc">P14 依赖 P13 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p10/">Motion Control Algorithm Development and Validation</a>
+              <span class="rel-desc">P14 依赖 P10 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_1_3/">Hardware abstraction and driver layer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Hardware abstraction and driver layer is part of Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">ModuLoop: Low-Level Code Generation using Modular Synthesizer and Closed-Loop Debugger for Robotic Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ModuLoop: Low-Level Code Generation using Modular Synthesizer and Closed-Loop Debugger for Robotic Control discusses Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">RoboKube: Establishing a New Foundation for the Cloud Native Evolution in Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboKube: Establishing a New Foundation for the Cloud Native Evolution in Robotics discusses Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_can_bus_2024/">CAN Bus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CAN Bus discusses Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_1_2/">Real-time control framework</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Real-time control framework is part of Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_3_2/">Hardware/software in the loop testing (HIL/SIL)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Hardware/software in the loop testing (HIL/SIL) is part of Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_halder_secure_ota_software_updates_in_2019/">Secure OTA Software Updates in Connected Vehicles: A Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Secure OTA Software Updates in Connected Vehicles: A Survey discusses Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15/">Integration &amp; V &amp; V testing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P15 依赖 P14 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_2_2/">Ota, diagnosis and health management</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Ota, diagnosis and health management is part of Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_1_1/">Selection and adaptation of middleware</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Selection and adaptation of middleware is part of Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_3_1/">End-to-end data flow alignment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">End-to-end data flow alignment is part of Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_barua_approximate_computing_for_robo_2021/">Approximate Computing for Robotic Path Planning: Experimentation, Case Study and Practical Implications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Approximate Computing for Robotic Path Planning: Experimentation, Case Study and Practical Implications discusses Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_2_1/">Data recording and playback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Data recording and playback is part of Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">Service-Oriented Robotic Computing for Cloud Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Service-Oriented Robotic Computing for Cloud Robotics discusses Software &amp; Integration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_2_3/">CI/CD and simulation test chain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">CI/CD and simulation test chain is part of Software &amp; Integration.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p14"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_halder_secure_ota_software_updates_in_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Secure OTA Software Updates in Connected Vehicles: A Survey</h3>
+          <p>A 2019 survey that classifies and compares secure over-the-air (OTA) software update techniques for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Hardware/software in the loop testing (HIL/SIL)</h3>
+          <p>HIL/SIL test reports, 100% coverage of key use cases</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Data recording and playback</h3>
+          <p>Data recording scheme, playback consistency verification</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Ota, diagnosis and health management</h3>
+          <p>OTA solutions, diagnostic protocols, health management interfaces</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p12/">
+          <span class="entry-type">Method</span>
+          <h3>VLA / WAM / AI algorithm integration (AI &amp; Perception)</h3>
+          <p>VLA / WAM / AI algorithm integration (AI &amp; Perception) — the 12th phase of the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>EtherCAT</h3>
+          <p>High-performance industrial Ethernet field bus for deterministic joint control.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_can_bus_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>CAN Bus</h3>
+          <p>Field bus connecting joint motor drives to the central controller in humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Hardware abstraction and driver layer</h3>
+          <p>Hal interface specification, driver coverage checklist, unit testing</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10/">
+          <span class="entry-type">Method</span>
+          <h3>Motion Control Algorithm Development and Validation</h3>
+          <p>Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Real-time control framework</h3>
+          <p>Real-time performance test report, maximum jitter &lt; target</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_barua_approximate_computing_for_robo_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Approximate Computing for Robotic Path Planning: Experimentation, Case Study and Practical Implications</h3>
+          <p>This paper applies loop perforation to approximate the A* path planning algorithm for battery-driven…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>CI/CD and simulation test chain</h3>
+          <p>CI pipeline, automatic test pass rate, coverage indicators</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15/">
+          <span class="entry-type">Method</span>
+          <h3>Integration &amp; V &amp; V testing</h3>
+          <p>Integration &amp; V &amp; v-phase 15 of the Android product development process, covering solution design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Service-Oriented Robotic Computing for Cloud Robotics</h3>
+          <p>A survey of service-oriented architecture and Web services for cloud robotics, distinguishing the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>End-to-end data flow alignment</h3>
+          <p>End-to-end delay &lt; target, fault injection test passed</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Selection and adaptation of middleware</h3>
+          <p>Middleware architecture diagram, node list, QoS policy</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboKube: Establishing a New Foundation for the Cloud Native Evolution in Robotics</h3>
+          <p>This paper proposes RoboKube, a Kubernetes-based framework for deploying containerized ROS 2…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p13/">
+          <span class="entry-type">Method</span>
+          <h3>Electronics &amp; Power Systems</h3>
+          <p>Electronics &amp; Power Systems—Phase 13 of the full lifecycle for humanoid robot product development,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_hardware_in_the_loop/">
+          <span class="entry-type">Method</span>
+          <h3>Hardware-in-the-Loop (HIL)</h3>
+          <p>A validation method where real hardware controllers interact with a real-time simulation of the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ModuLoop: Low-Level Code Generation using Modular Synthesizer and Closed-Loop Debugger for Robotic Control</h3>
+          <p>Proposes a closed-loop modular code synthesizer that converts natural-language commands into…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</a><ul>
+<li><a href="#middleware-and-real-time-framework">Middleware and Real-time Framework</a><ul>
+<li><a href="#middleware-selection-and-adaptation">Middleware Selection and Adaptation</a></li>
+<li><a href="#real-time-control-framework">Real-time Control Framework</a></li>
+<li><a href="#hardware-abstraction-and-driver-layer">Hardware Abstraction and Driver Layer</a></li>
+</ul>
+</li>
+<li><a href="#toolchain-and-devops">Toolchain and DevOps</a><ul>
+<li><a href="#data-recording-and-playback">Data Recording and Playback</a></li>
+<li><a href="#ota-diagnostics-and-health-management">OTA, Diagnostics, and Health Management</a></li>
+<li><a href="#cicd-and-simulation-test-chain">CI/CD and Simulation Test Chain</a></li>
+</ul>
+</li>
+<li><a href="#system-integration-and-interface-testing">System Integration and Interface Testing</a><ul>
+<li><a href="#end-to-end-data-flow-integration">End-to-End Data Flow Integration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰</h1>
+      <p class="entry-name-en">A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.16091v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>고충실도 미시규모 모델에서 단일 입자 모델까지의 연속 전기화학 배터리 모델을 유도하는 통합적 환원 프레임워크를 제시하고, 가정들과 한계, 열-전기화학 결합 확장에 대해 비판적으로 논의한 리뷰이다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2203.16091" target="_blank" rel="noopener">A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>다공성 전극 이론에서 도출된 물리 기반 전기화학 배터리 모델은 리튬이온 배터리를 이해하고 설계 및 관리를 개선하는 데 매우 강력한 도구입니다. 다양한 응용 분야에 따라 서로 다른 모델 정밀도, 즉 모델 복잡성이 필요합니다. 예를 들어, 배터리 설계에서는 더 긴 계산 시간과 강력한 컴퓨터 사용이 가능하지만, 실시간 배터리 제어(예: 전기 자동차)에서는 간단한 장치를 사용하여 매우 빠른 계산을 수행해야 합니다. 이러한 이유로 대부분의 특징을 유지하면서 낮은 계산 비용을 제공하는 단순화된 모델이 널리 사용됩니다. 문헌에서 이러한 단순화된 모델이 독립적으로 제시되어 모델 간 불일치를 초래하는 경우가 많지만, 실제로는 통일되고 체계적인 프레임워크를 사용하여 더 복잡한 모델에서 도출될 수 있습니다. 본 리뷰에서는 고정밀 미세 규모 모델에서 시작하여 단일 입자 모델(SPM)까지 축소하는 이 축소 프레임워크를 소개하고, 그 과정에서 Doyle-Fuller-Newman(DFN) 모델과 같은 다른 일반적인 모델을 도출합니다. 또한 각 모델의 장점과 단점에 대한 비판적 논의를 제공하여 특정 응용 분야에 대한 모델 선택을 지원합니다. 마지막으로, 특히 열 모델에 중점을 두고 모델의 가능한 확장에 대한 개요를 제공합니다. 이러한 확장 중 어느 것이든 미세 규모 모델에 통합될 수 있으며, 축소 프레임워크를 재적용하여 새로운 세대의 단순화된 다중 물리 모델을 도출할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>다공성 전극 이론에서 도출된 물리 기반 전기화학 배터리 모델은 리튬이온 배터리를 이해하고 설계 및 관리를 개선하는 데 매우 강력한 도구입니다. 다양한 응용 분야에 따라 서로 다른 모델 정밀도, 즉 모델 복잡성이 필요합니다. 예를 들어, 배터리 설계에서는 더 긴 계산 시간과 강력한 컴퓨터 사용이 가능하지만, 실시간 배터리 제어(예: 전기 자동차)에서는 간단한 장치를 사용하여 매우 빠른 계산을 수행해야 합니다. 이러한 이유로 대부분의 특징을 유지하면서 낮은 계산 비용을 제공하는 단순화된 모델이 널리 사용됩니다. 문헌에서 이러한 단순화된 모델이 독립적으로 제시되어 모델 간 불일치를 초래하는 경우가 많지만, 실제로는 통일되고 체계적인 프레임워크를 사용하여 더 복잡한 모델에서 도출될 수 있습니다. 본 리뷰에서는 고정밀 미세 규모 모델에서 시작하여 단일 입자 모델(SPM)까지 축소하는 이 축소 프레임워크를 소개하고, 그 과정에서 Doyle-Fuller-Newman(DFN) 모델과 같은 다른 일반적인 모델을 도출합니다. 또한 각 모델의 장점과 단점에 대한 비판적 논의를 제공하여 특정 응용 분야에 대한 모델 선택을 지원합니다. 마지막으로, 특히 열 모델에 중점을 두고 모델의 가능한 확장에 대한 개요를 제공합니다. 이러한 확장 중 어느 것이든 미세 규모 모델에 통합될 수 있으며, 축소 프레임워크를 재적용하여 새로운 세대의 단순화된 다중 물리 모델을 도출할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_from_experts_to_a_generalist_t_2025/">From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_usability_of_a_robots_realisti_2020/">자폐 아동 치료에서 로봇의 사실적 표정 및 주변 장치의 사용성</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">휴머노이드를 위한 인간 수준 구동</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ficht_nimbro_op2_grown_up_3d_printed_2017/">NimbRo-OP2: 연구를 위한 3D 프린팅 오픈 성인 크기 휴머노이드 플랫폼</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_kolzenberg_a_four_parameter_model_for_the_2022/">작동 중 배터리 노화 예측을 위한 고체 전해질 계면(SEI) 4개 매개변수 모델</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_pucci_automatic_gain_tuning_of_a_mom_2016/">휴머노이드 로봇을 위한 모멘텀 기반 균형 제어기의 자동 이득 튜닝</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1 휴머노이드 팔의 물리 기반 전력 소비 모델 식별</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">리튬 이온 배터리 팩의 열 방출 종합 분석</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zhu_cycloidal_quasi_direct_drive_a_2024/">족운동 로봇을 위한 사이클로이드 의사직구동 액추에이터 설계 및 학습 기반 토크 추정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_planella_a_continuum_of_physics_based_l_2022"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ficht_nimbro_op2_grown_up_3d_printed_2017/">
+          <span class="entry-type">논문</span>
+          <h3>NimbRo-OP2: 연구를 위한 3D 프린팅 오픈 성인 크기 휴머노이드 플랫폼</h3>
+          <p>본 논문은 약 135cm 키와 18kg 무게의 저렴하고 완전히 오픈소스인 3D 프린팅 성인 크기 휴머노이드 로봇 플랫폼인 NimbRo-OP2를 소개하고, RoboCup 2017…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_from_experts_to_a_generalist_t_2025/">
+          <span class="entry-type">논문</span>
+          <h3>From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</h3>
+          <p>这篇工作把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过世界模型/视频预测、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">
+          <span class="entry-type">논문</span>
+          <h3>CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</h3>
+          <p>본 논문은 Autodesk Inventor에서 경로를 그려 비전문 사용자가 산업용 로봇을 프로그래밍할 수 있는 CAD 기반 인간-로봇 인터페이스를 제안하며, 레이저 카메라와…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">
+          <span class="entry-type">논문</span>
+          <h3>BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</h3>
+          <p>BeyondMimic…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드를 위한 인간 수준 구동</h3>
+          <p>ISB 기반 자유도 아틀라스, 인간 등가 영역(HEE) 및 인간 수준 구동 점수(HLAS)를 통해 휴머노이드의 &#39;인간 수준&#39; 구동을 측정 가능하게 하는 재현 가능한 벤치마크…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_usability_of_a_robots_realisti_2020/">
+          <span class="entry-type">논문</span>
+          <h3>자폐 아동 치료에서 로봇의 사실적 표정 및 주변 장치의 사용성</h3>
+          <p>본 논문은 19명의 자폐 아동이 치료사와 함께 Zeno 휴머노이드 로봇을 이용한 감정 학습 활동에 참여한 사용성 테스트를 보고하며, 코퍼스 기반 사실적 표정과 실시간 거울 표정을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025/">
+          <span class="entry-type">논문</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kolzenberg_a_four_parameter_model_for_the_2022/">
+          <span class="entry-type">논문</span>
+          <h3>작동 중 배터리 노화 예측을 위한 고체 전해질 계면(SEI) 4개 매개변수 모델</h3>
+          <p>본 논문은 세 가지 매개변수화 프로토콜과 양극 개회로 전압 곡선만을 사용하여 리튬 이온 배터리 용량 감소를 예측하는 물리 기반 SEI 성장 4개 매개변수 모델을 제시하며, 25개의…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">
+          <span class="entry-type">논문</span>
+          <h3>관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</h3>
+          <p>본 논문은 저렴한 변형 게이지 관절 토크 센서와 하나의 고관절 장착 힘/토크 센서를 융합하여 로봇 다리의 접촉을 감지하고 위치를 추정하며 접촉력을 추정하는 일반화된 운동량 기반…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pucci_automatic_gain_tuning_of_a_mom_2016/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 로봇을 위한 모멘텀 기반 균형 제어기의 자동 이득 튜닝</h3>
+          <p>휴머노이드 로봇을 위한 모멘텀 기반 균형 제어기의 자동 이득 튜닝 기법을 제안하며, 폐쇄 루프 구속 관절 공간 동역학을 선형화하고 이득을 최적화하여 원하는 강성과 감쇄 특성을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</h3>
+          <p>본 논문은 제트 동력 휴머노이드 iRonCub를 위한 다중 속도 모델 예측 제어 프레임워크를 제안하며, 질량 중심 운동량 역학과 2차 비선형 제트 엔진 역학을 통합하고 MuJoCo…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">
+          <span class="entry-type">논문</span>
+          <h3>리튬 이온 배터리 팩의 열 방출 종합 분석</h3>
+          <p>이 2025년 arXiv 논문은 16셀 리튬 이온 배터리 팩에 대한 CFD 및 열 시뮬레이션을 통해 7가지 기하학적 배치와 기류 구성을 비교하였으며, 5개 인렛과 1개 아웃렛을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhu_cycloidal_quasi_direct_drive_a_2024/">
+          <span class="entry-type">논문</span>
+          <h3>족운동 로봇을 위한 사이클로이드 의사직구동 액추에이터 설계 및 학습 기반 토크 추정</h3>
+          <p>이 논문은 족운동 로봇을 위한 10:1 사이클로이드 의사직구동(C-QDD) 액추에이터와, 사이클로이드 기어 비선형성으로 인한 시뮬레이션-현실 간격을 줄이기 위해 액추에이터 상태…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Unitree G1 휴머노이드 팔의 물리 기반 전력 소비 모델 식별</h3>
+          <p>본 논문은 Unitree G1 휴머노이드 로봇의 7자유도 왼팔 전력 소비를 위한 물리 기반 선형-매개변수 모델을 제시하며, 액추에이터 손실 항, 기준 토크 보정 및 쌍별 관절 속도…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

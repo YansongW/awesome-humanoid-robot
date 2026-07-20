@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Requirements Definition and System Design (Concept / Pre-A) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Requirements Definition and System Design (Concept / Pre-A)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Requirements Definition and System Design (Concept / Pre-A)</h1>
+      <p class="entry-name-en">Requirements Definition and System Design (Concept / Pre-A)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Policy, Regulation &amp; Ethics</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Requirement Definition and System Architecture (Concept / Pre-A) – the first phase of the full lifecycle for humanoid robot product development, encompassing conceptual design, implementation validation, and document delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Requirements Definition and System Concept (Concept / Pre-A) is the first stage in the full lifecycle of humanoid robot product development, expanded into several Level-3 sub-tasks in WBS V3.</p>
+<h2 id="content">Content</h2>
+<p>This stage covers complete engineering actions such as input review, concept design, implementation/prototyping, verification closure, and documentation delivery, serving as a critical checkpoint to ensure downstream dependencies receive qualified inputs.</p>
+<h2 id="key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</h2>
+<h4 id="requirements-engineering">Requirements Engineering</h4>
+<h5 id="stakeholder-requirements-elicitation">Stakeholder Requirements Elicitation</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Interviews, questionnaires, workshops, on-site observation, Kano model</li>
+<li><strong>Design Thinking Logic</strong>: Identify explicit and implicit needs; distinguish Must-have / Differentiator / Exciter</li>
+<li><strong>Key Constraints</strong>: Time, sample representativeness, requirement conflicts</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Stakeholder list, requirements pool, priority ranking
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P1.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Stakeholder Requirements Elicitation"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P1.1.1.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "Stakeholder Requirements Elicitation"; demonstrate using "Interviews, questionnaires, workshops, on-site observation, Kano model"; clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P1.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Stakeholder Requirements Elicitation" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P1.1.1.4 Verification and Issue Closure</strong>: Verify the output of "Stakeholder Requirements Elicitation"; check if completion criteria are met; record issues and track to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P1.1.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Stakeholder Requirements Elicitation"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="system-requirements-specification-syrs">System Requirements Specification (SyRS)</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: SysML use case diagrams, requirements tree, SMART principle</li>
+<li><strong>Design Thinking Logic</strong>: Translate business language into engineering language: dimensions, weight, DOF, speed, payload, endurance, safety level</li>
+<li><strong>Key Constraints</strong>: Indicator coupling, test feasibility, cost drivers</li>
+<li><strong>Completion Criteria / Deliverables</strong>: SyRS baseline release, requirements traceability, quantified acceptance conditions
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P1.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "System Requirements Specification (SyRS)"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P1.1.2.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "System Requirements Specification (SyRS)"; demonstrate using "SysML use case diagrams, requirements tree, SMART principle"; clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P1.1.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "System Requirements Specification (SyRS)" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P1.1.2.4 Verification and Issue Closure</strong>: Verify the output of "System Requirements Specification (SyRS)"; check if completion criteria are met; record issues and track to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P1.1.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "System Requirements Specification (SyRS)"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="regulatory-standards-and-safety-requirements-mapping">Regulatory, Standards, and Safety Requirements Mapping</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: ISO 10218-1/2, ISO/TS 15066, IEC 61508, IEC 62368, CE/FCC/UL gap analysis</li>
+<li><strong>Design Thinking Logic</strong>: Safety requirements must become hard constraints early in design, not retrofitted later</li>
+<li><strong>Key Constraints</strong>: Regional differences, certification cycles, testing costs</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Regulatory requirements matrix, compliance roadmap, safety integrity level (SIL/PL)
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P1.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Regulatory, Standards, and Safety Requirements Mapping"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P1.1.3.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "Regulatory, Standards, and Safety Requirements Mapping"; demonstrate using "ISO 10218-1/2, ISO/TS 15066, IEC 61508, IEC 62368, CE/FCC/UL gap analysis"; clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P1.1.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Regulatory, Standards, and Safety Requirements Mapping" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P1.1.3.4 Verification and Issue Closure</strong>: Verify the output of "Regulatory, Standards, and Safety Requirements Mapping"; check if completion criteria are met; record issues and track to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P1.1.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Regulatory, Standards, and Safety Requirements Mapping"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="human-factors-engineering-and-interaction-requirements">Human Factors Engineering and Interaction Requirements</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Anthropometric databases, reach envelope analysis, startle response experiments, HMI prototypes</li>
+<li><strong>Design Thinking Logic</strong>: In human-robot coexistence scenarios, height, field of view, sound, and motion must be acceptable</li>
+<li><strong>Key Constraints</strong>: Cultural differences, user group diversity, psychological safety</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Human factors requirements report, key interaction posture envelopes, HMI principles
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P1.1.4.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Human Factors Engineering and Interaction Requirements"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P1.1.4.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "Human Factors Engineering and Interaction Requirements"; demonstrate using "Anthropometric databases, reach envelope analysis, startle response experiments, HMI prototypes"; clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P1.1.4.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Human Factors Engineering and Interaction Requirements" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P1.1.4.4 Verification and Issue Closure</strong>: Verify the output of "Human Factors Engineering and Interaction Requirements"; check if completion criteria are met; record issues and track to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P1.1.4.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Human Factors Engineering and Interaction Requirements"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h4 id="concept-design">Concept Design</h4>
+<h5 id="concept-divergence-and-convergence">Concept Divergence and Convergence</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Brainstorming, morphological sketches, Morphological Matrix, Pugh Matrix</li>
+<li><strong>Design Thinking Logic</strong>: Systematically evaluate multiple whole-body layouts, actuation schemes, and sensing schemes</li>
+<li><strong>Key Constraints</strong>: Technology readiness, cost, manufacturability</li>
+<li><strong>Completion Criteria / Deliverables</strong>: At least 3 concept solutions, scoring matrix, rationale for selected solution
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P1.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Concept Divergence and Convergence"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P1.2.1.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "Concept Divergence and Convergence"; demonstrate using "Brainstorming, morphological sketches, Morphological Matrix, Pugh Matrix"; clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P1.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Concept Divergence and Convergence" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P1.2.1.4 Verification and Issue Closure</strong>: Verify the output of "Concept Divergence and Convergence"; check if completion criteria are met; record issues and track to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P1.2.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Concept Divergence and Convergence"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="whole-body-architecture-and-function-allocation">Whole-Body Architecture and Function Allocation</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Functional decomposition, N² diagram, Interface Control Document (ICD) draft</li>
+<li><strong>Design Thinking Logic</strong>: Define boundaries of motion, manipulation, perception, computation, power, thermal management, and structural subsystems</li>
+<li><strong>Key Constraints</strong>: Real-time performance, power consumption, cable count, maintainability</li>
+<li><strong>Completion Criteria / Deliverables</strong>: System architecture diagram, function allocation table, ICD draft
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P1.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Whole-Body Architecture and Function Allocation"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P1.2.2.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "Whole-Body Architecture and Function Allocation"; demonstrate using "Functional decomposition, N² diagram, Interface Control Document (ICD) draft"; clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P1.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Whole-Body Architecture and Function Allocation" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P1.2.2.4 Verification and Issue Closure</strong>: Verify the output of "Whole-Body Architecture and Function Allocation"; check if completion criteria are met; record issues and track to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P1.2.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Whole-Body Architecture and Function Allocation"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="key-technical-indicator-trade-off-analysis">Key Technical Indicator Trade-off Analysis</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Multi-objective optimization, Pareto frontier, sensitivity analysis</li>
+<li><strong>Design Thinking Logic</strong>: Speed vs. endurance vs. cost vs. payload; find an acceptable design space</li>
+<li><strong>Key Constraints</strong>: Physical limits, supply chain capability, budget</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Trade-off analysis table, indicator boundaries, design space diagram
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P1.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Key Technical Indicator Trade-off Analysis"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P1.2.3.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "Key Technical Indicator Trade-off Analysis"; demonstrate using "Multi-objective optimization, Pareto frontier, sensitivity analysis"; clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P1.2.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Key Technical Indicator Trade-off Analysis" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P1.2.3.4 Verification and Issue Closure</strong>: Verify the output of "Key Technical Indicator Trade-off Analysis"; check if completion criteria are met; record issues and track to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P1.2.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Key Technical Indicator Trade-off Analysis"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16/">Pilot &amp; Production Ramp</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) mentions Pilot &amp; Production Ramp.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p1_1_3/">Mapping of regulations, standards and safety requirements</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) is part of Mapping of regulations, standards and safety requirements.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_1_1/">DFM/DFA review</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) mentions DFM/DFA review.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15/">Integration &amp; V &amp; V testing</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) mentions Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p1_1_1/">Stakeholder demand gathering</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) is part of Stakeholder demand gathering.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_standard_iec_61508/">IEC 61508</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) mentions IEC 61508.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_3_3/">PPAP / Mass Production Readiness Assessment</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) mentions PPAP / Mass Production Readiness Assessment.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p1_1_4/">Human Factors Engineering and Interaction Requirements</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) is part of Human Factors Engineering and Interaction Requirements.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p1_1_2/">System Requirements Specification (SyRS)</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) is part of System Requirements Specification (SyRS).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_1_3/">Assembly line planning and SOP</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) mentions Assembly line planning and SOP.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p0/">Project Initiation and Business Baseline</a>
+              <span class="rel-desc">P1 依赖 P0 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p2_2_2/">Human-Computer Interaction (HMI) Design</a>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) mentions Human-Computer Interaction (HMI) Design.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p1_1_4/">Human Factors Engineering and Interaction Requirements</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Human Factors Engineering and Interaction Requirements is part of Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Production Ramp mentions Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p1_1_2/">System Requirements Specification (SyRS)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">System Requirements Specification (SyRS) is part of Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p1_2_2/">Whole machine architecture and function allocation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Whole machine architecture and function allocation is part of Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p1_2_1/">Conceptual scheme divergence and convergence</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Conceptual scheme divergence and convergence is part of Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p1_1_3/">Mapping of regulations, standards and safety requirements</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Mapping of regulations, standards and safety requirements is part of Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_embracing_evolution_a_call_for_2025/">Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot discusses Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p2/">Industrial Design and Appearance Engineering (ID / A-Surface)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P2 依赖 P1 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design discusses Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p1_2_3/">Trade-off analysis of key technical indicators</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Trade-off analysis of key technical indicators is part of Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3/">System Architecture and Electromechanical Master Design (System / Preliminary Design)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P3 依赖 P1 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p1_1_1/">Stakeholder demand gathering</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Stakeholder demand gathering is part of Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p1_2_4/">Proof of Concept (Proof of Concept)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Proof of Concept (Proof of Concept) is part of Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sathuluri_a_systems_design_approach_for_2022/">A systems design approach for the co-design of a humanoid robot arm</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A systems design approach for the co-design of a humanoid robot arm discusses Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liberman_pincu_designing_robots_with_the_cont_2022/">Designing robots with the context in mind: One design does not fit all</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Designing robots with the context in mind: One design does not fit all proposes Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p1"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p2/">
+          <span class="entry-type">Method</span>
+          <h3>Industrial Design and Appearance Engineering (ID / A-Surface)</h3>
+          <p>Industrial Design and Appearance Engineering (ID / A-Surface) —— Phase 2 of the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_3_3/">
+          <span class="entry-type">Method</span>
+          <h3>PPAP / Mass Production Readiness Assessment</h3>
+          <p>PPAP approval and mass production readiness evaluation passed</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p2_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Human-Computer Interaction (HMI) Design</h3>
+          <p>HMI specifications, interaction prototypes, usability test reports</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">Concept</span>
+          <h3>Production Ramp</h3>
+          <p>Transition from pilot-line builds to volume manufacturing while improving yield, cycle time, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Whole machine architecture and function allocation</h3>
+          <p>System architecture diagram, function allocation table, ICD draft</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Stakeholder demand gathering</h3>
+          <p>Stakeholder list, demand pool, prioritization</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3/">
+          <span class="entry-type">Method</span>
+          <h3>System Architecture and Electromechanical Master Design (System / Preliminary Design)</h3>
+          <p>System Architecture and Electromechanical Design (System / Preliminary Design) —— Phase 3 of the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Trade-off analysis of key technical indicators</h3>
+          <p>Trade-off analysis table, indicator boundaries, design space diagram</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>DFM/DFA review</h3>
+          <p>DFM/DFA reports, engineering change lists, cost impact assessments</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design</h3>
+          <p>Introduces monotone subsystem decomposition, a constraint-programming method that computes…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1_2_4/">
+          <span class="entry-type">Method</span>
+          <h3>Proof of Concept (Proof of Concept)</h3>
+          <p>POC reports, risk downgrade records, Go/No-Go decisions</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p0/">
+          <span class="entry-type">Method</span>
+          <h3>Project Initiation and Business Baseline</h3>
+          <p>Project Initiation and Business Baseline</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Conceptual scheme divergence and convergence</h3>
+          <p>At least 3 conceptual proposals, scoring matrix, and reasons for selecting the proposal</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_standard_iec_61508/">
+          <span class="entry-type">Standard</span>
+          <h3>IEC 61508</h3>
+          <p>An international standard for functional safety of electrical/electronic/programmable electronic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1_1_4/">
+          <span class="entry-type">Method</span>
+          <h3>Human Factors Engineering and Interaction Requirements</h3>
+          <p>Human-cause requirements reporting, key interaction pose envelopes, HMI principles</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15/">
+          <span class="entry-type">Method</span>
+          <h3>Integration &amp; V &amp; V testing</h3>
+          <p>Integration &amp; V &amp; v-phase 15 of the Android product development process, covering solution design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_embracing_evolution_a_call_for_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</h3>
+          <p>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sathuluri_a_systems_design_approach_for_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>A systems design approach for the co-design of a humanoid robot arm</h3>
+          <p>This paper proposes a top-down, V-model-based co-design methodology for a humanoid robot arm, using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>System Requirements Specification (SyRS)</h3>
+          <p>SyRS baseline release, requirements traceability, and acceptance condition quantification</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot &amp; Production Ramp</h3>
+          <p>Pilot &amp; Production Ramp-stage 16 of the Android product development process, covering concept…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Assembly line planning and SOP</h3>
+          <p>Assembly flow chart, tooling list, SOP, time measurement</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Mapping of regulations, standards and safety requirements</h3>
+          <p>Regulatory requirements matrix, compliance roadmap, security objective level (SIL/PL)</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liberman_pincu_designing_robots_with_the_cont_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Designing robots with the context in mind: One design does not fit all</h3>
+          <p>This paper proposes a four-layer contextual framework (domain, physical environment, users, role)…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</a><ul>
+<li><a href="#requirements-engineering">Requirements Engineering</a><ul>
+<li><a href="#stakeholder-requirements-elicitation">Stakeholder Requirements Elicitation</a></li>
+<li><a href="#system-requirements-specification-syrs">System Requirements Specification (SyRS)</a></li>
+<li><a href="#regulatory-standards-and-safety-requirements-mapping">Regulatory, Standards, and Safety Requirements Mapping</a></li>
+<li><a href="#human-factors-engineering-and-interaction-requirements">Human Factors Engineering and Interaction Requirements</a></li>
+</ul>
+</li>
+<li><a href="#concept-design">Concept Design</a><ul>
+<li><a href="#concept-divergence-and-convergence">Concept Divergence and Convergence</a></li>
+<li><a href="#whole-body-architecture-and-function-allocation">Whole-Body Architecture and Function Allocation</a></li>
+<li><a href="#key-technical-indicator-trade-off-analysis">Key Technical Indicator Trade-off Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

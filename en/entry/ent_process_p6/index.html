@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URDF modeling and Kinematics &amp; URDF · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">URDF modeling and Kinematics &amp; URDF</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>URDF modeling and Kinematics &amp; URDF</h1>
+      <p class="entry-name-en">URDF modeling and Kinematics &amp; URDF</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Software &amp; Middleware</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>URDF modeling and Kinematics &amp; URDF-phase 6 of the entire Android product development process, covering conceptual design, implementation verification, and document delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>URDF modeling and kinematics verification (Kinematics &amp; URDF) is the 6th stage in the full humanoid robot product development workflow, expanded into several Level-3 sub-tasks in WBS V3.</p>
+<h2 id="content">Content</h2>
+<p>This stage covers complete engineering actions such as input review, solution design, implementation/prototyping, verification closure, and documentation delivery, serving as a critical checkpoint to ensure downstream dependencies receive qualified inputs.</p>
+<h2 id="key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</h2>
+<h4 id="urdfsdf-model-construction">URDF/SDF Model Construction</h4>
+<h5 id="urdfsdf-file-generation">URDF/SDF File Generation</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: ROS URDF, Xacro, SolidWorks/NX → URDF plugin, inertia parameter verification</li>
+<li><strong>Design Rationale</strong>: Links, joints, inertia, collision bodies, and visual models must be fully consistent with CAD; mass properties sourced from P3.1.2/P3.1.3</li>
+<li><strong>Key Constraints</strong>: Coordinate system consistency, unit uniformity, collision bodies must not be too dense</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Correctly loadable in RViz/Gazebo/Isaac Sim without parsing errors
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P6.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "URDF/SDF File Generation," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P6.1.1.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "URDF/SDF File Generation," justify using "ROS URDF, Xacro, SolidWorks/NX → URDF plugin, inertia parameter verification," and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P6.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "URDF/SDF File Generation" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P6.1.1.4 Verification and Issue Closure</strong>: Verify the output of "URDF/SDF File Generation," check compliance with completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P6.1.1.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "URDF/SDF File Generation," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="dh-modified-dh-parameter-definition">DH / Modified DH Parameter Definition</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Analytical method, Pinocchio/RBDL, symbolic computation</li>
+<li><strong>Design Rationale</strong>: Establish standard kinematic parameters for each kinematic chain to facilitate inverse kinematics and controller implementation</li>
+<li><strong>Key Constraints</strong>: Coordinate system orientation conventions, joint zero definitions</li>
+<li><strong>Completion Criteria / Deliverables</strong>: "DH Parameter Table," forward kinematics code with error &lt; 1e-6 compared to URDF
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P6.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "DH / Modified DH Parameter Definition," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P6.1.2.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "DH / Modified DH Parameter Definition," justify using "analytical method, Pinocchio/RBDL, symbolic computation," and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P6.1.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "DH / Modified DH Parameter Definition" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P6.1.2.4 Verification and Issue Closure</strong>: Verify the output of "DH / Modified DH Parameter Definition," check compliance with completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P6.1.2.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "DH / Modified DH Parameter Definition," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="collision-and-self-interference-model">Collision and Self-Interference Model</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Convex hull/simplified mesh, FCL/PyBullet, collision matrix</li>
+<li><strong>Design Rationale</strong>: No collisions between limbs and environment or between limbs during motion; overly tight collision bodies cause false positives, overly loose ones cause missed detections</li>
+<li><strong>Key Constraints</strong>: Computational cost, accuracy, maintainability</li>
+<li><strong>Completion Criteria / Deliverables</strong>: No false self-collision alarms in typical motions, no environmental penetration in key poses
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P6.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Collision and Self-Interference Model," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P6.1.3.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Collision and Self-Interference Model," justify using "convex hull/simplified mesh, FCL/PyBullet, collision matrix," and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P6.1.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Collision and Self-Interference Model" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P6.1.3.4 Verification and Issue Closure</strong>: Verify the output of "Collision and Self-Interference Model," check compliance with completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P6.1.3.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Collision and Self-Interference Model," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="kinematics-verification">Kinematics Verification</h4>
+<h5 id="forward-and-inverse-kinematics-solution-verification">Forward and Inverse Kinematics Solution Verification</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Analytical/numerical inverse kinematics, random pose sampling, singularity analysis</li>
+<li><strong>Design Rationale</strong>: Verify that joint limits and link lengths in URDF are consistent with CAD; high IK solution success rate</li>
+<li><strong>Key Constraints</strong>: Singular positions, multi-solution selection, joint limits</li>
+<li><strong>Completion Criteria / Deliverables</strong>: IK success rate &gt; 99% for 1000 random poses, position error &lt; 1 mm
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P6.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Forward and Inverse Kinematics Solution Verification," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P6.2.1.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Forward and Inverse Kinematics Solution Verification," justify using "analytical/numerical inverse kinematics, random pose sampling, singularity analysis," and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P6.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Forward and Inverse Kinematics Solution Verification" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P6.2.1.4 Test Execution and Result Analysis</strong>: Execute tests for "Forward and Inverse Kinematics Solution Verification" according to acceptance criteria, calculate pass rate/error/deviation, perform root cause analysis, and form improvement list.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P6.2.1.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Forward and Inverse Kinematics Solution Verification," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="workspace-and-reachability-analysis">Workspace and Reachability Analysis</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Matlab/Python, RViz, Monte Carlo sampling</li>
+<li><strong>Design Rationale</strong>: Generate reachable workspace point clouds for foot/end-effector, verify coverage of P2.2.1 ergonomic requirements</li>
+<li><strong>Key Constraints</strong>: Self-collision constraints, joint limits</li>
+<li><strong>Completion Criteria / Deliverables</strong>: "Workspace Analysis Report": reachable envelope, key pose coverage &gt; 95%
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P6.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Workspace and Reachability Analysis," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P6.2.2.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Workspace and Reachability Analysis," justify using "Matlab/Python, RViz, Monte Carlo sampling," and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P6.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Workspace and Reachability Analysis" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P6.2.2.4 Verification and Issue Closure</strong>: Verify the output of "Workspace and Reachability Analysis," check compliance with completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P6.2.2.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Workspace and Reachability Analysis," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="jacobian-and-velocityforce-transmission-analysis">Jacobian and Velocity/Force Transmission Analysis</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Geometric Jacobian, manipulability ellipsoid, force ellipsoid</li>
+<li><strong>Design Rationale</strong>: Evaluate the robot's velocity/force manipulation capability in different poses to inform control design</li>
+<li><strong>Key Constraints</strong>: Numerical stability</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Manipulability metrics for typical poses, force transmission efficiency analysis
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P6.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Jacobian and Velocity/Force Transmission Analysis," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P6.2.3.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Jacobian and Velocity/Force Transmission Analysis," justify using "geometric Jacobian, manipulability ellipsoid, force ellipsoid," and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P6.2.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Jacobian and Velocity/Force Transmission Analysis" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P6.2.3.4 Verification and Issue Closure</strong>: Verify the output of "Jacobian and Velocity/Force Transmission Analysis," check compliance with completion criteria, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P6.2.3.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Jacobian and Velocity/Force Transmission Analysis," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h2 id="completion-criteria">Completion Criteria</h2>
+<p>All Level-3 sub-tasks in this stage have passed acceptance review, and key deliverables are version-controlled and formally delivered to downstream dependents.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_pinocchio/">Pinocchio</a>
+              <span class="rel-desc">URDF modeling and Kinematics &amp; URDF uses Pinocchio.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5/">Ontological Structure Engineering and Prototyping (Mechanical Structure)</a>
+              <span class="rel-desc">P6 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p6_1_1/">URDF/SDF file generation</a>
+              <span class="rel-desc">URDF modeling and Kinematics &amp; URDF is part of URDF/SDF file generation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p6_2_2/">Workspace and accessibility analysis</a>
+              <span class="rel-desc">URDF modeling and Kinematics &amp; URDF is part of Workspace and accessibility analysis.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p6_2_1/">Verification of forward and inverse kinematics solution</a>
+              <span class="rel-desc">URDF modeling and Kinematics &amp; URDF is part of Verification of forward and inverse kinematics solution.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p6_1_2/">DH/modify the DH parameter definition</a>
+              <span class="rel-desc">URDF modeling and Kinematics &amp; URDF is part of DH/modify the DH parameter definition.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p6_2_2/">Workspace and accessibility analysis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Workspace and accessibility analysis is part of URDF modeling and Kinematics &amp; URDF.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10/">Motion Control Algorithm Development and Validation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P10 依赖 P6 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p6_2_1/">Verification of forward and inverse kinematics solution</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Verification of forward and inverse kinematics solution is part of URDF modeling and Kinematics &amp; URDF.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p6_1_3/">Model of collision and self-interference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Model of collision and self-interference is part of URDF modeling and Kinematics &amp; URDF.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p6_2_3/">Jacobian and analysis of velocity/force transmission</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Jacobian and analysis of velocity/force transmission is part of URDF modeling and Kinematics &amp; URDF.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p7/">Construction and verification of Simulation platform</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P7 依赖 P6 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p6_1_1/">URDF/SDF file generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">URDF/SDF file generation is part of URDF modeling and Kinematics &amp; URDF.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p6_1_2/">DH/modify the DH parameter definition</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">DH/modify the DH parameter definition is part of URDF modeling and Kinematics &amp; URDF.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p6"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p6_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>URDF/SDF file generation</h3>
+          <p>It loads correctly in RViz/Gazebo/Isaac Sim with no parsing errors</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10/">
+          <span class="entry-type">Method</span>
+          <h3>Motion Control Algorithm Development and Validation</h3>
+          <p>Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_pinocchio/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Pinocchio</h3>
+          <p>An open-source C++ library for efficient rigid-body dynamics, kinematics, and analytical…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p6_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Model of collision and self-interference</h3>
+          <p>There is no self-collision false alarm and no environment penetration in key postures</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p6_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Verification of forward and inverse kinematics solution</h3>
+          <p>The success rate of pose IK in 1000 groups was &gt; 99% , and the position error was &lt; 1 mm</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p6_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>DH/modify the DH parameter definition</h3>
+          <p>“DH parameter table”, forward kinematics code and URDF contrast error &lt; 1e-6</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p7/">
+          <span class="entry-type">Method</span>
+          <h3>Construction and verification of Simulation platform</h3>
+          <p>Construction and verification of Simulation platform</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p6_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Workspace and accessibility analysis</h3>
+          <p>Workspace Analysis Report: &gt; 95% coverage of reachable region and key attitude</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p6_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Jacobian and analysis of velocity/force transmission</h3>
+          <p>Analysis of manipulability index and force transfer efficiency of typical attitude</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5/">
+          <span class="entry-type">Method</span>
+          <h3>Ontological Structure Engineering and Prototyping (Mechanical Structure)</h3>
+          <p>Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process,…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</a><ul>
+<li><a href="#urdfsdf-model-construction">URDF/SDF Model Construction</a><ul>
+<li><a href="#urdfsdf-file-generation">URDF/SDF File Generation</a></li>
+<li><a href="#dh-modified-dh-parameter-definition">DH / Modified DH Parameter Definition</a></li>
+<li><a href="#collision-and-self-interference-model">Collision and Self-Interference Model</a></li>
+</ul>
+</li>
+<li><a href="#kinematics-verification">Kinematics Verification</a><ul>
+<li><a href="#forward-and-inverse-kinematics-solution-verification">Forward and Inverse Kinematics Solution Verification</a></li>
+<li><a href="#workspace-and-reachability-analysis">Workspace and Reachability Analysis</a></li>
+<li><a href="#jacobian-and-velocityforce-transmission-analysis">Jacobian and Velocity/Force Transmission Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#completion-criteria">Completion Criteria</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

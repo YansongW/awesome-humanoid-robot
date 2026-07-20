@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation</h1>
+      <p class="entry-name-en">H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.23523v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation is a 2025 work on manipulation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2507.23523" target="_blank" rel="noopener">H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇 조작을 위한 모방 학습은 대규모 고품질 로봇 시연 데이터의 부족이라는 근본적인 과제에 직면해 있습니다. 최근 로봇 기반 모델들은 데이터 규모를 늘리기 위해 교차 체형 로봇 데이터셋으로 사전 학습을 수행하는 경우가 많지만, 다양한 로봇 체형과 행동 공간으로 인해 통합 학습이 어려워 상당한 한계를 보입니다. 본 논문에서는 인간 조작 데이터를 활용하여 로봇 조작 능력을 향상시키는 새로운 접근 방식인 H-RDT(Human to Robotics Diffusion Transformer)를 제시합니다. 우리의 핵심 통찰은 대규모 자기중심적 인간 조작 비디오와 쌍을 이루는 3D 손 자세 주석이 자연스러운 조작 전략을 포착하는 풍부한 행동 사전 정보를 제공하며, 로봇 정책 학습에 도움이 될 수 있다는 점입니다. 우리는 두 단계의 학습 패러다임을 도입합니다: (1) 대규모 자기중심적 인간 조작 데이터로 사전 학습, (2) 모듈식 행동 인코더와 디코더를 사용한 로봇 특화 데이터로의 교차 체형 미세 조정. 2B 파라미터의 확산 트랜스포머 아키텍처를 기반으로 구축된 H-RDT는 플로우 매칭을 사용하여 복잡한 행동 분포를 모델링합니다. 시뮬레이션 및 실제 실험, 단일 작업 및 다중 작업 시나리오, 퓨샷 학습 및 견고성 평가를 포함한 광범위한 평가를 통해 H-RDT가 처음부터 학습하는 방식과 Pi0 및 RDT를 포함한 기존 최첨단 방법보다 우수하며, 시뮬레이션 및 실제 실험에서 각각 13.9% 및 40.5%의 유의미한 개선을 달성함을 입증했습니다. 이러한 결과는 인간 조작 데이터가 양손 로봇 조작 정책 학습을 위한 강력한 기반이 될 수 있다는 핵심 가설을 검증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>로봇 조작을 위한 모방 학습은 대규모 고품질 로봇 시연 데이터의 부족이라는 근본적인 과제에 직면해 있습니다. 최근 로봇 기반 모델들은 데이터 규모를 늘리기 위해 교차 체형 로봇 데이터셋으로 사전 학습을 수행하는 경우가 많지만, 다양한 로봇 체형과 행동 공간으로 인해 통합 학습이 어려워 상당한 한계를 보입니다. 본 논문에서는 인간 조작 데이터를 활용하여 로봇 조작 능력을 향상시키는 새로운 접근 방식인 H-RDT(Human to Robotics Diffusion Transformer)를 제시합니다. 우리의 핵심 통찰은 대규모 자기중심적 인간 조작 비디오와 쌍을 이루는 3D 손 자세 주석이 자연스러운 조작 전략을 포착하는 풍부한 행동 사전 정보를 제공하며, 로봇 정책 학습에 도움이 될 수 있다는 점입니다. 우리는 두 단계의 학습 패러다임을 도입합니다: (1) 대규모 자기중심적 인간 조작 데이터로 사전 학습, (2) 모듈식 행동 인코더와 디코더를 사용한 로봇 특화 데이터로의 교차 체형 미세 조정. 2B 파라미터의 확산 트랜스포머 아키텍처를 기반으로 구축된 H-RDT는 플로우 매칭을 사용하여 복잡한 행동 분포를 모델링합니다. 시뮬레이션 및 실제 실험, 단일 작업 및 다중 작업 시나리오, 퓨샷 학습 및 견고성 평가를 포함한 광범위한 평가를 통해 H-RDT가 처음부터 학습하는 방식과 Pi0 및 RDT를 포함한 기존 최첨단 방법보다 우수하며, 시뮬레이션 및 실제 실험에서 각각 13.9% 및 40.5%의 유의미한 개선을 달성함을 입증했습니다. 이러한 결과는 인간 조작 데이터가 양손 로봇 조작 정책 학습을 위한 강력한 기반이 될 수 있다는 핵심 가설을 검증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_dexterous_manipulation/">손재주 있는 조작</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_h_rdt_human_manipulation_enhan_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">방법</span>
+          <h3>손재주 있는 조작</h3>
+          <p>다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

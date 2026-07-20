@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>크리프 거동을 갖는 소프트 핑거의 확률적 모델링 접근 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">크리프 거동을 갖는 소프트 핑거의 확률적 모델링 접근</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>크리프 거동을 갖는 소프트 핑거의 확률적 모델링 접근</h1>
+      <p class="entry-name-en">Stochastic Approach for Modeling the Soft Finger with the Creep Behavior</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.07035v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 크리프 거동을 포착하기 위해 선형 3요소 점탄성 관절을 갖는 집중 파라미터 소프트 핑거 모델을 제안하고, 점탄성 파라미터와 초기 관절각을 확률 분포로 표현하여 확률변수 변환으로 관절각 확률 밀도를 분석하고 100회 실험으로 검증한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2306.07035" target="_blank" rel="noopener">Stochastic Approach for Modeling the Soft Finger with the Creep Behavior</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>소프트 로봇은 유연성에서 비롯된 높은 적응성과 안전성을 가지며, 이로 인해 인간 사회에서의 활용이 주목받고 있습니다. 그러나 소프트 로봇을 인간의 대체 노동자로 고려할 때, 정교한 동작을 수행하기에는 제어성이 충분하지 않습니다. 모델 기반 제어는 정교한 동작을 달성하는 데 효과적입니다. 제어에 적합한 모델을 구축할 때는 크리프 거동이나 운동의 변동성과 같은 특수한 특성에 기반한 문제들이 존재합니다. 본 논문에서는 크리프 거동을 위해 소프트 핑거의 점탄성 관절을 가진 집중 매개변수 모델을 구축합니다. 매개변수는 분포로 표현되어 운동의 변동성을 고려할 수 있게 합니다. 또한, 매개변수 분포를 기반으로 확률론적 분석을 수행합니다. 이는 실험 결과와 비교하여 높은 적응성을 보여주며, 로봇의 변동성에 대한 매개변수의 영향을 조사할 수 있게 합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>소프트 로봇은 유연성에서 비롯된 높은 적응성과 안전성을 가지며, 이로 인해 인간 사회에서의 활용이 주목받고 있습니다. 그러나 소프트 로봇을 인간의 대체 노동자로 고려할 때, 정교한 동작을 수행하기에는 제어성이 충분하지 않습니다. 모델 기반 제어는 정교한 동작을 달성하는 데 효과적입니다. 제어에 적합한 모델을 구축할 때는 크리프 거동이나 운동의 변동성과 같은 특수한 특성에 기반한 문제들이 존재합니다. 본 논문에서는 크리프 거동을 위해 소프트 핑거의 점탄성 관절을 가진 집중 매개변수 모델을 구축합니다. 매개변수는 분포로 표현되어 운동의 변동성을 고려할 수 있게 합니다. 또한, 매개변수 분포를 기반으로 확률론적 분석을 수행합니다. 이는 실험 결과와 비교하여 높은 적응성을 보여주며, 로봇의 변동성에 대한 매개변수의 영향을 조사할 수 있게 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p11_2_2/">手指阻抗与力控</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_dexterous_hand_2024/">민첩한 손</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_honji_stochastic_approach_for_modeli_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p11_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>手指阻抗与力控</h3>
+          <p>力控实验数据、易碎物体抓取视频</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_dexterous_hand_2024/">
+          <span class="entry-type">부품</span>
+          <h3>민첩한 손</h3>
+          <p>인간과 유사한 파지 및 손 안에서의 조작을 위해 설계된 독립적인 관절 제어가 가능한 다지 로봇 엔드 이펙터.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints</h1>
+      <p class="entry-name-en">Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09060v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.09060v1 Announce Type: new Abstract: Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal. A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.09060" target="_blank" rel="noopener">Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>다중 UAV 탐사는 종종 신뢰할 수 없는 통신, 제한된 시야 센싱(예: 경량 온보드 카메라), 그리고 각 로봇이 기지로 돌아갈 충분한 예산을 확보해야 하는 유한 이동 예산에 의해 제약을 받습니다. 본 논문에서는 방향성 센싱을 사용하는 통신 없는 팀을 위한 분산형 예산 인식 탐사 프레임워크인 Dec-MARVEL을 제시합니다. 각 로봇은 지도, 목표 또는 메시지를 교환하는 대신 우연한 관찰을 통해 협력합니다. 즉, 시야 내에 있는 동료의 궤적이 협력 신호 역할을 합니다. 그래프 어텐션 액터는 로컬 프론티어 기하학, 동료 움직임 및 예산 특징을 융합하여 복귀 가능한 웨이포인트-헤딩 행동을 선택합니다. 액터는 단계 조건부 비평가, 훈련 전용 작업 지향 특권 비평가, 그리고 혼합 기반 예산 커리큘럼으로 훈련됩니다. 세 가지 팀 규모(2, 4, 8대 로봇)와 세 가지 이동 예산(720, 800, 1024미터)을 포함한 900개의 보류된 시험에서 네 가지 기준선과 비교했을 때, Dec-MARVEL은 모든 9가지 팀 규모-예산 구성에서 가장 높거나 동등한 탐사율과 가장 낮은 센싱 중복을 달성합니다. 가장 엄격한 720m 예산 하에서 2, 4, 8대 로봇에 대해 각각 53%, 94%, 100%의 성공률을 기록하며, 이는 가장 강력한 기준선의 37%, 83%, 99%와 대비됩니다. 실제 로봇 실험을 통해 Dec-MARVEL의 시뮬레이션-실제 전환 및 실제 환경 배치 성공을 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>다중 UAV 탐사는 종종 신뢰할 수 없는 통신, 제한된 시야 센싱(예: 경량 온보드 카메라), 그리고 각 로봇이 기지로 돌아갈 충분한 예산을 확보해야 하는 유한 이동 예산에 의해 제약을 받습니다. 본 논문에서는 방향성 센싱을 사용하는 통신 없는 팀을 위한 분산형 예산 인식 탐사 프레임워크인 Dec-MARVEL을 제시합니다. 각 로봇은 지도, 목표 또는 메시지를 교환하는 대신 우연한 관찰을 통해 협력합니다. 즉, 시야 내에 있는 동료의 궤적이 협력 신호 역할을 합니다. 그래프 어텐션 액터는 로컬 프론티어 기하학, 동료 움직임 및 예산 특징을 융합하여 복귀 가능한 웨이포인트-헤딩 행동을 선택합니다. 액터는 단계 조건부 비평가, 훈련 전용 작업 지향 특권 비평가, 그리고 혼합 기반 예산 커리큘럼으로 훈련됩니다. 세 가지 팀 규모(2, 4, 8대 로봇)와 세 가지 이동 예산(720, 800, 1024미터)을 포함한 900개의 보류된 시험에서 네 가지 기준선과 비교했을 때, Dec-MARVEL은 모든 9가지 팀 규모-예산 구성에서 가장 높거나 동등한 탐사율과 가장 낮은 센싱 중복을 달성합니다. 가장 엄격한 720m 예산 하에서 2, 4, 8대 로봇에 대해 각각 53%, 94%, 100%의 성공률을 기록하며, 이는 가장 강력한 기준선의 37%, 83%, 99%와 대비됩니다. 실제 로봇 실험을 통해 Dec-MARVEL의 시뮬레이션-실제 전환 및 실제 환경 배치 성공을 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dec_marvel_decentralized_multi_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

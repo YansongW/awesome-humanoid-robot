@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACT · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ACT</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ACT</h1>
+      <p class="entry-name-en">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.13705v1.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, UC Berkeley, Meta, and published at Robotics - Science and Systems 2023.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.15607/RSS.2023.XIX.016" target="_blank" rel="noopener">ACT source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Fine manipulation tasks, such as threading cable ties or slotting a battery, are notoriously difficult for robots because they require precision, careful coordination of contact forces, and closed-loop visual feedback. Performing these tasks typically requires high-end robots, accurate sensors, or careful calibration, which can be expensive and difficult to set up. Can learning enable low-cost and imprecise hardware to perform these fine manipulation tasks? We present a low-cost system that performs end-to-end imitation learning directly from real demonstrations, collected with a custom teleoperation interface. Imitation learning, however, presents its own challenges, particularly in high-precision domains: errors in the policy can compound over time, and human demonstrations can be non-stationary. To address these challenges, we develop a simple yet novel algorithm, Action Chunking with Transformers (ACT), which learns a generative model over action sequences. ACT allows the robot to learn 6 difficult tasks in the real world, such as opening a translucent condiment cup and slotting a battery with 80-90% success, with only 10 minutes worth of demonstrations. Project website: https://tonyzhaozh.github.io/aloha/</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2304.13705v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              <span class="rel-desc">ACT引用动作分块变压器（ACT）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_action_chunking_with_transform_2023/">基于Transformer的动作分块</a>
+              <span class="rel-desc">ACTdevelops基于Transformer的动作分块。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">TWIST2｜可扩展、便携式、整体的人形数据收集系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">TWIST2｜可扩展、便携式、整体的人形数据收集系统提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egoprimo_egocentric_motion_gen_2026/">EgoPriMo｜用于交互式人形控制的第一视角运动生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">EgoPriMo｜用于交互式人形控制的第一视角运动生成提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bifrostumi_bridging_robot_free_2026/">BifrostUMI｜连接机器人无关示范和人形全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">BifrostUMI｜连接机器人无关示范和人形全身操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_generalizable_humanoid_manipul_2025/">使用3D扩散策略的通用人形操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">使用3D扩散策略的通用人形操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robust_and_generalized_humanoi_2026/">鲁棒且通用的人形运动跟踪</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">鲁棒且通用的人形运动跟踪提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_viral_visual_sim_to_real_at_sc_2025_1/">VIRAL｜大规模视觉模拟现实世界，用于人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VIRAL｜大规模视觉模拟现实世界，用于人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_eva_client_a_unified_data_coll_2026/">EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_grail_generating_humanoid_loco_2026/">GRAIL｜从3D资产和视频先验生成人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">GRAIL｜从3D资产和视频先验生成人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_motionwam_towards_foundation_w_2026/">MotionWAM｜迈向实时人形移动操作的基础世界行动模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MotionWAM｜迈向实时人形移动操作的基础世界行动模型提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pac_act_post_training_actor_cr_2026/">PAC-ACT: Post-training Actor-Critic for Action Chunking Transformers</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wt_umi_tactile_based_whole_bod_2026/">WT-UMI｜通过力监督接触感知规划进行基于触觉的全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">WT-UMI｜通过力监督接触感知规划进行基于触觉的全身操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper__2025/">人形机器人运动与操作｜控制规划和学习的进展与挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">人形机器人运动与操作｜控制规划和学习的进展与挑战提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_make_tracking_easy_neural_moti_2026/">Make Tracking Easy｜用于人形全身控制的神经运动重定向</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Make Tracking Easy｜用于人形全身控制的神经运动重定向提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egohumanoid_unlocking_in_the_w_2026/">EgoHumanoid｜通过机器人无关的第一视角示范解锁野外移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">EgoHumanoid｜通过机器人无关的第一视角示范解锁野外移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">DemoHLM｜从单一示范到通用人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">DemoHLM｜从单一示范到通用人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoidmimicgen_data_generati_2026/">HumanoidMimicGen｜通过全身规划进行移动操作的数据生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HumanoidMimicGen｜通过全身规划进行移动操作的数据生成提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_open_television_teleoperation_2024/">Open-TeleVision｜具有沉浸式主动视觉反馈的远程操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Open-TeleVision｜具有沉浸式主动视觉反馈的远程操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">TWIST2｜可扩展、便携式、整体的人形数据收集系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">TWIST2｜可扩展、便携式、整体的人形数据收集系统提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_unleashing_more_actions_via_ac_2026/">Unleashing More Actions via Action Compositional Training for VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">OmniH2O｜通用灵巧的人对人全身远程操作和学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">OmniH2O｜通用灵巧的人对人全身远程操作和学习提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_from_w1_towards_general_humano_2026/">FRoM-W1：面向自然语言指令的通用人形机器人全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">FRoM-W1：面向自然语言指令的通用人形机器人全身控制提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">OpenVLA-OFT提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tact_humanoid_whole_body_conta_2025/">TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_trajbooster_boosting_humanoid_2026/">TrajBooster｜通过以轨迹为中心的学习促进人形全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">TrajBooster｜通过以轨迹为中心的学习促进人形全身操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_oasis_from_simulation_data_col_2026/">OASIS｜从模拟数据收集到现实世界的人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">OASIS｜从模拟数据收集到现实世界的人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanplus_humanoid_shadowing_a_2024/">HumanPlus｜人形影子和模仿人类</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HumanPlus｜人形影子和模仿人类提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">动作分块变压器（ACT）提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bioprovla_agent_an_affordable_2026/">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_stageact_stage_conditioned_imi_2025/">StageACT｜鲁棒的人形开门的阶段条件模仿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">StageACT｜鲁棒的人形开门的阶段条件模仿提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_from_w1_towards_general_humano_2026/">FRoM-W1｜通过语言指令实现通用人形全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">FRoM-W1｜通过语言指令实现通用人形全身控制提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_coordinated_humanoid_manipulat_2025/">具有选择策略的协调人形操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">具有选择策略的协调人形操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_open_television_teleoperation_2024_2/">学习人对人的实时全身远程操作。</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">学习人对人的实时全身远程操作。提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_twist_teleoperated_whole_body_2025/">TWIST｜遥控全身模仿系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">TWIST｜遥控全身模仿系统提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_viral_visual_sim_to_real_at_sc_2025/">VIRAL｜大规模视觉模拟现实世界，用于人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VIRAL｜大规模视觉模拟现实世界，用于人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robot_motion_diffusion_model_m_2026/">Robot Motion Diffusion Model｜机器人角色的运动生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Robot Motion Diffusion Model｜机器人角色的运动生成提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">HITTER｜通过分层规划和学习的人形乒乓球机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HITTER｜通过分层规划和学习的人形乒乓球机器人提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hold_my_beer_learning_gentle_h_2025/">Hold｜My Beer 学习温和的人形运动和末端执行器稳定控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Hold｜My Beer 学习温和的人形运动和末端执行器稳定控制提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_action_models_are_zero_s_2026/">世界行动模型是零样本策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界行动模型是零样本策略提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_active_stereo_camera_outperfor_2026/">在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_motiondisco_motion_discovery_f_2026/">MotionDisco｜用于极端人形移动操作的运动发现</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MotionDisco｜用于极端人形移动操作的运动发现提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_genie_envisioner_a_unified_wor_2025/">Genie Envisioner｜机器人操作的统一世界基础平台</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Genie Envisioner｜机器人操作的统一世界基础平台提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gr00t_n1_an_open_foundation_mo_2025/">GR00T N1｜通用人形机器人的开放基础模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">GR00T N1｜通用人形机器人的开放基础模型提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_twist2_scalable_portable_and_h_2025/">TWIST2｜可扩展、便携式、整体的人形数据收集系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">TWIST2｜可扩展、便携式、整体的人形数据收集系统提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kungfubot2_learning_versatile_2025/">KungfuBot2｜学习人形全身控制的多样化运动技能</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">KungfuBot2｜学习人形全身控制的多样化运动技能提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_opt2skill_imitating_dynamicall_2025/">Opt2Skill｜模仿动态可行的全身轨迹以实现多样化人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Opt2Skill｜模仿动态可行的全身轨迹以实现多样化人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_openhlm_an_empirical_recipe_fo_2026/">OpenHLM｜全身人形移动操作的经验配方</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">OpenHLM｜全身人形移动操作的经验配方提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_expressive_whole_body_control_2024/">人形机器人富有表现力的全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">人形机器人富有表现力的全身控制提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_open_television_teleoperation_2024_1/">Open-TeleVision｜具有沉浸式主动视觉反馈的远程操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Open-TeleVision｜具有沉浸式主动视觉反馈的远程操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">TWIST｜遥控全身模仿系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">TWIST｜遥控全身模仿系统提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanx_toward_agile_and_genera_2026/">HumanX｜从人类视频中走向敏捷和可推广的人形交互技能</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HumanX｜从人类视频中走向敏捷和可推广的人形交互技能提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hmc_learning_heterogeneous_met_2025_1/">HMC｜学习异构元控制以实现接触丰富的移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HMC｜学习异构元控制以实现接触丰富的移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bharadhwaj_roboagent_generalization_and_e_2023/">MT-ACT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MT-ACT提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_demohlm_from_one_demonstration_2025/">DemoHLM｜从单一示范到通用人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">DemoHLM｜从单一示范到通用人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sugar_a_scalable_human_video_d_2026/">SUGAR｜可扩展的人类视频驱动的通用人形移动操作学习框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">SUGAR｜可扩展的人类视频驱动的通用人形移动操作学习框架提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hmc_learning_heterogeneous_met_2025/">HMC｜学习异构元控制以实现接触丰富的移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HMC｜学习异构元控制以实现接触丰富的移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_halomi_learning_humanoid_loco_2026/">HALOMI｜通过人类示范的主动感知学习人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HALOMI｜通过人类示范的主动感知学习人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_from_w1_towards_general_humano_2026_1/">FRoM-W1｜通过语言指令实现通用人形全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">FRoM-W1｜通过语言指令实现通用人形全身控制提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">LEGS｜微调无TeleopVLA，用于体现高斯泼溅世界中的人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">LEGS｜微调无TeleopVLA，用于体现高斯泼溅世界中的人形移动操作提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liang_mm_act_learn_from_multimodal_p_2025/">MM-ACT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MM-ACT提及ACT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">Gemini Robotics｜将人工智能带入物理世界</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Gemini Robotics｜将人工智能带入物理世界提及ACT。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zhao_learning_fine_grained_bimanual_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_robust_and_generalized_humanoi_2026/">
+          <span class="entry-type">论文</span>
+          <h3>鲁棒且通用的人形运动跟踪</h3>
+          <p>这篇工作主要解决数据闭环：用本体状态与关节序列、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过教师-学生知识迁移、ACT/行为克隆模仿学习、扩散策略/流匹配转成可训练、可复用的…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bioprovla_agent_an_affordable_2026/">
+          <span class="entry-type">论文</span>
+          <h3>BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</h3>
+          <p>arXiv:2605.07306v3 Announce Type: replace Abstract: Biological laboratory automation can reduce…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_opt2skill_imitating_dynamicall_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Opt2Skill｜模仿动态可行的全身轨迹以实现多样化人形移动操作</h3>
+          <p>Opt2Skill 先从相机图像/多视角观测、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openhlm_an_empirical_recipe_fo_2026/">
+          <span class="entry-type">论文</span>
+          <h3>OpenHLM｜全身人形移动操作的经验配方</h3>
+          <p>OpenHLM 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_w1_towards_general_humano_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FRoM-W1｜通过语言指令实现通用人形全身控制</h3>
+          <p>FRoM-W1 把语言指令、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过PPO/RL 策略训练、ACT/行为克隆模仿学习、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_oasis_from_simulation_data_col_2026/">
+          <span class="entry-type">论文</span>
+          <h3>OASIS｜从模拟数据收集到现实世界的人形移动操作</h3>
+          <p>OASIS…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Gemini Robotics｜将人工智能带入物理世界</h3>
+          <p>Gemini Robotics 的实现路径是先把语言指令、相机图像/多视角观测编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测全身轨迹/动作序列、动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hold_my_beer_learning_gentle_h_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Hold｜My Beer 学习温和的人形运动和末端执行器稳定控制</h3>
+          <p>Hold…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist_teleoperated_whole_body_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST｜遥控全身模仿系统</h3>
+          <p>TWIST 主要解决数据闭环：用人类视频/动捕轨迹、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过异构动捕与合成平衡数据、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_eva_client_a_unified_data_coll_2026/">
+          <span class="entry-type">论文</span>
+          <h3>EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots</h3>
+          <p>arXiv:2607.02646v1 Announce Type: new Abstract: We present EVA-Client, an open-source framework for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoidmimicgen_data_generati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HumanoidMimicGen｜通过全身规划进行移动操作的数据生成</h3>
+          <p>HumanoidMimicGen…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_action_models_are_zero_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界行动模型是零样本策略</h3>
+          <p>这篇工作先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_from_w1_towards_general_humano_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FRoM-W1：面向自然语言指令的通用人形机器人全身控制</h3>
+          <p>FRoM-W1 是一个开源两阶段框架，首先利用基于 9B LLaMA 的 H-GPT 模型从自然语言指令生成全身人体动作，然后通过强化学习运动控制器 H-ACT 将动作重定向并在宇树 H1 与 G1…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_open_television_teleoperation_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Open-TeleVision｜具有沉浸式主动视觉反馈的远程操作</h3>
+          <p>Open-TeleVision…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_motiondisco_motion_discovery_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MotionDisco｜用于极端人形移动操作的运动发现</h3>
+          <p>MotionDisco…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egovla_learning_vision_languag_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型</h3>
+          <p>EgoVLA 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、潜变量/动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_w1_towards_general_humano_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>FRoM-W1｜通过语言指令实现通用人形全身控制</h3>
+          <p>FRoM-W1 先从语言指令、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">
+          <span class="entry-type">论文</span>
+          <h3>BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制</h3>
+          <p>BeyondMimic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_halomi_learning_humanoid_loco_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HALOMI｜通过人类示范的主动感知学习人形移动操作</h3>
+          <p>HALOMI…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bifrostumi_bridging_robot_free_2026/">
+          <span class="entry-type">论文</span>
+          <h3>BifrostUMI｜连接机器人无关示范和人形全身操作</h3>
+          <p>BifrostUMI…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_genie_envisioner_a_unified_wor_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Genie Envisioner｜机器人操作的统一世界基础平台</h3>
+          <p>Genie Envisioner…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gr00t_n1_an_open_foundation_mo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GR00T N1｜通用人形机器人的开放基础模型</h3>
+          <p>GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_demohlm_from_one_demonstration_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DemoHLM｜从单一示范到通用人形移动操作</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kungfubot2_learning_versatile_2025/">
+          <span class="entry-type">论文</span>
+          <h3>KungfuBot2｜学习人形全身控制的多样化运动技能</h3>
+          <p>KungfuBot2…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_open_television_teleoperation_2024_2/">
+          <span class="entry-type">论文</span>
+          <h3>学习人对人的实时全身远程操作。</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_stageact_stage_conditioned_imi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>StageACT｜鲁棒的人形开门的阶段条件模仿</h3>
+          <p>StageACT 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bharadhwaj_roboagent_generalization_and_e_2023/">
+          <span class="entry-type">论文</span>
+          <h3>MT-ACT</h3>
+          <p>RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wt_umi_tactile_based_whole_bod_2026/">
+          <span class="entry-type">论文</span>
+          <h3>WT-UMI｜通过力监督接触感知规划进行基于触觉的全身操作</h3>
+          <p>WT-UMI…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_motionwam_towards_foundation_w_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MotionWAM｜迈向实时人形移动操作的基础世界行动模型</h3>
+          <p>MotionWAM 的实现路径是先把相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OmniH2O｜通用灵巧的人对人全身远程操作和学习</h3>
+          <p>OmniH2O 主要解决数据闭环：用语言指令、相机图像/多视角观测、人类视频/动捕轨迹采集人类操作和机器人状态，再通过教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_expressive_whole_body_control_2024/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人富有表现力的全身控制</h3>
+          <p>这篇工作把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过异构动捕与合成平衡数据、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pac_act_post_training_actor_cr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>PAC-ACT: Post-training Actor-Critic for Action Chunking Transformers</h3>
+          <p>arXiv:2607.09590v1 Announce Type: new Abstract: Precision industrial contact manipulation requires…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_make_tracking_easy_neural_moti_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Make Tracking Easy｜用于人形全身控制的神经运动重定向</h3>
+          <p>Make Tracking Easy 把本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_unleashing_more_actions_via_ac_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Unleashing More Actions via Action Compositional Training for VLA Models</h3>
+          <p>arXiv:2607.00351v1 Announce Type: new Abstract: Vision-Language-Action models excel at robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST｜遥控全身模仿系统</h3>
+          <p>TWIST 主要解决数据闭环：用人类视频/动捕轨迹、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过异构动捕与合成平衡数据、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST2｜可扩展、便携式、整体的人形数据收集系统</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper__2025/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人运动与操作｜控制规划和学习的进展与挑战</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、全身控制器/WBC/MPC生成可执行动作命令。关键点是把…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">
+          <span class="entry-type">论文</span>
+          <h3>LEGS｜微调无TeleopVLA，用于体现高斯泼溅世界中的人形移动操作</h3>
+          <p>LEGS 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liang_mm_act_learn_from_multimodal_p_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MM-ACT</h3>
+          <p>MM-ACT: Learn from Multimodal Parallel Generation to Act (MM-ACT), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist2_scalable_portable_and_h_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST2｜可扩展、便携式、整体的人形数据收集系统</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_generalizable_humanoid_manipul_2025/">
+          <span class="entry-type">论文</span>
+          <h3>使用3D扩散策略的通用人形操作</h3>
+          <p>使用3D扩散策略的通用人形操作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_viral_visual_sim_to_real_at_sc_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>VIRAL｜大规模视觉模拟现实世界，用于人形移动操作</h3>
+          <p>VIRAL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sugar_a_scalable_human_video_d_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SUGAR｜可扩展的人类视频驱动的通用人形移动操作学习框架</h3>
+          <p>SUGAR…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_trajbooster_boosting_humanoid_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TrajBooster｜通过以轨迹为中心的学习促进人形全身操作</h3>
+          <p>TrajBooster 的实现路径是先把相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanplus_humanoid_shadowing_a_2024/">
+          <span class="entry-type">论文</span>
+          <h3>HumanPlus｜人形影子和模仿人类</h3>
+          <p>HumanPlus 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hmc_learning_heterogeneous_met_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HMC｜学习异构元控制以实现接触丰富的移动操作</h3>
+          <p>HMC…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">
+          <span class="entry-type">论文</span>
+          <h3>REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调</h3>
+          <p>REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robot_motion_diffusion_model_m_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Robot Motion Diffusion Model｜机器人角色的运动生成</h3>
+          <p>Robot Motion Diffusion Model 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tact_humanoid_whole_body_conta_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality</h3>
+          <p>TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_viral_visual_sim_to_real_at_sc_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VIRAL｜大规模视觉模拟现实世界，用于人形移动操作</h3>
+          <p>VIRAL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egohumanoid_unlocking_in_the_w_2026/">
+          <span class="entry-type">论文</span>
+          <h3>EgoHumanoid｜通过机器人无关的第一视角示范解锁野外移动操作</h3>
+          <p>EgoHumanoid 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_active_stereo_camera_outperfor_2026/">
+          <span class="entry-type">论文</span>
+          <h3>在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置</h3>
+          <p>在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_open_television_teleoperation_2024_1/">
+          <span class="entry-type">论文</span>
+          <h3>Open-TeleVision｜具有沉浸式主动视觉反馈的远程操作</h3>
+          <p>Open-TeleVision…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egoprimo_egocentric_motion_gen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>EgoPriMo｜用于交互式人形控制的第一视角运动生成</h3>
+          <p>EgoPriMo…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>DemoHLM｜从单一示范到通用人形移动操作</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanx_toward_agile_and_genera_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HumanX｜从人类视频中走向敏捷和可推广的人形交互技能</h3>
+          <p>HumanX…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_coordinated_humanoid_manipulat_2025/">
+          <span class="entry-type">论文</span>
+          <h3>具有选择策略的协调人形操作</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配转成可训练、可复用的可执行动作命令。关键点是把动作生成看成…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hmc_learning_heterogeneous_met_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>HMC｜学习异构元控制以实现接触丰富的移动操作</h3>
+          <p>HMC…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST2｜可扩展、便携式、整体的人形数据收集系统</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_grail_generating_humanoid_loco_2026/">
+          <span class="entry-type">论文</span>
+          <h3>GRAIL｜从3D资产和视频先验生成人形移动操作</h3>
+          <p>GRAIL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HITTER｜通过分层规划和学习的人形乒乓球机器人</h3>
+          <p>HITTER 先从人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_action_chunking_with_transform_2023/">
+          <span class="entry-type">方法</span>
+          <h3>基于Transformer的动作分块</h3>
+          <p>基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

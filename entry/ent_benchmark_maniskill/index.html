@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ManiSkill · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/benchmark/">评测基准</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ManiSkill</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">评测基准</div>
+      <h1>ManiSkill</h1>
+      <p class="entry-name-en">ManiSkill</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">评测基准</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">阶段 2 · 双足平台</span>
+        <span class="roadmap-badge-role">拓展</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="maniskill">ManiSkill的定义与定位</h3>
+<p>ManiSkill属于 <strong>评测基准</strong> 类型。 所属领域包括：评测基准。 价值链层级：验证与市场层。 面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。 英文名称为 <em>ManiSkill</em>。 韩文名称为 <em>ManiSkill</em>。</p>
+<h3 id="maniskill_1">ManiSkill的任务设置与数据构成</h3>
+<p>ManiSkill通过标准化的任务或数据格式，为不同方法提供可比较的评估基础。理解其覆盖范围与标注方式，有助于正确解读实验结果。
+数据或任务的多样性、真实性与可扩展性，是衡量其价值的重要维度。</p>
+<h3 id="_2">使用方法与评价指标</h3>
+<p>使用该benchmark时，应关注基线方法、评估协议、误差来源以及结果的可复现性，以避免片面或误导性的结论。
+同时，需要注意训练集与测试集的划分、分布外泛化能力以及仿真到真实的迁移差距。</p>
+<h3 id="_3">典型结果与研究价值</h3>
+<p>ManiSkill为学术界与工业界提供了统一的比较基准，推动了相关算法的快速发展。
+通过分析排行榜结果与失败案例，可以识别当前方法的优势与短板，指导后续研究方向。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>benchmark</li>
+<li>chapter_25</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键评测基准之一，ManiSkill在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_hardware_in_the_loop/">硬件在环测试（HIL）</a>
+              <span class="rel-desc">ManiSkill提及硬件在环测试（HIL）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+              <span class="rel-desc">ManiSkill前置依赖线性代数。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+              <span class="rel-desc">ManiSkill提及域随机化。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF 机器人描述格式</a>
+              <span class="rel-desc">ManiSkill提及URDF 机器人描述格式。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo 物理引擎</a>
+              <span class="rel-desc">ManiSkill前置依赖MuJoCo 物理引擎。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_mjcf_simulation_format_2024/">MJCF 仿真格式</a>
+              <span class="rel-desc">ManiSkill提及MJCF 仿真格式。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_dreamzero_world_action_models_2026/">DreamZero: World Action Models are Zero-shot Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluated_in</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_volumedp_modeling_volumetric_r_2026/">VolumeDP: Modeling Volumetric Representation for Manipulation Policy Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_stage_transition_dense_reward_2026/">Stage-Transition Dense Reward Modeling for Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhan_mathcale_0_enhancing_generaliz_2025/">Epsilon0</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">Epsilon0评测于ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_isaac_gym/">Isaac Gym基准</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Isaac Gym基准提及ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_humanoid_foundation_model/">人形机器人基础模型基准</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">人形机器人基础模型基准提及ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">LIBERO前置依赖ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_molmospaces_a_large_scale_open_2026/">MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jlg_refined_policy_distillation_fr_2025/">RPD</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">RPD评测于ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_software_maniskill3_2024/">ManiSkill3</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_maniskill3_gpu_parallelized_ro_2024/">ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gao_a_taxonomy_for_evaluating_gene_2025/">评估通用机器人操作策略的分类法</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">评估通用机器人操作策略的分类法评测于ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_collins_benchmarking_simulated_robotic_2019/">通过真实世界数据集对模拟机器人操作进行基准测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">benchmarks</span>
+              <span class="rel-desc">通过真实世界数据集对模拟机器人操作进行基准测试benchmarksManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_warp_rl_reshaping_base_policy_2026/">Warp RL: Reshaping Base Policy Distributions for Dynamics Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_garcia_camacho_standardization_of_cloth_objec_2024/">布料物体的标准化及其在机器人操作中的相关性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">布料物体的标准化及其在机器人操作中的相关性提及ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lin_failsafe_reasoning_and_recover_2025/">FailSafe</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">FailSafe评测于ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_choromanski_evaluating_gemini_robotics_pol_2026/">在 Veo 世界模拟器中评估 Gemini Robotics 策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">在 Veo 世界模拟器中评估 Gemini Robotics 策略评测于ManiSkill。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_stare_vla_progressive_stage_aw_2025/">STARE-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">STARE-VLA评测于ManiSkill。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_benchmark_maniskill"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_technology_mjcf_simulation_format_2024/">
+          <span class="entry-type">技术</span>
+          <h3>MJCF 仿真格式</h3>
+          <p>MuJoCo的XML建模格式，用于描述具有接触、执行器和传感器的铰接刚体系统。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoid_foundation_model/">
+          <span class="entry-type">评测基准</span>
+          <h3>人形机器人基础模型基准</h3>
+          <p>一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhan_mathcale_0_enhancing_generaliz_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Epsilon0</h3>
+          <p>$\mathcal{E}_0$: Enhancing Generalization and Fine-Grained Control in VLA Models via Continuized…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_isaac_gym/">
+          <span class="entry-type">评测基准</span>
+          <h3>Isaac Gym基准</h3>
+          <p>基于NVIDIA Isaac Gym构建的GPU加速强化学习基准集合，用于高吞吐量机器人策略训练与评估。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_volumedp_modeling_volumetric_r_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VolumeDP: Modeling Volumetric Representation for Manipulation Policy Learning</h3>
+          <p>arXiv:2603.17720v2 Announce Type: replace Abstract: Imitation learning is a prominent paradigm for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_maniskill3_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ManiSkill3</h3>
+          <p>面向具身AI的GPU并行机器人仿真与渲染基准。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_choromanski_evaluating_gemini_robotics_pol_2026/">
+          <span class="entry-type">论文</span>
+          <h3>在 Veo 世界模拟器中评估 Gemini Robotics 策略</h3>
+          <p>本文通过在大规模机器人数据上微调 Veo2，构建了一个动作条件化、多视角一致的世界模拟器，并结合生成式场景编辑，在 ALOHA 2 双臂任务上对 Gemini Robotics…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_maniskill3_gpu_parallelized_ro_2024/">
+          <span class="entry-type">论文</span>
+          <h3>ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI</h3>
+          <p>ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_warp_rl_reshaping_base_policy_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Warp RL: Reshaping Base Policy Distributions for Dynamics Adaptation</h3>
+          <p>arXiv:2606.31043v1 Announce Type: cross Abstract: Residual reinforcement learning adapts a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_mujoco_physics_engine_2022/">
+          <span class="entry-type">软件平台</span>
+          <h3>MuJoCo 物理引擎</h3>
+          <p>具有丰富接触动力学的高保真物理引擎，广泛用于人形控制研究。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_urdf_robot_description_format_2024/">
+          <span class="entry-type">技术</span>
+          <h3>URDF 机器人描述格式</h3>
+          <p>用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_molmospaces_a_large_scale_open_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation</h3>
+          <p>MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_stare_vla_progressive_stage_aw_2025/">
+          <span class="entry-type">论文</span>
+          <h3>STARE-VLA</h3>
+          <p>STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dreamzero_world_action_models_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DreamZero: World Action Models are Zero-shot Policies</h3>
+          <p>DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_stage_transition_dense_reward_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Stage-Transition Dense Reward Modeling for Reinforcement Learning</h3>
+          <p>arXiv:2606.31377v1 Announce Type: new Abstract: Reinforcement learning for long-horizon robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_collins_benchmarking_simulated_robotic_2019/">
+          <span class="entry-type">论文</span>
+          <h3>通过真实世界数据集对模拟机器人操作进行基准测试</h3>
+          <p>Collins 等人提出了一种无需硬件的模拟机器人操作基准，通过分发真实世界的动作捕捉数据集和标准化协议，使研究人员能够使用23种运动学和动力学指标来量化仿真到现实的差距。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jlg_refined_policy_distillation_fr_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RPD</h3>
+          <p>Refined Policy Distillation: From VLA Generalists to RL Experts (RPD), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_garcia_camacho_standardization_of_cloth_objec_2024/">
+          <span class="entry-type">论文</span>
+          <h3>布料物体的标准化及其在机器人操作中的相关性</h3>
+          <p>本文提出了一种基于纺织工业标准的无损、易用的测量框架，用于表征布料的物理和机械特性，并评估了刚度、弹性和摩擦力如何影响Franka-Emika Panda机器人执行的五种机器人操作基元。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gao_a_taxonomy_for_evaluating_gene_2025/">
+          <span class="entry-type">论文</span>
+          <h3>评估通用机器人操作策略的分类法</h3>
+          <p>提出STAR-Gen分类法，用于评估视觉-语言机器人操作策略的视觉、语义和行为泛化能力，并通过Bridge V2和ALOHA 2上的1600多次真实世界试验进行了实例化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">基础学科</span>
+          <h3>线性代数</h3>
+          <p>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_hardware_in_the_loop/">
+          <span class="entry-type">方法</span>
+          <h3>硬件在环测试（HIL）</h3>
+          <p>真实硬件控制器与被控对象实时仿真模型交互的验证方法，可安全、可重复地测试控制软件。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lin_failsafe_reasoning_and_recover_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FailSafe</h3>
+          <p>FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models (FailSafe), is a…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#maniskill">ManiSkill的定义与定位</a></li>
+<li><a href="#maniskill_1">ManiSkill的任务设置与数据构成</a></li>
+<li><a href="#_2">使用方法与评价指标</a></li>
+<li><a href="#_3">典型结果与研究价值</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

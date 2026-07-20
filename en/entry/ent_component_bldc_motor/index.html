@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brushless DC Motor · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/component/">Component</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Brushless DC Motor</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Component</div>
+      <h1>Brushless DC Motor</h1>
+      <p class="entry-name-en">Brushless DC Motor</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span><span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#4.2.4 无刷直流电机与正弦永磁同步电机的换相及 FOC by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">Stage 1 · Build One Joint</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>An electric motor driven by electronic commutation rather than mechanical brushes, offering high efficiency, long lifetime, and high power density; widely used as the prime mover in robotic joints and humanoid actuators.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.15915" target="_blank" rel="noopener">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Brushless DC motors are an important component in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p><strong>Brushless DC motors</strong> (BLDC) are structurally similar to PMSMs, but their back-EMF waveforms differ: BLDC motors are designed with a trapezoidal waveform, paired with simple six-step commutation (switching the conducting phase every 60° electrical angle); PMSM back-EMF is sinusoidal, and when combined with FOC, it achieves lower torque ripple and higher efficiency.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: brushless DC motor, trapezoidal back-EMF, six-step commutation, Hall sensor, sinusoidal back-EMF</p>
+<ul>
+<li><strong>Brushless DC motor (BLDC)</strong>: A DC motor that replaces mechanical brushes with electronic commutation, typically featuring a trapezoidal back-EMF waveform, simple control, and lower cost.</li>
+<li><strong>Trapezoidal back-EMF / Sinusoidal back-EMF</strong>: Refers to the induced voltage in the motor windings varying with rotor position in a trapezoidal or sinusoidal manner. A sinusoidal motor paired with sinusoidal current can achieve zero torque ripple.</li>
+<li><strong>Six-step commutation</strong>: In BLDC motors, the conducting phase is switched every 60° electrical angle, with two phases conducting and one phase floating at any given time.</li>
+<li><strong>Hall sensor</strong>: A magnetic switch used to detect the rotor's magnetic pole position, commonly employed for BLDC commutation.</li>
+</ul>
+</div>
+<p>The core idea of <strong>Field-Oriented Control</strong> is to transform the currents from the three-phase stationary coordinate system to the two-phase stationary <span class="arithmatex">\(\alpha\beta\)</span> coordinate system via <strong>Clark transformation</strong>, and then to the rotor-rotating <span class="arithmatex">\(dq\)</span> coordinate system via <strong>Park transformation</strong>. This converts AC quantities into DC quantities, allowing PI controllers to independently control <span class="arithmatex">\(i_d\)</span> and <span class="arithmatex">\(i_q\)</span>. Finally, <strong>Space Vector Pulse Width Modulation</strong> (SVPWM) generates the switching signals for the three-phase inverter.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: Field-Oriented Control, Clark transformation, Park transformation, Space Vector Pulse Width Modulation, inverter</p>
+<ul>
+<li><strong>Field-Oriented Control (FOC)</strong>: Decomposes the stator current vector into the rotor rotating coordinate system for independent control, making AC motors as easy to control torque as DC motors.</li>
+<li><strong>Clark transformation</strong>: Converts the three-phase stationary coordinate system <span class="arithmatex">\(abc\)</span> to the two-phase stationary coordinate system <span class="arithmatex">\(\alpha\beta\)</span>.</li>
+<li><strong>Park transformation</strong>: Converts the two-phase stationary coordinate system <span class="arithmatex">\(\alpha\beta\)</span> to the rotor-rotating <span class="arithmatex">\(dq\)</span> coordinate system.</li>
+<li><strong>Space Vector Pulse Width Modulation (SVPWM)</strong>: A PWM method that enables the three-phase inverter to output a voltage vector closest to the target, offering approximately 15% higher voltage utilization than sinusoidal PWM.</li>
+<li><strong>Inverter</strong>: A power electronic circuit that converts DC power to AC power, typically consisting of six switching devices forming a three-phase bridge.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart LR
+    A["Three-phase currents ia ib ic"] --&gt; B["Clark transformation<br/>alpha beta"]
+    B --&gt; C["Park transformation<br/>d q"]
+    C --&gt; D["PI controllers<br/>id=0 iq=torque_cmd"]
+    D --&gt; E["Inverse Park transformation"]
+    E --&gt; F["SVPWM"]
+    F --&gt; G["Three-phase inverter"]
+    G --&gt; H["PMSM motor"]
+    H --&gt; I["Rotor position theta"]
+    I --&gt; C
+    I --&gt; E</p>
+<h2 id="_1">개요</h2>
+<p>브러시리스 DC 모터는 휴머노이드 로봇 분야의 중요한 부품입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p><strong>브러시리스 DC 모터</strong>(BLDC)는 PMSM과 구조가 유사하지만, 역기전력 파형이 다릅니다. BLDC는 사다리꼴 파형으로 설계되어 간단한 6단계 정류(60° 전기각마다 도통 상을 전환)를 사용합니다. 반면 PMSM의 역기전력은 정현파이며, FOC와 결합하면 더 작은 토크 리플과 더 높은 효율을 얻을 수 있습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 브러시리스 DC 모터, 사다리꼴 역기전력, 6단계 정류, 홀 센서, 정현파 역기전력</p>
+<ul>
+<li><strong>브러시리스 DC 모터(brushless DC motor, BLDC)</strong>: 기계적 브러시를 전자적 정류로 대체한 DC 모터로, 일반적으로 역기전력이 사다리꼴 파형이며 제어가 간단하고 비용이 낮습니다.</li>
+<li><strong>사다리꼴 역기전력 / 정현파 역기전력</strong>: 각각 모터 권선에서 유도되는 전압이 회전자 위치에 따라 사다리꼴 또는 정현파 형태로 변화하는 것을 의미합니다. 정현파 모터에 정현파 전류를 적용하면 토크 리플이 0에 가까워집니다.</li>
+<li><strong>6단계 정류(six-step commutation)</strong>: BLDC가 60° 전기각마다 도통 상을 전환하며, 임의의 순간에 두 상이 도통되고 한 상은 개방됩니다.</li>
+<li><strong>홀 센서(Hall sensor)</strong>: 회전자 자극 위치를 감지하는 자기 스위치로, BLDC 정류에 자주 사용됩니다.</li>
+</ul>
+</div>
+<p><strong>자계 지향 제어</strong>의 핵심 개념은 3상 정지 좌표계의 전류를 <strong>Clark 변환</strong>을 통해 2상 정지 <span class="arithmatex">\(\alpha\beta\)</span> 좌표계로 변환한 후, <strong>Park 변환</strong>을 통해 회전자와 함께 회전하는 <span class="arithmatex">\(dq\)</span> 좌표계로 변환하여 교류 성분을 직류 성분으로 만드는 것입니다. 그런 다음 PI 제어기를 사용하여 <span class="arithmatex">\(i_d\)</span>와 <span class="arithmatex">\(i_q\)</span>를 각각 제어합니다. 마지막으로 <strong>공간 벡터 펄스 폭 변조</strong>(SVPWM)를 통해 3상 인버터의 스위칭 신호를 생성합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 자계 지향 제어, Clark 변환, Park 변환, 공간 벡터 펄스 폭 변조, 인버터</p>
+<ul>
+<li><strong>자계 지향 제어(field-oriented control, FOC)</strong>: 고정자 전류 벡터를 회전자 회전 좌표계로 분해하여 독립적으로 제어함으로써, 교류 모터를 DC 모터처럼 토크를 쉽게 제어할 수 있게 합니다.</li>
+<li><strong>Clark 변환</strong>: 3상 정지 좌표계 <span class="arithmatex">\(abc\)</span>를 2상 정지 좌표계 <span class="arithmatex">\(\alpha\beta\)</span>로 변환합니다.</li>
+<li><strong>Park 변환</strong>: 2상 정지 좌표계 <span class="arithmatex">\(\alpha\beta\)</span>를 회전자와 함께 회전하는 <span class="arithmatex">\(dq\)</span> 좌표계로 변환합니다.</li>
+<li><strong>공간 벡터 펄스 폭 변조(SVPWM)</strong>: 3상 인버터가 목표 전압 벡터에 가장 가깝게 출력하도록 하는 PWM 방식으로, 정현파 PWM보다 전압 이용률이 약 15% 높습니다.</li>
+<li><strong>인버터(inverter)</strong>: 직류 전력을 교류 전력으로 변환하는 전력 전자 회로로, 일반적으로 6개의 스위칭 소자로 구성된 3상 브리지 형태입니다.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart LR
+    A["3상 전류 ia ib ic"] --&gt; B["Clark 변환<br/>alpha beta"]
+    B --&gt; C["Park 변환<br/>d q"]
+    C --&gt; D["PI 제어기<br/>id=0 iq=torque_cmd"]
+    D --&gt; E["역 Park 변환"]
+    E --&gt; F["SVPWM"]
+    F --&gt; G["3상 인버터"]
+    G --&gt; H["PMSM 모터"]
+    H --&gt; I["회전자 위치 theta"]
+    I --&gt; C
+    I --&gt; E</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_pid_control/">PID Control</a>
+              <span class="rel-desc">Brushless DC Motor has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+              <span class="rel-desc">Brushless DC Motor cites Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-desc">Brushless DC Motor uses Field-Oriented Control (FOC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_linear_algebra/">Linear Algebra</a>
+              <span class="rel-desc">Brushless DC Motor has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_classical_mechanics/">Classical Mechanics</a>
+              <span class="rel-desc">Brushless DC Motor has prerequisite Classical Mechanics.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_field_oriented_control/">Field-Oriented Control</a>
+              <span class="rel-desc">Brushless DC Motor uses Field-Oriented Control.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">integrates</span>
+              <span class="rel-desc">BLDC motors are part of the actuator chain whose losses are modelled.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yu_quasi_direct_drive_actuation_f_2020/">Quasi-Direct Drive Actuation for a Lightweight Hip Exoskeleton with High Backdrivability and High Bandwidth</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">A high-torque-density exterior-rotor BLDC motor is the core motor of the actuator.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_bonfiglioli_2024/">Bonfiglioli</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Bonfiglioli uses Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">Materials that make robots smart</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Materials that make robots smart discusses Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_oem_unitree_robotics/">Unitree Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Unitree Robotics has prerequisite Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_maxon_group_2024/">Maxon Group</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Maxon Group has prerequisite Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots mentions Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_dynamixel_xm430_w210_t/">ROBOTIS DYNAMIXEL XM430-W210-T</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ROBOTIS DYNAMIXEL XM430-W210-T has prerequisite Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yousefi_koma_surena_iv_towards_a_cost_effec_2021/">SURENA IV: Towards A Cost-effective Full-size Humanoid Robot for Real-world Scenarios</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SURENA IV uses BLDC brushless kit motors in its compact joint drives for high power-to-weight ratio.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">Robot Impedance Control and Passivity Analysis with Inner Torque and Velocity Feedback Loops</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Robot Impedance Control and Passivity Analysis with Inner Torque and Velocity Feedback Loops mentions Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_harmonic_drive_advances_surgic_2026/">Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">supplies</span>
+              <span class="rel-desc">Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component supplies Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_zeroerr_2024/">ZeroErr</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">supplies</span>
+              <span class="rel-desc">ZeroErr supplies Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_techrobots_2024/">Techrobots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">supplies</span>
+              <span class="rel-desc">Techrobots supplies Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_odri_bolt/">ODRI Bolt (Open Dynamic Robot Initiative)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ODRI&#39;s BLMC actuators are built from off-the-shelf frameless brushless motors combined with dual encoders and the custom MicroDriver electronics.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_dynamixel_xl330_m288_t/">ROBOTIS DYNAMIXEL XL330-M288-T</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ROBOTIS DYNAMIXEL XL330-M288-T has prerequisite Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_harmonic_drive_reducer/">Harmonic Drive Reducer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Harmonic Drive Reducer has prerequisite Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_manufacturer_nidec_drive_technology/">Nidec Drive Technology</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">produces</span>
+              <span class="rel-desc">Nidec Drive Technology produces Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_frameless_torque_motor_2024/">Frameless Torque Motor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Frameless Torque Motor has prerequisite Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sapkota_harmonic_content_analysis_of_a_2023/">Harmonic content analysis of a soft starting variable frequency motor drive based on FPGA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Harmonic content analysis of a soft starting variable frequency motor drive based on FPGA discusses Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">Real time state monitoring and fault diagnosis system for motor based on LabVIEW</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Real time state monitoring and fault diagnosis system for motor based on LabVIEW mentions Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_wittenstein_2024/">Wittenstein</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">supplies</span>
+              <span class="rel-desc">Wittenstein supplies Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi Direct Drive Actuator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Quasi Direct Drive Actuator has prerequisite Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_comp_servo_motor/">High-Performance Servo Motor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">High-Performance Servo Motor has prerequisite Brushless DC Motor.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_bldc_motor"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yu_quasi_direct_drive_actuation_f_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Quasi-Direct Drive Actuation for a Lightweight Hip Exoskeleton with High Backdrivability and High Bandwidth</h3>
+          <p>This paper presents a custom quasi-direct-drive actuator and a 3.4 kg bilateral hip exoskeleton that…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_dynamixel_xm430_w210_t/">
+          <span class="entry-type">Component</span>
+          <h3>ROBOTIS DYNAMIXEL XM430-W210-T</h3>
+          <p>A medium-size smart servo actuator from ROBOTIS&#39; X-series, featuring TTL communication, 3.0 N·m…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_wittenstein_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Wittenstein</h3>
+          <p>German manufacturer of precision gearboxes and servo actuators for robotics and automation.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_harmonic_drive_reducer/">
+          <span class="entry-type">Component</span>
+          <h3>Harmonic Drive Reducer</h3>
+          <p>A high-ratio, zero-backlash gear reducer based on a flexible spline, circular spline, and wave…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_dynamixel_xl330_m288_t/">
+          <span class="entry-type">Component</span>
+          <h3>ROBOTIS DYNAMIXEL XL330-M288-T</h3>
+          <p>A compact, low-cost smart servo actuator from ROBOTIS&#39; X-series, featuring TTL communication, 0.52…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_manufacturer_nidec_drive_technology/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Nidec Drive Technology</h3>
+          <p>Japanese precision drive subsidiary of Nidec Corporation, manufacturer of FLEXWAVE strain-wave gear…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_comp_servo_motor/">
+          <span class="entry-type">Component</span>
+          <h3>High-Performance Servo Motor</h3>
+          <p>A compact electric motor with precise position, velocity, and torque control, used as the core…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_odri_bolt/">
+          <span class="entry-type">Robot System</span>
+          <h3>ODRI Bolt (Open Dynamic Robot Initiative)</h3>
+          <p>The open-source point-foot biped from the Open Dynamic Robot Initiative, an international academic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control (FOC)</h3>
+          <p>A motor-control method that transforms three-phase currents into a rotating dq reference frame to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_harmonic_drive_advances_surgic_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component</h3>
+          <p>Harmonic Drive&#39;s launch of the LPA 20 integrated servo actuator strengthens the company&#39;s position…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sapkota_harmonic_content_analysis_of_a_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Harmonic content analysis of a soft starting variable frequency motor drive based on FPGA</h3>
+          <p>This paper proposes an FPGA-based variable-frequency soft-starting drive for three-phase induction…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">OEM</span>
+          <h3>Unitree Robotics</h3>
+          <p>Chinese robotics company developing quadruped and humanoid robots, including the Unitree H1 and G1…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Real time state monitoring and fault diagnosis system for motor based on LabVIEW</h3>
+          <p>Presents a LabVIEW-based real-time monitoring and multi-fault pre-diagnosis system for three-phase…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control</h3>
+          <p>A motor control technique that transforms three-phase stator currents into a rotating d-q reference…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_techrobots_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Techrobots</h3>
+          <p>Chinese supplier of robot joint actuators and modular robotic components.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_pid_control/">
+          <span class="entry-type">Method</span>
+          <h3>PID Control</h3>
+          <p>A foundational feedback control method that computes a control signal as a linear combination of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Impedance Control and Passivity Analysis with Inner Torque and Velocity Feedback Loops</h3>
+          <p>This paper analyzes how inner-loop torque bandwidth, velocity filtering, and sampling rate constrain…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</h3>
+          <p>This paper presents a physics-based, linear-in-parameters electrical power consumption model for the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots</h3>
+          <p>Presents a printable self-sustained compliant oscillator built from two mechanically coupled…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Materials that make robots smart</h3>
+          <p>This paper argues that embodied artificial intelligence is also a materials problem, defines…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_frameless_torque_motor_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Frameless Torque Motor</h3>
+          <p>Direct-drive motor without housing or bearings, integrated into robot joints for high torque…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_classical_mechanics/">
+          <span class="entry-type">Foundation</span>
+          <h3>Classical Mechanics</h3>
+          <p>The branch of physics describing the motion of macroscopic bodies under forces, including Newton&#39;s…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_zeroerr_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>ZeroErr</h3>
+          <p>Chinese manufacturer of high-precision robot joint modules and servo systems.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_maxon_group_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Maxon Group</h3>
+          <p>Swiss manufacturer of high-precision brushless DC motors, gearheads and controllers for robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">Foundation</span>
+          <h3>Linear Algebra</h3>
+          <p>The branch of mathematics concerning vector spaces, linear transformations, matrices, and systems of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_bonfiglioli_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Bonfiglioli</h3>
+          <p>Italian manufacturer of gearboxes and drive systems used in industrial and mobile robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yousefi_koma_surena_iv_towards_a_cost_effec_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>SURENA IV: Towards A Cost-effective Full-size Humanoid Robot for Real-world Scenarios</h3>
+          <p>SURENA IV is a 43-DoF, 170 cm, 68 kg anthropomorphic humanoid developed at the University of Tehran…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Quasi Direct Drive Actuator</h3>
+          <p>Actuator design using low-ratio gears with high-torque motors to achieve high bandwidth and force…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

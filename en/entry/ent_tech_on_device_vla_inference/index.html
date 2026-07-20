@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>On-Device VLA Inference · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/technology/">Technology</a>
+    <span>/</span>
+    <span class="breadcrumb-current">On-Device VLA Inference</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Technology</div>
+      <h1>On-Device VLA Inference</h1>
+      <p class="entry-name-en">On-Device VLA Inference</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Software &amp; Middleware</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="AI-extracted from VLA-Perf paper and NVIDIA deployment blog; specific latency claims depend on model and quantization configuration. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">Stage 2 · Biped Platform</span>
+        <span class="roadmap-badge-role">Optional</span>
+      </a>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">Stage 3 · Full Humanoid</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The practice of running Vision-Language-Action models directly on robot-embedded edge compute rather than offloading to edge or cloud servers, driven by latency, connectivity, and privacy constraints.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.18397" target="_blank" rel="noopener">How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/" target="_blank" rel="noopener">Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using a Sim-to-Real Workflow</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">uses</span>
+            <a href="/en/entry/ent_method_action_token_prediction/">Action Token Prediction</a>
+            
+              
+                
+              
+              <span class="rel-desc">On-device VLA inference deploys models that rely on action token prediction.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">is_based_on</span>
+            <a href="/en/entry/ent_paper_openvla_2024/">OpenVLA: An Open-Source Vision-Language-Action Model</a>
+            
+              
+                
+              
+              <span class="rel-desc">On-device VLA inference builds on architectures such as OpenVLA.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Deploying vision-language-action models directly on the robot's built-in edge computing devices, rather than offloading to edge or cloud servers, to meet latency, connectivity, and privacy constraints.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-on-device-vla-inference">Definition and Positioning of On-Device VLA Inference</h3>
+<p>On-device VLA inference belongs to the <strong>technology</strong> category. Its domains include: AI models and algorithms, software middleware, and components. Value chain level: intelligence layer. It involves deploying vision-language-action models directly on the robot's built-in edge computing devices, rather than offloading to edge or cloud servers, to meet latency, connectivity, and privacy constraints. The English term is <em>On-Device VLA Inference</em>. The Korean term is <em>온디바이스 VLA 추론</em>.</p>
+<h3 id="working-principle-and-technical-architecture-of-on-device-vla-inference">Working Principle and Technical Architecture of On-Device VLA Inference</h3>
+<p>The core mechanism of on-device VLA inference defines the performance boundaries of humanoid robot systems. Understanding its internal structure, signal flow, and control interfaces facilitates system integration and optimization.
+During selection and integration, attention must be paid to its compatibility with controllers, communication buses, power systems, and mechanical structures.</p>
+<h3 id="key-parameters-and-selection-considerations">Key Parameters and Selection Considerations</h3>
+<p>In engineering practice, selecting on-device VLA inference requires comprehensive consideration of performance metrics, reliability, cost, supply chain maturity, and compatibility with the overall system.
+Key parameters typically include precision, bandwidth, torque, power consumption, weight, interface protocols, and environmental adaptability.
+For different application scenarios, trade-offs between performance and cost may be necessary, with appropriate redundancy and safety margins reserved.</p>
+<h3 id="typical-applications-and-development-trends">Typical Applications and Development Trends</h3>
+<p>On-device VLA inference has been widely applied in prototype validation, academic research, and early commercial products of humanoid robots.
+As the industry chain matures, its integration level, intelligence, and cost-effectiveness are expected to continue improving.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>vla</li>
+<li>on_device_inference</li>
+<li>edge_compute</li>
+<li>latency</li>
+<li>real_time_control</li>
+<li>humanoid</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key technologies in the humanoid robot industry chain, on-device VLA inference plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, execution, energy, structure, and validation, collectively determining overall system performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              <span class="rel-desc">On-Device VLA Inference cites GR00T N1.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_manufacturer_nvidia/">NVIDIA</a>
+              <span class="rel-desc">On-Device VLA Inference cites NVIDIA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_action_token_prediction/">Action Token Prediction</a>
+              <span class="rel-desc">On-device VLA inference uses action token prediction as its core action-generation method.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_openvla_2024/">OpenVLA: An Open-Source Vision-Language-Action Model</a>
+              <span class="rel-desc">On-device VLA inference is based on model architectures such as OpenVLA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_ota_software_update_2024/">OTA Software Update</a>
+              <span class="rel-desc">On-Device VLA Inference mentions OTA Software Update.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_ros_2_middleware_2024/">ROS 2 Middleware</a>
+              <span class="rel-desc">On-Device VLA Inference has prerequisite ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_nvidia_jetson_thor/">NVIDIA Jetson Thor</a>
+              <span class="rel-desc">On-Device VLA Inference cites NVIDIA Jetson Thor.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_park_quantization_aware_imitation_l_2024/">Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hu_deead_dynamic_early_exit_of_vi_2025/">DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_xu_kv_efficient_vla_a_method_to_s_2025/">KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ma_running_vlas_at_real_time_spee_2025/">Running VLAs at Real-time Speed</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Running VLAs at Real-time Speed discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_nvidia_jetson_thor/">NVIDIA Jetson Thor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">enables</span>
+              <span class="rel-desc">Jetson Thor&#39;s on-robot AI compute enables real-time VLA inference without relying on external servers.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ni_swiftvla_unlocking_spatiotempo_2025/">SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_embodiedcpp_a_portable_inferen_2026/">Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots proposes On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rhinovla_technical_report_2026/">RhinoVLA Technical Report</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RhinoVLA Technical Report discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wu_vla_an_an_efficient_and_onboar_2025/">VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex Environments discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_autoprune_each_complexity_dese_2025/">AutoPrune: Each Complexity Deserves a Pruning Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AutoPrune: Each Complexity Deserves a Pruning Policy discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhao_vla_rail_a_real_time_asynchron_2025/">VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots introduces On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fang_sqap_vla_a_synergistic_quantiz_2025/">SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance Vision-Language-Action Models discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action Inference discusses On-Device VLA Inference.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_williams_lite_vla_efficient_vision_lang_2025/">Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots proposes On-Device VLA Inference.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_tech_on_device_vla_inference"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>OpenVLA: An Open-Source Vision-Language-Action Model</h3>
+          <p>A 7B-parameter open-source VLA pretrained on 970k real-world robot demonstrations from the Open…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fang_sqap_vla_a_synergistic_quantiz_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance Vision-Language-Action Models</h3>
+          <p>SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action Inference</h3>
+          <p>VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rhinovla_technical_report_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>RhinoVLA Technical Report</h3>
+          <p>arXiv:2606.07383v2 Announce Type: replace Abstract: Vision-Language-Action (VLA) models have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>NVIDIA</h3>
+          <p>American semiconductor and software company supplying GPUs, edge AI compute modules, simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wu_vla_an_an_efficient_and_onboar_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex Environments</h3>
+          <p>VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_williams_lite_vla_efficient_vision_lang_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots</h3>
+          <p>Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots (Lite VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ni_swiftvla_unlocking_spatiotempo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead</h3>
+          <p>SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_xu_kv_efficient_vla_a_method_to_s_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache</h3>
+          <p>KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>ROS 2 Middleware</h3>
+          <p>De facto robot middleware with DDS-based pub/sub and real-time support.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">Method</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA&#39;s general-purpose humanoid robot foundation model designed to enable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhao_vla_rail_a_real_time_asynchron_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots</h3>
+          <p>VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots (VLA-RAIL), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_nvidia_jetson_thor/">
+          <span class="entry-type">Component</span>
+          <h3>NVIDIA Jetson Thor</h3>
+          <p>NVIDIA&#39;s flagship edge AI compute module for humanoid and physical AI robots, built on Blackwell…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_autoprune_each_complexity_dese_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AutoPrune: Each Complexity Deserves a Pruning Policy</h3>
+          <p>AutoPrune: Each Complexity Deserves a Pruning Policy (AutoPrune), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">Method</span>
+          <h3>Action Token Prediction</h3>
+          <p>A method that frames robot action generation as an autoregressive next-token prediction problem,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_ota_software_update_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>OTA Software Update</h3>
+          <p>Over-the-air deployment of control policies, firmware, and system software to deployed humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_park_quantization_aware_imitation_l_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control</h3>
+          <p>Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control (QAIL+QBC), is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hu_deead_dynamic_early_exit_of_vi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving</h3>
+          <p>DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving (DeeAD), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</h3>
+          <p>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ma_running_vlas_at_real_time_spee_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Running VLAs at Real-time Speed</h3>
+          <p>Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_embodiedcpp_a_portable_inferen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots</h3>
+          <p>arXiv:2607.02501v2 Announce Type: replace Abstract: Embodied AI models now span…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-on-device-vla-inference">Definition and Positioning of On-Device VLA Inference</a></li>
+<li><a href="#working-principle-and-technical-architecture-of-on-device-vla-inference">Working Principle and Technical Architecture of On-Device VLA Inference</a></li>
+<li><a href="#key-parameters-and-selection-considerations">Key Parameters and Selection Considerations</a></li>
+<li><a href="#typical-applications-and-development-trends">Typical Applications and Development Trends</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

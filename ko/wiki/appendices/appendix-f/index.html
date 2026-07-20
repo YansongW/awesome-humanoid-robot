@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>부록 F 지식 그래프 검색 예시 · Wiki · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" aria-current="page">Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">부록 F 지식 그래프 검색 예시</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="f">부록 F 지식 그래프 검색 예시</h1>
+<p>본 부록에서는 본 사이트(kg.rounds-tech.com)에서 지식 그래프를 검색하고 탐색하는 방법을 소개하며, 일반적인 질문에 대한 검색 경로를 제시합니다.</p>
+<h2 id="f1">F.1 사이트 구조 개요</h2>
+<table>
+<thead>
+<tr>
+<th>진입점</th>
+<th>주소</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>홈페이지</td>
+<td><code>/</code></td>
+<td>분야 탐색, 유형 탐색, 추천 엔터티</td>
+</tr>
+<tr>
+<td>검색</td>
+<td><code>/search/</code></td>
+<td>전체 텍스트 검색(이름, 요약, 본문, arXiv 번호)</td>
+</tr>
+<tr>
+<td>그래프</td>
+<td><code>/graph/</code></td>
+<td>전체 관계 네트워크 및 커뮤니티 클러스터링 시각화</td>
+</tr>
+<tr>
+<td>Wiki</td>
+<td><code>/wiki/</code></td>
+<td>30개 장의 전문서 + 부록</td>
+</tr>
+<tr>
+<td>엔터티 카드</td>
+<td><code>/entry/&lt;엔터티ID&gt;/</code></td>
+<td>개별 엔터티의 요약, 본문, 관계, 출처</td>
+</tr>
+<tr>
+<td>유형 목록</td>
+<td><code>/types/&lt;유형&gt;/</code></td>
+<td>특정 유형의 모든 엔터티</td>
+</tr>
+</tbody>
+</table>
+<h2 id="f2">F.2 검색 팁</h2>
+<p><strong>키워드 검색</strong>: <code>/search/</code>에서 중문 또는 영문 입력 가능, 예:</p>
+<ul>
+<li><code>宇树</code> 또는 <code>Unitree</code> —— 회사, 제품 및 관련 논문 검색</li>
+<li><code>2304.13705</code> —— arXiv 번호로 논문 직접 검색(예: ACT)</li>
+<li><code>全身控制</code> —— 방법, 개념, 논문 장 절 검색</li>
+</ul>
+<p><strong>유형별 필터링</strong>: 검색 결과 페이지 상단의 유형 태그를 클릭하거나 URL 매개변수 사용:</p>
+<pre class="highlight"><code>/search/?type=paper            논문만 보기
+/search/?type=company          회사만 보기</code></pre>
+<p><strong>분야별 필터링</strong>: <code>domain</code> 매개변수 사용(홈페이지 분야 카드가 이 링크에 해당):</p>
+<pre class="highlight"><code>/search/?domain=07_ai_models_algorithms     AI 모델 및 알고리즘
+/search/?domain=04_actuators                액추에이터
+/search/?domain=11_applications_markets     응용 및 시장</code></pre>
+<p>매개변수 조합 가능: <code>/search/?domain=09_simulation_digital&amp;type=benchmark</code>(시뮬레이션 분야의 평가 기준).</p>
+<h2 id="f3">F.3 그래프 페이지 사용법</h2>
+<ul>
+<li><strong>전체 그래프 모드</strong>: 커뮤니티(cluster)별로 색상이 지정된 엔터티 네트워크 표시, 확대/축소 및 드래그 가능.</li>
+<li><strong>단일 엔터티 서브그래프</strong>: 엔터티 카드 페이지의 "관계 서브그래프"에서 1홉 이웃 확인 가능; 그래프 페이지 오른쪽 상단 검색창에서 특정 엔터티로 이동 가능.</li>
+<li><strong>관계 유형</strong>: 연결선 레이블은 현지화되어 있음, 예: <code>is_based_on</code>(기반), <code>evaluates_on</code>(평가 대상), <code>uses_dataset</code>(데이터셋 사용).</li>
+</ul>
+<h2 id="f4">F.4 일반적인 질문 검색 경로</h2>
+<p><strong>"특정 방법의 원리와 출처는?"</strong>
+방법명 검색 → 엔터티 카드 진입 → "핵심 내용" 및 "참고" 출처 확인; 카드의 "발신 관계"에서 <code>has_prerequisite</code>가 선행 이론을 나열.</p>
+<p><strong>"특정 기준/데이터셋이 어떤 작업에서 사용되었는가?"</strong>
+기준 엔터티 카드 진입 → "수신 관계"에서 <code>evaluates_on</code>(어떤 방법이 해당 기준에서 평가되었는지) 및 <code>uses_dataset</code>(어떤 작업이 데이터를 사용했는지) 확인.</p>
+<p><strong>"특정 회사의 제품 및 공급망은?"</strong>
+회사 카드 진입 → <code>manufacturer_of</code>(제조한 제품), <code>supplies</code>/<code>sources_from</code>(공급 및 조달) 관계 확인; 공급망 전체 개요는 Wiki 제7장 및 부록 D 참조.</p>
+<p><strong>"휴머노이드 로봇의 특정 주제에 대한 체계적 개요는?"</strong>
+먼저 Wiki 해당 장 확인(장 목록은 <code>/wiki/</code> 참조), 장 내에서 인용된 엔터티는 카드 페이지를 통해 추가 탐색 가능.</p>
+<h2 id="f5-id">F.5 엔터티 ID 명명 규칙</h2>
+<p>엔터티 ID는 <code>ent_&lt;유형&gt;_&lt;이름&gt;[_연도]</code> 형식으로 통일, 예:</p>
+<ul>
+<li><code>ent_paper_action_chunking_transformer_2023</code> —— 논문</li>
+<li><code>ent_method_whole_body_control</code> —— 방법</li>
+<li><code>ent_company_unitree_robotics_2024</code> —— 회사</li>
+<li><code>ent_standard_iso_13482_personal_care_robot_2014</code> —— 표준</li>
+</ul>
+<p>관계 ID는 <code>rel_&lt;소스엔터티ID&gt;_&lt;관계유형&gt;_&lt;대상엔터티ID&gt;</code> 형식.</p>
+<h2 id="f6">F.6 프로그래밍 방식 접근</h2>
+<p>본 사이트는 정적 사이트이며, 그래프 데이터는 JSON 형식으로 공개:</p>
+<pre class="highlight"><code>/data/search-index.json   검색 인덱스(요약, 분야, 유형 태그 포함)
+/data/relations.json      전체 노드 및 연결선
+/data/clusters.json       커뮤니티 클러스터링 결과
+/data/subgraphs/&lt;엔터티ID&gt;.json   단일 엔터티 1홉 서브그래프</code></pre>
+<p><code>fetch</code>를 통해 직접 가져와 2차 개발에 사용 가능; 원본 데이터(YAML/Markdown)는 GitHub 저장소 <code>YansongW/awesome-humanoid-robot</code>에서 관리.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/wiki/appendices/appendix-e/">← 이전<span>부록 E 표준, 법규 및 인증 목록</span></a>
+      
+      
+      <a class="next" href="/ko/wiki/appendices/appendix-g/">다음 →<span>부록 G 용어집</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#f">부록 F 지식 그래프 검색 예시</a><ul>
+<li><a href="#f1">F.1 사이트 구조 개요</a></li>
+<li><a href="#f2">F.2 검색 팁</a></li>
+<li><a href="#f3">F.3 그래프 페이지 사용법</a></li>
+<li><a href="#f4">F.4 일반적인 질문 검색 경로</a></li>
+<li><a href="#f5-id">F.5 엔터티 ID 명명 규칙</a></li>
+<li><a href="#f6">F.6 프로그래밍 방식 접근</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>발목 순응 기구 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/component/">부품</a>
+    <span>/</span>
+    <span class="breadcrumb-current">발목 순응 기구</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">부품</div>
+      <h1>발목 순응 기구</h1>
+      <p class="entry-name-en">Ankle Compliance Mechanism</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.7.6 碰撞检测与柔顺控制 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>보행 시 충격 흡수·지형 적응·에너지 효율을 높이기 위해 발목에 적용되는 기계적 또는 제어 기반 순응 설계.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>발목 순응 메커니즘은 휴머노이드 로봇 분야의 중요한 부품입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>휴머노이드 로봇은 인간-로봇 공존 환경에서 사람이나 물체와의 의도치 않은 접촉을 피할 수 없습니다. <strong>충돌 감지(collision detection)</strong>와 <strong>순응 제어(compliance control)</strong>는 충돌 피해를 줄이기 위한 두 가지 방어선입니다. 전자는 이상 접촉을 조기에 발견하고, 후자는 접촉 발생 후 접촉력을 감소시킵니다[36][73].</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 충돌 감지, 순응 제어, 접촉력, 외부 토크, 안전 반응</p>
+<ul>
+<li><strong>충돌 감지(collision detection)</strong>: 로봇과 외부 물체 간의 의도치 않은 접촉을 식별하는 과정.</li>
+<li><strong>순응 제어(compliance control)</strong>: 로봇이 힘을 받을 때 원하는 동적 응답을 따르도록 하는 제어 방법.</li>
+<li><strong>접촉력(contact force)</strong>: 로봇이 외부와 접촉할 때 상호 작용하는 힘.</li>
+<li><strong>외부 토크(external torque)</strong>: 접촉력이 관절에서 발생시키는 토크.</li>
+<li><strong>안전 반응(safety reaction)</strong>: 위험 감지 후 트리거되는 보호 동작.</li>
+</ul>
+</div>
+<p>로봇은 일반적으로 모든 표면에 힘 센서를 장착하지 않으므로, <strong>외부 토크 관측기(external torque observer)</strong>를 통해 접촉을 간접적으로 추정해야 합니다. 기본 아이디어는 모터 측에서 측정된 관절 토크와 동역학 모델이 예측한 명목 토크를 비교하는 것입니다:</p>
+<div class="arithmatex">\[
+\boldsymbol{\tau}_{\text{ext}} = \boldsymbol{\tau}_{\text{meas}} - \left[ \mathbf{M}(\mathbf{q})\ddot{\mathbf{q}} + \mathbf{C}(\mathbf{q}, \dot{\mathbf{q}})\dot{\mathbf{q}} + \mathbf{g}(\mathbf{q}) \right]
+\]</div>
+<p><span class="arithmatex">\(\boldsymbol{\tau}_{\text{ext}}\)</span>는 각 관절의 외부 토크 추정치입니다. 모델 오차, 마찰, 노이즈로 인해 일반적으로 필터링과 임계값 처리가 필요합니다. 더 강건한 방법으로는 운동량 관측기 기반 충돌 감지가 있으며, 이는 실제 운동량과 예측 운동량의 편차를 비교하여 충돌을 감지합니다:</p>
+<div class="arithmatex">\[
+\mathbf{r}(t) = \mathbf{K}_I \left[ \mathbf{p}(t) - \int_0^t \left( \boldsymbol{\tau} - \mathbf{g}(\mathbf{q}) + \mathbf{r}(s) \right) ds \right]
+\]</div>
+<p>여기서 <span class="arithmatex">\(\mathbf{p} = \mathbf{M}(\mathbf{q})\dot{\mathbf{q}}\)</span>는 일반화 운동량, <span class="arithmatex">\(\mathbf{K}_I\)</span>는 관측기 이득입니다. 운동량 관측기는 가속도 측정 노이즈에 민감하지 않아 휴머노이드 로봇의 충돌 감지에 일반적으로 사용됩니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 외부 토크 관측기, 운동량 관측기, 명목 토크, 관측기 이득</p>
+<ul>
+<li><strong>외부 토크 관측기(external torque observer)</strong>: 관절 외부 토크를 추정하는 알고리즘.</li>
+<li><strong>운동량 관측기(momentum observer)</strong>: 일반화 운동량 편차를 기반으로 충돌을 감지하는 관측기.</li>
+<li><strong>명목 토크(nominal torque)</strong>: 동역학 모델이 예측한 관절 토크.</li>
+<li><strong>관측기 이득(observer gain)</strong>: 관측기의 응답 속도와 노이즈 억제 능력을 조절하는 매개변수.</li>
+</ul>
+</div>
+<p>충돌 감지 임계값 설정은 핵심입니다. 임계값이 너무 낮으면 오작동(false positive)이 발생하여 정상 작업에 지장을 주고, 너무 높으면 반응이 지연되어 부상 위험이 증가합니다. 임계값은 일반적으로 ISO/TS 15066의 생체역학 한계, 로봇 속도, 작업 공간 및 작업 유형에 따라 결정됩니다. 예를 들어, 협동 속도가 1.5 m/s 미만인 팔의 경우 충돌 힘 임계값을 약 150 N으로 설정할 수 있습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 충돌 임계값, 오작동, 생체역학 한계, 협동 속도</p>
+<ul>
+<li><strong>충돌 임계값(collision threshold)</strong>: 안전 반응을 트리거하는 힘/토크 또는 운동량 편차 문턱값.</li>
+<li><strong>오작동(false positive)</strong>: 충돌이 아닌 상황에서 안전 반응이 잘못 트리거되는 현상.</li>
+<li><strong>생체역학 한계(biomechanical limit)</strong>: 인체가 견딜 수 있는 힘, 압력 또는 에너지의 상한.</li>
+<li><strong>협동 속도(collaborative speed)</strong>: 인간-로봇 협동에서 허용되는 최대 로봇 속도.</li>
+</ul>
+</div>
+<p>충돌 감지 후 일반적인 안전 반응 전략은 다음과 같습니다:</p>
+<ol>
+<li><strong>즉시 정지(stop)</strong>: 모터 토크를 차단하거나 위치 유지 모드로 전환, 저속 경접촉에 적합.</li>
+<li><strong>후퇴(recede)</strong>: 접촉 반대 방향으로 이동하여 접촉력을 감소, 역방향 이동이 가능한 경우에 적합.</li>
+<li><strong>순응(compliant)</strong>: 제로 포스/어드미턴스 제어 모드로 전환하여 로봇이 외력에 따라 자유롭게 움직이도록 함.</li>
+<li><strong>비상 정지(emergency stop)</strong>: 최고 수준의 안전 응답을 트리거하여 동력을 차단.</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["정상 작동"] --&gt; B{"충돌 감지"}
+    B --&gt;|"충돌 없음"| A
+    B --&gt;|"충돌 감지"| C["심각도 평가"]
+    C --&gt;|"경미"| D["순응/후퇴"]
+    C --&gt;|"심각"| E["즉시 정지/E-stop"]
+    D --&gt; F["이벤트 기록 및 복구"]
+    E --&gt; G["안전 상태/수동 확인"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 즉시 정지, 후퇴, 어드미턴스 제어, 비상 정지</p>
+<ul>
+<li><strong>즉시 정지(stop)</strong>: 로봇이 빠르게 감속하고 움직임을 멈춤.</li>
+<li><strong>후퇴(recede)</strong>: 로봇이 접촉력 반대 방향으로 이동하여 접촉을 해제.</li>
+<li><strong>어드미턴스 제어(admittance control)</strong>: 외력에 따라 원하는 움직임을 생성하는 제어 전략.</li>
+<li><strong>비상 정지(emergency stop)</strong>: 안전 회로를 트리거하여 로봇을 안전 상태로 전환.</li>
+</ul>
+</div>
+<p>순응 제어 구현 방식은 다음과 같습니다:</p>
+<ul>
+<li><strong>임피던스 제어(impedance control)</strong>: 로봇이 나타내는 질량-댐퍼-스프링 특성을 조절하여 접촉력과 변위가 원하는 관계를 갖도록 함.</li>
+<li><strong>어드미턴스 제어(admittance control)</strong>: 측정된 외력에 따라 원하는 운동 궤적을 계산, 위치 제어 내부 루프에 적합.</li>
+<li><strong>토크 제어(torque control)</strong>: 관절 출력 토크를 직접 제어하여 낮은 강성 응답을 구현.</li>
+<li><strong>가변 강성 제어(variable stiffness control)</strong>: 작업 단계에 따라 관절 강성을 조정하여 정밀도와 안전성을 균형.</li>
+</ul>
+<p>휴머노이드 로봇에서 순응 제어는 인간-로봇 상호작용뿐만 아니라 착지 충격 흡수, 불균일 지면 적응 및 낙상 보호에도 사용됩니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 임피던스 제어, 가변 강성 제어, 착지 충격, 낙상 보호</p>
+<ul>
+<li><strong>임피던스 제어(impedance control)</strong>: 로봇 끝단이 나타내는 임피던스(질량-댐퍼-강성)를 제어.</li>
+<li><strong>가변 강성 제어(variable stiffness control)</strong>: 온라인으로 관절 강성을 조정하는 제어 방법.</li>
+<li><strong>착지 충격(landing impact)</strong>: 발이 지면에 닿을 때의 충격력.</li>
+<li><strong>낙상 보호(fall protection)</strong>: 균형을 잃었을 때 피해를 줄이기 위한 조치 전략.</li>
+</ul>
+</div>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_impedance_control/">임피던스 제어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_admittance_control/">어드미턴스 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_subsystem_ankle_compliance"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_impedance_control/">
+          <span class="entry-type">방법</span>
+          <h3>임피던스 제어</h3>
+          <p>상호작용 힘과 변위 간의 동적 관계를 제어하여 로봇이 가상의 기계적 임피던스처럼 동작하도록 하는 제어 방식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_admittance_control/">
+          <span class="entry-type">방법</span>
+          <h3>어드미턴스 제어</h3>
+          <p>측정된 외력을 원하는 위치·속도 궤적으로 변환하는 제어 방식으로, 임피던스 제어와 상호 보완적.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

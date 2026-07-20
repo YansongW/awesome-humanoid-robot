@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DROID · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/dataset/">데이터셋</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DROID</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">데이터셋</div>
+      <h1>DROID</h1>
+      <p class="entry-name-en">DROID</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">데이터 및 데이터셋</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Scope described in original DROID paper and confirmed by Wang et al. 2026 VLA survey. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">3단계 · 완전한 휴로봇</span>
+        <span class="roadmap-badge-role">핵심</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>여러 실험실과 환경에서 수집된 분산적이고 다양한 실제 로봇 조작 데이터셋으로, 시각 및 환경 견고성 향상을 목표로 함.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2403.12945" target="_blank" rel="noopener">DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://droid-dataset.github.io/" target="_blank" rel="noopener">DROID Dataset</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>관련 개체</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/ko/entry/ent_paper_wang_vla_survey_2026/">로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</a>
+            
+              
+                
+              
+              <span class="rel-desc">Wang et al. 2026 서베이는 DROID를 강한 시각 및 환경 변화를 가진 분산 실제 데이터셋으로 인용함.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>분산형이고 다양한 실제 세계 로봇 조작 데이터셋으로, 여러 연구실과 환경에서 수집되었으며, 시각 및 환경 강건성을 향상시키는 것을 목표로 합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="droid">DROID 로봇 조작 데이터셋의 정의와 위치</h3>
+<p>DROID 로봇 조작 데이터셋은 <strong>데이터셋</strong> 유형에 속하며, 영문 명칭은 <em>DROID</em>입니다.
+분산형이고 다양한 실제 세계 로봇 조작 데이터셋으로, 여러 연구실과 환경에서 수집되었으며, 시각 및 환경 강건성을 향상시키는 것을 목표로 합니다.</p>
+<h3 id="droid_1">DROID 로봇 조작 데이터셋의 핵심 정보</h3>
+<p>다음은 DROID 로봇 조작 데이터셋에 대한 상세 설명을 정리한 것으로, 중·영문 독자 모두 참고할 수 있습니다.</p>
+<h2 id="_3">초록</h2>
+<blockquote>
+<p><strong>생활 예시</strong>: 마치 전 세계 많은 사진작가들이 서로 다른 도시와 다양한 조명 조건에서 촬영한 "거리 사진 컬렉션"과 같습니다. 풍부한 실제 장면 차이를 활용해 강건한 이미지 인식 시스템을 훈련하는 것입니다.</p>
+<p><strong>자연어 논리</strong>: DROID는 분산형이고 다양한 실제 세계 로봇 조작 데이터셋으로, 여러 연구실이 통일된 프로토콜에 따라 수집했습니다. 시각 및 환경 다양성을 강조하여, 정책 학습이 다양한 배경, 조명, 카메라 시점 및 장면 레이아웃에서도 일반화될 수 있도록 돕습니다. 이는 강건한 VLA 모델을 훈련하는 중요한 실제 데이터 소스입니다.</p>
+</blockquote>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_probability_theory/">확률론</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_linear_algebra/">선형대수학</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_vla_survey_2026/">로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_dataset_omniaction/">OmniAction 데이터셋</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_dataset_rh20t_manipulation_dataset_2023/">RH20T 조작 데이터셋</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_nvidia_isaac_sim_2024/">NVIDIA Isaac Sim</a>
+              <span class="rel-desc">DROID 데이터는 Isaac Sim에서 정책 학습을 위해 재생 또는 증강될 수 있습니다.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_roboomni_2025/">RoboOmni: 옴니모달 맥락에서의 주도적 로봇 조작</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">조달처</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_diffusion_policy_2023/">Diffusion Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">데이터셋 사용</span>
+              <span class="rel-desc">DROID은 Diffusion Policy 모델 학습에 사용됩니다.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_vla_survey_2026/">로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              <span class="rel-desc">Wang et al. (2026)은 DROID를 시각 및 환경 변화를 강조하는 분산 실제 데이터셋으로 인용함.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_agibot_world_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo: 확장 가능하고 지능적인 구체화 시스템을 위한 대규모 조작 플랫폼</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              <span class="rel-desc">해당 논문은 DROID를 관련 로봇 조작 데이터셋으로 언급한다.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">평가 대상</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wu_robomind_benchmark_on_multi_em_2025/">RoboMIND: 로봇 조작을 위한 다중 구현체 지능 표준 데이터 벤치마크</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">평가 대상</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_dataset_bridgedata_v2_2023/">BridgeData V2</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_openvla_2024/">OpenVLA: 오픈소스 비전-언어-액션 모델</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              <span class="rel-desc">OpenVLA 논문은 사전 학습에 사용된 다양한 로봇 데모 데이터의 일부로 DROID를 다룸.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_benchmark_humanoid_foundation_model/">휴리노이드 파울데이션 모델 벤치마크</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">평가 대상</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_dataset_droid"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">방법</span>
+          <h3>Diffusion Policy</h3>
+          <p>조건적 노이즈 제거 확산 프로세스로 표현된 시각욱동 정책, 다중 모드 동작 분포 가능.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_dataset_bridgedata_v2_2023/">
+          <span class="entry-type">데이터셋</span>
+          <h3>BridgeData V2</h3>
+          <p>모방 학습을 위한 언어 지시가 포함된 널리 사용되는 탁상 조작 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">논문</span>
+          <h3>OpenVLA: 오픈소스 비전-언어-액션 모델</h3>
+          <p>Open X-Embodiment 데이터셋의 97만 개 실제 로봇 데모로 사전 학습된 70억 개 매개변수의 오픈소스 VLA 모델로, Llama 2, DINOv2, SigLIP을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_dataset_omniaction/">
+          <span class="entry-type">데이터셋</span>
+          <h3>OmniAction 데이터셋</h3>
+          <p>주도적 로봇 조작을 위한 대규모 멀티모달 데이터셋으로, 112개 기술과 748개 객체에 걸쳐 141,000개 에피소드의 시각, 음성, 환경 소리 맥락을 포함함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">기초 학문</span>
+          <h3>확률론</h3>
+          <p>불확실성, 확률 변수, 분포, 기댓값에 관한 수학적 기초로, 로보틱스와 머신러닝의 모든 확률적 모델의 근간이 된다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_dataset_rh20t_manipulation_dataset_2023/">
+          <span class="entry-type">데이터셋</span>
+          <h3>RH20T 조작 데이터셋</h3>
+          <p>시각, 힘, 오디오 및 인간 시연 쌍이 포함된 약 11만 개의 접촉이 풍부한 조작 시퀀스.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_humanoid_foundation_model/">
+          <span class="entry-type">벤치마크</span>
+          <h3>휴리노이드 파울데이션 모델 벤치마크</h3>
+          <p>휴리노이드 로봇을 위한 AI 파울데이션 모델을 이동, 조작, 추론, 시뮬레이션-투-리얼 전이 등 10가지 역량 차원에서 평가하고 비교하는 독립적이고 공개적으로 접근 가능한…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">기초 학문</span>
+          <h3>선형대수학</h3>
+          <p>벡터 공간, 선형 변환, 행렬, 선형 방정식 체계를 다루는 수학 분야이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wu_robomind_benchmark_on_multi_em_2025/">
+          <span class="entry-type">논문</span>
+          <h3>RoboMIND: 로봇 조작을 위한 다중 구현체 지능 표준 데이터 벤치마크</h3>
+          <p>X-Humanoid Tien Kung 휴머노이드 로봇을 포함한 4가지 로봇 embodiment에 걸쳐 통합 플랫폼에서 사람 원격 조작으로 수집한 107k 궤적 조작 데이터셋…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_nvidia_isaac_sim_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>NVIDIA Isaac Sim</h3>
+          <p>GR00T 합성 데이터 파이프라인을 지원하는 GPU 가속 사실감 로봇 시뮬레이터.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_agibot_world_agibot_world_colosseo_a_large_2025/">
+          <span class="entry-type">논문</span>
+          <h3>AgiBot World Colosseo: 확장 가능하고 지능적인 구체화 시스템을 위한 대규모 조작 플랫폼</h3>
+          <p>본 논문은 100대 이상의 AgiBot G1 휴머노이드 로봇이 217개 실제 작업에서 수집한 백만 개 이상의 궤적을 담은 AgiBot World 조작 데이터셋과 잠재 행동 표현을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_roboomni_2025/">
+          <span class="entry-type">논문</span>
+          <h3>RoboOmni: 옴니모달 맥락에서의 주도적 로봇 조작</h3>
+          <p>2025년 VLA 시스템으로, 시각, 음성, 환경 소리를 융합하여 사용자 의도를 주도적으로 추론하고 명시적 텍스트 지시 없이 액션을 실행함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">논문</span>
+          <h3>로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</h3>
+          <p>2026년 서베이로, VLA의 발전은 모델 아키텍처보다 데이터 인프라와 평가 공동 설계에 더 많이 의존하고 있으며, 데이터셋, 벤치마크, 데이터 엔진 세 축으로 구성됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#droid">DROID 로봇 조작 데이터셋의 정의와 위치</a></li>
+<li><a href="#droid_1">DROID 로봇 조작 데이터셋의 핵심 정보</a></li>
+</ul>
+</li>
+<li><a href="#_3">초록</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

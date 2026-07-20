@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>附录 A 实体与关系速查表 · Wiki · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" aria-current="page">Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">附录 A 实体与关系速查表</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="a">附录 A 实体与关系速查表</h1>
+<blockquote>
+<p>本附录由 <code>scripts/build_appendices.py</code> 从知识图谱数据自动生成，随 KG 更新而更新。</p>
+</blockquote>
+<p>知识图谱的实体类型、关系类型与核心实体一览。</p>
+<h2 id="a1">A.1 实体类型分布</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>中文</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>paper</code></td>
+<td>论文</td>
+<td>1594</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>方法</td>
+<td>210</td>
+</tr>
+<tr>
+<td><code>report</code></td>
+<td>报告</td>
+<td>86</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td>零部件</td>
+<td>49</td>
+</tr>
+<tr>
+<td><code>technology</code></td>
+<td>技术</td>
+<td>28</td>
+</tr>
+<tr>
+<td><code>component_manufacturer</code></td>
+<td>零部件制造商</td>
+<td>19</td>
+</tr>
+<tr>
+<td><code>concept</code></td>
+<td>概念</td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>software_platform</code></td>
+<td>软件平台</td>
+<td>16</td>
+</tr>
+<tr>
+<td><code>robot_system</code></td>
+<td>机器人系统</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>dataset</code></td>
+<td>数据集</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>principle</code></td>
+<td>原理</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>benchmark</code></td>
+<td>评测基准</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td>公司</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>algorithm</code></td>
+<td>算法</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>formalism</code></td>
+<td>形式化方法</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>standard</code></td>
+<td>标准</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>equation</code></td>
+<td>方程</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>foundation</code></td>
+<td>基础学科</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>material</code></td>
+<td>材料</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>application_scenario</code></td>
+<td>应用场景</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>oem</code></td>
+<td>整机厂商</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>tier1_supplier</code></td>
+<td>Tier 1 供应商</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>operator</code></td>
+<td>算子</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>theorem</code></td>
+<td>定理</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>tool_equipment</code></td>
+<td>工具设备</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>market_segment</code></td>
+<td>市场细分</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td>—</td>
+<td><strong>2126</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="a2">A.2 关系类型分布</h2>
+<table>
+<thead>
+<tr>
+<th>关系类型</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cites</code></td>
+<td>562</td>
+</tr>
+<tr>
+<td><code>mentions</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>is_based_on</code></td>
+<td>64</td>
+</tr>
+<tr>
+<td><code>uses</code></td>
+<td>60</td>
+</tr>
+<tr>
+<td><code>requires</code></td>
+<td>42</td>
+</tr>
+<tr>
+<td><code>evaluates_on</code></td>
+<td>38</td>
+</tr>
+<tr>
+<td><code>evaluates</code></td>
+<td>28</td>
+</tr>
+<tr>
+<td><code>is_part_of</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>produces</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>implemented_on</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>integrates</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>enables</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>has_prerequisite</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>manufacturer_of</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>supplies</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>sources_from</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>applies_to</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>uses_dataset</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>combines_with</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>formalizes</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>is_regulated_by</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>constrains</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>models</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>derived_from</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>includes</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>verified_by</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>solves</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>is_alternative_to</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>uses_data</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>serves</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>validates_on</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>uses_technology</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>analyzes</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>uses_product_of</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>tested_with</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>addresses</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>is_version_of</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>instantiates</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>1063</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="a3-domain">A.3 领域（Domain）分布</h2>
+<table>
+<thead>
+<tr>
+<th>领域</th>
+<th>实体数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基础学科</td>
+<td>36</td>
+</tr>
+<tr>
+<td>原材料</td>
+<td>13</td>
+</tr>
+<tr>
+<td>零部件</td>
+<td>358</td>
+</tr>
+<tr>
+<td>制造工艺</td>
+<td>83</td>
+</tr>
+<tr>
+<td>组装集成测试</td>
+<td>38</td>
+</tr>
+<tr>
+<td>量产制造</td>
+<td>81</td>
+</tr>
+<tr>
+<td>设计工程</td>
+<td>400</td>
+</tr>
+<tr>
+<td>AI 模型与算法</td>
+<td>1595</td>
+</tr>
+<tr>
+<td>软件中间件</td>
+<td>1029</td>
+</tr>
+<tr>
+<td>数据与数据集</td>
+<td>118</td>
+</tr>
+<tr>
+<td>评测基准</td>
+<td>84</td>
+</tr>
+<tr>
+<td>应用与市场</td>
+<td>312</td>
+</tr>
+<tr>
+<td>政策法规伦理</td>
+<td>41</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a4-top-50">A.4 核心实体 Top 50（按关系数）</h2>
+<table>
+<thead>
+<tr>
+<th>排名</th>
+<th>实体</th>
+<th>类型</th>
+<th>关系数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="/entry/ent_qp_standard_form/">标准二次规划（QP）</a></td>
+<td>形式化方法</td>
+<td>43</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="/entry/ent_paper_dial_decoupling_intent_and_act_2026/">DIAL｜通过端到端VLA的潜在世界建模解耦意图和行动</a></td>
+<td>论文</td>
+<td>35</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">通过主动空间脑和可泛化动作小脑实现人形全身操作</a></td>
+<td>论文</td>
+<td>31</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a></td>
+<td>评测基准</td>
+<td>24</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">探索基于GPT的大语言模型在虚拟现实人机团队协作仿真中的可变自主性</a></td>
+<td>论文</td>
+<td>23</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a></td>
+<td>论文</td>
+<td>21</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">宇树 H1 人形机器人</a></td>
+<td>机器人系统</td>
+<td>21</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="/entry/ent_paper_active_stereo_camera_outperfor_2026/">在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置</a></td>
+<td>论文</td>
+<td>21</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">基于多阶段强化学习的人形全身羽毛球运动</a></td>
+<td>论文</td>
+<td>21</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a></td>
+<td>方法</td>
+<td>21</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a></td>
+<td>论文</td>
+<td>20</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo｜用于可扩展和智能具身系统的大规模操作平台</a></td>
+<td>论文</td>
+<td>20</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">机器人训练机器人：人形机器人的自动现实世界策略适应与学习</a></td>
+<td>论文</td>
+<td>20</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">RUKA：以学习重新思考人形手机器人设计</a></td>
+<td>论文</td>
+<td>20</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">基于无迹卡尔曼滤波的仿人机器人无关节力矩传感器力矩估计</a></td>
+<td>论文</td>
+<td>20</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a></td>
+<td>论文</td>
+<td>19</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">你的视觉-语言-动作模型已具备路径偏离检测的注意力头</a></td>
+<td>论文</td>
+<td>19</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">LingBot-VLA｜务实的VLA基础模型</a></td>
+<td>论文</td>
+<td>18</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">面向人形机器人的几何感知预测安全滤波器：从泊松安全函数到 CBF 约束模型预测控制</a></td>
+<td>论文</td>
+<td>18</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">基于关节力矩传感器和力/力矩传感器的腿式机器人接触感知</a></td>
+<td>论文</td>
+<td>18</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="/entry/ent_tier1_supplier_tuopujituan/">拓普集团</a></td>
+<td>Tier 1 供应商</td>
+<td>18</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a></td>
+<td>机器人系统</td>
+<td>17</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment 数据集</a></td>
+<td>数据集</td>
+<td>17</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">基于ROS的NimbRo-OP人形开放平台软件框架</a></td>
+<td>论文</td>
+<td>17</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="/entry/ent_component_planetary_roller_screw/">行星滚柱丝杠</a></td>
+<td>零部件</td>
+<td>17</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="/entry/ent_method_fea_finite_element_analysis/">有限元分析（FEA）</a></td>
+<td>方法</td>
+<td>17</td>
+</tr>
+<tr>
+<td>27</td>
+<td><a href="/entry/ent_paper_roboomni_2025/">RoboOmni：全模态上下文中的主动式机器人操作</a></td>
+<td>论文</td>
+<td>16</td>
+</tr>
+<tr>
+<td>28</td>
+<td><a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a></td>
+<td>评测基准</td>
+<td>16</td>
+</tr>
+<tr>
+<td>29</td>
+<td><a href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</a></td>
+<td>论文</td>
+<td>16</td>
+</tr>
+<tr>
+<td>30</td>
+<td><a href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">人形机器人的类人驱动能力</a></td>
+<td>论文</td>
+<td>16</td>
+</tr>
+<tr>
+<td>31</td>
+<td><a href="/entry/ent_paper_meng_expert_insight_based_modeling_2025/">基于专家洞见的稀土供应中断非动能战略威慑建模：一种仿真驱动的系统化框架</a></td>
+<td>论文</td>
+<td>16</td>
+</tr>
+<tr>
+<td>32</td>
+<td><a href="/entry/ent_formalism_floating_base_dynamics/">浮动基动力学</a></td>
+<td>形式化方法</td>
+<td>16</td>
+</tr>
+<tr>
+<td>33</td>
+<td><a href="/entry/ent_component_nvidia_jetson_thor/">NVIDIA Jetson Thor</a></td>
+<td>零部件</td>
+<td>15</td>
+</tr>
+<tr>
+<td>34</td>
+<td><a href="/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">基于物理信息神经网络与无迹卡尔曼滤波的人形机器人无传感器关节力矩估计</a></td>
+<td>论文</td>
+<td>15</td>
+</tr>
+<tr>
+<td>35</td>
+<td><a href="/entry/ent_paper_neto_high_level_robot_programming_b_2013/">基于CAD的高级机器人编程：应对不可预测环境</a></td>
+<td>论文</td>
+<td>15</td>
+</tr>
+<tr>
+<td>36</td>
+<td><a href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">基于物理的锂离子电池模型连续谱综述</a></td>
+<td>论文</td>
+<td>15</td>
+</tr>
+<tr>
+<td>37</td>
+<td><a href="/entry/ent_principle_zero_moment_point/">零力矩点（ZMP）</a></td>
+<td>原理</td>
+<td>15</td>
+</tr>
+<tr>
+<td>38</td>
+<td><a href="/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">人形机器人操作接口（HuMI）：无需机器人演示的全身操作</a></td>
+<td>论文</td>
+<td>14</td>
+</tr>
+<tr>
+<td>39</td>
+<td><a href="/entry/ent_paper_pi0_2024/">π0：用于通用机器人控制的视觉-语言-动作流模型</a></td>
+<td>论文</td>
+<td>14</td>
+</tr>
+<tr>
+<td>40</td>
+<td><a href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制</a></td>
+<td>论文</td>
+<td>14</td>
+</tr>
+<tr>
+<td>41</td>
+<td><a href="/entry/ent_benchmark_libero/">LIBERO</a></td>
+<td>评测基准</td>
+<td>14</td>
+</tr>
+<tr>
+<td>42</td>
+<td><a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性</a></td>
+<td>论文</td>
+<td>14</td>
+</tr>
+<tr>
+<td>43</td>
+<td><a href="/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">Drive-WM：面向自动驾驶的多视角视觉预测与世界模型规划</a></td>
+<td>论文</td>
+<td>14</td>
+</tr>
+<tr>
+<td>44</td>
+<td><a href="/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">Gemini Robotics｜将人工智能带入物理世界</a></td>
+<td>论文</td>
+<td>13</td>
+</tr>
+<tr>
+<td>45</td>
+<td><a href="/entry/ent_paper_aljalbout_reality_gap_2025/">机器人中的现实鸿沟：挑战、解决方案与最佳实践</a></td>
+<td>论文</td>
+<td>13</td>
+</tr>
+<tr>
+<td>46</td>
+<td><a href="/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">面向人机工效协作负载提升的人形机器人设计优化</a></td>
+<td>论文</td>
+<td>13</td>
+</tr>
+<tr>
+<td>47</td>
+<td><a href="/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">满足 ISO/TS 15066 约束的能量罐控制框架</a></td>
+<td>论文</td>
+<td>13</td>
+</tr>
+<tr>
+<td>48</td>
+<td><a href="/entry/ent_method_forward_kinematics/">正运动学</a></td>
+<td>方法</td>
+<td>13</td>
+</tr>
+<tr>
+<td>49</td>
+<td><a href="/entry/ent_method_inverse_kinematics/">逆运动学</a></td>
+<td>方法</td>
+<td>13</td>
+</tr>
+<tr>
+<td>50</td>
+<td><a href="/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">人形机器人在线平衡运动生成</a></td>
+<td>论文</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/wiki/chapters/chapter-30/">← 上一页<span>第 30 章 未来展望</span></a>
+      
+      
+      <a class="next" href="/wiki/appendices/appendix-b/">下一页 →<span>附录 B 关键数据集清单</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#a">附录 A 实体与关系速查表</a><ul>
+<li><a href="#a1">A.1 实体类型分布</a></li>
+<li><a href="#a2">A.2 关系类型分布</a></li>
+<li><a href="#a3-domain">A.3 领域（Domain）分布</a></li>
+<li><a href="#a4-top-50">A.4 核心实体 Top 50（按关系数）</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基于CAD的高级机器人编程：应对不可预测环境 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">基于CAD的高级机器人编程：应对不可预测环境</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>基于CAD的高级机器人编程：应对不可预测环境</h1>
+      <p class="entry-name-en">High-level robot programming based on CAD: dealing with unpredictable environments</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span><span class="tag">应用与市场</span><span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">上游</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1309.2086v1.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种基于CAD的人机交互界面，允许非专业用户在Autodesk Inventor中绘制路径来编程工业机器人，并通过激光相机和力/力矩传感器的在线反馈补偿环境不确定性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1309.2086" target="_blank" rel="noopener">High-level robot programming based on CAD: dealing with unpredictable environments</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Purpose - The purpose of this paper is to present a CAD-based human-robot interface that allows non-expert users to teach a robot in a manner similar to that used by human beings to teach each other.   Design/methodology/approach - Intuitive robot programming is achieved by using CAD drawings to generate robot programs off-line. Sensory feedback allows minimization of the effects of uncertainty, providing information to adjust the robot paths during robot operation.   Findings - It was found that it is possible to generate a robot program from a common CAD drawing and run it without any major concerns about calibration or CAD model accuracy.   Research limitations/implications - A limitation of the proposed system has to do with the fact that it was designed to be used for particular technological applications.   Practical implications - Since most manufacturing companies have CAD packages in their facilities today, CAD-based robot programming may be a good option to program robots without the need for skilled robot programmers.   Originality/value - The paper proposes a new CAD-based robot programming system. Robot programs are directly generated from a CAD drawing running on a commonly available 3D CAD package (Autodesk Inventor) and not from a commercial, computer aided robotics (CAR) software, making it a simple CAD integrated solution. This is a low-cost and low-setup time system where no advanced robot programming skills are required to operate it. In summary, robot programs are generated with a high-level of abstraction from the robot language.</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/1309.2086v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">生产</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_human_level_actuation_score/">类人驱动评分</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">满足 ISO/TS 15066 约束的能量罐控制框架</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">基于无迹卡尔曼滤波的仿人机器人无关节力矩传感器力矩估计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">人形机器人的类人驱动能力</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">探索基于GPT的大语言模型在虚拟现实人机团队协作仿真中的可变自主性</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">基于ROS的NimbRo-OP人形开放平台软件框架</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">人形机器人在线平衡运动生成</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_active_stereo_camera_outperfor_2026/">在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">基于无迹卡尔曼滤波的仿人机器人无关节力矩传感器力矩估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">人形机器人的类人驱动能力</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">多层级复杂供应网络中的物料整合权衡利用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ho_denoising_diffusion_probabilis_2020/">去噪扩散概率模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">人形机器人操作接口（HuMI）：无需机器人演示的全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">基于物理的锂离子电池模型连续谱综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_neto_high_level_robot_programming_b_2013"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">
+          <span class="entry-type">论文</span>
+          <h3>满足 ISO/TS 15066 约束的能量罐控制框架</h3>
+          <p>该论文提出了一种基于能量罐的被动控制框架，可直接执行 ISO/TS 15066 为协作机器人规定的能量边界，避免保守速度限制，同时在自由运动和人体接触期间保持稳定。该方法在 KUKA LWR 4+…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_active_stereo_camera_outperfor_2026/">
+          <span class="entry-type">论文</span>
+          <h3>在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置</h3>
+          <p>在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于无迹卡尔曼滤波的仿人机器人无关节力矩传感器力矩估计</h3>
+          <p>提出一种基于无迹卡尔曼滤波的多传感器融合方法，用于无关节力矩传感器的仿人机器人在线关节力矩估计，并在ergoCub仿人机器人的双层力矩控制架构中进行了实验验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">
+          <span class="entry-type">论文</span>
+          <h3>在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性</h3>
+          <p>这篇2024年arXiv论文介绍了一个Unity…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人的类人驱动能力</h3>
+          <p>Claims that humanoid robots achieve ``human-level&#39;&#39; actuation are common but rarely quantified. Peak…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ho_denoising_diffusion_probabilis_2020/">
+          <span class="entry-type">论文</span>
+          <h3>去噪扩散概率模型</h3>
+          <p>We present high quality image synthesis results using diffusion probabilistic models, a class of…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人在线平衡运动生成</h3>
+          <p>提出了一种面向低成本、位置控制关节且传感能力有限的人形机器人的解析全身运动生成方法，该方法用三角形质心质量近似身体和肢体，并将全身姿态表示为五个质点的倒立摆；在 igus 人形开放平台（igus…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_human_level_actuation_score/">
+          <span class="entry-type">评测基准</span>
+          <h3>类人驱动评分</h3>
+          <p>一种标量、可分解的基准指标，综合工作空间覆盖、扭矩-功率需求、带宽、效率和热可持续性，以量化人形机器人驱动能力接近类人水平的程度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">
+          <span class="entry-type">论文</span>
+          <h3>探索基于GPT的大语言模型在虚拟现实人机团队协作仿真中的可变自主性</h3>
+          <p>本文提出了一个基于Unity的虚拟现实仿真框架，用户可通过自然语言与由独立GPT-4实例驱动的多个仿真机器人对话，并利用OpenAI的函数调用API将非结构化语音转换为结构化机器人动作。一项包含12名…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">
+          <span class="entry-type">论文</span>
+          <h3>多层级复杂供应网络中的物料整合权衡利用</h3>
+          <p>Chauhan等人提出了一种混合整数线性规划框架，用于利用供应链层级间的多对多物料关系，纳入数量折扣、库存持有和运输成本，并在航空航天制造测试问题上进行了验证。研究表明，尽管存在层级间的成本权衡，整体…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">
+          <span class="entry-type">论文</span>
+          <h3>基于物理的锂离子电池模型连续谱综述</h3>
+          <p>Physics-based electrochemical battery models derived from porous electrode theory are a very…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">
+          <span class="entry-type">论文</span>
+          <h3>基于ROS的NimbRo-OP人形开放平台软件框架</h3>
+          <p>本文介绍了面向NimbRo-OP人形机器人的模块化ROS软件框架，提供硬件抽象、视觉感知、运动控制和行为生成功能，并用于实现2013年RoboCup中展示的基本足球技能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人操作接口（HuMI）：无需机器人演示的全身操作</h3>
+          <p>HuMI…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

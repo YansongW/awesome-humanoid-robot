@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FPGA 기반 소프트 스타팅 가변 주파수 모터 드라이브의 고조파 함량 분석 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FPGA 기반 소프트 스타팅 가변 주파수 모터 드라이브의 고조파 함량 분석</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>FPGA 기반 소프트 스타팅 가변 주파수 모터 드라이브의 고조파 함량 분석</h1>
+      <p class="entry-name-en">Harmonic content analysis of a soft starting variable frequency motor drive based on FPGA</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">대량 생산</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.00720v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 직접 디지털 합성(DDS) 기술을 이용한 삼상 유도전동기용 FPGA 기반 가변 주파수 소프트 스타팅 드라이브를 제안하고, 사인파 PWM, 3차 고조파 주입 PWM, 공간벡터 PWM의 고조파 특성과 진입 전류 감소 효과를 비교한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2311.00720" target="_blank" rel="noopener">Harmonic content analysis of a soft starting variable frequency motor drive based on FPGA</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전기 자동차, 전기 항공기, 무인 항공기 시스템 및 기타 모터 구동 시스템에 대한 수요가 증가함에 따라, 더 높은 효율성과 신뢰성을 갖춘 가변 주파수 제어를 사용하는 고성능 모터 드라이브는 끊임없이 변화하는 기술 환경에서 점점 더 중요한 부분이 되고 있습니다. 본 연구는 3상 유도 전동기를 위한 FPGA(Field Programmable Gate Array) 기반 가변 주파수 소프트 스타팅 모터 드라이브를 제안합니다. 인버터 출력 전압과 부하 전류는 MATLAB을 사용하여 고조파 함량을 분석합니다. 실험 구현에서는 4kHz의 스위칭 주파수로 4극 농형 델타 결선 유도 전동기를 사용합니다. 유도 전동기의 전류 및 전압 특성은 다양한 작동 조건에서 연구되어 고조파 함량과 소프트 스타트 지속 시간 변경의 영향을 분석합니다. 결과는 개선된 고조파 성능을 갖춘 저비용의 유연한 유도 전동기 제어를 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>전기 자동차, 전기 항공기, 무인 항공기 시스템 및 기타 모터 구동 시스템에 대한 수요가 증가함에 따라, 더 높은 효율성과 신뢰성을 갖춘 가변 주파수 제어를 사용하는 고성능 모터 드라이브는 끊임없이 변화하는 기술 환경에서 점점 더 중요한 부분이 되고 있습니다. 본 연구는 3상 유도 전동기를 위한 FPGA(Field Programmable Gate Array) 기반 가변 주파수 소프트 스타팅 모터 드라이브를 제안합니다. 인버터 출력 전압과 부하 전류는 MATLAB을 사용하여 고조파 함량을 분석합니다. 실험 구현에서는 4kHz의 스위칭 주파수로 4극 농형 델타 결선 유도 전동기를 사용합니다. 유도 전동기의 전류 및 전압 특성은 다양한 작동 조건에서 연구되어 고조파 함량과 소프트 스타트 지속 시간 변경의 영향을 분석합니다. 결과는 개선된 고조파 성능을 갖춘 저비용의 유연한 유도 전동기 제어를 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p13/">电子电气与能源系统（Electronics &amp; Power）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_bldc_motor/">브러시리스 DC 모터</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_foc_motor_control/">자장 지향 제어(FOC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_sapkota_harmonic_content_analysis_of_a_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">방법</span>
+          <h3>자장 지향 제어(FOC)</h3>
+          <p>삼상 전류를 회전하는 dq 좌표계로 변환하여 토크와 자속을 독립 제어하는 모터 제어 방식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_bldc_motor/">
+          <span class="entry-type">부품</span>
+          <h3>브러시리스 DC 모터</h3>
+          <p>기계적 브러시가 아닌 전자적 정류로 구동되는 전동기로, 높은 효율, 긴 수명, 높은 전력 밀도를 제공하며 로봇 관절 및 휴머노이드 액추에이터의 주 동력원으로 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p13/">
+          <span class="entry-type">방법</span>
+          <h3>电子电气与能源系统（Electronics &amp; Power）</h3>
+          <p>电子电气与能源系统（Electronics &amp; Power）</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

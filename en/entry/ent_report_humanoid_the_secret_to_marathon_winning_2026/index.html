@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Secret to Marathon-Winning Humanoid Robots · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/report/">Report</a>
+    <span>/</span>
+    <span class="breadcrumb-current">The Secret to Marathon-Winning Humanoid Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Report</div>
+      <h1>The Secret to Marathon-Winning Humanoid Robots</h1>
+      <p class="entry-name-en">The Secret to Marathon-Winning Humanoid Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Applications &amp; Markets</span><span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/china-humanoid-robot-marathon.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>On 19 April 2026, the Honor Lightning humanoid robot ran a half-marathon in 50 minutes and 26 seconds , beating the human world record by 7 minutes and the best robot time from 2025 by almost 2 hours. How did Honor do it? Is there some magical technology or technique that unlocked this performance? How did the company beat the significantly better-known Unitree (which reportedly had to supply its robot with an ice backpack to try and complete the race without overheating)? My doctoral thesis involved building and controlling hopping and running robots , and since then I’ve tried to design and build efficient commercial legged robots , giving me a decent idea of the constraints involved. In this article, we take a look at the fundamental underlying constraints to try and answer these questions. The Physics of Running Running consists of alternating phases of a leg pushing against the ground (“stance phase”) and the body flying through the air (“aerial phase”). In the aerial phase, the body falls due to gravity, losing vertical momentum. The leg in stance phase pushes against the ground to redirect the vertical momentum upward, while the other leg swings forward to reposition for the next foothold. Electric motors use energy to produce torque—the higher the torque, the more energy is lost as heat. Adding a gear train after the motor amplifies its torque and reduces its speed. A large reduction helps with torque production, but since the rotor of the motor itself has to spin faster, it becomes very sluggish at accelerating its output. This is obviously bad for the swing phase described above. These competing effects mean that for a particular motor, there is usually a sweet spot for the gear ratio: The power consumed by a robot leg is minimized at an optimal gear ratio (30:1 in this example). Avik De/Datawrapper How Honor Did It While the Lightning’s motor specifications are not published, the hip and knee motors roughly have a 110-to-150-millimeter outer diameter. For an approximate set of motor parameters, I looked to the ILM115x25 motor due to its relevant size and detailed specifications. We can use a simple physics model to estimate the power consumption for running at 7 meters per second (the Lightning’s average half-marathon speed) as gear ratio varies: The light blue curve shows how to pick the optimal gearing (45:1). The dark blue curve shows how much heat will be produced in the knee motor, ~150W for the optimal gearing. Avik De/Datawrapper We see that the drivetrain is not magical: with a gear ratio chosen for this task (we’ll return to this below), the approximate robot power consumption would be a very reasonable 400 watts. However, the dissipated knee power ( typically the main thermal limiting factor) is approximately 150 W. This is almost an unavoidable consequence—running at human speeds with a humanoid-size robot will inevitably generate this amount of heat! Over a prolonged period, keeping the motor from overheating would be a challenge, but the Lightning has a trick up its sleeve : According to Honor, the liquid-cooling pipes penetrate deep into the motors like capillaries. The high-power liquid pump has a heat-exchange flow rate of more than 4 liters per minute. Each of the four drive motors in the lower limbs is equipped with an independent liquid-cooling circuit. Liquid cooling is not new, but it’s definitely not a commodity. It has shown up in research periodically, and on the commercial side Apptronik tried it for a few of its prototypes but (to my knowledge) does not use it on its main Apollo platform. Basic air-convection-based cooling would not continuously be able to extract 150 W out of the knee motor, and so the cooling technology is a key enabler of this type of performance. Why Others Couldn’t Compete Why did Honor’s competitors, including more established and widely shipped humanoids such as from Unitree or Agibot , not compete as well? We can use the same model to generate an equivalent energetics plot for walking at 1.5 m/s, a much more modest but potentially more common activity for a commercial humanoid robot: The solid and dashed light blue lines show a running-optimized design, while green lines show a walking-optimized design. The optimal ratio for walking is much lower (30:1 vs. 45:1). However, the power dissipated in the knee motor while running [dark blue] is much higher at 30:1 vs. 45:1—the price to pay for running with a walking-optimized design. Avik De/Datawrapper The plot adds a new green curve for the walking power, and the optimal gearing is significantly different! Let’s say you design your robot to excel at the normal walking task and choose the green design with 30:1 gearing. The knee motor power to run a half marathon is over 300 W (red arrow), more than two times what we had with the running-optimized design. It wouldn’t be so surprising to need ice packs! Conversely, visually following the green curve shows that the running-optimized robot wastes more power for walking. Using larger motors sized for running increases the weight of the robot and wastes power when it is standing or walking. The larger motors also pose practical issues like bumping into objects while operating in homes or factories. Closing Thoughts Honor’s half-marathon performance was an impressive engineering effort and result. It didn’t need any magical leaps in technology, but the deployment of the capillary motor cooling solution is a notable advance without which this running pace would have been unsustainable. The cooling, weight optimization, and robustness advances may well be useful for more practical purposes like carrying heavy payloads down the line. The Honor Lighting robot [right] has much larger motors driving its legs than the Unitree H1 robot, making it a more efficient runner but a less efficient walker. Left: Wei Zhiyang/Zhejiang Daily Press Group/VCG/Getty Images; Right: VCG/Getty Images However, the Lightning is not as well-suited to other tasks as a robot designed for greater versatility. Engineering is always characterized by trade-offs, and making the correct ones separates good products from great ones. With consistently improving AI language models, this very human skill is becoming the most valuable one an engineer can have. The news coverage seemed to overly focus on the fact that the human half-marathon record had been broken by a robot. Machines and humans have very different capabilities and constraints, so why should we ever have expected the half-marathon time for a robot and human to be related? As in Deep Blue’s 1997 defeat of Garry Kasparov in chess , where it couldn’t physically move the pieces, the Honor robot’s capabilities are much narrower than a human running elbow to elbow with other runners while visually navigating the course without GPS. Comparing the robot runner to a human runner is just an apples-to-oranges comparison, which only risks diminishing Honor’s engineering achievement on one hand and human athletic achievement on the other.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://spectrum.ieee.org/china-humanoid-robot-marathon" target="_blank" rel="noopener">The Secret to Marathon-Winning Humanoid Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This impressive athletic performance isn’t magic, it’s motors and gear ratios from UPenn and a post-doc from Harvard who co-founded Ghost Robotics.</p>
+<h2 id="content">Content</h2>
+<p>On 19 April 2026, the Honor Lightning humanoid robot ran a half-marathon in 50 minutes and 26 seconds, beating the human world record by 7 minutes and the best robot time from 2025 by almost 2 hours. How did Honor do it? Is there some magical technology or technique that unlocked this performance? How did the company beat the significantly better-known Unitree (which reportedly had to supply its robot with an ice backpack to try and complete the race without overheating)? My doctoral thesis involved building and controlling hopping and running robots, and since then I’ve tried to design and build efficient commercial legged robots, giving me a decent idea of the constraints involved. In this article, we take a look at the fundamental underlying constraints to try and answer these questions.</p>
+<h3 id="the-physics-of-running">The Physics of Running</h3>
+<p>Running consists of alternating phases of a leg pushing against the ground (“stance phase”) and the body flying through the air (“aerial phase”). In the aerial phase, the body falls due to gravity, losing vertical momentum. The leg in stance phase pushes against the ground to redirect the vertical momentum upward, while the other leg swings forward to reposition for the next foothold.</p>
+<p>Electric motors use energy to produce torque—the higher the torque, the more energy is lost as heat. Adding a gear train after the motor amplifies its torque and reduces its speed. A large reduction helps with torque production, but since the rotor of the motor itself has to spin faster, it becomes very sluggish at accelerating its output. This is obviously bad for the swing phase described above. These competing effects mean that for a particular motor, there is usually a sweet spot for the gear ratio:</p>
+<p>The power consumed by a robot leg is minimized at an optimal gear ratio (30:1 in this example).<br />
+<em>Avik De/Datawrapper</em></p>
+<h3 id="how-honor-did-it">How Honor Did It</h3>
+<p>While the Lightning’s motor specifications are not published, the hip and knee motors roughly have a 110-to-150-millimeter outer diameter. For an approximate set of motor parameters, I looked to the ILM115x25 motor due to its relevant size and detailed specifications. We can use a simple physics model to estimate the power consumption for running at 7 meters per second (the Lightning’s average half-marathon speed) as gear ratio varies:</p>
+<p>The light blue curve shows how to pick the optimal gearing (45:1). The dark blue curve shows how much heat will be produced in the knee motor, ~150W for the optimal gearing.<br />
+<em>Avik De/Datawrapper</em></p>
+<p>We see that the drivetrain is not magical: with a gear ratio chosen for this task (we’ll return to this below), the approximate robot power consumption would be a very reasonable 400 watts. However, the dissipated knee power (typically the main thermal limiting factor) is approximately 150 W. This is almost an unavoidable consequence—running at human speeds with a humanoid-size robot will inevitably generate this amount of heat! Over a prolonged period, keeping the motor from overheating would be a challenge, but the Lightning has a trick up its sleeve: According to Honor, the liquid-cooling pipes penetrate deep into the motors like capillaries. The high-power liquid pump has a heat-exchange flow rate of more than 4 liters per minute. Each of the four drive motors in the lower limbs is equipped with an independent liquid-cooling circuit.</p>
+<p>Liquid cooling is not new, but it’s definitely not a commodity. It has shown up in research periodically, and on the commercial side Apptronik tried it for a few of its prototypes but (to my knowledge) does not use it on its main Apollo platform. Basic air-convection-based cooling would not continuously be able to extract 150 W out of the knee motor, and so the cooling technology is a key enabler of this type of performance.</p>
+<h3 id="why-others-couldnt-compete">Why Others Couldn’t Compete</h3>
+<p>Why did Honor’s competitors, including more established and widely shipped humanoids such as from Unitree or Agibot, not compete as well? We can use the same model to generate an equivalent energetics plot for walking at 1.5 m/s, a much more modest but potentially more common activity for a commercial humanoid robot:</p>
+<p>The solid and dashed light blue lines show a running-optimized design, while green lines show a walking-optimized design. The optimal ratio for walking is much lower (30:1 vs. 45:1). However, the power dissipated in the knee motor while running [dark blue] is much higher at 30:1 vs. 45:1—the price to pay for running with a walking-optimized design.<br />
+<em>Avik De/Datawrapper</em></p>
+<p>The plot adds a new green curve for the walking power, and the optimal gearing is significantly different! Let’s say you design your robot to excel at the normal walking task and choose the green design with 30:1 gearing. The knee motor power to run a half marathon is over 300 W (red arrow), more than two times what we had with the running-optimized design. It wouldn’t be so surprising to need ice packs! Conversely, visually following the green curve shows that the running-optimized robot wastes more power for walking. Using larger motors sized for running increases the weight of the robot and wastes power when it is standing or walking. The larger motors also pose practical issues like bumping into objects while operating in homes or factories.</p>
+<h3 id="closing-thoughts">Closing Thoughts</h3>
+<p>Honor’s half-marathon performance was an impressive engineering effort and result. It didn’t need any magical leaps in technology, but the deployment of the capillary motor cooling solution is a notable advance without which this running pace would have been unsustainable. The cooling, weight optimization, and robustness advances may well be useful for more practical purposes like carrying heavy payloads down the line.</p>
+<p>The Honor Lighting robot [right] has much larger motors driving its legs than the Unitree H1 robot, making it a more efficient runner but a less efficient walker.<br />
+<em>Left: Wei Zhiyang/Zhejiang Daily Press Group/VCG/Getty Images; Right: VCG/Getty Images</em></p>
+<p>However, the Lightning is not as well-suited to other tasks as a robot designed for greater versatility. Engineering is always characterized by trade-offs, and making the correct ones separates good products from great ones. With consistently improving AI language models, this very human skill is becoming the most valuable one an engineer can have.</p>
+<p>The news coverage seemed to overly focus on the fact that the human half-marathon record had been broken by a robot. Machines and humans have very different capabilities and constraints, so why should we ever have expected the half-marathon time for a robot and human to be related? As in Deep Blue’s 1997 defeat of Garry Kasparov in chess, where it couldn’t physically move the pieces, the Honor robot’s capabilities are much narrower than a human running elbow to elbow with other runners while visually navigating the course without GPS.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_concept_embodied_general_intelligence/">Embodied General Intelligence</a>
+              <span class="rel-desc">The Secret to Marathon-Winning Humanoid Robots discusses Embodied General Intelligence.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_report_humanoid_the_secret_to_marathon_winning_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_concept_embodied_general_intelligence/">
+          <span class="entry-type">Concept</span>
+          <h3>Embodied General Intelligence</h3>
+          <p>The long-term goal of building agents that can learn, reason, and act flexibly in diverse physical…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#the-physics-of-running">The Physics of Running</a></li>
+<li><a href="#how-honor-did-it">How Honor Did It</a></li>
+<li><a href="#why-others-couldnt-compete">Why Others Couldn’t Compete</a></li>
+<li><a href="#closing-thoughts">Closing Thoughts</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

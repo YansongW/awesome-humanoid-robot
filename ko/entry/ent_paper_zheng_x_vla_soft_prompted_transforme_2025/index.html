@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</h1>
+      <p class="entry-name-en">X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10274v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (X-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Shanghai AI Lab, Peking University.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.10274" target="_blank" rel="noopener">X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2510.10274" target="_blank" rel="noopener">X-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>성공적인 범용 Vision-Language-Action(VLA) 모델은 다양한 로봇 플랫폼에서 대규모, 교차-임보디먼트, 이종 데이터셋을 활용한 효과적인 훈련에 의존합니다. 풍부하고 다양한 로봇 데이터 소스의 이질성을 활용하고 촉진하기 위해, 우리는 프롬프트 학습 개념을 교차-임보디먼트 로봇 학습에 주입하고 각각의 고유한 데이터 소스에 대해 별도의 학습 가능한 임베딩 세트를 도입하여 최소한의 추가 파라미터로 새로운 소프트 프롬프트 접근법을 제안합니다. 이러한 임베딩은 임보디먼트별 프롬프트 역할을 하며, 통합되어 VLA 모델이 다양한 교차-임보디먼트 특징을 효과적으로 활용할 수 있게 합니다. 우리의 새로운 X-VLA는 깔끔한 flow-matching 기반 VLA 아키텍처로, 소프트 프롬프트된 표준 Transformer 인코더에만 의존하여 확장성과 단순성을 모두 갖추고 있습니다. 6개의 시뮬레이션과 3개의 실제 로봇에서 평가된 우리의 0.9B 인스턴스인 X-VLA-0.9B는 다양한 벤치마크에서 동시에 최고 성능(SOTA)을 달성하며, 유연한 손재주부터 임보디먼트, 환경, 작업 전반에 걸친 빠른 적응에 이르기까지 광범위한 능력 축에서 뛰어난 결과를 보여줍니다. 웹사이트: https://thu-air-dream.github.io/X-VLA/</p>
+<h2 id="_2">핵심 내용</h2>
+<p>성공적인 범용 Vision-Language-Action(VLA) 모델은 다양한 로봇 플랫폼에서 대규모, 교차-임보디먼트, 이종 데이터셋을 활용한 효과적인 훈련에 의존합니다. 풍부하고 다양한 로봇 데이터 소스의 이질성을 활용하고 촉진하기 위해, 우리는 프롬프트 학습 개념을 교차-임보디먼트 로봇 학습에 주입하고 각각의 고유한 데이터 소스에 대해 별도의 학습 가능한 임베딩 세트를 도입하여 최소한의 추가 파라미터로 새로운 소프트 프롬프트 접근법을 제안합니다. 이러한 임베딩은 임보디먼트별 프롬프트 역할을 하며, 통합되어 VLA 모델이 다양한 교차-임보디먼트 특징을 효과적으로 활용할 수 있게 합니다. 우리의 새로운 X-VLA는 깔끔한 flow-matching 기반 VLA 아키텍처로, 소프트 프롬프트된 표준 Transformer 인코더에만 의존하여 확장성과 단순성을 모두 갖추고 있습니다. 6개의 시뮬레이션과 3개의 실제 로봇에서 평가된 우리의 0.9B 인스턴스인 X-VLA-0.9B는 다양한 벤치마크에서 동시에 최고 성능(SOTA)을 달성하며, 유연한 손재주부터 임보디먼트, 환경, 작업 전반에 걸친 빠른 적응에 이르기까지 광범위한 능력 축에서 뛰어난 결과를 보여줍니다. 웹사이트: https://thu-air-dream.github.io/X-VLA/</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">VLA-0: Building State-of-the-Art VLAs with Zero Modification</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_dynawm_a_base_vla_guided_world_2026/">DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bi_motus_a_unified_latent_action_2025/">Motus: A Unified Latent Action World Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bioprovla_agent_an_affordable_2026/">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zheng_x_vla_soft_prompted_transforme_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bioprovla_agent_an_affordable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</h3>
+          <p>arXiv:2605.07306v3 Announce Type: replace Abstract: Biological laboratory automation can reduce…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dynawm_a_base_vla_guided_world_2026/">
+          <span class="entry-type">논문</span>
+          <h3>DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</h3>
+          <p>arXiv:2607.02604v1 Announce Type: cross Abstract: Although vision-language-action (VLA) models have…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bi_motus_a_unified_latent_action_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Motus: A Unified Latent Action World Model</h3>
+          <p>Motus: A Unified Latent Action World Model (Motus), is a 2025 large vision-language-action model for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLA-0: Building State-of-the-Art VLAs with Zero Modification</h3>
+          <p>VLA-0: Building State-of-the-Art VLAs with Zero Modification (VLA-0), is a 2025 large…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伺服驱动器 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/component/">零部件</a>
+    <span>/</span>
+    <span class="breadcrumb-current">伺服驱动器</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">零部件</div>
+      <h1>伺服驱动器</h1>
+      <p class="entry-name-en">Servo Drive</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-07.md#7.3.7.8 驱动器/伺服驱动器 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>伺服驱动器把控制器指令转换为电机功率输出，通常采用 FOC 控制，包含电流环、速度环和位置环。关节驱动器对体积、散热、EMI 和电流环带宽要求较高，是国产替代的重点环节。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Servo_drive" target="_blank" rel="noopener">Servo Drive</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>伺服驱动器是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>伺服驱动器把控制器指令转换为电机功率输出，通常采用 FOC 控制，包含电流环、速度环和位置环。关节驱动器对体积、散热、EMI 和电流环带宽要求较高，是国产替代的重点环节。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：伺服驱动器、电流环、速度环、位置环、总线通信</p>
+<ul>
+<li><strong>伺服驱动器（servo drive）</strong>：控制伺服电机电流、速度和位置的功率电子装置。</li>
+<li><strong>电流环/速度环/位置环</strong>：伺服控制的三环结构，由内而外响应越来越快。</li>
+<li><strong>总线通信</strong>：驱动器与控制器通过 CAN/EtherCAT/RS485 等总线交换数据。</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>供应商</th>
+<th>总部</th>
+<th>主要产品</th>
+<th>典型机器人应用</th>
+<th>供应状态/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elmo Motion Control</td>
+<td>以色列</td>
+<td>小型伺服驱动器</td>
+<td>协作/医疗机器人</td>
+<td>进口高端</td>
+</tr>
+<tr>
+<td>Copley Controls</td>
+<td>美国</td>
+<td>伺服驱动器</td>
+<td>精密运动</td>
+<td>进口</td>
+</tr>
+<tr>
+<td>Ingenia Motion Control</td>
+<td>西班牙</td>
+<td>数字伺服驱动器</td>
+<td>机器人关节</td>
+<td>进口</td>
+</tr>
+<tr>
+<td>汇川技术</td>
+<td>中国深圳</td>
+<td>伺服驱动器、变频器</td>
+<td>工业/人形</td>
+<td>国产龙头</td>
+</tr>
+<tr>
+<td>禾川科技</td>
+<td>中国浙江</td>
+<td>伺服驱动器</td>
+<td>工业/机器人</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>雷赛智能</td>
+<td>中国深圳</td>
+<td>伺服/步进驱动</td>
+<td>工业自动化</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>埃斯顿</td>
+<td>中国南京</td>
+<td>伺服驱动、控制器</td>
+<td>工业机器人</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>鸣志电器</td>
+<td>中国上海</td>
+<td>步进/伺服驱动</td>
+<td>机器人</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>步科股份</td>
+<td>中国上海</td>
+<td>低压伺服驱动器</td>
+<td>移动/协作机器人</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>英威腾</td>
+<td>中国深圳</td>
+<td>伺服驱动、变频器</td>
+<td>工业</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>信捷电气</td>
+<td>中国无锡</td>
+<td>伺服/PLC</td>
+<td>工业</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>固高科技</td>
+<td>中国深圳/香港</td>
+<td>运动控制器/驱动</td>
+<td>机器人/机床</td>
+<td>公开资料</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["运动指令"] --&gt; B["伺服驱动器&lt;br/&gt;FOC/PWM"]
+    B --&gt; C["无框电机"]
+    C --&gt; D["减速器/关节输出"]
+    D --&gt; E["编码器/电流传感器"]
+    E --&gt; B</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Servo_drive">Servo Drive</a></li>
+<li>项目 Wiki：chapter-07.md#7.3.7.8 驱动器/伺服驱动器</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">伺服驱动器使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-desc">伺服驱动器提及磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_principle_current_velocity_position_loops/">电流环/速度环/位置环</a>
+              <span class="rel-desc">伺服驱动器使用电流环/速度环/位置环。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+              <span class="rel-desc">伺服驱动器前置依赖线性代数。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_probability_theory/">概率论</a>
+              <span class="rel-desc">伺服驱动器前置依赖概率论。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_classical_mechanics/">经典力学</a>
+              <span class="rel-desc">伺服驱动器前置依赖经典力学。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">developed_by</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_company_inovance_technology_2024/">汇川技术</a>
+              <span class="rel-desc">伺服驱动器developed_by汇川技术。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_company_inovance_technology_2024/">汇川技术</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">制造</span>
+              <span class="rel-desc">汇川技术供应用于机器人关节的伺服驱动和电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_principle_current_velocity_position_loops/">电流环/速度环/位置环</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">电流环/速度环/位置环前置依赖伺服驱动器。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_servo_drive_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_foundation_classical_mechanics/">
+          <span class="entry-type">基础学科</span>
+          <h3>经典力学</h3>
+          <p>描述宏观物体在力作用下运动的物理学分支，包括牛顿定律、守恒原理和刚体动力学。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制（FOC）</h3>
+          <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">基础学科</span>
+          <h3>概率论</h3>
+          <p>关于不确定性、随机变量、分布和期望的数学基础，是机器人和机器学习中所有概率模型的根基。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">基础学科</span>
+          <h3>线性代数</h3>
+          <p>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">技术</span>
+          <h3>EtherCAT</h3>
+          <p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_current_velocity_position_loops/">
+          <span class="entry-type">原理</span>
+          <h3>电流环/速度环/位置环</h3>
+          <p>4.5.5 电流环、速度环、位置环的级联控制 实际关节驱动通常采用三级级联控制：最内层 电流环（力矩环），中间 速度环，最外层 位置环。每一层带宽约为下一层的 5-10 倍，以保证稳定性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_inovance_technology_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>汇川技术</h3>
+          <p>概述 汇川技术是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

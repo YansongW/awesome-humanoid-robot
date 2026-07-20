@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>강화학습 에이전트와 로봇의 감정: 서베이 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">강화학습 에이전트와 로봇의 감정: 서베이</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>강화학습 에이전트와 로봇의 감정: 서베이</h1>
+      <p class="entry-name-en">Emotion in Reinforcement Learning Agents and Robots: A Survey</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1705.05172v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>2017년에 발표된 서베이로, 강화학습 에이전트와 로봇에서 감정의 계산 모델을 체계적으로 정리하며 감정 유발, 감정 유형, 학습 및 사회적 신호 전달에서 감정의 기능을 중심으로 문헌을 분류한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1705.05172" target="_blank" rel="noopener">Emotion in Reinforcement Learning Agents and Robots: A Survey</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이 논문은 강화 학습(RL) 에이전트에서 감정의 계산 모델에 대한 최초의 조사를 제공합니다. 이 조사는 에이전트/로봇의 감정에 초점을 맞추며, 인간 사용자의 감정은 대부분 무시합니다. 감정은 동기 부여와 행동 선택에 영향을 미쳐 의사 결정에서 기능적인 역할을 하는 것으로 인식됩니다. 따라서 계산 감정 모델은 일반적으로 에이전트의 의사 결정 아키텍처에 기반하며, RL은 그 중요한 하위 클래스입니다. RL 기반 에이전트에서 감정을 연구하는 것은 세 가지 연구 분야에 유용합니다. 머신러닝(ML) 연구자에게 감정 모델은 학습 효율성을 향상시킬 수 있습니다. 대화형 ML 및 인간-로봇 상호작용(HRI) 커뮤니티에게 감정은 상태를 전달하고 사용자 투자를 증가시킬 수 있습니다. 마지막으로, 정서 모델링(AM) 연구자들이 성공적인 AI 에이전트 클래스에서 자신의 감정 이론을 조사할 수 있게 합니다. 이 조사는 감정 이론과 RL에 대한 배경 지식을 제공합니다. 체계적으로 다루는 내용은 1) 어떤 기반 차원(예: 항상성, 평가)에서 감정이 도출될 수 있으며 이를 RL 에이전트에서 어떻게 모델링할 수 있는지, 2) 이러한 차원에서 어떤 유형의 감정이 도출되었는지, 3) 이러한 감정이 에이전트의 학습 효율성에 영향을 미치거나 사회적 신호로 유용할 수 있는 방법입니다. 또한 평가 기준을 체계적으로 비교하고, (내재적) 동기 부여 및 모델 기반 RL과 같은 중요한 RL 하위 영역과의 연결을 도출합니다. 요약하면, 이 조사는 RL 에이전트에 감정을 구현하려는 엔지니어를 위한 실용적인 개요를 제공할 뿐만 아니라 미래의 감정-RL 연구를 위한 과제와 방향을 식별합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>이 논문은 강화 학습(RL) 에이전트에서 감정의 계산 모델에 대한 최초의 조사를 제공합니다. 이 조사는 에이전트/로봇의 감정에 초점을 맞추며, 인간 사용자의 감정은 대부분 무시합니다. 감정은 동기 부여와 행동 선택에 영향을 미쳐 의사 결정에서 기능적인 역할을 하는 것으로 인식됩니다. 따라서 계산 감정 모델은 일반적으로 에이전트의 의사 결정 아키텍처에 기반하며, RL은 그 중요한 하위 클래스입니다. RL 기반 에이전트에서 감정을 연구하는 것은 세 가지 연구 분야에 유용합니다. 머신러닝(ML) 연구자에게 감정 모델은 학습 효율성을 향상시킬 수 있습니다. 대화형 ML 및 인간-로봇 상호작용(HRI) 커뮤니티에게 감정은 상태를 전달하고 사용자 투자를 증가시킬 수 있습니다. 마지막으로, 정서 모델링(AM) 연구자들이 성공적인 AI 에이전트 클래스에서 자신의 감정 이론을 조사할 수 있게 합니다. 이 조사는 감정 이론과 RL에 대한 배경 지식을 제공합니다. 체계적으로 다루는 내용은 1) 어떤 기반 차원(예: 항상성, 평가)에서 감정이 도출될 수 있으며 이를 RL 에이전트에서 어떻게 모델링할 수 있는지, 2) 이러한 차원에서 어떤 유형의 감정이 도출되었는지, 3) 이러한 감정이 에이전트의 학습 효율성에 영향을 미치거나 사회적 신호로 유용할 수 있는 방법입니다. 또한 평가 기준을 체계적으로 비교하고, (내재적) 동기 부여 및 모델 기반 RL과 같은 중요한 RL 하위 영역과의 연결을 도출합니다. 요약하면, 이 조사는 RL 에이전트에 감정을 구현하려는 엔지니어를 위한 실용적인 개요를 제공할 뿐만 아니라 미래의 감정-RL 연구를 위한 과제와 방향을 식별합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_sac/">소프트 액터-크리틱(SAC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_moerland_emotion_in_reinforcement_learn_2017"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_sac/">
+          <span class="entry-type">알고리즘</span>
+          <h3>소프트 액터-크리틱(SAC)</h3>
+          <p>기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

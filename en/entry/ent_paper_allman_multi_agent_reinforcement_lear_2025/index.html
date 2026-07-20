@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</h1>
+      <p class="entry-name-en">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Applications &amp; Markets</span><span class="tag">Evaluation &amp; Benchmarks</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.04463v2.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper compares QMIX, IPPO, and MASAC on warehouse multi-agent reinforcement learning tasks using RWARE, MPE, and a custom Unity 3D simulation, demonstrating that QMIX&#39;s value decomposition outperforms independent learners but requires extensive hyperparameter tuning—particularly extended epsilon annealing—to discover sparse rewards.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.04463" target="_blank" rel="noopener">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>We present a comparative study of multi-agent reinforcement learning (MARL) algorithms for cooperative warehouse robotics. We evaluate QMIX and IPPO on the Robotic Warehouse (RWARE) environment and a custom Unity 3D simulation. Our experiments reveal that QMIX's value decomposition significantly outperforms independent learning approaches (achieving 3.25 mean return vs. 0.38 for advanced IPPO), but requires extensive hyperparameter tuning -- particularly extended epsilon annealing (5M+ steps) for sparse reward discovery. We demonstrate successful deployment in Unity ML-Agents, achieving consistent package delivery after 1M training steps. While MARL shows promise for small-scale deployments (2-4 robots), significant scaling challenges remain. Code and analyses: https://pallman14.github.io/MARL-QMIX-Warehouse-Robots/</p>
+<h2 id="content">Content</h2>
+<p>We present a comparative study of multi-agent reinforcement learning (MARL) algorithms for cooperative warehouse robotics. We evaluate QMIX and IPPO on the Robotic Warehouse (RWARE) environment and a custom Unity 3D simulation. Our experiments reveal that QMIX's value decomposition significantly outperforms independent learning approaches (achieving 3.25 mean return vs. 0.38 for advanced IPPO), but requires extensive hyperparameter tuning -- particularly extended epsilon annealing (5M+ steps) for sparse reward discovery. We demonstrate successful deployment in Unity ML-Agents, achieving consistent package delivery after 1M training steps. While MARL shows promise for small-scale deployments (2-4 robots), significant scaling challenges remain. Code and analyses: https://pallman14.github.io/MARL-QMIX-Warehouse-Robots/</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_pucci_automatic_gain_tuning_of_a_mom_2016/">Automatic Gain Tuning of a Momentum Based Balancing Controller for Humanoid Robots</a>
+              <span class="rel-desc">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination cites or references Automatic Gain Tuning of a Momentum Based Balancing Controller for Humanoid Robots.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World</a>
+              <span class="rel-desc">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination cites or references LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</a>
+              <span class="rel-desc">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination cites or references Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</a>
+              <span class="rel-desc">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066 cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">Drive-WM: Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Drive-WM: Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_bofa_humanoid_robots_101_2025/">Bank of America Institute — Humanoid Robots 101</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Bank of America Institute — Humanoid Robots 101 cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">Robotics and The Rare Earth Bottleneck</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Robotics and The Rare Earth Bottleneck cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_allman_multi_agent_reinforcement_lear_2025"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</h3>
+          <p>A unified whole-body reinforcement-learning controller enables a 21-DoF humanoid to play badminton…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids</h3>
+          <p>This paper proposes Robot-Trains-Robot (RTR), a framework in which a robot-arm teacher supports and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World</h3>
+          <p>The implementation path of LEGS is to first encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</h3>
+          <p>This 2024 arXiv paper presents a Unity VR simulation in which multiple simulated robot agents, each…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</h3>
+          <p>This paper proposes a multi-agent framework—Active Spatial Brain for active spatial perception and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_bofa_humanoid_robots_101_2025/">
+          <span class="entry-type">Report</span>
+          <h3>Bank of America Institute — Humanoid Robots 101</h3>
+          <p>An April 2025 primer from Bank of America Institute that breaks down humanoid robot architecture,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">
+          <span class="entry-type">Report</span>
+          <h3>Robotics and The Rare Earth Bottleneck</h3>
+          <p>An Oceanwall research note from July 2025 arguing that advanced robots, particularly humanoids, rely…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pucci_automatic_gain_tuning_of_a_mom_2016/">
+          <span class="entry-type">Paper</span>
+          <h3>Automatic Gain Tuning of a Momentum Based Balancing Controller for Humanoid Robots</h3>
+          <p>Proposes an automatic gain-tuning method for a momentum-based balancing controller for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</h3>
+          <p>This paper presents a multi-rate Model Predictive Control framework for the jet-powered humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066</h3>
+          <p>This paper compares ISO 10218-1/2:2011 with their 2025 revisions and analyzes the normative…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Drive-WM: Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving</h3>
+          <p>Drive-WM is a latent video diffusion world model for autonomous driving that generates high-fidelity…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

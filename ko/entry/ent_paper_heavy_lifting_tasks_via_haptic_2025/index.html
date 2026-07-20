@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heavy lifting tasks via haptic teleoperation of a wheeled humanoid · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Heavy lifting tasks via haptic teleoperation of a wheeled humanoid</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Heavy lifting tasks via haptic teleoperation of a wheeled humanoid</h1>
+      <p class="entry-name-en">Heavy lifting tasks via haptic teleoperation of a wheeled humanoid</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19530v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Heavy lifting tasks via haptic teleoperation of a wheeled humanoid is a 2025 work on teleoperation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.19530" target="_blank" rel="noopener">Heavy lifting tasks via haptic teleoperation of a wheeled humanoid (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>휴머노이드 로봇은 무거운 물체를 들어 올리거나 운반하는 등 전신 협응이 필요한 작업을 수행함으로써 육체적으로 힘든 환경에서 인간 작업자를 지원할 수 있습니다. 이러한 작업을 동적 이동 조작(DMM)이라고 하며, 동적 상호작용 힘 하에서 이동, 조작 및 자세를 동시에 제어해야 합니다. 본 논문은 무거운 페이로드를 운반하기 위한 높이 조절 가능한 바퀴형 휴머노이드 로봇에서 DMM을 위한 원격 조작 프레임워크를 제시합니다. 인간-기계 인터페이스(HMI)는 인간의 움직임을 포착하고 햅틱 피드백을 적용하여 인간 조종사에서 로봇으로의 전신 동작 재타겟팅을 가능하게 합니다. 조종사는 신체 움직임을 사용하여 로봇의 자세와 이동을 조절하고, 팔 움직임은 조작을 안내합니다. 실시간 햅틱 피드백은 엔드 이펙터의 힘과 균형 관련 신호를 전달하여 인간의 인지와 로봇 환경 상호작용 간의 루프를 닫습니다. 우리는 다양한 수준의 균형 지원을 제공하는 여러 원격 이동 매핑을 평가하여, 조종사가 페이로드로 인한 교란에 대응하여 로봇의 기울기를 수동 또는 자동으로 조절할 수 있도록 합니다. 시스템은 최대 2.5kg(로봇 질량의 21%)의 바벨과 상자를 동적으로 들어 올리는 실험을 통해 검증되었으며, 조종사의 안내 하에 협응된 전신 제어, 높이 변화 및 교란 처리를 입증합니다. 비디오 데모는 다음에서 확인할 수 있습니다: https://youtu.be/jF270_bG1h8?feature=shared</p>
+<h2 id="_2">핵심 내용</h2>
+<p>휴머노이드 로봇은 무거운 물체를 들어 올리거나 운반하는 등 전신 협응이 필요한 작업을 수행함으로써 육체적으로 힘든 환경에서 인간 작업자를 지원할 수 있습니다. 이러한 작업을 동적 이동 조작(DMM)이라고 하며, 동적 상호작용 힘 하에서 이동, 조작 및 자세를 동시에 제어해야 합니다. 본 논문은 무거운 페이로드를 운반하기 위한 높이 조절 가능한 바퀴형 휴머노이드 로봇에서 DMM을 위한 원격 조작 프레임워크를 제시합니다. 인간-기계 인터페이스(HMI)는 인간의 움직임을 포착하고 햅틱 피드백을 적용하여 인간 조종사에서 로봇으로의 전신 동작 재타겟팅을 가능하게 합니다. 조종사는 신체 움직임을 사용하여 로봇의 자세와 이동을 조절하고, 팔 움직임은 조작을 안내합니다. 실시간 햅틱 피드백은 엔드 이펙터의 힘과 균형 관련 신호를 전달하여 인간의 인지와 로봇 환경 상호작용 간의 루프를 닫습니다. 우리는 다양한 수준의 균형 지원을 제공하는 여러 원격 이동 매핑을 평가하여, 조종사가 페이로드로 인한 교란에 대응하여 로봇의 기울기를 수동 또는 자동으로 조절할 수 있도록 합니다. 시스템은 최대 2.5kg(로봇 질량의 21%)의 바벨과 상자를 동적으로 들어 올리는 실험을 통해 검증되었으며, 조종사의 안내 하에 협응된 전신 제어, 높이 변화 및 교란 처리를 입증합니다. 비디오 데모는 다음에서 확인할 수 있습니다: https://youtu.be/jF270_bG1h8?feature=shared</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p2_2_2/">人机交互（HMI）设计</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_heavy_lifting_tasks_via_haptic_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p2_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>人机交互（HMI）设计</h3>
+          <p>HMI 规范、交互原型、可用性测试报告</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

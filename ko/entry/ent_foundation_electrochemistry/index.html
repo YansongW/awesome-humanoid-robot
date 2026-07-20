@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>전기화학 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/foundation/">기초 학문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">전기화학</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">기초 학문</div>
+      <h1>전기화학</h1>
+      <p class="entry-name-en">Electrochemistry</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">기초 학문</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">기초 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#电池电化学基础：电极电位、动力学与扩散 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>전지, 연료 전지 및 부식에서 반응, 전위 및 물질 이동을 지배하는 계면을 통한 전자와 이온 전송의 기초 과학이다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://www.wiley.com/en-us/Electrochemical+Methods%3A+Fundamentals+and+Applications%2C+2nd+Edition-p-9780471043720" target="_blank" rel="noopener">A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed.</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전기화학은 휴머노이드 로봇 분야의 중요한 기초 학문입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>리튬이온 배터리의 에너지 저장은 본질적으로 리튬이 양극 및 음극 활물질 격자 내에서 가역적으로 삽입/탈리되는 반응입니다. 공칭 전압, 출력 성능, 저온 열화 및 노화를 이해하려면 전기화학 열역학과 동역학으로 돌아가야 합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 삽입 반응, 탈리 반응, 활물질, 전해질, 리튬 이온</p>
+<ul>
+<li><strong>삽입 반응(intercalation)</strong> : 리튬 이온이 결정 구조를 파괴하지 않고 호스트 격자에 가역적으로 삽입되는 반응.</li>
+<li><strong>탈리 반응(deintercalation)</strong> : 리튬 이온이 호스트 격자에서 빠져나오는 반응.</li>
+<li><strong>활물질(active material)</strong> : 배터리 내에서 전기화학 반응에 참여하여 리튬 이온을 저장하는 주재료.</li>
+<li><strong>전해질(electrolyte)</strong> : 양극과 음극 사이에서 리튬 이온을 전도하는 이온 전도체.</li>
+<li><strong>리튬 이온(Li⁺)</strong> : 리튬이온 배터리에서 전하 전달을 담당하는 캐리어.</li>
+</ul>
+</div>
+<p><strong>전극 전위와 네른스트 방정식</strong>. 전극 전위는 활물질 내 리튬의 화학 퍼텐셜에 의해 결정됩니다. 인터칼레이션 전극의 경우 네른스트 방정식은 다음과 같이 쓸 수 있습니다:</p>
+<div class="arithmatex">\[
+E(x) = E^\circ - \frac{RT}{F} \ln\left( \frac{a_{\mathrm{Li}^+,\mathrm{host}}}{a_{\mathrm{Li}^+}} \right)
+\]</div>
+<p>여기서 <span class="arithmatex">\(E^\circ\)</span>는 표준 전극 전위, <span class="arithmatex">\(R\)</span>은 기체 상수(8.314 J/(mol·K)), <span class="arithmatex">\(T\)</span>는 절대 온도, <span class="arithmatex">\(F\)</span>는 패러데이 상수(96485 C/mol), <span class="arithmatex">\(a\)</span>는 활성도입니다. 묽은 용액 근사에서 전극 전위는 리튬화 정도 <span class="arithmatex">\(x\)</span>(즉 SOC)에 따라 변합니다. 개방 회로 전압 <span class="arithmatex">\(OCV(x)\)</span>는 양극과 음극 전위의 차이입니다:</p>
+<div class="arithmatex">\[
+OCV(x) = E_\mathrm{cathode}(x) - E_\mathrm{anode}(x)
+\]</div>
+<p>흑연 음극의 경우 전위가 금속 리튬에 매우 가깝기 때문에(약 0.05–0.2 V vs Li/Li⁺), 전체 배터리 전압은 주로 양극 재료에 의해 결정됩니다. LiFePO₄의 플랫폼 전위는 약 3.45 V vs Li/Li⁺이고, NCM(LiNi₀.₈Co₀.₁Mn₀.₁O₂)은 약 3.7–3.8 V입니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 네른스트 방정식, 전극 전위, 활성도, 개방 회로 전압, 리튬 기준 전위</p>
+<ul>
+<li><strong>네른스트 방정식(Nernst equation)</strong> : 전극 전위와 반응물 활성도 간의 관계를 설명하는 방정식.</li>
+<li><strong>전극 전위(electrode potential)</strong> : 기준 전극에 대한 전극의 전위.</li>
+<li><strong>활성도(activity)</strong> : 유효 농도로, 재료 내 이온 또는 원자의 화학 퍼텐셜을 반영합니다.</li>
+<li><strong>개방 회로 전압(open-circuit voltage, OCV)</strong> : 배터리에 외부 전류가 흐르지 않을 때의 단자 전압.</li>
+<li><strong>리튬 기준 전위(potential vs Li/Li⁺)</strong> : 리튬 금속 기준 전극에 대한 전위.</li>
+</ul>
+</div>
+<p><strong>버틀러-볼머 방정식과 분극</strong>. 배터리가 방전될 때 전극 반응은 평형에서 벗어나 과전위 <span class="arithmatex">\(\eta\)</span>가 발생합니다. 버틀러-볼머(Butler-Volmer) 방정식은 전하 이동 전류 밀도 <span class="arithmatex">\(j\)</span>와 과전위의 관계를 설명합니다:</p>
+<div class="arithmatex">\[
+j = j_0 \left[ \exp\left( \frac{\alpha_a F \eta}{RT} \right) - \exp\left( -\frac{\alpha_c F \eta}{RT} \right) \right]
+\]</div>
+<p>여기서 <span class="arithmatex">\(j_0\)</span>는 교환 전류 밀도, <span class="arithmatex">\(\alpha_a, \alpha_c\)</span>는 양극 및 음극 전달 계수(일반적으로 <span class="arithmatex">\(\alpha_a \approx \alpha_c \approx 0.5\)</span>로 근사)입니다. 낮은 과전위 영역에서는 <span class="arithmatex">\(j \approx j_0 F \eta / RT\)</span>로 선형화할 수 있으며, 전하 이동 저항 <span class="arithmatex">\(R_{ct} = RT / (F j_0)\)</span>을 정의합니다. 고율 방전 시 전하 이동 분극과 농도 분극 모두 단자 전압을 크게 낮추고 줄 열을 발생시킵니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 버틀러-볼머 방정식, 교환 전류 밀도, 과전위, 분극, 전하 이동 저항</p>
+<ul>
+<li><strong>버틀러-볼머 방정식(Butler-Volmer equation)</strong> : 전기화학 반응 속도와 과전위 간의 관계를 설명하는 방정식.</li>
+<li><strong>교환 전류 밀도(exchange current density)</strong> : 평형 상태에서 정방향과 역방향 반응 전류 밀도의 크기로, 반응 활성을 나타냅니다.</li>
+<li><strong>과전위(overpotential)</strong> : 실제 전극 전위와 평형 전위의 차이.</li>
+<li><strong>분극(polarization)</strong> : 전류가 흐를 때 전극 전위가 평형 값에서 벗어나는 현상.</li>
+<li><strong>전하 이동 저항(charge-transfer resistance)</strong> : 전하 이동 단계에서 전류에 대한 저항.</li>
+</ul>
+</div>
+<p><strong>고상 확산</strong>. 리튬 이온이 양극 활물질 입자 내부에서 확산하는 것은 픽의 제2법칙을 따릅니다. 반경이 <span class="arithmatex">\(R_p\)</span>인 구형 입자의 경우 확산 시상수는 다음과 같이 근사할 수 있습니다:</p>
+<div class="arithmatex">\[
+\tau_D = \frac{R_p^2}{D_{\mathrm{Li}^+}}
+\]</div>
+<p>여기서 <span class="arithmatex">\(D_{\mathrm{Li}^+}\)</span>는 고상 확산 계수(LFP는 약 <span class="arithmatex">\(10^{-16}–10^{-14}\ \mathrm{m^2/s}\)</span>, NCM은 약 <span class="arithmatex">\(10^{-13}–10^{-12}\ \mathrm{m^2/s}\)</span>)입니다. 방전 속도가 너무 빠르면 입자 표면의 리튬 이온 농도가 고갈되고 내부는 여전히 리튬이 풍부하여 농도 분극이 형성되고 용량 발현이 제한됩니다. 입자 크기를 줄이거나, 작동 온도를 높이거나, 확산 계수가 높은 재료를 사용하면 출력 성능을 개선할 수 있습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 픽의 법칙, 확산 계수, 확산 시상수, 농도 분극</p>
+<ul>
+<li><strong>픽의 법칙(Fick's law)</strong> : 물질이 고농도 영역에서 저농도 영역으로 확산하는 법칙을 설명합니다.</li>
+<li><strong>확산 계수(diffusion coefficient)</strong> : 확산 속도를 나타내는 재료 매개변수.</li>
+<li><strong>확산 시상수(diffusion time constant)</strong> : 확산 과정이 평형에 도달하는 특성 시간.</li>
+<li><strong>농도 분극(concentration polarization)</strong> : 반응물 농도 구배로 인해 발생하는 분극.</li>
+</ul>
+</div>
+<p><strong>SEI 막의 형성과 성장</strong>. 첫 충전 시 전해질이 흑연 음극 표면에서 환원 분해되어 고체 전해질 계면막(SEI)을 형성합니다. 주요 성분으로는 Li₂CO₃, LiF, ROCO₂Li, 알킬 리튬 등이 있습니다. SEI 막은 이온 전도체이지만 전자 절연체로, 전해질의 지속적인 분해를 막습니다. 그러나 사이클 과정에서 SEI는 지속적으로 파괴-재구성되며, 활성 리튬을 소모하고 두꺼워져 용량 감소와 임피던스 상승을 초래합니다. 고온, 고전압 및 급속 충전은 SEI 성장을 가속화합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: SEI 막, LiF, Li₂CO₃, 활성 리튬, 임피던스 증가</p>
+<ul>
+<li><strong>SEI 막(Solid Electrolyte Interphase)</strong> : 음극 표면에 전해질 분해 생성물로 형성된 보호막.</li>
+<li><strong>LiF / Li₂CO₃</strong> : SEI에서 흔히 발견되는 무기 리튬 염 성분.</li>
+<li><strong>활성 리튬(cyclable lithium)</strong> : 충방전 사이클에 참여할 수 있는 총 리튬 이온 양.</li>
+<li><strong>임피던스 증가(impedance growth)</strong> : 사이클 또는 보관에 따라 배터리 내부 저항이 증가하는 현상.</li>
+</ul>
+</div>
+<p><strong>Python 예제: 네른스트 방정식을 사용한 OCV-SOC 곡선 근사</strong>. 아래 코드는 LFP와 NCM의 개방 회로 전압이 SOC에 따라 어떻게 변하는지 비교합니다. 실제 OCV-SOC 곡선은 상전이 플랫폼(LFP의 경우 약 20–80% SOC에서 전압 플랫폼이 매우 평탄함)을 고려해야 하므로, 여기서는 경험적 Redlich-Kister 전개식을 사용하여 피팅하며, 서로 다른 양극의 전위 차이를 중점적으로 보여줍니다.</p>
+<p>```python
+"""
+Approximate OCV-SOC curves for LFP and NCM positive electrodes
+using a Redlich-Kister expansion. For illustration only.
+"""
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<p>R = 8.314      # J/(mol K)
+T = 298.15     # K
+F = 96485      # C/mol</p>
+<p>soc = np.linspace(0.05, 0.95, 200)</p>
+<h2 id="overview">Overview</h2>
+<p>Electrochemistry is a fundamental discipline in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>The energy storage mechanism of lithium-ion batteries essentially involves the reversible intercalation/deintercalation of lithium within the crystal lattices of the positive and negative electrode active materials. Understanding nominal voltage, rate capability, low-temperature degradation, and aging requires revisiting electrochemical thermodynamics and kinetics.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Intercalation Reaction, Deintercalation Reaction, Active Material, Electrolyte, Lithium Ion</p>
+<ul>
+<li><strong>Intercalation</strong>: A reaction where lithium ions reversibly insert into a host lattice without destroying its structure.</li>
+<li><strong>Deintercalation</strong>: A reaction where lithium ions are extracted from the host lattice.</li>
+<li><strong>Active Material</strong>: The host material in a battery that participates in electrochemical reactions and stores lithium ions.</li>
+<li><strong>Electrolyte</strong>: An ionic conductor that conducts lithium ions between the positive and negative electrodes.</li>
+<li><strong>Lithium Ion (Li⁺)</strong>: The charge carrier responsible for charge transport in lithium-ion batteries.</li>
+</ul>
+</div>
+<p><strong>Electrode Potential and the Nernst Equation</strong>. The electrode potential is determined by the chemical potential of lithium in the active material. For intercalation electrodes, the Nernst equation can be written as:</p>
+<div class="arithmatex">\[
+E(x) = E^\circ - \frac{RT}{F} \ln\left( \frac{a_{\mathrm{Li}^+,\mathrm{host}}}{a_{\mathrm{Li}^+}} \right)
+\]</div>
+<p>where <span class="arithmatex">\(E^\circ\)</span> is the standard electrode potential, <span class="arithmatex">\(R\)</span> is the gas constant (8.314 J/(mol·K)), <span class="arithmatex">\(T\)</span> is the absolute temperature, <span class="arithmatex">\(F\)</span> is the Faraday constant (96485 C/mol), and <span class="arithmatex">\(a\)</span> is the activity. Under the dilute solution approximation, the electrode potential varies with the lithiation degree <span class="arithmatex">\(x\)</span> (i.e., SOC). The open-circuit voltage <span class="arithmatex">\(OCV(x)\)</span> is the difference between the positive and negative electrode potentials:</p>
+<div class="arithmatex">\[
+OCV(x) = E_\mathrm{cathode}(x) - E_\mathrm{anode}(x)
+\]</div>
+<p>For a graphite negative electrode, its potential is very close to that of metallic lithium (approximately 0.05–0.2 V vs Li/Li⁺), so the full cell voltage is primarily determined by the positive electrode material. The plateau potential of LiFePO₄ is about 3.45 V vs Li/Li⁺, while that of NCM (LiNi₀.₈Co₀.₁Mn₀.₁O₂) is about 3.7–3.8 V.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Nernst Equation, Electrode Potential, Activity, Open-Circuit Voltage, Potential vs Li/Li⁺</p>
+<ul>
+<li><strong>Nernst Equation</strong>: An equation describing the relationship between electrode potential and the activity of reactants.</li>
+<li><strong>Electrode Potential</strong>: The electrical potential of an electrode relative to a reference electrode.</li>
+<li><strong>Activity</strong>: The effective concentration, reflecting the chemical potential of ions or atoms in a material.</li>
+<li><strong>Open-Circuit Voltage (OCV)</strong>: The terminal voltage of a battery when no external current flows.</li>
+<li><strong>Potential vs Li/Li⁺</strong>: The potential relative to a lithium metal reference electrode.</li>
+</ul>
+</div>
+<p><strong>Butler-Volmer Equation and Polarization</strong>. When a battery discharges, the electrode reaction deviates from equilibrium, generating an overpotential <span class="arithmatex">\(\eta\)</span>. The Butler-Volmer equation describes the relationship between the charge transfer current density <span class="arithmatex">\(j\)</span> and the overpotential:</p>
+<div class="arithmatex">\[
+j = j_0 \left[ \exp\left( \frac{\alpha_a F \eta}{RT} \right) - \exp\left( -\frac{\alpha_c F \eta}{RT} \right) \right]
+\]</div>
+<p>where <span class="arithmatex">\(j_0\)</span> is the exchange current density, and <span class="arithmatex">\(\alpha_a, \alpha_c\)</span> are the anodic and cathodic transfer coefficients (typically approximated as <span class="arithmatex">\(\alpha_a \approx \alpha_c \approx 0.5\)</span>). In the low overpotential region, it can be linearized as <span class="arithmatex">\(j \approx j_0 F \eta / RT\)</span>, defining the charge transfer resistance <span class="arithmatex">\(R_{ct} = RT / (F j_0)\)</span>. During high-rate discharge, both charge transfer polarization and concentration polarization cause a significant drop in terminal voltage and generate Joule heat.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Butler-Volmer Equation, Exchange Current Density, Overpotential, Polarization, Charge-Transfer Resistance</p>
+<ul>
+<li><strong>Butler-Volmer Equation</strong>: An equation describing the relationship between the electrochemical reaction rate and overpotential.</li>
+<li><strong>Exchange Current Density</strong>: The magnitude of the forward and reverse reaction current densities at equilibrium, reflecting reaction activity.</li>
+<li><strong>Overpotential</strong>: The deviation of the actual electrode potential from the equilibrium potential.</li>
+<li><strong>Polarization</strong>: The phenomenon where the electrode potential deviates from the equilibrium value when current flows.</li>
+<li><strong>Charge-Transfer Resistance</strong>: The resistance to current flow from the charge transfer step.</li>
+</ul>
+</div>
+<p><strong>Solid-State Diffusion</strong>. The diffusion of lithium ions inside the active material particles of the positive electrode follows Fick's second law. For a spherical particle with radius <span class="arithmatex">\(R_p\)</span>, the diffusion time constant can be approximated as:</p>
+<div class="arithmatex">\[
+\tau_D = \frac{R_p^2}{D_{\mathrm{Li}^+}}
+\]</div>
+<p>where <span class="arithmatex">\(D_{\mathrm{Li}^+}\)</span> is the solid-state diffusion coefficient (LFP approximately <span class="arithmatex">\(10^{-16}–10^{-14}\ \mathrm{m^2/s}\)</span>, NCM approximately <span class="arithmatex">\(10^{-13}–10^{-12}\ \mathrm{m^2/s}\)</span>). If the discharge rate is too fast, the lithium ion concentration at the particle surface becomes depleted while the interior remains lithium-rich, creating concentration polarization and limiting capacity utilization. Reducing particle size, increasing operating temperature, or using materials with high diffusion coefficients can improve rate capability.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Fick's Law, Diffusion Coefficient, Diffusion Time Constant, Concentration Polarization</p>
+<ul>
+<li><strong>Fick's Law</strong>: A law describing the diffusion of matter from regions of high concentration to low concentration.</li>
+<li><strong>Diffusion Coefficient</strong>: A material parameter characterizing the rate of diffusion.</li>
+<li><strong>Diffusion Time Constant</strong>: The characteristic time for a diffusion process to reach equilibrium.</li>
+<li><strong>Concentration Polarization</strong>: Polarization caused by a concentration gradient of reactants.</li>
+</ul>
+</div>
+<p><strong>SEI Film Formation and Growth</strong>. During the first charge, the electrolyte undergoes reductive decomposition on the surface of the graphite negative electrode, forming a Solid Electrolyte Interphase (SEI) film. Its main components include Li₂CO₃, LiF, ROCO₂Li, alkyl lithium, etc. The SEI film is an ionic conductor but an electronic insulator, preventing further decomposition of the electrolyte. However, during cycling, the SEI continuously breaks and reforms, consuming cyclable lithium and thickening, leading to capacity fade and impedance rise. High temperature, high voltage, and fast charging accelerate SEI growth.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: SEI Film, LiF, Li₂CO₃, Cyclable Lithium, Impedance Growth</p>
+<ul>
+<li><strong>SEI Film (Solid Electrolyte Interphase)</strong>: A protective film formed on the negative electrode surface from the decomposition products of the electrolyte.</li>
+<li><strong>LiF / Li₂CO₃</strong>: Common inorganic lithium salt components in the SEI.</li>
+<li><strong>Cyclable Lithium</strong>: The total amount of lithium ions available to participate in charge-discharge cycles.</li>
+<li><strong>Impedance Growth</strong>: The increase in battery internal resistance with cycling or storage.</li>
+</ul>
+</div>
+<p><strong>Python Example: Approximating OCV-SOC Curves with the Nernst Equation</strong>. The following code compares the open-circuit voltage variation with SOC for LFP and NCM. Actual OCV-SOC curves also need to consider phase transition plateaus (LFP has a very flat voltage plateau between approximately 20–80% SOC), so an empirical Redlich-Kister expansion is used here for fitting, primarily to demonstrate the potential differences between different positive electrodes.</p>
+<p>```python
+"""
+Approximate OCV-SOC curves for LFP and NCM positive electrodes
+using a Redlich-Kister expansion. For illustration only.
+"""
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<p>R = 8.314      # J/(mol K)
+T = 298.15     # K
+F = 96485      # C/mol</p>
+<p>soc = np.linspace(0.05, 0.95, 200)</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_ficks_law/">픽의 법칙</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_butler_volmer_equation/">Butler-Volmer 방정식</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_method_equivalent_circuit_battery_model/">등가 회로 배터리 모델</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-desc">ent_method_equivalent_circuit_battery_model은 분극 및 확산 매개변수를 해석하기 위해 ent_foundation_electrochemistry를 선행 요건으로 한다.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_principle_conservation_of_charge/">전하 보존</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-desc">ent_principle_conservation_of_charge는 이온 및 전자 전송 평형을 이해하기 위해 ent_foundation_electrochemistry를 선행 요건으로 한다.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_thermal_simulation/">열 시뮬레이션</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_foundation_electrochemistry"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_butler_volmer_equation/">
+          <span class="entry-type">방정식</span>
+          <h3>Butler-Volmer 방정식</h3>
+          <p>전극 표면의 전류 밀도와 활성화 과전위 및 동역학 매개변수 간의 관계를 기술하는 방정식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_thermal_simulation/">
+          <span class="entry-type">방법</span>
+          <h3>열 시뮬레이션</h3>
+          <p>전자·기계 시스템의 작동 하중에서 온도 분포·열 유량·냉각 요구량을 예측하는 계산 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_ficks_law/">
+          <span class="entry-type">원리</span>
+          <h3>픽의 법칙</h3>
+          <p>종의 확산 선속이 농도 기울기의 음수에 비례한다는 구성 원리.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_conservation_of_charge/">
+          <span class="entry-type">원리</span>
+          <h3>전하 보존</h3>
+          <p>전하는 생성되거나 소멸될 수 없고 재분배될 뿐이라는 기본 원리이며, 키르히호프 전류 법칙과 전기화학 시스템의 전하 평형 방정식의 기초가 된다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_equivalent_circuit_battery_model/">
+          <span class="entry-type">방법</span>
+          <h3>등가 회로 배터리 모델</h3>
+          <p>전압원과 집중된 저항-커패시터 소자로 구성된 회로로 리튬 이온 셀 또는 팩을 표현하여 단자 전압, 전류 응답, 충전 상태 동역학을 예측하는 방법이다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

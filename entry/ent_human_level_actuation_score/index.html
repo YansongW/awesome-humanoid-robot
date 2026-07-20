@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>类人驱动评分 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/benchmark/">评测基准</a>
+    <span>/</span>
+    <span class="breadcrumb-current">类人驱动评分</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">评测基准</div>
+      <h1>类人驱动评分</h1>
+      <p class="entry-name-en">Human-Level Actuation Score</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">评测基准</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">验证与市场层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Definition sourced from the Human-Level Actuation for Humanoids paper; detailed measurement protocols require full-text review. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>一种标量、可分解的基准指标，综合工作空间覆盖、扭矩-功率需求、带宽、效率和热可持续性，以量化人形机器人驱动能力接近类人水平的程度。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.06796" target="_blank" rel="noopener">Human-Level Actuation for Humanoids</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="_2">类人驱动评分的定义与定位</h3>
+<p>类人驱动评分属于 <strong>评测基准</strong> 类型，英文名称为 <em>Human-Level Actuation Score</em>。
+一种标量、可分解的基准指标，综合工作空间覆盖、扭矩-功率需求、带宽、效率和热可持续性，以量化人形机器人驱动能力接近类人水平的程度。</p>
+<h3 id="_3">类人驱动评分的关键信息</h3>
+<p>以下整理了关于类人驱动评分的详细说明，供中英文读者参考。</p>
+<h2 id="_4">抽象</h2>
+<blockquote>
+<p><strong>生活实例</strong>：它就像一个综合信用评分——不是只看收入，而是把储蓄、负债、还款记录、消费习惯等合并成一个数字，来衡量一个人的财务健康度。</p>
+<p><strong>自然语言逻辑</strong>：类人驱动评分（HLAS）是一个标量、可分解的基准指标，把工作空间覆盖、扭矩-功率包络、带宽、效率和热可持续性汇总起来；它以参考人体为 1.0，量化不同机器人驱动系统距离“类人水平”有多远，便于在统一尺度上比较各类执行器技术。</p>
+</blockquote>
+<h2 id="_5">参考</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2511.06796">Human-Level Actuation for Humanoids</a></li>
+</ul>
+<p>类人驱动评分的相关技术仍在快速发展。从系统科学角度看，它与其他benchmark相互耦合，共同决定了人形机器人的整体性能。深入理解其原理、边界条件与工程约束，是将实验室样机转化为可量产产品的必要环节。</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_human_equivalence_envelope/">人等效包络</a>
+              <span class="rel-desc">类人驱动评分评测于人等效包络。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">人形机器人的类人驱动能力</a>
+              <span class="rel-desc">类人驱动评分引用人形机器人的类人驱动能力。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">基于关节力矩传感器和力/力矩传感器的腿式机器人接触感知</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">人形机器人的类人驱动能力</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">生产</span>
+              <span class="rel-desc">论文提出了HLAS作为人形机器人驱动的标量基准指标。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gallant_voxel_grid_based_human_2025/">Gallant｜跨3D约束地形的基于体素网格的人形运动和本地导航</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">生产</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_neto_high_level_robot_programming_b_2013/">基于CAD的高级机器人编程：应对不可预测环境</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">生产</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">扭矩控制人形机器人中的摩擦利用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">生产</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_human_equivalence_envelope/">人等效包络</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">人等效包络提及类人驱动评分。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_collins_benchmarking_simulated_robotic_2019/">通过真实世界数据集对模拟机器人操作进行基准测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">通过真实世界数据集对模拟机器人操作进行基准测试提及类人驱动评分。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_human_to_humanoid_rea_2024/">学习人对人的实时全身远程操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">生产</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">扭矩控制人形机器人中的摩擦利用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gait_adaptive_perceptive_human_2025/">具有实时基础地形重建的步态自适应感知人形运动</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">生产</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_human_humanoid_coordi_2025/">COLA｜学习人机协调以协作搬运物体</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">生产</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">多层级复杂供应网络中的物料整合权衡利用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_human_level_actuation_score"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_human_to_humanoid_rea_2024/">
+          <span class="entry-type">论文</span>
+          <h3>学习人对人的实时全身远程操作</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹采集人类操作和机器人状态，再通过IK/动作重定向转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">
+          <span class="entry-type">论文</span>
+          <h3>扭矩控制人形机器人中的摩擦利用</h3>
+          <p>A common architecture for torque controlled humanoid robots consists in two nested loops. The outer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_neto_high_level_robot_programming_b_2013/">
+          <span class="entry-type">论文</span>
+          <h3>基于CAD的高级机器人编程：应对不可预测环境</h3>
+          <p>本文提出一种基于CAD的人机交互界面，允许非专业用户在Autodesk Inventor中绘制路径来编程工业机器人，并通过激光相机和力/力矩传感器的在线反馈补偿环境不确定性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人的类人驱动能力</h3>
+          <p>Claims that humanoid robots achieve ``human-level&#39;&#39; actuation are common but rarely quantified. Peak…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_human_equivalence_envelope/">
+          <span class="entry-type">技术</span>
+          <h3>人等效包络</h3>
+          <p>一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gallant_voxel_grid_based_human_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Gallant｜跨3D约束地形的基于体素网格的人形运动和本地导航</h3>
+          <p>Gallant…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">
+          <span class="entry-type">论文</span>
+          <h3>基于关节力矩传感器和力/力矩传感器的腿式机器人接触感知</h3>
+          <p>本文提出了一种广义动量观测器框架，融合低成本应变片关节力矩传感器和单个髋部安装的力/力矩传感器，以检测、定位并估计机器人腿部沿线的接触力，硬件实验实现了亚厘米级定位精度和低于0.2 N的力误差。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gait_adaptive_perceptive_human_2025/">
+          <span class="entry-type">论文</span>
+          <h3>具有实时基础地形重建的步态自适应感知人形运动</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用下视深度相机和 U-Net…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">
+          <span class="entry-type">论文</span>
+          <h3>多层级复杂供应网络中的物料整合权衡利用</h3>
+          <p>Chauhan等人提出了一种混合整数线性规划框架，用于利用供应链层级间的多对多物料关系，纳入数量折扣、库存持有和运输成本，并在航空航天制造测试问题上进行了验证。研究表明，尽管存在层级间的成本权衡，整体…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_collins_benchmarking_simulated_robotic_2019/">
+          <span class="entry-type">论文</span>
+          <h3>通过真实世界数据集对模拟机器人操作进行基准测试</h3>
+          <p>Collins 等人提出了一种无需硬件的模拟机器人操作基准，通过分发真实世界的动作捕捉数据集和标准化协议，使研究人员能够使用23种运动学和动力学指标来量化仿真到现实的差距。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_human_humanoid_coordi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>COLA｜学习人机协调以协作搬运物体</h3>
+          <p>COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#_2">类人驱动评分的定义与定位</a></li>
+<li><a href="#_3">类人驱动评分的关键信息</a></li>
+</ul>
+</li>
+<li><a href="#_4">抽象</a></li>
+<li><a href="#_5">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

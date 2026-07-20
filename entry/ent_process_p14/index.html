@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>软件中间件与系统集成（Software &amp; Integration） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">软件中间件与系统集成（Software &amp; Integration）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>软件中间件与系统集成（Software &amp; Integration）</h1>
+      <p class="entry-name-en">Software &amp; Integration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>软件中间件与系统集成（Software &amp; Integration）是人形机器人产品开发全流程中的第 14 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">中间件与实时框架</h4>
+<h5 id="_4">中间件选型与适配</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：ROS2 / DDS / 自研中间件 / LCM</li>
+<li><strong>设计思考逻辑</strong>：ROS2 适合算法快速迭代，DDS 提供 QoS；硬实时控制可剥离到 RTOS</li>
+<li><strong>关键约束</strong>：实时性、消息延迟、生态、License</li>
+<li><strong>完成标准 / 输出物</strong>：中间件架构图、节点清单、QoS 策略
+<strong>三级子任务：</strong></li>
+<li><strong>P14.1.1.1 输入梳理与目标量化</strong>：整理「中间件选型与适配」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P14.1.1.2 候选方案建立与评估</strong>：针对「中间件选型与适配」建立候选方案库，使用「ROS2 / DDS / 自研中间件 / LCM」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P14.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「中间件选型与适配」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P14.1.1.4 验证与问题闭环</strong>：对「中间件选型与适配」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P14.1.1.5 文档输出与下游交付</strong>：输出「中间件选型与适配」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_5">实时控制框架</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：EtherCAT 主站、RTOS、控制周期保证、抖动分析</li>
+<li><strong>设计思考逻辑</strong>：保证控制环（≥1 kHz）不受 AI 任务干扰</li>
+<li><strong>关键约束</strong>：抖动、调度策略、核隔离</li>
+<li><strong>完成标准 / 输出物</strong>：实时性能测试报告、最大抖动 &lt; 目标
+<strong>三级子任务：</strong></li>
+<li><strong>P14.1.2.1 输入梳理与目标量化</strong>：整理「实时控制框架」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P14.1.2.2 算法/控制方案设计</strong>：基于「EtherCAT 主站、RTOS、控制周期保证、抖动分析」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P14.1.2.3 算法实现与仿真验证</strong>：将「实时控制框架」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P14.1.2.4 算法调参与性能验证</strong>：对「实时控制框架」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P14.1.2.5 文档输出与下游交付</strong>：输出「实时控制框架」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_6">硬件抽象与驱动层</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：统一关节接口、传感器 HAL、板级驱动</li>
+<li><strong>设计思考逻辑</strong>：屏蔽不同硬件实现，便于算法移植与替换</li>
+<li><strong>关键约束</strong>：兼容性、实时性、维护性</li>
+<li><strong>完成标准 / 输出物</strong>：HAL 接口规范、驱动覆盖清单、单元测试
+<strong>三级子任务：</strong></li>
+<li><strong>P14.1.3.1 输入梳理与目标量化</strong>：整理「硬件抽象与驱动层」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P14.1.3.2 方案/方法设计</strong>：针对「硬件抽象与驱动层」制定实施方法或候选方案，使用「统一关节接口、传感器 HAL、板级驱动」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P14.1.3.3 实施/原型/样件制作</strong>：根据设计方案执行「硬件抽象与驱动层」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P14.1.3.4 验证与问题闭环</strong>：对「硬件抽象与驱动层」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P14.1.3.5 文档输出与下游交付</strong>：输出「硬件抽象与驱动层」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="devops">工具链与 DevOps</h4>
+<h5 id="_7">数据记录与回放</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：rosbag2、结构化日志、数据湖、数据版本管理</li>
+<li><strong>设计思考逻辑</strong>：便于问题复现、模型训练、性能分析</li>
+<li><strong>关键约束</strong>：存储容量、带宽、隐私</li>
+<li><strong>完成标准 / 输出物</strong>：数据记录方案、回放一致性验证
+<strong>三级子任务：</strong></li>
+<li><strong>P14.2.1.1 输入梳理与目标量化</strong>：整理「数据记录与回放」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P14.2.1.2 方案/方法设计</strong>：针对「数据记录与回放」制定实施方法或候选方案，使用「rosbag2、结构化日志、数据湖、数据版本管理」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P14.2.1.3 实施/原型/样件制作</strong>：根据设计方案执行「数据记录与回放」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P14.2.1.4 验证与问题闭环</strong>：对「数据记录与回放」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P14.2.1.5 文档输出与下游交付</strong>：输出「数据记录与回放」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="ota">OTA、诊断与健康管理</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：远程升级、健康监控、故障码、预测性维护</li>
+<li><strong>设计思考逻辑</strong>：小批量及量产阶段快速迭代软件；降低现场维护成本</li>
+<li><strong>关键约束</strong>：安全性、回滚机制、带宽</li>
+<li><strong>完成标准 / 输出物</strong>：OTA 方案、诊断协议、健康管理界面
+<strong>三级子任务：</strong></li>
+<li><strong>P14.2.2.1 输入梳理与目标量化</strong>：整理「OTA、诊断与健康管理」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P14.2.2.2 方案/方法设计</strong>：针对「OTA、诊断与健康管理」制定实施方法或候选方案，使用「远程升级、健康监控、故障码、预测性维护」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P14.2.2.3 实施/原型/样件制作</strong>：根据设计方案执行「OTA、诊断与健康管理」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P14.2.2.4 验证与问题闭环</strong>：对「OTA、诊断与健康管理」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P14.2.2.5 文档输出与下游交付</strong>：输出「OTA、诊断与健康管理」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="cicd">CI/CD 与仿真测试链</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：GitLab CI、Docker、SIL/HIL 自动化测试、代码覆盖率</li>
+<li><strong>设计思考逻辑</strong>：持续集成保证软件质量，减少回归问题</li>
+<li><strong>关键约束</strong>：算力、测试环境维护</li>
+<li><strong>完成标准 / 输出物</strong>：CI 流水线、自动测试通过率、覆盖率指标
+<strong>三级子任务：</strong></li>
+<li><strong>P14.2.3.1 输入梳理与目标量化</strong>：整理「CI/CD 与仿真测试链」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P14.2.3.2 方案/方法设计</strong>：针对「CI/CD 与仿真测试链」制定实施方法或候选方案，使用「GitLab CI、Docker、SIL/HIL 自动化测试、代码覆盖率」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P14.2.3.3 实施/原型/样件制作</strong>：根据设计方案执行「CI/CD 与仿真测试链」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P14.2.3.4 测试执行与结果分析</strong>：按照验收标准执行「CI/CD 与仿真测试链」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P14.2.3.5 文档输出与下游交付</strong>：输出「CI/CD 与仿真测试链」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_8">系统集成与接口测试</h4>
+<h5 id="_9">端到端数据流联调</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：传感器 → 感知 → 规划 → 控制 → 执行器链路测试</li>
+<li><strong>设计思考逻辑</strong>：验证各模块接口、时序、异常处理</li>
+<li><strong>关键约束</strong>：实时性、消息丢失、节点故障</li>
+<li><strong>完成标准 / 输出物</strong>：端到端延迟 &lt; 目标、故障注入测试通过
+<strong>三级子任务：</strong></li>
+<li><strong>P14.3.1.1 输入梳理与目标量化</strong>：整理「端到端数据流联调」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P14.3.1.2 接口与集成策略设计</strong>：梳理「端到端数据流联调」涉及的子系统接口、数据流与时序，制定集成顺序、回退策略与异常处理机制。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P14.3.1.3 实施/原型/样件制作</strong>：根据设计方案执行「端到端数据流联调」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P14.3.1.4 验证与问题闭环</strong>：对「端到端数据流联调」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P14.3.1.5 文档输出与下游交付</strong>：输出「端到端数据流联调」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="hilsil">软硬件在环测试（HIL/SIL）</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：仿真模型 + 真实控制器、自动化测试用例</li>
+<li><strong>设计思考逻辑</strong>：在实物前验证控制器与软件逻辑</li>
+<li><strong>关键约束</strong>：模型保真度、测试覆盖率</li>
+<li><strong>完成标准 / 输出物</strong>：HIL/SIL 测试报告、关键用例 100% 覆盖
+<strong>三级子任务：</strong></li>
+<li><strong>P14.3.2.1 输入梳理与目标量化</strong>：整理「软硬件在环测试（HIL/SIL）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P14.3.2.2 方案/方法设计</strong>：针对「软硬件在环测试（HIL/SIL）」制定实施方法或候选方案，使用「仿真模型 + 真实控制器、自动化测试用例」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P14.3.2.3 建模/仿真与样机实现</strong>：建立「软硬件在环测试（HIL/SIL）」的仿真/数学模型或原型样机，使用「仿真模型 + 真实控制器、自动化测试用例」执行计算或实验，记录关键参数与边界条件。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P14.3.2.4 测试执行与结果分析</strong>：按照验收标准执行「软硬件在环测试（HIL/SIL）」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P14.3.2.5 文档输出与下游交付</strong>：输出「软硬件在环测试（HIL/SIL）」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h2 id="_10">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p14_1_3/">硬件抽象与驱动层</a>
+              <span class="rel-desc">软件中间件与系统集成（Software &amp; Integration）前置依赖硬件抽象与驱动层。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              <span class="rel-desc">P14 依赖 P12 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p14_1_1/">中间件选型与适配</a>
+              <span class="rel-desc">软件中间件与系统集成（Software &amp; Integration）前置依赖中间件选型与适配。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">软件中间件与系统集成（Software &amp; Integration）使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p14_2_3/">CI/CD 与仿真测试链</a>
+              <span class="rel-desc">软件中间件与系统集成（Software &amp; Integration）is_part_ofCI/CD 与仿真测试链。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p14_3_2/">软硬件在环测试（HIL/SIL）</a>
+              <span class="rel-desc">软件中间件与系统集成（Software &amp; Integration）is_part_of软硬件在环测试（HIL/SIL）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_hardware_in_the_loop/">硬件在环测试（HIL）</a>
+              <span class="rel-desc">软件中间件与系统集成（Software &amp; Integration）提及硬件在环测试（HIL）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p14_2_2/">OTA、诊断与健康管理</a>
+              <span class="rel-desc">软件中间件与系统集成（Software &amp; Integration）提及OTA、诊断与健康管理。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p13/">电子电气与能源系统（Electronics &amp; Power）</a>
+              <span class="rel-desc">P14 依赖 P13 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-desc">P14 依赖 P10 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p14_1_3/">硬件抽象与驱动层</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">硬件抽象与驱动层is_part_of软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">ModuLoop：基于模块化合成器与闭环调试器的机器人控制底层代码生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ModuLoop：基于模块化合成器与闭环调试器的机器人控制底层代码生成discusses软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">RoboKube：为机器人云原生演进建立新基础</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboKube：为机器人云原生演进建立新基础discusses软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_can_bus_2024/">CAN 总线</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CAN 总线discusses软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14_1_2/">实时控制框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">实时控制框架is_part_of软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14_3_2/">软硬件在环测试（HIL/SIL）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">软硬件在环测试（HIL/SIL）is_part_of软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_halder_secure_ota_software_updates_in_2019/">联网汽车安全空中软件更新：综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">联网汽车安全空中软件更新：综述discusses软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15/">整机集成与验证测试（Integration &amp; V&amp;V）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P15 依赖 P14 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14_2_2/">OTA、诊断与健康管理</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">OTA、诊断与健康管理is_part_of软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14_1_1/">中间件选型与适配</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">中间件选型与适配is_part_of软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14_3_1/">端到端数据流联调</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">端到端数据流联调is_part_of软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_barua_approximate_computing_for_robo_2021/">机器人路径规划中的近似计算：实验、案例研究与实际意义</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人路径规划中的近似计算：实验、案例研究与实际意义discusses软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14_2_1/">数据记录与回放</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">数据记录与回放is_part_of软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">面向云机器人技术的服务导向机器人计算</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向云机器人技术的服务导向机器人计算discusses软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14_2_3/">CI/CD 与仿真测试链</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">CI/CD 与仿真测试链is_part_of软件中间件与系统集成（Software &amp; Integration）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p14"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_halder_secure_ota_software_updates_in_2019/">
+          <span class="entry-type">论文</span>
+          <h3>联网汽车安全空中软件更新：综述</h3>
+          <p>This survey highlights and discusses remote OTA software updates in the automotive sector, mainly…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>软硬件在环测试（HIL/SIL）</h3>
+          <p>- P14.3.2.1 输入梳理与目标量化 - 整理「软硬件在环测试（HIL/SIL）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>数据记录与回放</h3>
+          <p>- P14.2.1.1 输入梳理与目标量化 - 整理「数据记录与回放」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>OTA、诊断与健康管理</h3>
+          <p>- P14.2.2.1 输入梳理与目标量化 - 整理「OTA、诊断与健康管理」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12/">
+          <span class="entry-type">方法</span>
+          <h3>VLA / WAM / AI 算法集成（AI &amp; Perception）</h3>
+          <p>VLA / WAM / AI 算法集成（AI &amp; Perception）是人形机器人产品开发全流程中的第 12 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">技术</span>
+          <h3>EtherCAT</h3>
+          <p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_can_bus_2024/">
+          <span class="entry-type">技术</span>
+          <h3>CAN 总线</h3>
+          <p>连接人形机器人关节电机驱动与中央控制器的现场总线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>硬件抽象与驱动层</h3>
+          <p>- P14.1.3.1 输入梳理与目标量化 - 整理「硬件抽象与驱动层」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10/">
+          <span class="entry-type">方法</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>实时控制框架</h3>
+          <p>- P14.1.2.1 输入梳理与目标量化 - 整理「实时控制框架」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_barua_approximate_computing_for_robo_2021/">
+          <span class="entry-type">论文</span>
+          <h3>机器人路径规划中的近似计算：实验、案例研究与实际意义</h3>
+          <p>Approximate computing is a computation domain which can be used to trade time and energy with…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>CI/CD 与仿真测试链</h3>
+          <p>- P14.2.3.1 输入梳理与目标量化 - 整理「CI/CD 与仿真测试链」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15/">
+          <span class="entry-type">方法</span>
+          <h3>整机集成与验证测试（Integration &amp; V&amp;V）</h3>
+          <p>整机集成与验证测试（Integration &amp; V&amp;V）是人形机器人产品开发全流程中的第 15 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">
+          <span class="entry-type">论文</span>
+          <h3>面向云机器人技术的服务导向机器人计算</h3>
+          <p>In this article, we present an overview of the use of service-oriented architecture and Web services…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>端到端数据流联调</h3>
+          <p>- P14.3.1.1 输入梳理与目标量化 - 整理「端到端数据流联调」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>中间件选型与适配</h3>
+          <p>- P14.1.1.1 输入梳理与目标量化 - 整理「中间件选型与适配」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RoboKube：为机器人云原生演进建立新基础</h3>
+          <p>本文提出 RoboKube，一种基于 Kubernetes 的框架，用于在设备-边缘-云端连续体上部署容器化的 ROS 2 应用，并通过使用 UR5 机械臂的遥操作测试平台验证其可行性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13/">
+          <span class="entry-type">方法</span>
+          <h3>电子电气与能源系统（Electronics &amp; Power）</h3>
+          <p>电子电气与能源系统（Electronics &amp; Power）是人形机器人产品开发全流程中的第 13 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_hardware_in_the_loop/">
+          <span class="entry-type">方法</span>
+          <h3>硬件在环测试（HIL）</h3>
+          <p>真实硬件控制器与被控对象实时仿真模型交互的验证方法，可安全、可重复地测试控制软件。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ModuLoop：基于模块化合成器与闭环调试器的机器人控制底层代码生成</h3>
+          <p>提出一种闭环模块化代码合成器，将自然语言指令转换为可执行的低层Python控制模块，并通过运行时探针迭代调试，在RGB-D相机与UR3机械臂标定及抓取放置任务中得到验证。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">中间件与实时框架</a><ul>
+<li><a href="#_4">中间件选型与适配</a></li>
+<li><a href="#_5">实时控制框架</a></li>
+<li><a href="#_6">硬件抽象与驱动层</a></li>
+</ul>
+</li>
+<li><a href="#devops">工具链与 DevOps</a><ul>
+<li><a href="#_7">数据记录与回放</a></li>
+<li><a href="#ota">OTA、诊断与健康管理</a></li>
+<li><a href="#cicd">CI/CD 与仿真测试链</a></li>
+</ul>
+</li>
+<li><a href="#_8">系统集成与接口测试</a><ul>
+<li><a href="#_9">端到端数据流联调</a></li>
+<li><a href="#hilsil">软硬件在环测试（HIL/SIL）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_10">完成标准</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

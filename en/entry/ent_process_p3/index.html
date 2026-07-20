@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>System Architecture and Electromechanical Master Design (System / Preliminary Design) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">System Architecture and Electromechanical Master Design (System / Preliminary Design)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>System Architecture and Electromechanical Master Design (System / Preliminary Design)</h1>
+      <p class="entry-name-en">System Architecture and Electromechanical Master Design (System / Preliminary Design)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>System Architecture and Electromechanical Design (System / Preliminary Design) —— Phase 3 of the humanoid robot product development process, covering solution design, implementation verification, and documentation delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>System Architecture and Electromechanical Overall Design (System / Preliminary Design) is the third stage in the full process of humanoid robot product development, expanded into several third-level sub-tasks in WBS V3.</p>
+<p>This stage covers complete engineering actions such as input review, scheme design, implementation/prototyping, verification closed-loop, and documentation delivery, serving as a key milestone to ensure downstream dependencies receive qualified inputs.</p>
+<h2 id="content">Content</h2>
+<h3 id="mechanical-overall-design">Mechanical Overall Design</h3>
+<h5 id="dof-configuration-and-joint-layout">DOF Configuration and Joint Layout</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Bionic analysis, task-driven DOF analysis, redundancy assessment</li>
+<li><strong>Design Rationale</strong>: Legs 6×2, arms 7×2, torso 1–3, head 2–3, hands 11–22; reduce complexity and weight while meeting task requirements</li>
+<li><strong>Key Constraints</strong>: Weight, cost, real-time control, wiring harness count</li>
+<li><strong>Completion Criteria/Deliverables</strong>: DOF configuration table, joint range of motion, joint speed/torque requirements v1
+<strong>Third-level sub-tasks:</strong></li>
+<li><strong>P3.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "DOF Configuration and Joint Layout"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Fourth-level key actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P3.1.1.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "DOF Configuration and Joint Layout"; demonstrate using "bionic analysis, task-driven DOF analysis, redundancy assessment"; clarify technical roadmap and resource requirements.
+<strong>Fourth-level key actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P3.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "DOF Configuration and Joint Layout" according to the design scheme; produce prototypes, samples, or complete key steps; record process data.
+<strong>Fourth-level key actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P3.1.1.4 Verification and Issue Closure</strong>: Verify outputs of "DOF Configuration and Joint Layout"; check if completion criteria are met; record issues and track until closure.
+<strong>Fourth-level key actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P3.1.1.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "DOF Configuration and Joint Layout"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Fourth-level key actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="whole-machine-mass-property-budget">Whole-Machine Mass Property Budget</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Top-down mass allocation, bottoms-up calculation, CoM and inertia tracking</li>
+<li><strong>Design Rationale</strong>: Mass and inertia directly affect energy consumption, dynamic response, and stability; must be locked in early</li>
+<li><strong>Key Constraints</strong>: Total weight target, battery energy density, structural materials</li>
+<li><strong>Completion Criteria/Deliverables</strong>: "Mass Budget Table", whole-machine CoM range, principal inertia upper limit
+<strong>Third-level sub-tasks:</strong></li>
+<li><strong>P3.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Whole-Machine Mass Property Budget"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Fourth-level key actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P3.1.2.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Whole-Machine Mass Property Budget"; demonstrate using "top-down mass allocation, bottoms-up calculation, CoM and inertia tracking"; clarify technical roadmap and resource requirements.
+<strong>Fourth-level key actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P3.1.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Whole-Machine Mass Property Budget" according to the design scheme; produce prototypes, samples, or complete key steps; record process data.
+<strong>Fourth-level key actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P3.1.2.4 Verification and Issue Closure</strong>: Verify outputs of "Whole-Machine Mass Property Budget"; check if completion criteria are met; record issues and track until closure.
+<strong>Fourth-level key actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P3.1.2.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Whole-Machine Mass Property Budget"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Fourth-level key actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="preliminary-kinematics-and-dynamics-analysis">Preliminary Kinematics and Dynamics Analysis</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Analytical methods, Matlab/Python, Pinocchio/RBDL, typical motion simulation</li>
+<li><strong>Design Rationale</strong>: Estimate peak torque and speed for each joint during standing, squatting, walking, and grasping</li>
+<li><strong>Key Constraints</strong>: Conservative load assumptions, simplified contact models</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Joint requirement specification v1, peak/continuous torque table, reaction forces for key motions
+<strong>Third-level sub-tasks:</strong></li>
+<li><strong>P3.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Preliminary Kinematics and Dynamics Analysis"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Fourth-level key actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P3.1.3.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Preliminary Kinematics and Dynamics Analysis"; demonstrate using "analytical methods, Matlab/Python, Pinocchio/RBDL, typical motion simulation"; clarify technical roadmap and resource requirements.
+<strong>Fourth-level key actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P3.1.3.3 Modeling/Simulation and Prototype Implementation</strong>: Establish simulation/mathematical models or prototype samples for "Preliminary Kinematics and Dynamics Analysis"; perform calculations or experiments using "analytical methods, Matlab/Python, Pinocchio/RBDL, typical motion simulation"; record key parameters and boundary conditions.
+<strong>Fourth-level key actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P3.1.3.4 Simulation Result Verification and Optimization</strong>: Verify consistency of simulation results for "Preliminary Kinematics and Dynamics Analysis" with theoretical/experimental data; identify weak points and iterate for optimization.
+<strong>Fourth-level key actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P3.1.3.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Preliminary Kinematics and Dynamics Analysis"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Fourth-level key actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="structural-topology-and-load-path-design">Structural Topology and Load Path Design</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Topology optimization, load path sketching, modular partitioning</li>
+<li><strong>Design Rationale</strong>: Use central skeleton with detachable limb modules for ease of assembly, maintenance, and upgrade</li>
+<li><strong>Key Constraints</strong>: Stiffness, strength, weight, maintainability</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Structural topology scheme, load path diagram, module interface definition
+<strong>Third-level sub-tasks:</strong></li>
+<li><strong>P3.1.4.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Structural Topology and Load Path Design"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Fourth-level key actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P3.1.4.2 Conceptual and Detailed Design</strong>: Complete conceptual design, detailed design, and interface definition for "Structural Topology and Load Path Design"; verify feasibility using "topology optimization, load path sketching, modular partitioning"; output drawings/algorithms/logical frameworks.
+<strong>Fourth-level key actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P3.1.4.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Structural Topology and Load Path Design" according to the design scheme; produce prototypes, samples, or complete key steps; record process data.
+<strong>Fourth-level key actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P3.1.4.4 Verification and Issue Closure</strong>: Verify outputs of "Structural Topology and Load Path Design"; check if completion criteria are met; record issues and track until closure.
+<strong>Fourth-level key actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P3.1.4.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Structural Topology and Load Path Design"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Fourth-level key actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h4 id="electrical-and-computing-architecture">Electrical and Computing Architecture</h4>
+<h5 id="computing-architecture-and-node-distribution">Computing Architecture and Node Distribution</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Computational power estimation, centralized vs distributed comparison, safety partitioning</li>
+<li><strong>Design Rationale</strong>: Separate AI tasks (GPU), real-time control (MCU/FPGA), and safety monitoring to reduce mutual interference</li>
+<li><strong>Key Constraints</strong>: Power consumption, heat dissipation, weight, real-time performance</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Computing architecture diagram, node computational power/power budget, communication interfaces
+<strong>Third-level sub-tasks:</strong></li>
+<li><strong>P3.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Computing Architecture and Node Distribution"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Fourth-level key actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P3.2.1.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Computing Architecture and Node Distribution"; demonstrate using "computational power estimation, centralized vs distributed comparison, safety partitioning"; clarify technical roadmap and resource requirements.
+<strong>Fourth-level key actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P3.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Computing Architecture and Node Distribution" according to the design scheme; produce prototypes, samples, or complete key steps; record process data.
+<strong>Fourth-level key actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P3.2.1.4 Verification and Issue Closure</strong>: Verify outputs of "Computing Architecture and Node Distribution"; check if completion criteria are met; record issues and track until closure.
+<strong>Fourth-level key actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P3.2.1.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Computing Architecture and Node Distribution"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Fourth-level key actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="communication-network-architecture">Communication Network Architecture</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: CAN-FD / EtherCAT / Ethernet / TSN bandwidth and latency analysis</li>
+<li><strong>Design Rationale</strong>: Joint control requires high real-time performance; vision/AI requires high bandwidth; dual bus if necessary</li>
+<li><strong>Key Constraints</strong>: Cable count, EMC, cost, scalability</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Communication topology diagram, protocol allocation table, bandwidth/latency budget
+<strong>Third-level sub-tasks:</strong></li>
+<li><strong>P3.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Communication Network Architecture"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Fourth-level key actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P3.2.2.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Communication Network Architecture"; demonstrate using "CAN-FD / EtherCAT / Ethernet / TSN bandwidth and latency analysis"; clarify technical roadmap and resource requirements.
+<strong>Fourth-level key actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P3.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Communication Network Architecture" according to the design scheme; produce prototypes, samples, or complete key steps; record process data.
+<strong>Fourth-level key actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P3.2.2.4 Verification and Issue Closure</strong>: Verify outputs of "Communication Network Architecture"; check if completion criteria are met; record issues and track until closure.
+<strong>Fourth-level key actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P3.2.2.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Communication Network Architecture"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Fourth-level key actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="preliminary-power-architecture-design">Preliminary Power Architecture Design</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Bus voltage selection, power flow analysis, safety partitioning</li>
+<li><strong>Design Rationale</strong>: Isolate motor bus (48 V/60 V/72 V) from logic power; ensure safe power-off during faults</li>
+<li><strong>Key Constraints</strong>: Voltage drop, efficiency, EMI, safety standards</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Power architecture diagram, bus voltage selection rationale, power budget v1
+<strong>Third-level sub-tasks:</strong></li>
+<li><strong>P3.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Preliminary Power Architecture Design"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Fourth-level key actions:</strong></li>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P3.2.3.2 Conceptual and Detailed Design</strong>: Complete conceptual design, detailed design, and interface definition for "Preliminary Power Architecture Design"; verify feasibility using "bus voltage selection, power flow analysis, safety partitioning"; output drawings/algorithms/logical frameworks.
+<strong>Fourth-level key actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P3.2.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Preliminary Power Architecture Design" according to the design scheme; produce prototypes, samples, or complete key steps; record process data.
+<strong>Fourth-level key actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P3.2.3.4 Verification and Issue Closure</strong>: Verify outputs of "Preliminary Power Architecture Design"; check if completion criteria are met; record issues and track until closure.
+<strong>Fourth-level key actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P3.2.3.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Preliminary Power Architecture Design"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Fourth-level key actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h4 id="safety-and-reliability-architecture">Safety and Reliability Architecture</h4>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p2/">Industrial Design and Appearance Engineering (ID / A-Surface)</a>
+              <span class="rel-desc">P3 依赖 P2 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">System Architecture and Electromechanical Master Design (System / Preliminary Design) uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_pinocchio/">Pinocchio</a>
+              <span class="rel-desc">System Architecture and Electromechanical Master Design (System / Preliminary Design) uses Pinocchio.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_fmea/">Failure Mode and Effects Analysis (FMEA)</a>
+              <span class="rel-desc">System Architecture and Electromechanical Master Design (System / Preliminary Design) mentions Failure Mode and Effects Analysis (FMEA).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p1/">Requirements Definition and System Design (Concept / Pre-A)</a>
+              <span class="rel-desc">P3 依赖 P1 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_2_2/">Communication network architecture</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Communication network architecture is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4/">Design of Joint Module and Actuator &amp; Drive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P4 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_1_4/">Structural topology and force transmission path design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Structural topology and force transmission path design is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5/">Ontological Structure Engineering and Prototyping (Mechanical Structure)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P5 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_2_3/">Preliminary design of power architecture</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Preliminary design of power architecture is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_1_3/">Preliminary analysis of kinematics and dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Preliminary analysis of kinematics and dynamics is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p11/">Dexterous Hand Selection/Design and Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P11 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_2_1/">Computing architecture and node distribution</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Computing architecture and node distribution is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p13/">Electronics &amp; Power Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P13 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_1_2/">Overall machine quality attribute budget</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Overall machine quality attribute budget is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_1_1/">DOF Configuration and Joint Layout</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">DOF Configuration and Joint Layout is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p8/">Structural FEA and iteration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P8 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_3_1/">Conceptual design of functional safety</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Conceptual design of functional safety is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_3_2/">Objective and allocation of reliability</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Objective and allocation of reliability is part of System Architecture and Electromechanical Master Design (System / Preliminary Design).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p3"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p2/">
+          <span class="entry-type">Method</span>
+          <h3>Industrial Design and Appearance Engineering (ID / A-Surface)</h3>
+          <p>Industrial Design and Appearance Engineering (ID / A-Surface) —— Phase 2 of the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_pinocchio/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Pinocchio</h3>
+          <p>An open-source C++ library for efficient rigid-body dynamics, kinematics, and analytical…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>Conceptual design of functional safety</h3>
+          <p>Safety concept document, safety goal, functional safety architecture</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5/">
+          <span class="entry-type">Method</span>
+          <h3>Ontological Structure Engineering and Prototyping (Mechanical Structure)</h3>
+          <p>Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Communication network architecture</h3>
+          <p>Communication topology, protocol allocation table, bandwidth/delay budget</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>DOF Configuration and Joint Layout</h3>
+          <p>DOF configuration table, joint range of motion, joint speed/torque requirements v1</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>EtherCAT</h3>
+          <p>High-performance industrial Ethernet field bus for deterministic joint control.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Computing architecture and node distribution</h3>
+          <p>Computing architecture diagram, computing power/power consumption budget of each node, communication…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Preliminary analysis of kinematics and dynamics</h3>
+          <p>Joint requirements specifications v1, peak/continuous torque meter, critical action reaction force</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1/">
+          <span class="entry-type">Method</span>
+          <h3>Requirements Definition and System Design (Concept / Pre-A)</h3>
+          <p>Requirement Definition and System Architecture (Concept / Pre-A) – the first phase of the full…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4/">
+          <span class="entry-type">Method</span>
+          <h3>Design of Joint Module and Actuator &amp; Drive</h3>
+          <p>Design of Actuator &amp; Drive-phase 4 of the entire product development process for Android, covering…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_fmea/">
+          <span class="entry-type">Method</span>
+          <h3>Failure Mode and Effects Analysis (FMEA)</h3>
+          <p>A bottom-up reliability method that identifies potential failure modes, their causes and effects,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8/">
+          <span class="entry-type">Method</span>
+          <h3>Structural FEA and iteration</h3>
+          <p>Structural FEA-the 8th stage of the Android product development process, covering conceptual design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Preliminary design of power architecture</h3>
+          <p>Power architecture diagram, bus voltage selection reasons, power budget v 1</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_1_4/">
+          <span class="entry-type">Method</span>
+          <h3>Structural topology and force transmission path design</h3>
+          <p>Structural topology scheme, force transmission path diagram, module interface definition</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Objective and allocation of reliability</h3>
+          <p>Reliability target allocation table, key component MTBF target</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p11/">
+          <span class="entry-type">Method</span>
+          <h3>Dexterous Hand Selection/Design and Integration</h3>
+          <p>Dexterous Hand Selection/Design and Integration — the 11th phase of the full-cycle humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Overall machine quality attribute budget</h3>
+          <p>Quality Budget Table, CoM Scope of the Whole Machine, and Upper Limit of Master Inertia</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p13/">
+          <span class="entry-type">Method</span>
+          <h3>Electronics &amp; Power Systems</h3>
+          <p>Electronics &amp; Power Systems—Phase 13 of the full lifecycle for humanoid robot product development,…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#mechanical-overall-design">Mechanical Overall Design</a><ul>
+<li><a href="#dof-configuration-and-joint-layout">DOF Configuration and Joint Layout</a></li>
+<li><a href="#whole-machine-mass-property-budget">Whole-Machine Mass Property Budget</a></li>
+<li><a href="#preliminary-kinematics-and-dynamics-analysis">Preliminary Kinematics and Dynamics Analysis</a></li>
+<li><a href="#structural-topology-and-load-path-design">Structural Topology and Load Path Design</a></li>
+<li><a href="#electrical-and-computing-architecture">Electrical and Computing Architecture</a><ul>
+<li><a href="#computing-architecture-and-node-distribution">Computing Architecture and Node Distribution</a></li>
+<li><a href="#communication-network-architecture">Communication Network Architecture</a></li>
+<li><a href="#preliminary-power-architecture-design">Preliminary Power Architecture Design</a></li>
+</ul>
+</li>
+<li><a href="#safety-and-reliability-architecture">Safety and Reliability Architecture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

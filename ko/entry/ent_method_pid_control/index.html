@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PID 제어 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PID 제어</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>PID 제어</h1>
+      <p class="entry-name-en">PID Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">1단계 · 관절 하나 만들기</span>
+        <span class="roadmap-badge-role">핵심</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>추적 오차의 비례·적분·미분 항의 선형 조합으로 제어 신호를 계산하는 기초 피드백 제어 방법.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://www.ieeectl.org/awards/astrom-hagglund-advanced-pid-control/" target="_blank" rel="noopener">K. J. Åström and T. Hägglund, Advanced PID Control, ISA, 2006</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1002/9780470544162" target="_blank" rel="noopener">K. Ogata, Modern Control Engineering, 5th ed., Prentice Hall, 2010</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>관련 개체</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">mentions</span>
+            <a href="/ko/entry/ent_method_impedance_control/">임피던스 제어</a>
+            
+              
+                
+              
+              <span class="rel-desc">PID control regulates position or velocity; impedance control extends this to regulate dynamic interaction forces with the environment.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>추적 오차의 비례, 적분, 미분 세 항의 선형 결합으로 제어량을 표현하는 기본적인 피드백 제어 방법.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="pid">PID 제어의 정의와 위치</h3>
+<p>PID 제어는 <strong>방법</strong> 유형에 속합니다. 관련 분야는 AI 모델 및 알고리즘, 부품을 포함합니다. 가치 사슬 계층은 지능 계층입니다. 추적 오차의 비례, 적분, 미분 세 항의 선형 결합으로 제어량을 표현하는 기본적인 피드백 제어 방법입니다. 영문 명칭은 <em>PID Control</em>입니다. 한글 명칭은 <em>PID 제어</em>입니다.</p>
+<h3 id="pid_1">PID 제어의 수학적 및 원리적 기초</h3>
+<p>PID 제어는 관련 수학 이론과 물리 법칙에 기반합니다. 그 전제 가정, 제약 조건 및 유도 과정을 이해하는 것이 이 방법을 올바르게 적용하기 위한 전제입니다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수 및 수렴성 또는 안정성 보장에 주목해야 합니다.
+인간형 로봇과 같은 고차원, 저구동, 강결합 시스템에서 PID 제어는 일반적으로 실시간성, 정밀도 및 강건성 사이에서 균형을 맞춰야 합니다.</p>
+<h3 id="_3">알고리즘 단계 및 구현 요점</h3>
+<p>PID 제어를 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 합니다.
+수치 방법, 선형대수 해석기 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있습니다.
+동시에 모델 오차, 센서 잡음 및 액추에이터 포화와 같은 공학적 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 보장해야 합니다.</p>
+<h3 id="_4">전형적인 응용 및 한계</h3>
+<p>PID 제어는 인간형 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있습니다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제입니다.</p>
+<h3 id="_5">관련 태그</h3>
+<ul>
+<li>control</li>
+<li>feedback</li>
+<li>joint_control</li>
+<li>actuator</li>
+<li>classical_control</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_6">인간형 로봇 시스템에서의 역할</h3>
+<p>인간형 로봇 산업 체인에서 핵심 방법 중 하나로서 PID 제어는 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_impedance_control/">임피던스 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_component_bldc_motor/">브러시리스 DC 모터</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">로봇 제어를 위한 적응형 커널 베이지안 최적화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">차동 구동 휠 모바일 로봇 사용자를 위한 미분기하학 기반의 새로운 보조 제어기</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">휴머노이드 로봇을 위한 시선 안정화: 통합 프레임워크</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chan_angle_constrained_formation_co_2020/">원형 이동 로봇을 위한 각도 제약 대형 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">측방 제한 입력력을 가진 공중 로봇 시스템의 전체 자세 추적 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_comp_servo_motor/">고성능 서보 모터</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_sampled_data_control_based_con_2020/">샘플링 데이터 제어 기반 분수 차수 다중 에이전트 시스템의 합의</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">위치 추정 검증을 통한 시각적 장소 인식 기반 로봇 내비게이션 개선</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_dynamixel_xm430_w210_t/">ROBOTIS DYNAMIXEL XM430-W210-T</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_oem_unitree_robotics/">유닛리 로보틱스</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_company_maxon_group_2024/">Maxon Group</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">벽면 추종 로봇 제어를 위한 기계 학습 알고리즘 비교 연구</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ribeiro_real_time_deep_learning_approa_2021/">자율 로봇 매니퓰레이션을 위한 시각 서보 제어 및 그래스프 감지의 실시간 딥러닝 접근법</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_odri_bolt/">ODRI Bolt (Open Dynamic Robot Initiative)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi Direct Drive Actuator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">제트 동력 비행 휴머노이드 로봇의 고장 감지 및 결허용 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_field_oriented_control/">전계 지향 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_impedance_control/">임피던스 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_principle_current_velocity_position_loops/">전류·속도·위치 제어 루프</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">변형 인식 로봇 3D 초음파</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_source_seeking_control_of_unic_2021/">3D 프린팅된 유연한 압저항 센서를 탑재한 유니사이클 로봇의 신호원 탐색 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_dynamixel_xl330_m288_t/">ROBOTIS DYNAMIXEL XL330-M288-T</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">불확실한 기구학과 동역학을 가진 로봇 매니퓰레이터의 적응 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_hollow_cup_motor_2024/">Hollow Cup Motor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_inverse_dynamics_qp/">역동역학 QP 공식화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_euler_lagrange_equations/">오일러-라그랑주 방정식</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_newton_euler_equations/">뉴턴-오일러 방정식</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_pid_control"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_newton_euler_equations/">
+          <span class="entry-type">방정식</span>
+          <h3>뉴턴-오일러 방정식</h3>
+          <p>강철 또는 관절 연결 다물체 시스템의 운전을 기술하는 결합된 힘 및 토크 평형 방정식 집합.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ribeiro_real_time_deep_learning_approa_2021/">
+          <span class="entry-type">논문</span>
+          <h3>자율 로봇 매니퓰레이션을 위한 시각 서보 제어 및 그래스프 감지의 실시간 딥러닝 접근법</h3>
+          <p>로봇 매니퓰레이션을 위한 두 개의 경량 CNN을 제안한다: 하나는 Cornell Grasping Dataset을 사용하여 단일 RGB 이미지로부터 5차원 그래스프 사각형을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">
+          <span class="entry-type">논문</span>
+          <h3>차동 구동 휠 모바일 로봇 사용자를 위한 미분기하학 기반의 새로운 보조 제어기</h3>
+          <p>이 2022년 arXiv 논문은 조이스틱 입력과 현재 차량 상태만을 사용하여 사용자가 차동 구동 휠 모바일 로봇, 특히 전동 휠체어를 조향할 수 있도록 돕는 미분기하학 기반 보조…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_dynamixel_xm430_w210_t/">
+          <span class="entry-type">부품</span>
+          <h3>ROBOTIS DYNAMIXEL XM430-W210-T</h3>
+          <p>ROBOTIS X 시리즈의 중형 스마트 서보 액추에이터로, TTL 통신, 3.0 N·m 정지 토크, 절대형 인코더 피드백 및 다양한 제어 모드를 갖추어 로봇 관절에 적합함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>오일러-라그랑주 방정식</h3>
+          <p>작용 적분의 정지 조건에서 도출된 2차 미분방정식으로, 일반화 좌표에서 기계 시스템의 용동 방정식을 제공.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">
+          <span class="entry-type">논문</span>
+          <h3>제트 동력 비행 휴머노이드 로봇의 고장 감지 및 결허용 제어</h3>
+          <p>본 논문은 제트 동력 휴머노이드 로봇 iRonCub의 시뮬레이션 비행 중 단일 터빈의 완전한 손실을 감지하고 복구하기 위해 RPM 기반 고장 감지기, 모멘텀 기반 비행 제어기,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_source_seeking_control_of_unic_2021/">
+          <span class="entry-type">논문</span>
+          <h3>3D 프린팅된 유연한 압저항 센서를 탑재한 유니사이클 로봇의 신호원 탐색 제어</h3>
+          <p>3D 프린팅된 유연한 그래핀 기반 압저항 기류 센서가 장착된 유니사이클 로봇을 위해 투영 경사 상승법 및 극값 탐색 제어 법칙을 제안하고, 점근적 수렴성을 증명하며 실험적으로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_impedance_control/">
+          <span class="entry-type">방법</span>
+          <h3>임피던스 제어</h3>
+          <p>상호작용 힘과 변위 간의 동적 관계를 제어하여 로봇이 가상의 기계적 임피던스처럼 동작하도록 하는 제어 방식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_hollow_cup_motor_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Hollow Cup Motor</h3>
+          <p>작고 가벼운 코어리스 DC 모터, 능숙한 로봇 손과 소형 관절에 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">
+          <span class="entry-type">논문</span>
+          <h3>측방 제한 입력력을 가진 공중 로봇 시스템의 전체 자세 추적 제어</h3>
+          <p>본 논문은 주 추력 방향에 주 제어 권한이 있고 측방 힘이 제한된 LBF(Laterally Bounded Force) 항공기 범주를 제안하며, 가능한 경우 위치와 자세의 독립적…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">
+          <span class="entry-type">논문</span>
+          <h3>불확실한 기구학과 동역학을 가진 로봇 매니퓰레이터의 적응 제어</h3>
+          <p>본 논문은 운동학적 및 동역학적 매개변수가 모두 불확실한 로봇 매니퓰레이터의 작업 공간 궤적 추적을 분리된 적응 루프와 역-야코비안 피드백을 사용하여 달성하는 두 가지 적응 제어…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_dynamixel_xl330_m288_t/">
+          <span class="entry-type">부품</span>
+          <h3>ROBOTIS DYNAMIXEL XL330-M288-T</h3>
+          <p>ROBOTIS X 시리즈의 컴팩트한 저비용 스마트 서보 액추에이터로, TTL 통신, 0.52 N·m 정지 토크, 288.4:1 감속비를 갖추어 소형 로봇 관절 및 손가락에 적합함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>역동역학 QP 공식화</h3>
+          <p>부유 기반 동역학과 물리적 제약 조건 하에서 작업 추종 오차를 최소화하여 일반화 가속도, 접촉력, 관절 토크를 계산하는 이차 계획법 공식화이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_comp_servo_motor/">
+          <span class="entry-type">부품</span>
+          <h3>고성능 서보 모터</h3>
+          <p>정밀한 위치, 속도 및 토크 제어가 가능한 소형 전동기로, 휨로봇 관절의 핵심 액추에이터로 사용됩니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_odri_bolt/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>ODRI Bolt (Open Dynamic Robot Initiative)</h3>
+          <p>The open-source point-foot biped from the Open Dynamic Robot Initiative, an international academic…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">
+          <span class="entry-type">논문</span>
+          <h3>로봇 제어를 위한 적응형 커널 베이지안 최적화</h3>
+          <p>본 논문은 사전 지식 없이 비정상 비용 함수를 모델링하기 위해 적응형 국소/전역 스파르탄 커널을 사용하는 가우시안 프로세스 베이지안 최적화 방법인 스파르탄 베이지안…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 로봇을 위한 시선 안정화: 통합 프레임워크</h3>
+          <p>본 논문은 관절 속도 명령에서 도출된 운동학적 피드포워드 항과 머리에 장착된 자이로스코프의 관성 피드백 항을 결합하여 자기 발생 움직임과 외부 섭동으로 인한 카메라 섭동을 보상하는…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">완제품 업체</span>
+          <h3>유닛리 로보틱스</h3>
+          <p>중국 로봇 기업으로, 고토크 액추에이터와 비용 중심 설계에 초점을 맞춘 Unitree H1 및 G1 휴인oid 플랫폼을 개발하고 있습니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_sampled_data_control_based_con_2020/">
+          <span class="entry-type">논문</span>
+          <h3>샘플링 데이터 제어 기반 분수 차수 다중 에이전트 시스템의 합의</h3>
+          <p>본 논문은 분수 차수 미적분학의 유전적이고 무한한 기억 특성을 고려하기 위해 과거 제어 입력을 보상하는 분수 차수 다중 에이전트 시스템을 위한 분산 샘플링 데이터 제어기를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">방법</span>
+          <h3>전계 지향 제어</h3>
+          <p>3상 정자 전류를 회전자 자속에 맞춘 d-q 좌표계로 변환하여 토크와 자속을 독립적으로 제어하는 모터 제어 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chan_angle_constrained_formation_co_2020/">
+          <span class="entry-type">논문</span>
+          <h3>원형 이동 로봇을 위한 각도 제약 대형 제어</h3>
+          <p>비전 센서로부터 얻은 이웃 로봇 원판의 내각/방위 측정만을 사용하여 평면 상의 원형 이동 로봇이 강성 대형을 형성하고 이웃 간 충돌 회피를 보장하는 기울기 기반 분산 제어법칙을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_bldc_motor/">
+          <span class="entry-type">부품</span>
+          <h3>브러시리스 DC 모터</h3>
+          <p>기계적 브러시가 아닌 전자적 정류로 구동되는 전동기로, 높은 효율, 긴 수명, 높은 전력 밀도를 제공하며 로봇 관절 및 휴머노이드 액추에이터의 주 동력원으로 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">
+          <span class="entry-type">논문</span>
+          <h3>변형 인식 로봇 3D 초음파</h3>
+          <p>로봇 촉진, 광류 알고리즘 및 결합 2차 회귀를 통해 픽셀 변위를 추정하고 두 가지 혈관 팬텀에서 검증된 환자 지정 강성 기반 변형 보정 방법을 제안한다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">
+          <span class="entry-type">논문</span>
+          <h3>위치 추정 검증을 통한 시각적 장소 인식 기반 로봇 내비게이션 개선</h3>
+          <p>본 논문은 시각적 장소 인식(VPR) 매칭을 허용 오차 내/외로 분류하는 다층 퍼셉트론(MLP) 기반 무결성 모니터를 제안하고, 이를 Clearpath Jackal 플랫폼을 이용해…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">
+          <span class="entry-type">논문</span>
+          <h3>벽면 추종 로봇 제어를 위한 기계 학습 알고리즘 비교 연구</h3>
+          <p>이 2019년 ROBIO 논문은 UCI 벽면 추종 로봇 내비게이션 데이터셋의 24, 4, 2 센서 형식을 사용하여 벽면 추종 로봇의 방향을 예측하기 위한 고전적 기계 학습 및 심층…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_company_maxon_group_2024/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>Maxon Group</h3>
+          <p>로보틱스용 고정밀 브러시리스 DC 모터, 기어헤드 및 컨트롤러 제조업체.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">기술</span>
+          <h3>Quasi Direct Drive Actuator</h3>
+          <p>저감속비 기어와 고토크 모터를 사용하여 높은 대역폭과 힘 투명성을 달성하는 액추에이터 설계.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_current_velocity_position_loops/">
+          <span class="entry-type">원리</span>
+          <h3>전류·속도·위치 제어 루프</h3>
+          <p>서보 드라이브의 중첩 피드백 제어 계층: 내측 전류 루프는 토크, 속도 루프는 속도, 외측 위치 루프는 관절 각도를 제어.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#pid">PID 제어의 정의와 위치</a></li>
+<li><a href="#pid_1">PID 제어의 수학적 및 원리적 기초</a></li>
+<li><a href="#_3">알고리즘 단계 및 구현 요점</a></li>
+<li><a href="#_4">전형적인 응용 및 한계</a></li>
+<li><a href="#_5">관련 태그</a></li>
+<li><a href="#_6">인간형 로봇 시스템에서의 역할</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

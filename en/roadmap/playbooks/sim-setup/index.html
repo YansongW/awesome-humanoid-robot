@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building a Simulation Environment from Scratch: Fall Ten Thousand Times in the Digital World First · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Building a Simulation Environment from Scratch: Fall Ten Thousand Times in the Digital World First</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="building-a-simulation-environment-from-scratch-fall-ten-thousand-times-in-the-digital-world-first">Building a Simulation Environment from Scratch: Fall Ten Thousand Times in the Digital World First</h1>
+<blockquote>
+<p>⚠️ The content of this roadmap is compiled based on public information and theoretical knowledge, and has not been verified on actual hardware; please verify safety specifications yourself when involving electrical and mechanical operations.</p>
+</blockquote>
+<p>Humanoid robots are the hardware that should least be "built first and tuned later": a real fall costs hundreds of dollars and a week of work, while falling ten thousand times in simulation costs nothing. But if the simulation is set up incorrectly, it's like indulging in a world with wrong physics. This page covers six steps: Choose Engine → Prepare Model → Run Control Simulation → Prepare Sim-to-Real Toolbox → Run Benchmarks → Set Up Environment. For theoretical background, see <a href="/wiki/chapters/chapter-23/">Chapter 23: Simulation and Physics Engines</a>; for control background, see <a href="/wiki/chapters/chapter-14/">Chapter 14</a> and <a href="/wiki/chapters/chapter-15/">Chapter 15</a>.</p>
+<h2 id="step-1-choose-a-simulation-engine">Step 1: Choose a Simulation Engine</h2>
+<p><strong>【What to do】</strong> First, clarify the main task, then refer to the table below to select the primary engine (most serious teams use two or more engines for cross-validation to reduce the systemic risk of modeling bias from a single engine—see the selection principles in <a href="/wiki/chapters/chapter-23/">Chapter 23</a>, Section 23.3.8):</p>
+<table>
+<thead>
+<tr>
+<th>Engine</th>
+<th>Physics Kernel</th>
+<th>Parallel Capability</th>
+<th>Rendering Fidelity</th>
+<th>Contact Quality</th>
+<th>Typical Positioning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a></td>
+<td>Proprietary convex contact solver</td>
+<td>CPU-based, MJX provides GPU path</td>
+<td>Medium</td>
+<td>High</td>
+<td>Control research, RL training</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_software_nvidia_isaac_sim_2024/">Isaac Sim</a> + <a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a></td>
+<td>PhysX</td>
+<td>GPU massive parallel</td>
+<td>High (RTX ray tracing)</td>
+<td>Medium-High</td>
+<td>Synthetic data, large-scale RL</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_software_gazebo/">Gazebo</a></td>
+<td>ODE/Bullet/DART (selectable)</td>
+<td>CPU-based</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>ROS full-stack integration testing</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_software_genesis_generative_physics_eng_2024/">Genesis</a></td>
+<td>Proprietary unified solver (rigid/soft/fluid differentiable unified)</td>
+<td>GPU massive parallel</td>
+<td>Medium-High</td>
+<td>Medium-High (including soft bodies)</td>
+<td>General/generative simulation</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_software_drake_systems_toolbox_2024/">Drake</a></td>
+<td>Proprietary (hydroelastic contact)</td>
+<td>CPU</td>
+<td>Medium-Low</td>
+<td>High (research-grade)</td>
+<td>Optimal control and formal analysis</td>
+</tr>
+</tbody>
+</table>
+<p>(Table compiled from the platform capability comparison in <a href="/wiki/chapters/chapter-23/">Chapter 23</a>, Section 23.3.8.) There is also a role that is easily confused: <a href="/entry/ent_software_pinocchio/">Pinocchio</a> is not a simulator, but an efficient open-source C++ library for rigid body dynamics/kinematics and analytical derivative computation—it is almost essential for computing dynamics terms when doing MPC/WBC, complementing the simulator.</p>
+<p><strong>【Why】</strong> Each engine has its own foundation: MuJoCo formulates contact dynamics as a convex optimization problem, resulting in smooth contacts and good physical consistency, making it the de facto standard for legged control and deep RL papers for a long time (Chapter 23, Section 23.3.1); Isaac Sim's core advantage is photorealistic rendering, supporting the GR00T synthetic data pipeline (source: <a href="/entry/ent_software_nvidia_isaac_sim_2024/">Isaac Sim</a> card), and Isaac Lab provides modular abstractions for RL environments, rewards, and domain randomization on top of it, with built-in humanoid task examples like H1/G1; Gazebo has mediocre physics but an irreplaceable ROS ecosystem; Drake excels in the rigorous combination of dynamics and mathematical programming; Genesis unifies soft/deformable bodies into a differentiable GPU framework, but its ecosystem is still accumulating. Actual choices from open-source projects can serve as anchors: ToddlerBot uses MuJoCo/MJX for PPO; Berkeley Humanoid Lite is based on Isaac Lab; OpenLoong's MPC+WBC framework is deployed on MuJoCo; Upkie uses PyBullet for zero-cost entry (source: data/roadmap/research/ various files).</p>
+<p><strong>【How to analyze your situation】</strong> Decide based on your goals:</p>
+<ul>
+<li><strong>RL locomotion/full-body control research</strong> → MuJoCo (Isaac Lab if you need GPU massive parallel), works even without an Nvidia GPU.</li>
+<li><strong>Visual policies, VLA, synthetic data</strong> → Isaac Sim/Lab, prerequisite: an NVIDIA GPU with RTX support.</li>
+<li><strong>ROS/ROS2 full-stack integration and navigation</strong> → Gazebo, don't worry about physics accuracy.</li>
+<li><strong>MPC/WBC algorithm derivation and verification</strong> → Drake + Pinocchio.</li>
+<li><strong>Experimenting with soft soles/flexible skin interaction</strong> → Keep an eye on Genesis, but don't rely on it as your only engine.</li>
+</ul>
+<h2 id="step-2-prepare-the-robot-model">Step 2: Prepare the Robot Model</h2>
+<p><strong>【What to do】</strong> Four actions:</p>
+<ol>
+<li><strong>Format conversion</strong>: Obtain <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF (Robot Description Format)</a> from CAD or existing repositories—the standard XML format in the ROS ecosystem, describing links, joints, inertia, and geometry; then convert to <a href="/entry/ent_technology_mjcf_simulation_format_2024/">MJCF (MuJoCo Simulation Format)</a> (MuJoCo's <code>compile</code> can directly load URDF). For Isaac, an additional conversion to USD is needed. Berkeley Humanoid Lite maintains URDF/MJCF/USD three formats simultaneously (source: data/roadmap/research/berkeley-humanoid-lite.md), and the habit of "keeping all three formats" is worth copying.</li>
+<li><strong>Collision geometry simplification</strong>: Never use high-polygon visual meshes directly as collision geometry—collision detection will be one to two orders of magnitude slower; use convex decomposition or primitive approximations like spheres/capsules/boxes instead (source: Chapter 23, Section 23.4.3).</li>
+<li><strong>Inertial parameter verification</strong>: Adopt a hierarchical approach for mass properties: "CAD theoretical values → measured weight values → system identification corrected values", keeping the whole-body center of mass error at the millimeter level; otherwise, the balance controller will be constantly "surprised" on the real robot (source: Chapter 23, Section 23.4.4).</li>
+<li><strong>Contact parameter calibration</strong>: Calibrate contact stiffness, damping, and friction coefficients between the foot sole and ground in pairs based on "foot sole material - ground material", and include them in subsequent domain randomization (source: Chapter 23, Section 23.4.4).</li>
+</ol>
+<p><strong>【Why】</strong> URDF was designed for visualization and the ROS toolchain, supporting only tree structures with weak actuator models; MJCF was designed for simulation and control—it automatically calculates inertia at compile time, natively supports closed-chain equality constraints, and treats actuators and sensors as first-class citizens (source: Chapter 23, Sections 23.4.1/23.4.2). Each conversion step incurs information loss: loss of inertia tensors, differences in joint orientation and limit conventions, and the fact that rendering materials and physics materials are two separate systems (source: Chapter 23, Section 23.4.3). The model's "realism" depends not on the engine but on these modeling details.</p>
+<p><strong>【How to analyze your situation】</strong> For replicating open-source robot models: directly use the officially maintained description files (e.g., Upkie's <code>upkie_description</code> URDF repository, source: data/roadmap/research/upkie.md), focusing your effort on verifying zero positions and actuator parameters. For self-developed models: first export a simplified URDF to get standing working, then iterate and refine; don't wait for a perfect CAD before entering simulation. Joint zero position calibration is the first step in aligning simulation with the real robot; ToddlerBot designed a 3D-printed zero-point calibration fixture for this, completing calibration in 1 minute (source: data/roadmap/research/toddlerbot.md).</p>
+<h2 id="step-3-run-through-the-control-simulation-pipeline">Step 3: Run Through the Control Simulation Pipeline</h2>
+<p><strong>【What to Do】</strong> Propel in three stages, each with a clear "pass" criterion:</p>
+<ol>
+<li><strong>PID Standing</strong>: Use joint position loop PID to keep the robot standing upright. Pass criterion: Stands statically for over 60 seconds and recovers from a gentle push.</li>
+<li><strong>MPC Walking</strong>: Integrate model-based gait control. You can use Pinocchio for dynamics calculations with a QP solver for MPC, or directly reproduce OpenLoong-Dyn-Control—based on MPC + WBC, including walking, jumping, and blind obstacle stepping examples, deployable on MuJoCo (Source: <code>data/roadmap/research/openloong-qinglong.md</code>). Pass criterion: Walks continuously on flat ground for 100 steps without falling, with adjustable step speed.</li>
+<li><strong>RL Training</strong>: Use <a href="/entry/ent_algorithm_ppo/">PPO (Proximal Policy Optimization)</a> to train walking/full-body policies—it limits policy update step sizes to prevent destructive updates and improve sample efficiency, making it the default starting point for legged RL (Source: PPO card). The Upkie project comes with examples of three balancing control paradigms (PID, MPC, Reinforcement Learning via Stable-Baselines3) and a Gymnasium interface (Source: <code>data/roadmap/research/upkie.md</code>), serving as a ready-made textbook for comparing the three paradigms. See <a href="/wiki/chapters/chapter-18/">Chapter 18</a> for training methods.</li>
+</ol>
+<p><strong>【Why】</strong> The three-stage sequence cannot be altered: PID standing validates <strong>model correctness</strong> (zero position, axes, mass properties); MPC validates <strong>dynamics modeling</strong> (actuator model, contact parameters); RL uses computational power for policy performance only after confirming "simulation fidelity." Both ToddlerBot and BHL achieved zero-shot sim-to-real for RL walking policies (Source: respective research files), precisely because model calibration was done first.</p>
+<p><strong>【How to Analyze Your Situation】</strong> Time allocation suggestion: Beginners stuck on PID standing should not panic—model errors exposed at this stage are the cheapest to fix. Those with a control theory background can quickly pass PID and focus on comparing MPC vs. RL—the final choice for hardware deployment depends on actuator capabilities (servo motors have weak force control, making RL position targets more realistic; QDD motors support force control, making both feasible).</p>
+<h2 id="step-4-prepare-the-sim-to-real-toolbox">Step 4: Prepare the Sim-to-Real Toolbox</h2>
+<p><strong>【What to Do】</strong> Three tools, prepared in the order of "shrink the gap, desensitize, engineering safety net":</p>
+<ol>
+<li><strong><a href="/entry/ent_method_system_identification/">System Identification</a></strong>: Build models from measured data to "pull" simulation towards reality. For single joints, use sweep/step excitation to fit gain, delay, and friction curves. For the whole robot, collect excitation trajectories under constraints to optimize inertial parameters (Chapter 23, Section 23.7.3). ToddlerBot's experience: SysID performed once on one motor model can be transferred to all 30 motors (Source: <code>data/roadmap/research/toddlerbot.md</code>).</li>
+<li><strong><a href="/entry/ent_method_domain_randomization/">Domain Randomization</a></strong>: Randomize simulation parameters during training to make policies insensitive to residual errors. Typical randomization items for humanoids: link mass and center of mass (±10% order), joint friction and damping, ground friction, actuator gain and delay, sensor noise, external push disturbances (Chapter 23, Section 23.7.2). The range is informed by sysID priors—too wide leads to conservative policies, too narrow leads to transfer failure. Can be combined with observation history for implicit online parameter identification, or use a "narrow-to-wide" curriculum for convergence.</li>
+<li><strong><a href="/entry/ent_method_hardware_in_the_loop/">Hardware-in-the-Loop (HIL)</a></strong>: The in-the-loop ladder before hardware deployment: SiL (Software-in-the-Loop for logic validation) → HIL (control software runs on the real vehicle platform, closed-loop with a real-time simulator via real EtherCAT/CAN bus, validating real-time performance and communication timing) → Single-joint/single-leg test bench → Full robot first test under gantry protection (Chapter 23, Section 23.7.4).</li>
+</ol>
+<p><strong>【Why】</strong> Reality gaps fall into three categories: Parameterizable gaps (mass, friction, delay—shrunk by sysID, covered by domain randomization), Structural gaps (backlash, hysteresis, soft body deformation—addressed by modeling supplements or structural avoidance), Perception distribution gaps (rendered vs. real image differences—addressed by visual domain randomization or mixed real data) (Chapter 23, Section 23.7.1). HIL has special requirements for simulation: it must run synchronously with wall-clock time (Real-Time Factor RTF = 1); timeouts manifest as bus frame drops on the controller side. Hence, HIL uses deterministic scheduling and simplified models, not the high-throughput variants used for RL training (Chapter 23, Section 23.7.4).</p>
+<p><strong>【How to Analyze Your Situation】</strong> For budget-constrained individual developers: SysID is a must (costs only time), domain randomization is a must (costs only compute), HIL can be simplified to a "SiL + single actuator test bench" two-stage process. For institutional teams working on full-size robots: The complete in-the-loop ladder is a safety baseline and cannot be cut—first tests of an 80 kg robot must use gantry protection.</p>
+<h2 id="step-5-quantify-your-policy-with-benchmarks">Step 5: Quantify Your Policy with Benchmarks</h2>
+<p><strong>【What to Do】</strong> After training your policy, benchmark it on public standards before hardware deployment:</p>
+<ul>
+<li><strong><a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a></strong>: A full-body humanoid benchmark based on the Unitree H1 morphology, with over 40 tasks covering pure locomotion (walking, running, balancing), pure manipulation (reaching, carrying, inserting), and coupled locomotion-manipulation. Unified model and environment parameters enable meaningful cross-algorithm comparisons (Chapter 23, Section 23.8.1 and benchmark card).</li>
+<li><strong><a href="/entry/ent_benchmark_maniskill/">ManiSkill</a></strong>: A unified benchmark for generalizable manipulation skills. The third generation, ManiSkill3, GPU-accelerates both physics and rendering parallelism, enabling high-throughput sampling for manipulation tasks with visual observations. It comes with demonstration data and baselines (Chapter 23, Sections 23.3.7/23.8.2). See <a href="/wiki/chapters/chapter-25/">Chapter 25: Robot Evaluation System</a> for evaluation methodology.</li>
+</ul>
+<p><strong>【Why】</strong> The value of benchmarks is to turn "I trained it well" from anecdotal evidence into a quantifiable, comparable protocol. Their limitations must also be clear: HumanoidBench only covers simulation and is tied to the H1 morphology; extrapolation to your robot model and real hardware requires additional validation (Chapter 23, Section 23.8.1). Engineering-wise, you should also build an "accident-driven scenario library": convert every real-world failure into a reproducible simulation test case for regression testing (Chapter 23, Section 23.8.3).</p>
+<p><strong>【How to Analyze Your Situation】</strong> For locomotion research: First run HumanoidBench locomotion tasks to see relative ranking. For manipulation: ManiSkill's demonstration data can save you weeks of data collection. For productization: Public benchmarks are just the entry ticket; your private scenario library is the main body.</p>
+<h2 id="step-6-hardware-configuration-and-installation">Step 6: Hardware Configuration and Installation</h2>
+<p><strong>【What to Do】</strong> Prepare hardware and install based on the engine:</p>
+<ul>
+<li><strong>MuJoCo Route</strong>: Pure CPU is sufficient; start with <code>pip install mujoco</code>. ToddlerBot proves the entire "simulation + RL training + deployment" pipeline can be pure Python, installed with a single <code>pip</code> command (Python &gt;= 3.10) (Source: <code>data/roadmap/research/toddlerbot.md</code>). GPU is only necessary for MJX large-scale parallel training.</li>
+<li><strong>Isaac Sim/Lab Route</strong>: Requires an NVIDIA GPU supporting RTX ray tracing with matching driver/CUDA versions. Specific GPU models and minimum VRAM vary with version; check current requirements with the supplier (official documentation).</li>
+<li><strong>Genesis Route</strong>: GPU accelerated; check its current CUDA requirements before installation.</li>
+<li><strong>Upkie Zero-Cost Start</strong>: Run simulation examples with a single <code>pixi</code>/<code>uv</code> command, ideal for learning control before buying hardware (Source: <code>data/roadmap/research/upkie.md</code>).</li>
+</ul>
+<p><strong>【Why】</strong> 90% of installation issues stem from three areas: NVIDIA driver and CUDA toolkit version mismatch, missing display environment on headless servers (requires EGL/Vulkan off-screen rendering configuration), and Python environment conflicts causing dynamic library clashes. First, get the engine's official example running, then load your own model—this isolates "environment issues" from "model issues."</p>
+<p><strong>【How to Analyze Your Situation】</strong> Laptop only (no NVIDIA GPU): MuJoCo + CPU training is entirely feasible; small MLP policies are acceptable within days. One RTX gaming GPU: Isaac Lab and Genesis can both run; VRAM determines the number of parallel environments. Server/multi-GPU: Only then consider Isaac Gym-style thousands of parallel environments and end-to-end GPU pipelines (observation and action tensors stay on GPU, Chapter 23, Section 23.3.3).</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>The simulator's official example runs on your machine, and you can clearly explain why you chose this engine (referencing the selection table from Step 1).</li>
+<li>The robot model in simulation: Joint axes/limits are verified one by one, collision bodies are simplified geometries, and the source of inertial parameters is documented (CAD/weighing/sysID level).</li>
+<li>At least the first two of the three-stage process (PID standing, MPC walking or open-source MPC example reproduction, PPO walking training) are completed, with screen recordings and logs archived for each stage.</li>
+<li>The sim-to-real three-tool set has implementation records: SysID data and fitted parameters, domain randomization range list (with justification), SiL/HIL test reports.</li>
+<li>A reproducible baseline score is obtained on at least one public benchmark (HumanoidBench or ManiSkill), with commands and random seeds documented.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Robot "falls apart" or twitches after URDF to MJCF conversion</td>
+<td>Missing/incorrect inertial parameters, differences in joint axis conventions</td>
+<td>Check <code>&lt;origin&gt;</code> and axis for each joint; verify inertial completeness for each link; use <code>simulate</code> interactive mode for single-joint excitation test</td>
+</tr>
+<tr>
+<td>Extremely low simulation frame rate</td>
+<td>High-polygon visual meshes used as collision bodies</td>
+<td>Replace with convex hull/primitive collision bodies; explicitly disable collision pairs for links that cannot contact</td>
+</tr>
+<tr>
+<td>Isaac Sim starts with black screen/crashes</td>
+<td>Mismatched driver and CUDA versions, insufficient VRAM</td>
+<td>Check official version compatibility matrix; confirm driver with <code>nvidia-smi</code>; reduce parallel environment count or disable ray tracing to test</td>
+</tr>
+<tr>
+<td>Rendering error on headless server</td>
+<td>Missing EGL/Vulkan off-screen rendering configuration</td>
+<td>Configure headless rendering environment variables per engine documentation; first run pure physics without rendering to verify</td>
+</tr>
+<tr>
+<td>RL training curve does not improve</td>
+<td>Reward design issues or mismatch in physics step size/control frequency</td>
+<td>First reproduce with official baseline environment; check frequency decoupling settings between physics stepping and policy stepping</td>
+</tr>
+<tr>
+<td>Sim-to-real fails immediately on hardware</td>
+<td>Domain randomization range does not cover real parameters, no system identification performed</td>
+<td>Perform actuator sweep identification; check zero-position calibration; replay real-world failure postures in simulation</td>
+</tr>
+<tr>
+<td>Controller reports bus frame loss during HIL</td>
+<td>Simulation not running at real-time rate (RTF ≠ 1)</td>
+<td>Switch to simplified physics model; use real-time kernel + dedicated core for simulation; monitor per-frame actual time consumption</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supplementary-reading">Supplementary Reading</h2>
+<ul>
+<li><a href="/roadmap/stage-0-foundations/">Stage 0 · Foundations</a> — Entry path for first simulation experience</li>
+<li><a href="/roadmap/stage-2-biped/">Stage 2 · Biped Platform</a> — From simulation walking to sim-to-real</li>
+<li><a href="/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/playbooks/sensor-selection/">← Previous<span>Selection Guide: How to Choose a Sensor</span></a>
+      
+      <span></span>
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#building-a-simulation-environment-from-scratch-fall-ten-thousand-times-in-the-digital-world-first">Building a Simulation Environment from Scratch: Fall Ten Thousand Times in the Digital World First</a><ul>
+<li><a href="#step-1-choose-a-simulation-engine">Step 1: Choose a Simulation Engine</a></li>
+<li><a href="#step-2-prepare-the-robot-model">Step 2: Prepare the Robot Model</a></li>
+<li><a href="#step-3-run-through-the-control-simulation-pipeline">Step 3: Run Through the Control Simulation Pipeline</a></li>
+<li><a href="#step-4-prepare-the-sim-to-real-toolbox">Step 4: Prepare the Sim-to-Real Toolbox</a></li>
+<li><a href="#step-5-quantify-your-policy-with-benchmarks">Step 5: Quantify Your Policy with Benchmarks</a></li>
+<li><a href="#step-6-hardware-configuration-and-installation">Step 6: Hardware Configuration and Installation</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#supplementary-reading">Supplementary Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

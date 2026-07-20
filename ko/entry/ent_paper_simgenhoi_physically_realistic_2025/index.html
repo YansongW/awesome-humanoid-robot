@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL</h1>
+      <p class="entry-name-en">SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14120v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL is a 2025 work on physics-based character animation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.14120" target="_blank" rel="noopener">SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>물리적으로 현실적인 인간형-객체 상호작용(HOI)을 생성하는 것은 로봇공학의 근본적인 과제입니다. 확산 기반 모델과 같은 기존 HOI 생성 접근 방식은 종종 비현실적인 접촉, 관통, 비현실적인 전신 동작과 같은 인공물로 인해 물리적 환경에서의 성공적인 실행을 저해합니다. 이러한 문제를 해결하기 위해, 우리는 생성 모델링과 강화 학습의 장점을 결합하여 제어 가능하고 물리적으로 타당한 HOI를 생성하는 통합 프레임워크인 SimGenHOI를 소개합니다. Diffusion Transformers(DiT)를 기반으로 하는 HOI 생성 모델은 텍스트 프롬프트, 객체 형상, 희소 객체 웨이포인트, 초기 인간형 자세에 따라 일련의 핵심 동작을 예측합니다. 이러한 핵심 동작은 필수적인 상호작용 역학을 포착하며 부드러운 모션 궤적으로 보간되어 장기간 생성을 자연스럽게 지원합니다. 물리적 현실성을 보장하기 위해, 우리는 강화 학습으로 훈련된 접촉 인식 전신 제어 정책을 설계하여 생성된 동작을 추적하면서 관통 및 발 미끄러짐과 같은 인공물을 교정합니다. 또한, 생성 모델과 제어 정책이 상호 반복적으로 정제되어 동작 현실성과 추적 견고성을 모두 향상시키는 상호 미세 조정 전략을 도입합니다. 광범위한 실험을 통해 SimGenHOI가 현실적이고 다양하며 물리적으로 타당한 인간형-객체 상호작용을 생성하여 시뮬레이션에서 현저히 높은 추적 성공률을 달성하고 장기간 조작 작업을 가능하게 함을 입증합니다. 코드는 수락 시 프로젝트 페이지(https://xingxingzuo.github.io/simgen_hoi)에서 공개될 예정입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>물리적으로 현실적인 인간형-객체 상호작용(HOI)을 생성하는 것은 로봇공학의 근본적인 과제입니다. 확산 기반 모델과 같은 기존 HOI 생성 접근 방식은 종종 비현실적인 접촉, 관통, 비현실적인 전신 동작과 같은 인공물로 인해 물리적 환경에서의 성공적인 실행을 저해합니다. 이러한 문제를 해결하기 위해, 우리는 생성 모델링과 강화 학습의 장점을 결합하여 제어 가능하고 물리적으로 타당한 HOI를 생성하는 통합 프레임워크인 SimGenHOI를 소개합니다. Diffusion Transformers(DiT)를 기반으로 하는 HOI 생성 모델은 텍스트 프롬프트, 객체 형상, 희소 객체 웨이포인트, 초기 인간형 자세에 따라 일련의 핵심 동작을 예측합니다. 이러한 핵심 동작은 필수적인 상호작용 역학을 포착하며 부드러운 모션 궤적으로 보간되어 장기간 생성을 자연스럽게 지원합니다. 물리적 현실성을 보장하기 위해, 우리는 강화 학습으로 훈련된 접촉 인식 전신 제어 정책을 설계하여 생성된 동작을 추적하면서 관통 및 발 미끄러짐과 같은 인공물을 교정합니다. 또한, 생성 모델과 제어 정책이 상호 반복적으로 정제되어 동작 현실성과 추적 견고성을 모두 향상시키는 상호 미세 조정 전략을 도입합니다. 광범위한 실험을 통해 SimGenHOI가 현실적이고 다양하며 물리적으로 타당한 인간형-객체 상호작용을 생성하여 시뮬레이션에서 현저히 높은 추적 성공률을 달성하고 장기간 조작 작업을 가능하게 함을 입증합니다. 코드는 수락 시 프로젝트 페이지(https://xingxingzuo.github.io/simgen_hoi)에서 공개될 예정입니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_dexterous_manipulation/">손재주 있는 조작</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_simgenhoi_physically_realistic_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">방법</span>
+          <h3>손재주 있는 조작</h3>
+          <p>다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

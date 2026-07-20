@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Butler-Volmer Equation · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/equation/">Equation</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Butler-Volmer Equation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Equation</div>
+      <h1>Butler-Volmer Equation</h1>
+      <p class="entry-name-en">Butler-Volmer Equation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Relates the electrochemical reaction current density at an electrode to the activation overpotential and kinetic parameters.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://www.wiley.com/en-us/Electrochemical+Methods%3A+Fundamentals+and+Applications%2C+2nd+Edition-p-9780471043720" target="_blank" rel="noopener">A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed., Wiley, 2001</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<h1 id="butler-volmer-equation">Butler-Volmer Equation</h1>
+<h2 id="content">Content</h2>
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p><strong>Life Example</strong>: Charging a battery is like many people squeezing through a revolving door at the same time. If the door is very narrow (large activation overpotential), everyone crowds together and the flow of people slows down; if the door is relatively wide (small overpotential), the flow is approximately proportional to the "looseness" of the door. The Butler-Volmer equation precisely describes the nonlinear relationship between the "door width" (overpotential) and the "flow of people" (current density).</p>
+<p><strong>Natural Language Logic</strong>: On the electrode surface, oxidation (lithium ions leaving the electrode) and reduction (lithium ions embedding into the electrode) occur simultaneously. The rates of both reactions vary exponentially with the potential difference, but in opposite directions. The net current density is the difference between the forward and reverse currents; when the overpotential is zero, they cancel out, resulting in zero net current. In the equation, <span class="arithmatex">\(j_0\)</span> represents the "passage capacity of the door at ideal width," and <span class="arithmatex">\(\alpha\)</span> represents the sensitivity of the reaction to potential changes.</p>
+</blockquote>
+<h2 id="formal-definition">Formal Definition</h2>
+<p>For a single-electron transfer reaction (<span class="arithmatex">\(n=1\)</span>), the Butler-Volmer equation is written as:</p>
+<div class="arithmatex">\[
+j = j_0 \left[ \exp\!\left( \frac{\alpha_a n F \eta}{RT} \right) - \exp\!\left( -\frac{\alpha_c n F \eta}{RT} \right) \right].
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(j\)</span>: Net current density (A/m²)</li>
+<li><span class="arithmatex">\(j_0\)</span>: Exchange current density</li>
+<li><span class="arithmatex">\(\alpha_a, \alpha_c\)</span>: Anodic and cathodic charge transfer coefficients, typically satisfying <span class="arithmatex">\(\alpha_a + \alpha_c = 1\)</span></li>
+<li><span class="arithmatex">\(n\)</span>: Number of electrons involved in the reaction</li>
+<li><span class="arithmatex">\(F\)</span>: Faraday constant</li>
+<li><span class="arithmatex">\(R\)</span>: Ideal gas constant</li>
+<li><span class="arithmatex">\(T\)</span>: Absolute temperature</li>
+<li><span class="arithmatex">\(\eta\)</span>: Activation overpotential</li>
+</ul>
+<p>The exchange current density can be further written as:</p>
+<div class="arithmatex">\[
+j_0 = n F k^0 c_R^{\alpha_c} c_O^{\alpha_a},
+\]</div>
+<p>where <span class="arithmatex">\(k^0\)</span> is the standard rate constant, and <span class="arithmatex">\(c_R, c_O\)</span> are the concentrations of the reduced and oxidized species, respectively.</p>
+<h2 id="key-symbols-and-intuitive-correspondence">Key Symbols and Intuitive Correspondence</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Intuitive Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(j\)</span></td>
+<td>Net current density</td>
+<td>Net flow of people through the "revolving door"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(j_0\)</span></td>
+<td>Exchange current density</td>
+<td>Bidirectional passage capacity of the door at ideal width</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta\)</span></td>
+<td>Activation overpotential</td>
+<td>"Tightness" of the door</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\alpha_a, \alpha_c\)</span></td>
+<td>Charge transfer coefficients</td>
+<td>Sensitivity of the door to pushing/pulling</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(F\)</span></td>
+<td>Faraday constant</td>
+<td>Size of the "charge packet" carried by one electron</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(RT/nF\)</span></td>
+<td>Thermal voltage</td>
+<td>Natural voltage scale determined by temperature</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relationships-with-other-knowledge-points">Relationships with Other Knowledge Points</h2>
+<ul>
+<li><code>derived_from</code> → Transition state theory</li>
+<li><code>has_prerequisite</code> → Electrochemical kinetics</li>
+<li><code>has_prerequisite</code> → Thermodynamics / Nernst equation</li>
+<li><code>approximates</code> → Tafel equation (Tafel approximation at high overpotential)</li>
+<li><code>uses</code> → Faraday constant, gas constant, charge transfer coefficients</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_foundation_electrochemistry/">Electrochemistry</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Electrochemistry uses Butler-Volmer Equation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_equivalent_circuit_battery_model/">Equivalent-Circuit Battery Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ent_method_equivalent_circuit_battery_model uses ent_butler_volmer_equation to parameterize charge-transfer polarization resistance.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_butler_volmer_equation"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_electrochemistry/">
+          <span class="entry-type">Foundation</span>
+          <h3>Electrochemistry</h3>
+          <p>The foundational science of electron and ion transport across interfaces, governing reactions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_equivalent_circuit_battery_model/">
+          <span class="entry-type">Method</span>
+          <h3>Equivalent-Circuit Battery Model</h3>
+          <p>A method that represents a lithium-ion cell or pack as an electrical circuit of a voltage source and…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#butler-volmer-equation">Butler-Volmer Equation</a><ul>
+<li><a href="#content">Content</a></li>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#formal-definition">Formal Definition</a></li>
+<li><a href="#key-symbols-and-intuitive-correspondence">Key Symbols and Intuitive Correspondence</a></li>
+<li><a href="#relationships-with-other-knowledge-points">Relationships with Other Knowledge Points</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

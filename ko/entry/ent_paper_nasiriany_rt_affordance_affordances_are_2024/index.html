@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RT-Affordance: Affordances are Versatile Intermediate Representations for Robot Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RT-Affordance: Affordances are Versatile Intermediate Representations for Robot Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>RT-Affordance: Affordances are Versatile Intermediate Representations for Robot Manipulation</h1>
+      <p class="entry-name-en">RT-Affordance: Affordances are Versatile Intermediate Representations for Robot Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.02704v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>RT-Affordance: Affordances are Versatile Intermediate Representations for Robot Manipulation (RT-A), is a 2024 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, The University of Austin at Texas, and published at ICRA25.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1109/ICRA55743.2025.11127525" target="_blank" rel="noopener">RT-A source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 연구에서는 중간 정책 표현이 조작 작업 수행 방법에 대한 지침을 제공함으로써 일반화를 촉진할 수 있는 방법을 탐구합니다. 언어, 목표 이미지, 궤적 스케치와 같은 기존 표현은 유용한 것으로 입증되었지만, 이러한 표현은 충분한 맥락을 제공하지 못하거나 지나치게 구체적인 맥락을 제공하여 덜 강건한 정책을 초래합니다. 우리는 작업의 주요 단계에서 로봇의 자세를 포착하는 어포던스(affordances)에 정책을 조건화하는 것을 제안합니다. 어포던스는 표현력이 풍부하면서도 가벼운 추상화를 제공하고, 사용자가 쉽게 지정할 수 있으며, 대규모 인터넷 데이터셋에서 지식을 전이하여 효율적인 학습을 촉진합니다. 우리의 방법인 RT-Affordance는 계층적 모델로, 먼저 작업 언어가 주어지면 어포던스 계획을 제안한 다음, 이 어포던스 계획에 정책을 조건화하여 조작을 수행합니다. 우리의 모델은 대규모 웹 데이터셋과 로봇 궤적을 포함한 이질적인 감독 소스를 유연하게 연결할 수 있습니다. 또한 저렴하게 수집 가능한 도메인 내 어포던스 이미지로 모델을 훈련하여, 추가적인 고비용 로봇 궤적을 수집하지 않고도 새로운 작업을 학습할 수 있습니다. 우리는 다양한 새로운 작업 세트에서 RT-Affordance가 기존 방법보다 50% 이상 뛰어난 성능을 보이는 것을 입증하고, 어포던스가 새로운 환경에 강건함을 실증적으로 보여줍니다. 비디오는 https://snasiriany.me/rt-affordance 에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>본 연구에서는 중간 정책 표현이 조작 작업 수행 방법에 대한 지침을 제공함으로써 일반화를 촉진할 수 있는 방법을 탐구합니다. 언어, 목표 이미지, 궤적 스케치와 같은 기존 표현은 유용한 것으로 입증되었지만, 이러한 표현은 충분한 맥락을 제공하지 못하거나 지나치게 구체적인 맥락을 제공하여 덜 강건한 정책을 초래합니다. 우리는 작업의 주요 단계에서 로봇의 자세를 포착하는 어포던스(affordances)에 정책을 조건화하는 것을 제안합니다. 어포던스는 표현력이 풍부하면서도 가벼운 추상화를 제공하고, 사용자가 쉽게 지정할 수 있으며, 대규모 인터넷 데이터셋에서 지식을 전이하여 효율적인 학습을 촉진합니다. 우리의 방법인 RT-Affordance는 계층적 모델로, 먼저 작업 언어가 주어지면 어포던스 계획을 제안한 다음, 이 어포던스 계획에 정책을 조건화하여 조작을 수행합니다. 우리의 모델은 대규모 웹 데이터셋과 로봇 궤적을 포함한 이질적인 감독 소스를 유연하게 연결할 수 있습니다. 또한 저렴하게 수집 가능한 도메인 내 어포던스 이미지로 모델을 훈련하여, 추가적인 고비용 로봇 궤적을 수집하지 않고도 새로운 작업을 학습할 수 있습니다. 우리는 다양한 새로운 작업 세트에서 RT-Affordance가 기존 방법보다 50% 이상 뛰어난 성능을 보이는 것을 입증하고, 어포던스가 새로운 환경에 강건함을 실증적으로 보여줍니다. 비디오는 https://snasiriany.me/rt-affordance 에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_rt_2_vision_language_action_mo_2023/">RT-2 비전-언어-동작 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_nasiriany_rt_affordance_affordances_are_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">방법</span>
+          <h3>RT-2 비전-언어-동작 모델</h3>
+          <p>웹 규모의 비전-언어 지식을 로봇 제어로 전이하는 VLA 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

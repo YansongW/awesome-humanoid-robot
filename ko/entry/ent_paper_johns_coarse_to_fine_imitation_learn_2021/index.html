@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coarse-to-Fine 모방 학습: 단일 시연으로부터의 로봇 조작 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Coarse-to-Fine 모방 학습: 단일 시연으로부터의 로봇 조작</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Coarse-to-Fine 모방 학습: 단일 시연으로부터의 로봇 조작</h1>
+      <p class="entry-name-en">Coarse-to-Fine Imitation Learning: Robot Manipulation from a Single Demonstration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">조립 통합 테스트</span><span class="tag">대량 생산</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2105.06411v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Johns(2021)은 엔드이펙터의 병목 자세를 추정하고 해당 자세부터 시연의 엔드이펙터 속도를 재생함으로써 단일 인간 시연으로부터 새로운 조작 작업을 학습하는 시각적 모방 학습 방법을 제안한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2105.06411" target="_blank" rel="noopener">Coarse-to-Fine Imitation Learning: Robot Manipulation from a Single Demonstration</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>우리는 단일 인간 시연으로부터 새로운 로봇 조작 작업을 학습할 수 있는 간단한 시각적 모방 학습 방법을 소개합니다. 이 방법은 상호작용 대상 객체에 대한 사전 지식 없이도 작동합니다. 우리의 방법은 모방 학습을 상태 추정 문제로 모델링하며, 상태는 시연에서 관찰된 객체 상호작용이 시작되는 지점의 엔드 이펙터(end-effector) 자세로 정의됩니다. 조작 작업을 대략적인 접근 궤적과 세밀한 상호작용 궤적으로 모델링함으로써, 이 상태 추정기는 엔드 이펙터의 카메라를 객체 주위로 자동 이동시켜 자기 지도 방식으로 훈련될 수 있습니다. 테스트 시에는 엔드 이펙터가 선형 경로를 통해 추정된 상태로 이동하며, 그 시점에서 원래 시연의 엔드 이펙터 속도가 단순히 재생됩니다. 이를 통해 명시적으로 정책을 학습할 필요 없이 복잡한 상호작용 궤적을 편리하게 획득할 수 있습니다. 8가지 일상 작업에 대한 실제 실험 결과, 우리의 방법은 단일 인간 시연으로부터 다양한 기술을 학습할 수 있을 뿐만 아니라 안정적이고 해석 가능한 제어기를 제공함을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>우리는 단일 인간 시연으로부터 새로운 로봇 조작 작업을 학습할 수 있는 간단한 시각적 모방 학습 방법을 소개합니다. 이 방법은 상호작용 대상 객체에 대한 사전 지식 없이도 작동합니다. 우리의 방법은 모방 학습을 상태 추정 문제로 모델링하며, 상태는 시연에서 관찰된 객체 상호작용이 시작되는 지점의 엔드 이펙터 자세로 정의됩니다. 조작 작업을 대략적인 접근 궤적과 세밀한 상호작용 궤적으로 모델링함으로써, 이 상태 추정기는 엔드 이펙터의 카메라를 객체 주위로 자동 이동시켜 자기 지도 방식으로 훈련될 수 있습니다. 테스트 시에는 엔드 이펙터가 선형 경로를 통해 추정된 상태로 이동하며, 그 시점에서 원래 시연의 엔드 이펙터 속도가 단순히 재생됩니다. 이를 통해 명시적으로 정책을 학습할 필요 없이 복잡한 상호작용 궤적을 편리하게 획득할 수 있습니다. 8가지 일상 작업에 대한 실제 실험 결과, 우리의 방법은 단일 인간 시연으로부터 다양한 기술을 학습할 수 있을 뿐만 아니라 안정적이고 해석 가능한 제어기를 제공함을 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_impedance_control/">임피던스 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_johns_coarse_to_fine_imitation_learn_2021"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_impedance_control/">
+          <span class="entry-type">방법</span>
+          <h3>임피던스 제어</h3>
+          <p>상호작용 힘과 변위 간의 동적 관계를 제어하여 로봇이 가상의 기계적 임피던스처럼 동작하도록 하는 제어 방식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

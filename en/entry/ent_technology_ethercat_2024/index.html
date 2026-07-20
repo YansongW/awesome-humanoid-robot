@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EtherCAT · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/technology/">Technology</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EtherCAT</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Technology</div>
+      <h1>EtherCAT</h1>
+      <p class="entry-name-en">EtherCAT</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Software &amp; Middleware</span><span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#EtherCAT 协议深度 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">Stage 1 · Build One Joint</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">Stage 2 · Biped Platform</span>
+        <span class="roadmap-badge-role">Optional</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>High-performance industrial Ethernet field bus for deterministic joint control.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/EtherCAT" target="_blank" rel="noopener">EtherCAT</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>EtherCAT is an important technology in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>EtherCAT is an industrial fieldbus based on standard Ethernet frames, proposed by Beckhoff and maintained by the EtherCAT Technology Group. Its most notable feature is "processing on the fly": slaves read and write data immediately as the frame passes through, without needing to fully receive the frame before forwarding.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: EtherCAT, master, slave, processing on the fly, Working Counter, Distributed Clocks</p>
+<ul>
+<li><strong>EtherCAT (Ethernet for Control Automation Technology)</strong>: A high-speed industrial fieldbus based on Ethernet.</li>
+<li><strong>Master</strong>: The node that initiates and controls EtherCAT communication.</li>
+<li><strong>Slave</strong>: A node that responds to master commands, such as servo drives or I/O modules.</li>
+<li><strong>Processing on the fly</strong>: Slaves read and write data instantly as the data frame passes through.</li>
+<li><strong>Working Counter (WC)</strong>: A counter at the end of each EtherCAT frame used to confirm whether slaves have processed successfully.</li>
+<li><strong>Distributed Clocks (DC)</strong>: EtherCAT's synchronization mechanism that allows all slaves to share a unified time base.</li>
+</ul>
+</div>
+<p><strong>EtherCAT Frame Structure</strong>. The standard Ethernet frame has an EtherType of <code>0x88A4</code>, followed by the EtherCAT header and several datagrams:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Length</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ethernet Header</td>
+<td>14 B</td>
+<td>Destination MAC, Source MAC, EtherType=0x88A4</td>
+</tr>
+<tr>
+<td>EtherCAT Header</td>
+<td>2 B</td>
+<td>Data length, reserved bits</td>
+</tr>
+<tr>
+<td>Datagram 1</td>
+<td>Variable</td>
+<td>Command, index, address, data, WC</td>
+</tr>
+<tr>
+<td>...</td>
+<td>Variable</td>
+<td>Multiple datagrams</td>
+</tr>
+<tr>
+<td>FCS</td>
+<td>4 B</td>
+<td>Ethernet frame checksum</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: EtherType, Datagram, FCS, MAC address</p>
+<ul>
+<li><strong>EtherType</strong>: A field in the Ethernet frame that identifies the upper-layer protocol.</li>
+<li><strong>Datagram</strong>: An independent data unit within an EtherCAT frame.</li>
+<li><strong>FCS (Frame Check Sequence)</strong>: The checksum at the end of an Ethernet frame, used to detect transmission errors.</li>
+<li><strong>MAC address (Media Access Control address)</strong>: The physical address of an Ethernet device.</li>
+</ul>
+</div>
+<p>Commands for each datagram include <code>APRD</code> (Auto Increment Physical Read), <code>APWR</code> (Auto Increment Physical Write), <code>FPRD</code> (Fixed Address Read), <code>FPWR</code> (Fixed Address Write), <code>LRW</code> (Logical Read/Write), etc. The master maps process data to the memory mapping area of slaves via logical addresses.</p>
+<p><strong>Distributed Clocks (DC)</strong>. DC measures the arrival and departure times of the telegram at each slave, calculating and compensating for propagation delay and clock offset:</p>
+<ol>
+<li>The master sends a special synchronization frame, and each slave records local timestamps <span class="arithmatex">\(t_{\text{in}}\)</span> and <span class="arithmatex">\(t_{\text{out}}\)</span>.</li>
+<li>The <strong>propagation delay</strong> <span class="arithmatex">\(t_{\text{prop}}\)</span> for each slave to the reference clock is calculated through round-trip measurements.</li>
+<li>Slaves adjust their local clocks based on <span class="arithmatex">\(t_{\text{prop}}\)</span> and cycle offset.</li>
+<li>Each cycle, the master sends an ARMW (Auto Repeat Read/Write) telegram, and slaves latch data when a synchronization event (e.g., SYNC0) is triggered.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: propagation delay, clock offset, drift compensation, SYNC0, ARMW</p>
+<ul>
+<li><strong>Propagation delay</strong>: The time required for a signal to travel from the sender to the receiver.</li>
+<li><strong>Clock offset</strong>: The time difference between two clocks.</li>
+<li><strong>Drift compensation</strong>: Correction for differences in clock frequency.</li>
+<li><strong>SYNC0</strong>: A hardware synchronization signal for EtherCAT slaves.</li>
+<li><strong>ARMW</strong>: An automatic repeat read/write command used for clock synchronization in EtherCAT.</li>
+</ul>
+</div>
+<p>DC synchronization accuracy is typically within 100 ns, sufficient to support multi-axis servos sampling and updating at the same microsecond-level moment.</p>
+<p><strong>PDO and SDO</strong>. PDO (Process Data Object) is periodic process data mapped to the logical memory area of the EtherCAT frame, automatically read and written each cycle; SDO (Service Data Object) is used for aperiodic parameter configuration, accessing the object dictionary via the mailbox protocol.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: PDO, SDO, object dictionary, mailbox, process data</p>
+<ul>
+<li><strong>PDO (Process Data Object)</strong>: A periodic process data object.</li>
+<li><strong>SDO (Service Data Object)</strong>: A service data object used for parameter configuration.</li>
+<li><strong>Object dictionary</strong>: An index table of parameters in CANopen/EtherCAT devices.</li>
+<li><strong>Mailbox</strong>: A buffering mechanism for aperiodic communication.</li>
+<li><strong>Process data</strong>: Data exchanged periodically in a control loop.</li>
+</ul>
+</div>
+<p><strong>Topology</strong>. EtherCAT supports line, tree, and ring topologies. The ring topology provides cable redundancy: when a cable segment breaks, the slave can automatically loop back, and the master detects the breakpoint and continues communicating with the remaining slaves.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["EtherCAT Master"] --&gt; B["Slave 1"]
+    B --&gt; C["Slave 2"]
+    C --&gt; D["..."]
+    D --&gt; E["Slave N"]
+    E --&gt;|"Loopback"| A
+    B -.-&gt;|"Redundancy Loopback"| E</code></pre>
+<p><strong>Cycle Time Calculation</strong>. The EtherCAT cycle time is determined by the frame transmission time and slave processing time:</p>
+<div class="arithmatex">\[
+T_{\text{cycle}} \geq T_{\text{frame}} + N \times T_{\text{slave}} + T_{\text{margin}}
+\]</div>
+<p>Where the frame transmission time is:</p>
+<div class="arithmatex">\[
+T_{\text{frame}} = \frac{L_{\text{frame}} \times 8}{R}
+\]</div>
+<p>For example, with 100 slaves, each with 16 B input + 16 B output, the total data is approximately 3200 B, plus the frame header about 3240 B, at 100 Mb/s:</p>
+<div class="arithmatex">\[
+T_{\text{frame}} = \frac{3240 \times 8}{100 \times 10^6} \approx 260\ \mu\text{s}
+\]</div>
+<p>If each slave processing time is 1 μs, the theoretical minimum cycle is about 360 μs. In practical engineering, 500 μs–1 ms is often used to leave a margin.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_can_bus_2024/">CAN Bus</a>
+              <span class="rel-desc">EtherCAT has prerequisite CAN Bus.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_ota_software_update_2024/">OTA Software Update</a>
+              <span class="rel-desc">EtherCAT mentions OTA Software Update.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_technology_can_bus_2024/">CAN Bus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">CAN Bus mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_inovance_technology_2024/">Inovance Technology</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Inovance Technology mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3/">System Architecture and Electromechanical Master Design (System / Preliminary Design)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">System Architecture and Electromechanical Master Design (System / Preliminary Design) uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_openloong/">OpenLoong (Qinglong) Open-Source Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">The OpenLoong/Qinglong humanoid uses EtherCAT as its fieldbus, corroborated by industry analysis and the loong_driver_sdk repository.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_servo_drive_2024/">Servo Drive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Servo Drive uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_concept_digital_twin/">Digital Twin</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Digital Twin uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_application_industrial_manufacturing/">Industrial Manufacturing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Industrial Manufacturing uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Whole-Body Control (WBC) mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hardware_in_the_loop_2024/">Hardware-in-the-Loop</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Hardware-in-the-Loop mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p13_1_3/">Communication Networks and Synchronization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Communication Networks and Synchronization mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA Teleoperation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ALOHA Teleoperation System has prerequisite EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14/">Software &amp; Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Software &amp; Integration uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14_1_2/">Real-time control framework</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Real-time control framework uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Model Predictive Control (MPC) mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p3_2_2/">Communication network architecture</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Communication network architecture uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_operator_task_jacobian/">Task Jacobian</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Task Jacobian mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_ati_force_torque_sensor_2024/">ATI Force Torque Sensor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ATI Force Torque Sensor uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p13/">Electronics &amp; Power Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Electronics &amp; Power Systems uses EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_2_3/">Whole-body control WBC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Whole-body control WBC mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_thermal_simulation/">Thermal Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_technology_ethercat_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_operator_task_jacobian/">
+          <span class="entry-type">Operator</span>
+          <h3>Task Jacobian</h3>
+          <p>The matrix that maps joint-space velocities and accelerations to the velocity/acceleration of a task…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_application_industrial_manufacturing/">
+          <span class="entry-type">Application Scenario</span>
+          <h3>Industrial Manufacturing</h3>
+          <p>The application of humanoid robots to tasks such as assembly, machine tending, inspection, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_digital_twin/">
+          <span class="entry-type">Concept</span>
+          <h3>Digital Twin</h3>
+          <p>A virtual replica of a physical asset or process that is continuously synchronized with real-world…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3/">
+          <span class="entry-type">Method</span>
+          <h3>System Architecture and Electromechanical Master Design (System / Preliminary Design)</h3>
+          <p>System Architecture and Electromechanical Design (System / Preliminary Design) —— Phase 3 of the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Communication network architecture</h3>
+          <p>Communication topology, protocol allocation table, bandwidth/delay budget</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_servo_drive_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Servo Drive</h3>
+          <p>Electronic amplifier that converts low-power command signals into high-current motor control for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-body control WBC</h3>
+          <p>WBC controller, multi-task coordination demonstration, solution time &amp;lt;1 ms</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_can_bus_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>CAN Bus</h3>
+          <p>Field bus connecting joint motor drives to the central controller in humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hardware_in_the_loop_2024/">
+          <span class="entry-type">Method</span>
+          <h3>Hardware-in-the-Loop</h3>
+          <p>Testing method where physical actuators and controllers are exercised against a real-time simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Real-time control framework</h3>
+          <p>Real-time performance test report, maximum jitter &lt; target</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p13_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Communication Networks and Synchronization</h3>
+          <p>Communication topology, protocol allocation, bandwidth/latency budget, synchronization accuracy</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14/">
+          <span class="entry-type">Method</span>
+          <h3>Software &amp; Integration</h3>
+          <p>Software &amp; Integration-the 14th stage of the entire Android product development process, covering…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_ota_software_update_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>OTA Software Update</h3>
+          <p>Over-the-air deployment of control policies, firmware, and system software to deployed humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_thermal_simulation/">
+          <span class="entry-type">Method</span>
+          <h3>Thermal Simulation</h3>
+          <p>A computational method that predicts temperature distribution, heat flux, and cooling requirements…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_openloong/">
+          <span class="entry-type">Robot System</span>
+          <h3>OpenLoong (Qinglong) Open-Source Humanoid Robot</h3>
+          <p>The full-size open-source humanoid reference platform from China&#39;s National and Local Co-built…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_aloha_teleoperation_system_2023/">
+          <span class="entry-type">Technology</span>
+          <h3>ALOHA Teleoperation System</h3>
+          <p>Low-cost bimanual leader-follower teleoperation hardware used to collect human demonstrations for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p13/">
+          <span class="entry-type">Method</span>
+          <h3>Electronics &amp; Power Systems</h3>
+          <p>Electronics &amp; Power Systems—Phase 13 of the full lifecycle for humanoid robot product development,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_ati_force_torque_sensor_2024/">
+          <span class="entry-type">Component</span>
+          <h3>ATI Force Torque Sensor</h3>
+          <p>Wrist and ankle force/torque sensor for contact control and interaction.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_inovance_technology_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Inovance Technology</h3>
+          <p>Chinese industrial automation supplier of servo drives and frameless torque motors for robot joints.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

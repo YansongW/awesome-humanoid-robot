@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stage 0 Foundation Building: Getting Your Ticket to Humanoid Robotics · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Stage 0 Foundation Building: Getting Your Ticket to Humanoid Robotics</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="stage-0-foundation-building-getting-your-ticket-to-humanoid-robotics">Stage 0 Foundation Building: Getting Your Ticket to Humanoid Robotics</h1>
+<blockquote>
+<p>⚠️ The content of this roadmap is compiled based on public information and theoretical knowledge, and has not been verified on actual hardware; please verify safety specifications yourself when dealing with electrical or mechanical operations.</p>
+</blockquote>
+<h2 id="positioning-of-this-stage">Positioning of This Stage</h2>
+<p>The goal of Stage 0 is not to "learn all the basics" – that's a bottomless pit where countless people get stuck. The goal is to obtain four tickets:</p>
+<ol>
+<li><strong>Mathematics</strong>: Be familiar with matrices, probability, dynamics equations, and QP when you see them in control papers;</li>
+<li><strong>Programming &amp; Toolchain</strong>: Be able to work with Python/C++/git/ROS 2, and know what 3D printing is about;</li>
+<li><strong>Circuit Concepts</strong>: Know where electricity comes from and how signals travel, so you don't burn boards when you later work with real hardware;</li>
+<li>
+<p><strong>Simulation</strong>: Read a URDF file and make a bipedal model stand up in MuJoCo.</p>
+</li>
+<li>
+<p><strong>Time Budget</strong>: 6–10 weeks part-time (8–10 hours/week), 3–4 weeks full-time.</p>
+</li>
+<li><strong>Budget</strong>: Approximately ¥0 – all software in this stage is open source; costs for optional 3D printing prototyping experience need to be confirmed with the supplier.</li>
+<li><strong>Core Discipline</strong>: Each topic provides a criterion for "how much is enough to learn". <strong>Meet the criterion and move on; do not go back for more practice</strong>. Real gaps will be exposed in later stages, and you can return to fill them with specific problems, which is ten times more efficient.</li>
+</ol>
+<h2 id="step-1-the-four-pillars-of-mathematics">Step 1: The Four Pillars of Mathematics</h2>
+<p>Don't learn them the way math majors do (definition-theorem-proof). Learn them as a "control engineer's minimum ammunition depot". The criterion for all four is <strong>demonstrable</strong>, not "I feel I understand".</p>
+<h3 id="11-linear-algebra">1.1 Linear Algebra</h3>
+<p>【What to do】Vector and matrix operations, eigenvalues/eigenvectors, rotation matrices and homogeneous transformations, least squares and pseudo-inverse. Hands-on practice: Use NumPy to write a 4×4 homogeneous transformation to transform foot coordinates from the ankle frame to the torso frame; then write the forward kinematics of a two-link planar arm.</p>
+<p>【Why】Linear algebra is the language of all spatial relationships in humanoid robots: forward kinematics is the multiplication of homogeneous transformations, the Jacobian matrix maps joint velocities to end-effector velocities, and every QP in whole-body control is a matrix operation. Card: <a href="/entry/ent_foundation_linear_algebra/">Linear Algebra</a> (the branch of mathematics studying vector spaces, linear transformations, matrices, and systems of linear equations). The kinematic derivations in Wiki <a href="/wiki/chapters/chapter-08/">Chapter 8</a> are all built on this.</p>
+<p>【How to approach based on your background】CS background: You already know the calculations; focus on <strong>geometric intuition</strong> – a rotation matrix is not nine numbers, it's the three axes of a coordinate system. Physics/Math background: Go straight to the exercises above as a test. Zero background: First watch 3Blue1Brown's "Essence of Linear Algebra" to build intuition, then start calculating.</p>
+<p><strong>How much is enough</strong> (stop when all three criteria are met): ① Can manually derive a 2D rotation matrix and explain the geometric meaning of each column; ② The forward kinematics code for a two-link planar arm runs and its output matches manual calculation; ③ When you see the pseudo-inverse J⁺ of the Jacobian, you know it's solving a least-squares problem.</p>
+<h3 id="12-probability-theory">1.2 Probability Theory</h3>
+<p>【What to do】Random variables, expectation and covariance, Gaussian distribution, Bayes' theorem, conditioning and marginalization. Hands-on practice: Use NumPy to simulate "joint encoder readings" with Gaussian noise, plot a histogram, and calculate the mean/variance; then manually solve a "sensor alarm → true fault probability" problem using Bayes' theorem.</p>
+<p>【Why】Real sensors always have noise. State estimation (the Kalman filter family) is essentially recursive Bayesian inference. Imitation learning and VLA models used later also output probability distributions of actions, not deterministic values. Card: <a href="/entry/ent_foundation_probability_theory/">Probability Theory</a> – the foundation of all probabilistic models in robotics and machine learning.</p>
+<p>【How to approach based on your background】AI background: Self-check with the criteria; you'll likely pass directly. Hardware background: This is often your weakest of the four, and it directly determines whether you can understand state estimation later – it's worth investing half your math budget here. Zero background: Study this after linear algebra.</p>
+<p><strong>How much is enough</strong>: ① Can explain in one sentence what the diagonal and off-diagonal elements of a covariance matrix represent; ② Can manually solve a Bayes' theorem problem with correct numerical results; ③ When you see the five equations of the Kalman filter, you don't panic – you don't need to derive them, but you can state the role of each equation (predict, gain, update).</p>
+<h3 id="13-classical-mechanics">1.3 Classical Mechanics</h3>
+<p>【What to do】Newton-Euler equations, Lagrangian method, kinetic/potential energy, inertia tensor, angular momentum. Hands-on practice: Use the Lagrangian method to derive the dynamics equations for a simple pendulum and a double pendulum, perform numerical integration for a 5-second simulation, and plot the angle curves.</p>
+<p>【Why】A humanoid robot is a floating-base multi-rigid-body system. The equation M(q)q̈ + C(q,q̇) + g(q) = τ will run through every control paper you read later. Bipedal balance (ZMP, capture point) is a direct consequence of classical mechanics. Card: <a href="/entry/ent_foundation_classical_mechanics/">Classical Mechanics</a> (including Newton's laws, conservation principles, and rigid body dynamics). The derivations in Wiki <a href="/wiki/chapters/chapter-08/">Chapter 8</a> and <a href="/wiki/chapters/chapter-14/">Chapter 14 Fundamentals of Robot Control</a> all start from here.</p>
+<p>【How to approach based on your background】Mechanical/Automotive background: You're likely good enough; just do the double pendulum exercise to verify and move on. Pure software background: This is your <strong>most important</strong> catch-up in this stage – without mechanical intuition, when a robot falls in simulation, you won't know if it's the controller's fault or the model's fault.</p>
+<p><strong>How much is enough</strong>: ① Can derive the double pendulum equations (allowed to follow a book, but can explain each step without it); ② Can qualitatively explain "why a humanoid robot with a larger torso inertia is actually easier to stabilize"; ③ Understand the meaning of each field in the <code>&lt;inertial&gt;</code> tag of a URDF – this directly paves the way for Step 4.</p>
+<h3 id="14-convex-optimization">1.4 Convex Optimization</h3>
+<p>【What to do】Identifying convex sets/functions, standard QP (Quadratic Programming) form, geometric meaning of equality/inequality constraints, solving a QP using an existing solver. Hands-on practice: Use Python to solve min ‖x‖² s.t. Ax=b, x≥0 (choose a solver like OSQP, quadprog, etc., based on your environment).</p>
+<p>【Why】The real-time layer of humanoid control almost always solves a QP: Whole-Body Control (WBC) formulates "task tracking + contact force constraints + torque limits" as an inverse dynamics QP, solved every millisecond; MPC solves QPs in a receding horizon. Convexity guarantees that any local optimum is also global – this is the fundamental reason engineers can put QP into kHz-level control loops. Card: <a href="/entry/ent_foundation_convex_optimization/">Convex Optimization</a>. For deeper study, see Wiki <a href="/wiki/chapters/chapter-14/">Chapter 14</a>.</p>
+<p>【How to approach based on your background】This is the subject with the <strong>fastest diminishing marginal returns</strong> among the four: if you're not writing your own controller, "can identify convexity + can use a solver + can understand QP structure" is enough; leave KKT derivation for later when needed. Operations research background: self-check and pass.</p>
+<p><strong>How much is enough</strong>: ① Given a problem, can determine if it's convex (quadratic positive definite objective + linear constraints → yes); ② The solution to the practice problem satisfies all constraints upon verification; ③ Can explain to someone else "why WBC dares to use QP in a real-time loop".</p>
+<h2 id="step-2-programming-toolchain">Step 2: Programming &amp; Toolchain</h2>
+<p>【What to do】① Python proficiency: NumPy vectorization, matplotlib plotting, writing classes; ② C++ to the level of "can read and modify": pointers/references, header files, compilation/linking; ③ Daily git operations: clone, branch, commit, push, submit a PR; ④ Install ROS 2 LTS, run the talker/listener example, and write your own pair of publisher/subscriber nodes; ⑤ Understand the basic FDM 3D printing workflow (modeling → slicing → printing) and strength fundamentals.</p>
+<p>【Why】The de facto standard for the humanoid software stack is <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 middleware</a> – a DDS-based publish/subscribe mechanism with real-time support (source: ros.org, see card). Your simulation, drivers, and state estimation in later stages will all be organized as nodes/topics. The industry standard division of labor is C++ for the low-level real-time loop and Python for algorithm prototyping. 3D printing is the primary manufacturing method for the later full-robot stage: the structural parts and cycloidal reducers of the open-source humanoid Berkeley Humanoid Lite are printed parts, with a total BOM cost of approximately $4,312 in the US and $3,236 in China (source: <code>data/roadmap/research/berkeley-humanoid-lite.md</code>). The slicing and tolerance knowledge you learn now will directly translate into money and time savings. For a full picture of the software ecosystem, see Wiki <a href="/wiki/chapters/chapter-22/">Chapter 22 Software Middleware</a>.</p>
+<p>【How to approach based on your background】Pure software background: Skip Python/git if you pass the self-check; invest time in C++ memory/real-time concepts and the ROS 2 node/topic/service trio. Hardware background: Starting Python with NumPy is the most efficient path, as it's closest to MATLAB thinking. Zero background: Learn Python first, then git; postpone C++ until needed, as you'll forget it if you don't use it.</p>
+<p><strong>How much is enough</strong>: ① ROS 2: Can independently write two nodes (one publisher, one subscriber) and verify data flow using <code>ros2 topic echo</code>; ② git: Complete the full fork→branch→commit→PR workflow once (practice on your own exercise repository); ③ 3D printing: Can explain the effect of FDM layer orientation on part strength, and why clearance is needed for mating holes (the specific tolerance magnitude for a given machine needs to be confirmed with the supplier).</p>
+<h2 id="step-3-circuits-and-embedded-basics">Step 3: Circuits and Embedded Basics</h2>
+<p><strong>[What to Do]</strong> In this phase, you will not build any boards, only establish three sets of concepts: <strong>Power Supply</strong> (voltage rails, current budget, wire gauge and voltage drop, fuses and switches), <strong>Ground</strong> (common ground, ground loops), and <strong>Signals</strong> (digital levels, differential transmission, anti-interference). Then focus on understanding the role of the <a href="/entry/ent_technology_can_bus_2024/">CAN Bus</a>: it is the fieldbus connecting the joint motor drivers of a humanoid robot with the central controller (Source: Card, Wikipedia CAN bus 2024). Optional hands-on: Buy an entry-level CAN adapter (price to be confirmed with the supplier), use can-utils to capture a segment of real bus data and observe the frame structure.</p>
+<p><strong>[Why]</strong> At the full robot stage, you will face a dozen to over twenty joint drivers hanging on the bus: Berkeley Humanoid Lite uses CAN to connect all actuators, with the main controller being an Intel N95 mini PC (approx. $129, placed in the torso, running both low-level control and RL policies; Source: <code>data/roadmap/research/berkeley-humanoid-lite.md</code>). During full robot debugging, more than half of the "mysterious problems" originate from the electrical layer: voltage drop, common ground, termination resistors, and wiring harnesses. Establishing these concepts now will save you from burning boards later. For details on power system engineering, see Wiki <a href="/wiki/chapters/chapter-06/">Chapter 6: Computation, Power, and Thermal Management</a>.</p>
+<p><strong>[How to Analyze Your Situation]</strong> EE/Automation background: Spend 30 minutes reviewing the concepts; Software or zero background: You are not required to design circuits, but you must be "brave enough to measure, and know how to measure" — use a multimeter to measure voltage and continuity, and understand what a short circuit on a 24 V bus means. Safety tip: Lithium batteries and bus capacitors are not toys. Verify safety regulations yourself before any live operation. If unsure, have someone with hardware experience present.</p>
+<p><strong>What is Sufficient to Learn</strong>: ① Be able to sketch a power supply topology diagram by hand: "Battery → Fuse/Emergency Stop → Bus → Each Driver"; ② Be able to explain why 120 Ω termination resistors are needed at both ends of a CAN bus; ③ Be able to explain why differential signals are more immune to interference than single-ended signals.</p>
+<h2 id="step-4-first-simulation-experience-understand-urdf-make-a-biped-stand-up">Step 4: First Simulation Experience — Understand URDF, Make a Biped Stand Up</h2>
+<p><strong>[What to Do]</strong> ① Install the <a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo Physics Engine</a>; ② Find an open-source humanoid/biped <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF Robot Description Format</a> file and read through it — URDF is an XML format describing robot links, joints, inertia, and geometry (Source: wiki.ros.org/urdf, see card); ③ Load the model into MuJoCo (or use the project's built-in MJCF); ④ Write a simple position PD controller: given target joint angles for a standing posture, make the biped model stand still for 10 seconds.</p>
+<p><strong>[Why]</strong> MuJoCo is a high-fidelity physics engine with rich contact dynamics, widely used in humanoid control research (Source: mujoco.org, see card) — the core difficulty of bipedal standing is precisely foot contact and balance, which plays to its strengths. Understanding URDF is the first key to unlocking any open-source humanoid repository: real open-source projects maintain three description formats (URDF/MJCF/USD) simultaneously (Berkeley Humanoid Lite, Source: <code>data/roadmap/research/berkeley-humanoid-lite.md</code>). Understanding this format allows you to read the "skeleton blueprint" of other robots. For a systematic discussion of the simulation technology stack, see Wiki <a href="/wiki/chapters/chapter-23/">Chapter 23: Simulation and Physics Engines</a>.</p>
+<p><strong>[How to Analyze Your Situation]</strong> No GPU is fine — CPU is sufficient for standing-level rigid body simulation. Prioritize "small size, good documentation" open-source bipeds (the research archive <code>data/roadmap/research/</code> contains candidates like Berkeley Humanoid Lite, ToddlerBot, along with cost and complexity analysis). Don't jump into full-size models. <strong>If you can only complete one thing in this phase, make it this one</strong> — it simultaneously validates mechanics, programming, and toolchain skills.</p>
+<p><strong>What is Sufficient to Learn</strong>: i.e., verification criteria items 1 and 2 below — this step is the graduation project for Stage 0.</p>
+<h2 id="verification-criteria">Verification Criteria</h2>
+<p>Self-check each item. Only proceed to Stage 1 if all are passed:</p>
+<ol>
+<li><strong>URDF Reading Comprehension</strong>: Given an unfamiliar biped URDF, be able to answer verbally without documentation — how many controllable joints, where is the root link, what are the <code>origin</code>/<code>axis</code> of the ankle joint, the meaning of <code>ixx/iyy/izz</code> in <code>&lt;inertial&gt;</code>; and use <code>check_urdf</code> or an equivalent tool to confirm no parsing errors.</li>
+<li><strong>MuJoCo Standing</strong>: Load the biped model, use your own position PD controller to achieve standing without external force for ≥ 10 seconds without falling; after applying a small impulse to the torso, the model can recover standing — or you can correctly explain why it cannot recover (gain, contact, or model issue). This tests mechanical intuition, not parameter tuning luck.</li>
+<li><strong>Math Spot Check</strong>: Randomly pick one item from each of the "sufficiency criteria" of the four core subjects, and be able to demonstrate it on the spot (hand calculation or running code).</li>
+<li><strong>Toolchain</strong>: Have a record of successfully running ROS 2 talker/listener (terminal screenshot or screen recording); all practice code from this phase is in your git repository with clear commit history.</li>
+<li><strong>Circuit Concepts</strong>: Be able to explain to a peer (or to the air) the three topics: power supply topology, CAN termination resistors, and differential signals; if you cannot explain clearly, it is considered not up to standard.</li>
+</ol>
+<p>Two "not sufficient" warning signals: Unable to write a PD controller without following a tutorial (Step 4 is done by following along); Changing the <code>origin</code> in URDF and not understanding why the model floats (geometric intuition from 1.1 not established). If either occurs, go back to the corresponding section for re-verification.</p>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model falls apart or flies around upon loading in MuJoCo</td>
+<td>Initial pose has interpenetration (joints embedded in each other); a link lacks <code>&lt;inertial&gt;</code> causing zero mass/inertia</td>
+<td>First check simulator compilation warnings; give the model a reasonable initial keyframe; check inertia parameters for each link</td>
+</tr>
+<tr>
+<td>Joints oscillate at high frequency during PD standing</td>
+<td>Gain too high, integration step too large, numerical stiffness</td>
+<td>First halve P gain then slowly increase; reduce simulation timestep to reproduce and compare; check if desired damping was written as spring stiffness</td>
+</tr>
+<tr>
+<td>Feet slip like on ice</td>
+<td>Contact friction parameters use defaults, lower than real sole-ground combination</td>
+<td>Check friction parameters for geom/contact pairs; adjust based on friction coefficient magnitude for sole material (rubber/PLA print), specific values need to be confirmed based on material</td>
+</tr>
+<tr>
+<td>Joint motion direction reversed after URDF to MJCF conversion</td>
+<td>URDF <code>axis</code> definition inconsistent with target simulator convention; angle unit mix-up (degrees vs radians)</td>
+<td>Drive each joint individually in the viewer to check direction; full-text search angle fields to confirm units</td>
+</tr>
+<tr>
+<td>Two ROS 2 nodes cannot receive messages from each other</td>
+<td><code>ROS_DOMAIN_ID</code> inconsistent; firewall blocking DDS traffic; topic name/QoS mismatch</td>
+<td>First get it working on the same machine, then across machines; <code>ros2 topic list</code> to confirm both see the same topic; check environment variables (refer to the official documentation of your distribution)</td>
+</tr>
+<tr>
+<td>Reluctant to enter Stage 1, repeatedly re-learning math</td>
+<td>Perfectionism trap: using "building a foundation" as an excuse to procrastinate</td>
+<td>Check off items against the verification criteria one by one; move on when criteria are met; let Stage 1 expose the real gaps</td>
+</tr>
+</tbody>
+</table>
+<p>Stage 0 is now complete. Next stop: <a href="/roadmap/stage-1-actuator/">Stage 1: Build an Actuator (Joint)</a>: Apply the circuit concepts from Step 3 and PD control to real hardware for the first time; the foundation in URDF and MuJoCo will pay off in <a href="/roadmap/stage-2-biped/">Stage 2: Biped Platform</a> for simulated walking.</p>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li><a href="/roadmap/playbooks/sim-setup/">Simulation Environment Setup Guide</a> — The first simulation experience in Stage 0 will use the engine installation and model preparation from this guide.</li>
+<li><a href="/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/index/">← Previous<span>0→1 Building a Humanoid Robot: Roadmap Overview</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/stage-1-actuator/">Next →<span>Phase 1: Build a Joint (Actuator)</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#stage-0-foundation-building-getting-your-ticket-to-humanoid-robotics">Stage 0 Foundation Building: Getting Your Ticket to Humanoid Robotics</a><ul>
+<li><a href="#positioning-of-this-stage">Positioning of This Stage</a></li>
+<li><a href="#step-1-the-four-pillars-of-mathematics">Step 1: The Four Pillars of Mathematics</a><ul>
+<li><a href="#11-linear-algebra">1.1 Linear Algebra</a></li>
+<li><a href="#12-probability-theory">1.2 Probability Theory</a></li>
+<li><a href="#13-classical-mechanics">1.3 Classical Mechanics</a></li>
+<li><a href="#14-convex-optimization">1.4 Convex Optimization</a></li>
+</ul>
+</li>
+<li><a href="#step-2-programming-toolchain">Step 2: Programming &amp; Toolchain</a></li>
+<li><a href="#step-3-circuits-and-embedded-basics">Step 3: Circuits and Embedded Basics</a></li>
+<li><a href="#step-4-first-simulation-experience-understand-urdf-make-a-biped-stand-up">Step 4: First Simulation Experience — Understand URDF, Make a Biped Stand Up</a></li>
+<li><a href="#verification-criteria">Verification Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

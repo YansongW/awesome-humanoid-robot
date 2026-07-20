@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RGB-D相机 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/component/">零部件</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RGB-D相机</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">零部件</div>
+      <h1>RGB-D相机</h1>
+      <p class="entry-name-en">RGB-D Camera</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-07.md#7.3.3.1 视觉/深度相机模块 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">阶段 3 · 完整人形</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>视觉/深度相机是人形机器人外部感知与场景理解的核心入口。当前主流三维深度获取技术包括结构光（structured light）、飞行时间（ToF，含 dToF/iToF）和双目立体视觉（stereo vision）三条路线，分别依赖不同的光学器件、发射器和图像传感器组合。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>RGB-D相机是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>视觉/深度相机是人形机器人外部感知与场景理解的核心入口。当前主流三维深度获取技术包括<strong>结构光（structured light）</strong>、<strong>飞行时间（ToF，含 dToF/iToF）</strong>和<strong>双目立体视觉（stereo vision）</strong>三条路线，分别依赖不同的光学器件、发射器和图像传感器组合。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：结构光、飞行时间（ToF）、dToF、iToF、SPAD、VCSEL、双目立体视觉</p>
+<ul>
+<li><strong>结构光（structured light）</strong>：通过投射已知红外图案并分析其在物体表面的变形来获取深度图像的技术。</li>
+<li><strong>飞行时间（ToF, Time-of-Flight）</strong>：测量光脉冲或调制光往返时间来计算距离的三维成像技术。</li>
+<li><strong>dToF（direct ToF）</strong>：直接测量单个光脉冲往返时间，常与 SPAD 配合实现远距离、低功耗深度感知。</li>
+<li><strong>iToF（indirect ToF）</strong>：通过测量调制光相位差间接计算距离，适合中短距离高分辨率场景。</li>
+<li><strong>SPAD（Single-Photon Avalanche Diode）</strong>：单光子雪崩二极管，具有高灵敏度，可用于 dToF 光子计数。</li>
+<li><strong>VCSEL（Vertical-Cavity Surface-Emitting Laser）</strong>：垂直腔面发射激光器，常用于结构光和 ToF 的光源。</li>
+<li><strong>双目立体视觉（stereo vision）</strong>：利用双相机视差和稠密匹配算法恢复深度的被动视觉方法。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["3D 视觉技术路线"] --&gt; B["结构光&lt;br/&gt;高精度/中距"]
+    A --&gt; C["ToF&lt;br/&gt;dToF/iToF"]
+    A --&gt; D["双目立体&lt;br/&gt;被动/纹理依赖"]
+    A --&gt; E["RGB-D 融合&lt;br/&gt;语义+深度"]</code></pre>
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th>总部</th>
+<th>核心技术与产品</th>
+<th>典型机器人应用</th>
+<th>供应状态/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>灵明光子</td>
+<td>中国</td>
+<td>SPAD/SiPM dToF 传感器</td>
+<td>深度相机、避障</td>
+<td>国产芯片，量产爬坡中[公司官网]</td>
+</tr>
+<tr>
+<td>聚芯微电子</td>
+<td>中国</td>
+<td>iToF 图像传感器、3D 感知方案</td>
+<td>服务机器人视觉</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>阜时科技</td>
+<td>中国</td>
+<td>SPAD dToF 芯片、结构光投射</td>
+<td>机器人/刷脸/车载</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>飞芯电子</td>
+<td>中国</td>
+<td>dToF 激光雷达/深度传感芯片</td>
+<td>机器人、扫地机</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>海康机器人</td>
+<td>中国</td>
+<td>工业相机、RGB-D、立体相机</td>
+<td>物流/制造机器人</td>
+<td>海康威视子公司</td>
+</tr>
+<tr>
+<td>奥比中光</td>
+<td>中国</td>
+<td>结构光/ToF 3D 视觉模组</td>
+<td>服务/人形机器人</td>
+<td>国产 3D 视觉龙头</td>
+</tr>
+<tr>
+<td>图漾科技</td>
+<td>中国</td>
+<td>工业 3D 相机（结构光/ToF）</td>
+<td>物流抓取、检测</td>
+<td>公开资料</td>
+</tr>
+<tr>
+<td>Intel RealSense</td>
+<td>美国</td>
+<td>立体/结构光/RGB-D 深度相机</td>
+<td>机器人开发原型</td>
+<td>产品线调整，需关注</td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>日本</td>
+<td>ToF 图像传感器、CMOS</td>
+<td>高端 3D 相机</td>
+<td>核心器件供应商</td>
+</tr>
+<tr>
+<td>舜宇光学</td>
+<td>中国</td>
+<td>光学镜头/模组/ToF 模组</td>
+<td>手机/机器人视觉</td>
+<td>光学组件供应稳定</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+<li>项目 Wiki：chapter-07.md#7.3.3.1 视觉/深度相机模块</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense 深度相机</a>
+              <span class="rel-desc">RGB-D相机基于Intel RealSense 深度相机。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+              <span class="rel-desc">RGB-D相机使用Unitree G1 人形机器人。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">NVIDIA Jetson AGX Orin</a>
+              <span class="rel-desc">RGB-D相机使用NVIDIA Jetson AGX Orin。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">LIBERO前置依赖RGB-D相机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense 深度相机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">Intel RealSense 深度相机前置依赖RGB-D相机。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_rgbd_camera"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_intel_realsense_depth_camera_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>Intel RealSense 深度相机</h3>
+          <p>Intel RealSense 深度相机是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>NVIDIA Jetson AGX Orin</h3>
+          <p>NVIDIA Jetson AGX Orin是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Unitree G1 人形机器人</h3>
+          <p>Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

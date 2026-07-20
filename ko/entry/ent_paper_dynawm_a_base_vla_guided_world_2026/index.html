@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</h1>
+      <p class="entry-name-en">DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02604v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.02604v1 Announce Type: cross Abstract: Although vision-language-action (VLA) models have received widespread attention, many challenges remain in manipulating dynamic moving objects. In most existing approaches, end-to-end forward or inverse dynamics models, i.e., world models, are incorporated into high-performance base VLA architectures, which may degrade the performance of well-pretrained base VLA models due to inappropriate fine-tuning. In this paper, we propose DynaWM, a base-VLA-guided world foundation model that adapts to a wide variety of fine-tuned and coarse-tuned base-VLA checkpoints for moving-object manipulation. DynaWM uses a Mamba-3-based action encoder to encode the base action chunk produced by the base VLA into an action-conditioning representation, a V-JEPA 2.1 vision encoder to extract features from multi-view observation history, and a proprioceptive state encoder to encode robotic-arm proprioceptive states. These feature representations jointly condition a flow-matching DiT to regenerate motion-aware action trajectories for moving-object manipulation. For systematic evaluation, we construct the DynaGrasp-32 benchmark, covering six categories of moving-object manipulation tasks, including velocity variation, trajectory variation, and multi-object manipulation, as well as the DynaGrasp-1600 dataset, which consists of 32 scenarios, 1,600 demonstration trajectories, and approximately 1.53M images. For fine-tuned base-VLA checkpoints, DynaWM achieves percentage improvements of 7.19, 45.31, 1.88, and 10.94 over SmolVLA, X-VLA, {\pi}0, and {\pi}0.5, respectively. For coarse-tuned base-VLA checkpoints, performance increases by 35.13, 44.06, 35.69, and 26.13 percentage, respectively. Ablation experiments show that visual encoding enhances success by 27.50%, while reducing success by 45.44% if action conditioning is removed.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.02604" target="_blank" rel="noopener">DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>비전-언어-행동(VLA) 모델이 널리 주목받고 있지만, 동적 움직임 객체를 조작하는 데는 여전히 많은 과제가 남아 있습니다. 대부분의 기존 접근 방식에서는 엔드투엔드 순방향 또는 역방향 동역학 모델, 즉 월드 모델을 고성능 기본 VLA 아키텍처에 통합하는데, 이는 부적절한 파인튜닝으로 인해 사전 학습된 기본 VLA 모델의 성능을 저하시킬 수 있습니다. 본 논문에서는 다양한 파인튜닝 및 코스튜닝된 기본 VLA 체크포인트에 적응하여 움직이는 객체 조작을 수행하는 기본 VLA 기반 월드 파운데이션 모델인 DynaWM을 제안합니다. DynaWM은 Mamba-3 기반 행동 인코더를 사용하여 기본 VLA가 생성한 기본 행동 청크를 행동 조건화 표현으로 인코딩하고, V-JEPA 2.1 비전 인코더를 사용하여 다중 뷰 관찰 기록에서 특징을 추출하며, 고유수용성 상태 인코더를 사용하여 로봇 팔의 고유수용성 상태를 인코딩합니다. 이러한 특징 표현들은 공동으로 플로우 매칭 DiT를 조건화하여 움직이는 객체 조작을 위한 움직임 인식 행동 궤적을 재생성합니다. 체계적인 평가를 위해 속도 변화, 궤적 변화, 다중 객체 조작 등 여섯 가지 범주의 움직이는 객체 조작 작업을 포함하는 DynaGrasp-32 벤치마크와 32개 시나리오, 1,600개의 시연 궤적, 약 153만 개의 이미지로 구성된 DynaGrasp-1600 데이터셋을 구축했습니다. 파인튜닝된 기본 VLA 체크포인트의 경우, DynaWM은 SmolVLA, X-VLA, π0, π0.5 대비 각각 7.19%, 45.31%, 1.88%, 10.94%의 성능 향상을 달성했습니다. 코스튜닝된 기본 VLA 체크포인트의 경우, 성능이 각각 35.13%, 44.06%, 35.69%, 26.13% 향상되었습니다. 절제 실험 결과, 시각적 인코딩은 성공률을 27.50% 향상시키는 반면, 행동 조건화를 제거하면 성공률이 45.44% 감소하는 것으로 나타났습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>비전-언어-행동(VLA) 모델이 널리 주목받고 있지만, 동적 움직임 객체를 조작하는 데는 여전히 많은 과제가 남아 있습니다. 대부분의 기존 접근 방식에서는 엔드투엔드 순방향 또는 역방향 동역학 모델, 즉 월드 모델을 고성능 기본 VLA 아키텍처에 통합하는데, 이는 부적절한 파인튜닝으로 인해 사전 학습된 기본 VLA 모델의 성능을 저하시킬 수 있습니다. 본 논문에서는 다양한 파인튜닝 및 코스튜닝된 기본 VLA 체크포인트에 적응하여 움직이는 객체 조작을 수행하는 기본 VLA 기반 월드 파운데이션 모델인 DynaWM을 제안합니다. DynaWM은 Mamba-3 기반 행동 인코더를 사용하여 기본 VLA가 생성한 기본 행동 청크를 행동 조건화 표현으로 인코딩하고, V-JEPA 2.1 비전 인코더를 사용하여 다중 뷰 관찰 기록에서 특징을 추출하며, 고유수용성 상태 인코더를 사용하여 로봇 팔의 고유수용성 상태를 인코딩합니다. 이러한 특징 표현들은 공동으로 플로우 매칭 DiT를 조건화하여 움직이는 객체 조작을 위한 움직임 인식 행동 궤적을 재생성합니다. 체계적인 평가를 위해 속도 변화, 궤적 변화, 다중 객체 조작 등 여섯 가지 범주의 움직이는 객체 조작 작업을 포함하는 DynaGrasp-32 벤치마크와 32개 시나리오, 1,600개의 시연 궤적, 약 153만 개의 이미지로 구성된 DynaGrasp-1600 데이터셋을 구축했습니다. 파인튜닝된 기본 VLA 체크포인트의 경우, DynaWM은 SmolVLA, X-VLA, π0, π0.5 대비 각각 7.19%, 45.31%, 1.88%, 10.94%의 성능 향상을 달성했습니다. 코스튜닝된 기본 VLA 체크포인트의 경우, 성능이 각각 35.13%, 44.06%, 35.69%, 26.13% 향상되었습니다. 절제 실험 결과, 시각적 인코딩은 성공률을 27.50% 향상시키는 반면, 행동 조건화를 제거하면 성공률이 45.44% 감소하는 것으로 나타났습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dynawm_a_base_vla_guided_world_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">
+          <span class="entry-type">논문</span>
+          <h3>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</h3>
+          <p>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (X-VLA),…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</h3>
+          <p>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

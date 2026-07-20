@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Production Ramp · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/concept/">Concept</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Production Ramp</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Concept</div>
+      <h1>Production Ramp</h1>
+      <p class="entry-name-en">Production Ramp</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Mass Production</span><span class="tag">Manufacturing Processes</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#国产替代与供应链韧性 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Transition from pilot-line builds to volume manufacturing while improving yield, cycle time, and cost.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Ramp-up" target="_blank" rel="noopener">Production Ramp</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Production ramp-up is an important concept in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>The current supply chain for humanoid robot actuators exhibits a <strong>high concentration of high-end reducers and high-end encoders</strong>: Harmonic Drive, a global leader in harmonic reducers, and Nabtesco, a leader in RV reducers, hold significant market shares; high-end magnetic encoders/optical encoders are also primarily supplied by Japanese and European companies. This concentration introduces supply risks, especially during geopolitical tensions and capacity constraints.</p>
+<p>The domestic supply chain has made rapid progress over the past decade: Leaderdrive and Laffert have achieved mass production in the field of harmonic reducers; Inovance, Weichuan, and Leadshine are competitive in frameless motors and servo drives; Fortior Technology and Novosense have made breakthroughs in gate drivers and current sensor chips. However, in high-end areas such as <strong>ultra-high precision harmonic reducers, ultra-high resolution optical encoders, and automotive-grade power modules</strong>, domestic substitution is still ongoing.</p>
+<p>Engineering strategies to enhance supply chain resilience include:</p>
+<ol>
+<li><strong>Dual Sourcing</strong>: Certify at least two suppliers for key components to avoid single-source dependency;</li>
+<li><strong>Modular Interfaces</strong>: Standardize interfaces for motors, reducers, and drives to facilitate supplier switching;</li>
+<li><strong>Safety Stock and VMI</strong>: Maintain reasonable inventory levels for long-lead-time parts or adopt vendor-managed inventory;</li>
+<li><strong>Vertical Integration</strong>: Develop core components in-house (e.g., Tesla's self-developed actuators, Optimus's integrated motor and reducer), but this requires balancing capital investment with production ramp-up.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Supply Chain Resilience, Dual Sourcing, Vertical Integration, VMI, Production Ramp-up</p>
+<ul>
+<li><strong>Supply Chain Resilience</strong>: The ability of a supply chain to resist disruptions and recover quickly.</li>
+<li><strong>Dual Sourcing</strong>: Certifying two suppliers for the same component.</li>
+<li><strong>Vertical Integration</strong>: A company extending upstream to produce key components in-house.</li>
+<li><strong>VMI (Vendor Managed Inventory)</strong>: The supplier manages inventory and replenishes based on actual consumption.</li>
+<li><strong>Production Ramp-up</strong>: The process from trial production to mass production, with gradual optimization of yield and cost.</li>
+</ul>
+</div>
+<hr />
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_company_leaderdrive_2024/">Leaderdrive</a>
+              <span class="rel-desc">Production Ramp mentions Leaderdrive.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15/">Integration &amp; V &amp; V testing</a>
+              <span class="rel-desc">Production Ramp mentions Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_1_3/">Assembly line planning and SOP</a>
+              <span class="rel-desc">Production Ramp mentions Assembly line planning and SOP.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15_3_2/">Software stability and regression testing</a>
+              <span class="rel-desc">Production Ramp mentions Software stability and regression testing.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15_1_1/">Integration and debugging of leg system</a>
+              <span class="rel-desc">Production Ramp mentions Integration and debugging of leg system.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16/">Pilot &amp; Production Ramp</a>
+              <span class="rel-desc">Production Ramp mentions Pilot &amp; Production Ramp.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">applies to</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a>
+              <span class="rel-desc">Production ramp transitions Tesla Optimus from pilot to volume builds.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p1/">Requirements Definition and System Design (Concept / Pre-A)</a>
+              <span class="rel-desc">Production Ramp mentions Requirements Definition and System Design (Concept / Pre-A).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_1_1/">DFM/DFA review</a>
+              <span class="rel-desc">Production Ramp mentions DFM/DFA review.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5_1_1/">Central skeleton and limb link design</a>
+              <span class="rel-desc">Production Ramp mentions Central skeleton and limb link design.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_3_1/">Pilot Run</a>
+              <span class="rel-desc">Production Ramp mentions Pilot Run.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p8/">Structural FEA and iteration</a>
+              <span class="rel-desc">Production Ramp mentions Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_3_3/">PPAP / Mass Production Readiness Assessment</a>
+              <span class="rel-desc">Production Ramp mentions PPAP / Mass Production Readiness Assessment.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5/">Ontological Structure Engineering and Prototyping (Mechanical Structure)</a>
+              <span class="rel-desc">Production Ramp mentions Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5_1_2/">Joint mounting interface and housing design</a>
+              <span class="rel-desc">Production Ramp mentions Joint mounting interface and housing design.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15_1_3/">Perception-planning-control closed-loop integration</a>
+              <span class="rel-desc">Production Ramp mentions Perception-planning-control closed-loop integration.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_3_1/">Pilot Run</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Pilot Run is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_3_2/">Cost Accounting and cost reduction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Cost Accounting and cost reduction is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_2_3/">Handling of incoming material and process exception</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Handling of incoming material and process exception is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_1_2/">Design of mould and tooling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Design of mould and tooling is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_3_3/">PPAP / Mass Production Readiness Assessment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">PPAP / Mass Production Readiness Assessment is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_1_1/">DFM/DFA review</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">DFM/DFA review is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_1_3/">Assembly line planning and SOP</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Assembly line planning and SOP is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_3_4/">Service Manual and Training</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Service Manual and Training is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_2_1/">Supplier selection and audit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Supplier selection and audit is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_2_2/">Establishment of quality control system</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Establishment of quality control system is part of Production Ramp.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16/">Pilot &amp; Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Pilot &amp; Production Ramp is part of Production Ramp.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_production_ramp_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Software stability and regression testing</h3>
+          <p>Long-term operation without crash, critical fault recovery through injection</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Central skeleton and limb link design</h3>
+          <p>3D structural model, key section design, BOM first draft</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Cost Accounting and cost reduction</h3>
+          <p>Small-batch cost analysis report, cost reduction project list</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_3_3/">
+          <span class="entry-type">Method</span>
+          <h3>PPAP / Mass Production Readiness Assessment</h3>
+          <p>PPAP approval and mass production readiness evaluation passed</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Handling of incoming material and process exception</h3>
+          <p>8D report, improved verification, lower defect rate</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_leaderdrive_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Leaderdrive</h3>
+          <p>Chinese harmonic drive manufacturer with growing market share in domestic robot supply chains.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5/">
+          <span class="entry-type">Method</span>
+          <h3>Ontological Structure Engineering and Prototyping (Mechanical Structure)</h3>
+          <p>Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Supplier selection and audit</h3>
+          <p>Supplier list, Sample Test Report, qualified supplier list</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_3_4/">
+          <span class="entry-type">Method</span>
+          <h3>Service Manual and Training</h3>
+          <p>Service manual, spare parts strategy, training plan</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>DFM/DFA review</h3>
+          <p>DFM/DFA reports, engineering change lists, cost impact assessments</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Perception-planning-control closed-loop integration</h3>
+          <p>End-to-end success rate of typical tasks &gt; Objectives</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1/">
+          <span class="entry-type">Method</span>
+          <h3>Requirements Definition and System Design (Concept / Pre-A)</h3>
+          <p>Requirement Definition and System Architecture (Concept / Pre-A) – the first phase of the full…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Joint mounting interface and housing design</h3>
+          <p>Joint interface drawings, housing 3D, sealing scheme</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Design of mould and tooling</h3>
+          <p>Tooling drawings, FAI plans, acceptance criteria</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15/">
+          <span class="entry-type">Method</span>
+          <h3>Integration &amp; V &amp; V testing</h3>
+          <p>Integration &amp; V &amp; v-phase 15 of the Android product development process, covering solution design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot Run</h3>
+          <p>Summary Report of trial production, through rate, problem closed-loop rate</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Integration and debugging of leg system</h3>
+          <p>Single/double leg standing stability, joint following error &lt; target</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8/">
+          <span class="entry-type">Method</span>
+          <h3>Structural FEA and iteration</h3>
+          <p>Structural FEA-the 8th stage of the Android product development process, covering conceptual design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Establishment of quality control system</h3>
+          <p>Quality Plan, inspection specification, SPC Control Chart</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot &amp; Production Ramp</h3>
+          <p>Pilot &amp; Production Ramp-stage 16 of the Android product development process, covering concept…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_tesla_optimus/">
+          <span class="entry-type">Robot System</span>
+          <h3>Tesla Optimus</h3>
+          <p>Tesla&#39;s general-purpose humanoid robot program, with stated goals of factory deployment and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Assembly line planning and SOP</h3>
+          <p>Assembly flow chart, tooling list, SOP, time measurement</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

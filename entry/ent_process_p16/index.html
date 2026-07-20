@@ -1,0 +1,1162 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小批量试产与量产准备（Pilot &amp; Production Ramp） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">小批量试产与量产准备（Pilot &amp; Production Ramp）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>小批量试产与量产准备（Pilot &amp; Production Ramp）</h1>
+      <p class="entry-name-en">Pilot &amp; Production Ramp</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">量产制造</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>小批量试产与量产准备（Pilot &amp; Production Ramp）是人形机器人产品开发全流程中的第 16 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">可制造性设计</h4>
+<h5 id="dfmdfa">DFM/DFA 评审</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：设计可制造性/可装配性分析、装配工时估算</li>
+<li><strong>设计思考逻辑</strong>：将 3D 打印/CNC 原型转化为压铸、注塑、钣金等量产工艺</li>
+<li><strong>关键约束</strong>：模具成本、良率、节拍</li>
+<li><strong>完成标准 / 输出物</strong>：DFM/DFA 报告、工程变更清单、成本影响评估
+<strong>三级子任务：</strong></li>
+<li><strong>P16.1.1.1 输入梳理与目标量化</strong>：整理「DFM/DFA 评审」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.1.1.2 方案/方法设计</strong>：针对「DFM/DFA 评审」制定实施方法或候选方案，使用「设计可制造性/可装配性分析、装配工时估算」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「DFM/DFA 评审」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.1.1.4 测试执行与结果分析</strong>：按照验收标准执行「DFM/DFA 评审」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.1.1.5 文档输出与下游交付</strong>：输出「DFM/DFA 评审」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_4">模具与工装设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：压铸模、注塑模、冲压模、夹具、治具、检具</li>
+<li><strong>设计思考逻辑</strong>：保证批量一致性与装配精度</li>
+<li><strong>关键约束</strong>：模具周期、成本、修改难度</li>
+<li><strong>完成标准 / 输出物</strong>：模具/工装图纸、FAI 计划、验收标准
+<strong>三级子任务：</strong></li>
+<li><strong>P16.1.2.1 输入梳理与目标量化</strong>：整理「模具与工装设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.1.2.2 概念与详细设计</strong>：完成「模具与工装设计」的概念设计、详细设计与接口定义，使用「压铸模、注塑模、冲压模、夹具、治具、检具」验证可行性，输出图纸/算法/逻辑框架。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.1.2.3 实施/原型/样件制作</strong>：根据设计方案执行「模具与工装设计」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.1.2.4 验证与问题闭环</strong>：对「模具与工装设计」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.1.2.5 文档输出与下游交付</strong>：输出「模具与工装设计」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="sop">装配线规划与 SOP</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：工位设计、工装夹具、标准作业、节拍平衡</li>
+<li><strong>设计思考逻辑</strong>：从单台手工装配过渡到小批量流水线</li>
+<li><strong>关键约束</strong>：节拍、人员培训、场地</li>
+<li><strong>完成标准 / 输出物</strong>：装配流程图、工装清单、SOP、节拍测算
+<strong>三级子任务：</strong></li>
+<li><strong>P16.1.3.1 输入梳理与目标量化</strong>：整理「装配线规划与 SOP」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.1.3.2 算法/控制方案设计</strong>：基于「工位设计、工装夹具、标准作业、节拍平衡」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.1.3.3 算法实现与仿真验证</strong>：将「装配线规划与 SOP」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.1.3.4 算法调参与性能验证</strong>：对「装配线规划与 SOP」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.1.3.5 文档输出与下游交付</strong>：输出「装配线规划与 SOP」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_5">供应链与质量管理</h4>
+<h5 id="_6">供应商选择与审核</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：供应商审核、样品承认、IQC、第二供应商开发</li>
+<li><strong>设计思考逻辑</strong>：关键部件（电机、减速器、电池、计算板）需多家备份</li>
+<li><strong>关键约束</strong>：交付周期、质量一致性、价格</li>
+<li><strong>完成标准 / 输出物</strong>：供应商清单、样品测试报告、合格供方名录
+<strong>三级子任务：</strong></li>
+<li><strong>P16.2.1.1 输入梳理与目标量化</strong>：整理「供应商选择与审核」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.2.1.2 候选方案建立与评估</strong>：针对「供应商选择与审核」建立候选方案库，使用「供应商审核、样品承认、IQC、第二供应商开发」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.2.1.3 实施/原型/样件制作</strong>：根据设计方案执行「供应商选择与审核」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.2.1.4 验证与问题闭环</strong>：对「供应商选择与审核」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.2.1.5 文档输出与下游交付</strong>：输出「供应商选择与审核」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_7">质量控制体系建立</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：SPC、FAI、来料检验、过程检验、出货检验、MSA</li>
+<li><strong>设计思考逻辑</strong>：建立关键尺寸与性能监控，防止批量不良</li>
+<li><strong>关键约束</strong>：AQL 标准、检测能力、人员培训</li>
+<li><strong>完成标准 / 输出物</strong>：质量计划、检验规范、SPC 控制图
+<strong>三级子任务：</strong></li>
+<li><strong>P16.2.2.1 输入梳理与目标量化</strong>：整理「质量控制体系建立」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.2.2.2 算法/控制方案设计</strong>：基于「SPC、FAI、来料检验、过程检验、出货检验、MSA」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.2.2.3 算法实现与仿真验证</strong>：将「质量控制体系建立」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.2.2.4 算法调参与性能验证</strong>：对「质量控制体系建立」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.2.2.5 文档输出与下游交付</strong>：输出「质量控制体系建立」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_8">来料与过程异常处理</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：8D、CAPA、供应商质量改进</li>
+<li><strong>设计思考逻辑</strong>：快速闭环质量问题，避免流入下游</li>
+<li><strong>关键约束</strong>：响应时间、根因分析能力</li>
+<li><strong>完成标准 / 输出物</strong>：8D 报告、改善验证、不良率下降
+<strong>三级子任务：</strong></li>
+<li><strong>P16.2.3.1 输入梳理与目标量化</strong>：整理「来料与过程异常处理」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.2.3.2 方案/方法设计</strong>：针对「来料与过程异常处理」制定实施方法或候选方案，使用「8D、CAPA、供应商质量改进」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.2.3.3 实施/原型/样件制作</strong>：根据设计方案执行「来料与过程异常处理」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.2.3.4 验证与问题闭环</strong>：对「来料与过程异常处理」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.2.3.5 文档输出与下游交付</strong>：输出「来料与过程异常处理」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_9">试产与量产爬坡</h4>
+<h5 id="pilot-run">小批量试产（Pilot Run）</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：10–50 台试产、问题追踪、ECN、首件检验</li>
+<li><strong>设计思考逻辑</strong>：验证供应链、装配、测试、软件全链路</li>
+<li><strong>关键约束</strong>：时间、资源、样机成本</li>
+<li><strong>完成标准 / 输出物</strong>：试产总结报告、直通率、问题闭环率
+<strong>三级子任务：</strong></li>
+<li><strong>P16.3.1.1 输入梳理与目标量化</strong>：整理「小批量试产（Pilot Run）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.3.1.2 方案/方法设计</strong>：针对「小批量试产（Pilot Run）」制定实施方法或候选方案，使用「10–50 台试产、问题追踪、ECN、首件检验」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.3.1.3 实施/原型/样件制作</strong>：根据设计方案执行「小批量试产（Pilot Run）」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.3.1.4 验证与问题闭环</strong>：对「小批量试产（Pilot Run）」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.3.1.5 文档输出与下游交付</strong>：输出「小批量试产（Pilot Run）」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_10">成本核算与降本</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：实际 BOM、制造成本、良率影响、VA/VE</li>
+<li><strong>设计思考逻辑</strong>：小批量数据修正早期成本模型，为量产定价提供依据</li>
+<li><strong>关键约束</strong>：规模经济、供应商议价能力</li>
+<li><strong>完成标准 / 输出物</strong>：小批量成本分析报告、降本项目清单
+<strong>三级子任务：</strong></li>
+<li><strong>P16.3.2.1 输入梳理与目标量化</strong>：整理「成本核算与降本」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.3.2.2 方案/方法设计</strong>：针对「成本核算与降本」制定实施方法或候选方案，使用「实际 BOM、制造成本、良率影响、VA/VE」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.3.2.3 实施/原型/样件制作</strong>：根据设计方案执行「成本核算与降本」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.3.2.4 验证与问题闭环</strong>：对「成本核算与降本」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.3.2.5 文档输出与下游交付</strong>：输出「成本核算与降本」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="ppap-readiness">PPAP / 量产 readiness 评估</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：PPAP 文件包、产能爬坡计划、质量/交付/成本 readiness 检查</li>
+<li><strong>设计思考逻辑</strong>：确认具备批量交付能力</li>
+<li><strong>关键约束</strong>：客户/法规要求</li>
+<li><strong>完成标准 / 输出物</strong>：PPAP 批准、量产 readiness 评估通过
+<strong>三级子任务：</strong></li>
+<li><strong>P16.3.3.1 输入梳理与目标量化</strong>：整理「PPAP / 量产 readiness 评估」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.3.3.2 方案/方法设计</strong>：针对「PPAP / 量产 readiness 评估」制定实施方法或候选方案，使用「PPAP 文件包、产能爬坡计划、质量/交付/成本 readiness 检查」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.3.3.3 实施/原型/样件制作</strong>：根据设计方案执行「PPAP / 量产 readiness 评估」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P16.3.3.4 验证与问题闭环</strong>：对「PPAP / 量产 readiness 评估」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.3.3.5 文档输出与下游交付</strong>：输出「PPAP / 量产 readiness 评估」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_11">服务手册与培训</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：维修手册、备件清单、客户培训、现场支持流程</li>
+<li><strong>设计思考逻辑</strong>：量产不仅是卖出产品，还要建立服务能力</li>
+<li><strong>关键约束</strong>：文档完整性、培训体系</li>
+<li><strong>完成标准 / 输出物</strong>：服务手册、备件策略、培训计划
+<strong>三级子任务：</strong></li>
+<li><strong>P16.3.4.1 输入梳理与目标量化</strong>：整理「服务手册与培训」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P16.3.4.2 方案/方法设计</strong>：针对「服务手册与培训」制定实施方法或候选方案，使用「维修手册、备件清单、客户培训、现场支持流程」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.3.4.3 内容编写与内部评审</strong>：按模板完成「服务手册与培训」主体内容编写，引用原始数据与结论，组织评审并修订。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.3.4.4 验证与问题闭环</strong>：对「服务手册与培训」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P16.3.4.5 文档输出与下游交付</strong>：输出「服务手册与培训」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_12">包装/运输/贮存与现场部署</h4>
+<h5 id="_13">包装/运输/贮存设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：运输冲击仿真、包装箱设计、固定夹具、贮存环境要求</li>
+<li><strong>设计思考逻辑</strong>：保证机器人在运输和长期贮存过程中不受损伤</li>
+<li><strong>关键约束</strong>：尺寸、重量、成本、可重复使用</li>
+<li><strong>完成标准 / 输出物</strong>：运输试验通过、包装规范、贮存手册
+<strong>三级子任务：</strong></li>
+<li><strong>P16.4.1.1 输入梳理与目标量化</strong>：整理「包装/运输/贮存设计」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P16.4.1.2 方案/方法设计</strong>：针对「包装/运输/贮存设计」制定实施方法或候选方案，使用「运输冲击仿真、包装箱设计、固定夹具、贮存环境要求」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.4.1.3 实施/建模/实验</strong>：根据方案执行「包装/运输/贮存设计」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P16.4.1.4 验证与优化</strong>：对「包装/运输/贮存设计」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P16.4.1.5 文档输出与下游交付</strong>：输出「包装/运输/贮存设计」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_14">现场部署与运维</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：安装调试、客户培训、远程运维、备件物流、现场服务手册</li>
+<li><strong>设计思考逻辑</strong>：产品交付不仅是硬件，还包括持续服务能力</li>
+<li><strong>关键约束</strong>：人员培训、服务网络、备件库存</li>
+<li><strong>完成标准 / 输出物</strong>：部署SOP、培训材料、服务手册、SLA
+<strong>三级子任务：</strong></li>
+<li><strong>P16.4.2.1 输入梳理与目标量化</strong>：整理「现场部署与运维」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P16.4.2.2 方案/方法设计</strong>：针对「现场部署与运维」制定实施方法或候选方案，使用「安装调试、客户培训、远程运维、备件物流、现场服务手册」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.4.2.3 实施/建模/实验</strong>：根据方案执行「现场部署与运维」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P16.4.2.4 验证与优化</strong>：对「现场部署与运维」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P16.4.2.5 文档输出与下游交付</strong>：输出「现场部署与运维」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h4 id="_15">可持续性、法务与保险</h4>
+<h5 id="eol">可持续性与 EOL 策略</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：LCA、RoHS/REACH 合规、回收拆解设计、EOL 处理方案</li>
+<li><strong>设计思考逻辑</strong>：满足环保法规并降低企业长期责任风险</li>
+<li><strong>关键约束</strong>：材料选择、成本、供应链</li>
+<li><strong>完成标准 / 输出物</strong>：LCA 报告、合规声明、拆解指南
+<strong>三级子任务：</strong></li>
+<li><strong>P16.5.1.1 输入梳理与目标量化</strong>：整理「可持续性与 EOL 策略」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P16.5.1.2 方案/方法设计</strong>：针对「可持续性与 EOL 策略」制定实施方法或候选方案，使用「LCA、RoHS/REACH 合规、回收拆解设计、EOL 处理方案」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.5.1.3 实施/建模/实验</strong>：根据方案执行「可持续性与 EOL 策略」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P16.5.1.4 验证与优化</strong>：对「可持续性与 EOL 策略」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P16.5.1.5 文档输出与下游交付</strong>：输出「可持续性与 EOL 策略」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_16">法务与保险</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：产品责任险、使用条款、免责声明、事故责任划分、合规审查</li>
+<li><strong>设计思考逻辑</strong>：降低产品上市后法律与财务风险</li>
+<li><strong>关键约束</strong>：地区法律差异、保险费率</li>
+<li><strong>完成标准 / 输出物</strong>：保险合同、用户协议、责任矩阵
+<strong>三级子任务：</strong></li>
+<li><strong>P16.5.2.1 输入梳理与目标量化</strong>：整理「法务与保险」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P16.5.2.2 方案/方法设计</strong>：针对「法务与保险」制定实施方法或候选方案，使用「产品责任险、使用条款、免责声明、事故责任划分、合规审查」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.5.2.3 实施/建模/实验</strong>：根据方案执行「法务与保险」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P16.5.2.4 验证与优化</strong>：对「法务与保险」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P16.5.2.5 文档输出与下游交付</strong>：输出「法务与保险」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h4 id="_17">经济性迭代</h4>
+<h5 id="vave-dfc">VA/VE 与面向成本设计（DFC）</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：价值工程分析、成本拆解、DFC 评审、二供开发、目标成本达成</li>
+<li><strong>设计思考逻辑</strong>：在量产前持续降本而不牺牲核心性能与安全</li>
+<li><strong>关键约束</strong>：质量底线、供应商能力、时间</li>
+<li><strong>完成标准 / 输出物</strong>：降本项目清单、成本达成率、VA/VE 报告
+<strong>三级子任务：</strong></li>
+<li><strong>P16.6.1.1 输入梳理与目标量化</strong>：整理「VA/VE 与面向成本设计（DFC）」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P16.6.1.2 方案/方法设计</strong>：针对「VA/VE 与面向成本设计（DFC）」制定实施方法或候选方案，使用「价值工程分析、成本拆解、DFC 评审、二供开发、目标成本达成」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P16.6.1.3 实施/建模/实验</strong>：根据方案执行「VA/VE 与面向成本设计（DFC）」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P16.6.1.4 验证与优化</strong>：对「VA/VE 与面向成本设计（DFC）」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P16.6.1.5 文档输出与下游交付</strong>：输出「VA/VE 与面向成本设计（DFC）」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h2 id="_18">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_19">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_2_3/">来料与过程异常处理</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及来料与过程异常处理。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p5_1_2/">关节安装接口与壳体设计</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及关节安装接口与壳体设计。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_2_1/">供应商选择与审核</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）前置依赖供应商选择与审核。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_2_2/">质量控制体系建立</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）前置依赖质量控制体系建立。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_design_for_manufacturing/">可制造性设计（DFM）</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及可制造性设计（DFM）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_design_for_manufacturing_2024/">面向制造的设计</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及面向制造的设计。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_1_3/">装配线规划与 SOP</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及装配线规划与 SOP。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p5/">本体结构工程与原型（Mechanical Structure）</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及本体结构工程与原型（Mechanical Structure）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p5_1_1/">中心骨架与四肢连杆设计</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及中心骨架与四肢连杆设计。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_1_1/">DFM/DFA 评审</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及DFM/DFA 评审。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_design_for_assembly/">可装配性设计（DFA）</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及可装配性设计（DFA）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_3_1/">小批量试产（Pilot Run）</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及小批量试产（Pilot Run）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_3_3/">PPAP / 量产 readiness 评估</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及PPAP / 量产 readiness 评估。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_production_ramp_2024/">产能爬坡</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）is_part_of产能爬坡。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              <span class="rel-desc">小批量试产与量产准备（Pilot &amp; Production Ramp）提及结构强度仿真与迭代（Structural FEA）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p15/">整机集成与验证测试（Integration &amp; V&amp;V）</a>
+              <span class="rel-desc">P16 依赖 P15 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p15_1_1/">腿部系统集成与调试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">腿部系统集成与调试提及小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_3_1/">小批量试产（Pilot Run）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">小批量试产（Pilot Run）is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1/">需求定义与系统方案（Concept / Pre-A）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ejsing_near_optimal_task_graph_schedu_2020/">基于 priced timed automata 与 priced timed Markov decision processes 的近优任务图调度</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于 priced timed automata 与 priced timed Markov decision processes 的近优任务图调度discusses小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_1_3/">装配线规划与 SOP</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">装配线规划与 SOPis_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_3_2/">软件稳定性与回归测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">软件稳定性与回归测试提及小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_production_ramp_2024/">产能爬坡</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">产能爬坡提及小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_1_2/">模具与工装设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">模具与工装设计is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_1_3/">感知-规划-控制闭环集成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">感知-规划-控制闭环集成提及小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_1_1/">DFM/DFA 评审</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">DFM/DFA 评审is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_3_4/">服务手册与培训</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">服务手册与培训is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_2_2/">质量控制体系建立</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">质量控制体系建立is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_2_1/">供应商选择与审核</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">供应商选择与审核is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_3_2/">成本核算与降本</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">成本核算与降本is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_3_3/">PPAP / 量产 readiness 评估</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">PPAP / 量产 readiness 评估is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16_2_3/">来料与过程异常处理</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">来料与过程异常处理is_part_of小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p16"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p15_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>软件稳定性与回归测试</h3>
+          <p>- P15.3.2.1 输入梳理与目标量化 - 整理「软件稳定性与回归测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p5_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>中心骨架与四肢连杆设计</h3>
+          <p>- P5.1.1.1 输入梳理与目标量化 - 整理「中心骨架与四肢连杆设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>成本核算与降本</h3>
+          <p>- P16.3.2.1 输入梳理与目标量化 - 整理「成本核算与降本」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_3_3/">
+          <span class="entry-type">方法</span>
+          <h3>PPAP / 量产 readiness 评估</h3>
+          <p>- P16.3.3.1 输入梳理与目标量化 - 整理「PPAP / 量产 readiness 评估」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>来料与过程异常处理</h3>
+          <p>- P16.2.3.1 输入梳理与目标量化 - 整理「来料与过程异常处理」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_design_for_manufacturing/">
+          <span class="entry-type">方法</span>
+          <h3>可制造性设计（DFM）</h3>
+          <p>使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p5/">
+          <span class="entry-type">方法</span>
+          <h3>本体结构工程与原型（Mechanical Structure）</h3>
+          <p>本体结构工程与原型（Mechanical Structure）是人形机器人产品开发全流程中的第 5 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">概念</span>
+          <h3>产能爬坡</h3>
+          <p>当前人形机器人执行器供应链呈现高端减速器与高端编码器高度集中的特征：谐波减速器全球头部企业 Harmonic Drive、RV 减速器 Nabtesco…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>供应商选择与审核</h3>
+          <p>- P16.2.1.1 输入梳理与目标量化 - 整理「供应商选择与审核」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_3_4/">
+          <span class="entry-type">方法</span>
+          <h3>服务手册与培训</h3>
+          <p>- P16.3.4.1 输入梳理与目标量化 - 整理「服务手册与培训」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>DFM/DFA 评审</h3>
+          <p>- P16.1.1.1 输入梳理与目标量化 - 整理「DFM/DFA 评审」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>感知-规划-控制闭环集成</h3>
+          <p>- P15.1.3.1 输入梳理与目标量化 - 整理「感知-规划-控制闭环集成」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1/">
+          <span class="entry-type">方法</span>
+          <h3>需求定义与系统方案（Concept / Pre-A）</h3>
+          <p>需求定义与系统方案（Concept / Pre-A）是人形机器人产品开发全流程中的第 1 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ejsing_near_optimal_task_graph_schedu_2020/">
+          <span class="entry-type">论文</span>
+          <h3>基于 priced timed automata 与 priced timed Markov decision processes 的近优任务图调度</h3>
+          <p>本文将抢占式与非抢占式任务图调度问题归约为 priced timed automata 与 priced timed Markov decision processes…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p5_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>关节安装接口与壳体设计</h3>
+          <p>- P5.1.2.1 输入梳理与目标量化 - 整理「关节安装接口与壳体设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>模具与工装设计</h3>
+          <p>- P16.1.2.1 输入梳理与目标量化 - 整理「模具与工装设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_design_for_assembly/">
+          <span class="entry-type">方法</span>
+          <h3>可装配性设计（DFA）</h3>
+          <p>减少零件数量、简化连接方式、缩短装配时间，从而降低生产成本并提高可靠性的设计方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>小批量试产（Pilot Run）</h3>
+          <p>- P16.3.1.1 输入梳理与目标量化 - 整理「小批量试产（Pilot Run）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15/">
+          <span class="entry-type">方法</span>
+          <h3>整机集成与验证测试（Integration &amp; V&amp;V）</h3>
+          <p>整机集成与验证测试（Integration &amp; V&amp;V）是人形机器人产品开发全流程中的第 15 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>腿部系统集成与调试</h3>
+          <p>- P15.1.1.1 输入梳理与目标量化 - 整理「腿部系统集成与调试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p8/">
+          <span class="entry-type">方法</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）是人形机器人产品开发全流程中的第 8 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>质量控制体系建立</h3>
+          <p>- P16.2.2.1 输入梳理与目标量化 - 整理「质量控制体系建立」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_design_for_manufacturing_2024/">
+          <span class="entry-type">方法</span>
+          <h3>面向制造的设计</h3>
+          <p>为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>装配线规划与 SOP</h3>
+          <p>- P16.1.3.1 输入梳理与目标量化 - 整理「装配线规划与 SOP」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">可制造性设计</a><ul>
+<li><a href="#dfmdfa">DFM/DFA 评审</a></li>
+<li><a href="#_4">模具与工装设计</a></li>
+<li><a href="#sop">装配线规划与 SOP</a></li>
+</ul>
+</li>
+<li><a href="#_5">供应链与质量管理</a><ul>
+<li><a href="#_6">供应商选择与审核</a></li>
+<li><a href="#_7">质量控制体系建立</a></li>
+<li><a href="#_8">来料与过程异常处理</a></li>
+</ul>
+</li>
+<li><a href="#_9">试产与量产爬坡</a><ul>
+<li><a href="#pilot-run">小批量试产（Pilot Run）</a></li>
+<li><a href="#_10">成本核算与降本</a></li>
+<li><a href="#ppap-readiness">PPAP / 量产 readiness 评估</a></li>
+<li><a href="#_11">服务手册与培训</a></li>
+</ul>
+</li>
+<li><a href="#_12">包装/运输/贮存与现场部署</a><ul>
+<li><a href="#_13">包装/运输/贮存设计</a></li>
+<li><a href="#_14">现场部署与运维</a></li>
+</ul>
+</li>
+<li><a href="#_15">可持续性、法务与保险</a><ul>
+<li><a href="#eol">可持续性与 EOL 策略</a></li>
+<li><a href="#_16">法务与保险</a></li>
+</ul>
+</li>
+<li><a href="#_17">经济性迭代</a><ul>
+<li><a href="#vave-dfc">VA/VE 与面向成本设计（DFC）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_18">完成标准</a></li>
+<li><a href="#_19">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

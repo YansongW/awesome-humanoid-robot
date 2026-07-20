@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>캡처 포인트 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/principle/">원리</a>
+    <span>/</span>
+    <span class="breadcrumb-current">캡처 포인트</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">원리</div>
+      <h1>캡처 포인트</h1>
+      <p class="entry-name-en">Capture Point</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.4.9 捕获点（Capture Point）与线性倒立摆 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>캡처 포인트는 휴머노이드 로봇 분야의 중요한 원리입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p><strong>캡처 포인트(Capture Point, CP)</strong>는 휴머노이드 로봇의 푸시 리커버리(push recovery) 및 보행 계획에서 핵심 개념입니다. 이는 지면 위의 한 점으로, 로봇이 해당 지점에 즉시 발을 디디고 질량 중심을 지지하는 발 바로 위에 위치시킬 수 있다면, 다음 걸음을 내딛지 않고도 정지할 수 있는 지점을 의미합니다[44][45]. 캡처 포인트의 존재는 복잡한 동적 균형 문제를 "다음 걸음은 어디에 디뎌야 하는가"라는 기하학적 문제로 변환합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 캡처 포인트(Capture Point), 푸시 리커버리, 보행 계획, 동적 균형</p>
+<ul>
+<li><strong>캡처 포인트(Capture Point, CP)</strong>: 현재 질량 중심 상태가 주어졌을 때, 한 걸음 내에서 로봇을 정지 상태로 복원할 수 있는 발 디딤 위치.</li>
+<li><strong>푸시 리커버리(push recovery)</strong>: 외부에서 밀림을 받은 후, 걸음을 내딛거나 자세를 조정하여 균형을 회복하는 능력.</li>
+<li><strong>보행 계획(gait planning)</strong>: 걷는 순서와 발 디딤 위치를 생성하는 과정.</li>
+<li><strong>동적 균형(dynamic balance)</strong>: 운동 중 넘어지지 않고 유지하는 능력.</li>
+</ul>
+</div>
+<p><strong>선형 역진자 모델(Linear Inverted Pendulum Model, LIPM)</strong>에서 질량 중심 높이 <span class="arithmatex">\(z_c\)</span>는 일정하고, 질점은 질량이 없는 막대를 통해 지면의 ZMP에 연결된다고 가정합니다. LIPM의 수평 동역학은 다음과 같습니다:</p>
+<div class="arithmatex">\[
+\ddot{x} = \frac{g}{z_c}(x - x_{\text{ZMP}})
+\]</div>
+<p>여기서 <span class="arithmatex">\(g\)</span>는 중력 가속도, <span class="arithmatex">\(x\)</span>는 질량 중심의 수평 위치입니다. 이 방정식은 다음과 같이 다시 쓸 수 있습니다:</p>
+<div class="arithmatex">\[
+\dot{x} = \omega_0 (x - x_{\text{ZMP}})
+\]</div>
+<p>여기서 <span class="arithmatex">\(\omega_0 = \sqrt{g/z_c}\)</span>는 LIPM의 고유 진동수입니다. ZMP가 일정하게 유지되면 질량 중심 운동은 수렴 성분과 발산 성분으로 분해됩니다. 발산 성분을 <strong>발산 운동 성분(Divergent Component of Motion, DCM)</strong>이라고 합니다:</p>
+<div class="arithmatex">\[
+\xi = x + \frac{\dot{x}}{\omega_0}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 선형 역진자 모델(LIPM), 고유 진동수, 발산 운동 성분(DCM)</p>
+<ul>
+<li><strong>선형 역진자 모델(LIPM)</strong>: 로봇을 높이가 일정한 질량 중심-무질량 막대-ZMP의 선형 모델로 단순화한 것.</li>
+<li><strong>고유 진동수(natural frequency)</strong>: LIPM의 특성 진동수 <span class="arithmatex">\(\omega_0 = \sqrt{g/z_c}\)</span>.</li>
+<li><strong>발산 운동 성분(DCM)</strong>: 질량 중심 운동에서 시간에 따라 지수적으로 발산하는 성분으로, 로봇이 걸음을 내딛어야 하는지 결정합니다.</li>
+</ul>
+</div>
+<p>캡처 포인트는 본질적으로 현재 DCM의 위치입니다. 2차원 LIPM의 경우:</p>
+<div class="arithmatex">\[
+x_{\text{CP}} = x_{\text{CoM}} + \frac{\dot{x}_{\text{CoM}}}{\omega_0}
+\]</div>
+<p>3차원 수평면으로 확장하면:</p>
+<div class="arithmatex">\[
+\mathbf{r}_{\text{CP}} = \mathbf{r}_{\text{CoM}}^{xy} + \frac{\dot{\mathbf{r}}_{\text{CoM}}^{xy}}{\omega_0}
+\]</div>
+<p>다음 발 디딤 위치(즉, 새로운 ZMP)를 정확히 캡처 포인트에 놓으면, 질량 중심은 직선으로 해당 지점을 향해 이동하여 결국 정지합니다. 캡처 포인트에 발을 디디지 않으면 DCM은 계속 발산하며, 로봇은 한 걸음을 더 내딛거나 넘어져야 합니다.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["현재 CoM 위치와 속도"] --&gt; B["omega_0 = sqrt(g/z_c) 계산"]
+    B --&gt; C["DCM / CP 계산"]
+    C --&gt; D["r_CP = r_CoM + v_CoM / omega_0"]
+    D --&gt; E{"발이 CP 위에 있는가?"}
+    E --&gt;|"예"| F["한 걸음 내에서 정지"]
+    E --&gt;|"아니오"| G["계속 걸음 또는 넘어짐"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 발 디딤 위치, ZMP, DCM 제어, 캡처 영역</p>
+<ul>
+<li><strong>발 디딤 위치(foot placement)</strong>: 보행 시 발이 닿는 위치.</li>
+<li><strong>ZMP(Zero Moment Point)</strong>: 지면 반력의 등가 작용점.</li>
+<li><strong>DCM 제어(DCM control)</strong>: ZMP 또는 발 디딤 위치를 조절하여 발산 성분을 제어하는 방법.</li>
+<li><strong>캡처 영역(capture region)</strong>: 로봇이 균형을 회복할 수 있는 모든 가능한 발 디딤 위치의 집합.</li>
+</ul>
+</div>
+<p><strong>Python 예제: 캡처 포인트 및 필요한 발 디딤 위치 계산</strong></p>
+<p>다음 코드는 질량 중심의 수평 위치, 속도, 높이가 주어졌을 때 캡처 포인트를 계산하고, 실제 발 디딤 위치가 주어졌을 때 한 걸음으로 정지할 수 있는지 판단합니다.</p>
+<p>```python
+import numpy as np</p>
+<p>def compute_capture_point(r_com, v_com, z_c, g=9.81):
+    """
+    2차원/3차원 수평면의 캡처 포인트를 계산합니다.
+    r_com: CoM 수평 위치 (x, y) 또는 (x, y, z) (x, y만 사용)
+    v_com: CoM 수평 속도 (vx, vy) 또는 (vx, vy, vz)
+    z_c: 질량 중심 높이 (일정)
+    """
+    r_com = np.array(r_com)[:2]
+    v_com = np.array(v_com)[:2]
+    omega_0 = np.sqrt(g / z_c)
+    r_cp = r_com + v_com / omega_0
+    return r_cp, omega_0</p>
+<p>def step_recovery_check(r_com, v_com, z_c, foot_place, g=9.81):
+    """
+    주어진 발 디딤 위치 foot_place가 CoM을 안정화할 수 있는지 판단합니다.
+    간단한 기준: 새로운 ZMP가 foot_place에 있을 때, DCM이 해당 지점으로 수렴하면 성공.
+    """
+    r_cp, omega_0 = compute_capture_point(r_com, v_com, z_c, g)
+    dist = np.linalg.norm(r_cp - np.array(foot_place)[:2])
+    omega_0_val = omega_0
+    # 실제 발 디딤 위치가 캡처 포인트와 일치하면 이론적으로 한 걸음으로 정지 가능
+    # 여기서는 시간 상수 tau = 1/omega_0와 오프셋을 제공
+    tau = 1.0 / omega_0_val
+    return {
+        'capture_point': r_cp,
+        'omega_0': omega_0_val,
+        'time_constant': tau,
+        'foot_placement_error': dist,
+        'single_step_capture': dist &lt; 0.02  # 2cm 오차 허용
+    }</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_gait_planning/">보행 패턴 계획</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_method_hierarchical_qp_wbc/">계층적 QP 전신 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wiedebach_walking_on_partial_footholds_i_2016/">아틀라스 인간형 로봇을 이용한 선 접촉을 포함한 부분 발판 보행</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_stability_aware_retargeting_fo_2025/">Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_prasad_geometric_mechanics_of_contact_2023/">접촉 전환 시스템의 기하학적 역학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_unified_humanoid_fall_safety_p_2025/">Unified Humanoid Fall-Safety Policy from a Few Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_whole_body_humanoid_robot_loco_2024/">Whole-body Humanoid Robot Locomotion with Human Reference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hover_versatile_humanoid_contr_2024/">HOVER 다용도 휨로봇 제어기</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_discovering_self_protective_fa_2025/">Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_cmr_contractive_mapping_embedd_2026/">CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_embedding_classical_balance_co_2026/">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chasing_stability_humanoid_run_2025/">Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sakurai_bipedal_robot_running_human_li_2024/">쌍족 로봇 달리기: 빠르고 느린 적응을 이용한 인간형 구동 타이밍</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_vigor_visual_goal_in_context_i_2026/">VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p10_2_1/">站立与抗扰平衡控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_biomechanical_comparisons_reve_2026/">Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ficht_centroidal_state_estimation_an_2023/">하드웨어 제약이 있는 휴머노이드 로봇을 위한 중심 상태 추정 및 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_symmetric_and_low_ene_2018/">Learning Symmetric and Low-energy Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_humanoid_arm_motion_v_2025/">Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_architecture_is_all_you_need_d_2025/">Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_shield_safety_on_humanoids_via_2025/">SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_floating_base_dynamics/">부유 기반 동역학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_forward_kinematics/">정욕동학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_principle_capture_point"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_embedding_classical_balance_co_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</h3>
+          <p>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_stability_aware_retargeting_fo_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation</h3>
+          <p>Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation is a 2025 work on teleoperation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>정욕동학</h3>
+          <p>주어진 관절 각도로부터 동차 변환 사슬 또는 지수곱을 이용해 말단 동작기 위치·방향을 계산하는 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>站立与抗扰平衡控制</h3>
+          <p>站立抗扰实物视频、恢复能力满足指标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_hierarchical_qp_wbc/">
+          <span class="entry-type">방법</span>
+          <h3>계층적 QP 전신 제어</h3>
+          <p>여러 작업을 우선순위에 따라 쌓아 올리고 연속된 이차 계획법으로 풀어 높은 우선순위 작업을 먼저 만족시키는 전신 제어 방법이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wiedebach_walking_on_partial_footholds_i_2016/">
+          <span class="entry-type">논문</span>
+          <h3>아틀라스 인간형 로봇을 이용한 선 접촉을 포함한 부분 발판 보행</h3>
+          <p>온라인 접촉면 탐색과 상체 각운동량 회복을 통해 아틀라스 인간형 로봇이 부분적이고 불확실한 발판(선 접촉 및 점 접촉)에서 보행하고 균형을 유지할 수 있는 운동량 기반 제어 방법을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hover_versatile_humanoid_contr_2024/">
+          <span class="entry-type">방법</span>
+          <h3>HOVER 다용도 휨로봇 제어기</h3>
+          <p>다양한 휨로봇 행동 모드를 위한 다용도 신경망 전신 제어기.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_architecture_is_all_you_need_d_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion</h3>
+          <p>Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10/">
+          <span class="entry-type">방법</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sakurai_bipedal_robot_running_human_li_2024/">
+          <span class="entry-type">논문</span>
+          <h3>쌍족 로봇 달리기: 빠르고 느린 적응을 이용한 인간형 구동 타이밍</h3>
+          <p>본 논문은 착지 시 빠른 위상 재설정과 보행 주기의 느린 수렴을 결합한 중추 패턴 생성기 기반 제어기를 제안하여 근골격계 쌍족 주행 로봇에서 인간형 근육 활성화 타이밍을 재현하고,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">
+          <span class="entry-type">논문</span>
+          <h3>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</h3>
+          <p>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_whole_body_humanoid_robot_loco_2024/">
+          <span class="entry-type">논문</span>
+          <h3>Whole-body Humanoid Robot Locomotion with Human Reference</h3>
+          <p>Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>부유 기반 동역학</h3>
+          <p>이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_unified_humanoid_fall_safety_p_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Unified Humanoid Fall-Safety Policy from a Few Demonstrations</h3>
+          <p>Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ficht_centroidal_state_estimation_an_2023/">
+          <span class="entry-type">논문</span>
+          <h3>하드웨어 제약이 있는 휴머노이드 로봇을 위한 중심 상태 추정 및 제어</h3>
+          <p>하드웨어 제약이 있는 휴머노이드 로봇을 위해 5질량 모델과 근사된 사지 역학을 결합한 중심 상태 추정 및 제어 방법을 제안하여, 힘 센서 없이도 정확한 질량 중심/압력 중심 추정과…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>역욕동학</h3>
+          <p>원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_discovering_self_protective_fa_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning</h3>
+          <p>Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_symmetric_and_low_ene_2018/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Symmetric and Low-energy Locomotion</h3>
+          <p>Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_cmr_contractive_mapping_embedd_2026/">
+          <span class="entry-type">논문</span>
+          <h3>CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains</h3>
+          <p>CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chasing_stability_humanoid_run_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL</h3>
+          <p>Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_biomechanical_comparisons_reve_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits</h3>
+          <p>Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a 2026 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_humanoid_arm_motion_v_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning</h3>
+          <p>Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_vigor_visual_goal_in_context_i_2026/">
+          <span class="entry-type">논문</span>
+          <h3>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</h3>
+          <p>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_prasad_geometric_mechanics_of_contact_2023/">
+          <span class="entry-type">논문</span>
+          <h3>접촉 전환 시스템의 기하학적 역학</h3>
+          <p>본 논문은 연속적인 사지 각도와 이산적인 접촉 상태를 하이브리드 형상 공간에 결합하여 보행 운동을 위한 기하학적 역학 프레임워크를 제안하고, 접촉 모드 간 보행 최적화를 위해…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">방법</span>
+          <h3>유한요소해석(FEA)</h3>
+          <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shield_safety_on_humanoids_via_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics</h3>
+          <p>SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_gait_planning/">
+          <span class="entry-type">방법</span>
+          <h3>보행 패턴 계획</h3>
+          <p>족욕 로봇의 안정적이고 효율적인 이동을 위해 보행 순서·시기·상태 전이를 생성하는 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

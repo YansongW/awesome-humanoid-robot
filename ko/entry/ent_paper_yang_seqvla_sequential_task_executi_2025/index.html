@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model</h1>
+      <p class="entry-name-en">SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14138v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model (SeqVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Drexel University, Virginia Tech.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.14138" target="_blank" rel="noopener">SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.14138" target="_blank" rel="noopener">SeqVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>장기간 로봇 조작 작업은 여러 상호 의존적인 하위 작업을 엄격한 순서로 실행해야 하며, 하위 작업 완료 감지 오류가 하위 작업 실패로 이어질 수 있습니다. 기존의 Vision-Language-Action (VLA) 모델(예: <span class="arithmatex">\(π_0\)</span>)은 연속적인 저수준 제어에 뛰어나지만, 하위 작업이 완료되었는지 식별하는 내부 신호가 없어 순차적 환경에서 취약합니다. 우리는 SeqVLA를 제안합니다. 이는 <span class="arithmatex">\(π_0\)</span>의 완료 인식 확장판으로, 기본 아키텍처에 현재 하위 작업 완료 여부를 감지하는 경량 탐지 헤드를 추가합니다. 이 이중 헤드 설계를 통해 SeqVLA는 조작 동작을 생성할 뿐만 아니라 하위 작업 간 전환을 자율적으로 트리거할 수 있습니다. 우리는 동작 헤드와 탐지 헤드의 최적화 방식(공동 vs. 순차적 파인튜닝)과 사전 학습 지식 보존 방식(전체 파인튜닝 vs. 고정 백본)이 다른 네 가지 파인튜닝 전략을 조사합니다. 실험은 7개의 개별 하위 작업으로 구성된 샐러드 포장과 4개의 개별 하위 작업으로 구성된 사탕 포장이라는 두 가지 다단계 작업에서 수행됩니다. 결과는 SeqVLA가 전체 성공률에서 기준 모델 <span class="arithmatex">\(π_0\)</span> 및 다른 강력한 기준 모델을 크게 능가함을 보여줍니다. 특히, 고정되지 않은 백본을 사용한 공동 파인튜닝은 가장 결정적이고 통계적으로 신뢰할 수 있는 완료 예측을 제공하여 순서 관련 실패를 제거하고 강력한 장기 실행을 가능하게 합니다. 우리의 결과는 확장 가능한 순차적 조작을 위해 동작 생성과 하위 작업 인식 탐지를 결합하는 것의 중요성을 강조합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>장기간 로봇 조작 작업은 여러 상호 의존적인 하위 작업을 엄격한 순서로 실행해야 하며, 하위 작업 완료 감지 오류가 하위 작업 실패로 이어질 수 있습니다. 기존의 Vision-Language-Action (VLA) 모델(예: <span class="arithmatex">\(π_0\)</span>)은 연속적인 저수준 제어에 뛰어나지만, 하위 작업이 완료되었는지 식별하는 내부 신호가 없어 순차적 환경에서 취약합니다. 우리는 SeqVLA를 제안합니다. 이는 <span class="arithmatex">\(π_0\)</span>의 완료 인식 확장판으로, 기본 아키텍처에 현재 하위 작업 완료 여부를 감지하는 경량 탐지 헤드를 추가합니다. 이 이중 헤드 설계를 통해 SeqVLA는 조작 동작을 생성할 뿐만 아니라 하위 작업 간 전환을 자율적으로 트리거할 수 있습니다. 우리는 동작 헤드와 탐지 헤드의 최적화 방식(공동 vs. 순차적 파인튜닝)과 사전 학습 지식 보존 방식(전체 파인튜닝 vs. 고정 백본)이 다른 네 가지 파인튜닝 전략을 조사합니다. 실험은 7개의 개별 하위 작업으로 구성된 샐러드 포장과 4개의 개별 하위 작업으로 구성된 사탕 포장이라는 두 가지 다단계 작업에서 수행됩니다. 결과는 SeqVLA가 전체 성공률에서 기준 모델 <span class="arithmatex">\(π_0\)</span> 및 다른 강력한 기준 모델을 크게 능가함을 보여줍니다. 특히, 고정되지 않은 백본을 사용한 공동 파인튜닝은 가장 결정적이고 통계적으로 신뢰할 수 있는 완료 예측을 제공하여 순서 관련 실패를 제거하고 강력한 장기 실행을 가능하게 합니다. 우리의 결과는 확장 가능한 순차적 조작을 위해 동작 생성과 하위 작업 인식 탐지를 결합하는 것의 중요성을 강조합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_yang_seqvla_sequential_task_executi_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

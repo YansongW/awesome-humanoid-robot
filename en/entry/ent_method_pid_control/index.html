@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PID Control · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PID Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>PID Control</h1>
+      <p class="entry-name-en">PID Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">Stage 1 · Build One Joint</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A foundational feedback control method that computes a control signal as a linear combination of proportional, integral, and derivative terms of the tracking error.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://www.ieeectl.org/awards/astrom-hagglund-advanced-pid-control/" target="_blank" rel="noopener">K. J. Åström and T. Hägglund, Advanced PID Control, ISA, 2006</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1002/9780470544162" target="_blank" rel="noopener">K. Ogata, Modern Control Engineering, 5th ed., Prentice Hall, 2010</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">mentions</span>
+            <a href="/en/entry/ent_method_impedance_control/">Impedance Control</a>
+            
+              
+                
+              
+              <span class="rel-desc">PID control regulates position or velocity; impedance control extends this to regulate dynamic interaction forces with the environment.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>A fundamental feedback control method that expresses the control quantity as a linear combination of three terms: proportional, integral, and derivative of the tracking error.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-pid-control">Definition and Positioning of PID Control</h3>
+<p>PID control belongs to the <strong>method</strong> type. Its related fields include: AI models and algorithms, components. Value chain level: intelligence layer. A fundamental feedback control method that expresses the control quantity as a linear combination of three terms: proportional, integral, and derivative of the tracking error. Its English name is <em>PID Control</em>. Its Korean name is <em>PID 제어</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-pid-control">Mathematical and Theoretical Foundations of PID Control</h3>
+<p>PID control is built upon relevant mathematical theories and physical laws. Understanding its underlying assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In humanoid robots, which are high-dimensional, underactuated, and strongly coupled systems, PID control typically requires a balance between real-time performance, accuracy, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>When implementing PID control in practice, it is necessary to define initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Reasonable selection of numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable operation of the algorithm on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>PID control can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptability remain key issues to address in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>control</li>
+<li>feedback</li>
+<li>joint_control</li>
+<li>actuator</li>
+<li>classical_control</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key methods in the humanoid robot industry chain, PID control plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_impedance_control/">Impedance Control</a>
+              <span class="rel-desc">PID Control mentions Impedance Control.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_component_bldc_motor/">Brushless DC Motor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Brushless DC Motor has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">Bayesian Optimization with Adaptive Kernels for Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Bayesian Optimization with Adaptive Kernels for Robot Control discusses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">A Novel Assistive Controller Based on Differential Geometry for Users of the Differential-Drive Wheeled Mobile Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Novel Assistive Controller Based on Differential Geometry for Users of the Differential-Drive Wheeled Mobile Robots discusses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework uses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chan_angle_constrained_formation_co_2020/">Angle-Constrained Formation Control for Circular Mobile Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Angle-Constrained Formation Control for Circular Mobile Robots discusses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">Full-Pose Tracking Control for Aerial Robotic Systems with Laterally-Bounded Input Force</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Full-Pose Tracking Control for Aerial Robotic Systems with Laterally-Bounded Input Force discusses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_comp_servo_motor/">High-Performance Servo Motor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">High-Performance Servo Motor has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_sampled_data_control_based_con_2020/">Sampled-Data Control Based Consensus of Fractional-Order Multi-Agent Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Sampled-Data Control Based Consensus of Fractional-Order Multi-Agent Systems discusses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">Improving Visual Place Recognition Based Robot Navigation By Verifying Localization Estimates</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Improving Visual Place Recognition Based Robot Navigation By Verifying Localization Estimates uses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_dynamixel_xm430_w210_t/">ROBOTIS DYNAMIXEL XM430-W210-T</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ROBOTIS DYNAMIXEL XM430-W210-T has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Model Predictive Control (MPC) has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_oem_unitree_robotics/">Unitree Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Unitree Robotics has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_maxon_group_2024/">Maxon Group</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Maxon Group has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">A Comparative Study on Machine Learning Algorithms for the Control of a Wall Following Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">A Comparative Study on Machine Learning Algorithms for the Control of a Wall Following Robot studies PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ribeiro_real_time_deep_learning_approa_2021/">Real-Time Deep Learning Approach to Visual Servo Control and Grasp Detection for Autonomous Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Real-Time Deep Learning Approach to Visual Servo Control and Grasp Detection for Autonomous Robotic Manipulation discusses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_odri_bolt/">ODRI Bolt (Open Dynamic Robot Initiative)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ODRI Bolt (Open Dynamic Robot Initiative) has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi Direct Drive Actuator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Quasi Direct Drive Actuator has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">Failure Detection and Fault Tolerant Control of a Jet-Powered Flying Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Failure Detection and Fault Tolerant Control of a Jet-Powered Flying Humanoid Robot uses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_field_oriented_control/">Field-Oriented Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">FOC typically uses PI/PID current controllers in the d-q frame to regulate flux and torque currents.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_impedance_control/">Impedance Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Impedance Control has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_principle_current_velocity_position_loops/">Current / Velocity / Position Control Loops</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Current / Velocity / Position Control Loops has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">Deformation-Aware Robotic 3D Ultrasound</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Deformation-Aware Robotic 3D Ultrasound uses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_source_seeking_control_of_unic_2021/">Source Seeking Control of Unicycle Robots with 3D-printed Flexible Piezoresistive Sensors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Source Seeking Control of Unicycle Robots with 3D-printed Flexible Piezoresistive Sensors discusses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_dynamixel_xl330_m288_t/">ROBOTIS DYNAMIXEL XL330-M288-T</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ROBOTIS DYNAMIXEL XL330-M288-T has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics discusses PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_hollow_cup_motor_2024/">Hollow Cup Motor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Hollow Cup Motor has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_inverse_dynamics_qp/">Inverse-Dynamics QP Formulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_euler_lagrange_equations/">Euler-Lagrange Equations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_newton_euler_equations/">Newton-Euler equations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_pid_control"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_newton_euler_equations/">
+          <span class="entry-type">Equation</span>
+          <h3>Newton-Euler equations</h3>
+          <p>A set of coupled force and torque balance equations that describe the motion of a rigid body or…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ribeiro_real_time_deep_learning_approa_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Real-Time Deep Learning Approach to Visual Servo Control and Grasp Detection for Autonomous Robotic Manipulation</h3>
+          <p>Proposes two lightweight CNNs for robotic manipulation: one predicts a five-dimensional grasp…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>A Novel Assistive Controller Based on Differential Geometry for Users of the Differential-Drive Wheeled Mobile Robots</h3>
+          <p>This 2022 arXiv paper presents a differential-geometry-based assistive controller that helps users…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_dynamixel_xm430_w210_t/">
+          <span class="entry-type">Component</span>
+          <h3>ROBOTIS DYNAMIXEL XM430-W210-T</h3>
+          <p>A medium-size smart servo actuator from ROBOTIS&#39; X-series, featuring TTL communication, 3.0 N·m…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">Formalism</span>
+          <h3>Euler-Lagrange Equations</h3>
+          <p>Second-order differential equations derived from the stationarity of the action integral, giving the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Failure Detection and Fault Tolerant Control of a Jet-Powered Flying Humanoid Robot</h3>
+          <p>This paper proposes an RPM-based failure detector, a momentum-based flight controller, and an…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_source_seeking_control_of_unic_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Source Seeking Control of Unicycle Robots with 3D-printed Flexible Piezoresistive Sensors</h3>
+          <p>Presents projected gradient-ascent and extremum-seeking control laws for a unicycle robot using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_impedance_control/">
+          <span class="entry-type">Method</span>
+          <h3>Impedance Control</h3>
+          <p>A control approach that regulates the dynamic relationship between interaction force and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_hollow_cup_motor_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Hollow Cup Motor</h3>
+          <p>Small, lightweight coreless DC motor used in dexterous robot hands and small joints.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Full-Pose Tracking Control for Aerial Robotic Systems with Laterally-Bounded Input Force</h3>
+          <p>This paper introduces Laterally Bounded Force (LBF) vehicles, a class of aerial robots whose primary…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">
+          <span class="entry-type">Paper</span>
+          <h3>Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics</h3>
+          <p>This paper proposes two adaptive control schemes that achieve task-space trajectory tracking for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_dynamixel_xl330_m288_t/">
+          <span class="entry-type">Component</span>
+          <h3>ROBOTIS DYNAMIXEL XL330-M288-T</h3>
+          <p>A compact, low-cost smart servo actuator from ROBOTIS&#39; X-series, featuring TTL communication, 0.52…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">Formalism</span>
+          <h3>Inverse-Dynamics QP Formulation</h3>
+          <p>A quadratic-program formulation that computes generalized accelerations, contact forces, and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_comp_servo_motor/">
+          <span class="entry-type">Component</span>
+          <h3>High-Performance Servo Motor</h3>
+          <p>A compact electric motor with precise position, velocity, and torque control, used as the core…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_odri_bolt/">
+          <span class="entry-type">Robot System</span>
+          <h3>ODRI Bolt (Open Dynamic Robot Initiative)</h3>
+          <p>The open-source point-foot biped from the Open Dynamic Robot Initiative, an international academic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Bayesian Optimization with Adaptive Kernels for Robot Control</h3>
+          <p>This paper introduces Spartan Bayesian Optimization (SBO), a Gaussian-process Bayesian optimization…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">
+          <span class="entry-type">Paper</span>
+          <h3>Gaze Stabilization for Humanoid Robots: a Comprehensive Framework</h3>
+          <p>This paper proposes a gaze stabilization framework for humanoid robots that combines a kinematic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">OEM</span>
+          <h3>Unitree Robotics</h3>
+          <p>Chinese robotics company developing quadruped and humanoid robots, including the Unitree H1 and G1…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_sampled_data_control_based_con_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Sampled-Data Control Based Consensus of Fractional-Order Multi-Agent Systems</h3>
+          <p>This paper proposes a distributed sampled-data controller for fractional-order multi-agent systems…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control</h3>
+          <p>A motor control technique that transforms three-phase stator currents into a rotating d-q reference…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chan_angle_constrained_formation_co_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Angle-Constrained Formation Control for Circular Mobile Robots</h3>
+          <p>Proposes a gradient-based distributed control law for planar circular mobile robots that uses only…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_bldc_motor/">
+          <span class="entry-type">Component</span>
+          <h3>Brushless DC Motor</h3>
+          <p>An electric motor driven by electronic commutation rather than mechanical brushes, offering high…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Deformation-Aware Robotic 3D Ultrasound</h3>
+          <p>Proposes a patient-specified stiffness-based method to correct force-induced tissue deformation in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Improving Visual Place Recognition Based Robot Navigation By Verifying Localization Estimates</h3>
+          <p>This paper introduces a Multi-Layer Perceptron (MLP) integrity monitor for Visual Place Recognition…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>A Comparative Study on Machine Learning Algorithms for the Control of a Wall Following Robot</h3>
+          <p>This 2019 ROBIO paper compares classical machine learning and deep learning classifiers for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_maxon_group_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Maxon Group</h3>
+          <p>Swiss manufacturer of high-precision brushless DC motors, gearheads and controllers for robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Quasi Direct Drive Actuator</h3>
+          <p>Actuator design using low-ratio gears with high-torque motors to achieve high bandwidth and force…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_current_velocity_position_loops/">
+          <span class="entry-type">Principle</span>
+          <h3>Current / Velocity / Position Control Loops</h3>
+          <p>The nested feedback-control hierarchy for servo drives, where an inner current loop regulates…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-pid-control">Definition and Positioning of PID Control</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-pid-control">Mathematical and Theoretical Foundations of PID Control</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation</h1>
+      <p class="entry-name-en">From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.30749v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2606.30749v1 Announce Type: new Abstract: Large-scale dexterous grasp datasets encode rich priors over hand-object interaction, but their use has largely been confined to grasp generation and pick-and-place manipulation. We study whether such data can instead support functional dexterity in articulated tool use, where a robot must acquire a tool, maintain contact, and operate its functional moving parts. We adapt a hierarchical imitation learning framework that combines high-level hand sub-goal prediction with a low-level goal-conditioned controller. We construct a 355k-trajectory grasp-pretraining dataset from large-scale dexterous grasp annotations and use it to pretrain the low-level controller. The controller is then fine-tuned on downstream task demonstrations. To evaluate this setting, we introduce DexCraft, a simulation benchmark with six articulated tool-use tasks requiring coordinated finger motion. Across simulation and real-world experiments, our approach outperforms end-to-end diffusion policy baselines and hierarchical policies trained from scratch. In the real world, it improves full-task success by 33.3 percentage points over DP3. These results show that grasp datasets can serve not only as resources for grasp synthesis, but also as scalable pretraining data for contact-rich dexterous manipulation. Videos are shown on https://yingyuan0414.github.io/grasp2dexterity/ .</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.30749" target="_blank" rel="noopener">From Grasps to Dexterity: Large-Scale Grasp Pretraining for Dexterous Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>대규모 정밀 파지 데이터셋은 손-물체 상호작용에 대한 풍부한 사전 지식을 인코딩하지만, 그 활용은 주로 파지 생성과 집어 옮기기 조작에 국한되어 왔습니다. 본 연구에서는 이러한 데이터가 오히려 관절 도구 사용에서의 기능적 정밀성을 지원할 수 있는지 조사합니다. 여기서 로봇은 도구를 획득하고, 접촉을 유지하며, 기능적 움직임 부품을 작동해야 합니다. 우리는 고수준의 손 하위 목표 예측과 저수준의 목표 조건 제어기를 결합한 계층적 모방 학습 프레임워크를 적용합니다. 대규모 정밀 파지 주석에서 355k 궤적의 파지 사전 학습 데이터셋을 구축하고, 이를 저수준 제어기 사전 학습에 사용합니다. 그런 다음 제어기는 하위 작업 시연에 대해 미세 조정됩니다. 이 설정을 평가하기 위해, 우리는 조정된 손가락 움직임이 필요한 여섯 가지 관절 도구 사용 작업을 포함하는 시뮬레이션 벤치마크인 DexCraft를 소개합니다. 시뮬레이션 및 실제 실험 전반에 걸쳐, 우리의 접근 방식은 종단간 확산 정책 기준선과 처음부터 학습된 계층적 정책보다 우수한 성능을 보입니다. 실제 환경에서는 DP3 대비 전체 작업 성공률을 33.3% 포인트 향상시킵니다. 이러한 결과는 파지 데이터셋이 파지 합성을 위한 자원뿐만 아니라 접촉이 풍부한 정밀 조작을 위한 확장 가능한 사전 학습 데이터로도 사용될 수 있음을 보여줍니다. 비디오는 https://yingyuan0414.github.io/grasp2dexterity/ 에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>대규모 정밀 파지 데이터셋은 손-물체 상호작용에 대한 풍부한 사전 지식을 인코딩하지만, 그 활용은 주로 파지 생성과 집어 옮기기 조작에 국한되어 왔습니다. 본 연구에서는 이러한 데이터가 오히려 관절 도구 사용에서의 기능적 정밀성을 지원할 수 있는지 조사합니다. 여기서 로봇은 도구를 획득하고, 접촉을 유지하며, 기능적 움직임 부품을 작동해야 합니다. 우리는 고수준의 손 하위 목표 예측과 저수준의 목표 조건 제어기를 결합한 계층적 모방 학습 프레임워크를 적용합니다. 대규모 정밀 파지 주석에서 355k 궤적의 파지 사전 학습 데이터셋을 구축하고, 이를 저수준 제어기 사전 학습에 사용합니다. 그런 다음 제어기는 하위 작업 시연에 대해 미세 조정됩니다. 이 설정을 평가하기 위해, 우리는 조정된 손가락 움직임이 필요한 여섯 가지 관절 도구 사용 작업을 포함하는 시뮬레이션 벤치마크인 DexCraft를 소개합니다. 시뮬레이션 및 실제 실험 전반에 걸쳐, 우리의 접근 방식은 종단간 확산 정책 기준선과 처음부터 학습된 계층적 정책보다 우수한 성능을 보입니다. 실제 환경에서는 DP3 대비 전체 작업 성공률을 33.3% 포인트 향상시킵니다. 이러한 결과는 파지 데이터셋이 파지 합성을 위한 자원뿐만 아니라 접촉이 풍부한 정밀 조작을 위한 확장 가능한 사전 학습 데이터로도 사용될 수 있음을 보여줍니다. 비디오는 https://yingyuan0414.github.io/grasp2dexterity/ 에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_from_grasps_to_dexterity_large_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">
+          <span class="entry-type">논문</span>
+          <h3>3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations</h3>
+          <p>3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations (DP3),…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

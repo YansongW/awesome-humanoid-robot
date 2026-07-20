@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>牛顿-欧拉方程 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/equation/">方程</a>
+    <span>/</span>
+    <span class="breadcrumb-current">牛顿-欧拉方程</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方程</div>
+      <h1>牛顿-欧拉方程</h1>
+      <p class="entry-name-en">Newton-Euler equations</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">基础学科</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">基础层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1007/978-1-4899-7560-7" target="_blank" rel="noopener">R. Featherstone, Rigid Body Dynamics Algorithms, Springer, 2014</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">is_alternative_to</span>
+            <a href="/entry/ent_lagrangian/">拉格朗日量</a>
+            
+              
+                
+              
+              <span class="rel-desc">牛顿-欧拉形式与拉格朗日形式对刚体系统等价；前者强调力/力矩平衡，后者强调能量。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="-">牛顿-欧拉方程的定义与定位</h3>
+<p>牛顿-欧拉方程属于 <strong>方程</strong> 类型。 所属领域包括：基础学科。 价值链层级：基础层。 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。 英文名称为 <em>Newton-Euler equations</em>。 韩文名称为 <em>뉴턴-오일러 방정식</em>。</p>
+<h3 id="-_1">牛顿-欧拉方程的数学与原理基础</h3>
+<p>牛顿-欧拉方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，牛顿-欧拉方程通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_2">算法步骤与实现要点</h3>
+<p>在实际实现牛顿-欧拉方程时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_3">典型应用与局限性</h3>
+<p>牛顿-欧拉方程可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>dynamics</li>
+<li>rigid_body</li>
+<li>multibody</li>
+<li>newton_euler</li>
+<li>equations_of_motion</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方程之一，牛顿-欧拉方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li><a href="https://doi.org/10.1007/978-1-4899-7560-7">R. Featherstone, Rigid Body Dynamics Algorithms, Springer, 2014</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">可替代</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_lagrangian/">拉格朗日量</a>
+              <span class="rel-desc">牛顿-欧拉方程is_alternative_to拉格朗日量。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_impedance_control/">阻抗控制</a>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_pid_control/">PID控制</a>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_admittance_control/">导纳控制</a>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_lagrangian/">拉格朗日量</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">可替代</span>
+              <span class="rel-desc">拉格朗日量is_alternative_to牛顿-欧拉方程。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">喷气动力人形机器人的统一多速率模型预测控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">MIT人形机器人：面向杂技行为的设计、运动规划与控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_euler_lagrange_equations/">欧拉-拉格朗日方程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">欧拉-拉格朗日方程提及牛顿-欧拉方程。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lift_towards_bridging_the_gap_2026/">LIFT：用大批量 SAC 预训练 + 物理先验世界模型微调，把人形 sim-to-real 压到 1 小时</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">LIFT：用大批量 SAC 预训练 + 物理先验世界模型微调，把人形 sim-to-real 压到 1 小时使用牛顿-欧拉方程。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_newton_euler_equations"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>喷气动力人形机器人的统一多速率模型预测控制</h3>
+          <p>本文提出了一种用于喷气动力人形机器人iRonCub的多速率模型预测控制框架，将质心动量动力学与二阶非线性喷气发动机动力学相结合，并通过MuJoCo仿真进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_admittance_control/">
+          <span class="entry-type">方法</span>
+          <h3>导纳控制</h3>
+          <p>概述 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。 ## 核心内容 #### 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_pid_control/">
+          <span class="entry-type">方法</span>
+          <h3>PID控制</h3>
+          <p>一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">形式化方法</span>
+          <h3>欧拉-拉格朗日方程</h3>
+          <p>由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lift_towards_bridging_the_gap_2026/">
+          <span class="entry-type">论文</span>
+          <h3>LIFT：用大批量 SAC 预训练 + 物理先验世界模型微调，把人形 sim-to-real 压到 1 小时</h3>
+          <p>LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_impedance_control/">
+          <span class="entry-type">方法</span>
+          <h3>阻抗控制</h3>
+          <p>阻抗控制（impedance control）不把位置与力分开控制，而是调节机器人末端表现出的机械阻抗（mechanical…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">
+          <span class="entry-type">论文</span>
+          <h3>MIT人形机器人：面向杂技行为的设计、运动规划与控制</h3>
+          <p>Demonstrating acrobatic behavior of a humanoid robot such as flips and spinning jumps requires…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_lagrangian/">
+          <span class="entry-type">形式化方法</span>
+          <h3>拉格朗日量</h3>
+          <p>通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#-">牛顿-欧拉方程的定义与定位</a></li>
+<li><a href="#-_1">牛顿-欧拉方程的数学与原理基础</a></li>
+<li><a href="#_2">算法步骤与实现要点</a></li>
+<li><a href="#_3">典型应用与局限性</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

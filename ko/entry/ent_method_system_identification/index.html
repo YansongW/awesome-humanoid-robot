@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>시스템 동정 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">시스템 동정</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>시스템 동정</h1>
+      <p class="entry-name-en">System Identification</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">데이터 및 데이터셋</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">2단계 · 이족 플랫폼</span>
+        <span class="roadmap-badge-role">선택</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>측정된 입출력 데이터로부터 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>측정된 입출력 데이터를 기반으로 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">시스템 동정의 정의와 위치</h3>
+<p>시스템 동정은 <strong>방법</strong> 유형에 속한다. 관련 분야는 AI 모델 및 알고리즘, 데이터 및 데이터셋을 포함한다. 가치 사슬 계층: 지능 계층. 측정된 입출력 데이터를 기반으로 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정. 영문 명칭은 <em>System Identification</em>이다. 한글 명칭은 <em>시스템 동정</em>이다.</p>
+<h3 id="_4">시스템 동정의 수학적 및 원리적 기초</h3>
+<p>시스템 동정은 관련 수학 이론과 물리 법칙에 기반한다. 그 전제 가정, 제약 조건 및 유도 과정을 이해하는 것이 이 방법을 올바르게 적용하기 위한 전제 조건이다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수 및 수렴성 또는 안정성 보장에 주목해야 한다.
+인간형 로봇과 같은 고차원, 저구동, 강결합 시스템에서 시스템 동정은 일반적으로 실시간성, 정밀도 및 강건성 사이에서 균형을 이루어야 한다.</p>
+<h3 id="_5">알고리즘 단계와 구현 요점</h3>
+<p>실제로 시스템 동정을 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 한다.
+수치 방법, 선형대수 솔버 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있다.
+동시에 모델 오차, 센서 잡음 및 액추에이터 포화와 같은 공학적 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 보장해야 한다.</p>
+<h3 id="_6">대표적 응용과 한계</h3>
+<p>시스템 동정은 인간형 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있다.
+그러나 계산 복잡도, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제이다.</p>
+<h3 id="_7">관련 태그</h3>
+<ul>
+<li>method</li>
+<li>chapter_18</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_8">인간형 로봇 시스템에서의 역할</h3>
+<p>인간형 로봇 산업 체인에서 핵심 방법 중 하나로서 시스템 동정은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 한다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정한다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_probability_theory/">확률론</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_linear_algebra/">선형대수학</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_rma_rapid_motor_adaptation_for_2026/">RMA: Rapid Motor Adaptation for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_impedance_guided_programmable_2026/">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_lee_attention_based_neural_augment_2026/">다족 보행 로봇 상태 추정을 위한 주의 기반 신경 증강 칼만 필터</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_task_adaptive_design_of_modula_2026/">Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_jorgensen_thermal_recovery_of_multi_limb_2019/">전기 액추에이터를 갖춘 다지체 로봇의 열 회복</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_closing_sim_to_real_gap_for_he_2026/">Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p10_3_1/">系统辨识与参数校准</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_adaptive_invariant_extended_ka_2026/">Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_physically_grounded_3d_generat_2026/">Physically Grounded 3D Generative Reconstruction under Hand Occlusion using Proprioception and Multi-Contact Touch</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_a_hybrid_autoencoder_for_robus_2026/">A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_towards_bridging_the_gap_syste_2025/">Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_float_drone_for_physical_inter_2026/">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_to_balance_motor_ther_2026/">Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_tendon_actuated_robots_with_a_2026/">Tendon-Actuated Robots with a Tapered, Flexible Polymer Backbone: Design, Fabrication, and Modeling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_teetaert_a_sliding_window_filter_for_on_2025/">온라인 연속시간 연속체 로봇 상태 추정을 위한 슬라이딩 윈도우 필터</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_source_seeking_control_of_unic_2021/">3D 프린팅된 유연한 압저항 센서를 탑재한 유니사이클 로봇의 신호원 탐색 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_oehler_accurate_pose_prediction_on_si_2023/">거친 지형에서 이동 지상 로봇을 위한 부호 거리 장의 정확한 자세 예측</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chen_adaptive_robotic_information_g_2023/">비정상 가우시안 프로세스를 통한 적응형 로봇 정보 수집</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hossen_care_finding_root_causes_of_co_2023/">CARE: 고도로 구성 가능한 로봇의 구성 문제 근본 원인 탐지</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_domain_adaptation/">도메인 적응</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_levy_meta_learning_online_dynamics_2025/">Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_phypush_one_push_is_all_you_ne_2026/">PhyPush: One Push is All You Need for Sensorless Physical Property Estimation with Physics-Guided Transformers</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_hardware_in_the_loop/">하드웨어 인 더 루프(HIL)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_3d_cal_an_open_source_software_2026/">3D Cal: An Open-Source Software Library for Depth Reconstruction on Vision-Based Tactile Sensors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_suzuki_attitude_estimation_free_gnss_2023/">자세 추정 없는 GNSS/IMU 통합 위치 추정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_unified_structural_hydrodynami_2026/">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zheng_model_based_control_of_planar_2022/">제한된 환경에서 크롤링을 위한 평면 압전 인치웜 소프트 로봇의 모델 기반 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_aerodynamics_for_the_2025/">Learning Aerodynamics for the Control of Flying Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_inekformer_a_hybrid_state_esti_2025/">InEKFormer: A Hybrid State Estimator for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_petit_bayesian_optimization_for_deve_2020/">파라미터 경계 축소를 통한 메타러닝과 베이지안 최적화를 활용한 발달 로보틱스</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bridging_the_sim_to_real_gap_f_2025/">Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion: An optimization-based multi-sensor state estimator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sampling_based_system_identifi_2025/">Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_contact_representatio_2026/">Learning Contact Representation for Leg Odometry</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_action_chunking_with_transform_2023/">Action Chunking with Transformers</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">구현 대상</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_action_token_prediction/">액션 토큰 예측</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인스턴스화</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">구현 대상</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">디퓨전 정책: 행동 확산을 통한 시각운동 정책 학습</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">구현 대상</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">구현 대상</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_system_identification"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_closing_sim_to_real_gap_for_he_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation</h3>
+          <p>Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_levy_meta_learning_online_dynamics_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving</h3>
+          <p>Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving (Meta-Learning Online…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_task_adaptive_design_of_modula_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</h3>
+          <p>arXiv:2607.09548v1 Announce Type: new Abstract: Aerial manipulation with multirotor platforms…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">
+          <span class="entry-type">논문</span>
+          <h3>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</h3>
+          <p>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_source_seeking_control_of_unic_2021/">
+          <span class="entry-type">논문</span>
+          <h3>3D 프린팅된 유연한 압저항 센서를 탑재한 유니사이클 로봇의 신호원 탐색 제어</h3>
+          <p>3D 프린팅된 유연한 그래핀 기반 압저항 기류 센서가 장착된 유니사이클 로봇을 위해 투영 경사 상승법 및 극값 탐색 제어 법칙을 제안하고, 점근적 수렴성을 증명하며 실험적으로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_towards_bridging_the_gap_syste_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots</h3>
+          <p>Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">
+          <span class="entry-type">논문</span>
+          <h3>디퓨전 정책: 행동 확산을 통한 시각운동 정책 학습</h3>
+          <p>디퓨전 정책은 로봇의 시각운동 정책을 동작 공간에 대한 조건부 노이즈 제거 확산 과정으로 모델링하여, 시각 관찰을 조건으로 행동 분포의 점수 기울기를 학습하고 확률적 랑주뱅…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_contact_representatio_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Contact Representation for Leg Odometry</h3>
+          <p>Learning Contact Representation for Leg Odometry is a paper on State Estimation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10_3_1/">
+          <span class="entry-type">방법</span>
+          <h3>系统辨识与参数校准</h3>
+          <p>辨识报告、仿真-实物频率响应对比</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_teetaert_a_sliding_window_filter_for_on_2025/">
+          <span class="entry-type">논문</span>
+          <h3>온라인 연속시간 연속체 로봇 상태 추정을 위한 슬라이딩 윈도우 필터</h3>
+          <p>본 논문은 인대 구동 연속체 로봇에서 실시간보다 빠르고 배치 스무더에 필적하는 정확도를 달성하기 위해 요인 그래프 주변화와 가우스-뉴턴 최적화를 활용한 연속시간 슬라이딩 윈도우…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">
+          <span class="entry-type">논문</span>
+          <h3>[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</h3>
+          <p>arXiv:2607.00569v1 Announce Type: new Abstract: In this article, we present dynamic modeling, gait…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bridging_the_sim_to_real_gap_f_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation</h3>
+          <p>Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation is a 2025 work on sim-to-real for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">
+          <span class="entry-type">논문</span>
+          <h3>CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</h3>
+          <p>arXiv:2607.09557v1 Announce Type: new Abstract: Fine grain control and positioning of autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hossen_care_finding_root_causes_of_co_2023/">
+          <span class="entry-type">논문</span>
+          <h3>CARE: 고도로 구성 가능한 로봇의 구성 문제 근본 원인 탐지</h3>
+          <p>CARE는 관찰된 로봇 추적 데이터로부터 인과 그래프 모델을 학습하여 잘못된 구성으로 인한 기능적 결함의 근본 원인을 진단하는 인과 기반 방법으로, Husky, Turtlebot…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zheng_model_based_control_of_planar_2022/">
+          <span class="entry-type">논문</span>
+          <h3>제한된 환경에서 크롤링을 위한 평면 압전 인치웜 소프트 로봇의 모델 기반 제어</h3>
+          <p>Zheng 등은 5개 액추에이터 평면 압전 소프트 로봇을 위한 모델 기반 전체 형상 제어기를 제안한다. 연속 소프트 바디 모델과 베이지안 최적화를 사용해 목표 형상에 대한…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">
+          <span class="entry-type">논문</span>
+          <h3>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</h3>
+          <p>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sampling_based_system_identifi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning</h3>
+          <p>Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_phypush_one_push_is_all_you_ne_2026/">
+          <span class="entry-type">논문</span>
+          <h3>PhyPush: One Push is All You Need for Sensorless Physical Property Estimation with Physics-Guided Transformers</h3>
+          <p>arXiv:2605.26284v2 Announce Type: replace Abstract: Accurately estimating object mass and friction…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_physically_grounded_3d_generat_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Physically Grounded 3D Generative Reconstruction under Hand Occlusion using Proprioception and Multi-Contact Touch</h3>
+          <p>arXiv:2604.09100v2 Announce Type: replace-cross Abstract: We propose a multimodal, physically…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chen_adaptive_robotic_information_g_2023/">
+          <span class="entry-type">논문</span>
+          <h3>비정상 가우시안 프로세스를 통한 적응형 로봇 정보 수집</h3>
+          <p>본 논문은 주의 기반 입력 의존 길이 척도 선택을 통해 로봇 정보 수집의 불확실성 정량화를 개선하는 비정상 가우시안 프로세스 커널인 Attentive Kernel(AK)을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_tendon_actuated_robots_with_a_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Tendon-Actuated Robots with a Tapered, Flexible Polymer Backbone: Design, Fabrication, and Modeling</h3>
+          <p>arXiv:2603.19124v3 Announce Type: replace Abstract: This paper presents the design, modeling, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_aerodynamics_for_the_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Aerodynamics for the Control of Flying Humanoid Robots</h3>
+          <p>Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_3d_cal_an_open_source_software_2026/">
+          <span class="entry-type">논문</span>
+          <h3>3D Cal: An Open-Source Software Library for Depth Reconstruction on Vision-Based Tactile Sensors</h3>
+          <p>arXiv:2511.03078v3 Announce Type: replace Abstract: Tactile sensing plays a key role in enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">기초 학문</span>
+          <h3>확률론</h3>
+          <p>불확실성, 확률 변수, 분포, 기댓값에 관한 수학적 기초로, 로보틱스와 머신러닝의 모든 확률적 모델의 근간이 된다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_unified_structural_hydrodynami_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</h3>
+          <p>arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_petit_bayesian_optimization_for_deve_2020/">
+          <span class="entry-type">논문</span>
+          <h3>파라미터 경계 축소를 통한 메타러닝과 베이지안 최적화를 활용한 발달 로보틱스</h3>
+          <p>본 논문은 베이지안 최적화, 3D 시각적 유사도, 파라미터 경계 축소 등의 장기 기억 및 추론 모듈을 결합하여 유사한 과거 작업의 최적 반복으로부터 축소된 경계를 사용해 새로운…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">방법</span>
+          <h3>액션 토큰 예측</h3>
+          <p>언어 모델링과 유사하지만 이산적 또는 연속적인 액션 토큰을 출력하는 자기회귀적 다음 토큰 예측 문제로 로봇 동작 생성을 구성하는 방법이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_a_hybrid_autoencoder_for_robus_2026/">
+          <span class="entry-type">논문</span>
+          <h3>A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion</h3>
+          <p>A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jorgensen_thermal_recovery_of_multi_limb_2019/">
+          <span class="entry-type">논문</span>
+          <h3>전기 액추에이터를 갖춘 다지체 로봇의 열 회복</h3>
+          <p>과열된 액추에이터를 냉각시키는 로봇 구형을 찾기 위해 데이터 기반의 노력 기반 1차 열 모델과 접촉 제약 열 역기구학 방법을 제안하고 NASA Valkyrie 휴머노이드에서…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_rma_rapid_motor_adaptation_for_2026/">
+          <span class="entry-type">논문</span>
+          <h3>RMA: Rapid Motor Adaptation for Legged Robots</h3>
+          <p>RMA: Rapid Motor Adaptation for Legged Robots is a paper on 仿真到真实 for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_impedance_guided_programmable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</h3>
+          <p>arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_inekformer_a_hybrid_state_esti_2025/">
+          <span class="entry-type">논문</span>
+          <h3>InEKFormer: A Hybrid State Estimator for Humanoid Robots</h3>
+          <p>InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on state estimation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_float_drone_for_physical_inter_2026/">
+          <span class="entry-type">논문</span>
+          <h3>FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</h3>
+          <p>arXiv:2607.04260v1 Announce Type: new Abstract: Aerial physical interaction represents a promising…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">
+          <span class="entry-type">논문</span>
+          <h3>VINS-Fusion: An optimization-based multi-sensor state estimator</h3>
+          <p>VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_suzuki_attitude_estimation_free_gnss_2023/">
+          <span class="entry-type">논문</span>
+          <h3>자세 추정 없는 GNSS/IMU 통합 위치 추정</h3>
+          <p>가속도계 크기와 속도 벡터 각도 변화 제약만을 사용하여 자세 추정 없이 GNSS/IMU를 융합하는 최적화 기반 위치 추정 방법을 제안하여 IMU 장착 오차에 둔감하고…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_oehler_accurate_pose_prediction_on_si_2023/">
+          <span class="entry-type">논문</span>
+          <h3>거친 지형에서 이동 지상 로봇을 위한 부호 거리 장의 정확한 자세 예측</h3>
+          <p>활성 플리퍼를 갖춘 이동 지상 로봇의 거친 지형에서 3차원 자세를 예측하는 반복 기하학적 방법을 제안하며, 실제 궤형 로봇에서 평균 위치 오차 3.11cm, 방향 오차 3.91°를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">기초 학문</span>
+          <h3>선형대수학</h3>
+          <p>벡터 공간, 선형 변환, 행렬, 선형 방정식 체계를 다루는 수학 분야이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_adaptive_invariant_extended_ka_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</h3>
+          <p>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation is a paper on State…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 적응</h3>
+          <p>소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_to_balance_motor_ther_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</h3>
+          <p>arXiv:2605.27046v3 Announce Type: replace Abstract: Motor thermal management is often overlooked in…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_hardware_in_the_loop/">
+          <span class="entry-type">방법</span>
+          <h3>하드웨어 인 더 루프(HIL)</h3>
+          <p>실제 하드웨어 컨트롤러가 플랜트의 실시간 시뮬레이션과 상호작용하여 제어 소프트웨어를 안전하고 반복 가능하게 검증하는 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lee_attention_based_neural_augment_2026/">
+          <span class="entry-type">논문</span>
+          <h3>다족 보행 로봇 상태 추정을 위한 주의 기반 신경 증강 칼만 필터</h3>
+          <p>지속적인 발 미끄러짐 수준으로부터 미끄러짐에 의한 오차를 추정하는 교차 주의 신경 보상기로 Invariant Extended Kalman Filter를 확장한 AttenNKF를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_action_chunking_with_transform_2023/">
+          <span class="entry-type">방법</span>
+          <h3>Action Chunking with Transformers</h3>
+          <p>모방 학습에서 누적 오류를 줄이기 위해 동작 청크를 예측하는 Transformer 기반 정책.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">시스템 동정의 정의와 위치</a></li>
+<li><a href="#_4">시스템 동정의 수학적 및 원리적 기초</a></li>
+<li><a href="#_5">알고리즘 단계와 구현 요점</a></li>
+<li><a href="#_6">대표적 응용과 한계</a></li>
+<li><a href="#_7">관련 태그</a></li>
+<li><a href="#_8">인간형 로봇 시스템에서의 역할</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

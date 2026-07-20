@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gazebo · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/software_platform/">软件平台</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Gazebo</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">软件平台</div>
+      <h1>Gazebo</h1>
+      <p class="entry-name-en">Gazebo</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from kg/entities/ent_software_platform_open_robotics_gazebo.md by scripts/backfill_nonpaper_entries.py. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">阶段 2 · 双足平台</span>
+        <span class="roadmap-badge-role">拓展</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="gazebo">Gazebo的定义与定位</h3>
+<p>Gazebo属于 <strong>软件平台</strong> 类型。 所属领域包括：软件中间件。 价值链层级：智能层。 提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。 英文名称为 <em>Gazebo</em>。 韩文名称为 <em>Gazebo</em>。</p>
+<h3 id="gazebo_1">Gazebo的工作原理与技术架构</h3>
+<p>Gazebo的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
+在选型与集成过程中，需要关注其与控制器、通信总线、电源系统与机械结构的兼容性。</p>
+<h3 id="_2">关键参数与选型要点</h3>
+<p>在工程实践中，选用Gazebo需要综合考虑性能指标、可靠性、成本、供应链成熟度以及与整机系统的兼容性。
+关键参数通常包括精度、带宽、扭矩、功耗、重量、接口协议与环境适应性等。
+针对不同应用场景，可能需要在性能与成本之间进行权衡，并预留适当的冗余与安全裕量。</p>
+<h3 id="_3">典型应用与发展趋势</h3>
+<p>Gazebo已广泛应用于人形机器人的原型验证、学术研究与早期商业化产品中。
+未来随着产业链成熟，其集成度、智能化水平与成本效益有望持续提升。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>software_platform</li>
+<li>chapter_23</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键软件平台之一，Gazebo在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 中间件</a>
+              <span class="rel-desc">Gazebo前置依赖ROS 2 中间件。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF 机器人描述格式</a>
+              <span class="rel-desc">Gazebo前置依赖URDF 机器人描述格式。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_classical_mechanics/">经典力学</a>
+              <span class="rel-desc">Gazebo前置依赖经典力学。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_macenski_robot_operating_system_2_desig_2022/">机器人操作系统2：设计、架构与真实场景应用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">机器人操作系统2：设计、架构与真实场景应用提及Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_neto_high_level_programming_and_con_2013/">基于手持加速度计输入设备的工业机器人高级编程与控制：手势与姿态识别</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于手持加速度计输入设备的工业机器人高级编程与控制：手势与姿态识别使用Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_adorno_dq_robotics_a_library_for_robo_2020/">DQ Robotics：用于机器人建模与控制的库</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">DQ Robotics：用于机器人建模与控制的库提及Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_martinez_rozas_skyeye_team_at_mbzirc_2020_a_t_2021/">Skyeye 团队参加 MBZIRC 2020：用于城市建筑场景下无 GPS 自主灭火的空地机器人团队</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Skyeye 团队参加 MBZIRC 2020：用于城市建筑场景下无 GPS 自主灭火的空地机器人团队使用Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_daudelin_an_integrated_system_for_perce_2018/">面向模块化机器人的感知驱动自主集成系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向模块化机器人的感知驱动自主集成系统discussesGazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_busch_enabling_the_deployment_of_any_2023/">通过自动化容器化在微服务架构中实现任意规模机器人应用的部署</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">通过自动化容器化在微服务架构中实现任意规模机器人应用的部署discussesGazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bravo_arrabal_strengthening_multi_robot_syst_2025/">面向搜救的强化多机器人系统：协同设计机器人与6G通信</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">面向搜救的强化多机器人系统：协同设计机器人与6G通信使用Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_robot_system_toddlerbot/">ToddlerBot 幼儿机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">ToddlerBot 幼儿机器人前置依赖Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021/">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构使用Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_software_nvidia_isaac_sim_2024/">NVIDIA Isaac Sim</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">NVIDIA Isaac Sim前置依赖Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gao_real_time_service_subscription_2025/">车联网边缘计算中的实时服务订阅与自适应卸载控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">车联网边缘计算中的实时服务订阅与自适应卸载控制评测于Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_barua_approximate_computing_for_robo_2021/">机器人路径规划中的近似计算：实验、案例研究与实际意义</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">机器人路径规划中的近似计算：实验、案例研究与实际意义使用Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_prorok_graph_neural_networks_for_lear_2018/">用于学习机器人团队协调的图神经网络</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">用于学习机器人团队协调的图神经网络discussesGazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_andreasson_software_architectures_for_mob_2023/">移动机器人软件架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">移动机器人软件架构discussesGazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tahir_mobile_robot_control_and_auton_2023/">通过协同仿真孪生实现移动机器人控制与自主性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">通过协同仿真孪生实现移动机器人控制与自主性使用Gazebo。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_fea_finite_element_analysis/">有限元分析（FEA）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_software_gazebo"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_busch_enabling_the_deployment_of_any_2023/">
+          <span class="entry-type">论文</span>
+          <h3>通过自动化容器化在微服务架构中实现任意规模机器人应用的部署</h3>
+          <p>本文提出了基于微服务架构的ROS/ROS…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bravo_arrabal_strengthening_multi_robot_syst_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向搜救的强化多机器人系统：协同设计机器人与6G通信</h3>
+          <p>提出在X-IoCA架构中协同设计移动机器人与5G/6G边缘云通信的实地搜救用例，集成混合无线传感器网络、基于ROS的智能手机、MEC SLAM以及网络化UGV/UAV协作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_prorok_graph_neural_networks_for_lear_2018/">
+          <span class="entry-type">论文</span>
+          <h3>用于学习机器人团队协调的图神经网络</h3>
+          <p>本文将图神经网络（GNN）应用于多机器人协调，将机器人团队建模为图（机器人为节点、通信链路为边），并在监督学习设置中学习可微的消息传递与状态更新函数，以估计网络的代数连通性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021/">
+          <span class="entry-type">论文</span>
+          <h3>面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构</h3>
+          <p>本文提出了一种低成本的可穿戴传感器背心及模块化ROS开源软件架构，集成物联网连接，使社交人形机器人能够进行触觉、温度、手势、距离和视觉感知，并支持本地及远程人机交互。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_adorno_dq_robotics_a_library_for_robo_2020/">
+          <span class="entry-type">论文</span>
+          <h3>DQ Robotics：用于机器人建模与控制的库</h3>
+          <p>介绍 DQ Robotics，一个跨 Python、MATLAB 和 C++ 实现双四元数代数、用于机器人建模与控制的开源库，支持串联机械臂、移动机械臂、协作双臂和人形机器人。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_macenski_robot_operating_system_2_desig_2022/">
+          <span class="entry-type">论文</span>
+          <h3>机器人操作系统2：设计、架构与真实场景应用</h3>
+          <p>The next chapter of the robotics revolution is well underway with the deployment of robots for a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ROS 2 中间件</h3>
+          <p>基于DDS的发布/订阅和实时支持的事实标准机器人中间件。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gao_real_time_service_subscription_2025/">
+          <span class="entry-type">论文</span>
+          <h3>车联网边缘计算中的实时服务订阅与自适应卸载控制</h3>
+          <p>本文针对车联网边缘计算提出了带截止时间约束的任务卸载与资源分配问题（DOAP），并设计了基于线性规划舍入和局部比率技术的 1/4 近似算法 SARound，以及在线服务订阅与卸载控制框架，并在基于…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_daudelin_an_integrated_system_for_perce_2018/">
+          <span class="entry-type">论文</span>
+          <h3>面向模块化机器人的感知驱动自主集成系统</h3>
+          <p>提出了一种将集中式感知、建图与基于LTL的高层规划同分布式SMORES-EP硬件相结合的模块化机器人系统，使机器人能够自主探索未知环境、决定何时以及如何重构，并操作物体以完成任务，已通过三项硬件演示验…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_urdf_robot_description_format_2024/">
+          <span class="entry-type">技术</span>
+          <h3>URDF 机器人描述格式</h3>
+          <p>用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_barua_approximate_computing_for_robo_2021/">
+          <span class="entry-type">论文</span>
+          <h3>机器人路径规划中的近似计算：实验、案例研究与实际意义</h3>
+          <p>Approximate computing is a computation domain which can be used to trade time and energy with…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_andreasson_software_architectures_for_mob_2023/">
+          <span class="entry-type">论文</span>
+          <h3>移动机器人软件架构</h3>
+          <p>一篇综述章节，回顾了移动机器人的软件架构和中间件框架，包括 ROS、ROS2、YARP、Orocos、Player、CARMEN、MATLAB 和 Microsoft Robotics…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tahir_mobile_robot_control_and_auton_2023/">
+          <span class="entry-type">论文</span>
+          <h3>通过协同仿真孪生实现移动机器人控制与自主性</h3>
+          <p>提出一种协同仿真孪生（ST）框架，将基于SLAM的路径规划卸载到远程仿真智能体，并通过物理机器人的速度跟踪与预测力反馈实现双向同步，在受限室内环境中进行了实验评估。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_nvidia_isaac_sim_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>NVIDIA Isaac Sim</h3>
+          <p>GPU加速的逼真机器人仿真器，支撑GR00T合成数据管道。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_toddlerbot/">
+          <span class="entry-type">机器人系统</span>
+          <h3>ToddlerBot 幼儿机器人</h3>
+          <p>ToddlerBot 是斯坦福大学开源的幼儿尺寸人形机器人，身高 0.56 m、重 3.4 kg，全身 30 个主动自由度，BOM 约 6,000 美元，采用 ROBOTIS Dynamixel…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_classical_mechanics/">
+          <span class="entry-type">基础学科</span>
+          <h3>经典力学</h3>
+          <p>描述宏观物体在力作用下运动的物理学分支，包括牛顿定律、守恒原理和刚体动力学。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_martinez_rozas_skyeye_team_at_mbzirc_2020_a_t_2021/">
+          <span class="entry-type">论文</span>
+          <h3>Skyeye 团队参加 MBZIRC 2020：用于城市建筑场景下无 GPS 自主灭火的空地机器人团队</h3>
+          <p>介绍了一种由最多三架无人机和一辆无人地面车组成的异构多机器人系统，该系统在 MBZIRC 2020 比赛中利用基于激光雷达的无 GPS 定位、改进的 Lazy Theta*…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_neto_high_level_programming_and_con_2013/">
+          <span class="entry-type">论文</span>
+          <h3>基于手持加速度计输入设备的工业机器人高级编程与控制：手势与姿态识别</h3>
+          <p>2013年发表的论文，提出了一种示教编程系统，利用Wii Remote内置的三轴加速度计捕捉手部手势与姿态，并通过人工神经网络识别，结合语音识别、力控制和代码生成，实现对工业机器人的直观编程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">方法</span>
+          <h3>有限元分析（FEA）</h3>
+          <p>有限元分析（Finite Element Analysis, FEA）是预测连杆、关节支架与壳体在载荷下应力、变形与模态的核心数值工具。通过把连续体离散为有限数量的单元，FEA…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#gazebo">Gazebo的定义与定位</a></li>
+<li><a href="#gazebo_1">Gazebo的工作原理与技术架构</a></li>
+<li><a href="#_2">关键参数与选型要点</a></li>
+<li><a href="#_3">典型应用与发展趋势</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

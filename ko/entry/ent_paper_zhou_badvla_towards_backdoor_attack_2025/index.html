@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization</h1>
+      <p class="entry-name-en">BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.16640v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization (BadVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology, Lehigh University, and published at NIPS25.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.16640" target="_blank" rel="noopener">BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2505.16640" target="_blank" rel="noopener">BadVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Vision-Language-Action (VLA) 모델은 다중 모드 입력으로부터 직접적인 종단 간 의사 결정을 가능하게 하여 로봇 제어를 발전시켰습니다. 그러나 이들의 긴밀하게 결합된 아키텍처는 새로운 보안 취약점을 드러냅니다. 기존의 적대적 섭동과 달리, 백도어 공격은 더 은밀하고 지속적이며 실질적으로 중요한 위협을 나타냅니다. 특히 등장하는 Training-as-a-Service 패러다임 하에서 더욱 그렇지만, VLA 모델의 맥락에서는 아직 거의 탐구되지 않았습니다. 이러한 격차를 해소하기 위해, 우리는 Objective-Decoupled Optimization에 기반한 백도어 공격 방법인 BadVLA를 제안하며, 이는 처음으로 VLA 모델의 백도어 취약점을 드러냅니다. 구체적으로, 이는 두 단계 프로세스로 구성됩니다: (1) 명시적 특징 공간 분리를 통해 정상 입력으로부터 트리거 표현을 격리하고, (2) 조건부 제어 편차를 통해 트리거가 있을 때만 활성화되면서 깨끗한 작업 성능을 유지합니다. 여러 VLA 벤치마크에 대한 실증적 결과는 BadVLA가 깨끗한 작업 정확도에 최소한의 영향을 미치면서 거의 100%의 공격 성공률을 일관되게 달성함을 보여줍니다. 추가 분석은 일반적인 입력 섭동, 작업 전이 및 모델 미세 조정에 대한 견고성을 확인하며, 현재 VLA 배포에서의 중요한 보안 취약점을 강조합니다. 우리의 연구는 VLA 모델의 백도어 취약점에 대한 최초의 체계적인 조사를 제공하며, 안전하고 신뢰할 수 있는 구현 모델 설계 관행의 긴급한 필요성을 강조합니다. 프로젝트 페이지를 https://badvla-project.github.io/에 공개했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Vision-Language-Action (VLA) 모델은 다중 모드 입력으로부터 직접적인 종단 간 의사 결정을 가능하게 하여 로봇 제어를 발전시켰습니다. 그러나 이들의 긴밀하게 결합된 아키텍처는 새로운 보안 취약점을 드러냅니다. 기존의 적대적 섭동과 달리, 백도어 공격은 더 은밀하고 지속적이며 실질적으로 중요한 위협을 나타냅니다. 특히 등장하는 Training-as-a-Service 패러다임 하에서 더욱 그렇지만, VLA 모델의 맥락에서는 아직 거의 탐구되지 않았습니다. 이러한 격차를 해소하기 위해, 우리는 Objective-Decoupled Optimization에 기반한 백도어 공격 방법인 BadVLA를 제안하며, 이는 처음으로 VLA 모델의 백도어 취약점을 드러냅니다. 구체적으로, 이는 두 단계 프로세스로 구성됩니다: (1) 명시적 특징 공간 분리를 통해 정상 입력으로부터 트리거 표현을 격리하고, (2) 조건부 제어 편차를 통해 트리거가 있을 때만 활성화되면서 깨끗한 작업 성능을 유지합니다. 여러 VLA 벤치마크에 대한 실증적 결과는 BadVLA가 깨끗한 작업 정확도에 최소한의 영향을 미치면서 거의 100%의 공격 성공률을 일관되게 달성함을 보여줍니다. 추가 분석은 일반적인 입력 섭동, 작업 전이 및 모델 미세 조정에 대한 견고성을 확인하며, 현재 VLA 배포에서의 중요한 보안 취약점을 강조합니다. 우리의 연구는 VLA 모델의 백도어 취약점에 대한 최초의 체계적인 조사를 제공하며, 안전하고 신뢰할 수 있는 구현 모델 설계 관행의 긴급한 필요성을 강조합니다. 프로젝트 페이지를 https://badvla-project.github.io/에 공개했습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zhou_badvla_towards_backdoor_attack_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

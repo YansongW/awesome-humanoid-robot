@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>시뮬레이션 환경 처음부터 구축하기: 먼저 디지털 세계에서 만 번 넘어져 보자 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">시뮬레이션 환경 처음부터 구축하기: 먼저 디지털 세계에서 만 번 넘어져 보자</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="_1">시뮬레이션 환경 처음부터 구축하기: 먼저 디지털 세계에서 만 번 넘어져 보자</h1>
+<blockquote>
+<p>⚠️ 이 로드맵 내용은 공개 자료와 이론 지식을 바탕으로 정리되었으며, 실제 기기로 검증되지 않았습니다. 전기 및 기계 작업 시 안전 규정을 직접 확인하시기 바랍니다.</p>
+</blockquote>
+<p>휴머노이드 로봇은 "일단 만들고 나서 조정"하면 안 되는 하드웨어입니다. 실제 로봇이 한 번 넘어지면 수백 달러와 일주일의 공정이 필요하지만, 시뮬레이션에서 만 번 넘어져도 비용이 들지 않습니다. 하지만 시뮬레이션을 잘못 구축하면 물리학이 틀린 세계에서 자기만족에 빠지는 것과 같습니다. 이 페이지에서는 여섯 단계로 진행합니다: 엔진 선택 → 모델 준비 → 제어 시뮬레이션 실행 → sim-to-real 도구 상자 준비 → 벤치마크 적용 → 환경 설치. 이론적 배경은 <a href="/wiki/chapters/chapter-23/">제23장 시뮬레이션 및 물리 엔진</a>을, 제어 배경은 <a href="/wiki/chapters/chapter-14/">제14장</a>과 <a href="/wiki/chapters/chapter-15/">제15장</a>을 참조하십시오.</p>
+<h2 id="1">1단계: 시뮬레이션 엔진 선택</h2>
+<p><strong>【무엇을 할 것인가】</strong> 먼저 주요 작업을 명확히 한 후, 아래 표를 참고하여 주력 엔진을 선택합니다(대부분의 진지한 팀은 두 개 이상의 엔진을 교차 검증하여 단일 엔진 모델링 편향의 시스템적 위험을 줄입니다 — <a href="/wiki/chapters/chapter-23/">제23장</a> 23.3.8절의 선택 원칙):</p>
+<table>
+<thead>
+<tr>
+<th>엔진</th>
+<th>물리 커널</th>
+<th>병렬 처리 능력</th>
+<th>렌더링 충실도</th>
+<th>접촉 품질</th>
+<th>일반적인 용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a></td>
+<td>자체 개발 볼록 접촉 솔버</td>
+<td>CPU 위주, MJX가 GPU 경로 제공</td>
+<td>중</td>
+<td>높음</td>
+<td>제어 연구, RL 훈련</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_software_nvidia_isaac_sim_2024/">Isaac Sim</a> + <a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a></td>
+<td>PhysX</td>
+<td>GPU 대규모 병렬 처리</td>
+<td>높음(RTX 광선 추적)</td>
+<td>중상</td>
+<td>합성 데이터, 대규모 RL</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_software_gazebo/">Gazebo</a></td>
+<td>ODE/Bullet/DART 등 선택 가능</td>
+<td>CPU 위주</td>
+<td>중</td>
+<td>중</td>
+<td>ROS 전체 스택 통합 테스트</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_software_genesis_generative_physics_eng_2024/">Genesis</a></td>
+<td>자체 개발 통합 솔버(강체/연체/유체 미분 가능 통합)</td>
+<td>GPU 대규모 병렬 처리</td>
+<td>중상</td>
+<td>중상(연체 포함)</td>
+<td>범용/생성형 시뮬레이션</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_software_drake_systems_toolbox_2024/">Drake</a></td>
+<td>자체 개발(hydroelastic 접촉)</td>
+<td>CPU</td>
+<td>중하</td>
+<td>높음(연구 수준)</td>
+<td>최적 제어 및 형식 분석</td>
+</tr>
+</tbody>
+</table>
+<p>(표는 <a href="/wiki/chapters/chapter-23/">제23장</a> 23.3.8절 플랫폼 성능 비교를 바탕으로 정리했습니다.) 혼동하기 쉬운 역할도 있습니다: <a href="/entry/ent_software_pinocchio/">Pinocchio</a>는 시뮬레이터가 아니라 효율적인 강체 동역학/운동학 및 해석적 도함수 계산을 위한 오픈 소스 C++ 라이브러리입니다 — MPC/WBC를 수행할 때 거의 필수적으로 동역학 항을 계산하는 데 사용되며, 시뮬레이터와 상호 보완적입니다.</p>
+<p><strong>【왜 하는가】</strong> 각 엔진의 핵심 강점이 다릅니다: MuJoCo는 접촉 동역학을 볼록 최적화 문제로 표현하여 접촉이 부드럽고 물리적 일관성이 높아 오랫동안 보행 제어 및 심층 RL 논문의 사실상 표준이었습니다(제23장 23.3.1절). Isaac Sim의 핵심 장점은 사진 수준의 렌더링과 GR00T 합성 데이터 파이프라인 지원입니다(출처: <a href="/entry/ent_software_nvidia_isaac_sim_2024/">Isaac Sim</a> 카드). Isaac Lab은 그 위에 RL 환경, 보상, 도메인 무작위화를 위한 모듈식 추상화를 제공하며 H1/G1 등 휴머노이드 작업 예제를 내장하고 있습니다. Gazebo는 물리 성능은 평범하지만 ROS 생태계에서 대체 불가능합니다. Drake는 동역학과 수학적 계획의 엄격한 결합에서 강점을 보입니다. Genesis는 연체/변형체를 미분 가능한 GPU 프레임워크로 통합했지만 생태계는 아직 축적 중입니다. 오픈 소스 프로젝트의 실제 선택을 기준점으로 삼을 수 있습니다: ToddlerBot은 MuJoCo/MJX로 PPO를 실행합니다. Berkeley Humanoid Lite는 Isaac Lab을 기반으로 합니다. OpenLoong의 MPC+WBC 프레임워크는 MuJoCo에 배포됩니다. Upkie는 PyBullet으로 무료로 시작합니다(출처: data/roadmap/research/ 각 파일).</p>
+<p><strong>【상황에 따른 분석 방법】</strong> 목표에 따라 결정합니다:</p>
+<ul>
+<li><strong>RL 보행/전신 제어 연구</strong> → MuJoCo(GPU 대규모 병렬 처리가 필요하면 Isaac Lab), NVIDIA GPU가 없어도 가능합니다.</li>
+<li><strong>비전 정책, VLA, 합성 데이터</strong> → Isaac Sim/Lab, 단 RTX를 지원하는 NVIDIA 그래픽 카드가 필요합니다.</li>
+<li><strong>ROS/ROS2 전체 스택 통합 및 내비게이션</strong> → Gazebo, 물리 정밀도에 집착하지 마십시오.</li>
+<li><strong>MPC/WBC 알고리즘 유도 및 검증</strong> → Drake + Pinocchio.</li>
+<li><strong>연체 발바닥/유연한 스킨 상호 작용</strong> 체험 → Genesis에 주목하되, 유일한 엔진으로 삼지 마십시오.</li>
+</ul>
+<h2 id="2">2단계: 로봇 모델 준비</h2>
+<p><strong>【무엇을 할 것인가】</strong> 네 가지 작업:</p>
+<ol>
+<li><strong>형식 변환</strong>: CAD 또는 기존 저장소에서 <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF(로봇 설명 형식)</a>를 얻습니다 — ROS 생태계의 표준 XML 형식으로, 링크, 관절, 관성 및 형상을 설명합니다. 그런 다음 <a href="/entry/ent_technology_mjcf_simulation_format_2024/">MJCF(MuJoCo 시뮬레이션 형식)</a>으로 변환합니다(MuJoCo의 <code>compile</code>은 URDF를 직접 로드할 수 있습니다). Isaac에 들어가려면 USD로 한 번 더 변환해야 합니다. Berkeley Humanoid Lite는 URDF/MJCF/USD 세 가지 형식을 동시에 유지 관리합니다(출처: data/roadmap/research/berkeley-humanoid-lite.md). "세 가지 형식을 모두 갖추는" 습관을 그대로 따라 하는 것이 좋습니다.</li>
+<li><strong>충돌체 단순화</strong>: 절대 고면수 시각적 메시를 충돌체로 직접 사용해서는 안 됩니다 — 충돌 감지 속도가 1~2자릿수 느려집니다. 볼록 분해 또는 구/캡슐/박스 등 프리미티브 근사로 대체하십시오(출처: 제23장 23.4.3절).</li>
+<li><strong>관성 매개변수 확인</strong>: 질량 속성은 "CAD 이론값 → 중량 측정 실측값 → 시스템 식별 보정값"의 단계별로 신뢰도를 적용하며, 전체 기계의 질량 중심 오차를 밀리미터 단위로 제어해야 합니다. 그렇지 않으면 균형 제어기가 실제 기기에서 계속 "놀라게" 됩니다(출처: 제23장 23.4.4절).</li>
+<li><strong>접촉 매개변수 교정</strong>: 발바닥과 지면 사이의 접촉 강성, 감쇠, 마찰 계수는 "발바닥 재질-지면 재질" 쌍으로 교정하고, 이후 도메인 무작위화 범위에 포함시킵니다(출처: 제23장 23.4.4절).</li>
+</ol>
+<p><strong>【왜 하는가】</strong> URDF는 시각화 및 ROS 도구 체인을 위해 만들어졌으며, 트리 구조만 지원하고 액추에이터 모델이 약합니다. MJCF는 시뮬레이션 및 제어를 위해 만들어졌습니다 — 컴파일 시 관성을 자동 계산하고, 네이티브 폐쇄 체인 등식 제약 조건을 지원하며, 액추에이터와 센서가 일급 시민입니다(출처: 제23장 23.4.1/23.4.2절). 각 변환 단계마다 정보 손실이 발생합니다: 관성 텐서 손실, 관절 방향 및 제한 규칙 차이, 렌더링 재질과 물리 재질은 별개의 체계입니다(출처: 제23장 23.4.3절). 모델이 "진짜처럼 보이게" 하는 것은 엔진이 아니라 이러한 모델링 세부 사항입니다.</p>
+<p><strong>【상황에 따른 분석 방법】</strong> 오픈 소스 기종을 복제하는 경우: 공식적으로 유지 관리되는 설명 파일(예: Upkie의 <code>upkie_description</code> URDF 저장소, 출처: data/roadmap/research/upkie.md)을 직접 사용하고, 영점 및 액추에이터 매개변수 확인에 집중하십시오. 자체 개발 기종: 먼저 단순화된 URDF를 내보내 서 있는 동작을 통과시킨 후 반복적으로 세부 조정하고, CAD가 완벽해질 때까지 시뮬레이션을 기다리지 마십시오. 관절 영점 교정은 시뮬레이션과 실제 기기를 일치시키는 첫 번째 단계이며, ToddlerBot은 이를 위해 3D 프린팅 영점 교정 지그를 설계하여 1분 만에 교정을 완료합니다(출처: data/roadmap/research/toddlerbot.md).</p>
+<h2 id="3">3단계: 제어 시뮬레이션 파이프라인 실행</h2>
+<p><strong>【할 일】</strong> 3단계 로켓 추진 방식으로 진행하며, 각 단계마다 명확한 "통과 기준"이 있습니다:</p>
+<ol>
+<li><strong>PID 자세 유지</strong>: 관절 위치 제어 루프 PID를 사용하여 로봇이 넘어지지 않고 똑바로 서 있게 합니다. 통과 기준: 60초 이상 정적으로 서 있고, 가볍게 밀어도 자세를 회복합니다.</li>
+<li><strong>MPC 보행</strong>: 모델 기반 보행 제어를 적용합니다. Pinocchio로 동역학을 계산하고 QP 솔버를 결합하여 MPC를 구성하거나, OpenLoong-Dyn-Control을 직접 재현할 수 있습니다. 이는 MPC + WBC를 기반으로 하며, 보행, 점프, 장애물 맹목 밟기 세 가지 예시를 포함하고 MuJoCo에 배포 가능합니다 (출처: data/roadmap/research/openloong-qinglong.md). 통과 기준: 평지에서 100보 연속 보행 시 넘어지지 않고, 보행 속도 조절 가능.</li>
+<li><strong>RL 훈련</strong>: <a href="/entry/ent_algorithm_ppo/">PPO(Proximal Policy Optimization)</a>를 사용하여 보행/전신 정책을 훈련합니다. 이 알고리즘은 정책 업데이트 단계 크기를 제한하여 파괴적인 업데이트를 방지하고 샘플 효율성을 높여, 보행 로봇 RL의 기본 시작점입니다 (출처: PPO 카드). Upkie 프로젝트에는 PID, MPC, 강화 학습(Stable-Baselines3)의 세 가지 균형 제어 패러다임 예시와 Gymnasium 인터페이스가 내장되어 있어 (출처: data/roadmap/research/upkie.md), 세 가지 패러다임을 비교할 수 있는 완벽한 교재입니다. 훈련 방법은 <a href="/wiki/chapters/chapter-18/">제18장</a>을 참조하세요.</li>
+</ol>
+<p><strong>【이유】</strong> 3단계 로켓 순서는 바꿀 수 없습니다: PID 자세 유지는 <strong>모델 정확성</strong>(영점, 축 방향, 질량 속성)을 검증합니다; MPC는 <strong>동역학 모델링</strong>(액추에이터 모델, 접촉 매개변수)을 검증합니다; RL은 "시뮬레이션 신뢰성"이 확인된 후에야 연산 능력을 사용하여 정책 성능을 향상시킵니다. ToddlerBot과 BHL은 모두 RL 보행 정책의 제로샷 sim-to-real을 구현했으며 (출처: 각각의 조사 파일), 그 전제 조건은 모델 보정이 먼저 이루어진 것입니다.</p>
+<p><strong>【상황별 분석】</strong> 시간 분배 제안: 초보자는 PID 자세 유지 단계에서 막히더라도 당황하지 마세요. 이 단계에서 드러나는 모델 오류가 가장 수정하기 쉽습니다. 제어 이론 배경이 있는 사람은 PID를 빠르게 통과하고 MPC와 RL 비교에 집중하세요. 최종적으로 어떤 방식을 사용할지는 액추에이터 성능에 달려 있습니다 (서보 모터는 힘 제어가 약하므로 RL이 위치 목표를 출력하는 것이 더 현실적입니다; QDD는 힘 제어가 가능하므로 둘 다 가능합니다).</p>
+<h2 id="4-sim-to-real">4단계: sim-to-real 도구 상자 준비</h2>
+<p><strong>【할 일】</strong> 세 가지 도구를 "격차 축소, 민감도 둔화, 엔지니어링 안전망" 순서로 준비합니다:</p>
+<ol>
+<li><strong><a href="/entry/ent_method_system_identification/">시스템 식별(System Identification)</a></strong>: 측정 데이터를 사용하여 모델을 구축하고 시뮬레이션을 현실에 "가깝게" 만듭니다. 단일 관절은 스윕/스텝 입력으로 게인, 지연, 마찰 곡선을 피팅합니다; 전체 기계는 제약 조건 하에서 가진 궤적을 수집하여 관성 매개변수를 최적화합니다 (23장 23.7.3절). ToddlerBot의 경험: 동일 모델 모터는 1회 sysID만 수행하면 전체 30대 모터에 적용 가능합니다 (출처: data/roadmap/research/toddlerbot.md).</li>
+<li><strong><a href="/entry/ent_method_domain_randomization/">도메인 무작위화(Domain Randomization)</a></strong>: 훈련 중 시뮬레이션 매개변수를 무작위화하여 정책이 잔여 오차에 덜 민감하도록 만듭니다. 휴머노이드의 일반적인 무작위화 항목: 링크 질량 및 무게 중심(±10% 수준), 관절 마찰 및 댐핑, 지면 마찰, 액추에이터 게인 및 지연, 센서 노이즈, 외력 밀기 방해 (23장 23.7.2절). 범위는 sysID가 사전 정보를 제공합니다. 너무 넓으면 보수적인 정책이 학습되고, 너무 좁으면 전이가 실패합니다. 관측 이력을 사용하여 정책이 암시적으로 온라인 매개변수 식별을 수행하거나, "좁았다가 넓어지는" 커리큘럼 방식으로 수렴할 수 있습니다.</li>
+<li><strong><a href="/entry/ent_method_hardware_in_the_loop/">HIL(Hardware-in-the-Loop)</a></strong>: 실제 기기 테스트 전 단계별 테스트: SiL(Software-in-the-Loop, 로직 검증) → HIL(제어 소프트웨어가 실제 차량 플랫폼에서 실행되고, 실제 EtherCAT/CAN 버스를 통해 실시간 시뮬레이터와 폐루프를 형성하여 실시간성 및 통신 타이밍 검증) → 단일 관절/단일 다리 테스트 벤치 → 안전 장치 보호 하의 전체 기계 첫 테스트 (23장 23.7.4절).</li>
+</ol>
+<p><strong>【이유】</strong> 현실과의 격차는 세 가지 유형으로 나뉩니다: 매개변수화 가능한 격차(질량, 마찰, 지연 - sysID로 축소, 도메인 무작위화로 커버), 구조적 격차(백래시, 히스테리시스, 소프트 바디 변형 - 모델링 보완 또는 구조적 회피), 인식 분포 격차(렌더링과 실제 이미지 차이 - 시각적 도메인 무작위화 또는 실제 데이터 혼합) (23장 23.7.1절). HIL은 시뮬레이션에 특별한 요구 사항이 있습니다: 벽시계 시간에 맞춰 동기화되어야 하며(실시간 비율 RTF = 1), 시간 초과는 컨트롤러 측 버스 프레임 손실로 나타납니다. 따라서 HIL은 결정론적 스케줄링과 간결한 모델을 사용하며, RL 훈련의 높은 처리량 변형과는 다릅니다 (23장 23.7.4절).</p>
+<p><strong>【상황별 분석】</strong> 예산이 제한된 개인 개발자: sysID는 반드시 수행해야 하고(비용은 시간뿐), 도메인 무작위화는 반드시 활성화해야 하며(비용은 연산 능력뿐), HIL은 "SiL + 단일 액추에이터 테스트 벤치" 두 단계로 간소화할 수 있습니다. 기관 팀이 전체 크기 모델을 개발하는 경우: 완전한 HIL 단계는 안전의 최소 기준이므로 생략할 수 없습니다. 80kg급 로봇의 첫 테스트는 반드시 안전 장치 보호 하에 이루어져야 합니다.</p>
+<h2 id="5">5단계: 벤치마크 테스트로 정책 정량화</h2>
+<p><strong>【할 일】</strong> 정책을 학습한 후, 공개 벤치마크에서 점수를 먼저 확인한 후 실제 기기 테스트를 진행합니다:</p>
+<ul>
+<li><strong><a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a></strong>: Unitree H1 형태 기반의 전신 휴머노이드 벤치마크로, 40개 이상의 작업이 순수 이동(보행, 달리기, 균형), 순수 조작(뻗기, 운반, 삽입), 이동-조작 결합의 세 가지 유형을 포괄합니다. 통일된 모델 및 환경 매개변수는 알고리즘 간 비교를 의미 있게 만듭니다 (23장 23.8.1절 및 벤치마크 카드).</li>
+<li><strong><a href="/entry/ent_benchmark_maniskill/">ManiSkill</a></strong>: 일반화 가능한 조작 기술을 위한 통합 벤치마크입니다. 3세대 ManiSkill3는 물리 시뮬레이션 병렬화와 렌더링 병렬화를 동시에 GPU화하여, 시각적 관측을 포함한 조작 작업도 높은 처리량으로 샘플링할 수 있으며, 데모 데이터와 베이스라인이 함께 제공됩니다 (23장 23.3.7/23.8.2절). 평가 방법론은 <a href="/wiki/chapters/chapter-25/">제25장 로봇 평가 시스템</a>을 참조하세요.</li>
+</ul>
+<p><strong>【이유】</strong> 벤치마크의 가치는 "내가 잘 훈련했다"는 일화를 정량화 가능하고 비교 가능한 프로토콜로 바꾸는 데 있습니다. 한계점도 분명합니다: HumanoidBench는 시뮬레이션만 다루고 형태가 H1에 고정되어 있어, 사용자 모델과 실제 하드웨어로의 외삽에는 추가 검증이 필요합니다 (23장 23.8.1절). 엔지니어링 측면에서는 "사고 기반 시나리오 라이브러리"를 구축해야 합니다: 실제 기기 테스트의 모든 실패를 재현 가능한 시뮬레이션 테스트 케이스로 전환하여 회귀 테스트에 포함시킵니다 (23장 23.8.3절).</p>
+<p><strong>【상황별 분석】</strong> 보행 연구: 먼저 HumanoidBench의 이동 작업을 실행하여 상대적 순위를 확인합니다. 조작 연구: ManiSkill의 데모 데이터를 사용하면 데이터 수집에 필요한 몇 주를 절약할 수 있습니다. 제품화: 공개 벤치마크는 입장권일 뿐이며, 자체 시나리오 라이브러리가 핵심입니다.</p>
+<h2 id="6">6단계: 하드웨어 구성 및 설치</h2>
+<p><strong>【할 일】</strong> 엔진에 따라 하드웨어를 준비하고 설치합니다:</p>
+<ul>
+<li><strong>MuJoCo 경로</strong>: CPU만으로 충분하며, <code>pip install mujoco</code>로 시작합니다. ToddlerBot은 "시뮬레이션 + RL 훈련 + 배포" 전체 체인이 순수 Python, <code>pip</code> 한 번 설치(Python &gt;= 3.10)로 가능함을 입증했습니다 (출처: data/roadmap/research/toddlerbot.md). GPU는 MJX 대규모 병렬 훈련에만 필요합니다.</li>
+<li><strong>Isaac Sim/Lab 경로</strong>: RTX 레이 트레이싱을 지원하는 NVIDIA 그래픽 카드와 호환되는 드라이버/CUDA 버전이 필요합니다. 구체적인 그래픽 카드 모델과 최소 VRAM은 버전에 따라 변경되므로, 공급업체(공식 문서)에 현재 버전 요구 사항을 직접 확인해야 합니다.</li>
+<li><strong>Genesis 경로</strong>: GPU 가속을 사용합니다. 설치 전 현재 버전의 CUDA 요구 사항을 확인하세요.</li>
+<li><strong>Upkie 방식의 무료 시작</strong>: <code>pixi</code>/<code>uv</code> 명령 하나로 시뮬레이션 예제를 실행할 수 있어, 하드웨어를 구매하기 전에 제어를 먼저 배우기에 적합합니다 (출처: data/roadmap/research/upkie.md).</li>
+</ul>
+<p><strong>【이유】</strong> 설치 문제의 90%는 세 가지에 집중됩니다: NVIDIA 드라이버와 CUDA toolkit 버전 불일치, 헤드리스 서버의 디스플레이 환경 부족(EGL/Vulkan 오프스크린 렌더링 설정 필요), Python 환경 혼용으로 인한 동적 라이브러리 충돌. 먼저 엔진 공식 예제를 실행한 후 자체 모델을 로드하여 "환경 문제"와 "모델 문제"를 분리하세요.</p>
+<p><strong>【상황별 분석】</strong> 노트북만 있는 경우(NVIDIA GPU 없음): MuJoCo + CPU 훈련으로 충분하며, 소형 MLP 정책은 며칠 단위로 수용 가능합니다. RTX 게이밍 카드 한 장: Isaac Lab과 Genesis를 모두 실행할 수 있으며, VRAM이 병렬 환경 수를 결정합니다. 서버/멀티 GPU: Isaac Gym 방식의 수천 개 병렬 환경과 종단간 GPU 파이프라인(관측 및 동작 텐서가 VRAM을 벗어나지 않음, 23장 23.3.3절)을 고려할 수 있습니다.</p>
+<h2 id="_2">합격 기준</h2>
+<ul>
+<li>시뮬레이터 공식 예제가 사용자 컴퓨터에서 실행되고, 이 엔진을 선택한 이유를 설명할 수 있어야 합니다 (1단계 선택표 참조).</li>
+<li>시뮬레이션 내 로봇 모델: 각 관절의 축 방향/제한 범위를 하나씩 확인하여 오류가 없고, 충돌체는 단순화된 기하학적 형태이며, 관성 매개변수 출처가 기록되어 있어야 합니다 (CAD/무게 측정/sysID 중 어느 단계인지).</li>
+<li>PID 자세 유지, MPC 보행(또는 오픈소스 MPC 예제 재현), PPO 보행 훈련의 3단계 프로세스 중 최소 처음 두 단계를 완료하고, 각 단계의 화면 녹화 및 로그 파일이存档되어 있어야 합니다.</li>
+<li>sim-to-real 세 가지 도구의 적용 기록: sysID 데이터 및 피팅 매개변수, 도메인 무작위화 범위 목록(근거 명시), SiL/HIL 테스트 보고서.</li>
+<li>최소 하나의 공개 벤치마크(HumanoidBench 또는 ManiSkill)에서 재현 가능한 베이스라인 점수를 기록하고, 명령어와 랜덤 시드가 기록되어 있어야 합니다.</li>
+</ul>
+<h2 id="_3">일반적인 함정과 문제 해결</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>문제 해결 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URDF를 MJCF로 변환 후 로봇이 "분해"되거나 경련</td>
+<td>관성 매개변수 누락/오류, 관절 축 방향 규약 차이</td>
+<td>각 관절별로 <code>&lt;origin&gt;</code>과 axis 확인; 각 link의 inertial 완전성 검사; <code>simulate</code> 대화형 모드로 단일 관절 구동 테스트</td>
+</tr>
+<tr>
+<td>시뮬레이션 프레임 속도 매우 낮음</td>
+<td>고폴리곤 시각적 메시가 충돌체로 사용됨</td>
+<td>볼록 껍질/기본 충돌체로 교체; 접촉 불가능한 링크 쌍에 대해 명시적으로 충돌 쌍 비활성화</td>
+</tr>
+<tr>
+<td>Isaac Sim 실행 시 검은 화면/충돌</td>
+<td>드라이버와 CUDA 버전 불일치, VRAM 부족</td>
+<td>공식 버전 호환성 매트릭스 확인; <code>nvidia-smi</code>로 드라이버 확인; 병렬 환경 수 줄이거나 레이 트레이싱 비활성화 후 시도</td>
+</tr>
+<tr>
+<td>모니터 없는 서버에서 렌더링 오류</td>
+<td>EGL/Vulkan 오프스크린 렌더링 설정 부족</td>
+<td>엔진 문서에 따라 headless 렌더링 환경 변수 설정; 먼저 순수 물리(렌더링 없음)로 검증</td>
+</tr>
+<tr>
+<td>RL 학습 곡선 상승 없음</td>
+<td>보상 설계 문제 또는 물리 스텝/제어 주파수 불일치</td>
+<td>먼저 공식 기준 환경으로 재현; 물리 스텝과 정책 스텝의 주파수 분리 설정 확인</td>
+</tr>
+<tr>
+<td>sim-to-real 실제 기기에서 즉시 넘어짐</td>
+<td>도메인 랜덤화 범위가 실제 매개변수 미포함, sysID 미수행</td>
+<td>액추에이터 스윕 주파수 식별 수행; 영점 보정 확인; 실제 기기 실패 자세를 시뮬레이션에서 재현</td>
+</tr>
+<tr>
+<td>HIL에서 컨트롤러 버스 프레임 손실 보고</td>
+<td>시뮬레이션이 실시간 속도로 진행되지 않음 (RTF ≠ 1)</td>
+<td>간소화된 물리 모델로 교체; 실시간 커널 + 전용 코어에서 시뮬레이션 실행; 각 프레임의 실제 소요 시간 모니터링</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">함께 읽기</h2>
+<ul>
+<li><a href="/roadmap/stage-0-foundations/">단계 0 · 기초 기반 다지기</a> —— 시뮬레이션 첫 경험을 위한 입문 경로</li>
+<li><a href="/roadmap/stage-2-biped/">단계 2 · 이족 보행 플랫폼</a> —— 시뮬레이션 보행에서 sim-to-real까지</li>
+<li><a href="/roadmap/index/">로드맵 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/playbooks/sensor-selection/">← 이전<span>선정 매뉴얼: 센서(Sensor) 어떻게 고를까</span></a>
+      
+      <span></span>
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">시뮬레이션 환경 처음부터 구축하기: 먼저 디지털 세계에서 만 번 넘어져 보자</a><ul>
+<li><a href="#1">1단계: 시뮬레이션 엔진 선택</a></li>
+<li><a href="#2">2단계: 로봇 모델 준비</a></li>
+<li><a href="#3">3단계: 제어 시뮬레이션 파이프라인 실행</a></li>
+<li><a href="#4-sim-to-real">4단계: sim-to-real 도구 상자 준비</a></li>
+<li><a href="#5">5단계: 벤치마크 테스트로 정책 정량화</a></li>
+<li><a href="#6">6단계: 하드웨어 구성 및 설치</a></li>
+<li><a href="#_2">합격 기준</a></li>
+<li><a href="#_3">일반적인 함정과 문제 해결</a></li>
+<li><a href="#_4">함께 읽기</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

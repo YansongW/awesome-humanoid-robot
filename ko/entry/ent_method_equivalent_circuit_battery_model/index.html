@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>등가 회로 배터리 모델 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">등가 회로 배터리 모델</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>등가 회로 배터리 모델</h1>
+      <p class="entry-name-en">Equivalent-Circuit Battery Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span><span class="tag">기초 학문</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">상위</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">기초 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Standard method in battery engineering and BMS state estimation. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>전압원과 집중된 저항-커패시터 소자로 구성된 회로로 리튬 이온 셀 또는 팩을 표현하여 단자 전압, 전류 응답, 충전 상태 동역학을 예측하는 방법이다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1016/j.jpowsour.2012.02.064" target="_blank" rel="noopener">A comparative study of equivalent circuit models for Li-ion batteries</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>관련 개체</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">formalizes</span>
+            <a href="/ko/entry/ent_formalism_thevenin_equivalent_circuit/">테베닌 등가 회로</a>
+            
+              
+                
+              
+              <span class="rel-desc">등가 회로 배터리 방법은 테베닌 등가 회로 공식화를 구현한다.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">uses</span>
+            <a href="/ko/entry/ent_butler_volmer_equation/">Butler-Volmer 방정식</a>
+            
+              
+                
+              
+              <span class="rel-desc">모델의 고충실도 변형은 Butler-Volmer 동역학을 사용하여 분극 저항을 매개변수화한다.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">has_prerequisite</span>
+            <a href="/ko/entry/ent_foundation_electrochemistry/">전기화학</a>
+            
+              
+                
+              
+              <span class="rel-desc">전기화학 동역학 및 전송 이론은 등가 회로 소자의 매개변수화를 뒷받침한다.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>리튬이온 셀 또는 배터리 팩을 전압원과 집중 저항-커패시턴스 소자로 구성된 회로로 표현하여 단자 전압, 전류 응답 및 충전 상태 동역학을 예측하는 방법입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">등가 회로 배터리 모델의 정의와 위치</h3>
+<p>등가 회로 배터리 모델은 <strong>방법</strong> 유형에 속합니다. 관련 분야로는 부품, 설계 공학, 기초 학문이 포함됩니다. 가치 사슬 계층은 상류, 중류, 기초입니다. 리튬이온 셀 또는 배터리 팩을 전압원과 집중 저항-커패시턴스 소자로 구성된 회로로 표현하여 단자 전압, 전류 응답 및 충전 상태 동역학을 예측하는 방법입니다. 영어 명칭은 <em>Equivalent-Circuit Battery Model</em>입니다. 한국어 명칭은 <em>등가 회로 배터리 모델</em>입니다.</p>
+<h3 id="_4">등가 회로 배터리 모델의 수학적 및 원리적 기초</h3>
+<p>등가 회로 배터리 모델은 관련 수학 이론과 물리 법칙에 기반합니다. 그 전제 가정, 제약 조건 및 유도 과정을 이해하는 것이 이 방법을 올바르게 적용하기 위한 전제입니다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수 및 수렴성 또는 안정성 보장에 주목해야 합니다.
+인간형 로봇과 같은 고차원, 저구동, 강결합 시스템에서 등가 회로 배터리 모델은 일반적으로 실시간성, 정밀도 및 강건성 사이에서 균형을 맞춰야 합니다.</p>
+<h3 id="_5">알고리즘 단계와 구현 핵심</h3>
+<p>등가 회로 배터리 모델을 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 합니다.
+수치 방법, 선형 대수 솔버 및 병렬 계산 전략을 적절히 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있습니다.
+동시에 모델 오차, 센서 노이즈 및 액추에이터 포화와 같은 공학적 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 해야 합니다.</p>
+<h3 id="_6">전형적인 응용과 한계</h3>
+<p>등가 회로 배터리 모델은 인간형 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있습니다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제입니다.</p>
+<h3 id="_7">관련 태그</h3>
+<ul>
+<li>battery_model</li>
+<li>equivalent_circuit</li>
+<li>thevenin_model</li>
+<li>lithium_ion_battery</li>
+<li>state_of_charge</li>
+<li>humanoid_robot</li>
+</ul>
+<h3 id="_8">인간형 로봇 시스템에서의 역할</h3>
+<p>인간형 로봇 산업 체인에서 핵심 방법 중 하나로서 등가 회로 배터리 모델은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_electrochemistry/">전기화학</a>
+              <span class="rel-desc">ent_method_equivalent_circuit_battery_model은 분극 및 확산 매개변수를 해석하기 위해 ent_foundation_electrochemistry를 선행 요건으로 한다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">형식화</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_formalism_thevenin_equivalent_circuit/">테베닌 등가 회로</a>
+              <span class="rel-desc">ent_method_equivalent_circuit_battery_model은 배터리 상태 추정을 위해 ent_formalism_thevenin_equivalent_circuit을 공식화한다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_butler_volmer_equation/">Butler-Volmer 방정식</a>
+              <span class="rel-desc">ent_method_equivalent_circuit_battery_model은 전하 이동 분극 저항을 매개변수화하기 위해 ent_butler_volmer_equation을 사용한다.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_miseikis_3d_vision_guided_robotic_charg_2017/">전기 및 플러그인 하이브리드 차량을 위한 3D 비전 기반 로봇 충전 스테이션</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">리튬 이온 배터리 노화 궤적의 &#39;무릎&#39; 현상</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">현재 리튬 이온 전지 기술 및 잠재적 고체 전해질 전지 기술에 대한 간단한 리뷰</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">향상된 전도성의 흑연지 기반 집전체를 갖춘 얇은 유연한 리튬 이온 배터리</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">리튬 이온 배터리 잔존 유용 수명 및 SOH 추정 (전기자동차용)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_tech_li_battery_humanoid/">휴로이드 로봇용 리튬 이온 배터리 시스템</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              <span class="rel-desc">ent_tech_li_battery_humanoid은 상태 추정 및 전압 예측을 위해 ent_method_equivalent_circuit_battery_model을 사용한다.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_equivalent_circuit_battery_model"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_butler_volmer_equation/">
+          <span class="entry-type">방정식</span>
+          <h3>Butler-Volmer 방정식</h3>
+          <p>전극 표면의 전류 밀도와 활성화 과전위 및 동역학 매개변수 간의 관계를 기술하는 방정식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_tech_li_battery_humanoid/">
+          <span class="entry-type">기술</span>
+          <h3>휴로이드 로봇용 리튬 이온 배터리 시스템</h3>
+          <p>휴로이드 로봇의 기존 온보드 에너지 저장 기술로, 에너지 밀도, 출력 밀도, 사이클 수명 간의 균형을 맞추지만, 일반적인 동적 작업 시 2-4시간으로 운영 시간을 제한함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">
+          <span class="entry-type">논문</span>
+          <h3>향상된 전도성의 흑연지 기반 집전체를 갖춘 얇은 유연한 리튬 이온 배터리</h3>
+          <p>본 논문은 나노 알루미늄 또는 구리층으로 코팅된 흑연지를 집전체로 사용하고 LiFePO4 양극, Li4Ti5O12 음극, LiPF6에 침적된 폴리에틸렌 분리막을 결합하여 총 두께…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">
+          <span class="entry-type">논문</span>
+          <h3>현재 리튬 이온 전지 기술 및 잠재적 고체 전해질 전지 기술에 대한 간단한 리뷰</h3>
+          <p>Andrew Ulvestad가 2018년에 발표한 개관 논문으로, 최첨단 리튬 이온 전지와 리튬 금속 음극을 사용하는 신흥 고체 전해질 전지를 비교하며, 황화물·고분자·산화물 고체…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_miseikis_3d_vision_guided_robotic_charg_2017/">
+          <span class="entry-type">논문</span>
+          <h3>전기 및 플러그인 하이브리드 차량을 위한 3D 비전 기반 로봇 충전 스테이션</h3>
+          <p>이 2017년 arXiv 논문은 스테레오 카메라 3D 비전 시스템, 형상 기반 매칭 및 UR10 로봇 암을 사용하여 차량을 개조하지 않고도 EV/PHEV 충전 포트를 찾아 연결하는…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">
+          <span class="entry-type">논문</span>
+          <h3>리튬 이온 배터리 잔존 유용 수명 및 SOH 추정 (전기자동차용)</h3>
+          <p>2023년 arXiv 논문은 리튬 이온 배터리 잔존 유용 수명(RUL) 추정을 위한 경험적, 물리 기반 및 데이터 기반 접근법을 검토하고 TensorFlow Keras로 구현된…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_electrochemistry/">
+          <span class="entry-type">기초 학문</span>
+          <h3>전기화학</h3>
+          <p>전지, 연료 전지 및 부식에서 반응, 전위 및 물질 이동을 지배하는 계면을 통한 전자와 이온 전송의 기초 과학이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_thevenin_equivalent_circuit/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>테베닌 등가 회로</h3>
+          <p>두 단자에서 바라본 임의의 선형 전기 네트워크를 등가 이상 전압원과 등가 저항의 직렬 연결로 대체하는 형식화이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">
+          <span class="entry-type">논문</span>
+          <h3>리튬 이온 배터리 노화 궤적의 &#39;무릎&#39; 현상</h3>
+          <p>2022년 리뷰로, 리튬 이온 배터리의 용량 감소 &#39;무릎&#39;을 정의하고 6가지 열화 경로와 3가지 내부 상태 궤적 유형을 분류하며 민감도와 예측 과제를 검토한다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">등가 회로 배터리 모델의 정의와 위치</a></li>
+<li><a href="#_4">등가 회로 배터리 모델의 수학적 및 원리적 기초</a></li>
+<li><a href="#_5">알고리즘 단계와 구현 핵심</a></li>
+<li><a href="#_6">전형적인 응용과 한계</a></li>
+<li><a href="#_7">관련 태그</a></li>
+<li><a href="#_8">인간형 로봇 시스템에서의 역할</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

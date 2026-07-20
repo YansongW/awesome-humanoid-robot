@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AWS RoboMaker · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AWS RoboMaker</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="aws-robomaker">AWS RoboMaker</h1>
+<blockquote>
+<p>This entry belongs to <a href="/wiki/appendix-d/">Appendix D Enterprise/Product Wiki</a>.
+Data update time: 2026-07-01. All parameters are based on official public information; missing items are marked as "Not disclosed."</p>
+</blockquote>
+<hr />
+<h2 id="company-information-card">Company Information Card</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chinese Name</strong></td>
+<td>Amazon Web Services RoboMaker</td>
+</tr>
+<tr>
+<td><strong>English Name</strong></td>
+<td>AWS RoboMaker</td>
+</tr>
+<tr>
+<td><strong>Headquarters</strong></td>
+<td>Seattle, Washington, USA</td>
+</tr>
+<tr>
+<td><strong>Founded</strong></td>
+<td>Released in 2018 (officially commercialized in 2019)</td>
+</tr>
+<tr>
+<td><strong>Official Website</strong></td>
+<td><a href="https://aws.amazon.com/robomaker">https://aws.amazon.com/robomaker</a></td>
+</tr>
+<tr>
+<td><strong>Supply Chain Role</strong></td>
+<td>Cloud robotics platform, robot simulation, fleet management</td>
+</tr>
+<tr>
+<td><strong>Enterprise Attribute</strong></td>
+<td>Public cloud department service</td>
+</tr>
+<tr>
+<td><strong>Parent Company/Group</strong></td>
+<td>Amazon Web Services (AWS) / Amazon.com Inc.</td>
+</tr>
+<tr>
+<td><strong>Data Source</strong></td>
+<td>AWS official website, AWS RoboMaker product page, AWS blog and announcements</td>
+</tr>
+</tbody>
+</table>
+<h2 id="company-overview">Company Overview</h2>
+<p>AWS RoboMaker is a cloud robotics development platform launched by Amazon Web Services, designed to provide robot developers with cloud-based simulation, machine learning, fleet management, and continuous integration/continuous deployment (CI/CD) capabilities.</p>
+<p>The platform natively integrates Robot Operating System (ROS/ROS2). Developers can run Gazebo simulations at scale in the cloud, train models using Amazon SageMaker, and deploy models to edge robots via AWS IoT Greengrass. RoboMaker also offers sample applications and world files (such as Small Warehouse World) to accelerate prototyping of AMRs, warehouse robots, and outdoor mobile robots.</p>
+<p>Starting in 2024, AWS has gradually migrated some of RoboMaker's managed capabilities to the open-source ROS ecosystem and a broader set of AWS services (such as IoT, SageMaker, SimSpace Weaver), recommending that new customers build their own cloud robotics solutions based on open-source toolchains and AWS services.</p>
+<h2 id="product-lines">Product Lines</h2>
+<table>
+<thead>
+<tr>
+<th>Product Line</th>
+<th>Positioning</th>
+<th>Representative Product</th>
+<th>Application Areas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cloud Robotics Development Platform</td>
+<td>Cloud-based ROS/ROS2 development and simulation</td>
+<td>AWS RoboMaker</td>
+<td>AMR, warehousing, service robots</td>
+</tr>
+<tr>
+<td>Simulation and Digital Twin</td>
+<td>Large-scale parallel physics simulation</td>
+<td>RoboMaker Simulation</td>
+<td>Algorithm validation, scenario regression testing</td>
+</tr>
+<tr>
+<td>Fleet and Edge Management</td>
+<td>Robot OTA, monitoring, task scheduling</td>
+<td>AWS IoT Greengrass + RoboMaker Fleet Management</td>
+<td>Field deployment, remote operations</td>
+</tr>
+<tr>
+<td>Machine Learning Services</td>
+<td>Cloud model training and edge inference</td>
+<td>Amazon SageMaker + RoboMaker ML</td>
+<td>Perception, navigation, manipulation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="representative-products">Representative Products</h2>
+<h3 id="aws-robomaker-cloud-robotics-platform">AWS RoboMaker Cloud Robotics Platform</h3>
+<blockquote>
+<p>AWS RoboMaker: Please visit the <a href="https://aws.amazon.com/robomaker">official page</a> for details.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Value</th>
+<th>Remarks/Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment Form</td>
+<td>Public cloud SaaS / PaaS</td>
+<td>AWS official website</td>
+</tr>
+<tr>
+<td>Supported Middleware</td>
+<td>ROS 1 / ROS 2</td>
+<td>AWS RoboMaker documentation</td>
+</tr>
+<tr>
+<td>Simulation Engine</td>
+<td>Gazebo / Ignition</td>
+<td>AWS public information</td>
+</tr>
+<tr>
+<td>Maximum Concurrent Simulations</td>
+<td>On-demand scaling (AWS compute resources)</td>
+<td>AWS official website</td>
+</tr>
+<tr>
+<td>Edge Deployment</td>
+<td>AWS IoT Greengrass</td>
+<td>AWS documentation</td>
+</tr>
+<tr>
+<td>ML Training Integration</td>
+<td>Amazon SageMaker</td>
+<td>AWS public information</td>
+</tr>
+<tr>
+<td>Data Storage</td>
+<td>Amazon S3, Amazon CloudWatch</td>
+<td>AWS documentation</td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td>Billed by simulation hours, storage, and data transfer</td>
+<td>AWS pricing page</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Technical Highlights</strong>: Cloud-based ROS development environment, large-scale parallel simulation, model training integrated with SageMaker, Greengrass edge deployment, sample warehouse world and navigation stack.</p>
+<p><strong>Application Scenarios</strong>: AMR navigation algorithm validation, warehouse robot digital twin, remote monitoring of service robots, OTA updates for robot models.</p>
+<h3 id="aws-iot-greengrass-robot-edge-deployment">AWS IoT Greengrass (Robot Edge Deployment)</h3>
+<blockquote>
+<p>AWS IoT Greengrass: Please visit the <a href="https://aws.amazon.com/robomaker">official page</a> for details.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Specification</th>
+<th>Value</th>
+<th>Remarks/Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment Form</td>
+<td>Edge runtime + cloud management</td>
+<td>AWS official website</td>
+</tr>
+<tr>
+<td>Supported Protocols</td>
+<td>MQTT, HTTP, local Lambda</td>
+<td>AWS documentation</td>
+</tr>
+<tr>
+<td>Security Mechanisms</td>
+<td>Device certificates, IAM, TLS encryption</td>
+<td>AWS public information</td>
+</tr>
+<tr>
+<td>Offline Operation</td>
+<td>Supports local computation and message queuing</td>
+<td>AWS documentation</td>
+</tr>
+<tr>
+<td>Supported Hardware</td>
+<td>ARM / x86 edge gateways, NVIDIA Jetson, etc.</td>
+<td>AWS public information</td>
+</tr>
+<tr>
+<td>Container Support</td>
+<td>Docker compatible</td>
+<td>AWS documentation</td>
+</tr>
+<tr>
+<td>Pricing</td>
+<td>Billed by device connections and messages</td>
+<td>AWS pricing page</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Technical Highlights</strong>: Edge-cloud collaboration, local Lambda computation, secure OTA, device shadow and state synchronization, integration with RoboMaker fleet management.</p>
+<p><strong>Application Scenarios</strong>: On-site robot task execution, local decision-making in offline/weak network environments, factory line edge inference, fleet-level configuration distribution.</p>
+<h2 id="supply-chain-position">Supply Chain Position</h2>
+<ul>
+<li><strong>Upstream Key Components/Materials</strong>: AWS self-developed cloud infrastructure, NVIDIA/Intel edge computing modules, ROS/ROS2 open-source ecosystem, Gazebo simulation engine.</li>
+<li><strong>Downstream Customers/Application Scenarios</strong>: Warehouse logistics AMRs, service robot manufacturers, autonomous driving R&amp;D, educational and research institutions.</li>
+<li><strong>Main Competitors/Comparables</strong>: Google Cloud Robotics, Microsoft Azure IoT + ROS, Formant, InOrbit, Freedom Robotics.</li>
+</ul>
+<h2 id="knowledge-graph-nodes-and-relationships">Knowledge Graph Nodes and Relationships</h2>
+<ul>
+<li>Company Entity: <code>ent_company_aws_robomaker</code></li>
+<li>Product/Platform Entities: <code>ent_product_aws_robomaker_cloud</code>, <code>ent_product_aws_iot_greengrass</code></li>
+<li>Key Relationships:</li>
+<li><code>rel_ent_company_aws_robomaker_manufactures_ent_product_aws_robomaker_cloud</code> (<code>ent_company_aws_robomaker</code> → <code>manufactures</code> → <code>ent_product_aws_robomaker_cloud</code>)</li>
+<li><code>rel_ent_company_aws_robomaker_manufactures_ent_product_aws_iot_greengrass</code> (<code>ent_company_aws_robomaker</code> → <code>manufactures</code> → <code>ent_product_aws_iot_greengrass</code>)</li>
+</ul>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://aws.amazon.com/robomaker">AWS RoboMaker Official Website</a></li>
+<li><a href="https://docs.aws.amazon.com/robomaker/">AWS RoboMaker Documentation</a></li>
+<li><a href="https://aws.amazon.com/greengrass/">AWS IoT Greengrass Product Page</a></li>
+<li><a href="https://aws.amazon.com/blogs/robotics/">AWS Blog – RoboMaker Migration Announcement</a></li>
+</ol>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/appendices/appendix-d/companies/company_aurora_optics/">← Previous<span>Aurora Optics / Aurora Optics</span></a>
+      
+      
+      <a class="next" href="/en/wiki/appendices/appendix-d/companies/company_baowu_magnesium/">Next →<span>Baowu Magnesium</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#aws-robomaker">AWS RoboMaker</a><ul>
+<li><a href="#company-information-card">Company Information Card</a></li>
+<li><a href="#company-overview">Company Overview</a></li>
+<li><a href="#product-lines">Product Lines</a></li>
+<li><a href="#representative-products">Representative Products</a><ul>
+<li><a href="#aws-robomaker-cloud-robotics-platform">AWS RoboMaker Cloud Robotics Platform</a></li>
+<li><a href="#aws-iot-greengrass-robot-edge-deployment">AWS IoT Greengrass (Robot Edge Deployment)</a></li>
+</ul>
+</li>
+<li><a href="#supply-chain-position">Supply Chain Position</a></li>
+<li><a href="#knowledge-graph-nodes-and-relationships">Knowledge Graph Nodes and Relationships</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

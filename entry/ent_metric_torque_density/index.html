@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>转矩密度 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/concept/">概念</a>
+    <span>/</span>
+    <span class="breadcrumb-current">转矩密度</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">概念</div>
+      <h1>转矩密度</h1>
+      <p class="entry-name-en">Torque Density</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>1. 扭矩密度 \(\tau_d = \tau_{\text{peak}} / m\)（单位：N·m/kg）或 N·m/L，衡量单位质量/体积能产生多大扭矩。 2. 功率密度 \(P_d = P_{\text{peak}} / m\)（单位：W/kg），衡量单位质量能输出多大机械功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<h3 id="412">4.1.2 功率密度、扭矩密度与动态响应</h3>
+<h2 id="_2">核心内容</h2>
+<p>把执行器看作一个能量转换装置，其核心指标可归结为两点：</p>
+<ol>
+<li><strong>扭矩密度</strong> <span class="arithmatex">\(\tau_d = \tau_{\text{peak}} / m\)</span>（单位：N·m/kg）或 N·m/L，衡量单位质量/体积能产生多大扭矩。</li>
+<li><strong>功率密度</strong> <span class="arithmatex">\(P_d = P_{\text{peak}} / m\)</span>（单位：W/kg），衡量单位质量能输出多大机械功率。</li>
+</ol>
+<p>二者通过电机转速关联：</p>
+<div class="arithmatex">\[
+P = \tau \, \omega
+\]</div>
+<p>其中 <span class="arithmatex">\(\omega\)</span> 为角速度（rad/s）。电机本体通常在高转速、低扭矩区运行效率最高；机器人关节需要低转速、高扭矩，因此必须借助减速器进行"扭矩放大"。这一匹配是本章后续讨论的核心。</p>
+<p>机器人动态响应还可用 <strong>机械时间常数</strong> 描述：</p>
+<div class="arithmatex">\[
+\tau_m = \frac{J \, R}{k_t^2}
+\]</div>
+<p>其中 <span class="arithmatex">\(J\)</span> 为转子与负载的等效转动惯量，<span class="arithmatex">\(R\)</span> 为电枢电阻，<span class="arithmatex">\(k_t\)</span> 为转矩常数。时间常数越小，电机加减速越快。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：转动惯量、机械时间常数、转矩常数</p>
+<ul>
+<li><strong>转动惯量（moment of inertia）</strong>：物体抵抗角加速度的能力，类比平动中的质量。离转轴越远、质量越大，转动惯量越大。单位 kg·m²。</li>
+<li><strong>机械时间常数（mechanical time constant）</strong>：电机从静止加速到约 63% 稳态转速所需的时间，反映机械响应快慢。</li>
+<li><strong>转矩常数（torque constant）</strong>：电机电流与产生转矩之间的比例系数 <span class="arithmatex">\(\tau = k_t I\)</span>。单位 N·m/A，其大小取决于磁场强度与绕组有效长度。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["任务需求&lt;br/&gt;力矩 速度 带宽"] --&gt; B["电机本体&lt;br/&gt;高速低扭"]
+    B --&gt; C["传动机构&lt;br/&gt;减速增扭"]
+    C --&gt; D["关节输出&lt;br/&gt;低速高扭"]
+    E["质量/体积约束"] --&gt; B
+    E --&gt; C
+    F["热与续航"] --&gt; G["效率与损耗"]
+    G --&gt; B
+    G --&gt; C</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">结合</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_rv_reducer/">RV减速器</a>
+              <span class="rel-desc">Wiki 第4章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">结合</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_harmonic_reducer_2024/">谐波减速器</a>
+              <span class="rel-desc">Wiki 第4章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_field_oriented_control/">磁场定向控制</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">结合</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_planetary_roller_screw/">行星滚柱丝杠</a>
+              <span class="rel-desc">Wiki 第4章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_cervettini_a_framework_for_optimal_ankle_2025/">人形机器人踝关节最优设计框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">人形机器人踝关节最优设计框架discusses转矩密度。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_metric_torque_density"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_cervettini_a_framework_for_optimal_ankle_2025/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人踝关节最优设计框架</h3>
+          <p>The design of the humanoid ankle is critical for safe and efficient ground interaction. Key factors…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制</h3>
+          <p>一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">零部件</span>
+          <h3>行星滚柱丝杠</h3>
+          <p>- Tesla Optimus：据 Tesla AI Day 2022 与后续公开信息，Optimus 躯干采用 28 个执行器（14 个旋转 + 14 个线性），旋转关节使用无框力矩电机 +…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_rv_reducer/">
+          <span class="entry-type">零部件</span>
+          <h3>RV减速器</h3>
+          <p>一种高刚性、高扭矩的摆线针轮减速器，抗冲击性与定位精度优异，常用于重载机器人臀、腰等关节。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制（FOC）</h3>
+          <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_harmonic_reducer_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>谐波减速器</h3>
+          <p>谐波减速器（Harmonic Drive）是一种基于柔性齿轮弹性变形原理的精密减速装置，由波发生器（Wave Generator）、柔性齿轮（Flexspline）和刚性内齿圈（Circular…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a><ul>
+<li><a href="#412">4.1.2 功率密度、扭矩密度与动态响应</a></li>
+</ul>
+</li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

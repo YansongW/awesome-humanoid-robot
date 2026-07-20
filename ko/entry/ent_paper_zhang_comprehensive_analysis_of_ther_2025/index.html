@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>리튬 이온 배터리 팩의 열 방출 종합 분석 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">리튬 이온 배터리 팩의 열 방출 종합 분석</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>리튬 이온 배터리 팩의 열 방출 종합 분석</h1>
+      <p class="entry-name-en">Comprehensive Analysis of Thermal Dissipation in Lithium-Ion Battery Packs</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.07070v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>이 2025년 arXiv 논문은 16셀 리튬 이온 배터리 팩에 대한 CFD 및 열 시뮬레이션을 통해 7가지 기하학적 배치와 기류 구성을 비교하였으며, 5개 인렛과 1개 아웃렛을 갖는 사다리꼴(넓은 밑변) 배열이 가장 균형 잡힌 설계임을 밝혔고, 나노 탄소 기반 상변화 물질 통합이 12.5분까지 상변화 지속 시간을 연장하여 온도를 안정화할 수 있음을 보였다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2502.07070" target="_blank" rel="noopener">Comprehensive Analysis of Thermal Dissipation in Lithium-Ion Battery Packs</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>리튬이온 배터리 팩의 안전하고 효율적인 작동을 위해서는 효과적인 열 관리가 필수적이며, 특히 드론과 같이 소형 설계와 다양한 기류 조건이 독특한 과제를 제시하는 응용 분야에서 중요합니다. 본 연구는 냉각 기류 구성을 최적화하고 상변화 물질(PCM)을 통합하여 방열을 향상시킴으로써 16셀 리튬이온 배터리 팩의 열 성능을 조사합니다. 민간 드론의 작동 조건을 반영하여 0~15m/s의 기류 속도에서 7가지 기하학적 구성을 평가했습니다. 입구 및 출구 구성, 기류 역학, PCM 상전이 거동의 영향을 분석하기 위해 포괄적인 3D 시뮬레이션 접근법이 사용되었습니다. 결과는 5개의 입구와 1개의 출구 설정과 결합된 사다리꼴(넓은 베이스) 구성이 가장 균형 잡힌 성능을 달성하여 저속 및 고속 기류 조건에서 최적의 작동 온도를 효과적으로 유지함을 보여줍니다. PCM 통합은 열 거동을 더욱 안정화시켰으며, 테스트 조건에서 상전이 지속 시간이 12.5분까지 연장되었습니다. 이러한 발견은 에너지 밀도가 높은 배터리 팩을 위한 소형이고 신뢰할 수 있는 열 관리 시스템을 발전시키는 데 있어 기하학적 최적화와 재료 통합의 중요성을 강조합니다. 본 연구는 드론 및 휴대용 에너지 저장 시스템과 같은 경량 응용 분야에 맞춤화된 효율적인 냉각 전략을 설계하기 위한 기초를 제공합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>리튬이온 배터리 팩의 안전하고 효율적인 작동을 위해서는 효과적인 열 관리가 필수적이며, 특히 드론과 같이 소형 설계와 다양한 기류 조건이 독특한 과제를 제시하는 응용 분야에서 중요합니다. 본 연구는 냉각 기류 구성을 최적화하고 상변화 물질(PCM)을 통합하여 방열을 향상시킴으로써 16셀 리튬이온 배터리 팩의 열 성능을 조사합니다. 민간 드론의 작동 조건을 반영하여 0~15m/s의 기류 속도에서 7가지 기하학적 구성을 평가했습니다. 입구 및 출구 구성, 기류 역학, PCM 상전이 거동의 영향을 분석하기 위해 포괄적인 3D 시뮬레이션 접근법이 사용되었습니다. 결과는 5개의 입구와 1개의 출구 설정과 결합된 사다리꼴(넓은 베이스) 구성이 가장 균형 잡힌 성능을 달성하여 저속 및 고속 기류 조건에서 최적의 작동 온도를 효과적으로 유지함을 보여줍니다. PCM 통합은 열 거동을 더욱 안정화시켰으며, 테스트 조건에서 상전이 지속 시간이 12.5분까지 연장되었습니다. 이러한 발견은 에너지 밀도가 높은 배터리 팩을 위한 소형이고 신뢰할 수 있는 열 관리 시스템을 발전시키는 데 있어 기하학적 최적화와 재료 통합의 중요성을 강조합니다. 본 연구는 드론 및 휴대용 에너지 저장 시스템과 같은 경량 응용 분야에 맞춤화된 효율적인 냉각 전략을 설계하기 위한 기초를 제공합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_gallant_voxel_grid_based_human_2025/">Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_gait_adaptive_perceptive_human_2025/">Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">휴머노이드를 위한 인간 수준 구동</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025_1/">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zhang_comprehensive_analysis_of_ther_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드를 위한 인간 수준 구동</h3>
+          <p>ISB 기반 자유도 아틀라스, 인간 등가 영역(HEE) 및 인간 수준 구동 점수(HLAS)를 통해 휴머노이드의 &#39;인간 수준&#39; 구동을 측정 가능하게 하는 재현 가능한 벤치마크…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gallant_voxel_grid_based_human_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</h3>
+          <p>Gallant…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">
+          <span class="entry-type">논문</span>
+          <h3>관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</h3>
+          <p>본 논문은 저렴한 변형 게이지 관절 토크 센서와 하나의 고관절 장착 힘/토크 센서를 융합하여 로봇 다리의 접촉을 감지하고 위치를 추정하며 접촉력을 추정하는 일반화된 운동량 기반…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gait_adaptive_perceptive_human_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用下视深度相机和 U-Net…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</h3>
+          <p>본 논문은 제트 동력 휴머노이드 iRonCub를 위한 다중 속도 모델 예측 제어 프레임워크를 제안하며, 질량 중심 운동량 역학과 2차 비선형 제트 엔진 역학을 통합하고 MuJoCo…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</h3>
+          <p>AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">
+          <span class="entry-type">논문</span>
+          <h3>물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰</h3>
+          <p>고충실도 미시규모 모델에서 단일 입자 모델까지의 연속 전기화학 배터리 모델을 유도하는 통합적 환원 프레임워크를 제시하고, 가정들과 한계, 열-전기화학 결합 확장에 대해 비판적으로…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

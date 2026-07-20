@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions</h1>
+      <p class="entry-name-en">Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions is a paper on 物理动画 for humanoid robotics.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>비디오 데이터는 3D 캐릭터 모션 컨트롤러를 학습하는 데 모션 캡처 데이터보다 비용 효율적이지만, 비디오에서 직접 현실적이고 다양한 행동을 합성하는 것은 여전히 어려운 과제입니다. 기존 접근법은 일반적으로 물리 기반 모방을 위해 3D 궤적을 얻기 위해 기성 모션 재구성 기술에 의존합니다. 이러한 재구성 방법은 일반화에 어려움을 겪는데, 3D 학습 데이터(잠재적으로 부족할 수 있음)를 필요로 하거나 물리적으로 타당한 포즈를 생성하지 못해 인간-객체 상호작용(HOI)이나 비인간 캐릭터와 같은 까다로운 시나리오에 적용하기 어렵습니다. 우리는 Mimic2DM이라는 새로운 모션 모방 프레임워크를 도입하여 이 문제를 해결합니다. 이 프레임워크는 비디오에서 추출한 널리 사용 가능한 2D 키포인트 궤적만을 직접 사용하여 제어 정책을 학습합니다. 재투영 오차를 최소화함으로써, 2D 모션 데이터만을 사용하여 물리 시뮬레이션에서 임의의 2D 참조 모션을 추적할 수 있는 일반적인 단일 시점 2D 모션 추적 정책을 훈련합니다. 이 정책은 서로 다른 또는 약간 다른 시점에서 캡처된 다양한 2D 모션으로 훈련될 때, 여러 시점을 집계하여 3D 모션 추적 능력을 추가로 획득할 수 있습니다. 또한, 우리는 트랜스포머 기반의 자기회귀 2D 모션 생성기를 개발하고 이를 계층적 제어 프레임워크에 통합하여, 생성기가 고품질의 2D 참조 궤적을 생성하여 추적 정책을 안내합니다. 제안된 접근법은 다재다능하며, 명시적인 3D 모션 데이터에 의존하지 않고 춤, 축구 드리블, 동물 움직임 등 다양한 영역에서 물리적으로 타당하고 다양한 모션을 합성하는 것을 효과적으로 학습할 수 있음을 보여줍니다. 프로젝트 웹사이트: https://jiann-li.github.io/mimic2dm/</p>
+<h2 id="_2">핵심 내용</h2>
+<p>비디오 데이터는 3D 캐릭터 모션 컨트롤러를 학습하는 데 모션 캡처 데이터보다 비용 효율적이지만, 비디오에서 직접 현실적이고 다양한 행동을 합성하는 것은 여전히 어려운 과제입니다. 기존 접근법은 일반적으로 물리 기반 모방을 위해 3D 궤적을 얻기 위해 기성 모션 재구성 기술에 의존합니다. 이러한 재구성 방법은 일반화에 어려움을 겪는데, 3D 학습 데이터(잠재적으로 부족할 수 있음)를 필요로 하거나 물리적으로 타당한 포즈를 생성하지 못해 인간-객체 상호작용(HOI)이나 비인간 캐릭터와 같은 까다로운 시나리오에 적용하기 어렵습니다. 우리는 Mimic2DM이라는 새로운 모션 모방 프레임워크를 도입하여 이 문제를 해결합니다. 이 프레임워크는 비디오에서 추출한 널리 사용 가능한 2D 키포인트 궤적만을 직접 사용하여 제어 정책을 학습합니다. 재투영 오차를 최소화함으로써, 2D 모션 데이터만을 사용하여 물리 시뮬레이션에서 임의의 2D 참조 모션을 추적할 수 있는 일반적인 단일 시점 2D 모션 추적 정책을 훈련합니다. 이 정책은 서로 다른 또는 약간 다른 시점에서 캡처된 다양한 2D 모션으로 훈련될 때, 여러 시점을 집계하여 3D 모션 추적 능력을 추가로 획득할 수 있습니다. 또한, 우리는 트랜스포머 기반의 자기회귀 2D 모션 생성기를 개발하고 이를 계층적 제어 프레임워크에 통합하여, 생성기가 고품질의 2D 참조 궤적을 생성하여 추적 정책을 안내합니다. 제안된 접근법은 다재다능하며, 명시적인 3D 모션 데이터에 의존하지 않고 춤, 축구 드리블, 동물 움직임 등 다양한 영역에서 물리적으로 타당하고 다양한 모션을 합성하는 것을 효과적으로 학습할 수 있음을 보여줍니다. 프로젝트 웹사이트: https://jiann-li.github.io/mimic2dm/</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_learning_to_control_physically_2025/">Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_mimic2dm_learning_to_control_p_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_to_control_physically_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions</h3>
+          <p>Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions is a…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

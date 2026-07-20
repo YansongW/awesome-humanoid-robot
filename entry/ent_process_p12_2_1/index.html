@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLA 模型选型与微调 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VLA 模型选型与微调</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>VLA 模型选型与微调</h1>
+      <p class="entry-name-en">VLA Model Selection and Fine-Tuning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>- P12.2.1.1 输入梳理与目标量化 - 整理「VLA 模型选型与微调」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化 KPI - 建立任务 Owner、时间节点与风险登记</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p><strong>所属阶段/工作包</strong>：VLA / WAM / AI 算法集成（AI &amp; Perception）</p>
+<h2 id="_2">核心内容</h2>
+<p><strong>方法 / 工具</strong>：OpenVLA、RT-X、π0、Diffusion Policy、自研模型</p>
+<p><strong>设计思考逻辑</strong>：将视觉-语言指令映射到机器人动作；需针对本机本体微调</p>
+<p><strong>关键约束</strong>：数据量、sim-to-real、安全性、算力</p>
+<p><strong>完成标准 / 输出物</strong>：可执行自然语言指令的端到端 demo、成功率指标</p>
+<p><strong>三级子任务与四级关键动作：</strong></p>
+<ul>
+<li>P12.2.1.1 输入梳理与目标量化</li>
+<li>
+<p>整理「VLA 模型选型与微调」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。</p>
+<ul>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+</ul>
+</li>
+<li>
+<p>P12.2.1.2 算法/控制方案设计</p>
+</li>
+<li>
+<p>基于「OpenVLA、RT-X、π0、Diffusion Policy、自研模型」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。</p>
+<ul>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+</ul>
+</li>
+<li>
+<p>P12.2.1.3 算法实现与仿真验证</p>
+</li>
+<li>
+<p>将「VLA 模型选型与微调」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。</p>
+<ul>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+</ul>
+</li>
+<li>
+<p>P12.2.1.4 算法调参与性能验证</p>
+</li>
+<li>
+<p>对「VLA 模型选型与微调」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。</p>
+<ul>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+</ul>
+</li>
+<li>
+<p>P12.2.1.5 文档输出与下游交付</p>
+</li>
+<li>输出「VLA 模型选型与微调」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。<ul>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">参考</h2>
+<ul>
+<li>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              <span class="rel-desc">VLA 模型选型与微调is_part_ofVLA / WAM / AI 算法集成（AI &amp; Perception）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">VLA 模型选型与微调提及OpenVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_collaboration_open_x_embodiment_robotic_lear_2023/">RT-X</a>
+              <span class="rel-desc">VLA 模型选型与微调提及RT-X。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">VLA 模型选型与微调提及OpenVLA。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_omaisan_towards_accessible_physical_ai_2025/">Towards Accessible Physical AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Towards Accessible Physical AIdiscussesVLA 模型选型与微调。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nian_control_your_robot_a_unified_s_2025/">Control Your Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Control Your RobotdiscussesVLA 模型选型与微调。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VLA / WAM / AI 算法集成（AI &amp; Perception）提及VLA 模型选型与微调。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jin_dual_actor_fine_tuning_of_vla_2025/">Dual-Actor Fine-Tuning of VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p12_2_1"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_collaboration_open_x_embodiment_robotic_lear_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-X</h3>
+          <p>Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_omaisan_towards_accessible_physical_ai_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Accessible Physical AI</h3>
+          <p>Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World Robot Control…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12/">
+          <span class="entry-type">方法</span>
+          <h3>VLA / WAM / AI 算法集成（AI &amp; Perception）</h3>
+          <p>VLA / WAM / AI 算法集成（AI &amp; Perception）是人形机器人产品开发全流程中的第 12 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jin_dual_actor_fine_tuning_of_vla_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Dual-Actor Fine-Tuning of VLA Models</h3>
+          <p>Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach (Dual-Actor…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nian_control_your_robot_a_unified_s_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Control Your Robot</h3>
+          <p>Control Your Robot: A Unified System for Robot Control and Policy Deployment (Control Your Robot),…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

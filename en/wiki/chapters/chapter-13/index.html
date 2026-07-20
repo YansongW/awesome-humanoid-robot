@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 13: Mass Production and Scaling · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 13: Mass Production and Scaling</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-13-mass-production-and-scaling">Chapter 13: Mass Production and Scaling</h1>
+<h2 id="summary">Summary</h2>
+<p>For humanoid robots to move from laboratory prototypes to deliveries of tens of thousands or hundreds of thousands of units, the gap to bridge is not just an engineering challenge, but a comprehensive manufacturing system capability: Design for Manufacturability, supply chain lock-in, pilot run validation, production ramp-up, yield engineering, cost curve management, and quality system establishment. This chapter uses the mass production process entities (from P0 Project Initiation to P16 Pilot Run and Production Preparation) in the knowledge graph as the main thread to systematically discuss six core issues of humanoid robot mass production: the mass production introduction process, production ramp-up models, yield and reliability engineering, cost curves and cost reduction paths, supply chain organization and supply assurance strategies, and manufacturing models of typical companies. This chapter provides quantitative tools such as the learning curve model for production ramp-up, series yield model, defect density model, and process capability index. It also depicts the engineering economics landscape of humanoid robot scaling, drawing on public practices from integrators like Tesla, Figure AI, Unitree Robotics, and Agility Robotics, as well as BOM cost trajectories from public industry forecasts such as Bank of America's <em>Humanoid Robots 101</em> (2025). This chapter complements Chapter 6 (Supply Chain) and Chapter 9 (Subsystem Design): Chapter 6 focuses on the supply-side landscape of components, Chapter 9 focuses on Design Validation (DV/PV) itself, while this chapter focuses on the manufacturing system problem of "producing a stable design, at low cost, and at scale."</p>
+<p><strong>Keywords:</strong> Mass Production Introduction; Production Ramp-up; Learning Curve; Yield Engineering; Process Capability Index; BOM Cost; DFM/DFA; PPAP; Supply Chain Assurance; Vertical Integration</p>
+<hr />
+<h2 id="131-from-prototype-to-mass-production-the-overall-framework-for-production-introduction">13.1 From Prototype to Mass Production: The Overall Framework for Production Introduction</h2>
+<h3 id="1311-fundamental-differences-between-prototype-and-mass-production-mindsets">13.1.1 Fundamental Differences Between Prototype and Mass Production Mindsets</h3>
+<p>The goal of a laboratory prototype is to "prove it works," while the goal of a mass-produced product is to "prove it is repeatable." The differences in their engineering objective functions can be summarized as:</p>
+<ul>
+<li><strong>Prototype</strong>: Maximize performance ceiling, tolerating manual debugging, one-off customization, and long assembly times.</li>
+<li><strong>Mass Production</strong>: Minimize unit cost, assembly time, and quality variation, provided the performance floor meets specifications.</li>
+</ul>
+<p>A humanoid robot typically contains 30–60 degrees of freedom, thousands of components, and dozens of suppliers. Any single point of variation—a batch of harmonic drives with excessive backlash, a batch of frameless torque motors with demagnetized magnets, or a loss of coaxiality in a joint module assembly—can be amplified at the system level into issues with walking stability or lifespan. Therefore, the essence of New Product Introduction (NPI) is the process of <strong>systematically driving uncertainty out of the system</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: NPI, EVT/DVT/PVT, DV/PV, Production Readiness</p>
+<ul>
+<li><strong>NPI (New Product Introduction)</strong>: The entire process of transforming a product design into a manufacturing system capable of stable mass production, encompassing process development, supply chain setup, pilot run validation, and ramp-up.</li>
+<li><strong>EVT/DVT/PVT</strong>: Three stages of prototype iteration: Engineering Validation, Design Validation, and Production Validation; PVT is followed by the production ramp-up.</li>
+<li><strong>DV/PV (Design Validation / Production Validation)</strong>: DV verifies "whether the design meets specifications," while PV verifies "whether the product manufactured using the mass production process still meets specifications." Chapter 9 has already discussed the test content of DV/PV; this chapter focuses on manufacturing consistency after PV.</li>
+<li><strong>Production Readiness</strong>: The simultaneous achievement of process freeze, supply chain freeze, and quality baseline freeze, typically marked by PPAP approval.</li>
+</ul>
+</div>
+<h3 id="1312-the-main-thread-of-the-mass-production-process-in-the-knowledge-graph-p0p16">13.1.2 The Main Thread of the Mass Production Process in the Knowledge Graph: P0–P16</h3>
+<p>The knowledge graph models the complete process of a humanoid robot from project initiation to mass production as 17 stage entities (research/methods/ent_process_p0 … p16), forming the process backbone of the entire book:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Name</th>
+<th>Relationship with Mass Production</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>Project Initiation &amp; Business Baseline</td>
+<td>Define target cost, target volume, target market</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Requirements Definition &amp; System Concept (Concept / Pre-A)</td>
+<td>Freeze product specifications and platform strategy</td>
+</tr>
+<tr>
+<td>P2–P3</td>
+<td>Industrial Design &amp; Mechatronic System Design</td>
+<td>Determine the upper limit of manufacturability</td>
+</tr>
+<tr>
+<td>P4–P5</td>
+<td>Joint Module &amp; Drive System, Body Structure Engineering</td>
+<td>Determine the main portion of BOM cost</td>
+</tr>
+<tr>
+<td>P6–P9</td>
+<td>URDF Verification, Simulation, Structural &amp; Thermal Iteration</td>
+<td>Use simulation to reduce physical prototyping cycles</td>
+</tr>
+<tr>
+<td>P10–P14</td>
+<td>Control, Dexterous Hand, AI, Electrical/Electronic &amp; Software Integration</td>
+<td>Determine manufacturing requirements for software flashability and calibration</td>
+</tr>
+<tr>
+<td>P15</td>
+<td>System Integration &amp; Verification/Validation (Integration &amp; V&amp;V)</td>
+<td>DV/PV Verification</td>
+</tr>
+<tr>
+<td>P16</td>
+<td>Pilot Run &amp; Production Preparation (Pilot &amp; Production Ramp)</td>
+<td>Core of this chapter</td>
+</tr>
+</tbody>
+</table>
+<p>Stage P16 is further subdivided into three sub-process groups, corresponding exactly to the three work fronts of production preparation:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    P16["P16 Pilot Run &amp; Production Preparation"] --&gt; A["P16.1 Manufacturing Engineering Preparation"]
+    P16 --&gt; B["P16.2 Supply Chain &amp; Quality Preparation"]
+    P16 --&gt; C["P16.3 Pilot Run &amp; Production Handover"]
+    A --&gt; A1["DFM/DFA Review"]
+    A --&gt; A2["Mold &amp; Tooling Design"]
+    A --&gt; A3["Assembly Line Planning &amp; SOP"]
+    B --&gt; B1["Supplier Selection &amp; Audit"]
+    B --&gt; B2["Quality Control System Establishment"]
+    B --&gt; B3["Incoming Material &amp; Process Anomaly Handling"]
+    C --&gt; C1["Pilot Run"]
+    C --&gt; C2["Cost Accounting &amp; Reduction"]
+    C --&gt; C3["PPAP / Production Readiness Assessment"]
+    C --&gt; C4["Service Manual &amp; Training"]</code></pre>
+<h3 id="1313-milestones-and-freeze-discipline-in-production-introduction">13.1.3 Milestones and "Freeze" Discipline in Production Introduction</h3>
+<p>A typical production introduction timeline includes four "freeze points," which require stricter discipline than the previous research culture in the humanoid robot industry:</p>
+<ol>
+<li><strong>Design Freeze</strong>: Any subsequent changes must go through the ECN (Engineering Change Notice) process, assessing the impact on tooling, inventory, and shipped products.</li>
+<li><strong>Process Freeze</strong>: Assembly sequence, tightening torque, dispensing volume, and calibration parameters are fixed into the SOP (Standard Operating Procedure).</li>
+<li><strong>Supply Freeze</strong>: The Approved Vendor List (AVL) for critical materials and the ratio for second sources are determined.</li>
+<li><strong>Quality Baseline Freeze</strong>: Outgoing Quality Control (OQC) specifications, reliability acceptance criteria, and traceability granularity (down to the joint module serial number level) are determined.</li>
+</ol>
+<p>The PPAP (Production Part Approval Process), commonly used in the automotive industry, serves as a verification tool in the DV/PV context of Chapter 9. In the context of this chapter, it acts as the <strong>legal document for production handover</strong>: suppliers submit dimensional reports, material reports, performance test reports, and process capability data. The integrator can only approve supply according to the production takt time after receiving these documents.</p>
+<h2 id="132-capacity-planning-and-production-ramp-up">13.2 Capacity Planning and Production Ramp-Up</h2>
+<h3 id="1321-basic-metrics-of-capacity-cycle-time-bottleneck-and-oee">13.2.1 Basic Metrics of Capacity: Cycle Time, Bottleneck, and OEE</h3>
+<p>Production line capacity is determined by the bottleneck station. Assuming a production line has <span class="arithmatex">\(n\)</span> stations, and the cycle time of the <span class="arithmatex">\(i\)</span>-th station is <span class="arithmatex">\(t_i\)</span> (including operation time and loading/unloading time), the theoretical cycle time is:</p>
+<div class="arithmatex">\[
+t_{cyc} = \max_{i=1,\dots,n} t_i, \qquad Q_{theory} = \frac{T_{avail}}{t_{cyc}}
+\]</div>
+<p>where <span class="arithmatex">\(T_{avail}\)</span> is the available production time. Actual output must be multiplied by the <strong>Overall Equipment Effectiveness (OEE)</strong>:</p>
+<div class="arithmatex">\[
+OEE = A \times P \times Q
+\]</div>
+<ul>
+<li><span class="arithmatex">\(A\)</span> (Availability): Deducting time for changeovers, breakdowns, and material shortages;</li>
+<li><span class="arithmatex">\(P\)</span> (Performance): Ratio of actual cycle time to theoretical cycle time;</li>
+<li><span class="arithmatex">\(Q\)</span> (Quality): First Pass Yield (FPY).</li>
+</ul>
+<p>Humanoid robot final assembly is still predominantly based on <strong>manual assembly island production lines</strong>—pre-assembly of joint modules, cable routing, and whole-machine calibration are highly dependent on skilled workers, which is fundamentally different from the highly automated assembly lines in the automotive industry. Typically, the cycle time for whole-machine final assembly in the small-batch phase is measured in "days/unit," and the ramp-up goal is to compress the bottleneck station to "hours/unit." The constraining factor is usually not final assembly, but rather <strong>burn-in testing of joint modules and whole-machine calibration</strong>: each joint requires temperature rise, backlash, efficiency, and noise testing; each whole machine requires gait calibration and sensor calibration. The time constants of these stations determine the investment in the production line.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Cycle Time, Bottleneck, OEE, FPY, Burn-in, Calibration</p>
+<ul>
+<li><strong>Cycle Time</strong>: The time interval between the completion of two consecutive products on a production line, determined by the slowest station.</li>
+<li><strong>Bottleneck</strong>: The station with the longest cycle time; increasing the speed of non-bottleneck stations is ineffective for total capacity (Theory of Constraints, TOC).</li>
+<li><strong>OEE (Overall Equipment Effectiveness)</strong>: A standard metric for measuring overall equipment efficiency; a typical world-class value for discrete manufacturing is around 85%.</li>
+<li><strong>FPY (First Pass Yield)</strong>: The proportion of products that pass all inspections without rework; it is the most important health indicator during the ramp-up phase.</li>
+<li><strong>Burn-in</strong>: A screening process that involves powering on and running equipment under high temperature/full load to induce early failures.</li>
+<li><strong>Calibration</strong>: The process of writing sensor biases, joint zero points, and kinematic parameters into individual product configurations; each humanoid robot is unique, and calibration data must be archived with its serial number.</li>
+</ul>
+</div>
+<h3 id="1322-production-ramp-up-curves-and-learning-models">13.2.2 Production Ramp-Up Curves and Learning Models</h3>
+<p>The unit output during the ramp-up phase approximately follows an S-curve over time. Two types of models are commonly used in engineering.</p>
+<p><strong>(1) Learning Curve (Wright's Law)</strong>: For each doubling of cumulative production, the unit cost (or unit labor hours) decreases by a fixed percentage <span class="arithmatex">\(1-\phi\)</span>, where <span class="arithmatex">\(\phi\)</span> is the learning rate:</p>
+<div class="arithmatex">\[
+C(N) = C_1 \cdot N^{-b}, \qquad b = -\log_2 \phi
+\]</div>
+<p>The typical learning rate for discrete manufacturing is <span class="arithmatex">\(\phi \in [0.80, 0.95]\)</span>: <span class="arithmatex">\(\phi=0.85\)</span> means that for each doubling of cumulative production, unit cost decreases by 15%. The joint modules of humanoid robots (integrated components of motor + reducer + encoder + driver) share process homology with consumer-grade drones and new energy vehicle drive motors, and a reference learning rate is approximately 0.85–0.92.</p>
+<p><strong>(2) Ramp-Up Production Model</strong>: Monthly output <span class="arithmatex">\(Q(t)\)</span> during the ramp-up phase is approximately:</p>
+<div class="arithmatex">\[
+Q(t) = Q_{max}\left(1 - e^{-t/\tau}\right)
+\]</div>
+<p>where <span class="arithmatex">\(\tau\)</span> is the ramp-up time constant, determined jointly by production line debugging, worker proficiency, and supply chain kitting rate. Generally, for a completely new product category (with no inheritable process heritage), <span class="arithmatex">\(\tau\)</span> is measured in quarters; for production lines involving automotive Tier 1 suppliers, <span class="arithmatex">\(\tau\)</span> is significantly shortened—this is one reason why automotive-grade suppliers like Tesla, Tuopu Group, and Sanhua Intelligent Controls are highly valued by robot OEMs.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["PVT Small Batch&lt;br/&gt;Tens to Hundreds of Units"] --&gt; B["Early Ramp-Up&lt;br/&gt;Hundreds of Units/Month&lt;br/&gt;FPY Rapidly Rising"]
+    B --&gt; C["Mid Ramp-Up&lt;br/&gt;Thousands of Units/Month&lt;br/&gt;Bottleneck Station Replication"]
+    C --&gt; D["Steady-State Mass Production&lt;br/&gt;Tens of Thousands of Units/Month&lt;br/&gt;Cost Enters Learning Curve Plateau"]
+    A -.-&gt;|Main Contradiction: Design Defect Exposure| A1["Design Retrospective ECN"]
+    B -.-&gt;|Main Contradiction: Process &amp; Yield| B1["SOP Iteration/Poka-Yoke"]
+    C -.-&gt;|Main Contradiction: Supply Chain Kitting| C1["Second Source Introduction/VMI"]</code></pre>
+<h3 id="1323-typical-failure-modes-and-countermeasures-during-ramp-up">13.2.3 Typical Failure Modes and Countermeasures During Ramp-Up</h3>
+<p>The main contradiction during the ramp-up phase is not "producing slowly," but "producing inconsistently." Typical issues include:</p>
+<ul>
+<li><strong>Poor Inter-Batch Consistency</strong>: Drift in the distribution of joint backlash between different shifts under the same SOP—countermeasure: <strong>Poka-Yoke</strong> design at critical stations and networked torque-angle curve recording for tightening tools;</li>
+<li><strong>Insufficient Calibration Capacity</strong>: Whole-machine gait calibration relies on engineer experience—countermeasure: script and fixture the calibration process, transforming "expert parameter tuning" into "automated calibration stations";</li>
+<li><strong>Software Version Fragmentation</strong>: Firmware in trial production batches inconsistent with shipping firmware—countermeasure: establish software baseline management within the Manufacturing Execution System (MES), combined with OTA (Over-The-Air) to achieve version uniformity after shipment (Knowledge Graph Entity: ent_technology_ota_software_update_2024);</li>
+<li><strong>Rework Stations Consuming Capacity</strong>: When FPY falls below approximately 80%, rework can overwhelm the bottleneck station—countermeasure: establish a dedicated rework area and an 8D problem-solving process.</li>
+</ul>
+<h2 id="133-yield-engineering-and-manufacturing-quality">13.3 Yield Engineering and Manufacturing Quality</h2>
+<h3 id="1331-series-yield-model-why-humanoid-robot-yield-is-a-multiplication-problem">13.3.1 Series Yield Model: Why Humanoid Robot Yield is a "Multiplication Problem"</h3>
+<p>A humanoid robot is composed of thousands of parts and dozens of key modules connected in series. If the overall qualification requires all key processes to be qualified, and each process is approximately independent, then the overall first-pass yield is the product of the yields of each process:</p>
+<div class="arithmatex">\[
+Y_{total} = \prod_{i=1}^{n} Y_i
+\]</div>
+<p>A simplified example illustrates the severity: Assuming a robot has 40 joint module processes and 20 final assembly processes, with each process yield at 99%, then</p>
+<div class="arithmatex">\[
+Y_{total} = 0.99^{60} \approx 54.7\%
+\]</div>
+<p>That is, nearly half of the robots require rework. To achieve an overall FPY of 90%, the average single-process yield must satisfy</p>
+<div class="arithmatex">\[
+\bar{Y} \ge 0.90^{1/60} \approx 99.82\%
+\]</div>
+<p>This explains why mass production of humanoid robots must align with the automotive industry's PPM (Parts Per Million) management approach: <strong>The "decimal places" of single-point yield are exponentially amplified in a series system.</strong></p>
+<h3 id="1332-defect-density-model-and-areacomplexity-scaling">13.3.2 Defect Density Model and Area/Complexity Scaling</h3>
+<p>For processes such as reducer tooth surfaces, motor magnet bonding, and PCB soldering, yield is often estimated using a defect density model. The Poisson model gives:</p>
+<div class="arithmatex">\[
+Y = e^{-D_0 A}
+\]</div>
+<p>Where <span class="arithmatex">\(D_0\)</span> is the defect density (defects per unit area or per joint), and <span class="arithmatex">\(A\)</span> is the critical area (or number of solder joints, mating surfaces). The improved Murphy model accounts for defect clustering effects:</p>
+<div class="arithmatex">\[
+Y = \left(\frac{1 - e^{-D_0 A}}{D_0 A}\right)^2
+\]</div>
+<p>The engineering implication is: <strong>Reducing the critical area or the number of critical features is itself a yield engineering practice.</strong> This explains the dual benefit of highly integrated joint modules (integrating motor, reducer, encoder, driver, and torque sensor) — it both reduces BOM and decreases the number of assembly interfaces, thereby exponentially improving series yield.</p>
+<h3 id="1333-statistical-process-control-and-process-capability-index">13.3.3 Statistical Process Control and Process Capability Index</h3>
+<p>Key characteristics (such as harmonic reducer backlash, joint zero-position error, and overall static balance) must be included in Statistical Process Control (SPC). The process capability index is defined as:</p>
+<div class="arithmatex">\[
+C_p = \frac{USL - LSL}{6\sigma}, \qquad C_{pk} = \min\left(\frac{USL-\mu}{3\sigma}, \frac{\mu-LSL}{3\sigma}\right)
+\]</div>
+<p>Where <span class="arithmatex">\(USL/LSL\)</span> are the upper and lower specification limits, and <span class="arithmatex">\(\mu,\sigma\)</span> are the process mean and standard deviation. Automotive-grade requirements typically demand <span class="arithmatex">\(C_{pk} \ge 1.33\)</span> (corresponding to approximately 63 PPM), while critical safety characteristics require <span class="arithmatex">\(C_{pk} \ge 1.67\)</span>. Currently, few suppliers can stably provide <span class="arithmatex">\(C_{pk}\)</span> data for characteristics like joint backlash, lost motion, and efficiency. This is a capability that must be established during the P16.2.2 "Quality Control System Establishment" phase.</p>
+<h3 id="1334-reliability-and-life-verification">13.3.4 Reliability and Life Verification</h3>
+<p>Mass production quality is not only about passing factory inspection but also about remaining qualified throughout the product's lifespan. Key points for humanoid robot reliability engineering:</p>
+<ul>
+<li><strong>MTBF Target</strong>: Industrial scenarios typically require a Mean Time Between Failures of thousands of hours; assuming two shifts per day, annual operation is approximately 4000–6000 hours, and the lifespan of critical robot components must cover the warranty period;</li>
+<li><strong>Accelerated Life Test (ALT)</strong>: Apply over-rated load and high temperature to joint modules, extrapolating life using the inverse power law model:</li>
+</ul>
+<div class="arithmatex">\[
+L = L_0 \left(\frac{S_0}{S}\right)^{m}
+\]</div>
+<p>Where <span class="arithmatex">\(S\)</span> is the stress level, and <span class="arithmatex">\(m\)</span> is a material/mechanism-related exponent (typically <span class="arithmatex">\(m\approx 3\)</span>–<span class="arithmatex">\(5\)</span> for fatigue failure);
+- <strong>Failure Mode Library</strong>: Chapters 4 and 5 have discussed failure mechanisms for actuators and transmissions (tooth surface fatigue, bearing wear, magnet demagnetization, encoder contamination). During the mass production phase, these must be translated into inspection items and frequencies in the Control Plan.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Design Failure Mode Effects Analysis DFMEA"] --&gt; C["Control Plan"]
+    B["Process Failure Mode Effects Analysis PFMEA"] --&gt; C
+    C --&gt; D["Incoming Quality Control IQC"]
+    C --&gt; E["In-Process Quality Control IPQC + SPC"]
+    C --&gt; F["Outgoing Quality Control OQC + Burn-in"]
+    D --&gt; G["Traceability: Serial Number Level MES Record"]
+    E --&gt; G
+    F --&gt; G
+    G --&gt; H["Field Failure 8D Analysis"]
+    H -.-&gt;|Corrective Action Feedback| A</code></pre>
+<h3 id="1335-python-example-series-yield-and-ramp-up-scrap-cost">13.3.5 Python Example: Series Yield and Ramp-Up Scrap Cost</h3>
+<p>The following script combines the series yield model from 13.3.1 with a ramp-up learning curve to estimate the additional manufacturing cost due to yield loss during the ramp-up phase and demonstrates the financial implication of "yield first, then capacity expansion":</p>
+<pre class="highlight"><code class="language-python"># Series yield and ramp-up scrap cost example
+import math
+
+# Total critical processes: 40 joint module processes + 20 final assembly processes
+n_ops = 60
+
+def total_yield(p_op, n=n_ops):
+    """Series yield: overall first-pass yield when each process yield is p_op"""
+    return p_op ** n
+
+for p in [0.99, 0.995, 0.998, 0.999]:
+    print(f"Single process yield {p:.1%} -&gt; Overall FPY {total_yield(p):.1%}")
+
+# Ramp-up learning curve: Monthly output Q(t) = Qmax * (1 - exp(-t/tau))
+Qmax, tau = 2000, 9          # Steady-state monthly output 2000 units, ramp-up time constant 9 months
+fpy0, fpy1, k = 0.55, 0.90, 0.25  # FPY converges from 55% to 90%, rate k
+unit_cost = 25000            # Unit manufacturing cost during ramp-up (USD, order of magnitude estimate)
+
+def monthly_output(t):
+    return Qmax * (1 - math.exp(-t / tau))
+
+def monthly_fpy(t):
+    return fpy1 - (fpy1 - fpy0) * math.exp(-k * t)
+
+scrap = 0.0
+for t in range(24):          # First 24 months
+    q = monthly_output(t)
+    scrap += q * (1 - monthly_fpy(t)) * unit_cost
+
+print(f"Total cumulative output over 24-month ramp-up: {sum(monthly_output(t) for t in range(24)):,.0f} units")
+print(f"Scrap/rework cost magnitude due to yield loss: approximately {scrap/1e6:,.0f} million USD")</code></pre>
+<p>Engineering interpretation of the example: During the process where FPY climbs from 55% to 90%, the yield loss represents a cash outflow on the same order of magnitude as equipment investment. Therefore, the primary KPI during the ramp-up phase is not output but the <strong>FPY slope</strong> — which corroborates the qualitative judgment in 13.2.3 that "rework stations occupy production capacity."</p>
+<h2 id="134-cost-curves-and-cost-reduction-pathways">13.4 Cost Curves and Cost Reduction Pathways</h2>
+<h3 id="1341-current-status-and-public-forecasts-of-bom-costs">13.4.1 Current Status and Public Forecasts of BOM Costs</h3>
+<p>The Bill of Materials (BOM) cost is the primary constraint for the commercialization of humanoid robots. The magnitude picture given by public industry forecasts is as follows (all are estimates from analytical institutions, not audited data):</p>
+<ul>
+<li>Bank of America Institute's "Humanoid Robots 101" (April 2025, knowledge graph entity ent_report_bofa_humanoid_robots_101_2025) estimates: For a typical humanoid robot primarily using a Chinese supply chain, containing 16 rotary actuators, 14 linear actuators (planetary roller screws), a 6-DOF dexterous hand, depth cameras, and LiDAR, the BOM at the end of 2025 is approximately <strong>$35,000/unit</strong>;</li>
+<li>The same report predicts that the BOM will drop to <strong><span class="arithmatex">\(13,000–\)</span>17,000/unit</strong> between 2030 and 2035, implying an average annual reduction of approximately 14%, consistent with a learning curve model (<span class="arithmatex">\(\phi \approx 0.86\)</span>–<span class="arithmatex">\(0.88\)</span>);</li>
+<li>An early anchor for consumer-level pricing has already appeared: Unitree Robotics' G1 humanoid robot has a public starting price of <strong>$16,000</strong> (knowledge graph entity ent_report_unitree_unitree_g1_humanoid_agent_pric_2024). Its approach sacrifices some performance (payload, battery life, protection rating) to achieve a lower price, validating the cost potential of the Chinese supply chain.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Data Usage Note</p>
+<p>The BOM and market size figures cited in this section and Chapter 28 are all public industry forecasts or publicly quoted company prices. They are forward-looking estimates from analytical institutions. Actual values depend on the technical route (harmonic vs. planetary, roller screw vs. trapezoidal screw, whether to equip dexterous hands and LiDAR) and production volume assumptions. Readers should treat them as magnitude references, not precise predictions.</p>
+</div>
+<h3 id="1342-bom-structure-where-the-major-costs-lie">13.4.2 BOM Structure: Where the Major Costs Lie</h3>
+<p>Based on component entities in the knowledge graph and public industry teardowns, the BOM of a full-size electrically actuated humanoid robot is roughly distributed according to the following structure (typically, there is significant variation depending on the specific design):</p>
+<table>
+<thead>
+<tr>
+<th>Cost Item</th>
+<th>Magnitude Share</th>
+<th>Key Components (KG Entity Examples)</th>
+<th>Cost Reduction Lever</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joint Actuators (Rotary + Linear)</td>
+<td>40%–60%</td>
+<td>Harmonic Drives (Harmonic Drive, Leaderdrive), Planetary Gearboxes (Nabtesco, Wittenstein), Frameless Torque Motors (Kollmorgen, maxon), Planetary Roller Screws (GSA, Rollvis, Ewellix)</td>
+<td>Integration, Domestic Substitution, Specification Downgrading</td>
+</tr>
+<tr>
+<td>Dexterous Hand &amp; End Effector</td>
+<td>5%–15%</td>
+<td>Inspire Robots, DH Robotics, Wonik Robotics, Dexterous Hand Micro Screws/Tendons</td>
+<td>DOF Reduction, Tendon-Driven Solutions</td>
+</tr>
+<tr>
+<td>Computing &amp; Sensing</td>
+<td>10%–20%</td>
+<td>NVIDIA Jetson Platform, Depth Cameras (Orbbec), LiDAR (Hesai, RoboSense), IMU, 6-Axis Force Sensors (ATI, Kunwei, Bota Systems)</td>
+<td>Domestic SoC, Sensor Reduction &amp; Fusion</td>
+</tr>
+<tr>
+<td>Battery &amp; Power Supply</td>
+<td>3%–8%</td>
+<td>Lithium Battery Pack (CATL, EVE Energy), BMS, DC-DC</td>
+<td>Platform Battery Pack</td>
+</tr>
+<tr>
+<td>Structure &amp; Appearance</td>
+<td>5%–10%</td>
+<td>Aluminum/Magnesium Alloy Die Casting &amp; CNC, Carbon Fiber Covers</td>
+<td>Die Casting Replacing CNC, Plastic Replacing Aluminum</td>
+</tr>
+<tr>
+<td>Wiring &amp; Electrical</td>
+<td>3%–5%</td>
+<td>Connectors (TE Connectivity, JST), Wiring Harnesses</td>
+<td>EtherCAT End-to-End, Wireless Solutions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1343-four-pathways-for-cost-reduction">13.4.3 Four Pathways for Cost Reduction</h3>
+<p><strong>Pathway 1: Design-to-Cost (DTC).</strong> Set a target cost during the P1–P5 stages and decompose it down to the module level. The method entity <strong>Value Analysis / Value Engineering (VAVE, ent_method_value_analysis_value_engineering)</strong> in the knowledge graph provides a systematic tool: for each component, ask "what is its function, and what is the lowest-cost solution to achieve that function?" Typical VAVE cases include: replacing high-reduction-ratio harmonic drives with Quasi-Direct-Drive (QDD) solutions (trading control bandwidth for reducer cost and volume, as in Unitree's approach); using planetary roller screws only for high-load joints (as in Tesla Optimus's concept); reducing dexterous hand DOF from 20+ to 6–11 to match real task requirements.</p>
+<p><strong>Pathway 2: Scale-Driven Cost Reduction.</strong> Described by the learning curve <span class="arithmatex">\(C(N)=C_1 N^{-b}\)</span>. A prerequisite for scale-driven cost reduction is Design for Manufacturing (DFM); otherwise, scaling only amplifies defect costs.</p>
+<p><strong>Pathway 3: Supply Chain Cost Reduction.</strong> Domestic substitution is a core lever for Chinese OEMs: shifting harmonic drives from Harmonic Drive Systems to Leaderdrive or Laifual, planetary gearboxes to Shuanghuan or Zhongda, and motors to Moons' or Jiangsu Leili. Public industry teardowns commonly report that such substitutions can lead to a 30%–60% reduction in component-level costs.</p>
+<p><strong>Pathway 4: Manufacturing Cost Reduction.</strong> This is the routinization of "Cost Accounting and Reduction" (Section 16.3.2): replacing full CNC machining (refer to the process boundary of knowledge graph entity ent_process_cnc_machining) with net-shape forming processes like die casting, MIM (Metal Injection Molding), and cold heading, reducing the machining time for structural parts by an order of magnitude; reducing direct labor through fixtures, automatic tightening, and automatic dispensing.</p>
+<h3 id="1344-the-linkage-between-cost-volume-and-price">13.4.4 The Linkage Between Cost, Volume, and Price</h3>
+<p>OEMs face a dynamic system of simultaneous equations: price determines demand, demand determines volume, volume determines cost via the learning curve, and cost determines the feasible price. A simplified expression of this linkage is:</p>
+<div class="arithmatex">\[
+P(N) = \frac{C_1 N^{-b}}{1 - m}
+\]</div>
+<p>where <span class="arithmatex">\(m\)</span> is the target gross margin. When <span class="arithmatex">\(N\)</span> is below the thousand-unit level, any positive-margin pricing struggles to meet the return on investment requirements of industrial customers (which typically require a payback period of 2–3 years for robots replacing human labor). Only when cumulative production enters the tens of thousands and the BOM drops below $20,000 does the Total Cost of Ownership (TCO) for industrial scenarios begin to close. This is the core conclusion of the "Mass Production and Scaling" chapter: <strong>The commercialization of humanoid robots is fundamentally a race between the manufacturing learning curve and the scenario TCO curve.</strong></p>
+<h2 id="135-supply-chain-organization-and-supply-assurance-strategy">13.5 Supply Chain Organization and Supply Assurance Strategy</h2>
+<h3 id="1351-identification-of-key-long-lead-time-materials">13.5.1 Identification of Key Long-Lead-Time Materials</h3>
+<p>The focus of supply chain management during the ramp-up period is on materials with <strong>long lead times, high bottlenecks, and high volatility</strong>. Based on knowledge graph entities and public industry information, the key bottleneck materials for humanoid robots include:</p>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Bottleneck Cause</th>
+<th>KG Related Entities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Planetary Roller Screw</td>
+<td>Scarcity of high-precision grinders/whirling machines, concentrated process know-how</td>
+<td>GSA, Rollvis, Ewellix, Nanjing Craft, Best</td>
+</tr>
+<tr>
+<td>Harmonic Drive</td>
+<td>Consistency in flexspline material and tooth profile machining</td>
+<td>Harmonic Drive Systems, Leaderdrive, Laifual</td>
+</tr>
+<tr>
+<td>High-Performance NdFeB Magnets</td>
+<td>Fluctuations in rare earth raw materials and export controls</td>
+<td>Zhongke Sanhuan, JL Mag, Zhenghai Magnet, Ningbo Yunsheng; ent_report_oceanwall_rare_earth_bottleneck_2025</td>
+</tr>
+<tr>
+<td>Automotive-Grade Computing Chips</td>
+<td>Advanced process capacity and export policies</td>
+<td>NVIDIA, Horizon, Black Sesame</td>
+</tr>
+<tr>
+<td>Six-Axis Force/Torque Sensor</td>
+<td>Calibration capacity and consistency</td>
+<td>ATI, Kunwei, Bota Systems</td>
+</tr>
+<tr>
+<td>High-End Encoder</td>
+<td>Grating ruling process</td>
+<td>Heidenhain, Renishaw, Tamagawa</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1352-supplier-selection-audit-and-second-source-strategy">13.5.2 Supplier Selection, Audit, and Second-Source Strategy</h3>
+<p>The particularity of P16.2.1 "Supplier Selection and Audit" in the humanoid robot industry: a large number of core suppliers are cross-industry entrants from automotive parts, 3C, and medical device sectors, resulting in significant variation in the maturity of their quality systems (IATF 16949 or ISO 9001). Practical key points:</p>
+<ul>
+<li><strong>Tiered Management</strong>: Allocate resources according to the "bottleneck/leverage/routine/critical" four-quadrant (Kraljic Matrix); harmonic drives, screws, and magnets fall under "bottleneck + critical" and must be dual-sourced or have capacity reservation agreements signed;</li>
+<li><strong>Process Audit</strong>: Conduct VDA 6.3 or equivalent process audits for key suppliers, focusing on verifying the authenticity of SPC data and change management (unnotified material/process changes are the largest source of batch failures);</li>
+<li><strong>Second-Source Introduction Rhythm</strong>: A second source is not only a bargaining tool but also an insurance for supply assurance; however, second-source parts must pass complete PPAP and full-machine A/B comparison verification to avoid "nominal dual-source, actual single-source";</li>
+<li><strong>Inventory Strategy</strong>: For policy-volatile materials like rare earth magnets, safety stock can be estimated using</li>
+</ul>
+<div class="arithmatex">\[
+SS = z \cdot \sigma_L \cdot \sqrt{LT}
+\]</div>
+<p>where <span class="arithmatex">\(z\)</span> is the service level coefficient, <span class="arithmatex">\(\sigma_L\)</span> is demand volatility, and <span class="arithmatex">\(LT\)</span> is the replenishment lead time. The "right tail of the lead time distribution" caused by policy risks needs to be addressed using scenario-based reserves rather than normal distribution assumptions.</p>
+<h3 id="1353-new-relationship-between-oems-and-tier-1-suppliers">13.5.3 New Relationship Between OEMs and Tier 1 Suppliers</h3>
+<p>The humanoid robot industry is replicating the "OEM—Tier 1—Tier 2" stratification of the automotive industry. Clear Tier 1 supplier entities have already appeared in the knowledge graph: <strong>Tuopu Group</strong> (actuator assembly direction), <strong>Sanhua Intelligent Controls</strong> (electromechanical actuator direction). Both have transitioned from new energy vehicle thermal management and structural components, undertaking the outsourcing of actuator assemblies from OEMs. The engineering implications of this model are:</p>
+<ul>
+<li>OEMs focus on the "brain + cerebellum" (AI and motion control) and system integration, outsourcing the manufacturing learning curve of joint modules to Tier 1 suppliers with automotive mass production experience;</li>
+<li>Tier 1 suppliers then integrate upstream Tier 2 suppliers for reducers (Leaderdrive, Shuanghuan), motors (Mingzhi, Buke, etc.), and screws (Nanjing Craft, Best);</li>
+<li>OEMs retain the definition rights for key interfaces (communication protocols, torque-position characteristics, fail-safe behavior), i.e., the extension of the ICD described in Chapter 9.</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    OEM["OEM&lt;br/&gt;Tesla / Figure / Unitree / UBTECH / Zhiyuan"] --&gt; T1["Tier 1 Actuator/Structure Assembly&lt;br/&gt;Tuopu Group / Sanhua Intelligent Controls / ODM: Luxshare Precision, etc."]
+    T1 --&gt; T2a["Reducer&lt;br/&gt;Leaderdrive / Shuanghuan / Nabtesco / HD"]
+    T1 --&gt; T2b["Motor&lt;br/&gt;Mingzhi / maxon / Kollmorgen / Buke"]
+    T1 --&gt; T2c["Screw&lt;br/&gt;GSA / Nanjing Craft / Best"]
+    T1 --&gt; T2d["Sensor&lt;br/&gt;ATI / Kunwei / Bota / Heidenhain"]
+    T2a --&gt; T3["Materials &amp; Machine Tools&lt;br/&gt;Magnets: Zhongke Sanhuan/JL Mag&lt;br/&gt;Bearing Steel / High-Precision Grinder"]
+    T2b --&gt; T3</code></pre>
+<h2 id="136-typical-manufacturing-models-and-cases">13.6 Typical Manufacturing Models and Cases</h2>
+<h3 id="1361-vertical-integration-model-tesla-optimus">13.6.1 Vertical Integration Model: Tesla Optimus</h3>
+<p>Tesla's (knowledge graph entity ent_oem_tesla) mass production philosophy inherits from its automotive business: <strong>Design for Manufacturability Internalization</strong> – first determine the target cost (publicly stated as a long-term sub-$20,000 price point) and target volume, then reverse-engineer the design of each actuator and screw; develop actuator assemblies in-house, reusing the company's casting, motor, and battery process heritage from automotive; the factory is the product ("the machine that builds the machine"), treating the production line itself as an iteration target. The risk lies in the need to build a learning curve for the entirely new actuator supply chain, resulting in higher short-term costs compared to outsourcing.</p>
+<h3 id="1362-dedicated-factory-model-agility-robotics-and-figure-ai">13.6.2 Dedicated Factory Model: Agility Robotics and Figure AI</h3>
+<p>Agility Robotics built RoboFab, a dedicated factory for Digit (knowledge graph entity product_digit), the first publicly announced humanoid robot-specific production line planned for an annual capacity of tens of thousands of units. Its significance lies in validating the unit economics of a "humanoid robot-specific manufacturing system." Figure AI (ent_oem_figure_ai) has publicly disclosed the capacity plan for its self-built factory, BotQ, and adopts a dual-track model of "in-house production + co-creation with automotive customer scenarios" (public collaborations with automakers like BMW). The factory serves both as a delivery capability and as an infrastructure for collecting real-world operational data – pointing to the deep connection between this chapter and Chapter 21 (Data Infrastructure): <strong>A mass production factory is simultaneously a data factory.</strong></p>
+<h3 id="1363-cost-disruption-model-unitree-robotics">13.6.3 Cost Disruption Model: Unitree Robotics</h3>
+<p>Unitree Robotics' (ent_oem_unitree_robotics) path is to inversely define engineering specifications through consumer-level pricing: the G1, with a public starting price of $16,000 (ent_report_unitree_unitree_g1_humanoid_agent_pric_2024), targets the research and developer market, while the H1/H2 cover higher performance segments. The key to its manufacturing model is: in-house development and production of quasi-direct drive joints, extensive use of die-casting and extruded profiles for structural parts, and leveraging the motor and reducer supply chain already proven by its quadruped robots (Go2, etc.). This model demonstrates that, supported by the Chinese supply chain, the price decline of humanoid robots can be significantly faster than the industry's publicly forecasted average – at the cost of an initial gap between performance and industrial application requirements.</p>
+<h3 id="1364-comparison-of-the-three-models">13.6.4 Comparison of the Three Models</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Vertical Integration (Tesla)</th>
+<th>Dedicated Factory (Agility/Figure)</th>
+<th>Cost Disruption (Unitree)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target Scenario</td>
+<td>In-house factory → General Industry</td>
+<td>Logistics/Manufacturing Customers</td>
+<td>Research/Developer → Light Commercial</td>
+</tr>
+<tr>
+<td>Core Barrier</td>
+<td>Manufacturing process heritage + data loop</td>
+<td>Scenario know-how + dedicated production line</td>
+<td>Supply chain cost + rapid iteration</td>
+</tr>
+<tr>
+<td>Mass Production Risk</td>
+<td>Full-chain self-build, high capital expenditure</td>
+<td>Dependent on single large customer adoption pace</td>
+<td>Performance ceiling and industrial reliability</td>
+</tr>
+<tr>
+<td>Cost Path</td>
+<td>Scale + process reuse</td>
+<td>Learning curve + customer co-sharing</td>
+<td>Domestic supply chain + down-specced design</td>
+</tr>
+</tbody>
+</table>
+<h2 id="137-quality-system-and-mass-production-regulatory-alignment">13.7 Quality System and Mass Production Regulatory Alignment</h2>
+<p>Mass production of humanoid robots also requires crossing regulatory thresholds: the complete machine must meet target market requirements for electrical safety (e.g., IEC 60204-1), electromagnetic compatibility (EMC), functional safety (ISO 13849, IEC 61508), and human-robot collaborative safety (the spirit of ISO/TS 15066 extended to bipedal platforms); the standard organization entities in the knowledge graph (ISO, IEEE SA, ANSI/RIA, UL Solutions, TÜV SÜD, SGS) constitute the certification ecosystem. The mass production quality system typically uses ISO 9001 as a baseline, with IATF 16949 added for automotive customers. This chapter does not elaborate on standard clauses (see Appendix E), but emphasizes one point: <strong>Certification capability must be built into the design before P16</strong> – retroactively adding safety circuits (e.g., joint brakes, torque limits) almost inevitably overturns the existing design, a lesson repeatedly validated in the collaborative robot industry.</p>
+<h2 id="138-chapter-summary">13.8 Chapter Summary</h2>
+<ul>
+<li>The essence of mass production introduction is to eliminate uncertainty: the quadruple freeze of design, process, supply chain, and quality marks readiness for mass production, and PPAP is the legal handover document;</li>
+<li>Capacity ramp-up is dominated by bottleneck stations (joint aging test, whole-machine calibration), following the learning curve <span class="arithmatex">\(C(N)=C_1N^{-b}\)</span>, with a typical learning rate of 0.85–0.92;</li>
+<li>The yield rate of humanoid robots is a series multiplication problem: 60 processes with 99% yield result in only about 55% overall FPY; mass production must move toward PPM management and automotive-grade levels with <span class="arithmatex">\(C_{pk}\ge1.33\)</span>;</li>
+<li>Cost curve anchor points: industry public forecasts (BofA <em>Humanoid Robots 101</em>) give a BOM trajectory of approximately $35,000 in 2025 and <span class="arithmatex">\(13,000–\)</span>17,000 in 2030–2035; Unitree G1, with a selling price of $16,000, provides an early consumer-side anchor;</li>
+<li>Bottleneck materials in the supply chain are planetary roller screws, harmonic reducers, NdFeB magnets, automotive-grade computing power, and six-axis force sensors; the rise of Tier 1 suppliers such as Tuopu and Sanhua indicates the formation of industry stratification;</li>
+<li>Manufacturing models diverge into three routes: vertical integration, dedicated factories, and cost disruption, with the common feature being that factories simultaneously assume the dual functions of manufacturing and data collection.</li>
+</ul>
+<h2 id="knowledge-graph-entities-covered-in-this-chapter">Knowledge Graph Entities Covered in This Chapter</h2>
+<table>
+<thead>
+<tr>
+<th>Entity ID</th>
+<th>Name</th>
+<th>Reference Location in This Chapter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ent_process_p0 – p16</td>
+<td>Main process flow from project initiation to mass production (including all sub-processes of P16)</td>
+<td>13.1–13.7</td>
+</tr>
+<tr>
+<td>ent_method_value_analysis_value_engineering</td>
+<td>Value Engineering/Value Analysis (VAVE)</td>
+<td>13.4.3</td>
+</tr>
+<tr>
+<td>ent_report_bofa_humanoid_robots_101_2025</td>
+<td>Bank of America Institute <em>Humanoid Robots 101</em></td>
+<td>13.4.1</td>
+</tr>
+<tr>
+<td>ent_report_oceanwall_rare_earth_bottleneck_2025</td>
+<td>Rare Earth Bottleneck Analysis Report</td>
+<td>13.5.1</td>
+</tr>
+<tr>
+<td>ent_report_unitree_unitree_g1_humanoid_agent_pric_2024</td>
+<td>Unitree G1 Price Announcement</td>
+<td>13.4.1, 13.6.3</td>
+</tr>
+<tr>
+<td>ent_oem_tesla / ent_oem_figure_ai / ent_oem_unitree_robotics</td>
+<td>Tesla / Figure AI / Unitree Robotics</td>
+<td>13.6</td>
+</tr>
+<tr>
+<td>ent_tier1_supplier_tuopujituan / ent_tier1_supplier_sanhuazhikong</td>
+<td>Tuopu Group / Sanhua Intelligent Controls</td>
+<td>13.5.3</td>
+</tr>
+<tr>
+<td>ent_technology_ota_software_update_2024</td>
+<td>OTA Over-the-Air Update</td>
+<td>13.2.3</td>
+</tr>
+<tr>
+<td>ent_process_cnc_machining</td>
+<td>CNC Machining Process</td>
+<td>13.4.3</td>
+</tr>
+<tr>
+<td>Appendix D Company Cards</td>
+<td>Harmonic Drive, Nabtesco, Leaderdrive, maxon, Kollmorgen, ATI, Heidenhain, CATL, Orbbec, Hesai, etc.</td>
+<td>13.4.2, 13.5.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<ul>
+<li>Bank of America Institute. (2025-04). <em>Humanoid Robots 101</em>. https://institute.bankofamerica.com/content/dam/transformation/humanoid-robots.pdf (Included in the knowledge graph; its BOM and adoption forecasts are analyst estimates)</li>
+<li>Knowledge graph research/methods/ent_process_p0.md – ent_process_p16.md (Mass production process entity family)</li>
+<li>Appendix D: List of Major Suppliers and Companies; Appendix E: List of Standards, Regulations, and Certifications</li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-12/">← Previous<span>Chapter 12: Certification, Compliance, and Quality Standards</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-14/">Next →<span>Chapter 14: Fundamentals of Robot Control</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-13-mass-production-and-scaling">Chapter 13: Mass Production and Scaling</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#131-from-prototype-to-mass-production-the-overall-framework-for-production-introduction">13.1 From Prototype to Mass Production: The Overall Framework for Production Introduction</a><ul>
+<li><a href="#1311-fundamental-differences-between-prototype-and-mass-production-mindsets">13.1.1 Fundamental Differences Between Prototype and Mass Production Mindsets</a></li>
+<li><a href="#1312-the-main-thread-of-the-mass-production-process-in-the-knowledge-graph-p0p16">13.1.2 The Main Thread of the Mass Production Process in the Knowledge Graph: P0–P16</a></li>
+<li><a href="#1313-milestones-and-freeze-discipline-in-production-introduction">13.1.3 Milestones and "Freeze" Discipline in Production Introduction</a></li>
+</ul>
+</li>
+<li><a href="#132-capacity-planning-and-production-ramp-up">13.2 Capacity Planning and Production Ramp-Up</a><ul>
+<li><a href="#1321-basic-metrics-of-capacity-cycle-time-bottleneck-and-oee">13.2.1 Basic Metrics of Capacity: Cycle Time, Bottleneck, and OEE</a></li>
+<li><a href="#1322-production-ramp-up-curves-and-learning-models">13.2.2 Production Ramp-Up Curves and Learning Models</a></li>
+<li><a href="#1323-typical-failure-modes-and-countermeasures-during-ramp-up">13.2.3 Typical Failure Modes and Countermeasures During Ramp-Up</a></li>
+</ul>
+</li>
+<li><a href="#133-yield-engineering-and-manufacturing-quality">13.3 Yield Engineering and Manufacturing Quality</a><ul>
+<li><a href="#1331-series-yield-model-why-humanoid-robot-yield-is-a-multiplication-problem">13.3.1 Series Yield Model: Why Humanoid Robot Yield is a "Multiplication Problem"</a></li>
+<li><a href="#1332-defect-density-model-and-areacomplexity-scaling">13.3.2 Defect Density Model and Area/Complexity Scaling</a></li>
+<li><a href="#1333-statistical-process-control-and-process-capability-index">13.3.3 Statistical Process Control and Process Capability Index</a></li>
+<li><a href="#1334-reliability-and-life-verification">13.3.4 Reliability and Life Verification</a></li>
+<li><a href="#1335-python-example-series-yield-and-ramp-up-scrap-cost">13.3.5 Python Example: Series Yield and Ramp-Up Scrap Cost</a></li>
+</ul>
+</li>
+<li><a href="#134-cost-curves-and-cost-reduction-pathways">13.4 Cost Curves and Cost Reduction Pathways</a><ul>
+<li><a href="#1341-current-status-and-public-forecasts-of-bom-costs">13.4.1 Current Status and Public Forecasts of BOM Costs</a></li>
+<li><a href="#1342-bom-structure-where-the-major-costs-lie">13.4.2 BOM Structure: Where the Major Costs Lie</a></li>
+<li><a href="#1343-four-pathways-for-cost-reduction">13.4.3 Four Pathways for Cost Reduction</a></li>
+<li><a href="#1344-the-linkage-between-cost-volume-and-price">13.4.4 The Linkage Between Cost, Volume, and Price</a></li>
+</ul>
+</li>
+<li><a href="#135-supply-chain-organization-and-supply-assurance-strategy">13.5 Supply Chain Organization and Supply Assurance Strategy</a><ul>
+<li><a href="#1351-identification-of-key-long-lead-time-materials">13.5.1 Identification of Key Long-Lead-Time Materials</a></li>
+<li><a href="#1352-supplier-selection-audit-and-second-source-strategy">13.5.2 Supplier Selection, Audit, and Second-Source Strategy</a></li>
+<li><a href="#1353-new-relationship-between-oems-and-tier-1-suppliers">13.5.3 New Relationship Between OEMs and Tier 1 Suppliers</a></li>
+</ul>
+</li>
+<li><a href="#136-typical-manufacturing-models-and-cases">13.6 Typical Manufacturing Models and Cases</a><ul>
+<li><a href="#1361-vertical-integration-model-tesla-optimus">13.6.1 Vertical Integration Model: Tesla Optimus</a></li>
+<li><a href="#1362-dedicated-factory-model-agility-robotics-and-figure-ai">13.6.2 Dedicated Factory Model: Agility Robotics and Figure AI</a></li>
+<li><a href="#1363-cost-disruption-model-unitree-robotics">13.6.3 Cost Disruption Model: Unitree Robotics</a></li>
+<li><a href="#1364-comparison-of-the-three-models">13.6.4 Comparison of the Three Models</a></li>
+</ul>
+</li>
+<li><a href="#137-quality-system-and-mass-production-regulatory-alignment">13.7 Quality System and Mass Production Regulatory Alignment</a></li>
+<li><a href="#138-chapter-summary">13.8 Chapter Summary</a></li>
+<li><a href="#knowledge-graph-entities-covered-in-this-chapter">Knowledge Graph Entities Covered in This Chapter</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

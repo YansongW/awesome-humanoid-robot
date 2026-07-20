@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>捕获点 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/principle/">原理</a>
+    <span>/</span>
+    <span class="breadcrumb-current">捕获点</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">原理</div>
+      <h1>捕获点</h1>
+      <p class="entry-name-en">Capture Point</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.4.9 捕获点（Capture Point）与线性倒立摆 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>捕获点（Capture Point, CP）是人形机器人推恢（push recovery）与步态规划中的核心概念：它是地面上这样一个点——若机器人能在该点立即踩下去并把质心置于支撑脚正上方，则无需再迈下一步即可停止[44][45]。捕获点的存在把复杂的动态平衡问题转化为“下一步应踩在哪里”的几何问题。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>捕获点是人形机器人领域的重要原理。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p><strong>捕获点（Capture Point, CP）</strong>是人形机器人推恢（push recovery）与步态规划中的核心概念：它是地面上这样一个点——若机器人能在该点立即踩下去并把质心置于支撑脚正上方，则无需再迈下一步即可停止[44][45]。捕获点的存在把复杂的动态平衡问题转化为“下一步应踩在哪里”的几何问题。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：捕获点（Capture Point）、推恢、步态规划、动态平衡</p>
+<ul>
+<li><strong>捕获点（Capture Point, CP）</strong>：给定当前质心状态，单步之内使机器人恢复静止所需的落脚点。</li>
+<li><strong>推恢（push recovery）</strong>：受到外部推扰后通过迈步或姿态调整恢复平衡的能力。</li>
+<li><strong>步态规划（gait planning）</strong>：生成行走步序与落脚点的过程。</li>
+<li><strong>动态平衡（dynamic balance）</strong>：在运动过程中保持不倾倒的能力。</li>
+</ul>
+</div>
+<p>在<strong>线性倒立摆模型（Linear Inverted Pendulum Model, LIPM）</strong>中，假设质心高度 <span class="arithmatex">\(z_c\)</span> 恒定，且质点通过无质量杆连接到地面上的 ZMP。LIPM 的水平动力学为：</p>
+<div class="arithmatex">\[
+\ddot{x} = \frac{g}{z_c}(x - x_{\text{ZMP}})
+\]</div>
+<p>其中 <span class="arithmatex">\(g\)</span> 为重力加速度，<span class="arithmatex">\(x\)</span> 为质心水平位置。该方程可改写为：</p>
+<div class="arithmatex">\[
+\dot{x} = \omega_0 (x - x_{\text{ZMP}})
+\]</div>
+<p>其中 <span class="arithmatex">\(\omega_0 = \sqrt{g/z_c}\)</span> 为 LIPM 的自然频率。若 ZMP 保持恒定，质心运动可分解为收敛分量与发散分量。发散分量称为<strong>发散运动分量（Divergent Component of Motion, DCM）</strong>：</p>
+<div class="arithmatex">\[
+\xi = x + \frac{\dot{x}}{\omega_0}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：线性倒立摆模型（LIPM）、自然频率、发散运动分量（DCM）</p>
+<ul>
+<li><strong>线性倒立摆模型（LIPM）</strong>：把机器人简化为高度恒定的质心-无质量杆-ZMP 的线性模型。</li>
+<li><strong>自然频率（natural frequency）</strong>：LIPM 特征频率 <span class="arithmatex">\(\omega_0 = \sqrt{g/z_c}\)</span>。</li>
+<li><strong>发散运动分量（DCM）</strong>：质心运动中随时间指数发散的分量，决定机器人是否需要迈步。</li>
+</ul>
+</div>
+<p>捕获点本质上就是当前 DCM 的位置。对于二维 LIPM：</p>
+<div class="arithmatex">\[
+x_{\text{CP}} = x_{\text{CoM}} + \frac{\dot{x}_{\text{CoM}}}{\omega_0}
+\]</div>
+<p>扩展到三维水平面：</p>
+<div class="arithmatex">\[
+\mathbf{r}_{\text{CP}} = \mathbf{r}_{\text{CoM}}^{xy} + \frac{\dot{\mathbf{r}}_{\text{CoM}}^{xy}}{\omega_0}
+\]</div>
+<p>若把下一步落脚点（即新的 ZMP）正好置于捕获点，则质心将沿直线趋向该点并最终静止；若不迈到捕获点，DCM 将继续发散，机器人必须再迈一步甚至跌倒。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["当前 CoM 位置与速度"] --&gt; B["计算 omega_0 = sqrt(g/z_c)"]
+    B --&gt; C["计算 DCM / CP"]
+    C --&gt; D["r_CP = r_CoM + v_CoM / omega_0"]
+    D --&gt; E{"脚踏在 CP 上?"}
+    E --&gt;|"是"| F["单步内静止"]
+    E --&gt;|"否"| G["继续迈步或跌倒"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：落脚点、ZMP、DCM 控制、捕获区域</p>
+<ul>
+<li><strong>落脚点（foot placement）</strong>：行走时脚落地的位置。</li>
+<li><strong>ZMP（Zero Moment Point）</strong>：地面反作用力等效作用点。</li>
+<li><strong>DCM 控制（DCM control）</strong>：通过调节 ZMP 或落脚点控制发散分量的方法。</li>
+<li><strong>捕获区域（capture region）</strong>：所有能使机器人恢复平衡的可行落脚点集合。</li>
+</ul>
+</div>
+<p><strong>Python 算例：捕获点与所需落脚点计算</strong></p>
+<p>以下代码给定质心水平位置、速度、质心高度，计算捕获点；并给定实际迈步位置，判断是否能单步恢复静止。</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+def compute_capture_point(r_com, v_com, z_c, g=9.81):
+    """
+    计算二维/三维水平面捕获点。
+    r_com: CoM 水平位置 (x, y) 或 (x, y, z)（只取 x, y）
+    v_com: CoM 水平速度 (vx, vy) 或 (vx, vy, vz)
+    z_c: 质心高度（恒定）
+    """
+    r_com = np.array(r_com)[:2]
+    v_com = np.array(v_com)[:2]
+    omega_0 = np.sqrt(g / z_c)
+    r_cp = r_com + v_com / omega_0
+    return r_cp, omega_0
+
+def step_recovery_check(r_com, v_com, z_c, foot_place, g=9.81):
+    """
+    判断给定落脚点 foot_place 是否能把 CoM 稳定下来。
+    简单判据：新 ZMP 位于 foot_place，若 DCM 收敛到该点则成功。
+    """
+    r_cp, omega_0 = compute_capture_point(r_com, v_com, z_c, g)
+    dist = np.linalg.norm(r_cp - np.array(foot_place)[:2])
+    omega_0_val = omega_0
+    # 若实际落脚点与捕获点重合，则理论上可单步静止
+    # 这里给出时间常数 tau = 1/omega_0，以及偏移
+    tau = 1.0 / omega_0_val
+    return {
+        'capture_point': r_cp,
+        'omega_0': omega_0_val,
+        'time_constant': tau,
+        'foot_placement_error': dist,
+        'single_step_capture': dist &lt; 0.02  # 允许 2 cm 误差
+    }
+
+## 参考
+- Wiki extraction
+- 项目 Wiki：chapter-08.md#8.4.9 捕获点（Capture Point）与线性倒立摆
+
+## Overview
+Capture points are an important principle in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
+
+## Content
+**Capture Point (CP)** is a core concept in humanoid robot push recovery and gait planning: it is a point on the ground such that if the robot can immediately step onto that point and place its center of mass directly above the support foot, no further steps are needed to come to a stop[44][45]. The existence of the capture point transforms the complex dynamic balance problem into a geometric one: "where should the next step be placed?"
+
+!!! note "Terminology: Capture Point (CP), Push Recovery, Gait Planning, Dynamic Balance"
+    - **Capture Point (CP)**: Given the current center of mass state, the foot placement required to bring the robot to a stop within a single step.
+    - **Push Recovery**: The ability to regain balance after an external push disturbance by stepping or adjusting posture.
+    - **Gait Planning**: The process of generating walking step sequences and foot placements.
+    - **Dynamic Balance**: The ability to maintain stability without falling during motion.
+
+In the **Linear Inverted Pendulum Model (LIPM)**, the center of mass height \(z_c\) is assumed constant, and the point mass is connected to the ZMP on the ground via a massless rod. The horizontal dynamics of the LIPM are:
+
+$$
+\ddot{x} = \frac{g}{z_c}(x - x_{\text{ZMP}})
+$$
+
+where \(g\) is the gravitational acceleration and \(x\) is the horizontal position of the center of mass. This equation can be rewritten as:
+
+$$
+\dot{x} = \omega_0 (x - x_{\text{ZMP}})
+$$
+
+where \(\omega_0 = \sqrt{g/z_c}\) is the natural frequency of the LIPM. If the ZMP remains constant, the center of mass motion can be decomposed into a convergent component and a divergent component. The divergent component is called the **Divergent Component of Motion (DCM)**:
+
+$$
+\xi = x + \frac{\dot{x}}{\omega_0}
+$$
+
+!!! note "Terminology: Linear Inverted Pendulum Model (LIPM), Natural Frequency, Divergent Component of Motion (DCM)"
+    - **Linear Inverted Pendulum Model (LIPM)**: A linear model that simplifies the robot to a constant-height center of mass, massless rod, and ZMP.
+    - **Natural Frequency**: The characteristic frequency of the LIPM, \(\omega_0 = \sqrt{g/z_c}\).
+    - **Divergent Component of Motion (DCM)**: The component of center of mass motion that diverges exponentially over time, determining whether the robot needs to step.
+
+The capture point is essentially the current DCM position. For a 2D LIPM:
+
+$$
+x_{\text{CP}} = x_{\text{CoM}} + \frac{\dot{x}_{\text{CoM}}}{\omega_0}
+$$
+
+Extending to the 3D horizontal plane:
+
+$$
+\mathbf{r}_{\text{CP}} = \mathbf{r}_{\text{CoM}}^{xy} + \frac{\dot{\mathbf{r}}_{\text{CoM}}^{xy}}{\omega_0}
+$$
+
+If the next foot placement (i.e., the new ZMP) is placed exactly at the capture point, the center of mass will move in a straight line toward that point and eventually come to a stop; if the step is not placed at the capture point, the DCM will continue to diverge, and the robot must take another step or fall.
+
+```mermaid
+flowchart TD
+    A["Current CoM position and velocity"] --&gt; B["Compute omega_0 = sqrt(g/z_c)"]
+    B --&gt; C["Compute DCM / CP"]
+    C --&gt; D["r_CP = r_CoM + v_CoM / omega_0"]
+    D --&gt; E{"Foot placed on CP?"}
+    E --&gt;|"Yes"| F["Stop within one step"]
+    E --&gt;|"No"| G["Continue stepping or fall"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Foot Placement, ZMP, DCM Control, Capture Region</p>
+<ul>
+<li><strong>Foot Placement</strong>: The position where the foot lands during walking.</li>
+<li><strong>ZMP (Zero Moment Point)</strong>: The equivalent point of action of ground reaction forces.</li>
+<li><strong>DCM Control</strong>: A method of controlling the divergent component by adjusting the ZMP or foot placement.</li>
+<li><strong>Capture Region</strong>: The set of all feasible foot placements that can restore the robot's balance.</li>
+</ul>
+</div>
+<p><strong>Python Example: Capture Point and Required Foot Placement Calculation</strong></p>
+<p>The following code calculates the capture point given the center of mass horizontal position, velocity, and height; and given an actual step position, determines whether a single-step stop is possible.</p>
+<p>```python
+import numpy as np</p>
+<p>def compute_capture_point(r_com, v_com, z_c, g=9.81):
+    """
+    Compute the 2D/3D horizontal capture point.
+    r_com: CoM horizontal position (x, y) or (x, y, z) (only x, y used)
+    v_com: CoM horizontal velocity (vx, vy) or (vx, vy, vz)
+    z_c: Center of mass height (constant)
+    """
+    r_com = np.array(r_com)[:2]
+    v_com = np.array(v_com)[:2]
+    omega_0 = np.sqrt(g / z_c)
+    r_cp = r_com + v_com / omega_0
+    return r_cp, omega_0</p>
+<p>def step_recovery_check(r_com, v_com, z_c, foot_place, g=9.81):
+    """
+    Check if the given foot placement can stabilize the CoM.
+    Simple criterion: if the new ZMP is at foot_place, success if DCM converges to that point.
+    """
+    r_cp, omega_0 = compute_capture_point(r_com, v_com, z_c, g)
+    dist = np.linalg.norm(r_cp - np.array(foot_place)[:2])
+    omega_0_val = omega_0
+    # If the actual foot placement coincides with the capture point, theoretically a single-step stop is possible
+    # Here we provide the time constant tau = 1/omega_0 and the offset
+    tau = 1.0 / omega_0_val
+    return {
+        'capture_point': r_cp,
+        'omega_0': omega_0_val,
+        'time_constant': tau,
+        'foot_placement_error': dist,
+        'single_step_capture': dist &lt; 0.02  # Allow 2 cm error
+    }</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_principle_zero_moment_point/">零力矩点（ZMP）</a>
+              <span class="rel-desc">捕获点提及零力矩点（ZMP）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gait_planning/">步态规划</a>
+              <span class="rel-desc">捕获点提及步态规划。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_method_hierarchical_qp_wbc/">分层二次规划全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">分层二次规划全身控制提及捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wiedebach_walking_on_partial_footholds_i_2016/">Atlas人形机器人在部分支撑面（包括线接触）上的行走方法</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Atlas人形机器人在部分支撑面（包括线接触）上的行走方法使用捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_stability_aware_retargeting_fo_2025/">Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_prasad_geometric_mechanics_of_contact_2023/">接触切换系统的几何力学</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">接触切换系统的几何力学discusses捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_unified_humanoid_fall_safety_p_2025/">Unified Humanoid Fall-Safety Policy from a Few Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_whole_body_humanoid_robot_loco_2024/">Whole-body Humanoid Robot Locomotion with Human Reference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">运动控制算法开发与验证（Motion Control）使用捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hover_versatile_humanoid_contr_2024/">HOVER 通用人形控制器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HOVER 通用人形控制器提及捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_discovering_self_protective_fa_2025/">Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cmr_contractive_mapping_embedd_2026/">CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_embedding_classical_balance_co_2026/">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chasing_stability_humanoid_run_2025/">Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sakurai_bipedal_robot_running_human_li_2024/">双足机器人跑步：利用快/慢自适应实现类人驱动时机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">双足机器人跑步：利用快/慢自适应实现类人驱动时机discusses捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vigor_visual_goal_in_context_i_2026/">VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_2_1/">站立与抗扰平衡控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">站立与抗扰平衡控制使用捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_biomechanical_comparisons_reve_2026/">Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ficht_centroidal_state_estimation_an_2023/">面向硬件受限人形机器人的质心状态估计与控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">面向硬件受限人形机器人的质心状态估计与控制使用捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_symmetric_and_low_ene_2018/">Learning Symmetric and Low-energy Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">模型预测控制（MPC）提及捕获点。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_humanoid_arm_motion_v_2025/">Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_architecture_is_all_you_need_d_2025/">Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shield_safety_on_humanoids_via_2025/">SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_fea_finite_element_analysis/">有限元分析（FEA）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_floating_base_dynamics/">浮动基动力学</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_inverse_kinematics/">逆运动学</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_principle_zero_moment_point/">零力矩点（ZMP）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_forward_kinematics/">正运动学</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_principle_capture_point"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_embedding_classical_balance_co_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</h3>
+          <p>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_stability_aware_retargeting_fo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation</h3>
+          <p>Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation is a 2025 work on teleoperation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">方法</span>
+          <h3>正运动学</h3>
+          <p>根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>站立与抗扰平衡控制</h3>
+          <p>- P10.2.1.1 输入梳理与目标量化 - 整理「站立与抗扰平衡控制」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_hierarchical_qp_wbc/">
+          <span class="entry-type">方法</span>
+          <h3>分层二次规划全身控制</h3>
+          <p>一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wiedebach_walking_on_partial_footholds_i_2016/">
+          <span class="entry-type">论文</span>
+          <h3>Atlas人形机器人在部分支撑面（包括线接触）上的行走方法</h3>
+          <p>We present a method for humanoid robot walking on partial footholds such as small stepping stones…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hover_versatile_humanoid_contr_2024/">
+          <span class="entry-type">方法</span>
+          <h3>HOVER 通用人形控制器</h3>
+          <p>支持多种人形机器人行为模式的通用人形机器人神经全身控制器。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_architecture_is_all_you_need_d_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion</h3>
+          <p>Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10/">
+          <span class="entry-type">方法</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sakurai_bipedal_robot_running_human_li_2024/">
+          <span class="entry-type">论文</span>
+          <h3>双足机器人跑步：利用快/慢自适应实现类人驱动时机</h3>
+          <p>本文提出一种基于中枢模式发生器的控制器，通过触地时的快速相位重置与步态周期的慢速收敛来复现类人肌肉激活时机，并在弹簧负载倒立摆模型与一台人形尺寸双足机器人上进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">
+          <span class="entry-type">论文</span>
+          <h3>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</h3>
+          <p>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_whole_body_humanoid_robot_loco_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Whole-body Humanoid Robot Locomotion with Human Reference</h3>
+          <p>Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">形式化方法</span>
+          <h3>浮动基动力学</h3>
+          <p>人形机器人不同于固定基座的工业机械臂，其基座（躯干）可在空间中自由移动。因此需要用浮动基（floating base）坐标描述系统位形：</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_unified_humanoid_fall_safety_p_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Unified Humanoid Fall-Safety Policy from a Few Demonstrations</h3>
+          <p>Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ficht_centroidal_state_estimation_an_2023/">
+          <span class="entry-type">论文</span>
+          <h3>面向硬件受限人形机器人的质心状态估计与控制</h3>
+          <p>针对硬件受限的人形机器人，提出了一种结合五质量模型与近似肢体动力学的质心状态估计与控制方法，可在无力传感器的条件下实现准确的质心/压力中心估计与反应式步态平衡。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">方法</span>
+          <h3>逆运动学</h3>
+          <p>根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_discovering_self_protective_fa_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning</h3>
+          <p>Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_symmetric_and_low_ene_2018/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Symmetric and Low-energy Locomotion</h3>
+          <p>Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cmr_contractive_mapping_embedd_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains</h3>
+          <p>CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chasing_stability_humanoid_run_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL</h3>
+          <p>Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_biomechanical_comparisons_reve_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits</h3>
+          <p>Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a 2026 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_humanoid_arm_motion_v_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning</h3>
+          <p>Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vigor_visual_goal_in_context_i_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</h3>
+          <p>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_prasad_geometric_mechanics_of_contact_2023/">
+          <span class="entry-type">论文</span>
+          <h3>接触切换系统的几何力学</h3>
+          <p>Discrete and periodic contact switching is a key characteristic of steady-state legged locomotion.…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">方法</span>
+          <h3>有限元分析（FEA）</h3>
+          <p>有限元分析（Finite Element Analysis, FEA）是预测连杆、关节支架与壳体在载荷下应力、变形与模态的核心数值工具。通过把连续体离散为有限数量的单元，FEA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">原理</span>
+          <h3>零力矩点（ZMP）</h3>
+          <p>8.4.4 零力矩点（ZMP）与动态平衡 零力矩点（Zero Moment Point, ZMP）是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shield_safety_on_humanoids_via_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics</h3>
+          <p>SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gait_planning/">
+          <span class="entry-type">方法</span>
+          <h3>步态规划</h3>
+          <p>为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

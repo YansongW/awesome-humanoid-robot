@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inertial Measurement Unit · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/component/">Component</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Inertial Measurement Unit</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Component</div>
+      <h1>Inertial Measurement Unit</h1>
+      <p class="entry-name-en">Inertial Measurement Unit</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span><span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from kg/entities/ent_component_analog_devices_adis16475.md by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and state estimation.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit" target="_blank" rel="noopener">Inertial Measurement Unit</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Inertial measurement units are important components in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<h2 id="analog-devices-adis16475-miniature-mems-imu">Analog Devices ADIS16475 Miniature MEMS IMU</h2>
+<h3 id="overview_1">Overview</h3>
+<p>The ADIS16475 is a precision, miniature MEMS inertial measurement unit (IMU) from Analog Devices, integrating a three-axis gyroscope and a three-axis accelerometer, along with built-in temperature sensors, signal conditioning, calibration, and digital filtering. Each sensor is factory-calibrated for sensitivity, bias, axial alignment, linear acceleration (gyroscope bias), and impact center (accelerometer position), providing high-precision six-degree-of-freedom inertial measurements over a wide temperature range. It is suitable for applications such as robotics, drones, autonomous driving, industrial stabilization platforms, and navigation systems.</p>
+<h3 id="working-principle-and-technical-architecture">Working Principle and Technical Architecture</h3>
+<p>The ADIS16475 utilizes the ADI iSensor technology platform, with a core architecture including:</p>
+<ol>
+<li><strong>MEMS Inertial Sensing Elements</strong>: The three-axis gyroscope and three-axis accelerometer share the same package, sensing angular velocity and specific force through precision micromechanical structures.</li>
+<li><strong>Signal Conditioning and Dynamic Compensation</strong>: Each sensor channel integrates low-noise amplification, filtering, and A/D conversion. Factory calibration data is used for temperature, nonlinearity, cross-axis coupling, and <span class="arithmatex">\(g\)</span>-sensitivity compensation.</li>
+<li><strong>Internal Processor and Registers</strong>: Outputs data such as angular velocity, acceleration, temperature, delta angle, and delta velocity via the SPI interface.</li>
+<li><strong>Self-Test and Synchronization</strong>: Supports on-demand self-test, flash self-test, data-ready indication, and external synchronization modes (direct/pulse/scaled/output).</li>
+</ol>
+<p>Key accuracy specifications:</p>
+<ul>
+<li><strong>Angular Random Walk (ARW)</strong>: <span class="arithmatex">\(0.15°/\sqrt{\text{hr}}\)</span>, characterizing gyroscope angle integration noise:
+  $$
+  \sigma_\theta(t) = \text{ARW} \cdot \sqrt{t}
+  $$</li>
+<li><strong>In-Run Bias Stability</strong>: Typical values of <span class="arithmatex">\(2°/\text{hr}\)</span> for the gyroscope and <span class="arithmatex">\(3.6~\mu g\)</span> for the accelerometer.</li>
+<li><strong>Cross-Axis Alignment Error</strong>: <span class="arithmatex">\(\pm 0.1°\)</span>, significantly reducing installation alignment effort during multi-sensor fusion.</li>
+</ul>
+<h3 id="key-parameters">Key Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes/Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sensor Type</td>
+<td>6-axis IMU (3-axis gyroscope + 3-axis accelerometer)</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Package</td>
+<td>44-ball BGA, approx. 11 mm × 15 mm × 11 mm</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Gyroscope Range</td>
+<td>±125 °/s, ±500 °/s, ±2000 °/s (selectable)</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Accelerometer Range</td>
+<td>±8 g</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>In-Run Gyroscope Bias Stability</td>
+<td>2 °/hr (typical)</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Angular Random Walk</td>
+<td>0.15 °/√hr</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>In-Run Accelerometer Bias Stability</td>
+<td>3.6 μg</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Cross-Axis Alignment Error</td>
+<td>±0.1°</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Output Data</td>
+<td>Angular velocity, acceleration, temperature, delta angle, delta velocity</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>SPI</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Supply Voltage</td>
+<td>3.0 V – 3.6 V</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Operating Current</td>
+<td>Approx. 44 mA (typical)</td>
+<td>Distributor</td>
+</tr>
+<tr>
+<td>Operating Temperature</td>
+<td>−40 °C ~ +105 °C</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Calibration Temperature Range</td>
+<td>−40 °C ~ +85 °C</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Shock Resistance</td>
+<td>2000 g</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Not publicly available</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-scenarios">Application Scenarios</h3>
+<ul>
+<li><strong>Humanoid Robot Attitude Estimation</strong>: Provides high-frequency inertial reference for the torso, feet, or head, fused with vision and joint encoders for stable attitude estimation.</li>
+<li><strong>Drone Flight Control</strong>: Used for attitude stabilization, heading hold, and navigation calculations.</li>
+<li><strong>Autonomous Driving and Robot Navigation</strong>: Fused with GNSS/LiDAR/vision for high-dynamic pose estimation.</li>
+<li><strong>Industrial Stabilization Platforms</strong>: Active vibration damping and stabilization control for cameras, antennas, and robotic arm end-effectors.</li>
+<li><strong>Precision Instruments and Surveying</strong>: Inertial measurement, vibration analysis, and motion capture.</li>
+</ul>
+<h3 id="supply-chain-relationships">Supply Chain Relationships</h3>
+<ul>
+<li><strong>Upstream</strong>: MEMS wafers, ASIC chips, BGA package substrates, precision resistors and capacitors, temperature compensation algorithm IP.</li>
+<li><strong>Manufacturer</strong>: Analog Devices, recorded in the knowledge graph via the relationship <code>ent_company_analog_devices -- manufactures --&gt; ent_component_analog_devices_adis16475</code>.</li>
+<li><strong>Downstream</strong>: Robot OEMs, drones, autonomous driving platforms, industrial automation, aerospace, medical devices. Main competitors include Bosch Sensortec, STMicroelectronics, TDK InvenSense, Honeywell, etc.</li>
+</ul>
+<h3 id="sources-and-verification">Sources and Verification</h3>
+<p>Key parameters are sourced from the official Analog Devices ADIS16475 datasheet (Rev. C) and the DigiKey authorized distributor page. Critical specifications such as gyroscope range, bias stability, ARW, cross-axis alignment error, supply voltage, and temperature range are clearly stated in the official datasheet. The price is not publicly available.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_unitree_h1_humanoid_robot_2024/">Unitree H1 Humanoid Robot</a>
+              <span class="rel-desc">IMU is mounted on Unitree H1 torso for balance estimation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_imu_2024/">Inertial Measurement Unit</a>
+              <span class="rel-desc">Inertial Measurement Unit cites Inertial Measurement Unit.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_design_of_an_adaptive_lightwei_2023/">Design of an Adaptive Lightweight LiDAR to Decouple Robot-Camera Geometry</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Design of an Adaptive Lightweight LiDAR to Decouple Robot-Camera Geometry uses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">Soft robotic suits: State of the art, core technologies and open challenges</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Soft robotic suits: State of the art, core technologies and open challenges mentions Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_imu_2024/">Inertial Measurement Unit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Inertial Measurement Unit cites Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_han_design_calibration_and_control_2024/">Design, Calibration, and Control of Compliant Force-sensing Gripping Pads for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Design, Calibration, and Control of Compliant Force-sensing Gripping Pads for Humanoid Robots uses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_park_multimodal_sensing_and_interac_2018/">Multimodal Sensing and Interaction for a Robotic Hand Orthosis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Multimodal Sensing and Interaction for a Robotic Hand Orthosis uses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_razmi_event_driven_on_sensor_locomot_2026/">Event-Driven On-Sensor Locomotion Mode Recognition Using a Shank-Mounted IMU with Embedded Machine Learning for Exoskeleton Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Event-Driven On-Sensor Locomotion Mode Recognition Using a Shank-Mounted IMU with Embedded Machine Learning for Exoskeleton Control uses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mukherjee_how_imu_drift_influences_multi_2026/">How IMU Drift Influences Multi-Radar Inertial Odometry for Ground Robots in Subterranean Terrains</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">How IMU Drift Influences Multi-Radar Inertial Odometry for Ground Robots in Subterranean Terrains discusses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_legged_robot_state_estimation_2017/">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors uses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">MPC requires IMU feedback for state estimation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_andreasson_sensors_for_mobile_robots_2023/">Sensors for Mobile Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Sensors for Mobile Robots discusses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gait_legged_robot_propriocepti_2026/">GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg Tokens</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg Tokens uses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">Materials that make robots smart</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Materials that make robots smart discusses Inertial Measurement Unit.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_design_and_visual_servoing_con_2024/">Design and Visual Servoing Control of MicroNeuro for Intraventricular Biopsy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Design and Visual Servoing Control of MicroNeuro for Intraventricular Biopsy uses Inertial Measurement Unit.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_inertial_measurement_unit_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mukherjee_how_imu_drift_influences_multi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>How IMU Drift Influences Multi-Radar Inertial Odometry for Ground Robots in Subterranean Terrains</h3>
+          <p>This paper proposes a two-stage Multi-Radar Inertial Odometry (MRIO) framework that estimates radar…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_design_of_an_adaptive_lightwei_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Design of an Adaptive Lightweight LiDAR to Decouple Robot-Camera Geometry</h3>
+          <p>This paper proposes a lightweight MEMS-mirror LiDAR that actively reorients its field of view using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_razmi_event_driven_on_sensor_locomot_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Event-Driven On-Sensor Locomotion Mode Recognition Using a Shank-Mounted IMU with Embedded Machine Learning for Exoskeleton Control</h3>
+          <p>This paper presents a wearable human activity recognition system that performs real-time locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_andreasson_sensors_for_mobile_robots_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Sensors for Mobile Robots</h3>
+          <p>A survey chapter that presents a taxonomy, key specifications, and bottom-up survey of sensors used…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Materials that make robots smart</h3>
+          <p>This paper argues that embodied artificial intelligence is also a materials problem, defines…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_legged_robot_state_estimation_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</h3>
+          <p>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gait_legged_robot_propriocepti_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg Tokens</h3>
+          <p>Gait: Legged Robot Proprioceptive State Estimation with Attention over inertial-legs is a paper on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_han_design_calibration_and_control_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Design, Calibration, and Control of Compliant Force-sensing Gripping Pads for Humanoid Robots</h3>
+          <p>This 2024 paper presents low-cost, lightweight compliant gripping pads that measure normal gripping…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_park_multimodal_sensing_and_interac_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Multimodal Sensing and Interaction for a Robotic Hand Orthosis</h3>
+          <p>Park et al. present an active hand orthosis that combines forearm EMG, finger bend, and thumb…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control</h3>
+          <p>Online optimal-control approach for generating contact-rich whole-body motion.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_design_and_visual_servoing_con_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Design and Visual Servoing Control of MicroNeuro for Intraventricular Biopsy</h3>
+          <p>This paper presents MicroNeuro, a cable-driven hybrid dual-segment flexible robotic endoscope for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_imu_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Inertial Measurement Unit</h3>
+          <p>Sensor package combining accelerometers and gyroscopes to estimate orientation, angular velocity,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_unitree_h1_humanoid_robot_2024/">
+          <span class="entry-type">Robot System</span>
+          <h3>Unitree H1 Humanoid Robot</h3>
+          <p>Full-size electric humanoid with 25-27 DoF, proprietary high-torque joints, peak leg-joint torque up…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Soft robotic suits: State of the art, core technologies and open challenges</h3>
+          <p>A 2021 arXiv survey that defines soft robotic suits, proposes a taxonomy, and reviews actuation,…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#analog-devices-adis16475-miniature-mems-imu">Analog Devices ADIS16475 Miniature MEMS IMU</a><ul>
+<li><a href="#overview_1">Overview</a></li>
+<li><a href="#working-principle-and-technical-architecture">Working Principle and Technical Architecture</a></li>
+<li><a href="#key-parameters">Key Parameters</a></li>
+<li><a href="#application-scenarios">Application Scenarios</a></li>
+<li><a href="#supply-chain-relationships">Supply Chain Relationships</a></li>
+<li><a href="#sources-and-verification">Sources and Verification</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

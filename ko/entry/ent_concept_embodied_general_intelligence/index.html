@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>구체화된 범용 지능 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/concept/">개념</a>
+    <span>/</span>
+    <span class="breadcrumb-current">구체화된 범용 지능</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">개념</div>
+      <h1>구체화된 범용 지능</h1>
+      <p class="entry-name-en">Embodied General Intelligence</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">응용 및 시장</span><span class="tag">정책 규제 윤리</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-01.md#1.1.5 机器人的形式化定义 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>신체를 통해 다양한 물리 환경에서 유연하게 학습·추론·행동할 수 있는 에이전트 구축의 장기 목표.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>체현된 범용 지능은 휴머노이드 로봇 분야의 중요한 개념입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 자세한 내용을 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>제어 이론과 시스템 과학의 관점에서 로봇은 <strong>동적 시스템</strong>(Dynamical System)으로 형식화될 수 있습니다:</p>
+<div class="arithmatex">\[
+\dot{x}(t) = f\big(x(t), u(t)\big), \quad y(t) = h\big(x(t), u(t)\big)
+\]</div>
+<p>여기서:</p>
+<ul>
+<li><span class="arithmatex">\(x(t) \in \mathbb{R}^n\)</span>는 시스템 상태 벡터로, 예를 들어 관절 각도, 각속도, 질량 중심 위치, 자세 쿼터니언 등입니다;</li>
+<li><span class="arithmatex">\(u(t) \in \mathbb{R}^m\)</span>는 제어 입력으로, 예를 들어 모터 전류, 토크 또는 전압입니다;</li>
+<li><span class="arithmatex">\(y(t) \in \mathbb{R}^p\)</span>는 시스템 출력, 즉 센서 측정값입니다;</li>
+<li><span class="arithmatex">\(f\)</span>는 상태 전이 함수로, 시스템 동역학을 설명합니다;</li>
+<li><span class="arithmatex">\(h\)</span>는 관측 함수로, 센서 모델을 설명합니다.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 상태 공간(State Space)</p>
+<p>상태 공간은 제어 이론에서 동적 시스템의 모든 가능한 상태를 설명하는 수학적 공간입니다. 시스템의 미래 진화는 현재 상태와 미래 입력에만 의존하며 과거와는 무관합니다. 이 성질을 "마르코프 성질"이라고 합니다. 휴머노이드 로봇의 상태 공간 차원은 일반적으로 30–100차원 이상이며, 이른바 "차원의 저주"를 초래합니다.</p>
+</div>
+<p>휴머노이드 로봇의 경우 <span class="arithmatex">\(f\)</span>는 일반적으로 강체 동역학 방정식으로 주어집니다. 라그랑주 방정식을 예로 들면:</p>
+<div class="arithmatex">\[
+M(q)\ddot{q} + C(q, \dot{q})\dot{q} + G(q) = S^T \tau + J_c^T F_c
+\]</div>
+<p>여기서:</p>
+<ul>
+<li><span class="arithmatex">\(q \in \mathbb{R}^n\)</span>는 일반화 좌표입니다;</li>
+<li><span class="arithmatex">\(M(q)\)</span>는 질량 행렬입니다;</li>
+<li><span class="arithmatex">\(C(q, \dot{q})\)</span>는 코리올리 힘과 원심력 항입니다;</li>
+<li><span class="arithmatex">\(G(q)\)</span>는 중력 항입니다;</li>
+<li><span class="arithmatex">\(\tau\)</span>는 관절 토크입니다;</li>
+<li><span class="arithmatex">\(S\)</span>는 선택 행렬입니다;</li>
+<li><span class="arithmatex">\(J_c\)</span>는 접촉점 야코비 행렬입니다;</li>
+<li><span class="arithmatex">\(F_c\)</span>는 지면 접촉력입니다.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 야코비 행렬(Jacobian Matrix)</p>
+<p>야코비 행렬 <span class="arithmatex">\(J\)</span>는 로봇 관절 공간 속도를 작업 공간(예: 말단 효과기 또는 질량 중심) 속도로 선형 매핑합니다: <span class="arithmatex">\(v = J(q)\dot{q}\)</span>. 힘 제어에서 그 전치 <span class="arithmatex">\(J^T\)</span>는 작업 공간 힘을 관절 토크로 매핑합니다: <span class="arithmatex">\(\tau = J^T F\)</span>. 야코비 행렬은 로봇 운동학 및 정역학 분석의 핵심 도구입니다.</p>
+</div>
+<p><strong>에이전트(Agent)</strong> 관점에서 로봇은 환경과 상호작용하는 자율 개체로, <strong>인식-결정-실행 순환</strong>(Sense-Decide-Act Loop)을 따릅니다:</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    E[환경] --&gt; |센서| S[인식]
+    S --&gt; |상태 추정| D[결정]
+    D --&gt; |제어 명령| A[실행]
+    A --&gt; |물리적 작용| E</code></pre>
+<p>체현된 지능(Embodied AI) 프레임워크에서 지능은 알고리즘에만 존재하는 것이 아니라 <strong>신체 형태, 센서 구성 및 동적 상호작용에 내장</strong>됩니다. 이 개념은 형태 계산(Morphological Computation)과 밀접하게 관련됩니다: 로봇 본체의 물리적 특성(예: 유연성, 질량 분포, 탄성 발) 자체가 일부 계산 기능을 담당하여 제어기의 부담을 줄일 수 있습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 체현된 지능(Embodied AI)</p>
+<p>체현된 지능은 지능적 행동이 물리적 신체를 가진 에이전트가 실제 환경과 상호작용함으로써 발생해야 하며, 단순한 기호 추론이나 오프라인 데이터 학습에 의존해서는 안 된다고 강조합니다. 그 철학적 뿌리는 메를로-퐁티(Merleau-Ponty)의 "신체 주체" 개념과 피아제(Piaget)의 인지 발달 이론으로 거슬러 올라갑니다. 휴머노이드 로봇의 경우 체현된 지능은 운동 제어, 인식, 추론 및 사회적 상호작용이 신체-환경 결합 프레임워크에서 통합되어야 함을 의미합니다.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 형태 계산(Morphological Computation)</p>
+<p>형태 계산은 에이전트 자체의 물리적 구조와 재료 특성을 활용하여 일부 "계산" 작업을 수행함으로써 명시적 제어기의 복잡성을 줄이는 것을 말합니다. 예를 들어, 새의 깃털과 골격 구조, 치타의 척추 탄성, 휴머노이드 로봇의 유연한 관절은 어느 정도 동적 안정성 문제를 "미리 해결"하여 상위 제어를 더 간결하게 만듭니다.</p>
+</div>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_lagrangian/">라그랑지안</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_report_industry_primebot_brings_personal_robot_2026/">PrimeBOT Brings Personal Robotics to the UN&#39;s AI for Good Summit in Geneva</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_application_home_service/">가정 서비스</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_unitree_unitree_teases_new_h1_humanoid_2024/">Unitree teases new H1 humanoid robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_actuator_video_friday_who_wins_in_robot_2026/">Video Friday: Who Wins in Robot vs. Pro Ping-Pong Player?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_unitree_unitree_g1_humanoid_agent_pric_2024/">Unitree G1 Humanoid Agent | Price from $16K</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_battery_ground_robots_inherit_the_kill_2026/">Ground Robots Inherit the Kill Zone</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_application_healthcare/">의료 지원</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_ieee_agentic_ai_for_robot_teams_2026/">Agentic AI for Robot Teams</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_unitree_kung_fu_meets_spring_unitree_s_2026/">Kung Fu Meets Spring, Unitree SFG Robots Present &#34;Cyber Real Kung Fu&#34; in the Year of the Horse</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">demonstrates_on</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_video_friday_an_earthbound_mar_2026/">Video Friday: An Earthbound Mars Rover for the Moon</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_unitree_the_industrys_first_ultra_wide_2024/">The Industry&#39;s First Ultra-wide-angle 4D LiDAR</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_technology_neura_robotics_showcases_full_2026/">NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_technology_cobot_announces_second_generat_2026/">Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical AI to Real Operations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_ieee_defining_autonomy_for_wellness_2026/">Defining Autonomy for Wellness Robots in Senior Care</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_company_deepx_and_sixfab_launch_deepx_2026/">DEEPX and Sixfab Launch &#39;DEEPX AI HAT&#39; to Drive Edge Physical AI on Raspberry Pi</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_nvidia_how_cosmos_3_helps_physical_ai_2026/">How Cosmos 3 Helps Physical AI Think Before It Acts</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_orbbec_unveils_robot_free_data_2026/">Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_actuator_video_friday_robotic_motion_di_2026/">Video Friday: Robotic Motion Discovery Reveals Unusual Behaviors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_actuator_will_robotics_have_a_chatgpt_m_2026/">Will Robotics Have a ChatGPT Moment?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_verisilicon_introduces_cpp2000_2000/">VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics and Mobile Vision Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_market_humanoid_global_forecast/">글로벌 휴로봇 시장 전망</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_application_logistics_warehouse/">물류 및 창고 자동화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_realbotix_to_deploy_first_huma_2026/">Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_ieee_honors_robotics_pioneer_t_2026/">IEEE Honors Robotics Pioneer Toshio Fukuda</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_industry_inorbitai_demonstrates_the_fut_2026/">InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical AI at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_actuator_irobot_founder_wants_to_put_a_2026/">iRobot Founder Wants to Put a Robotic Familiar Into Your Home</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_ieee_video_friday_do_robots_even_ne_2026/">Video Friday: Do Robots Even Need Legs?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_actuator_video_friday_ai_gives_robot_ha_2026/">Video Friday: AI Gives Robot Hands Humanlike Dexterity</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_video_friday_extreme_omnidirec_2026/">Video Friday: Extreme Omnidirectional Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_video_friday_figure_1x_ramp_up_2026/">Video Friday: Figure, 1X Ramp Up Humanoid Robot Production</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_the_secret_to_marathon_winning_2026/">The Secret to Marathon-Winning Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_video_friday_a_world_cup_for_r_2026/">Video Friday: A World Cup for Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_ieee_visual_language_models_train_r_2026/">Visual Language Models Train Robots to Read Human Emotions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_german_economy_calls_for_faste_2026/">German Economy Calls for Faster Humanoid Robotics Adoption</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_concept_data_flywheel/">데이터 플라이휠</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_nvidia_nvidia_research_unlocks_advanc_2026/">NVIDIA Research Unlocks Advanced Grasping, Smarter Autonomous Driving and Agent Training at Scale</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_company_x_square_robot_secures_four_co_2026/">X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion Valuation in Push for Physical AI Foundation Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">develops</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_new_indro_cortex_controller_si_2026/">NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_unitree_unitree_h1_15_yrs_old_debuted_2025/">Unitree H1: 1.5 Yrs Old &#34;Debuted&#34; at the SFG</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_technology_wirobotics_begins_building_a_p_2026/">WIRobotics Begins Building a Physical AI Development Ecosystem: The First Technology Release Features the ALLEX Simulation Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_unitree_unitree_go2_quadruped_robot_of_2024/">Unitree Go2 - Quadruped Robot of Embodied AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_technology_tech_mahindra_and_viam_partner_2026/">Tech Mahindra and Viam partner to scale advanced robotics and automation solutions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_industry_abb_robotics_collaborates_with_2026/">ABB Robotics collaborates with Roche to bring physical AI to laboratories</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_daimon_robotics_wants_to_give_2026/">DAIMON Robotics Wants to Give Robot Hands a Sense of Touch</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_concept_embodied_general_intelligence"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_report_unitree_the_industrys_first_ultra_wide_2024/">
+          <span class="entry-type">보고서</span>
+          <h3>The Industry&#39;s First Ultra-wide-angle 4D LiDAR</h3>
+          <p>The Industry&#39;s First Ultra-wide-angle 4D LiDAR is a knowledge node related to report in the humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_neura_robotics_showcases_full_2026/">
+          <span class="entry-type">기술</span>
+          <h3>NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026</h3>
+          <p>NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_industry_abb_robotics_collaborates_with_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>ABB Robotics collaborates with Roche to bring physical AI to laboratories</h3>
+          <p>ABB Robotics collaborates with Roche to bring physical AI to laboratories</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_new_indro_cortex_controller_si_2026/">
+          <span class="entry-type">부품</span>
+          <h3>NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION</h3>
+          <p>InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_actuator_video_friday_robotic_motion_di_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: Robotic Motion Discovery Reveals Unusual Behaviors</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_wirobotics_begins_building_a_p_2026/">
+          <span class="entry-type">기술</span>
+          <h3>WIRobotics Begins Building a Physical AI Development Ecosystem: The First Technology Release Features the ALLEX Simulation Model</h3>
+          <p>-Additional core ALLEX technologies to be released sequentially -Expanding the Physical AI…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_tech_mahindra_and_viam_partner_2026/">
+          <span class="entry-type">기술</span>
+          <h3>Tech Mahindra and Viam partner to scale advanced robotics and automation solutions</h3>
+          <p>Tech Mahindra&#39;s global enterprise clients can harness the power of physical AI with direct access to…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_actuator_irobot_founder_wants_to_put_a_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>iRobot Founder Wants to Put a Robotic Familiar Into Your Home</h3>
+          <p>Two years ago, Colin Angle stepped down as CEO of iRobot , the company that he cofounded and the…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_unitree_unitree_g1_humanoid_agent_pric_2024/">
+          <span class="entry-type">보고서</span>
+          <h3>Unitree G1 Humanoid Agent | Price from $16K</h3>
+          <p>Unitree G1, Humanoid Agent, AI avatar, Price from $16K!</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_video_friday_extreme_omnidirec_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: Extreme Omnidirectional Robot</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_data_flywheel/">
+          <span class="entry-type">개념</span>
+          <h3>데이터 플라이휠</h3>
+          <p>배포된 로봇이 데이터를 생성하고, 데이터가 AI 모델을 개선하며, 모델이 로봇 성능을 높여 더 많은 데이터를 생성하는 자기 강화 순환.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_ieee_honors_robotics_pioneer_t_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>IEEE Honors Robotics Pioneer Toshio Fukuda</h3>
+          <p>Toshio Fukuda has been blazing trails for most of his career. He is considered to be one of the most…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_application_healthcare/">
+          <span class="entry-type">응용 시나리오</span>
+          <h3>의료 지원</h3>
+          <p>병원·노인 돌봄·재활 환경에서 보조·동반·치료 지원을 위해 휴로봇을 배치하는 적용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_ieee_visual_language_models_train_r_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Visual Language Models Train Robots to Read Human Emotions</h3>
+          <p>This article is part of our exclusive IEEE Journal Watch series in partnership with IEEE Xplore. As…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_battery_ground_robots_inherit_the_kill_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Ground Robots Inherit the Kill Zone</h3>
+          <p>Borys Drozhak has a vision: a frontline almost free of humans, patrolled by flying drones and ground…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_unitree_unitree_go2_quadruped_robot_of_2024/">
+          <span class="entry-type">보고서</span>
+          <h3>Unitree Go2 - Quadruped Robot of Embodied AI</h3>
+          <p>Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to report in the humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_realbotix_to_deploy_first_huma_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District</h3>
+          <p>Pilot program with Salamanca City Central School District marks major step for education technology</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_actuator_video_friday_ai_gives_robot_ha_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: AI Gives Robot Hands Humanlike Dexterity</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_video_friday_a_world_cup_for_r_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: A World Cup for Robots</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos , collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_actuator_will_robotics_have_a_chatgpt_m_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Will Robotics Have a ChatGPT Moment?</h3>
+          <p>Over the next few decades, billions of autonomous, AI-powered robots will work alongside people in…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_actuator_video_friday_who_wins_in_robot_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: Who Wins in Robot vs. Pro Ping-Pong Player?</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_verisilicon_introduces_cpp2000_2000/">
+          <span class="entry-type">부품</span>
+          <h3>VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics and Mobile Vision Applications</h3>
+          <p>Enhancing image quality and visual perception for moving-camera systems</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_nvidia_how_cosmos_3_helps_physical_ai_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>How Cosmos 3 Helps Physical AI Think Before It Acts</h3>
+          <p>How Cosmos 3 Helps Physical AI Think Before It Acts</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_ieee_defining_autonomy_for_wellness_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Defining Autonomy for Wellness Robots in Senior Care</h3>
+          <p>An examination of how socially assistive wellness robots could support the seven dimensions of…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_unitree_unitree_h1_15_yrs_old_debuted_2025/">
+          <span class="entry-type">보고서</span>
+          <h3>Unitree H1: 1.5 Yrs Old &#34;Debuted&#34; at the SFG</h3>
+          <p>Unitree H1: 1.5 Yrs Old &#34;Debuted&#34; at the SFG is a knowledge node related to report in the humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_nvidia_nvidia_research_unlocks_advanc_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>NVIDIA Research Unlocks Advanced Grasping, Smarter Autonomous Driving and Agent Training at Scale</h3>
+          <p>What makes a robot gripper useful isn’t that it can pick up one object — it’s that it can pick up…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_unitree_unitree_teases_new_h1_humanoid_2024/">
+          <span class="entry-type">보고서</span>
+          <h3>Unitree teases new H1 humanoid robot</h3>
+          <p>Unitree teases new H1 humanoid robot is a knowledge node related to report in the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_the_secret_to_marathon_winning_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>The Secret to Marathon-Winning Humanoid Robots</h3>
+          <p>On 19 April 2026, the Honor Lightning humanoid robot ran a half-marathon in 50 minutes and 26…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_application_home_service/">
+          <span class="entry-type">응용 시나리오</span>
+          <h3>가정 서비스</h3>
+          <p>주거 환경에서 가사·보안·오락·노인 돌봄을 위해 휴로봇을 사용하는 적용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_video_friday_an_earthbound_mar_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: An Earthbound Mars Rover for the Moon</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_daimon_robotics_wants_to_give_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>DAIMON Robotics Wants to Give Robot Hands a Sense of Touch</h3>
+          <p>This article is brought to you by DAIMON Robotics . This April, Hong Kong-based DAIMON Robotics has…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_industry_primebot_brings_personal_robot_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>PrimeBOT Brings Personal Robotics to the UN&#39;s AI for Good Summit in Geneva</h3>
+          <p>PrimeBOT Brings Personal Robotics to the UN&#39;s AI for Good Summit in Geneva</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_orbbec_unveils_robot_free_data_2026/">
+          <span class="entry-type">부품</span>
+          <h3>Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale</h3>
+          <p>Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_market_humanoid_global_forecast/">
+          <span class="entry-type">시장 세그먼트</span>
+          <h3>글로벌 휴로봇 시장 전망</h3>
+          <p>향후 수년간 휴로봇의 시장 규모·성장률·지역 도입·세분 수요를 전망하는 예측.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_cobot_announces_second_generat_2026/">
+          <span class="entry-type">기술</span>
+          <h3>Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical AI to Real Operations</h3>
+          <p>One production-tested platform combines mobility, bimanual manipulation, and self-directed task…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_lagrangian/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>라그랑지안</h3>
+          <p>울성 및 위치 에너지의 차이(또는 일반화된 조합)로 시스템 역학을 기술하고 변분 원리로부터 운 동 방정식을 유도하는 스칼라 함수.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_ieee_agentic_ai_for_robot_teams_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Agentic AI for Robot Teams</h3>
+          <p>This presentation highlights recent efforts at the Johns Hopkins Applied Physics Laboratory to…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_company_deepx_and_sixfab_launch_deepx_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>DEEPX and Sixfab Launch &#39;DEEPX AI HAT&#39; to Drive Edge Physical AI on Raspberry Pi</h3>
+          <p>-Partnership delivers high-performance, low-power AI acceleration directly to the global Raspberry…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_ieee_video_friday_do_robots_even_ne_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: Do Robots Even Need Legs?</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_application_logistics_warehouse/">
+          <span class="entry-type">응용 시나리오</span>
+          <h3>물류 및 창고 자동화</h3>
+          <p>물류 센터와 창고에서 휴로봇을 이용한 피킹·분류·포장·운반 적용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_industry_inorbitai_demonstrates_the_fut_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical AI at Automate 2026</h3>
+          <p>Experience the future of the sentient enterprise as InOrbit.AI orchestrates a groundbreaking…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_company_x_square_robot_secures_four_co_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion Valuation in Push for Physical AI Foundation Models</h3>
+          <p>New funding supports development of embodied AI foundation models, commercial deployments and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_unitree_kung_fu_meets_spring_unitree_s_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Kung Fu Meets Spring, Unitree SFG Robots Present &#34;Cyber Real Kung Fu&#34; in the Year of the Horse</h3>
+          <p>Kung Fu Meets Spring, Unitree SFG Robots Present &#34;Cyber Real Kung Fu&#34; in the Year of the Horse is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_video_friday_figure_1x_ramp_up_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: Figure, 1X Ramp Up Humanoid Robot Production</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_german_economy_calls_for_faste_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>German Economy Calls for Faster Humanoid Robotics Adoption</h3>
+          <p>82 % consider humanoid robots drivers of future innovation</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

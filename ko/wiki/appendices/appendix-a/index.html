@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>부록 A: 엔티티 및 관계 빠른 참조표 · Wiki · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" aria-current="page">Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">부록 A: 엔티티 및 관계 빠른 참조표</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="a">부록 A: 엔티티 및 관계 빠른 참조표</h1>
+<blockquote>
+<p>이 부록은 <code>scripts/build_appendices.py</code>를 통해 지식 그래프 데이터에서 자동 생성되었으며, KG 업데이트에 따라 갱신됩니다.</p>
+</blockquote>
+<p>지식 그래프의 엔티티 유형, 관계 유형 및 핵심 엔티티 개요입니다.</p>
+<h2 id="a1">A.1 엔티티 유형 분포</h2>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>한국어</th>
+<th>수량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>paper</code></td>
+<td>논문</td>
+<td>1594</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>방법</td>
+<td>210</td>
+</tr>
+<tr>
+<td><code>report</code></td>
+<td>보고서</td>
+<td>86</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td>부품</td>
+<td>49</td>
+</tr>
+<tr>
+<td><code>technology</code></td>
+<td>기술</td>
+<td>28</td>
+</tr>
+<tr>
+<td><code>component_manufacturer</code></td>
+<td>부품 제조사</td>
+<td>19</td>
+</tr>
+<tr>
+<td><code>concept</code></td>
+<td>개념</td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>software_platform</code></td>
+<td>소프트웨어 플랫폼</td>
+<td>16</td>
+</tr>
+<tr>
+<td><code>robot_system</code></td>
+<td>로봇 시스템</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>dataset</code></td>
+<td>데이터셋</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>principle</code></td>
+<td>원리</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>benchmark</code></td>
+<td>평가 기준</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td>회사</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>algorithm</code></td>
+<td>알고리즘</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>formalism</code></td>
+<td>형식적 방법</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>standard</code></td>
+<td>표준</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>equation</code></td>
+<td>방정식</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>foundation</code></td>
+<td>기초 학문</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>material</code></td>
+<td>재료</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>application_scenario</code></td>
+<td>응용 시나리오</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>oem</code></td>
+<td>완제품 제조사</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>tier1_supplier</code></td>
+<td>Tier 1 공급업체</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>operator</code></td>
+<td>연산자</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>theorem</code></td>
+<td>정리</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>tool_equipment</code></td>
+<td>도구 장비</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>market_segment</code></td>
+<td>시장 세분화</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td>—</td>
+<td><strong>2126</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="a2">A.2 관계 유형 분포</h2>
+<table>
+<thead>
+<tr>
+<th>관계 유형</th>
+<th>수량</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cites</code></td>
+<td>562</td>
+</tr>
+<tr>
+<td><code>mentions</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>is_based_on</code></td>
+<td>64</td>
+</tr>
+<tr>
+<td><code>uses</code></td>
+<td>60</td>
+</tr>
+<tr>
+<td><code>requires</code></td>
+<td>42</td>
+</tr>
+<tr>
+<td><code>evaluates_on</code></td>
+<td>38</td>
+</tr>
+<tr>
+<td><code>evaluates</code></td>
+<td>28</td>
+</tr>
+<tr>
+<td><code>is_part_of</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>produces</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>implemented_on</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>integrates</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>enables</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>has_prerequisite</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>manufacturer_of</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>supplies</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>sources_from</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>applies_to</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>uses_dataset</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>combines_with</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>formalizes</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>is_regulated_by</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>constrains</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>models</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>derived_from</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>includes</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>verified_by</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>solves</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>is_alternative_to</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>uses_data</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>serves</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>validates_on</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>uses_technology</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>analyzes</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>uses_product_of</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>tested_with</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>addresses</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>is_version_of</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>instantiates</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>1063</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="a3">A.3 도메인 분포</h2>
+<table>
+<thead>
+<tr>
+<th>도메인</th>
+<th>엔티티 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기초 학문</td>
+<td>36</td>
+</tr>
+<tr>
+<td>원자재</td>
+<td>13</td>
+</tr>
+<tr>
+<td>부품</td>
+<td>358</td>
+</tr>
+<tr>
+<td>제조 공정</td>
+<td>83</td>
+</tr>
+<tr>
+<td>조립·통합·테스트</td>
+<td>38</td>
+</tr>
+<tr>
+<td>양산 제조</td>
+<td>81</td>
+</tr>
+<tr>
+<td>설계 엔지니어링</td>
+<td>400</td>
+</tr>
+<tr>
+<td>AI 모델 및 알고리즘</td>
+<td>1595</td>
+</tr>
+<tr>
+<td>소프트웨어 미들웨어</td>
+<td>1029</td>
+</tr>
+<tr>
+<td>데이터 및 데이터셋</td>
+<td>118</td>
+</tr>
+<tr>
+<td>평가 기준</td>
+<td>84</td>
+</tr>
+<tr>
+<td>응용 및 시장</td>
+<td>312</td>
+</tr>
+<tr>
+<td>정책·규제·윤리</td>
+<td>41</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a4-top-50">A.4 핵심 엔터티 Top 50 (관계 수 기준)</h2>
+<table>
+<thead>
+<tr>
+<th>순위</th>
+<th>개체</th>
+<th>유형</th>
+<th>관계 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="/entry/ent_qp_standard_form/">표준 2차 계획법(QP)</a></td>
+<td>형식화 방법</td>
+<td>43</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="/entry/ent_paper_dial_decoupling_intent_and_act_2026/">DIAL｜종단간 VLA를 통한 잠재 세계 모델링으로 의도와 행동 분리</a></td>
+<td>논문</td>
+<td>35</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">능동 공간 뇌와 일반화 가능한 행동 소뇌를 통한 휴머노이드 전신 조작</a></td>
+<td>논문</td>
+<td>31</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a></td>
+<td>평가 기준</td>
+<td>24</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">GPT 기반 대규모 언어 모델을 활용한 가상 현실 인간-로봇 팀 협업 시뮬레이션의 가변 자율성 탐구</a></td>
+<td>논문</td>
+<td>23</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="/entry/ent_paper_wang_vla_survey_2026/">로봇 비전-언어-행동: 데이터셋, 기준 및 데이터 엔진 개요</a></td>
+<td>논문</td>
+<td>21</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">Unitree H1 휴머노이드 로봇</a></td>
+<td>로봇 시스템</td>
+<td>21</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="/entry/ent_paper_active_stereo_camera_outperfor_2026/">휴머노이드 조작 ACT 모방 학습에서 능동 스테레오 카메라가 다중 센서 설정보다 우수</a></td>
+<td>논문</td>
+<td>21</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">다단계 강화 학습 기반 휴머노이드 전신 배드민턴 운동</a></td>
+<td>논문</td>
+<td>21</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="/entry/ent_method_foc_motor_control/">자계 방향 제어(FOC)</a></td>
+<td>방법</td>
+<td>21</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="/entry/ent_paper_wang_wam_survey_2026/">세계 행동 모델: 구현 지능의 다음 프론티어</a></td>
+<td>논문</td>
+<td>20</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo｜확장 가능하고 지능적인 구현 시스템을 위한 대규모 조작 플랫폼</a></td>
+<td>논문</td>
+<td>20</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">로봇이 로봇을 훈련하다: 휴머노이드 로봇의 자동 실제 세계 정책 적응 및 학습</a></td>
+<td>논문</td>
+<td>20</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">RUKA: 학습을 통한 휴머노이드 손 로봇 디자인 재고</a></td>
+<td>논문</td>
+<td>20</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">무향 칼만 필터 기반 휴머노이드 로봇의 관절 토크 센서 없는 토크 추정</a></td>
+<td>논문</td>
+<td>20</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="/entry/ent_paper_openvla_2024/">OpenVLA: 오픈소스 비전-언어-행동 모델</a></td>
+<td>논문</td>
+<td>19</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">당신의 비전-언어-행동 모델은 이미 경로 이탈 감지를 위한 주의 헤드를 갖추고 있다</a></td>
+<td>논문</td>
+<td>19</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">LingBot-VLA｜실용적인 VLA 기반 모델</a></td>
+<td>논문</td>
+<td>18</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">휴머노이드 로봇을 위한 기하학 인식 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 모델 예측 제어까지</a></td>
+<td>논문</td>
+<td>18</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">관절 토크 센서 및 힘/토크 센서 기반 다리 로봇 접촉 감지</a></td>
+<td>논문</td>
+<td>18</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="/entry/ent_tier1_supplier_tuopujituan/">탑 그룹</a></td>
+<td>Tier 1 공급업체</td>
+<td>18</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a></td>
+<td>로봇 시스템</td>
+<td>17</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment 데이터셋</a></td>
+<td>데이터셋</td>
+<td>17</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">ROS 기반 NimbRo-OP 휴머노이드 개방형 플랫폼 소프트웨어 프레임워크</a></td>
+<td>논문</td>
+<td>17</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="/entry/ent_component_planetary_roller_screw/">행성 롤러 스크류</a></td>
+<td>부품</td>
+<td>17</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="/entry/ent_method_fea_finite_element_analysis/">유한 요소 해석(FEA)</a></td>
+<td>방법</td>
+<td>17</td>
+</tr>
+<tr>
+<td>27</td>
+<td><a href="/entry/ent_paper_roboomni_2025/">RoboOmni: 전모달 컨텍스트에서의 능동 로봇 조작</a></td>
+<td>논문</td>
+<td>16</td>
+</tr>
+<tr>
+<td>28</td>
+<td><a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a></td>
+<td>평가 기준</td>
+<td>16</td>
+</tr>
+<tr>
+<td>29</td>
+<td><a href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1 휴머노이드 로봇 팔의 물리 기반 전력 소비 모델 식별</a></td>
+<td>논문</td>
+<td>16</td>
+</tr>
+<tr>
+<td>30</td>
+<td><a href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">휴머노이드 로봇의 인간 수준 구동 능력</a></td>
+<td>논문</td>
+<td>16</td>
+</tr>
+<tr>
+<td>31</td>
+<td><a href="/entry/ent_paper_meng_expert_insight_based_modeling_2025/">전문가 통찰 기반 희토류 공급 중단 비군사 전략 억제 모델링: 시뮬레이션 기반 체계적 프레임워크</a></td>
+<td>논문</td>
+<td>16</td>
+</tr>
+<tr>
+<td>32</td>
+<td><a href="/entry/ent_formalism_floating_base_dynamics/">부동 기반 동역학</a></td>
+<td>형식화 방법</td>
+<td>16</td>
+</tr>
+<tr>
+<td>33</td>
+<td><a href="/entry/ent_component_nvidia_jetson_thor/">NVIDIA Jetson Thor</a></td>
+<td>부품</td>
+<td>15</td>
+</tr>
+<tr>
+<td>34</td>
+<td><a href="/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">물리 정보 신경망과 무향 칼만 필터 기반 휴머노이드 로봇의 무센서 관절 토크 추정</a></td>
+<td>논문</td>
+<td>15</td>
+</tr>
+<tr>
+<td>35</td>
+<td><a href="/entry/ent_paper_neto_high_level_robot_programming_b_2013/">CAD 기반 고급 로봇 프로그래밍: 예측 불가능한 환경 대응</a></td>
+<td>논문</td>
+<td>15</td>
+</tr>
+<tr>
+<td>36</td>
+<td><a href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">물리 기반 리튬 이온 배터리 모델의 연속 스펙트럼 개요</a></td>
+<td>논문</td>
+<td>15</td>
+</tr>
+<tr>
+<td>37</td>
+<td><a href="/entry/ent_principle_zero_moment_point/">영점 모멘트(ZMP)</a></td>
+<td>원리</td>
+<td>15</td>
+</tr>
+<tr>
+<td>38</td>
+<td><a href="/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">휴머노이드 조작 인터페이스(HuMI): 로봇 시연 없는 전신 조작</a></td>
+<td>논문</td>
+<td>14</td>
+</tr>
+<tr>
+<td>39</td>
+<td><a href="/entry/ent_paper_pi0_2024/">π0: 범용 로봇 제어를 위한 비전-언어-행동 흐름 모델</a></td>
+<td>논문</td>
+<td>14</td>
+</tr>
+<tr>
+<td>40</td>
+<td><a href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic｜모션 추적에서 유도 확산을 통한 다양한 휴머노이드 제어까지</a></td>
+<td>논문</td>
+<td>14</td>
+</tr>
+<tr>
+<td>41</td>
+<td><a href="/entry/ent_benchmark_libero/">LIBERO</a></td>
+<td>평가 기준</td>
+<td>14</td>
+</tr>
+<tr>
+<td>42</td>
+<td><a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">VR 기반 인간-로봇 협업 시뮬레이션에서 GPT 기반 대규모 언어 모델을 통한 가변 자율성 구현 탐구</a></td>
+<td>논문</td>
+<td>14</td>
+</tr>
+<tr>
+<td>43</td>
+<td><a href="/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">Drive-WM: 자율 주행을 위한 다중 시점 비전 예측 및 세계 모델 계획</a></td>
+<td>논문</td>
+<td>14</td>
+</tr>
+<tr>
+<td>44</td>
+<td><a href="/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">Gemini Robotics｜인공지능을 물리적 세계로</a></td>
+<td>논문</td>
+<td>13</td>
+</tr>
+<tr>
+<td>45</td>
+<td><a href="/entry/ent_paper_aljalbout_reality_gap_2025/">로봇의 현실 격차: 도전 과제, 해결책 및 모범 사례</a></td>
+<td>논문</td>
+<td>13</td>
+</tr>
+<tr>
+<td>46</td>
+<td><a href="/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">인간-로봇 협업 부하 리프팅을 위한 휴머노이드 로봇 설계 최적화</a></td>
+<td>논문</td>
+<td>13</td>
+</tr>
+<tr>
+<td>47</td>
+<td><a href="/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">ISO/TS 15066 제약 조건을 충족하는 에너지 탱크 기반 제어 프레임워크</a></td>
+<td>논문</td>
+<td>13</td>
+</tr>
+<tr>
+<td>48</td>
+<td><a href="/entry/ent_method_forward_kinematics/">정기구학</a></td>
+<td>방법</td>
+<td>13</td>
+</tr>
+<tr>
+<td>49</td>
+<td><a href="/entry/ent_method_inverse_kinematics/">역기구학</a></td>
+<td>방법</td>
+<td>13</td>
+</tr>
+<tr>
+<td>50</td>
+<td><a href="/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">휴머노이드 로봇의 온라인 균형 동작 생성</a></td>
+<td>논문</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/wiki/chapters/chapter-30/">← 이전<span>제 30장 미래 전망</span></a>
+      
+      
+      <a class="next" href="/ko/wiki/appendices/appendix-b/">다음 →<span>부록 B 주요 데이터셋 목록</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#a">부록 A: 엔티티 및 관계 빠른 참조표</a><ul>
+<li><a href="#a1">A.1 엔티티 유형 분포</a></li>
+<li><a href="#a2">A.2 관계 유형 분포</a></li>
+<li><a href="#a3">A.3 도메인 분포</a></li>
+<li><a href="#a4-top-50">A.4 핵심 엔터티 Top 50 (관계 수 기준)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

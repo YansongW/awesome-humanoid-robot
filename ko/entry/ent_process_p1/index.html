@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>需求定义与系统方案（Concept / Pre-A） · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">需求定义与系统方案（Concept / Pre-A）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>需求定义与系统方案（Concept / Pre-A）</h1>
+      <p class="entry-name-en">Requirements Definition and System Design (Concept / Pre-A)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">정책 규제 윤리</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>需求定义与系统方案（Concept / Pre-A）</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>요구사항 정의 및 시스템 개념(Concept / Pre-A)은 휴머노이드 로봇 제품 개발 전 과정의 첫 번째 단계로, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>이 단계는 입력 정리, 설계, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 활동을 포괄하며, 하위 의존 부서가 적격한 입력을 확보하는 핵심 관문입니다.</p>
+<h2 id="_3">주요 하위 작업 및 기술 내용</h2>
+<h4 id="_4">요구사항 엔지니어링</h4>
+<h5 id="_5">이해관계자 요구사항 수집</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 인터뷰, 설문조사, 워크숍, 현장 촬영, Kano 모델</li>
+<li><strong>설계 사고 논리</strong>: 명시적 및 암묵적 요구사항 식별; Must-have / Differentiator / Exciter 구분</li>
+<li><strong>주요 제약 조건</strong>: 시간, 표본 대표성, 요구사항 충돌</li>
+<li><strong>완료 기준 / 산출물</strong>: 이해관계자 목록, 요구사항 풀, 우선순위 정렬
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P1.1.1.1 입력 정리 및 목표 정량화</strong>: 「이해관계자 요구사항 수집」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P1.1.1.2 설계/방법 설계</strong>: 「이해관계자 요구사항 수집」에 대한 구현 방법 또는 후보 설계를 수립하고, 「인터뷰, 설문조사, 워크숍, 현장 촬영, Kano 모델」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 설계 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 설계 확정</li>
+<li><strong>P1.1.1.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「이해관계자 요구사항 수집」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P1.1.1.4 검증 및 문제 폐쇄</strong>: 「이해관계자 요구사항 수집」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P1.1.1.5 문서 출력 및 하위 인도</strong>: 「이해관계자 요구사항 수집」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="syrs">시스템 요구사항 명세서 (SyRS)</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: SysML 유스케이스 다이어그램, 요구사항 트리, SMART 원칙</li>
+<li><strong>설계 사고 논리</strong>: 비즈니스 언어를 엔지니어링 언어로 변환: 크기, 무게, DOF, 속도, 부하, 배터리 수명, 안전 등급</li>
+<li><strong>주요 제약 조건</strong>: 지표 결합, 테스트 가능성, 비용 주도</li>
+<li><strong>완료 기준 / 산출물</strong>: SyRS 기준선 릴리스, 요구사항 추적 가능, 검수 조건 정량화
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P1.1.2.1 입력 정리 및 목표 정량화</strong>: 「시스템 요구사항 명세서 (SyRS)」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P1.1.2.2 설계/방법 설계</strong>: 「시스템 요구사항 명세서 (SyRS)」에 대한 구현 방법 또는 후보 설계를 수립하고, 「SysML 유스케이스 다이어그램, 요구사항 트리, SMART 원칙」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 설계 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 설계 확정</li>
+<li><strong>P1.1.2.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「시스템 요구사항 명세서 (SyRS)」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P1.1.2.4 검증 및 문제 폐쇄</strong>: 「시스템 요구사항 명세서 (SyRS)」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P1.1.2.5 문서 출력 및 하위 인도</strong>: 「시스템 요구사항 명세서 (SyRS)」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_6">법규, 표준 및 안전 요구사항 매핑</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: ISO 10218-1/2, ISO/TS 15066, IEC 61508, IEC 62368, CE/FCC/UL 차이 분석</li>
+<li><strong>설계 사고 논리</strong>: 안전 요구사항은 설계 초기에 하드 제약 조건이 되어야 하며, 후반에 추가되어서는 안 됨</li>
+<li><strong>주요 제약 조건</strong>: 지역 차이, 인증 주기, 테스트 비용</li>
+<li><strong>완료 기준 / 산출물</strong>: 법규 요구사항 매트릭스, 규정 준수 로드맵, 안전 목표 등급 (SIL/PL)
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P1.1.3.1 입력 정리 및 목표 정량화</strong>: 「법규, 표준 및 안전 요구사항 매핑」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P1.1.3.2 설계/방법 설계</strong>: 「법규, 표준 및 안전 요구사항 매핑」에 대한 구현 방법 또는 후보 설계를 수립하고, 「ISO 10218-1/2, ISO/TS 15066, IEC 61508, IEC 62368, CE/FCC/UL 차이 분석」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 설계 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 설계 확정</li>
+<li><strong>P1.1.3.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「법규, 표준 및 안전 요구사항 매핑」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P1.1.3.4 검증 및 문제 폐쇄</strong>: 「법규, 표준 및 안전 요구사항 매핑」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P1.1.3.5 문서 출력 및 하위 인도</strong>: 「법규, 표준 및 안전 요구사항 매핑」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_7">인간공학 및 상호작용 요구사항</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 인체 측정 데이터베이스, 도달 가능 영역 분석, 놀람 반응 실험, HMI 프로토타입</li>
+<li><strong>설계 사고 논리</strong>: 로봇과 인간이 공존하는 시나리오에서 높이, 시야, 소리, 동작이 수용 가능해야 함</li>
+<li><strong>주요 제약 조건</strong>: 문화 차이, 사용자 그룹 다양성, 심리적 안전</li>
+<li><strong>완료 기준 / 산출물</strong>: 인간공학 요구사항 보고서, 주요 상호작용 자세 포락선, HMI 원칙
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P1.1.4.1 입력 정리 및 목표 정량화</strong>: 「인간공학 및 상호작용 요구사항」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P1.1.4.2 설계/방법 설계</strong>: 「인간공학 및 상호작용 요구사항」에 대한 구현 방법 또는 후보 설계를 수립하고, 「인체 측정 데이터베이스, 도달 가능 영역 분석, 놀람 반응 실험, HMI 프로토타입」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 설계 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 설계 확정</li>
+<li><strong>P1.1.4.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「인간공학 및 상호작용 요구사항」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P1.1.4.4 검증 및 문제 폐쇄</strong>: 「인간공학 및 상호작용 요구사항」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P1.1.4.5 문서 출력 및 하위 인도</strong>: 「인간공학 및 상호작용 요구사항」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_8">개념 설계</h4>
+<h5 id="_9">개념 설계 발산 및 수렴</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 브레인스토밍, 형태 스케치, Morphological Matrix, Pugh Matrix</li>
+<li><strong>설계 사고 논리</strong>: 다양한 전체 기체 레이아웃, 구동 방식, 센서 방식에서 체계적으로 평가</li>
+<li><strong>주요 제약 조건</strong>: 기술 성숙도, 비용, 제조 가능성</li>
+<li><strong>완료 기준 / 산출물</strong>: 최소 3개의 개념 설계, 점수 매트릭스, 선택된 설계 이유
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P1.2.1.1 입력 정리 및 목표 정량화</strong>: 「개념 설계 발산 및 수렴」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P1.2.1.2 설계/방법 설계</strong>: 「개념 설계 발산 및 수렴」에 대한 구현 방법 또는 후보 설계를 수립하고, 「브레인스토밍, 형태 스케치, Morphological Matrix, Pugh Matrix」를 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 설계 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 설계 확정</li>
+<li><strong>P1.2.1.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「개념 설계 발산 및 수렴」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P1.2.1.4 검증 및 문제 폐쇄</strong>: 「개념 설계 발산 및 수렴」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P1.2.1.5 문서 출력 및 하위 인도</strong>: 「개념 설계 발산 및 수렴」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_10">전체 기체 아키텍처 및 기능 할당</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 기능 분해, N² 다이어그램, 인터페이스 제어 문서 (ICD) 초안</li>
+<li><strong>설계 사고 논리</strong>: 운동, 조작, 인지, 계산, 에너지, 열 관리, 구조 서브시스템의 경계 명확화</li>
+<li><strong>주요 제약 조건</strong>: 실시간성, 전력 소비, 케이블 수, 유지보수성</li>
+<li><strong>완료 기준 / 산출물</strong>: 시스템 아키텍처 다이어그램, 기능 할당표, ICD 초안
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P1.2.2.1 입력 정리 및 목표 정량화</strong>: 「전체 기체 아키텍처 및 기능 할당」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P1.2.2.2 설계/방법 설계</strong>: 「전체 기체 아키텍처 및 기능 할당」에 대한 구현 방법 또는 후보 설계를 수립하고, 「기능 분해, N² 다이어그램, 인터페이스 제어 문서 (ICD) 초안」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 설계 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 설계 확정</li>
+<li><strong>P1.2.2.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「전체 기체 아키텍처 및 기능 할당」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P1.2.2.4 검증 및 문제 폐쇄</strong>: 「전체 기체 아키텍처 및 기능 할당」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P1.2.2.5 문서 출력 및 하위 인도</strong>: 「전체 기체 아키텍처 및 기능 할당」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_11">핵심 기술 지표 트레이드오프 분석</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 다목적 최적화, Pareto 프론티어, 민감도 분석</li>
+<li><strong>설계 사고 논리</strong>: 속도 vs 배터리 수명 vs 비용 vs 부하; 수용 가능한 설계 공간 찾기</li>
+<li><strong>주요 제약 조건</strong>: 물리적 한계, 공급망 역량, 예산</li>
+<li><strong>완료 기준 / 산출물</strong>: 트레이드오프 분석표, 지표 경계, 설계 공간 도표
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P1.2.3.1 입력 정리 및 목표 정량화</strong>: 「핵심 기술 지표 트레이드오프 분석」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P1.2.3.2 설계/방법 설계</strong>: 「핵심 기술 지표 트레이드오프 분석」에 대한 구현 방법 또는 후보 설계를 수립하고, 「다목적 최적화, Pareto 프론티어, 민감도 분석」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 설계 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 설계 확정</li>
+<li><strong>P1.2.3.3 구현/프로토타입/시제품 제작</strong>: 설계에 따라 「핵심 기술 지표 트레이드오프 분석」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P1.2.3.4 검증 및 문제 폐쇄</strong>: 「핵심 기술 지표 트레이드오프 분석」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P1.2.3.5 문서 출력 및 하위 인도</strong>: 「핵심 기술 지표 트레이드오프 분석」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16/">小批量试产与量产准备（Pilot &amp; Production Ramp）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p1_1_3/">法规、标准与安全需求映射</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_1_1/">DFM/DFA 评审</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15/">整机集成与验证测试（Integration &amp; V&amp;V）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p1_1_1/">利益相关方需求采集</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_standard_iec_61508/">IEC 61508</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_3_3/">PPAP / 量产 readiness 评估</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p1_1_4/">人因工程与交互需求</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p1_1_2/">系统需求规格书（SyRS）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_1_3/">装配线规划与 SOP</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p0/">项目立项与商业基线</a>
+              <span class="rel-desc">P1 依赖 P0 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p2_2_2/">人机交互（HMI）设计</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1_1_4/">人因工程与交互需求</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1_1_2/">系统需求规格书（SyRS）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1_2_2/">整机架构与功能分配</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1_2_1/">概念方案发散与收敛</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1_1_3/">法规、标准与安全需求映射</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_embracing_evolution_a_call_for_2025/">Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p2/">工业设计与外观工程（ID / A-Surface）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P2 依赖 P1 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1_2_3/">关键技术指标权衡分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P3 依赖 P1 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1_1_1/">利益相关方需求采集</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1_2_4/">概念验证（Proof of Concept）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sathuluri_a_systems_design_approach_for_2022/">휴머노이드 로봇 팔의 공동 설계를 위한 시스템 설계 접근법</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liberman_pincu_designing_robots_with_the_cont_2022/">상황을 고려한 로봇 설계: 하나의 디자인이 모든 곳에 맞지 않는다</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p1"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p2/">
+          <span class="entry-type">방법</span>
+          <h3>工业设计与外观工程（ID / A-Surface）</h3>
+          <p>工业设计与外观工程（ID / A-Surface）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_3_3/">
+          <span class="entry-type">방법</span>
+          <h3>PPAP / 量产 readiness 评估</h3>
+          <p>PPAP 批准、量产 readiness 评估通过</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p2_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>人机交互（HMI）设计</h3>
+          <p>HMI 规范、交互原型、可用性测试报告</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">개념</span>
+          <h3>Production Ramp</h3>
+          <p>파일럿 라인에서 볼륨 제조로 전환하면서 수율, 사이클 타임 및 비용을 개선하는 과정.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>整机架构与功能分配</h3>
+          <p>系统架构图、功能分配表、ICD 草案</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>利益相关方需求采集</h3>
+          <p>利益相关方清单、需求池、优先级排序</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p3/">
+          <span class="entry-type">방법</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>关键技术指标权衡分析</h3>
+          <p>权衡分析表、指标边界、设计空间图</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>DFM/DFA 评审</h3>
+          <p>DFM/DFA 报告、工程变更清单、成本影响评估</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해</h3>
+          <p>대규모 카탈로그에서 제약 프로그래밍을 사용해 파레토 최적 부품 선택을 계산하고, 일관성 조건 하에서 서브시스템 파레토 전면이 전체 시스템의 전역 최적 파레토 전면을 결정함을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_2_4/">
+          <span class="entry-type">방법</span>
+          <h3>概念验证（Proof of Concept）</h3>
+          <p>POC 报告、风险降级记录、Go/No-Go 决策</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p0/">
+          <span class="entry-type">방법</span>
+          <h3>项目立项与商业基线</h3>
+          <p>项目立项与商业基线</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>概念方案发散与收敛</h3>
+          <p>至少 3 套概念方案、评分矩阵、选定方案理由</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_standard_iec_61508/">
+          <span class="entry-type">표준</span>
+          <h3>IEC 61508</h3>
+          <p>전기·전자·프로그래머블 전자 안전 관련 시스템의 기능 안전에 관한 국제 표준.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_1_4/">
+          <span class="entry-type">방법</span>
+          <h3>人因工程与交互需求</h3>
+          <p>人因需求报告、关键交互姿态包络、HMI 原则</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15/">
+          <span class="entry-type">방법</span>
+          <h3>整机集成与验证测试（Integration &amp; V&amp;V）</h3>
+          <p>整机集成与验证测试（Integration &amp; V&amp;V）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_embracing_evolution_a_call_for_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</h3>
+          <p>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sathuluri_a_systems_design_approach_for_2022/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 로봇 팔의 공동 설계를 위한 시스템 설계 접근법</h3>
+          <p>본 논문은 V 모델 기반의 상향식 공동 설계 방법론을 제시하여 휴머노이드 로봇 팔의 설계 변수에 대한 최대 허용 솔루션 공간을 구축하고, 상위 요구사항을 허용 오차가 있는 하위…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>系统需求规格书（SyRS）</h3>
+          <p>SyRS 基线发布、需求可追溯、验收条件量化</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16/">
+          <span class="entry-type">방법</span>
+          <h3>小批量试产与量产准备（Pilot &amp; Production Ramp）</h3>
+          <p>小批量试产与量产准备（Pilot &amp; Production Ramp）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>装配线规划与 SOP</h3>
+          <p>装配流程图、工装清单、SOP、节拍测算</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>法规、标准与安全需求映射</h3>
+          <p>法规需求矩阵、合规路线图、安全目标等级（SIL/PL）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liberman_pincu_designing_robots_with_the_cont_2022/">
+          <span class="entry-type">논문</span>
+          <h3>상황을 고려한 로봇 설계: 하나의 디자인이 모든 곳에 맞지 않는다</h3>
+          <p>본 논문은 사회적 보조 로봇 설계를 위한 네 가지 상황적 층(도메인, 물리적 환경, 사용자, 역할)을 제안하고, 228명의 성인을 대상으로 한 온라인 설문조사를 통해 네 가지 사용…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#_3">주요 하위 작업 및 기술 내용</a><ul>
+<li><a href="#_4">요구사항 엔지니어링</a><ul>
+<li><a href="#_5">이해관계자 요구사항 수집</a></li>
+<li><a href="#syrs">시스템 요구사항 명세서 (SyRS)</a></li>
+<li><a href="#_6">법규, 표준 및 안전 요구사항 매핑</a></li>
+<li><a href="#_7">인간공학 및 상호작용 요구사항</a></li>
+</ul>
+</li>
+<li><a href="#_8">개념 설계</a><ul>
+<li><a href="#_9">개념 설계 발산 및 수렴</a></li>
+<li><a href="#_10">전체 기체 아키텍처 및 기능 할당</a></li>
+<li><a href="#_11">핵심 기술 지표 트레이드오프 분석</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

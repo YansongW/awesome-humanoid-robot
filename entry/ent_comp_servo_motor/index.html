@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高性能伺服电机 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/component/">零部件</a>
+    <span>/</span>
+    <span class="breadcrumb-current">高性能伺服电机</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">零部件</div>
+      <h1>高性能伺服电机</h1>
+      <p class="entry-name-en">High-Performance Servo Motor</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body backfilled from kg/entities/ent_component_servo_motor.md by scripts/backfill_nonpaper_entries.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>伺服电机（Servo Motor）是一种与专用伺服驱动器配套、具备闭环位置、速度与转矩控制能力的高性能电机，广泛应用于工业机器人、数控机床、人形机器人关节、AGV 舵轮及精密定位平台。工业机器人与高端自动化系统中最常见的为交流永磁同步伺服电机（PMSM），其转子采用稀土永磁材料，定子由逆变器供电，配合高分辨率编码器实现毫秒级动态响应。以安川（Yaskawa）Sigma-7 系列为例，小惯量型号 SGM7J-A5AFA61 额定功率 $50\,\text{W}$、额定转矩 $0.159\,\text{Nm}$、最高转速 $6000\,\text{rpm}$，并内置 24 位串行增量编码器。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://example.com/actuator-survey-2025" target="_blank" rel="noopener">Humanoid Robot Actuator Survey 2025</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">consumes</span>
+            <a href="/entry/ent_mat_neodymium_magnet/">钕铁硼磁体</a>
+            
+              
+                
+              
+              <span class="rel-desc">高性能伺服电机消耗钕铁硼永磁体。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>高性能伺服电机是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<h2 id="_3">伺服电机</h2>
+<h3 id="_4">概述</h3>
+<p>伺服电机（Servo Motor）是一种与专用伺服驱动器配套、具备闭环位置、速度与转矩控制能力的高性能电机，广泛应用于工业机器人、数控机床、人形机器人关节、AGV 舵轮及精密定位平台。工业机器人与高端自动化系统中最常见的为交流永磁同步伺服电机（PMSM），其转子采用稀土永磁材料，定子由逆变器供电，配合高分辨率编码器实现毫秒级动态响应。以安川（Yaskawa）Sigma-7 系列为例，小惯量型号 SGM7J-A5AFA61 额定功率 <span class="arithmatex">\(50\,\text{W}\)</span>、额定转矩 <span class="arithmatex">\(0.159\,\text{Nm}\)</span>、最高转速 <span class="arithmatex">\(6000\,\text{rpm}\)</span>，并内置 24 位串行增量编码器。</p>
+<h3 id="_5">工作原理 / 技术架构</h3>
+<p>交流伺服电机通常采用磁场定向控制（Field-Oriented Control, FOC）。在同步旋转坐标系下，定子电流被分解为励磁分量 <span class="arithmatex">\(i_d\)</span> 与转矩分量 <span class="arithmatex">\(i_q\)</span>。对于表贴式永磁同步电机，电磁转矩可简化为</p>
+<div class="arithmatex">\[
+T_e = \frac{3}{2} p \lambda_f i_q,
+\]</div>
+<p>其中 <span class="arithmatex">\(p\)</span> 为极对数，<span class="arithmatex">\(\lambda_f\)</span> 为永磁体磁链，<span class="arithmatex">\(i_q\)</span> 为交轴电流。通过电流环、速度环、位置环三级级联控制，伺服系统可实现高精度轨迹跟踪。编码器分辨率 <span class="arithmatex">\(N\)</span> 决定了最小可分辨角度</p>
+<div class="arithmatex">\[
+\Delta \theta = \frac{360^\circ}{N},
+\]</div>
+<p>24 位编码器对应 <span class="arithmatex">\(\Delta \theta \approx 1.29 \times 10^{-5\circ}\)</span>，足以满足机器人关节的精密定位需求。</p>
+<h3 id="_6">关键参数表</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>小型伺服电机（Yaskawa SGM7J-A5AFA61）</th>
+<th>中型伺服电机（Yaskawa SGMG-09A2AB）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电机类型</td>
+<td>交流永磁同步伺服电机</td>
+<td>交流永磁同步伺服电机</td>
+</tr>
+<tr>
+<td>额定功率</td>
+<td><span class="arithmatex">\(50\,\text{W}\)</span></td>
+<td><span class="arithmatex">\(850\,\text{W}\)</span></td>
+</tr>
+<tr>
+<td>额定电压</td>
+<td><span class="arithmatex">\(200\,\text{VAC}\)</span></td>
+<td><span class="arithmatex">\(200\,\text{VAC}\)</span></td>
+</tr>
+<tr>
+<td>额定转速</td>
+<td><span class="arithmatex">\(3000\,\text{rpm}\)</span></td>
+<td><span class="arithmatex">\(1500\,\text{rpm}\)</span></td>
+</tr>
+<tr>
+<td>最高转速</td>
+<td><span class="arithmatex">\(6000\,\text{rpm}\)</span></td>
+<td>未公开</td>
+</tr>
+<tr>
+<td>额定转矩</td>
+<td><span class="arithmatex">\(0.159\,\text{Nm}\)</span></td>
+<td><span class="arithmatex">\(5.39\,\text{Nm}\)</span></td>
+</tr>
+<tr>
+<td>最大转矩</td>
+<td><span class="arithmatex">\(0.557\,\text{Nm}\)</span></td>
+<td>约 <span class="arithmatex">\(300\%\)</span> 额定转矩</td>
+</tr>
+<tr>
+<td>额定电流</td>
+<td>未公开</td>
+<td><span class="arithmatex">\(7.1\,\text{A}\)</span></td>
+</tr>
+<tr>
+<td>编码器分辨率</td>
+<td>24 位增量</td>
+<td><span class="arithmatex">\(8192\,\text{P/R}\)</span> 增量</td>
+</tr>
+<tr>
+<td>防护等级</td>
+<td>IP65（带油封选项）</td>
+<td>IP67</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>小型关节、电子装配</td>
+<td>机器人关节、CNC、输送</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">应用场景</h3>
+<p>伺服电机是机器人运动控制的核心执行元件：</p>
+<ul>
+<li><strong>工业机器人关节</strong>：六轴工业机器人每个关节均由伺服电机驱动，配合减速器实现高精度轨迹控制。</li>
+<li><strong>人形机器人四肢</strong>：肩、肘、髋、膝、踝等大扭矩关节采用高功率密度伺服电机，手腕与手指则使用微型伺服或空心杯电机。</li>
+<li><strong>CNC 与半导体设备</strong>：在直线电机、转台、分度盘中实现亚微米级定位。</li>
+<li><strong>AGV/AMR 驱动轮</strong>：伺服电机集成在驱动轮内，实现差速转向与速度闭环。</li>
+</ul>
+<h3 id="_8">供应链关系</h3>
+<p>伺服电机供应链上游包括永磁体、硅钢片、绕组铜线、编码器芯片与轴承供应商；中游为伺服电机与驱动器制造商，如安川、松下、三菱、西门子、汇川、台达等；下游面向机器人本体、数控机床、自动化产线及集成商。在“公司—产品—零部件”网络中，伺服电机属于关键运动控制零部件，通常由机器人 OEM 或专业关节模组厂商采购后，与减速器、制动器、编码器集成为一体化关节执行器。</p>
+<h3 id="_9">来源与验证</h3>
+<ul>
+<li>供应商产品页列明 Yaskawa SGM7J-A5AFA61 的 <span class="arithmatex">\(50\,\text{W}\)</span> 功率、<span class="arithmatex">\(0.159\,\text{Nm}\)</span> 额定转矩、<span class="arithmatex">\(3000\,\text{rpm}\)</span> 额定转速、<span class="arithmatex">\(6000\,\text{rpm}\)</span> 最高转速及 24 位编码器。</li>
+<li>供应商产品页列明 Yaskawa SGMG-09A2AB 的 <span class="arithmatex">\(850\,\text{W}\)</span> 功率、<span class="arithmatex">\(5.39\,\text{Nm}\)</span> 转矩、<span class="arithmatex">\(1500\,\text{rpm}\)</span> 转速、<span class="arithmatex">\(7.1\,\text{A}\)</span> 电流、IP67 防护等级及 <span class="arithmatex">\(8192\,\text{P/R}\)</span> 增量编码器。</li>
+<li>Lenze 伺服电机操作手册给出伺服电机铭牌参数定义、温度等级、热阻及与伺服变频器配套使用的选型逻辑。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li><a href="https://example.com/actuator-survey-2025">Humanoid Robot Actuator Survey 2025</a></li>
+<li>项目 Wiki：kg/entities/ent_component_servo_motor.md</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">consumes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_mat_neodymium_magnet/">钕铁硼磁体</a>
+              <span class="rel-desc">高性能伺服电机consumes钕铁硼磁体。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_pid_control/">PID控制</a>
+              <span class="rel-desc">高性能伺服电机前置依赖PID控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_field_oriented_control/">磁场定向控制</a>
+              <span class="rel-desc">高性能伺服电机使用磁场定向控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-desc">高性能伺服电机使用磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_joint_encoder_2024/">关节编码器</a>
+              <span class="rel-desc">高性能伺服电机前置依赖关节编码器。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_bldc_motor/">无刷直流电机</a>
+              <span class="rel-desc">高性能伺服电机前置依赖无刷直流电机。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_mat_neodymium_magnet/">钕铁硼磁体</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">供应</span>
+              <span class="rel-desc">钕铁硼磁体是人形机器人执行器所用高性能伺服电机的关键输入材料。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_allegro_hand/">Allegro 灵巧手</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">Allegro 灵巧手前置依赖高性能伺服电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_robot_system_inmoov/">InMoov 3D 打印人形机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">InMoov 由标准航模舵机驱动（社区常用型号 MG996R、HS-805BB 等），无定制执行器。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_harmonic_drive_systems_2024/">哈默纳科</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">哈默纳科前置依赖高性能伺服电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_maxon_group_2024/">Maxon</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">制造</span>
+              <span class="rel-desc">Maxon生产用于机器人关节的精密电机和齿轮头。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_leaderdrive_2024/">绿的谐波</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">绿的谐波前置依赖高性能伺服电机。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_7dof_arm_2024/">七自由度机械臂</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">七自由度机械臂前置依赖高性能伺服电机。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_comp_servo_motor"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_mat_neodymium_magnet/">
+          <span class="entry-type">材料</span>
+          <h3>钕铁硼磁体</h3>
+          <p>一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_allegro_hand/">
+          <span class="entry-type">零部件</span>
+          <h3>Allegro 灵巧手</h3>
+          <p>由 Wonik Robotics 生产的商用16自由度四指灵巧机器人手，因扭矩控制关节和 ROS 兼容性而广泛用于操作研究。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_leaderdrive_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>绿的谐波</h3>
+          <p>概述 绿的谐波是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制</h3>
+          <p>一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_bldc_motor/">
+          <span class="entry-type">零部件</span>
+          <h3>无刷直流电机</h3>
+          <p>无刷直流电机（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_pid_control/">
+          <span class="entry-type">方法</span>
+          <h3>PID控制</h3>
+          <p>一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_inmoov/">
+          <span class="entry-type">机器人系统</span>
+          <h3>InMoov 3D 打印人形机器人</h3>
+          <p>InMoov 是法国雕塑家 Gaël Langevin 于 2012 年发起的开源 3D 打印真人尺寸人形机器人，全部零件可在家用 3D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_harmonic_drive_systems_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>哈默纳科</h3>
+          <p>概述 哈默纳科是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制（FOC）</h3>
+          <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_maxon_group_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>Maxon</h3>
+          <p>Maxon是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_7dof_arm_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>七自由度机械臂</h3>
+          <p>人形机器人中常用的七自由度机械臂，模仿人体手臂冗余度以提升操作灵活性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_joint_encoder_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>关节编码器</h3>
+          <p>安装于机器人关节的位置或速度传感器，为电机控制提供高分辨率反馈。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">伺服电机</a><ul>
+<li><a href="#_4">概述</a></li>
+<li><a href="#_5">工作原理 / 技术架构</a></li>
+<li><a href="#_6">关键参数表</a></li>
+<li><a href="#_7">应用场景</a></li>
+<li><a href="#_8">供应链关系</a></li>
+<li><a href="#_9">来源与验证</a></li>
+</ul>
+</li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

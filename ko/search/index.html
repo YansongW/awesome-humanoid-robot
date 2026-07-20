@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지식 그래프 검색 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" aria-current="page">검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <section class="search-hero">
+    <h1>지식 그래프 검색</h1>
+    <form id="search-form" class="big-search" action="/ko/search/" method="get">
+      <input type="search" name="q" id="search-input" placeholder="키워드 입력, 예: 감속기, Tesla, VLA…" autocomplete="off">
+      <button type="submit">검색</button>
+    </form>
+    <div class="search-filters" id="search-filters">
+      <span class="filter-label">유형별 필터:</span>
+      <div class="filter-tags" id="type-filters">
+        <button class="filter-tag active" data-type="all">전체</button>
+        
+        <button class="filter-tag" data-type="algorithm">알고리즘</button>
+        
+        <button class="filter-tag" data-type="application_scenario">응용 시나리오</button>
+        
+        <button class="filter-tag" data-type="benchmark">벤치마크</button>
+        
+        <button class="filter-tag" data-type="company">기업</button>
+        
+        <button class="filter-tag" data-type="component">부품</button>
+        
+        <button class="filter-tag" data-type="component_manufacturer">부품 제조사</button>
+        
+        <button class="filter-tag" data-type="concept">개념</button>
+        
+        <button class="filter-tag" data-type="dataset">데이터셋</button>
+        
+        <button class="filter-tag" data-type="equation">방정식</button>
+        
+        <button class="filter-tag" data-type="formalism">형식화 방법</button>
+        
+        <button class="filter-tag" data-type="foundation">기초 학문</button>
+        
+        <button class="filter-tag" data-type="market_segment">시장 세그먼트</button>
+        
+        <button class="filter-tag" data-type="material">재료</button>
+        
+        <button class="filter-tag" data-type="method">방법</button>
+        
+        <button class="filter-tag" data-type="oem">완제품 업체</button>
+        
+        <button class="filter-tag" data-type="operator">연산자</button>
+        
+        <button class="filter-tag" data-type="paper">논문</button>
+        
+        <button class="filter-tag" data-type="principle">원리</button>
+        
+        <button class="filter-tag" data-type="report">보고서</button>
+        
+        <button class="filter-tag" data-type="robot_system">로봇 시스템</button>
+        
+        <button class="filter-tag" data-type="software_platform">소프트웨어 플랫폼</button>
+        
+        <button class="filter-tag" data-type="standard">표준</button>
+        
+        <button class="filter-tag" data-type="technology">기술</button>
+        
+        <button class="filter-tag" data-type="theorem">정리</button>
+        
+        <button class="filter-tag" data-type="tier1_supplier">Tier 1 공급업체</button>
+        
+        <button class="filter-tag" data-type="tool_equipment">도구/장비</button>
+        
+      </div>
+      <div class="filter-domain">
+        <label for="domain-filter" class="filter-label">영역 필터</label>
+        <select id="domain-filter">
+          <option value="">전체</option>
+          
+          <option value="00_foundations">기초 학문</option>
+          
+          <option value="01_raw_materials">원자재</option>
+          
+          <option value="02_components">부품</option>
+          
+          <option value="03_manufacturing_processes">제조 공정</option>
+          
+          <option value="04_assembly_integration_testing">조립 통합 테스트</option>
+          
+          <option value="05_mass_production">대량 생산</option>
+          
+          <option value="06_design_engineering">설계 공학</option>
+          
+          <option value="07_ai_models_algorithms">AI 모델 및 알고리즘</option>
+          
+          <option value="08_software_middleware">소프트웨어 미들웨어</option>
+          
+          <option value="09_data_datasets">데이터 및 데이터셋</option>
+          
+          <option value="10_evaluation_benchmarks">평가 및 벤치마크</option>
+          
+          <option value="11_applications_markets">응용 및 시장</option>
+          
+          <option value="12_policy_regulation_ethics">정책 규제 윤리</option>
+          
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section class="search-results-section" data-base-path="/ko" data-no-results="“{query}”에 대한 개체를 찾을 수 없습니다." data-results-count="{count}개 결과" data-empty-message="키워드를 입력하거나 유형을 선택하여 검색을 시작하세요." data-loading="검색 색인 로드 중…">
+    <div class="results-header">
+      <h2 id="results-title">전체 개체</h2>
+      <span id="results-count" class="results-count"></span>
+    </div>
+    <div id="results-list" class="results-list">
+      <div class="loading-state">검색 색인 로드 중…</div>
+    </div>
+    <div id="load-more" class="load-more hidden">
+      <button>더 보기</button>
+    </div>
+  </section>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+<script src="/js/search.js"></script>
+
+</body>
+</html>

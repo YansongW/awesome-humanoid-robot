@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine</h1>
+      <p class="entry-name-en">CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.15968v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine (CoReVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by College of Transportation, Tongji University.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.15968" target="_blank" rel="noopener">CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.15968" target="_blank" rel="noopener">CoReVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>자율주행(AD) 시스템은 눈에 띄는 발전을 이루었지만, 장기 꼬리(long-tail) 안전 중요 시나리오에서의 성능은 여전히 제한적입니다. 이러한 드문 사례들은 불균형적으로 많은 사고를 유발합니다. Vision-Language Action(VLA) 모델은 강력한 추론 능력을 갖추고 있어 잠재적인 해결책을 제공하지만, 이러한 조건에서 고품질 데이터 부족과 비효율적인 학습으로 인해 효과성이 제한됩니다. 이러한 문제를 해결하기 위해, 우리는 데이터 수집(Collection)과 행동 개선(Refinement)의 이중 단계 과정을 통해 장기 꼬리 시나리오에서 성능을 향상시키는 지속 학습 종단간 자율주행 프레임워크인 CoReVLA를 제안합니다. 첫째, 모델은 오픈소스 주행 QA 데이터셋 혼합에 대해 공동 미세 조정되어 주행 시나리오에 대한 기초적인 이해를 습득합니다. 다음으로, CoReVLA는 Cave Automatic Virtual Environment(CAVE) 시뮬레이션 플랫폼에 배포되어 실시간 상호작용으로부터 운전자 개입 데이터를 수집합니다. 각 개입은 CoReVLA가 안정적으로 처리하지 못하는 장기 꼬리 시나리오를 나타냅니다. 마지막으로, 모델은 직접 선호 최적화(DPO)를 통해 개선되어 인간의 선호로부터 직접 학습함으로써 수동 설계 보상으로 인한 보상 해킹을 방지합니다. 광범위한 개방 루프 및 폐쇄 루프 실험을 통해 제안된 CoReVLA 모델이 주행 시나리오를 정확히 인식하고 적절한 결정을 내릴 수 있음을 입증했습니다. Bench2Drive 벤치마크에서 CoReVLA는 장기 꼬리 안전 중요 시나리오에서 주행 점수(DS) 72.18, 성공률(SR) 50%를 달성하여 최신 방법보다 DS 7.96, SR 15% 더 우수한 성능을 보였습니다. 또한, 사례 연구를 통해 모델이 과거 개입 경험을 활용하여 유사한 실패 가능 시나리오에서 지속적으로 성능을 향상시킬 수 있는 능력을 입증했습니다. 모든 코드와 전처리된 데이터셋은 https://github.com/FanGShiYuu/CoReVLA 에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>자율주행(AD) 시스템은 눈에 띄는 발전을 이루었지만, 장기 꼬리(long-tail) 안전 중요 시나리오에서의 성능은 여전히 제한적입니다. 이러한 드문 사례들은 불균형적으로 많은 사고를 유발합니다. Vision-Language Action(VLA) 모델은 강력한 추론 능력을 갖추고 있어 잠재적인 해결책을 제공하지만, 이러한 조건에서 고품질 데이터 부족과 비효율적인 학습으로 인해 효과성이 제한됩니다. 이러한 문제를 해결하기 위해, 우리는 데이터 수집(Collection)과 행동 개선(Refinement)의 이중 단계 과정을 통해 장기 꼬리 시나리오에서 성능을 향상시키는 지속 학습 종단간 자율주행 프레임워크인 CoReVLA를 제안합니다. 첫째, 모델은 오픈소스 주행 QA 데이터셋 혼합에 대해 공동 미세 조정되어 주행 시나리오에 대한 기초적인 이해를 습득합니다. 다음으로, CoReVLA는 Cave Automatic Virtual Environment(CAVE) 시뮬레이션 플랫폼에 배포되어 실시간 상호작용으로부터 운전자 개입 데이터를 수집합니다. 각 개입은 CoReVLA가 안정적으로 처리하지 못하는 장기 꼬리 시나리오를 나타냅니다. 마지막으로, 모델은 직접 선호 최적화(DPO)를 통해 개선되어 인간의 선호로부터 직접 학습함으로써 수동 설계 보상으로 인한 보상 해킹을 방지합니다. 광범위한 개방 루프 및 폐쇄 루프 실험을 통해 제안된 CoReVLA 모델이 주행 시나리오를 정확히 인식하고 적절한 결정을 내릴 수 있음을 입증했습니다. Bench2Drive 벤치마크에서 CoReVLA는 장기 꼬리 안전 중요 시나리오에서 주행 점수(DS) 72.18, 성공률(SR) 50%를 달성하여 최신 방법보다 DS 7.96, SR 15% 더 우수한 성능을 보였습니다. 또한, 사례 연구를 통해 모델이 과거 개입 경험을 활용하여 유사한 실패 가능 시나리오에서 지속적으로 성능을 향상시킬 수 있는 능력을 입증했습니다. 모든 코드와 전처리된 데이터셋은 https://github.com/FanGShiYuu/CoReVLA 에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_fang_corevla_a_dual_stage_end_to_en_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planetary Roller Screw · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/component/">부품</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Planetary Roller Screw</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">부품</div>
+      <h1>Planetary Roller Screw</h1>
+      <p class="entry-name-en">Planetary Roller Screw</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#滚珠丝杠与行星滚柱丝杠的力学与效率 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>회전 운 동을 선형 운 동으로 변환하는 고효율 선형 변환 부품, 로봇 선형 관절에 사용.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Roller_screw" target="_blank" rel="noopener">Planetary Roller Screw</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>행성 롤러 스크류는 휴머노이드 로봇 분야의 중요한 부품입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고용으로 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>휴머노이드 로봇의 선형 관절(예: Optimus의 몸통 및 다리 일부 직선 구동기)은 종종 볼 스크류 또는 행성 롤러 스크류를 사용하여 모터의 회전 운동을 직선 추력으로 변환합니다. 기본 운동학 관계는 다음과 같습니다: 리드(lead) <span class="arithmatex">\(l\)</span>은 스크류가 한 바퀴 회전할 때 너트가 전진하는 거리를 나타내므로, 너트의 선형 변위는</p>
+<div class="arithmatex">\[
+x = \frac{l}{2\pi} \, \theta
+\]</div>
+<p>여기서 <span class="arithmatex">\(\theta\)</span>는 스크류 회전 각도(rad)입니다. 시간에 대해 미분하면 선속도와 각속도의 관계는</p>
+<div class="arithmatex">\[
+v = \frac{l}{2\pi} \, \omega
+\]</div>
+<p>모터 출력 토크를 <span class="arithmatex">\(\tau\)</span>라고 할 때, 손실을 무시하면 발생하는 축 방향 추력은</p>
+<div class="arithmatex">\[
+F = \frac{2\pi}{l} \, \tau
+\]</div>
+<p>전달 효율 <span class="arithmatex">\(\eta\)</span>를 고려하면</p>
+<div class="arithmatex">\[
+F = \frac{2\pi \, \eta}{l} \, \tau
+\]</div>
+<p>또는 모터에 필요한 토크를 역산하면</p>
+<div class="arithmatex">\[
+\tau = \frac{F \, l}{2\pi \, \eta}
+\]</div>
+<p>예를 들어, Tesla Optimus 선형 관절은 행성 롤러 스크류를 사용하는 것으로 알려져 있으며, <span class="arithmatex">\(F=8000\ \text{N}\)</span>의 추력이 필요하고, 스크류 리드 <span class="arithmatex">\(l=5\ \text{mm}=0.005\ \text{m}\)</span>, 효율 <span class="arithmatex">\(\eta=0.90\)</span>일 경우, 모터 측에 필요한 연속 토크는 약</p>
+<div class="arithmatex">\[
+\tau = \frac{8000 \times 0.005}{2\pi \times 0.90} \approx 7.07\ \text{N·m}
+\]</div>
+<p>입니다. 이는 선형 관절이 여전히 비교적 큰 크기의 프레임리스 토크 모터를 필요로 하는 이유를 설명합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 피치, 리드, 볼 스크류, 행성 롤러 스크류, 백 드라이빙, 셀프 록킹</p>
+<ul>
+<li><strong>리드(lead, <span class="arithmatex">\(l\)</span>)</strong> : 스크류가 한 바퀴 회전할 때 너트가 축 방향으로 이동하는 거리, 단위 mm/rev 또는 m/rad.</li>
+<li><strong>볼 스크류(ball screw)</strong> : 볼이 스크류와 너트의 레이스웨이 사이를 구르며 하중을 전달하며, 마찰이 낮고 효율이 높습니다.</li>
+<li><strong>행성 롤러 스크류(planetary roller screw)</strong> : 여러 개의 행성 롤러가 볼을 대체하며, 접촉 면적이 크고 동일 크기의 볼 스크류보다 하중 지지 능력과 수명이 훨씬 높습니다.</li>
+<li><strong>백 드라이빙(back-driving)</strong> : 축 방향 하중이 너트를 역회전시키는 현상으로, 리드 각과 마찰에 의해 결정됩니다.</li>
+<li><strong>셀프 록킹(self-locking)</strong> : 리드 각이 마찰각보다 작을 때 축 방향 힘이 스크류를 역구동할 수 없어 관절이 정지 상태를 유지합니다.</li>
+</ul>
+</div>
+<p>스크류의 기계적 이점은 <strong>리드 각(lead angle)</strong> <span class="arithmatex">\(\lambda\)</span>으로 이해할 수 있습니다. 스크류 나사산을 경사면으로 펼치면 리드 각은 다음을 만족합니다.</p>
+<div class="arithmatex">\[
+\tan\lambda = \frac{l}{\pi d_m}
+\]</div>
+<p>여기서 <span class="arithmatex">\(d_m\)</span>은 나사산의 피치 직경입니다. 스크류 쌍의 효율은 근사적으로 다음과 같이 쓸 수 있습니다.</p>
+<div class="arithmatex">\[
+\eta = \frac{\tan\lambda}{\tan(\lambda + \rho)}
+\]</div>
+<p><span class="arithmatex">\(\rho\)</span>는 등가 마찰각이며, <span class="arithmatex">\(\tan\rho = \mu\)</span>, <span class="arithmatex">\(\mu\)</span>는 구름 또는 미끄럼 마찰 계수입니다. 볼 스크류의 경우 <span class="arithmatex">\(\mu\approx0.003\)</span>–<span class="arithmatex">\(0.01\)</span>로 효율이 90%–95%에 달합니다. 미끄럼 스크류의 경우 <span class="arithmatex">\(\mu\)</span>는 0.1–0.2까지 가능하며 효율은 30%–50%에 불과합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 리드 각, 마찰각, 등가 마찰 계수, 나사산 피치 직경</p>
+<ul>
+<li><strong>리드 각(lead angle, <span class="arithmatex">\(\lambda\)</span>)</strong> : 나사산을 펼쳤을 때 경사면과 축에 수직인 평면 사이의 각도.</li>
+<li><strong>마찰각(friction angle, <span class="arithmatex">\(\rho\)</span>)</strong> : 마찰 계수에 해당하는 등가 각도로, <span class="arithmatex">\(\tan\rho=\mu\)</span>.</li>
+<li><strong>등가 마찰 계수(equivalent friction coefficient)</strong> : 구름/미끄럼 접촉 및 윤활 상태를 종합한 마찰 계수.</li>
+<li><strong>나사산 피치 직경(pitch diameter, <span class="arithmatex">\(d_m\)</span>)</strong> : 나사산의 산과 골 사이의 평균 직경.</li>
+</ul>
+</div>
+<p><span class="arithmatex">\(\lambda &lt; \rho\)</span>일 때 스크류는 <strong>셀프 록킹</strong> 특성을 가지며, 축 방향 하중이 모터를 역구동할 수 없습니다. <span class="arithmatex">\(\lambda &gt; \rho\)</span>일 때 스크류는 백 드라이빙이 가능합니다. 휴머노이드 로봇 관절은 일반적으로 힘 제어와 순응적 상호작용을 위해 어느 정도의 백 드라이빙 성능이 필요하므로, 셀프 록킹 사다리꼴 스크류보다는 큰 리드의 볼/롤러 스크류를 주로 선택합니다.</p>
+<p>볼 스크류와 행성 롤러 스크류의 핵심 차이는 하중 지지 요소에 있습니다. 볼은 점 접촉으로 헤르츠 접촉 응력이 높은 반면, 행성 롤러는 선 접촉으로 접촉 면적이 크게 증가합니다. SKF 기술 자료에 따르면, 동일 크기에서 행성 롤러 스크류의 정격 동적 하중은 볼 스크류의 3–5배, 수명은 10–15배에 달할 수 있지만, 비용과 제조 정밀도 요구 사항도 더 높습니다[43]. 따라서 Optimus와 같이 높은 추력을 강조하는 플랫폼은 롤러 스크류를 선호하는 반면, 일반 산업용 선형 모듈은 주로 볼 스크류를 사용합니다.</p>
+<p>```mermaid
+flowchart LR
+    A["모터 토크 tau"] --&gt; B["스크류 회전 omega"]
+    B --&gt; C["리드 l"]
+    C --&gt; D["축 방향 추력 F = 2π η tau / l"]
+    E["볼: 점 접촉"] --&gt; F["중간 하중 지지  고효율"]
+    G["롤러: 선 접촉"] --&gt; H["고하중 지지  긴 수명  고비용"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_planetary_roller_screw/">행성 롤러 스크류</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_linear_actuator_2024/">Linear Actuator</a>
+              <span class="rel-desc">행성 롤러 스크류는 선형 액추에이터에서 회전 운 동을 선형 운 동으로 변환합니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_system_tesla_optimus/">테슬라 옵티머스</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_planetary_roller_screw_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">부품</span>
+          <h3>행성 롤러 스크류</h3>
+          <p>스레드 롤러를 통해 회전욕동을 직선욕동으로 변환하는 고하중·고정밀 직선 기구로 휴로봇 선형 액추에이터에 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_linear_actuator_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Linear Actuator</h3>
+          <p>선형 운 동을 생성하는 액추에이터, 일반적으로 프레임리스 토크 모터, 행성 롤러 스크류, 인코더 및 힘 센서로 구성.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_tesla_optimus/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>테슬라 옵티머스</h3>
+          <p>테슬라의 범용 휴인oid 로봇 프로그램으로, 공장 배치와 대량 생산을 목표로 합니다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

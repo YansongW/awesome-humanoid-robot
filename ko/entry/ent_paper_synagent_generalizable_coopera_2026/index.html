@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy</h1>
+      <p class="entry-name-en">SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>SynAgent 先从相机图像/多视角观测恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、扩散策略/流匹配生成全身轨迹/动作序列、地形/场景表征。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://yw0208.github.io/synagent/" target="_blank" rel="noopener">SynAgent project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>제어 가능한 협력적 휴머노이드 조작은 심각한 데이터 부족, 다중 에이전트 협력의 복잡성, 그리고 객체 간 일반화의 한계로 인해 구현 지능(embodied intelligence)의 근본적이면서도 어려운 문제입니다. 본 논문에서는 단일 에이전트-객체 상호작용에서 다중 에이전트 인간-객체-인간 시나리오로 기술을 전이하기 위해 Solo-to-Cooperative Agent Synergy를 활용하여 확장 가능하고 물리적으로 타당한 협력 조작을 가능하게 하는 통합 프레임워크인 SynAgent를 제시합니다. 동작 전이 중 의미적 무결성을 유지하기 위해, Delaunay 사면체화를 통해 구축된 Interact Mesh를 기반으로 하는 상호작용 보존 리타겟팅 방법을 도입하여 인간과 객체 간의 공간적 관계를 충실히 유지합니다. 이 정제된 데이터를 기반으로, 분산 훈련과 다중 에이전트 PPO를 통해 풍부한 단일 인간 데이터로부터 시너지 협력 행동을 부트스트래핑하는 단일 에이전트 사전 훈련 및 적응 패러다임을 제안합니다. 마지막으로, 조건부 VAE를 사용한 궤적 조건 생성 정책을 개발하고, 동작 모방 사전 정보로부터 다중 교사 증류를 통해 훈련하여 안정적이고 제어 가능한 객체 수준 궤적 실행을 달성합니다. 광범위한 실험을 통해 SynAgent가 협력 모방과 궤적 조건 제어 모두에서 기존 기준선을 크게 능가하며, 다양한 객체 형상에 걸쳐 일반화됨을 입증합니다. 코드와 데이터는 출판 후 공개될 예정입니다. 프로젝트 페이지: http://yw0208.github.io/synagent</p>
+<h2 id="_2">핵심 내용</h2>
+<p>제어 가능한 협력적 휴머노이드 조작은 심각한 데이터 부족, 다중 에이전트 협력의 복잡성, 그리고 객체 간 일반화의 한계로 인해 구현 지능(embodied intelligence)의 근본적이면서도 어려운 문제입니다. 본 논문에서는 단일 에이전트-객체 상호작용에서 다중 에이전트 인간-객체-인간 시나리오로 기술을 전이하기 위해 Solo-to-Cooperative Agent Synergy를 활용하여 확장 가능하고 물리적으로 타당한 협력 조작을 가능하게 하는 통합 프레임워크인 SynAgent를 제시합니다. 동작 전이 중 의미적 무결성을 유지하기 위해, Delaunay 사면체화를 통해 구축된 Interact Mesh를 기반으로 하는 상호작용 보존 리타겟팅 방법을 도입하여 인간과 객체 간의 공간적 관계를 충실히 유지합니다. 이 정제된 데이터를 기반으로, 분산 훈련과 다중 에이전트 PPO를 통해 풍부한 단일 인간 데이터로부터 시너지 협력 행동을 부트스트래핑하는 단일 에이전트 사전 훈련 및 적응 패러다임을 제안합니다. 마지막으로, 조건부 VAE를 사용한 궤적 조건 생성 정책을 개발하고, 동작 모방 사전 정보로부터 다중 교사 증류를 통해 훈련하여 안정적이고 제어 가능한 객체 수준 궤적 실행을 달성합니다. 광범위한 실험을 통해 SynAgent가 협력 모방과 궤적 조건 제어 모두에서 기존 기준선을 크게 능가하며, 다양한 객체 형상에 걸쳐 일반화됨을 입증합니다. 코드와 데이터는 출판 후 공개될 예정입니다. 프로젝트 페이지: http://yw0208.github.io/synagent</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">다단계 강화학습을 통한 휴머노이드 전신 배드민턴</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_synagent_generalizable_coopera_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">
+          <span class="entry-type">논문</span>
+          <h3>다단계 강화학습을 통한 휴머노이드 전신 배드민턴</h3>
+          <p>통합된 전신 강화학습 제어기를 통해 21자유도 휴머노이드가 시뮬레이션 및 실제 환경에서 배드민턴을 칠 수 있으며, 시뮬레이션에서는 21회 연속 랠리를, 실제 테스트에서는 초당 최대…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</h3>
+          <p>본 논문은 로봇 팔 교사가 순응적 접촉, 커리큘럼 스케줄링, 섭동, 실패 감지 및 자동 리셋을 통해 휴머노이드 학생을 지지하고 안내하여 최소한의 인간 개입으로 효율적인 실제 세계…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</h1>
+      <p class="entry-name-en">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">상위</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://amo-humanoid.github.io/" target="_blank" rel="noopener">AMO project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>휴머노이드 로봇은 초정밀 전신 움직임을 통해 대부분의 손재주를 얻으며, 이는 넓은 작업 공간을 필요로 하는 작업(예: 바닥에서 물체 집기)을 가능하게 합니다. 그러나 높은 자유도(DoF)와 비선형 동역학으로 인해 실제 휴머노이드에서 이러한 능력을 구현하는 것은 여전히 어려운 과제입니다. 본 연구에서는 시뮬레이션-실제 강화 학습(sim-to-real RL)과 궤적 최적화를 통합하여 실시간 적응형 전신 제어를 가능하게 하는 Adaptive Motion Optimization (AMO) 프레임워크를 제안합니다. 동작 모방 강화 학습에서의 분포 편향을 완화하기 위해 하이브리드 AMO 데이터셋을 구축하고, 잠재적으로 분포 외(O.O.D.) 명령에 대해 강건하고 요구 기반 적응이 가능한 네트워크를 학습시킵니다. AMO를 시뮬레이션과 29-DoF Unitree G1 휴머노이드 로봇에서 검증하여, 강력한 기준선 대비 우수한 안정성과 확장된 작업 공간을 입증합니다. 마지막으로, AMO의 일관된 성능이 모방 학습을 통한 자율 작업 실행을 지원함을 보여주며, 시스템의 다재다능함과 강건성을 강조합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>휴머노이드 로봇은 초정밀 전신 움직임을 통해 대부분의 손재주를 얻으며, 이는 넓은 작업 공간을 필요로 하는 작업(예: 바닥에서 물체 집기)을 가능하게 합니다. 그러나 높은 자유도(DoF)와 비선형 동역학으로 인해 실제 휴머노이드에서 이러한 능력을 구현하는 것은 여전히 어려운 과제입니다. 본 연구에서는 시뮬레이션-실제 강화 학습(sim-to-real RL)과 궤적 최적화를 통합하여 실시간 적응형 전신 제어를 가능하게 하는 Adaptive Motion Optimization (AMO) 프레임워크를 제안합니다. 동작 모방 강화 학습에서의 분포 편향을 완화하기 위해 하이브리드 AMO 데이터셋을 구축하고, 잠재적으로 분포 외(O.O.D.) 명령에 대해 강건하고 요구 기반 적응이 가능한 네트워크를 학습시킵니다. AMO를 시뮬레이션과 29-DoF Unitree G1 휴머노이드 로봇에서 검증하여, 강력한 기준선 대비 우수한 안정성과 확장된 작업 공간을 입증합니다. 마지막으로, AMO의 일관된 성능이 모방 학습을 통한 자율 작업 실행을 지원함을 보여주며, 시스템의 다재다능함과 강건성을 강조합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_dial_decoupling_intent_and_act_2026/">DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_qp_standard_form/">표준 이차 계획법(QP)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_li_amo_adaptive_motion_optimizati_2025/">AMO: 초민첩한 인간형 로봇 전신 제어를 위한 적응형 동작 최적화</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_active_stereo_camera_outperfor_2026/">Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">RUKA: 학습을 통한 휴머노이드 손 설계의 재고</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_meng_expert_insight_based_modeling_2025/">전문가 통찰 기반 희토류 공급 중단의 비동력 전략 억제 모델링: 시뮬레이션 중심 체계적 프레임워크</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">리튬 이온 배터리 팩의 열 방출 종합 분석</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_kapandji_test/">Kapandji 테스트</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_amo_adaptive_motion_optimizati_2025_1"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_amo_adaptive_motion_optimizati_2025/">
+          <span class="entry-type">논문</span>
+          <h3>AMO: 초민첩한 인간형 로봇 전신 제어를 위한 적응형 동작 최적화</h3>
+          <p>sim-to-real 강화학습과 궤적 최적화를 결합하여 29-DoF Unitree G1 인간형 로봇에서 실시간 초민첩 전신 제어를 가능하게 하는 AMO(Adaptive Motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">
+          <span class="entry-type">논문</span>
+          <h3>AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</h3>
+          <p>AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_meng_expert_insight_based_modeling_2025/">
+          <span class="entry-type">논문</span>
+          <h3>전문가 통찰 기반 희토류 공급 중단의 비동력 전략 억제 모델링: 시뮬레이션 중심 체계적 프레임워크</h3>
+          <p>Wei Meng의 2025년 arXiv 논문은 희토류 자원 의존성을 군사 장비·기술 세대·전투 능력에 매핑하는 REG-CAP 프레임워크를 제안하고,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_active_stereo_camera_outperfor_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</h3>
+          <p>在人形操作的ACT模仿学习中，主动立体相机的性能优于多传感器设置…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dial_decoupling_intent_and_act_2026/">
+          <span class="entry-type">논문</span>
+          <h3>DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA</h3>
+          <p>DIAL 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_qp_standard_form/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>표준 이차 계획법(QP)</h3>
+          <p>등식 및 부등식 선형 제약 조건 하에서 이차 목적 함수를 최소화하는 볼록 최적화 문제.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">
+          <span class="entry-type">논문</span>
+          <h3>센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</h3>
+          <p>본 논문은 다수의 웨어러블 센서 모달리티에서 RGB 비디오 학생 네트워크로 지식을 증류하여 동작 인식을 수행하는 SAKDN 프레임워크를 제안하며, Gramian Angular…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">
+          <span class="entry-type">논문</span>
+          <h3>RUKA: 학습을 통한 휴머노이드 손 설계의 재고</h3>
+          <p>RUKA는 15개의 과소 구동 자유도와 11개의 액추에이터를 갖춘 저렴한 3D 프린팅 틴돈 구동 의인화 손으로, MANUS 모션 캡처 장갑 데이터로 학습한 LSTM+MLP 모델로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">
+          <span class="entry-type">논문</span>
+          <h3>리튬 이온 배터리 팩의 열 방출 종합 분석</h3>
+          <p>이 2025년 arXiv 논문은 16셀 리튬 이온 배터리 팩에 대한 CFD 및 열 시뮬레이션을 통해 7가지 기하학적 배치와 기류 구성을 비교하였으며, 5개 인렛과 1개 아웃렛을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_kapandji_test/">
+          <span class="entry-type">벤치마크</span>
+          <h3>Kapandji 테스트</h3>
+          <p>임상적으로 엄지 대립 능력과 손가락 재주를 측정하는 테스트로, 로봇공학에서 능숙한 로봇 손의 엄지 가동 범위와 대립 품질을 평가하기 위해 채택되었습니다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

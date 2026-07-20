@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" aria-current="page">홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>휴로봇: 광산에서 시장까지</h1>
+      <p class="hero-subtitle">
+        재료, 부품, 제조, 설계, AI, 소프트웨어, 데이터, 테스트, 양산, 응용, 시장, 정책을 포괄하는 휴로봇 산업 전반의 체계적 지도입니다.
+        2143개 개체와 5892개 관계 탐색
+      </p>
+      <div class="hero-search">
+        <form action="/ko/search/" method="get">
+          <input type="search" name="q" placeholder="키워드 입력, 예: 감속기, Tesla, VLA…" autocomplete="off">
+          <button type="submit">검색</button>
+        </form>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number">2143</span>
+          <span class="stat-label">개체</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5892</span>
+          <span class="stat-label">관계</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">26</span>
+          <span class="stat-label">유형</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">13</span>
+          <span class="stat-label">영역</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="roadmap-banner">
+      <div>
+        <strong>🛠️ 0→1 휴로봇 만들기</strong>
+        <p>완전 초보자를 위한 실습 로드맵: 기초 다지기, 관절 하나, 이족 플랫폼, 완전한 휴로봇까지. 각 단계는 무엇을, 왜, 어떻게 분석할지 알려주는 지식 카드로 연결됩니다.</p>
+      </div>
+      <a href="/ko/roadmap/" class="btn btn-primary">로드맵 시작</a>
+    </div>
+    <div class="wiki-banner">
+      <div>
+        <strong>📖 Wiki 프로젝트</strong>
+        <p>이 지식 그래프는 &#39;휴로봇: 광산에서 시장까지&#39; Wiki의 데이터 기반이며, 물리 → 인식 → 의사결정 → 구동 → 시스템 → 산업 순으로 전개됩니다.</p>
+      </div>
+      <a href="/ko/wiki/" class="btn btn-secondary">Wiki 목차 보기</a>
+    </div>
+    <div class="section-header">
+      <h2>영역별 탐색</h2>
+      <a href="/ko/search/" class="link-arrow">전체 보기 →</a>
+    </div>
+    <div class="domain-grid">
+      
+      <a class="domain-card" href="/ko/search/?domain=00_foundations" style="--domain-color: #7c8798">
+        <span class="domain-name">기초 학문</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=01_raw_materials" style="--domain-color: #2a9d8f">
+        <span class="domain-name">원자재</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=02_components" style="--domain-color: #5d8c48">
+        <span class="domain-name">부품</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=03_manufacturing_processes" style="--domain-color: #c38e3c">
+        <span class="domain-name">제조 공정</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=04_assembly_integration_testing" style="--domain-color: #b3592a">
+        <span class="domain-name">조립 통합 테스트</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=05_mass_production" style="--domain-color: #a84442">
+        <span class="domain-name">대량 생산</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=06_design_engineering" style="--domain-color: #7d5a8a">
+        <span class="domain-name">설계 공학</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=07_ai_models_algorithms" style="--domain-color: #3d7ea6">
+        <span class="domain-name">AI 모델 및 알고리즘</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=08_software_middleware" style="--domain-color: #5a8fbd">
+        <span class="domain-name">소프트웨어 미들웨어</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=09_data_datasets" style="--domain-color: #2d5a7b">
+        <span class="domain-name">데이터 및 데이터셋</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=10_evaluation_benchmarks" style="--domain-color: #c9a227">
+        <span class="domain-name">평가 및 벤치마크</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=11_applications_markets" style="--domain-color: #b34d73">
+        <span class="domain-name">응용 및 시장</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/ko/search/?domain=12_policy_regulation_ethics" style="--domain-color: #6b5b4f">
+        <span class="domain-name">정책 규제 윤리</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="container">
+    <div class="section-header">
+      <h2>유형별 탐색</h2>
+    </div>
+    <div class="type-cloud">
+      
+      <a class="type-tag" href="/ko/types/algorithm/">알고리즘</a>
+      
+      <a class="type-tag" href="/ko/types/application_scenario/">응용 시나리오</a>
+      
+      <a class="type-tag" href="/ko/types/benchmark/">벤치마크</a>
+      
+      <a class="type-tag" href="/ko/types/company/">기업</a>
+      
+      <a class="type-tag" href="/ko/types/component/">부품</a>
+      
+      <a class="type-tag" href="/ko/types/component_manufacturer/">부품 제조사</a>
+      
+      <a class="type-tag" href="/ko/types/concept/">개념</a>
+      
+      <a class="type-tag" href="/ko/types/dataset/">데이터셋</a>
+      
+      <a class="type-tag" href="/ko/types/equation/">방정식</a>
+      
+      <a class="type-tag" href="/ko/types/formalism/">형식화 방법</a>
+      
+      <a class="type-tag" href="/ko/types/foundation/">기초 학문</a>
+      
+      <a class="type-tag" href="/ko/types/market_segment/">시장 세그먼트</a>
+      
+      <a class="type-tag" href="/ko/types/material/">재료</a>
+      
+      <a class="type-tag" href="/ko/types/method/">방법</a>
+      
+      <a class="type-tag" href="/ko/types/oem/">완제품 업체</a>
+      
+      <a class="type-tag" href="/ko/types/operator/">연산자</a>
+      
+      <a class="type-tag" href="/ko/types/paper/">논문</a>
+      
+      <a class="type-tag" href="/ko/types/principle/">원리</a>
+      
+      <a class="type-tag" href="/ko/types/report/">보고서</a>
+      
+      <a class="type-tag" href="/ko/types/robot_system/">로봇 시스템</a>
+      
+      <a class="type-tag" href="/ko/types/software_platform/">소프트웨어 플랫폼</a>
+      
+      <a class="type-tag" href="/ko/types/standard/">표준</a>
+      
+      <a class="type-tag" href="/ko/types/technology/">기술</a>
+      
+      <a class="type-tag" href="/ko/types/theorem/">정리</a>
+      
+      <a class="type-tag" href="/ko/types/tier1_supplier/">Tier 1 공급업체</a>
+      
+      <a class="type-tag" href="/ko/types/tool_equipment/">도구/장비</a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>추천 개체</h2>
+    </div>
+    <div class="entry-grid">
+      
+      <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+        <span class="entry-type">방법</span>
+        <h3>행동 클로닝</h3>
+        <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘, 데이터 및 데이터셋</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+        <span class="entry-type">방법</span>
+        <h3>전신 제어(WBC)</h3>
+        <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+        <span class="entry-type">개념</span>
+        <h3>세계 모델</h3>
+        <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+        <span class="entry-type">방법</span>
+        <h3>OpenVLA</h3>
+        <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+        <span class="entry-type">방법</span>
+        <h3>시뮬-실제 전이</h3>
+        <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+        <span class="entry-type">알고리즘</span>
+        <h3>근위 정책 최적화(PPO)</h3>
+        <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+        <span class="entry-type">방법</span>
+        <h3>모델 예측 제어(MPC)</h3>
+        <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+        <span class="entry-type">방법</span>
+        <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+        <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘, 데이터 및 데이터셋</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+        <span class="entry-type">방법</span>
+        <h3>도메인 랜덤화</h3>
+        <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘, 데이터 및 데이터셋</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_benchmark_humanoidbench/">
+        <span class="entry-type">벤치마크</span>
+        <h3>HumanoidBench</h3>
+        <p>Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해 40개 이상의 작업을 제공함.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘, 평가 및 벤치마크</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+        <span class="entry-type">방법</span>
+        <h3>작업 계획</h3>
+        <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘</span>
+      </a>
+      
+      <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+        <span class="entry-type">방법</span>
+        <h3>디퓨전 정책</h3>
+        <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        <span class="entry-meta">AI 모델 및 알고리즘, 데이터 및 데이터셋</span>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2>관계 그래프</h2>
+        <p>재료, 부품, 제조, 설계, AI, 소프트웨어, 데이터, 테스트, 양산, 응용, 시장, 정책을 포괄하는 휴로봇 산업 전반의 체계적 지도입니다.</p>
+      </div>
+      <a href="/ko/graph/" class="btn btn-primary">그래프 열기</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+</body>
+</html>

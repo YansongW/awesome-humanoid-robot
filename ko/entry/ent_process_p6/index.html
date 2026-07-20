@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URDF 建模与运动学校核（Kinematics &amp; URDF） · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">URDF 建模与运动学校核（Kinematics &amp; URDF）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>URDF 建模与运动学校核（Kinematics &amp; URDF）</h1>
+      <p class="entry-name-en">URDF modeling and Kinematics &amp; URDF</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>URDF 建模与运动学校核（Kinematics &amp; URDF）</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>URDF 모델링 및 운동학 검증(Kinematics &amp; URDF)은 휴머노이드 로봇 제품 개발 전 과정 중 6번째 단계이며, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>이 단계는 입력 정리, 설계 방안, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 확보할 수 있도록 하는 핵심 지점입니다.</p>
+<h2 id="_3">주요 하위 작업 및 기술 내용</h2>
+<h4 id="urdfsdf">URDF/SDF 모델 구축</h4>
+<h5 id="urdfsdf_1">URDF/SDF 파일 생성</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: ROS URDF, Xacro, SolidWorks/NX → URDF 플러그인, 관성 매개변수 검증</li>
+<li><strong>설계 사고 논리</strong>: 링크, 조인트, 관성, 충돌체, 시각 모델은 CAD와 완전히 일치해야 함; 질량 속성은 P3.1.2/P3.1.3에서 가져옴</li>
+<li><strong>주요 제약 조건</strong>: 좌표계 일관성, 단위 통일, 충돌체가 너무 조밀하지 않아야 함</li>
+<li><strong>완료 기준 / 산출물</strong>: RViz/Gazebo/Isaac Sim에서 올바르게 로드 가능, 구문 오류 없음
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P6.1.1.1 입력 정리 및 목표 정량화</strong>: 「URDF/SDF 파일 생성」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P6.1.1.2 방안/방법 설계</strong>: 「URDF/SDF 파일 생성」에 대한 구현 방법 또는 후보 방안을 수립하고, 「ROS URDF, Xacro, SolidWorks/NX → URDF 플러그인, 관성 매개변수 검증」을 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P6.1.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「URDF/SDF 파일 생성」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 매개변수 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P6.1.1.4 검증 및 문제 폐쇄</strong>: 「URDF/SDF 파일 생성」의 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P6.1.1.5 문서 출력 및 하위 인도</strong>: 「URDF/SDF 파일 생성」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 참조</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="dh-dh">DH / 수정 DH 매개변수 정의</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 해석법, Pinocchio/RBDL, 기호 계산</li>
+<li><strong>설계 사고 논리</strong>: 각 운동 체인에 대해 표준 운동학 매개변수를 설정하여 역운동학 및 컨트롤러 구현을 용이하게 함</li>
+<li><strong>주요 제약 조건</strong>: 좌표계 방향 약속, 조인트 영점 정의</li>
+<li><strong>완료 기준 / 산출물</strong>: 《DH 매개변수 표》, 정운동학 코드와 URDF 비교 오차 &lt; 1e-6
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P6.1.2.1 입력 정리 및 목표 정량화</strong>: 「DH / 수정 DH 매개변수 정의」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P6.1.2.2 방안/방법 설계</strong>: 「DH / 수정 DH 매개변수 정의」에 대한 구현 방법 또는 후보 방안을 수립하고, 「해석법, Pinocchio/RBDL, 기호 계산」을 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P6.1.2.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「DH / 수정 DH 매개변수 정의」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 매개변수 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P6.1.2.4 검증 및 문제 폐쇄</strong>: 「DH / 수정 DH 매개변수 정의」의 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P6.1.2.5 문서 출력 및 하위 인도</strong>: 「DH / 수정 DH 매개변수 정의」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 참조</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_4">충돌 및 자체 간섭 모델</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 볼록 껍질/단순화된 메쉬, FCL/PyBullet, 충돌 매트릭스</li>
+<li><strong>설계 사고 논리</strong>: 운동 과정에서 팔다리와 환경, 팔다리와 팔다리 간 충돌이 발생하지 않아야 함; 충돌체가 너무 조밀하면 오경보, 너무 느슨하면 누락 발생</li>
+<li><strong>주요 제약 조건</strong>: 계산 비용, 정밀도, 유지보수성</li>
+<li><strong>완료 기준 / 산출물</strong>: 일반 동작에서 자체 충돌 오경보 없음, 주요 자세에서 환경 관통 없음
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P6.1.3.1 입력 정리 및 목표 정량화</strong>: 「충돌 및 자체 간섭 모델」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P6.1.3.2 방안/방법 설계</strong>: 「충돌 및 자체 간섭 모델」에 대한 구현 방법 또는 후보 방안을 수립하고, 「볼록 껍질/단순화된 메쉬, FCL/PyBullet, 충돌 매트릭스」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P6.1.3.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「충돌 및 자체 간섭 모델」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 매개변수 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P6.1.3.4 검증 및 문제 폐쇄</strong>: 「충돌 및 자체 간섭 모델」의 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P6.1.3.5 문서 출력 및 하위 인도</strong>: 「충돌 및 자체 간섭 모델」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 참조</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_5">운동학 검증</h4>
+<h5 id="_6">정/역운동학 해석 검증</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 해석/수치 역운동학, 무작위 자세 샘플링, 특이점 분석</li>
+<li><strong>설계 사고 논리</strong>: URDF의 조인트 한계, 링크 길이가 CAD와 일치하는지 검증; IK 해석 성공률 높음</li>
+<li><strong>주요 제약 조건</strong>: 특이 위치, 다중 해 선택, 조인트 한계</li>
+<li><strong>완료 기준 / 산출물</strong>: 무작위 1000개 자세 IK 성공률 &gt; 99%, 위치 오차 &lt; 1 mm
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P6.2.1.1 입력 정리 및 목표 정량화</strong>: 「정/역운동학 해석 검증」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P6.2.1.2 방안/방법 설계</strong>: 「정/역운동학 해석 검증」에 대한 구현 방법 또는 후보 방안을 수립하고, 「해석/수치 역운동학, 무작위 자세 샘플링, 특이점 분석」을 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P6.2.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「정/역운동학 해석 검증」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 매개변수 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P6.2.1.4 테스트 실행 및 결과 분석</strong>: 검수 기준에 따라 「정/역운동학 해석 검증」 테스트를 수행하고, 통과율/오차/편차를 통계하며, 근본 원인 분석을 수행하고 개선 목록을 작성함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P6.2.1.5 문서 출력 및 하위 인도</strong>: 「정/역운동학 해석 검증」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 참조</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_7">작업 공간 및 도달 가능성 분석</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: Matlab/Python, RViz, 몬테카를로 샘플링</li>
+<li><strong>설계 사고 논리</strong>: 발끝/손끝 도달 가능 공간 클라우드 맵을 생성하여 P2.2.1 인간공학 요구 사항 충족 검증</li>
+<li><strong>주요 제약 조건</strong>: 자체 충돌 제약, 조인트 한계</li>
+<li><strong>완료 기준 / 산출물</strong>: 《작업 공간 분석 보고서》: 도달 가능 영역 포락선, 주요 자세 커버리지 &gt; 95%
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P6.2.2.1 입력 정리 및 목표 정량화</strong>: 「작업 공간 및 도달 가능성 분석」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P6.2.2.2 방안/방법 설계</strong>: 「작업 공간 및 도달 가능성 분석」에 대한 구현 방법 또는 후보 방안을 수립하고, 「Matlab/Python, RViz, 몬테카를로 샘플링」을 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P6.2.2.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「작업 공간 및 도달 가능성 분석」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 매개변수 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P6.2.2.4 검증 및 문제 폐쇄</strong>: 「작업 공간 및 도달 가능성 분석」의 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P6.2.2.5 문서 출력 및 하위 인도</strong>: 「작업 공간 및 도달 가능성 분석」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 참조</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_8">야코비안 및 속도/힘 전달 분석</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 기하 야코비안, 조작도 타원체, 힘 타원체</li>
+<li><strong>설계 사고 논리</strong>: 다양한 자세에서 로봇의 속도/힘 조작 능력을 평가하여 제어 설계에 근거 제공</li>
+<li><strong>주요 제약 조건</strong>: 수치 안정성</li>
+<li><strong>완료 기준 / 산출물</strong>: 일반 자세 조작도 지표, 힘 전달 효율 분석
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P6.2.3.1 입력 정리 및 목표 정량화</strong>: 「야코비안 및 속도/힘 전달 분석」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P6.2.3.2 방안/방법 설계</strong>: 「야코비안 및 속도/힘 전달 분석」에 대한 구현 방법 또는 후보 방안을 수립하고, 「기하 야코비안, 조작도 타원체, 힘 타원체」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P6.2.3.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「야코비안 및 속도/힘 전달 분석」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품 구축 및 핵심 매개변수 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P6.2.3.4 검증 및 문제 폐쇄</strong>: 「야코비안 및 속도/힘 전달 분석」의 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P6.2.3.5 문서 출력 및 하위 인도</strong>: 「야코비안 및 속도/힘 전달 분석」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 참조</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h2 id="_9">완료 기준</h2>
+<p>본 단계의 모든 3레벨 하위 작업은 검수 심사를 통과하며, 주요 산출물의 버전이 관리되고 하위 의존 부서에 공식적으로 인도됩니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_pinocchio/">Pinocchio</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5/">本体结构工程与原型（Mechanical Structure）</a>
+              <span class="rel-desc">P6 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p6_1_1/">URDF/SDF 文件生成</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p6_2_2/">工作空间与可达性分析</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p6_2_1/">正逆运动学解算验证</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p6_1_2/">DH / 修改 DH 参数定义</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p6_2_2/">工作空间与可达性分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P10 依赖 P6 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p6_2_1/">正逆运动学解算验证</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p6_1_3/">碰撞与自干涉模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p6_2_3/">雅可比与速度/力传递分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p7/">仿真平台搭建与验证（Simulation）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P7 依赖 P6 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p6_1_1/">URDF/SDF 文件生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p6_1_2/">DH / 修改 DH 参数定义</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p6"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p6_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>URDF/SDF 文件生成</h3>
+          <p>可在 RViz/Gazebo/Isaac Sim 中正确加载、无解析错误</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10/">
+          <span class="entry-type">방법</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_pinocchio/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>Pinocchio</h3>
+          <p>효율적인 강체 동역학·운동학·해석적 미분을 위한 오픈소스 C++ 라이브러리로, 로보틱스 연구 및 모델 기반 제어에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p6_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>碰撞与自干涉模型</h3>
+          <p>典型动作无自碰撞误报、关键姿态无环境穿透</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p6_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>正逆运动学解算验证</h3>
+          <p>随机 1000 组位姿 IK 成功率 &gt; 99%、位置误差 &lt; 1 mm</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p6_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>DH / 修改 DH 参数定义</h3>
+          <p>《DH 参数表》、正运动学代码与 URDF 对比误差 &lt; 1e-6</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p7/">
+          <span class="entry-type">방법</span>
+          <h3>仿真平台搭建与验证（Simulation）</h3>
+          <p>仿真平台搭建与验证（Simulation）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p6_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>工作空间与可达性分析</h3>
+          <p>《工作空间分析报告》：可达域包络、关键姿态覆盖度 &gt; 95%</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p6_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>雅可比与速度/力传递分析</h3>
+          <p>典型姿态可操作度指标、力传递效率分析</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5/">
+          <span class="entry-type">방법</span>
+          <h3>本体结构工程与原型（Mechanical Structure）</h3>
+          <p>本体结构工程与原型（Mechanical Structure）</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#_3">주요 하위 작업 및 기술 내용</a><ul>
+<li><a href="#urdfsdf">URDF/SDF 모델 구축</a><ul>
+<li><a href="#urdfsdf_1">URDF/SDF 파일 생성</a></li>
+<li><a href="#dh-dh">DH / 수정 DH 매개변수 정의</a></li>
+<li><a href="#_4">충돌 및 자체 간섭 모델</a></li>
+</ul>
+</li>
+<li><a href="#_5">운동학 검증</a><ul>
+<li><a href="#_6">정/역운동학 해석 검증</a></li>
+<li><a href="#_7">작업 공간 및 도달 가능성 분석</a></li>
+<li><a href="#_8">야코비안 및 속도/힘 전달 분석</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_9">완료 기준</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

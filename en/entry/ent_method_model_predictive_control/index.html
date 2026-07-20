@@ -1,0 +1,2822 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model Predictive Control (MPC) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Model Predictive Control (MPC)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Model Predictive Control (MPC)</h1>
+      <p class="entry-name-en">Model Predictive Control (MPC)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">Stage 2 · Biped Platform</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem using a predictive model and applies only the first control action.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1017/9781139061799" target="_blank" rel="noopener">F. Borrelli, A. Bemporad, and M. Morari, Predictive Control for Linear and Hybrid Systems, Cambridge, 2017</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1007/s10514-016-9572-3" target="_blank" rel="noopener">S. Kuindersma et al., Optimization-based Locomotion Planning, Estimation, and Control Design for Atlas, Autonomous Robots, 2016</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">is_based_on</span>
+            <a href="/en/entry/ent_formalism_euler_lagrange_equations/">Euler-Lagrange Equations</a>
+            
+              
+                
+              
+              <span class="rel-desc">MPC for humanoids commonly uses floating-base dynamics derived from Euler-Lagrange or Newton-Euler equations as the prediction model.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">solves</span>
+            <a href="/en/entry/ent_qp_standard_form/">Standard Quadratic Program (QP)</a>
+            
+              
+                
+              
+              <span class="rel-desc">Each MPC iteration solves a quadratic program (QP) when the dynamics and constraints are linearized.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">requires</span>
+            <a href="/en/entry/ent_foundation_convex_optimization/">Convex Optimization</a>
+            
+              
+                
+              
+              <span class="rel-desc">Stability and tractability of MPC rely on convex optimization theory and efficient QP solvers.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem based on a predictive model and executes only the first control action.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-model-predictive-control-mpc">Definition and Positioning of Model Predictive Control (MPC)</h3>
+<p>Model Predictive Control (MPC) belongs to the <strong>method</strong> type. Its domain includes AI models and algorithms. Value chain level: intelligence layer. It is an optimization-based control method that repeatedly solves a finite-horizon optimal control problem based on a predictive model and executes only the first control action. The English name is <em>Model Predictive Control (MPC)</em>. The Korean name is <em>모델 예측 제어(MPC)</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-model-predictive-control-mpc">Mathematical and Theoretical Foundations of Model Predictive Control (MPC)</h3>
+<p>Model Predictive Control (MPC) is built upon relevant mathematical theories and physical laws. Understanding its underlying assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In humanoid robots, which are high-dimensional, underactuated, and strongly coupled systems, Model Predictive Control (MPC) typically requires a balance between real-time performance, accuracy, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>When implementing Model Predictive Control (MPC) in practice, it is necessary to clarify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable algorithm operation on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>Model Predictive Control (MPC) can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptability remain key issues to address in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>control</li>
+<li>optimization</li>
+<li>locomotion</li>
+<li>gait</li>
+<li>whole_body_control</li>
+<li>realtime</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key methods in the humanoid robot industry chain, Model Predictive Control (MPC) plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall robot performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_operator_task_jacobian/">Task Jacobian</a>
+              <span class="rel-desc">Model Predictive Control (MPC) mentions Task Jacobian.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_pid_control/">PID Control</a>
+              <span class="rel-desc">Model Predictive Control (MPC) has prerequisite PID Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">Model Predictive Control (MPC) mentions EtherCAT.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-desc">Model Predictive Control (MPC) mentions Whole-Body Control (WBC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_convex_optimization/">Convex Optimization</a>
+              <span class="rel-desc">Stability and tractability of MPC rely on convex optimization theory and efficient QP solvers.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">solves</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_qp_standard_form/">Standard Quadratic Program (QP)</a>
+              <span class="rel-desc">Each MPC iteration solves a quadratic program when the system dynamics and constraints are linearized.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_capture_point/">Capture Point</a>
+              <span class="rel-desc">Model Predictive Control (MPC) mentions Capture Point.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_formalism_euler_lagrange_equations/">Euler-Lagrange Equations</a>
+              <span class="rel-desc">MPC for humanoids commonly uses floating-base dynamics derived from Euler-Lagrange equations as the prediction model.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_hover_versatile_humanoid_contr_2024/">HOVER Versatile Humanoid Controller</a>
+              <span class="rel-desc">Model Predictive Control (MPC) mentions HOVER Versatile Humanoid Controller.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_control_operators_for_interact_2025/">Control Operators for Interactive Character Animation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Control Operators for Interactive Character Animation discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sombolestan_hierarchical_adaptive_loco_man_2023/">Hierarchical Adaptive Loco-manipulation Control for Quadruped Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Hierarchical Adaptive Loco-manipulation Control for Quadruped Robots mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_stabilizing_humanoid_robot_tra_2025/">Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_safefall_learning_protective_c_2026/">SafeFall: Learning Protective Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">SafeFall: Learning Protective Control for Humanoid Robots proposes Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gentlehumanoid_learning_upper_2025/">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_urbanvla_a_vision_language_act_2025/">UrbanVLA: A Vision-Language-Action Model for Urban Micromobility</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">UrbanVLA: A Vision-Language-Action Model for Urban Micromobility uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_upkie/">Upkie Wheeled Biped Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Upkie ships with an out-of-the-box MPC (qpmpc) balancing controller example, alongside PID and reinforcement-learning examples.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_concept_demo_to_product_gap/">Demo-to-Product Gap</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Demo-to-Product Gap mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zheng_model_based_control_of_planar_2022/">Model-Based Control of Planar Piezoelectric Inchworm Soft Robot for Crawling in Constrained Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Model-Based Control of Planar Piezoelectric Inchworm Soft Robot for Crawling in Constrained Environments uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_towards_proprioception_aware_e_2025/">Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pace_physics_augmentation_for_2026/">PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hiking_in_the_wild_a_scalable_2026/">Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">Failure Detection and Fault Tolerant Control of a Jet-Powered Flying Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Failure Detection and Fault Tolerant Control of a Jet-Powered Flying Humanoid Robot uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoidexo_scalable_whole_bod_2025_1/">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omnixtreme_breaking_the_genera_2026/">OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_humanoid_video_friday_watch_this_runnin_2026/">Video Friday: Watch This Running Robot Not Fall Down Stairs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Video Friday: Watch This Running Robot Not Fall Down Stairs mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper__2025/">Humanoid Robot Motion and Operation｜Progress and Challenges in Control Planning and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Humanoid Robot Motion and Operation｜Progress and Challenges in Control Planning and Learning uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">A Survey of Robot Manipulation in Contact</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Survey of Robot Manipulation in Contact discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_humanoid_locomotion_w_2024/">Learning Humanoid Locomotion with Perceptive Internal Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Humanoid Locomotion with Perceptive Internal Model uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_seec_stable_end_effector_contr_2025/">SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_neary_improving_pre_trained_vision_l_2025/">Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Geometry-Aware Predictive Safety Filters on Humanoids mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_any2any_efficient_cross_embodi_2026/">Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_let_humanoids_hike_integrative_2025/">Let Humanoids Hike! Integrative Skill Development on Complex Trails</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Let Humanoids Hike! Integrative Skill Development on Complex Trails uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">Multi-robot Implicit Control of Massive Herds</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Multi-robot Implicit Control of Massive Herds uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reference_free_sampling_based_2025/">Reference-Free Sampling-Based Model Predictive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Reference-Free Sampling-Based Model Predictive Control mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_state_nav_stability_aware_trav_2025/">STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_senbaslar_rlss_real_time_decentralized_c_2023/">RLSS: Real-time, Decentralized, Cooperative, Networkless Multi-Robot Trajectory Planning using Linear Spatial Separations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">RLSS: Real-time, Decentralized, Cooperative, Networkless Multi-Robot Trajectory Planning using Linear Spatial Separations is based on Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_u_joint_caams_experimental_eva_2026/">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_curobov2_dynamics_aware_motion_2026/">cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p12/">VLA / WAM / AI algorithm integration (AI &amp; Perception)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">VLA / WAM / AI algorithm integration (AI &amp; Perception) mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_sampled_data_control_based_con_2020/">Sampled-Data Control Based Consensus of Fractional-Order Multi-Agent Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Sampled-Data Control Based Consensus of Fractional-Order Multi-Agent Systems discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mosaic_modular_scalable_autono_2026/">MOSAIC: Modular Scalable Autonomy for Intelligent Coordination of Heterogeneous Robotic Teams</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MOSAIC: Modular Scalable Autonomy for Intelligent Coordination of Heterogeneous Robotic Teams discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple Quadrupedal Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple Quadrupedal Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p12_3_1/">World Model/WAM Construction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">World Model/WAM Construction mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_top_time_optimization_policy_f_2025/">TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hand_eye_autonomous_delivery_l_2025/">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_hierarchical_model_based_sys_2025/">A Hierarchical, Model-Based System for High-Performance Humanoid Soccer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">A Hierarchical, Model-Based System for High-Performance Humanoid Soccer proposes Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_x_op_cross_morphology_whole_bo_2026/">X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tactile_and_vision_conditioned_2026/">Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_arxiv_202507_lovon_legged_open_2025/">arXiv 2025.07, LOVON: Legged Open-Vocabulary Object Navigator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">arXiv 2025.07, LOVON: Legged Open-Vocabulary Object Navigator uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p7_2_1/">Basic standing and walking simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Basic standing and walking simulation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bjelonic_keep_rollin_whole_body_motion_2019/">Keep Rollin&#39; – Whole-Body Motion Control and Planning for Wheeled Quadrupedal Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Keep Rollin&#39; – Whole-Body Motion Control and Planning for Wheeled Quadrupedal Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_motionwam_towards_foundation_w_2026/">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation compares with Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_hierarchical_qp_wbc/">Hierarchical QP Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Hierarchical QP Whole-Body Control mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hu_active_uncertainty_reduction_f_2022/">Active Uncertainty Reduction for Human-Robot Interaction: An Implicit Dual Control Approach</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Active Uncertainty Reduction for Human-Robot Interaction: An Implicit Dual Control Approach mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">Bayesian Optimization with Adaptive Kernels for Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Bayesian Optimization with Adaptive Kernels for Robot Control discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_levy_meta_learning_online_dynamics_2025/">Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_design_and_control_of_a_bipeda_2024/">Design and Control of a Bipedal Robotic Character</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Design and Control of a Bipedal Robotic Character uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hafo_a_force_adaptive_control_2025/">HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments cites Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_float_drone_for_physical_inter_2026/">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reinforcement_learning_with_da_2026/">Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_balance_motor_ther_2026/">Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_behavior_foundation_model_for_2025/">Behavior Foundation Model for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Behavior Foundation Model for Humanoid Robots mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dreamzero_world_action_models_2026/">DreamZero: World Action Models are Zero-shot Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DreamZero: World Action Models are Zero-shot Policies mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_xu_wam_flow_parallel_coarse_to_fi_2025/">WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_predictive_sampling_real_time_2022/">Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rl_with_data_bootstrapping_for_2025/">RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_differentiable_reacha_2025/">Learning Differentiable Reachability Maps for Optimization-based Humanoid Motion Generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Differentiable Reachability Maps for Optimization-based Humanoid Motion Generation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_striker_skills_2026_1/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_husky_humanoid_skateboarding_s_2026/">HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_textop_real_time_interactive_t_2026/">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_doublyaware_dual_planning_and_2025/">DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_all_terrain_locomotio_2026/">Learning All-Terrain Locomotion for a Planetary Rover with Actively Articulated Suspension</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning All-Terrain Locomotion for a Planetary Rover with Actively Articulated Suspension uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_impedance_guided_programmable_2026/">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_td_grpc_temporal_difference_le_2025/">TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_optimizing_bipedal_locomotion_2025/">Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_haninger_model_predictive_impedance_con_2022/">Model Predictive Impedance Control with Gaussian Processes for Human and Environment Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Model Predictive Impedance Control with Gaussian Processes for Human and Environment Interaction mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_motion_planning_in_compressed_2026/">Motion Planning in Compressed Representation Spaces</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Motion Planning in Compressed Representation Spaces discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_whole_body_model_predictive_co_2025/">Whole-Body Model-Predictive Control of Legged Robots with MuJoCo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Whole-Body Model-Predictive Control of Legged Robots with MuJoCo mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shin_infusing_model_predictive_cont_2021/">Infusing Model Predictive Control into Meta-Reinforcement Learning for Mobile Robots in Dynamic Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Infusing Model Predictive Control into Meta-Reinforcement Learning for Mobile Robots in Dynamic Environments mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_morphquad_morphable_quadrotor_2026/">MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_floating_base_dynamics/">Floating-Base Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-desc">Floating-Base Dynamics is prerequisite for Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_aldana_lopez_designing_controllers_with_pre_2023/">Designing controllers with predefined convergence-time bound using bounded time-varying gains</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Designing controllers with predefined convergence-time bound using bounded time-varying gains proposes Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_flam_foundation_model_based_bo_2025/">FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_strouhal_aware_model_predictiv_2026/">Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_aerodynamics_for_the_2025/">Learning Aerodynamics for the Control of Flying Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Aerodynamics for the Control of Flying Humanoid Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hover_versatile_neural_whole_b_2025/">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_heracles_bridging_precise_trac_2026/">Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control proposes Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_eiffert_predicting_responses_to_a_robo_2020/">Predicting Responses to a Robot&#39;s Future Motion using Generative Recurrent Neural Networks</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Predicting Responses to a Robot&#39;s Future Motion using Generative Recurrent Neural Networks discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_anchorvla_bridging_discrete_de_2026/">AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_kkt_conditions/">Karush-Kuhn-Tucker (KKT) Conditions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Karush-Kuhn-Tucker (KKT) Conditions mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_structured_4d_latent_predictiv_2026/">Structured 4D Latent Predictive Model for Robot Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Structured 4D Latent Predictive Model for Robot Planning discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_opening_the_sim_to_real_door_f_2025_1/">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_human_aware_physical_human_rob_2024/">Human-Aware Physical Human-Robot Collaborative Transportation and Manipulation with Multiple Aerial Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Human-Aware Physical Human-Robot Collaborative Transportation and Manipulation with Multiple Aerial Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_hierarchical_framework_for_h_2025/">A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_vla_towards_universal_2025/">Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_openloong/">OpenLoong (Qinglong) Open-Source Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">OpenLoong&#39;s open-source whole-body dynamics control framework OpenLoong-Dyn-Control is built on MPC plus WBC and is deployable in MuJoCo simulation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_safeflow_real_time_text_driven_2026/">SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoidexo_scalable_whole_bod_2025/">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_iterative_closed_loop_motion_s_2026/">Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sarkar_planning_robot_motion_using_de_2019/">Planning Robot Motion using Deep Visual Prediction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Planning Robot Motion using Deep Visual Prediction proposes Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_quadrupedal_locomotio_2026/">Learning Quadrupedal Locomotion over Challenging Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Quadrupedal Locomotion over Challenging Terrain uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_a_vision_based_footst_2025/">Learning a Vision-Based Footstep Planner for Hierarchical Walking Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning a Vision-Based Footstep Planner for Hierarchical Walking Control uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10/">Motion Control Algorithm Development and Validation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Motion Control Algorithm Development and Validation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rapt_model_predictive_out_of_d_2026/">RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_collision_free_humanoid_traver_2026/">Collision-Free Humanoid Traversal in Cluttered Indoor Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Collision-Free Humanoid Traversal in Cluttered Indoor Scenes mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">Full-Pose Tracking Control for Aerial Robotic Systems with Laterally-Bounded Input Force</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Full-Pose Tracking Control for Aerial Robotic Systems with Laterally-Bounded Input Force discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pilot_a_perceptive_integrated_2026/">PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes compares with Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_neural_control_adjoint_learnin_2026/">Neural Control: Adjoint Learning Through Equilibrium Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Neural Control: Adjoint Learning Through Equilibrium Constraints discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mind_v_hierarchical_world_mode_2026/">MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with RL-based Physical Alignment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with RL-based Physical Alignment discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_manifold_constrained_hamilton_2026/">Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shield_safety_on_humanoids_via_2025/">SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">develops</span>
+              <span class="rel-desc">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot develops Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mechanical_intelligence_aware_2025/">Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_oehler_accurate_pose_prediction_on_si_2023/">Accurate Pose Prediction on Signed Distance Fields for Mobile Ground Robots in Rough Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Accurate Pose Prediction on Signed Distance Fields for Mobile Ground Robots in Rough Terrain mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ceer_compliant_end_effector_an_2026/">CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hester_a_real_time_model_based_reinfo_2011/">A Real-Time Model-Based Reinforcement Learning Architecture for Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Real-Time Model-Based Reinforcement Learning Architecture for Robot Control discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robot_trajectron_v3_a_probabil_2026/">Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_thor_towards_human_level_whole_2025/">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_direction_and_trajectory_track_2022/">Direction and Trajectory Tracking Control for Nonholonomic Spherical Robot by Combining Sliding Mode Controller and Model Prediction Controller</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Direction and Trajectory Tracking Control for Nonholonomic Spherical Robot by Combining Sliding Mode Controller and Model Prediction Controller mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dynaretarget_dynamically_feasi_2026/">DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_2_1/">Standing and Anti-Interference Balance Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Standing and Anti-Interference Balance Control mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dexterous_safe_control_for_hum_2025/">Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hand_eye_autonomous_delivery_l_2025_1/">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ficht_centroidal_state_estimation_an_2023/">Centroidal State Estimation and Control for Hardware-constrained Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Centroidal State Estimation and Control for Hardware-constrained Humanoid Robots discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_whole_body_bilateral_teleopera_2025/">Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unified_structural_hydrodynami_2026/">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025/">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">integrates</span>
+              <span class="rel-desc">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation integrates Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ultra_unified_multimodal_contr_2026/">ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_striker_skills_2026/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_textop_real_time_interactive_t_2026_1/">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_physv2a_reachability_gated_and_2026/">PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fahmi_vital_vision_based_terrain_awa_2022/">ViTAL: Vision-Based Terrain-Aware Locomotion for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ViTAL: Vision-Based Terrain-Aware Locomotion for Legged Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_active_metric_semantic_mapping_2023/">Active Metric-Semantic Mapping by Multiple Aerial Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Active Metric-Semantic Mapping by Multiple Aerial Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">Extreme Parkour with Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Extreme Parkour with Legged Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vofa_visual_object_goal_pushin_2026/">VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_experts_to_a_generalist_t_2025/">From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omnitrack_general_motion_track_2026/">OmniTrack: General Motion Tracking via Physics-Consistent Reference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">OmniTrack: General Motion Tracking via Physics-Consistent Reference uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_anymal_parkour_robust_percepti_2026/">ANYmal Parkour: Robust Perceptive Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ANYmal Parkour: Robust Perceptive Locomotion uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hierarchical_visuomotor_contro_2018/">Hierarchical visuomotor control of humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Hierarchical visuomotor control of humanoids mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_agile_a_comprehensive_workflow_2026/">AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shi_koopman_operators_for_modeling_2023/">Koopman Operators for Modeling and Control of Soft Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Koopman Operators for Modeling and Control of Soft Robotics mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_comfree_sim_a_gpu_parallelized_2026/">ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_splitadapter_load_aware_humano_2026/">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_opening_the_sim_to_real_door_f_2025/">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025_1/">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">integrates</span>
+              <span class="rel-desc">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation integrates Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_bruce/">BRUCE (Bipedal Robot Unit with Compliance Enhanced)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">BRUCE runs a variable-frequency MPC locomotion control algorithm supporting walking, running and jumping.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_visualmimic_visual_humanoid_lo_2025/">VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_track_any_motions_under_any_di_2025/">Track Any Motions under Any Disturbances</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Track Any Motions under Any Disturbances mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_eco_energy_constrained_optimiz_2026/">ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_faststair_learning_to_run_up_s_2026/">FastStair: Learning to Run Up Stairs with Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">FastStair: Learning to Run Up Stairs with Humanoid Robots uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_khazoom_tailoring_solution_accuracy_fo_2024/">Tailoring Solution Accuracy for Fast Whole-body Model Predictive Control of Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Tailoring Solution Accuracy for Fast Whole-body Model Predictive Control of Legged Robots proposes Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learned_motion_matching_2020/">Learned motion matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learned motion matching uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_haic_humanoid_agile_object_int_2026/">HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model cites Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_task_adaptive_design_of_modula_2026/">Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_amanzadeh_predictive_control_with_indire_2024/">Predictive Control with Indirect Adaptive Laws for Payload Transportation by Quadrupedal Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Predictive Control with Indirect Adaptive Laws for Payload Transportation by Quadrupedal Robots mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pro_hoi_perceptive_root_guided_2026/">Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nian_control_your_robot_a_unified_s_2025/">Control Your Robot: A Unified System for Robot Control and Policy Deployment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Control Your Robot: A Unified System for Robot Control and Policy Deployment discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hierarchical_planning_and_cont_2023/">Hierarchical Planning and Control for Box Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Hierarchical Planning and Control for Box Loco-Manipulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_skillblender_towards_versatile_2025/">SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_underwatervla_dual_brain_visio_2025/">UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_adversarial_locomotion_and_mot_2025/">Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tang_collaborative_planar_pushing_o_2024/">Collaborative Planar Pushing of Polytopic Objects with Multiple Robots in Complex Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Collaborative Planar Pushing of Polytopic Objects with Multiple Robots in Complex Scenes proposes Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omni_perception_omnidirectiona_2025/">Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_morgan_model_predictive_actor_critic_2021/">Model Predictive Actor-Critic: Accelerating Robot Skill Acquisition with Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Model Predictive Actor-Critic: Accelerating Robot Skill Acquisition with Deep Reinforcement Learning mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_co_design_framework_for_high_2026/">A Co-Design Framework for High-Performance Jumping of a Five-Bar Monoped with Actuator Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">A Co-Design Framework for High-Performance Jumping of a Five-Bar Monoped with Actuator Optimization uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_robot_acrobatics_util_2025/">Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hierarchical_intention_aware_e_2025/">Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_scalable_and_general_whole_bod_2026/">Scalable and General Whole-Body Control for Cross-Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">integrates</span>
+              <span class="rel-desc">Scalable and General Whole-Body Control for Cross-Humanoid Locomotion integrates Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cad_driven_co_design_for_fligh_2025/">CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_full_order_sampling_based_mpc_2024/">Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding studies Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lauri_planning_for_robotic_explorati_2015/">Planning for robotic exploration based on forward simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Planning for robotic exploration based on forward simulation uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">Hierarchical Reduced-Order Model Predictive Control for Robust Locomotion on Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Hierarchical Reduced-Order Model Predictive Control for Robust Locomotion on Humanoid Robots mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_perceptive_humanoid_l_2025/">Learning Perceptive Humanoid Locomotion over Challenging Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Perceptive Humanoid Locomotion over Challenging Terrain uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_skater_synthesized_kinematics_2026/">SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles uses Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_occluding_the_solution_space_p_2026/">Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation discusses Model Predictive Control (MPC).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_model_predictive_control"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_levy_meta_learning_online_dynamics_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving</h3>
+          <p>Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving (Meta-Learning Online…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_active_metric_semantic_mapping_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Active Metric-Semantic Mapping by Multiple Aerial Robots</h3>
+          <p>This paper presents PAMS, an active metric-semantic mapping framework in which multiple…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tang_collaborative_planar_pushing_o_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Collaborative Planar Pushing of Polytopic Objects with Multiple Robots in Complex Scenes</h3>
+          <p>This 2024 arXiv paper proposes a hybrid optimization framework in which a team of mobile robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_vla_towards_universal_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</h3>
+          <p>The implementation path of Humanoid-VLA is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_task_adaptive_design_of_modula_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</h3>
+          <p>arXiv:2607.09548v1 Announce Type: new Abstract: Aerial manipulation with multirotor platforms…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_textop_real_time_interactive_t_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</h3>
+          <p>TextOp mainly solves the data closed loop: using language instructions, teleoperation/exoskeleton…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dexterous_safe_control_for_hum_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm</h3>
+          <p>Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bjelonic_keep_rollin_whole_body_motion_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Keep Rollin&#39; – Whole-Body Motion Control and Planning for Wheeled Quadrupedal Robots</h3>
+          <p>This paper presents an online zero-moment-point motion optimizer and a hierarchical whole-body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_anchorvla_bridging_discrete_de_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning</h3>
+          <p>arXiv:2607.03182v1 Announce Type: new Abstract: Autonomous driving planning requires translating…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_visualmimic_visual_humanoid_lo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation</h3>
+          <p>VisualMimic first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adversarial_locomotion_and_mot_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning</h3>
+          <p>This work mainly addresses the data closed loop: collecting human operation and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_a_vision_based_footst_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning a Vision-Based Footstep Planner for Hierarchical Walking Control</h3>
+          <p>Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>A Survey of Robot Manipulation in Contact</h3>
+          <p>This survey reviews robot manipulation tasks that require sustained or controlled contact with the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM mainly solves the closed-loop data problem: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_stabilizing_humanoid_robot_tra_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning</h3>
+          <p>Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_collision_free_humanoid_traver_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Collision-Free Humanoid Traversal in Cluttered Indoor Scenes</h3>
+          <p>Collision-Free Humanoid Traversal in Cluttered Indoor Scenes is a 2026 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_control_operators_for_interact_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Control Operators for Interactive Character Animation</h3>
+          <p>Control Operators for Interactive Character Animation is a 2025 work on human motion analysis and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omnitrack_general_motion_track_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>OmniTrack: General Motion Tracking via Physics-Consistent Reference</h3>
+          <p>OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge node related to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_humanoid_locomotion_w_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Humanoid Locomotion with Perceptive Internal Model</h3>
+          <p>Learning Humanoid Locomotion with Perceptive Internal Model is a 2024 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mosaic_modular_scalable_autono_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MOSAIC: Modular Scalable Autonomy for Intelligent Coordination of Heterogeneous Robotic Teams</h3>
+          <p>arXiv:2601.23038v3 Announce Type: replace Abstract: Mobile robots have become indispensable for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10/">
+          <span class="entry-type">Method</span>
+          <h3>Motion Control Algorithm Development and Validation</h3>
+          <p>Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper__2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Robot Motion and Operation｜Progress and Challenges in Control Planning and Learning</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_aerodynamics_for_the_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Aerodynamics for the Control of Flying Humanoid Robots</h3>
+          <p>Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_opening_the_sim_to_real_door_f_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</h3>
+          <p>This work mainly addresses data closed loops: acquisition of human operation and robotic states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_safeflow_real_time_text_driven_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating</h3>
+          <p>SafeFlow first recovers the scene, target, or motion representation from the ontological state and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_aldana_lopez_designing_controllers_with_pre_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Designing controllers with predefined convergence-time bound using bounded time-varying gains</h3>
+          <p>This chapter proposes a redesign methodology to construct robust predefined-time controllers for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_flam_foundation_model_based_bo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation</h3>
+          <p>FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_seec_stable_end_effector_contr_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation</h3>
+          <p>SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_skillblender_towards_versatile_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending</h3>
+          <p>SkillBlender first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_impedance_guided_programmable_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</h3>
+          <p>arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_occluding_the_solution_space_p_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation</h3>
+          <p>arXiv:2607.03758v1 Announce Type: new Abstract: Adversarial attacks on motion planning are crucial…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hover_versatile_neural_whole_b_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots</h3>
+          <p>HOVER first recovers scene, goal, or motion representations from ontology states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tactile_and_vision_conditioned_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</h3>
+          <p>arXiv:2607.09218v1 Announce Type: new Abstract: Whole-arm manipulation involves direct contact with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_robot_acrobatics_util_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics</h3>
+          <p>Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_skater_synthesized_kinematics_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles</h3>
+          <p>SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_behavior_foundation_model_for_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Behavior Foundation Model for Humanoid Robots</h3>
+          <p>This work mainly addresses the data closed loop: collecting human operation and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_balance_motor_ther_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</h3>
+          <p>arXiv:2605.27046v3 Announce Type: replace Abstract: Motor thermal management is often overlooked in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p12_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>World Model/WAM Construction</h3>
+          <p>Demonstration of the world model’s predictive capabilities, prediction error metrics</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoidexo_scalable_whole_bod_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</h3>
+          <p>HumanoidExo primarily addresses data closure: acquiring human operations and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shield_safety_on_humanoids_via_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics</h3>
+          <p>SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_co_design_framework_for_high_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>A Co-Design Framework for High-Performance Jumping of a Five-Bar Monoped with Actuator Optimization</h3>
+          <p>arXiv:2604.06025v2 Announce Type: replace Abstract: The performance of legged robots depends…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vofa_visual_object_goal_pushin_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids</h3>
+          <p>VOFA converts camera images/multi-view observations, body state and joint sequences, and simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_operator_task_jacobian/">
+          <span class="entry-type">Operator</span>
+          <h3>Task Jacobian</h3>
+          <p>The matrix that maps joint-space velocities and accelerations to the velocity/acceleration of a task…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical Reduced-Order Model Predictive Control for Robust Locomotion on Humanoid Robots</h3>
+          <p>Presents a hierarchical reduced-order model predictive control framework for humanoid locomotion,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple Quadrupedal Robots</h3>
+          <p>This paper proposes an online cascaded planning framework in which multiple quadrupedal robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_kkt_conditions/">
+          <span class="entry-type">Theorem</span>
+          <h3>Karush-Kuhn-Tucker (KKT) Conditions</h3>
+          <p>Necessary (and sufficient under convexity/constraint qualification) optimality conditions for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_morphquad_morphable_quadrotor_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</h3>
+          <p>arXiv:2607.02764v1 Announce Type: new Abstract: Infrastructure maintenance, contact-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rl_with_data_bootstrapping_for_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</h3>
+          <p>RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">Formalism</span>
+          <h3>Euler-Lagrange Equations</h3>
+          <p>Second-order differential equations derived from the stationarity of the action integral, giving the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_textop_real_time_interactive_t_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</h3>
+          <p>TextOp primarily addresses data closed loops: using language instructions, teleoperation/exoskeleton…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Failure Detection and Fault Tolerant Control of a Jet-Powered Flying Humanoid Robot</h3>
+          <p>This paper proposes an RPM-based failure detector, a momentum-based flight controller, and an…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omni_perception_omnidirectiona_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments</h3>
+          <p>Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pilot_a_perceptive_integrated_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes</h3>
+          <p>Pilot first recovers the scene, target, or motion representation from ontological states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_iterative_closed_loop_motion_s_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control</h3>
+          <p>Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_qp_standard_form/">
+          <span class="entry-type">Formalism</span>
+          <h3>Standard Quadratic Program (QP)</h3>
+          <p>A convex optimization problem where a quadratic objective is minimized subject to linear equality…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_hierarchical_qp_wbc/">
+          <span class="entry-type">Method</span>
+          <h3>Hierarchical QP Whole-Body Control</h3>
+          <p>A whole-body control method that stacks multiple tasks by priority and solves them as a cascade of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_amanzadeh_predictive_control_with_indire_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Predictive Control with Indirect Adaptive Laws for Payload Transportation by Quadrupedal Robots</h3>
+          <p>This paper presents a hierarchical adaptive model-predictive-control (AMPC) framework for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zheng_model_based_control_of_planar_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Model-Based Control of Planar Piezoelectric Inchworm Soft Robot for Crawling in Constrained Environments</h3>
+          <p>Zheng et al. present a model-based full-shape controller for a five-actuator planar piezoelectric…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids</h3>
+          <p>Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hester_a_real_time_model_based_reinfo_2011/">
+          <span class="entry-type">Paper</span>
+          <h3>A Real-Time Model-Based Reinforcement Learning Architecture for Robot Control</h3>
+          <p>Presents RTMBA, a parallel architecture for model-based reinforcement learning that uses…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mind_v_hierarchical_world_mode_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with RL-based Physical Alignment</h3>
+          <p>arXiv:2512.06628v4 Announce Type: replace Abstract: Scalable embodied intelligence is constrained by…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_splitadapter_load_aware_humano_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</h3>
+          <p>SplitAdapter converts simulated interaction data into trackable body targets and uses PPO/RL policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_haninger_model_predictive_impedance_con_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Model Predictive Impedance Control with Gaussian Processes for Human and Environment Interaction</h3>
+          <p>This paper proposes a nonlinear model predictive control framework that jointly optimizes robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hierarchical_intention_aware_e_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots</h3>
+          <p>Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_top_time_optimization_policy_f_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots</h3>
+          <p>TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_predictive_sampling_real_time_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</h3>
+          <p>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_pid_control/">
+          <span class="entry-type">Method</span>
+          <h3>PID Control</h3>
+          <p>A foundational feedback control method that computes a control signal as a linear combination of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reinforcement_learning_with_da_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</h3>
+          <p>Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_strouhal_aware_model_predictiv_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion</h3>
+          <p>arXiv:2607.03216v1 Announce Type: new Abstract: Efficient flapping propulsion hinges on operating…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_any2any_efficient_cross_embodi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking</h3>
+          <p>Any2Any converts visual, state, and action data into trackable body targets and outputs full-body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_scalable_and_general_whole_bod_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Scalable and General Whole-Body Control for Cross-Humanoid Locomotion</h3>
+          <p>This work mainly addresses data closed loops: acquisition of human operation and robotic states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_full_order_sampling_based_mpc_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing</h3>
+          <p>Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_khazoom_tailoring_solution_accuracy_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Tailoring Solution Accuracy for Fast Whole-body Model Predictive Control of Legged Robots</h3>
+          <p>Presents a whole-body nonlinear model predictive control framework that uses one SQP iteration per…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_oehler_accurate_pose_prediction_on_si_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Accurate Pose Prediction on Signed Distance Fields for Mobile Ground Robots in Rough Terrain</h3>
+          <p>Presents an iterative geometric method that predicts the 3D pose of mobile ground robots with active…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hiking_in_the_wild_a_scalable_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids</h3>
+          <p>Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lauri_planning_for_robotic_explorati_2015/">
+          <span class="entry-type">Paper</span>
+          <h3>Planning for robotic exploration based on forward simulation</h3>
+          <p>Lauri and Ritala formulate robotic exploration as a POMDP with a mutual-information reward and solve…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</h3>
+          <p>HITTER first recovers scene, target, or motion representations from human video/kinetach…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_physv2a_reachability_gated_and_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation</h3>
+          <p>arXiv:2607.09365v1 Announce Type: new Abstract: Video-based manipulation provides object-centric…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoidexo_scalable_whole_bod_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</h3>
+          <p>HumanoidExo primarily addresses data closure: collecting human operations and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_underwatervla_dual_brain_visio_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation</h3>
+          <p>UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_x_op_cross_morphology_whole_bo_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting</h3>
+          <p>X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting is a paper on Teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_humanoid_video_friday_watch_this_runnin_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Video Friday: Watch This Running Robot Not Fall Down Stairs</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_doublyaware_dual_planning_and_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion</h3>
+          <p>DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_towards_proprioception_aware_e_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots</h3>
+          <p>Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_track_any_motions_under_any_di_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Track Any Motions under Any Disturbances</h3>
+          <p>This work first recovers scene, target, or motion representations from simulated interaction data…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_curobov2_dynamics_aware_motion_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots</h3>
+          <p>cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_human_aware_physical_human_rob_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Human-Aware Physical Human-Robot Collaborative Transportation and Manipulation with Multiple Aerial Robots</h3>
+          <p>Proposes a hierarchical control framework in which a team of quadrotors carrying a cable-suspended…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</h3>
+          <p>arXiv:2504.16738v3 Announce Type: replace Abstract: Planning long-horizon manipulation motions using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_faststair_learning_to_run_up_s_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FastStair: Learning to Run Up Stairs with Humanoid Robots</h3>
+          <p>FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_agile_a_comprehensive_workflow_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning</h3>
+          <p>AGILE first recovers scene, target or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_haic_humanoid_agile_object_int_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model</h3>
+          <p>HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_experts_to_a_generalist_t_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</h3>
+          <p>This work transforms camera images/multi-view observations, proprioceptive states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hierarchical_visuomotor_contro_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical visuomotor control of humanoids</h3>
+          <p>Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_whole_body_model_predictive_co_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Whole-Body Model-Predictive Control of Legged Robots with MuJoCo</h3>
+          <p>Whole-Body Model-Predictive Control of Legged Robots with MuJoCo is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</h3>
+          <p>This paper presents a multi-rate Model Predictive Control framework for the jet-powered humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_striker_skills_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_state_nav_stability_aware_trav_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</h3>
+          <p>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-robot Implicit Control of Massive Herds</h3>
+          <p>This paper proposes a multi-robot herding method that combines Implicit Control with a dynamic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_thor_towards_human_level_whole_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</h3>
+          <p>Thor converts camera images/multi-view observations, body state and joint sequences, contact…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_capture_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Capture Point</h3>
+          <p>A point on the ground where the robot must step to bring itself to a complete stop, used as a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cad_driven_co_design_for_fligh_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids</h3>
+          <p>CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids is a 2025 work on hardware design for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</h3>
+          <p>HOMIE mainly solves the data closed loop: using ontology state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_anymal_parkour_robust_percepti_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ANYmal Parkour: Robust Perceptive Locomotion</h3>
+          <p>ANYmal Parkour: Robust Perceptive Locomotion is a paper on walking Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_neural_control_adjoint_learnin_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Neural Control: Adjoint Learning Through Equilibrium Constraints</h3>
+          <p>arXiv:2605.03288v2 Announce Type: replace Abstract: Many physical AI tasks require sequential…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hand_eye_autonomous_delivery_l_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</h3>
+          <p>This work first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unified_structural_hydrodynami_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</h3>
+          <p>arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shi_koopman_operators_for_modeling_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Koopman Operators for Modeling and Control of Soft Robotics</h3>
+          <p>A 2023 review of Koopman operator theory and its data-driven approximations (EDMD/gEDMD) for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fahmi_vital_vision_based_terrain_awa_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>ViTAL: Vision-Based Terrain-Aware Locomotion for Legged Robots</h3>
+          <p>ViTAL proposes an online vision-based locomotion planning strategy that jointly plans body poses and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pro_hoi_perceptive_root_guided_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction</h3>
+          <p>Pro-hoi first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ficht_centroidal_state_estimation_an_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Centroidal State Estimation and Control for Hardware-constrained Humanoid Robots</h3>
+          <p>Introduces centroidal state estimation and control methods for humanoid robots with hardware…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rapt_model_predictive_out_of_d_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots</h3>
+          <p>RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_arxiv_202507_lovon_legged_open_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>arXiv 2025.07, LOVON: Legged Open-Vocabulary Object Navigator</h3>
+          <p>arXiv 2025.07, LOVON: Legged Open-Vocabulary Object Navigator is a 2025 work on navigation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_td_grpc_temporal_difference_le_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</h3>
+          <p>TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_let_humanoids_hike_integrative_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Let Humanoids Hike! Integrative Skill Development on Complex Trails</h3>
+          <p>Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ultra_unified_multimodal_contr_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation</h3>
+          <p>ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_differentiable_reacha_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Differentiable Reachability Maps for Optimization-based Humanoid Motion Generation</h3>
+          <p>Learning Differentiable Reachability Maps for Optimization-based Humanoid Motion Generation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_hierarchical_framework_for_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs</h3>
+          <p>A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_eiffert_predicting_responses_to_a_robo_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Predicting Responses to a Robot&#39;s Future Motion using Generative Recurrent Neural Networks</h3>
+          <p>Proposes ResponseRNN, a spatio-temporal graph RNN that conditions future trajectory predictions of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM mainly solves the closed-loop data problem: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_eco_energy_constrained_optimiz_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking</h3>
+          <p>ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking is a 2026 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Extreme Parkour with Legged Robots</h3>
+          <p>Extreme Parkour with Legged Robots is a paper on Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learned_motion_matching_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Learned motion matching</h3>
+          <p>Learned motion matching is a 2020 work on human motion analysis and synthesis for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</h3>
+          <p>This paper proposes a predictive safety filter that combines nonlinear model predictive control…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_opening_the_sim_to_real_door_f_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</h3>
+          <p>This work mainly addresses data closed loops: acquisition of human operation and robotic states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_demo_to_product_gap/">
+          <span class="entry-type">Concept</span>
+          <h3>Demo-to-Product Gap</h3>
+          <p>The systematic gap between metrics optimized for staged demonstrations and those required for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_manifold_constrained_hamilton_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning</h3>
+          <p>arXiv:2511.03591v2 Announce Type: replace Abstract: Safe multi-agent motion planning (MAMP) under…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_xu_wam_flow_parallel_coarse_to_fi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving</h3>
+          <p>WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mechanical_intelligence_aware_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation</h3>
+          <p>Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_whole_body_bilateral_teleopera_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation</h3>
+          <p>Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omnixtreme_breaking_the_genera_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control</h3>
+          <p>OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hu_active_uncertainty_reduction_f_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Active Uncertainty Reduction for Human-Robot Interaction: An Implicit Dual Control Approach</h3>
+          <p>Presents an implicit dual-control stochastic MPC algorithm that enables robots to actively reduce…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_morgan_model_predictive_actor_critic_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Model Predictive Actor-Critic: Accelerating Robot Skill Acquisition with Deep Reinforcement Learning</h3>
+          <p>This paper introduces Model Predictive Actor-Critic (MoPAC), a hybrid model-based/model-free…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Full-Pose Tracking Control for Aerial Robotic Systems with Laterally-Bounded Input Force</h3>
+          <p>This paper introduces Laterally Bounded Force (LBF) vehicles, a class of aerial robots whose primary…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_bruce/">
+          <span class="entry-type">Robot System</span>
+          <h3>BRUCE (Bipedal Robot Unit with Compliance Enhanced)</h3>
+          <p>A 70 cm, 4.8 kg child-size bipedal humanoid platform co-developed by Westwood Robotics and UCLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</h3>
+          <p>Falcon primarily addresses data closed-loop: capturing human operations and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dynaretarget_dynamically_feasi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization</h3>
+          <p>DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_upkie/">
+          <span class="entry-type">Robot System</span>
+          <h3>Upkie Wheeled Biped Robot</h3>
+          <p>A fully open-source wheeled biped robot built from about 3,000 USD of off-the-shelf components plus…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Standing and Anti-Interference Balance Control</h3>
+          <p>Video of the standing anti-interference physical prototype; its recovery capability meets the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</h3>
+          <p>arXiv:2607.00569v1 Announce Type: new Abstract: In this article, we present dynamic modeling, gait…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_striker_skills_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gentlehumanoid_learning_upper_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</h3>
+          <p>Gentlehumanoid first recovers scenes, targets, or motion representations from camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space</h3>
+          <p>This work mainly addresses the data closed loop: collecting human operation and robot state using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shin_infusing_model_predictive_cont_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Infusing Model Predictive Control into Meta-Reinforcement Learning for Mobile Robots in Dynamic Environments</h3>
+          <p>Proposes MPC-PEARL, an algorithm that combines off-policy meta-reinforcement learning with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hierarchical_planning_and_cont_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical Planning and Control for Box Loco-Manipulation</h3>
+          <p>Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_senbaslar_rlss_real_time_decentralized_c_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>RLSS: Real-time, Decentralized, Cooperative, Networkless Multi-Robot Trajectory Planning using Linear Spatial Separations</h3>
+          <p>RLSS is a decentralized, communication-free, receding-horizon trajectory planner for multiple robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p12/">
+          <span class="entry-type">Method</span>
+          <h3>VLA / WAM / AI algorithm integration (AI &amp; Perception)</h3>
+          <p>VLA / WAM / AI algorithm integration (AI &amp; Perception) — the 12th phase of the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</h3>
+          <p>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>EtherCAT</h3>
+          <p>High-performance industrial Ethernet field bus for deterministic joint control.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_motionwam_towards_foundation_w_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</h3>
+          <p>The implementation path of MotionWAM is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hover_versatile_humanoid_contr_2024/">
+          <span class="entry-type">Method</span>
+          <h3>HOVER Versatile Humanoid Controller</h3>
+          <p>Versatile neural whole-body controller for multiple humanoid behavior modes.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Bayesian Optimization with Adaptive Kernels for Robot Control</h3>
+          <p>This paper introduces Spartan Bayesian Optimization (SBO), a Gaussian-process Bayesian optimization…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_structured_4d_latent_predictiv_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Structured 4D Latent Predictive Model for Robot Planning</h3>
+          <p>arXiv:2607.01166v1 Announce Type: new Abstract: Video predictive models are emerging as a powerful…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nian_control_your_robot_a_unified_s_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Control Your Robot: A Unified System for Robot Control and Policy Deployment</h3>
+          <p>Control Your Robot: A Unified System for Robot Control and Policy Deployment (Control Your Robot),…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_direction_and_trajectory_track_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Direction and Trajectory Tracking Control for Nonholonomic Spherical Robot by Combining Sliding Mode Controller and Model Prediction Controller</h3>
+          <p>Proposes a hierarchical terminal sliding-mode direction controller (HTSMC), a model-predictive…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_u_joint_caams_experimental_eva_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</h3>
+          <p>arXiv:2607.03321v1 Announce Type: new Abstract: Continuum manipulators mounted on multi-rotor UAVs…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_sampled_data_control_based_con_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Sampled-Data Control Based Consensus of Fractional-Order Multi-Agent Systems</h3>
+          <p>This paper proposes a distributed sampled-data controller for fractional-order multi-agent systems…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p7_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Basic standing and walking simulation</h3>
+          <p>Simulation video, stable walking 10m, steering/ramp passing</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dreamzero_world_action_models_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>DreamZero: World Action Models are Zero-shot Policies</h3>
+          <p>DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_all_terrain_locomotio_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning All-Terrain Locomotion for a Planetary Rover with Actively Articulated Suspension</h3>
+          <p>arXiv:2606.06790v2 Announce Type: replace Abstract: This paper presents ERNEST, a four-wheeled…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">Formalism</span>
+          <h3>Floating-Base Dynamics</h3>
+          <p>A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_husky_humanoid_skateboarding_s_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control</h3>
+          <p>HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_quadrupedal_locomotio_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Quadrupedal Locomotion over Challenging Terrain</h3>
+          <p>Learning Quadrupedal Locomotion over Challenging Terrain is a paper on High Impact Selection for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_perceptive_humanoid_l_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Perceptive Humanoid Locomotion over Challenging Terrain</h3>
+          <p>Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_optimizing_bipedal_locomotion_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running</h3>
+          <p>Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_motion_planning_in_compressed_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Motion Planning in Compressed Representation Spaces</h3>
+          <p>arXiv:2606.30940v1 Announce Type: new Abstract: Deep learning methods have vastly expanded the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hafo_a_force_adaptive_control_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments</h3>
+          <p>HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_float_drone_for_physical_inter_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</h3>
+          <p>arXiv:2607.04260v1 Announce Type: new Abstract: Aerial physical interaction represents a promising…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</h3>
+          <p>HOMIE mainly solves the data closed loop: it uses ontology state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robot_trajectron_v3_a_probabil_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation</h3>
+          <p>arXiv:2607.09315v1 Announce Type: new Abstract: We aim to address the challenge of teleoperating…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_design_and_control_of_a_bipeda_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Design and Control of a Bipedal Robotic Character</h3>
+          <p>Design and Control of a Bipedal Robotic Character is a 2024 work on hardware design for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_urbanvla_a_vision_language_act_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>UrbanVLA: A Vision-Language-Action Model for Urban Micromobility</h3>
+          <p>UrbanVLA: A Vision-Language-Action Model for Urban Micromobility (UrbanVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_neary_improving_pre_trained_vision_l_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search</h3>
+          <p>Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_convex_optimization/">
+          <span class="entry-type">Foundation</span>
+          <h3>Convex Optimization</h3>
+          <p>The mathematical discipline of minimizing convex functions over convex sets, guaranteeing that any…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reference_free_sampling_based_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Reference-Free Sampling-Based Model Predictive Control</h3>
+          <p>Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_heracles_bridging_precise_trac_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control</h3>
+          <p>Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_openloong/">
+          <span class="entry-type">Robot System</span>
+          <h3>OpenLoong (Qinglong) Open-Source Humanoid Robot</h3>
+          <p>The full-size open-source humanoid reference platform from China&#39;s National and Local Co-built…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hand_eye_autonomous_delivery_l_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</h3>
+          <p>This work first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</h3>
+          <p>Falcon primarily addresses data closed-loop: capturing human manipulation and robot states with body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_comfree_sim_a_gpu_parallelized_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control</h3>
+          <p>ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_safefall_learning_protective_c_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SafeFall: Learning Protective Control for Humanoid Robots</h3>
+          <p>SafeFall: Learning Protective Control for Humanoid Robots is a knowledge node related to paper in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_hierarchical_model_based_sys_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Hierarchical, Model-Based System for High-Performance Humanoid Soccer</h3>
+          <p>A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pace_physics_augmentation_for_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis</h3>
+          <p>This work first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</h3>
+          <p>HYPERmotion first recovers scene, target, or motion representations from language instructions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ceer_compliant_end_effector_an_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation</h3>
+          <p>CEER mainly solves the data closed loop: using ontology state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sarkar_planning_robot_motion_using_de_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Planning Robot Motion using Deep Visual Prediction</h3>
+          <p>Introduces PROM-Net, a lightweight unsupervised encoder-decoder convolutional LSTM network that…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sombolestan_hierarchical_adaptive_loco_man_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Hierarchical Adaptive Loco-manipulation Control for Quadruped Robots</h3>
+          <p>Proposes a hierarchical adaptive control framework that enables quadruped robots to perform…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</h3>
+          <p>Sumo transforms the body state, joint sequence, and simulation interaction data into a trackable…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-model-predictive-control-mpc">Definition and Positioning of Model Predictive Control (MPC)</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-model-predictive-control-mpc">Mathematical and Theoretical Foundations of Model Predictive Control (MPC)</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

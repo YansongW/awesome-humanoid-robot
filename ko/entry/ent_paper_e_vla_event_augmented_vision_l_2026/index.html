@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-VLA: Event-Augmented Vision-Language-Action Model for Dark and Blurred Scenes · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">E-VLA: Event-Augmented Vision-Language-Action Model for Dark and Blurred Scenes</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>E-VLA: Event-Augmented Vision-Language-Action Model for Dark and Blurred Scenes</h1>
+      <p class="entry-name-en">E-VLA: Event-Augmented Vision-Language-Action Model for Dark and Blurred Scenes</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.04834v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2604.04834v2 Announce Type: replace-cross Abstract: Robotic Vision-Language-Action (VLA) models generalize well for open-ended manipulation, but their perception is fragile under sensing-stage degradations such as extreme low light, motion blur, and black clipping. We present E-VLA, an event-augmented VLA framework that improves manipulation robustness when conventional frame-based vision becomes unreliable. Instead of reconstructing images from events, E-VLA directly leverages motion and structural cues in event streams to preserve semantic perception and perception-action consistency under adverse conditions. We build an open-source teleoperation platform with a DAVIS346 event camera and collect a real-world synchronized RGB-event-action manipulation dataset across diverse tasks and illuminations. We also propose lightweight, pretrained-compatible event integration strategies and study event windowing for stable deployment. Experiments show that even a simple parameter-free fusion, i.e., overlaying accumulated event maps onto RGB images, could substantially improve robustness in dark and heavy-blur scenes: on Pick-Place at 20 lux, success increases from 0% (image-only) to 60% with overlay fusion and to 90% with our event adapter; under severe motion blur (1000 ms-exposure proxy), Pick-Place improves from 0% to 20-25%, and Sorting from 5% to 32.5%. Overall, E-VLA provides systematic evidence that event-driven perception can be effectively integrated into VLA models, pointing toward robust embodied intelligence beyond conventional frame-based imaging. Code and dataset will be available at https://github.com/JJayzee/E-VLA.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2604.04834" target="_blank" rel="noopener">E-VLA: Event-Augmented Vision-Language-Action Model for Dark and Blurred Scenes</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Robotic Vision-Language-Action (VLA) 모델은 개방형 조작 작업에서 일반화 성능이 뛰어나지만, 극도로 낮은 조도, 모션 블러, 블랙 클리핑과 같은 센싱 단계의 열화에 취약합니다. 본 논문에서는 기존 프레임 기반 비전이 신뢰할 수 없을 때 조작의 강건성을 향상시키는 이벤트 증강 VLA 프레임워크인 E-VLA를 제안합니다. E-VLA는 이벤트로부터 이미지를 재구성하는 대신, 이벤트 스트림의 움직임 및 구조적 단서를 직접 활용하여 열악한 조건에서도 의미론적 인식과 인식-행동 일관성을 유지합니다. DAVIS346 이벤트 카메라를 갖춘 오픈소스 원격 조작 플랫폼을 구축하고, 다양한 작업과 조명 조건에서 실제 세계의 동기화된 RGB-이벤트-행동 조작 데이터셋을 수집했습니다. 또한, 경량화된 사전 학습 호환 이벤트 통합 전략을 제안하고 안정적인 배포를 위한 이벤트 윈도잉을 연구했습니다. 실험 결과, 누적 이벤트 맵을 RGB 이미지에 오버레이하는 간단한 파라미터 없는 융합조차도 어둡고 심한 블러가 있는 장면에서 강건성을 크게 향상시킬 수 있음을 보여줍니다: 20 lux에서 Pick-Place 작업의 경우, 이미지만 사용했을 때 0%에서 오버레이 융합 시 60%, 당사의 이벤트 어댑터 사용 시 90%로 성공률이 증가했습니다. 심한 모션 블러(1000ms 노출 프록시) 조건에서는 Pick-Place가 0%에서 20-25%로, Sorting이 5%에서 32.5%로 향상되었습니다. 전반적으로 E-VLA는 이벤트 기반 인식이 VLA 모델에 효과적으로 통합될 수 있다는 체계적인 증거를 제공하며, 기존 프레임 기반 이미징을 넘어서는 강건한 구현 지능을 지향합니다. 코드와 데이터셋은 https://github.com/JJayzee/E-VLA에서 제공될 예정입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Robotic Vision-Language-Action (VLA) 모델은 개방형 조작 작업에서 일반화 성능이 뛰어나지만, 극도로 낮은 조도, 모션 블러, 블랙 클리핑과 같은 센싱 단계의 열화에 취약합니다. 본 논문에서는 기존 프레임 기반 비전이 신뢰할 수 없을 때 조작의 강건성을 향상시키는 이벤트 증강 VLA 프레임워크인 E-VLA를 제안합니다. E-VLA는 이벤트로부터 이미지를 재구성하는 대신, 이벤트 스트림의 움직임 및 구조적 단서를 직접 활용하여 열악한 조건에서도 의미론적 인식과 인식-행동 일관성을 유지합니다. DAVIS346 이벤트 카메라를 갖춘 오픈소스 원격 조작 플랫폼을 구축하고, 다양한 작업과 조명 조건에서 실제 세계의 동기화된 RGB-이벤트-행동 조작 데이터셋을 수집했습니다. 또한, 경량화된 사전 학습 호환 이벤트 통합 전략을 제안하고 안정적인 배포를 위한 이벤트 윈도잉을 연구했습니다. 실험 결과, 누적 이벤트 맵을 RGB 이미지에 오버레이하는 간단한 파라미터 없는 융합조차도 어둡고 심한 블러가 있는 장면에서 강건성을 크게 향상시킬 수 있음을 보여줍니다: 20 lux에서 Pick-Place 작업의 경우, 이미지만 사용했을 때 0%에서 오버레이 융합 시 60%, 당사의 이벤트 어댑터 사용 시 90%로 성공률이 증가했습니다. 심한 모션 블러(1000ms 노출 프록시) 조건에서는 Pick-Place가 0%에서 20-25%로, Sorting이 5%에서 32.5%로 향상되었습니다. 전반적으로 E-VLA는 이벤트 기반 인식이 VLA 모델에 효과적으로 통합될 수 있다는 체계적인 증거를 제공하며, 기존 프레임 기반 이미징을 넘어서는 강건한 구현 지능을 지향합니다. 코드와 데이터셋은 https://github.com/JJayzee/E-VLA에서 제공될 예정입니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_e_vla_event_augmented_vision_l_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

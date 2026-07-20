@@ -1,0 +1,1861 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action Chunking with Transformers (ACT) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Action Chunking with Transformers (ACT)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Action Chunking with Transformers (ACT)</h1>
+      <p class="entry-name-en">Action Chunking with Transformers (ACT)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Data &amp; Datasets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body rewritten about ACT (previously mis-backfilled with power-distribution content); source set to the ACT paper.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">Stage 3 · Full Humanoid</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>An imitation-learning method that predicts a sequence of future actions as a chunk using a transformer, reducing compounding errors in long-horizon tasks.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2304.13705" target="_blank" rel="noopener">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Action Chunking Transformer (ACT) is an imitation learning method proposed by Zhao et al. on the ALOHA low-cost dual-arm teleoperation platform. It models the policy as a Conditional Variational Autoencoder (CVAE), where a Transformer encoder-decoder predicts a sequence of future k-step actions (action chunk) in one shot. During execution, temporal ensemble is used to compute a weighted average of overlapping predictions, thereby suppressing error accumulation in long-horizon fine-grained manipulation tasks.</p>
+<h2 id="content">Content</h2>
+<ul>
+<li><strong>Action Chunking</strong>: Instead of regressing single-frame actions step by step, the policy predicts an action chunk of length k (e.g., 100 steps) at once, effectively modeling short-term "intent" and significantly alleviating the compounding error problem in imitation learning.</li>
+<li><strong>CVAE Modeling</strong>: Conditioned on the current joint state and multi-view images, the CVAE encoder compresses the demonstration action chunk into a style variable z during training, while the decoder (Transformer) reconstructs the action chunk based on the conditioned observations and z. During inference, z is directly set to the prior mean.</li>
+<li><strong>Temporal Ensemble</strong>: During execution, multiple overlapping predictions at each timestep are averaged with exponential weights, yielding smooth and jitter-resistant control outputs.</li>
+<li><strong>Low-Cost Hardware Integration</strong>: Combined with the ALOHA platform, demonstration data is collected using a dual-arm teleoperation system costing approximately $20,000. It achieves 80%–90% success rates on fine-grained dual-arm tasks such as zipping, opening lids, and inserting slots.</li>
+<li><strong>Impact</strong>: ACT has become an important baseline for subsequent methods such as VLA (Vision-Language-Action) models and diffusion policies. "Action chunking" has also become one of the mainstream designs for action heads in robot foundation models.</li>
+<li><strong>Limitations and Future Directions</strong>: The original ACT only supports single-task, single-scenario demonstration distributions, with limited generalization to language instructions and open objects. Subsequent works such as diffusion policies, OpenVLA, and π0 have extended it in terms of action head design, pre-training scale, and multi-task instruction conditioning.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">Action Chunking with Transformers (ACT) mentions OpenVLA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">Action Chunking with Transformers (ACT) mentions OpenVLA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_forward_kinematics/">Forward Kinematics</a>
+              <span class="rel-desc">Action Chunking with Transformers (ACT) has prerequisite Forward Kinematics.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+              <span class="rel-desc">Action Chunking with Transformers (ACT) mentions Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_behavior_cloning/">Behavior Cloning</a>
+              <span class="rel-desc">Action Chunking with Transformers (ACT) has prerequisite Behavior Cloning.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">implemented on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_system_identification/">System Identification</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 18. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper__2025/">Humanoid Robot Motion and Operation｜Progress and Challenges in Control Planning and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Humanoid Robot Motion and Operation｜Progress and Challenges in Control Planning and Learning mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_motionwam_towards_foundation_w_2026/">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_armada_augmented_reality_for_r_2024/">ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ye_vla_r1_enhancing_reasoning_in_2025/">VLA-R1: Enhancing Reasoning in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">VLA-R1: Enhancing Reasoning in Vision-Language-Action Models uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_halomi_learning_humanoid_loco_2026/">HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hmc_learning_heterogeneous_met_2025_1/">HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_vlmimic_vision_language_models_2024/">VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_simple_to_complex_structured_d_2026/">Simple-to-Complex Structured Demonstrations for Vision-Language-Action Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Simple-to-Complex Structured Demonstrations for Vision-Language-Action Learning mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yang_seqvla_sequential_task_executi_2025/">SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_humanoid_visual_tactile_acti_2025/">A Humanoid Visual-Tactile-Action Dataset for Contact-Rich Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">A Humanoid Visual-Tactile-Action Dataset for Contact-Rich Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_make_tracking_easy_neural_moti_2026/">Make Tracking Easy: Neural Motion Retargeting for Humanoid Whole-body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Make Tracking Easy: Neural Motion Retargeting for Humanoid Whole-body Control mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_expressive_whole_body_control_2024/">Expressive Whole-Body Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Expressive Whole-Body Control for Humanoid Robots mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wt_umi_tactile_based_whole_bod_2026/">WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_motiondisco_motion_discovery_f_2026/">MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_systematic_study_of_data_mod_2026/">A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shen_videovla_video_generators_can_2025/">VideoVLA: Video Generators Can Be Generalizable Robot Manipulators</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">VideoVLA: Video Generators Can Be Generalizable Robot Manipulators uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cai_seeing_space_and_motion_enhanc_2025/">Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic Awareness for VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic Awareness for VLA uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_01327_3_is_imitation_learning_2026/">01327-3), Is imitation learning the route to humanoid robots?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">01327-3), Is imitation learning the route to humanoid robots? mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jiang_galaxea_open_world_dataset_and_2025/">Galaxea Open-World Dataset and G0 Dual-System VLA Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Galaxea Open-World Dataset and G0 Dual-System VLA Model uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lara_latent_action_representat_2026/">LARA: Latent Action Representation Alignment for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">LARA: Latent Action Representation Alignment for Vision-Language-Action Models discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hmc_learning_heterogeneous_met_2025/">HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gr00t_n1_an_open_foundation_mo_2025/">GR00T N1: An Open Foundation Model for Generalist Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">GR00T N1: An Open Foundation Model for Generalist Humanoid Robots mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ng_endovla_dual_phase_vision_lang_2025/">EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in Endoscopy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in Endoscopy discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_commanding_humanoid_by_free_fo_2025/">Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_openhlm_an_empirical_recipe_fo_2026/">OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_3ds_vla_2025/">3DS-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">3DS-VLA uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hime_hierarchical_embodied_mem_2026/">HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bioprovla_agent_an_affordable_2026/">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jia_video2act_a_dual_system_video_2025/">Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_generalizable_humanoid_manipul_2025/">Generalizable Humanoid Manipulation with 3D Diffusion Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Generalizable Humanoid Manipulation with 3D Diffusion Policies mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_xie_dexbotic_open_source_vision_la_2025/">Dexbotic: Open-Source Vision-Language-Action Toolbox</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Dexbotic: Open-Source Vision-Language-Action Toolbox uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chronoflow_policy_unifying_pas_2026/">ChronoFlow-Policy: Unifying Past-Current-Future Interaction Flow in Visuomotor Policy Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">ChronoFlow-Policy: Unifying Past-Current-Future Interaction Flow in Visuomotor Policy Learning cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanplus_humanoid_shadowing_a_2024/">HumanPlus: Humanoid Shadowing and Imitation from Humans</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HumanPlus: Humanoid Shadowing and Imitation from Humans mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_opt2skill_imitating_dynamicall_2025/">Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_w1_towards_general_humano_2026_1/">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_dial_decoupling_intent_and_act_2026/">DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_stageact_stage_conditioned_imi_2025/">StageACT: Stage-Conditioned Imitation for Robust Humanoid Door Opening</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">StageACT: Stage-Conditioned Imitation for Robust Humanoid Door Opening mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_belkhale_rt_h_action_hierarchies_using_2024/">RT-H: Action Hierarchies Using Language</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RT-H: Action Hierarchies Using Language discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hold_my_beer_learning_gentle_h_2025/">Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egohumanoid_unlocking_in_the_w_2026/">EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robot_motion_diffusion_model_m_2026/">Robot Motion Diffusion Model: Motion Generation for Robotic Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Robot Motion Diffusion Model: Motion Generation for Robotic Characters mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unleashing_more_actions_via_ac_2026/">Unleashing More Actions via Action Compositional Training for VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Unleashing More Actions via Action Compositional Training for VLA Models mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_autospeed_annotation_free_stag_2026/">AutoSpeed: Annotation-Free Stage-Adaptive Motion Speed Learning for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AutoSpeed: Annotation-Free Stage-Adaptive Motion Speed Learning for Robot Manipulation discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_bridgevla_input_output_alignme_2025/">BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">TWIST: Teleoperated Whole-Body Imitation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TWIST: Teleoperated Whole-Body Imitation System mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanx_toward_agile_and_genera_2026/">HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kungfubot2_learning_versatile_2025/">KungfuBot2: Learning Versatile Motion Skills for Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">KungfuBot2: Learning Versatile Motion Skills for Humanoid Whole-Body Control mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unified_video_action_model_2025/">Unified Video Action Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Unified Video Action Model proposes Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_active_stereo_camera_outperfor_2026/">Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mimicdroid_in_context_learning_2025/">MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_from_w1_towards_general_humano_2026/">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_grail_generating_humanoid_loco_2026/">GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_eva_client_a_unified_data_coll_2026/">EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jiang_asyncvla_asynchronous_flow_mat_2025/">AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_viral_visual_sim_to_real_at_sc_2025_1/">VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_high_fidelity_one_step_generat_2026/">High-Fidelity One-Step Generative Visuomotor Policy via Recursive Correction, Frequency Consistency, and Contrastive Flow Matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">High-Fidelity One-Step Generative Visuomotor Policy via Recursive Correction, Frequency Consistency, and Contrastive Flow Matching mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_halo_wa_hybrid_attention_laten_2026/">HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_w1_towards_general_humano_2026/">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_figure_helix_a_vision_language_action_2025/">Helix: A vision-language-action model for generalist humanoid control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Helix: A vision-language-action model for generalist humanoid control uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robust_and_generalized_humanoi_2026/">Robust and Generalized Humanoid Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Robust and Generalized Humanoid Motion Tracking mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_coordinated_humanoid_manipulat_2025/">Coordinated Humanoid Manipulation with Choice Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Coordinated Humanoid Manipulation with Choice Policies mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bharadhwaj_roboagent_generalization_and_e_2023/">RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action Chunking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action Chunking mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_geometry_aware_motion_latents_2026/">Geometry-Aware Motion Latents for Learning Robust Manipulation Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Geometry-Aware Motion Latents for Learning Robust Manipulation Policies discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025/">TWIST: Teleoperated Whole-Body Imitation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TWIST: Teleoperated Whole-Body Imitation System mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_an_claw_a_vision_language_action_2025/">CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_peng_colavla_leveraging_cognitive_l_2025/">ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tact_humanoid_whole_body_conta_2025/">TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pac_act_post_training_actor_cr_2026/">PAC-ACT: Post-training Actor-Critic for Action Chunking Transformers</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">PAC-ACT: Post-training Actor-Critic for Action Chunking Transformers mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_abot_m05_unified_mobility_and_2026/">ABot-M0.5: Unified Mobility-and-Manipulation World Action Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">ABot-M0.5: Unified Mobility-and-Manipulation World Action Model cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_differential_amplifier_inspire_2026/">Differential Amplifier-Inspired AmpAttention for Multi-View Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Differential Amplifier-Inspired AmpAttention for Multi-View Robotic Manipulation discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_open_television_teleoperation_2024_2/">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bifrostumi_bridging_robot_free_2026/">BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoidmimicgen_data_generati_2026/">HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rgmp_recurrent_geometric_prior_2025/">RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_trajbooster_boosting_humanoid_2026/">TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_viral_visual_sim_to_real_at_sc_2025/">VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_fast_in_slow_a_dual_system_vla_2025/">Fast-in-Slow: A Dual-System VLA Model Unifying Fast Manipulation within Slow Reasoning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Fast-in-Slow: A Dual-System VLA Model Unifying Fast Manipulation within Slow Reasoning uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bimanual_dexterity_for_complex_2024/">Bimanual Dexterity for Complex Tasks</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Bimanual Dexterity for Complex Tasks uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ni_swiftvla_unlocking_spatiotempo_2025/">SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egoprimo_egocentric_motion_gen_2026/">EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_world_action_models_are_zero_s_2026/">World Action Models are Zero-shot Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">World Action Models are Zero-shot Policies mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ye_actdistill_general_action_guid_2025/">ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action Models uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lin_onetwovla_a_unified_vision_lan_2025/">OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hancock_actions_as_language_fine_tunin_2025/">Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_b_spline_policy_accelerating_m_2026/">B-spline Policy: Accelerating Manipulation Policies via B-spline Action Representations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">B-spline Policy: Accelerating Manipulation Policies via B-spline Action Representations cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_open_television_teleoperation_2024/">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_genie_envisioner_a_unified_wor_2025/">Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">Gemini Robotics: Bringing AI into the Physical World</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Gemini Robotics: Bringing AI into the Physical World mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_koo_retovla_reusing_register_token_2025/">RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_qi_continuous_vision_language_act_2025/">Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_open_television_teleoperation_2024_1/">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_towards_generalizable_robotic_2026/">Towards Generalizable Robotic Manipulation in Dynamic Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Towards Generalizable Robotic Manipulation in Dynamic Environments discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gu_manualvla_a_unified_vla_model_2025/">ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_guhur_instruction_driven_history_awa_2022/">Instruction-driven history-aware policies for robotic manipulations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Instruction-driven history-aware policies for robotic manipulations cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_crayonrobo_object_centric_prom_2025/">CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liang_mm_act_learn_from_multimodal_p_2025/">MM-ACT: Learn from Multimodal Parallel Generation to Act</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">MM-ACT: Learn from Multimodal Parallel Generation to Act mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_oasis_from_simulation_data_col_2026/">OASIS: From Simulation Data Collection to Real-World Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">OASIS: From Simulation Data Collection to Real-World Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fabrivla_a_lightweight_vision_2026/">FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation discusses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_beyond_monotonic_progress_retr_2026/">Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fan_long_vla_unleashing_long_horiz_2025/">Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation uses Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_action_chunking_with_transform_2023/">Action Chunking with Transformers</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Action Chunking with Transformers cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_han_a_dual_process_vla_efficient_r_2024/">A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM cites Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sugar_a_scalable_human_video_d_2026/">SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework mentions Action Chunking with Transformers (ACT).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_action_chunking_transformer"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_w1_towards_general_humano_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</h3>
+          <p>FRoM-W1 transforms verbal commands, ontology state and joint sequences, and simulated interaction…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_b_spline_policy_accelerating_m_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>B-spline Policy: Accelerating Manipulation Policies via B-spline Action Representations</h3>
+          <p>arXiv:2607.09648v1 Announce Type: new Abstract: In this work, we present B-spline Policy (BSP), an…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_dial_decoupling_intent_and_act_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA</h3>
+          <p>DIAL introduces a dual-system VLA architecture that uses a VLM-based System-2 for latent visual…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_humanoid_visual_tactile_acti_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Humanoid Visual-Tactile-Action Dataset for Contact-Rich Manipulation</h3>
+          <p>A Humanoid Visual-Tactile-Action Dataset for Contact-Rich Manipulation is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_halo_wa_hybrid_attention_laten_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models</h3>
+          <p>arXiv:2607.04265v1 Announce Type: new Abstract: World-action (WA) models can generate long-horizon…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jiang_asyncvla_asynchronous_flow_mat_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models</h3>
+          <p>AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models (AsyncVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_simple_to_complex_structured_d_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Simple-to-Complex Structured Demonstrations for Vision-Language-Action Learning</h3>
+          <p>arXiv:2607.04591v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models have…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_halomi_learning_humanoid_loco_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations</h3>
+          <p>Halomi first reconstructs the scene, object, or motion representation from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fan_long_vla_unleashing_long_horiz_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation</h3>
+          <p>Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM mainly solves the closed-loop data problem: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_open_television_teleoperation_2024_2/">
+          <span class="entry-type">Paper</span>
+          <h3>Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</h3>
+          <p>This work mainly addresses data closed loops: acquisition of human operation and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_abot_m05_unified_mobility_and_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ABot-M0.5: Unified Mobility-and-Manipulation World Action Model</h3>
+          <p>arXiv:2607.00678v1 Announce Type: cross Abstract: Mobile manipulation is a key capability for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_3ds_vla_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>3DS-VLA</h3>
+          <p>3DS-VLA (3DS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World</h3>
+          <p>The implementation path of LEGS is to first encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper__2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Robot Motion and Operation｜Progress and Challenges in Control Planning and Learning</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_belkhale_rt_h_action_hierarchies_using_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>RT-H: Action Hierarchies Using Language</h3>
+          <p>RT-H: Action Hierarchies Using Language (RT-H), is a 2024 large vision-language-action model for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST: Teleoperated Whole-Body Imitation System</h3>
+          <p>TWIST mainly solves the data closed loop: using human video/kinetrap trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_01327_3_is_imitation_learning_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>01327-3), Is imitation learning the route to humanoid robots?</h3>
+          <p>01327-3), Is imitation learning the route to humanoid robots? is a 2026 work on manipulation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ye_actdistill_general_action_guid_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action Models</h3>
+          <p>ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_viral_visual_sim_to_real_at_sc_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation</h3>
+          <p>VIRAL mainly solves the data closed loop: using camera images/multi-view observation, ontology state…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hmc_learning_heterogeneous_met_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation</h3>
+          <p>HMC mainly solves the data closed loop: using teleoperation/exoskeleton data, contact force/tactile…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_trajbooster_boosting_humanoid_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning</h3>
+          <p>The implementation path of TrajBooster is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</h3>
+          <p>The implementation path of REFINE-DP is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_bridgevla_input_output_alignme_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models</h3>
+          <p>BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_an_claw_a_vision_language_action_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping</h3>
+          <p>CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping (CLAW), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_system_identification/">
+          <span class="entry-type">Method</span>
+          <h3>System Identification</h3>
+          <p>The process of building mathematical models of dynamical systems from measured input-output data,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shen_videovla_video_generators_can_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VideoVLA: Video Generators Can Be Generalizable Robot Manipulators</h3>
+          <p>VideoVLA: Video Generators Can Be Generalizable Robot Manipulators (VideoVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_grail_generating_humanoid_loco_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors</h3>
+          <p>Grail first recovers scenes, objects, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_open_television_teleoperation_2024_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</h3>
+          <p>Open-TeleVision primarily addresses data closed loops: capturing human operations and robotic states…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_action_chunking_with_transform_2023/">
+          <span class="entry-type">Method</span>
+          <h3>Action Chunking with Transformers</h3>
+          <p>Transformer-based policy that predicts action chunks to reduce compounding errors in imitation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ng_endovla_dual_phase_vision_lang_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in Endoscopy</h3>
+          <p>EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in Endoscopy (EndoVLA), is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Gemini Robotics: Bringing AI into the Physical World</h3>
+          <p>The implementation path of Gemini Robotics is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_han_a_dual_process_vla_efficient_r_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM</h3>
+          <p>A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM (DP-VLA), is a 2024 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bimanual_dexterity_for_complex_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Bimanual Dexterity for Complex Tasks</h3>
+          <p>Bimanual Dexterity for Complex Tasks is a 2024 work on manipulation for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST: Teleoperated Whole-Body Imitation System</h3>
+          <p>TWIST mainly solves the data closed loop: using human video/kinetrap trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_from_w1_towards_general_humano_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</h3>
+          <p>FRoM-W1 is an open-source two-stage framework that generates whole-body human motions from…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_w1_towards_general_humano_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</h3>
+          <p>FRoM-W1 first restores the scene, object, or motion representation from speech instructions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_genie_envisioner_a_unified_wor_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation</h3>
+          <p>Genie Envisioner is implemented by encoding language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_peng_colavla_leveraging_cognitive_l_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving</h3>
+          <p>ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kungfubot2_learning_versatile_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>KungfuBot2: Learning Versatile Motion Skills for Humanoid Whole-Body Control</h3>
+          <p>KungfuBot2 converts ontology states and joint sequences, human video/motion capture trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_stageact_stage_conditioned_imi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>StageACT: Stage-Conditioned Imitation for Robust Humanoid Door Opening</h3>
+          <p>StageACT mainly solves the data closed loop: using camera images/multi-view observation, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_openvla/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>An open-source vision-language-action model trained on the Open X-Embodiment dataset for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_high_fidelity_one_step_generat_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>High-Fidelity One-Step Generative Visuomotor Policy via Recursive Correction, Frequency Consistency, and Contrastive Flow Matching</h3>
+          <p>arXiv:2607.03865v1 Announce Type: new Abstract: Generative models such as diffusion and flow…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_vlmimic_vision_language_models_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions</h3>
+          <p>VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions (VLMimic), is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pac_act_post_training_actor_cr_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PAC-ACT: Post-training Actor-Critic for Action Chunking Transformers</h3>
+          <p>arXiv:2607.09590v1 Announce Type: new Abstract: Precision industrial contact manipulation requires…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_qi_continuous_vision_language_act_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning</h3>
+          <p>Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unleashing_more_actions_via_ac_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Unleashing More Actions via Action Compositional Training for VLA Models</h3>
+          <p>arXiv:2607.00351v1 Announce Type: new Abstract: Vision-Language-Action models excel at robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cai_seeing_space_and_motion_enhanc_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic Awareness for VLA</h3>
+          <p>Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic Awareness for VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fabrivla_a_lightweight_vision_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation</h3>
+          <p>arXiv:2607.08575v2 Announce Type: replace Abstract: We present FabriVLA, a lightweight…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chronoflow_policy_unifying_pas_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ChronoFlow-Policy: Unifying Past-Current-Future Interaction Flow in Visuomotor Policy Learning</h3>
+          <p>arXiv:2606.31493v1 Announce Type: new Abstract: Visual signals play a crucial role in policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_systematic_study_of_data_mod_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation</h3>
+          <p>A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gu_manualvla_a_unified_vla_model_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation</h3>
+          <p>ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hancock_actions_as_language_fine_tunin_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting</h3>
+          <p>Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_crayonrobo_object_centric_prom_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation</h3>
+          <p>CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lin_onetwovla_a_unified_vision_lan_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning</h3>
+          <p>OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning (OneTwoVLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tact_humanoid_whole_body_conta_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality</h3>
+          <p>TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</h3>
+          <p>HITTER first recovers scene, target, or motion representations from human video/kinetach…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_differential_amplifier_inspire_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Differential Amplifier-Inspired AmpAttention for Multi-View Robotic Manipulation</h3>
+          <p>arXiv:2607.02845v1 Announce Type: new Abstract: Multi-view robotic manipulation methods with the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robot_motion_diffusion_model_m_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Motion Diffusion Model: Motion Generation for Robotic Characters</h3>
+          <p>The Robot Motion Diffusion Model first recovers the scene, target, or Motion representation from the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bioprovla_agent_an_affordable_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</h3>
+          <p>arXiv:2605.07306v3 Announce Type: replace Abstract: Biological laboratory automation can reduce…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_openhlm_an_empirical_recipe_fo_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation</h3>
+          <p>The implementation path of OpenHLM is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_opt2skill_imitating_dynamicall_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation</h3>
+          <p>Opt2Skill first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_oasis_from_simulation_data_col_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>OASIS: From Simulation Data Collection to Real-World Humanoid Loco-Manipulation</h3>
+          <p>OASIS mainly solves the data closed loop: using camera images/multi-view observations, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rgmp_recurrent_geometric_prior_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation</h3>
+          <p>RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_beyond_monotonic_progress_retr_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation</h3>
+          <p>arXiv:2606.24633v2 Announce Type: replace Abstract: Human demonstrations for robot imitation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hold_my_beer_learning_gentle_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control</h3>
+          <p>Hold first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_eva_client_a_unified_data_coll_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EVA-Client: A Unified Data Collection, Inference, and Deployment Framework for Embodied Policies on Real Robots</h3>
+          <p>arXiv:2607.02646v1 Announce Type: new Abstract: We present EVA-Client, an open-source framework for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_world_action_models_are_zero_s_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>World Action Models are Zero-shot Policies</h3>
+          <p>This work first encodes language instructions, camera images/multi-view observations, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</h3>
+          <p>BeyondMimic transforms human video/motion capture trajectories into trackable body targets and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bifrostumi_bridging_robot_free_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation</h3>
+          <p>BifrostUMI mainly solves the data closed loop: using camera images/multi-view observations, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ni_swiftvla_unlocking_spatiotempo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead</h3>
+          <p>SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wt_umi_tactile_based_whole_bod_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning</h3>
+          <p>WT-UMI mainly solves the data closed loop: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_expressive_whole_body_control_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Expressive Whole-Body Control for Humanoid Robots</h3>
+          <p>This work transforms ontology state and joint sequences, human video/motion capture trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ye_vla_r1_enhancing_reasoning_in_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VLA-R1: Enhancing Reasoning in Vision-Language-Action Models</h3>
+          <p>VLA-R1: Enhancing Reasoning in Vision-Language-Action Models (VLA-R1), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_towards_generalizable_robotic_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Generalizable Robotic Manipulation in Dynamic Environments</h3>
+          <p>arXiv:2603.15620v3 Announce Type: replace-cross Abstract: Vision-Language-Action (VLA) models excel…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sugar_a_scalable_human_video_d_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework</h3>
+          <p>SUGAR mainly solves the data closed loop: using camera images/multi-view observations, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_active_stereo_camera_outperfor_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</h3>
+          <p>In ACT imitation learning for humanoid manipulation, the performance of active stereo cameras is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_viral_visual_sim_to_real_at_sc_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation</h3>
+          <p>VIRAL mainly solves the data closed loop: using camera images/multi-view observation, ontology state…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jia_video2act_a_dual_system_video_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling</h3>
+          <p>Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling (Video2Act),…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM mainly solves the closed-loop data problem: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hime_hierarchical_embodied_mem_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control</h3>
+          <p>arXiv:2607.03449v1 Announce Type: new Abstract: Current Vision-Language-Action (VLA) models excel at…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanx_toward_agile_and_genera_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos</h3>
+          <p>HumanX first recovers scene, target, or motion representations from human videos/move-capture…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>7B-parameter open VLA trained on 970k episodes from Open X-Embodiment.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_coordinated_humanoid_manipulat_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Coordinated Humanoid Manipulation with Choice Policies</h3>
+          <p>This work mainly addresses the data closed loop: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_figure_helix_a_vision_language_action_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Helix: A vision-language-action model for generalist humanoid control</h3>
+          <p>Helix: A vision-language-action model for generalist humanoid control (Helix), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">Method</span>
+          <h3>Behavior Cloning</h3>
+          <p>A supervised imitation-learning method that trains a policy to replicate expert demonstrations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robust_and_generalized_humanoi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Robust and Generalized Humanoid Motion Tracking</h3>
+          <p>This work mainly addresses data closed-loop: acquisition of human operation and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lara_latent_action_representat_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>LARA: Latent Action Representation Alignment for Vision-Language-Action Models</h3>
+          <p>arXiv:2606.07100v2 Announce Type: replace-cross Abstract: Visual-language action (VLA) models enable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_guhur_instruction_driven_history_awa_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Instruction-driven history-aware policies for robotic manipulations</h3>
+          <p>Instruction-driven history-aware policies for robotic manipulations (Hiveformer), is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yang_seqvla_sequential_task_executi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model</h3>
+          <p>SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unified_video_action_model_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Unified Video Action Model</h3>
+          <p>Unified Video Action Model is a 2025 work on manipulation for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoidmimicgen_data_generati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning</h3>
+          <p>HumanoidMimicGen primarily addresses data closure: acquiring human and robot states using camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Forward Kinematics</h3>
+          <p>The computation of end-effector position and orientation from given joint angles, using a chain of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_open_television_teleoperation_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</h3>
+          <p>Open-TeleVision primarily addresses data closed loops: capturing human operations and robotic states…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_motiondisco_motion_discovery_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation</h3>
+          <p>MotionDisco primarily addresses data closed loops: acquiring human manipulation and robot states…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egovla_learning_vision_languag_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</h3>
+          <p>The implementation path of egofla is to first encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_geometry_aware_motion_latents_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometry-Aware Motion Latents for Learning Robust Manipulation Policies</h3>
+          <p>arXiv:2607.04714v1 Announce Type: new Abstract: Learning motion latents for robotic manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gr00t_n1_an_open_foundation_mo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GR00T N1: An Open Foundation Model for Generalist Humanoid Robots</h3>
+          <p>The implementation path of GR00T n 1 is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bharadhwaj_roboagent_generalization_and_e_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action Chunking</h3>
+          <p>RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_motionwam_towards_foundation_w_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</h3>
+          <p>The implementation path of MotionWAM is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning</h3>
+          <p>OMNIH2O primarily addresses data closed loops: capturing human operations and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_make_tracking_easy_neural_moti_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Make Tracking Easy: Neural Motion Retargeting for Humanoid Whole-body Control</h3>
+          <p>Make Tracking Easy converts the body state with joint sequences, contact force/tactile signals into…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_armada_augmented_reality_for_r_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition</h3>
+          <p>ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liang_mm_act_learn_from_multimodal_p_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>MM-ACT: Learn from Multimodal Parallel Generation to Act</h3>
+          <p>MM-ACT: Learn from Multimodal Parallel Generation to Act (MM-ACT), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jiang_galaxea_open_world_dataset_and_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Galaxea Open-World Dataset and G0 Dual-System VLA Model</h3>
+          <p>Galaxea Open-World Dataset and G0 Dual-System VLA Model (G0), is a 2025 large vision-language-action…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_generalizable_humanoid_manipul_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Generalizable Humanoid Manipulation with 3D Diffusion Policies</h3>
+          <p>Universal humanoid operation using 3D diffusion strategy, it mainly solves the data closed-loop:…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_koo_retovla_reusing_register_token_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models</h3>
+          <p>RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models (RetoVLA),…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanplus_humanoid_shadowing_a_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanPlus: Humanoid Shadowing and Imitation from Humans</h3>
+          <p>HumanPlus mainly solves the data closed loop: using camera images/multi-view observations, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mimicdroid_in_context_learning_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos</h3>
+          <p>MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_autospeed_annotation_free_stag_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AutoSpeed: Annotation-Free Stage-Adaptive Motion Speed Learning for Robot Manipulation</h3>
+          <p>arXiv:2607.01051v1 Announce Type: new Abstract: Different stages of manipulation tasks exhibit…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_commanding_humanoid_by_free_fo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary</h3>
+          <p>Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</h3>
+          <p>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egohumanoid_unlocking_in_the_w_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration</h3>
+          <p>The implementation path of EgoHumanoid is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_fast_in_slow_a_dual_system_vla_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Fast-in-Slow: A Dual-System VLA Model Unifying Fast Manipulation within Slow Reasoning</h3>
+          <p>Fast-in-Slow: A Dual-System VLA Model Unifying Fast Manipulation within Slow Reasoning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egoprimo_egocentric_motion_gen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control</h3>
+          <p>The implementation path of EgoPriMo is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hmc_learning_heterogeneous_met_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation</h3>
+          <p>HMC mainly solves the data closed loop: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_xie_dexbotic_open_source_vision_la_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Dexbotic: Open-Source Vision-Language-Action Toolbox</h3>
+          <p>Dexbotic: Open-Source Vision-Language-Action Toolbox (Dexbotic), is a 2025 large…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

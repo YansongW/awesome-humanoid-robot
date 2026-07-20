@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAPS-X: 세분화를 통한 설명 가능한 다중 로봇 동작 계획 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">MAPS-X: 세분화를 통한 설명 가능한 다중 로봇 동작 계획</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>MAPS-X: 세분화를 통한 설명 가능한 다중 로봇 동작 계획</h1>
+      <p class="entry-name-en">MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.16106v3.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>MAPS-X는 중앙 집중식 샘플링 기반 트리 플래너에 분리된 궤적 세분화를 통합하여 사용자가 정의한 세그먼트 수 범위 내에서 시각적으로 설명 가능한 다중 로봇 동작 계획을 생성한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2010.16106" target="_blank" rel="noopener">MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전통적인 다중 로봇 모션 플래닝(MMP)은 환경 내에서 동시에 궤적을 실행할 때 로봇 간 충돌이 발생하지 않도록 여러 로봇의 궤적을 계산하는 데 초점을 맞춥니다. 안전이 중요한 응용 분야에서는 인간 감독자가 계획이 실제로 충돌이 없음을 검증하고자 할 수 있습니다. 본 연구에서는 시간 구간을 나타내는 짧은 이미지 시퀀스로 계획을 시각화하는 방식에 기반한 MMP 계획에 대한 설명 개념을 제안합니다. 각 시간 구간에서 에이전트의 궤적은 서로 분리되어 있어 계획의 안전성을 명확히 보여줍니다. 우리는 표준적인 최적성 개념(예: makespan)이 짧은 설명과 충돌을 일으킬 수 있음을 보여줍니다. 따라서 기존의 중앙 집중식 샘플링 기반 트리 플래너 X에 플러그인하여 원하는 수의 이미지를 사용해 좋은 설명을 가진 계획을 생성할 수 있는 메타 알고리즘, 즉 다중 에이전트 계획 분할-X(MAPS-X)와 그 레이지 변형을 제안합니다. 우리는 이 설명-계획 체계의 효용성을 입증하고 MAPS-X의 성능을 광범위하게 평가합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>전통적인 다중 로봇 모션 플래닝(MMP)은 환경 내에서 동시에 궤적을 실행할 때 로봇 간 충돌이 발생하지 않도록 여러 로봇의 궤적을 계산하는 데 초점을 맞춥니다. 안전이 중요한 응용 분야에서는 인간 감독자가 계획이 실제로 충돌이 없음을 검증하고자 할 수 있습니다. 본 연구에서는 시간 구간을 나타내는 짧은 이미지 시퀀스로 계획을 시각화하는 방식에 기반한 MMP 계획에 대한 설명 개념을 제안합니다. 각 시간 구간에서 에이전트의 궤적은 서로 분리되어 있어 계획의 안전성을 명확히 보여줍니다. 우리는 표준적인 최적성 개념(예: makespan)이 짧은 설명과 충돌을 일으킬 수 있음을 보여줍니다. 따라서 기존의 중앙 집중식 샘플링 기반 트리 플래너 X에 플러그인하여 원하는 수의 이미지를 사용해 좋은 설명을 가진 계획을 생성할 수 있는 메타 알고리즘, 즉 다중 에이전트 계획 분할-X(MAPS-X)와 그 레이지 변형을 제안합니다. 우리는 이 설명-계획 체계의 효용성을 입증하고 MAPS-X의 성능을 광범위하게 평가합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_kottinger_maps_x_explainable_multi_robot_2021"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10/">
+          <span class="entry-type">방법</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

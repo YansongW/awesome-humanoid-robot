@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>부유 기반 동역학 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/formalism/">형식화 방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">부유 기반 동역학</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">형식화 방법</div>
+      <h1>부유 기반 동역학</h1>
+      <p class="entry-name-en">Floating-Base Dynamics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<h4 id="847">8.4.7 부동 기반 동역학</h4>
+<h2 id="_2">핵심 내용</h2>
+<p>휴머노이드 로봇은 고정 기반의 산업용 로봇 팔과 달리, 그 기반(몸통)이 공간에서 자유롭게 움직일 수 있습니다. 따라서 <strong>부동 기반(floating base)</strong> 좌표를 사용하여 시스템의 형상을 기술합니다:</p>
+<div class="arithmatex">\[
+\mathbf{q} = (\mathbf{p}_{\text{base}}, \mathbf{R}_{\text{base}}, \mathbf{q}_{\text{joints}})
+\]</div>
+<p>여기서 <span class="arithmatex">\(\mathbf{p}_{\text{base}} \in \mathbb{R}^3\)</span>는 기반 위치, <span class="arithmatex">\(\mathbf{R}_{\text{base}} \in SO(3)\)</span>는 기반 자세, <span class="arithmatex">\(\mathbf{q}_{\text{joints}} \in \mathbb{R}^{n_j}\)</span>는 관절 각도입니다[4][6].</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 부동 기반, 부동 기반 좌표, 기반 위치, 기반 자세, 일반화 좌표</p>
+<ul>
+<li><strong>부동 기반(floating base)</strong>: 공간에서 자유롭게 병진 및 회전할 수 있는 로봇의 기반.</li>
+<li><strong>기반 위치(base position)</strong>: 부동 기반 좌표계의 원점이 관성 좌표계에서 차지하는 위치.</li>
+<li><strong>기반 자세(base orientation)</strong>: 관성 좌표계에 대한 부동 기반 좌표계의 회전.</li>
+<li><strong>일반화 좌표(generalized coordinates)</strong>: 시스템의 형상을 기술하는 최소 독립 변수 집합.</li>
+</ul>
+</div>
+<p>부동 기반 시스템의 핵심 특징은 <strong>저구동(underactuation)</strong>입니다: 기반의 6 자유도에는 직접적인 액추에이터가 없으며, 발과 지면 사이의 접촉력을 통해서만 간접적으로 제어됩니다. 이로 인해 휴머노이드 로봇은 본질적으로 접촉력에 의해 구동되는 시스템이 됩니다.</p>
+<p>부동 기반 동역학 방정식의 표준 형태는 다음과 같습니다:</p>
+<div class="arithmatex">\[
+\mathbf{M}(\mathbf{q}) \dot{\mathbf{v}} + \mathbf{C}(\mathbf{q}, \mathbf{v}) \mathbf{v} + \mathbf{g}(\mathbf{q}) = \mathbf{S}^T \boldsymbol{\tau} + \sum_{c} \mathbf{J}_c^T(\mathbf{q}) \mathbf{F}_c
+\]</div>
+<p>여기서:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{M}(\mathbf{q})\)</span>: 부동 기반과 관절을 포함하는 <span class="arithmatex">\(n \times n\)</span> 질량 행렬.</li>
+<li><span class="arithmatex">\(\mathbf{C}(\mathbf{q}, \mathbf{v})\)</span>: 코리올리 힘과 원심력 항.</li>
+<li><span class="arithmatex">\(\mathbf{g}(\mathbf{q})\)</span>: 중력 항.</li>
+<li><span class="arithmatex">\(\mathbf{S}\)</span>: 선택 행렬로, 관절 토크 <span class="arithmatex">\(\boldsymbol{\tau}\)</span>를 일반화 좌표 공간에 매핑합니다 (관절에만 작용하고 부동 기반에는 작용하지 않음).</li>
+<li><span class="arithmatex">\(\mathbf{J}_c\)</span>: <span class="arithmatex">\(c\)</span>번째 접촉점에 해당하는 야코비 행렬.</li>
+<li><span class="arithmatex">\(\mathbf{F}_c\)</span>: <span class="arithmatex">\(c\)</span>번째 접촉력.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 저구동, 선택 행렬, 접촉 야코비, 일반화 힘</p>
+<ul>
+<li><strong>저구동(underactuation)</strong>: 시스템의 자유도가 독립적인 제어 입력보다 많은 경우.</li>
+<li><strong>선택 행렬(selection matrix)</strong>: 제어되는 관절과 제어되지 않는 부동 기반 자유도를 구분하는 행렬.</li>
+<li><strong>접촉 야코비(contact Jacobian)</strong>: 일반화 속도를 접촉점 속도로 매핑하는 야코비 행렬.</li>
+<li><strong>일반화 힘(generalized force)</strong>: 일반화 좌표에 대응하는 힘 또는 토크.</li>
+</ul>
+</div>
+<p>이 방정식은 부동 기반과 관절에 대해 블록 형태로 다음과 같이 쓸 수도 있습니다:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\mathbf{M}_{b} &amp; \mathbf{M}_{bj} \\
+\mathbf{M}_{jb} &amp; \mathbf{M}_{j}
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\mathbf{v}}_b \\
+\ddot{\mathbf{q}}_j
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbf{h}_b \\
+\mathbf{h}_j
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbf{0} \\
+\boldsymbol{\tau}
+\end{bmatrix}
++
+\sum_c
+\begin{bmatrix}
+\mathbf{J}_{c,b}^T \\
+\mathbf{J}_{c,j}^T
+\end{bmatrix}
+\mathbf{F}_c
+\]</div>
+<p>위쪽 블록(부동 기반)에는 <span class="arithmatex">\(\boldsymbol{\tau}\)</span> 항이 없으며, 이것이 바로 저구동의 수학적 표현입니다: 기반 가속도 <span class="arithmatex">\(\dot{\mathbf{v}}_b\)</span>는 전적으로 접촉력 <span class="arithmatex">\(\mathbf{F}_c\)</span>에 의해 결정됩니다.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["부동 기반 동역학"] --&gt; B["기반 6-DOF 액추에이터 없음"]
+    B --&gt; C["저구동 시스템"]
+    C --&gt; D["접촉력 F_c가 기반을 간접 제어"]
+    D --&gt; E["M v_dot + C v + g = S^T tau + J_c^T F_c"]
+    E --&gt; F["보행/균형 제어기 설계"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 질량 행렬 분할, 코리올리 힘 항, 부동 기반 가속도, 관절 가속도</p>
+<ul>
+<li><strong>질량 행렬 분할(partitioned mass matrix)</strong>: 부동 기반과 관절에 해당하는 부분 행렬을 분리하여 표현.</li>
+<li><strong>코리올리 힘 항(Coriolis term)</strong>: 좌표계 회전과 상대 운동 결합으로 발생하는 관성 항.</li>
+<li><strong>부동 기반 가속도(floating base acceleration)</strong>: 기반의 선형 가속도와 각가속도의 조합.</li>
+<li><strong>관절 가속도(joint acceleration)</strong>: 관절 각도의 시간에 대한 2차 도함수.</li>
+</ul>
+</div>
+<p>접촉 구속 조건은 시스템의 운동을 더욱 제한합니다. 특정 접촉점이 지면에 고정되어 있는 경우(미끄러짐 없음, 발 들림 없음), 접촉점 속도는 0입니다:</p>
+<div class="arithmatex">\[
+\mathbf{J}_c \mathbf{v} = \mathbf{0}
+\]</div>
+<p>미분하여 가속도 수준의 구속 조건을 얻습니다:</p>
+<div class="arithmatex">\[
+\mathbf{J}_c \dot{\mathbf{v}} + \dot{\mathbf{J}}_c \mathbf{v} = \mathbf{0}
+\]</div>
+<p>이 구속 조건은 동역학 방정식과 연립하여 관절 토크와 접촉력을 동시에 풀 수 있게 합니다. 이것은 휴머노이드 로봇의 모델 예측 제어(MPC)와 전신 제어(WBC)의 수학적 기초입니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 접촉 구속 조건, 무미끄러짐 구속 조건, 가속도 수준 구속 조건, 모델 예측 제어(MPC)</p>
+<ul>
+<li><strong>접촉 구속 조건(contact constraint)</strong>: 접촉점의 운동학적 양을 제한하는 등식 또는 부등식 구속 조건.</li>
+<li><strong>무미끄러짐 구속 조건(no-slip constraint)</strong>: 접촉점의 접선 방향 속도가 0이어야 한다는 구속 조건.</li>
+<li><strong>가속도 수준 구속 조건(acceleration-level constraint)</strong>: 속도가 아닌 가속도에 대한 구속 조건.</li>
+<li><strong>모델 예측 제어(MPC)</strong>: 동적 모델을 기반으로 미래 시간 영역에서 제어 입력을 순차적으로 최적화하는 방법.</li>
+</ul>
+</div>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_formalism_inverse_dynamics_qp/">역동역학 QP 공식화</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_digital_twin/">디지털 트윈</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_capture_point/">캡처 포인트</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_design_for_assembly/">조립 용이성 설계(DFA)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_design_for_manufacturing/">제조 용이성 설계(DFM)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_forward_kinematics/">정욕동학</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ironcub_3_the_jet_powered_flyi_2025/">iRonCub 3: The Jet-Powered Flying Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_drama_trunk_pitch_oscillations_for_j_2019/">인간과 휴머노이드 로봇에서의 관절 하중 재분배를 위한 몸통 피치 진동</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_the_duke_humanoid_design_and_c_2024/">The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_uniact_unified_motion_generati_2025/">UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_arachchige_dynamic_modeling_and_validatio_2023/">소프트 로봇 뱀 보행의 동적 모델링 및 검증</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_exceeding_the_maximum_speed_li_2025/">Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_design_of_a_flying_humanoid_ro_2021/">추력 벡터 제어에 기반한 비행 휴머노이드 로봇 설계</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_principle_center_of_mass/">질량 중심(COM)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">형식화</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_forward_kinematics/">정욕동학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_formalism_floating_base_dynamics"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_exceeding_the_maximum_speed_li_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids</h3>
+          <p>Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_design_for_manufacturing/">
+          <span class="entry-type">방법</span>
+          <h3>제조 용이성 설계(DFM)</h3>
+          <p>부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>정욕동학</h3>
+          <p>주어진 관절 각도로부터 동차 변환 사슬 또는 지수곱을 이용해 말단 동작기 위치·방향을 계산하는 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_digital_twin/">
+          <span class="entry-type">개념</span>
+          <h3>디지털 트윈</h3>
+          <p>물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_center_of_mass/">
+          <span class="entry-type">원리</span>
+          <h3>질량 중심(COM)</h3>
+          <p>강체 내 모든 질량의 가중 평균 위치로, 휴로봇의 균형·보행·울동량 기반 제어의 핵심 변수.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_the_duke_humanoid_design_and_c_2024/">
+          <span class="entry-type">논문</span>
+          <h3>The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics</h3>
+          <p>The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_design_of_a_flying_humanoid_ro_2021/">
+          <span class="entry-type">논문</span>
+          <h3>추력 벡터 제어에 기반한 비행 휴머노이드 로봇 설계</h3>
+          <p>본 논문은 4개의 덕티드 팬과 10개의 브러시리스 모터 관절을 갖춘 실물 크기 비행 휴머노이드 로봇 Jet-HR2를 제안하며, 발에 장착된 팬의 추력 벡터 제어를 통해 추중비…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>역동역학 QP 공식화</h3>
+          <p>부유 기반 동역학과 물리적 제약 조건 하에서 작업 추종 오차를 최소화하여 일반화 가속도, 접촉력, 관절 토크를 계산하는 이차 계획법 공식화이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_drama_trunk_pitch_oscillations_for_j_2019/">
+          <span class="entry-type">논문</span>
+          <h3>인간과 휴머노이드 로봇에서의 관절 하중 재분배를 위한 몸통 피치 진동</h3>
+          <p>Drama와 Badri-Spröwitz의 2019년 arXiv 논문은 몸통이 있는 스프링 로드 인버티드 펜듈럼(TSLIP) 모델과 가상점(VP) 목표를 사용하여 몸통 피치 진동을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_capture_point/">
+          <span class="entry-type">원리</span>
+          <h3>캡처 포인트</h3>
+          <p>로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">방법</span>
+          <h3>유한요소해석(FEA)</h3>
+          <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_arachchige_dynamic_modeling_and_validatio_2023/">
+          <span class="entry-type">논문</span>
+          <h3>소프트 로봇 뱀 보행의 동적 모델링 및 검증</h3>
+          <p>부유 기반 운동학적 피부 표현과 분산 접촉 역학을 활용한 공압식 소프트 로봇 뱀의 완전한 공간 동적 모델을 제시하고, 평면 및 공간 롤링 보행을 수치적으로 그리고 실험적으로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_design_for_assembly/">
+          <span class="entry-type">방법</span>
+          <h3>조립 용이성 설계(DFA)</h3>
+          <p>부품 수를 줄이고 결합을 단순화하며 조립 시간을 단축하여 생산 비용을 낮추고 신뢰성을 높이는 설계 방법론.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>역욕동학</h3>
+          <p>원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ironcub_3_the_jet_powered_flyi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>iRonCub 3: The Jet-Powered Flying Humanoid Robot</h3>
+          <p>iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware design for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Model Predictive Control</h3>
+          <p>접촉이 풍부한 전신 동작을 생성하기 위한 온라인 최적 제어 접근법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_uniact_unified_motion_generati_2025/">
+          <span class="entry-type">논문</span>
+          <h3>UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots</h3>
+          <p>UniAct…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a><ul>
+<li><a href="#847">8.4.7 부동 기반 동역학</a></li>
+</ul>
+</li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

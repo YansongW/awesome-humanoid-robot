@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Occupancy-SLAM: 로봇 포즈와 연속 점유 지도를 동시에 최적화 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Occupancy-SLAM: 로봇 포즈와 연속 점유 지도를 동시에 최적화</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Occupancy-SLAM: 로봇 포즈와 연속 점유 지도를 동시에 최적화</h1>
+      <p class="entry-name-en">Occupancy-SLAM: Simultaneously Optimizing Robot Poses and Continuous Occupancy Map</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.10743v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>가우스-뉴턴 변형을 사용하여 2D 레이저 스캔과 주행거리계 정보로부터 로봇 궤적과 연속 점유 지도를 동시에 최적화하는 SLAM 접근법.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2405.10743" target="_blank" rel="noopener">Occupancy-SLAM: Simultaneously Optimizing Robot Poses and Continuous Occupancy Map</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문에서는 2D 레이저 스캔(및 오도메트리) 정보를 사용하여 로봇 궤적과 점유 지도를 동시에 최적화하는 최적화 기반 SLAM 접근법을 제안합니다. 핵심 혁신은 로봇 자세와 점유 지도가 함께 최적화된다는 점으로, 이는 지도를 추정하기 전에 로봇 자세를 먼저 얻어야 하는 기존 점유 지도 작성 전략과 크게 다릅니다. 본 공식에서 지도는 환경의 각 2D 지점이 해당 증거 값을 갖는 연속 점유 지도로 표현됩니다. 점유-SLAM 문제는 변수에 모든 로봇 자세와 선택된 이산 격자 셀 노드의 점유 값을 포함하는 최적화 문제로 공식화됩니다. 우리는 이 새롭게 공식화된 문제를 해결하기 위해 가우스-뉴턴 방법의 변형을 제안하며, 최적화된 점유 지도와 로봇 궤적 및 그 불확실성을 함께 얻습니다. 본 알고리즘은 배치 최적화를 기반으로 하고 관련 변수 수가 많기 때문에 오프라인 접근법입니다. 시뮬레이션과 공개적으로 이용 가능한 실제 2D 레이저 데이터셋을 사용한 평가는, 상대적으로 정확한 초기 추정치가 제공될 때 제안된 접근법이 최신 기술보다 지도와 로봇 궤적을 더 정확하게 추정할 수 있음을 보여줍니다. 비디오는 제안된 점유-SLAM의 수렴 과정과 Cartographer와의 결과 비교를 보여주며, \url{https://youtu.be/4oLyVEUC4iY}에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>본 논문에서는 2D 레이저 스캔(및 오도메트리) 정보를 사용하여 로봇 궤적과 점유 지도를 동시에 최적화하는 최적화 기반 SLAM 접근법을 제안합니다. 핵심 혁신은 로봇 자세와 점유 지도가 함께 최적화된다는 점으로, 이는 지도를 추정하기 전에 로봇 자세를 먼저 얻어야 하는 기존 점유 지도 작성 전략과 크게 다릅니다. 본 공식에서 지도는 환경의 각 2D 지점이 해당 증거 값을 갖는 연속 점유 지도로 표현됩니다. 점유-SLAM 문제는 변수에 모든 로봇 자세와 선택된 이산 격자 셀 노드의 점유 값을 포함하는 최적화 문제로 공식화됩니다. 우리는 이 새롭게 공식화된 문제를 해결하기 위해 가우스-뉴턴 방법의 변형을 제안하며, 최적화된 점유 지도와 로봇 궤적 및 그 불확실성을 함께 얻습니다. 본 알고리즘은 배치 최적화를 기반으로 하고 관련 변수 수가 많기 때문에 오프라인 접근법입니다. 시뮬레이션과 공개적으로 이용 가능한 실제 2D 레이저 데이터셋을 사용한 평가는, 상대적으로 정확한 초기 추정치가 제공될 때 제안된 접근법이 최신 기술보다 지도와 로봇 궤적을 더 정확하게 추정할 수 있음을 보여줍니다. 비디오는 제안된 점유-SLAM의 수렴 과정과 Cartographer와의 결과 비교를 보여주며, \url{https://youtu.be/4oLyVEUC4iY}에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p12_1_2/">SLAM 与场景理解</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_active_set_method/">이차 계획법의 활성 집합법</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zhao_occupancy_slam_simultaneously_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_active_set_method/">
+          <span class="entry-type">알고리즘</span>
+          <h3>이차 계획법의 활성 집합법</h3>
+          <p>활성 제약 조건의 작업 집합을 유지하고 최적성 조건이 만족될 때까지 등식 제약 하위 문제를 푸는 QP를 위한 반복 알고리즘이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p12_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>SLAM 与场景理解</h3>
+          <p>定位精度、地图一致性、语义标注准确率</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

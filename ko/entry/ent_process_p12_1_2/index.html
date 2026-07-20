@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLAM 与场景理解 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SLAM 与场景理解</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>SLAM 与场景理解</h1>
+      <p class="entry-name-en">SLAM and Scene Understanding</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>定位精度、地图一致性、语义标注准确率</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p><strong>소속 단계/작업 패키지</strong>: VLA / WAM / AI 알고리즘 통합 (AI &amp; Perception)</p>
+<h2 id="_2">핵심 내용</h2>
+<p><strong>방법/도구</strong>: 시각/레이저 SLAM, 의미론적 분할, 3D 장면 그래프</p>
+<p><strong>설계 사고 논리</strong>: 로봇은 자신의 위치, 주변 환경, 목표 도달 방법을 알아야 함</p>
+<p><strong>핵심 제약 조건</strong>: 동적 환경, 계산 자원, 지도 업데이트</p>
+<p><strong>완료 기준/산출물</strong>: 위치 정밀도, 지도 일관성, 의미론적 주석 정확도</p>
+<p><strong>3단계 하위 작업 및 4단계 핵심 조치:</strong></p>
+<ul>
+<li>P12.1.2.1 입력 정리 및 목표 정량화</li>
+<li>
+<p>「SLAM 및 장면 이해」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화된 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.</p>
+<ul>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화된 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+</ul>
+</li>
+<li>
+<p>P12.1.2.2 방안/방법 설계</p>
+</li>
+<li>
+<p>「SLAM 및 장면 이해」에 대한 실행 방법 또는 후보 방안을 수립하고, 「시각/레이저 SLAM, 의미론적 분할, 3D 장면 그래프」를 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.</p>
+<ul>
+<li>2개 이상의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 확정</li>
+</ul>
+</li>
+<li>
+<p>P12.1.2.3 구현/프로토타입/시제품 제작</p>
+</li>
+<li>
+<p>설계 방안에 따라 「SLAM 및 장면 이해」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.</p>
+<ul>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 실행</li>
+<li>이상 및 편차 기록</li>
+</ul>
+</li>
+<li>
+<p>P12.1.2.4 검증 및 문제 해결</p>
+</li>
+<li>
+<p>「SLAM 및 장면 이해」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적함.</p>
+<ul>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 실행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+</ul>
+</li>
+<li>
+<p>P12.1.2.5 문서 출력 및 하위 전달</p>
+</li>
+<li>「SLAM 및 장면 이해」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료함.<ul>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_suzuki_mobile_robot_localization_with_2019/">유사거리 잔차를 이용한 GNSS 다중경로 검출 기반 이동 로봇 위치 추정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_humanoid_occupancy_enabling_a_2025/">Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_fischer_bio_inspired_robot_perception_2021/">생체에서 영감을 받은 로봇 인지와 로봇이 모델링한 인간 인지의 결합</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_lanza_multi_sensory_integration_in_a_2020/">양자유사 로봇 인지 모델에서의 다중감각 통합</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_colledanchise_act_perceive_and_plan_in_belie_2020/">로봇 위치 추정을 위한 신념 공간에서의 행동, 인식 및 계획</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_teetaert_continuum_robot_localization_u_2026/">분산식 시간측정 센서를 활용한 연속체 로봇 위치추정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wise_a_certifiably_correct_algorith_2026/">일반화된 로봇-월드 및 핸드-아이 보정을 위한 인증 가능한 정확한 알고리즘</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_kimera_an_open_source_library_2026/">Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_armor_egocentric_perception_fo_2024/">ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_volumetric_environment_represe_2024/">Volumetric Environment Representation for Vision-Language Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bin_real_time_polygonal_semantic_m_2024/">인간형 로봇 계단 등반을 위한 실시간 다각형 의미 지도 작성</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hughes_foundations_of_spatial_percept_2023/">로봇 공간 인식의 기초: 계층적 표상과 실시간 시스템</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360 LiDAR</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_thinking_in_360_humanoid_visua_2025/">Thinking in 360: Humanoid Visual Search in the Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_humanoidpano_hybrid_spherical_2025/">HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_saccon_automated_generation_of_mdps_u_2025/">논리 프로그래밍과 대형 언어 모델을 활용한 로봇 응용을 위한 MDP 자동 생성</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_active_metric_semantic_mapping_2023/">다중 공중 로봇을 위한 능동 메트릭-시맨틱 매핑</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_egoactor_grounding_task_planni_2026/">EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_embodmocap_in_the_wild_4d_huma_2026/">EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion: An optimization-based multi-sensor state estimator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zhao_occupancy_slam_simultaneously_2024/">Occupancy-SLAM: 로봇 포즈와 연속 점유 지도를 동시에 최적화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_thinking_in_360_humanoid_visua_2026/">Thinking in 360°: Humanoid Visual Search in the Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_autoodom_learning_auto_regress_2025/">AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_humblot_renaux_navigation_oriented_scene_unde_2022/">로봇 자율 주행을 위한 내비게이션 중심 장면 이해: 자기중심 영상에서 주행 가능 영역 분할 학습</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p12_1_2"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_livox_mid_360_lidar_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Livox Mid-360 LiDAR</h3>
+          <p>휨로봇 머리나 몸통에 장착되는 컴팩트한 360도 LiDAR.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_active_metric_semantic_mapping_2023/">
+          <span class="entry-type">논문</span>
+          <h3>다중 공중 로봇을 위한 능동 메트릭-시맨틱 매핑</h3>
+          <p>본 논문은 다수의 이종 공중 로봇이 협력하여 컴팩트한 객체 수준 지도를 구축하고 기하학적 및 의미론적 불확실성을 모두 줄이도록 정보가 풍부한 관점을 선택하는 능동 메트릭-시맨틱…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_autoodom_learning_auto_regress_2025/">
+          <span class="entry-type">논문</span>
+          <h3>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</h3>
+          <p>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humanoid_occupancy_enabling_a_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots</h3>
+          <p>Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wise_a_certifiably_correct_algorith_2026/">
+          <span class="entry-type">논문</span>
+          <h3>일반화된 로봇-월드 및 핸드-아이 보정을 위한 인증 가능한 정확한 알고리즘</h3>
+          <p>SE(3) 상 최대우도 QCQP에 대한 긴밀한 SDP 완화를 통해 여러 센서와 대상 자세를 공동으로 추정하고 스케일-프리 단안 카메라를 포함하는 일반화된 로봇-월드 및 핸드-아이…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_thinking_in_360_humanoid_visua_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Thinking in 360°: Humanoid Visual Search in the Wild</h3>
+          <p>Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_fischer_bio_inspired_robot_perception_2021/">
+          <span class="entry-type">논문</span>
+          <h3>생체에서 영감을 받은 로봇 인지와 로봇이 모델링한 인간 인지의 결합</h3>
+          <p>Tobias Fischer가 2021년에 발표한 연구 진술로, iCub의 마커 없는 시점 취득, RT-GENE 시선 데이터셋, RT-BENE 눈 깜빡임 데이터셋, 시각적 장소…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humblot_renaux_navigation_oriented_scene_unde_2022/">
+          <span class="entry-type">논문</span>
+          <h3>로봇 자율 주행을 위한 내비게이션 중심 장면 이해: 자기중심 영상에서 주행 가능 영역 분할 학습</h3>
+          <p>본 논문은 자기중심 야외 영상에 3단계 순서형 주행 가능 수준 레이블을 부여하고, 소프트 순서형 라벨과 안전에 중요한 픽셀별 손실 가중치를 사용하여 도심과 오프로드 데이터셋 간…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_embodmocap_in_the_wild_4d_huma_2026/">
+          <span class="entry-type">논문</span>
+          <h3>EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents</h3>
+          <p>EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents is a 2026 work on human…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_occupancy_slam_simultaneously_2024/">
+          <span class="entry-type">논문</span>
+          <h3>Occupancy-SLAM: 로봇 포즈와 연속 점유 지도를 동시에 최적화</h3>
+          <p>가우스-뉴턴 변형을 사용하여 2D 레이저 스캔과 주행거리계 정보로부터 로봇 궤적과 연속 점유 지도를 동시에 최적화하는 SLAM 접근법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_armor_egocentric_perception_fo_2024/">
+          <span class="entry-type">논문</span>
+          <h3>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</h3>
+          <p>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p12/">
+          <span class="entry-type">방법</span>
+          <h3>VLA / WAM / AI 算法集成（AI &amp; Perception）</h3>
+          <p>VLA / WAM / AI 算法集成（AI &amp; Perception）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lanza_multi_sensory_integration_in_a_2020/">
+          <span class="entry-type">논문</span>
+          <h3>양자유사 로봇 인지 모델에서의 다중감각 통합</h3>
+          <p>다중 큐비트 시스템을 사용하여 연속적인 센서 판독값을 인코딩하고 의사결정을 위한 신념 쿼리를 지원하는 양자유사 로봇 인지 모델을 다중감각 입력으로 일반화함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_egoactor_grounding_task_planni_2026/">
+          <span class="entry-type">논문</span>
+          <h3>EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models</h3>
+          <p>EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_thinking_in_360_humanoid_visua_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Thinking in 360: Humanoid Visual Search in the Wild</h3>
+          <p>Thinking in 360: Humanoid Visual Search in the Wild is a 2025 work on navigation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kimera_an_open_source_library_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping</h3>
+          <p>Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping is a 2026 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hughes_foundations_of_spatial_percept_2023/">
+          <span class="entry-type">논문</span>
+          <h3>로봇 공간 인식의 기초: 계층적 표상과 실시간 시스템</h3>
+          <p>본 논문은 계층적 3D 장면 그래프를 확장 가능한 공간 표상으로 형식화하고, 시각-관성 데이터로부터 3D 장면 그래프를 실시간으로 점진적으로 구축·유지·보정하는 오픈소스 실시간…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM</h3>
+          <p>ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_volumetric_environment_represe_2024/">
+          <span class="entry-type">논문</span>
+          <h3>Volumetric Environment Representation for Vision-Language Navigation</h3>
+          <p>Volumetric Environment Representation for Vision-Language Navigation (VER), is a 2024 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_saccon_automated_generation_of_mdps_u_2025/">
+          <span class="entry-type">논문</span>
+          <h3>논리 프로그래밍과 대형 언어 모델을 활용한 로봇 응용을 위한 MDP 자동 생성</h3>
+          <p>본 논문은 소수 샘플 프롬프트된 대형 언어 모델, Prolog 기반 지식 추출, 도달 가능성 분석 및 Storm 모델 검사기를 결합하여 자연어로 기술된 로봇 시나리오에서 마르코프…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bin_real_time_polygonal_semantic_m_2024/">
+          <span class="entry-type">논문</span>
+          <h3>인간형 로봇 계단 등반을 위한 실시간 다각형 의미 지도 작성</h3>
+          <p>본 논문은 인간형 로봇 계단 등반을 위한 실시간 다각형 평면 의미 지도 작성 시스템을 제안한다. GPU 가속 이방성 확산 필터링, Sobel 기반 법선 추정, 다각형 윤곽 추출,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_teetaert_continuum_robot_localization_u_2026/">
+          <span class="entry-type">논문</span>
+          <h3>분산식 시간측정 센서를 활용한 연속체 로봇 위치추정</h3>
+          <p>본 논문은 비구조화 환경에서 연속체 로봇의 위치추정을 위해 희소 분산식 시간측정 센서 측정값과 자이로스코프 데이터를 로봇 형상 사전정보와 융합하는 연속시간 요인그래프 기반 MAP…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">
+          <span class="entry-type">논문</span>
+          <h3>VINS-Fusion: An optimization-based multi-sensor state estimator</h3>
+          <p>VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humanoidpano_hybrid_spherical_2025/">
+          <span class="entry-type">논문</span>
+          <h3>HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots</h3>
+          <p>HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_colledanchise_act_perceive_and_plan_in_belie_2020/">
+          <span class="entry-type">논문</span>
+          <h3>로봇 위치 추정을 위한 신념 공간에서의 행동, 인식 및 계획</h3>
+          <p>본 논문은 엔트로피 기반 휴리스틱을 사용하는 최우선 탐색을 통해 신념 공간에서 구동 및 인식 동작 시퀀스를 계획함으로써 로봇 자세 불확실성을 줄이는 행동-계획 상호 교차…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_suzuki_mobile_robot_localization_with_2019/">
+          <span class="entry-type">논문</span>
+          <h3>유사거리 잔차를 이용한 GNSS 다중경로 검출 기반 이동 로봇 위치 추정</h3>
+          <p>본 논문은 유사거리 잔차를 분석하여 비시각 다중경로 신호를 검출하고 제외하는 입자 필터 기반 GNSS 위치 추정 방법을 제안하고 실제 도심 환경에서 검증하였다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

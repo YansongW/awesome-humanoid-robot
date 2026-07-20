@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" aria-current="page">Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Humanoid Robots: From Mine to Market</h1>
+      <p class="hero-subtitle">
+        A systematic map of the humanoid robot value chain—materials, components, manufacturing, design, AI, software, data, testing, mass production, applications, markets, and policy.
+        Explore 2143 entities and 5892 relations
+      </p>
+      <div class="hero-search">
+        <form action="/en/search/" method="get">
+          <input type="search" name="q" placeholder="Enter keywords, e.g. reducer, Tesla, VLA…" autocomplete="off">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number">2143</span>
+          <span class="stat-label">Entities</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5892</span>
+          <span class="stat-label">Relations</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">26</span>
+          <span class="stat-label">Types</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">13</span>
+          <span class="stat-label">Domains</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="roadmap-banner">
+      <div>
+        <strong>🛠️ Build a Humanoid from 0 to 1</strong>
+        <p>A hands-on roadmap for complete beginners: foundations, one joint, a biped platform, then a full humanoid. Every step links to knowledge cards explaining what to do, why, and how to analyze your own case.</p>
+      </div>
+      <a href="/en/roadmap/" class="btn btn-primary">Start the Roadmap</a>
+    </div>
+    <div class="wiki-banner">
+      <div>
+        <strong>📖 Wiki Project</strong>
+        <p>This knowledge graph underpins the Humanoid Robots: From Mine to Market wiki, organized from physics → perception → decision → actuation → system → industry.</p>
+      </div>
+      <a href="/en/wiki/" class="btn btn-secondary">Read Wiki TOC</a>
+    </div>
+    <div class="section-header">
+      <h2>Explore by Domain</h2>
+      <a href="/en/search/" class="link-arrow">View all →</a>
+    </div>
+    <div class="domain-grid">
+      
+      <a class="domain-card" href="/en/search/?domain=00_foundations" style="--domain-color: #7c8798">
+        <span class="domain-name">Foundations</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=01_raw_materials" style="--domain-color: #2a9d8f">
+        <span class="domain-name">Raw Materials</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=02_components" style="--domain-color: #5d8c48">
+        <span class="domain-name">Components</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=03_manufacturing_processes" style="--domain-color: #c38e3c">
+        <span class="domain-name">Manufacturing Processes</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=04_assembly_integration_testing" style="--domain-color: #b3592a">
+        <span class="domain-name">Assembly, Integration &amp; Testing</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=05_mass_production" style="--domain-color: #a84442">
+        <span class="domain-name">Mass Production</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=06_design_engineering" style="--domain-color: #7d5a8a">
+        <span class="domain-name">Design Engineering</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=07_ai_models_algorithms" style="--domain-color: #3d7ea6">
+        <span class="domain-name">AI Models &amp; Algorithms</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=08_software_middleware" style="--domain-color: #5a8fbd">
+        <span class="domain-name">Software &amp; Middleware</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=09_data_datasets" style="--domain-color: #2d5a7b">
+        <span class="domain-name">Data &amp; Datasets</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=10_evaluation_benchmarks" style="--domain-color: #c9a227">
+        <span class="domain-name">Evaluation &amp; Benchmarks</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=11_applications_markets" style="--domain-color: #b34d73">
+        <span class="domain-name">Applications &amp; Markets</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/en/search/?domain=12_policy_regulation_ethics" style="--domain-color: #6b5b4f">
+        <span class="domain-name">Policy, Regulation &amp; Ethics</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="container">
+    <div class="section-header">
+      <h2>Browse by Type</h2>
+    </div>
+    <div class="type-cloud">
+      
+      <a class="type-tag" href="/en/types/algorithm/">Algorithm</a>
+      
+      <a class="type-tag" href="/en/types/application_scenario/">Application Scenario</a>
+      
+      <a class="type-tag" href="/en/types/benchmark/">Benchmark</a>
+      
+      <a class="type-tag" href="/en/types/company/">Company</a>
+      
+      <a class="type-tag" href="/en/types/component/">Component</a>
+      
+      <a class="type-tag" href="/en/types/component_manufacturer/">Component Manufacturer</a>
+      
+      <a class="type-tag" href="/en/types/concept/">Concept</a>
+      
+      <a class="type-tag" href="/en/types/dataset/">Dataset</a>
+      
+      <a class="type-tag" href="/en/types/equation/">Equation</a>
+      
+      <a class="type-tag" href="/en/types/formalism/">Formalism</a>
+      
+      <a class="type-tag" href="/en/types/foundation/">Foundation</a>
+      
+      <a class="type-tag" href="/en/types/market_segment/">Market Segment</a>
+      
+      <a class="type-tag" href="/en/types/material/">Material</a>
+      
+      <a class="type-tag" href="/en/types/method/">Method</a>
+      
+      <a class="type-tag" href="/en/types/oem/">OEM</a>
+      
+      <a class="type-tag" href="/en/types/operator/">Operator</a>
+      
+      <a class="type-tag" href="/en/types/paper/">Paper</a>
+      
+      <a class="type-tag" href="/en/types/principle/">Principle</a>
+      
+      <a class="type-tag" href="/en/types/report/">Report</a>
+      
+      <a class="type-tag" href="/en/types/robot_system/">Robot System</a>
+      
+      <a class="type-tag" href="/en/types/software_platform/">Software Platform</a>
+      
+      <a class="type-tag" href="/en/types/standard/">Standard</a>
+      
+      <a class="type-tag" href="/en/types/technology/">Technology</a>
+      
+      <a class="type-tag" href="/en/types/theorem/">Theorem</a>
+      
+      <a class="type-tag" href="/en/types/tier1_supplier/">Tier 1 Supplier</a>
+      
+      <a class="type-tag" href="/en/types/tool_equipment/">Tool / Equipment</a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Entities</h2>
+    </div>
+    <div class="entry-grid">
+      
+      <a class="entry-card" href="/en/entry/ent_method_behavior_cloning/">
+        <span class="entry-type">Method</span>
+        <h3>Behavior Cloning</h3>
+        <p>A supervised imitation-learning method that trains a policy to replicate expert demonstrations, often used as a baseline…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms, Data &amp; Datasets</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+        <span class="entry-type">Method</span>
+        <h3>Whole-Body Control (WBC)</h3>
+        <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks such as balance,…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_concept_world_model/">
+        <span class="entry-type">Concept</span>
+        <h3>World Model</h3>
+        <p>A learned or hand-crafted internal model that predicts future states of the environment, enabling planning and reasoning…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_paper_openvla_2024_1/">
+        <span class="entry-type">Method</span>
+        <h3>OpenVLA</h3>
+        <p>7B-parameter open VLA trained on 970k episodes from Open X-Embodiment.</p>
+        <span class="entry-meta">AI Models &amp; Algorithms</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_method_sim_to_real/">
+        <span class="entry-type">Method</span>
+        <h3>Sim-to-Real Transfer</h3>
+        <p>Techniques for transferring policies or controllers trained in simulation to physical robots, typically using domain…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_algorithm_ppo/">
+        <span class="entry-type">Algorithm</span>
+        <h3>Proximal Policy Optimization (PPO)</h3>
+        <p>A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive policy changes and…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+        <span class="entry-type">Method</span>
+        <h3>Model Predictive Control (MPC)</h3>
+        <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem using a predictive…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_method_action_chunking_transformer/">
+        <span class="entry-type">Method</span>
+        <h3>Action Chunking with Transformers (ACT)</h3>
+        <p>An imitation-learning method that predicts a sequence of future actions as a chunk using a transformer, reducing…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms, Data &amp; Datasets</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_method_domain_randomization/">
+        <span class="entry-type">Method</span>
+        <h3>Domain Randomization</h3>
+        <p>A sim-to-real technique that randomizes simulation parameters during training to improve policy robustness against…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms, Data &amp; Datasets</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_benchmark_humanoidbench/">
+        <span class="entry-type">Benchmark</span>
+        <h3>HumanoidBench</h3>
+        <p>A simulated benchmark for whole-body humanoid locomotion and manipulation based on the Unitree H1 robot, providing over…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms, Evaluation &amp; Benchmarks</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_method_task_planning/">
+        <span class="entry-type">Method</span>
+        <h3>Task Planning</h3>
+        <p>The process of generating a sequence of high-level actions to achieve a goal, often using symbolic representations such…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms</span>
+      </a>
+      
+      <a class="entry-card" href="/en/entry/ent_method_diffusion_policy/">
+        <span class="entry-type">Method</span>
+        <h3>Diffusion Policy</h3>
+        <p>A visuomotor policy that represents action distributions as denoising diffusion models, enabling multimodal and smooth…</p>
+        <span class="entry-meta">AI Models &amp; Algorithms, Data &amp; Datasets</span>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2>Relation Graph</h2>
+        <p>A systematic map of the humanoid robot value chain—materials, components, manufacturing, design, AI, software, data, testing, mass production, applications, markets, and policy.</p>
+      </div>
+      <a href="/en/graph/" class="btn btn-primary">Open Graph</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+</body>
+</html>

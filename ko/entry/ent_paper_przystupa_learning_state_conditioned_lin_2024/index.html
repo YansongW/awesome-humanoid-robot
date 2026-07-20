@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로봇 매니퓰레이터의 저차원 제어를 위한 상태 조건부 선형 매핑 학습 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">로봇 매니퓰레이터의 저차원 제어를 위한 상태 조건부 선형 매핑 학습</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>로봇 매니퓰레이터의 저차원 제어를 위한 상태 조건부 선형 매핑 학습</h1>
+      <p class="entry-name-en">Learning State Conditioned Linear Mappings for Low-Dimensional Control of Robotic Manipulators</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">부품</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">상위</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.21441v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 신경망을 사용하여 상태 의존적 선형 기저를 예측하고 저자유도 입력으로 고자유도 로봇 매니퓰레이터를 제어하는 상태 조건부 선형 매핑(SCL maps)을 제안하고 Kinova Gen-3 lite 매니퓰레이터를 통한 사용자 연구로 검증한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2410.21441" target="_blank" rel="noopener">Learning State Conditioned Linear Mappings for Low-Dimensional Control of Robotic Manipulators</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇 조작 문제를 해결하기 위해 제어 솔루션을 단순화하는 적절한 작업 공간을 식별하는 것은 중요합니다. 이 문제에 대한 한 가지 접근 방식은 적절한 저차원 행동 공간을 학습하는 것입니다. 선형 및 비선형 행동 매핑 방법은 단순성과 단일 저차원 부분 공간 외부의 모터 명령을 표현하는 능력 사이에서 절충점을 가집니다. 우리는 로봇의 현재 구성에 따라 적응하는 로컬 선형 행동 표현을 학습함으로써 이 두 가지 이점을 모두 얻을 수 있다고 제안합니다. 상태 조건부 선형 맵은 주어진 상태에 대해 고차원 로봇 작동이 저차원 행동에서 선형임을 보장합니다. 로봇 상태가 변화함에 따라 행동 매핑도 변화하여 즉시 필요한 움직임을 표현할 수 있는 능력을 보장합니다. 이러한 로컬 선형 표현은 설계상 바람직한 이론적 특성을 보장하며, 두 가지 사용자 연구를 통해 이러한 발견을 경험적으로 검증합니다. 결과는 상태 조건부 선형 맵이 집어 옮기기 작업에서 조건부 오토인코더 및 PCA 기준선보다 우수한 성능을 보이며, 더 복잡한 따르기 작업에서 모드 전환과 유사한 성능을 나타냄을 시사합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>로봇 조작 문제를 해결하기 위해 제어 솔루션을 단순화하는 적절한 작업 공간을 식별하는 것은 중요합니다. 이 문제에 대한 한 가지 접근 방식은 적절한 저차원 행동 공간을 학습하는 것입니다. 선형 및 비선형 행동 매핑 방법은 단순성과 단일 저차원 부분 공간 외부의 모터 명령을 표현하는 능력 사이에서 절충점을 가집니다. 우리는 로봇의 현재 구성에 따라 적응하는 로컬 선형 행동 표현을 학습함으로써 이 두 가지 이점을 모두 얻을 수 있다고 제안합니다. 상태 조건부 선형 맵은 주어진 상태에 대해 고차원 로봇 작동이 저차원 행동에서 선형임을 보장합니다. 로봇 상태가 변화함에 따라 행동 매핑도 변화하여 즉시 필요한 움직임을 표현할 수 있는 능력을 보장합니다. 이러한 로컬 선형 표현은 설계상 바람직한 이론적 특성을 보장하며, 두 가지 사용자 연구를 통해 이러한 발견을 경험적으로 검증합니다. 결과는 상태 조건부 선형 맵이 집어 옮기기 작업에서 조건부 오토인코더 및 PCA 기준선보다 우수한 성능을 보이며, 더 복잡한 따르기 작업에서 모드 전환과 유사한 성능을 나타냄을 시사합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_dexterous_manipulation/">손재주 있는 조작</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_bilateral_teleoperation/">양방향 원격 조작</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_przystupa_learning_state_conditioned_lin_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_bilateral_teleoperation/">
+          <span class="entry-type">방법</span>
+          <h3>양방향 원격 조작</h3>
+          <p>명령 신호는 마스터→슬레이브, 힘·촉각 피드백은 슬레이브→마스터로 흐르는 원격 조작 구조로 투명성과 안전성을 향상.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">방법</span>
+          <h3>손재주 있는 조작</h3>
+          <p>다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

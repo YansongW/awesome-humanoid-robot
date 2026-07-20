@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIT 휴머노이드 로봇: 곡예 동작을 위한 설계, 운동 계획 및 제어 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">MIT 휴머노이드 로봇: 곡예 동작을 위한 설계, 운동 계획 및 제어</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>MIT 휴머노이드 로봇: 곡예 동작을 위한 설계, 운동 계획 및 제어</h1>
+      <p class="entry-name-en">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">부품</span><span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.09025v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 MIT 휴머노이드 로봇의 설계, 액추에이터 인식 키노다이나믹 계획법 및 착륙 제어를 제시하며, 경험적으로 검증된 액추에이터 및 배터리 모델을 포함한 사실적인 동역학 시뮬레이션에서 백플립, 프론트플립, 스핀 점프를 시연한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2104.09025" target="_blank" rel="noopener">The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>인간형 로봇의 공중제비나 회전 점프와 같은 곡예 동작을 구현하려면 하드웨어 설계, 동작 계획 및 제어 전반에 걸친 체계적인 접근 방식이 필요합니다. 본 논문에서는 인간형 로봇의 고도로 동적인 동작 제어를 위한 실용적인 시스템 설계의 일환으로, 새로운 인간형 로봇 설계, 액추에이터 인식 운동-동역학적 동작 계획기, 그리고 착지 제어기를 제시합니다. 충격적인 동작을 구현하기 위해 두 가지 새로운 고유수용성 액추에이터를 개발하고, 자체 설계한 동력계를 사용하여 그 성능을 실험적으로 평가합니다. 액추에이터의 토크, 속도 및 전력 한계는 구성에 따른 반력 한계를 근사화하여 운동-동역학적 동작 계획기에 반영하고, 로봇의 전신 동역학과 함께 액추에이터 동역학을 포함시켜 동역학 시뮬레이터에 반영합니다. 착지 제어를 위해 모델 예측 제어와 전신 충격 제어를 동적으로 일관된 방식으로 연결하여 장시간 수평 최적 제어와 고대역폭 전신 동역학 기반 피드백을 모두 달성합니다. 전체 동작에 걸친 액추에이터의 토크 출력은 배터리 전압 강하 및 역기전력 전압을 포함한 속도-토크 모델을 기반으로 검증됩니다. 세심하게 설계된 하드웨어와 제어 프레임워크를 통해 현실적인 동역학 시뮬레이션에서 뒤로 공중제비, 앞으로 공중제비 및 회전 점프와 같은 동적 동작을 성공적으로 시연합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>인간형 로봇의 공중제비나 회전 점프와 같은 곡예 동작을 구현하려면 하드웨어 설계, 동작 계획 및 제어 전반에 걸친 체계적인 접근 방식이 필요합니다. 본 논문에서는 인간형 로봇의 고도로 동적인 동작 제어를 위한 실용적인 시스템 설계의 일환으로, 새로운 인간형 로봇 설계, 액추에이터 인식 운동-동역학적 동작 계획기, 그리고 착지 제어기를 제시합니다. 충격적인 동작을 구현하기 위해 두 가지 새로운 고유수용성 액추에이터를 개발하고, 자체 설계한 동력계를 사용하여 그 성능을 실험적으로 평가합니다. 액추에이터의 토크, 속도 및 전력 한계는 구성에 따른 반력 한계를 근사화하여 운동-동역학적 동작 계획기에 반영하고, 로봇의 전신 동역학과 함께 액추에이터 동역학을 포함시켜 동역학 시뮬레이터에 반영합니다. 착지 제어를 위해 모델 예측 제어와 전신 충격 제어를 동적으로 일관된 방식으로 연결하여 장시간 수평 최적 제어와 고대역폭 전신 동역학 기반 피드백을 모두 달성합니다. 전체 동작에 걸친 액추에이터의 토크 출력은 배터리 전압 강하 및 역기전력 전압을 포함한 속도-토크 모델을 기반으로 검증됩니다. 세심하게 설계된 하드웨어와 제어 프레임워크를 통해 현실적인 동역학 시뮬레이션에서 뒤로 공중제비, 앞으로 공중제비 및 회전 점프와 같은 동적 동작을 성공적으로 시연합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_splitadapter_load_aware_humano_2026/">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_newton_euler_equations/">뉴턴-오일러 방정식</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_physiflow_physics_aware_humano_2026/">PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_whole_body_dynamic_throwing_wi_2025/">Whole-Body Dynamic Throwing with Legged Manipulators</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chignoli_the_mit_humanoid_robot_design_2021"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_newton_euler_equations/">
+          <span class="entry-type">방정식</span>
+          <h3>뉴턴-오일러 방정식</h3>
+          <p>강철 또는 관절 연결 다물체 시스템의 운전을 기술하는 결합된 힘 및 토크 평형 방정식 집합.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_physiflow_physics_aware_humano_2026/">
+          <span class="entry-type">논문</span>
+          <h3>PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking</h3>
+          <p>PhysiFlow 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">
+          <span class="entry-type">논문</span>
+          <h3>센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</h3>
+          <p>본 논문은 다수의 웨어러블 센서 모달리티에서 RGB 비디오 학생 네트워크로 지식을 증류하여 동작 인식을 수행하는 SAKDN 프레임워크를 제안하며, Gramian Angular…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_splitadapter_load_aware_humano_2026/">
+          <span class="entry-type">논문</span>
+          <h3>SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</h3>
+          <p>SplitAdapter 把仿真交互数据转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</h3>
+          <p>본 논문은 비선형 모델 예측 제어(MPC)와 푸아송 안전 함수를 통해 지각 데이터에서 합성된 제어 장벽 함수(CBF) 제약을 결합한 예측 안전 필터를 제안한다. 이동 경계 및…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_whole_body_dynamic_throwing_wi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Whole-Body Dynamic Throwing with Legged Manipulators</h3>
+          <p>这篇工作先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用扩散策略/流匹配生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</h3>
+          <p>Sumo…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

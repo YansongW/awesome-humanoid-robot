@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies</h1>
+      <p class="entry-name-en">ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31132v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2606.31132v1 Announce Type: new Abstract: Generative control policies (GCPs), such as diffusion policies and flow-based vision-language-action models, enable test-time scaling in robot control. Test-time compute can be allocated along two axes: sequential scaling, which increases denoising steps to refine actions, and parallel scaling, which samples multiple candidate actions to search across modes of the policy distribution. However, the optimal allocation of sequential and parallel compute is hard to know a priori as it is state-, task-, and policy-dependent. For example, early stages of a grasp may benefit from broader parallel exploration, while near-contact phases may require more sequential refinement for precision. We present ELASTIC, an algorithm that learns state-dependent test-time compute schedules for GCPs. We formulate compute allocation as a meta-Markov Decision Process in which a meta-policy interacts with a frozen pretrained robot policy and selects sequential steps and parallel samples at each denoising iteration to maximize task success while minimizing compute. Using reinforcement learning, this meta-policy also learns adaptive compute schedules without access to the GCP&#39;s training data. Across simulated manipulation benchmarks with diffusion policies, ELASTIC Pareto-dominates fixed and single-axis scaling baselines at matched compute budgets. On real-world robot manipulation with the $\pi_{0.5}$ vision-language-action model, ELASTIC matches best-of-$10$ success while reducing wall-clock latency by 34%.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.31132" target="_blank" rel="noopener">ELASTIC: Efficiently Learning to Adaptively Scale Test-Time Compute for Generative Control Policies</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>생성적 제어 정책(GCP), 예를 들어 확산 정책(diffusion policies) 및 흐름 기반 비전-언어-행동 모델(flow-based vision-language-action models)은 로봇 제어에서 테스트 시간 확장(test-time scaling)을 가능하게 합니다. 테스트 시간 연산은 두 가지 축을 따라 할당될 수 있습니다: 순차적 확장(sequential scaling)은 노이즈 제거 단계를 증가시켜 행동을 정제하고, 병렬 확장(parallel scaling)은 여러 후보 행동을 샘플링하여 정책 분포의 모드 간을 탐색합니다. 그러나 순차적 및 병렬 연산의 최적 할당은 상태, 작업 및 정책에 따라 달라지므로 사전에 알기 어렵습니다. 예를 들어, 잡기(grasp)의 초기 단계는 더 넓은 병렬 탐색의 이점을 얻을 수 있는 반면, 접촉 근접 단계에서는 정밀도를 위해 더 많은 순차적 정제가 필요할 수 있습니다. 우리는 GCP를 위한 상태 의존적 테스트 시간 연산 스케줄을 학습하는 알고리즘인 ELASTIC을 제시합니다. 우리는 연산 할당을 메타-마르코프 결정 과정(meta-Markov Decision Process)으로 공식화하며, 여기서 메타 정책은 고정된 사전 훈련된 로봇 정책과 상호작용하고 각 노이즈 제거 반복에서 순차적 단계와 병렬 샘플을 선택하여 연산을 최소화하면서 작업 성공을 극대화합니다. 강화 학습을 사용하여, 이 메타 정책은 GCP의 훈련 데이터에 접근하지 않고도 적응형 연산 스케줄을 학습합니다. 확산 정책을 사용한 시뮬레이션 조작 벤치마크에서 ELASTIC은 동일한 연산 예산에서 고정 및 단일 축 확장 기준선을 파레토 지배(Pareto-dominates)합니다. <span class="arithmatex">\(π_{0.5}\)</span> 비전-언어-행동 모델을 사용한 실제 로봇 조작에서 ELASTIC은 최고-10(best-of-<span class="arithmatex">\(10\)</span>) 성공률과 일치하면서 벽시계 지연 시간(wall-clock latency)을 34% 줄입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>생성적 제어 정책(GCP), 예를 들어 확산 정책(diffusion policies) 및 흐름 기반 비전-언어-행동 모델(flow-based vision-language-action models)은 로봇 제어에서 테스트 시간 확장(test-time scaling)을 가능하게 합니다. 테스트 시간 연산은 두 가지 축을 따라 할당될 수 있습니다: 순차적 확장(sequential scaling)은 노이즈 제거 단계를 증가시켜 행동을 정제하고, 병렬 확장(parallel scaling)은 여러 후보 행동을 샘플링하여 정책 분포의 모드 간을 탐색합니다. 그러나 순차적 및 병렬 연산의 최적 할당은 상태, 작업 및 정책에 따라 달라지므로 사전에 알기 어렵습니다. 예를 들어, 잡기(grasp)의 초기 단계는 더 넓은 병렬 탐색의 이점을 얻을 수 있는 반면, 접촉 근접 단계에서는 정밀도를 위해 더 많은 순차적 정제가 필요할 수 있습니다. 우리는 GCP를 위한 상태 의존적 테스트 시간 연산 스케줄을 학습하는 알고리즘인 ELASTIC을 제시합니다. 우리는 연산 할당을 메타-마르코프 결정 과정(meta-Markov Decision Process)으로 공식화하며, 여기서 메타 정책은 고정된 사전 훈련된 로봇 정책과 상호작용하고 각 노이즈 제거 반복에서 순차적 단계와 병렬 샘플을 선택하여 연산을 최소화하면서 작업 성공을 극대화합니다. 강화 학습을 사용하여, 이 메타 정책은 GCP의 훈련 데이터에 접근하지 않고도 적응형 연산 스케줄을 학습합니다. 확산 정책을 사용한 시뮬레이션 조작 벤치마크에서 ELASTIC은 동일한 연산 예산에서 고정 및 단일 축 확장 기준선을 파레토 지배(Pareto-dominates)합니다. <span class="arithmatex">\(π_{0.5}\)</span> 비전-언어-행동 모델을 사용한 실제 로봇 조작에서 ELASTIC은 최고-10(best-of-<span class="arithmatex">\(10\)</span>) 성공률과 일치하면서 벽시계 지연 시간(wall-clock latency)을 34% 줄입니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_diffusion_policy_2023/">Diffusion Policy</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_elastic_efficiently_learning_t_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">방법</span>
+          <h3>Diffusion Policy</h3>
+          <p>조건적 노이즈 제거 확산 프로세스로 표현된 시각욱동 정책, 다중 모드 동작 분포 가능.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">벤치마크</span>
+          <h3>HumanoidBench</h3>
+          <p>Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해 40개 이상의 작업을 제공함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

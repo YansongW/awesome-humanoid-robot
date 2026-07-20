@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>整机集成与验证测试（Integration &amp; V&amp;V） · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">整机集成与验证测试（Integration &amp; V&amp;V）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>整机集成与验证测试（Integration &amp; V&amp;V）</h1>
+      <p class="entry-name-en">Integration &amp; V &amp; V testing</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">조립 통합 테스트</span><span class="tag">평가 및 벤치마크</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>整机集成与验证测试（Integration &amp; V&amp;V）</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전체 기기 통합 및 검증 테스트(Integration &amp; V&amp;V)는 휴머노이드 로봇 제품 개발 전 과정 중 15번째 단계이며, WBS V3에서 여러 3레벨 하위 작업으로 세분화됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>이 단계는 입력 검토, 설계 방안, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 받을 수 있도록 보장하는 핵심 마일스톤입니다.</p>
+<h2 id="_3">주요 하위 작업 및 기술 내용</h2>
+<h4 id="_4">하위 시스템 통합</h4>
+<h5 id="_5">다리 시스템 통합 및 디버깅</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 단일 다리 테스트대, 서기, 발 구르기, 관절 조정</li>
+<li><strong>설계 사고 논리</strong>: 다리는 균형과 보행의 핵심이므로 먼저 개별 검증</li>
+<li><strong>핵심 제약 조건</strong>: 안전 벨트, 리미트 보호</li>
+<li><strong>완료 기준 / 산출물</strong>: 단일 다리/양다리 서기 안정, 관절 추종 오차 &lt; 목표
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P15.1.1.1 입력 검토 및 목표 정량화</strong>: 「다리 시스템 통합 및 디버깅」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P15.1.1.2 인터페이스 및 통합 전략 설계</strong>: 「다리 시스템 통합 및 디버깅」과 관련된 하위 시스템 인터페이스, 데이터 흐름 및 타이밍을 정리하고, 통합 순서, 롤백 전략 및 예외 처리 메커니즘을 수립합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 동결</li>
+<li><strong>P15.1.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「다리 시스템 통합 및 디버깅」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P15.1.1.4 검증 및 문제 폐쇄</strong>: 「다리 시스템 통합 및 디버깅」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P15.1.1.5 문서 출력 및 하위 인도</strong>: 「다리 시스템 통합 및 디버깅」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_6">팔 및 손 통합</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 단일 팔 기능 테스트, 양손 협조, 파지 교정</li>
+<li><strong>설계 사고 논리</strong>: 상지 조작 능력은 전체 기기 통합 전에 검증 필요</li>
+<li><strong>핵심 제약 조건</strong>: 작업 공간, 충돌, 부하</li>
+<li><strong>완료 기준 / 산출물</strong>: 단일 팔/양팔 전형적 동작 통과, 파지 성공률 목표 달성
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P15.1.2.1 입력 검토 및 목표 정량화</strong>: 「팔 및 손 통합」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P15.1.2.2 인터페이스 및 통합 전략 설계</strong>: 「팔 및 손 통합」과 관련된 하위 시스템 인터페이스, 데이터 흐름 및 타이밍을 정리하고, 통합 순서, 롤백 전략 및 예외 처리 메커니즘을 수립합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 동결</li>
+<li><strong>P15.1.2.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「팔 및 손 통합」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P15.1.2.4 검증 및 문제 폐쇄</strong>: 「팔 및 손 통합」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P15.1.2.5 문서 출력 및 하위 인도</strong>: 「팔 및 손 통합」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="-">인지-계획-제어 폐쇄 루프 통합</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 종단 간 작업 테스트, 폐쇄 루프 피드백 디버깅</li>
+<li><strong>설계 사고 논리</strong>: 인지, AI, 제어, 실행을 연결하여 시스템 수준 동작 검증</li>
+<li><strong>핵심 제약 조건</strong>: 지연, 오류 처리, 안전</li>
+<li><strong>완료 기준 / 산출물</strong>: 전형적 작업 종단 간 성공률 &gt; 목표
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P15.1.3.1 입력 검토 및 목표 정량화</strong>: 「인지-계획-제어 폐쇄 루프 통합」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P15.1.3.2 알고리즘/제어 방안 설계</strong>: 「종단 간 작업 테스트, 폐쇄 루프 피드백 디버깅」을 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보 방안을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 동결합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 동결</li>
+<li><strong>P15.1.3.3 알고리즘 구현 및 시뮬레이션 검증</strong>: 「인지-계획-제어 폐쇄 루프 통합」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P15.1.3.4 알고리즘 파라미터 튜닝 및 성능 검증</strong>: 「인지-계획-제어 폐쇄 루프 통합」 알고리즘의 파라미터 최적화 및 경계 테스트를 수행하고, 전형적/극한 작업 조건에서의 성능이 지표를 충족하는지 검증합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P15.1.3.5 문서 출력 및 하위 인도</strong>: 「인지-계획-제어 폐쇄 루프 통합」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_7">기능 안전 및 성능 검증</h4>
+<h5 id="_8">안전 기능 테스트</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 비상 정지, 낙상 보호, 충돌 감지, 리미트, 안전 영역</li>
+<li><strong>설계 사고 논리</strong>: 모든 이상 상황에서 안전하게 정지하거나 보호 자세 진입 가능</li>
+<li><strong>핵심 제약 조건</strong>: 안전 표준, 인원 보호</li>
+<li><strong>완료 기준 / 산출물</strong>: 안전 테스트 보고서, 모든 안전 기능 통과
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P15.2.1.1 입력 검토 및 목표 정량화</strong>: 「안전 기능 테스트」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P15.2.1.2 방안/방법 설계</strong>: 「안전 기능 테스트」에 대한 구현 방법 또는 후보 방안을 수립하고, 「비상 정지, 낙상 보호, 충돌 감지, 리미트, 안전 영역」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 동결</li>
+<li><strong>P15.2.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「안전 기능 테스트」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P15.2.1.4 테스트 수행 및 결과 분석</strong>: 검수 기준에 따라 「안전 기능 테스트」 테스트를 수행하고, 통과율/오차/편차를 통계하며, 근본 원인 분석을 수행하고 개선 목록을 작성합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P15.2.1.5 문서 출력 및 하위 인도</strong>: 「안전 기능 테스트」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_9">성능 기준 테스트</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 보행 속도, 배터리 수명, 부하, 조작 정밀도, 소음</li>
+<li><strong>설계 사고 논리</strong>: PRD에 따라 KPI를 항목별로 검증</li>
+<li><strong>핵심 제약 조건</strong>: 테스트 환경, 반복 횟수, 센서 정밀도</li>
+<li><strong>완료 기준 / 산출물</strong>: 《성능 테스트 보고서》, KPI 달성률
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P15.2.2.1 입력 검토 및 목표 정량화</strong>: 「성능 기준 테스트」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P15.2.2.2 방안/방법 설계</strong>: 「성능 기준 테스트」에 대한 구현 방법 또는 후보 방안을 수립하고, 「보행 속도, 배터리 수명, 부하, 조작 정밀도, 소음」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 동결</li>
+<li><strong>P15.2.2.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「성능 기준 테스트」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P15.2.2.4 테스트 수행 및 결과 분석</strong>: 검수 기준에 따라 「성능 기준 테스트」 테스트를 수행하고, 통과율/오차/편차를 통계하며, 근본 원인 분석을 수행하고 개선 목록을 작성합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P15.2.2.5 문서 출력 및 하위 인도</strong>: 「성능 기준 테스트」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_10">환경 적응성 테스트</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 온도, 습도, 먼지, 전자기 간섭, 조명, 바닥 재질</li>
+<li><strong>설계 사고 논리</strong>: 목표 사용 환경에 대한 견고성 검증</li>
+<li><strong>핵심 제약 조건</strong>: 테스트 비용, 시간, 장비</li>
+<li><strong>완료 기준 / 산출물</strong>: 환경 테스트 보고서, 고장 모드 및 개선
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P15.2.3.1 입력 검토 및 목표 정량화</strong>: 「환경 적응성 테스트」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P15.2.3.2 방안/방법 설계</strong>: 「환경 적응성 테스트」에 대한 구현 방법 또는 후보 방안을 수립하고, 「온도, 습도, 먼지, 전자기 간섭, 조명, 바닥 재질」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 동결</li>
+<li><strong>P15.2.3.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「환경 적응성 테스트」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P15.2.3.4 테스트 수행 및 결과 분석</strong>: 검수 기준에 따라 「환경 적응성 테스트」 테스트를 수행하고, 통과율/오차/편차를 통계하며, 근본 원인 분석을 수행하고 개선 목록을 작성합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P15.2.3.5 문서 출력 및 하위 인도</strong>: 「환경 적응성 테스트」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_11">신뢰성 및 내구성 검증</h4>
+<h5 id="_12">관절 및 전체 기기 내구성 테스트</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 연속 운전, 관절 사이클, 낙하, 진동</li>
+<li><strong>설계 사고 논리</strong>: 초기 고장 노출, MTBF 가정 검증</li>
+<li><strong>핵심 제약 조건</strong>: 테스트 주기, 시제품 수량</li>
+<li><strong>완료 기준 / 산출물</strong>: 신뢰성 테스트 계획 및 결과, 고장 분석 및 개선
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P15.3.1.1 입력 검토 및 목표 정량화</strong>: 「관절 및 전체 기기 내구성 테스트」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록 수립</li>
+<li><strong>P15.3.1.2 방안/방법 설계</strong>: 「관절 및 전체 기기 내구성 테스트」에 대한 구현 방법 또는 후보 방안을 수립하고, 「연속 운전, 관절 사이클, 낙하, 진동」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>최소 2개의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수화</li>
+<li>검토 조직 및 방안 동결</li>
+<li><strong>P15.3.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「관절 및 전체 기기 내구성 테스트」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P15.3.1.4 테스트 수행 및 결과 분석</strong>: 검수 기준에 따라 「관절 및 전체 기기 내구성 테스트」 테스트를 수행하고, 통과율/오차/편차를 통계하며, 근본 원인 분석을 수행하고 개선 목록을 작성합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P15.3.1.5 문서 출력 및 하위 인도</strong>: 「관절 및 전체 기기 내구성 테스트」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p14/">软件中间件与系统集成（Software &amp; Integration）</a>
+              <span class="rel-desc">P15 依赖 P14 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_1_3/">感知-规划-控制闭环集成</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_3_1/">关节与整机耐久测试</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_1_1/">DFM/DFA 评审</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_1_3/">装配线规划与 SOP</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_1_1/">腿部系统集成与调试</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              <span class="rel-desc">P15 依赖 P8 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_3_2/">软件稳定性与回归测试</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p16_3_3/">PPAP / 量产 readiness 评估</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p9/">热管理仿真与迭代（Thermal Management）</a>
+              <span class="rel-desc">P15 依赖 P9 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_3_3/">认证准备与预审核</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-desc">P15 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p11/">灵巧手选型/设计与集成（Dexterous Hand）</a>
+              <span class="rel-desc">P15 依赖 P11 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_2_1/">安全功能测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_2_2/">性能基准测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_3_2/">软件稳定性与回归测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_1_2/">手臂与手部集成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p1/">需求定义与系统方案（Concept / Pre-A）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_2_3/">环境适应性测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_1_3/">感知-规划-控制闭环集成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_3_1/">关节与整机耐久测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_3_3/">认证准备与预审核</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15_1_1/">腿部系统集成与调试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16/">小批量试产与量产准备（Pilot &amp; Production Ramp）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P16 依赖 P15 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p15"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>软件稳定性与回归测试</h3>
+          <p>长时运行无崩溃、关键故障注入恢复通过</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_3_3/">
+          <span class="entry-type">방법</span>
+          <h3>PPAP / 量产 readiness 评估</h3>
+          <p>PPAP 批准、量产 readiness 评估通过</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>环境适应性测试</h3>
+          <p>环境测试报告、失效模式与改进</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>手臂与手部集成</h3>
+          <p>单臂/双臂典型动作通过、抓取成功率达标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p9/">
+          <span class="entry-type">방법</span>
+          <h3>热管理仿真与迭代（Thermal Management）</h3>
+          <p>热管理仿真与迭代（Thermal Management）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_3_1/">
+          <span class="entry-type">방법</span>
+          <h3>关节与整机耐久测试</h3>
+          <p>可靠性测试计划与结果、失效分析与改进</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">개념</span>
+          <h3>Production Ramp</h3>
+          <p>파일럿 라인에서 볼륨 제조로 전환하면서 수율, 사이클 타임 및 비용을 개선하는 과정.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>DFM/DFA 评审</h3>
+          <p>DFM/DFA 报告、工程变更清单、成本影响评估</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>性能基准测试</h3>
+          <p>《性能测试报告》、KPI 达标率</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10/">
+          <span class="entry-type">방법</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p14/">
+          <span class="entry-type">방법</span>
+          <h3>软件中间件与系统集成（Software &amp; Integration）</h3>
+          <p>软件中间件与系统集成（Software &amp; Integration）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>感知-规划-控制闭环集成</h3>
+          <p>典型任务端到端成功率 &gt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1/">
+          <span class="entry-type">방법</span>
+          <h3>需求定义与系统方案（Concept / Pre-A）</h3>
+          <p>需求定义与系统方案（Concept / Pre-A）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_3_3/">
+          <span class="entry-type">방법</span>
+          <h3>认证准备与预审核</h3>
+          <p>预测试报告、技术文件清单、认证计划</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>腿部系统集成与调试</h3>
+          <p>单腿/双腿站立稳定、关节跟随误差 &lt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8/">
+          <span class="entry-type">방법</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>安全功能测试</h3>
+          <p>安全测试报告、所有安全功能通过</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16/">
+          <span class="entry-type">방법</span>
+          <h3>小批量试产与量产准备（Pilot &amp; Production Ramp）</h3>
+          <p>小批量试产与量产准备（Pilot &amp; Production Ramp）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p11/">
+          <span class="entry-type">방법</span>
+          <h3>灵巧手选型/设计与集成（Dexterous Hand）</h3>
+          <p>灵巧手选型/设计与集成（Dexterous Hand）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>装配线规划与 SOP</h3>
+          <p>装配流程图、工装清单、SOP、节拍测算</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#_3">주요 하위 작업 및 기술 내용</a><ul>
+<li><a href="#_4">하위 시스템 통합</a><ul>
+<li><a href="#_5">다리 시스템 통합 및 디버깅</a></li>
+<li><a href="#_6">팔 및 손 통합</a></li>
+<li><a href="#-">인지-계획-제어 폐쇄 루프 통합</a></li>
+</ul>
+</li>
+<li><a href="#_7">기능 안전 및 성능 검증</a><ul>
+<li><a href="#_8">안전 기능 테스트</a></li>
+<li><a href="#_9">성능 기준 테스트</a></li>
+<li><a href="#_10">환경 적응성 테스트</a></li>
+</ul>
+</li>
+<li><a href="#_11">신뢰성 및 내구성 검증</a><ul>
+<li><a href="#_12">관절 및 전체 기기 내구성 테스트</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

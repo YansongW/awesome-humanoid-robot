@@ -1,0 +1,957 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>运动控制算法开发与验证（Motion Control） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">运动控制算法开发与验证（Motion Control）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>运动控制算法开发与验证（Motion Control）</h1>
+      <p class="entry-name-en">Motion Control Algorithm Development and Validation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">状态估计与感知融合</h4>
+<h5 id="imu">IMU 与关节编码器融合</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：EKF/UKF/Madgwick、零速修正、关节运动学积分</li>
+<li><strong>设计思考逻辑</strong>：实时估计质心位置、速度、姿态；是平衡控制的基础</li>
+<li><strong>关键约束</strong>：传感器延迟、协方差调参、足端打滑</li>
+<li><strong>完成标准 / 输出物</strong>：状态估计器、实测轨迹误差 &lt; 目标、站立漂移可控
+<strong>三级子任务：</strong></li>
+<li><strong>P10.1.1.1 输入梳理与目标量化</strong>：整理「IMU 与关节编码器融合」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.1.1.2 方案/方法设计</strong>：针对「IMU 与关节编码器融合」制定实施方法或候选方案，使用「EKF/UKF/Madgwick、零速修正、关节运动学积分」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「IMU 与关节编码器融合」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.1.1.4 验证与问题闭环</strong>：对「IMU 与关节编码器融合」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.1.1.5 文档输出与下游交付</strong>：输出「IMU 与关节编码器融合」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_4">接触状态估计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：足底力/力矩、加速度突变检测、概率接触检测</li>
+<li><strong>设计思考逻辑</strong>：准确判断足端是否触地是步态切换与平衡控制的关键</li>
+<li><strong>关键约束</strong>：噪声、传感器位置、地面硬度</li>
+<li><strong>完成标准 / 输出物</strong>：接触检测准确率 &gt; 98%、误触发率 &lt; 2%
+<strong>三级子任务：</strong></li>
+<li><strong>P10.1.2.1 输入梳理与目标量化</strong>：整理「接触状态估计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.1.2.2 算法/控制方案设计</strong>：基于「足底力/力矩、加速度突变检测、概率接触检测」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.1.2.3 算法实现与仿真验证</strong>：将「接触状态估计」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.1.2.4 算法调参与性能验证</strong>：对「接触状态估计」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.1.2.5 文档输出与下游交付</strong>：输出「接触状态估计」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_5">外力/扰动估计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：动量观测器、广义动量、卡尔曼滤波</li>
+<li><strong>设计思考逻辑</strong>：估计外部推力/拉力，用于鲁棒平衡与跌倒预测</li>
+<li><strong>关键约束</strong>：模型误差、延迟</li>
+<li><strong>完成标准 / 输出物</strong>：外力估计响应 &lt; 100 ms、稳态误差 &lt; 目标
+<strong>三级子任务：</strong></li>
+<li><strong>P10.1.3.1 输入梳理与目标量化</strong>：整理「外力/扰动估计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.1.3.2 算法/控制方案设计</strong>：基于「动量观测器、广义动量、卡尔曼滤波」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.1.3.3 算法实现与仿真验证</strong>：将「外力/扰动估计」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.1.3.4 算法调参与性能验证</strong>：对「外力/扰动估计」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.1.3.5 文档输出与下游交付</strong>：输出「外力/扰动估计」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="wbc">平衡、步态与 WBC</h4>
+<h5 id="_6">站立与抗扰平衡控制</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：LQR、MPC、ZMP/Capture Point、角动量控制</li>
+<li><strong>设计思考逻辑</strong>：双足站立与抗扰是核心安全功能；MPC 可统一处理约束</li>
+<li><strong>关键约束</strong>：实时求解频率 ≥ 100 Hz、关节极限</li>
+<li><strong>完成标准 / 输出物</strong>：站立抗扰实物视频、恢复能力满足指标
+<strong>三级子任务：</strong></li>
+<li><strong>P10.2.1.1 输入梳理与目标量化</strong>：整理「站立与抗扰平衡控制」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.2.1.2 算法/控制方案设计</strong>：基于「LQR、MPC、ZMP/Capture Point、角动量控制」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.2.1.3 算法实现与仿真验证</strong>：将「站立与抗扰平衡控制」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.2.1.4 算法调参与性能验证</strong>：对「站立与抗扰平衡控制」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.2.1.5 文档输出与下游交付</strong>：输出「站立与抗扰平衡控制」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_7">步态规划与地形适应</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：ZMP preview、Raibert heuristic、基于优化的步态、RL/IL</li>
+<li><strong>设计思考逻辑</strong>：从周期性行走到非结构化地形；先稳定再高效</li>
+<li><strong>关键约束</strong>：关节速度/扭矩限制、能耗</li>
+<li><strong>完成标准 / 输出物</strong>：平地/斜坡/障碍行走数据、速度/能耗满足 PRD
+<strong>三级子任务：</strong></li>
+<li><strong>P10.2.2.1 输入梳理与目标量化</strong>：整理「步态规划与地形适应」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.2.2.2 算法/控制方案设计</strong>：基于「ZMP preview、Raibert heuristic、基于优化的步态、RL/IL」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.2.2.3 算法实现与仿真验证</strong>：将「步态规划与地形适应」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.2.2.4 算法调参与性能验证</strong>：对「步态规划与地形适应」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.2.2.5 文档输出与下游交付</strong>：输出「步态规划与地形适应」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="wbc_1">全身控制 WBC</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：QP-based WBC、任务优先级、接触力优化、零空间投影</li>
+<li><strong>设计思考逻辑</strong>：协调下肢平衡、躯干姿态、上肢操作；满足摩擦锥约束</li>
+<li><strong>关键约束</strong>：计算实时性、任务冲突、摩擦锥</li>
+<li><strong>完成标准 / 输出物</strong>：WBC 控制器、多任务协调演示、求解时间 &lt; 1 ms
+<strong>三级子任务：</strong></li>
+<li><strong>P10.2.3.1 输入梳理与目标量化</strong>：整理「全身控制 WBC」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.2.3.2 算法/控制方案设计</strong>：基于「QP-based WBC、任务优先级、接触力优化、零空间投影」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.2.3.3 算法实现与仿真验证</strong>：将「全身控制 WBC」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.2.3.4 算法调参与性能验证</strong>：对「全身控制 WBC」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.2.3.5 文档输出与下游交付</strong>：输出「全身控制 WBC」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_8">柔顺 / 阻抗控制</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：关节阻抗、笛卡尔阻抗、力位混合控制、导纳控制</li>
+<li><strong>设计思考逻辑</strong>：实现与环境/人的安全交互，降低碰撞冲击</li>
+<li><strong>关键约束</strong>：稳定性、带宽、力传感器噪声</li>
+<li><strong>完成标准 / 输出物</strong>：柔顺接触实验数据、碰撞力 &lt; 安全阈值
+<strong>三级子任务：</strong></li>
+<li><strong>P10.2.4.1 输入梳理与目标量化</strong>：整理「柔顺 / 阻抗控制」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.2.4.2 算法/控制方案设计</strong>：基于「关节阻抗、笛卡尔阻抗、力位混合控制、导纳控制」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.2.4.3 算法实现与仿真验证</strong>：将「柔顺 / 阻抗控制」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.2.4.4 算法调参与性能验证</strong>：对「柔顺 / 阻抗控制」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.2.4.5 文档输出与下游交付</strong>：输出「柔顺 / 阻抗控制」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="sim-to-real">Sim-to-Real 与测试</h4>
+<h5 id="_9">系统辨识与参数校准</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：最小二乘、最大似然、频域辨识、摩擦/惯量辨识</li>
+<li><strong>设计思考逻辑</strong>：仿真参数与实际存在差异，需通过辨识缩小 gap</li>
+<li><strong>关键约束</strong>：激励信号安全性、参数可辨识性</li>
+<li><strong>完成标准 / 输出物</strong>：辨识报告、仿真-实物频率响应对比
+<strong>三级子任务：</strong></li>
+<li><strong>P10.3.1.1 输入梳理与目标量化</strong>：整理「系统辨识与参数校准」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.3.1.2 方案/方法设计</strong>：针对「系统辨识与参数校准」制定实施方法或候选方案，使用「最小二乘、最大似然、频域辨识、摩擦/惯量辨识」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.3.1.3 实施/原型/样件制作</strong>：根据设计方案执行「系统辨识与参数校准」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.3.1.4 验证与问题闭环</strong>：对「系统辨识与参数校准」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.3.1.5 文档输出与下游交付</strong>：输出「系统辨识与参数校准」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_10">域随机化与鲁棒训练</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：Domain Randomization、系统噪声注入、地形/负载变化</li>
+<li><strong>设计思考逻辑</strong>：提升策略/控制器对参数不确定性的鲁棒性</li>
+<li><strong>关键约束</strong>：训练成本、仿真速度</li>
+<li><strong>完成标准 / 输出物</strong>：随机化参数范围、跨域迁移成功率
+<strong>三级子任务：</strong></li>
+<li><strong>P10.3.2.1 输入梳理与目标量化</strong>：整理「域随机化与鲁棒训练」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.3.2.2 方案/方法设计</strong>：针对「域随机化与鲁棒训练」制定实施方法或候选方案，使用「Domain Randomization、系统噪声注入、地形/负载变化」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.3.2.3 实施/原型/样件制作</strong>：根据设计方案执行「域随机化与鲁棒训练」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.3.2.4 验证与问题闭环</strong>：对「域随机化与鲁棒训练」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.3.2.5 文档输出与下游交付</strong>：输出「域随机化与鲁棒训练」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_11">实物安全解锁与验证</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：吊带保护、渐进解锁、急停、跌倒保护</li>
+<li><strong>设计思考逻辑</strong>：从仿真到实物需分阶段解锁，确保人机安全</li>
+<li><strong>关键约束</strong>：安全护栏、人员培训、保险</li>
+<li><strong>完成标准 / 输出物</strong>：Sim-to-Real 迁移报告、关键动作实物通过
+<strong>三级子任务：</strong></li>
+<li><strong>P10.3.3.1 输入梳理与目标量化</strong>：整理「实物安全解锁与验证」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P10.3.3.2 方案/方法设计</strong>：针对「实物安全解锁与验证」制定实施方法或候选方案，使用「吊带保护、渐进解锁、急停、跌倒保护」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P10.3.3.3 实施/原型/样件制作</strong>：根据设计方案执行「实物安全解锁与验证」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P10.3.3.4 测试执行与结果分析</strong>：按照验收标准执行「实物安全解锁与验证」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P10.3.3.5 文档输出与下游交付</strong>：输出「实物安全解锁与验证」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h2 id="_12">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p6/">URDF 建模与运动学校核（Kinematics &amp; URDF）</a>
+              <span class="rel-desc">P10 依赖 P6 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_principle_capture_point/">捕获点</a>
+              <span class="rel-desc">运动控制算法开发与验证（Motion Control）使用捕获点。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4/">关节模组与驱动系统设计（Actuator &amp; Drive）</a>
+              <span class="rel-desc">P10 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_joint_encoder_2024/">关节编码器</a>
+              <span class="rel-desc">运动控制算法开发与验证（Motion Control）使用关节编码器。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p7/">仿真平台搭建与验证（Simulation）</a>
+              <span class="rel-desc">P10 依赖 P7 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+              <span class="rel-desc">运动控制算法开发与验证（Motion Control）使用域随机化。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_principle_zero_moment_point/">零力矩点（ZMP）</a>
+              <span class="rel-desc">运动控制算法开发与验证（Motion Control）提及零力矩点（ZMP）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-desc">运动控制算法开发与验证（Motion Control）提及模型预测控制（MPC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              <span class="rel-desc">运动控制算法开发与验证（Motion Control）提及全身控制（WBC）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p10_3_3/">实物安全解锁与验证</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">实物安全解锁与验证is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_2_1/">站立与抗扰平衡控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">站立与抗扰平衡控制is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p7/">仿真平台搭建与验证（Simulation）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P7 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P12 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_2_3/">全身控制 WBC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">全身控制 WBCis_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_2_2/">步态规划与地形适应</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">步态规划与地形适应is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">MAPS-X：基于轨迹分段的可解释多机器人运动规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MAPS-X：基于轨迹分段的可解释多机器人运动规划提及运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_2_4/">柔顺 / 阻抗控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">柔顺 / 阻抗控制is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physdiff_physics_guided_human_2022/">PhysDiff: Physics-Guided Human Motion Diffusion Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">PhysDiff: Physics-Guided Human Motion Diffusion Modeldiscusses运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_1_3/">外力/扰动估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">外力/扰动估计is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_3_2/">域随机化与鲁棒训练</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">域随机化与鲁棒训练is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_teshnizi_motion_planning_for_a_pair_of_2021/">一对系留机器人的运动规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">一对系留机器人的运动规划discusses运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p11/">灵巧手选型/设计与集成（Dexterous Hand）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P11 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_1_2/">接触状态估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">接触状态估计is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14/">软件中间件与系统集成（Software &amp; Integration）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P14 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_1_1/">IMU 与关节编码器融合</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">IMU 与关节编码器融合is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15/">整机集成与验证测试（Integration &amp; V&amp;V）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P15 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_3_1/">系统辨识与参数校准</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">系统辨识与参数校准is_part_of运动控制算法开发与验证（Motion Control）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p10"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p10_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化与鲁棒训练</h3>
+          <p>- P10.3.2.1 输入梳理与目标量化 - 整理「域随机化与鲁棒训练」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p7/">
+          <span class="entry-type">方法</span>
+          <h3>仿真平台搭建与验证（Simulation）</h3>
+          <p>搭建仿真平台并在仿真环境中验证感知、规划与控制算法，覆盖仿真场景配置、模型标定、域随机化与 sim-to-real 迁移评估，降低实机调试成本与风险。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physdiff_physics_guided_human_2022/">
+          <span class="entry-type">论文</span>
+          <h3>PhysDiff: Physics-Guided Human Motion Diffusion Model</h3>
+          <p>PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human motion analysis and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>步态规划与地形适应</h3>
+          <p>方法 / 工具：ZMP preview、Raibert heuristic、基于优化的步态、RL/IL</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>系统辨识与参数校准</h3>
+          <p>- P10.3.1.1 输入梳理与目标量化 - 整理「系统辨识与参数校准」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>站立与抗扰平衡控制</h3>
+          <p>- P10.2.1.1 输入梳理与目标量化 - 整理「站立与抗扰平衡控制」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>接触状态估计</h3>
+          <p>- P10.1.2.1 输入梳理与目标量化 - 整理「接触状态估计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_3_3/">
+          <span class="entry-type">方法</span>
+          <h3>实物安全解锁与验证</h3>
+          <p>- P10.3.3.1 输入梳理与目标量化 - 整理「实物安全解锁与验证」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p6/">
+          <span class="entry-type">方法</span>
+          <h3>URDF 建模与运动学校核（Kinematics &amp; URDF）</h3>
+          <p>URDF 建模与运动学校核（Kinematics &amp; URDF）是人形机器人产品开发全流程中的第 6 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12/">
+          <span class="entry-type">方法</span>
+          <h3>VLA / WAM / AI 算法集成（AI &amp; Perception）</h3>
+          <p>VLA / WAM / AI 算法集成（AI &amp; Perception）是人形机器人产品开发全流程中的第 12 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制 WBC</h3>
+          <p>- P10.2.3.1 输入梳理与目标量化 - 整理「全身控制 WBC」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_capture_point/">
+          <span class="entry-type">原理</span>
+          <h3>捕获点</h3>
+          <p>捕获点（Capture Point, CP）是人形机器人推恢（push…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">原理</span>
+          <h3>零力矩点（ZMP）</h3>
+          <p>8.4.4 零力矩点（ZMP）与动态平衡 零力矩点（Zero Moment Point, ZMP）是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14/">
+          <span class="entry-type">方法</span>
+          <h3>软件中间件与系统集成（Software &amp; Integration）</h3>
+          <p>软件中间件与系统集成（Software &amp; Integration）是人形机器人产品开发全流程中的第 14 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4/">
+          <span class="entry-type">方法</span>
+          <h3>关节模组与驱动系统设计（Actuator &amp; Drive）</h3>
+          <p>关节模组与驱动系统设计（Actuator &amp; Drive）是人形机器人产品开发全流程中的第 4 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>外力/扰动估计</h3>
+          <p>- P10.1.3.1 输入梳理与目标量化 - 整理「外力/扰动估计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15/">
+          <span class="entry-type">方法</span>
+          <h3>整机集成与验证测试（Integration &amp; V&amp;V）</h3>
+          <p>整机集成与验证测试（Integration &amp; V&amp;V）是人形机器人产品开发全流程中的第 15 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">
+          <span class="entry-type">论文</span>
+          <h3>MAPS-X：基于轨迹分段的可解释多机器人运动规划</h3>
+          <p>Traditional multi-robot motion planning (MMP) focuses on computing trajectories for multiple robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p11/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧手选型/设计与集成（Dexterous Hand）</h3>
+          <p>灵巧手选型/设计与集成（Dexterous Hand）是人形机器人产品开发全流程中的第 11 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_teshnizi_motion_planning_for_a_pair_of_2021/">
+          <span class="entry-type">论文</span>
+          <h3>一对系留机器人的运动规划</h3>
+          <p>Considering an environment containing polygonal obstacles, we address the problem of planning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>IMU 与关节编码器融合</h3>
+          <p>- P10.1.1.1 输入梳理与目标量化 - 整理「IMU 与关节编码器融合」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_2_4/">
+          <span class="entry-type">方法</span>
+          <h3>柔顺 / 阻抗控制</h3>
+          <p>- P10.2.4.1 输入梳理与目标量化 - 整理「柔顺 / 阻抗控制」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_joint_encoder_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>关节编码器</h3>
+          <p>安装于机器人关节的位置或速度传感器，为电机控制提供高分辨率反馈。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">状态估计与感知融合</a><ul>
+<li><a href="#imu">IMU 与关节编码器融合</a></li>
+<li><a href="#_4">接触状态估计</a></li>
+<li><a href="#_5">外力/扰动估计</a></li>
+</ul>
+</li>
+<li><a href="#wbc">平衡、步态与 WBC</a><ul>
+<li><a href="#_6">站立与抗扰平衡控制</a></li>
+<li><a href="#_7">步态规划与地形适应</a></li>
+<li><a href="#wbc_1">全身控制 WBC</a></li>
+<li><a href="#_8">柔顺 / 阻抗控制</a></li>
+</ul>
+</li>
+<li><a href="#sim-to-real">Sim-to-Real 与测试</a><ul>
+<li><a href="#_9">系统辨识与参数校准</a></li>
+<li><a href="#_10">域随机化与鲁棒训练</a></li>
+<li><a href="#_11">实物安全解锁与验证</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_12">完成标准</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

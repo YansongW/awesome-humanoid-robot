@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Developing Vision-Language-Action Model from Egocentric Videos · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Developing Vision-Language-Action Model from Egocentric Videos</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Developing Vision-Language-Action Model from Egocentric Videos</h1>
+      <p class="entry-name-en">Developing Vision-Language-Action Model from Egocentric Videos</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.21986v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Developing Vision-Language-Action Model from Egocentric Videos (Developing Vision-Language-Action Model from Egocentric Videos), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Science Tokyo, NII LLMC, Sony Interactive Entertainment.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.21986" target="_blank" rel="noopener">Developing Vision-Language-Action Model from Egocentric Videos (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.21986" target="_blank" rel="noopener">Developing Vision-Language-Action Model from Egocentric Videos source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>자기중심적 비디오는 인간이 물체와 도구를 조작하는 방식을 포착하여, 물체 조작 학습을 위한 다양한 움직임 단서를 제공합니다. 비전-언어-행동 모델(VLA) 훈련에 일반적으로 사용되는 고비용의 전문가 주도 수동 원격 조작과 달리, 자기중심적 비디오는 확장 가능한 대안을 제시합니다. 그러나 이러한 비디오를 로봇 정책 훈련에 활용한 이전 연구들은 일반적으로 상세한 손 자세 기록과 같은 보조 주석에 의존합니다. 결과적으로, 원시 자기중심적 비디오에서 직접 VLA를 훈련할 수 있는지 여부는 여전히 불분명합니다. 본 연구에서는 보조 기록 없이 자기중심적 비디오에서 6자유도 물체 조작 궤적을 추출하는 프레임워크인 EgoScaler를 활용하여 이 문제를 해결합니다. 우리는 EgoScaler를 네 개의 대규모 자기중심적 비디오 데이터셋에 적용하고, 노이즈가 있거나 불완전한 궤적을 자동으로 정제하여 VLA 사전 훈련을 위한 새로운 대규모 데이터셋을 구축합니다. 시뮬레이션 및 실제 로봇 환경 모두에서 최첨단 <span class="arithmatex">\(π_0\)</span> 아키텍처를 사용한 실험을 통해 세 가지 주요 결과를 도출했습니다: (i) 우리 데이터셋으로 사전 훈련하면 처음부터 훈련하는 것보다 작업 성공률이 20% 이상 향상되고, (ii) 성능이 실제 로봇 데이터셋을 사용한 경우와 경쟁력이 있으며, (iii) 우리 데이터셋과 실제 로봇 데이터를 결합하면 추가적인 개선이 이루어집니다. 이러한 결과는 자기중심적 비디오가 VLA 연구 발전을 위한 유망하고 확장 가능한 자원임을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>자기중심적 비디오는 인간이 물체와 도구를 조작하는 방식을 포착하여, 물체 조작 학습을 위한 다양한 움직임 단서를 제공합니다. 비전-언어-행동 모델(VLA) 훈련에 일반적으로 사용되는 고비용의 전문가 주도 수동 원격 조작과 달리, 자기중심적 비디오는 확장 가능한 대안을 제시합니다. 그러나 이러한 비디오를 로봇 정책 훈련에 활용한 이전 연구들은 일반적으로 상세한 손 자세 기록과 같은 보조 주석에 의존합니다. 결과적으로, 원시 자기중심적 비디오에서 직접 VLA를 훈련할 수 있는지 여부는 여전히 불분명합니다. 본 연구에서는 보조 기록 없이 자기중심적 비디오에서 6자유도 물체 조작 궤적을 추출하는 프레임워크인 EgoScaler를 활용하여 이 문제를 해결합니다. 우리는 EgoScaler를 네 개의 대규모 자기중심적 비디오 데이터셋에 적용하고, 노이즈가 있거나 불완전한 궤적을 자동으로 정제하여 VLA 사전 훈련을 위한 새로운 대규모 데이터셋을 구축합니다. 시뮬레이션 및 실제 로봇 환경 모두에서 최첨단 <span class="arithmatex">\(π_0\)</span> 아키텍처를 사용한 실험을 통해 세 가지 주요 결과를 도출했습니다: (i) 우리 데이터셋으로 사전 훈련하면 처음부터 훈련하는 것보다 작업 성공률이 20% 이상 향상되고, (ii) 성능이 실제 로봇 데이터셋을 사용한 경우와 경쟁력이 있으며, (iii) 우리 데이터셋과 실제 로봇 데이터를 결합하면 추가적인 개선이 이루어집니다. 이러한 결과는 자기중심적 비디오가 VLA 연구 발전을 위한 유망하고 확장 가능한 자원임을 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_yoshida_developing_vision_language_act_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

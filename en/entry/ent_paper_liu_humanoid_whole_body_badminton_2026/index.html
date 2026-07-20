@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</h1>
+      <p class="entry-name-en">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Components</span><span class="tag">Applications &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Upstream</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.11218v3.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A unified whole-body reinforcement-learning controller enables a 21-DoF humanoid to play badminton in simulation and on hardware, achieving 21-hit rallies in simulation and outgoing shuttle speeds up to 19.1 m/s in real-world tests.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.11218" target="_blank" rel="noopener">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Humanoid robots have demonstrated strong capabilities for interacting with static scenes across locomotion and manipulation, yet dynamic real-world interactions remain challenging. As a step toward fast-moving object interactions, we present a reinforcement-learning training pipeline that yields a unified whole-body controller for humanoid badminton, coordinating footwork and striking without motion priors or expert demonstrations. Training follows a three-stage curriculum (footwork acquisition, precision-guided swing generation, and task-focused refinement) so legs and arms jointly serve the hitting objective. For deployment, we use an Extended Kalman Filter (EKF) to estimate and predict shuttlecock trajectories for target striking, and also develop a prediction-free variant that removes the EKF and explicit prediction. We validate the framework with five sets of experiments in simulation and on hardware. In simulation, two robots sustain a rally of 21 consecutive hits. In real-world tests with both machine-fed shuttles and human-robot rallies, the robot achieves outgoing shuttle speeds up to 19.1~m/s with a mean return landing distance of 4~m. Moreover, the prediction-free variant attains comparable performance to the EKF-based target-known policy. Overall, our approach enables dynamic yet precise goal striking in humanoid badminton and suggests a path toward more dynamics-critical whole-body interaction tasks.</p>
+<h2 id="content">Content</h2>
+<p>Humanoid robots have demonstrated strong capabilities for interacting with static scenes across locomotion and manipulation, yet dynamic real-world interactions remain challenging. As a step toward fast-moving object interactions, we present a reinforcement-learning training pipeline that yields a unified whole-body controller for humanoid badminton, coordinating footwork and striking without motion priors or expert demonstrations. Training follows a three-stage curriculum (footwork acquisition, precision-guided swing generation, and task-focused refinement) so legs and arms jointly serve the hitting objective. For deployment, we use an Extended Kalman Filter (EKF) to estimate and predict shuttlecock trajectories for target striking, and also develop a prediction-free variant that removes the EKF and explicit prediction. We validate the framework with five sets of experiments in simulation and on hardware. In simulation, two robots sustain a rally of 21 consecutive hits. In real-world tests with both machine-fed shuttles and human-robot rallies, the robot achieves outgoing shuttle speeds up to 19.1~m/s with a mean return landing distance of 4~m. Moreover, the prediction-free variant attains comparable performance to the EKF-based target-known policy. Overall, our approach enables dynamic yet precise goal striking in humanoid badminton and suggests a path toward more dynamics-critical whole-body interaction tasks.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</a>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</a>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_clone_closed_loop_whole_body_h_2025/">CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks</a>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">Ego-Vision World Model for Humanoid Contact Planning</a>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references Ego-Vision World Model for Humanoid Contact Planning.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_coordex_coordinating_body_and_2026/">CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</a>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</a>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</a>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_synagent_generalizable_coopera_2026/">SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_striker_skills_2026_1/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_striker_skills_2026/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_langwbc_language_directed_huma_2025/">LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">TWIST: Teleoperated Whole-Body Imitation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">TWIST: Teleoperated Whole-Body Imitation System cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unitracker_learning_universal_2025/">UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">Online Balanced Motion Generation for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Online Balanced Motion Generation for Humanoid Robots cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025/">TWIST: Teleoperated Whole-Body Imitation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">TWIST: Teleoperated Whole-Body Imitation System cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_expressive_whole_body_control_2024/">Expressive Whole-Body Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Expressive Whole-Body Control for Humanoid Robots cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation in Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation in Humanoid Robots cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kaidanov_the_role_of_domain_randomizati_2024/">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_liu_humanoid_whole_body_badminton_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</h3>
+          <p>Vision-language-action (VLA) models have demonstrated strong semantic understanding and zero-shot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_synagent_generalizable_coopera_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy</h3>
+          <p>Controllable cooperative humanoid manipulation is a fundamental yet challenging problem for embodied…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kaidanov_the_role_of_domain_randomizati_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control</h3>
+          <p>This paper studies how dataset diversity and size affect Diffusion Policies for whole-body humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST: Teleoperated Whole-Body Imitation System</h3>
+          <p>TWIST mainly solves the data closed loop: using human video/kinetrap trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</h3>
+          <p>This paper compares QMIX, IPPO, and MASAC on warehouse multi-agent reinforcement learning tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_coordex_coordinating_body_and_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</h3>
+          <p>CoorDex converts the body state with joint sequences, contact force/tactile signals into trackable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_striker_skills_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Online Balanced Motion Generation for Humanoid Robots</h3>
+          <p>Proposes an analytic whole-body motion generator for low-cost humanoid robots with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</h3>
+          <p>This paper presents a multi-rate Model Predictive Control framework for the jet-powered humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_striker_skills_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning</h3>
+          <p>OMNIH2O primarily addresses data closed loops: capturing human operations and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_expressive_whole_body_control_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Expressive Whole-Body Control for Humanoid Robots</h3>
+          <p>This work transforms ontology state and joint sequences, human video/motion capture trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST: Teleoperated Whole-Body Imitation System</h3>
+          <p>TWIST mainly solves the data closed loop: using human video/kinetrap trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</h3>
+          <p>This paper proposes a multi-agent framework—Active Spatial Brain for active spatial perception and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unitracker_learning_universal_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots</h3>
+          <p>UniTracker converts camera images/multi-view observations, ontology state and joint sequences, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_clone_closed_loop_whole_body_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks</h3>
+          <p>CLONE mainly solves the closed-loop data problem: using teleoperation/exoskeleton data to collect…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation in Humanoid Robots</h3>
+          <p>This paper proposes a real-time sensorless whole-body torque control framework for humanoid robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Ego-Vision World Model for Humanoid Contact Planning</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_langwbc_language_directed_huma_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning</h3>
+          <p>LangWBC first recovers scene, goal, or motion representations from language instructions, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</h3>
+          <p>HuMI is a portable, robot-free data-collection and hierarchical-learning framework that translates…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

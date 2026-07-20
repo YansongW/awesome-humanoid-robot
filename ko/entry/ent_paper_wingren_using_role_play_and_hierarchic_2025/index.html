@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>인간-로봇 상호작용 설계를 위한 역할극과 계층적 작업 분석 활용 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">인간-로봇 상호작용 설계를 위한 역할극과 계층적 작업 분석 활용</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>인간-로봇 상호작용 설계를 위한 역할극과 계층적 작업 분석 활용</h1>
+      <p class="entry-name-en">Using role-play and Hierarchical Task Analysis for designing human-robot interaction</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.13378v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 Furhat 플랫폼에서 커뮤니티 약국 지원 로봇을 설계하기 위해 역할극과 계층적 작업 분석을 적용하여 전문가 행동을 포착, 모델링, 구현하는 방법을 보여준다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.13378" target="_blank" rel="noopener">Using role-play and Hierarchical Task Analysis for designing human-robot interaction</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>우리는 인간-로봇 상호작용 분야에서 현재보다 더 많이 사용되어야 한다고 생각하는 두 가지 방법, 즉 역할극과 계층적 작업 분석의 사용을 제시합니다. 이 방법들의 잠재력 중 일부는 지역 약국에서 지원을 목적으로 하는 로봇 애플리케이션을 개발 중인 진행 중인 연구 프로젝트에서의 사용을 통해 입증됩니다. 두 방법은 우리에게 여러 가지 이점을 제공했습니다. 역할극은 약사가 로봇 행동의 모델 역할을 할 수 있는 통제되고 조정 가능한 환경을 제공하여 고객의 요구를 이해하는 데 도움을 주었습니다. 또한 계층적 작업 분석은 표시된 행동이 올바르게 모델링되도록 보장하고 공동 설계를 촉진하여 개발을 지원했습니다. 향후 연구는 사회적 로봇 상호작용에 특히 적합한 작업 분석 방법 개발에 초점을 맞출 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>우리는 인간-로봇 상호작용 분야에서 현재보다 더 많이 사용되어야 한다고 생각하는 두 가지 방법, 즉 역할극과 계층적 작업 분석의 사용을 제시합니다. 이 방법들의 잠재력 중 일부는 지역 약국에서 지원을 목적으로 하는 로봇 애플리케이션을 개발 중인 진행 중인 연구 프로젝트에서의 사용을 통해 입증됩니다. 두 방법은 우리에게 여러 가지 이점을 제공했습니다. 역할극은 약사가 로봇 행동의 모델 역할을 할 수 있는 통제되고 조정 가능한 환경을 제공하여 고객의 요구를 이해하는 데 도움을 주었습니다. 또한 계층적 작업 분석은 표시된 행동이 올바르게 모델링되도록 보장하고 공동 설계를 촉진하여 개발을 지원했습니다. 향후 연구는 사회적 로봇 상호작용에 특히 적합한 작업 분석 방법 개발에 초점을 맞출 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p2_2_2/">人机交互（HMI）设计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p1_1_4/">人因工程与交互需求</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_unitree_h1_humanoid_robot_2024/">Unitree H1 휨로봇</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wingren_using_role_play_and_hierarchic_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p2_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>人机交互（HMI）设计</h3>
+          <p>HMI 规范、交互原型、可用性测试报告</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1_1_4/">
+          <span class="entry-type">방법</span>
+          <h3>人因工程与交互需求</h3>
+          <p>人因需求报告、关键交互姿态包络、HMI 原则</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_unitree_h1_humanoid_robot_2024/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Unitree H1 휨로봇</h3>
+          <p>25-27자유도를 가진 전기식 휨로봇, 최대 360 N·m 다리 관절 토크 및 약 189 N·m/kg 토크 밀도.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

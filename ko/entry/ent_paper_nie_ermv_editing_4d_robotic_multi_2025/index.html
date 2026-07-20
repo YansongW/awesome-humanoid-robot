@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents</h1>
+      <p class="entry-name-en">ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.17462v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents (ERMV), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Key Laboratory of System Control and Information Processing, Cambridge University.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2507.17462" target="_blank" rel="noopener">ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2507.17462" target="_blank" rel="noopener">ERMV source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇 모방 학습은 4D 다중 시점 순차 이미지에 의존합니다. 그러나 데이터 수집의 높은 비용과 고품질 데이터의 부족은 Vision-Language-Action(VLA) 모델과 같은 임베디드 지능 정책의 일반화 및 적용을 심각하게 제한합니다. 데이터 증강은 데이터 부족을 극복하기 위한 강력한 전략이지만, 조작 작업을 위한 4D 다중 시점 순차 이미지를 편집하는 방법은 현재 부족합니다. 따라서 우리는 단일 프레임 편집 및 로봇 상태 조건을 기반으로 전체 다중 시점 시퀀스를 효율적으로 편집하는 새로운 데이터 증강 프레임워크인 ERMV(Editing Robotic Multi-View 4D data)를 제안합니다. 이 작업은 세 가지 핵심 과제를 제시합니다: (1) 동적 시점과 긴 시간 범위에서 기하학적 및 외관 일관성 유지; (2) 낮은 계산 비용으로 작업 창 확장; (3) 로봇 팔과 같은 중요한 객체의 의미적 무결성 보장. ERMV는 일련의 혁신을 통해 이러한 과제를 해결합니다. 첫째, 모션 블러에서 시공간적 일관성을 보장하기 위해 기하학적 제약을 적용하기 전에 움직임으로 인한 픽셀 이동을 학습하는 새로운 Epipolar Motion-Aware Attention(EMA-Attn) 메커니즘을 도입합니다. 둘째, 편집 작업 창을 최대화하기 위해 ERMV는 Sparse Spatio-Temporal(STT) 모듈을 개척하여 시간적 및 공간적 시점을 분리하고 시점의 희소 샘플링을 통해 단일 프레임 다중 시점 문제를 재구성하여 계산 요구를 줄입니다. 셋째, 오류 누적을 완화하기 위해 피드백 개입 메커니즘을 통합하여 Multimodal Large Language Model(MLLM)을 사용하여 편집 불일치를 확인하고 필요한 경우에만 목표된 전문가 지침을 요청합니다. 광범위한 실험을 통해 ERMV로 증강된 데이터가 시뮬레이션 및 실제 환경 모두에서 VLA 모델의 견고성과 일반화를 크게 향상시킴을 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>로봇 모방 학습은 4D 다중 시점 순차 이미지에 의존합니다. 그러나 데이터 수집의 높은 비용과 고품질 데이터의 부족은 Vision-Language-Action(VLA) 모델과 같은 임베디드 지능 정책의 일반화 및 적용을 심각하게 제한합니다. 데이터 증강은 데이터 부족을 극복하기 위한 강력한 전략이지만, 조작 작업을 위한 4D 다중 시점 순차 이미지를 편집하는 방법은 현재 부족합니다. 따라서 우리는 단일 프레임 편집 및 로봇 상태 조건을 기반으로 전체 다중 시점 시퀀스를 효율적으로 편집하는 새로운 데이터 증강 프레임워크인 ERMV(Editing Robotic Multi-View 4D data)를 제안합니다. 이 작업은 세 가지 핵심 과제를 제시합니다: (1) 동적 시점과 긴 시간 범위에서 기하학적 및 외관 일관성 유지; (2) 낮은 계산 비용으로 작업 창 확장; (3) 로봇 팔과 같은 중요한 객체의 의미적 무결성 보장. ERMV는 일련의 혁신을 통해 이러한 과제를 해결합니다. 첫째, 모션 블러에서 시공간적 일관성을 보장하기 위해 기하학적 제약을 적용하기 전에 움직임으로 인한 픽셀 이동을 학습하는 새로운 Epipolar Motion-Aware Attention(EMA-Attn) 메커니즘을 도입합니다. 둘째, 편집 작업 창을 최대화하기 위해 ERMV는 Sparse Spatio-Temporal(STT) 모듈을 개척하여 시간적 및 공간적 시점을 분리하고 시점의 희소 샘플링을 통해 단일 프레임 다중 시점 문제를 재구성하여 계산 요구를 줄입니다. 셋째, 오류 누적을 완화하기 위해 피드백 개입 메커니즘을 통합하여 Multimodal Large Language Model(MLLM)을 사용하여 편집 불일치를 확인하고 필요한 경우에만 목표된 전문가 지침을 요청합니다. 광범위한 실험을 통해 ERMV로 증강된 데이터가 시뮬레이션 및 실제 환경 모두에서 VLA 모델의 견고성과 일반화를 크게 향상시킴을 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_nie_ermv_editing_4d_robotic_multi_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

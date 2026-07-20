@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keep Rollin&#39; – 바퀴 달린 사족 로봇의 전신 동작 제어 및 계획 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Keep Rollin&#39; – 바퀴 달린 사족 로봇의 전신 동작 제어 및 계획</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Keep Rollin&#39; – 바퀴 달린 사족 로봇의 전신 동작 제어 및 계획</h1>
+      <p class="entry-name-en">Keep Rollin&#39; – Whole-Body Motion Control and Planning for Wheeled Quadrupedal Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.03557v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 ANYmal 사족 로봇의 토크 제어 휠의 비홀onomic 롤링 구속 조건을 긴밀히 통합한 온라인 영점모멘트점 동작 최적화기와 계층적 전신 제어기를 제안하여, 최대 4 m/s의 동적 하이브리드 보행 및 주행을 실현하고 사족 보행 대비 운송 비용을 83% 감소시켰다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1809.03557" target="_blank" rel="noopener">Keep Rollin&#39; – Whole-Body Motion Control and Planning for Wheeled Quadrupedal Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>바퀴 달린 사족 로봇을 위한 동적 보행 전략을 제시하며, 이는 보행과 주행의 장점을 결합합니다. 개발된 최적화 프레임워크는 바퀴로 인해 추가된 자유도를 긴밀하게 통합합니다. 우리의 접근 방식은 영점 모멘트 기반 동작 최적화에 의존하며, 이는 참조 궤적을 지속적으로 업데이트합니다. 참조 동작은 계층적 전신 제어기에 의해 추적되며, 이는 비홀로노믹 구름 제약 조건을 포함한 우선순위가 지정된 일련의 작업을 해결하여 최적의 일반화 가속도와 접촉력을 계산합니다. 우리의 접근 방식은 다리에 부착된 조향 불가능한 바퀴를 포함하여 완전히 토크 제어되는 사족 로봇 ANYmal에서 테스트되었습니다. 평지와 경사 지형, 그리고 단차를 넘는 실험을 수행했으며, 바퀴를 동작 제어 및 계획 프레임워크에 통합하면 직관적인 동작 궤적이 생성되어 다른 바퀴 달린 보행 로봇에 비해 더 견고하고 동적인 보행이 가능함을 보여줍니다. 또한, 4m/s의 속도와 83%의 운송 비용 절감을 통해 바퀴 달린 보행 로봇이 순수 보행 로봇보다 우수함을 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>바퀴 달린 사족 로봇을 위한 동적 보행 전략을 제시하며, 이는 보행과 주행의 장점을 결합합니다. 개발된 최적화 프레임워크는 바퀴로 인해 추가된 자유도를 긴밀하게 통합합니다. 우리의 접근 방식은 영점 모멘트 기반 동작 최적화에 의존하며, 이는 참조 궤적을 지속적으로 업데이트합니다. 참조 동작은 계층적 전신 제어기에 의해 추적되며, 이는 비홀로노믹 구름 제약 조건을 포함한 우선순위가 지정된 일련의 작업을 해결하여 최적의 일반화 가속도와 접촉력을 계산합니다. 우리의 접근 방식은 다리에 부착된 조향 불가능한 바퀴를 포함하여 완전히 토크 제어되는 사족 로봇 ANYmal에서 테스트되었습니다. 평지와 경사 지형, 그리고 단차를 넘는 실험을 수행했으며, 바퀴를 동작 제어 및 계획 프레임워크에 통합하면 직관적인 동작 궤적이 생성되어 다른 바퀴 달린 보행 로봇에 비해 더 견고하고 동적인 보행이 가능함을 보여줍니다. 또한, 4m/s의 속도와 83%의 운송 비용 절감을 통해 바퀴 달린 보행 로봇이 순수 보행 로봇보다 우수함을 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_hierarchical_qp_wbc/">계층적 QP 전신 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bjelonic_keep_rollin_whole_body_motion_2019"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_hierarchical_qp_wbc/">
+          <span class="entry-type">방법</span>
+          <h3>계층적 QP 전신 제어</h3>
+          <p>여러 작업을 우선순위에 따라 쌓아 올리고 연속된 이차 계획법으로 풀어 높은 우선순위 작업을 먼저 만족시키는 전신 제어 방법이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

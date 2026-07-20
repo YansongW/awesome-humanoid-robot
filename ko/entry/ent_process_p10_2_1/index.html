@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>站立与抗扰平衡控制 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">站立与抗扰平衡控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>站立与抗扰平衡控制</h1>
+      <p class="entry-name-en">Standing and Anti-Interference Balance Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>站立抗扰实物视频、恢复能力满足指标</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p><strong>소속 단계/작업 패키지</strong>：운동 제어 알고리즘 개발 및 검증 (Motion Control)</p>
+<h2 id="_2">핵심 내용</h2>
+<p><strong>방법 / 도구</strong>：LQR, MPC, ZMP/Capture Point, 각운동량 제어</p>
+<p><strong>설계 사고 논리</strong>：이족 보행 및 외란 저항은 핵심 안전 기능이며, MPC는 제약 조건을 통합 처리 가능</p>
+<p><strong>핵심 제약 조건</strong>：실시간 해결 주파수 ≥ 100 Hz, 관절 한계</p>
+<p><strong>완료 기준 / 산출물</strong>：서 있는 상태에서 외란 저항을 보여주는 실제 영상, 회복 능력이 지표 충족</p>
+<p><strong>3단계 하위 작업 및 4단계 핵심 조치：</strong></p>
+<ul>
+<li>P10.2.1.1 입력 정리 및 목표 정량화</li>
+<li>
+<p>「서 있는 상태 및 외란 저항 균형 제어」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.</p>
+<ul>
+<li>모든 상위 입력 목록을 나열하고 버전 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+</ul>
+</li>
+<li>
+<p>P10.2.1.2 알고리즘/제어 방식 설계</p>
+</li>
+<li>
+<p>「LQR, MPC, ZMP/Capture Point, 각운동량 제어」를 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하여 후보 방안을 형성하고, 안정성, 실시간성 및 확장성을 평가하며, 구현 경로를 확정함.</p>
+<ul>
+<li>2개 이상의 후보 방안 형성</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 방안 확정</li>
+</ul>
+</li>
+<li>
+<p>P10.2.1.3 알고리즘 구현 및 시뮬레이션 검증</p>
+</li>
+<li>
+<p>「서 있는 상태 및 외란 저항 균형 제어」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하여 기능 정확성, 실시간성 및 강건성을 검증함.</p>
+<ul>
+<li>모델/시제 구축 및 주요 매개변수 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+</ul>
+</li>
+<li>
+<p>P10.2.1.4 알고리즘 튜닝 및 성능 검증</p>
+</li>
+<li>
+<p>「서 있는 상태 및 외란 저항 균형 제어」알고리즘에 대해 매개변수 최적화 및 경계 테스트를 수행하여 일반/극한 작업 조건에서의 성능이 지표를 충족하는지 검증함.</p>
+<ul>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+</ul>
+</li>
+<li>
+<p>P10.2.1.5 문서 출력 및 하위 전달</p>
+</li>
+<li>「서 있는 상태 및 외란 저항 균형 제어」최종 보고서/도면/사양서 출력, ICD/BOM/SOP/요구 사항 추적 체인 업데이트, 하위 단계로의 공식 전달 완료.<ul>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_capture_point/">캡처 포인트</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">휴머노이드 로봇을 위한 시선 안정화: 통합 프레임워크</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p10_2_1"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_capture_point/">
+          <span class="entry-type">원리</span>
+          <h3>캡처 포인트</h3>
+          <p>로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 로봇을 위한 시선 안정화: 통합 프레임워크</h3>
+          <p>본 논문은 관절 속도 명령에서 도출된 운동학적 피드포워드 항과 머리에 장착된 자이로스코프의 관성 피드백 항을 결합하여 자기 발생 움직임과 외부 섭동으로 인한 카메라 섭동을 보상하는…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10/">
+          <span class="entry-type">방법</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

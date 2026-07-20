@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>임피던스 제어 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">임피던스 제어</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>임피던스 제어</h1>
+      <p class="entry-name-en">Impedance Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#阻抗控制 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">1단계 · 관절 하나 만들기</span>
+        <span class="roadmap-badge-role">핵심</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>상호작용 힘과 변위 간의 동적 관계를 제어하여 로봇이 가상의 기계적 임피던스처럼 동작하도록 하는 제어 방식.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>임피던스 제어는 휴머노이드 로봇 분야의 중요한 방법입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p><strong>임피던스 제어(impedance control)</strong>는 위치와 힘을 분리하여 제어하지 않고, 로봇 말단이 나타내는 <strong>기계적 임피던스(mechanical impedance)</strong>——즉 질량-감쇠-스프링 특성을 조절합니다. 힘과 위치/속도 관계를 다음과 같이 정의합니다:</p>
+<div class="arithmatex">\[
+\mathbf{F} = \mathbf{M}_d (\ddot{\mathbf{x}}_d - \ddot{\mathbf{x}}) + \mathbf{D}_d (\dot{\mathbf{x}}_d - \dot{\mathbf{x}}) + \mathbf{K}_d (\mathbf{x}_d - \mathbf{x})
+\]</div>
+<p>여기서 <span class="arithmatex">\(\mathbf{M}_d\)</span>, <span class="arithmatex">\(\mathbf{D}_d\)</span>, <span class="arithmatex">\(\mathbf{K}_d\)</span>는 각각 기대 관성, 감쇠 및 강성 행렬입니다. 이 방정식은 말단이 기대 궤적에서 벗어날 때 로봇이 벗어난 정도에 비례하는 복원력을 생성하며, 외부 교란을 받을 때 로봇이 기대 동역학에 따라 응답함을 나타냅니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 임피던스 제어, 기계적 임피던스, 기대 관성, 기대 감쇠, 기대 강성</p>
+<ul>
+<li><strong>임피던스 제어(impedance control)</strong>: 로봇 말단이 나타내는 질량-감쇠-스프링 특성을 제어하는 방법.</li>
+<li><strong>기계적 임피던스(mechanical impedance)</strong>: 힘과 운동(변위, 속도, 가속도) 사이의 동적 관계.</li>
+<li><strong>기대 관성(desired inertia) <span class="arithmatex">\(\mathbf{M}_d\)</span></strong>: 기대되는 관성 특성 행렬.</li>
+<li><strong>기대 감쇠(desired damping) <span class="arithmatex">\(\mathbf{D}_d\)</span></strong>: 기대되는 감쇠 특성 행렬.</li>
+<li><strong>기대 강성(desired stiffness) <span class="arithmatex">\(\mathbf{K}_d\)</span></strong>: 기대되는 강성 특성 행렬.</li>
+</ul>
+</div>
+<p>임피던스 제어는 두 가지 유형으로 나눌 수 있습니다:</p>
+<ol>
+<li><strong>토크 수준 임피던스(torque-level impedance)</strong>: 임피던스 방정식에 따라 직접 기대 작업력을 계산한 후, <span class="arithmatex">\(\boldsymbol{\tau} = \mathbf{J}^T \mathbf{F}\)</span>를 통해 관절 토크로 매핑합니다. 토크 제어 내부 루프가 필요합니다.</li>
+<li><strong>위치 수준 임피던스(position-level impedance)</strong>: 위치 제어 외부 루프에 힘-위치 관계를 추가하여 위치 명령을 통해 간접적으로 순응을 구현합니다. 구현이 간단하지만 대역폭이 제한됩니다.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 토크 수준 임피던스, 위치 수준 임피던스, 토크 제어 내부 루프, 위치 제어 외부 루프</p>
+<ul>
+<li><strong>토크 수준 임피던스(torque-level impedance)</strong>: 관절 토크를 직접 출력하는 임피던스 제어.</li>
+<li><strong>위치 수준 임피던스(position-level impedance)</strong>: 위치 명령을 통해 순응을 구현하는 임피던스 제어.</li>
+<li><strong>토크 제어 내부 루프(torque control inner loop)</strong>: 관절 토크를 빠르게 제어하는 내부 회로.</li>
+<li><strong>위치 제어 외부 루프(position control outer loop)</strong>: 위치 명령을 생성하는 외부 회로.</li>
+</ul>
+</div>
+<p>휴머노이드 로봇에서 임피던스 제어는 다음에 사용될 수 있습니다:</p>
+<ul>
+<li><strong>착지 완충</strong>: 발이 지면에 닿을 때 낮은 강성-높은 감쇠로 나타나 충격을 흡수합니다.</li>
+<li><strong>인간-로봇 상호작용</strong>: 팔의 낮은 강성으로 접촉 안전성을 보장합니다.</li>
+<li><strong>도구 사용</strong>: 작업에 따라 말단 임피던스를 조정합니다. 예를 들어 나사 조이기에서는 높은 강성, 문 열기에서는 중간 강성을 사용합니다.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 착지 완충, 인간-로봇 상호작용 안전, 도구 사용, 강성 조절</p>
+<ul>
+<li><strong>착지 완충(landing buffering)</strong>: 순응성을 통해 착지 충격을 줄입니다.</li>
+<li><strong>인간-로봇 상호작용 안전(HRI safety)</strong>: 인간-로봇 접촉 시 부상 위험을 낮춥니다.</li>
+<li><strong>도구 사용(tool use)</strong>: 로봇이 도구를 사용하여 작업을 수행합니다.</li>
+<li><strong>강성 조절(stiffness regulation)</strong>: 작업에 따라 시스템 강성을 조정합니다.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["기대 궤적 x_d, v_d, a_d"] --&gt; B["실제 상태 x, v, a"]
+    B --&gt; C["임피던스 방정식"]
+    C --&gt; D["F = Md e_ddot + Dd e_dot + Kd e"]
+    D --&gt; E["작업력 F"]
+    E --&gt; F["tau = J^T F"]
+    F --&gt; G["관절 토크 제어"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_technology_series_elastic_actuator_2024/">Series Elastic Actuator</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_pid_control/">PID 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">접촉 상태에서의 로봇 조작에 대한 서베이</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_aerial_manipulation_contact_me_2026/">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_one_shot_multimodal_learning_f_2026/">One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_marconi_structured_prediction_for_cris_2021/">잘못 명시된 로봇 모델을 위한 CRiSP 역기구학 학습의 구조화 예측</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_morphquad_morphable_quadrotor_2026/">MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi Direct Drive Actuator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_towards_adaptable_humanoid_con_2025/">Towards Adaptable Humanoid Control via Adaptive Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_robot_crash_course_learning_so_2025/">Robot Crash Course: Learning Soft and Stylized Falling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_extremcontrol_low_latency_huma_2026/">ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_h2_compact_human_humanoid_co_m_2025/">H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_safehumanoid_vlm_rag_driven_co_2025/">SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_the_quadruped_soft_tail_compli_2026/">The Quadruped Soft Tail: Compliant Grasping and Swabbing for Contamination Surveys in Harsh Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_current_as_touch_proprioceptiv_2026/">Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_high_speed_and_impact_resilien_2024/">High-Speed and Impact Resilient Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_preference_conditioned_multi_o_2025/">Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_u_joint_caams_experimental_eva_2026/">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_luo_ceer_compliant_end_effector_an_2026/">CEER: 계층형 휴머노이드 로코-매니퓰레이션을 위한 통합 인터페이스로서의 순응적 최종 효과기 및 루트 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_granados_dance_teaching_by_a_robot_comb_2017/">로봇에 의한 댄스 교육: 기술 학습 과정을 지원하기 위한 인지 및 물리적 인간-로봇 상호작용의 결합</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_visualizing_impedance_control_2026/">Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_admittance_control/">어드미턴스 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_subsystem_ankle_compliance/">발목 순응 기구</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_force_position_hybrid_control/">힘/위치 하이브리드 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_unified_structural_hydrodynami_2026/">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_pid_control/">PID 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_amor_adaptive_character_contro_2025/">AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_tacrefinenet_tactile_only_gras_2025/">TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_spatial_relationship_preservin_2010/">Spatial relationship preserving character motion adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_human_like_badminton_2026/">Learning Human-Like Badminton Skills for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_robust_operational_space_contr_2026/">Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_softmimic_learning_compliant_w_2025/">SoftMimic: Learning Compliant Whole-body Control from Examples</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_murooka_whole_body_multi_contact_motio_2024/">분산 촉각 센서 기반 휴머노이드 로봇의 전신 다중 접촉 동작 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_humanoidvlm_vision_language_gu_2026/">HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">변형 인식 로봇 3D 초음파</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_johns_coarse_to_fine_imitation_learn_2021/">Coarse-to-Fine 모방 학습: 단일 시연으로부터의 로봇 조작</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_impedance_guided_programmable_2026/">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_physics_based_motion_tracking_2026/">Physics-Based Motion Tracking of Contact-Rich Interacting Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_float_drone_for_physical_inter_2026/">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">불확실한 기구학과 동역학을 가진 로봇 매니퓰레이터의 적응 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_newton_euler_equations/">뉴턴-오일러 방정식</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_inverse_dynamics_qp/">역동역학 QP 공식화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_foc_motor_control/">자장 지향 제어(FOC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_planetary_roller_screw/">행성 롤러 스크류</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_euler_lagrange_equations/">오일러-라그랑주 방정식</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">형식화</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_impedance_control"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_newton_euler_equations/">
+          <span class="entry-type">방정식</span>
+          <h3>뉴턴-오일러 방정식</h3>
+          <p>강철 또는 관절 연결 다물체 시스템의 운전을 기술하는 결합된 힘 및 토크 평형 방정식 집합.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_amor_adaptive_character_contro_2025/">
+          <span class="entry-type">논문</span>
+          <h3>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</h3>
+          <p>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_morphquad_morphable_quadrotor_2026/">
+          <span class="entry-type">논문</span>
+          <h3>MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</h3>
+          <p>arXiv:2607.02764v1 Announce Type: new Abstract: Infrastructure maintenance, contact-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_current_as_touch_proprioceptiv_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</h3>
+          <p>arXiv:2607.03529v1 Announce Type: new Abstract: Compliance is essential for dexterous manipulation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">부품</span>
+          <h3>행성 롤러 스크류</h3>
+          <p>스레드 롤러를 통해 회전욕동을 직선욕동으로 변환하는 고하중·고정밀 직선 기구로 휴로봇 선형 액추에이터에 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_preference_conditioned_multi_o_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</h3>
+          <p>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_human_like_badminton_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Human-Like Badminton Skills for Humanoid Robots</h3>
+          <p>Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>오일러-라그랑주 방정식</h3>
+          <p>작용 적분의 정지 조건에서 도출된 2차 미분방정식으로, 일반화 좌표에서 기계 시스템의 용동 방정식을 제공.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_towards_adaptable_humanoid_con_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Towards Adaptable Humanoid Control via Adaptive Motion Tracking</h3>
+          <p>Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_marconi_structured_prediction_for_cris_2021/">
+          <span class="entry-type">논문</span>
+          <h3>잘못 명시된 로봇 모델을 위한 CRiSP 역기구학 학습의 구조화 예측</h3>
+          <p>비모수 커널 회귀와 잘못 명시될 수 있는 순방향 기구학 모델을 결합하여 구속 조건 하의 중복 로봇 팔 역기구학을 학습하는 CRiSP-FK 구조화 예측 알고리즘을 제안하고, 일반화…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">기술</span>
+          <h3>Mobile ALOHA</h3>
+          <p>가정 및 창고 조작 데이터 수집을 위한 전신 이동 양손 텔레오퍼레이션 플랫폼.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">
+          <span class="entry-type">논문</span>
+          <h3>불확실한 기구학과 동역학을 가진 로봇 매니퓰레이터의 적응 제어</h3>
+          <p>본 논문은 운동학적 및 동역학적 매개변수가 모두 불확실한 로봇 매니퓰레이터의 작업 공간 궤적 추적을 분리된 적응 루프와 역-야코비안 피드백을 사용하여 달성하는 두 가지 적응 제어…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_visualizing_impedance_control_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</h3>
+          <p>arXiv:2603.25418v2 Announce Type: replace Abstract: Teleoperation for contact-rich manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_robust_operational_space_contr_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation</h3>
+          <p>arXiv:2607.00424v1 Announce Type: new Abstract: Redundant robotic manipulators operating in…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_one_shot_multimodal_learning_f_2026/">
+          <span class="entry-type">논문</span>
+          <h3>One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps</h3>
+          <p>arXiv:2607.09515v1 Announce Type: new Abstract: Robotic manipulation tasks often require…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_aerial_manipulation_contact_me_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</h3>
+          <p>arXiv:2607.04719v1 Announce Type: new Abstract: Aerial robots are increasingly moving from remote…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">
+          <span class="entry-type">논문</span>
+          <h3>접촉 상태에서의 로봇 조작에 대한 서베이</h3>
+          <p>본 서베이는 환경과의 지속적이거나 제어된 접촉을 필요로 하는 로봇 조작 작업을 검토하고, 접촉 작업, 저수준 제어 전략, 스킬 표현, 계획 및 학습 방법을 분류하며, 변형 가능한…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_luo_ceer_compliant_end_effector_an_2026/">
+          <span class="entry-type">논문</span>
+          <h3>CEER: 계층형 휴머노이드 로코-매니퓰레이션을 위한 통합 인터페이스로서의 순응적 최종 효과기 및 루트 제어</h3>
+          <p>CEER는 휴머노이드 로코-매니퓰레이션을 위한 순응적 최종 효과기-루트(EE-root) 제어 추상화를 제안하며, 전신 동작 추적기로부터 교사-학생 증류를 통해 저수준 정책을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_murooka_whole_body_multi_contact_motio_2024/">
+          <span class="entry-type">논문</span>
+          <h3>분산 촉각 센서 기반 휴머노이드 로봇의 전신 다중 접촉 동작 제어</h3>
+          <p>본 논문은 분산 촉각 센서 피드백을 사용하여 무릎, 팔꿈치, 전완부, 대퇴부와 같은 중간 사지 영역의 접촉을 안정화하는 전신 다중 접촉 제어 방법을 제시하고, 시뮬레이션과 RHP…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">
+          <span class="entry-type">논문</span>
+          <h3>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</h3>
+          <p>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>역동역학 QP 공식화</h3>
+          <p>부유 기반 동역학과 물리적 제약 조건 하에서 작업 추종 오차를 최소화하여 일반화 가속도, 접촉력, 관절 토크를 계산하는 이차 계획법 공식화이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_extremcontrol_low_latency_huma_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control</h3>
+          <p>ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humanoidvlm_vision_language_gu_2026/">
+          <span class="entry-type">논문</span>
+          <h3>HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation</h3>
+          <p>HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">방법</span>
+          <h3>자장 지향 제어(FOC)</h3>
+          <p>삼상 전류를 회전하는 dq 좌표계로 변환하여 토크와 자속을 독립 제어하는 모터 제어 방식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_physics_based_motion_tracking_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Physics-Based Motion Tracking of Contact-Rich Interacting Characters</h3>
+          <p>Physics-Based Motion Tracking of Contact-Rich Interacting Characters is a paper on 物理动画 for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">
+          <span class="entry-type">논문</span>
+          <h3>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models</h3>
+          <p>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_u_joint_caams_experimental_eva_2026/">
+          <span class="entry-type">논문</span>
+          <h3>U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</h3>
+          <p>arXiv:2607.03321v1 Announce Type: new Abstract: Continuum manipulators mounted on multi-rotor UAVs…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_h2_compact_human_humanoid_co_m_2025/">
+          <span class="entry-type">논문</span>
+          <h3>H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies</h3>
+          <p>H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_granados_dance_teaching_by_a_robot_comb_2017/">
+          <span class="entry-type">논문</span>
+          <h3>로봇에 의한 댄스 교육: 기술 학습 과정을 지원하기 위한 인지 및 물리적 인간-로봇 상호작용의 결합</h3>
+          <p>본 연구는 1.8m 높이의 이동형 휴머노이드 댄스 교육 로봇을 제안하여 밀접 접촉의 사교댄스 상황에서 적응형 임피던스 기반 제어기로 인간 학습자를 안내한다; 누적 수행에 기반한…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_robot_crash_course_learning_so_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Robot Crash Course: Learning Soft and Stylized Falling</h3>
+          <p>Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_spatial_relationship_preservin_2010/">
+          <span class="entry-type">논문</span>
+          <h3>Spatial relationship preserving character motion adaptation</h3>
+          <p>Spatial relationship preserving character motion adaptation is a 2010 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_softmimic_learning_compliant_w_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SoftMimic: Learning Compliant Whole-body Control from Examples</h3>
+          <p>SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_unified_structural_hydrodynami_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</h3>
+          <p>arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_safehumanoid_vlm_rag_driven_co_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot</h3>
+          <p>SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_tacrefinenet_tactile_only_gras_2025/">
+          <span class="entry-type">논문</span>
+          <h3>TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses</h3>
+          <p>TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses (TacRefineNet),…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_admittance_control/">
+          <span class="entry-type">방법</span>
+          <h3>어드미턴스 제어</h3>
+          <p>측정된 외력을 원하는 위치·속도 궤적으로 변환하는 제어 방식으로, 임피던스 제어와 상호 보완적.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_pid_control/">
+          <span class="entry-type">방법</span>
+          <h3>PID 제어</h3>
+          <p>추적 오차의 비례·적분·미분 항의 선형 조합으로 제어 신호를 계산하는 기초 피드백 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">
+          <span class="entry-type">논문</span>
+          <h3>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</h3>
+          <p>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">
+          <span class="entry-type">논문</span>
+          <h3>변형 인식 로봇 3D 초음파</h3>
+          <p>로봇 촉진, 광류 알고리즘 및 결합 2차 회귀를 통해 픽셀 변위를 추정하고 두 가지 혈관 팬텀에서 검증된 환자 지정 강성 기반 변형 보정 방법을 제안한다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_johns_coarse_to_fine_imitation_learn_2021/">
+          <span class="entry-type">논문</span>
+          <h3>Coarse-to-Fine 모방 학습: 단일 시연으로부터의 로봇 조작</h3>
+          <p>Johns(2021)은 엔드이펙터의 병목 자세를 추정하고 해당 자세부터 시연의 엔드이펙터 속도를 재생함으로써 단일 인간 시연으로부터 새로운 조작 작업을 학습하는 시각적 모방 학습…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_impedance_guided_programmable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</h3>
+          <p>arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_force_position_hybrid_control/">
+          <span class="entry-type">방법</span>
+          <h3>힘/위치 하이브리드 제어</h3>
+          <p>접촉 작업에서 제약 방향으로는 힘을, 자유 방향으로는 위치를 동시에 제어하는 전략.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_series_elastic_actuator_2024/">
+          <span class="entry-type">기술</span>
+          <h3>Series Elastic Actuator</h3>
+          <p>모터와 부하 사이에 탄성 요소를 직렬로 배치한 액추에이터, 정확한 힘 제어 및 충격 내성 가능.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_float_drone_for_physical_inter_2026/">
+          <span class="entry-type">논문</span>
+          <h3>FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</h3>
+          <p>arXiv:2607.04260v1 Announce Type: new Abstract: Aerial physical interaction represents a promising…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_subsystem_ankle_compliance/">
+          <span class="entry-type">부품</span>
+          <h3>발목 순응 기구</h3>
+          <p>보행 시 충격 흡수·지형 적응·에너지 효율을 높이기 위해 발목에 적용되는 기계적 또는 제어 기반 순응 설계.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Model Predictive Control</h3>
+          <p>접촉이 풍부한 전신 동작을 생성하기 위한 온라인 최적 제어 접근법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_high_speed_and_impact_resilien_2024/">
+          <span class="entry-type">논문</span>
+          <h3>High-Speed and Impact Resilient Teleoperation of Humanoid Robots</h3>
+          <p>High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">기술</span>
+          <h3>Quasi Direct Drive Actuator</h3>
+          <p>저감속비 기어와 고토크 모터를 사용하여 높은 대역폭과 힘 투명성을 달성하는 액추에이터 설계.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_the_quadruped_soft_tail_compli_2026/">
+          <span class="entry-type">논문</span>
+          <h3>The Quadruped Soft Tail: Compliant Grasping and Swabbing for Contamination Surveys in Harsh Environments</h3>
+          <p>arXiv:2606.30900v1 Announce Type: new Abstract: Beryllium contamination surveys in radioactive areas…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>유한요소해석(FEA) · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">유한요소해석(FEA)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>유한요소해석(FEA)</h1>
+      <p class="entry-name-en">Finite Element Analysis (FEA)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<h4 id="856">8.5.6 유한요소해석의 링크 설계 적용</h4>
+<h2 id="_2">핵심 내용</h2>
+<p><strong>유한요소해석(FEA)</strong>은 링크, 관절 브래킷 및 하우징이 하중 하에서 응력, 변형 및 모드를 예측하는 핵심 수치 도구입니다. 연속체를 유한한 수의 요소로 이산화함으로써, FEA는 편미분 방정식을 선형 대수 방정식 시스템으로 변환하여 해결함으로써 설계 단계에서 잠재적인 구조적 약점을 발견합니다[27][28].</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 유한요소해석(FEA), 이산화, 요소, 노드, 자유도</p>
+<ul>
+<li><strong>유한요소해석(FEA)</strong>: 연속 구조를 유한 요소로 이산화하고 역학적 응답을 수치적으로 해결하는 방법.</li>
+<li><strong>이산화(discretization)</strong>: 연속적인 기하학 및 물리적 장을 유한한 수의 요소로 분해하는 과정.</li>
+<li><strong>요소(element)</strong>: 유한요소 격자를 구성하는 기본 기하학적 블록(예: 사면체, 육면체, 쉘 요소).</li>
+<li><strong>노드(node)</strong>: 요소 간의 연결점으로, 장 변수가 노드에서 계산됨.</li>
+<li><strong>자유도(DOF)</strong>: 각 노드에서 구해야 하는 변위 성분의 수.</li>
+</ul>
+</div>
+<p>휴머노이드 로봇 링크의 FEA 표준 작업 흐름은 다음과 같습니다:</p>
+<ol>
+<li><strong>기하학 가져오기 및 정리</strong>: CAD에서 STEP/IGES 모델을 가져와 전체 역학적 응답에 영향을 미치지 않는 작은 필렛, 나사산, 모따기, 미세 구멍 등의 특징을 제거.</li>
+<li><strong>재료 속성 정의</strong>: 탄성 계수 <span class="arithmatex">\(E\)</span>, 푸아송 비 <span class="arithmatex">\(\nu\)</span>, 밀도 <span class="arithmatex">\(\rho\)</span>를 설정하고, 복합 재료의 경우 이방성 매개변수도 정의.</li>
+<li><strong>격자 생성</strong>: 기하학을 요소 집합으로 이산화. 일반적인 요소 유형은 다음과 같음:</li>
+<li><strong>사면체 요소(tetrahedron)</strong>: 복잡한 기하학에 적응하지만, 동일한 노드 수에서 일반적으로 육면체보다 정밀도가 낮음.</li>
+<li><strong>육면체 요소(hexahedron)</strong>: 규칙적인 격자에서 정밀도가 높고 수렴이 빠르며, 블록형 구조에 적합.</li>
+<li><strong>쉘 요소(shell)</strong>: 얇은 벽 구조에 사용되며 자유도를 크게 줄일 수 있음.</li>
+<li><strong>보 요소(beam)</strong>: 가늘고 긴 부재에 사용되며 계산 효율이 가장 높음.</li>
+<li><strong>경계 조건 및 하중</strong>: 관절 장착면 또는 베어링 시트를 구속하고, 중력, 관성 하중, 관절 토크, 지면 반력 등을 적용.</li>
+<li><strong>해석 및 후처리</strong>: 변위, 응력, 변형률, 안전 계수, 고유 진동수를 계산하고, 고응력 영역과 변형 모드를 식별.</li>
+<li><strong>수렴성 검증</strong>: 격자를 점진적으로 세분화하여 주요 부위의 응력이 안정화되는지 관찰.</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["CAD 기하학"] --&gt; B["기하학 정리/단순화"]
+    B --&gt; C["재료 속성"]
+    C --&gt; D["격자 생성"]
+    D --&gt; E["경계 조건 및 하중"]
+    E --&gt; F["FEA 해석"]
+    F --&gt; G["응력/변형/모드"]
+    G --&gt; H["수렴성 검사"]
+    H --&gt;|"수렴 안 됨"| D
+    H --&gt;|"수렴됨"| I["설계 결정"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 기하학 정리, 격자 수렴, 후처리, 경계 조건, 하중 조건</p>
+<ul>
+<li><strong>기하학 정리(geometry cleanup)</strong>: 분석 결과에 영향을 미치지 않는 작은 특징을 제거하여 모델을 단순화.</li>
+<li><strong>격자 수렴(mesh convergence)</strong>: 격자를 세분화함에 따라 계산 결과가 안정화되는 현상.</li>
+<li><strong>후처리(post-processing)</strong>: FEA 결과를 시각화하고 평가.</li>
+<li><strong>경계 조건(boundary condition)</strong>: 변위 또는 온도를 구속하는 조건.</li>
+<li><strong>하중 조건(load case)</strong>: 특정 작동 상태에서 구조에 작용하는 하중 조합.</li>
+</ul>
+</div>
+<p>격자 유형 선택은 결과에 큰 영향을 미칩니다. 복잡한 응력 상태를 받는 관절 브래킷의 경우, 2차 사면체 요소(10노드)가 굽힘을 잘 포착할 수 있으며, 가늘고 긴 링크의 경우 육면체 요소가 효율성을 높일 수 있습니다. 쉘 요소는 벽 두께가 다른 치수에 비해 훨씬 작은 케이싱 및 얇은 벽 튜브에 적합합니다.</p>
+<p><strong>응력 집중(stress concentration)</strong>은 링크 설계에서 흔한 문제입니다. 기하학적 급변점(예: 구멍 가장자리, 노치, 단차, 예각)에서 국부 응력이 공칭 응력보다 현저히 높아지는 현상이 발생하며, 응력 집중 계수 <span class="arithmatex">\(K_t\)</span>는 다음과 같이 정의됩니다:</p>
+<div class="arithmatex">\[
+K_t = \frac{\sigma_{\max}}{\sigma_{\text{nom}}}
+\]</div>
+<p>여기서 <span class="arithmatex">\(\sigma_{\max}\)</span>는 국부 최대 응력, <span class="arithmatex">\(\sigma_{\text{nom}}\)</span>은 공칭 응력입니다. 응력 집중을 완화하는 방법으로는 필렛 반경 증가, 예각 회피, 점진적 단면 변화, 구멍 가장자리에 보강 링 설치 등이 있습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 응력 집중, 응력 집중 계수, 필렛, 공칭 응력</p>
+<ul>
+<li><strong>응력 집중(stress concentration)</strong>: 기하학적 급변으로 인해 국부 응력이 현저히 증가하는 현상.</li>
+<li><strong>응력 집중 계수(stress concentration factor)</strong>: 국부 최대 응력과 공칭 응력의 비율.</li>
+<li><strong>필렛(fillet)</strong>: 두 표면 사이의 부드러운 전환으로, 응력 집중을 줄이는 데 사용.</li>
+<li><strong>공칭 응력(nominal stress)</strong>: 단순화된 공식으로 계산된 평균 응력.</li>
+</ul>
+</div>
+<p>수렴성 검증은 FEA 신뢰성의 보장입니다. 이론적으로 요소 크기 <span class="arithmatex">\(h \to 0\)</span>일 때 수치 해는 정확 해에 수렴해야 합니다. 공학에서는 일반적으로 <strong>h-수렴</strong>을 사용합니다: 격자를 점진적으로 세분화하고 주요 위치의 응력이 요소 수에 따라 변화하는 곡선을 그려, 상대 변화가 5% 미만일 때 결과가 수렴된 것으로 간주합니다. 중요한 하중 지지 부재의 경우, 최소 두 번의 격자 세분화 비교를 권장합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: h-수렴, 요소 크기, 수치 해, 정확 해, 수렴 기준</p>
+<ul>
+<li><strong>h-수렴(h-convergence)</strong>: 요소 크기를 줄여 계산 정밀도를 높이는 수렴 방식.</li>
+<li><strong>요소 크기(element size)</strong>: 유한요소 격자에서 요소의 일반적인 변 길이.</li>
+<li><strong>수치 해(numerical solution)</strong>: 이산 모델에서 계산된 근사 해.</li>
+<li><strong>정확 해(exact solution)</strong>: 연속 문제의 이론적 해.</li>
+<li><strong>수렴 기준(convergence criterion)</strong>: 수치 해가 충분히 안정적인지 판단하는 기준.</li>
+</ul>
+</div>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_capture_point/">캡처 포인트</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_digital_twin/">디지털 트윈</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_design_for_assembly/">조립 용이성 설계(DFA)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_gazebo/">Gazebo</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_linear_algebra/">선형대수학</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_design_for_manufacturing/">제조 용이성 설계(DFM)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_finite_element_analysis_2024/">Finite Element Analysis</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_forward_kinematics/">정욕동학</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p4_2_1/">电机选型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_formalism_floating_base_dynamics/">부유 기반 동역학</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_2_2/">疲劳与寿命预估</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bytewrist_a_parallel_robotic_w_2026/">ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion for Confined Spaces</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_quasi_direct_drive_for_low_cos_2019/">Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_the_duke_humanoid_design_and_c_2024/">The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_orca_open_source_reliable_cost_2025/">ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ironcub_3_the_jet_powered_flyi_2025/">iRonCub 3: The Jet-Powered Flying Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_dexwrist_a_robotic_wrist_for_c_2026/">DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_202411_zeroth_bot_2024/">2024.11, Zeroth Bot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_finite_element_analysis_2024/">Finite Element Analysis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_1_2/">FEA 模型准备</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sathuluri_a_systems_design_approach_for_2022/">휴머노이드 로봇 팔의 공동 설계를 위한 시스템 설계 접근법</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_a_21_dof_humanoid_dexterous_ha_2025/">A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_arachchige_dynamic_modeling_and_validatio_2023/">소프트 로봇 뱀 보행의 동적 모델링 및 검증</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_integrated_linkage_driven_dext_2021/">Integrated linkage-driven dexterous anthropomorphic robotic hand</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_aero_hand_open_2026/">Aero Hand Open</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_dijit_a_robotic_head_for_an_ac_2025/">DIJIT: A Robotic Head for an Active Observer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_a_soft_continuum_robot_with_se_2024/">자기 제어 가능한 가변 곡률을 가진 소프트 연속체 로봇</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_evolutionary_continuous_adapti_2025/">Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_2_3/">轻量化与拓扑优化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_fahmideh_a_study_of_influential_factors_2018/">녹색 제조를 위한 자체 재구성 로봇 설계 영향 요인 연구</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_2_1/">静动态应力与变形分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_toward_humanoid_brain_body_co_2025/">Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_garrappa_numerical_evaluation_of_two_an_2015/">두 변수 및 세 변수 Mittag–Leffler 함수의 수치 평가</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_antagonistic_bowden_cable_actu_2025/">Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous Manipulation for Payload Constrained Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_2_4/">仿真-试验闭环迭代</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_allgeuer_child_sized_3d_printed_igus_hu_2015/">어린이 크기의 3D 프린팅 igus 휴머노이드 오픈 플랫폼</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_x2_n_a_transformable_wheel_leg_2026/">X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_1_1/">载荷工况定义</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_pimbs_efficient_body_schema_le_2025/">PIMBS: Efficient Body Schema Learning for Musculoskeletal Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_vouga_asynchronous_variational_integ_2009/">접촉 역학을 위한 상호작용 포텐셜의 비동기 변분 적분법</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8_1_3/">非线性分析与稳定性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_dexlink_hand_a_compact_afforda_2026/">DexLink Hand: A Compact, Affordable, 16-DOF Linkage-Driven Hand with Human-Like Dexterity</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_rapid_hand_a_robust_affordable_2025/">RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_floating_base_dynamics/">부유 기반 동역학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_forward_kinematics/">정욕동학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_fea_finite_element_analysis"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>静动态应力与变形分析</h3>
+          <p>《FEA 应力报告》：应力、变形、安全系数</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_gazebo/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>Gazebo</h3>
+          <p>물리 엔진·센서 모델·장면 작성을 제공하는 오픈소스 3D 로보틱스 시뮬레이터로, 알고리즘 개발·테스트에 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dijit_a_robotic_head_for_an_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>DIJIT: A Robotic Head for an Active Observer</h3>
+          <p>DIJIT: A Robotic Head for an Active Observer is a 2025 work on hardware design for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_evolutionary_continuous_adapti_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance</h3>
+          <p>Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_quasi_direct_drive_for_low_cos_2019/">
+          <span class="entry-type">논문</span>
+          <h3>Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation</h3>
+          <p>Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work on hardware design for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_design_for_manufacturing/">
+          <span class="entry-type">방법</span>
+          <h3>제조 용이성 설계(DFM)</h3>
+          <p>부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_integrated_linkage_driven_dext_2021/">
+          <span class="entry-type">논문</span>
+          <h3>Integrated linkage-driven dexterous anthropomorphic robotic hand</h3>
+          <p>Integrated linkage-driven dexterous anthropomorphic robotic hand is a 2021 work on hardware design…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>轻量化与拓扑优化</h3>
+          <p>优化后 CAD、减重比例 &gt; 目标、强度仍满足</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_vouga_asynchronous_variational_integ_2009/">
+          <span class="entry-type">논문</span>
+          <h3>접촉 역학을 위한 상호작용 포텐셜의 비동기 변분 적분법</h3>
+          <p>비동기 변분 적분기(AVI)를 페널티 접촉력과 같은 상호작용 포텐셜로 확장하고, 완화된 가정 하에서 다중심플렉틱성을 증명하며, 비동기 접촉 역학(ACM) 프레임워크를 통해 얇은…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>정욕동학</h3>
+          <p>주어진 관절 각도로부터 동차 변환 사슬 또는 지수곱을 이용해 말단 동작기 위치·방향을 계산하는 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_digital_twin/">
+          <span class="entry-type">개념</span>
+          <h3>디지털 트윈</h3>
+          <p>물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_2_4/">
+          <span class="entry-type">방법</span>
+          <h3>仿真-试验闭环迭代</h3>
+          <p>仿真与试验误差 &lt; 15%、设计迭代记录</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p4_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>电机选型</h3>
+          <p>电机规格书、选型对比表、热校核</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_a_soft_continuum_robot_with_se_2024/">
+          <span class="entry-type">논문</span>
+          <h3>자기 제어 가능한 가변 곡률을 가진 소프트 연속체 로봇</h3>
+          <p>본 논문은 외력이나 이산식 잠금 장치 없이 세그먼트 단위에서 연속적인 곡률과 강성 변화를 실현하는 모터 제어 입자 잠금 성장 척추를 내장한 공압식 소프트 연속체 로봇 SCoReS를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>疲劳与寿命预估</h3>
+          <p>疲劳分析报告、关键件循环寿命 &gt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_the_duke_humanoid_design_and_c_2024/">
+          <span class="entry-type">논문</span>
+          <h3>The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics</h3>
+          <p>The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_aero_hand_open_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Aero Hand Open</h3>
+          <p>Aero Hand Open is a 2026 work on hardware design for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_orca_open_source_reliable_cost_2025/">
+          <span class="entry-type">논문</span>
+          <h3>ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning</h3>
+          <p>ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dexlink_hand_a_compact_afforda_2026/">
+          <span class="entry-type">논문</span>
+          <h3>DexLink Hand: A Compact, Affordable, 16-DOF Linkage-Driven Hand with Human-Like Dexterity</h3>
+          <p>DexLink Hand: A Compact, Affordable, 16-DOF Linkage-Driven Hand with Human-Like Dexterity is a paper…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_finite_element_analysis_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Finite Element Analysis</h3>
+          <p>프로토타입 전 로봇 링크, 브래킷 및 기어박스의 구조, 열 및 모달 분석을 위한 수치 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>载荷工况定义</h3>
+          <p>《载荷工况表》：载荷大小、方向、作用点、发生概率</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_rapid_hand_a_robust_affordable_2025/">
+          <span class="entry-type">논문</span>
+          <h3>RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy</h3>
+          <p>RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_x2_n_a_transformable_wheel_leg_2026/">
+          <span class="entry-type">논문</span>
+          <h3>X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation</h3>
+          <p>X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_capture_point/">
+          <span class="entry-type">원리</span>
+          <h3>캡처 포인트</h3>
+          <p>로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bytewrist_a_parallel_robotic_w_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion for Confined Spaces</h3>
+          <p>ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion for Confined Spaces…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>非线性分析与稳定性</h3>
+          <p>屈曲模态、大变形下的应力/应变</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_fahmideh_a_study_of_influential_factors_2018/">
+          <span class="entry-type">논문</span>
+          <h3>녹색 제조를 위한 자체 재구성 로봇 설계 영향 요인 연구</h3>
+          <p>Fahmideh와 Lammers(2018)는 자체 재구성 로봇이 녹색 제조를 가능하게 하는지에 영향을 미치는 설계 시점, 실행 시점 및 하드웨어 요인에 대한 예비 연구 모델을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>부유 기반 동역학</h3>
+          <p>이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_arachchige_dynamic_modeling_and_validatio_2023/">
+          <span class="entry-type">논문</span>
+          <h3>소프트 로봇 뱀 보행의 동적 모델링 및 검증</h3>
+          <p>부유 기반 운동학적 피부 표현과 분산 접촉 역학을 활용한 공압식 소프트 로봇 뱀의 완전한 공간 동적 모델을 제시하고, 평면 및 공간 롤링 보행을 수치적으로 그리고 실험적으로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_design_for_assembly/">
+          <span class="entry-type">방법</span>
+          <h3>조립 용이성 설계(DFA)</h3>
+          <p>부품 수를 줄이고 결합을 단순화하며 조립 시간을 단축하여 생산 비용을 낮추고 신뢰성을 높이는 설계 방법론.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_garrappa_numerical_evaluation_of_two_an_2015/">
+          <span class="entry-type">논문</span>
+          <h3>두 변수 및 세 변수 Mittag–Leffler 함수의 수치 평가</h3>
+          <p>최적 포물선 경로를 이용한 라플라스 변환 수치 역변환 알고리즘을 제안하여 2-변수 및 3-변수 Mittag–Leffler 함수를 평가하고, 오차 제어와 공개 MATLAB 구현을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sathuluri_a_systems_design_approach_for_2022/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 로봇 팔의 공동 설계를 위한 시스템 설계 접근법</h3>
+          <p>본 논문은 V 모델 기반의 상향식 공동 설계 방법론을 제시하여 휴머노이드 로봇 팔의 설계 변수에 대한 최대 허용 솔루션 공간을 구축하고, 상위 요구사항을 허용 오차가 있는 하위…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>역욕동학</h3>
+          <p>원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>FEA 模型准备</h3>
+          <p>高质量 FEA 模型、网格质量报告、边界条件清单</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_202411_zeroth_bot_2024/">
+          <span class="entry-type">논문</span>
+          <h3>2024.11, Zeroth Bot</h3>
+          <p>2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8/">
+          <span class="entry-type">방법</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_a_21_dof_humanoid_dexterous_ha_2025/">
+          <span class="entry-type">논문</span>
+          <h3>A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0</h3>
+          <p>A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0 is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ironcub_3_the_jet_powered_flyi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>iRonCub 3: The Jet-Powered Flying Humanoid Robot</h3>
+          <p>iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware design for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_toward_humanoid_brain_body_co_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery</h3>
+          <p>Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_antagonistic_bowden_cable_actu_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous Manipulation for Payload Constrained Humanoids</h3>
+          <p>Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous Manipulation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dexwrist_a_robotic_wrist_for_c_2026/">
+          <span class="entry-type">논문</span>
+          <h3>DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation</h3>
+          <p>DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation is a 2026 work on hardware design…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_allgeuer_child_sized_3d_printed_igus_hu_2015/">
+          <span class="entry-type">논문</span>
+          <h3>어린이 크기의 3D 프린팅 igus 휴머노이드 오픈 플랫폼</h3>
+          <p>90cm 높이의 저비용 완전 3D 프린팅 어린이 크기 휴머노이드 로봇인 igus 휴머노이드 오픈 플랫폼을 소개하고, 오픈소스 ROS 소프트웨어와 기계/전기 설계 및 동적 동작…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">기초 학문</span>
+          <h3>선형대수학</h3>
+          <p>벡터 공간, 선형 변환, 행렬, 선형 방정식 체계를 다루는 수학 분야이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pimbs_efficient_body_schema_le_2025/">
+          <span class="entry-type">논문</span>
+          <h3>PIMBS: Efficient Body Schema Learning for Musculoskeletal Humanoids</h3>
+          <p>PIMBS: Efficient Body Schema Learning for Musculoskeletal Humanoids is a 2025 work on hardware…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a><ul>
+<li><a href="#856">8.5.6 유한요소해석의 링크 설계 적용</a></li>
+</ul>
+</li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

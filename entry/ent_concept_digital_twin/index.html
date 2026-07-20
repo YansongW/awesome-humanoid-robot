@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数字孪生 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/concept/">概念</a>
+    <span>/</span>
+    <span class="breadcrumb-current">数字孪生</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">概念</div>
+      <h1>数字孪生</h1>
+      <p class="entry-name-en">Digital Twin</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.8.3 数字孪生：从虚拟样机到在线映射 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>数字孪生（digital twin）是物理实体在数字空间的实时映射，可用于设计验证、虚拟调试、健康监测与预测性维护。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>数字孪生是人形机器人领域的重要概念。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p><strong>数字孪生（digital twin）</strong>是物理实体在数字空间的实时映射，可用于设计验证、虚拟调试、健康监测与预测性维护。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：数字孪生、虚拟样机、虚拟调试、预测性维护、在线映射</p>
+<ul>
+<li><strong>数字孪生（digital twin）</strong>：物理系统的高保真数字映射，可实时同步状态。</li>
+<li><strong>虚拟样机（virtual prototype）</strong>：在软件中构建的产品模型，用于仿真验证。</li>
+<li><strong>虚拟调试（virtual commissioning）</strong>：在虚拟环境中验证控制逻辑与软件。</li>
+<li><strong>预测性维护（predictive maintenance）</strong>：基于状态监测预测故障并提前维护。</li>
+<li><strong>在线映射（online mapping）</strong>：物理状态实时反馈到数字模型的过程。</li>
+</ul>
+</div>
+<p>人形机器人数字孪生工作流通常包括：</p>
+<ol>
+<li><strong>高保真模型</strong>：CAD/CAE 模型 + 多体动力学 + 传感器模型。</li>
+<li><strong>仿真平台</strong>：Isaac Sim、Gazebo、MuJoCo、Webots 等。</li>
+<li><strong>数据接口</strong>：ROS 2、DDS、EtherCAT 等实现虚实数据同步。</li>
+<li><strong>在线标定</strong>：通过真实传感器数据修正模型参数。</li>
+<li><strong>闭环优化</strong>：在数字空间中测试控制策略，再部署到实体。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：高保真模型、仿真平台、数据接口、在线标定、闭环优化</p>
+<ul>
+<li><strong>高保真模型（high-fidelity model）</strong>：接近真实物理行为的详细模型。</li>
+<li><strong>仿真平台（simulation platform）</strong>：提供物理引擎与可视化环境的软件。</li>
+<li><strong>数据接口（data interface）</strong>：不同系统之间交换数据的协议与 API。</li>
+<li><strong>在线标定（online calibration）</strong>：利用实际数据修正模型参数。</li>
+<li><strong>闭环优化（closed-loop optimization）</strong>：根据反馈持续改进设计或控制。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["物理机器人"] --&gt;|"传感器数据"| B["数据接口"]
+    B --&gt; C["数字孪生模型"]
+    C --&gt; D["仿真/分析/预测"]
+    D --&gt; E["优化策略"]
+    E --&gt;|"控制指令"| A
+    C -.-&gt;|"可视化/监控"| F["运维平台"]</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+<li>项目 Wiki：chapter-08.md#8.8.3 数字孪生：从虚拟样机到在线映射</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">数字孪生使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_adaptation/">域适应</a>
+              <span class="rel-desc">数字孪生提及域适应。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              <span class="rel-desc">数字孪生提及Sim-to-Real迁移。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_concept_perception_stack/">感知栈</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">感知栈discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wei_aero_adaptive_and_efficient_ru_2026/">AERO：面向能量收集物联网的自适应高效运行时感知空中固件更新</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AERO：面向能量收集物联网的自适应高效运行时感知空中固件更新discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_martinez_rozas_skyeye_team_at_mbzirc_2020_a_t_2021/">Skyeye 团队参加 MBZIRC 2020：用于城市建筑场景下无 GPS 自主灭火的空地机器人团队</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Skyeye 团队参加 MBZIRC 2020：用于城市建筑场景下无 GPS 自主灭火的空地机器人团队discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_morton_frax_fast_robot_kinematics_and_2026/">frax：基于 JAX 的快速机器人运动学与动力学库</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">frax：基于 JAX 的快速机器人运动学与动力学库discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_underwater_ribbon_cutting_ushe_2026/">Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gao_real_time_service_subscription_2025/">车联网边缘计算中的实时服务订阅与自适应卸载控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">车联网边缘计算中的实时服务订阅与自适应卸载控制discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tahir_mobile_robot_control_and_auton_2023/">通过协同仿真孪生实现移动机器人控制与自主性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">通过协同仿真孪生实现移动机器人控制与自主性提出数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_daudelin_an_integrated_system_for_perce_2018/">面向模块化机器人的感知驱动自主集成系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向模块化机器人的感知驱动自主集成系统discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">ModuLoop：基于模块化合成器与闭环调试器的机器人控制底层代码生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">ModuLoop：基于模块化合成器与闭环调试器的机器人控制底层代码生成提及数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">RoboKube：为机器人云原生演进建立新基础</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboKube：为机器人云原生演进建立新基础discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_vention_and_teradyne_robotics_2026/">Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_software_humanoidverse_2024/">HumanoidVerse</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">HumanoidVersediscusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_taming_silent_failures_a_frame_2025/">驯服静默失效：可验证人工智能可靠性框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">驯服静默失效：可验证人工智能可靠性框架discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_stolzle_guiding_soft_robots_with_motor_2024/">基于运动想象脑信号与阻抗控制的软体机器人导引</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于运动想象脑信号与阻抗控制的软体机器人导引discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gong_augmented_reality_enhanced_rob_2025/">用于收集用户演示的增强现实增强型机器人遥操作系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">用于收集用户演示的增强现实增强型机器人遥操作系统discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_halder_secure_ota_software_updates_in_2019/">联网汽车安全空中软件更新：综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">联网汽车安全空中软件更新：综述提及数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_alirezazadeh_optimal_algorithm_allocation_f_2021/">机器人网络云系统的最优算法分配</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人网络云系统的最优算法分配discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_software_genesis_generative_physics_eng_2024/">Genesis 生成式物理引擎</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Genesis 生成式物理引擎discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021/">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kaigom_metarobotics_for_industry_and_2024/">面向工业与社会的元机器人技术：愿景、技术与机遇</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">面向工业与社会的元机器人技术：愿景、技术与机遇introduces数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bravo_arrabal_strengthening_multi_robot_syst_2025/">面向搜救的强化多机器人系统：协同设计机器人与6G通信</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向搜救的强化多机器人系统：协同设计机器人与6G通信discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">面向云机器人技术的服务导向机器人计算</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">面向云机器人技术的服务导向机器人计算提及数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360 激光雷达</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Livox Mid-360 激光雷达使用数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_darup_encrypted_control_for_networke_2020/">网络化系统的加密控制：示例性介绍与当前挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">网络化系统的加密控制：示例性介绍与当前挑战discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_han_innovative_research_on_iot_arc_2024/">物联网架构与机器人操作平台的创新研究：大语言模型与生成式人工智能的应用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">物联网架构与机器人操作平台的创新研究：大语言模型与生成式人工智能的应用discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_enhanced_visual_feedback_with_2022/">基于SLAM的沉浸式人形机器人遥操作中解耦视角控制的增强视觉反馈</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于SLAM的沉浸式人形机器人遥操作中解耦视角控制的增强视觉反馈discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lee_harness_engineering_for_physic_2026/">物理人工智能的Harness工程：机器人中间件即Harness层</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">物理人工智能的Harness工程：机器人中间件即Harness层discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_barua_a_perspective_on_robotic_telep_2022/">基于认知的机器人远程临场与遥操作视角：我们准备好了吗？</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于认知的机器人远程临场与遥操作视角：我们准备好了吗？discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_fea_finite_element_analysis/">有限元分析（FEA）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_principle_zero_moment_point/">零力矩点（ZMP）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_floating_base_dynamics/">浮动基动力学</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_forward_kinematics/">正运动学</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_inverse_kinematics/">逆运动学</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_concept_digital_twin"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_livox_mid_360_lidar_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>Livox Mid-360 激光雷达</h3>
+          <p>Livox Mid-360 激光雷达是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_perception_stack/">
+          <span class="entry-type">概念</span>
+          <h3>感知栈</h3>
+          <p>处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_genesis_generative_physics_eng_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>Genesis 生成式物理引擎</h3>
+          <p>面向机器人等领域的新兴生成式通用物理引擎。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_han_innovative_research_on_iot_arc_2024/">
+          <span class="entry-type">论文</span>
+          <h3>物联网架构与机器人操作平台的创新研究：大语言模型与生成式人工智能的应用</h3>
+          <p>这篇2024年RICAI论文提出了一种支持物联网的机器人操作平台，集成大语言模型、生成式人工智能、边缘计算和5G网络，以在制造、医疗和服务应用中支持实时决策、自然语言交互和动态任务生成。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bravo_arrabal_strengthening_multi_robot_syst_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向搜救的强化多机器人系统：协同设计机器人与6G通信</h3>
+          <p>提出在X-IoCA架构中协同设计移动机器人与5G/6G边缘云通信的实地搜救用例，集成混合无线传感器网络、基于ROS的智能手机、MEC SLAM以及网络化UGV/UAV协作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_barua_a_perspective_on_robotic_telep_2022/">
+          <span class="entry-type">论文</span>
+          <h3>基于认知的机器人远程临场与遥操作视角：我们准备好了吗？</h3>
+          <p>这篇2022年arXiv观点/综述文章调查了机器人远程临场与遥操作系统，主张采用混合云-边缘架构以平衡重计算与实时响应，并研究了认知、社交意识、多模态交互以及ANA Avatar…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_taming_silent_failures_a_frame_2025/">
+          <span class="entry-type">论文</span>
+          <h3>驯服静默失效：可验证人工智能可靠性框架</h3>
+          <p>本文提出FAME（形式化保证与监控环境）框架，结合离线形式化综合与在线运行时监控，检测安全关键系统中AI组件的静默失效，并在基于CARLA和YOLOv4的自动驾驶感知系统上进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_stolzle_guiding_soft_robots_with_motor_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于运动想象脑信号与阻抗控制的软体机器人导引</h3>
+          <p>本文提出了一种利用三通道可穿戴脑电图运动想象脑机接口，为平面手性剪切拉胀软体机器人驱动虚拟笛卡尔吸引子，并通过新型笛卡尔阻抗控制器进行跟踪的流程；报告了初步的定量设定点调节结果和一项日常生活活动演示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021/">
+          <span class="entry-type">论文</span>
+          <h3>面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构</h3>
+          <p>本文提出了一种低成本的可穿戴传感器背心及模块化ROS开源软件架构，集成物联网连接，使社交人形机器人能够进行触觉、温度、手势、距离和视觉感知，并支持本地及远程人机交互。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_humanoidverse_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>HumanoidVerse</h3>
+          <p>面向Sim-to-Real人形机器人学习的多仿真器训练框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_morton_frax_fast_robot_kinematics_and_2026/">
+          <span class="entry-type">论文</span>
+          <h3>frax：基于 JAX 的快速机器人运动学与动力学库</h3>
+          <p>frax 是一个纯 Python 的 JAX 库，用于在 CPU、GPU 和 TPU 上实现完全向量化的机器人运动学与动力学计算，在 CPU 上达到微秒级延迟，在 GPU…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">方法</span>
+          <h3>正运动学</h3>
+          <p>根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_halder_secure_ota_software_updates_in_2019/">
+          <span class="entry-type">论文</span>
+          <h3>联网汽车安全空中软件更新：综述</h3>
+          <p>This survey highlights and discusses remote OTA software updates in the automotive sector, mainly…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_underwater_ribbon_cutting_ushe_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory</h3>
+          <p>Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory的定义与定位 UnderwateEvent marked…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_darup_encrypted_control_for_networke_2020/">
+          <span class="entry-type">论文</span>
+          <h3>网络化系统的加密控制：示例性介绍与当前挑战</h3>
+          <p>Cloud computing and distributed computing are becoming ubiquitous in many modern control systems…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_enhanced_visual_feedback_with_2022/">
+          <span class="entry-type">论文</span>
+          <h3>基于SLAM的沉浸式人形机器人遥操作中解耦视角控制的增强视觉反馈</h3>
+          <p>本文提出了一种用于HRP-4CR人形机器人沉浸式遥操作的解耦视角控制系统，将ZED Mini相机的实时点云流与SLAM重建网格融合，以缓解视觉反馈延迟、相机视场角限制以及机器人颈部运动范围受限的问题。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">技术</span>
+          <h3>EtherCAT</h3>
+          <p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gao_real_time_service_subscription_2025/">
+          <span class="entry-type">论文</span>
+          <h3>车联网边缘计算中的实时服务订阅与自适应卸载控制</h3>
+          <p>本文针对车联网边缘计算提出了带截止时间约束的任务卸载与资源分配问题（DOAP），并设计了基于线性规划舍入和局部比率技术的 1/4 近似算法 SARound，以及在线服务订阅与卸载控制框架，并在基于…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_vention_and_teradyne_robotics_2026/">
+          <span class="entry-type">技术</span>
+          <h3>Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells</h3>
+          <p>Live demonstrations at Automate 2026 showcase the integration, featuring Vention&#39;s Rapid Operator…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_daudelin_an_integrated_system_for_perce_2018/">
+          <span class="entry-type">论文</span>
+          <h3>面向模块化机器人的感知驱动自主集成系统</h3>
+          <p>提出了一种将集中式感知、建图与基于LTL的高层规划同分布式SMORES-EP硬件相结合的模块化机器人系统，使机器人能够自主探索未知环境、决定何时以及如何重构，并操作物体以完成任务，已通过三项硬件演示验…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kaigom_metarobotics_for_industry_and_2024/">
+          <span class="entry-type">论文</span>
+          <h3>面向工业与社会的元机器人技术：愿景、技术与机遇</h3>
+          <p>本文提出 Metarobotics 是一种软件定义框架，整合超越 URLLC 的…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gong_augmented_reality_enhanced_rob_2025/">
+          <span class="entry-type">论文</span>
+          <h3>用于收集用户演示的增强现实增强型机器人遥操作系统</h3>
+          <p>Traditional industrial robot programming is often complex and time-consuming, typically requiring…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">形式化方法</span>
+          <h3>浮动基动力学</h3>
+          <p>人形机器人不同于固定基座的工业机械臂，其基座（躯干）可在空间中自由移动。因此需要用浮动基（floating base）坐标描述系统位形：</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tahir_mobile_robot_control_and_auton_2023/">
+          <span class="entry-type">论文</span>
+          <h3>通过协同仿真孪生实现移动机器人控制与自主性</h3>
+          <p>提出一种协同仿真孪生（ST）框架，将基于SLAM的路径规划卸载到远程仿真智能体，并通过物理机器人的速度跟踪与预测力反馈实现双向同步，在受限室内环境中进行了实验评估。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">
+          <span class="entry-type">论文</span>
+          <h3>面向云机器人技术的服务导向机器人计算</h3>
+          <p>In this article, we present an overview of the use of service-oriented architecture and Web services…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">方法</span>
+          <h3>逆运动学</h3>
+          <p>根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RoboKube：为机器人云原生演进建立新基础</h3>
+          <p>本文提出 RoboKube，一种基于 Kubernetes 的框架，用于在设备-边缘-云端连续体上部署容器化的 ROS 2 应用，并通过使用 UR5 机械臂的遥操作测试平台验证其可行性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lee_harness_engineering_for_physic_2026/">
+          <span class="entry-type">论文</span>
+          <h3>物理人工智能的Harness工程：机器人中间件即Harness层</h3>
+          <p>该论文提出机器人中间件应作为物理人工智能的Harness层，通过 Projection、Isolation 和 Transfer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_martinez_rozas_skyeye_team_at_mbzirc_2020_a_t_2021/">
+          <span class="entry-type">论文</span>
+          <h3>Skyeye 团队参加 MBZIRC 2020：用于城市建筑场景下无 GPS 自主灭火的空地机器人团队</h3>
+          <p>介绍了一种由最多三架无人机和一辆无人地面车组成的异构多机器人系统，该系统在 MBZIRC 2020 比赛中利用基于激光雷达的无 GPS 定位、改进的 Lazy Theta*…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_alirezazadeh_optimal_algorithm_allocation_f_2021/">
+          <span class="entry-type">论文</span>
+          <h3>机器人网络云系统的最优算法分配</h3>
+          <p>A robotic network is a system with multiple robots connected by a communication network. Certain…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wei_aero_adaptive_and_efficient_ru_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AERO：面向能量收集物联网的自适应高效运行时感知空中固件更新</h3>
+          <p>AERO提出了一种运行时感知的空中固件更新机制，将固件更新任务建模为有向无环图，并在间歇性能量与时间约束下和常规任务联合调度，以提高能量收集物联网设备的更新可靠性与一致性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">方法</span>
+          <h3>域适应</h3>
+          <p>将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">方法</span>
+          <h3>有限元分析（FEA）</h3>
+          <p>有限元分析（Finite Element Analysis, FEA）是预测连杆、关节支架与壳体在载荷下应力、变形与模态的核心数值工具。通过把连续体离散为有限数量的单元，FEA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">原理</span>
+          <h3>零力矩点（ZMP）</h3>
+          <p>8.4.4 零力矩点（ZMP）与动态平衡 零力矩点（Zero Moment Point, ZMP）是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ModuLoop：基于模块化合成器与闭环调试器的机器人控制底层代码生成</h3>
+          <p>提出一种闭环模块化代码合成器，将自然语言指令转换为可执行的低层Python控制模块，并通过运行时探针迭代调试，在RGB-D相机与UR3机械臂标定及抓取放置任务中得到验证。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

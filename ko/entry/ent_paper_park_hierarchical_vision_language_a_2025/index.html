@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hierarchical Vision Language Action Model Using Success and Failure Demonstrations · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Hierarchical Vision Language Action Model Using Success and Failure Demonstrations</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Hierarchical Vision Language Action Model Using Success and Failure Demonstrations</h1>
+      <p class="entry-name-en">Hierarchical Vision Language Action Model Using Success and Failure Demonstrations</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.03913v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Hierarchical Vision Language Action Model Using Success and Failure Demonstrations (VINE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Korea University, KAIST, Seoul National University, NAVER AI Lab.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.03913" target="_blank" rel="noopener">Hierarchical Vision Language Action Model Using Success and Failure Demonstrations (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2512.03913" target="_blank" rel="noopener">VINE source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존의 Vision-Language-Action (VLA) 모델은 일반적으로 원격 조작 성공 시연 데이터로 학습되며, 데이터 수집 과정에서 자연스럽게 발생하는 수많은 실패 시도는 폐기됩니다. 그러나 이러한 실패는 정책이 취약할 수 있는 위치와 방식을 인코딩하며, 이 정보는 강건성을 개선하는 데 활용될 수 있습니다. 우리는 혼합 품질 데이터셋을 활용하여 계획 시점에서 실패 인식 추론을 학습함으로써 이 문제를 해결합니다. 우리는 계층적 강화 학습 형식 아래에서 고수준 추론(System 2)과 저수준 제어(System 1)를 분리하는 계층적 비전-언어-행동 모델인 VINE을 소개합니다. 이를 통해 실패를 잡음이 있는 감독 신호가 아닌 구조화된 학습 신호로 사용할 수 있게 됩니다. System 2는 2D 장면 그래프 추상화에 대해 실행 가능성 기반 트리 검색을 수행합니다: 하위 목표 전환을 제안하고, 성공과 실패 모두에서 성공 확률을 예측하며, 실행 전에 취약한 분기를 제거하여 계획 평가를 실행 가능성 점수화로 전환합니다. 선택된 하위 목표 시퀀스는 System 1에 전달되며, System 1은 에이전트의 핵심 기술을 수정하지 않고 저수준 행동을 실행합니다. 오프라인 원격 조작 데이터로 완전히 학습된 VINE은 부정적 경험을 의사 결정 루프에 직접 통합합니다. 다양한 까다로운 조작 작업에서 이 접근 방식은 성공률과 강건성을 일관되게 개선하며, 실패 데이터가 VLA의 광범위한 능력을 강건한 실행으로 전환하는 데 필수적인 자원임을 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>기존의 Vision-Language-Action (VLA) 모델은 일반적으로 원격 조작 성공 시연 데이터로 학습되며, 데이터 수집 과정에서 자연스럽게 발생하는 수많은 실패 시도는 폐기됩니다. 그러나 이러한 실패는 정책이 취약할 수 있는 위치와 방식을 인코딩하며, 이 정보는 강건성을 개선하는 데 활용될 수 있습니다. 우리는 혼합 품질 데이터셋을 활용하여 계획 시점에서 실패 인식 추론을 학습함으로써 이 문제를 해결합니다. 우리는 계층적 강화 학습 형식 아래에서 고수준 추론(System 2)과 저수준 제어(System 1)를 분리하는 계층적 비전-언어-행동 모델인 VINE을 소개합니다. 이를 통해 실패를 잡음이 있는 감독 신호가 아닌 구조화된 학습 신호로 사용할 수 있게 됩니다. System 2는 2D 장면 그래프 추상화에 대해 실행 가능성 기반 트리 검색을 수행합니다: 하위 목표 전환을 제안하고, 성공과 실패 모두에서 성공 확률을 예측하며, 실행 전에 취약한 분기를 제거하여 계획 평가를 실행 가능성 점수화로 전환합니다. 선택된 하위 목표 시퀀스는 System 1에 전달되며, System 1은 에이전트의 핵심 기술을 수정하지 않고 저수준 행동을 실행합니다. 오프라인 원격 조작 데이터로 완전히 학습된 VINE은 부정적 경험을 의사 결정 루프에 직접 통합합니다. 다양한 까다로운 조작 작업에서 이 접근 방식은 성공률과 강건성을 일관되게 개선하며, 실패 데이터가 VLA의 광범위한 능력을 강건한 실행으로 전환하는 데 필수적인 자원임을 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_park_hierarchical_vision_language_a_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

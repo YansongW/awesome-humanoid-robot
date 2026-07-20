@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots</h1>
+      <p class="entry-name-en">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span><span class="tag">Design Engineering</span><span class="tag">Applications &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10843v1.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper presents a generalized momentum-based observer framework that fuses low-cost strain-gauge joint torque sensors with a single hip-mounted force/torque sensor to detect, localize, and estimate contact forces along robot legs, achieving sub-centimeter localization accuracy and force errors below 0.2 N in hardware experiments.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.10843" target="_blank" rel="noopener">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper presents a method for detecting and localizing contact along robot legs using distributed joint torque sensors and a single hip-mounted force-torque (FT) sensor within a generalized momentum-based observer framework. We designed a low-cost strain-gauge-based joint torque sensor that can be installed on every joint to provide direct torque measurements, eliminating the need for complex friction models and offering more accurate torque readings than motor current-based estimation. Simulation studies on a floating-based 2-DoF robot leg verified that the proposed framework accurately recovers contact force and location along the thigh and shin links. Through a calibration procedure, our torque sensor achieved an average 96.4% accuracy relative to ground truth measurements. Building upon the torque sensor, we conducted hardware experiments on a 2-DoF manipulator, demonstrating sub-centimeter contact localization accuracy and force errors below 0.2 N.</p>
+<h2 id="content">Content</h2>
+<p>This paper presents a method for detecting and localizing contact along robot legs using distributed joint torque sensors and a single hip-mounted force-torque (FT) sensor within a generalized momentum-based observer framework. We designed a low-cost strain-gauge-based joint torque sensor that can be installed on every joint to provide direct torque measurements, eliminating the need for complex friction models and offering more accurate torque readings than motor current-based estimation. Simulation studies on a floating-based 2-DoF robot leg verified that the proposed framework accurately recovers contact force and location along the thigh and shin links. Through a calibration procedure, our torque sensor achieved an average 96.4% accuracy relative to ground truth measurements. Building upon the torque sensor, we conducted hardware experiments on a 2-DoF manipulator, demonstrating sub-centimeter contact localization accuracy and force errors below 0.2 N.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">evaluates on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_human_level_actuation_score/">Human-Level Actuation Score</a>
+              <span class="rel-desc">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots evaluates or benchmarks Human-Level Actuation Score.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_gallant_voxel_grid_based_human_2025/">Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</a>
+              <span class="rel-desc">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots cites or references Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed</a>
+              <span class="rel-desc">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots cites or references A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</a>
+              <span class="rel-desc">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots cites or references Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">A ROS-based Software Framework for the NimbRo-OP Humanoid Open Platform</a>
+              <span class="rel-desc">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots cites or references A ROS-based Software Framework for the NimbRo-OP Humanoid Open Platform.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025/">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</a>
+              <span class="rel-desc">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots cites or references FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">Energy Tank-based Control Framework for Satisfying the ISO/TS 15066 Constraint</a>
+              <span class="rel-desc">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots cites or references Energy Tank-based Control Framework for Satisfying the ISO/TS 15066 Constraint.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">UKF-Based Sensor Fusion for Joint-Torque Sensorless Humanoid Robots</a>
+              <span class="rel-desc">Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots cites or references UKF-Based Sensor Fusion for Joint-Torque Sensorless Humanoid Robots.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">Online Balanced Motion Generation for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Online Balanced Motion Generation for Humanoid Robots cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">Comprehensive Analysis of Thermal Dissipation in Lithium-Ion Battery Packs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Comprehensive Analysis of Thermal Dissipation in Lithium-Ion Battery Packs cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066 cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">Energy Tank-based Control Framework for Satisfying the ISO/TS 15066 Constraint</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Energy Tank-based Control Framework for Satisfying the ISO/TS 15066 Constraint cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">Robotics and The Rare Earth Bottleneck</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Robotics and The Rare Earth Bottleneck cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_report_bofa_humanoid_robots_101_2025/">Bank of America Institute — Humanoid Robots 101</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Bank of America Institute — Humanoid Robots 101 cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_meng_expert_insight_based_modeling_2025/">Expert Insight-Based Modeling of Non-Kinetic Strategic Deterrence of Rare Earth Supply Disruption: A Simulation-Driven Systematic Framework</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Expert Insight-Based Modeling of Non-Kinetic Strategic Deterrence of Rare Earth Supply Disruption: A Simulation-Driven Systematic Framework cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids cites or references Contact Sensing via Joint Torque Sensors and a Force/Torque Sensor for Legged Robots.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_grinberg_contact_sensing_via_joint_torq_2025"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_meng_expert_insight_based_modeling_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Expert Insight-Based Modeling of Non-Kinetic Strategic Deterrence of Rare Earth Supply Disruption: A Simulation-Driven Systematic Framework</h3>
+          <p>Wei Meng&#39;s 2025 arXiv paper proposes a simulation-driven REG-CAP framework that maps rare-earth…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Energy Tank-based Control Framework for Satisfying the ISO/TS 15066 Constraint</h3>
+          <p>This paper proposes an energy tank-based, passivity-based control framework that directly enforces…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids</h3>
+          <p>This paper proposes Robot-Trains-Robot (RTR), a framework in which a robot-arm teacher supports and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>UKF-Based Sensor Fusion for Joint-Torque Sensorless Humanoid Robots</h3>
+          <p>Proposes an Unscented Kalman Filter-based sensor fusion method for online joint-torque estimation in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">
+          <span class="entry-type">Report</span>
+          <h3>Robotics and The Rare Earth Bottleneck</h3>
+          <p>An Oceanwall research note from July 2025 arguing that advanced robots, particularly humanoids, rely…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_report_bofa_humanoid_robots_101_2025/">
+          <span class="entry-type">Report</span>
+          <h3>Bank of America Institute — Humanoid Robots 101</h3>
+          <p>An April 2025 primer from Bank of America Institute that breaks down humanoid robot architecture,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Online Balanced Motion Generation for Humanoid Robots</h3>
+          <p>Proposes an analytic whole-body motion generator for low-cost humanoid robots with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_human_level_actuation_score/">
+          <span class="entry-type">Benchmark</span>
+          <h3>Human-Level Actuation Score</h3>
+          <p>A scalar, decomposable benchmarking metric that aggregates workspace coverage, torque-power…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gallant_voxel_grid_based_human_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</h3>
+          <p>Gallant first recovers the scene, object, or motion representation from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</h3>
+          <p>This paper presents a Unity-based VR simulation framework in which users converse via natural…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</h3>
+          <p>Falcon primarily addresses data closed-loop: capturing human manipulation and robot states with body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed</h3>
+          <p>A review that presents a unified reductive framework deriving continuum electrochemical battery…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhang_comprehensive_analysis_of_ther_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Comprehensive Analysis of Thermal Dissipation in Lithium-Ion Battery Packs</h3>
+          <p>This 2025 arXiv paper presents CFD and thermal simulations of a 16-cell lithium-ion battery pack,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</h3>
+          <p>This paper proposes a predictive safety filter that combines nonlinear model predictive control…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066</h3>
+          <p>This paper compares ISO 10218-1/2:2011 with their 2025 revisions and analyzes the normative…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">
+          <span class="entry-type">Paper</span>
+          <h3>A ROS-based Software Framework for the NimbRo-OP Humanoid Open Platform</h3>
+          <p>This paper presents a modular ROS-based software framework for the NimbRo-OP humanoid robot,…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

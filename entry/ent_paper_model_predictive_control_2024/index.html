@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>模型预测控制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">模型预测控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>模型预测控制</h1>
+      <p class="entry-name-en">Model Predictive Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>用于生成接触丰富的全身运动的在线最优控制方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://roboti.us/lab/papers/KoenemannIROS15.pdf" target="_blank" rel="noopener">Model Predictive Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="_2">模型预测控制的定义与定位</h3>
+<p>模型预测控制属于 <strong>方法</strong> 类型。 所属领域包括：AI 模型与算法, 设计工程。 价值链层级：智能层, midstream。 用于生成接触丰富的全身运动的在线最优控制方法。 英文名称为 <em>Model Predictive Control</em>。 韩文名称为 <em>Model Predictive Control</em>。</p>
+<h3 id="_3">模型预测控制的数学与原理基础</h3>
+<p>模型预测控制建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，模型预测控制通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_4">算法步骤与实现要点</h3>
+<p>在实际实现模型预测控制时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_5">典型应用与局限性</h3>
+<p>模型预测控制可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_6">相关标签</h3>
+<ul>
+<li>control</li>
+<li>method</li>
+<li>mpc</li>
+<li>optimization</li>
+<li>whole_body</li>
+</ul>
+<h3 id="_7">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，模型预测控制在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li><a href="https://roboti.us/lab/papers/KoenemannIROS15.pdf">Model Predictive Control</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">实现于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">宇树 H1 人形机器人</a>
+              <span class="rel-desc">MPC用于Unitree H1的全身运动生成。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_inertial_measurement_unit_2024/">惯性测量单元</a>
+              <span class="rel-desc">MPC需要IMU反馈进行状态估计。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo 物理引擎</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">MuJoCo常用于原型化和评估MPC控制器。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_embrace_collisions_humanoid_sh_2025/">Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_underwatervla_dual_brain_visio_2025/">UnderwaterVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">UnderwaterVLA使用模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rl_with_data_bootstrapping_for_2025/">RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hand_eye_autonomous_delivery_l_2025/">手眼自主配送｜学习人形机器人导航运动和伸手</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">手眼自主配送｜学习人形机器人导航运动和伸手使用模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_twist2_scalable_portable_and_h_2025/">TWIST2｜可扩展、便携式、整体的人形数据收集系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">TWIST2｜可扩展、便携式、整体的人形数据收集系统使用模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_agile_striker_skills_2026/">从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能使用模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">喷气动力人形机器人的统一多速率模型预测控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">develops</span>
+              <span class="rel-desc">喷气动力人形机器人的统一多速率模型预测控制develops模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_impedance_control/">阻抗控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">阻抗控制提及模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_full_order_sampling_based_mpc_2024/">Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper__2025/">人形机器人运动与操作｜控制规划和学习的进展与挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">人形机器人运动与操作｜控制规划和学习的进展与挑战使用模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_x_op_cross_morphology_whole_bo_2026/">单台 Apple Vision Pro 驱动、跨形态免重训的分层全身遥操作：MPC 重定向器兼顾操作者意图与动力学可行性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">单台 Apple Vision Pro 驱动、跨形态免重训的分层全身遥操作：MPC 重定向器兼顾操作者意图与动力学可行性使用模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cad_driven_co_design_for_fligh_2025/">CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_td_grpc_temporal_difference_le_2025/">TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hover_versatile_neural_whole_b_2025/">HOVER｜用于人形机器人的多样化神经全身控制器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HOVER｜用于人形机器人的多样化神经全身控制器提及模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_scalable_and_general_whole_bod_2026/">用于跨人形运动的可扩展和通用全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">用于跨人形运动的可扩展和通用全身控制使用模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_falcon_learning_force_adaptive_2025_1/">FALCON｜学习力自适应人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">集成</span>
+              <span class="rel-desc">FALCON｜学习力自适应人形移动操作integrates模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_doublyaware_dual_planning_and_2025/">DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_admittance_control/">导纳控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">导纳控制提及模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dreamzero_world_action_models_2026/">DreamZero: World Action Models are Zero-shot Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_state_nav_stability_aware_trav_2025/">STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">通过真实部署就绪的技能空间释放人形机器人的潜力</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">通过真实部署就绪的技能空间释放人形机器人的潜力使用模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_strouhal_aware_model_predictiv_2026/">Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_falcon_learning_force_adaptive_2025/">FALCON｜学习力自适应人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">集成</span>
+              <span class="rel-desc">FALCON｜学习力自适应人形移动操作integrates模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_software_drake_systems_toolbox_2024/">Drake 系统工具箱</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Drake为MPC开发提供基于优化的控制工具。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_vla_towards_universal_2025/">Humanoid-VLA｜通过视觉集成实现通用人形控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Humanoid-VLA｜通过视觉集成实现通用人形控制提及模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">HYPERmotion｜学习自主移动操作的混合行为规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HYPERmotion｜学习自主移动操作的混合行为规划提及模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_saxena_sitcom_scaling_inference_time_2025/">SITCOM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">SITCOM基于模型预测控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reinforcement_learning_with_da_2026/">Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_floating_base_dynamics/">浮动基动力学</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_model_predictive_control_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_underwatervla_dual_brain_visio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UnderwaterVLA</h3>
+          <p>UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_x_op_cross_morphology_whole_bo_2026/">
+          <span class="entry-type">论文</span>
+          <h3>单台 Apple Vision Pro 驱动、跨形态免重训的分层全身遥操作：MPC 重定向器兼顾操作者意图与动力学可行性</h3>
+          <p>X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting is a paper on 遥操作 for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_vla_towards_universal_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid-VLA｜通过视觉集成实现通用人形控制</h3>
+          <p>Humanoid-VLA 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹编码成多模态表征，再用扩散策略/流匹配、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_doublyaware_dual_planning_and_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion</h3>
+          <p>DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rl_with_data_bootstrapping_for_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</h3>
+          <p>RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_impedance_control/">
+          <span class="entry-type">方法</span>
+          <h3>阻抗控制</h3>
+          <p>阻抗控制（impedance control）不把位置与力分开控制，而是调节机器人末端表现出的机械阻抗（mechanical…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_falcon_learning_force_adaptive_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>FALCON｜学习力自适应人形移动操作</h3>
+          <p>FALCON…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_saxena_sitcom_scaling_inference_time_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SITCOM</h3>
+          <p>SITCOM: Scaling Inference-Time COMpute for VLAs (SITCOM), is a 2025 large vision-language-action…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">
+          <span class="entry-type">论文</span>
+          <h3>通过真实部署就绪的技能空间释放人形机器人的潜力</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略转成可训练、可复用的低…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_agile_striker_skills_2026/">
+          <span class="entry-type">论文</span>
+          <h3>从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>喷气动力人形机器人的统一多速率模型预测控制</h3>
+          <p>本文提出了一种用于喷气动力人形机器人iRonCub的多速率模型预测控制框架，将质心动量动力学与二阶非线性喷气发动机动力学相结合，并通过MuJoCo仿真进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_state_nav_stability_aware_trav_2025/">
+          <span class="entry-type">论文</span>
+          <h3>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</h3>
+          <p>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_embrace_collisions_humanoid_sh_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions</h3>
+          <p>Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">
+          <span class="entry-type">机器人系统</span>
+          <h3>宇树 H1 人形机器人</h3>
+          <p>概述 宇树 H1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_mujoco_physics_engine_2022/">
+          <span class="entry-type">软件平台</span>
+          <h3>MuJoCo 物理引擎</h3>
+          <p>具有丰富接触动力学的高保真物理引擎，广泛用于人形控制研究。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cad_driven_co_design_for_fligh_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids</h3>
+          <p>CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids is a 2025 work on hardware design for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper__2025/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人运动与操作｜控制规划和学习的进展与挑战</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、全身控制器/WBC/MPC生成可执行动作命令。关键点是把…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dreamzero_world_action_models_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DreamZero: World Action Models are Zero-shot Policies</h3>
+          <p>DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hand_eye_autonomous_delivery_l_2025/">
+          <span class="entry-type">论文</span>
+          <h3>手眼自主配送｜学习人形机器人导航运动和伸手</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用异构动捕与合成平衡数据、全身控制器/WBC/MPC、分层技能/专家策略生成低层控制器目标、导航/到…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_inertial_measurement_unit_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>惯性测量单元</h3>
+          <p>Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist2_scalable_portable_and_h_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST2｜可扩展、便携式、整体的人形数据收集系统</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">形式化方法</span>
+          <h3>浮动基动力学</h3>
+          <p>人形机器人不同于固定基座的工业机械臂，其基座（躯干）可在空间中自由移动。因此需要用浮动基（floating base）坐标描述系统位形：</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_admittance_control/">
+          <span class="entry-type">方法</span>
+          <h3>导纳控制</h3>
+          <p>概述 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。 ## 核心内容 #### 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_td_grpc_temporal_difference_le_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</h3>
+          <p>TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_strouhal_aware_model_predictiv_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion</h3>
+          <p>arXiv:2607.03216v1 Announce Type: new Abstract: Efficient flapping propulsion hinges on operating…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reinforcement_learning_with_da_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</h3>
+          <p>Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_scalable_and_general_whole_bod_2026/">
+          <span class="entry-type">论文</span>
+          <h3>用于跨人形运动的可扩展和通用全身控制</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过AMP/运动先验、全身控制器/WBC/MPC转成可训练、可复用的全身轨迹/动作序…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_full_order_sampling_based_mpc_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing</h3>
+          <p>Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hover_versatile_neural_whole_b_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HOVER｜用于人形机器人的多样化神经全身控制器</h3>
+          <p>HOVER…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_falcon_learning_force_adaptive_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FALCON｜学习力自适应人形移动操作</h3>
+          <p>FALCON…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">
+          <span class="entry-type">论文</span>
+          <h3>HYPERmotion｜学习自主移动操作的混合行为规划</h3>
+          <p>HYPERmotion 先从语言指令、相机图像/多视角观测、本体状态与关节序列恢复场景、目标或运动表征，再用PPO/RL 策略训练、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_drake_systems_toolbox_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>Drake 系统工具箱</h3>
+          <p>MIT面向基于优化控制与分析的系统建模工具箱。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#_2">模型预测控制的定义与定位</a></li>
+<li><a href="#_3">模型预测控制的数学与原理基础</a></li>
+<li><a href="#_4">算法步骤与实现要点</a></li>
+<li><a href="#_5">典型应用与局限性</a></li>
+<li><a href="#_6">相关标签</a></li>
+<li><a href="#_7">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

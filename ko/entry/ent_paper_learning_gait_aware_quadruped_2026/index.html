@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</h1>
+      <p class="entry-name-en">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00442v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.00442v1 Announce Type: new Abstract: Reinforcement learning (RL) for quadruped locomotion commonly depends on fixed, hand-crafted, and Markovian reward functions that limit both interpretability of learned policies and lack explicit control over gait behaviors. We introduce a framework where distinct gaits are specified using parameterized constraints expressed in Signal Temporal Logic (STL). These include safety bounds, gait synchronization constraints, command tracking, and actuation bounds. From these specifications, we develop a reward shaping mechanism that provides learning agents a dense, continuous reward landscape that encodes desired behavior. We define parametric STL templates for three speed regimes (walking-trot, trot, bound), calibrate their parameters from reference rollouts, and compute rewards from using smooth approximations of STL robustness over the rollouts. The generated rewards can be used to provide shaped gradients compatible with Proximal Policy Optimization (PPO). We instantiate the approach on Google&#39;s Barkour quadruped robot in MuJoCo XLA (MJX). We use parallelization within the simulator to improve training speeds and use domain randomization to robustify learned policies. We show that compared to a baseline of hand-crafted rewards, the STL-shaped rewards yield tighter velocity tracking and more stable training. Videos can be found on our project website: https://stl-locomotion.github.io/.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.00442" target="_blank" rel="noopener">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>사족 보행을 위한 강화 학습(RL)은 일반적으로 고정되고 수작업으로 설계된 마르코프 보상 함수에 의존하며, 이는 학습된 정책의 해석 가능성을 제한하고 보행 동작에 대한 명시적 제어가 부족합니다. 본 연구에서는 신호 시간 논리(STL)로 표현된 매개변수화된 제약 조건을 사용하여 다양한 보행을 지정하는 프레임워크를 소개합니다. 여기에는 안전 경계, 보행 동기화 제약 조건, 명령 추적 및 작동 경계가 포함됩니다. 이러한 명세를 바탕으로 학습 에이전트에 원하는 동작을 인코딩하는 조밀하고 연속적인 보상 공간을 제공하는 보상 형성 메커니즘을 개발합니다. 세 가지 속도 영역(걷기-트로트, 트로트, 바운드)에 대한 매개변수화된 STL 템플릿을 정의하고, 참조 롤아웃에서 매개변수를 보정한 후 롤아웃에 대한 STL 강건성의 매끄러운 근사를 사용하여 보상을 계산합니다. 생성된 보상은 근접 정책 최적화(PPO)와 호환되는 형성된 그래디언트를 제공하는 데 사용할 수 있습니다. 이 접근 방식을 Google의 Barkour 사족 로봇에 MuJoCo XLA(MJX) 환경에서 구현합니다. 시뮬레이터 내 병렬화를 사용하여 훈련 속도를 향상시키고 도메인 무작위화를 사용하여 학습된 정책을 강건하게 만듭니다. 수작업 보상 기준선과 비교하여 STL 형성 보상이 더 정밀한 속도 추적과 더 안정적인 훈련을 제공함을 보여줍니다. 비디오는 프로젝트 웹사이트에서 확인할 수 있습니다: https://stl-locomotion.github.io/.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>사족 보행을 위한 강화 학습(RL)은 일반적으로 고정되고 수작업으로 설계된 마르코프 보상 함수에 의존하며, 이는 학습된 정책의 해석 가능성을 제한하고 보행 동작에 대한 명시적 제어가 부족합니다. 본 연구에서는 신호 시간 논리(STL)로 표현된 매개변수화된 제약 조건을 사용하여 다양한 보행을 지정하는 프레임워크를 소개합니다. 여기에는 안전 경계, 보행 동기화 제약 조건, 명령 추적 및 작동 경계가 포함됩니다. 이러한 명세를 바탕으로 학습 에이전트에 원하는 동작을 인코딩하는 조밀하고 연속적인 보상 공간을 제공하는 보상 형성 메커니즘을 개발합니다. 세 가지 속도 영역(걷기-트로트, 트로트, 바운드)에 대한 매개변수화된 STL 템플릿을 정의하고, 참조 롤아웃에서 매개변수를 보정한 후 롤아웃에 대한 STL 강건성의 매끄러운 근사를 사용하여 보상을 계산합니다. 생성된 보상은 근접 정책 최적화(PPO)와 호환되는 형성된 그래디언트를 제공하는 데 사용할 수 있습니다. 이 접근 방식을 Google의 Barkour 사족 로봇에 MuJoCo XLA(MJX) 환경에서 구현합니다. 시뮬레이터 내 병렬화를 사용하여 훈련 속도를 향상시키고 도메인 무작위화를 사용하여 학습된 정책을 강건하게 만듭니다. 수작업 보상 기준선과 비교하여 STL 형성 보상이 더 정밀한 속도 추적과 더 안정적인 훈련을 제공함을 보여줍니다. 비디오는 프로젝트 웹사이트에서 확인할 수 있습니다: https://stl-locomotion.github.io/.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_learning_gait_aware_quadruped_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

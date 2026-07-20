@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Agile Quadrotor Flight in the Real World · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Agile Quadrotor Flight in the Real World</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning Agile Quadrotor Flight in the Real World</h1>
+      <p class="entry-name-en">Learning Agile Quadrotor Flight in the Real World</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.10111v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2602.10111v2 Announce Type: replace Abstract: Learning-based controllers have achieved impressive performance in agile quadrotor flight but typically rely on massive training in simulation, necessitating accurate system identification for effective Sim2Real transfer. However, even with precise modeling, fixed policies remain susceptible to out-of-distribution scenarios, ranging from external aerodynamic disturbances to internal hardware degradation. To ensure safety under these evolving uncertainties, such controllers are forced to operate with conservative safety margins, inherently constraining their agility outside of controlled settings. While online adaptation offers a potential remedy, safely exploring physical limits remains a critical bottleneck due to data scarcity and safety risks. To bridge this gap, we propose a self-adaptive framework that eliminates the need for precise system identification or offline Sim2Real transfer. We introduce Adaptive Temporal Scaling (ATS) to actively explore platform physical limits, and employ online residual learning to augment a simple nominal model. {Based on the learned hybrid model, we further propose Real-world Anchored Short-horizon Backpropagation Through Time (RASH-BPTT) to achieve efficient and robust in-flight policy updates. Extensive experiments demonstrate that our quadrotor reliably executes agile maneuvers near actuator saturation limits. The system evolves a conservative base policy with a peak speed of 1.9 m/s to 7.3 m/s within approximately 100 seconds of flight time. These findings underscore that real-world adaptation serves not merely to compensate for modeling errors, but as a practical mechanism for sustained performance improvement in aggressive flight regimes.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.10111" target="_blank" rel="noopener">Learning Agile Quadrotor Flight in the Real World (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>학습 기반 제어기는 민첩한 쿼드로터 비행에서 인상적인 성능을 달성했지만, 일반적으로 시뮬레이션에서 대규모 훈련에 의존하며, 효과적인 Sim2Real 전이를 위해 정확한 시스템 식별이 필요합니다. 그러나 정밀한 모델링이 있더라도 고정된 정책은 외부 공기역학적 교란부터 내부 하드웨어 성능 저하에 이르기까지 분포 외 시나리오에 취약합니다. 이러한 변화하는 불확실성 하에서 안전을 보장하기 위해, 이러한 제어기는 보수적인 안전 마진으로 작동해야 하며, 이는 통제된 환경 외부에서의 민첩성을 본질적으로 제한합니다. 온라인 적응이 잠재적 해결책을 제공하지만, 데이터 부족과 안전 위험으로 인해 물리적 한계를 안전하게 탐색하는 것은 여전히 중요한 병목 현상입니다. 이러한 격차를 해소하기 위해, 우리는 정밀한 시스템 식별이나 오프라인 Sim2Real 전이가 필요 없는 자가 적응 프레임워크를 제안합니다. 우리는 적응형 시간 스케일링(ATS)을 도입하여 플랫폼의 물리적 한계를 적극적으로 탐색하고, 온라인 잔차 학습을 사용하여 간단한 명목 모델을 보강합니다. 학습된 하이브리드 모델을 기반으로, 우리는 실세계 고정 단기 시간 역전파(RASH-BPTT)를 추가로 제안하여 효율적이고 강건한 비행 중 정책 업데이트를 달성합니다. 광범위한 실험을 통해 우리의 쿼드로터가 액추에이터 포화 한계 근처에서 민첩한 기동을 안정적으로 실행함을 입증했습니다. 시스템은 약 100초의 비행 시간 내에 최고 속도 1.9m/s에서 7.3m/s로 보수적인 기본 정책을 진화시킵니다. 이러한 결과는 실제 적응이 단순히 모델링 오류를 보상하는 것이 아니라, 공격적인 비행 영역에서 지속적인 성능 향상을 위한 실용적인 메커니즘으로 작용함을 강조합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>학습 기반 제어기는 민첩한 쿼드로터 비행에서 인상적인 성능을 달성했지만, 일반적으로 시뮬레이션에서 대규모 훈련에 의존하며, 효과적인 Sim2Real 전이를 위해 정확한 시스템 식별이 필요합니다. 그러나 정밀한 모델링이 있더라도 고정된 정책은 외부 공기역학적 교란부터 내부 하드웨어 성능 저하에 이르기까지 분포 외 시나리오에 취약합니다. 이러한 변화하는 불확실성 하에서 안전을 보장하기 위해, 이러한 제어기는 보수적인 안전 마진으로 작동해야 하며, 이는 통제된 환경 외부에서의 민첩성을 본질적으로 제한합니다. 온라인 적응이 잠재적 해결책을 제공하지만, 데이터 부족과 안전 위험으로 인해 물리적 한계를 안전하게 탐색하는 것은 여전히 중요한 병목 현상입니다. 이러한 격차를 해소하기 위해, 우리는 정밀한 시스템 식별이나 오프라인 Sim2Real 전이가 필요 없는 자가 적응 프레임워크를 제안합니다. 우리는 적응형 시간 스케일링(ATS)을 도입하여 플랫폼의 물리적 한계를 적극적으로 탐색하고, 온라인 잔차 학습을 사용하여 간단한 명목 모델을 보강합니다. 학습된 하이브리드 모델을 기반으로, 우리는 실세계 고정 단기 시간 역전파(RASH-BPTT)를 추가로 제안하여 효율적이고 강건한 비행 중 정책 업데이트를 달성합니다. 광범위한 실험을 통해 우리의 쿼드로터가 액추에이터 포화 한계 근처에서 민첩한 기동을 안정적으로 실행함을 입증했습니다. 시스템은 약 100초의 비행 시간 내에 최고 속도 1.9m/s에서 7.3m/s로 보수적인 기본 정책을 진화시킵니다. 이러한 결과는 실제 적응이 단순히 모델링 오류를 보상하는 것이 아니라, 공격적인 비행 영역에서 지속적인 성능 향상을 위한 실용적인 메커니즘으로 작용함을 강조합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_backpropagation/">역전파</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_learning_agile_quadrotor_fligh_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_backpropagation/">
+          <span class="entry-type">알고리즘</span>
+          <h3>역전파</h3>
+          <p>피드포워드 신경망의 모든 매개변수에 대한 손실 함수의 기울기를 계산하기 위해 연쇄 법칙을 역순으로 층별로 적용하는 효율적인 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

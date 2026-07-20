@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>软演员-评论家（SAC） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/algorithm/">算法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">软演员-评论家（SAC）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">算法</div>
+      <h1>软演员-评论家（SAC）</h1>
+      <p class="entry-name-en">Soft Actor-Critic (SAC)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#Python 示例：八点法 + RANSAC + 三角测量 by scripts/backfill_nonpaper_entries.py. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="-sac">软演员-评论家（SAC）的定义与定位</h3>
+<p>软演员-评论家（SAC）属于 <strong>算法</strong> 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。 英文名称为 <em>Soft Actor-Critic (SAC)</em>。 韩文名称为 <em>소프트 액터-크리틱(SAC)</em>。</p>
+<h3 id="-sac_1">软演员-评论家（SAC）的数学与原理基础</h3>
+<p>软演员-评论家（SAC）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，软演员-评论家（SAC）通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_2">算法步骤与实现要点</h3>
+<p>在实际实现软演员-评论家（SAC）时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_3">典型应用与局限性</h3>
+<p>软演员-评论家（SAC）可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>algorithm</li>
+<li>chapter_15</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键算法之一，软演员-评论家（SAC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_quantum_deep_reinforcement_lea_2025/">Quantum deep reinforcement learning for humanoid robot navigation task</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">强化学习智能体与机器人中的情绪：综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">强化学习智能体与机器人中的情绪：综述discusses软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shortcut_trajectory_planning_f_2026/">Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kasaura_benchmarking_actor_critic_deep_2023/">动作约束下机器人控制的演员-评论家深度强化学习算法基准测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">动作约束下机器人控制的演员-评论家深度强化学习算法基准测试提及软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_add_adversarial_disentanglemen_2026/">对抗解耦与蒸馏</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">对抗解耦与蒸馏提及软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reduced_order_model_guided_rl_2025/">Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_hyperparameter_auto_tuning_in_2021/">自监督机器人学习中的超参数自动调优</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">自监督机器人学习中的超参数自动调优提及软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_seo_learning_sim_to_real_humanoid_2025/">在15分钟内学习从仿真到现实的人形机器人运动</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">在15分钟内学习从仿真到现实的人形机器人运动使用软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">面向任务自适应异构多机器人协作的机器人内部注意力建模</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">面向任务自适应异构多机器人协作的机器人内部注意力建模引用软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_residual_off_policy_rl_for_fin_2025/">Residual Off-Policy RL for Finetuning Behavior Cloning Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chebotar_q_transformer_scalable_offline_2023/">Q-Transformer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">Q-Transformer基于软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_adapting_generalist_robot_poli_2026/">Adapting Generalist Robot Policies with Semantic Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">基于集成误差的强化学习探索价值奖励</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于集成误差的强化学习探索价值奖励discusses软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lift_towards_bridging_the_gap_2026/">LIFT：用大批量 SAC 预训练 + 物理先验世界模型微调，把人形 sim-to-real 压到 1 小时</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">LIFT：用大批量 SAC 预训练 + 物理先验世界模型微调，把人形 sim-to-real 压到 1 小时使用软演员-评论家（SAC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_freeform_preference_learning_f_2026/">Freeform Preference Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_algorithm_sac"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_hyperparameter_auto_tuning_in_2021/">
+          <span class="entry-type">论文</span>
+          <h3>自监督机器人学习中的超参数自动调优</h3>
+          <p>提出一种基于变分自编码器证据下界（ELBO）的在线自动调参方法，用于自监督强化学习（RIG+SAC），动态调整回放缓冲区大小、每轮策略梯度更新次数和每轮探索步数，以减少人工调参及样本/计算开销。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_quantum_deep_reinforcement_lea_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Quantum deep reinforcement learning for humanoid robot navigation task</h3>
+          <p>Quantum deep reinforcement learning for humanoid robot navigation task is a 2025 work on navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chebotar_q_transformer_scalable_offline_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Q-Transformer</h3>
+          <p>Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reduced_order_model_guided_rl_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</h3>
+          <p>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shortcut_trajectory_planning_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</h3>
+          <p>arXiv:2607.09336v1 Announce Type: cross Abstract: Diffusion-based trajectory planners have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">
+          <span class="entry-type">论文</span>
+          <h3>强化学习智能体与机器人中的情绪：综述</h3>
+          <p>This article provides the first survey of computational models of emotion in reinforcement learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_freeform_preference_learning_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Freeform Preference Learning for Robotic Manipulation</h3>
+          <p>arXiv:2606.32027v1 Announce Type: new Abstract: Reward design remains a central bottleneck for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_seo_learning_sim_to_real_humanoid_2025/">
+          <span class="entry-type">论文</span>
+          <h3>在15分钟内学习从仿真到现实的人形机器人运动</h3>
+          <p>本文提出了一种基于 FastSAC 和 FastTD3 的实用方案，结合大规模并行仿真，在单张 RTX 4090 GPU 上仅用 15 分钟即可训练出鲁棒的全尺寸人形机器人运动策略，并在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_add_adversarial_disentanglemen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>对抗解耦与蒸馏</h3>
+          <p>ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid robotics. 对抗解耦与蒸馏.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</h3>
+          <p>arXiv:2607.00483v1 Announce Type: new Abstract: Designing effective reward functions remains a major…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lift_towards_bridging_the_gap_2026/">
+          <span class="entry-type">论文</span>
+          <h3>LIFT：用大批量 SAC 预训练 + 物理先验世界模型微调，把人形 sim-to-real 压到 1 小时</h3>
+          <p>LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">
+          <span class="entry-type">论文</span>
+          <h3>From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</h3>
+          <p>arXiv:2603.10263v2 Announce Type: replace Abstract: We introduce Distribution Contractive…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kasaura_benchmarking_actor_critic_deep_2023/">
+          <span class="entry-type">论文</span>
+          <h3>动作约束下机器人控制的演员-评论家深度强化学习算法基准测试</h3>
+          <p>本研究提出了一个动作约束强化学习算法评估基准，在线性、凸、盒型和椭圆型动作约束下，对MuJoCo与PyBullet-Gym任务中的现有算法及新型TD3/SAC变体进行了比较，并公开了基准代码。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</h3>
+          <p>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">
+          <span class="entry-type">论文</span>
+          <h3>面向任务自适应异构多机器人协作的机器人内部注意力建模</h3>
+          <p>提出了innerATT，一种基于注意力机制的多智能体actor-critic方法，用于动态组建异构机器人团队以满足变化的任务需求并限制资源消耗，并在Multi-Agent Particle…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_residual_off_policy_rl_for_fin_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Residual Off-Policy RL for Finetuning Behavior Cloning Policies</h3>
+          <p>Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work on manipulation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于集成误差的强化学习探索价值奖励</h3>
+          <p>本文提出了一种名为VBE（集成误差价值奖励）的即插即用探索方法，通过维护一组随机动作价值函数并使用其最大预测误差作为附加价值奖励，为强化学习提供首次访问乐观性和深度探索能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_adapting_generalist_robot_poli_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Adapting Generalist Robot Policies with Semantic Reinforcement Learning</h3>
+          <p>arXiv:2606.31958v1 Announce Type: new Abstract: Generalist robot policies learn a diverse repertoire…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#-sac">软演员-评论家（SAC）的定义与定位</a></li>
+<li><a href="#-sac_1">软演员-评论家（SAC）的数学与原理基础</a></li>
+<li><a href="#_2">算法步骤与实现要点</a></li>
+<li><a href="#_3">典型应用与局限性</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

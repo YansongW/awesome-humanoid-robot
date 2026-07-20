@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Force/Position Hybrid Control · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Force/Position Hybrid Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Force/Position Hybrid Control</h1>
+      <p class="entry-name-en">Force/Position Hybrid Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#混合力/位置控制 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A control strategy that simultaneously regulates force along constrained directions and position along free directions in contact tasks.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Hybrid force/position control is an important method in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>In many tasks, certain directions require position control, while others require force control. For example, when pushing an object along a tabletop, the horizontal direction controls position, and the vertical direction controls contact force. <strong>Hybrid force/position control</strong> decomposes the task space into a position-controlled subspace and a force-controlled subspace using a selection matrix <span class="arithmatex">\(\boldsymbol{\Sigma}\)</span>:</p>
+<div class="arithmatex">\[
+\boldsymbol{\Sigma} = \text{diag}(\sigma_1, \ldots, \sigma_m), \quad \sigma_i \in \{0,1\}
+\]</div>
+<ul>
+<li>If <span class="arithmatex">\(\sigma_i = 1\)</span>, the <span class="arithmatex">\(i\)</span>-th direction controls position.</li>
+<li>If <span class="arithmatex">\(\sigma_i = 0\)</span>, the <span class="arithmatex">\(i\)</span>-th direction controls force.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Hybrid Force/Position Control, Selection Matrix, Position-Controlled Subspace, Force-Controlled Subspace</p>
+<ul>
+<li><strong>Hybrid force/position control</strong>: A strategy that simultaneously controls force and position.</li>
+<li><strong>Selection matrix</strong>: A diagonal matrix that selects either position-controlled or force-controlled directions.</li>
+<li><strong>Position-controlled subspace</strong>: The directions selected by the selection matrix for position control.</li>
+<li><strong>Force-controlled subspace</strong>: The directions not selected by the selection matrix for force control.</li>
+</ul>
+</div>
+<p>Assume the task space error is <span class="arithmatex">\(\mathbf{e} = \mathbf{x}_d - \mathbf{x}\)</span> and the force error is <span class="arithmatex">\(\mathbf{e}_F = \mathbf{F}_d - \mathbf{F}\)</span>. The control law is:</p>
+<div class="arithmatex">\[
+\mathbf{F}_{\text{cmd}} = \boldsymbol{\Sigma} \, \mathbf{K}_p (\mathbf{x}_d - \mathbf{x}) + (\mathbf{I} - \boldsymbol{\Sigma}) \, \mathbf{K}_f (\mathbf{F}_d - \mathbf{F})
+\]</div>
+<p>This is then mapped to joint torques via <span class="arithmatex">\(\boldsymbol{\tau} = \mathbf{J}^T \mathbf{F}_{\text{cmd}}\)</span>. This control method is widely used in industrial assembly tasks (e.g., peg-in-hole insertion).</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Position Error, Force Error, Proportional Gain, Control Law</p>
+<ul>
+<li><strong>Position error</strong>: The difference between the desired position and the actual position.</li>
+<li><strong>Force error</strong>: The difference between the desired force and the actual force.</li>
+<li><strong>Proportional gain</strong>: The proportional coefficient of the error in the controller.</li>
+<li><strong>Control law</strong>: The mathematical expression that determines the control output.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["Task Space"] --&gt; B["Selection Matrix Sigma"]
+    B --&gt; C["Position-Controlled Subspace"]
+    B --&gt; D["Force-Controlled Subspace"]
+    C --&gt; E["Position Feedback Kp e_x"]
+    D --&gt; F["Force Feedback Kf e_F"]
+    E --&gt; G["Synthesized Task Force F_cmd"]
+    F --&gt; G
+    G --&gt; H["tau = J^T F_cmd"]</p>
+<h2 id="_1">개요</h2>
+<p>힘-위치 혼합 제어는 휴머노이드 로봇 분야의 중요한 방법입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>많은 작업에서 특정 방향은 위치를 제어해야 하고, 다른 방향은 힘을 제어해야 합니다. 예를 들어, 책상 위에서 물체를 밀 때 수평 방향은 위치를 제어하고 수직 방향은 접촉력을 제어합니다. <strong>혼합 힘/위치 제어(hybrid force/position control)</strong>는 선택 행렬 <span class="arithmatex">\(\boldsymbol{\Sigma}\)</span>을 통해 작업 공간을 위치 제어 부분 공간과 힘 제어 부분 공간으로 분해합니다:</p>
+<div class="arithmatex">\[
+\boldsymbol{\Sigma} = \text{diag}(\sigma_1, \ldots, \sigma_m), \quad \sigma_i \in \{0,1\}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\sigma_i = 1\)</span>이면, <span class="arithmatex">\(i\)</span>번째 방향은 위치를 제어합니다.</li>
+<li><span class="arithmatex">\(\sigma_i = 0\)</span>이면, <span class="arithmatex">\(i\)</span>번째 방향은 힘을 제어합니다.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 혼합 힘/위치 제어, 선택 행렬, 위치 제어 부분 공간, 힘 제어 부분 공간</p>
+<ul>
+<li><strong>혼합 힘/위치 제어(hybrid force/position control)</strong>: 힘과 위치를 동시에 제어하는 전략.</li>
+<li><strong>선택 행렬(selection matrix)</strong>: 위치 제어 방향 또는 힘 제어 방향을 선택하는 대각 행렬.</li>
+<li><strong>위치 제어 부분 공간(position-controlled subspace)</strong>: 선택 행렬에 의해 선택된 위치 제어 방향.</li>
+<li><strong>힘 제어 부분 공간(force-controlled subspace)</strong>: 선택 행렬에 의해 선택되지 않은 힘 제어 방향.</li>
+</ul>
+</div>
+<p>작업 공간 오차가 <span class="arithmatex">\(\mathbf{e} = \mathbf{x}_d - \mathbf{x}\)</span>이고, 힘 오차가 <span class="arithmatex">\(\mathbf{e}_F = \mathbf{F}_d - \mathbf{F}\)</span>라고 가정하면, 제어 법칙은 다음과 같습니다:</p>
+<div class="arithmatex">\[
+\mathbf{F}_{\text{cmd}} = \boldsymbol{\Sigma} \, \mathbf{K}_p (\mathbf{x}_d - \mathbf{x}) + (\mathbf{I} - \boldsymbol{\Sigma}) \, \mathbf{K}_f (\mathbf{F}_d - \mathbf{F})
+\]</div>
+<p>그런 다음 <span class="arithmatex">\(\boldsymbol{\tau} = \mathbf{J}^T \mathbf{F}_{\text{cmd}}\)</span>를 통해 관절 토크로 매핑됩니다. 이러한 제어는 산업용 조립(예: 구멍에 축 삽입)에서 널리 사용됩니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 위치 오차, 힘 오차, 비례 이득, 제어 법칙</p>
+<ul>
+<li><strong>위치 오차(position error)</strong>: 목표 위치와 실제 위치의 차이.</li>
+<li><strong>힘 오차(force error)</strong>: 목표 힘과 실제 힘의 차이.</li>
+<li><strong>비례 이득(proportional gain)</strong>: 제어기에서 오차의 비례 계수.</li>
+<li><strong>제어 법칙(control law)</strong>: 제어 출력을 결정하는 수학적 표현.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["작업 공간"] --&gt; B["선택 행렬 Sigma"]
+    B --&gt; C["위치 제어 부분 공간"]
+    B --&gt; D["힘 제어 부분 공간"]
+    C --&gt; E["위치 피드백 Kp e_x"]
+    D --&gt; F["힘 피드백 Kf e_F"]
+    E --&gt; G["합성 작업 힘 F_cmd"]
+    F --&gt; G
+    G --&gt; H["tau = J^T F_cmd"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_impedance_control/">Impedance Control</a>
+              <span class="rel-desc">Force/Position Hybrid Control mentions Impedance Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              <span class="rel-desc">Force/Position Hybrid Control mentions Mobile ALOHA.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_fame_force_adaptive_rl_for_exp_2026/">FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yu_forcevla_enhancing_vla_models_2025/">ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation uses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_he_forceband_learning_forceful_ma_2026/">ForceBand: Learning Forceful Manipulation with sEMG</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ForceBand: Learning Forceful Manipulation with sEMG discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_aerial_manipulation_contact_me_2026/">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_tacrefinenet_tactile_only_gras_2025/">TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses uses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hafo_a_force_adaptive_control_2025/">HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments uses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">Deformation-Aware Robotic 3D Ultrasound</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Deformation-Aware Robotic 3D Ultrasound uses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_navarro_guerrero_visuo_haptic_object_perception_2023/">Visuo-Haptic Object Perception for Robots: An Overview</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Visuo-Haptic Object Perception for Robots: An Overview discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_admittance_control/">Admittance Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Admittance Control mentions Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_u_joint_caams_experimental_eva_2026/">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation mentions Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_perception_manipulation_robo_2026/">A Perception-Manipulation Robotics System for Food Cutting</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Perception-Manipulation Robotics System for Food Cutting discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_spikeatac_a_multimodal_tactile_2026/">SpikeATac: A Multimodal Tactile Finger with Taxelized Dynamic Sensing for Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">SpikeATac: A Multimodal Tactile Finger with Taxelized Dynamic Sensing for Dexterous Manipulation mentions Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_one_shot_multimodal_learning_f_2026/">One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_harmonic_drive_advances_surgic_2026/">Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component uses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sensorless_four_channel_contro_2026/">Sensorless Four-Channel Control Architecture Using Inverse Dynamics Modeling for Human-Scale Bilateral Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Sensorless Four-Channel Control Architecture Using Inverse Dynamics Modeling for Human-Scale Bilateral Teleoperation discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models discusses Force/Position Hybrid Control.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_force_position_hybrid_control"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_spikeatac_a_multimodal_tactile_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SpikeATac: A Multimodal Tactile Finger with Taxelized Dynamic Sensing for Dexterous Manipulation</h3>
+          <p>arXiv:2510.27048v3 Announce Type: replace Abstract: In this work, we introduce SpikeATac, a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_perception_manipulation_robo_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>A Perception-Manipulation Robotics System for Food Cutting</h3>
+          <p>arXiv:2607.04367v1 Announce Type: new Abstract: In the development of cooking robots, mastering the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_impedance_control/">
+          <span class="entry-type">Method</span>
+          <h3>Impedance Control</h3>
+          <p>A control approach that regulates the dynamic relationship between interaction force and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Mobile ALOHA</h3>
+          <p>Whole-body mobile bimanual teleoperation platform for collecting home and warehouse manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">
+          <span class="entry-type">Paper</span>
+          <h3>Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics</h3>
+          <p>This paper proposes two adaptive control schemes that achieve task-space trajectory tracking for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_one_shot_multimodal_learning_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps</h3>
+          <p>arXiv:2607.09515v1 Announce Type: new Abstract: Robotic manipulation tasks often require…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sensorless_four_channel_contro_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Sensorless Four-Channel Control Architecture Using Inverse Dynamics Modeling for Human-Scale Bilateral Teleoperation</h3>
+          <p>arXiv:2607.01201v1 Announce Type: new Abstract: The four-channel teleoperation architecture is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_aerial_manipulation_contact_me_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</h3>
+          <p>arXiv:2607.04719v1 Announce Type: new Abstract: Aerial robots are increasingly moving from remote…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fame_force_adaptive_rl_for_exp_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid</h3>
+          <p>FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_navarro_guerrero_visuo_haptic_object_perception_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Visuo-Haptic Object Perception for Robots: An Overview</h3>
+          <p>This 2023 survey reviews the integration of visual and haptic sensing for robotic object perception,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_harmonic_drive_advances_surgic_2026/">
+          <span class="entry-type">Report</span>
+          <h3>Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component</h3>
+          <p>Harmonic Drive&#39;s launch of the LPA 20 integrated servo actuator strengthens the company&#39;s position…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models</h3>
+          <p>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_u_joint_caams_experimental_eva_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</h3>
+          <p>arXiv:2607.03321v1 Announce Type: new Abstract: Continuum manipulators mounted on multi-rotor UAVs…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yu_forcevla_enhancing_vla_models_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation</h3>
+          <p>ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation (ForceVLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_he_forceband_learning_forceful_ma_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ForceBand: Learning Forceful Manipulation with sEMG</h3>
+          <p>ForceBand introduces a low-cost wrist-worn sEMG system that predicts per-finger forces from muscle…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_tacrefinenet_tactile_only_gras_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses</h3>
+          <p>TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses (TacRefineNet),…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_admittance_control/">
+          <span class="entry-type">Method</span>
+          <h3>Admittance Control</h3>
+          <p>A control approach that converts measured external forces into desired position or velocity…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Deformation-Aware Robotic 3D Ultrasound</h3>
+          <p>Proposes a patient-specified stiffness-based method to correct force-induced tissue deformation in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hafo_a_force_adaptive_control_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments</h3>
+          <p>HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments is…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

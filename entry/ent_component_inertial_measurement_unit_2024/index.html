@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>惯性测量单元 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/component/">零部件</a>
+    <span>/</span>
+    <span class="breadcrumb-current">惯性测量单元</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">零部件</div>
+      <h1>惯性测量单元</h1>
+      <p class="entry-name-en">Inertial Measurement Unit</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from kg/entities/ent_component_analog_devices_adis16475.md by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit" target="_blank" rel="noopener">Inertial Measurement Unit</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>惯性测量单元是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<h2 id="analog-devices-adis16475-mems-analog-devices-adis16475-miniature-mems-imu">Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU</h2>
+<h3 id="_3">概述</h3>
+<p>ADIS16475 是 Analog Devices 推出的精密、微型 MEMS 惯性测量单元（IMU），集成三轴陀螺仪与三轴加速度计，并内置温度传感器、信号调理、校准与数字滤波功能。该器件出厂前对每个传感器进行灵敏度、偏置、轴向对准、线性加速度（陀螺偏置）及撞击中心（加速度计位置）标定，可在宽温范围内提供高精度的六自由度惯性测量，适用于机器人、无人机、自动驾驶、工业稳定平台及导航系统等应用。</p>
+<h3 id="_4">工作原理与技术架构</h3>
+<p>ADIS16475 采用 ADI iSensor 技术平台，核心架构包括：</p>
+<ol>
+<li><strong>MEMS 惯性敏感单元</strong>：三轴陀螺仪与三轴加速度计共用同一封装，通过精密微机械结构感知角速度与比力。</li>
+<li><strong>信号调理与动态补偿</strong>：每个传感器通道集成低噪声放大、滤波与 A/D 转换，工厂标定数据用于温度、非线性、轴间耦合及 <span class="arithmatex">\(g\)</span> 敏感补偿。</li>
+<li><strong>内部处理器与寄存器</strong>：通过 SPI 接口输出角速度、加速度、温度、增量角（delta angle）与增量速度（delta velocity）等数据。</li>
+<li><strong>自检与同步</strong>：支持按需自测试、Flash 自检、数据就绪指示及外部同步模式（direct/pulse/scaled/output）。</li>
+</ol>
+<p>关键精度指标：</p>
+<ul>
+<li><strong>角随机游走（ARW）</strong>：<span class="arithmatex">\(0.15°/\sqrt{\text{hr}}\)</span>，表征陀螺角度积分噪声：
+  $$
+  \sigma_\theta(t) = \text{ARW} \cdot \sqrt{t}
+  $$</li>
+<li><strong>运行中偏置稳定性</strong>：陀螺仪典型值 <span class="arithmatex">\(2°/\text{hr}\)</span>，加速度计 <span class="arithmatex">\(3.6~\mu g\)</span>。</li>
+<li><strong>轴间对准误差</strong>：<span class="arithmatex">\(\pm 0.1°\)</span>，显著降低多传感器融合时的安装对准工作量。</li>
+</ul>
+<h3 id="_5">关键参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数项</th>
+<th>数值</th>
+<th>备注/来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传感器类型</td>
+<td>6 轴 IMU（3 轴陀螺仪 + 3 轴加速度计）</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>封装</td>
+<td>44-ball BGA，约 11 mm × 15 mm × 11 mm</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>陀螺仪量程</td>
+<td>±125 °/s、±500 °/s、±2000 °/s（可选）</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>加速度计量程</td>
+<td>±8 g</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>运行中陀螺偏置稳定性</td>
+<td>2 °/hr（典型）</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>角随机游走</td>
+<td>0.15 °/√hr</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>加速度计运行偏置稳定性</td>
+<td>3.6 μg</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>轴间对准误差</td>
+<td>±0.1°</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>输出数据</td>
+<td>角速度、加速度、温度、delta angle、delta velocity</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>接口</td>
+<td>SPI</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>供电电压</td>
+<td>3.0 V – 3.6 V</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>工作电流</td>
+<td>约 44 mA（典型）</td>
+<td>distributor</td>
+</tr>
+<tr>
+<td>工作温度</td>
+<td>−40 °C ~ +105 °C</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>校准温度范围</td>
+<td>−40 °C ~ +85 °C</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>抗冲击</td>
+<td>2000 g</td>
+<td>ADI datasheet</td>
+</tr>
+<tr>
+<td>价格</td>
+<td>未公开</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">应用场景</h3>
+<ul>
+<li><strong>人形机器人姿态估计</strong>：为躯干、足部或头部提供高频惯性参考，与视觉、关节编码器融合实现稳定姿态估计。</li>
+<li><strong>无人机飞控</strong>：用于姿态稳定、航向保持及导航解算。</li>
+<li><strong>自动驾驶与机器人导航</strong>：与 GNSS/ LiDAR/ 视觉融合，提供高动态下的位姿推算。</li>
+<li><strong>工业稳定平台</strong>：摄像头、天线、机械臂末端的主动减振与稳定控制。</li>
+<li><strong>精密仪器与测绘</strong>：惯性测量、振动分析与运动捕捉。</li>
+</ul>
+<h3 id="_7">供应链关系</h3>
+<ul>
+<li><strong>上游</strong>：MEMS 晶圆、ASIC 芯片、BGA 封装基板、精密电阻电容、温补算法 IP。</li>
+<li><strong>制造商</strong>：Analog Devices 通过关系 <code>ent_company_analog_devices -- manufactures --&gt; ent_component_analog_devices_adis16475</code> 记录于知识图谱。</li>
+<li><strong>下游</strong>：机器人 OEM、无人机、自动驾驶平台、工业自动化、航空航天、医疗设备。主要竞争对手包括 Bosch Sensortec、STMicroelectronics、TDK InvenSense、Honeywell 等。</li>
+</ul>
+<h3 id="_8">来源与验证</h3>
+<p>主要参数来自 Analog Devices 官方 ADIS16475 datasheet（Rev. C）及 DigiKey 授权分销商页面。陀螺仪量程、偏置稳定性、ARW、轴间对准误差、供电与温度范围等关键指标均在官方 datasheet 中明确。价格未公开。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit">Inertial Measurement Unit</a></li>
+<li>项目 Wiki：kg/entities/ent_component_analog_devices_adis16475.md</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">宇树 H1 人形机器人</a>
+              <span class="rel-desc">IMU安装在Unitree H1躯干用于平衡估计。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_imu_2024/">惯性测量单元</a>
+              <span class="rel-desc">惯性测量单元引用惯性测量单元。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_chen_design_of_an_adaptive_lightwei_2023/">用于解耦机器人-相机几何结构自适应轻量激光雷达设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">用于解耦机器人-相机几何结构自适应轻量激光雷达设计使用惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">软体机器人服：现状、核心技术与开放挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">软体机器人服：现状、核心技术与开放挑战提及惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_imu_2024/">惯性测量单元</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">惯性测量单元引用惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_han_design_calibration_and_control_2024/">面向人形机器人的柔顺力传感夹持垫设计、标定与控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">面向人形机器人的柔顺力传感夹持垫设计、标定与控制使用惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_park_multimodal_sensing_and_interac_2018/">机器人手部矫形器的多模态感知与交互</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">机器人手部矫形器的多模态感知与交互使用惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_razmi_event_driven_on_sensor_locomot_2026/">基于嵌入式机器学习和胫部惯性测量单元的事件驱动式外骨骼运动模式识别</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于嵌入式机器学习和胫部惯性测量单元的事件驱动式外骨骼运动模式识别使用惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mukherjee_how_imu_drift_influences_multi_2026/">IMU漂移如何影响地下地形地面机器人的多雷达惯性里程计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">IMU漂移如何影响地下地形地面机器人的多雷达惯性里程计discusses惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_legged_robot_state_estimation_2017/">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_model_predictive_control_2024/">模型预测控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">MPC需要IMU反馈进行状态估计。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_andreasson_sensors_for_mobile_robots_2023/">移动机器人传感器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">移动机器人传感器discusses惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gait_legged_robot_propriocepti_2026/">GAIT：用「惯性-腿部」分词与注意力做足式机器人本体感知状态估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">GAIT：用「惯性-腿部」分词与注意力做足式机器人本体感知状态估计使用惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">使机器人智能化的材料</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">使机器人智能化的材料discusses惯性测量单元。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_design_and_visual_servoing_con_2024/">用于脑室内活检的混合双段柔性神经外科机器人 MicroNeuro 设计与视觉伺服控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">用于脑室内活检的混合双段柔性神经外科机器人 MicroNeuro 设计与视觉伺服控制使用惯性测量单元。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_inertial_measurement_unit_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_mukherjee_how_imu_drift_influences_multi_2026/">
+          <span class="entry-type">论文</span>
+          <h3>IMU漂移如何影响地下地形地面机器人的多雷达惯性里程计</h3>
+          <p>本文提出了一个两阶段多雷达惯性里程计（MRIO）框架，通过最小二乘法估计雷达自车速度，利用扩展卡尔曼滤波器（EKF）在线校正IMU偏差，并将校正后的IMU加速度与多个TI IWR6843AOP EVM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_design_of_an_adaptive_lightwei_2023/">
+          <span class="entry-type">论文</span>
+          <h3>用于解耦机器人-相机几何结构自适应轻量激光雷达设计</h3>
+          <p>A fundamental challenge in robot perception is the coupling of the sensor pose and robot pose. This…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_razmi_event_driven_on_sensor_locomot_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于嵌入式机器学习和胫部惯性测量单元的事件驱动式外骨骼运动模式识别</h3>
+          <p>本论文提出了一种可穿戴人体活动识别系统，利用嵌入在胫部LSM6DSV16X惯性测量单元中的机器学习核心，直接对站立、平地行走和楼梯上行三种运动模式进行实时识别，从而以事件驱动、低功耗的方式支持下肢外骨…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_andreasson_sensors_for_mobile_robots_2023/">
+          <span class="entry-type">论文</span>
+          <h3>移动机器人传感器</h3>
+          <p>A sensor is a device that converts a physical parameter or an environmental characteristic (e.g.,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">
+          <span class="entry-type">论文</span>
+          <h3>使机器人智能化的材料</h3>
+          <p>本文提出具身人工智能也是一个材料问题，将“机器人材料”定义为紧密集成结构、传感、驱动、计算和通信的复合材料，综述了现有原型，并指出了制造、网络、材料科学和控制领域的跨学科挑战。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_legged_robot_state_estimation_2017/">
+          <span class="entry-type">论文</span>
+          <h3>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</h3>
+          <p>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gait_legged_robot_propriocepti_2026/">
+          <span class="entry-type">论文</span>
+          <h3>GAIT：用「惯性-腿部」分词与注意力做足式机器人本体感知状态估计</h3>
+          <p>GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg Tokens is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_han_design_calibration_and_control_2024/">
+          <span class="entry-type">论文</span>
+          <h3>面向人形机器人的柔顺力传感夹持垫设计、标定与控制</h3>
+          <p>该2024年论文提出了一种低成本、轻量化的柔顺力传感夹持垫，可测量法向夹持力与压力中心，并开发了标定方法以及基于极限面理论防止打滑的混成力-对准-位置控制器，在NAO人形机器人抓取箱形物体上进行了验证…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_park_multimodal_sensing_and_interac_2018/">
+          <span class="entry-type">论文</span>
+          <h3>机器人手部矫形器的多模态感知与交互</h3>
+          <p>Wearable robotic hand rehabilitation devices can allow greater freedom and flexibility than their…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制</h3>
+          <p>用于生成接触丰富的全身运动的在线最优控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_design_and_visual_servoing_con_2024/">
+          <span class="entry-type">论文</span>
+          <h3>用于脑室内活检的混合双段柔性神经外科机器人 MicroNeuro 设计与视觉伺服控制</h3>
+          <p>本文介绍了MicroNeuro，一种用于脑室内脑肿瘤活检的线缆驱动混合双段柔性机器人内窥镜，以及一种基于图像的视觉伺服框架，该框架利用在线雅可比估计和约束模型预测控制来提高跟踪精度和鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_imu_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>惯性测量单元</h3>
+          <p>Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">
+          <span class="entry-type">机器人系统</span>
+          <h3>宇树 H1 人形机器人</h3>
+          <p>概述 宇树 H1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">
+          <span class="entry-type">论文</span>
+          <h3>软体机器人服：现状、核心技术与开放挑战</h3>
+          <p>Wearable robots are undergoing a disruptive transition, from the rigid machines that populated the…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#analog-devices-adis16475-mems-analog-devices-adis16475-miniature-mems-imu">Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU</a><ul>
+<li><a href="#_3">概述</a></li>
+<li><a href="#_4">工作原理与技术架构</a></li>
+<li><a href="#_5">关键参数</a></li>
+<li><a href="#_6">应用场景</a></li>
+<li><a href="#_7">供应链关系</a></li>
+<li><a href="#_8">来源与验证</a></li>
+</ul>
+</li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

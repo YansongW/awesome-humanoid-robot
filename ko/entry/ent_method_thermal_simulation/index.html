@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>열 시뮬레이션 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">열 시뮬레이션</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>열 시뮬레이션</h1>
+      <p class="entry-name-en">Thermal Simulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#两节点热网络模型 by scripts/backfill_nonpaper_entries.py. Body backfilled from chapter-06.md section &#39;6.7.3 整机功率与热仿真思路&#39; by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>전자·기계 시스템의 작동 하중에서 온도 분포·열 유량·냉각 요구량을 예측하는 계산 방법.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전자 및 기계 시스템이 작동 하중 하에서 온도 분포, 열유속 밀도 및 방열 요구량을 예측하는 계산 방법.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="673">6.7.3 전체 기기 전력 및 열 시뮬레이션 접근법</h3>
+<p>전체 기기 열 시뮬레이션은 일반적으로 다음 단계로 진행됩니다:</p>
+<ol>
+<li><strong>소비 전력 모델 구축</strong>: 각 구성 요소의 정상 상태 소비 전력, 최대 소비 전력 및 듀티 사이클을 나열합니다.</li>
+<li><strong>기하학적 모델 구축</strong>: CAD 모델 또는 단순화된 형상을 사용하여 로봇 외부 케이스, 방열판, 공기 덕트를 표현합니다.</li>
+<li><strong>재료 특성 설정</strong>: 열전도율, 비열 용량, 밀도, 방사율을 설정합니다.</li>
+<li><strong>메쉬 분할</strong>: 주요 영역은 세밀하게, 원거리 영역은 거칠게 분할합니다.</li>
+<li><strong>경계 조건 설정</strong>: 주변 온도, 대류 계수, 팬 곡선, 접촉 열 저항을 설정합니다.</li>
+<li><strong>정상/과도 온도장 해석</strong>: 주요 칩의 접합 온도와 외부 케이스 온도를 평가합니다.</li>
+<li><strong>반복 최적화</strong>: 방열판, 공기 덕트, TIM, 전력 분배를 조정하여 열 목표를 충족할 때까지 반복합니다.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 듀티 사이클, CAD, 경계 조건, 메쉬 수렴, 팬 곡선</p>
+<ul>
+<li><strong>듀티 사이클(duty cycle)</strong>: 특정 구성 요소가 높은 소비 전력 상태에 있는 시간 비율.</li>
+<li><strong>CAD(Computer-Aided Design)</strong>: 컴퓨터 지원 설계.</li>
+<li><strong>경계 조건(boundary condition)</strong>: 해석 영역 경계에서의 물리적 제약 조건(예: 온도, 열유속, 대류).</li>
+<li><strong>메쉬 수렴(mesh convergence)</strong>: 메쉬를 세밀화한 후 결과가 더 이상 크게 변하지 않아 수치 해석이 신뢰할 수 있음을 나타냄.</li>
+<li><strong>팬 곡선(fan curve)</strong>: 팬 유량과 압력 강하 간의 관계 곡선.</li>
+</ul>
+</div>
+<h3 id="_3">인간형 로봇에서 열 시뮬레이션의 공학적 의의</h3>
+<p>인간형 로봇은 연산 장치, 모터 드라이브, 배터리 및 전력 전자 장치를 통합하며, 열 밀도가 높고 공간이 제한적입니다. 열 시뮬레이션은 주요 칩의 접합 온도, 모터 권선 온도 상승 및 외부 케이스 표면 온도를 예측하여 방열판, 공기 덕트, 열 인터페이스 재료 및 전력 관리 전략의 설계를 안내하고, 과열로 인한 성능 저하 또는 수명 감소를 방지하는 데 사용됩니다. 열-구조-전기 연합 시뮬레이션을 통해 전체 기기 설계 초기 단계에서 열 병목 현상을 식별하고 배치를 최적화할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_electrochemistry/">전기화학</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_silva_plata_model_based_capacitive_touch_s_2025/">소프트 로보틱스에서 모델 기반 전容성 터치 감지: 예술적 응용을 위한 강건한 촉각 상호작용</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">리튬 이온 배터리 노화 궤적의 &#39;무릎&#39; 현상</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">리튬 이온 배터리 잔존 유용 수명 및 SOH 추정 (전기자동차용)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">향상된 전도성의 흑연지 기반 집전체를 갖춘 얇은 유연한 리튬 이온 배터리</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">현재 리튬 이온 전지 기술 및 잠재적 고체 전해질 전지 기술에 대한 간단한 리뷰</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">오리가미에서 영감받은 로봇의 자율 구동을 위한 컷-앤-폴드 자가 지속 컴플라이언트 오실레이터</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_nvidia_jetson_agx_orin_2024/">NVIDIA Jetson AGX Orin</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">제약</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_safety_mcu/">안전 MCU</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">제약</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_thermal_simulation"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">
+          <span class="entry-type">논문</span>
+          <h3>오리가미에서 영감받은 로봇의 자율 구동을 위한 컷-앤-폴드 자가 지속 컴플라이언트 오실레이터</h3>
+          <p>두 개의 기계적으로 결합된 자가 개방 스위치로 구성된 프린터블 자가 지속 컴플라이언트 오실레이터를 제안한다. 각 스위치는 바이스테이블 벅빔(bistable buckled…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_safety_mcu/">
+          <span class="entry-type">부품</span>
+          <h3>안전 MCU</h3>
+          <p>주 컴퓨팅 유닛과 독립적으로 중요 신호를 모니터링하고 워치독 및 안전 반응을 수행하는 기능 안전 마이크로컨트롤러.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">
+          <span class="entry-type">논문</span>
+          <h3>향상된 전도성의 흑연지 기반 집전체를 갖춘 얇은 유연한 리튬 이온 배터리</h3>
+          <p>본 논문은 나노 알루미늄 또는 구리층으로 코팅된 흑연지를 집전체로 사용하고 LiFePO4 양극, Li4Ti5O12 음극, LiPF6에 침적된 폴리에틸렌 분리막을 결합하여 총 두께…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">
+          <span class="entry-type">논문</span>
+          <h3>현재 리튬 이온 전지 기술 및 잠재적 고체 전해질 전지 기술에 대한 간단한 리뷰</h3>
+          <p>Andrew Ulvestad가 2018년에 발표한 개관 논문으로, 최첨단 리튬 이온 전지와 리튬 금속 음극을 사용하는 신흥 고체 전해질 전지를 비교하며, 황화물·고분자·산화물 고체…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">
+          <span class="entry-type">논문</span>
+          <h3>리튬 이온 배터리 잔존 유용 수명 및 SOH 추정 (전기자동차용)</h3>
+          <p>2023년 arXiv 논문은 리튬 이온 배터리 잔존 유용 수명(RUL) 추정을 위한 경험적, 물리 기반 및 데이터 기반 접근법을 검토하고 TensorFlow Keras로 구현된…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_nvidia_jetson_agx_orin_2024/">
+          <span class="entry-type">부품</span>
+          <h3>NVIDIA Jetson AGX Orin</h3>
+          <p>휨로봇 VLA 추론 및 인식에 널리 사용되는 온보드 GPU/ARM SoC.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_electrochemistry/">
+          <span class="entry-type">기초 학문</span>
+          <h3>전기화학</h3>
+          <p>전지, 연료 전지 및 부식에서 반응, 전위 및 물질 이동을 지배하는 계면을 통한 전자와 이온 전송의 기초 과학이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_silva_plata_model_based_capacitive_touch_s_2025/">
+          <span class="entry-type">논문</span>
+          <h3>소프트 로보틱스에서 모델 기반 전容성 터치 감지: 예술적 응용을 위한 강건한 촉각 상호작용</h3>
+          <p>상호 커패시턴스 감지와 온라인 SOFA 유한 요소 시뮬레이션을 결합하여 임의의 3D 변형 표면에서 인간의 접촉을 localize하는, 변형에 강한 소프트 로봇용 전容성 터치 스킨을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">기술</span>
+          <h3>EtherCAT</h3>
+          <p>결정론적 관절 제어를 위한 고성능 산업용 이더넷 필드 버스.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">
+          <span class="entry-type">논문</span>
+          <h3>리튬 이온 배터리 노화 궤적의 &#39;무릎&#39; 현상</h3>
+          <p>2022년 리뷰로, 리튬 이온 배터리의 용량 감소 &#39;무릎&#39;을 정의하고 6가지 열화 경로와 3가지 내부 상태 궤적 유형을 분류하며 민감도와 예측 과제를 검토한다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#673">6.7.3 전체 기기 전력 및 열 시뮬레이션 접근법</a></li>
+<li><a href="#_3">인간형 로봇에서 열 시뮬레이션의 공학적 의의</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Battery Management System · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/component/">Component</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Battery Management System</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Component</div>
+      <h1>Battery Management System</h1>
+      <p class="entry-name-en">Battery Management System</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span><span class="tag">Design Engineering</span><span class="tag">Assembly, Integration &amp; Testing</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Upstream</span><span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#6.5.2 电池管理系统 BMS：SOC/SOH 估计、均衡、过充过放保护、热失控 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>An electronic subsystem that monitors, protects, and balances battery cells to ensure safe and efficient energy storage and delivery in robots and electric vehicles.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.15915" target="_blank" rel="noopener">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The battery management system is a critical component in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>A Battery Management System (BMS) monitors and protects the battery pack, ensuring it operates within a safe, efficient, and long-lasting window.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: BMS, SOC, SOH, Balancing, Thermal Runaway, Overcharge, Overdischarge</p>
+<ul>
+<li><strong>BMS (Battery Management System)</strong>: Responsible for monitoring, protecting, and controlling the battery pack.</li>
+<li><strong>SOC (State of Charge)</strong>: Indicates the remaining charge as a percentage.</li>
+<li><strong>SOH (State of Health)</strong>: Reflects the ratio of the battery's current maximum capacity to its initial capacity.</li>
+<li><strong>Balancing</strong>: Equalizes voltage/capacity among series-connected cells to prevent individual cells from overcharging or overdischarging.</li>
+<li><strong>Thermal runaway</strong>: A self-accelerating exothermic reaction inside the battery, leading to a rapid temperature rise.</li>
+<li><strong>Overcharge / Overdischarge</strong>: Charging voltage exceeding the upper limit or discharging voltage falling below the lower limit, potentially damaging the battery or causing safety incidents.</li>
+</ul>
+</div>
+<p><strong>Mechanism of Thermal Runaway</strong>. Thermal runaway in lithium-ion batteries is typically triggered by overcharge, overdischarge, short circuit, mechanical damage, or high temperature. The process includes: SEI decomposition (approx. 80–120 °C), separator shrinkage (approx. 130 °C), cathode oxygen release and electrolyte oxidation (approx. 150–250 °C), ultimately leading to internal short circuits and intense heat generation. The BMS provides multi-level warnings via voltage, temperature, and gas sensors (e.g., CO, HF), and upon detecting anomalies, it disconnects the main relay and activates fire suppression or venting systems.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: SEI, Separator, Electrolyte, Cathode Oxygen Release, Gas Sensor</p>
+<ul>
+<li><strong>SEI (Solid Electrolyte Interphase)</strong>: A solid electrolyte interface film formed on the anode surface, crucial for battery performance and safety.</li>
+<li><strong>Cathode oxygen release</strong>: The release of oxygen from cathode materials at high temperatures, exacerbating the risk of electrolyte combustion.</li>
+<li><strong>Gas sensor</strong>: A sensor that detects abnormal gas production (CO, HF, hydrocarbons) from the battery.</li>
+</ul>
+</div>
+<p><strong>SOC Estimation</strong>. Coulomb counting estimates SOC by integrating current:</p>
+<div class="arithmatex">\[
+SOC(t) = SOC(t_0) + \frac{1}{Q_{nom}} \int_{t_0}^{t} \eta \, I(\tau) \, d\tau
+\]</div>
+<p>where <span class="arithmatex">\(Q_{nom}\)</span> is the nominal capacity, <span class="arithmatex">\(\eta\)</span> is the charge/discharge efficiency, and <span class="arithmatex">\(I\)</span> is the current (positive for charging). Coulomb counting accumulates errors and is often combined with open-circuit voltage (OCV) lookup tables or Kalman filtering.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Coulomb Counting, Open-Circuit Voltage, Kalman Filter, Internal Resistance</p>
+<ul>
+<li><strong>Coulomb counting</strong>: A method for estimating battery charge/discharge by integrating current.</li>
+<li><strong>Open-circuit voltage (OCV)</strong>: The terminal voltage of a battery under no load, which has a monotonic relationship with SOC.</li>
+<li><strong>Kalman filter</strong>: An algorithm that recursively estimates states using a model and measurements.</li>
+<li><strong>Internal resistance</strong>: The equivalent resistance inside the battery, causing terminal voltage to deviate from OCV during charge/discharge.</li>
+</ul>
+</div>
+<p><strong>SOH Estimation</strong>. Common methods include: capacity fade method, internal resistance growth method, incremental capacity analysis (ICA), and differential voltage analysis (DVA).</p>
+<p><strong>Extended Kalman Filter (EKF) for SOC Estimation</strong>. The battery can be modeled as a first-order RC equivalent circuit:</p>
+<div class="arithmatex">\[
+U_t = U_{OCV}(SOC) - I R_0 - U_1
+$$
+$$
+\dot{U}_1 = -\frac{U_1}{R_1 C_1} + \frac{I}{C_1}
+$$
+$$
+\dot{SOC} = -\frac{\eta I}{Q_{nom}}
+\]</div>
+<p>The state vector is <span class="arithmatex">\([SOC, U_1]^T\)</span>, and the observation is the terminal voltage <span class="arithmatex">\(U_t\)</span>. At each sampling instant, the EKF first predicts the state using the model, then updates it with the voltage measurement, thereby suppressing both current integration drift and voltage measurement noise. More advanced methods like the Unscented Kalman Filter (UKF) and Particle Filter (PF) can handle strong nonlinearities but require higher computational cost.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Equivalent Circuit Model, First-Order RC, Polarization Voltage, Extended Kalman Filter, Unscented Kalman Filter</p>
+<ul>
+<li><strong>Equivalent circuit model (ECM)</strong>: A simplified model using voltage sources, resistors, and capacitors to simulate battery electrical behavior.</li>
+<li><strong>First-order RC model</strong>: A battery model including an ohmic internal resistance <span class="arithmatex">\(R_0\)</span> and one RC parallel polarization branch.</li>
+<li><strong>Polarization voltage</strong>: The additional voltage drop during battery charge/discharge due to electrochemical and concentration polarization.</li>
+<li><strong>Unscented Kalman Filter (UKF)</strong>: A variant of the Kalman filter that handles nonlinear systems via the unscented transform.</li>
+<li><strong>Particle Filter (PF)</strong>: A Monte Carlo sampling-based method for nonlinear/non-Gaussian state estimation.</li>
+</ul>
+</div>
+<p><strong>Balancing</strong>. Passive balancing dissipates energy from high-voltage cells through resistors; active balancing transfers energy from high-voltage cells to low-voltage cells using inductors, capacitors, or transformers, offering higher efficiency but at a higher cost.</p>
+<p>```mermaid
+flowchart TD
+    A["Battery Pack"] --&gt; B["Voltage / Current / Temperature Sampling"]
+    B --&gt; C["SOC / SOH Estimation"]
+    C --&gt; D["Balancing Control"]
+    D --&gt; E["Passive Balancing"]
+    D --&gt; F["Active Balancing"]
+    B --&gt; G["Safety Protection"]
+    G --&gt; H["Overcharge / Overdischarge / Overtemperature Cutoff"]</p>
+<h2 id="_1">개요</h2>
+<p>배터리 관리 시스템은 휴머노이드 로봇 분야의 중요한 부품입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>배터리 관리 시스템(BMS)은 배터리 팩을 모니터링하고 보호하여 안전하고 효율적이며 긴 수명 범위 내에서 작동하도록 보장합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: BMS, SOC, SOH, 균등화, 열 폭주, 과충전, 과방전</p>
+<ul>
+<li><strong>BMS(Battery Management System)</strong>: 배터리 관리 시스템으로, 배터리 팩의 모니터링, 보호 및 제어를 담당합니다.</li>
+<li><strong>SOC(State of Charge)</strong>: 충전 상태로, 남은 전력량을 백분율로 나타냅니다.</li>
+<li><strong>SOH(State of Health)</strong>: 건강 상태로, 배터리의 현재 최대 용량과 초기 용량의 비율을 반영합니다.</li>
+<li><strong>균등화(balancing)</strong>: 직렬 연결된 배터리 셀 간의 전압/용량을 일치시켜 특정 셀의 과충전 또는 과방전을 방지합니다.</li>
+<li><strong>열 폭주(thermal runaway)</strong>: 배터리 내부의 발열 반응이 자기 가속화되어 온도가 급격히 상승하는 현상입니다.</li>
+<li><strong>과충전 / 과방전</strong>: 충전 전압이 상한을 초과하거나 방전 전압이 하한 미만으로 떨어져 배터리를 손상시키거나 안전 사고를 유발할 수 있습니다.</li>
+</ul>
+</div>
+<p><strong>열 폭주 메커니즘</strong>. 리튬이온 배터리의 열 폭주는 일반적으로 과충전, 과방전, 단락, 기계적 손상 또는 고온에 의해 유발됩니다. 과정은 다음과 같습니다: SEI 막 분해(약 80–120 °C), 분리막 수축(약 130 °C), 양극 산소 방출 및 전해질 산화(약 150–250 °C), 최종적으로 내부 단락과 격렬한 발열로 이어집니다. BMS는 전압, 온도 및 가스 센서(예: CO, HF)를 통해 다단계 경고를 수행하고, 이상이 감지되면 주 릴레이를 차단하고 소화 또는 배기 장치를 작동시킵니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: SEI 막, 분리막, 전해질, 양극 산소 방출, 가스 센서</p>
+<ul>
+<li><strong>SEI 막(Solid Electrolyte Interphase)</strong>: 음극 표면에 형성된 고체 전해질 계면 막으로, 배터리 성능과 안전성에 매우 중요합니다.</li>
+<li><strong>양극 산소 방출(cathode oxygen release)</strong>: 고온에서 양극 재료가 산소를 방출하여 전해질 연소 위험을 증가시킵니다.</li>
+<li><strong>가스 센서(gas sensor)</strong>: 배터리 이상 가스(CO, HF, 탄화수소)를 감지하는 센서입니다.</li>
+</ul>
+</div>
+<p><strong>SOC 추정</strong>. 쿨롱 카운팅법은 전류를 적분하여 SOC를 추정합니다:</p>
+<div class="arithmatex">\[
+SOC(t) = SOC(t_0) + \frac{1}{Q_{nom}} \int_{t_0}^{t} \eta \, I(\tau) \, d\tau
+\]</div>
+<p>여기서 <span class="arithmatex">\(Q_{nom}\)</span>은 공칭 용량, <span class="arithmatex">\(\eta\)</span>는 충방전 효율, <span class="arithmatex">\(I\)</span>는 전류(충전 시 양수)입니다. 쿨롱 카운팅은 오차가 누적되므로, 개방 회로 전압(OCV) 테이블 조회 또는 칼만 필터와 결합하여 사용됩니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 쿨롱 카운팅, 개방 회로 전압, 칼만 필터, 내부 저항</p>
+<ul>
+<li><strong>쿨롱 카운팅(coulomb counting)</strong>: 전류를 적분하여 배터리의 충방전량을 추정하는 방법입니다.</li>
+<li><strong>개방 회로 전압(OCV)</strong>: 무부하 상태에서 배터리의 단자 전압으로, SOC와 단조 관계를 가집니다.</li>
+<li><strong>칼만 필터(Kalman filter)</strong>: 모델과 측정값을 사용하여 상태를 재귀적으로 추정하는 알고리즘입니다.</li>
+<li><strong>내부 저항(internal resistance)</strong>: 배터리 내부의 등가 저항으로, 충방전 시 단자 전압이 OCV에서 벗어나게 합니다.</li>
+</ul>
+</div>
+<p><strong>SOH 추정</strong>. 일반적인 방법으로는 용량 감소법, 내부 저항 증가법, 증분 용량 분석(ICA) 및 차동 전압 분석(DVA)이 있습니다.</p>
+<p><strong>확장 칼만 필터(EKF) SOC 추정</strong>. 배터리는 1차 RC 등가 회로로 모델링할 수 있습니다:</p>
+<div class="arithmatex">\[
+U_t = U_{OCV}(SOC) - I R_0 - U_1
+$$
+$$
+\dot{U}_1 = -\frac{U_1}{R_1 C_1} + \frac{I}{C_1}
+$$
+$$
+\dot{SOC} = -\frac{\eta I}{Q_{nom}}
+\]</div>
+<p>상태 벡터는 <span class="arithmatex">\([SOC, U_1]^T\)</span>로 하고, 관측량은 단자 전압 <span class="arithmatex">\(U_t\)</span>입니다. EKF는 각 샘플링 시점에서 먼저 모델을 통해 상태를 예측한 후, 전압 측정값으로 상태를 업데이트하여 전류 적분 드리프트와 전압 측정 노이즈를 동시에 억제합니다. 더 진보된 무향 칼만 필터(UKF)와 입자 필터(PF)는 강한 비선형성을 처리할 수 있지만 계산량이 더 많습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 등가 회로 모델, 1차 RC, 분극 전압, 확장 칼만 필터, 무향 칼만 필터</p>
+<ul>
+<li><strong>등가 회로 모델(equivalent circuit model, ECM)</strong>: 전압원, 저항, 커패시터를 사용하여 배터리의 전기적 거동을 모방한 단순화된 모델입니다.</li>
+<li><strong>1차 RC 모델</strong>: 하나의 옴 내부 저항 <span class="arithmatex">\(R_0\)</span>과 하나의 RC 병렬 분극 분기로 구성된 배터리 모델입니다.</li>
+<li><strong>분극 전압(polarization voltage)</strong>: 배터리 충방전 과정에서 전기화학적 분극과 농도 분극으로 인해 발생하는 추가 전압 강하입니다.</li>
+<li><strong>무향 칼만 필터(UKF)</strong>: 무향 변환을 통해 비선형 시스템을 처리하는 칼만 필터 변형입니다.</li>
+<li><strong>입자 필터(PF)</strong>: 몬테카를로 샘플링 기반의 비선형/비가우시안 상태 추정 방법입니다.</li>
+</ul>
+</div>
+<p><strong>균등화</strong>. 수동 균등화는 저항을 통해 높은 전압 셀의 에너지를 소모합니다. 능동 균등화는 인덕터, 커패시터 또는 변압기를 통해 높은 전압 셀에서 낮은 전압 셀로 에너지를 전달하며, 효율은 높지만 비용이 더 높습니다.</p>
+<p>```mermaid
+flowchart TD
+    A["배터리 팩"] --&gt; B["전압 / 전류 / 온도 샘플링"]
+    B --&gt; C["SOC / SOH 추정"]
+    C --&gt; D["균등화 제어"]
+    D --&gt; E["수동 균등화"]
+    D --&gt; F["능동 균등화"]
+    B --&gt; G["안전 보호"]
+    G --&gt; H["과충전 / 과방전 / 과온 차단"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+              <span class="rel-desc">Battery Management System cites Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a>
+              <span class="rel-desc">BMS manages the torso battery pack of Tesla Optimus.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">Estimation of Remaining Useful Life and SOH of Lithium Ion Batteries (For EV Vehicles)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Estimation of Remaining Useful Life and SOH of Lithium Ion Batteries (For EV Vehicles) discusses Battery Management System.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_tech_li_battery_humanoid/">Lithium-Ion Battery System for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">integrates</span>
+              <span class="rel-desc">ent_tech_li_battery_humanoid integrates ent_component_battery_management_system for monitoring, protection, and cell balancing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">&#34;Knees&#34; in lithium-ion battery aging trajectories</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">&#34;Knees&#34; in lithium-ion battery aging trajectories discusses Battery Management System.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mckay_learning_the_p2d_model_for_lit_2025/">Learning the P2D Model for Lithium-Ion Batteries with SOH Detection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">addresses</span>
+              <span class="rel-desc">The surrogate model is intended to run inside a BMS for real-time prediction and SOH detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066 uses or builds on Battery Management System.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">A Brief Review of Current Lithium Ion Battery Technology and Potential Solid State Battery Technologies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Brief Review of Current Lithium Ion Battery Technology and Potential Solid State Battery Technologies discusses Battery Management System.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">Thin Flexible Lithium Ion Battery Featuring Graphite Paper Based Current Collectors with Enhanced Conductivity</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Thin Flexible Lithium Ion Battery Featuring Graphite Paper Based Current Collectors with Enhanced Conductivity discusses Battery Management System.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">integrates</span>
+              <span class="rel-desc">The Battery Management System is part of the onboard power measurement chain.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_tech_li_battery_humanoid/">Lithium-Ion Battery System for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">A lithium-ion battery pack for humanoid robots requires a battery management system to maintain cell health, optimize performance, and prevent fault conditions.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_battery_management_system"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_tech_li_battery_humanoid/">
+          <span class="entry-type">Technology</span>
+          <h3>Lithium-Ion Battery System for Humanoid Robots</h3>
+          <p>The incumbent onboard energy storage technology for humanoid robots, balancing energy density, power…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">
+          <span class="entry-type">Paper</span>
+          <h3>Thin Flexible Lithium Ion Battery Featuring Graphite Paper Based Current Collectors with Enhanced Conductivity</h3>
+          <p>This paper reports an ultrathin (&lt;250 μm including encapsulation), lightweight, flexible lithium-ion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mckay_learning_the_p2d_model_for_lit_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning the P2D Model for Lithium-Ion Batteries with SOH Detection</h3>
+          <p>This paper proposes a Convolutional Neural Network surrogate trained on synthetic P2D battery…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>A Brief Review of Current Lithium Ion Battery Technology and Potential Solid State Battery Technologies</h3>
+          <p>A 2018 review by Andrew Ulvestad that benchmarks state-of-the-art lithium-ion batteries against…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Estimation of Remaining Useful Life and SOH of Lithium Ion Batteries (For EV Vehicles)</h3>
+          <p>This 2023 arXiv paper reviews empirical, physics-based, and data-driven approaches for lithium-ion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_tesla_optimus/">
+          <span class="entry-type">Robot System</span>
+          <h3>Tesla Optimus</h3>
+          <p>Tesla&#39;s general-purpose humanoid robot program, with stated goals of factory deployment and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Evolution of Safety Requirements in Industrial Robotics: Comparative Analysis of ISO 10218-1/2 (2011 vs. 2025) and Integration of ISO/TS 15066</h3>
+          <p>This paper compares ISO 10218-1/2:2011 with their 2025 revisions and analyzes the normative…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</h3>
+          <p>This paper presents a physics-based, linear-in-parameters electrical power consumption model for the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>&#34;Knees&#34; in lithium-ion battery aging trajectories</h3>
+          <p>A 2022 review that defines capacity-fade &#39;knees&#39; in lithium-ion batteries, classifies six…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

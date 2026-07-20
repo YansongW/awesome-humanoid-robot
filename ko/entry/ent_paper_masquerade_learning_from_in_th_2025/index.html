@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masquerade: Learning from In-the-wild Human Videos using Data-Editing · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Masquerade: Learning from In-the-wild Human Videos using Data-Editing</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Masquerade: Learning from In-the-wild Human Videos using Data-Editing</h1>
+      <p class="entry-name-en">Masquerade: Learning from In-the-wild Human Videos using Data-Editing</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.09976v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Masquerade: Learning from In-the-wild Human Videos using Data-Editing is a 2025 work on manipulation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.09976" target="_blank" rel="noopener">Masquerade: Learning from In-the-wild Human Videos using Data-Editing (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇 조작 연구는 여전히 심각한 데이터 부족 문제를 겪고 있습니다. 가장 큰 로봇 데이터셋조차도 언어 및 시각 분야의 최근 혁신을 이끈 데이터셋에 비해 규모가 수십 배 작고 다양성도 떨어집니다. 우리는 Masquerade를 소개합니다. 이는 실제 환경의 자기중심적 인간 비디오를 편집하여 인간과 로봇 간의 시각적 구현 격차를 해소하고, 편집된 비디오를 통해 로봇 정책을 학습하는 방법입니다. 우리의 파이프라인은 (i) 3D 손 자세 추정, (ii) 인간 팔 인페인팅, (iii) 복원된 엔드 이펙터 궤적을 추적하는 렌더링된 양팔 로봇 오버레이를 통해 각 인간 비디오를 로봇화된 시연으로 변환합니다. 편집된 클립의 675K 프레임에서 미래 2D 로봇 키포인트를 예측하도록 시각 인코더를 사전 학습하고, 작업당 50개의 로봇 시연만으로 확산 정책 헤드를 미세 조정하는 동안 보조 손실을 유지하면, 이전 연구보다 훨씬 더 잘 일반화되는 정책을 얻을 수 있습니다. 각각 세 가지 보지 못한 장면에서 평가된 세 가지 장기적 양팔 주방 작업에서 Masquerade는 기준선보다 5-6배 더 뛰어난 성능을 보였습니다. 절제 연구는 로봇 오버레이와 공동 학습이 모두 필수적이며, 성능이 편집된 인간 비디오 양에 따라 로그 스케일로 증가함을 보여줍니다. 이러한 결과는 시각적 구현 격차를 명시적으로 해소함으로써 인간 비디오에서 얻을 수 있는 방대하고 즉시 활용 가능한 데이터 소스를 활용하여 로봇 정책을 개선할 수 있음을 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>로봇 조작 연구는 여전히 심각한 데이터 부족 문제를 겪고 있습니다. 가장 큰 로봇 데이터셋조차도 언어 및 시각 분야의 최근 혁신을 이끈 데이터셋에 비해 규모가 수십 배 작고 다양성도 떨어집니다. 우리는 Masquerade를 소개합니다. 이는 실제 환경의 자기중심적 인간 비디오를 편집하여 인간과 로봇 간의 시각적 구현 격차를 해소하고, 편집된 비디오를 통해 로봇 정책을 학습하는 방법입니다. 우리의 파이프라인은 (i) 3D 손 자세 추정, (ii) 인간 팔 인페인팅, (iii) 복원된 엔드 이펙터 궤적을 추적하는 렌더링된 양팔 로봇 오버레이를 통해 각 인간 비디오를 로봇화된 시연으로 변환합니다. 편집된 클립의 675K 프레임에서 미래 2D 로봇 키포인트를 예측하도록 시각 인코더를 사전 학습하고, 작업당 50개의 로봇 시연만으로 확산 정책 헤드를 미세 조정하는 동안 보조 손실을 유지하면, 이전 연구보다 훨씬 더 잘 일반화되는 정책을 얻을 수 있습니다. 각각 세 가지 보지 못한 장면에서 평가된 세 가지 장기적 양팔 주방 작업에서 Masquerade는 기준선보다 5-6배 더 뛰어난 성능을 보였습니다. 절제 연구는 로봇 오버레이와 공동 학습이 모두 필수적이며, 성능이 편집된 인간 비디오 양에 따라 로그 스케일로 증가함을 보여줍니다. 이러한 결과는 시각적 구현 격차를 명시적으로 해소함으로써 인간 비디오에서 얻을 수 있는 방대하고 즉시 활용 가능한 데이터 소스를 활용하여 로봇 정책을 개선할 수 있음을 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_masquerade_learning_from_in_th_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

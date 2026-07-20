@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EtherCAT · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/technology/">기술</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EtherCAT</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">기술</div>
+      <h1>EtherCAT</h1>
+      <p class="entry-name-en">EtherCAT</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">소프트웨어 미들웨어</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#EtherCAT 协议深度 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">1단계 · 관절 하나 만들기</span>
+        <span class="roadmap-badge-role">핵심</span>
+      </a>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">2단계 · 이족 플랫폼</span>
+        <span class="roadmap-badge-role">선택</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>결정론적 관절 제어를 위한 고성능 산업용 이더넷 필드 버스.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/EtherCAT" target="_blank" rel="noopener">EtherCAT</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>EtherCAT은 휴머노이드 로봇 분야의 중요한 기술입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>EtherCAT은 Beckhoff가 제안하고 EtherCAT Technology Group이 유지 관리하는 표준 이더넷 프레임 기반의 산업용 필드버스입니다. 가장 큰 특징은 "processing on the fly"로, 슬레이브가 프레임이 통과할 때 즉시 데이터를 읽고 쓰며, 프레임을 완전히 수신한 후 전달할 필요가 없습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: EtherCAT, 마스터, 슬레이브, 즉시 읽기/쓰기, 작업 카운터, 분산 클록</p>
+<ul>
+<li><strong>EtherCAT (Ethernet for Control Automation Technology)</strong>: 이더넷 기반의 고속 산업용 필드버스.</li>
+<li><strong>마스터 (master)</strong>: EtherCAT 통신을 시작하고 제어하는 노드.</li>
+<li><strong>슬레이브 (slave)</strong>: 마스터 명령에 응답하는 노드(예: 서보 드라이브, I/O 모듈).</li>
+<li><strong>즉시 읽기/쓰기 (processing on the fly)</strong>: 슬레이브가 데이터 프레임이 통과할 때 즉시 읽고 쓰는 방식.</li>
+<li><strong>작업 카운터 (Working Counter, WC)</strong>: 각 EtherCAT 프레임 끝에 있는 카운터로, 슬레이브가 성공적으로 처리했는지 확인.</li>
+<li><strong>분산 클록 (Distributed Clocks, DC)</strong>: EtherCAT의 동기화 메커니즘으로, 모든 슬레이브가 동일한 시간 기준을 공유.</li>
+</ul>
+</div>
+<p><strong>EtherCAT 프레임 구조</strong>. 표준 이더넷 프레임의 EtherType은 <code>0x88A4</code>이며, 그 뒤에 EtherCAT 헤더와 여러 데이터그램이 이어집니다:</p>
+<table>
+<thead>
+<tr>
+<th>필드</th>
+<th>길이</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이더넷 헤더</td>
+<td>14 B</td>
+<td>목적지 MAC, 소스 MAC, EtherType=0x88A4</td>
+</tr>
+<tr>
+<td>EtherCAT 헤더</td>
+<td>2 B</td>
+<td>데이터 길이, 예약 비트</td>
+</tr>
+<tr>
+<td>데이터그램 1</td>
+<td>가변</td>
+<td>명령, 인덱스, 주소, 데이터, WC</td>
+</tr>
+<tr>
+<td>...</td>
+<td>가변</td>
+<td>여러 데이터그램</td>
+</tr>
+<tr>
+<td>FCS</td>
+<td>4 B</td>
+<td>이더넷 프레임 체크섬</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: EtherType, 데이터그램, FCS, MAC 주소</p>
+<ul>
+<li><strong>EtherType</strong>: 이더넷 프레임에서 상위 프로토콜을 식별하는 필드.</li>
+<li><strong>데이터그램 (Datagram)</strong>: EtherCAT 프레임 내의 독립적인 데이터 단위.</li>
+<li><strong>FCS (Frame Check Sequence)</strong>: 이더넷 프레임 끝의 체크섬 시퀀스로, 전송 오류 감지에 사용.</li>
+<li><strong>MAC 주소 (Media Access Control address)</strong>: 이더넷 장치의 물리적 주소.</li>
+</ul>
+</div>
+<p>각 데이터그램의 명령에는 <code>APRD</code> (자동 증가 물리 읽기), <code>APWR</code> (자동 증가 물리 쓰기), <code>FPRD</code> (고정 주소 읽기), <code>FPWR</code> (고정 주소 쓰기), <code>LRW</code> (논리 읽기/쓰기) 등이 있습니다. 마스터는 논리 주소를 통해 프로세스 데이터를 슬레이브의 메모리 매핑 영역에 매핑합니다.</p>
+<p><strong>분산 클록 (DC)</strong>. DC는 각 슬레이브에서 메시지의 도착 및 출발 시간을 측정하여 전파 지연과 클록 오프셋을 계산하고 보상합니다:</p>
+<ol>
+<li>마스터가 특수 동기화 프레임을 전송하면, 각 슬레이브는 로컬 타임스탬프 <span class="arithmatex">\(t_{\text{in}}\)</span> 및 <span class="arithmatex">\(t_{\text{out}}\)</span>을 기록합니다.</li>
+<li>왕복 측정을 통해 각 슬레이브에서 기준 클록까지의 <strong>전파 지연</strong> <span class="arithmatex">\(t_{\text{prop}}\)</span>을 계산합니다.</li>
+<li>슬레이브는 <span class="arithmatex">\(t_{\text{prop}}\)</span> 및 주기 오프셋에 따라 로컬 클록을 조정합니다.</li>
+<li>각 주기마다 마스터가 ARMW (Auto Repeat Read/Write) 메시지를 전송하고, 슬레이브는 동기화 이벤트(예: SYNC0)가 트리거될 때 데이터를 래치합니다.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 전파 지연, 클록 오프셋, 드리프트 보상, SYNC0, ARMW</p>
+<ul>
+<li><strong>전파 지연 (propagation delay)</strong>: 신호가 송신단에서 수신단까지 도달하는 데 걸리는 시간.</li>
+<li><strong>클록 오프셋 (clock offset)</strong>: 두 클록 간의 시간 차이.</li>
+<li><strong>드리프트 보상 (drift compensation)</strong>: 클록 주파수 차이를 보정하는 작업.</li>
+<li><strong>SYNC0</strong>: EtherCAT 슬레이브의 하드웨어 동기화 신호.</li>
+<li><strong>ARMW</strong>: EtherCAT에서 클록 동기화에 사용되는 자동 반복 읽기/쓰기 명령.</li>
+</ul>
+</div>
+<p>DC 동기화 정밀도는 일반적으로 100 ns 이내로, 여러 축의 서보가 동일한 마이크로초 단위 시점에 샘플링 및 업데이트를 지원할 수 있습니다.</p>
+<p><strong>PDO와 SDO</strong>. PDO (Process Data Object)는 주기적인 프로세스 데이터로, EtherCAT 프레임의 논리 메모리 영역에 매핑되어 매 주기마다 자동으로 읽고 쓰입니다. SDO (Service Data Object)는 비주기적인 파라미터 구성에 사용되며, 메일박스(mailbox) 프로토콜을 통해 객체 사전(object dictionary)에 접근합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: PDO, SDO, 객체 사전, 메일박스, 프로세스 데이터</p>
+<ul>
+<li><strong>PDO (Process Data Object)</strong>: 주기적인 프로세스 데이터 객체.</li>
+<li><strong>SDO (Service Data Object)</strong>: 서비스 데이터 객체로, 파라미터 구성에 사용.</li>
+<li><strong>객체 사전 (object dictionary)</strong>: CANopen/EtherCAT 장치에서 파라미터의 인덱스 테이블.</li>
+<li><strong>메일박스 (mailbox)</strong>: 비주기적 통신을 위한 버퍼 메커니즘.</li>
+<li><strong>프로세스 데이터 (process data)</strong>: 제어 루프에서 주기적으로 교환되는 데이터.</li>
+</ul>
+</div>
+<p><strong>토폴로지</strong>. EtherCAT은 라인형, 트리형, 링형 토폴로지를 지원합니다. 링형 토폴로지는 케이블 이중화를 제공합니다: 특정 케이블이 끊어지면 슬레이브가 자동으로 루프백하여 마스터가 단절 지점을 감지하고 나머지 슬레이브와 계속 통신합니다.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["EtherCAT 마스터"] --&gt; B["슬레이브 1"]
+    B --&gt; C["슬레이브 2"]
+    C --&gt; D["..."]
+    D --&gt; E["슬레이브 N"]
+    E --&gt;|"루프백"| A
+    B -.-&gt;|"이중화 루프백"| E</code></pre>
+<p><strong>주기 시간 계산</strong>. EtherCAT 주기 시간은 프레임 전송 시간과 슬레이브 처리 시간에 의해 결정됩니다:</p>
+<div class="arithmatex">\[
+T_{\text{cycle}} \geq T_{\text{frame}} + N \times T_{\text{slave}} + T_{\text{margin}}
+\]</div>
+<p>여기서 프레임 전송 시간은:</p>
+<div class="arithmatex">\[
+T_{\text{frame}} = \frac{L_{\text{frame}} \times 8}{R}
+\]</div>
+<p>예를 들어, 100개의 슬레이브, 각 슬레이브당 16 B 입력 + 16 B 출력, 총 데이터량 약 3200 B에 프레임 헤더를 더해 약 3240 B, 100 Mb/s에서:</p>
+<div class="arithmatex">\[
+T_{\text{frame}} = \frac{3240 \times 8}{100 \times 10^6} \approx 260\ \mu\text{s}
+\]</div>
+<p>각 슬레이브 처리 시간이 1 μs라면, 이론적 최소 주기는 약 360 μs입니다. 실제 엔지니어링에서는 여유를 두기 위해 500 μs–1 ms를 자주 사용합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_technology_can_bus_2024/">CAN Bus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_technology_ota_software_update_2024/">OTA Software Update</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_technology_can_bus_2024/">CAN Bus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_company_inovance_technology_2024/">Inovance Technology</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_openloong/">OpenLoong (Qinglong) Open-Source Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_servo_drive_2024/">Servo Drive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_concept_digital_twin/">디지털 트윈</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_application_industrial_manufacturing/">산업 제조</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hardware_in_the_loop_2024/">Hardware-in-the-Loop</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p13_1_3/">通信网络与同步</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA 텔레오퍼레이션 시스템</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p14/">软件中间件与系统集成（Software &amp; Integration）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p14_1_2/">实时控制框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p3_2_2/">通信网络架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_operator_task_jacobian/">작업 Jacobian</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_ati_force_torque_sensor_2024/">ATI 힘/토크 센서</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p13/">电子电气与能源系统（Electronics &amp; Power）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p10_2_3/">全身控制 WBC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_thermal_simulation/">열 시뮬레이션</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_technology_ethercat_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_operator_task_jacobian/">
+          <span class="entry-type">연산자</span>
+          <h3>작업 Jacobian</h3>
+          <p>관절 공간 속도와 가속도를 작업 공간의 작업 좌표 속도/가속도로 매핑하는 행렬이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_application_industrial_manufacturing/">
+          <span class="entry-type">응용 시나리오</span>
+          <h3>산업 제조</h3>
+          <p>휴로봇을 공장의 조립·기계 관리·검사·자재 취급 등에 적용하는 분야.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_digital_twin/">
+          <span class="entry-type">개념</span>
+          <h3>디지털 트윈</h3>
+          <p>물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p3/">
+          <span class="entry-type">방법</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p3_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>通信网络架构</h3>
+          <p>通信拓扑图、协议分配表、带宽/延迟预算</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_servo_drive_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Servo Drive</h3>
+          <p>로봇 관절용 모터 제어를 위한 고전류로 저전력 명령 신호를 변환하는 전자 증폭기.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>全身控制 WBC</h3>
+          <p>WBC 控制器、多任务协调演示、求解时间 &lt; 1 ms</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_can_bus_2024/">
+          <span class="entry-type">기술</span>
+          <h3>CAN Bus</h3>
+          <p>휨로봇 관절 모터 드라이브와 중앙 제어기를 연결하는 필드 버스.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hardware_in_the_loop_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Hardware-in-the-Loop</h3>
+          <p>완전한 통합 전 실제 액추에이터와 컨트롤러를 실시간 시뮬레이션 모델에 대해 테스트하는 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p14_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>实时控制框架</h3>
+          <p>实时性能测试报告、最大抖动 &lt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p13_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>通信网络与同步</h3>
+          <p>通信拓扑图、协议分配、带宽/延迟预算、同步精度</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p14/">
+          <span class="entry-type">방법</span>
+          <h3>软件中间件与系统集成（Software &amp; Integration）</h3>
+          <p>软件中间件与系统集成（Software &amp; Integration）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_ota_software_update_2024/">
+          <span class="entry-type">기술</span>
+          <h3>OTA Software Update</h3>
+          <p>배포된 휨로봇 플릿에 제어 정책, 펌웨어 및 시스템 소프트웨어를 무선으로 배포.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_thermal_simulation/">
+          <span class="entry-type">방법</span>
+          <h3>열 시뮬레이션</h3>
+          <p>전자·기계 시스템의 작동 하중에서 온도 분포·열 유량·냉각 요구량을 예측하는 계산 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_openloong/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>OpenLoong (Qinglong) Open-Source Humanoid Robot</h3>
+          <p>The full-size open-source humanoid reference platform from China&#39;s National and Local Co-built…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_aloha_teleoperation_system_2023/">
+          <span class="entry-type">기술</span>
+          <h3>ALOHA 텔레오퍼레이션 시스템</h3>
+          <p>모방 학습을 위한 인간 시연 데이터를 수집하는 저비용 양손 리더-팔로워 텔레오퍼레이션 하드웨어.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p13/">
+          <span class="entry-type">방법</span>
+          <h3>电子电气与能源系统（Electronics &amp; Power）</h3>
+          <p>电子电气与能源系统（Electronics &amp; Power）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_ati_force_torque_sensor_2024/">
+          <span class="entry-type">부품</span>
+          <h3>ATI 힘/토크 센서</h3>
+          <p>접촉 제어 및 상호작용을 위한 손목 및 발목 힘/토크 센서.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_company_inovance_technology_2024/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>Inovance Technology</h3>
+          <p>로봇 관절용 서보 드라이브 및 프레임리스 토크 모터를 공급하는 중국 산업 자동화 업체.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

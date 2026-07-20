@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning</h1>
+      <p class="entry-name-en">Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04681v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.04681v1 Announce Type: new Abstract: Embodied Chain-of-Thought has emerged as a promising mechanism to enhance robot decision-making and interpretability in black-box Vision-Language Action (VLA) models. However, whether this verbalized Chain-of-Thought truthfully reflects the policy&#39;s underlying decision process remains poorly understood. We distinguish between functional reasoning, in which reasoning improves task performance, and faithful reasoning, in which reasoning truly reflects the policy&#39;s internal decision process. We argue that SoTA alignment strategies offer a necessary but insufficient notion of faithfulness, admitting reasoning whose intermediate steps can mask the causal links in action prediction through confounding factors (e.g., reasoning that is ungrounded in the environment and internally disconnected or inconsistent), restricting policy generalization. We study this gap through a human evaluation of a SoTA reasoning model for autonomous driving, revealing an inconsistent coupling between reasoning quality and downstream trajectory improvement. We then operationalize a behavioral surrogate for embodied faithfulness through a learned critic, Pinocchio, scoring observation grounding and stepwise coherence, and use this critic as a dense reward signal in post-training an embodied policy with reinforcement learning. Across withheld driving benchmarks, our post-trained planner improves faithfulness by 4% and 18% over SoTA alignment and trajectory error post-training baselines, respectively, while maintaining competitive downstream task performance. Finally, on a synthetic out-of-distribution test set, post-training for faithfulness improves policy responsiveness to rare counterfactual scenarios by 1.6x that of a SoTA policy, suggesting that faithful reasoning traces contribute to more robust, generalizable, and interpretable embodied intelligence. Project page: https://mjf-su.github.io/pinocchio/</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.04681" target="_blank" rel="noopener">Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Embodied Chain-of-Thought는 블랙박스 Vision-Language Action (VLA) 모델에서 로봇의 의사 결정과 해석 가능성을 향상시키는 유망한 메커니즘으로 부상했습니다. 그러나 이러한 언어화된 Chain-of-Thought가 정책의 근본적인 의사 결정 과정을 진실되게 반영하는지 여부는 아직 잘 이해되지 않고 있습니다. 우리는 추론이 작업 성능을 향상시키는 기능적 추론과 추론이 정책의 내부 의사 결정 과정을 진실되게 반영하는 충실한 추론을 구분합니다. 우리는 SoTA 정렬 전략이 필요하지만 충분하지 않은 충실성 개념을 제공한다고 주장하며, 이는 중간 단계가 혼란 요인(예: 환경에 근거하지 않고 내부적으로 단절되거나 일관성이 없는 추론)을 통해 행동 예측의 인과 관계를 가릴 수 있는 추론을 허용하여 정책 일반화를 제한합니다. 우리는 자율 주행을 위한 SoTA 추론 모델의 인간 평가를 통해 이러한 격차를 연구하며, 추론 품질과 하위 궤적 개선 사이의 불일치하는 결합을 밝혀냅니다. 그런 다음 학습된 비평가인 Pinocchio를 통해 관찰 근거와 단계적 일관성을 평가하는 행동적 대리 지표를 구현하고, 이 비평가를 강화 학습을 통한 임베디드 정책의 사후 훈련에서 밀집 보상 신호로 사용합니다. 보류된 운전 벤치마크에서 사후 훈련된 플래너는 SoTA 정렬 및 궤적 오류 사후 훈련 기준선 대비 각각 4% 및 18%의 충실성 향상을 보이며 경쟁력 있는 하위 작업 성능을 유지합니다. 마지막으로 합성 분포 외 테스트 세트에서 충실성을 위한 사후 훈련은 드문 반사실적 시나리오에 대한 정책 응답성을 SoTA 정책 대비 1.6배 향상시켜, 충실한 추론 흔적이 더 강건하고 일반화 가능하며 해석 가능한 임베디드 지능에 기여함을 시사합니다. 프로젝트 페이지: https://mjf-su.github.io/pinocchio/</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Embodied Chain-of-Thought는 블랙박스 Vision-Language Action (VLA) 모델에서 로봇의 의사 결정과 해석 가능성을 향상시키는 유망한 메커니즘으로 부상했습니다. 그러나 이러한 언어화된 Chain-of-Thought가 정책의 근본적인 의사 결정 과정을 진실되게 반영하는지 여부는 아직 잘 이해되지 않고 있습니다. 우리는 추론이 작업 성능을 향상시키는 기능적 추론과 추론이 정책의 내부 의사 결정 과정을 진실되게 반영하는 충실한 추론을 구분합니다. 우리는 SoTA 정렬 전략이 필요하지만 충분하지 않은 충실성 개념을 제공한다고 주장하며, 이는 중간 단계가 혼란 요인(예: 환경에 근거하지 않고 내부적으로 단절되거나 일관성이 없는 추론)을 통해 행동 예측의 인과 관계를 가릴 수 있는 추론을 허용하여 정책 일반화를 제한합니다. 우리는 자율 주행을 위한 SoTA 추론 모델의 인간 평가를 통해 이러한 격차를 연구하며, 추론 품질과 하위 궤적 개선 사이의 불일치하는 결합을 밝혀냅니다. 그런 다음 학습된 비평가인 Pinocchio를 통해 관찰 근거와 단계적 일관성을 평가하는 행동적 대리 지표를 구현하고, 이 비평가를 강화 학습을 통한 임베디드 정책의 사후 훈련에서 밀집 보상 신호로 사용합니다. 보류된 운전 벤치마크에서 사후 훈련된 플래너는 SoTA 정렬 및 궤적 오류 사후 훈련 기준선 대비 각각 4% 및 18%의 충실성 향상을 보이며 경쟁력 있는 하위 작업 성능을 유지합니다. 마지막으로 합성 분포 외 테스트 세트에서 충실성을 위한 사후 훈련은 드문 반사실적 시나리오에 대한 정책 응답성을 SoTA 정책 대비 1.6배 향상시켜, 충실한 추론 흔적이 더 강건하고 일반화 가능하며 해석 가능한 임베디드 지능에 기여함을 시사합니다. 프로젝트 페이지: https://mjf-su.github.io/pinocchio/</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_pinocchio/">Pinocchio</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_do_vision_language_action_mode_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_software_pinocchio/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>Pinocchio</h3>
+          <p>효율적인 강체 동역학·운동학·해석적 미분을 위한 오픈소스 C++ 라이브러리로, 로보틱스 연구 및 모델 기반 제어에 널리 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

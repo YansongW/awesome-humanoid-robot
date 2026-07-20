@@ -1,0 +1,969 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>工业制造 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/application_scenario/">应用场景</a>
+    <span>/</span>
+    <span class="breadcrumb-current">工业制造</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">应用场景</div>
+      <h1>工业制造</h1>
+      <p class="entry-name-en">Industrial Manufacturing</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#6.8 供应链与主要厂商 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>概述 工业制造是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>工业制造是人形机器人领域的重要应用场景。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>人形机器人计算、电源与热管理子系统的供应链高度全球化，同时受到半导体制造、电池材料和热界面材料等上游环节制约。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：供应链、ODM、OEM、IDM、Fabless、Foundry</p>
+<ul>
+<li><strong>供应链（supply chain）</strong>：从原材料到最终产品的所有环节和企业网络。</li>
+<li><strong>ODM（Original Design Manufacturer）</strong>：原始设计制造商，负责设计和制造，品牌方贴牌销售。</li>
+<li><strong>OEM（Original Equipment Manufacturer）</strong>：原始设备制造商，通常指代工厂或品牌整机厂。</li>
+<li><strong>IDM（Integrated Device Manufacturer）</strong>：同时从事芯片设计、制造和封测的垂直整合企业。</li>
+<li><strong>Fabless</strong>：无晶圆厂设计公司，只设计芯片，委托 Foundry 制造。</li>
+<li><strong>Foundry</strong>：晶圆代工厂，如台积电、三星、Intel Foundry。</li>
+</ul>
+</div>
+<p><strong>计算平台厂商</strong>：NVIDIA（Jetson 系列、Thor）、Intel（NUC、Xeon）、Qualcomm（RB 系列、QCS 系列）、AMD（Kria FPGA、Ryzen Embedded）、Apple（M 系列）、NXP（i.MX、S32）、Renesas、Horizon Robotics、Rockchip、Allwinner 等。</p>
+<p><strong>电源与电池厂商</strong>：CATL、BYD、LG Energy Solution、Samsung SDI、Panasonic、EVE Energy、欣旺达、亿纬锂能、德州仪器（TI）、ADI、Infineon、ON Semiconductor、MPS、STMicroelectronics 等提供 BMS、功率半导体和电源管理 IC。</p>
+<p><strong>热管理厂商</strong>：Aavid（Boyd）、Delta、Nidec、Fujikura、双鸿、超众、奇鋐等提供散热器、热管、均热板、风扇和液冷方案；Shin-Etsu、Dow、Henkel、信越等提供 TIM 材料。</p>
+<p><strong>制造瓶颈</strong>。先进制程（7 nm 及以下）晶圆代工、HBM 高带宽内存、高端功率半导体（SiC/GaN）是当前机器人与自动驾驶计算平台的关键瓶颈。地缘政治和出口管制进一步增加了供应链不确定性。</p>
+<p><strong>国产替代进展</strong>。中国大陆在计算芯片、功率半导体和电池领域已形成完整产业链：华为昇腾、地平线征程、寒武纪思元、瑞芯微 RK 系列提供从端侧到边缘的 AI 算力；比亚迪、宁德时代在全球动力电池市场占据重要份额；士兰微、华润微、斯达半导、时代电气等在 IGBT 和 SiC 模块领域持续突破。国产替代的成熟度直接影响人形机器人成本可控性和供应链韧性。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：国产替代、IGBT、SiC、GaN、HBM、晶圆代工</p>
+<ul>
+<li><strong>国产替代（domestic substitution）</strong>：用本国或本地供应链产品替代进口产品的过程。</li>
+<li><strong>IGBT（Insulated Gate Bipolar Transistor）</strong>：绝缘栅双极型晶体管，中高压功率开关器件。</li>
+<li><strong>SiC（Silicon Carbide）</strong>：碳化硅，宽禁带半导体，适合高频高温功率应用。</li>
+<li><strong>GaN（Gallium Nitride）</strong>：氮化镓，另一种宽禁带半导体，适合高频高效电源。</li>
+<li><strong>HBM（High Bandwidth Memory）</strong>：高带宽存储器，通过 3D 堆叠实现高带宽。</li>
+<li><strong>晶圆代工（wafer foundry）</strong>：提供晶圆制造服务的半导体工厂。</li>
+</ul>
+</div>
+<p><strong>成本结构</strong>。以一台高端人形机器人为例，计算平台（SoM + 载板 + 散热）可能占总 BOM 成本的 10%–20%；电池组占 15%–25%；电机与驱动占 30%–40%；结构件、传感器、线束和组装占其余部分。随着量产规模扩大和芯片集成度提高，计算与电源子系统的成本占比有望下降。</p>
+<p><strong>整机计算架构案例</strong>。当前主流人形机器人厂商多采用“中央大脑 + 分布式小脑”架构：</p>
+<ul>
+<li><strong>Tesla Optimus</strong>：采用自研 FSD 芯片作为感知与决策主控，躯干和关节通过自定义通信总线连接，强调视觉主导的端到端控制。</li>
+<li><strong>Boston Dynamics Atlas</strong>：使用嵌入式实时计算机处理状态估计与步态控制，液压/电动执行器由专用驱动板闭环控制，强调高动态运动的确定性。</li>
+<li><strong>Agility Digit / Figure 02</strong>：采用 NVIDIA Jetson 或类似平台处理多相机感知与导航，下层通过 EtherCAT 或类似总线连接关节驱动器。</li>
+<li><strong>优必选 Walker / 智元远征 A2 / 傅利叶 GR-1</strong>：多采用 NVIDIA Jetson AGX Orin / Xavier 或国产替代平台作为上位机，结合 ARM MCU/FPGA 做关节实时控制。</li>
+</ul>
+<p>这些案例共同表明：人形机器人计算架构正在从早期的 PC/工控机 + 运动控制卡，向高度集成的嵌入式 SoC + 实时总线 + 云端协同演进。</p>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+<li>项目 Wiki：chapter-06.md#6.8 供应链与主要厂商</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">工业制造提及英伟达。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">工业制造使用EtherCAT。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">NVIDIA Jetson AGX Orin</a>
+              <span class="rel-desc">工业制造使用NVIDIA Jetson AGX Orin。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_boston_dynamics_atlas_2024/">波士顿动力 Atlas</a>
+              <span class="rel-desc">工业制造使用波士顿动力 Atlas。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_figure_02/">Figure 02</a>
+              <span class="rel-desc">工业制造使用Figure 02。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_report_humanoid_video_friday_give_robots_a_han_2026/">Video Friday: Give Robots a Hand</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Video Friday: Give Robots a Hand提及工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_abb_robotics_completes_its_ai_2026/">ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous forklift</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_actuator_will_robotics_have_a_chatgpt_m_2026/">Will Robotics Have a ChatGPT Moment?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Will Robotics Have a ChatGPT Moment?提及工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_deepx_and_sixfab_launch_deepx_2026/">DEEPX and Sixfab Launch &#39;DEEPX AI HAT&#39; to Drive Edge Physical AI on Raspberry Pi</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_vention_and_fanuc_america_join_2026/">Vention and FANUC America Join Forces to Bring Industrial Robots to Vention&#39;s AI-Driven Hardware and Software Platform</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_black_robotic_versus_human_teleopera_2025/">远程超声的机器人与人类遥操作对比</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">远程超声的机器人与人类遥操作对比提及工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_new_indro_cortex_controller_si_2026/">NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_ieee_what_makes_a_job_dull_dirty_or_2026/">What Makes a Job Dull, Dirty, or Dangerous?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lichtenfeld_lessons_from_the_field_a_case_2025/">实地经验：工业紧急情况下机器人干预的案例研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">实地经验：工业紧急情况下机器人干预的案例研究discusses工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_locus_robotics_helps_hellofres_2026/">Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_cobot_announces_second_generat_2026/">Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical AI to Real Operations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_application_logistics_warehouse/">物流仓储</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">物流仓储提及工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_humanoid_german_economy_calls_for_faste_2026/">German Economy Calls for Faster Humanoid Robotics Adoption</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_actuator_video_friday_heavy_robotic_mac_2026/">Video Friday: Heavy Robotic Machinery Operates Itself</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_techman_robot_empowers_manufac_2026/">Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI Solutions at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_sabanto_inc_and_verdant_roboti_2026/">Sabanto Inc. and Verdant Robotics Announce Technical Integration of Autonomous Tractor Operation with SharpShooter Plant-Level Precision Application</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_humanoid_daimon_robotics_wants_to_give_2026/">DAIMON Robotics Wants to Give Robot Hands a Sense of Touch</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_verisilicon_introduces_cpp2000_2000/">VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics and Mobile Vision Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_inorbitai_demonstrates_the_fut_2026/">InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical AI at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_danish_robotics_startup_enters_2026/">Danish robotics startup enters the industrial truck market already crowned a winner</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_logic_highlights_the_logic_pal_2026/">Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_denso_exhibits_high_performanc_2026/">DENSO Exhibits High-Performance Robots at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_eldakruri_evaluating_the_economic_feasib_2025/">评估卡塔尔机器人与自动化劳动力替代的经济可行性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">评估卡塔尔机器人与自动化劳动力替代的经济可行性discusses工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_humanoid_proposed_chinese_robot_ban_is_2026/">Proposed Chinese Robot Ban Is Latest U.S. Tech Sovereignty Move</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_humanoid_ieee_honors_robotics_pioneer_t_2026/">IEEE Honors Robotics Pioneer Toshio Fukuda</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_neura_robotics_showcases_full_2026/">NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_humanoid_hello_robot_sets_the_standard_2026/">Hello Robot Sets the Standard for Practical, Safe Home Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_abb_robotics_collaborates_with_2026/">ABB Robotics collaborates with Roche to bring physical AI to laboratories</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_underwater_ribbon_cutting_ushe_2026/">Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_wittenstein_2024/">Wittenstein</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">targets</span>
+              <span class="rel-desc">Wittensteintargets工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_battery_robots_could_turn_e_waste_into_2026/">Robots Could Turn E-Waste Into a Source of Legacy Chips</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_humanoid_home_robot_safety_is_all_about_2026/">Home Robot Safety Is All About Relationships</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_productive_robotics_equips_man_2026/">Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_indro_robotics_launches_axiom_2026/">InDro Robotics Launches Axiom: A Budget-Friendly Humanoid-Style Platform for Physical AI Research</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">targets</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_robot_safety_is_now_3d_sonair_2026/">Robot safety is now 3D: Sonair unveils world&#39;s first safety-certified 3D ultrasonic sensor for human-robot collaboration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_orbbec_unveils_robot_free_data_2026/">Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_ieee_video_friday_do_robots_even_ne_2026/">Video Friday: Do Robots Even Need Legs?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Video Friday: Do Robots Even Need Legs?提及工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_dexrobot_unveils_full_dexterou_2026/">DexRobot Unveils Full Dexterous Hand Series and New DexTele Teleoperation System at Automate 2026</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_x_square_robot_secures_four_co_2026/">X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion Valuation in Push for Physical AI Foundation Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">targets</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_actuator_video_friday_ai_gives_robot_ha_2026/">Video Friday: AI Gives Robot Hands Humanlike Dexterity</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ramadurai_effect_of_human_involvement_on_2022/">人类参与对回收中人机协作工作性能与流畅性的影响</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">人类参与对回收中人机协作工作性能与流畅性的影响discusses工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_nvidia_how_jaiveer_singh_is_helping_r_2026/">How Jaiveer Singh Is Helping Robots — and Developers — Move Faster</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_industry_revolutionizing_construction_i_2026/">Revolutionizing Construction: Introducing the World&#39;s First Fleet-Capable Downward Drilling Robot, Now Commercially Available to Accelerate Data Center Construction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_company_hippo_harvest_closes_30_millio_2026/">Hippo Harvest Closes $30 Million Series C Led by Cox Farms, Scaling Robotic Indoor Growing Technology and Expanding to New Markets</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_technology_tech_mahindra_and_viam_partner_2026/">Tech Mahindra and Viam partner to scale advanced robotics and automation solutions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_report_battery_ground_robots_inherit_the_kill_2026/">Ground Robots Inherit the Kill Zone</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Ground Robots Inherit the Kill Zone提及工业制造。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_market_humanoid_global_forecast/">人形机器人全球市场预测</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">人形机器人全球市场预测discusses工业制造。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_application_industrial_manufacturing"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_black_robotic_versus_human_teleopera_2025/">
+          <span class="entry-type">论文</span>
+          <h3>远程超声的机器人与人类遥操作对比</h3>
+          <p>本文在超声体模上对比了机器人（Franka Panda）与人类（混合现实HoloLens…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_neura_robotics_showcases_full_2026/">
+          <span class="entry-type">技术</span>
+          <h3>NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026</h3>
+          <p>NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_abb_robotics_collaborates_with_2026/">
+          <span class="entry-type">报告</span>
+          <h3>ABB Robotics collaborates with Roche to bring physical AI to laboratories</h3>
+          <p>• Agreement lays the foundation for a new era of digitally connected labs enabled by intelligent…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_new_indro_cortex_controller_si_2026/">
+          <span class="entry-type">零部件</span>
+          <h3>NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION</h3>
+          <p>InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_nvidia_how_jaiveer_singh_is_helping_r_2026/">
+          <span class="entry-type">报告</span>
+          <h3>How Jaiveer Singh Is Helping Robots — and Developers — Move Faster</h3>
+          <p>When Jaiveer Singh talks about robots, he doesn’t begin with spectacle. He begins with…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_hippo_harvest_closes_30_millio_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Hippo Harvest Closes $30 Million Series C Led by Cox Farms, Scaling Robotic Indoor Growing Technology and Expanding to New Markets</h3>
+          <p>Funding accelerates the company&#39;s next phase of growth as Hippo Harvest brings indoor-grown organic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_tech_mahindra_and_viam_partner_2026/">
+          <span class="entry-type">技术</span>
+          <h3>Tech Mahindra and Viam partner to scale advanced robotics and automation solutions</h3>
+          <p>Tech Mahindra&#39;s global enterprise clients can harness the power of physical AI with direct access to…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_humanoid_video_friday_give_robots_a_han_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Video Friday: Give Robots a Hand</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_humanoid_hello_robot_sets_the_standard_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Hello Robot Sets the Standard for Practical, Safe Home Robots</h3>
+          <p>Many roboticists (and at least one robotics journalist) have been seduced by the dream of a robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_actuator_video_friday_heavy_robotic_mac_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Video Friday: Heavy Robotic Machinery Operates Itself</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_wittenstein_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>Wittenstein</h3>
+          <p>Wittenstein是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_humanoid_ieee_honors_robotics_pioneer_t_2026/">
+          <span class="entry-type">报告</span>
+          <h3>IEEE Honors Robotics Pioneer Toshio Fukuda</h3>
+          <p>Toshio Fukuda has been blazing trails for most of his career. He is considered to be one of the most…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_humanoid_proposed_chinese_robot_ban_is_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Proposed Chinese Robot Ban Is Latest U.S. Tech Sovereignty Move</h3>
+          <p>The American Security Robotics Act, a bipartisan bill introduced in March by Senators Tom Cotton…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_sabanto_inc_and_verdant_roboti_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Sabanto Inc. and Verdant Robotics Announce Technical Integration of Autonomous Tractor Operation with SharpShooter Plant-Level Precision Application</h3>
+          <p>The two systems now operate as a single, integrated solution, enabling fully autonomous field work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_locus_robotics_helps_hellofres_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio</h3>
+          <p>Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_battery_ground_robots_inherit_the_kill_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Ground Robots Inherit the Kill Zone</h3>
+          <p>Borys Drozhak has a vision: a frontline almost free of humans, patrolled by flying drones and ground…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_denso_exhibits_high_performanc_2026/">
+          <span class="entry-type">报告</span>
+          <h3>DENSO Exhibits High-Performance Robots at Automate 2026</h3>
+          <p>DENSO to demonstrate its precision 4-axis, 6-axis and collaborative</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_actuator_video_friday_ai_gives_robot_ha_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Video Friday: AI Gives Robot Hands Humanlike Dexterity</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_robot_safety_is_now_3d_sonair_2026/">
+          <span class="entry-type">零部件</span>
+          <h3>Robot safety is now 3D: Sonair unveils world&#39;s first safety-certified 3D ultrasonic sensor for human-robot collaboration</h3>
+          <p>The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified to fulfil all…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_underwater_ribbon_cutting_ushe_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory</h3>
+          <p>Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory的定义与定位 UnderwateEvent marked…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_battery_robots_could_turn_e_waste_into_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Robots Could Turn E-Waste Into a Source of Legacy Chips</h3>
+          <p>Electronic waste is moving up on regulatory agendas in 2026. New European waste-shipment rules,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_actuator_will_robotics_have_a_chatgpt_m_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Will Robotics Have a ChatGPT Moment?</h3>
+          <p>Over the next few decades, billions of autonomous, AI-powered robots will work alongside people in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">技术</span>
+          <h3>EtherCAT</h3>
+          <p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_verisilicon_introduces_cpp2000_2000/">
+          <span class="entry-type">零部件</span>
+          <h3>VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics and Mobile Vision Applications</h3>
+          <p>Enhancing image quality and visual perception for moving-camera systems</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_abb_robotics_completes_its_ai_2026/">
+          <span class="entry-type">报告</span>
+          <h3>ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous forklift</h3>
+          <p>-The new Flexley Stack F712 extends ABB Robotics’ AI-powered Visual SLAM technology to autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_techman_robot_empowers_manufac_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI Solutions at Automate 2026</h3>
+          <p>Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_revolutionizing_construction_i_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Revolutionizing Construction: Introducing the World&#39;s First Fleet-Capable Downward Drilling Robot, Now Commercially Available to Accelerate Data Center Construction</h3>
+          <p>-Downward drilling robot delivers up to 10x faster drilling speeds than traditional methods and has…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_dexrobot_unveils_full_dexterou_2026/">
+          <span class="entry-type">报告</span>
+          <h3>DexRobot Unveils Full Dexterous Hand Series and New DexTele Teleoperation System at Automate 2026</h3>
+          <p>This year&#39;s show features a dedicated Humanoid Robot Pavilion and a sharpened focus on AI-driven…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_humanoid_daimon_robotics_wants_to_give_2026/">
+          <span class="entry-type">报告</span>
+          <h3>DAIMON Robotics Wants to Give Robot Hands a Sense of Touch</h3>
+          <p>This article is brought to you by DAIMON Robotics . This April, Hong Kong-based DAIMON Robotics has…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_productive_robotics_equips_man_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS</h3>
+          <p>Booth #237138 in the north building will focus on abrasive machining, sawing and finishing with a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_orbbec_unveils_robot_free_data_2026/">
+          <span class="entry-type">零部件</span>
+          <h3>Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale</h3>
+          <p>Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_indro_robotics_launches_axiom_2026/">
+          <span class="entry-type">报告</span>
+          <h3>InDro Robotics Launches Axiom: A Budget-Friendly Humanoid-Style Platform for Physical AI Research</h3>
+          <p>New modular robot lowers barrier to humanoid development; first customer units already shipping</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_market_humanoid_global_forecast/">
+          <span class="entry-type">市场细分</span>
+          <h3>人形机器人全球市场预测</h3>
+          <p>对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_cobot_announces_second_generat_2026/">
+          <span class="entry-type">技术</span>
+          <h3>Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical AI to Real Operations</h3>
+          <p>One production-tested platform combines mobility, bimanual manipulation, and self-directed task…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_eldakruri_evaluating_the_economic_feasib_2025/">
+          <span class="entry-type">论文</span>
+          <h3>评估卡塔尔机器人与自动化劳动力替代的经济可行性</h3>
+          <p>该2025年研究通过使用卡塔尔特定的劳动力、工资和机器人进口数据校准资本增强型柯布-道格拉斯模型，并模拟至2030年的乐观、现状和悲观采用情景，评估机器人与自动化能否在经济上替代卡塔尔低技能外籍劳工。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_vention_and_fanuc_america_join_2026/">
+          <span class="entry-type">技术</span>
+          <h3>Vention and FANUC America Join Forces to Bring Industrial Robots to Vention&#39;s AI-Driven Hardware and Software Platform</h3>
+          <p>Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD robots powered by…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_deepx_and_sixfab_launch_deepx_2026/">
+          <span class="entry-type">报告</span>
+          <h3>DEEPX and Sixfab Launch &#39;DEEPX AI HAT&#39; to Drive Edge Physical AI on Raspberry Pi</h3>
+          <p>-Partnership delivers high-performance, low-power AI acceleration directly to the global Raspberry…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_danish_robotics_startup_enters_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Danish robotics startup enters the industrial truck market already crowned a winner</h3>
+          <p>The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 2026 for a self-driving…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_boston_dynamics_atlas_2024/">
+          <span class="entry-type">机器人系统</span>
+          <h3>波士顿动力 Atlas</h3>
+          <p>概述 波士顿动力 Atlas是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lichtenfeld_lessons_from_the_field_a_case_2025/">
+          <span class="entry-type">论文</span>
+          <h3>实地经验：工业紧急情况下机器人干预的案例研究</h3>
+          <p>本文记录了首次将移动操作机器人部署到化工厂火灾现场以中和爆炸性气体危险的案例：配备定制半刚性机械臂延伸装置的Telerob Telemax…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_humanoid_home_robot_safety_is_all_about_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Home Robot Safety Is All About Relationships</h3>
+          <p>The International Organization for Standardization (ISO) is updating its 12-year-old safety…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_ieee_video_friday_do_robots_even_ne_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Video Friday: Do Robots Even Need Legs?</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_ieee_what_makes_a_job_dull_dirty_or_2026/">
+          <span class="entry-type">报告</span>
+          <h3>What Makes a Job Dull, Dirty, or Dangerous?</h3>
+          <p>For years, the field of robotics has used the terms “dull, dirty, and dangerous” (DDD) to describe…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>NVIDIA Jetson AGX Orin</h3>
+          <p>NVIDIA Jetson AGX Orin是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_figure_02/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Figure 02</h3>
+          <p>概述 Figure 02是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_application_logistics_warehouse/">
+          <span class="entry-type">应用场景</span>
+          <h3>物流仓储</h3>
+          <p>在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_inorbitai_demonstrates_the_fut_2026/">
+          <span class="entry-type">报告</span>
+          <h3>InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical AI at Automate 2026</h3>
+          <p>Experience the future of the sentient enterprise as InOrbit.AI orchestrates a groundbreaking…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_industry_logic_highlights_the_logic_pal_2026/">
+          <span class="entry-type">报告</span>
+          <h3>Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation</h3>
+          <p>Revolutionary robot delivers end-to-end automation across supply chains</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_x_square_robot_secures_four_co_2026/">
+          <span class="entry-type">报告</span>
+          <h3>X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion Valuation in Push for Physical AI Foundation Models</h3>
+          <p>New funding supports development of embodied AI foundation models, commercial deployments and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ramadurai_effect_of_human_involvement_on_2022/">
+          <span class="entry-type">论文</span>
+          <h3>人类参与对回收中人机协作工作性能与流畅性的影响</h3>
+          <p>一项包含6名参与者与UR3e协作机器人的被试内研究表明，在遮挡移除、间距优化和夹持选择中增加人类辅助，可将可回收杯子分拣任务的机器人准确率从33.3%提升至100%，并改善主观流畅性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_report_humanoid_german_economy_calls_for_faste_2026/">
+          <span class="entry-type">报告</span>
+          <h3>German Economy Calls for Faster Humanoid Robotics Adoption</h3>
+          <p>概述 82 % consider humanoid robots drivers of future innovation</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>인간 수준 구동 점수 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/benchmark/">벤치마크</a>
+    <span>/</span>
+    <span class="breadcrumb-current">인간 수준 구동 점수</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">벤치마크</div>
+      <h1>인간 수준 구동 점수</h1>
+      <p class="entry-name-en">Human-Level Actuation Score</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">평가 및 벤치마크</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">검증 및 시장 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Definition sourced from the Human-Level Actuation for Humanoids paper; detailed measurement protocols require full-text review. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>작업 공간 커버리지, 토크-전력 요구사항, 대역폭, 효율 및 열 지속성을 종합하여 휴인oid 로봇의 구동이 인간 수준에 얼마나 가까운지 정량화하는 스칼라 분해 가능 벤치마크 지표입니다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.06796" target="_blank" rel="noopener">Human-Level Actuation for Humanoids</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>스칼라이며 분해 가능한 벤치마크 지표로, 작업 공간 범위, 토크-전력 요구량, 대역폭, 효율성 및 열 지속 가능성을 종합하여 휴머노이드 로봇의 구동 능력이 인간 수준에 얼마나 근접했는지를 정량화합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">휴먼 수준 구동 점수의 정의와 위치</h3>
+<p>휴먼 수준 구동 점수는 <strong>평가 벤치마크</strong> 유형에 속하며, 영문 명칭은 <em>Human-Level Actuation Score</em>입니다.
+스칼라이며 분해 가능한 벤치마크 지표로, 작업 공간 범위, 토크-전력 요구량, 대역폭, 효율성 및 열 지속 가능성을 종합하여 휴머노이드 로봇의 구동 능력이 인간 수준에 얼마나 근접했는지를 정량화합니다.</p>
+<h3 id="_4">휴먼 수준 구동 점수의 주요 정보</h3>
+<p>다음은 휴먼 수준 구동 점수에 대한 상세 설명을 정리한 것으로, 중·영문 독자 모두 참고할 수 있습니다.</p>
+<h2 id="_5">초록</h2>
+<blockquote>
+<p><strong>생활 속 예시</strong>: 이는 종합 신용 점수와 같습니다. 단순히 소득만 보는 것이 아니라 저축, 부채, 상환 기록, 소비 습관 등을 하나의 숫자로 통합하여 개인의 재정 건강도를 측정하는 것입니다.</p>
+<p><strong>자연어 논리</strong>: 휴먼 수준 구동 점수(HLAS)는 스칼라이며 분해 가능한 벤치마크 지표로, 작업 공간 범위, 토크-전력 포락선, 대역폭, 효율성 및 열 지속 가능성을 종합합니다. 기준 인체를 1.0으로 삼아 다양한 로봇 구동 시스템이 '인간 수준'에서 얼마나 떨어져 있는지를 정량화하며, 다양한 액추에이터 기술을 통일된 척도에서 비교할 수 있도록 합니다.</p>
+</blockquote>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_human_equivalence_envelope/">인간 등가 영역</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">휴머노이드를 위한 인간 수준 구동</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">평가 대상</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">휴머노이드를 위한 인간 수준 구동</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">생산</span>
+              <span class="rel-desc">본 논문은 휴머노이드 구동을 위한 스칼라 벤치마크 지표로 HLAS를 제안한다.</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gallant_voxel_grid_based_human_2025/">Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">생산</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">생산</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">토크 제어 휴머노이드 로봇에서의 마찰 활용</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">생산</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_human_equivalence_envelope/">인간 등가 영역</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_collins_benchmarking_simulated_robotic_2019/">실제 세계 데이터셋을 통한 시뮬레이션 로봇 조작 벤치마킹</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_human_to_humanoid_rea_2024/">Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">생산</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">토크 제어 휴머노이드 로봇에서의 마찰 활용</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">평가 대상</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gait_adaptive_perceptive_human_2025/">Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">생산</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_human_humanoid_coordi_2025/">Learning Human-Humanoid Coordination for Collaborative Object Carrying</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">생산</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">다계층 복잡 공급망에서의 자재 통합 트레이드오프 활용</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">평가 대상</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_human_level_actuation_score"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_human_to_humanoid_rea_2024/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹采集人类操作和机器人状态，再通过IK/动作重定向转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">
+          <span class="entry-type">논문</span>
+          <h3>토크 제어 휴머노이드 로봇에서의 마찰 활용</h3>
+          <p>관절 마찰을 상쇄하는 대신 안정화 감쇄 항으로 활용하는 토크 제어 프레임워크를 제안하고, iCub 휴머노이드 로봇에서 고정 기반 및 부유 기반 확장을 검증함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">
+          <span class="entry-type">논문</span>
+          <h3>CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</h3>
+          <p>본 논문은 Autodesk Inventor에서 경로를 그려 비전문 사용자가 산업용 로봇을 프로그래밍할 수 있는 CAD 기반 인간-로봇 인터페이스를 제안하며, 레이저 카메라와…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드를 위한 인간 수준 구동</h3>
+          <p>ISB 기반 자유도 아틀라스, 인간 등가 영역(HEE) 및 인간 수준 구동 점수(HLAS)를 통해 휴머노이드의 &#39;인간 수준&#39; 구동을 측정 가능하게 하는 재현 가능한 벤치마크…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_human_equivalence_envelope/">
+          <span class="entry-type">기술</span>
+          <h3>인간 등가 영역</h3>
+          <p>작업별 구간에서 동일한 관절 각도와 각속도에서 인간의 토크와 전력을 동시에 충족해야 하는 관절별 작동 요구사항 정의입니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gallant_voxel_grid_based_human_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</h3>
+          <p>Gallant…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">
+          <span class="entry-type">논문</span>
+          <h3>관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</h3>
+          <p>본 논문은 저렴한 변형 게이지 관절 토크 센서와 하나의 고관절 장착 힘/토크 센서를 융합하여 로봇 다리의 접촉을 감지하고 위치를 추정하며 접촉력을 추정하는 일반화된 운동량 기반…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gait_adaptive_perceptive_human_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用下视深度相机和 U-Net…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chauhan_exploitation_of_material_conso_2023/">
+          <span class="entry-type">논문</span>
+          <h3>다계층 복잡 공급망에서의 자재 통합 트레이드오프 활용</h3>
+          <p>Chauhan 등은 공급망 계층 간 다대다 자재 관계를 활용하고 수량 할인, 재고 보유 및 운송 비용을 포함하는 혼합정수선형계획법 프레임워크를 제안하고, 항공우주 제조 테스트…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_collins_benchmarking_simulated_robotic_2019/">
+          <span class="entry-type">논문</span>
+          <h3>실제 세계 데이터셋을 통한 시뮬레이션 로봇 조작 벤치마킹</h3>
+          <p>Collins 등은 실제 세계 모션 캡처 데이터셋과 표준화된 프로토콜을 배포하여 연구자들이 23개의 운동학적 및 동역학적 메트릭을 사용하여 sim2real 격차를 정량화할 수…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_human_humanoid_coordi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Human-Humanoid Coordination for Collaborative Object Carrying</h3>
+          <p>COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">휴먼 수준 구동 점수의 정의와 위치</a></li>
+<li><a href="#_4">휴먼 수준 구동 점수의 주요 정보</a></li>
+</ul>
+</li>
+<li><a href="#_5">초록</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

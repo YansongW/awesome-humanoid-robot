@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</h1>
+      <p class="entry-name-en">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.11173v4.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2512.11173v4 Announce Type: replace Abstract: Achieving precise positioning of the mobile manipulator&#39;s base is essential for successful manipulation actions that follow. Most of the RGB-based navigation systems only guarantee coarse, meter-level accuracy, making them less suitable for the precise positioning phase of mobile manipulation. This gap prevents manipulation policies from operating within the distribution of their training demonstrations, resulting in frequent execution failures. We address this gap by introducing an object-centric imitation learning framework for last-meter navigation, enabling a quadruped mobile manipulator robot to achieve manipulation-ready positioning using only RGB observations from its onboard cameras. Our method conditions the navigation policy on three inputs: goal images, multi-view RGB observations from the onboard cameras, and a text prompt specifying the target object. A language-driven segmentation module and a spatial score-matrix decoder then supply explicit object grounding and relative pose reasoning. Using real-world data from a single object instance within a category, the system generalizes to unseen object instances across diverse environments with challenging lighting and background conditions. To comprehensively evaluate this, we introduce two metrics: an edge-alignment metric, which uses ground truth orientation, and an object-alignment metric, which evaluates how well the robot visually faces the target. Under these metrics, our policy achieves 74.58% success in edge-alignment and 89.42% success in object-alignment when positioning relative to unseen target objects. These results show that precise last-meter navigation can be achieved at a category-level without depth, LiDAR, or map priors, enabling a scalable pathway toward unified mobile manipulation. Project page: https://rpm-lab-umn.github.io/category-level-last-meter-nav/</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.11173" target="_blank" rel="noopener">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이동 조작기의 베이스를 정밀하게 위치시키는 것은 이후의 성공적인 조작 동작에 필수적입니다. 대부분의 RGB 기반 내비게이션 시스템은 대략적인 미터 단위의 정확도만 보장하므로, 이동 조작의 정밀 위치 결정 단계에는 적합하지 않습니다. 이러한 격차로 인해 조작 정책이 훈련 시연의 분포 내에서 작동하지 못해 실행 실패가 빈번하게 발생합니다. 우리는 이러한 격차를 해소하기 위해 객체 중심 모방 학습 프레임워크를 최종 미터 내비게이션에 도입하여, 사족 이동 조작 로봇이 탑재 카메라의 RGB 관측만으로 조작 준비가 완료된 위치 결정을 달성할 수 있도록 합니다. 우리의 방법은 내비게이션 정책을 세 가지 입력(목표 이미지, 탑재 카메라의 다중 뷰 RGB 관측, 대상 객체를 지정하는 텍스트 프롬프트)에 조건화합니다. 언어 기반 분할 모듈과 공간 점수 행렬 디코더가 명시적 객체 근거 및 상대적 자세 추론을 제공합니다. 카테고리 내 단일 객체 인스턴스의 실제 데이터를 사용하여, 시스템은 까다로운 조명 및 배경 조건을 가진 다양한 환경에서 보지 못한 객체 인스턴스로 일반화됩니다. 이를 종합적으로 평가하기 위해, 우리는 두 가지 지표(지상 실측 방향을 사용하는 에지 정렬 지표와 로봇이 시각적으로 대상을 얼마나 잘 마주하는지 평가하는 객체 정렬 지표)를 도입합니다. 이 지표 하에서, 우리의 정책은 보지 못한 대상 객체에 대해 위치 결정 시 에지 정렬에서 74.58%, 객체 정렬에서 89.42%의 성공률을 달성합니다. 이러한 결과는 깊이, LiDAR 또는 지도 사전 정보 없이도 카테고리 수준에서 정밀한 최종 미터 내비게이션이 가능함을 보여주며, 통합 이동 조작을 위한 확장 가능한 경로를 제공합니다. 프로젝트 페이지: https://rpm-lab-umn.github.io/category-level-last-meter-nav/</p>
+<h2 id="_2">핵심 내용</h2>
+<p>이동 조작기의 베이스를 정밀하게 위치시키는 것은 이후의 성공적인 조작 동작에 필수적입니다. 대부분의 RGB 기반 내비게이션 시스템은 대략적인 미터 단위의 정확도만 보장하므로, 이동 조작의 정밀 위치 결정 단계에는 적합하지 않습니다. 이러한 격차로 인해 조작 정책이 훈련 시연의 분포 내에서 작동하지 못해 실행 실패가 빈번하게 발생합니다. 우리는 이러한 격차를 해소하기 위해 객체 중심 모방 학습 프레임워크를 최종 미터 내비게이션에 도입하여, 사족 이동 조작 로봇이 탑재 카메라의 RGB 관측만으로 조작 준비가 완료된 위치 결정을 달성할 수 있도록 합니다. 우리의 방법은 내비게이션 정책을 세 가지 입력(목표 이미지, 탑재 카메라의 다중 뷰 RGB 관측, 대상 객체를 지정하는 텍스트 프롬프트)에 조건화합니다. 언어 기반 분할 모듈과 공간 점수 행렬 디코더가 명시적 객체 근거 및 상대적 자세 추론을 제공합니다. 카테고리 내 단일 객체 인스턴스의 실제 데이터를 사용하여, 시스템은 까다로운 조명 및 배경 조건을 가진 다양한 환경에서 보지 못한 객체 인스턴스로 일반화됩니다. 이를 종합적으로 평가하기 위해, 우리는 두 가지 지표(지상 실측 방향을 사용하는 에지 정렬 지표와 로봇이 시각적으로 대상을 얼마나 잘 마주하는지 평가하는 객체 정렬 지표)를 도입합니다. 이 지표 하에서, 우리의 정책은 보지 못한 대상 객체에 대해 위치 결정 시 에지 정렬에서 74.58%, 객체 정렬에서 89.42%의 성공률을 달성합니다. 이러한 결과는 깊이, LiDAR 또는 지도 사전 정보 없이도 카테고리 수준에서 정밀한 최종 미터 내비게이션이 가능함을 보여주며, 통합 이동 조작을 위한 확장 가능한 경로를 제공합니다. 프로젝트 페이지: https://rpm-lab-umn.github.io/category-level-last-meter-nav/</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_learning_category_level_last_m_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

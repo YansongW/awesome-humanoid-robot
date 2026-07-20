@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Boston Dynamics Atlas · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/robot_system/">Robot System</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Boston Dynamics Atlas</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Robot System</div>
+      <h1>Boston Dynamics Atlas</h1>
+      <p class="entry-name-en">Boston Dynamics Atlas</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.9.2 Boston Dynamics Atlas：液压驱动到电动驱动 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>High-performance humanoid robot; latest generation uses all-electric actuation for dynamic athletic tasks.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://bostondynamics.com/atlas" target="_blank" rel="noopener">Boston Dynamics Atlas</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Boston Dynamics' Atlas is an important robotic system in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>Boston Dynamics Atlas is renowned for its highly dynamic motion. Early versions used hydraulic actuation, enabling running, jumping, and backflips; the new Atlas released in 2024 has shifted to fully electric actuation, emphasizing maintainability and commercial viability[35].</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: hydraulic actuation, electric actuation, highly dynamic motion, backflip, maintainability</p>
+<ul>
+<li><strong>Hydraulic actuation</strong>: A drive method that uses high-pressure fluid to transmit power.</li>
+<li><strong>Electric actuation</strong>: A drive method that uses motors and reducers to transmit power.</li>
+<li><strong>Highly dynamic motion</strong>: Fast, high-acceleration, high-impact movement.</li>
+<li><strong>Backflip</strong>: A backward aerial somersault, demonstrating high power and control capability.</li>
+<li><strong>Maintainability</strong>: The ease with which a system can be repaired and serviced.</li>
+</ul>
+</div>
+<p>The hydraulic Atlas excels in high power density and impact resistance, but suffers from issues such as noise, oil leakage, and complex maintenance. The electric Atlas, through high-torque-density motors and advanced control, aims to reduce operating and maintenance costs while preserving performance.</p>
+<p>```mermaid
+flowchart TD
+    A["Atlas Hydraulic Version"] --&gt; B["High Power Density"]
+    A --&gt; C["Highly Dynamic Motion"]
+    A --&gt; D["Noise/Leakage/Complex Maintenance"]
+    B --&gt; E["Running/Jumping/Backflip"]
+    C --&gt; E
+    D --&gt; F["Motivation for Electrification"]
+    G["Atlas Electric Version"] --&gt; H["Quiet/Clean/Easy Maintenance"]
+    G --&gt; I["Performance Retention"]
+    F --&gt; G</p>
+<h2 id="_1">개요</h2>
+<p>보스턴 다이내믹스의 Atlas는 휴머노이드 로봇 분야에서 중요한 로봇 시스템입니다. 아래 내용은 프로젝트 Wiki에서 정리한 내용으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Boston Dynamics Atlas는 고동적 운동으로 유명합니다. 초기 버전은 유압 구동 방식을 채택하여 달리기, 점프, 백플립이 가능했습니다. 2024년에 공개된 새로운 Atlas는 완전 전기 구동 방식으로 전환되며 유지보수성과 상업화 가능성을 강조했습니다[35].</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 유압 구동, 전기 구동, 고동적 운동, 백플립, 유지보수성</p>
+<ul>
+<li><strong>유압 구동(hydraulic actuation)</strong>: 고압 액체를 이용해 동력을 전달하는 구동 방식.</li>
+<li><strong>전기 구동(electric actuation)</strong>: 모터와 감속기를 이용해 동력을 전달하는 구동 방식.</li>
+<li><strong>고동적 운동(highly dynamic motion)</strong>: 빠르고 큰 가속도와 높은 충격을 동반하는 운동.</li>
+<li><strong>백플립(backflip)</strong>: 공중에서 뒤로 회전하는 동작으로, 높은 출력과 제어 능력을 보여줌.</li>
+<li><strong>유지보수성(maintainability)</strong>: 시스템의 수리 및 유지보수 용이성.</li>
+</ul>
+</div>
+<p>유압 Atlas의 장점은 높은 출력 밀도와 충격 저항 능력에 있지만, 소음, 오일 누출, 복잡한 유지보수 등의 문제가 있습니다. 전기 Atlas는 고토크 밀도 모터와 첨단 제어를 통해 성능을 유지하면서도 운영 및 유지보수 비용을 낮추려고 합니다.</p>
+<p>```mermaid
+flowchart TD
+    A["Atlas 유압 버전"] --&gt; B["높은 출력 밀도"]
+    A --&gt; C["고동적 운동"]
+    A --&gt; D["소음/누출/복잡한 유지보수"]
+    B --&gt; E["달리기/점프/백플립"]
+    C --&gt; E
+    D --&gt; F["전동화 동기"]
+    G["Atlas 전기 버전"] --&gt; H["조용함/청결함/유지보수 용이"]
+    G --&gt; I["성능 유지"]
+    F --&gt; G</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_unitree_h1_humanoid_robot_2024/">Unitree H1 Humanoid Robot</a>
+              <span class="rel-desc">Boston Dynamics Atlas mentions Unitree H1 Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_system_figure_02/">Figure 02</a>
+              <span class="rel-desc">Boston Dynamics Atlas mentions Figure 02.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a>
+              <span class="rel-desc">Boston Dynamics Atlas mentions Tesla Optimus.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_ubtech_walker_s_2024/">UBTECH Walker S</a>
+              <span class="rel-desc">Boston Dynamics Atlas mentions UBTECH Walker S.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">Tesla Optimus compares with Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deng_embodiment_in_socially_interac_2019/">Embodiment in Socially Interactive Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Embodiment in Socially Interactive Robots discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_explosive_output_to_enhance_ju_2025/">Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_berkeley_humanoid_lite_an_open_2025/">Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_allgeuer_child_sized_3d_printed_igus_hu_2015/">Child-sized 3D Printed igus Humanoid Open Platform</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Child-sized 3D Printed igus Humanoid Open Platform discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_toward_humanoid_brain_body_co_2025/">Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_extreme_dynamic_symmetry_enabl_2026/">Extreme Dynamic Symmetry Enables Omnidirectional and Multifunctional Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Extreme Dynamic Symmetry Enables Omnidirectional and Multifunctional Robots discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_apptronik_apollo_2024/">Apptronik Apollo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Apptronik Apollo mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_osmo_open_source_tactile_glove_2025/">OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pomerleau_robotics_in_snow_and_ice_2022/">Robotics in Snow and Ice</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Robotics in Snow and Ice discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_berkeley_humanoid_a_research_p_2024/">Berkeley Humanoid: A Research Platform for Learning-based Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Berkeley Humanoid: A Research Platform for Learning-based Control mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_orca_open_source_reliable_cost_2025/">ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_control_of_humanoid_robots_wit_2025/">Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation Models discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_micro_wheeled_leg_robot_2026/">Micro-Wheeled_leg-Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Micro-Wheeled_leg-Robot discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_oem_figure_ai/">Figure AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">Figure AI compares with Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_agibot_yuanzheng_a1_2024/">AgiBot Yuanzheng A1</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">AgiBot Yuanzheng A1 mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_1x_technologies_neo_2024/">1X Technologies NEO</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">1X Technologies NEO discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_drama_trunk_pitch_oscillations_for_j_2019/">Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_aldarondo_fauna_sprout_a_lightweight_app_2026/">Fauna Sprout: A lightweight, approachable, developer-ready humanoid robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Fauna Sprout: A lightweight, approachable, developer-ready humanoid robot discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_embracing_evolution_a_call_for_2025/">Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot discusses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_application_industrial_manufacturing/">Industrial Manufacturing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Industrial Manufacturing uses Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fahmideh_a_study_of_influential_factors_2018/">A study of influential factors in designing self-reconfigurable robots for green manufacturing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">A study of influential factors in designing self-reconfigurable robots for green manufacturing mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dijit_a_robotic_head_for_an_ac_2025/">DIJIT: A Robotic Head for an Active Observer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DIJIT: A Robotic Head for an Active Observer mentions Boston Dynamics Atlas.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_planetary_roller_screw/">Planetary Roller Screw</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_robot_boston_dynamics_atlas_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_robot_apptronik_apollo_2024/">
+          <span class="entry-type">Robot System</span>
+          <h3>Apptronik Apollo</h3>
+          <p>Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_application_industrial_manufacturing/">
+          <span class="entry-type">Application Scenario</span>
+          <h3>Industrial Manufacturing</h3>
+          <p>The application of humanoid robots to tasks such as assembly, machine tending, inspection, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_aldarondo_fauna_sprout_a_lightweight_app_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Fauna Sprout: A lightweight, approachable, developer-ready humanoid robot</h3>
+          <p>This paper introduces Sprout, a 1.07 m, 22.7 kg developer-ready humanoid robot platform from Fauna…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dijit_a_robotic_head_for_an_ac_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DIJIT: A Robotic Head for an Active Observer</h3>
+          <p>DIJIT: A Robotic Head for an Active Observer is a 2025 work on hardware design for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">Component</span>
+          <h3>Planetary Roller Screw</h3>
+          <p>A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_osmo_open_source_tactile_glove_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer</h3>
+          <p>OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer is a 2025 work on hardware design…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deng_embodiment_in_socially_interac_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Embodiment in Socially Interactive Robots</h3>
+          <p>A systematic review of 65 empirical studies from 2003 to 2017 that introduces three taxonomies for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_oem_figure_ai/">
+          <span class="entry-type">OEM</span>
+          <h3>Figure AI</h3>
+          <p>American humanoid robotics startup developing the Figure humanoid robot for logistics and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_micro_wheeled_leg_robot_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Micro-Wheeled_leg-Robot</h3>
+          <p>Micro-Wheeled_leg-Robot is a 2026 work on hardware design for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_orca_open_source_reliable_cost_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning</h3>
+          <p>ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control (FOC)</h3>
+          <p>A motor-control method that transforms three-phase currents into a rotating dq reference frame to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_unitree_h1_humanoid_robot_2024/">
+          <span class="entry-type">Robot System</span>
+          <h3>Unitree H1 Humanoid Robot</h3>
+          <p>Full-size electric humanoid with 25-27 DoF, proprietary high-torque joints, peak leg-joint torque up…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_drama_trunk_pitch_oscillations_for_j_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots</h3>
+          <p>This 2019 arXiv paper by Drama and Badri-Spröwitz uses a trunk-equipped spring-loaded inverted…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fahmideh_a_study_of_influential_factors_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>A study of influential factors in designing self-reconfigurable robots for green manufacturing</h3>
+          <p>Fahmideh and Lammers (2018) propose a preliminary research model of design-time, run-time, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_embracing_evolution_a_call_for_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</h3>
+          <p>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_explosive_output_to_enhance_ju_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint</h3>
+          <p>Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_extreme_dynamic_symmetry_enabl_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Extreme Dynamic Symmetry Enables Omnidirectional and Multifunctional Robots</h3>
+          <p>This paper introduces dynamic isotropy as a whole-body measure of uniform attainable center-of-mass…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_berkeley_humanoid_a_research_p_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Berkeley Humanoid: A Research Platform for Learning-based Control</h3>
+          <p>Berkeley Humanoid: A Research Platform for Learning-based Control is a 2024 work on hardware design…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_control_of_humanoid_robots_wit_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation Models</h3>
+          <p>Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation Models is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_berkeley_humanoid_lite_an_open_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot</h3>
+          <p>Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pomerleau_robotics_in_snow_and_ice_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Robotics in Snow and Ice</h3>
+          <p>A survey chapter that defines robotics in snow and ice, taxonomizes cryosphere sub-domains, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_toward_humanoid_brain_body_co_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery</h3>
+          <p>Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_1x_technologies_neo_2024/">
+          <span class="entry-type">Robot System</span>
+          <h3>1X Technologies NEO</h3>
+          <p>Humanoid robot using soft, biomimetic pneumatic muscle actuation for safe human interaction.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_figure_02/">
+          <span class="entry-type">Robot System</span>
+          <h3>Figure 02</h3>
+          <p>Humanoid robot developed by Figure AI for logistics and manufacturing, featuring onboard…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_tesla_optimus/">
+          <span class="entry-type">Robot System</span>
+          <h3>Tesla Optimus</h3>
+          <p>Tesla&#39;s general-purpose humanoid robot program, with stated goals of factory deployment and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_allgeuer_child_sized_3d_printed_igus_hu_2015/">
+          <span class="entry-type">Paper</span>
+          <h3>Child-sized 3D Printed igus Humanoid Open Platform</h3>
+          <p>Presents the igus Humanoid Open Platform, a 90 cm child-sized, low-cost, fully 3D-printed humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_agibot_yuanzheng_a1_2024/">
+          <span class="entry-type">Robot System</span>
+          <h3>AgiBot Yuanzheng A1</h3>
+          <p>Chinese humanoid robot using harmonic integrated joints and planetary-reducer joint motors.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_ubtech_walker_s_2024/">
+          <span class="entry-type">Robot System</span>
+          <h3>UBTECH Walker S</h3>
+          <p>Industrial humanoid robot for factory operations, featuring all-electric modular joints.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

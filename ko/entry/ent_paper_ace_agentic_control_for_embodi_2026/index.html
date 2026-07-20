@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning</h1>
+      <p class="entry-name-en">ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04162v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.04162v1 Announce Type: new Abstract: Open-ended tabletop manipulation requires agents to not only understand natural language but also adapt to dynamic environments and execution failures. We present ACE (Agentic Control for Embodied Manipulation), a zero-shot workflow reasoning framework for tabletop pick-and-place from natural language. Rather than relying on direct low-level action mapping, ACE combines agentic workflow reasoning with two robot-facing executable skills: a visual grounding interface and a reusable pick-and-place primitive. To bridge semantic reasoning and physical control, the active sub-goal is grounded into a mask-mediated vision-action interface. This unified mask specifies the target object and destination, is tracked over time, exposed for human verification, and ultimately passed to a task-agnostic downstream policy for execution. Crucially, ACE operates in a closed loop supported by a multi-timescale memory. After an action is executed, the system automatically verifies whether the intended sub-goal succeeded, using the outcome to advance, retry, repair, or replan. This enables online adaptation to user corrections, scene changes, and physical failures. We evaluate ACE on logically complex, long-horizon tasks, including zero-shot multi-step equation formation with number cubes and constraint-based object retrieval. ACE demonstrates task-level zero-shot generalization on novel semantic constraints and randomized tabletop scenes without task-specific retraining. Specifically, while standard end-to-end baselines struggle to complete these logically demanding tasks, ACE achieves a 50% success rate in equation formation and a 70% success rate in constraint retrieval. This contrast demonstrates that explicit workflow reasoning and mask-mediated control offer a robust, practical route toward adaptable robotic manipulation.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.04162" target="_blank" rel="noopener">ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>개방형 테이블탑 조작은 에이전트가 자연어를 이해할 뿐만 아니라 동적 환경과 실행 실패에 적응해야 합니다. 본 논문에서는 자연어 기반 테이블탑 집기 및 놓기 작업을 위한 제로샷 워크플로 추론 프레임워크인 ACE(Agentic Control for Embodied Manipulation)를 제시합니다. ACE는 직접적인 저수준 행동 매핑에 의존하는 대신, 에이전트 워크플로 추론과 두 가지 로봇 실행 가능 스킬(시각적 접지 인터페이스 및 재사용 가능한 집기-놓기 프리미티브)을 결합합니다. 의미 추론과 물리적 제어를 연결하기 위해 활성 하위 목표는 마스크 매개 시각-행동 인터페이스로 접지됩니다. 이 통합 마스크는 대상 객체와 목적지를 지정하고, 시간에 따라 추적되며, 인간 검증을 위해 노출되고, 최종적으로 작업에 구애받지 않는 다운스트림 정책에 전달되어 실행됩니다. 핵심적으로 ACE는 다중 시간 척도 메모리로 지원되는 폐쇄 루프에서 작동합니다. 행동이 실행된 후 시스템은 의도된 하위 목표가 성공했는지 자동으로 확인하고, 결과를 사용하여 진행, 재시도, 수리 또는 재계획을 수행합니다. 이를 통해 사용자 수정, 장면 변화 및 물리적 실패에 대한 온라인 적응이 가능합니다. 우리는 ACE를 숫자 큐브를 사용한 제로샷 다단계 방정식 형성 및 제약 기반 객체 검색을 포함한 논리적으로 복잡하고 장기적인 작업에서 평가합니다. ACE는 작업별 재훈련 없이 새로운 의미 제약 조건과 무작위 테이블탑 장면에서 작업 수준의 제로샷 일반화를 보여줍니다. 구체적으로, 표준 엔드투엔드 기준선이 이러한 논리적으로 까다로운 작업을 완료하는 데 어려움을 겪는 반면, ACE는 방정식 형성에서 50%의 성공률, 제약 검색에서 70%의 성공률을 달성합니다. 이러한 대비는 명시적 워크플로 추론과 마스크 매개 제어가 적응형 로봇 조작을 위한 강력하고 실용적인 경로를 제공함을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>개방형 테이블탑 조작은 에이전트가 자연어를 이해할 뿐만 아니라 동적 환경과 실행 실패에 적응해야 합니다. 본 논문에서는 자연어 기반 테이블탑 집기 및 놓기 작업을 위한 제로샷 워크플로 추론 프레임워크인 ACE(Agentic Control for Embodied Manipulation)를 제시합니다. ACE는 직접적인 저수준 행동 매핑에 의존하는 대신, 에이전트 워크플로 추론과 두 가지 로봇 실행 가능 스킬(시각적 접지 인터페이스 및 재사용 가능한 집기-놓기 프리미티브)을 결합합니다. 의미 추론과 물리적 제어를 연결하기 위해 활성 하위 목표는 마스크 매개 시각-행동 인터페이스로 접지됩니다. 이 통합 마스크는 대상 객체와 목적지를 지정하고, 시간에 따라 추적되며, 인간 검증을 위해 노출되고, 최종적으로 작업에 구애받지 않는 다운스트림 정책에 전달되어 실행됩니다. 핵심적으로 ACE는 다중 시간 척도 메모리로 지원되는 폐쇄 루프에서 작동합니다. 행동이 실행된 후 시스템은 의도된 하위 목표가 성공했는지 자동으로 확인하고, 결과를 사용하여 진행, 재시도, 수리 또는 재계획을 수행합니다. 이를 통해 사용자 수정, 장면 변화 및 물리적 실패에 대한 온라인 적응이 가능합니다. 우리는 ACE를 숫자 큐브를 사용한 제로샷 다단계 방정식 형성 및 제약 기반 객체 검색을 포함한 논리적으로 복잡하고 장기적인 작업에서 평가합니다. ACE는 작업별 재훈련 없이 새로운 의미 제약 조건과 무작위 테이블탑 장면에서 작업 수준의 제로샷 일반화를 보여줍니다. 구체적으로, 표준 엔드투엔드 기준선이 이러한 논리적으로 까다로운 작업을 완료하는 데 어려움을 겪는 반면, ACE는 방정식 형성에서 50%의 성공률, 제약 검색에서 70%의 성공률을 달성합니다. 이러한 대비는 명시적 워크플로 추론과 마스크 매개 제어가 적응형 로봇 조작을 위한 강력하고 실용적인 경로를 제공함을 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ace_agentic_control_for_embodi_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

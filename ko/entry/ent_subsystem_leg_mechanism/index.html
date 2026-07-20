@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>다리 기구 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/component/">부품</a>
+    <span>/</span>
+    <span class="breadcrumb-current">다리 기구</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">부품</div>
+      <h1>다리 기구</h1>
+      <p class="entry-name-en">Leg Mechanism</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-09.md#9.2.13 下肢关键尺寸与公差 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>고관절·무릎·발목 관절을 포함하는 다리 연결 기구의 용동·구조 설계로, 하중 지지·충격 흡수·이동을 담당.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>다리 기구는 휴머노이드 로봇 분야의 중요한 부품입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고용입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>하체 링크 길이, 관절 축선 오프셋 및 조립 공차는 운동학적 정밀도, 조립 가능성 및 동적 성능을 직접 결정합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 링크 길이, 관절 축선 오프셋, 베어링 시트 구멍 공차, 동축도, H7/g6, 형상 공차</p>
+<ul>
+<li><strong>링크 길이(link length)</strong>: 인접한 관절 축선 사이의 수직 거리.</li>
+<li><strong>관절 축선 오프셋(joint axis offset)</strong>: 실제 회전 축선과 명목 축선 사이의 위치 편차.</li>
+<li><strong>베어링 시트 구멍 공차(bearing housing tolerance)</strong>: 베어링을 설치하는 구멍의 직경 허용 변동 범위.</li>
+<li><strong>동축도(coaxiality)</strong>: 두 축 또는 구멍의 축선이 일치하는 정도를 나타내는 형상 공차.</li>
+<li><strong>H7/g6</strong>: 구멍 H7, 축 g6의 끼워맞춤 기호로, 헐거운 끼워맞춤을 나타냄.</li>
+<li><strong>형상 공차(geometric dimensioning and tolerancing, GD&amp;T)</strong>: 부품의 기하학적 특징이 이상적인 형상, 방향, 위치 및 흔들림에 대해 허용되는 변동량을 제어함.</li>
+</ul>
+</div>
+<p><strong>일반적인 링크 길이 범위</strong>: 키 1.6–1.8 m의 휴머노이드 로봇을 예로 들면:</p>
+<table>
+<thead>
+<tr>
+<th>치수</th>
+<th>범위</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>대퇴 길이 <span class="arithmatex">\(l_{\text{thigh}}\)</span></td>
+<td>0.38–0.45 m</td>
+<td>고관절-무릎 축선 거리</td>
+</tr>
+<tr>
+<td>하퇴 길이 <span class="arithmatex">\(l_{\text{shank}}\)</span></td>
+<td>0.38–0.45 m</td>
+<td>무릎-발목 축선 거리</td>
+</tr>
+<tr>
+<td>발 길이</td>
+<td>0.22–0.28 m</td>
+<td>발뒤꿈치-발끝</td>
+</tr>
+<tr>
+<td>발 너비</td>
+<td>0.08–0.12 m</td>
+<td>측면 기울기 안정성에 영향</td>
+</tr>
+<tr>
+<td>고관절 간격</td>
+<td>0.16–0.22 m</td>
+<td>양쪽 고관절 축선 거리</td>
+</tr>
+</tbody>
+</table>
+<p><strong>관절 축선 오프셋</strong>: 고관절, 무릎, 발목의 세 축이 시상면에서 동일 평면에 있어야 하는 오차는 <span class="arithmatex">\(\pm 0.3\,\text{mm}\)</span> 이내로 제어해야 하며, 그렇지 않으면 보행 중 측면 흔들림 모멘트가 발생합니다. 고관절 yaw 축과 pitch/roll 축의 직각도는 <span class="arithmatex">\(\le 0.05°\)</span>를 권장합니다.</p>
+<p><strong>베어링 시트 구멍 공차</strong>: 구름 베어링의 외륜과 시트 구멍은 일반적으로 H7/k6(과도 끼워맞춤) 또는 H7/g6(조립이 용이한 헐거운 끼워맞춤)을 사용합니다. 관절 출력축과 베어링 내륜은 일반적으로 k6/m6(약간의 억지 끼워맞춤)을 사용합니다. 베어링 시트 구멍의 원통도는 <span class="arithmatex">\(\le 0.01\,\text{mm}\)</span>, 조립 기준에 대한 동축도는 <span class="arithmatex">\(\le 0.02\,\text{mm}\)</span>를 요구합니다.</p>
+<p><strong>끼워맞춤 예시</strong>: 알루미늄 합금 하우징에 깊은 홈 볼 베어링 6206을 설치할 때, 외륜 직경 <span class="arithmatex">\(D=62\,\text{mm}\)</span>: 시트 구멍은 H7(<span class="arithmatex">\(+0.030/0\)</span>)을 선택하여 외륜 끼워맞춤 후 약간의 헐거움 또는 과도 상태가 되도록 함; 축 저널은 k6(<span class="arithmatex">\(+0.021/+0.002\)</span>)를 선택하여 내륜이 축과 함께 회전하도록 보장.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["하체 링크"] --&gt; B["대퇴 L1"]
+    A --&gt; C["하퇴 L2"]
+    A --&gt; D["발 L3"]
+    B --&gt; E["고관절-무릎 동축도 ≤0.02 mm"]
+    C --&gt; E
+    D --&gt; F["발목-발 평면도 ≤0.02 mm"]
+    E --&gt; G["베어링 시트 구멍 H7/k6"]</code></pre>
+<p><strong>GD&amp;T의 하체 적용 예시</strong>: 무릎 관절 출력 플랜지를 예로 들면:</p>
+<table>
+<thead>
+<tr>
+<th>특징</th>
+<th>공차</th>
+<th>기준</th>
+<th>기능</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>플랜지 단면 평면도</td>
+<td><span class="arithmatex">\(0.02\,\text{mm}\)</span></td>
+<td>—</td>
+<td>하퇴 단면과 밀착</td>
+</tr>
+<tr>
+<td>단면의 축 저널에 대한 직각도</td>
+<td><span class="arithmatex">\(0.03\,\text{mm}\)</span></td>
+<td>A</td>
+<td>하퇴 축선의 직각도 보장</td>
+</tr>
+<tr>
+<td>축 저널 원통도</td>
+<td><span class="arithmatex">\(0.01\,\text{mm}\)</span></td>
+<td>A</td>
+<td>베어링 끼워맞춤 정밀도</td>
+</tr>
+<tr>
+<td>볼트 구멍 위치도</td>
+<td><span class="arithmatex">\(\phi 0.1\,\text{mm}\)</span></td>
+<td>A</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>공차 체인 예시</strong>: 고관절에서 발목 관절까지의 동축도 공차 체인은 다음을 포함: 고관절 하우징 베어링 시트 동축도, 대퇴관 양단 플랜지 동축도, 무릎 하우징 동축도, 하퇴관 동축도, 발목 하우징 동축도. 각 항목을 <span class="arithmatex">\(\pm 0.02\,\text{mm}\)</span>로 제어하면 최악의 경우 누적이 <span class="arithmatex">\(\pm 0.10\,\text{mm}\)</span>가 되며, 선별 조립 또는 조정 심(shim)을 통해 보상해야 함.</p>
+<p>```mermaid
+flowchart LR
+    A["고관절 하우징"] --&gt;|"±0.02"| B["대퇴관"]
+    B --&gt;|"±0.02"| C["무릎 하우징"]
+    C --&gt;|"±0.02"| D["하퇴관"]
+    D --&gt;|"±0.02"| E["발목 하우징"]
+    E --&gt; F["동축도 누적 ±0.10"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_forward_kinematics/">정욕동학</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_subsystem_leg_mechanism"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>역욕동학</h3>
+          <p>원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>정욕동학</h3>
+          <p>주어진 관절 각도로부터 동차 변환 사슬 또는 지수곱을 이용해 말단 동작기 위치·방향을 계산하는 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,2822 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>모델 예측 제어(MPC) · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">모델 예측 제어(MPC)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>모델 예측 제어(MPC)</h1>
+      <p class="entry-name-en">Model Predictive Control (MPC)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">2단계 · 이족 플랫폼</span>
+        <span class="roadmap-badge-role">핵심</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1017/9781139061799" target="_blank" rel="noopener">F. Borrelli, A. Bemporad, and M. Morari, Predictive Control for Linear and Hybrid Systems, Cambridge, 2017</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1007/s10514-016-9572-3" target="_blank" rel="noopener">S. Kuindersma et al., Optimization-based Locomotion Planning, Estimation, and Control Design for Atlas, Autonomous Robots, 2016</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>관련 개체</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">is_based_on</span>
+            <a href="/ko/entry/ent_formalism_euler_lagrange_equations/">오일러-라그랑주 방정식</a>
+            
+              
+                
+              
+              <span class="rel-desc">MPC for humanoids commonly uses floating-base dynamics derived from Euler-Lagrange or Newton-Euler equations as the prediction model.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">solves</span>
+            <a href="/ko/entry/ent_qp_standard_form/">표준 이차 계획법(QP)</a>
+            
+              
+                
+              
+              <span class="rel-desc">Each MPC iteration solves a quadratic program (QP) when the dynamics and constraints are linearized.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">requires</span>
+            <a href="/ko/entry/ent_foundation_convex_optimization/">볼록 최적화</a>
+            
+              
+                
+              
+              <span class="rel-desc">Stability and tractability of MPC rely on convex optimization theory and efficient QP solvers.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>예측 모델을 기반으로 유한 시간 영역 최적 제어 문제를 반복적으로 풀고 첫 번째 제어량만 실행하는 최적 제어 방법.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="mpc">모델 예측 제어(MPC)의 정의와 위치</h3>
+<p>모델 예측 제어(MPC)는 <strong>방법</strong> 유형에 속합니다. 소속 분야는 AI 모델 및 알고리즘입니다. 가치 사슬 계층: 지능 계층. 예측 모델을 기반으로 유한 시간 영역 최적 제어 문제를 반복적으로 풀고 첫 번째 제어량만 실행하는 최적 제어 방법입니다. 영어 명칭은 <em>Model Predictive Control (MPC)</em>입니다. 한국어 명칭은 <em>모델 예측 제어(MPC)</em>입니다.</p>
+<h3 id="mpc_1">모델 예측 제어(MPC)의 수학적 및 원리적 기초</h3>
+<p>모델 예측 제어(MPC)는 관련 수학 이론과 물리 법칙에 기반합니다. 그 전제 가정, 제약 조건 및 유도 과정을 이해하는 것이 이 방법을 올바르게 적용하기 위한 전제입니다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수 및 수렴성 또는 안정성 보장에 주목해야 합니다.
+고차원, 저구동, 강결합 시스템인 휴머노이드 로봇에서 모델 예측 제어(MPC)는 일반적으로 실시간성, 정밀도 및 강건성 사이에서 균형을 맞춰야 합니다.</p>
+<h3 id="_3">알고리즘 단계와 구현 요점</h3>
+<p>모델 예측 제어(MPC)를 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 튜닝 전략을 명확히 해야 합니다.
+수치적 방법, 선형대수 솔버 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있습니다.
+동시에 모델 오차, 센서 노이즈 및 액추에이터 포화와 같은 엔지니어링 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 보장해야 합니다.</p>
+<h3 id="_4">전형적인 응용과 한계</h3>
+<p>모델 예측 제어(MPC)는 휴머노이드 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있습니다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제입니다.</p>
+<h3 id="_5">관련 태그</h3>
+<ul>
+<li>control</li>
+<li>optimization</li>
+<li>locomotion</li>
+<li>gait</li>
+<li>whole_body_control</li>
+<li>realtime</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_6">휴머노이드 로봇 시스템에서의 역할</h3>
+<p>휴머노이드 로봇 산업 체인에서 핵심 방법 중 하나로서 모델 예측 제어(MPC)는 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_operator_task_jacobian/">작업 Jacobian</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_pid_control/">PID 제어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_convex_optimization/">볼록 최적화</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">해결</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_qp_standard_form/">표준 이차 계획법(QP)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_capture_point/">캡처 포인트</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_formalism_euler_lagrange_equations/">오일러-라그랑주 방정식</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_hover_versatile_humanoid_contr_2024/">HOVER 다용도 휨로봇 제어기</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_control_operators_for_interact_2025/">Control Operators for Interactive Character Animation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sombolestan_hierarchical_adaptive_loco_man_2023/">사족 로봇을 위한 계층적 적응형 이동-조작 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_stabilizing_humanoid_robot_tra_2025/">Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_safefall_learning_protective_c_2026/">SafeFall: Learning Protective Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gentlehumanoid_learning_upper_2025/">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_urbanvla_a_vision_language_act_2025/">UrbanVLA: A Vision-Language-Action Model for Urban Micromobility</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_upkie/">Upkie Wheeled Biped Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_concept_demo_to_product_gap/">데모-제품 간격</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_twist2_scalable_portable_and_h_2025/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zheng_model_based_control_of_planar_2022/">제한된 환경에서 크롤링을 위한 평면 압전 인치웜 소프트 로봇의 모델 기반 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_towards_proprioception_aware_e_2025/">Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_pace_physics_augmentation_for_2026/">PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hiking_in_the_wild_a_scalable_2026/">Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">제트 동력 비행 휴머노이드 로봇의 고장 감지 및 결허용 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_humanoidexo_scalable_whole_bod_2025_1/">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_omnixtreme_breaking_the_genera_2026/">OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_humanoid_video_friday_watch_this_runnin_2026/">Video Friday: Watch This Running Robot Not Fall Down Stairs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper__2025/">人形机器人运动与操作｜控制规划和学习的进展与挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">접촉 상태에서의 로봇 조작에 대한 서베이</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_humanoid_locomotion_w_2024/">Learning Humanoid Locomotion with Perceptive Internal Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_seec_stable_end_effector_contr_2025/">SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_neary_improving_pre_trained_vision_l_2025/">Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_any2any_efficient_cross_embodi_2026/">Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_let_humanoids_hike_integrative_2025/">Let Humanoids Hike! Integrative Skill Development on Complex Trails</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">대규모 군집의 다중 로봇 암묵적 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_reference_free_sampling_based_2025/">Reference-Free Sampling-Based Model Predictive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_state_nav_stability_aware_trav_2025/">STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_senbaslar_rlss_real_time_decentralized_c_2023/">RLSS: 선형 공간 분리를 이용한 실시간 분산 협력 무통신 다중 로봇 궤적 계획</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">기반</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_u_joint_caams_experimental_eva_2026/">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_curobov2_dynamics_aware_motion_2026/">cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_sampled_data_control_based_con_2020/">샘플링 데이터 제어 기반 분수 차수 다중 에이전트 시스템의 합의</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_mosaic_modular_scalable_autono_2026/">MOSAIC: Modular Scalable Autonomy for Intelligent Coordination of Heterogeneous Robotic Teams</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">다수의 사족 로봇을 이용한 케이블 견인 하중의 협업 내비게이션 및 조작</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p12_3_1/">世界模型 / WAM 构建</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_top_time_optimization_policy_f_2025/">TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hand_eye_autonomous_delivery_l_2025/">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_a_hierarchical_model_based_sys_2025/">A Hierarchical, Model-Based System for High-Performance Humanoid Soccer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_x_op_cross_morphology_whole_bo_2026/">X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_tactile_and_vision_conditioned_2026/">Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_arxiv_202507_lovon_legged_open_2025/">arXiv 2025.07, LOVON: Legged Open-Vocabulary Object Navigator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p7_2_1/">基础站立与行走仿真</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bjelonic_keep_rollin_whole_body_motion_2019/">Keep Rollin&#39; – 바퀴 달린 사족 로봇의 전신 동작 제어 및 계획</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_motionwam_towards_foundation_w_2026/">MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_hierarchical_qp_wbc/">계층적 QP 전신 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hu_active_uncertainty_reduction_f_2022/">인간-로봇 상호작용을 위한 능동적 불확실성 감소: 암시적 이중 제어 접근법</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">로봇 제어를 위한 적응형 커널 베이지안 최적화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_levy_meta_learning_online_dynamics_2025/">Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_design_and_control_of_a_bipeda_2024/">Design and Control of a Bipedal Robotic Character</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hafo_a_force_adaptive_control_2025/">HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_float_drone_for_physical_inter_2026/">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_reinforcement_learning_with_da_2026/">Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_to_balance_motor_ther_2026/">Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_behavior_foundation_model_for_2025/">Behavior Foundation Model for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_dreamzero_world_action_models_2026/">DreamZero: World Action Models are Zero-shot Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_xu_wam_flow_parallel_coarse_to_fi_2025/">WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_predictive_sampling_real_time_2022/">Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_rl_with_data_bootstrapping_for_2025/">RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_differentiable_reacha_2025/">Learning Differentiable Reachability Maps for Optimization-based Humanoid Motion Generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_agile_striker_skills_2026_1/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_husky_humanoid_skateboarding_s_2026/">HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_textop_real_time_interactive_t_2026/">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_doublyaware_dual_planning_and_2025/">DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_all_terrain_locomotio_2026/">Learning All-Terrain Locomotion for a Planetary Rover with Actively Articulated Suspension</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_impedance_guided_programmable_2026/">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_td_grpc_temporal_difference_le_2025/">TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_optimizing_bipedal_locomotion_2025/">Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_haninger_model_predictive_impedance_con_2022/">인간 및 환경 상호작용을 위한 가우시안 프로세스 기반 모델 예측 임피던스 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_motion_planning_in_compressed_2026/">Motion Planning in Compressed Representation Spaces</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_whole_body_model_predictive_co_2025/">Whole-Body Model-Predictive Control of Legged Robots with MuJoCo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_shin_infusing_model_predictive_cont_2021/">동적 환경에서 모바일 로봇을 위한 메타 강화 학습에 모델 예측 제어 통합</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_morphquad_morphable_quadrotor_2026/">MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_floating_base_dynamics/">부유 기반 동역학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">is_prerequisite_for</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_aldana_lopez_designing_controllers_with_pre_2023/">유계 시변 이득을 사용하여 사전 정의된 수렴 시간 한계를 갖는 제어기 설계</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_flam_foundation_model_based_bo_2025/">FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_strouhal_aware_model_predictiv_2026/">Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_aerodynamics_for_the_2025/">Learning Aerodynamics for the Control of Flying Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hover_versatile_neural_whole_b_2025/">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_heracles_bridging_precise_trac_2026/">Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_eiffert_predicting_responses_to_a_robo_2020/">생성 순환 신경망을 이용한 로봇의 미래 동작에 대한 반응 예측</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_anchorvla_bridging_discrete_de_2026/">AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_kkt_conditions/">Karush-Kuhn-Tucker (KKT) 조건</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_structured_4d_latent_predictiv_2026/">Structured 4D Latent Predictive Model for Robot Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_opening_the_sim_to_real_door_f_2025_1/">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_human_aware_physical_human_rob_2024/">다중 공중 로봇을 이용한 인간 인식 물리적 인간-로봇 협력 운반 및 조작</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_a_hierarchical_framework_for_h_2025/">A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_humanoid_vla_towards_universal_2025/">Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_openloong/">OpenLoong (Qinglong) Open-Source Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_safeflow_real_time_text_driven_2026/">SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_humanoidexo_scalable_whole_bod_2025/">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_iterative_closed_loop_motion_s_2026/">Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sarkar_planning_robot_motion_using_de_2019/">딥 비주얼 예측을 이용한 로봇 동작 계획</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_quadrupedal_locomotio_2026/">Learning Quadrupedal Locomotion over Challenging Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_a_vision_based_footst_2025/">Learning a Vision-Based Footstep Planner for Hierarchical Walking Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_rapt_model_predictive_out_of_d_2026/">RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_collision_free_humanoid_traver_2026/">Collision-Free Humanoid Traversal in Cluttered Indoor Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">측방 제한 입력력을 가진 공중 로봇 시스템의 전체 자세 추적 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_pilot_a_perceptive_integrated_2026/">PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_neural_control_adjoint_learnin_2026/">Neural Control: Adjoint Learning Through Equilibrium Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_mind_v_hierarchical_world_mode_2026/">MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with RL-based Physical Alignment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_manifold_constrained_hamilton_2026/">Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_shield_safety_on_humanoids_via_2025/">SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">develops</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_mechanical_intelligence_aware_2025/">Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_oehler_accurate_pose_prediction_on_si_2023/">거친 지형에서 이동 지상 로봇을 위한 부호 거리 장의 정확한 자세 예측</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ceer_compliant_end_effector_an_2026/">CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hester_a_real_time_model_based_reinfo_2011/">로봇 제어를 위한 실시간 모델 기반 강화학습 아키텍처</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_robot_trajectron_v3_a_probabil_2026/">Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_thor_towards_human_level_whole_2025/">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_direction_and_trajectory_track_2022/">슬라이딩 모드 컨트롤러와 모델 예측 컨트롤러를 결합한 비홀로노믹 구형 로봇의 방향 및 궤적 추적 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_dynaretarget_dynamically_feasi_2026/">DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p10_2_1/">站立与抗扰平衡控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_dexterous_safe_control_for_hum_2025/">Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hand_eye_autonomous_delivery_l_2025_1/">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ficht_centroidal_state_estimation_an_2023/">하드웨어 제약이 있는 휴머노이드 로봇을 위한 중심 상태 추정 및 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_whole_body_bilateral_teleopera_2025/">Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_unified_structural_hydrodynami_2026/">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_falcon_learning_force_adaptive_2025/">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">통합</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ultra_unified_multimodal_contr_2026/">ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_agile_striker_skills_2026/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_textop_real_time_interactive_t_2026_1/">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_physv2a_reachability_gated_and_2026/">PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_fahmi_vital_vision_based_terrain_awa_2022/">ViTAL: 시각 기반 지형 인식 다리 로봇 보행 기법</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_active_metric_semantic_mapping_2023/">다중 공중 로봇을 위한 능동 메트릭-시맨틱 매핑</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">Extreme Parkour with Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_vofa_visual_object_goal_pushin_2026/">VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_from_experts_to_a_generalist_t_2025/">From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_omnitrack_general_motion_track_2026/">OmniTrack: General Motion Tracking via Physics-Consistent Reference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_anymal_parkour_robust_percepti_2026/">ANYmal Parkour: Robust Perceptive Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hierarchical_visuomotor_contro_2018/">Hierarchical visuomotor control of humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_agile_a_comprehensive_workflow_2026/">AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_shi_koopman_operators_for_modeling_2023/">소프트 로봇 모델링 및 제어를 위한 쿱만 연산자</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_comfree_sim_a_gpu_parallelized_2026/">ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_splitadapter_load_aware_humano_2026/">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_opening_the_sim_to_real_door_f_2025/">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_falcon_learning_force_adaptive_2025_1/">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">통합</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_bruce/">BRUCE (Bipedal Robot Unit with Compliance Enhanced)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_visualmimic_visual_humanoid_lo_2025/">VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_track_any_motions_under_any_di_2025/">Track Any Motions under Any Disturbances</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_eco_energy_constrained_optimiz_2026/">ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_faststair_learning_to_run_up_s_2026/">FastStair: Learning to Run Up Stairs with Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_khazoom_tailoring_solution_accuracy_fo_2024/">족보 로봇을 위한 고속 전신 모델 예측 제어의 해 정확도 조정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learned_motion_matching_2020/">Learned motion matching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_haic_humanoid_agile_object_int_2026/">HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_task_adaptive_design_of_modula_2026/">Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_amanzadeh_predictive_control_with_indire_2024/">사족 보행 로봇의 페이로드 운송을 위한 간접 적응 예측 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_pro_hoi_perceptive_root_guided_2026/">Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_nian_control_your_robot_a_unified_s_2025/">Control Your Robot: A Unified System for Robot Control and Policy Deployment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hierarchical_planning_and_cont_2023/">Hierarchical Planning and Control for Box Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_skillblender_towards_versatile_2025/">SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_underwatervla_dual_brain_visio_2025/">UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_adversarial_locomotion_and_mot_2025/">Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_tang_collaborative_planar_pushing_o_2024/">복잡한 장면에서 다중 로봇을 이용한 다면체 객체의 협동 평면 밀기</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_omni_perception_omnidirectiona_2025/">Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_morgan_model_predictive_actor_critic_2021/">모델 예측 액터-크리틱: 심층 강화학습을 통한 로봇 기능 습득 가속화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_a_co_design_framework_for_high_2026/">A Co-Design Framework for High-Performance Jumping of a Five-Bar Monoped with Actuator Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_humanoid_robot_acrobatics_util_2025/">Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hierarchical_intention_aware_e_2025/">Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_scalable_and_general_whole_bod_2026/">Scalable and General Whole-Body Control for Cross-Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">통합</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_cad_driven_co_design_for_fligh_2025/">CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_full_order_sampling_based_mpc_2024/">Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_lauri_planning_for_robotic_explorati_2015/">전방 시뮬레이션 기반 로봇 탐사 계획</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">인간형 로봇의 견고한 보행을 위한 계층적 차수 축소 모델 예측 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_learning_perceptive_humanoid_l_2025/">Learning Perceptive Humanoid Locomotion over Challenging Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_skater_synthesized_kinematics_2026/">SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_occluding_the_solution_space_p_2026/">Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_model_predictive_control"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_levy_meta_learning_online_dynamics_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving</h3>
+          <p>Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving (Meta-Learning Online…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_active_metric_semantic_mapping_2023/">
+          <span class="entry-type">논문</span>
+          <h3>다중 공중 로봇을 위한 능동 메트릭-시맨틱 매핑</h3>
+          <p>본 논문은 다수의 이종 공중 로봇이 협력하여 컴팩트한 객체 수준 지도를 구축하고 기하학적 및 의미론적 불확실성을 모두 줄이도록 정보가 풍부한 관점을 선택하는 능동 메트릭-시맨틱…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_tang_collaborative_planar_pushing_o_2024/">
+          <span class="entry-type">논문</span>
+          <h3>복잡한 장면에서 다중 로봇을 이용한 다면체 객체의 협동 평면 밀기</h3>
+          <p>이 2024년 arXiv 논문은 여러 이동 로봇이 장애물이 밀집된 복잡한 환경에서 다면체 객체를 협동하여 평면으로 밀 수 있도록 준정적 접촉 모드 생성, 계층적 하이브리드 검색,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humanoid_vla_towards_universal_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</h3>
+          <p>Humanoid-VLA 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹编码成多模态表征，再用扩散策略/流匹配、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_task_adaptive_design_of_modula_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</h3>
+          <p>arXiv:2607.09548v1 Announce Type: new Abstract: Aerial manipulation with multirotor platforms…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_textop_real_time_interactive_t_2026_1/">
+          <span class="entry-type">논문</span>
+          <h3>TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</h3>
+          <p>TextOp…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dexterous_safe_control_for_hum_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm</h3>
+          <p>Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bjelonic_keep_rollin_whole_body_motion_2019/">
+          <span class="entry-type">논문</span>
+          <h3>Keep Rollin&#39; – 바퀴 달린 사족 로봇의 전신 동작 제어 및 계획</h3>
+          <p>본 논문은 ANYmal 사족 로봇의 토크 제어 휠의 비홀onomic 롤링 구속 조건을 긴밀히 통합한 온라인 영점모멘트점 동작 최적화기와 계층적 전신 제어기를 제안하여, 최대 4…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_anchorvla_bridging_discrete_de_2026/">
+          <span class="entry-type">논문</span>
+          <h3>AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning</h3>
+          <p>arXiv:2607.03182v1 Announce Type: new Abstract: Autonomous driving planning requires translating…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_visualmimic_visual_humanoid_lo_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation</h3>
+          <p>VisualMimic…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_adversarial_locomotion_and_mot_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning</h3>
+          <p>这篇工作主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过扩散策略/流匹配、全身控制器/WBC/MPC转成可训练、可复用的关节位置/力矩命令、全身…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_a_vision_based_footst_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Learning a Vision-Based Footstep Planner for Hierarchical Walking Control</h3>
+          <p>Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">
+          <span class="entry-type">논문</span>
+          <h3>접촉 상태에서의 로봇 조작에 대한 서베이</h3>
+          <p>본 서베이는 환경과의 지속적이거나 제어된 접촉을 필요로 하는 로봇 조작 작업을 검토하고, 접촉 작업, 저수준 제어 전략, 스킬 표현, 계획 및 학습 방법을 분류하며, 변형 가능한…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025/">
+          <span class="entry-type">논문</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_stabilizing_humanoid_robot_tra_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning</h3>
+          <p>Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_collision_free_humanoid_traver_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Collision-Free Humanoid Traversal in Cluttered Indoor Scenes</h3>
+          <p>Collision-Free Humanoid Traversal in Cluttered Indoor Scenes is a 2026 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_control_operators_for_interact_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Control Operators for Interactive Character Animation</h3>
+          <p>Control Operators for Interactive Character Animation is a 2025 work on human motion analysis and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_omnitrack_general_motion_track_2026/">
+          <span class="entry-type">논문</span>
+          <h3>OmniTrack: General Motion Tracking via Physics-Consistent Reference</h3>
+          <p>OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge node related to…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_humanoid_locomotion_w_2024/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Humanoid Locomotion with Perceptive Internal Model</h3>
+          <p>Learning Humanoid Locomotion with Perceptive Internal Model is a 2024 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_mosaic_modular_scalable_autono_2026/">
+          <span class="entry-type">논문</span>
+          <h3>MOSAIC: Modular Scalable Autonomy for Intelligent Coordination of Heterogeneous Robotic Teams</h3>
+          <p>arXiv:2601.23038v3 Announce Type: replace Abstract: Mobile robots have become indispensable for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10/">
+          <span class="entry-type">방법</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper__2025/">
+          <span class="entry-type">논문</span>
+          <h3>人形机器人运动与操作｜控制规划和学习的进展与挑战</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、全身控制器/WBC/MPC生成可执行动作命令。关键点是把…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_aerodynamics_for_the_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Aerodynamics for the Control of Flying Humanoid Robots</h3>
+          <p>Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_opening_the_sim_to_real_door_f_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过教师-学生知识迁移、全身控制器/WBC/MPC、闭环纠错/人类干预转成可训练、可…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_safeflow_real_time_text_driven_2026/">
+          <span class="entry-type">논문</span>
+          <h3>SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating</h3>
+          <p>SafeFlow…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_aldana_lopez_designing_controllers_with_pre_2023/">
+          <span class="entry-type">논문</span>
+          <h3>유계 시변 이득을 사용하여 사전 정의된 수렴 시간 한계를 갖는 제어기 설계</h3>
+          <p>본 장에서는 일정하게 유계인 시변 이득을 사용하여 외란이 있는 적분기 체인을 위한 강인한 사전 정의 시간 제어기를 구성하는 재설계 방법론을 제안하고, 균일 리아푸노프 안정성 조건을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_flam_foundation_model_based_bo_2025/">
+          <span class="entry-type">논문</span>
+          <h3>FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation</h3>
+          <p>FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_seec_stable_end_effector_contr_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation</h3>
+          <p>SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_skillblender_towards_versatile_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending</h3>
+          <p>SkillBlender 先从相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_impedance_guided_programmable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</h3>
+          <p>arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_occluding_the_solution_space_p_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation</h3>
+          <p>arXiv:2607.03758v1 Announce Type: new Abstract: Adversarial attacks on motion planning are crucial…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hover_versatile_neural_whole_b_2025/">
+          <span class="entry-type">논문</span>
+          <h3>HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots</h3>
+          <p>HOVER…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_tactile_and_vision_conditioned_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</h3>
+          <p>arXiv:2607.09218v1 Announce Type: new Abstract: Whole-arm manipulation involves direct contact with…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">
+          <span class="entry-type">논문</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humanoid_robot_acrobatics_util_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics</h3>
+          <p>Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_skater_synthesized_kinematics_2026/">
+          <span class="entry-type">논문</span>
+          <h3>SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles</h3>
+          <p>SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_behavior_foundation_model_for_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Behavior Foundation Model for Humanoid Robots</h3>
+          <p>这篇工作主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过教师-学生知识迁移、扩散策略/流匹配、全身控制器/WBC/MPC转成可训练、可复用的全身…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_to_balance_motor_ther_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</h3>
+          <p>arXiv:2605.27046v3 Announce Type: replace Abstract: Motor thermal management is often overlooked in…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p12_3_1/">
+          <span class="entry-type">방법</span>
+          <h3>世界模型 / WAM 构建</h3>
+          <p>世界模型预测能力演示、预测误差指标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humanoidexo_scalable_whole_bod_2025/">
+          <span class="entry-type">논문</span>
+          <h3>HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</h3>
+          <p>HumanoidExo…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shield_safety_on_humanoids_via_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics</h3>
+          <p>SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_a_co_design_framework_for_high_2026/">
+          <span class="entry-type">논문</span>
+          <h3>A Co-Design Framework for High-Performance Jumping of a Five-Bar Monoped with Actuator Optimization</h3>
+          <p>arXiv:2604.06025v2 Announce Type: replace Abstract: The performance of legged robots depends…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_vofa_visual_object_goal_pushin_2026/">
+          <span class="entry-type">논문</span>
+          <h3>VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids</h3>
+          <p>VOFA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_operator_task_jacobian/">
+          <span class="entry-type">연산자</span>
+          <h3>작업 Jacobian</h3>
+          <p>관절 공간 속도와 가속도를 작업 공간의 작업 좌표 속도/가속도로 매핑하는 행렬이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">
+          <span class="entry-type">논문</span>
+          <h3>인간형 로봇의 견고한 보행을 위한 계층적 차수 축소 모델 예측 제어</h3>
+          <p>ALIP 보행 간 동역학에 기반한 40Hz 비선형 보행 계획기와 팔 및 몸통 동역학을 포함하는 500Hz 선형 MPC를 결합한 인간형 로봇 보행을 위한 계층적 차수 축소 MPC…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">
+          <span class="entry-type">논문</span>
+          <h3>다수의 사족 로봇을 이용한 케이블 견인 하중의 협업 내비게이션 및 조작</h3>
+          <p>본 논문은 다수의 사족 로봇이 케이블로 연결된 하중을 목표 지점으로 협업하여 견인하면서 실시간으로 장애물을 회피할 수 있는 온라인 캐스케이드 계획 프레임워크를 제안하며, 병렬화된…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_kkt_conditions/">
+          <span class="entry-type">정리</span>
+          <h3>Karush-Kuhn-Tucker (KKT) 조건</h3>
+          <p>제약이 있는 비선형 계획법의 최적성 필요조건(볼록성 및 제약 자격이 있으면 충분조건이기도 함).</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_morphquad_morphable_quadrotor_2026/">
+          <span class="entry-type">논문</span>
+          <h3>MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</h3>
+          <p>arXiv:2607.02764v1 Announce Type: new Abstract: Infrastructure maintenance, contact-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_rl_with_data_bootstrapping_for_2025/">
+          <span class="entry-type">논문</span>
+          <h3>RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</h3>
+          <p>RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>오일러-라그랑주 방정식</h3>
+          <p>작용 적분의 정지 조건에서 도출된 2차 미분방정식으로, 일반화 좌표에서 기계 시스템의 용동 방정식을 제공.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_textop_real_time_interactive_t_2026/">
+          <span class="entry-type">논문</span>
+          <h3>TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</h3>
+          <p>TextOp…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nava_failure_detection_and_fault_to_2023/">
+          <span class="entry-type">논문</span>
+          <h3>제트 동력 비행 휴머노이드 로봇의 고장 감지 및 결허용 제어</h3>
+          <p>본 논문은 제트 동력 휴머노이드 로봇 iRonCub의 시뮬레이션 비행 중 단일 터빈의 완전한 손실을 감지하고 복구하기 위해 RPM 기반 고장 감지기, 모멘텀 기반 비행 제어기,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_omni_perception_omnidirectiona_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments</h3>
+          <p>Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pilot_a_perceptive_integrated_2026/">
+          <span class="entry-type">논문</span>
+          <h3>PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes</h3>
+          <p>PILOT 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_iterative_closed_loop_motion_s_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control</h3>
+          <p>Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_qp_standard_form/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>표준 이차 계획법(QP)</h3>
+          <p>등식 및 부등식 선형 제약 조건 하에서 이차 목적 함수를 최소화하는 볼록 최적화 문제.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_hierarchical_qp_wbc/">
+          <span class="entry-type">방법</span>
+          <h3>계층적 QP 전신 제어</h3>
+          <p>여러 작업을 우선순위에 따라 쌓아 올리고 연속된 이차 계획법으로 풀어 높은 우선순위 작업을 먼저 만족시키는 전신 제어 방법이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_amanzadeh_predictive_control_with_indire_2024/">
+          <span class="entry-type">논문</span>
+          <h3>사족 보행 로봇의 페이로드 운송을 위한 간접 적응 예측 제어</h3>
+          <p>본 논문은 간접 경사 하강 적응 법칙을 사용하여 저차원 템플릿 모델의 불확실한 매개변수를 온라인으로 추정하고, MPC 제약 내에 볼록 안정성 기준을 포함하며, 하위 레벨 비선형…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zheng_model_based_control_of_planar_2022/">
+          <span class="entry-type">논문</span>
+          <h3>제한된 환경에서 크롤링을 위한 평면 압전 인치웜 소프트 로봇의 모델 기반 제어</h3>
+          <p>Zheng 등은 5개 액추에이터 평면 압전 소프트 로봇을 위한 모델 기반 전체 형상 제어기를 제안한다. 연속 소프트 바디 모델과 베이지안 최적화를 사용해 목표 형상에 대한…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids</h3>
+          <p>Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hester_a_real_time_model_based_reinfo_2011/">
+          <span class="entry-type">논문</span>
+          <h3>로봇 제어를 위한 실시간 모델 기반 강화학습 아키텍처</h3>
+          <p>RTMBA를 제안한다. 샘플 기반 근사 계획과 상호배제 잠금으로 보호된 공유 상태를 갖춘 세 개의 동시 스레드(행동, 모델 학습, 계획)를 사용하여 로봇의 제어 주파수에서 동작을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_mind_v_hierarchical_world_mode_2026/">
+          <span class="entry-type">논문</span>
+          <h3>MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with RL-based Physical Alignment</h3>
+          <p>arXiv:2512.06628v4 Announce Type: replace Abstract: Scalable embodied intelligence is constrained by…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_splitadapter_load_aware_humano_2026/">
+          <span class="entry-type">논문</span>
+          <h3>SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</h3>
+          <p>SplitAdapter 把仿真交互数据转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_haninger_model_predictive_impedance_con_2022/">
+          <span class="entry-type">논문</span>
+          <h3>인간 및 환경 상호작용을 위한 가우시안 프로세스 기반 모델 예측 임피던스 제어</h3>
+          <p>본 논문은 로봇 궤적과 임피던스를 온라인으로 공동 최적화하는 비선형 모델 예측 제어 프레임워크를 제안한다. 소량의 시연으로부터 가우시안 프로세스를 이용해 불확실성 인식 작업 모델을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hierarchical_intention_aware_e_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots</h3>
+          <p>Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_top_time_optimization_policy_f_2025/">
+          <span class="entry-type">논문</span>
+          <h3>TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots</h3>
+          <p>TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots is…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_predictive_sampling_real_time_2022/">
+          <span class="entry-type">논문</span>
+          <h3>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</h3>
+          <p>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_pid_control/">
+          <span class="entry-type">방법</span>
+          <h3>PID 제어</h3>
+          <p>추적 오차의 비례·적분·미분 항의 선형 조합으로 제어 신호를 계산하는 기초 피드백 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_reinforcement_learning_with_da_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation</h3>
+          <p>Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_strouhal_aware_model_predictiv_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion</h3>
+          <p>arXiv:2607.03216v1 Announce Type: new Abstract: Efficient flapping propulsion hinges on operating…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_any2any_efficient_cross_embodi_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking</h3>
+          <p>Any2Any 把视觉、状态和动作数据转成可跟踪的身体目标，并通过源/目标机器人运动学对齐、PEFT…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_scalable_and_general_whole_bod_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Scalable and General Whole-Body Control for Cross-Humanoid Locomotion</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过AMP/运动先验、全身控制器/WBC/MPC转成可训练、可复用的全身轨迹/动作序…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_full_order_sampling_based_mpc_2024/">
+          <span class="entry-type">논문</span>
+          <h3>Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing</h3>
+          <p>Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_khazoom_tailoring_solution_accuracy_fo_2024/">
+          <span class="entry-type">논문</span>
+          <h3>족보 로봇을 위한 고속 전신 모델 예측 제어의 해 정확도 조정</h3>
+          <p>ADMM 기반 QP 솔버를 사용하여 제어 단계당 하나의 SQP 반복으로 전신 비선형 모델 예측 제어 프레임워크를 제시하여 MIT 휴머노이드에서 실시간 속도를 달성하고, 초기 시간…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_oehler_accurate_pose_prediction_on_si_2023/">
+          <span class="entry-type">논문</span>
+          <h3>거친 지형에서 이동 지상 로봇을 위한 부호 거리 장의 정확한 자세 예측</h3>
+          <p>활성 플리퍼를 갖춘 이동 지상 로봇의 거친 지형에서 3차원 자세를 예측하는 반복 기하학적 방법을 제안하며, 실제 궤형 로봇에서 평균 위치 오차 3.11cm, 방향 오차 3.91°를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hiking_in_the_wild_a_scalable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids</h3>
+          <p>Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lauri_planning_for_robotic_explorati_2015/">
+          <span class="entry-type">논문</span>
+          <h3>전방 시뮬레이션 기반 로봇 탐사 계획</h3>
+          <p>Lauri와 Ritala는 로봇 탐사를 상호 정보량 보상을 갖는 POMDP로 공식화하고 개루프 전방 시뮬레이션 계획을 사용하여 풀며, 이러한 계획기와 통합할 수 있는 표본 기반…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">
+          <span class="entry-type">논문</span>
+          <h3>HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</h3>
+          <p>HITTER 先从人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_physv2a_reachability_gated_and_2026/">
+          <span class="entry-type">논문</span>
+          <h3>PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation</h3>
+          <p>arXiv:2607.09365v1 Announce Type: new Abstract: Video-based manipulation provides object-centric…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humanoidexo_scalable_whole_bod_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</h3>
+          <p>HumanoidExo…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_underwatervla_dual_brain_visio_2025/">
+          <span class="entry-type">논문</span>
+          <h3>UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation</h3>
+          <p>UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_x_op_cross_morphology_whole_bo_2026/">
+          <span class="entry-type">논문</span>
+          <h3>X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting</h3>
+          <p>X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting is a paper on 遥操作 for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_humanoid_video_friday_watch_this_runnin_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Video Friday: Watch This Running Robot Not Fall Down Stairs</h3>
+          <p>Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_doublyaware_dual_planning_and_2025/">
+          <span class="entry-type">논문</span>
+          <h3>DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion</h3>
+          <p>DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_towards_proprioception_aware_e_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots</h3>
+          <p>Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_track_any_motions_under_any_di_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Track Any Motions under Any Disturbances</h3>
+          <p>这篇工作先从仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用扩散策略/流匹配生成全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_curobov2_dynamics_aware_motion_2026/">
+          <span class="entry-type">논문</span>
+          <h3>cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots</h3>
+          <p>cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_human_aware_physical_human_rob_2024/">
+          <span class="entry-type">논문</span>
+          <h3>다중 공중 로봇을 이용한 인간 인식 물리적 인간-로봇 협력 운반 및 조작</h3>
+          <p>케이블로 매달린 강체 페이로드를 운반하는 쿼드로터 팀이 인간과 협력하여 6자유도로 물체를 운반 및 조작할 수 있는 계층적 제어 프레임워크를 제안한다. 이 방법은 force 센서가…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">
+          <span class="entry-type">논문</span>
+          <h3>MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</h3>
+          <p>arXiv:2504.16738v3 Announce Type: replace Abstract: Planning long-horizon manipulation motions using…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_faststair_learning_to_run_up_s_2026/">
+          <span class="entry-type">논문</span>
+          <h3>FastStair: Learning to Run Up Stairs with Humanoid Robots</h3>
+          <p>FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_agile_a_comprehensive_workflow_2026/">
+          <span class="entry-type">논문</span>
+          <h3>AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning</h3>
+          <p>AGILE 先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_haic_humanoid_agile_object_int_2026/">
+          <span class="entry-type">논문</span>
+          <h3>HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model</h3>
+          <p>HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_from_experts_to_a_generalist_t_2025/">
+          <span class="entry-type">논문</span>
+          <h3>From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</h3>
+          <p>这篇工作把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过世界模型/视频预测、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hierarchical_visuomotor_contro_2018/">
+          <span class="entry-type">논문</span>
+          <h3>Hierarchical visuomotor control of humanoids</h3>
+          <p>Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_whole_body_model_predictive_co_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Whole-Body Model-Predictive Control of Legged Robots with MuJoCo</h3>
+          <p>Whole-Body Model-Predictive Control of Legged Robots with MuJoCo is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</h3>
+          <p>본 논문은 제트 동력 휴머노이드 iRonCub를 위한 다중 속도 모델 예측 제어 프레임워크를 제안하며, 질량 중심 운동량 역학과 2차 비선형 제트 엔진 역학을 통합하고 MuJoCo…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_agile_striker_skills_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_state_nav_stability_aware_trav_2025/">
+          <span class="entry-type">논문</span>
+          <h3>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</h3>
+          <p>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">
+          <span class="entry-type">논문</span>
+          <h3>대규모 군집의 다중 로봇 암묵적 제어</h3>
+          <p>본 논문은 음영 제어와 볼록 껍질 군집에 기반한 동적 할당 전략을 결합하여 소수의 로봇으로 대량의 도망자를 원하는 궤적으로 유도하는 다중 로봇 군집 제어 방법을 제시한다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_thor_towards_human_level_whole_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</h3>
+          <p>Thor 把相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_capture_point/">
+          <span class="entry-type">원리</span>
+          <h3>캡처 포인트</h3>
+          <p>로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_cad_driven_co_design_for_fligh_2025/">
+          <span class="entry-type">논문</span>
+          <h3>CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids</h3>
+          <p>CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids is a 2025 work on hardware design for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">
+          <span class="entry-type">논문</span>
+          <h3>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</h3>
+          <p>HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_anymal_parkour_robust_percepti_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ANYmal Parkour: Robust Perceptive Locomotion</h3>
+          <p>ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_neural_control_adjoint_learnin_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Neural Control: Adjoint Learning Through Equilibrium Constraints</h3>
+          <p>arXiv:2605.03288v2 Announce Type: replace Abstract: Many physical AI tasks require sequential…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hand_eye_autonomous_delivery_l_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用异构动捕与合成平衡数据、全身控制器/WBC/MPC、分层技能/专家策略生成低层控制器目标、导航/到…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_twist2_scalable_portable_and_h_2025/">
+          <span class="entry-type">논문</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_unified_structural_hydrodynami_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</h3>
+          <p>arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shi_koopman_operators_for_modeling_2023/">
+          <span class="entry-type">논문</span>
+          <h3>소프트 로봇 모델링 및 제어를 위한 쿱만 연산자</h3>
+          <p>2023년 발표된 리뷰로, 데이터 기반 근사법(EDMD/gEDMD)을 활용한 쿱만 연산자 이론을 소프트 로봇의 모델링 및 제어에 적용한 최신 연구를 정리하며, 리프팅 함수 설계,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_fahmi_vital_vision_based_terrain_awa_2022/">
+          <span class="entry-type">논문</span>
+          <h3>ViTAL: 시각 기반 지형 인식 다리 로봇 보행 기법</h3>
+          <p>ViTAL은 공유된 지형 인식 능력을 바탕으로 다리 로봇의 몸 자세와 발판을 동시에 온라인으로 계획하는 시각 기반 보행 계획 전략을 제안하고 HyQ 및 HyQReal 사족 로봇으로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pro_hoi_perceptive_root_guided_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction</h3>
+          <p>Pro-HOI…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ficht_centroidal_state_estimation_an_2023/">
+          <span class="entry-type">논문</span>
+          <h3>하드웨어 제약이 있는 휴머노이드 로봇을 위한 중심 상태 추정 및 제어</h3>
+          <p>하드웨어 제약이 있는 휴머노이드 로봇을 위해 5질량 모델과 근사된 사지 역학을 결합한 중심 상태 추정 및 제어 방법을 제안하여, 힘 센서 없이도 정확한 질량 중심/압력 중심 추정과…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_rapt_model_predictive_out_of_d_2026/">
+          <span class="entry-type">논문</span>
+          <h3>RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots</h3>
+          <p>RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_arxiv_202507_lovon_legged_open_2025/">
+          <span class="entry-type">논문</span>
+          <h3>arXiv 2025.07, LOVON: Legged Open-Vocabulary Object Navigator</h3>
+          <p>arXiv 2025.07, LOVON: Legged Open-Vocabulary Object Navigator is a 2025 work on navigation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_td_grpc_temporal_difference_le_2025/">
+          <span class="entry-type">논문</span>
+          <h3>TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</h3>
+          <p>TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_let_humanoids_hike_integrative_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Let Humanoids Hike! Integrative Skill Development on Complex Trails</h3>
+          <p>Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ultra_unified_multimodal_contr_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation</h3>
+          <p>ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_differentiable_reacha_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Differentiable Reachability Maps for Optimization-based Humanoid Motion Generation</h3>
+          <p>Learning Differentiable Reachability Maps for Optimization-based Humanoid Motion Generation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_a_hierarchical_framework_for_h_2025/">
+          <span class="entry-type">논문</span>
+          <h3>A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs</h3>
+          <p>A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_eiffert_predicting_responses_to_a_robo_2020/">
+          <span class="entry-type">논문</span>
+          <h3>생성 순환 신경망을 이용한 로봇의 미래 동작에 대한 반응 예측</h3>
+          <p>ResponseRNN을 제안하는데, 이는 로봇의 계획된 다음 행동을 조건으로 주변 보행자나 가축의 미래 궤적을 예측하는 시공간 그래프 RNN으로, 근거리 상호작용 예측 정확도를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_eco_energy_constrained_optimiz_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking</h3>
+          <p>ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking is a 2026 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Extreme Parkour with Legged Robots</h3>
+          <p>Extreme Parkour with Legged Robots is a paper on 行走 Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learned_motion_matching_2020/">
+          <span class="entry-type">논문</span>
+          <h3>Learned motion matching</h3>
+          <p>Learned motion matching is a 2020 work on human motion analysis and synthesis for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</h3>
+          <p>본 논문은 비선형 모델 예측 제어(MPC)와 푸아송 안전 함수를 통해 지각 데이터에서 합성된 제어 장벽 함수(CBF) 제약을 결합한 예측 안전 필터를 제안한다. 이동 경계 및…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_opening_the_sim_to_real_door_f_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过教师-学生知识迁移、全身控制器/WBC/MPC、闭环纠错/人类干预转成可训练、可…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_demo_to_product_gap/">
+          <span class="entry-type">개념</span>
+          <h3>데모-제품 간격</h3>
+          <p>데모를 위한 지표와 대량생산·인증 가능한 제품이 요구하는 지표 사이의 체계적 간극.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_manifold_constrained_hamilton_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning</h3>
+          <p>arXiv:2511.03591v2 Announce Type: replace Abstract: Safe multi-agent motion planning (MAMP) under…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_xu_wam_flow_parallel_coarse_to_fi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving</h3>
+          <p>WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_mechanical_intelligence_aware_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation</h3>
+          <p>Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_whole_body_bilateral_teleopera_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation</h3>
+          <p>Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_omnixtreme_breaking_the_genera_2026/">
+          <span class="entry-type">논문</span>
+          <h3>OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control</h3>
+          <p>OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control is a knowledge node…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hu_active_uncertainty_reduction_f_2022/">
+          <span class="entry-type">논문</span>
+          <h3>인간-로봇 상호작용을 위한 능동적 불확실성 감소: 암시적 이중 제어 접근법</h3>
+          <p>시나리오 트리 기반 확률적 동적 프로그래밍을 통해 상호작용적 모션 계획 중 숨겨진 인간 상태에 대한 불확실성을 능동적으로 줄일 수 있는 암시적 이중 제어 확률적 MPC 알고리즘을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_morgan_model_predictive_actor_critic_2021/">
+          <span class="entry-type">논문</span>
+          <h3>모델 예측 액터-크리틱: 심층 강화학습을 통한 로봇 기능 습득 가속화</h3>
+          <p>본 논문은 정보 이론적 모델 예측 rollout과 최대 엔트로피 액터-크리틱 정책 최적화기를 결합하여 모델 편향을 완화하면서 탐색을 유지하는 하이브리드 모델 기반/모델 프리…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_franchi_full_pose_tracking_control_for_2017/">
+          <span class="entry-type">논문</span>
+          <h3>측방 제한 입력력을 가진 공중 로봇 시스템의 전체 자세 추적 제어</h3>
+          <p>본 논문은 주 추력 방향에 주 제어 권한이 있고 측방 힘이 제한된 LBF(Laterally Bounded Force) 항공기 범주를 제안하며, 가능한 경우 위치와 자세의 독립적…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_bruce/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>BRUCE (Bipedal Robot Unit with Compliance Enhanced)</h3>
+          <p>A 70 cm, 4.8 kg child-size bipedal humanoid platform co-developed by Westwood Robotics and UCLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_falcon_learning_force_adaptive_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</h3>
+          <p>FALCON…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dynaretarget_dynamically_feasi_2026/">
+          <span class="entry-type">논문</span>
+          <h3>DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization</h3>
+          <p>DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_upkie/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Upkie Wheeled Biped Robot</h3>
+          <p>A fully open-source wheeled biped robot built from about 3,000 USD of off-the-shelf components plus…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>站立与抗扰平衡控制</h3>
+          <p>站立抗扰实物视频、恢复能力满足指标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">
+          <span class="entry-type">논문</span>
+          <h3>[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</h3>
+          <p>arXiv:2607.00569v1 Announce Type: new Abstract: In this article, we present dynamic modeling, gait…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_agile_striker_skills_2026_1/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gentlehumanoid_learning_upper_2025/">
+          <span class="entry-type">논문</span>
+          <h3>GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</h3>
+          <p>GentleHumanoid 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略转成可训练、可复用的低…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shin_infusing_model_predictive_cont_2021/">
+          <span class="entry-type">논문</span>
+          <h3>동적 환경에서 모바일 로봇을 위한 메타 강화 학습에 모델 예측 제어 통합</h3>
+          <p>오프폴리시 메타 강화 학습과 사건 기반 무작위 모델 예측 제어를 결합하여 동적 장애물 및 보행자 환경에서 모바일 로봇의 안전한 내비게이션을 위한 MPC-PEARL 알고리즘을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hierarchical_planning_and_cont_2023/">
+          <span class="entry-type">논문</span>
+          <h3>Hierarchical Planning and Control for Box Loco-Manipulation</h3>
+          <p>Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_senbaslar_rlss_real_time_decentralized_c_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RLSS: 선형 공간 분리를 이용한 실시간 분산 협력 무통신 다중 로봇 궤적 계획</h3>
+          <p>RLSS는 잡음이 많은 정적 환경에서 다중 로봇을 위한 분산·무통신·재계획 수평 궤적 계획기로, 선형 공간 분리를 사용하여 실행 가능할 때 충돌 회피를 보장하는 볼록 2차 계획법을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p12/">
+          <span class="entry-type">방법</span>
+          <h3>VLA / WAM / AI 算法集成（AI &amp; Perception）</h3>
+          <p>VLA / WAM / AI 算法集成（AI &amp; Perception）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">
+          <span class="entry-type">논문</span>
+          <h3>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</h3>
+          <p>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">기술</span>
+          <h3>EtherCAT</h3>
+          <p>결정론적 관절 제어를 위한 고성능 산업용 이더넷 필드 버스.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_motionwam_towards_foundation_w_2026/">
+          <span class="entry-type">논문</span>
+          <h3>MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation</h3>
+          <p>MotionWAM 的实现路径是先把相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hover_versatile_humanoid_contr_2024/">
+          <span class="entry-type">방법</span>
+          <h3>HOVER 다용도 휨로봇 제어기</h3>
+          <p>다양한 휨로봇 행동 모드를 위한 다용도 신경망 전신 제어기.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">
+          <span class="entry-type">논문</span>
+          <h3>로봇 제어를 위한 적응형 커널 베이지안 최적화</h3>
+          <p>본 논문은 사전 지식 없이 비정상 비용 함수를 모델링하기 위해 적응형 국소/전역 스파르탄 커널을 사용하는 가우시안 프로세스 베이지안 최적화 방법인 스파르탄 베이지안…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_structured_4d_latent_predictiv_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Structured 4D Latent Predictive Model for Robot Planning</h3>
+          <p>arXiv:2607.01166v1 Announce Type: new Abstract: Video predictive models are emerging as a powerful…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nian_control_your_robot_a_unified_s_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Control Your Robot: A Unified System for Robot Control and Policy Deployment</h3>
+          <p>Control Your Robot: A Unified System for Robot Control and Policy Deployment (Control Your Robot),…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_direction_and_trajectory_track_2022/">
+          <span class="entry-type">논문</span>
+          <h3>슬라이딩 모드 컨트롤러와 모델 예측 컨트롤러를 결합한 비홀로노믹 구형 로봇의 방향 및 궤적 추적 제어</h3>
+          <p>비홀로노믹 구형 로봇을 위해 계층적 터미널 슬라이딩 모드 방향 제어기(HTSMC), 모델 예측 명령 계획기(MPC), 이를 결합한 MHH 궤적 추적 프레임워크를 제안하고 하드웨어…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_u_joint_caams_experimental_eva_2026/">
+          <span class="entry-type">논문</span>
+          <h3>U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</h3>
+          <p>arXiv:2607.03321v1 Announce Type: new Abstract: Continuum manipulators mounted on multi-rotor UAVs…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_sampled_data_control_based_con_2020/">
+          <span class="entry-type">논문</span>
+          <h3>샘플링 데이터 제어 기반 분수 차수 다중 에이전트 시스템의 합의</h3>
+          <p>본 논문은 분수 차수 미적분학의 유전적이고 무한한 기억 특성을 고려하기 위해 과거 제어 입력을 보상하는 분수 차수 다중 에이전트 시스템을 위한 분산 샘플링 데이터 제어기를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p7_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>基础站立与行走仿真</h3>
+          <p>仿真视频、稳定行走 10 m、转向/斜坡通过</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_dreamzero_world_action_models_2026/">
+          <span class="entry-type">논문</span>
+          <h3>DreamZero: World Action Models are Zero-shot Policies</h3>
+          <p>DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_all_terrain_locomotio_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Learning All-Terrain Locomotion for a Planetary Rover with Actively Articulated Suspension</h3>
+          <p>arXiv:2606.06790v2 Announce Type: replace Abstract: This paper presents ERNEST, a four-wheeled…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>부유 기반 동역학</h3>
+          <p>이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_husky_humanoid_skateboarding_s_2026/">
+          <span class="entry-type">논문</span>
+          <h3>HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control</h3>
+          <p>HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_quadrupedal_locomotio_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Quadrupedal Locomotion over Challenging Terrain</h3>
+          <p>Learning Quadrupedal Locomotion over Challenging Terrain is a paper on 高影响力精选 High Impact Selection…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_learning_perceptive_humanoid_l_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Perceptive Humanoid Locomotion over Challenging Terrain</h3>
+          <p>Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_optimizing_bipedal_locomotion_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running</h3>
+          <p>Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_motion_planning_in_compressed_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Motion Planning in Compressed Representation Spaces</h3>
+          <p>arXiv:2606.30940v1 Announce Type: new Abstract: Deep learning methods have vastly expanded the…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hafo_a_force_adaptive_control_2025/">
+          <span class="entry-type">논문</span>
+          <h3>HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments</h3>
+          <p>HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments is…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_float_drone_for_physical_inter_2026/">
+          <span class="entry-type">논문</span>
+          <h3>FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</h3>
+          <p>arXiv:2607.04260v1 Announce Type: new Abstract: Aerial physical interaction represents a promising…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</h3>
+          <p>HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_robot_trajectron_v3_a_probabil_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation</h3>
+          <p>arXiv:2607.09315v1 Announce Type: new Abstract: We aim to address the challenge of teleoperating…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_design_and_control_of_a_bipeda_2024/">
+          <span class="entry-type">논문</span>
+          <h3>Design and Control of a Bipedal Robotic Character</h3>
+          <p>Design and Control of a Bipedal Robotic Character is a 2024 work on hardware design for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_urbanvla_a_vision_language_act_2025/">
+          <span class="entry-type">논문</span>
+          <h3>UrbanVLA: A Vision-Language-Action Model for Urban Micromobility</h3>
+          <p>UrbanVLA: A Vision-Language-Action Model for Urban Micromobility (UrbanVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_neary_improving_pre_trained_vision_l_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search</h3>
+          <p>Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_convex_optimization/">
+          <span class="entry-type">기초 학문</span>
+          <h3>볼록 최적화</h3>
+          <p>볼록 집합 위에서 볼록 함수를 최소화하는 수학 분야로, 모든 국소 최적해가 전역 최적해임을 보장한다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_reference_free_sampling_based_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Reference-Free Sampling-Based Model Predictive Control</h3>
+          <p>Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_heracles_bridging_precise_trac_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control</h3>
+          <p>Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_openloong/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>OpenLoong (Qinglong) Open-Source Humanoid Robot</h3>
+          <p>The full-size open-source humanoid reference platform from China&#39;s National and Local Co-built…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hand_eye_autonomous_delivery_l_2025_1/">
+          <span class="entry-type">논문</span>
+          <h3>Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用异构动捕与合成平衡数据、全身控制器/WBC/MPC、分层技能/专家策略生成低层控制器目标、地形/场…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_falcon_learning_force_adaptive_2025/">
+          <span class="entry-type">논문</span>
+          <h3>FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</h3>
+          <p>FALCON…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_comfree_sim_a_gpu_parallelized_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control</h3>
+          <p>ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_safefall_learning_protective_c_2026/">
+          <span class="entry-type">논문</span>
+          <h3>SafeFall: Learning Protective Control for Humanoid Robots</h3>
+          <p>SafeFall: Learning Protective Control for Humanoid Robots is a knowledge node related to paper in…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_a_hierarchical_model_based_sys_2025/">
+          <span class="entry-type">논문</span>
+          <h3>A Hierarchical, Model-Based System for High-Performance Humanoid Soccer</h3>
+          <p>A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pace_physics_augmentation_for_2026/">
+          <span class="entry-type">논문</span>
+          <h3>PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用PPO/RL 策略训练生成关节位置/力矩命令、地形/场景表征。关键点是把PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">
+          <span class="entry-type">논문</span>
+          <h3>HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</h3>
+          <p>HYPERmotion 先从语言指令、相机图像/多视角观测、本体状态与关节序列恢复场景、目标或运动表征，再用PPO/RL 策略训练、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ceer_compliant_end_effector_an_2026/">
+          <span class="entry-type">논문</span>
+          <h3>CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation</h3>
+          <p>CEER…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sarkar_planning_robot_motion_using_de_2019/">
+          <span class="entry-type">논문</span>
+          <h3>딥 비주얼 예측을 이용한 로봇 동작 계획</h3>
+          <p>원시 비디오에서 최대 10프레임의 미래를 예측하는 경량 비지도 인코더-디코더 컨볼루션 LSTM 네트워크인 PROM-Net을 소개하고, 동적 환경에서 로봇 동작 계획을 위해 이러한…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sombolestan_hierarchical_adaptive_loco_man_2023/">
+          <span class="entry-type">논문</span>
+          <h3>사족 로봇을 위한 계층적 적응형 이동-조작 제어</h3>
+          <p>사족 로봇이 물체 질량, 지형 마찰 또는 경사를 사전에 알 필요 없이 이동-조작 작업을 수행할 수 있게 하는 계층적 적응형 제어 프레임워크를 제안하고, Unitree A1 로봇에서…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</h3>
+          <p>Sumo…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#mpc">모델 예측 제어(MPC)의 정의와 위치</a></li>
+<li><a href="#mpc_1">모델 예측 제어(MPC)의 수학적 및 원리적 기초</a></li>
+<li><a href="#_3">알고리즘 단계와 구현 요점</a></li>
+<li><a href="#_4">전형적인 응용과 한계</a></li>
+<li><a href="#_5">관련 태그</a></li>
+<li><a href="#_6">휴머노이드 로봇 시스템에서의 역할</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

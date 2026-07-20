@@ -1,0 +1,3032 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proximal Policy Optimization (PPO) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/algorithm/">Algorithm</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Proximal Policy Optimization (PPO)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Algorithm</div>
+      <h1>Proximal Policy Optimization (PPO)</h1>
+      <p class="entry-name-en">Proximal Policy Optimization (PPO)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">Stage 2 · Biped Platform</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive policy changes and improve sample efficiency.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>A policy gradient reinforcement learning algorithm that avoids destructive changes and improves sample efficiency by limiting the step size of policy updates.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-proximal-policy-optimization-ppo">Definition and Positioning of Proximal Policy Optimization (PPO)</h3>
+<p>Proximal Policy Optimization (PPO) belongs to the <strong>algorithm</strong> type. Its domain includes: AI models and algorithms. Value chain level: intelligence layer. It is a policy gradient reinforcement learning algorithm that avoids destructive changes and improves sample efficiency by limiting the step size of policy updates. Its English name is <em>Proximal Policy Optimization (PPO)</em>. Its Korean name is <em>근위 정책 최적화(PPO)</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-proximal-policy-optimization-ppo">Mathematical and Theoretical Foundations of Proximal Policy Optimization (PPO)</h3>
+<p>Proximal Policy Optimization (PPO) is built upon relevant mathematical theories and physical laws. Understanding its underlying assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In a humanoid robot system, which is high-dimensional, underactuated, and strongly coupled, Proximal Policy Optimization (PPO) typically needs to balance real-time performance, precision, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>When implementing Proximal Policy Optimization (PPO) in practice, it is necessary to clarify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable operation of the algorithm on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>Proximal Policy Optimization (PPO) can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptation capability remain key issues to address in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>algorithm</li>
+<li>chapter_15</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key algorithms in the humanoid robot industry chain, Proximal Policy Optimization (PPO) plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall system performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_convex_optimization/">Convex Optimization</a>
+              <span class="rel-desc">Proximal Policy Optimization (PPO) has prerequisite Convex Optimization.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_probability_theory/">Probability Theory</a>
+              <span class="rel-desc">Proximal Policy Optimization (PPO) has prerequisite Probability Theory.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_linear_algebra/">Linear Algebra</a>
+              <span class="rel-desc">Proximal Policy Optimization (PPO) has prerequisite Linear Algebra.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bao_sim_to_real_transfer_in_deep_r_2025/">Sim-to-Real Transfer in Deep Reinforcement Learning for Bipedal Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Sim-to-Real Transfer in Deep Reinforcement Learning for Bipedal Locomotion discusses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_spectral_normalization_for_lip_2025/">Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhu_wmpo_world_model_based_policy_2025/">WMPO: World Model-based Policy Optimization for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">WMPO: World Model-based Policy Optimization for Vision-Language-Action Models uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_locomotion_on_discret_2026/">Learning Locomotion on Discrete Terrain via Minimal Proximity Sensing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Locomotion on Discrete Terrain via Minimal Proximity Sensing uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_amor_adaptive_character_contro_2025/">AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omnitactune_policy_agnostic_re_2026/">OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">Ego-Vision World Model for Humanoid Contact Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Ego-Vision World Model for Humanoid Contact Planning mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhou_badvla_towards_backdoor_attack_2025/">BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_motion_skills_with_ad_2025/">Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_gait_driven_rl_framework_for_2025/">A Gait Driven RL Framework for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">A Gait Driven RL Framework for Humanoid Robots uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hou_robust_fall_recovery_for_armle_2026/">Robust Fall Recovery for Armless Bipedal-Wheeled Robots via Force-Guided Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Robust Fall Recovery for Armless Bipedal-Wheeled Robots via Force-Guided Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humam_humanoid_motion_control_2025/">HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_walk_in_costume_ad_2025/">Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025/">TWIST: Teleoperated Whole-Body Imitation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">TWIST: Teleoperated Whole-Body Imitation System mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learn_weightlessness_imitate_n_2026/">Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ze_twist_teleoperated_whole_body_2025/">TWIST: Teleoperated Whole-Body Imitation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TWIST: Teleoperated Whole-Body Imitation System uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robust_and_versatile_bipedal_j_2023/">Robust and Versatile Bipedal Jumping Control through Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Robust and Versatile Bipedal Jumping Control through Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_critic_architecture_matters_du_2026/">Critic Architecture Matters: Dual vs. Unified Critics for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Critic Architecture Matters: Dual vs. Unified Critics for Humanoid Loco-Manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_adapting_humanoid_locomotion_o_2024/">Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_towards_adaptive_humanoid_cont_2026/">Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_manipulation_interfac_2026/">Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_embracing_bulky_objects_with_h_2025/">Embracing Bulky Objects with Humanoid Robots: Whole-Body Manipulation with Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Embracing Bulky Objects with Humanoid Robots: Whole-Body Manipulation with Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_awr_advantage_weighted_regress_2026/">AWR: Advantage Weighted Regression</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">AWR: Advantage Weighted Regression mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hiwet_hierarchical_world_frame_2026_1/">HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_langwbc_language_directed_huma_2025/">LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gentlehumanoid_learning_upper_2025/">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_look_before_you_leap_distillin_2026/">Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dribble_master_learning_agile_2025/">Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_adaptnet_policy_adaptation_for_2023/">AdaptNet: Policy Adaptation for Physics-Based Character Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">AdaptNet: Policy Adaptation for Physics-Based Character Control mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hifar_multi_stage_curriculum_l_2025/">HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_reinforcement_learning_for_rob_2021/">Reinforcement Learning for Robust Parameterized Locomotion Control of Bipedal Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Reinforcement Learning for Robust Parameterized Locomotion Control of Bipedal Robots mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_towards_versatile_humanoid_tab_2025/">Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_expressive_whole_body_control_2024/">Expressive Whole-Body Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Expressive Whole-Body Control for Humanoid Robots mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_eschenbach_metric_based_imitation_learnin_2020/">Metric-Based Imitation Learning Between Two Dissimilar Anthropomorphic Robotic Arms</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Metric-Based Imitation Learning Between Two Dissimilar Anthropomorphic Robotic Arms mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zollo_confidence_calibration_in_visi_2025/">Confidence Calibration in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Confidence Calibration in Vision-Language-Action Models mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deepmimic_example_guided_deep_2026/">DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_vla_rft_vision_language_action_2025/">VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mixture_of_experts_rl_for_faul_2026/">Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_humanoid_standing_up_2025/">Learning Humanoid Standing-up Control across Diverse Postures</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Humanoid Standing-up Control across Diverse Postures uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_berdica_towards_reinforcement_learning_2024/">Towards Reinforcement Learning Controllers for Soft Robots using Learned Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Towards Reinforcement Learning Controllers for Soft Robots using Learned Environments mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_h_zero_cross_humanoid_locomoti_2025/">H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cabi_scaling_data_driven_robotics_w_2019/">Scaling data-driven robotics with reward sketching and batch reinforcement learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Scaling data-driven robotics with reward sketching and batch reinforcement learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_freeform_preference_learning_f_2026/">Freeform Preference Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Freeform Preference Learning for Robotic Manipulation discusses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reactor_reinforcement_learning_2026/">ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_benchmarking_potential_based_r_2023/">Benchmarking Potential Based Rewards for Learning Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates on</span>
+              <span class="rel-desc">Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is evaluated on Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_add_adversarial_disentanglemen_2026/">ADD: Adversarial Disentanglement and Distillation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">ADD: Adversarial Disentanglement and Distillation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hex_humanoid_aligned_experts_f_2026/">HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shortcut_trajectory_planning_f_2026/">Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning cites Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_booster_gym_an_end_to_end_rl_f_2025/">Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lips_large_scale_humanoid_robo_2025/">LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pace_physics_augmentation_for_2026/">PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reinforcement_learning_for_ver_2024/">Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_whole_body_humanoid_l_2026/">Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_xu_stare_vla_progressive_stage_aw_2025/">STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fu_minddrive_a_vision_language_ac_2025/">MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhou_autovla_a_vision_language_acti_2025/">AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_benchmarking_humanoid_imitatio_2025/">Benchmarking Humanoid Imitation Learning with Motion Difficulty</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates on</span>
+              <span class="rel-desc">Benchmarking Humanoid Imitation Learning with Motion Difficulty is evaluated on Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_finn_one_shot_visual_imitation_lear_2017/">One-Shot Visual Imitation Learning via Meta-Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">extends</span>
+              <span class="rel-desc">One-Shot Visual Imitation Learning via Meta-Learning extends Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_combined_constrained_sampling_2026/">Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_torne_reconciling_reality_through_si_2024/">Reconciling Reality through Simulation: A Real-to-Sim-to-Real Approach for Robust Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Reconciling Reality through Simulation: A Real-to-Sim-to-Real Approach for Robust Manipulation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hiwet_hierarchical_world_frame_2026/">HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">Extreme Parkour with Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Extreme Parkour with Legged Robots uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wococo_learning_whole_body_hum_2024/">WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dhakate_carosac_a_reinforcement_learni_2025/">CaRoSaC: A Reinforcement Learning-Based Kinematic Control of Cable-Driven Parallel Robots by Addressing Cable Sag through Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CaRoSaC: A Reinforcement Learning-Based Kinematic Control of Cable-Driven Parallel Robots by Addressing Cable Sag through Simulation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_coordinated_humanoid_robot_loc_2025/">Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_w1_towards_general_humano_2026_1/">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_make_tracking_easy_neural_moti_2026/">Make Tracking Easy: Neural Motion Retargeting for Humanoid Whole-body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Make Tracking Easy: Neural Motion Retargeting for Humanoid Whole-body Control mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_preference_conditioned_multi_o_2025/">Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_walk_in_minutes_us_2026/">Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">Emotion in Reinforcement Learning Agents and Robots: A Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Emotion in Reinforcement Learning Agents and Robots: A Survey discusses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_gait_aware_quadruped_2026/">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_beamdojo_learning_agile_humano_2025/">BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_success_in_humanoid_reinforcem_2025/">Success in Humanoid Reinforcement Learning under Partial Observation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Success in Humanoid Reinforcement Learning under Partial Observation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_skillblender_towards_versatile_2025/">SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_clabaugh_long_term_personalization_of_a_2019/">Long-Term Personalization of an In-Home Socially Assistive Robot for Children with Autism Spectrum Disorders</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Long-Term Personalization of an In-Home Socially Assistive Robot for Children with Autism Spectrum Disorders uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mimickit_a_reinforcement_learn_2026/">MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanplus_humanoid_shadowing_a_2024/">HumanPlus: Humanoid Shadowing and Imitation from Humans</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HumanPlus: Humanoid Shadowing and Imitation from Humans mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cg_mutra_continuously_gated_mu_2026/">CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_add_physics_based_motion_imita_2025/">ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_parkour_learning_2024/">Humanoid Parkour Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Humanoid Parkour Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_get_up_across_morp_2025/">Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_humanoid_arm_motion_v_2025/">Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mimicking_bench_a_benchmark_fo_2024/">Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_what_can_rl_bring_to_vla_gener_2025/">What Can RL Bring to VLA Generalization? An Empirical Study</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">What Can RL Bring to VLA Generalization? An Empirical Study mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_walk_and_fly_with_2023/">Learning to Walk and Fly with Adversarial Motion Priors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning to Walk and Fly with Adversarial Motion Priors uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhang_safevla_towards_safety_alignme_2025/">SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robotdancing_residual_action_r_2025/">RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rove_unlocking_human_intervent_2026/">ROVE: Unlocking Human Interventions for Humanoid Manipulation via Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ROVE: Unlocking Human Interventions for Humanoid Manipulation via Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_reinforcement_learning_of_cpg_2022/">Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_emergent_active_perception_and_2025/">Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_coordex_coordinating_body_and_2026/">CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_simgenhoi_physically_realistic_2025/">SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">TWIST: Teleoperated Whole-Body Imitation System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TWIST: Teleoperated Whole-Body Imitation System uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_steadytray_learning_object_bal_2026_1/">SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual RL uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_farooq_integrating_vision_foundation_2025/">Integrating Vision Foundation Models with Reinforcement Learning for Enhanced Object Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Integrating Vision Foundation Models with Reinforcement Learning for Enhanced Object Interaction uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_distillation_ppo_a_novel_two_s_2025/">Distillation-PPO: A Novel Two-Stage RL Framework for Humanoid Robot Perceptive Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Distillation-PPO: A Novel Two-Stage RL Framework for Humanoid Robot Perceptive Locomotion mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reinforcement_learning_based_c_2026/">Reinforcement Learning-Based Control for an Inline Skating Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Reinforcement Learning-Based Control for an Inline Skating Humanoid Robot uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_steadytray_learning_object_bal_2026/">SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_guidewalk_learning_unified_aut_2026/">GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across Versatile Terrains</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across Versatile Terrains uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_real_world_humanoid_locomotion_2023/">Real-World Humanoid Locomotion with Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Real-World Humanoid Locomotion with Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_clear_closed_loop_reinforcemen_2026/">CLEAR: Closed-Loop Reinforcement Learning at Scale for End-to-End Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CLEAR: Closed-Loop Reinforcement Learning at Scale for End-to-End Autonomous Driving uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_composite_motion_learning_with_2023/">Composite Motion Learning with Task Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Composite Motion Learning with Task Control mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mobile_television_predictive_m_2025/">Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_discovering_self_protective_fa_2025/">Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_human_humanoid_coordi_2025/">Learning Human-Humanoid Coordination for Collaborative Object Carrying</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Learning Human-Humanoid Coordination for Collaborative Object Carrying mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unitracker_learning_universal_2025/">UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning discusses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liang_dichotomous_diffusion_policy_o_2025/">Dichotomous Diffusion Policy Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Dichotomous Diffusion Policy Optimization uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_marco_robot_learning_with_crash_cons_2021/">Robot Learning with Crash Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Robot Learning with Crash Constraints discusses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_symmetric_and_low_ene_2018/">Learning Symmetric and Low-energy Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Symmetric and Low-energy Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robot_motion_diffusion_model_m_2026/">Robot Motion Diffusion Model: Motion Generation for Robotic Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Robot Motion Diffusion Model: Motion Generation for Robotic Characters mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reinforcegen_hybrid_skill_poli_2026/">ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_z_1_efficient_reinforcement_le_2026/">Z-1: Efficient Reinforcement Learning for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Z-1: Efficient Reinforcement Learning for Vision-Language-Action Models uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_closing_the_reality_gap_zero_s_2026/">Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ttt_parkour_rapid_test_time_tr_2026/">TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chasing_stability_humanoid_run_2025/">Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_agile_a_comprehensive_workflow_2026/">AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hester_a_real_time_model_based_reinfo_2011/">A Real-Time Model-Based Reinforcement Learning Architecture for Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">A Real-Time Model-Based Reinforcement Learning Architecture for Robot Control mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning discusses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ase_adversarial_skill_embeddin_2026/">ASE: Adversarial Skill Embeddings for Large-Scale Motion Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ASE: Adversarial Skill Embeddings for Large-Scale Motion Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_now_you_see_that_learning_end_2026/">Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reduced_order_model_guided_rl_2025/">Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_e_sds_environment_aware_see_it_2025/">E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_multi_modal_whole_bod_2024/">Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_striker_skills_2026/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_synagent_generalizable_coopera_2026/">SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_and_dynamic_mot_2019/">Learning Agile and Dynamic Motor Skills for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Agile and Dynamic Motor Skills for Legged Robots uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bilivla_scene_aware_vision_lan_2026/">BiliVLA: Scene-Aware Vision-Language-Action Model with Reinforcement Learning for Autonomous Biliary Endoscopic Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">BiliVLA: Scene-Aware Vision-Language-Action Model with Reinforcement Learning for Autonomous Biliary Endoscopic Navigation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_faststair_learning_to_run_up_s_2026/">FastStair: Learning to Run Up Stairs with Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">FastStair: Learning to Run Up Stairs with Humanoid Robots uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_opt2skill_imitating_dynamicall_2025/">Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">HumanoidBench has prerequisite Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rl_from_physical_feedback_alig_2025/">RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kungfubot_physics_based_humano_2025/">KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_multi_task_deep_reinforcement_2018/">Multi-task Deep Reinforcement Learning with PopArt</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Multi-task Deep Reinforcement Learning with PopArt uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_quadrupedal_locomotio_2026/">Learning Quadrupedal Locomotion over Challenging Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Quadrupedal Locomotion over Challenging Terrain uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_katayama_learning_bipedal_locomotion_on_2025/">Learning Bipedal Locomotion on Gear-Driven Humanoid Robot Using Foot-Mounted IMUs</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Bipedal Locomotion on Gear-Driven Humanoid Robot Using Foot-Mounted IMUs uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_he_viral_visual_sim_to_real_at_sc_2025/">VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deepmimic_example_guided_deep_2026_1/">DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gait_conditioned_rl_with_multi_2025/">Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_warp_rm_a_warp_augmented_relat_2026/">WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_amp_adversarial_motion_priors_2021/">AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_conrft_a_reinforced_fine_tunin_2025/">ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deep_reinforcement_learning_fo_2024/">Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey discusses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_goalkeeper_learning_f_2026/">Humanoid Goalkeeper: Learning from Position Conditioned Task-Motion Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Humanoid Goalkeeper: Learning from Position Conditioned Task-Motion Constraints uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kinematics_aware_multi_policy_2025/">Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_radosavovic_learning_humanoid_locomotion_o_2024/">Learning Humanoid Locomotion over Challenging Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Humanoid Locomotion over Challenging Terrain uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_physmodpo_physically_plausible_2026/">PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_styleloco_generative_adversari_2025/">StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_dexterous_grasping_fr_2026/">Learning Dexterous Grasping from Sparse Taxonomy Guidance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Dexterous Grasping from Sparse Taxonomy Guidance uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">Bayesian Optimization with Adaptive Kernels for Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates on</span>
+              <span class="rel-desc">Bayesian Optimization with Adaptive Kernels for Robot Control is evaluated on Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_gr_rl_going_dexterous_and_prec_2025/">GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pilot_a_perceptive_integrated_2026/">PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_gym_reinforcement_lea_2024/">Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ppo_proximal_policy_optimizati_2026/">PPO: Proximal Policy Optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">PPO: Proximal Policy Optimization mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_coordex_coordinating_body_and_2026/">CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hord_robust_humanoid_control_v_2026/">HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_embedding_classical_balance_co_2026/">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_thor_towards_human_level_whole_2025/">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_w1_towards_general_humano_2026/">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ase_large_scale_reusable_adver_2022/">ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_gentle_humanoid_locom_2025/">Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_software_nvidia_isaac_lab_2024/">NVIDIA Isaac Lab</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">NVIDIA Isaac Lab has prerequisite Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_striker_skills_2026_1/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kraus_generative_adversarial_imitati_2026/">Generative adversarial imitation learning for robot swarms: Learning from human demonstrations and trained policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Generative adversarial imitation learning for robot swarms: Learning from human demonstrations and trained policies mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_traversing_narrow_paths_a_two_2025/">Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_slac_simulation_pretrained_lat_2025/">SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_retargeting_matters_general_mo_2025/">Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_smooth_humanoid_locom_2024/">Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_versatile_humanoid_ma_2026/">Learning Versatile Humanoid Manipulation with Touch Dreaming</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Learning Versatile Humanoid Manipulation with Touch Dreaming mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_halo_wa_hybrid_attention_laten_2026/">HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">Robot Inner Attention Modeling for Task-Adaptive Teaming of Heterogeneous Multi Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Robot Inner Attention Modeling for Task-Adaptive Teaming of Heterogeneous Multi Robots cites Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robust_humanoid_walking_on_com_2025/">Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dreamcontrol_human_inspired_wh_2025/">DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_rl_online_rl_fine_tuning_for_f_2025/">πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mash_cooperative_heterogeneous_2025/">MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_metaworld_x_hierarchical_world_2026/">MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_ball_composing_pol_2025/">Learning to Ball: Composing Policies for Long-Horizon Basketball Moves</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning to Ball: Composing Policies for Long-Horizon Basketball Moves uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fame_force_adaptive_rl_for_exp_2026/">FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_anticipatory_reinforcement_lea_2026/">Anticipatory Reinforcement Learning for Trajectory Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Anticipatory Reinforcement Learning for Trajectory Tracking mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_symphony_a_heuristic_normalize_2025/">Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots proposes Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_to_look_seeking_infor_2024/">Learning to Look: Seeking Information for Decision Making via Policy Factorization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning to Look: Seeking Information for Decision Making via Policy Factorization uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fu_load_aware_locomotion_control_2026/">Load-Aware Locomotion Control for Humanoid Robots in Industrial Transportation Tasks</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Load-Aware Locomotion Control for Humanoid Robots in Industrial Transportation Tasks uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_physics_models_for_sim_to_real_2026/">Physics Models for Sim-to-Real Transfer in Professional-Level Robot Table Tennis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Physics Models for Sim-to-Real Transfer in Professional-Level Robot Table Tennis mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_vision_driven_reactiv_2026/">Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_calm_conditional_adversarial_l_2026/">CALM: Conditional Adversarial Latent Models for Directable Virtual Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CALM: Conditional Adversarial Latent Models for Directable Virtual Characters uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_xie_textop_real_time_interactive_t_2026/">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robot_crash_course_learning_so_2025/">Robot Crash Course: Learning Soft and Stylized Falling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Robot Crash Course: Learning Soft and Stylized Falling uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_do_you_have_freestyle_expressi_2025/">Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_splitadapter_load_aware_humano_2026/">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhang_grape_generalizing_robot_polic_2024/">GRAPE: Generalizing Robot Policy via Preference Alignment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">GRAPE: Generalizing Robot Policy via Preference Alignment uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_manipulation_interfac_2026_1/">Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kungfubot_2_learning_versatile_2025/">KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jiang_irl_vla_training_an_vision_lan_2025/">IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ego_vision_world_model_for_hum_2026/">Ego-Vision World Model for Humanoid Contact Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Ego-Vision World Model for Humanoid Contact Planning mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_adapting_generalist_robot_poli_2026/">Adapting Generalist Robot Policies with Semantic Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Adapting Generalist Robot Policies with Semantic Reinforcement Learning uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egm_efficiently_learning_gener_2025/">EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control uses Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_algorithm_ppo"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_w1_towards_general_humano_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</h3>
+          <p>FRoM-W1 transforms verbal commands, ontology state and joint sequences, and simulated interaction…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wococo_learning_whole_body_hum_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts</h3>
+          <p>WoCoCo first recovers scene, target or motion representations from ontology state and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_gym_reinforcement_lea_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer</h3>
+          <p>Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mash_cooperative_heterogeneous_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion</h3>
+          <p>MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</h3>
+          <p>arXiv:2607.00483v1 Announce Type: new Abstract: Designing effective reward functions remains a major…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_walk_and_fly_with_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Walk and Fly with Adversarial Motion Priors</h3>
+          <p>Learning to Walk and Fly with Adversarial Motion Priors is a 2023 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Inner Attention Modeling for Task-Adaptive Teaming of Heterogeneous Multi Robots</h3>
+          <p>Proposes innerATT, an attention-based multi-agent actor-critic method that dynamically forms…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_halo_wa_hybrid_attention_laten_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models</h3>
+          <p>arXiv:2607.04265v1 Announce Type: new Abstract: World-action (WA) models can generate long-horizon…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_physmodpo_physically_plausible_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization</h3>
+          <p>Physmodpo: Physically-Plausible Humanoid Motion with Preference Optimization is a paper on physical…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhang_safevla_towards_safety_alignme_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning</h3>
+          <p>SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fu_minddrive_a_vision_language_ac_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning</h3>
+          <p>MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_now_you_see_that_learning_end_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels</h3>
+          <p>Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</h3>
+          <p>arXiv:2607.09557v1 Announce Type: new Abstract: Fine grain control and positioning of autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_coordex_coordinating_body_and_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</h3>
+          <p>CoorDex converts the body state with joint sequences, contact force/tactile signals into trackable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_symphony_a_heuristic_normalize_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots</h3>
+          <p>Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_manipulation_interfac_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</h3>
+          <p>This work mainly addresses the data closed loop: collecting human operations and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_steadytray_learning_object_bal_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual RL</h3>
+          <p>SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residential RL is a paper…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_benchmarking_humanoid_imitatio_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Benchmarking Humanoid Imitation Learning with Motion Difficulty</h3>
+          <p>Benchmarking Humanoid Imitation Learning with Motion Difficulty is a 2025 work on simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adapting_generalist_robot_poli_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Adapting Generalist Robot Policies with Semantic Reinforcement Learning</h3>
+          <p>arXiv:2606.31958v1 Announce Type: new Abstract: Generalist robot policies learn a diverse repertoire…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zollo_confidence_calibration_in_visi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Confidence Calibration in Vision-Language-Action Models</h3>
+          <p>Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_multi_task_deep_reinforcement_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-task Deep Reinforcement Learning with PopArt</h3>
+          <p>Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based character…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jiang_irl_vla_training_an_vision_lan_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model</h3>
+          <p>IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (IRL-VLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omnitactune_policy_agnostic_re_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies</h3>
+          <p>arXiv:2607.03723v1 Announce Type: new Abstract: Visual policies learned from human videos,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dhakate_carosac_a_reinforcement_learni_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>CaRoSaC: A Reinforcement Learning-Based Kinematic Control of Cable-Driven Parallel Robots by Addressing Cable Sag through Simulation</h3>
+          <p>This paper proposes the CaRoSaC framework, which combines a Unity3D/Obi Rope-based flexible-cable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST: Teleoperated Whole-Body Imitation System</h3>
+          <p>TWIST mainly solves the data closed loop: using human video/kinetrap trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_clabaugh_long_term_personalization_of_a_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Long-Term Personalization of an In-Home Socially Assistive Robot for Children with Autism Spectrum Disorders</h3>
+          <p>Presents a hierarchical human-robot learning framework that uses Q-learning to autonomously…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hou_robust_fall_recovery_for_armle_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Robust Fall Recovery for Armless Bipedal-Wheeled Robots via Force-Guided Learning</h3>
+          <p>This paper proposes FTSR, a force-guided teacher-student reinforcement-learning framework that…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">Benchmark</span>
+          <h3>HumanoidBench</h3>
+          <p>A simulated benchmark for whole-body humanoid locomotion and manipulation based on the Unitree H1…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_clear_closed_loop_reinforcemen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CLEAR: Closed-Loop Reinforcement Learning at Scale for End-to-End Autonomous Driving</h3>
+          <p>arXiv:2607.02841v1 Announce Type: new Abstract: End-to-end autonomous driving (E2E-AD) aims to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_marco_robot_learning_with_crash_cons_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Learning with Crash Constraints</h3>
+          <p>This paper introduces EIC2, a constrained Bayesian optimization framework for robot learning with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</h3>
+          <p>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robotdancing_residual_action_r_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking</h3>
+          <p>RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_skillblender_towards_versatile_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending</h3>
+          <p>SkillBlender first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hiwet_hierarchical_world_frame_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation</h3>
+          <p>HiWET first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hiwet_hierarchical_world_frame_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation</h3>
+          <p>HiWET converts the body state with joint sequences, simulated interaction data, contact…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</h3>
+          <p>The implementation path of REFINE-DP is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_smooth_humanoid_locom_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies</h3>
+          <p>Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_physics_models_for_sim_to_real_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Physics Models for Sim-to-Real Transfer in Professional-Level Robot Table Tennis</h3>
+          <p>arXiv:2606.28805v2 Announce Type: replace Abstract: At competitive speeds and spins, a table tennis…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kraus_generative_adversarial_imitati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Generative adversarial imitation learning for robot swarms: Learning from human demonstrations and trained policies</h3>
+          <p>This paper proposes SwarmGAIL, a GAIL-based imitation-learning framework that learns decentralized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhou_autovla_a_vision_language_acti_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning</h3>
+          <p>AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_benchmarking_potential_based_r_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Benchmarking Potential Based Rewards for Learning Humanoid Locomotion</h3>
+          <p>Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_composite_motion_learning_with_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Composite Motion Learning with Task Control</h3>
+          <p>Composite Motion Learning with Task Control is a 2023 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_closing_the_reality_gap_zero_s_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation</h3>
+          <p>arXiv:2607.04940v1 Announce Type: new Abstract: Human-like dexterous hands with multiple fingers…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_walk_in_minutes_us_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning</h3>
+          <p>Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning is a paper on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_slac_simulation_pretrained_lat_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning</h3>
+          <p>SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_look_before_you_leap_distillin_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models</h3>
+          <p>arXiv:2607.03751v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models acquire broad…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ase_adversarial_skill_embeddin_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ASE: Adversarial Skill Embeddings for Large-Scale Motion Control</h3>
+          <p>ASE: Adversarial Skill Embeddings for Large-Scale Motion Control is a paper on skill sets for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_humanoid_standing_up_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Humanoid Standing-up Control across Diverse Postures</h3>
+          <p>Learning Humanoid Standing-up Control across Diverse Postures is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_get_up_across_morp_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy</h3>
+          <p>Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bilivla_scene_aware_vision_lan_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>BiliVLA: Scene-Aware Vision-Language-Action Model with Reinforcement Learning for Autonomous Biliary Endoscopic Navigation</h3>
+          <p>arXiv:2606.23531v2 Announce Type: replace Abstract: Endoscopic retrograde cholangiopancreatography…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_awr_advantage_weighted_regress_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AWR: Advantage Weighted Regression</h3>
+          <p>AWR: Advantage Weighted Regression is a paper on base RL for humanoid robotics. Advantage-weighted…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_he_viral_visual_sim_to_real_at_sc_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation</h3>
+          <p>VIRAL is a visual sim-to-real framework that trains a privileged RL teacher for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhang_grape_generalizing_robot_polic_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>GRAPE: Generalizing Robot Policy via Preference Alignment</h3>
+          <p>GRAPE: Generalizing Robot Policy via Preference Alignment (GRAPE), is a 2024 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_preference_conditioned_multi_o_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</h3>
+          <p>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_whole_body_humanoid_l_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking</h3>
+          <p>Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking is a knowledge…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ppo_proximal_policy_optimizati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PPO: Proximal Policy Optimization</h3>
+          <p>PPO: Proximal Policy Optimization is a paper on basic RL for humanoid robotics. Proximal policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist_teleoperated_whole_body_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST: Teleoperated Whole-Body Imitation System</h3>
+          <p>TWIST mainly solves the data closed loop: using human video/kinetrap trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_embedding_classical_balance_co_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</h3>
+          <p>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_rl_online_rl_fine_tuning_for_f_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models</h3>
+          <p>πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reinforcegen_hybrid_skill_poli_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</h3>
+          <p>arXiv:2512.16861v2 Announce Type: replace Abstract: Long-horizon manipulation has been a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pilot_a_perceptive_integrated_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes</h3>
+          <p>Pilot first recovers the scene, target, or motion representation from ontological states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_w1_towards_general_humano_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions</h3>
+          <p>FRoM-W1 first restores the scene, object, or motion representation from speech instructions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dreamcontrol_human_inspired_wh_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion</h3>
+          <p>DreamControl first recovers scene, target, or motion representations from ontology states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_gentle_humanoid_locom_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control</h3>
+          <p>Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_critic_architecture_matters_du_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Critic Architecture Matters: Dual vs. Unified Critics for Humanoid Loco-Manipulation</h3>
+          <p>This work transforms camera images/multi-view observations, ontology state and joint sequences, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robust_and_versatile_bipedal_j_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Robust and Versatile Bipedal Jumping Control through Reinforcement Learning</h3>
+          <p>Robust and Versatile Bipedal Jumping Control through Reinforcement Learning is a 2023 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_goalkeeper_learning_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Goalkeeper: Learning from Position Conditioned Task-Motion Constraints</h3>
+          <p>We present a reinforcement learning framework for autonomous goalkeeping with humanoid robots in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hester_a_real_time_model_based_reinfo_2011/">
+          <span class="entry-type">Paper</span>
+          <h3>A Real-Time Model-Based Reinforcement Learning Architecture for Robot Control</h3>
+          <p>Presents RTMBA, a parallel architecture for model-based reinforcement learning that uses…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_splitadapter_load_aware_humano_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</h3>
+          <p>SplitAdapter converts simulated interaction data into trackable body targets and uses PPO/RL policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cg_mutra_continuously_gated_mu_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion</h3>
+          <p>arXiv:2606.08922v2 Announce Type: replace Abstract: Falling is an inherent risk for humanoid robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_warp_rm_a_warp_augmented_relat_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation</h3>
+          <p>arXiv:2606.28320v3 Announce Type: replace Abstract: Scaling imitation learning requires large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_nvidia_isaac_lab_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>NVIDIA Isaac Lab</h3>
+          <p>Modular learning framework built on Isaac Sim for large-scale robot policy training.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_locomotion_on_discret_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Locomotion on Discrete Terrain via Minimal Proximity Sensing</h3>
+          <p>arXiv:2606.31912v1 Announce Type: new Abstract: Learning-based control has revolutionized dynamic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_eschenbach_metric_based_imitation_learnin_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Metric-Based Imitation Learning Between Two Dissimilar Anthropomorphic Robotic Arms</h3>
+          <p>This paper introduces a distance measure between dissimilar robotic embodiments to solve the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_katayama_learning_bipedal_locomotion_on_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Bipedal Locomotion on Gear-Driven Humanoid Robot Using Foot-Mounted IMUs</h3>
+          <p>This paper proposes a reinforcement learning framework that uses foot-mounted inertial measurement…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_ball_composing_pol_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Ball: Composing Policies for Long-Horizon Basketball Moves</h3>
+          <p>Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">Foundation</span>
+          <h3>Probability Theory</h3>
+          <p>The mathematical foundation for reasoning about uncertainty, random variables, distributions, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_booster_gym_an_end_to_end_rl_f_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion</h3>
+          <p>Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_coordinated_humanoid_robot_loc_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy</h3>
+          <p>Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adapting_humanoid_locomotion_o_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training</h3>
+          <p>Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</h3>
+          <p>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liang_dichotomous_diffusion_policy_o_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Dichotomous Diffusion Policy Optimization</h3>
+          <p>Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action model for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_discovering_self_protective_fa_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning</h3>
+          <p>Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_vision_driven_reactiv_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots</h3>
+          <p>Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge node related to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_steadytray_learning_object_bal_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning</h3>
+          <p>SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_berdica_towards_reinforcement_learning_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Reinforcement Learning Controllers for Soft Robots using Learned Environments</h3>
+          <p>This paper presents a model-based reinforcement learning pipeline for soft pneumatic manipulators…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_e_sds_environment_aware_see_it_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion</h3>
+          <p>E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_and_dynamic_mot_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile and Dynamic Motor Skills for Legged Robots</h3>
+          <p>Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on sim-to-real for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Ego-Vision World Model for Humanoid Contact Planning</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_add_adversarial_disentanglemen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ADD: Adversarial Disentanglement and Distillation</h3>
+          <p>ADD: Adversarial Disentanglement and Distillation is a paper on style learning for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_langwbc_language_directed_huma_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning</h3>
+          <p>LangWBC first recovers scene, goal, or motion representations from language instructions, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mixture_of_experts_rl_for_faul_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion</h3>
+          <p>arXiv:2606.25965v2 Announce Type: replace Abstract: Legged robots deployed in planetary exploration…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">Foundation</span>
+          <h3>Linear Algebra</h3>
+          <p>The branch of mathematics concerning vector spaces, linear transformations, matrices, and systems of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mimicking_bench_a_benchmark_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking</h3>
+          <p>Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robust_humanoid_walking_on_com_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</h3>
+          <p>Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_finn_one_shot_visual_imitation_lear_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>One-Shot Visual Imitation Learning via Meta-Learning</h3>
+          <p>Extends model-agnostic meta-learning (MAML) to imitation learning, enabling a robot to acquire new…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</h3>
+          <p>HITTER first recovers scene, target, or motion representations from human video/kinetach…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_z_1_efficient_reinforcement_le_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Z-1: Efficient Reinforcement Learning for Vision-Language-Action Models</h3>
+          <p>arXiv:2606.31846v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models offer a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rove_unlocking_human_intervent_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ROVE: Unlocking Human Interventions for Humanoid Manipulation via Reinforcement Learning</h3>
+          <p>The realization path of Rove is to encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robot_motion_diffusion_model_m_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Motion Diffusion Model: Motion Generation for Robotic Characters</h3>
+          <p>The Robot Motion Diffusion Model first recovers the scene, target, or Motion representation from the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_opt2skill_imitating_dynamicall_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation</h3>
+          <p>Opt2Skill first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_dexterous_grasping_fr_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Dexterous Grasping from Sparse Taxonomy Guidance</h3>
+          <p>arXiv:2604.04138v2 Announce Type: replace Abstract: Dexterous manipulation requires planning a grasp…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_emergent_active_perception_and_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning</h3>
+          <p>Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hord_robust_humanoid_control_v_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation</h3>
+          <p>HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_farooq_integrating_vision_foundation_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Integrating Vision Foundation Models with Reinforcement Learning for Enhanced Object Interaction</h3>
+          <p>This paper integrates the Segment Anything Model (SAM) and YOLOv5 into the observation pipeline of a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rl_from_physical_feedback_alig_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control</h3>
+          <p>RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_anticipatory_reinforcement_lea_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Anticipatory Reinforcement Learning for Trajectory Tracking</h3>
+          <p>arXiv:2607.03132v1 Announce Type: cross Abstract: Deep reinforcement learning (DRL) in industrial…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_traversing_narrow_paths_a_two_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking</h3>
+          <p>Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_freeform_preference_learning_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Freeform Preference Learning for Robotic Manipulation</h3>
+          <p>arXiv:2606.32027v1 Announce Type: new Abstract: Reward design remains a central bottleneck for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_faststair_learning_to_run_up_s_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FastStair: Learning to Run Up Stairs with Humanoid Robots</h3>
+          <p>FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhou_badvla_towards_backdoor_attack_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization</h3>
+          <p>BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_gait_aware_quadruped_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</h3>
+          <p>arXiv:2607.00442v1 Announce Type: new Abstract: Reinforcement learning (RL) for quadruped locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_agile_a_comprehensive_workflow_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning</h3>
+          <p>AGILE first recovers scene, target or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_torne_reconciling_reality_through_si_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Reconciling Reality through Simulation: A Real-to-Sim-to-Real Approach for Robust Manipulation</h3>
+          <p>RialTo builds on-the-fly digital-twin simulations from real-world scans and transfers real-world…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fame_force_adaptive_rl_for_exp_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid</h3>
+          <p>FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhu_wmpo_world_model_based_policy_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>WMPO: World Model-based Policy Optimization for Vision-Language-Action Models</h3>
+          <p>WMPO: World Model-based Policy Optimization for Vision-Language-Action Models (WMPO), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humam_humanoid_motion_control_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba</h3>
+          <p>HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_distillation_ppo_a_novel_two_s_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Distillation-PPO: A Novel Two-Stage RL Framework for Humanoid Robot Perceptive Locomotion</h3>
+          <p>Distillation-PPO: A Novel Two-Stage RL Framework for Humanoid Robot Perceptive Locomotion is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_striker_skills_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</h3>
+          <p>arXiv:2603.10263v2 Announce Type: replace Abstract: We introduce Distribution Contractive…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hex_humanoid_aligned_experts_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation</h3>
+          <p>The implementation path of HEX is to first encode the ontology state and joint sequence into…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reinforcement_learning_based_c_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Reinforcement Learning-Based Control for an Inline Skating Humanoid Robot</h3>
+          <p>arXiv:2606.31807v1 Announce Type: new Abstract: As humanoid robots become increasingly dynamic,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_gait_driven_rl_framework_for_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Gait Driven RL Framework for Humanoid Robots</h3>
+          <p>A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_expressive_whole_body_control_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Expressive Whole-Body Control for Humanoid Robots</h3>
+          <p>This work transforms ontology state and joint sequences, human video/motion capture trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning</h3>
+          <p>RoboBallet trains a graph neural network policy via deep reinforcement learning to jointly allocate,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_add_physics_based_motion_imita_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators</h3>
+          <p>ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_thor_towards_human_level_whole_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</h3>
+          <p>Thor converts camera images/multi-view observations, body state and joint sequences, contact…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mimickit_a_reinforcement_learn_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control</h3>
+          <p>MimicKit is an open-source framework for training motion controllers using motion imitation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_reinforcement_learning_of_cpg_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot</h3>
+          <p>This paper presents a bio-inspired cascade controller for a soft snake robot that combines…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</h3>
+          <p>HOMIE mainly solves the data closed loop: using ontology state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_amp_adversarial_motion_priors_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control</h3>
+          <p>AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control is a 2021 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unitracker_learning_universal_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots</h3>
+          <p>UniTracker converts camera images/multi-view observations, ontology state and joint sequences, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_combined_constrained_sampling_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation</h3>
+          <p>arXiv:2602.08557v2 Announce Type: replace Abstract: Training non-prehensile manipulation policies in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_towards_adaptive_humanoid_cont_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning</h3>
+          <p>Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hifar_multi_stage_curriculum_l_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery</h3>
+          <p>HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_do_you_have_freestyle_expressi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control</h3>
+          <p>Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_versatile_humanoid_ma_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Versatile Humanoid Manipulation with Touch Dreaming</h3>
+          <p>This work mainly addresses the data closed loop: acquiring human operation and robot state using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning</h3>
+          <p>This paper proposes Value Bonuses with Ensemble errors (VBE), a plug-in exploration method that…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_symmetric_and_low_ene_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Symmetric and Low-energy Locomotion</h3>
+          <p>Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_guidewalk_learning_unified_aut_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across Versatile Terrains</h3>
+          <p>GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kungfubot_physics_based_humano_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills</h3>
+          <p>KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reduced_order_model_guided_rl_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</h3>
+          <p>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_calm_conditional_adversarial_l_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CALM: Conditional Adversarial Latent Models for Directable Virtual Characters</h3>
+          <p>CALM: Conditional Adversarial Latent Models for Directory Virtual Characters is a paper on skill…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Emotion in Reinforcement Learning Agents and Robots: A Survey</h3>
+          <p>A 2017 survey that systematically reviews computational models of emotion in reinforcement learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_humanoid_arm_motion_v_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning</h3>
+          <p>Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_motion_skills_with_ad_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots</h3>
+          <p>Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reinforcement_learning_for_ver_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control</h3>
+          <p>Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control is a 2024 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dribble_master_learning_agile_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion</h3>
+          <p>Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Extreme Parkour with Legged Robots</h3>
+          <p>Extreme Parkour with Legged Robots is a paper on Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reactor_reinforcement_learning_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting</h3>
+          <p>ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lips_large_scale_humanoid_robo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures</h3>
+          <p>LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shortcut_trajectory_planning_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</h3>
+          <p>arXiv:2607.09336v1 Announce Type: cross Abstract: Diffusion-based trajectory planners have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mobile_television_predictive_m_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control</h3>
+          <p>Mobile-TeleVision converts body states and joint sequences, human video/motion capture trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learn_weightlessness_imitate_n_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot</h3>
+          <p>arXiv:2604.21351v2 Announce Type: replace Abstract: The integration of imitation and reinforcement…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_reinforcement_learning_for_rob_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Reinforcement Learning for Robust Parameterized Locomotion Control of Bipedal Robots</h3>
+          <p>Presents a model-free reinforcement learning framework that combines an HZD gait library with PPO…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_simgenhoi_physically_realistic_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL</h3>
+          <p>SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_towards_versatile_humanoid_tab_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation</h3>
+          <p>Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_metaworld_x_hierarchical_world_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation</h3>
+          <p>The implementation path of MetaWorld-X is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_retargeting_matters_general_mo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking</h3>
+          <p>Retargeting mainly addresses data closed-loop: collecting human operations and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_radosavovic_learning_humanoid_locomotion_o_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Humanoid Locomotion over Challenging Terrain</h3>
+          <p>Presents a transformer-based blind locomotion controller for the Digit humanoid robot, pre-trained…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_spectral_normalization_for_lip_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</h3>
+          <p>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_embracing_bulky_objects_with_h_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Embracing Bulky Objects with Humanoid Robots: Whole-Body Manipulation with Reinforcement Learning</h3>
+          <p>Embracing Bulky Objects with Humanoid Robots: Whole-Body Manipulation with Reinforcement Learning is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_synagent_generalizable_coopera_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy</h3>
+          <p>Controllable cooperative humanoid manipulation is a fundamental yet challenging problem for embodied…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fu_load_aware_locomotion_control_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Load-Aware Locomotion Control for Humanoid Robots in Industrial Transportation Tasks</h3>
+          <p>This paper presents a reinforcement-learning-based load-aware locomotion framework for full-size…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_manipulation_interfac_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</h3>
+          <p>This work mainly addresses the data closed loop: human video/kinetach trajectories,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_h_zero_cross_humanoid_locomoti_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer</h3>
+          <p>H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_gr_rl_going_dexterous_and_prec_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation</h3>
+          <p>GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation (GR-RL), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egm_efficiently_learning_gener_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control</h3>
+          <p>EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_styleloco_generative_adversari_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion</h3>
+          <p>StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deep_reinforcement_learning_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey</h3>
+          <p>Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gait_conditioned_rl_with_multi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion</h3>
+          <p>Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_walk_in_costume_ad_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids</h3>
+          <p>Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_human_humanoid_coordi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Human-Humanoid Coordination for Collaborative Object Carrying</h3>
+          <p>COLA first recovers scene, target or motion representations from ontology state and joint sequences,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_conrft_a_reinforced_fine_tunin_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy</h3>
+          <p>ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy (ConRFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kinematics_aware_multi_policy_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation</h3>
+          <p>Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deepmimic_example_guided_deep_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills</h3>
+          <p>DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper on exact imitation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_multi_modal_whole_bod_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots</h3>
+          <p>Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_success_in_humanoid_reinforcem_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Success in Humanoid Reinforcement Learning under Partial Observation</h3>
+          <p>Success in Humanoid Reinforcement Learning under Partial Observation is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_striker_skills_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gentlehumanoid_learning_upper_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</h3>
+          <p>Gentlehumanoid first recovers scenes, targets, or motion representations from camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_to_look_seeking_infor_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning to Look: Seeking Information for Decision Making via Policy Factorization</h3>
+          <p>Learning to Look: Seeking Information for Decision Making via Policy Factorization is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_what_can_rl_bring_to_vla_gener_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>What Can RL Bring to VLA Generalization? An Empirical Study</h3>
+          <p>What Can RL Bring to VLA Generalization? An Empirical Study (What Can RL Bring to VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kungfubot_2_learning_versatile_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control</h3>
+          <p>KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adaptnet_policy_adaptation_for_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>AdaptNet: Policy Adaptation for Physics-Based Character Control</h3>
+          <p>AdaptNet: Policy Adaptation for Physics-Based Character Control is a 2023 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</h3>
+          <p>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning</h3>
+          <p>OMNIH2O primarily addresses data closed loops: capturing human operations and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ze_twist_teleoperated_whole_body_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST: Teleoperated Whole-Body Imitation System</h3>
+          <p>TWIST retargets human motion capture data to humanoid robots and trains a single whole-body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Bayesian Optimization with Adaptive Kernels for Robot Control</h3>
+          <p>This paper introduces Spartan Bayesian Optimization (SBO), a Gaussian-process Bayesian optimization…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cabi_scaling_data_driven_robotics_w_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Scaling data-driven robotics with reward sketching and batch reinforcement learning</h3>
+          <p>Introduces reward sketching to learn task-specific reward functions from human preferences,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ase_large_scale_reusable_adver_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</h3>
+          <p>ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_make_tracking_easy_neural_moti_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Make Tracking Easy: Neural Motion Retargeting for Humanoid Whole-body Control</h3>
+          <p>Make Tracking Easy converts the body state with joint sequences, contact force/tactile signals into…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_real_world_humanoid_locomotion_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Real-World Humanoid Locomotion with Reinforcement Learning</h3>
+          <p>Real-World Humanoid Locomotion with Reinforcement Learning is a 2023 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_beamdojo_learning_agile_humano_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds</h3>
+          <p>BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_xu_stare_vla_progressive_stage_aw_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models</h3>
+          <p>STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_parkour_learning_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Parkour Learning</h3>
+          <p>Humanoid Parkour Learning is a 2024 work on locomotion for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robot_crash_course_learning_so_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Crash Course: Learning Soft and Stylized Falling</h3>
+          <p>Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deepmimic_example_guided_deep_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills</h3>
+          <p>DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_quadrupedal_locomotio_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Quadrupedal Locomotion over Challenging Terrain</h3>
+          <p>Learning Quadrupedal Locomotion over Challenging Terrain is a paper on High Impact Selection for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ttt_parkour_rapid_test_time_tr_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour</h3>
+          <p>TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanplus_humanoid_shadowing_a_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanPlus: Humanoid Shadowing and Imitation from Humans</h3>
+          <p>HumanPlus mainly solves the data closed loop: using camera images/multi-view observations, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_coordex_coordinating_body_and_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</h3>
+          <p>CoorDex is a learning pipeline that distills separate whole-body and wrist-stabilized hand motion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_xie_textop_real_time_interactive_t_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</h3>
+          <p>TextOp is a real-time text-driven humanoid motion generation and control framework that uses a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ego_vision_world_model_for_hum_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Ego-Vision World Model for Humanoid Contact Planning</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</h3>
+          <p>HOMIE mainly solves the data closed loop: it uses ontology state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chasing_stability_humanoid_run_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL</h3>
+          <p>Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_convex_optimization/">
+          <span class="entry-type">Foundation</span>
+          <h3>Convex Optimization</h3>
+          <p>The mathematical discipline of minimizing convex functions over convex sets, guaranteeing that any…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bao_sim_to_real_transfer_in_deep_r_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Sim-to-Real Transfer in Deep Reinforcement Learning for Bipedal Locomotion</h3>
+          <p>This survey chapter examines how deep reinforcement learning policies for bipedal locomotion can be…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pace_physics_augmentation_for_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis</h3>
+          <p>This work first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</h3>
+          <p>HYPERmotion first recovers scene, target, or motion representations from language instructions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_amor_adaptive_character_contro_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</h3>
+          <p>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_vla_rft_vision_language_action_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators</h3>
+          <p>VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-proximal-policy-optimization-ppo">Definition and Positioning of Proximal Policy Optimization (PPO)</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-proximal-policy-optimization-ppo">Mathematical and Theoretical Foundations of Proximal Policy Optimization (PPO)</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

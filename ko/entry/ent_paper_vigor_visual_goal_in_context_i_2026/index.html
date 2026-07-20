@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</h1>
+      <p class="entry-name-en">VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.16511v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.16511" target="_blank" rel="noopener">VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>혼잡한 환경에서 작동하는 휴머노이드에게 신뢰할 수 있는 낙상 회복은 매우 중요합니다. 사족 보행 로봇이나 바퀴 달린 로봇과 달리, 휴머노이드는 낙상 중에 고에너지 충격, 복잡한 전신 접촉, 큰 시점 변화를 겪기 때문에 지속적인 작동을 위해 회복이 필수적입니다. 기존 방법들은 낙상 안전을 낙상 회피, 충격 완화, 기립 회복과 같은 개별 문제로 분할하거나, 평평한 지형에서 강화 학습이나 모방 학습을 통해 시각 없이 훈련된 종단간 정책에 의존합니다. 더 깊은 수준에서 보면, 낙상 안전은 자세, 동역학, 지형을 결합하고 완전한 커버리지를 요구하는 모놀리식 데이터 복잡성으로 취급되어 확장성과 일반화를 제한합니다. 우리는 낙상 회복의 모든 단계를 포괄하는 통합된 낙상 안전 접근법을 제시합니다. 이는 두 가지 통찰에 기반합니다: 1) 자연스러운 인간의 낙상 및 회복 자세는 매우 제한적이며 정렬을 통해 평평한 지형에서 복잡한 지형으로 전이 가능하고, 2) 빠른 전신 반응에는 통합된 지각-운동 표현이 필요합니다. 우리는 평평한 지형에서의 희소한 인간 시연과 시뮬레이션된 복잡한 지형을 사용하여 특권 교사를 훈련시키고, 이를 자기중심적 깊이와 고유수용감각에만 의존하는 배치 가능한 학생으로 증류합니다. 학생은 무엇을 인지해야 하고 어떻게 행동해야 하는지를 별도로 인코딩하는 대신, 다음 목표 자세와 로컬 지형을 결합한 교사의 맥락 내 목표 잠재 표현을 일치시킴으로써 반응하는 방법을 학습합니다. 시뮬레이션과 실제 Unitree G1 휴머노이드에서의 결과는 실제 환경 미세 조정 없이 다양한 비평평 환경에서 강력한 제로샷 낙상 안전을 입증합니다. 프로젝트 페이지는 https://vigor2026.github.io/ 에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>혼잡한 환경에서 작동하는 휴머노이드에게 신뢰할 수 있는 낙상 회복은 매우 중요합니다. 사족 보행 로봇이나 바퀴 달린 로봇과 달리, 휴머노이드는 낙상 중에 고에너지 충격, 복잡한 전신 접촉, 큰 시점 변화를 겪기 때문에 지속적인 작동을 위해 회복이 필수적입니다. 기존 방법들은 낙상 안전을 낙상 회피, 충격 완화, 기립 회복과 같은 개별 문제로 분할하거나, 평평한 지형에서 강화 학습이나 모방 학습을 통해 시각 없이 훈련된 종단간 정책에 의존합니다. 더 깊은 수준에서 보면, 낙상 안전은 자세, 동역학, 지형을 결합하고 완전한 커버리지를 요구하는 모놀리식 데이터 복잡성으로 취급되어 확장성과 일반화를 제한합니다. 우리는 낙상 회복의 모든 단계를 포괄하는 통합된 낙상 안전 접근법을 제시합니다. 이는 두 가지 통찰에 기반합니다: 1) 자연스러운 인간의 낙상 및 회복 자세는 매우 제한적이며 정렬을 통해 평평한 지형에서 복잡한 지형으로 전이 가능하고, 2) 빠른 전신 반응에는 통합된 지각-운동 표현이 필요합니다. 우리는 평평한 지형에서의 희소한 인간 시연과 시뮬레이션된 복잡한 지형을 사용하여 특권 교사를 훈련시키고, 이를 자기중심적 깊이와 고유수용감각에만 의존하는 배치 가능한 학생으로 증류합니다. 학생은 무엇을 인지해야 하고 어떻게 행동해야 하는지를 별도로 인코딩하는 대신, 다음 목표 자세와 로컬 지형을 결합한 교사의 맥락 내 목표 잠재 표현을 일치시킴으로써 반응하는 방법을 학습합니다. 시뮬레이션과 실제 Unitree G1 휴머노이드에서의 결과는 실제 환경 미세 조정 없이 다양한 비평평 환경에서 강력한 제로샷 낙상 안전을 입증합니다. 프로젝트 페이지는 https://vigor2026.github.io/ 에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_capture_point/">캡처 포인트</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_gait_planning/">보행 패턴 계획</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vigor_visual_goal_in_context_i_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_capture_point/">
+          <span class="entry-type">원리</span>
+          <h3>캡처 포인트</h3>
+          <p>로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_gait_planning/">
+          <span class="entry-type">방법</span>
+          <h3>보행 패턴 계획</h3>
+          <p>족욕 로봇의 안정적이고 효율적인 이동을 위해 보행 순서·시기·상태 전이를 생성하는 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

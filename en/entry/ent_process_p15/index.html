@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integration &amp; V &amp; V testing · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Integration &amp; V &amp; V testing</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Integration &amp; V &amp; V testing</h1>
+      <p class="entry-name-en">Integration &amp; V &amp; V testing</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Assembly, Integration &amp; Testing</span><span class="tag">Evaluation &amp; Benchmarks</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Integration &amp; V &amp; v-phase 15 of the Android product development process, covering solution design, implementation verification, and document delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Whole-machine Integration &amp; V&amp;V is the 15th phase in the full-process development of humanoid robot products, expanded into several Level-3 sub-tasks in WBS V3.</p>
+<h2 id="content">Content</h2>
+<p>This phase covers complete engineering actions such as input review, solution design, implementation/prototyping, verification closure, and documentation delivery, serving as a key milestone to ensure downstream dependencies receive qualified inputs.</p>
+<h2 id="key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</h2>
+<h4 id="subsystem-integration">Subsystem Integration</h4>
+<h5 id="leg-system-integration-and-debugging">Leg System Integration and Debugging</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Single-leg test stand, standing, stepping, joint coordination</li>
+<li><strong>Design Rationale</strong>: Legs are the core of balance and walking; verify independently first</li>
+<li><strong>Key Constraints</strong>: Safety harness, limit protection</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Stable single-leg/dual-leg standing, joint tracking error &lt; target
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P15.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Leg System Integration and Debugging," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P15.1.1.2 Interface and Integration Strategy Design</strong>: Review subsystem interfaces, data flows, and timing involved in "Leg System Integration and Debugging," define integration sequence, rollback strategy, and exception handling mechanism.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P15.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Leg System Integration and Debugging" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P15.1.1.4 Verification and Issue Closure</strong>: Verify the output of "Leg System Integration and Debugging," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P15.1.1.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Leg System Integration and Debugging," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="arm-and-hand-integration">Arm and Hand Integration</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Single-arm functional test, dual-hand coordination, grasp calibration</li>
+<li><strong>Design Rationale</strong>: Upper limb manipulation capability must be verified before whole-machine integration</li>
+<li><strong>Key Constraints</strong>: Workspace, collision, load</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Typical single-arm/dual-arm actions pass, grasp success rate meets target
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P15.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Arm and Hand Integration," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P15.1.2.2 Interface and Integration Strategy Design</strong>: Review subsystem interfaces, data flows, and timing involved in "Arm and Hand Integration," define integration sequence, rollback strategy, and exception handling mechanism.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P15.1.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Arm and Hand Integration" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P15.1.2.4 Verification and Issue Closure</strong>: Verify the output of "Arm and Hand Integration," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P15.1.2.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Arm and Hand Integration," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="perception-planning-control-closed-loop-integration">Perception-Planning-Control Closed-Loop Integration</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: End-to-end task testing, closed-loop feedback debugging</li>
+<li><strong>Design Rationale</strong>: Connect perception, AI, control, and actuation to verify system-level behavior</li>
+<li><strong>Key Constraints</strong>: Latency, fault handling, safety</li>
+<li><strong>Completion Criteria/Deliverables</strong>: End-to-end success rate for typical tasks &gt; target
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P15.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Perception-Planning-Control Closed-Loop Integration," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P15.1.3.2 Algorithm/Control Solution Design</strong>: Based on "end-to-end task testing, closed-loop feedback debugging," establish mathematical models or algorithm frameworks, form candidate solutions, evaluate stability, real-time performance, and scalability, and freeze the implementation path.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P15.1.3.3 Algorithm Implementation and Simulation Verification</strong>: Implement algorithms for "Perception-Planning-Control Closed-Loop Integration" in simulation environments or offline data, verifying functional correctness, real-time performance, and robustness.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P15.1.3.4 Algorithm Tuning and Performance Verification</strong>: Perform parameter tuning and boundary testing for algorithms in "Perception-Planning-Control Closed-Loop Integration," verifying performance under typical/extreme conditions meets indicators.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P15.1.3.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Perception-Planning-Control Closed-Loop Integration," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h4 id="functional-safety-and-performance-verification">Functional Safety and Performance Verification</h4>
+<h5 id="safety-function-testing">Safety Function Testing</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Emergency stop, fall protection, collision detection, limit stops, safety zones</li>
+<li><strong>Design Rationale</strong>: Any anomaly should result in safe shutdown or protective posture</li>
+<li><strong>Key Constraints</strong>: Safety standards, personnel protection</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Safety test report, all safety functions pass
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P15.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Safety Function Testing," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P15.2.1.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Safety Function Testing," using "emergency stop, fall protection, collision detection, limit stops, safety zones" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P15.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Safety Function Testing" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P15.2.1.4 Test Execution and Result Analysis</strong>: Execute tests for "Safety Function Testing" according to acceptance criteria, calculate pass rate/error/deviation, perform root cause analysis, and form an improvement list.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P15.2.1.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Safety Function Testing," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="performance-benchmark-testing">Performance Benchmark Testing</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Walking speed, battery life, load, operation precision, noise</li>
+<li><strong>Design Rationale</strong>: Verify KPIs item by item against PRD</li>
+<li><strong>Key Constraints</strong>: Test environment, repetition count, sensor accuracy</li>
+<li><strong>Completion Criteria/Deliverables</strong>: "Performance Test Report," KPI achievement rate
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P15.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Performance Benchmark Testing," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P15.2.2.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Performance Benchmark Testing," using "walking speed, battery life, load, operation precision, noise" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P15.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Performance Benchmark Testing" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P15.2.2.4 Test Execution and Result Analysis</strong>: Execute tests for "Performance Benchmark Testing" according to acceptance criteria, calculate pass rate/error/deviation, perform root cause analysis, and form an improvement list.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P15.2.2.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Performance Benchmark Testing," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="environmental-adaptability-testing">Environmental Adaptability Testing</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Temperature, humidity, dust, electromagnetic interference, lighting, floor material</li>
+<li><strong>Design Rationale</strong>: Verify robustness in target operating environments</li>
+<li><strong>Key Constraints</strong>: Test cost, time, equipment</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Environmental test report, failure modes and improvements
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P15.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Environmental Adaptability Testing," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P15.2.3.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Environmental Adaptability Testing," using "temperature, humidity, dust, electromagnetic interference, lighting, floor material" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P15.2.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Environmental Adaptability Testing" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P15.2.3.4 Test Execution and Result Analysis</strong>: Execute tests for "Environmental Adaptability Testing" according to acceptance criteria, calculate pass rate/error/deviation, perform root cause analysis, and form an improvement list.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P15.2.3.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Environmental Adaptability Testing," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h4 id="reliability-and-durability-verification">Reliability and Durability Verification</h4>
+<h5 id="joint-and-whole-machine-durability-testing">Joint and Whole-Machine Durability Testing</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Continuous operation, joint cycling, drop, vibration</li>
+<li><strong>Design Rationale</strong>: Expose early failures, verify MTBF assumptions</li>
+<li><strong>Key Constraints</strong>: Test cycle, number of prototypes</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Reliability test plan and results, failure analysis and improvements
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P15.3.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Joint and Whole-Machine Durability Testing," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P15.3.1.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Joint and Whole-Machine Durability Testing," using "continuous operation, joint cycling, drop, vibration" for justification, and clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P15.3.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute implementation work for "Joint and Whole-Machine Durability Testing" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P15.3.1.4 Test Execution and Result Analysis</strong>: Execute tests for "Joint and Whole-Machine Durability Testing" according to acceptance criteria, calculate pass rate/error/deviation, perform root cause analysis, and form an improvement list.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P15.3.1.5 Documentation Output and Downstream Delivery</strong>: Output final reports/drawings/specifications for "Joint and Whole-Machine Durability Testing," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documentation per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p14/">Software &amp; Integration</a>
+              <span class="rel-desc">P15 依赖 P14 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15_1_3/">Perception-planning-control closed-loop integration</a>
+              <span class="rel-desc">Integration &amp; V &amp; V testing mentions Perception-planning-control closed-loop integration.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15_3_1/">Joint and machine endurance test</a>
+              <span class="rel-desc">Integration &amp; V &amp; V testing is part of Joint and machine endurance test.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_1_1/">DFM/DFA review</a>
+              <span class="rel-desc">Integration &amp; V &amp; V testing mentions DFM/DFA review.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_1_3/">Assembly line planning and SOP</a>
+              <span class="rel-desc">Integration &amp; V &amp; V testing mentions Assembly line planning and SOP.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15_1_1/">Integration and debugging of leg system</a>
+              <span class="rel-desc">Integration &amp; V &amp; V testing mentions Integration and debugging of leg system.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p8/">Structural FEA and iteration</a>
+              <span class="rel-desc">P15 依赖 P8 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15_3_2/">Software stability and regression testing</a>
+              <span class="rel-desc">Integration &amp; V &amp; V testing mentions Software stability and regression testing.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p16_3_3/">PPAP / Mass Production Readiness Assessment</a>
+              <span class="rel-desc">Integration &amp; V &amp; V testing mentions PPAP / Mass Production Readiness Assessment.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p9/">Thermal Management simulation and iteration</a>
+              <span class="rel-desc">P15 依赖 P9 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p15_3_3/">Preparation and pre-audit for certification</a>
+              <span class="rel-desc">Integration &amp; V &amp; V testing mentions Preparation and pre-audit for certification.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p10/">Motion Control Algorithm Development and Validation</a>
+              <span class="rel-desc">P15 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p11/">Dexterous Hand Selection/Design and Integration</a>
+              <span class="rel-desc">P15 依赖 P11 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_2_1/">Safety function test</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Safety function test is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_2_2/">Performance benchmarking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Performance benchmarking is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_3_2/">Software stability and regression testing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Software stability and regression testing is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Production Ramp mentions Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_1_2/">Arm and hand integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Arm and hand integration is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p1/">Requirements Definition and System Design (Concept / Pre-A)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Requirements Definition and System Design (Concept / Pre-A) mentions Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_2_3/">Test for environmental suitability</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Test for environmental suitability is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_1_3/">Perception-planning-control closed-loop integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Perception-planning-control closed-loop integration is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_3_1/">Joint and machine endurance test</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Joint and machine endurance test is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_3_3/">Preparation and pre-audit for certification</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Preparation and pre-audit for certification is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15_1_1/">Integration and debugging of leg system</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Integration and debugging of leg system is part of Integration &amp; V &amp; V testing.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16/">Pilot &amp; Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P16 依赖 P15 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p15"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Software stability and regression testing</h3>
+          <p>Long-term operation without crash, critical fault recovery through injection</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_3_3/">
+          <span class="entry-type">Method</span>
+          <h3>PPAP / Mass Production Readiness Assessment</h3>
+          <p>PPAP approval and mass production readiness evaluation passed</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Test for environmental suitability</h3>
+          <p>Environmental test report, Failure Mode and improvement</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Arm and hand integration</h3>
+          <p>Single arm/double arm typical movement passing and grasping success rate reaching the standard</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9/">
+          <span class="entry-type">Method</span>
+          <h3>Thermal Management simulation and iteration</h3>
+          <p>Thermal Management simulation and iteration-phase 9 of the entire Android product development…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>Joint and machine endurance test</h3>
+          <p>Reliability test plan and results, failure analysis and improvement</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">Concept</span>
+          <h3>Production Ramp</h3>
+          <p>Transition from pilot-line builds to volume manufacturing while improving yield, cycle time, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>DFM/DFA review</h3>
+          <p>DFM/DFA reports, engineering change lists, cost impact assessments</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Performance benchmarking</h3>
+          <p>Performance Test Report, KPI compliance rate</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10/">
+          <span class="entry-type">Method</span>
+          <h3>Motion Control Algorithm Development and Validation</h3>
+          <p>Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14/">
+          <span class="entry-type">Method</span>
+          <h3>Software &amp; Integration</h3>
+          <p>Software &amp; Integration-the 14th stage of the entire Android product development process, covering…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Perception-planning-control closed-loop integration</h3>
+          <p>End-to-end success rate of typical tasks &gt; Objectives</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p1/">
+          <span class="entry-type">Method</span>
+          <h3>Requirements Definition and System Design (Concept / Pre-A)</h3>
+          <p>Requirement Definition and System Architecture (Concept / Pre-A) – the first phase of the full…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_3_3/">
+          <span class="entry-type">Method</span>
+          <h3>Preparation and pre-audit for certification</h3>
+          <p>Pre-test report, Technical Document List, certification plan</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Integration and debugging of leg system</h3>
+          <p>Single/double leg standing stability, joint following error &lt; target</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8/">
+          <span class="entry-type">Method</span>
+          <h3>Structural FEA and iteration</h3>
+          <p>Structural FEA-the 8th stage of the Android product development process, covering conceptual design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Safety function test</h3>
+          <p>Security test report, all security functions passed</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot &amp; Production Ramp</h3>
+          <p>Pilot &amp; Production Ramp-stage 16 of the Android product development process, covering concept…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p11/">
+          <span class="entry-type">Method</span>
+          <h3>Dexterous Hand Selection/Design and Integration</h3>
+          <p>Dexterous Hand Selection/Design and Integration — the 11th phase of the full-cycle humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Assembly line planning and SOP</h3>
+          <p>Assembly flow chart, tooling list, SOP, time measurement</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</a><ul>
+<li><a href="#subsystem-integration">Subsystem Integration</a><ul>
+<li><a href="#leg-system-integration-and-debugging">Leg System Integration and Debugging</a></li>
+<li><a href="#arm-and-hand-integration">Arm and Hand Integration</a></li>
+<li><a href="#perception-planning-control-closed-loop-integration">Perception-Planning-Control Closed-Loop Integration</a></li>
+</ul>
+</li>
+<li><a href="#functional-safety-and-performance-verification">Functional Safety and Performance Verification</a><ul>
+<li><a href="#safety-function-testing">Safety Function Testing</a></li>
+<li><a href="#performance-benchmark-testing">Performance Benchmark Testing</a></li>
+<li><a href="#environmental-adaptability-testing">Environmental Adaptability Testing</a></li>
+</ul>
+</li>
+<li><a href="#reliability-and-durability-verification">Reliability and Durability Verification</a><ul>
+<li><a href="#joint-and-whole-machine-durability-testing">Joint and Whole-Machine Durability Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

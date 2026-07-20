@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impedance Control · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Impedance Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Impedance Control</h1>
+      <p class="entry-name-en">Impedance Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#阻抗控制 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">Stage 1 · Build One Joint</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A control approach that regulates the dynamic relationship between interaction force and displacement, making the robot behave like a virtual mechanical impedance.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Impedance control is an important method in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p><strong>Impedance control</strong> does not control position and force separately, but instead regulates the <strong>mechanical impedance</strong> exhibited at the robot's end-effector—namely, the mass-damping-spring characteristics. It defines the relationship between force and position/velocity as:</p>
+<div class="arithmatex">\[
+\mathbf{F} = \mathbf{M}_d (\ddot{\mathbf{x}}_d - \ddot{\mathbf{x}}) + \mathbf{D}_d (\dot{\mathbf{x}}_d - \dot{\mathbf{x}}) + \mathbf{K}_d (\mathbf{x}_d - \mathbf{x})
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{M}_d\)</span>, <span class="arithmatex">\(\mathbf{D}_d\)</span>, and <span class="arithmatex">\(\mathbf{K}_d\)</span> are the desired inertia, damping, and stiffness matrices, respectively. This equation indicates that when the end-effector deviates from the desired trajectory, the robot generates a restoring force proportional to the deviation; when subjected to external disturbances, the robot responds according to the desired dynamics.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Impedance Control, Mechanical Impedance, Desired Inertia, Desired Damping, Desired Stiffness</p>
+<ul>
+<li><strong>Impedance control</strong>: A method for controlling the mass-damping-spring characteristics exhibited at the robot's end-effector.</li>
+<li><strong>Mechanical impedance</strong>: The dynamic relationship between force and motion (displacement, velocity, acceleration).</li>
+<li><strong>Desired inertia <span class="arithmatex">\(\mathbf{M}_d\)</span></strong>: The desired inertia characteristic matrix.</li>
+<li><strong>Desired damping <span class="arithmatex">\(\mathbf{D}_d\)</span></strong>: The desired damping characteristic matrix.</li>
+<li><strong>Desired stiffness <span class="arithmatex">\(\mathbf{K}_d\)</span></strong>: The desired stiffness characteristic matrix.</li>
+</ul>
+</div>
+<p>Impedance control can be divided into two categories:</p>
+<ol>
+<li><strong>Torque-level impedance</strong>: Directly calculates the desired task force from the impedance equation, then maps it to joint torques via <span class="arithmatex">\(\boldsymbol{\tau} = \mathbf{J}^T \mathbf{F}\)</span>. Requires a torque control inner loop.</li>
+<li><strong>Position-level impedance</strong>: Adds a force-position relationship to the outer position control loop, achieving compliance indirectly through position commands. Simple to implement but has limited bandwidth.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Torque-Level Impedance, Position-Level Impedance, Torque Control Inner Loop, Position Control Outer Loop</p>
+<ul>
+<li><strong>Torque-level impedance</strong>: Impedance control that directly outputs joint torques.</li>
+<li><strong>Position-level impedance</strong>: Impedance control that achieves compliance through position commands.</li>
+<li><strong>Torque control inner loop</strong>: An internal loop for fast control of joint torques.</li>
+<li><strong>Position control outer loop</strong>: An external loop that generates position commands.</li>
+</ul>
+</div>
+<p>In humanoid robots, impedance control can be used for:</p>
+<ul>
+<li><strong>Landing buffering</strong>: Exhibits low stiffness and high damping when the foot contacts the ground to absorb impact.</li>
+<li><strong>Human-robot interaction</strong>: Low arm stiffness ensures safe contact.</li>
+<li><strong>Tool use</strong>: Adjusts end-effector impedance according to the task, e.g., high stiffness for screwing, medium stiffness for opening doors.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Landing Buffering, HRI Safety, Tool Use, Stiffness Regulation</p>
+<ul>
+<li><strong>Landing buffering</strong>: Reducing contact impact through compliance.</li>
+<li><strong>HRI safety</strong>: Reducing the risk of injury during human-robot contact.</li>
+<li><strong>Tool use</strong>: The robot using tools to complete tasks.</li>
+<li><strong>Stiffness regulation</strong>: Adjusting system stiffness according to the task.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["Desired trajectory x_d, v_d, a_d"] --&gt; B["Actual state x, v, a"]
+    B --&gt; C["Impedance equation"]
+    C --&gt; D["F = Md e_ddot + Dd e_dot + Kd e"]
+    D --&gt; E["Task force F"]
+    E --&gt; F["tau = J^T F"]
+    F --&gt; G["Joint torque control"]</p>
+<h2 id="_1">개요</h2>
+<p>임피던스 제어는 휴머노이드 로봇 분야의 중요한 방법입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p><strong>임피던스 제어(impedance control)</strong>는 위치와 힘을 분리하여 제어하지 않고, 로봇 말단이 나타내는 <strong>기계적 임피던스(mechanical impedance)</strong>——즉 질량-감쇠-스프링 특성을 조절합니다. 힘과 위치/속도 관계를 다음과 같이 정의합니다:</p>
+<div class="arithmatex">\[
+\mathbf{F} = \mathbf{M}_d (\ddot{\mathbf{x}}_d - \ddot{\mathbf{x}}) + \mathbf{D}_d (\dot{\mathbf{x}}_d - \dot{\mathbf{x}}) + \mathbf{K}_d (\mathbf{x}_d - \mathbf{x})
+\]</div>
+<p>여기서 <span class="arithmatex">\(\mathbf{M}_d\)</span>, <span class="arithmatex">\(\mathbf{D}_d\)</span>, <span class="arithmatex">\(\mathbf{K}_d\)</span>는 각각 기대 관성, 감쇠 및 강성 행렬입니다. 이 방정식은 말단이 기대 궤적에서 벗어날 때 로봇이 벗어난 양에 비례하는 복원력을 생성하며, 외부 교란을 받을 때 로봇이 기대 동특성에 따라 응답함을 나타냅니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 임피던스 제어, 기계적 임피던스, 기대 관성, 기대 감쇠, 기대 강성</p>
+<ul>
+<li><strong>임피던스 제어(impedance control)</strong>: 로봇 말단이 나타내는 질량-감쇠-스프링 특성을 제어하는 방법.</li>
+<li><strong>기계적 임피던스(mechanical impedance)</strong>: 힘과 운동(변위, 속도, 가속도) 사이의 동적 관계.</li>
+<li><strong>기대 관성(desired inertia) <span class="arithmatex">\(\mathbf{M}_d\)</span></strong>: 기대되는 관성 특성 행렬.</li>
+<li><strong>기대 감쇠(desired damping) <span class="arithmatex">\(\mathbf{D}_d\)</span></strong>: 기대되는 감쇠 특성 행렬.</li>
+<li><strong>기대 강성(desired stiffness) <span class="arithmatex">\(\mathbf{K}_d\)</span></strong>: 기대되는 강성 특성 행렬.</li>
+</ul>
+</div>
+<p>임피던스 제어는 두 가지 유형으로 나눌 수 있습니다:</p>
+<ol>
+<li><strong>토크 수준 임피던스(torque-level impedance)</strong>: 임피던스 방정식에 따라 직접 기대 작업 힘을 계산한 후, <span class="arithmatex">\(\boldsymbol{\tau} = \mathbf{J}^T \mathbf{F}\)</span>를 통해 관절 토크로 매핑합니다. 토크 제어 내부 루프가 필요합니다.</li>
+<li><strong>위치 수준 임피던스(position-level impedance)</strong>: 위치 제어 외부 루프에 힘-위치 관계를 추가하여 위치 명령을 통해 간접적으로 순응을 구현합니다. 구현이 간단하지만 대역폭이 제한됩니다.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 토크 수준 임피던스, 위치 수준 임피던스, 토크 제어 내부 루프, 위치 제어 외부 루프</p>
+<ul>
+<li><strong>토크 수준 임피던스(torque-level impedance)</strong>: 관절 토크를 직접 출력하는 임피던스 제어.</li>
+<li><strong>위치 수준 임피던스(position-level impedance)</strong>: 위치 명령을 통해 순응을 구현하는 임피던스 제어.</li>
+<li><strong>토크 제어 내부 루프(torque control inner loop)</strong>: 관절 토크를 빠르게 제어하는 내부 회로.</li>
+<li><strong>위치 제어 외부 루프(position control outer loop)</strong>: 위치 명령을 생성하는 외부 회로.</li>
+</ul>
+</div>
+<p>휴머노이드 로봇에서 임피던스 제어는 다음에 사용될 수 있습니다:</p>
+<ul>
+<li><strong>착지 완충</strong>: 발이 지면에 닿을 때 낮은 강성-높은 감쇠로 나타나 충격을 흡수합니다.</li>
+<li><strong>인간-로봇 상호작용</strong>: 팔의 낮은 강성으로 접촉 안전을 보장합니다.</li>
+<li><strong>도구 사용</strong>: 작업에 따라 말단 임피던스를 조정합니다. 예: 나사 조이기 시 높은 강성, 문 열기 시 중간 강성.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 착지 완충, 인간-로봇 상호작용 안전, 도구 사용, 강성 조절</p>
+<ul>
+<li><strong>착지 완충(landing buffering)</strong>: 순응성을 통해 착지 충격을 줄입니다.</li>
+<li><strong>인간-로봇 상호작용 안전(HRI safety)</strong>: 인간-로봇 접촉 시 부상 위험을 낮춥니다.</li>
+<li><strong>도구 사용(tool use)</strong>: 로봇이 도구를 사용하여 작업을 완료합니다.</li>
+<li><strong>강성 조절(stiffness regulation)</strong>: 작업에 따라 시스템 강성을 조정합니다.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["기대 궤적 x_d, v_d, a_d"] --&gt; B["실제 상태 x, v, a"]
+    B --&gt; C["임피던스 방정식"]
+    C --&gt; D["F = Md e_ddot + Dd e_dot + Kd e"]
+    D --&gt; E["작업 힘 F"]
+    E --&gt; F["tau = J^T F"]
+    F --&gt; G["관절 토크 제어"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_series_elastic_actuator_2024/">Series Elastic Actuator</a>
+              <span class="rel-desc">Impedance Control mentions Series Elastic Actuator.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              <span class="rel-desc">Impedance Control mentions Model Predictive Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              <span class="rel-desc">Impedance Control mentions Mobile ALOHA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_pid_control/">PID Control</a>
+              <span class="rel-desc">Impedance Control has prerequisite PID Control.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">A Survey of Robot Manipulation in Contact</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Survey of Robot Manipulation in Contact discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_aerial_manipulation_contact_me_2026/">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_one_shot_multimodal_learning_f_2026/">One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps proposes Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_marconi_structured_prediction_for_cris_2021/">Structured Prediction for CRiSP Inverse Kinematics Learning with Misspecified Robot Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Structured Prediction for CRiSP Inverse Kinematics Learning with Misspecified Robot Models discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Whole-Body Control (WBC) has prerequisite Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_morphquad_morphable_quadrotor_2026/">MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi Direct Drive Actuator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Quasi Direct Drive Actuator uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_towards_adaptable_humanoid_con_2025/">Towards Adaptable Humanoid Control via Adaptive Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Towards Adaptable Humanoid Control via Adaptive Motion Tracking uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robot_crash_course_learning_so_2025/">Robot Crash Course: Learning Soft and Stylized Falling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Robot Crash Course: Learning Soft and Stylized Falling uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_extremcontrol_low_latency_huma_2026/">ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_h2_compact_human_humanoid_co_m_2025/">H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_safehumanoid_vlm_rag_driven_co_2025/">SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot proposes Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_the_quadruped_soft_tail_compli_2026/">The Quadruped Soft Tail: Compliant Grasping and Swabbing for Contamination Surveys in Harsh Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">The Quadruped Soft Tail: Compliant Grasping and Swabbing for Contamination Surveys in Harsh Environments uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_current_as_touch_proprioceptiv_2026/">Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_high_speed_and_impact_resilien_2024/">High-Speed and Impact Resilient Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">High-Speed and Impact Resilient Teleoperation of Humanoid Robots uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_preference_conditioned_multi_o_2025/">Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_u_joint_caams_experimental_eva_2026/">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_luo_ceer_compliant_end_effector_an_2026/">CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_granados_dance_teaching_by_a_robot_comb_2017/">Dance Teaching by a Robot: Combining Cognitive and Physical Human–Robot Interaction for Supporting the Skill Learning Process</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Dance Teaching by a Robot: Combining Cognitive and Physical Human–Robot Interaction for Supporting the Skill Learning Process uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_visualizing_impedance_control_2026/">Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation studies Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_admittance_control/">Admittance Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Admittance Control mentions Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_subsystem_ankle_compliance/">Ankle Compliance Mechanism</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Ankle Compliance Mechanism mentions Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_force_position_hybrid_control/">Force/Position Hybrid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Force/Position Hybrid Control mentions Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unified_structural_hydrodynami_2026/">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_pid_control/">PID Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">PID Control mentions Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_amor_adaptive_character_contro_2025/">AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_tacrefinenet_tactile_only_gras_2025/">TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_spatial_relationship_preservin_2010/">Spatial relationship preserving character motion adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Spatial relationship preserving character motion adaptation uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_human_like_badminton_2026/">Learning Human-Like Badminton Skills for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Human-Like Badminton Skills for Humanoid Robots uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_robust_operational_space_contr_2026/">Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_softmimic_learning_compliant_w_2025/">SoftMimic: Learning Compliant Whole-body Control from Examples</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">SoftMimic: Learning Compliant Whole-body Control from Examples uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_murooka_whole_body_multi_contact_motio_2024/">Whole-body Multi-contact Motion Control for Humanoid Robots Based on Distributed Tactile Sensors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Whole-body Multi-contact Motion Control for Humanoid Robots Based on Distributed Tactile Sensors uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoidvlm_vision_language_gu_2026/">HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation proposes Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">Deformation-Aware Robotic 3D Ultrasound</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Deformation-Aware Robotic 3D Ultrasound uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_johns_coarse_to_fine_imitation_learn_2021/">Coarse-to-Fine Imitation Learning: Robot Manipulation from a Single Demonstration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Coarse-to-Fine Imitation Learning: Robot Manipulation from a Single Demonstration uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_impedance_guided_programmable_2026/">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials introduces Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots uses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_physics_based_motion_tracking_2026/">Physics-Based Motion Tracking of Contact-Rich Interacting Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Physics-Based Motion Tracking of Contact-Rich Interacting Characters mentions Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_float_drone_for_physical_inter_2026/">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics discusses Impedance Control.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_newton_euler_equations/">Newton-Euler equations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_inverse_dynamics_qp/">Inverse-Dynamics QP Formulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_planetary_roller_screw/">Planetary Roller Screw</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_euler_lagrange_equations/">Euler-Lagrange Equations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">formalizes</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 14. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_impedance_control"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_newton_euler_equations/">
+          <span class="entry-type">Equation</span>
+          <h3>Newton-Euler equations</h3>
+          <p>A set of coupled force and torque balance equations that describe the motion of a rigid body or…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_amor_adaptive_character_contro_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</h3>
+          <p>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_morphquad_morphable_quadrotor_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency</h3>
+          <p>arXiv:2607.02764v1 Announce Type: new Abstract: Infrastructure maintenance, contact-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_current_as_touch_proprioceptiv_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</h3>
+          <p>arXiv:2607.03529v1 Announce Type: new Abstract: Compliance is essential for dexterous manipulation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">Component</span>
+          <h3>Planetary Roller Screw</h3>
+          <p>A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_preference_conditioned_multi_o_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</h3>
+          <p>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_human_like_badminton_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Human-Like Badminton Skills for Humanoid Robots</h3>
+          <p>Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">Formalism</span>
+          <h3>Euler-Lagrange Equations</h3>
+          <p>Second-order differential equations derived from the stationarity of the action integral, giving the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_towards_adaptable_humanoid_con_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Adaptable Humanoid Control via Adaptive Motion Tracking</h3>
+          <p>Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_marconi_structured_prediction_for_cris_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Structured Prediction for CRiSP Inverse Kinematics Learning with Misspecified Robot Models</h3>
+          <p>Introduces CRiSP-FK, a structured prediction algorithm that combines kernel regression with a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Mobile ALOHA</h3>
+          <p>Whole-body mobile bimanual teleoperation platform for collecting home and warehouse manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_adaptive_control_of_robot_mani_2014/">
+          <span class="entry-type">Paper</span>
+          <h3>Adaptive Control of Robot Manipulators With Uncertain Kinematics and Dynamics</h3>
+          <p>This paper proposes two adaptive control schemes that achieve task-space trajectory tracking for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_visualizing_impedance_control_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Visualizing Impedance Control in Augmented Reality for Teleoperation: Design and User Evaluation</h3>
+          <p>arXiv:2603.25418v2 Announce Type: replace Abstract: Teleoperation for contact-rich manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robust_operational_space_contr_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Robust Operational Space Control with Conformal Disturbance Bounds for Safe Redundant Manipulation</h3>
+          <p>arXiv:2607.00424v1 Announce Type: new Abstract: Redundant robotic manipulators operating in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_one_shot_multimodal_learning_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps</h3>
+          <p>arXiv:2607.09515v1 Announce Type: new Abstract: Robotic manipulation tasks often require…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_aerial_manipulation_contact_me_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</h3>
+          <p>arXiv:2607.04719v1 Announce Type: new Abstract: Aerial robots are increasingly moving from remote…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_suomalainen_a_survey_of_robot_manipulation_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>A Survey of Robot Manipulation in Contact</h3>
+          <p>This survey reviews robot manipulation tasks that require sustained or controlled contact with the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_luo_ceer_compliant_end_effector_an_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation</h3>
+          <p>CEER proposes a compliant end-effector and root (EE-root) control abstraction for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_murooka_whole_body_multi_contact_motio_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Whole-body Multi-contact Motion Control for Humanoid Robots Based on Distributed Tactile Sensors</h3>
+          <p>This paper presents a whole-body multi-contact control method that uses distributed tactile-sensor…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</h3>
+          <p>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">Formalism</span>
+          <h3>Inverse-Dynamics QP Formulation</h3>
+          <p>A quadratic-program formulation that computes generalized accelerations, contact forces, and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_extremcontrol_low_latency_huma_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control</h3>
+          <p>ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoidvlm_vision_language_gu_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation</h3>
+          <p>HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control (FOC)</h3>
+          <p>A motor-control method that transforms three-phase currents into a rotating dq reference frame to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_physics_based_motion_tracking_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Physics-Based Motion Tracking of Contact-Rich Interacting Characters</h3>
+          <p>Physics-based Motion Tracking of Contact-Rich Interacting Characters is a paper on physics animation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models</h3>
+          <p>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_u_joint_caams_experimental_eva_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>U-Joint CAAMS: Experimental Evaluation of a Universal-Joint Continuum Manipulator for Aerial Manipulation</h3>
+          <p>arXiv:2607.03321v1 Announce Type: new Abstract: Continuum manipulators mounted on multi-rotor UAVs…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_h2_compact_human_humanoid_co_m_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies</h3>
+          <p>H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_granados_dance_teaching_by_a_robot_comb_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Dance Teaching by a Robot: Combining Cognitive and Physical Human–Robot Interaction for Supporting the Skill Learning Process</h3>
+          <p>This paper presents a 1.8 m mobile humanoid Dance Teaching Robot that guides a human student through…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_robot_crash_course_learning_so_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Crash Course: Learning Soft and Stylized Falling</h3>
+          <p>Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_spatial_relationship_preservin_2010/">
+          <span class="entry-type">Paper</span>
+          <h3>Spatial relationship preserving character motion adaptation</h3>
+          <p>Spatial relationship preserving character motion adaptation is a 2010 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_softmimic_learning_compliant_w_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SoftMimic: Learning Compliant Whole-body Control from Examples</h3>
+          <p>SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unified_structural_hydrodynami_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</h3>
+          <p>arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_safehumanoid_vlm_rag_driven_co_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot</h3>
+          <p>SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_tacrefinenet_tactile_only_gras_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses</h3>
+          <p>TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses (TacRefineNet),…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_admittance_control/">
+          <span class="entry-type">Method</span>
+          <h3>Admittance Control</h3>
+          <p>A control approach that converts measured external forces into desired position or velocity…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_pid_control/">
+          <span class="entry-type">Method</span>
+          <h3>PID Control</h3>
+          <p>A foundational feedback control method that computes a control signal as a linear combination of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</h3>
+          <p>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jiang_deformation_aware_robotic_3d_u_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Deformation-Aware Robotic 3D Ultrasound</h3>
+          <p>Proposes a patient-specified stiffness-based method to correct force-induced tissue deformation in…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_johns_coarse_to_fine_imitation_learn_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Coarse-to-Fine Imitation Learning: Robot Manipulation from a Single Demonstration</h3>
+          <p>Johns (2021) proposes a visual imitation-learning method that learns a novel manipulation task from…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_impedance_guided_programmable_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</h3>
+          <p>arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_force_position_hybrid_control/">
+          <span class="entry-type">Method</span>
+          <h3>Force/Position Hybrid Control</h3>
+          <p>A control strategy that simultaneously regulates force along constrained directions and position…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_series_elastic_actuator_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Series Elastic Actuator</h3>
+          <p>Actuator with an elastic element in series with the motor and load, enabling accurate force control…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_float_drone_for_physical_inter_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</h3>
+          <p>arXiv:2607.04260v1 Announce Type: new Abstract: Aerial physical interaction represents a promising…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_subsystem_ankle_compliance/">
+          <span class="entry-type">Component</span>
+          <h3>Ankle Compliance Mechanism</h3>
+          <p>A mechanical or control-based compliance design at the ankle that improves shock absorption, terrain…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control</h3>
+          <p>Online optimal-control approach for generating contact-rich whole-body motion.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_high_speed_and_impact_resilien_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>High-Speed and Impact Resilient Teleoperation of Humanoid Robots</h3>
+          <p>High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Quasi Direct Drive Actuator</h3>
+          <p>Actuator design using low-ratio gears with high-torque motors to achieve high bandwidth and force…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_the_quadruped_soft_tail_compli_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>The Quadruped Soft Tail: Compliant Grasping and Swabbing for Contamination Surveys in Harsh Environments</h3>
+          <p>arXiv:2606.30900v1 Announce Type: new Abstract: Beryllium contamination surveys in radioactive areas…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

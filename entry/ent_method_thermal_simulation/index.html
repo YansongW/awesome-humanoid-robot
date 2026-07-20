@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>热仿真 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">热仿真</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>热仿真</h1>
+      <p class="entry-name-en">Thermal Simulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#两节点热网络模型 by scripts/backfill_nonpaper_entries.py. Body backfilled from chapter-06.md section &#39;6.7.3 整机功率与热仿真思路&#39; by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>1. 建立功耗模型：列出各组件的稳态功耗、峰值功耗和占空比。 2. 构建几何模型：用 CAD 模型或简化几何表示机器人外壳、散热器、风道。 3. 设置材料属性：导热系数、比热容、密度、发射率。 4. 划分网格：对关键区域加密，对远处区域粗化。 5. 设定边界条件：环境温度、对流系数、风扇曲线、接触热阻。 6. 求解稳态/瞬态温度场：评估关键芯片结温和外壳温度。 7. 迭代优化：调整散热器、风道、TIM、功耗分配，直到满足热目标。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>预测电子与机械系统在运行载荷下的温度分布、热流密度与散热需求的计算方法。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="673">6.7.3 整机功率与热仿真思路</h3>
+<p>整机热仿真通常按以下步骤进行：</p>
+<ol>
+<li><strong>建立功耗模型</strong>：列出各组件的稳态功耗、峰值功耗和占空比。</li>
+<li><strong>构建几何模型</strong>：用 CAD 模型或简化几何表示机器人外壳、散热器、风道。</li>
+<li><strong>设置材料属性</strong>：导热系数、比热容、密度、发射率。</li>
+<li><strong>划分网格</strong>：对关键区域加密，对远处区域粗化。</li>
+<li><strong>设定边界条件</strong>：环境温度、对流系数、风扇曲线、接触热阻。</li>
+<li><strong>求解稳态/瞬态温度场</strong>：评估关键芯片结温和外壳温度。</li>
+<li><strong>迭代优化</strong>：调整散热器、风道、TIM、功耗分配，直到满足热目标。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：占空比、CAD、边界条件、网格收敛、风扇曲线</p>
+<ul>
+<li><strong>占空比（duty cycle）</strong>：某组件处于高功耗状态的时间比例。</li>
+<li><strong>CAD（Computer-Aided Design）</strong>：计算机辅助设计。</li>
+<li><strong>边界条件（boundary condition）</strong>：求解域边界上的物理约束，如温度、热流、对流。</li>
+<li><strong>网格收敛（mesh convergence）</strong>：加密网格后结果不再显著变化，说明数值解可信。</li>
+<li><strong>风扇曲线（fan curve）</strong>：风扇流量与压降的关系曲线。</li>
+</ul>
+</div>
+<h3 id="_3">热仿真在人形机器人中的工程意义</h3>
+<p>人形机器人集成了计算单元、电机驱动、电池和功率电子，热密度高且空间受限。热仿真用于预判关键芯片结温、电机绕组温升和外壳表面温度，指导散热器、风道、导热界面材料和功耗管理策略的设计，避免过热降频或寿命衰减。通过热-力-电联合仿真，还可以在整机设计早期识别热瓶颈并优化布局。</p>
+<h2 id="_4">参考</h2>
+<ul>
+<li>项目 Wiki：wiki/docs/chapters/chapter-06.md 第「6.7.3 整机功率与热仿真思路」节</li>
+<li>Wiki extraction</li>
+</ul>
+<p>热仿真作为人形机器人产业链中的关键组成部分，其相关理论与工程实践仍在持续发展。深入理解其原理、边界条件与典型应用场景，对于将实验室样机转化为可量产产品具有重要意义。</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_electrochemistry/">电化学</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_silva_plata_model_based_capacitive_touch_s_2025/">软体机器人中基于模型的电容式触觉感知：实现面向艺术应用的鲁棒触觉交互</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">软体机器人中基于模型的电容式触觉感知：实现面向艺术应用的鲁棒触觉交互提及热仿真。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">锂离子电池老化轨迹中的“拐点”</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">锂离子电池老化轨迹中的“拐点”discusses热仿真。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">锂离子电池剩余使用寿命与SOH估计（面向电动汽车）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">锂离子电池剩余使用寿命与SOH估计（面向电动汽车）discusses热仿真。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">基于高导电性石墨纸集流体的超薄柔性锂离子电池</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于高导电性石墨纸集流体的超薄柔性锂离子电池使用热仿真。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">当前锂离子电池技术与潜在固态电池技术简要综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">当前锂离子电池技术与潜在固态电池技术简要综述discusses热仿真。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器discusses热仿真。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">NVIDIA Jetson AGX Orin</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">约束</span>
+              <span class="rel-desc">Wiki 第6章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_safety_mcu/">安全MCU</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">约束</span>
+              <span class="rel-desc">Wiki 第6章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_thermal_simulation"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">
+          <span class="entry-type">论文</span>
+          <h3>用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器</h3>
+          <p>提出了一种可打印的自持续柔顺振荡器，该振荡器由两个机械耦合的自打开开关构成，每个开关将双稳态屈曲梁与导电超螺旋聚合物（CSCP）热驱动器相结合，可在无需离散电子元件或控制硬件的情况下，由恒定电流产生周…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_safety_mcu/">
+          <span class="entry-type">零部件</span>
+          <h3>安全MCU</h3>
+          <p>1. 专用 NPU 与异构计算。面向 Transformer、扩散模型和机器人策略的专用加速器（如 NVIDIA Blackwell、Qualcomm Hexagon NPU、Apple Neural…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_qu_thin_flexible_lithium_ion_batt_2015/">
+          <span class="entry-type">论文</span>
+          <h3>基于高导电性石墨纸集流体的超薄柔性锂离子电池</h3>
+          <p>该论文报道了一种超薄（包括封装层小于250微米）、轻质、柔性的锂离子电池，其采用纳米铝或铜层涂覆的石墨纸作为集流体，并配以磷酸铁锂正极、钛酸锂负极和浸润六氟磷酸锂的聚乙烯隔膜。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ulvestad_a_brief_review_of_current_lith_2018/">
+          <span class="entry-type">论文</span>
+          <h3>当前锂离子电池技术与潜在固态电池技术简要综述</h3>
+          <p>Andrew Ulvestad于2018年发表的综述，将最先进的锂离子电池与采用锂金属负极的新兴固态电池进行基准比较，比较了硫化物、聚合物和氧化物固态电解质，并调研了商用固态电池项目。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kumar_estimation_of_remaining_useful_2023/">
+          <span class="entry-type">论文</span>
+          <h3>锂离子电池剩余使用寿命与SOH估计（面向电动汽车）</h3>
+          <p>这篇2023年arXiv论文综述了经验、物理和数据驱动的锂离子电池剩余使用寿命（RUL）估计方法，并提出了一种基于TensorFlow…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>NVIDIA Jetson AGX Orin</h3>
+          <p>NVIDIA Jetson AGX Orin是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_electrochemistry/">
+          <span class="entry-type">基础学科</span>
+          <h3>电化学</h3>
+          <p>锂离子电池的能量存储本质上是锂在正负极活性材料晶格中的可逆嵌入/脱嵌反应。要理解标称电压、倍率性能、低温衰减和老化，需要回到电化学热力学与动力学。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_silva_plata_model_based_capacitive_touch_s_2025/">
+          <span class="entry-type">论文</span>
+          <h3>软体机器人中基于模型的电容式触觉感知：实现面向艺术应用的鲁棒触觉交互</h3>
+          <p>提出了一种用于软体机器人的形变鲁棒电容式触觉皮肤，通过将互电容传感与在线 SOFA 有限元仿真相结合，在任意三维形变表面上定位人体触摸，并在一件交互式软体雕塑上进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">技术</span>
+          <h3>EtherCAT</h3>
+          <p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_attia_knees_in_lithium_ion_battery_a_2022/">
+          <span class="entry-type">论文</span>
+          <h3>锂离子电池老化轨迹中的“拐点”</h3>
+          <p>Lithium-ion batteries can last many years but sometimes exhibit rapid, nonlinear degradation that…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#673">6.7.3 整机功率与热仿真思路</a></li>
+<li><a href="#_3">热仿真在人形机器人中的工程意义</a></li>
+</ul>
+</li>
+<li><a href="#_4">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

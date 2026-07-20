@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>需求定义与系统方案（Concept / Pre-A） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">需求定义与系统方案（Concept / Pre-A）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>需求定义与系统方案（Concept / Pre-A）</h1>
+      <p class="entry-name-en">Requirements Definition and System Design (Concept / Pre-A)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">设计工程</span><span class="tag">政策法规伦理</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>需求定义与系统方案（Concept / Pre-A）是人形机器人产品开发全流程中的第 1 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">需求工程</h4>
+<h5 id="_4">利益相关方需求采集</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：访谈、问卷、工作坊、现场跟拍、Kano 模型</li>
+<li><strong>设计思考逻辑</strong>：识别显性与隐性需求；区分 Must-have / Differentiator / Exciter</li>
+<li><strong>关键约束</strong>：时间、样本代表性、需求冲突</li>
+<li><strong>完成标准 / 输出物</strong>：利益相关方清单、需求池、优先级排序
+<strong>三级子任务：</strong></li>
+<li><strong>P1.1.1.1 输入梳理与目标量化</strong>：整理「利益相关方需求采集」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P1.1.1.2 方案/方法设计</strong>：针对「利益相关方需求采集」制定实施方法或候选方案，使用「访谈、问卷、工作坊、现场跟拍、Kano 模型」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P1.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「利益相关方需求采集」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P1.1.1.4 验证与问题闭环</strong>：对「利益相关方需求采集」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P1.1.1.5 文档输出与下游交付</strong>：输出「利益相关方需求采集」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="syrs">系统需求规格书（SyRS）</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：SysML 用例图、需求树、SMART 原则</li>
+<li><strong>设计思考逻辑</strong>：将商业语言转化为工程语言：尺寸、重量、DOF、速度、负载、续航、安全等级</li>
+<li><strong>关键约束</strong>：指标耦合、测试可行性、成本驱动</li>
+<li><strong>完成标准 / 输出物</strong>：SyRS 基线发布、需求可追溯、验收条件量化
+<strong>三级子任务：</strong></li>
+<li><strong>P1.1.2.1 输入梳理与目标量化</strong>：整理「系统需求规格书（SyRS）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P1.1.2.2 方案/方法设计</strong>：针对「系统需求规格书（SyRS）」制定实施方法或候选方案，使用「SysML 用例图、需求树、SMART 原则」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P1.1.2.3 实施/原型/样件制作</strong>：根据设计方案执行「系统需求规格书（SyRS）」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P1.1.2.4 验证与问题闭环</strong>：对「系统需求规格书（SyRS）」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P1.1.2.5 文档输出与下游交付</strong>：输出「系统需求规格书（SyRS）」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_5">法规、标准与安全需求映射</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：ISO 10218-1/2、ISO/TS 15066、IEC 61508、IEC 62368、CE/FCC/UL 差距分析</li>
+<li><strong>设计思考逻辑</strong>：安全需求必须在设计早期成为硬约束，而非后期补票</li>
+<li><strong>关键约束</strong>：地区差异、认证周期、测试费用</li>
+<li><strong>完成标准 / 输出物</strong>：法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
+<strong>三级子任务：</strong></li>
+<li><strong>P1.1.3.1 输入梳理与目标量化</strong>：整理「法规、标准与安全需求映射」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P1.1.3.2 方案/方法设计</strong>：针对「法规、标准与安全需求映射」制定实施方法或候选方案，使用「ISO 10218-1/2、ISO/TS 15066、IEC 61508、IEC 62368、CE/FCC/UL 差距分析」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P1.1.3.3 实施/原型/样件制作</strong>：根据设计方案执行「法规、标准与安全需求映射」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P1.1.3.4 验证与问题闭环</strong>：对「法规、标准与安全需求映射」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P1.1.3.5 文档输出与下游交付</strong>：输出「法规、标准与安全需求映射」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_6">人因工程与交互需求</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：人体测量数据库、可达域分析、惊吓反应实验、HMI 原型</li>
+<li><strong>设计思考逻辑</strong>：机器人与人共融场景的高度、视野、声音、动作必须可接受</li>
+<li><strong>关键约束</strong>：文化差异、用户群体多样性、心理安全</li>
+<li><strong>完成标准 / 输出物</strong>：人因需求报告、关键交互姿态包络、HMI 原则
+<strong>三级子任务：</strong></li>
+<li><strong>P1.1.4.1 输入梳理与目标量化</strong>：整理「人因工程与交互需求」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P1.1.4.2 方案/方法设计</strong>：针对「人因工程与交互需求」制定实施方法或候选方案，使用「人体测量数据库、可达域分析、惊吓反应实验、HMI 原型」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P1.1.4.3 实施/原型/样件制作</strong>：根据设计方案执行「人因工程与交互需求」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P1.1.4.4 验证与问题闭环</strong>：对「人因工程与交互需求」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P1.1.4.5 文档输出与下游交付</strong>：输出「人因工程与交互需求」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_7">概念设计</h4>
+<h5 id="_8">概念方案发散与收敛</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：头脑风暴、形态草图、Morphological Matrix、Pugh Matrix</li>
+<li><strong>设计思考逻辑</strong>：在多种整机布局、驱动方案、传感方案中系统评估</li>
+<li><strong>关键约束</strong>：技术成熟度、成本、可制造性</li>
+<li><strong>完成标准 / 输出物</strong>：至少 3 套概念方案、评分矩阵、选定方案理由
+<strong>三级子任务：</strong></li>
+<li><strong>P1.2.1.1 输入梳理与目标量化</strong>：整理「概念方案发散与收敛」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P1.2.1.2 方案/方法设计</strong>：针对「概念方案发散与收敛」制定实施方法或候选方案，使用「头脑风暴、形态草图、Morphological Matrix、Pugh Matrix」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P1.2.1.3 实施/原型/样件制作</strong>：根据设计方案执行「概念方案发散与收敛」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P1.2.1.4 验证与问题闭环</strong>：对「概念方案发散与收敛」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P1.2.1.5 文档输出与下游交付</strong>：输出「概念方案发散与收敛」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_9">整机架构与功能分配</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：功能分解、N² 图、接口控制文档（ICD）草案</li>
+<li><strong>设计思考逻辑</strong>：明确运动、操作、感知、计算、能源、热管理、结构子系统的边界</li>
+<li><strong>关键约束</strong>：实时性、功耗、线缆数量、可维护性</li>
+<li><strong>完成标准 / 输出物</strong>：系统架构图、功能分配表、ICD 草案
+<strong>三级子任务：</strong></li>
+<li><strong>P1.2.2.1 输入梳理与目标量化</strong>：整理「整机架构与功能分配」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P1.2.2.2 方案/方法设计</strong>：针对「整机架构与功能分配」制定实施方法或候选方案，使用「功能分解、N² 图、接口控制文档（ICD）草案」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P1.2.2.3 实施/原型/样件制作</strong>：根据设计方案执行「整机架构与功能分配」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P1.2.2.4 验证与问题闭环</strong>：对「整机架构与功能分配」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P1.2.2.5 文档输出与下游交付</strong>：输出「整机架构与功能分配」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_10">关键技术指标权衡分析</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：多目标优化、Pareto 前沿、敏感性分析</li>
+<li><strong>设计思考逻辑</strong>：速度 vs 续航 vs 成本 vs 负载；找到可接受的设计空间</li>
+<li><strong>关键约束</strong>：物理极限、供应链能力、预算</li>
+<li><strong>完成标准 / 输出物</strong>：权衡分析表、指标边界、设计空间图
+<strong>三级子任务：</strong></li>
+<li><strong>P1.2.3.1 输入梳理与目标量化</strong>：整理「关键技术指标权衡分析」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P1.2.3.2 方案/方法设计</strong>：针对「关键技术指标权衡分析」制定实施方法或候选方案，使用「多目标优化、Pareto 前沿、敏感性分析」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P1.2.3.3 实施/原型/样件制作</strong>：根据设计方案执行「关键技术指标权衡分析」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P1.2.3.4 验证与问题闭环</strong>：对「关键技术指标权衡分析」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P1.2.3.5 文档输出与下游交付</strong>：输出「关键技术指标权衡分析」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="proof-of-concept">概念验证（Proof of Concept）</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：快速样机、关键子系统台架测试、技术 de-risk</li>
+<li><strong>设计思考逻辑</strong>：对最高风险项（如关节峰值扭矩、单腿平衡、手指力控）提前验证</li>
+<li><strong>关键约束</strong>：时间、预算、样机精度</li>
+<li><strong>完成标准 / 输出物</strong>：POC 报告、风险降级记录、Go/No-Go 决策
+<strong>三级子任务：</strong></li>
+<li><strong>P1.2.4.1 输入梳理与目标量化</strong>：整理「概念验证（Proof of Concept）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P1.2.4.2 方案/方法设计</strong>：针对「概念验证（Proof of Concept）」制定实施方法或候选方案，使用「快速样机、关键子系统台架测试、技术 de-risk」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P1.2.4.3 实施/原型/样件制作</strong>：根据设计方案执行「概念验证（Proof of Concept）」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P1.2.4.4 测试执行与结果分析</strong>：按照验收标准执行「概念验证（Proof of Concept）」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P1.2.4.5 文档输出与下游交付</strong>：输出「概念验证（Proof of Concept）」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h2 id="_11">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16/">小批量试产与量产准备（Pilot &amp; Production Ramp）</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及小批量试产与量产准备（Pilot &amp; Production Ramp）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p1_1_3/">法规、标准与安全需求映射</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）is_part_of法规、标准与安全需求映射。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_1_1/">DFM/DFA 评审</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及DFM/DFA 评审。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p15/">整机集成与验证测试（Integration &amp; V&amp;V）</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p1_1_1/">利益相关方需求采集</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）is_part_of利益相关方需求采集。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_standard_iec_61508/">IEC 61508</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及IEC 61508。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_3_3/">PPAP / 量产 readiness 评估</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及PPAP / 量产 readiness 评估。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p1_1_4/">人因工程与交互需求</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）is_part_of人因工程与交互需求。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p1_1_2/">系统需求规格书（SyRS）</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）is_part_of系统需求规格书（SyRS）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_1_3/">装配线规划与 SOP</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及装配线规划与 SOP。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p0/">项目立项与商业基线</a>
+              <span class="rel-desc">P1 依赖 P0 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p2_2_2/">人机交互（HMI）设计</a>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及人机交互（HMI）设计。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p1_1_4/">人因工程与交互需求</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">人因工程与交互需求is_part_of需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_production_ramp_2024/">产能爬坡</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">产能爬坡提及需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1_1_2/">系统需求规格书（SyRS）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">系统需求规格书（SyRS）is_part_of需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1_2_2/">整机架构与功能分配</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">整机架构与功能分配is_part_of需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1_2_1/">概念方案发散与收敛</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">概念方案发散与收敛is_part_of需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1_1_3/">法规、标准与安全需求映射</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">法规、标准与安全需求映射is_part_of需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_embracing_evolution_a_call_for_2025/">Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p2/">工业设计与外观工程（ID / A-Surface）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P2 依赖 P1 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">面向高效多目标机器人设计的单调子系统分解</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向高效多目标机器人设计的单调子系统分解discusses需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1_2_3/">关键技术指标权衡分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">关键技术指标权衡分析is_part_of需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P3 依赖 P1 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1_1_1/">利益相关方需求采集</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">利益相关方需求采集is_part_of需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1_2_4/">概念验证（Proof of Concept）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">概念验证（Proof of Concept）is_part_of需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sathuluri_a_systems_design_approach_for_2022/">一种用于人形机器人手臂协同设计的系统设计方法</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">一种用于人形机器人手臂协同设计的系统设计方法discusses需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liberman_pincu_designing_robots_with_the_cont_2022/">情境驱动下的机器人设计：一种设计并不适用于所有情境</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">情境驱动下的机器人设计：一种设计并不适用于所有情境提出需求定义与系统方案（Concept / Pre-A）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p1"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p2/">
+          <span class="entry-type">方法</span>
+          <h3>工业设计与外观工程（ID / A-Surface）</h3>
+          <p>工业设计与外观工程（ID / A-Surface）是人形机器人产品开发全流程中的第 2 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_3_3/">
+          <span class="entry-type">方法</span>
+          <h3>PPAP / 量产 readiness 评估</h3>
+          <p>- P16.3.3.1 输入梳理与目标量化 - 整理「PPAP / 量产 readiness 评估」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p2_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>人机交互（HMI）设计</h3>
+          <p>- P2.2.2.1 输入梳理与目标量化 - 整理「人机交互（HMI）设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">概念</span>
+          <h3>产能爬坡</h3>
+          <p>当前人形机器人执行器供应链呈现高端减速器与高端编码器高度集中的特征：谐波减速器全球头部企业 Harmonic Drive、RV 减速器 Nabtesco…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>整机架构与功能分配</h3>
+          <p>- P1.2.2.1 输入梳理与目标量化 - 整理「整机架构与功能分配」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>利益相关方需求采集</h3>
+          <p>设计思考逻辑：识别显性与隐性需求；区分 Must-have / Differentiator / Exciter</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3/">
+          <span class="entry-type">方法</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）是人形机器人产品开发全流程中的第 3 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>关键技术指标权衡分析</h3>
+          <p>- P1.2.3.1 输入梳理与目标量化 - 整理「关键技术指标权衡分析」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>DFM/DFA 评审</h3>
+          <p>- P16.1.1.1 输入梳理与目标量化 - 整理「DFM/DFA 评审」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向高效多目标机器人设计的单调子系统分解</h3>
+          <p>Automating design minimizes errors, accelerates the design process, and reduces cost. However,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1_2_4/">
+          <span class="entry-type">方法</span>
+          <h3>概念验证（Proof of Concept）</h3>
+          <p>- P1.2.4.1 输入梳理与目标量化 - 整理「概念验证（Proof of Concept）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p0/">
+          <span class="entry-type">方法</span>
+          <h3>项目立项与商业基线</h3>
+          <p>项目立项与商业基线阶段：明确人形机器人项目的目标、范围、预算、目标市场与商业可行性，形成立项决策与商业基线，为后续研发、试产与量产流程提供依据。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>概念方案发散与收敛</h3>
+          <p>- P1.2.1.1 输入梳理与目标量化 - 整理「概念方案发散与收敛」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_standard_iec_61508/">
+          <span class="entry-type">标准</span>
+          <h3>IEC 61508</h3>
+          <p>人形机器人在人机共融环境中运行，其安全相关控制系统必须满足功能安全（functional safety）要求：当发生故障时，系统仍能将机器人带入安全状态。功能安全等级通常用 IEC 61508 的…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1_1_4/">
+          <span class="entry-type">方法</span>
+          <h3>人因工程与交互需求</h3>
+          <p>- P1.1.4.1 输入梳理与目标量化 - 整理「人因工程与交互需求」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15/">
+          <span class="entry-type">方法</span>
+          <h3>整机集成与验证测试（Integration &amp; V&amp;V）</h3>
+          <p>整机集成与验证测试（Integration &amp; V&amp;V）是人形机器人产品开发全流程中的第 15 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_embracing_evolution_a_call_for_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</h3>
+          <p>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sathuluri_a_systems_design_approach_for_2022/">
+          <span class="entry-type">论文</span>
+          <h3>一种用于人形机器人手臂协同设计的系统设计方法</h3>
+          <p>Classically, the development of humanoid robots has been sequential and iterative. Such bottom-up…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>系统需求规格书（SyRS）</h3>
+          <p>- P1.1.2.1 输入梳理与目标量化 - 整理「系统需求规格书（SyRS）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16/">
+          <span class="entry-type">方法</span>
+          <h3>小批量试产与量产准备（Pilot &amp; Production Ramp）</h3>
+          <p>小批量试产与量产准备（Pilot &amp; Production Ramp）是人形机器人产品开发全流程中的第 16 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>装配线规划与 SOP</h3>
+          <p>- P16.1.3.1 输入梳理与目标量化 - 整理「装配线规划与 SOP」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>法规、标准与安全需求映射</h3>
+          <p>方法 / 工具：ISO 10218-1/2、ISO/TS 15066、IEC 61508、IEC 62368、CE/FCC/UL 差距分析</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liberman_pincu_designing_robots_with_the_cont_2022/">
+          <span class="entry-type">论文</span>
+          <h3>情境驱动下的机器人设计：一种设计并不适用于所有情境</h3>
+          <p>本文提出了社交辅助机器人设计的情境四层框架（领域、物理环境、用户、角色），并通过一项228名成人的在线问卷研究表明，用户对四种使用情境下机器人的期望特性与视觉品质存在显著差异。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">需求工程</a><ul>
+<li><a href="#_4">利益相关方需求采集</a></li>
+<li><a href="#syrs">系统需求规格书（SyRS）</a></li>
+<li><a href="#_5">法规、标准与安全需求映射</a></li>
+<li><a href="#_6">人因工程与交互需求</a></li>
+</ul>
+</li>
+<li><a href="#_7">概念设计</a><ul>
+<li><a href="#_8">概念方案发散与收敛</a></li>
+<li><a href="#_9">整机架构与功能分配</a></li>
+<li><a href="#_10">关键技术指标权衡分析</a></li>
+<li><a href="#proof-of-concept">概念验证（Proof of Concept）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_11">完成标准</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

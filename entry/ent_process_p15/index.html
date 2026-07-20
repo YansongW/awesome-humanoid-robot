@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>整机集成与验证测试（Integration &amp; V&amp;V） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">整机集成与验证测试（Integration &amp; V&amp;V）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>整机集成与验证测试（Integration &amp; V&amp;V）</h1>
+      <p class="entry-name-en">Integration &amp; V &amp; V testing</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">组装集成测试</span><span class="tag">评测基准</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>整机集成与验证测试（Integration &amp; V&amp;V）是人形机器人产品开发全流程中的第 15 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">分系统集成</h4>
+<h5 id="_4">腿部系统集成与调试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：单腿测试台、站立、踏步、关节协调</li>
+<li><strong>设计思考逻辑</strong>：腿部是平衡与行走核心，先单独验证</li>
+<li><strong>关键约束</strong>：安全吊带、限位保护</li>
+<li><strong>完成标准 / 输出物</strong>：单腿/双腿站立稳定、关节跟随误差 &lt; 目标
+<strong>三级子任务：</strong></li>
+<li><strong>P15.1.1.1 输入梳理与目标量化</strong>：整理「腿部系统集成与调试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.1.1.2 接口与集成策略设计</strong>：梳理「腿部系统集成与调试」涉及的子系统接口、数据流与时序，制定集成顺序、回退策略与异常处理机制。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「腿部系统集成与调试」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.1.1.4 验证与问题闭环</strong>：对「腿部系统集成与调试」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.1.1.5 文档输出与下游交付</strong>：输出「腿部系统集成与调试」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_5">手臂与手部集成</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：单臂功能测试、双手协调、抓取标定</li>
+<li><strong>设计思考逻辑</strong>：上肢操作能力需在整机集成前验证</li>
+<li><strong>关键约束</strong>：工作空间、碰撞、负载</li>
+<li><strong>完成标准 / 输出物</strong>：单臂/双臂典型动作通过、抓取成功率达标
+<strong>三级子任务：</strong></li>
+<li><strong>P15.1.2.1 输入梳理与目标量化</strong>：整理「手臂与手部集成」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.1.2.2 接口与集成策略设计</strong>：梳理「手臂与手部集成」涉及的子系统接口、数据流与时序，制定集成顺序、回退策略与异常处理机制。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.1.2.3 实施/原型/样件制作</strong>：根据设计方案执行「手臂与手部集成」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.1.2.4 验证与问题闭环</strong>：对「手臂与手部集成」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.1.2.5 文档输出与下游交付</strong>：输出「手臂与手部集成」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="-">感知-规划-控制闭环集成</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：端到端任务测试、闭环反馈调试</li>
+<li><strong>设计思考逻辑</strong>：将感知、AI、控制、执行串联，验证系统级行为</li>
+<li><strong>关键约束</strong>：延迟、故障处理、安全</li>
+<li><strong>完成标准 / 输出物</strong>：典型任务端到端成功率 &gt; 目标
+<strong>三级子任务：</strong></li>
+<li><strong>P15.1.3.1 输入梳理与目标量化</strong>：整理「感知-规划-控制闭环集成」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.1.3.2 算法/控制方案设计</strong>：基于「端到端任务测试、闭环反馈调试」建立数学模型或算法框架，形成候选方案，评估稳定性、实时性与可扩展性，并冻结实现路径。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.1.3.3 算法实现与仿真验证</strong>：将「感知-规划-控制闭环集成」的算法在仿真环境或离线数据中实现，验证功能正确性、实时性与鲁棒性。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.1.3.4 算法调参与性能验证</strong>：对「感知-规划-控制闭环集成」算法进行参数调优与边界测试，验证在典型/极端工况下的性能是否满足指标。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.1.3.5 文档输出与下游交付</strong>：输出「感知-规划-控制闭环集成」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_6">功能安全与性能验证</h4>
+<h5 id="_7">安全功能测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：急停、跌倒保护、碰撞检测、限位、安全区域</li>
+<li><strong>设计思考逻辑</strong>：任何异常都能安全停机或进入保护姿态</li>
+<li><strong>关键约束</strong>：安全标准、人员保护</li>
+<li><strong>完成标准 / 输出物</strong>：安全测试报告、所有安全功能通过
+<strong>三级子任务：</strong></li>
+<li><strong>P15.2.1.1 输入梳理与目标量化</strong>：整理「安全功能测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.2.1.2 方案/方法设计</strong>：针对「安全功能测试」制定实施方法或候选方案，使用「急停、跌倒保护、碰撞检测、限位、安全区域」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.2.1.3 实施/原型/样件制作</strong>：根据设计方案执行「安全功能测试」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.2.1.4 测试执行与结果分析</strong>：按照验收标准执行「安全功能测试」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.2.1.5 文档输出与下游交付</strong>：输出「安全功能测试」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_8">性能基准测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：行走速度、续航、负载、操作精度、噪音</li>
+<li><strong>设计思考逻辑</strong>：对照 PRD 逐项验证 KPI</li>
+<li><strong>关键约束</strong>：测试环境、重复次数、传感器精度</li>
+<li><strong>完成标准 / 输出物</strong>：《性能测试报告》、KPI 达标率
+<strong>三级子任务：</strong></li>
+<li><strong>P15.2.2.1 输入梳理与目标量化</strong>：整理「性能基准测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.2.2.2 方案/方法设计</strong>：针对「性能基准测试」制定实施方法或候选方案，使用「行走速度、续航、负载、操作精度、噪音」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.2.2.3 实施/原型/样件制作</strong>：根据设计方案执行「性能基准测试」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.2.2.4 测试执行与结果分析</strong>：按照验收标准执行「性能基准测试」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.2.2.5 文档输出与下游交付</strong>：输出「性能基准测试」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_9">环境适应性测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：温度、湿度、灰尘、电磁干扰、光照、地面材质</li>
+<li><strong>设计思考逻辑</strong>：验证目标使用环境的鲁棒性</li>
+<li><strong>关键约束</strong>：测试成本、时间、设备</li>
+<li><strong>完成标准 / 输出物</strong>：环境测试报告、失效模式与改进
+<strong>三级子任务：</strong></li>
+<li><strong>P15.2.3.1 输入梳理与目标量化</strong>：整理「环境适应性测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.2.3.2 方案/方法设计</strong>：针对「环境适应性测试」制定实施方法或候选方案，使用「温度、湿度、灰尘、电磁干扰、光照、地面材质」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.2.3.3 实施/原型/样件制作</strong>：根据设计方案执行「环境适应性测试」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.2.3.4 测试执行与结果分析</strong>：按照验收标准执行「环境适应性测试」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.2.3.5 文档输出与下游交付</strong>：输出「环境适应性测试」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_10">可靠性与耐久验证</h4>
+<h5 id="_11">关节与整机耐久测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：连续运行、关节循环、跌落、振动</li>
+<li><strong>设计思考逻辑</strong>：暴露早期失效，验证 MTBF 假设</li>
+<li><strong>关键约束</strong>：测试周期、样机数量</li>
+<li><strong>完成标准 / 输出物</strong>：可靠性测试计划与结果、失效分析与改进
+<strong>三级子任务：</strong></li>
+<li><strong>P15.3.1.1 输入梳理与目标量化</strong>：整理「关节与整机耐久测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.3.1.2 方案/方法设计</strong>：针对「关节与整机耐久测试」制定实施方法或候选方案，使用「连续运行、关节循环、跌落、振动」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.3.1.3 实施/原型/样件制作</strong>：根据设计方案执行「关节与整机耐久测试」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.3.1.4 测试执行与结果分析</strong>：按照验收标准执行「关节与整机耐久测试」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.3.1.5 文档输出与下游交付</strong>：输出「关节与整机耐久测试」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_12">软件稳定性与回归测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：长时运行、压力测试、故障注入、版本回归</li>
+<li><strong>设计思考逻辑</strong>：软件失效是机器人现场问题的主要来源</li>
+<li><strong>关键约束</strong>：测试覆盖度、日志分析能力</li>
+<li><strong>完成标准 / 输出物</strong>：长时运行无崩溃、关键故障注入恢复通过
+<strong>三级子任务：</strong></li>
+<li><strong>P15.3.2.1 输入梳理与目标量化</strong>：整理「软件稳定性与回归测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.3.2.2 方案/方法设计</strong>：针对「软件稳定性与回归测试」制定实施方法或候选方案，使用「长时运行、压力测试、故障注入、版本回归」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.3.2.3 实施/原型/样件制作</strong>：根据设计方案执行「软件稳定性与回归测试」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.3.2.4 测试执行与结果分析</strong>：按照验收标准执行「软件稳定性与回归测试」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.3.2.5 文档输出与下游交付</strong>：输出「软件稳定性与回归测试」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_13">认证准备与预审核</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：CE/FCC/UL 预测试、技术文件准备、第三方机构对接</li>
+<li><strong>设计思考逻辑</strong>：正式认证周期长，需提前准备</li>
+<li><strong>关键约束</strong>：认证费用、整改周期</li>
+<li><strong>完成标准 / 输出物</strong>：预测试报告、技术文件清单、认证计划
+<strong>三级子任务：</strong></li>
+<li><strong>P15.3.3.1 输入梳理与目标量化</strong>：整理「认证准备与预审核」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P15.3.3.2 方案/方法设计</strong>：针对「认证准备与预审核」制定实施方法或候选方案，使用「CE/FCC/UL 预测试、技术文件准备、第三方机构对接」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.3.3.3 实施/原型/样件制作</strong>：根据设计方案执行「认证准备与预审核」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P15.3.3.4 验证与问题闭环</strong>：对「认证准备与预审核」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P15.3.3.5 文档输出与下游交付</strong>：输出「认证准备与预审核」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_14">认证与型式试验</h4>
+<h5 id="cefcculkc">CE/FCC/UL/KC 认证计划</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：法规差距分析、认证机构对接、测试项清单、时间表</li>
+<li><strong>设计思考逻辑</strong>：明确目标市场强制认证要求，制定可执行的认证路线图</li>
+<li><strong>关键约束</strong>：认证费用、周期、地区差异</li>
+<li><strong>完成标准 / 输出物</strong>：认证计划书、测试项清单、机构协议
+<strong>三级子任务：</strong></li>
+<li><strong>P15.4.1.1 输入梳理与目标量化</strong>：整理「CE/FCC/UL/KC 认证计划」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P15.4.1.2 方案/方法设计</strong>：针对「CE/FCC/UL/KC 认证计划」制定实施方法或候选方案，使用「法规差距分析、认证机构对接、测试项清单、时间表」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.4.1.3 实施/建模/实验</strong>：根据方案执行「CE/FCC/UL/KC 认证计划」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P15.4.1.4 验证与优化</strong>：对「CE/FCC/UL/KC 认证计划」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P15.4.1.5 文档输出与下游交付</strong>：输出「CE/FCC/UL/KC 认证计划」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_15">型式试验执行与整改</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：电气安全、机械安全、EMC、射频、环境试验、第三方实验室</li>
+<li><strong>设计思考逻辑</strong>：通过权威测试验证合规性，对不合格项进行设计整改</li>
+<li><strong>关键约束</strong>：测试资源、整改周期、样机可用性</li>
+<li><strong>完成标准 / 输出物</strong>：型式试验报告、整改闭环、合规声明
+<strong>三级子任务：</strong></li>
+<li><strong>P15.4.2.1 输入梳理与目标量化</strong>：整理「型式试验执行与整改」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P15.4.2.2 方案/方法设计</strong>：针对「型式试验执行与整改」制定实施方法或候选方案，使用「电气安全、机械安全、EMC、射频、环境试验、第三方实验室」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.4.2.3 实施/建模/实验</strong>：根据方案执行「型式试验执行与整改」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P15.4.2.4 验证与优化</strong>：对「型式试验执行与整改」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P15.4.2.5 文档输出与下游交付</strong>：输出「型式试验执行与整改」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h4 id="_16">维护性与极端环境验证</h4>
+<h5 id="_17">维护性验证</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：维修姿态分析、工具可达性检查、MTTR 实测、快拆件验证</li>
+<li><strong>设计思考逻辑</strong>：确保现场维护人员能高效、安全地完成常见维修任务</li>
+<li><strong>关键约束</strong>：人体尺度、工具通用性</li>
+<li><strong>完成标准 / 输出物</strong>：MTTR 实测值 &lt; 目标、关键件更换时间 &lt; 目标
+<strong>三级子任务：</strong></li>
+<li><strong>P15.5.1.1 输入梳理与目标量化</strong>：整理「维护性验证」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P15.5.1.2 方案/方法设计</strong>：针对「维护性验证」制定实施方法或候选方案，使用「维修姿态分析、工具可达性检查、MTTR 实测、快拆件验证」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.5.1.3 实施/建模/实验</strong>：根据方案执行「维护性验证」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P15.5.1.4 验证与优化</strong>：对「维护性验证」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P15.5.1.5 文档输出与下游交付</strong>：输出「维护性验证」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_18">极端环境测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：IP 等级测试、温度循环、盐雾、高低温启动、湿热试验</li>
+<li><strong>设计思考逻辑</strong>：验证机器人在目标使用环境（仓库、户外、工厂）的鲁棒性</li>
+<li><strong>关键约束</strong>：试验设备、时间、成本</li>
+<li><strong>完成标准 / 输出物</strong>：环境测试报告、失效模式与改进
+<strong>三级子任务：</strong></li>
+<li><strong>P15.5.2.1 输入梳理与目标量化</strong>：整理「极端环境测试」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P15.5.2.2 方案/方法设计</strong>：针对「极端环境测试」制定实施方法或候选方案，使用「IP 等级测试、温度循环、盐雾、高低温启动、湿热试验」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.5.2.3 实施/建模/实验</strong>：根据方案执行「极端环境测试」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P15.5.2.4 验证与优化</strong>：对「极端环境测试」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P15.5.2.5 文档输出与下游交付</strong>：输出「极端环境测试」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_19">多机器人协同验证</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：通信协议、任务调度、冲突避免、协同SLAM/规划</li>
+<li><strong>设计思考逻辑</strong>：为未来集群部署验证多机协调基础能力</li>
+<li><strong>关键约束</strong>：网络带宽、实时性、安全</li>
+<li><strong>完成标准 / 输出物</strong>：多机协同 demo、任务分配成功率、无碰撞
+<strong>三级子任务：</strong></li>
+<li><strong>P15.5.3.1 输入梳理与目标量化</strong>：整理「多机器人协同验证」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P15.5.3.2 方案/方法设计</strong>：针对「多机器人协同验证」制定实施方法或候选方案，使用「通信协议、任务调度、冲突避免、协同SLAM/规划」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P15.5.3.3 实施/建模/实验</strong>：根据方案执行「多机器人协同验证」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P15.5.3.4 验证与优化</strong>：对「多机器人协同验证」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P15.5.3.5 文档输出与下游交付</strong>：输出「多机器人协同验证」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h2 id="_20">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_21">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p14/">软件中间件与系统集成（Software &amp; Integration）</a>
+              <span class="rel-desc">P15 依赖 P14 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p15_1_3/">感知-规划-控制闭环集成</a>
+              <span class="rel-desc">整机集成与验证测试（Integration &amp; V&amp;V）提及感知-规划-控制闭环集成。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p15_3_1/">关节与整机耐久测试</a>
+              <span class="rel-desc">整机集成与验证测试（Integration &amp; V&amp;V）is_part_of关节与整机耐久测试。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_1_1/">DFM/DFA 评审</a>
+              <span class="rel-desc">整机集成与验证测试（Integration &amp; V&amp;V）提及DFM/DFA 评审。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_1_3/">装配线规划与 SOP</a>
+              <span class="rel-desc">整机集成与验证测试（Integration &amp; V&amp;V）提及装配线规划与 SOP。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p15_1_1/">腿部系统集成与调试</a>
+              <span class="rel-desc">整机集成与验证测试（Integration &amp; V&amp;V）提及腿部系统集成与调试。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              <span class="rel-desc">P15 依赖 P8 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p15_3_2/">软件稳定性与回归测试</a>
+              <span class="rel-desc">整机集成与验证测试（Integration &amp; V&amp;V）提及软件稳定性与回归测试。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p16_3_3/">PPAP / 量产 readiness 评估</a>
+              <span class="rel-desc">整机集成与验证测试（Integration &amp; V&amp;V）提及PPAP / 量产 readiness 评估。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p9/">热管理仿真与迭代（Thermal Management）</a>
+              <span class="rel-desc">P15 依赖 P9 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p15_3_3/">认证准备与预审核</a>
+              <span class="rel-desc">整机集成与验证测试（Integration &amp; V&amp;V）提及认证准备与预审核。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-desc">P15 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p11/">灵巧手选型/设计与集成（Dexterous Hand）</a>
+              <span class="rel-desc">P15 依赖 P11 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p15_2_1/">安全功能测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">安全功能测试is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_2_2/">性能基准测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">性能基准测试is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_3_2/">软件稳定性与回归测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">软件稳定性与回归测试is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_production_ramp_2024/">产能爬坡</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">产能爬坡提及整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_1_2/">手臂与手部集成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">手臂与手部集成is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p1/">需求定义与系统方案（Concept / Pre-A）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">需求定义与系统方案（Concept / Pre-A）提及整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_2_3/">环境适应性测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">环境适应性测试is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_1_3/">感知-规划-控制闭环集成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">感知-规划-控制闭环集成is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_3_1/">关节与整机耐久测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">关节与整机耐久测试is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_3_3/">认证准备与预审核</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">认证准备与预审核is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p15_1_1/">腿部系统集成与调试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">腿部系统集成与调试is_part_of整机集成与验证测试（Integration &amp; V&amp;V）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p16/">小批量试产与量产准备（Pilot &amp; Production Ramp）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P16 依赖 P15 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p15"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p15_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>软件稳定性与回归测试</h3>
+          <p>- P15.3.2.1 输入梳理与目标量化 - 整理「软件稳定性与回归测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_3_3/">
+          <span class="entry-type">方法</span>
+          <h3>PPAP / 量产 readiness 评估</h3>
+          <p>- P16.3.3.1 输入梳理与目标量化 - 整理「PPAP / 量产 readiness 评估」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>环境适应性测试</h3>
+          <p>- P15.2.3.1 输入梳理与目标量化 - 整理「环境适应性测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>手臂与手部集成</h3>
+          <p>- P15.1.2.1 输入梳理与目标量化 - 整理「手臂与手部集成」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p9/">
+          <span class="entry-type">方法</span>
+          <h3>热管理仿真与迭代（Thermal Management）</h3>
+          <p>热管理仿真与迭代（Thermal Management）是人形机器人产品开发全流程中的第 9 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>关节与整机耐久测试</h3>
+          <p>- P15.3.1.1 输入梳理与目标量化 - 整理「关节与整机耐久测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">概念</span>
+          <h3>产能爬坡</h3>
+          <p>当前人形机器人执行器供应链呈现高端减速器与高端编码器高度集中的特征：谐波减速器全球头部企业 Harmonic Drive、RV 减速器 Nabtesco…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>DFM/DFA 评审</h3>
+          <p>- P16.1.1.1 输入梳理与目标量化 - 整理「DFM/DFA 评审」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>性能基准测试</h3>
+          <p>- P15.2.2.1 输入梳理与目标量化 - 整理「性能基准测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10/">
+          <span class="entry-type">方法</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14/">
+          <span class="entry-type">方法</span>
+          <h3>软件中间件与系统集成（Software &amp; Integration）</h3>
+          <p>软件中间件与系统集成（Software &amp; Integration）是人形机器人产品开发全流程中的第 14 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>感知-规划-控制闭环集成</h3>
+          <p>- P15.1.3.1 输入梳理与目标量化 - 整理「感知-规划-控制闭环集成」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p1/">
+          <span class="entry-type">方法</span>
+          <h3>需求定义与系统方案（Concept / Pre-A）</h3>
+          <p>需求定义与系统方案（Concept / Pre-A）是人形机器人产品开发全流程中的第 1 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_3_3/">
+          <span class="entry-type">方法</span>
+          <h3>认证准备与预审核</h3>
+          <p>- P15.3.3.1 输入梳理与目标量化 - 整理「认证准备与预审核」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>腿部系统集成与调试</h3>
+          <p>- P15.1.1.1 输入梳理与目标量化 - 整理「腿部系统集成与调试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p8/">
+          <span class="entry-type">方法</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）是人形机器人产品开发全流程中的第 8 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p15_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>安全功能测试</h3>
+          <p>- P15.2.1.1 输入梳理与目标量化 - 整理「安全功能测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16/">
+          <span class="entry-type">方法</span>
+          <h3>小批量试产与量产准备（Pilot &amp; Production Ramp）</h3>
+          <p>小批量试产与量产准备（Pilot &amp; Production Ramp）是人形机器人产品开发全流程中的第 16 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p11/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧手选型/设计与集成（Dexterous Hand）</h3>
+          <p>灵巧手选型/设计与集成（Dexterous Hand）是人形机器人产品开发全流程中的第 11 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p16_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>装配线规划与 SOP</h3>
+          <p>- P16.1.3.1 输入梳理与目标量化 - 整理「装配线规划与 SOP」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">分系统集成</a><ul>
+<li><a href="#_4">腿部系统集成与调试</a></li>
+<li><a href="#_5">手臂与手部集成</a></li>
+<li><a href="#-">感知-规划-控制闭环集成</a></li>
+</ul>
+</li>
+<li><a href="#_6">功能安全与性能验证</a><ul>
+<li><a href="#_7">安全功能测试</a></li>
+<li><a href="#_8">性能基准测试</a></li>
+<li><a href="#_9">环境适应性测试</a></li>
+</ul>
+</li>
+<li><a href="#_10">可靠性与耐久验证</a><ul>
+<li><a href="#_11">关节与整机耐久测试</a></li>
+<li><a href="#_12">软件稳定性与回归测试</a></li>
+<li><a href="#_13">认证准备与预审核</a></li>
+</ul>
+</li>
+<li><a href="#_14">认证与型式试验</a><ul>
+<li><a href="#cefcculkc">CE/FCC/UL/KC 认证计划</a></li>
+<li><a href="#_15">型式试验执行与整改</a></li>
+</ul>
+</li>
+<li><a href="#_16">维护性与极端环境验证</a><ul>
+<li><a href="#_17">维护性验证</a></li>
+<li><a href="#_18">极端环境测试</a></li>
+<li><a href="#_19">多机器人协同验证</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_20">完成标准</a></li>
+<li><a href="#_21">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

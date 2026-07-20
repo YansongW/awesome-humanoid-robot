@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scaled Dot-Product Self-Attention · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/equation/">Equation</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Scaled Dot-Product Self-Attention</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Equation</div>
+      <h1>Scaled Dot-Product Self-Attention</h1>
+      <p class="entry-name-en">Scaled Dot-Product Self-Attention</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The core equation of the Transformer that computes a weighted sum of values based on query-key compatibility.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Vaswani et al., Attention Is All You Need, NeurIPS 2017</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">uses</span>
+            <a href="/en/entry/ent_operator_softmax_function/">Softmax Function</a>
+            
+              
+                
+              
+              <span class="rel-desc">Self-attention uses the softmax operator to normalize attention weights.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">derived_from</span>
+            <a href="/en/entry/ent_principle_maximum_likelihood_estimation/">Maximum Likelihood Estimation</a>
+            
+              
+                
+              
+              <span class="rel-desc">The attention mechanism is trained by objectives derived from maximum likelihood estimation.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<h1 id="scaled-dot-product-self-attention-equation">Scaled Dot-Product Self-Attention Equation</h1>
+<h2 id="content">Content</h2>
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p><strong>Life example</strong>: When reading a sentence, each word "looks back" at the entire sentence and decides which words to focus on based on relevance. For instance, in "I ate the apple," the word "ate" pays more attention to "apple" than to "I." Self-attention allows the model to automatically learn this "who should look at whom" weighting mechanism. The scaling factor <span class="arithmatex">\(1/\sqrt{d_k}\)</span> prevents over-excitation: if Query and Key have high dimensions, the dot product can become extremely large, causing softmax to become "all-or-nothing," and the model fails to learn subtle attention distributions.</p>
+<p><strong>Natural language logic</strong>: Project the input sequence into three sets of vectors: Query, Key, and Value; compute similarity via dot product between Query and Key; normalize with softmax to obtain attention weights; multiply weights by Value to get the output. The step <span class="arithmatex">\(QK^\top/\sqrt{d_k}\)</span> simultaneously accomplishes "matching" and "scaling," making training more stable.</p>
+</blockquote>
+<h2 id="formal-definition">Formal Definition</h2>
+<p>Given the input representation matrix <span class="arithmatex">\(X \in \mathbb{R}^{n \times d_{\text{model}}}\)</span> and learnable projection matrices <span class="arithmatex">\(W_Q, W_K, W_V\)</span>, compute:</p>
+<div class="arithmatex">\[
+Q = X W_Q, \quad K = X W_K, \quad V = X W_V,
+\]</div>
+<div class="arithmatex">\[
+\text{Attention}(Q, K, V) = \operatorname{softmax}\!\left( \frac{Q K^\top}{\sqrt{d_k}} \right) V.
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(n\)</span>: sequence length</li>
+<li><span class="arithmatex">\(d_k\)</span>: dimension of Query/Key</li>
+<li><span class="arithmatex">\(d_v\)</span>: dimension of Value (typically <span class="arithmatex">\(d_v = d_k\)</span>)</li>
+<li><span class="arithmatex">\(\operatorname{softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}\)</span></li>
+</ul>
+<p>Multi-head attention executes the above process in parallel across <span class="arithmatex">\(h\)</span> different subspaces and concatenates the results:</p>
+<div class="arithmatex">\[
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O,
+\]</div>
+<p>where <span class="arithmatex">\(\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)\)</span>.</p>
+<h2 id="key-symbols-and-intuitive-correspondence">Key Symbols and Intuitive Correspondence</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Intuitive Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(Q\)</span></td>
+<td>Query</td>
+<td>"The question I am asking"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K\)</span></td>
+<td>Key</td>
+<td>"The label each position can answer"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(V\)</span></td>
+<td>Value</td>
+<td>"The actual information each position carries"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(QK^\top\)</span></td>
+<td>Dot product similarity</td>
+<td>"Degree of match between question and label"</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(1/\sqrt{d_k}\)</span></td>
+<td>Scaling factor</td>
+<td>Prevents high-dimensional dot products from saturating softmax</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\operatorname{softmax}\)</span></td>
+<td>Normalized exponential</td>
+<td>Converts match scores into "probabilistic" attention weights</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relationships-with-other-knowledge-points">Relationships with Other Knowledge Points</h2>
+<ul>
+<li><code>uses</code> → Matrix multiplication, softmax operator</li>
+<li><code>has_prerequisite</code> → Linear algebra</li>
+<li><code>has_prerequisite</code> → Probability / measure theory</li>
+<li><code>instantiates</code> → Transformer architecture</li>
+<li><code>builds_on</code> → VLA foundation models (GR00T N1, OpenVLA, π0, etc.)</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_formalism_transformer_action_decoder/">Transformer Action Decoder Formalism</a>
+              <span class="rel-desc">Scaled Dot-Product Self-Attention cites Transformer Action Decoder Formalism.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">builds_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              <span class="rel-desc">Scaled Dot-Product Self-Attention builds on GR00T N1.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">derived from</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_maximum_likelihood_estimation/">Maximum Likelihood Estimation</a>
+              <span class="rel-desc">The self-attention equation is trained using objectives derived from maximum likelihood estimation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">Scaled Dot-Product Self-Attention mentions OpenVLA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_operator_softmax_function/">Softmax Function</a>
+              <span class="rel-desc">The self-attention equation uses the softmax operator to normalize query-key scores.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">Scaled Dot-Product Self-Attention mentions OpenVLA.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_language_to_locomotion_re_2025/">From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance uses or builds on Scaled Dot-Product Self-Attention.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection uses or builds on Scaled Dot-Product Self-Attention.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_holomotion_1_technical_report_2026/">HoloMotion-1 Technical Report</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">HoloMotion-1 Technical Report uses or builds on Scaled Dot-Product Self-Attention.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_open_television_teleoperation_2024_2/">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback uses or builds on Scaled Dot-Product Self-Attention.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_transformer_action_decoder/">Transformer Action Decoder Formalism</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">includes</span>
+              <span class="rel-desc">The Transformer action decoder includes scaled dot-product self-attention as a core equation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_versatile_humanoid_ma_2026/">Learning Versatile Humanoid Manipulation with Touch Dreaming</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Versatile Humanoid Manipulation with Touch Dreaming uses or builds on Scaled Dot-Product Self-Attention.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_coordex_coordinating_body_and_2026/">CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation uses or builds on Scaled Dot-Product Self-Attention.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_active_stereo_camera_outperfor_2026/">Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation uses or builds on Scaled Dot-Product Self-Attention.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_self_attention_equation"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_transformer_action_decoder/">
+          <span class="entry-type">Formalism</span>
+          <h3>Transformer Action Decoder Formalism</h3>
+          <p>A formal generative framework that decodes robot actions from visual-language context using a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_active_stereo_camera_outperfor_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</h3>
+          <p>In ACT imitation learning for humanoid manipulation, the performance of active stereo cameras is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</h3>
+          <p>This paper identifies sparse &#39;Navigation Heads&#39; in a frozen Vision-Language-Action model whose…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_coordex_coordinating_body_and_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation</h3>
+          <p>CoorDex converts the body state with joint sequences, contact force/tactile signals into trackable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_maximum_likelihood_estimation/">
+          <span class="entry-type">Principle</span>
+          <h3>Maximum Likelihood Estimation</h3>
+          <p>A statistical principle that chooses model parameters to maximize the probability of observing the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_language_to_locomotion_re_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance</h3>
+          <p>This work first recovers scenes, targets, or motion representations from speech instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_operator_softmax_function/">
+          <span class="entry-type">Operator</span>
+          <h3>Softmax Function</h3>
+          <p>A differentiable operator that converts a vector of real-valued scores into a probability…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>7B-parameter open VLA trained on 970k episodes from Open X-Embodiment.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_openvla/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>An open-source vision-language-action model trained on the Open X-Embodiment dataset for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_holomotion_1_technical_report_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HoloMotion-1 Technical Report</h3>
+          <p>HoloMotion transforms human video/motion capture trajectories into trackable body targets and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_open_television_teleoperation_2024_2/">
+          <span class="entry-type">Paper</span>
+          <h3>Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</h3>
+          <p>This work mainly addresses data closed loops: acquisition of human operation and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_versatile_humanoid_ma_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Versatile Humanoid Manipulation with Touch Dreaming</h3>
+          <p>This work mainly addresses the data closed loop: acquiring human operation and robot state using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">Method</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA&#39;s general-purpose humanoid robot foundation model designed to enable…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#scaled-dot-product-self-attention-equation">Scaled Dot-Product Self-Attention Equation</a><ul>
+<li><a href="#content">Content</a></li>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#formal-definition">Formal Definition</a></li>
+<li><a href="#key-symbols-and-intuitive-correspondence">Key Symbols and Intuitive Correspondence</a></li>
+<li><a href="#relationships-with-other-knowledge-points">Relationships with Other Knowledge Points</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

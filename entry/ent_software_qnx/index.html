@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QNX · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/software_platform/">软件平台</a>
+    <span>/</span>
+    <span class="breadcrumb-current">QNX</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">软件平台</div>
+      <h1>QNX</h1>
+      <p class="entry-name-en">QNX</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#6.4.3 实时操作系统：Linux PREEMPT_RT, Xenomai, QNX, Zephyr by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">阶段 2 · 双足平台</span>
+        <span class="roadmap-badge-role">拓展</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>通用操作系统（如标准 Linux）并非为硬实时设计。实时操作系统（RTOS）通过内核抢占、优先级调度和确定性中断响应满足微秒级时序要求。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>QNX是人形机器人领域的重要软件平台。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>通用操作系统（如标准 Linux）并非为硬实时设计。实时操作系统（RTOS）通过内核抢占、优先级调度和确定性中断响应满足微秒级时序要求。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：实时操作系统、抢占、优先级、中断延迟、调度器</p>
+<ul>
+<li><strong>实时操作系统（RTOS）</strong>：能够满足确定性时间约束的操作系统。</li>
+<li><strong>抢占（preemption）</strong>：高优先级任务可中断低优先级任务立即执行。</li>
+<li><strong>优先级（priority）</strong>：决定任务执行先后顺序的属性。</li>
+<li><strong>中断延迟（interrupt latency）</strong>：从中断发生到进入中断服务程序的时间。</li>
+<li><strong>调度器（scheduler）</strong>：决定哪个任务在哪个时刻运行的内核组件。</li>
+</ul>
+</div>
+<p><strong>Linux PREEMPT_RT</strong>。通过给主线 Linux 打实时补丁，使内核中大部分代码可抢占，中断也可线程化。它保留了 Linux 丰富的生态，同时提供数十微秒的调度延迟，是机器人主控的常见选择。</p>
+<p><strong>Xenomai</strong>。在 Linux 上提供双核（dual-kernel）实时扩展，实时任务运行在 Cobalt 实时核，非实时任务运行在 Linux 核。Xenomai 的调度延迟可低至微秒级，但配置和维护较复杂。</p>
+<p><strong>QNX</strong>。BlackBerry 拥有的微内核实时操作系统，广泛应用于汽车、医疗和工业。其微内核架构把文件系统、网络栈等作为用户态服务，内核只保留最小功能，具有高可靠性和安全性。</p>
+<p><strong>Zephyr</strong>。Linux 基金会托管的开源 RTOS，面向资源受限的嵌入式设备，支持多种架构，常用于传感器节点和电机控制器。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：微内核、双核实时、中断线程化、调度延迟</p>
+<ul>
+<li><strong>微内核（microkernel）</strong>：只在内核态保留最基本服务（进程、内存、IPC），其他服务在用户态运行。</li>
+<li><strong>双核实时（dual-kernel real-time）</strong>：在通用 OS 旁边运行一个独立实时内核的架构。</li>
+<li><strong>中断线程化（interrupt threading）</strong>：把中断处理程序作为内核线程运行，可被更高优先级实时任务抢占。</li>
+<li><strong>调度延迟（scheduling latency）</strong>：从任务变为可运行到真正开始执行的时间。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["应用任务"] --&gt; B["实时内核调度器"]
+    B --&gt; C["可抢占内核"]
+    C --&gt; D["硬件中断"]
+    E["Linux 服务"] -.-&gt;|"非实时"| C</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+<li>项目 Wiki：chapter-06.md#6.4.3 实时操作系统：Linux PREEMPT_RT, Xenomai, QNX, Zephyr</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_rt_preempt_linux/">Linux RT-PREEMPT</a>
+              <span class="rel-desc">QNX前置依赖Linux RT-PREEMPT。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 中间件</a>
+              <span class="rel-desc">QNX前置依赖ROS 2 中间件。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使能</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_moveit_motion_planning_2024/">MoveIt 运动规划</a>
+              <span class="rel-desc">Wiki 第22章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_darup_encrypted_control_for_networke_2020/">网络化系统的加密控制：示例性介绍与当前挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">网络化系统的加密控制：示例性介绍与当前挑战discussesQNX。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_software_qnx"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ROS 2 中间件</h3>
+          <p>基于DDS的发布/订阅和实时支持的事实标准机器人中间件。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_rt_preempt_linux/">
+          <span class="entry-type">软件平台</span>
+          <h3>Linux RT-PREEMPT</h3>
+          <p>使Linux内核大部分可抢占以提供确定性低延迟实时行为的内核补丁集，常用于机器人控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_moveit_motion_planning_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>MoveIt 运动规划</h3>
+          <p>MoveIt 是 ROS 生态中常用的运动规划框架，集成 OMPL 等规划器、逆运动学求解与碰撞检测，广泛用于机械臂及人形机器人的全身运动规划。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_darup_encrypted_control_for_networke_2020/">
+          <span class="entry-type">论文</span>
+          <h3>网络化系统的加密控制：示例性介绍与当前挑战</h3>
+          <p>Cloud computing and distributed computing are becoming ubiquitous in many modern control systems…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

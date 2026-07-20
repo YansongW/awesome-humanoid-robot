@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>휴머노이드를 위한 기하-aware 예측 안전 필터: 푸아송 안전 함수에서 CBF 제약 MPC로</h1>
+      <p class="entry-name-en">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.11129v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 비선형 모델 예측 제어(MPC)와 푸아송 안전 함수를 통해 지각 데이터에서 합성된 제어 장벽 함수(CBF) 제약을 결합한 예측 안전 필터를 제안한다. 이동 경계 및 밍코프스키 집합 연산을 사용하여 푸아송 안전 함수를 시변 영역과 로봇 구성 공간으로 확장하고, Unitree Go2 사족 로봇과 G1 휴머노이드 로봇의 동적 충돌 회피 및 환경 탐색 작업에서 검증하였다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.11129" target="_blank" rel="noopener">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>관련 개체</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">evaluates_on</span>
+            <a href="/ko/entry/ent_robot_system_unitree_g1/">Unitree G1 휴머노이드 로봇</a>
+            
+              
+                
+              
+              <span class="rel-desc">예측 안전 필터는 Unitree G1 휴머노이드 로봇에서 동적 충돌 회피 및 환경 탐색 시나리오로 실험적으로 검증되었다.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/ko/entry/ent_oem_unitree_robotics/">유닛리 로보틱스</a>
+            
+              
+                
+              
+              <span class="rel-desc">논문은 실험에 사용된 Go2 사족 로봇과 G1 휴머노이드 플랫폼의 제조사로서 Unitree를 모델명으로 식별한다.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>비정형적이고 동적으로 변화하는 환경에서의 자율 주행은 현대 로봇 공학자들에게 많은 도전 과제를 제시하는 복잡한 작업입니다. 특히, 보행 로봇은 일반적으로 조작 가능한 비대칭 형상을 가지며, 이는 안전이 중요한 궤적 계획 중에 고려되어야 합니다. 본 연구는 제어 장벽 함수(CBF)를 기반으로 형상을 인식하는 안전 제약 조건을 갖춘 온라인 궤적 생성을 위한 비선형 모델 예측 제어(MPC) 알고리즘인 예측 안전 필터를 제안합니다. 중요한 점은, 우리의 방법이 푸아송 안전 함수를 활용하여 인식 데이터로부터 직접 CBF 제약 조건을 수치적으로 합성한다는 것입니다. 우리는 푸아송 방정식에 대한 정적 디리클레 문제를 매개변수화된 이동 경계값 문제로 재구성함으로써, 푸아송 안전 함수에 대한 이론적 프레임워크를 확장하여 영역의 시간적 변화를 통합합니다. 또한, 민코프스키 집합 연산을 사용하여 로봇 형상을 고려한 구성 공간으로 영역을 확장합니다. 마지막으로, 다양한 안전이 중요한 시나리오에서 휴머노이드 및 사족 로봇에 실시간 예측 안전 필터를 구현합니다. 결과는 푸아송 안전 함수의 다용성과 CBF 제약 조건이 적용된 모델 예측 안전 중요 제어기의 이점을 강조합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>비정형적이고 동적으로 변화하는 환경에서의 자율 주행은 현대 로봇 공학자들에게 많은 도전 과제를 제시하는 복잡한 작업입니다. 특히, 보행 로봇은 일반적으로 조작 가능한 비대칭 형상을 가지며, 이는 안전이 중요한 궤적 계획 중에 고려되어야 합니다. 본 연구는 제어 장벽 함수(CBF)를 기반으로 형상을 인식하는 안전 제약 조건을 갖춘 온라인 궤적 생성을 위한 비선형 모델 예측 제어(MPC) 알고리즘인 예측 안전 필터를 제안합니다. 중요한 점은, 우리의 방법이 푸아송 안전 함수를 활용하여 인식 데이터로부터 직접 CBF 제약 조건을 수치적으로 합성한다는 것입니다. 우리는 푸아송 방정식에 대한 정적 디리클레 문제를 매개변수화된 이동 경계값 문제로 재구성함으로써, 푸아송 안전 함수에 대한 이론적 프레임워크를 확장하여 영역의 시간적 변화를 통합합니다. 또한, 민코프스키 집합 연산을 사용하여 로봇 형상을 고려한 구성 공간으로 영역을 확장합니다. 마지막으로, 다양한 안전이 중요한 시나리오에서 휴머노이드 및 사족 로봇에 실시간 예측 안전 필터를 구현합니다. 결과는 푸아송 안전 함수의 다용성과 CBF 제약 조건이 적용된 모델 예측 안전 중요 제어기의 이점을 강조합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">산업용 로봇 안전 요구사항의 진화: ISO 10218-1/2(2011 대 2025) 비교 분석 및 ISO/TS 15066 통합</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_from_experts_to_a_generalist_t_2025/">From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_system_unitree_g1/">Unitree G1 휴머노이드 로봇</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_from_language_to_locomotion_re_2025/">From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_unitree_dex3_1_hand/">Unitree Dex3-1 민첩한 손</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_oem_unitree_robotics/">유닛리 로보틱스</a>
+              <span class="rel-desc">논문은 실험에 사용된 Go2 사족 로봇과 G1 휴머노이드 플랫폼의 제조사로서 Unitree를 모델명으로 식별한다.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">MIT 휴머노이드 로봇: 곡예 동작을 위한 설계, 운동 계획 및 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">능동 공간 뇌와 일반화 가능한 동작 소뇌를 통한 휴머노이드 전신 조작</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_bofa_humanoid_robots_101_2025/">뱅크오브아메리카 인스티튜트 — 휴이노이드 로봇 101</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">로보틱스와 희토류 병목</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">인간형 로봇의 견고한 보행을 위한 계층적 차수 축소 모델 예측 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">인간-로봇 인체공학적 하중 리프팅을 위한 휴머노이드 로봇 설계 최적화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">산업용 로봇 안전 요구사항의 진화: ISO 10218-1/2(2011 대 2025) 비교 분석 및 ISO/TS 15066 통합</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bena_geometry_aware_predictive_safe_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">
+          <span class="entry-type">논문</span>
+          <h3>인간형 로봇의 견고한 보행을 위한 계층적 차수 축소 모델 예측 제어</h3>
+          <p>ALIP 보행 간 동역학에 기반한 40Hz 비선형 보행 계획기와 팔 및 몸통 동역학을 포함하는 500Hz 선형 MPC를 결합한 인간형 로봇 보행을 위한 계층적 차수 축소 MPC…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_unitree_dex3_1_hand/">
+          <span class="entry-type">부품</span>
+          <h3>Unitree Dex3-1 민첩한 손</h3>
+          <p>Unitree G1-EDU 휴머노이드 로봇을 위한 힘 제어식 3지 민첩한 엔드 이펙터 옵션으로, 물체 조작을 위해 손당 7+2자유도를 추가함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chignoli_the_mit_humanoid_robot_design_2021/">
+          <span class="entry-type">논문</span>
+          <h3>MIT 휴머노이드 로봇: 곡예 동작을 위한 설계, 운동 계획 및 제어</h3>
+          <p>본 논문은 MIT 휴머노이드 로봇의 설계, 액추에이터 인식 키노다이나믹 계획법 및 착륙 제어를 제시하며, 경험적으로 검증된 액추에이터 및 배터리 모델을 포함한 사실적인 동역학…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_from_experts_to_a_generalist_t_2025/">
+          <span class="entry-type">논문</span>
+          <h3>From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</h3>
+          <p>这篇工作把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过世界模型/视频预测、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">
+          <span class="entry-type">논문</span>
+          <h3>BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion</h3>
+          <p>BeyondMimic…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_bofa_humanoid_robots_101_2025/">
+          <span class="entry-type">보고서</span>
+          <h3>뱅크오브아메리카 인스티튜트 — 휴이노이드 로봇 101</h3>
+          <p>2025년 4월 Bank of America Institute가 발표한 휴이노이드 로봇 입문서로, 휴이노이드 로봇 아키텍처, 핵심 부품, BOM 비용 궤적 및 2060년까지의 도입…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">
+          <span class="entry-type">논문</span>
+          <h3>인간-로봇 인체공학적 하중 리프팅을 위한 휴머노이드 로봇 설계 최적화</h3>
+          <p>Sartore, Rapetti, Pucci는 인간 모델을 포함한 비선형 하드웨어 설계 최적화 문제를 제안하여 협업 하중 리프팅에서 작업자들의 에너지 소비를 최소화하고, 이를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Unitree G1 휴머노이드 로봇</h3>
+          <p>Unitree Robotics가 개발한 컴팩트한 양산형 휴머노이드 로봇으로, 23~43자유도, 35kg 몸체, 2m/s 보행 속도를 갖추며 연구, 교육 및 경량 산업 작업을 위해…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_demohlm_from_one_demonstration_2025/">
+          <span class="entry-type">논문</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</h3>
+          <p>본 논문은 제트 동력 휴머노이드 iRonCub를 위한 다중 속도 모델 예측 제어 프레임워크를 제안하며, 질량 중심 운동량 역학과 2차 비선형 제트 엔진 역학을 통합하고 MuJoCo…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hartmann_evolution_of_safety_requiremen_2026/">
+          <span class="entry-type">논문</span>
+          <h3>산업용 로봇 안전 요구사항의 진화: ISO 10218-1/2(2011 대 2025) 비교 분석 및 ISO/TS 15066 통합</h3>
+          <p>본 논문은 ISO 10218-1/2:2011과 2025년 개정판을 비교하고 ISO/TS 15066의 규범적 통합을 분석하며, 확장된 기능 안전, 사이버 보안, 소프트웨어 검증 및…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids</h3>
+          <p>Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</h3>
+          <p>본 논문은 로봇 팔 교사가 순응적 접촉, 커리큘럼 스케줄링, 섭동, 실패 감지 및 자동 리셋을 통해 휴머노이드 학생을 지지하고 안내하여 최소한의 인간 개입으로 효율적인 실제 세계…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">완제품 업체</span>
+          <h3>유닛리 로보틱스</h3>
+          <p>중국 로봇 기업으로, 고토크 액추에이터와 비용 중심 설계에 초점을 맞춘 Unitree H1 및 G1 휴인oid 플랫폼을 개발하고 있습니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">논문</span>
+          <h3>능동 공간 뇌와 일반화 가능한 동작 소뇌를 통한 휴머노이드 전신 조작</h3>
+          <p>본 논문은 능동 공간 지각 및 계획을 담당하는 능동 공간 뇌와 하지 이동·상지 정교 조작으로 분리된 일반화 가능한 동작 소뇌를 결합한 다중 에이전트 프레임워크를 제안하여, 작업별…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">
+          <span class="entry-type">논문</span>
+          <h3>관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</h3>
+          <p>본 논문은 저렴한 변형 게이지 관절 토크 센서와 하나의 고관절 장착 힘/토크 센서를 융합하여 로봇 다리의 접촉을 감지하고 위치를 추정하며 접촉력을 추정하는 일반화된 운동량 기반…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_from_language_to_locomotion_re_2025/">
+          <span class="entry-type">논문</span>
+          <h3>From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance</h3>
+          <p>这篇工作先从语言指令、相机图像/多视角观测、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_oceanwall_rare_earth_bottleneck_2025/">
+          <span class="entry-type">보고서</span>
+          <h3>로보틱스와 희토류 병목</h3>
+          <p>Oceanwall의 2025년 7월 연구 노트로, 고급 로봇 특히 휴로이드 로봇이 NdFeB 영구자석에 의존하며 중국의 희토류 정제 지배력이 지정학적 공급망 리스크를 초기한다고…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

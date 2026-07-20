@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI</h1>
+      <p class="entry-name-en">ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04426v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.04426v1 Announce Type: new Abstract: Embodied AI is moving from isolated perception or action modules toward physical agents that understand, plan under goals, act through robot bodies, monitor progress, and improve from experience. Existing systems address this loop only in parts: end-to-end policies generate actions but often lack spatial reasoning, planning, and execution assessment, while robot-agent systems orchestrate tools or specialists but do not learn a shared representation. This fragmentation limits general Physical Agentic AI. We present ACE-Brain-0.5, a unified embodied foundation model that organizes robot intelligence into five coupled functions: spatial perception, decision making, embodied interaction, self-monitoring, and self-improvement. Built on ACE-Brain-0, which established spatial intelligence as a shared scaffold across robot platforms, ACE-Brain-0.5 extends an understanding-centric model into a closed-loop foundation model. A single 8B backbone instantiates the first four functions: grounding objects and affordances, reasoning over 3D and egocentric spatial relations, decomposing instructions into subgoals, generating navigation and manipulation actions, and estimating progress for verification and recovery. To unify these capabilities without cross-task interference, we introduce SSR+, which extends Scaffold-Specialize-Reconcile with a Reactivate stage after task-vector merging. The fifth function, self-improvement, is realized by a companion framework that updates external execution state, including task schemas, spatial memory, and failure-recovery cases, from rollouts. Across fifteen benchmarks, ACE-Brain-0.5 improves over ACE-Brain-0 on 14 of 18 spatial perception and grounding benchmarks, achieves competitive navigation and manipulation performance, and provides strong progress estimation in ID and OOD settings. Together, these results mark an early step toward general Physical Agentic AI.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.04426" target="_blank" rel="noopener">ACE-Brain-0.5: A Unified Embodied Foundational Model for Physical Agentic AI (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Embodied AI는 고립된 인식 또는 행동 모듈에서 물리적 에이전트로 진화하고 있습니다. 이 에이전트는 이해하고, 목표에 따라 계획하며, 로봇 신체를 통해 행동하고, 진행 상황을 모니터링하며, 경험을 통해 개선합니다. 기존 시스템은 이 순환 과정의 일부만을 다룹니다. 종단 간 정책은 행동을 생성하지만 공간 추론, 계획 및 실행 평가가 부족한 경우가 많고, 로봇-에이전트 시스템은 도구나 전문가를 조정하지만 공유 표현을 학습하지 못합니다. 이러한 단편화는 일반적인 물리적 에이전트 AI를 제한합니다. 우리는 ACE-Brain-0.5를 제시합니다. 이는 로봇 지능을 다섯 가지 결합된 기능(공간 인식, 의사 결정, 구현된 상호작용, 자기 모니터링, 자기 개선)으로 구성하는 통합된 구현 기반 모델입니다. ACE-Brain-0(로봇 플랫폼 전반에 걸쳐 공유된 스캐폴드로 공간 지능을 확립)을 기반으로 구축된 ACE-Brain-0.5는 이해 중심 모델을 폐루프 기반 모델로 확장합니다. 단일 8B 백본은 처음 네 가지 기능을 구현합니다: 객체와 어포던스 접지, 3D 및 자기 중심 공간 관계 추론, 명령을 하위 목표로 분해, 탐색 및 조작 행동 생성, 검증 및 복구를 위한 진행 상황 추정. 이러한 기능을 교차 작업 간섭 없이 통합하기 위해 우리는 SSR+를 도입합니다. 이는 작업 벡터 병합 후 Reactivate 단계로 Scaffold-Specialize-Reconcile을 확장합니다. 다섯 번째 기능인 자기 개선은 롤아웃에서 작업 스키마, 공간 메모리, 실패 복구 사례를 포함한 외부 실행 상태를 업데이트하는 동반 프레임워크에 의해 실현됩니다. 15개의 벤치마크에서 ACE-Brain-0.5는 18개의 공간 인식 및 접지 벤치마크 중 14개에서 ACE-Brain-0보다 개선되었으며, 경쟁력 있는 탐색 및 조작 성능을 달성하고, ID 및 OOD 설정에서 강력한 진행 상황 추정을 제공합니다. 이러한 결과는 함께 일반적인 물리적 에이전트 AI를 향한 초기 단계를 나타냅니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Embodied AI는 고립된 인식 또는 행동 모듈에서 물리적 에이전트로 진화하고 있습니다. 이 에이전트는 이해하고, 목표에 따라 계획하며, 로봇 신체를 통해 행동하고, 진행 상황을 모니터링하며, 경험을 통해 개선합니다. 기존 시스템은 이 순환 과정의 일부만을 다룹니다. 종단 간 정책은 행동을 생성하지만 공간 추론, 계획 및 실행 평가가 부족한 경우가 많고, 로봇-에이전트 시스템은 도구나 전문가를 조정하지만 공유 표현을 학습하지 못합니다. 이러한 단편화는 일반적인 물리적 에이전트 AI를 제한합니다. 우리는 ACE-Brain-0.5를 제시합니다. 이는 로봇 지능을 다섯 가지 결합된 기능(공간 인식, 의사 결정, 구현된 상호작용, 자기 모니터링, 자기 개선)으로 구성하는 통합된 구현 기반 모델입니다. ACE-Brain-0(로봇 플랫폼 전반에 걸쳐 공유된 스캐폴드로 공간 지능을 확립)을 기반으로 구축된 ACE-Brain-0.5는 이해 중심 모델을 폐루프 기반 모델로 확장합니다. 단일 8B 백본은 처음 네 가지 기능을 구현합니다: 객체와 어포던스 접지, 3D 및 자기 중심 공간 관계 추론, 명령을 하위 목표로 분해, 탐색 및 조작 행동 생성, 검증 및 복구를 위한 진행 상황 추정. 이러한 기능을 교차 작업 간섭 없이 통합하기 위해 우리는 SSR+를 도입합니다. 이는 작업 벡터 병합 후 Reactivate 단계로 Scaffold-Specialize-Reconcile을 확장합니다. 다섯 번째 기능인 자기 개선은 롤아웃에서 작업 스키마, 공간 메모리, 실패 복구 사례를 포함한 외부 실행 상태를 업데이트하는 동반 프레임워크에 의해 실현됩니다. 15개의 벤치마크에서 ACE-Brain-0.5는 18개의 공간 인식 및 접지 벤치마크 중 14개에서 ACE-Brain-0보다 개선되었으며, 경쟁력 있는 탐색 및 조작 성능을 달성하고, ID 및 OOD 설정에서 강력한 진행 상황 추정을 제공합니다. 이러한 결과는 함께 일반적인 물리적 에이전트 AI를 향한 초기 단계를 나타냅니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_action_token_prediction/">액션 토큰 예측</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ace_brain_05_a_unified_embodie_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">방법</span>
+          <h3>액션 토큰 예측</h3>
+          <p>언어 모델링과 유사하지만 이산적 또는 연속적인 액션 토큰을 출력하는 자기회귀적 다음 토큰 예측 문제로 로봇 동작 생성을 구성하는 방법이다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

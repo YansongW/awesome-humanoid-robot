@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 14 章 机器人控制基础 · Wiki · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" aria-current="page">Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">第 14 章 机器人控制基础</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="14">第 14 章 机器人控制基础</h1>
+<h2 id="_1">摘要</h2>
+<p>第 8 章给出了人形机器人的运动学与动力学模型，第 9 章给出了各子系统的物理实现；本章回答的核心问题是：<strong>给定一个高维、浮动基、欠驱动且与环境的接触不断切换的机械系统，如何实时地计算关节力矩，使其完成期望的运动并保持平衡</strong>。本章按"自底向上"的控制栈展开：首先讨论关节级伺服控制——级联的电流/速度/位置环、PID 控制律及其离散实现、抗饱和与前馈补偿、面向柔顺交互的阻抗/导纳控制；随后进入状态空间方法，给出 LQR 的形式化、代数 Riccati 方程与增益调度；再讨论模型预测控制（MPC）的滚动时域原理、二次规划（QP）形式化与实时求解工程；最后系统阐述全身控制（WBC）——任务 Jacobian、零空间投影、逆动力学 QP 与分层 QP——并讨论状态估计、实时通信与安全链等系统集成问题。全章以 PID、LQR、MPC、WBC 四条方法主线贯穿，并给出两个可运行的 Python 算例。本章刻意不重复第 8 章已推导的运动学/动力学模型与阻抗控制基础，而把重点放在<strong>控制器本身的结构、算法与工程实现</strong>上。</p>
+<p><strong>关键词</strong>：级联控制；PID；抗积分饱和；力矩控制；阻抗控制；状态空间；LQR；Riccati 方程；模型预测控制；二次规划；全身控制；零空间投影；分层 QP；实时性；EtherCAT；功能安全</p>
+<hr />
+<h2 id="141">14.1 人形机器人控制问题概述</h2>
+<h3 id="1411">14.1.1 控制栈分层：从功率开关到全身行为</h3>
+<p>人形机器人的控制不是单一算法，而是一个跨越五个数量级时间尺度的<strong>分层控制栈（control stack）</strong>。最底层是驱动器内部的功率电子开关与磁场定向控制（Field-Oriented Control, FOC），在数十千赫兹下调节电机相电流；其上是关节伺服环（电流环/速度环/位置环，见第 4 章执行器部分对 FOC 硬件的论述）；再向上是全身控制（Whole-Body Control, WBC）在 0.5–2 kHz 求解关节力矩；更上层是运动生成（MPC 或步态模式生成器，典型 50–500 Hz）；最顶层是任务与行为规划，工作频率可低至 1 Hz 以下。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：控制栈、控制频率、实时性、硬实时与软实时</p>
+<ul>
+<li><strong>控制栈（control stack）</strong>：由多层控制器按频率与抽象级别堆叠而成的体系结构，每层向下一层下发参考量、向上层汇报状态。</li>
+<li><strong>控制频率（control rate）</strong>：控制器每个周期重新计算输出的频率，单位为 Hz。关节伺服典型为 1–10 kHz，WBC 典型为 0.5–2 kHz。</li>
+<li><strong>实时性（real-time）</strong>：计算结果必须在截止时间前输出的性质。错过截止时间在硬实时系统中视为故障。</li>
+<li><strong>硬实时（hard real-time）</strong>：不允许任何一次超时，如电机电流环与急停回路。</li>
+<li><strong>软实时（soft real-time）</strong>：偶发超时只导致性能下降而非灾难，如感知与任务规划。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["任务与行为规划&lt;br/&gt;0.1–10 Hz"] --&gt; B["运动生成 / 步态模式生成&lt;br/&gt;MPC, 50–500 Hz"]
+    B --&gt; C["全身控制 WBC&lt;br/&gt;逆动力学 QP, 0.5–2 kHz"]
+    C --&gt; D["关节伺服：位置/速度/力矩环&lt;br/&gt;1–10 kHz"]
+    D --&gt; E["驱动器：FOC 电流环&lt;br/&gt;10–40 kHz"]
+    E --&gt; F["电机与减速器物理本体"]
+    F --&gt; G["传感：编码器/力矩/IMU/相机"]
+    G --&gt; C
+    G --&gt; D</code></pre>
+<p>各层的典型频率与延迟预算如下表所示（数值为行业常见量级，具体平台差异较大）：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>典型频率</th>
+<th>单周期预算</th>
+<th>主要计算内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FOC 电流环</td>
+<td>10–40 kHz</td>
+<td>25–100 µs</td>
+<td>Clarke/Park 变换、PI 调节、PWM 调制</td>
+</tr>
+<tr>
+<td>关节伺服环</td>
+<td>1–10 kHz</td>
+<td>100–1000 µs</td>
+<td>PID、前馈、滤波、限幅</td>
+</tr>
+<tr>
+<td>全身控制（WBC）</td>
+<td>0.5–2 kHz</td>
+<td>0.5–2 ms</td>
+<td>正逆动力学、QP 求解、接触力分配</td>
+</tr>
+<tr>
+<td>运动生成（MPC）</td>
+<td>50–500 Hz</td>
+<td>2–20 ms</td>
+<td>有限时域优化、落脚点规划</td>
+</tr>
+<tr>
+<td>任务规划</td>
+<td>0.1–10 Hz</td>
+<td>100 ms 以上</td>
+<td>行为树、状态机、语义决策</td>
+</tr>
+</tbody>
+</table>
+<p>分层架构的工程含义是：<strong>任何上层算法的性能上限都被下层环路的带宽与跟踪精度锁死</strong>。一个在仿真中完美的 WBC，若关节力矩环带宽只有 20 Hz，其实际表现会远逊于理论预期。因此本章采用自底向上的叙述顺序。</p>
+<h3 id="1412">14.1.2 人形机器人控制的四个结构性困难</h3>
+<p>与固定基座机械臂或轮式底盘相比，人形机器人的控制问题有四个结构性困难，它们决定了本章方法选型的基本格局：</p>
+<ol>
+<li><strong>浮动基与欠驱动</strong>。人形机器人没有固定基座，本体位姿的 6 个自由度没有直接执行器，只能通过地面反作用力间接控制（浮动基动力学，见第 8 章 8.4.7）。系统自由度数 <span class="arithmatex">\(n + 6\)</span> 大于执行器数 <span class="arithmatex">\(n\)</span>，是典型的欠驱动系统。</li>
+<li><strong>混合动力学（hybrid dynamics）</strong>。足的接触/脱离使动力学方程随接触状态离散切换；控制律必须在接触状态机驱动下切换约束集，并处理接触建立瞬间的冲击。</li>
+<li><strong>高维与强耦合</strong>。整机自由度典型为 20–60，惯量耦合显著，任何忽略耦合的单关节独立控制在动态行走中都会失效。</li>
+<li><strong>严格实时性</strong>。平衡本身是动力学不稳定问题（倒立摆），控制延迟直接消耗稳定裕度。一般而言，从传感采样到力矩输出的端到端延迟每增加 1 ms，可恢复扰动的量级就下降一截。</li>
+</ol>
+<h3 id="1413">14.1.3 反馈、前馈与标称/误差分解</h3>
+<p>几乎所有实用的人形机器人控制器都可写成"<strong>标称前馈 + 误差反馈</strong>"的形式：</p>
+<div class="arithmatex">\[
+\tau = \tau_{\mathrm{ff}}(q_d, \dot q_d, \ddot q_d) + \tau_{\mathrm{fb}}(q_d - q, \dot q_d - \dot q, \ldots)
+\]</div>
+<p>其中 <span class="arithmatex">\(\tau_{\mathrm{ff}}\)</span> 由模型（逆动力学、重力补偿、摩擦模型）给出，<span class="arithmatex">\(\tau_{\mathrm{fb}}\)</span> 由反馈律（PID、LQR、QP）给出。前馈承担了"模型已知部分"的力矩需求，反馈只需修正模型误差与扰动，从而可以用较低的反馈增益获得同样的跟踪精度——这对于需要保持柔顺、不能无限提高刚度的交互型机器人至关重要。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：前馈控制、反馈控制、计算力矩法、扰动观测器</p>
+<ul>
+<li><strong>前馈控制（feedforward control）</strong>：利用模型预先计算所需控制量，不依赖误差信号。</li>
+<li><strong>反馈控制（feedback control）</strong>：根据期望与实测状态之差计算控制量，能抑制模型误差与外部扰动。</li>
+<li><strong>计算力矩法（computed torque control）</strong>：用逆动力学模型把非线性系统反馈线性化为解耦的双积分器，再配 PD 反馈，是前馈+反馈思想的极端形式。</li>
+<li><strong>扰动观测器（disturbance observer, DOB）</strong>：把未建模力矩作为扩张状态估计并补偿，常用于替代高增益反馈。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["期望轨迹&lt;br/&gt;q_d, q̇_d, q̈_d"] --&gt; B["前馈: 逆动力学/重力/摩擦&lt;br/&gt;τ_ff"]
+    A --&gt; C["反馈律&lt;br/&gt;PID / LQR / QP"]
+    D["实测状态 q, q̇"] --&gt; C
+    B --&gt; E(("Σ"))
+    C --&gt; E
+    E --&gt; F["关节力矩指令 τ"]
+    F --&gt; G["机器人本体"]
+    G --&gt; D</code></pre>
+<h2 id="142">14.2 关节级伺服控制</h2>
+<h3 id="1421">14.2.1 级联控制：电流环/速度环/位置环</h3>
+<p>关节伺服普遍采用<strong>级联控制（cascade control）</strong>：最内环是电流（力矩）环，中间是速度环，最外环是位置环。内环带宽必须显著高于外环——典型地每向外一层带宽降低 3–10 倍——否则内外环动态相互干涉，整定失去意义。</p>
+<p>电流环的对象是电机电气动态。经 FOC 变换后（见第 4 章），<span class="arithmatex">\(q\)</span> 轴电流近似满足一阶模型</p>
+<div class="arithmatex">\[
+L_q \frac{d i_q}{dt} = v_q - R_s i_q - k_e \omega_m
+\]</div>
+<p>其中 <span class="arithmatex">\(L_q\)</span>、<span class="arithmatex">\(R_s\)</span> 为定子电感与电阻，<span class="arithmatex">\(k_e\)</span> 为反电动势常数，<span class="arithmatex">\(\omega_m\)</span> 为电机角速度。电磁时间常数 <span class="arithmatex">\(L_q/R_s\)</span> 典型为亚毫秒级，因此电流环带宽可达数千赫兹。关节输出力矩 <span class="arithmatex">\(\tau_j = N \eta k_t i_q\)</span>（<span class="arithmatex">\(N\)</span> 为减速比，<span class="arithmatex">\(\eta\)</span> 为传动效率，<span class="arithmatex">\(k_t\)</span> 为转矩常数），故电流环实质上就是<strong>力矩环</strong>。</p>
+<p>速度环与位置环的对象则是机电动态：</p>
+<div class="arithmatex">\[
+J_{\mathrm{eff}} \dot \omega = \tau_j - \tau_g(q) - \tau_f(\omega) - \tau_{\mathrm{ext}}
+\]</div>
+<p>其中 <span class="arithmatex">\(J_{\mathrm{eff}} = J_m N^2 + J_l\)</span> 为电机转子惯量经减速比放大后与负载惯量之和，<span class="arithmatex">\(\tau_g\)</span> 为重力矩，<span class="arithmatex">\(\tau_f\)</span> 为摩擦力矩，<span class="arithmatex">\(\tau_{\mathrm{ext}}\)</span> 为外部耦合力矩。注意 <span class="arithmatex">\(N^2\)</span> 的放大作用：高减速比关节（如谐波减速，<span class="arithmatex">\(N\)</span> 典型为 50–160）中，负载侧惯量与扰动被折算到电机侧后缩小 <span class="arithmatex">\(N^2\)</span> 倍，这使得高减速比关节"天然抗扰但天然不透明"——末端碰撞力也被缩小 <span class="arithmatex">\(N^2\)</span> 倍，难以用电机电流感知。准直驱（Quasi-Direct-Drive, QDD）方案刻意取低减速比（典型 <span class="arithmatex">\(N = 6\!-\!12\)</span>）以换取力矩透明度与反向驱动能力，其代价是电流环必须直接承受负载扰动，对伺服设计提出更高要求。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：级联控制、带宽、转矩常数、反向驱动性、力矩透明度</p>
+<ul>
+<li><strong>级联控制（cascade control）</strong>：多个控制环嵌套，外环输出作为内环给定。整定顺序必须由内向外。</li>
+<li><strong>带宽（bandwidth）</strong>：闭环幅频特性下降到 <span class="arithmatex">\(-3\)</span> dB 对应的频率，反映环路能跟踪多快的指令。</li>
+<li><strong>转矩常数（torque constant, <span class="arithmatex">\(k_t\)</span>）</strong>：单位电流产生的电机转矩，单位 N·m/A。</li>
+<li><strong>反向驱动性（backdrivability）</strong>：从输出端反向驱动电机转动的能力，低减速比传动反向驱动性好。</li>
+<li><strong>力矩透明度（torque transparency）</strong>：无需专用力矩传感器、仅靠电流即可准确估计输出力矩的程度。</li>
+</ul>
+</div>
+<h3 id="1422-pid">14.2.2 PID 控制律与离散实现</h3>
+<p><strong>PID 控制（PID Control）</strong>是关节伺服的主力算法。连续形式为</p>
+<div class="arithmatex">\[
+u(t) = K_p e(t) + K_i \int_0^t e(s)\, ds + K_d \frac{d e(t)}{dt}
+\]</div>
+<p>其中 <span class="arithmatex">\(e(t) = r(t) - y(t)\)</span> 为跟踪误差。三项的作用可概括为：比例项提供即时纠正，决定响应速度；积分项消除常值扰动（如重力、库仑摩擦）造成的稳态误差；微分项提供阻尼、抑制超调。Åström 与 Hägglund 在《Advanced PID Control》中系统总结了 PID 的整定与抗扰设计，Ogata 的《Modern Control Engineering》给出了经典的频域分析框架，二者均为本主题的标准参考。</p>
+<p>数字控制器以周期 <span class="arithmatex">\(T_s\)</span> 采样，常用离散实现为<strong>位置式</strong>：</p>
+<div class="arithmatex">\[
+u[k] = K_p e[k] + K_i T_s \sum_{j=0}^{k} e[j] + K_d \frac{e[k] - e[k-1]}{T_s}
+\]</div>
+<p>以及<strong>增量式（velocity form）</strong>：</p>
+<div class="arithmatex">\[
+\Delta u[k] = K_p \left(e[k] - e[k-1]\right) + K_i T_s e[k] + \frac{K_d}{T_s}\left(e[k] - 2e[k-1] + e[k-2]\right)
+\]</div>
+<p>增量式输出的是控制量的增量，天然避免了积分累加器的显式累加，且在手动/自动切换时无扰，工程上更常用。</p>
+<h3 id="1423">14.2.3 工程细节：抗饱和、微分滤波与前馈</h3>
+<p>教科书 PID 与实际可用 PID 之间隔着一串工程细节，缺失任何一项都可能在真机上造成振荡甚至事故。</p>
+<p><strong>抗积分饱和（anti-windup）</strong>。执行器输出受限（电流限幅、力矩限幅）时，误差持续存在会使积分项无限累积（积分饱和），饱和解除后造成巨大超调。常用方案是<strong>反算抗饱和（back-calculation）</strong>：把饱和差值经增益 <span class="arithmatex">\(K_t\)</span> 反馈到积分器，</p>
+<div class="arithmatex">\[
+I[k+1] = I[k] + K_i T_s e[k] + K_t T_s \left( u_{\mathrm{sat}}[k] - u_{\mathrm{unsat}}[k] \right)
+\]</div>
+<p>其中 <span class="arithmatex">\(u_{\mathrm{unsat}}\)</span> 与 <span class="arithmatex">\(u_{\mathrm{sat}}\)</span> 分别为限幅前后的控制量。典型取 <span class="arithmatex">\(K_t = 1/\sqrt{K_p K_d}\)</span> 或按积分时间常数倒数选取。</p>
+<p><strong>微分滤波</strong>。微分项放大量测噪声，必须串联低通滤波器，构成"带滤波微分"：</p>
+<div class="arithmatex">\[
+D(s) = \frac{K_d s}{1 + s / N_f}
+\]</div>
+<p>滤波系数 <span class="arithmatex">\(N_f\)</span> 典型取 5–20。此外，为避免给定值阶跃经微分项产生"微分冲击"，实用中多采用<strong>微分先行（derivative on measurement）</strong>：微分只作用于测量值而非误差。</p>
+<p><strong>前馈与补偿</strong>。按 14.1.3 的分解，关节伺服通常叠加三项前馈：</p>
+<div class="arithmatex">\[
+\tau_{\mathrm{cmd}} = \underbrace{J_{\mathrm{eff}} \ddot q_d + \tau_g(\hat q) + \hat \tau_f(\hat \omega)}_{\text{模型前馈}} + \underbrace{K_p e + K_d \dot e + K_i \int e}_{\text{反馈}}
+\]</div>
+<p>其中重力补偿 <span class="arithmatex">\(\tau_g(\hat q)\)</span> 在人形机器人上收益最大：腿与手臂关节的重力矩可达峰值力矩的三至五成，不补偿时只能靠积分项硬扛，导致启动迟缓与稳态抖动。摩擦补偿 <span class="arithmatex">\(\hat\tau_f\)</span> 常用库仑+粘性模型 <span class="arithmatex">\(\hat \tau_f = b\hat\omega + F_c \,\mathrm{sgn}(\hat\omega)\)</span>，但减速器摩擦随温度与磨损漂移，标定方法见第 8 章 8.3.10 的参数辨识。</p>
+<table>
+<thead>
+<tr>
+<th>工程环节</th>
+<th>目的</th>
+<th>典型做法</th>
+<th>缺失后果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抗积分饱和</td>
+<td>限幅下抑制超调</td>
+<td>反算法、积分钳位</td>
+<td>大超调、冲击负载</td>
+</tr>
+<tr>
+<td>微分滤波</td>
+<td>抑制噪声放大</td>
+<td>一阶低通 <span class="arithmatex">\(N_f = 5\!-\!20\)</span></td>
+<td>力矩高频抖动、电流发热</td>
+</tr>
+<tr>
+<td>微分先行</td>
+<td>避免给定阶跃冲击</td>
+<td>微分作用于测量值</td>
+<td>阶跃响应力矩尖峰</td>
+</tr>
+<tr>
+<td>重力前馈</td>
+<td>卸掉反馈负担</td>
+<td><span class="arithmatex">\(\tau_g(\hat q)\)</span> 在线计算</td>
+<td>稳态误差、启动迟滞</td>
+</tr>
+<tr>
+<td>摩擦前馈</td>
+<td>改善低速跟踪</td>
+<td>库仑+粘性模型</td>
+<td>爬行、极限环</td>
+</tr>
+<tr>
+<td>陷波/低通滤波</td>
+<td>避开机械谐振</td>
+<td>按 FFT 谱设置陷波点</td>
+<td>谐振啸叫、结构疲劳</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1424">14.2.4 面向交互的力矩控制：阻抗、导纳与力/位混合</h3>
+<p>当机器人与环境发生物理接触时，纯位置控制在几何误差下会产生不受控的接触力，必须引入<strong>柔顺控制</strong>。第 8 章 8.4.11 已推导了<strong>阻抗控制（Impedance Control）</strong>、<strong>导纳控制（Admittance Control）</strong>与<strong>力/位混合控制（Hybrid Force-Position Control）</strong>的动力学基础，本节从伺服实现角度补充三点。</p>
+<p>第一，<strong>阻抗控制的本质是修改力矩环的参考</strong>。把期望的"虚拟弹簧-阻尼-惯量"关系写成力矩指令</p>
+<div class="arithmatex">\[
+\tau = J^T(q)\left[ K_t (x_d - x) + D_t (\dot x_d - \dot x) + \Lambda (\ddot x_d - \ddot x) \right] + \tau_g(q)
+\]</div>
+<p>其闭环行为取决于力矩环的保真度：QDD 关节靠电流估计力矩，串联弹性执行器（Series Elastic Actuator, SEA）靠弹簧形变测量力矩，二者都能实现较"软"的阻抗；高减速比关节则必须额外安装关节力矩传感器，否则阻抗控制只是名义上的。</p>
+<p>第二，<strong>导纳控制是位置控制机器人的柔顺补丁</strong>。导纳外环根据测量力修正位置给定 <span class="arithmatex">\(x_c = x_d + \Delta x(F_{\mathrm{ext}})\)</span>，内环仍是高增益位置伺服，因此适合谐波减速类的高刚度关节，但接触瞬态的稳定性受外环采样率与传感器噪声限制。</p>
+<p>第三，<strong>力/位混合控制按方向分解任务空间</strong>。在约束方向（如足底法向、插入方向）闭环控制力，在自由方向闭环控制位置，选择矩阵 <span class="arithmatex">\(S\)</span> 与 <span class="arithmatex">\(I - S\)</span> 实现投影（见 8.4.11）。人形机器人足底在支撑相实质上是"位置约束方向"，而擦灰、按压等操作任务才真正需要力闭环。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：阻抗控制、导纳控制、力/位混合控制、串联弹性执行器</p>
+<ul>
+<li><strong>阻抗控制（impedance control）</strong>：控制机器人呈现给环境的动态关系（惯量-阻尼-刚度），输出为力、输入为运动偏差。</li>
+<li><strong>导纳控制（admittance control）</strong>：阻抗的对偶——输入为力，输出为运动修正量，包裹在位置环之外。</li>
+<li><strong>力/位混合控制（hybrid force-position control）</strong>：在任务空间正交分解为力控子空间与位置控子空间。</li>
+<li><strong>串联弹性执行器（SEA）</strong>：在执行器与负载间串联弹性元件，以形变测力并提供固有柔顺，代价是带宽受弹簧-惯量谐振限制。</li>
+</ul>
+</div>
+<h3 id="1425-python">14.2.5 Python 算例：单关节伺服仿真——重力前馈与抗饱和的作用</h3>
+<p>下面用一个单摆关节（如肩屈曲关节）的数值仿真，演示 PID + 重力前馈 + 反算抗饱和的组合效果。读者可开关 <code>use_ff</code> 与 <code>use_aw</code> 两个开关观察稳态误差与饱和超调的变化。</p>
+<pre class="highlight"><code class="language-python"># 单关节（单摆）伺服仿真：PID + 重力前馈 + 反算抗饱和
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 关节参数（近似一个肩/肘关节）
+m, l, g = 2.0, 0.30, 9.81      # 连杆质量(kg)、质心距离(m)、重力加速度
+J = m * l**2                    # 绕关节转动惯量
+b = 0.05                        # 粘性摩擦
+tau_max = 8.0                   # 力矩限幅 (N·m)
+Ts = 1e-3                       # 伺服周期 1 kHz
+T = 3.0
+N = int(T / Ts)
+
+# 参考轨迹：0 -&gt; 1 rad 的平滑阶跃（五次多项式）
+qd = np.ones(N) * 1.0
+
+# PID 增益
+Kp, Ki, Kd = 25.0, 12.0, 1.2
+Kt = 1.0 / np.sqrt(Kp * Kd)     # 反算抗饱和增益
+
+use_ff = True   # 是否启用重力前馈
+use_aw = True   # 是否启用抗积分饱和
+
+q, w = 0.0, 0.0
+I = 0.0
+log_q, log_tau = [], []
+
+for k in range(N):
+    e = qd[k] - q
+    ed = -w                       # 微分先行：对测量值微分
+    tau_g = m * g * l * np.sin(q) # 重力矩
+    tau_ff = tau_g if use_ff else 0.0
+    u_unsat = tau_ff + Kp * e + Kd * ed + I
+    u = np.clip(u_unsat, -tau_max, tau_max)
+    if use_aw:
+        I += Ki * Ts * e + Kt * Ts * (u - u_unsat)
+    else:
+        I += Ki * Ts * e
+    # 关节动力学：J q̈ + b q̇ = u - τ_g
+    acc = (u - b * w - tau_g) / J
+    w += acc * Ts
+    q += w * Ts
+    log_q.append(q); log_tau.append(u)
+
+t = np.arange(N) * Ts
+plt.plot(t, qd, 'k--', label='reference')
+plt.plot(t, log_q, label='q (ff+aw)' if (use_ff and use_aw) else 'q')
+plt.xlabel('t [s]'); plt.ylabel('q [rad]'); plt.legend(); plt.grid(True)
+plt.show()</code></pre>
+<h2 id="143">14.3 状态空间控制与线性二次型调节器</h2>
+<h3 id="1431">14.3.1 状态空间模型、线性化与离散化</h3>
+<p>PID 是单输入单输出方法，而人形机器人的平衡问题天然是多变量耦合的。状态空间方法把系统写成</p>
+<div class="arithmatex">\[
+\dot x = f(x, u), \qquad y = h(x)
+\]</div>
+<p>在标称点 <span class="arithmatex">\((x_0, u_0)\)</span> 处做泰勒展开并略去高阶项，得到线性化模型</p>
+<div class="arithmatex">\[
+\delta \dot x = A \delta x + B \delta u, \quad A = \left.\frac{\partial f}{\partial x}\right|_{x_0, u_0}, \quad B = \left.\frac{\partial f}{\partial u}\right|_{x_0, u_0}
+\]</div>
+<p>数字控制器需要离散模型。对采样周期 <span class="arithmatex">\(T_s\)</span> 的零阶保持（ZOH）离散化：</p>
+<div class="arithmatex">\[
+A_d = e^{A T_s} \approx I + A T_s + \frac{(A T_s)^2}{2}, \qquad B_d = \left( \int_0^{T_s} e^{A s} ds \right) B
+\]</div>
+<p>线性化模型的有效性是局部的：扰动把状态推离标称点越远，模型误差越大。这就是为什么状态空间方法在人形机器人上总是与前述标称轨迹生成（第 15 章）或增益调度（14.3.4）配合使用。</p>
+<h3 id="1432-lyapunov">14.3.2 稳定性概念与 Lyapunov 判据</h3>
+<p>控制的最低要求不是"跟踪好"而是"不倒"。对线性系统 <span class="arithmatex">\(\dot x = A x\)</span>，渐近稳定的充要条件是 <span class="arithmatex">\(A\)</span> 的全部特征值位于左半平面。对非线性系统，常用工具是 <strong>Lyapunov 第二方法</strong>：若能找到正定函数 <span class="arithmatex">\(V(x)\)</span>（可理解为能量），且沿系统轨迹 <span class="arithmatex">\(\dot V(x) = \nabla V \cdot f(x) &lt; 0\)</span>，则平衡点渐近稳定。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：Lyapunov 函数、渐近稳定、吸引域、控制 Lyapunov 函数</p>
+<ul>
+<li><strong>Lyapunov 函数</strong>：在平衡点取最小值、沿系统轨迹单调递减的标量函数，是稳定性的"能量证书"。</li>
+<li><strong>渐近稳定（asymptotic stability）</strong>：充分小的初始偏差最终收敛回平衡点。</li>
+<li><strong>吸引域（region of attraction）</strong>：能收敛回平衡点的初始状态集合；人形机器人受支撑多边形限制，吸引域总是有限的。</li>
+<li><strong>控制 Lyapunov 函数（Control Lyapunov Function, CLF）</strong>：对每个状态都存在控制使 <span class="arithmatex">\(\dot V &lt; 0\)</span> 的函数，可直接用作控制约束（见第 15 章 CLF 引导的跑步学习）。</li>
+</ul>
+</div>
+<p>Lyapunov 思想在人形机器人中的一个直接推论是：任何"基于能量的"控制（如把总机械能塑造成期望形式）都自带稳定性论证的雏形；而纯数据驱动控制器若不附加此类结构，其稳定性只能靠大量测试背书（见第 15 章 15.4）。</p>
+<h3 id="1433-lqr-riccati">14.3.3 LQR：形式化与代数 Riccati 方程</h3>
+<p><strong>线性二次型调节器（Linear Quadratic Regulator, LQR）</strong> 是状态空间方法中最实用的反馈律。对线性系统 <span class="arithmatex">\(\dot x = A x + B u\)</span>，LQR 最小化无限时域二次代价</p>
+<div class="arithmatex">\[
+J = \int_0^{\infty} \left( x^T Q x + u^T R u \right) dt
+\]</div>
+<p>其中 <span class="arithmatex">\(Q \succeq 0\)</span> 惩罚状态偏差，<span class="arithmatex">\(R \succ 0\)</span> 惩罚控制消耗。最优反馈为线性状态反馈</p>
+<div class="arithmatex">\[
+u = -K x, \qquad K = R^{-1} B^T P
+\]</div>
+<p>其中 <span class="arithmatex">\(P\)</span> 是<strong>连续时间代数 Riccati 方程（CARE）</strong>的唯一正定解：</p>
+<div class="arithmatex">\[
+A^T P + P A - P B R^{-1} B^T P + Q = 0
+\]</div>
+<p>离散系统对应离散代数 Riccati 方程（DARE），<code>scipy.linalg.solve_discrete_are</code> 可直接求解。LQR 的价值不在"最优"二字本身，而在于：它把多变量反馈设计压缩为 <span class="arithmatex">\(Q\)</span>、<span class="arithmatex">\(R\)</span> 两个矩阵的整定，且闭环对增益与相位扰动具有经典的鲁棒裕度（对状态反馈形式，增益裕度 <span class="arithmatex">\([1/2, \infty)\)</span>、相位裕度 <span class="arithmatex">\(\geq 60^\circ\)</span>）。</p>
+<p><span class="arithmatex">\(Q\)</span>、<span class="arithmatex">\(R\)</span> 的整定有明确物理含义：<span class="arithmatex">\(Q\)</span> 中某元素加大，意味着"这个状态偏差更贵"，反馈会更 aggressively 地纠正它。Bryson 经验法则取 <span class="arithmatex">\(Q_{ii} = 1/x_{i,\max}^2\)</span>、<span class="arithmatex">\(R_{ii} = 1/u_{i,\max}^2\)</span>，使各项代价无量纲化，再在此基础上微调。</p>
+<h3 id="1434-lqr">14.3.4 增益调度与时变 LQR</h3>
+<p>单个 LQR 只在标称点附近有效。处理行走这类周期性大偏差运动的标准做法是：</p>
+<ol>
+<li><strong>离线</strong>：沿标称轨迹 <span class="arithmatex">\(\{(x_0(t), u_0(t))\}\)</span> 逐点线性化，得到时变系统 <span class="arithmatex">\(A(t), B(t)\)</span>，求解时变 Riccati 方程（TV-LQR），得到反馈增益序列 <span class="arithmatex">\(K(t)\)</span>；或按步态相位采样若干关键点，各解一个 LQR。</li>
+<li><strong>在线</strong>：查表或插值得到当前相位的增益，执行 <span class="arithmatex">\(\delta u = -K(t)\, \delta x\)</span>。</li>
+</ol>
+<p>Kuindersma 等人在 DARPA 机器人挑战赛期间为 Boston Dynamics Atlas 开发的基于优化的运动规划、估计与控制系统（发表于 <em>Autonomous Robots</em> 2016）即采用"离线轨迹优化 + TV-LQR 反馈 + QP 全身控制"的组合，是这一范式在人形机器人上的标志性工程验证。近年来时变 LQR 也常以微分动态规划（DDP）求解的副产品形式出现——DDP 的二阶展开反向传播天然给出沿线性二次增益（见第 15 章 15.3）。</p>
+<h3 id="1435-python-lqr">14.3.5 Python 算例：倒立摆平衡的 LQR 设计</h3>
+<p>以单腿站立简化为倒立摆（踝关节输入力矩）为例，设计离散 LQR 并仿真角度扰动恢复。该算例同时演示了 14.3.1 的线性化与 14.3.3 的 DARE 求解。</p>
+<pre class="highlight"><code class="language-python"># 倒立摆 LQR 平衡控制
+import numpy as np
+from scipy.linalg import solve_discrete_are
+import matplotlib.pyplot as plt
+
+# 物理参数：倒立摆近似（质心高度 h、质量 m）
+m, h, g = 60.0, 0.9, 9.81
+I = m * h**2                    # 绕踝关节惯量（近似）
+# 状态 x = [theta, theta_dot]，输入 u = 踝力矩
+# 线性化：thetä = (m g h / I) theta + (1/I) u
+A = np.array([[0.0, 1.0],
+              [m * g * h / I, 0.0]])
+B = np.array([[0.0], [1.0 / I]])
+
+# ZOH 离散化（一阶欧拉近似，Ts 较小时可接受）
+Ts = 0.005
+Ad = np.eye(2) + A * Ts
+Bd = B * Ts
+
+# LQR 权重：惩罚角度偏差远大于角速度，力矩权重适中
+Q = np.diag([100.0, 1.0])
+R = np.array([[0.5]])
+P = solve_discrete_are(Ad, Bd, Q, R)
+K = np.linalg.inv(R + Bd.T @ P @ Bd) @ (Bd.T @ P @ Ad)
+print("LQR 增益 K =", K)
+
+# 仿真：初始角度扰动 0.1 rad
+N = 600
+x = np.array([0.1, 0.0])
+log = []
+for k in range(N):
+    u = -K @ x
+    x = Ad @ x + Bd.flatten() * u
+    log.append([x[0], x[1], u[0]])
+
+log = np.array(log)
+t = np.arange(N) * Ts
+fig, ax = plt.subplots(2, 1, sharex=True)
+ax[0].plot(t, log[:, 0]); ax[0].set_ylabel('theta [rad]'); ax[0].grid(True)
+ax[1].plot(t, log[:, 2]); ax[1].set_ylabel('u [N·m]'); ax[1].set_xlabel('t [s]'); ax[1].grid(True)
+plt.show()</code></pre>
+<h2 id="144-mpc">14.4 模型预测控制（MPC）</h2>
+<h3 id="1441">14.4.1 滚动时域优化原理</h3>
+<p>LQR 在无限时域上最优，但无法显式处理约束——而人形机器人的核心约束（关节限位、力矩限幅、摩擦锥、ZMP 支撑多边形）恰恰是硬性的。<strong>模型预测控制（Model Predictive Control, MPC）</strong> 在每个控制周期求解一个有限时域开环最优控制问题：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\min_{u_{0:N-1},\, x_{1:N}} \quad &amp; \sum_{k=0}^{N-1} \ell(x_k, u_k) + \ell_f(x_N) \\
+\text{s.t.} \quad &amp; x_{k+1} = f(x_k, u_k), \quad k = 0, \ldots, N-1 \\
+&amp; x_k \in \mathcal{X}, \quad u_k \in \mathcal{U} \\
+&amp; x_0 = \hat x(t)
+\end{aligned}
+\]</div>
+<p>然后<strong>只执行第一步控制</strong> <span class="arithmatex">\(u_0^*\)</span>，下一周期用新的状态估计 <span class="arithmatex">\(\hat x\)</span> 重新求解——这就是滚动时域（receding horizon）机制。预测模型在每次求解时被"重新锚定"到当前状态，使 MPC 兼具优化的前瞻性与反馈的鲁棒性。Borrelli、Bemporad 与 Morari 的《Predictive Control for Linear and Hybrid Systems》是这一领域的标准教材。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["当前状态估计 x̂(t)"] --&gt; B["求解有限时域 OCP&lt;br/&gt;预测模型 + 约束 + 代价"]
+    B --&gt; C["最优序列 u*0, u*1, ..., u*N-1"]
+    C --&gt; D["仅执行 u*0"]
+    D --&gt; E["系统演化一个周期 Δt"]
+    E --&gt; F["新状态估计 x̂(t+Δt)"]
+    F --&gt; B</code></pre>
+<p>时域长度 <span class="arithmatex">\(N\)</span> 与离散步长 <span class="arithmatex">\(\Delta t\)</span> 的选择是核心权衡：预测时域 <span class="arithmatex">\(N \Delta t\)</span> 必须覆盖被控对象的主导动态（人形平衡控制典型取 0.5–1.5 s），而步数越多求解越慢。MPC 相比 LQR 的代价是计算量：LQR 在线只需一次矩阵-向量乘，MPC 每个周期都要解一个优化问题。</p>
+<h3 id="1442">14.4.2 从最优控制问题到二次规划</h3>
+<p>当代价取二次型、模型取线性（或线性化）、约束取线性（或线性化的摩擦锥）时，上述 OCP 转化为<strong>二次规划（Quadratic Program, QP）</strong>标准形</p>
+<div class="arithmatex">\[
+\min_{z} \; \frac{1}{2} z^T H z + g^T z \quad \text{s.t.} \quad A_{\mathrm{eq}} z = b_{\mathrm{eq}}, \quad A_{\mathrm{in}} z \leq b_{\mathrm{in}}
+\]</div>
+<p>其中优化变量 <span class="arithmatex">\(z\)</span> 堆叠了时域内的状态与控制。QP 的最优性由 <strong>KKT 条件（Karush-Kuhn-Tucker conditions）</strong>刻画：最优解处梯度、等式约束与不等式约束乘子满足互补松弛条件。凸 QP 是凸优化问题，任何局部最优即全局最优，且有多项式时间算法——这是 MPC 能实时化的理论基础。</p>
+<p>QP 求解器分两大家族：<strong>积极集法（active-set method）</strong>沿约束边界迭代，利用上一周期的解<strong>热启动（warm start）</strong>时通常只需少数迭代，适合控制周期极短的场合；<strong>内点法（interior-point method）</strong>通过障碍函数把不等式约束吸收进目标，迭代次数对问题规模不敏感，适合大规模稀疏问题。人形机器人 MPC 实践中，结构利用（把 QP 按时间步分块的稀疏结构交给 Riccati 递推或块稀疏分解）往往比求解器选择本身更能决定求解速度。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：QP、KKT 条件、积极集法、内点法、热启动、紧缩</p>
+<ul>
+<li><strong>QP（quadratic program）</strong>：二次目标加线性约束的优化问题，是实时 MPC 的主力求解形式。</li>
+<li><strong>KKT 条件</strong>：带约束优化的一阶必要条件；对凸问题也是充分条件。</li>
+<li><strong>积极集法（active-set method）</strong>：维护一个"起作用约束集"，在约束面之间移动的 QP 迭代方法。</li>
+<li><strong>内点法（interior-point method）</strong>：沿约束内部的中心路径逼近最优解的迭代方法。</li>
+<li><strong>热启动（warm start）</strong>：用上一次求解结果初始化本次迭代，显著减少迭代次数。</li>
+<li><strong>紧缩（condensing）</strong>：利用动力学等式把状态变量消去，得到只含控制量的稠密小 QP；时域短时效率高，时域长时破坏稀疏性。</li>
+</ul>
+</div>
+<h3 id="1443">14.4.3 实时化工程：线性化、预计算与延迟补偿</h3>
+<p>把人形机器人 MPC 从离线算法变成在线控制器，需要一组标准工程手段：</p>
+<ul>
+<li><strong>模型降阶与线性化</strong>。全阶浮动基动力学（见第 8 章 8.4.7）维数高且强非线性，直接在 1 kHz 下做非线性 MPC 目前仍困难。主流做法是降阶：用线性倒立摆、单刚体（质心动力学）等简化模型做 MPC 预测模型，把全阶跟踪交给 WBC（见第 15 章 15.3.2）。</li>
+<li><strong>单步线性化 + 多步预测</strong>。在每个 MPC 周期只对当前标称轨迹做一次线性化，得到线性时变（LTV）模型，把非线性 MPC 近似为单个 QP；这牺牲了非线性精度但换来数量级的速度。</li>
+<li><strong>预计算与代码生成</strong>。<span class="arithmatex">\(A(t), B(t)\)</span> 的矩阵值可沿标称轨迹离线预计算；QP 求解器代码可针对固定问题结构自动生成，消除动态内存分配。</li>
+<li><strong>延迟补偿</strong>。传感-计算-执行链路存在 1–5 ms 级延迟，标准做法是用前向模拟把状态估计推进一个延迟周期再求解 MPC，否则相当于在错误的初值上优化。</li>
+<li><strong>不可行处理</strong>。扰动过大时 QP 可能不可行；工程上把关键约束（如 ZMP 支撑多边形）改写为带松弛变量的软约束，并对松弛量施加大惩罚，保证求解器总能返回一个"最不坏"的解。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>设计旋钮</th>
+<th>典型取值</th>
+<th>增大/放宽的收益</th>
+<th>代价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测时域 <span class="arithmatex">\(N\Delta t\)</span></td>
+<td>0.5–1.5 s</td>
+<td>前瞻性强、落脚规划更优</td>
+<td>求解时间近似线性增长</td>
+</tr>
+<tr>
+<td>离散步长 <span class="arithmatex">\(\Delta t\)</span></td>
+<td>10–40 ms</td>
+<td>分辨率高</td>
+<td>步数增加、矩阵病态</td>
+</tr>
+<tr>
+<td>预测模型</td>
+<td>LIPM / 单刚体 / 全阶</td>
+<td>保真度高</td>
+<td>非线性、求解变慢</td>
+</tr>
+<tr>
+<td>求解频率</td>
+<td>50–500 Hz</td>
+<td>抗扰恢复快</td>
+<td>算力与功耗</td>
+</tr>
+<tr>
+<td>约束软化</td>
+<td>松弛 + 大惩罚</td>
+<td>避免不可行崩溃</td>
+<td>约束被暂时违反</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1444-mpc">14.4.4 人形机器人中的 MPC 应用谱系</h3>
+<p>MPC 在人形机器人中按预测模型分层出现：</p>
+<ol>
+<li><strong>模式生成级 MPC</strong>：以 ZMP/质心为状态，生成质心轨迹与 ZMP 参考（第 15 章 15.2.2 的预观控制可视为其特例），典型 50–200 Hz。</li>
+<li><strong>质心动力学 MPC</strong>：以质心位置/速度与角动量为状态、足底反力为输入，直接优化未来若干个接触相的反力分配与落脚点，典型 100–500 Hz。MIT Cheetah 3 的凸 MPC 与 Atlas 的 QP 体系均属此类思路（第 15 章 15.3.2 详述）。</li>
+<li><strong>全身/全阶 MPC</strong>：直接在全阶动力学上优化关节轨迹与接触序列。受算力限制长期停留在离线或低频在线，近年随 GPU 采样与物理引擎进步出现新形态，如基于 MuJoCo 的腿足机器人全身 MPC（Whole-Body Model-Predictive Control of Legged Robots with MuJoCo）与扩散退火式全阶采样 MPC（Full-Order Sampling-Based MPC for Torque-Level Locomotion Control），代表第 15 章讨论的前沿方向。</li>
+</ol>
+<h2 id="145-wbc">14.5 全身控制（WBC）</h2>
+<h3 id="1451-jacobian">14.5.1 任务函数与任务 Jacobian</h3>
+<p><strong>全身控制（Whole-Body Control, WBC）</strong> 在力矩层统一协调全身 <span class="arithmatex">\(n\)</span> 个关节与全部接触，使机器人同时完成多个任务：质心跟踪、姿态稳定、摆动足轨迹、手末端位姿、关节限位规避等。每个任务写为任务空间量 <span class="arithmatex">\(\sigma_i(q)\)</span>（如质心位置、摆动足位姿），其对时间的导数由<strong>任务 Jacobian（Task Jacobian）</strong>给出：</p>
+<div class="arithmatex">\[
+\dot \sigma_i = J_i(q)\, \dot q, \qquad \ddot \sigma_i = J_i(q)\, \ddot q + \dot J_i(q, \dot q)\, \dot q
+\]</div>
+<p>若期望任务加速度为 <span class="arithmatex">\(\ddot \sigma_i^*\)</span>（通常由任务空间的 PD 律 <span class="arithmatex">\(\ddot \sigma_i^* = \ddot \sigma_i^d + K_p(\sigma_i^d - \sigma_i) + K_d(\dot\sigma_i^d - \dot\sigma_i)\)</span> 生成），则控制问题转化为：<strong>求关节加速度 <span class="arithmatex">\(\ddot q\)</span> 使所有任务误差最小，同时满足动力学方程、接触约束与限位</strong>。</p>
+<h3 id="1452-qp">14.5.2 加权 QP 与零空间投影</h3>
+<p>处理多任务有两种基本策略。</p>
+<p><strong>加权策略（weighted）</strong>：把所有任务误差加权堆叠进一个目标，</p>
+<div class="arithmatex">\[
+\min_{\ddot q} \; \sum_i w_i \left\| J_i \ddot q + \dot J_i \dot q - \ddot \sigma_i^* \right\|^2
+\]</div>
+<p>权重 <span class="arithmatex">\(w_i\)</span> 表达任务相对重要性。实现简单、计算快，但权重只提供"软"优先级——高权重任务的误差仍可能非零，且权重整定随任务组合变化。</p>
+<p><strong>严格优先级（strict hierarchy）</strong>：高优先级任务精确满足，低优先级任务只能在高优先级任务的<strong>零空间（null space）</strong>内优化。对两级任务，解为</p>
+<div class="arithmatex">\[
+\ddot q = J_1^{\dagger} \left( \ddot \sigma_1^* - \dot J_1 \dot q \right) + N_1\, \xi, \qquad N_1 = I - J_1^{\dagger} J_1
+\]</div>
+<p>其中 <span class="arithmatex">\(J_1^{\dagger}\)</span> 为任务 1 Jacobian 的伪逆，<span class="arithmatex">\(N_1\)</span> 向 <span class="arithmatex">\(J_1\)</span> 的零空间投影，<span class="arithmatex">\(\xi\)</span> 由任务 2 的优化确定（可把 <span class="arithmatex">\(J_2 N_1\)</span> 作为新的有效 Jacobian 递归求解）。零空间投影保证了任务 2 的任何动作都不会干扰任务 1——这是冗余机器人利用多余自由度的标准机制（冗余与零空间的运动学讨论见第 8 章 8.2.4）。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：任务空间、伪逆、零空间投影、任务优先级、正则化</p>
+<ul>
+<li><strong>任务空间（task space / operational space）</strong>：以任务相关量（质心、末端位姿）描述运动的坐标空间。</li>
+<li><strong>伪逆（Moore-Penrose pseudoinverse, <span class="arithmatex">\(J^{\dagger}\)</span>）</strong>：给出最小范数意义下 <span class="arithmatex">\(\dot q = J^{\dagger}\dot\sigma\)</span> 的解。</li>
+<li><strong>零空间投影（null-space projection）</strong>：矩阵 <span class="arithmatex">\(N = I - J^{\dagger}J\)</span> 把任意关节速度投影到不改变任务量的方向集合。</li>
+<li><strong>任务优先级（task priority）</strong>：任务间的层次关系；严格优先级下低优先级任务不得劣化高优先级任务的解。</li>
+<li><strong>正则化（regularization）</strong>：在伪逆/QP 中加入小的 <span class="arithmatex">\(\| \cdot \|\)</span> 惩罚避免奇异附近增益爆炸。</li>
+</ul>
+</div>
+<h3 id="1453-qpwbc">14.5.3 逆动力学 QP：WBC 的标准形式化</h3>
+<p>现代力矩级 WBC 的主流是<strong>逆动力学 QP 形式化（Inverse-Dynamics QP Formulation）</strong>。决策变量取 <span class="arithmatex">\(\nu = [\ddot q^T, \tau^T, f_c^T]^T\)</span>（关节加速度、关节力矩、接触反力），约束来自<strong>浮动基动力学（Floating-Base Dynamics）</strong>：</p>
+<div class="arithmatex">\[
+M(q)\, \ddot q + h(q, \dot q) = S^T \tau + J_c(q)^T f_c
+\]</div>
+<p>其中 <span class="arithmatex">\(M\)</span> 为惯量矩阵，<span class="arithmatex">\(h\)</span> 为科氏/离心/重力项，<span class="arithmatex">\(S\)</span> 为驱动选择矩阵（浮动基前 6 行无驱动），<span class="arithmatex">\(J_c\)</span> 为接触 Jacobian，<span class="arithmatex">\(f_c\)</span> 为接触反力。标准 QP 写为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\min_{\ddot q, \tau, f_c} \quad &amp; \sum_i w_i \left\| J_i \ddot q + \dot J_i \dot q - \ddot\sigma_i^* \right\|^2 + \lambda_{\tau} \|\tau\|^2 + \lambda_{f} \|f_c\|^2 \\
+\text{s.t.} \quad &amp; M \ddot q + h = S^T \tau + J_c^T f_c &amp;&amp; \text{（动力学一致性）}\\
+&amp; J_c \ddot q + \dot J_c \dot q = 0 &amp;&amp; \text{（接触点加速度为零）}\\
+&amp; f_c \in \mathcal{F} &amp;&amp; \text{（摩擦锥 + CoP 约束，见 8.4.13）}\\
+&amp; \tau_{\min} \leq \tau \leq \tau_{\max} &amp;&amp; \text{（力矩限幅）}\\
+&amp; \ddot q_{\min} \leq \ddot q \leq \ddot q_{\max} &amp;&amp; \text{（加速度限幅）}
+\end{aligned}
+\]</div>
+<p>解出的 <span class="arithmatex">\(\tau\)</span> 直接下发关节力矩环。该形式化的关键性质是：<strong>前 6 行动力学方程（浮动基行）把"本体加速度—接触力—关节力矩"三者绑定</strong>，平衡不再依赖任何单一任务，而是由动力学约束全局保证。摩擦锥在工程上常以四棱锥（pyramid）线性化以保持 QP 的线性结构。</p>
+<h3 id="1454-qp-wbc">14.5.4 分层 QP WBC</h3>
+<p>当任务有硬优先级时，可把 14.5.2 的零空间思想与 14.5.3 的 QP 结合，形成<strong>分层二次规划全身控制（Hierarchical QP Whole-Body Control）</strong>：按优先级从高到低依次求解一串 QP，每个 QP 在低优先级目标上优化，同时把"不得劣化此前所有 QP 最优值"作为等式/不等式约束加入。这一路线由 de Lasa 等人的早期工作奠基，经 Herzog 等人的系统化，并由 Kim 等人的《Hierarchical QP whole-body control: from theory to practice》给出了面向实机的完整工程论述（包括约束一致性与正则化细节）。</p>
+<p>与加权 QP 的对比：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>加权 QP</th>
+<th>分层 QP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优先级</td>
+<td>软（权重比）</td>
+<td>硬（严格层次）</td>
+</tr>
+<tr>
+<td>计算量</td>
+<td>单 QP，快</td>
+<td>级联 QP，约为层数倍</td>
+</tr>
+<tr>
+<td>权重整定</td>
+<td>随任务组合变化，繁琐</td>
+<td>层内仍需权重，但层间无需</td>
+</tr>
+<tr>
+<td>约束可行性</td>
+<td>单问题，易诊断</td>
+<td>需防止高层约束使低层不可行</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>任务同级、追求速度</td>
+<td>安全/平衡任务必须绝对优先</td>
+</tr>
+</tbody>
+</table>
+<p>人形机器人上，"接触约束 + 平衡（质心/ZMP）"通常置于最高层，摆动足与手末端次之，姿态与关节限位规避再次之。</p>
+<h3 id="1455">14.5.5 工程实现要点</h3>
+<ul>
+<li><strong>接触状态机</strong>：<span class="arithmatex">\(J_c\)</span> 与约束集随支撑相切换（左支撑/右支撑/双支撑），WBC 必须与步态状态机严格同步；接触建立瞬间用冲击模型或短时导纳过渡，避免 QP 约束突变引起力矩跳变。</li>
+<li><strong>状态一致性</strong>：QP 依赖 <span class="arithmatex">\(M(q), h(q,\dot q), J_c(q)\)</span> 的准确值，而它们依赖浮动基位姿估计——WBC 与状态估计（14.6.1）构成闭环，估计漂移会直接表现为力矩偏差。</li>
+<li><strong>求解频率与正则化</strong>：WBC 典型运行在 0.5–2 kHz；<span class="arithmatex">\(\lambda_{\tau}, \lambda_{f}\)</span> 既抑制解的范数（节能、降噪），也保证 QP 严格凸、数值良态。接近奇异构型时伪逆需带阻尼（damped least squares）。</li>
+<li><strong>与上层接口</strong>：MPC/模式生成器输出质心加速度参考、摆动足轨迹与期望接触力，WBC 将其作为任务 <span class="arithmatex">\(\ddot\sigma_i^*\)</span> 与正则目标；上层频率低（百 Hz 级）时，WBC 内部需对参考做插值。</li>
+<li><strong>力矩接口</strong>：WBC 输出的是期望关节力矩，最终品质取决于 14.2 节的力矩环保真度；QDD 与带关节力矩传感器的关节是当前主流接口。</li>
+</ul>
+<h3 id="1456-python">14.5.6 Python 算例：两任务零空间投影</h3>
+<p>用一个 3 连杆平面臂（<span class="arithmatex">\(n=3\)</span>，末端位置任务维数 2，冗余度 1）演示严格优先级：任务 1 为末端位置跟踪，任务 2 为关节居中（posture）。可以看到任务 2 只在零空间内起作用。</p>
+<pre class="highlight"><code class="language-python"># 两任务严格优先级（零空间投影）示例
+import numpy as np
+
+def fk(q, L):
+    # 平面 3R 臂末端位置
+    x = L[0]*np.cos(q[0]) + L[1]*np.cos(q[0]+q[1]) + L[2]*np.cos(q.sum())
+    y = L[0]*np.sin(q[0]) + L[1]*np.sin(q[0]+q[1]) + L[2]*np.sin(q.sum())
+    return np.array([x, y])
+
+def jac(q, L):
+    s1 = q[0]; s12 = q[0]+q[1]; s123 = q.sum()
+    J = np.array([
+        [-L[0]*np.sin(s1)-L[1]*np.sin(s12)-L[2]*np.sin(s123), -L[1]*np.sin(s12)-L[2]*np.sin(s123), -L[2]*np.sin(s123)],
+        [ L[0]*np.cos(s1)+L[1]*np.cos(s12)+L[2]*np.cos(s123),  L[1]*np.cos(s12)+L[2]*np.cos(s123),  L[2]*np.cos(s123)]
+    ])
+    return J
+
+L = [0.30, 0.25, 0.20]
+q = np.array([0.3, 0.5, -0.4])
+q_home = np.array([0.0, 0.6, -0.6])   # 关节居中参考
+xd = np.array([0.45, 0.15])           # 末端目标
+
+Kp, K2 = 8.0, 2.0
+dt = 0.01
+for step in range(300):
+    J = jac(q, L)
+    x = fk(q, L)
+    v1 = Kp * (xd - x)                # 任务1：期望末端速度
+    J1_pinv = np.linalg.pinv(J)
+    N1 = np.eye(3) - J1_pinv @ J      # 零空间投影矩阵
+    v2 = K2 * (q_home - q)            # 任务2：关节居中速度
+    qd = J1_pinv @ v1 + N1 @ v2       # 严格优先级合成
+    q = q + qd * dt
+
+print("最终末端位置:", fk(q, L), "目标:", xd)
+print("最终关节角:", q)</code></pre>
+<h2 id="146">14.6 控制系统集成与选型</h2>
+<h3 id="1461">14.6.1 状态估计接口</h3>
+<p>所有前述控制器都假设状态 <span class="arithmatex">\(q, \dot q\)</span> 与浮动基位姿已知，但实际上浮动基的 6 自由度无法直接测量，必须融合 IMU、关节编码器与接触信息估计。腿足机器人状态估计的主流做法是把 IMU 预积分、正运动学腿长约束与接触因子联合优化或滤波，代表性工作如结合正运动学与预积分接触因子的腿足机器人状态估计（Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors），以及针对地形不确定性的自适应不变扩展卡尔曼滤波（Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation）。工程要点是接触检测：错误的接触假设会让运动学约束把估计拉偏，常见判据是足底力开关阈值 + 冲击检测的组合。本章控制环路与状态估计的耦合在第 15 章 15.5 继续讨论。</p>
+<h3 id="1462">14.6.2 实时通信与调度</h3>
+<p>控制栈各层分布在多个计算节点上：驱动器内的 MCU（FOC）、关节级控制器、中央实时计算机（WBC/MPC）、高算力计算机（感知/学习策略）。节点间总线的确定性直接决定可实现的上层频率：</p>
+<table>
+<thead>
+<tr>
+<th>总线</th>
+<th>典型周期</th>
+<th>抖动</th>
+<th>在人形机器人中的角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EtherCAT</td>
+<td>100 µs–1 ms</td>
+<td>微秒级</td>
+<td>主流关节总线，分布式时钟同步</td>
+</tr>
+<tr>
+<td>CAN / CAN-FD</td>
+<td>1–10 ms</td>
+<td>取决于负载率</td>
+<td>低速传感、电池管理、部分关节</td>
+</tr>
+<tr>
+<td>以太网（UDP/TCP）</td>
+<td>不确定</td>
+<td>毫秒级</td>
+<td>感知数据、非实时指令</td>
+</tr>
+</tbody>
+</table>
+<p>中央实时计算机通常运行带实时补丁的 Linux（PREEMPT_RT）配合 CPU 隔离与 FIFO 调度，保证 WBC 线程的最坏延迟有界；对确定性要求更高的场合则采用 QNX 等商用实时操作系统。EtherCAT 的分布式时钟（Distributed Clocks）机制把各关节的采样相位对齐到微秒级，是力矩级 WBC 得以分布式实施的前提。</p>
+<h3 id="1463">14.6.3 安全链与失效保护</h3>
+<p>人形机器人在人类近旁作业，控制系统必须假设自身会失效并为此设计<strong>安全链（safety chain）</strong>：</p>
+<ol>
+<li><strong>功能安全标准框架</strong>：整机安全完整性按 IEC 61508 的 SIL 等级或 ISO 13849 的 PL 等级分解；个人护理机器人还需满足 ISO 13482，协作场景参考 ISO/TS 15066 的力/压强限值。</li>
+<li><strong>硬件层</strong>：安全转矩关断（Safe Torque Off, STO）在驱动器硬件层切断电机转矩，不依赖软件；急停回路硬接线。</li>
+<li><strong>软件层</strong>：看门狗监控控制周期超时；力矩/速度/位置包络监控（超限即降级）；跌倒检测触发保护姿态（收腿、护头）。</li>
+<li><strong>降级策略</strong>：传感失效（如单只足底力传感器断线）时切换到低带宽位置控制或安全停机，而非直接崩溃。</li>
+</ol>
+<p>控制算法选型必须把安全链考虑在内：基于优化的控制器（MPC/WBC）必须永远有"求解失败时的上一周期保持 + 快速衰减"兜底逻辑；学习型策略（第 15 章）通常外套模型法安全过滤器。</p>
+<h3 id="1464">14.6.4 方法对比与选型指南</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>模型依赖</th>
+<th>约束处理</th>
+<th>多变量耦合</th>
+<th>计算量</th>
+<th>在人形机器人中的典型位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>无（局部）</td>
+<td>限幅外置</td>
+<td>无（逐关节）</td>
+<td>极低</td>
+<td>关节伺服</td>
+</tr>
+<tr>
+<td>PID + 前馈</td>
+<td>逆动力学/重力</td>
+<td>限幅外置</td>
+<td>经前馈部分补偿</td>
+<td>极低</td>
+<td>关节伺服、静态作业</td>
+</tr>
+<tr>
+<td>阻抗/导纳</td>
+<td>目标阻抗模型</td>
+<td>间接</td>
+<td>经 Jacobian</td>
+<td>低</td>
+<td>交互任务、柔顺行走</td>
+</tr>
+<tr>
+<td>LQR / TV-LQR</td>
+<td>线性化模型</td>
+<td>无显式约束</td>
+<td>有</td>
+<td>低（查表）</td>
+<td>平衡镇定、轨迹跟踪</td>
+</tr>
+<tr>
+<td>MPC</td>
+<td>预测模型</td>
+<td>显式（核心优势）</td>
+<td>有</td>
+<td>中–高</td>
+<td>模式生成、质心控制</td>
+</tr>
+<tr>
+<td>WBC（QP）</td>
+<td>全阶逆动力学</td>
+<td>显式</td>
+<td>有（本质）</td>
+<td>中</td>
+<td>力矩级全身协调</td>
+</tr>
+</tbody>
+</table>
+<p>选型经验法则：<strong>能用低层解决的不要放到高层</strong>（关节摩擦/重力在伺服层补偿，比让 WBC 硬算便宜得多）；<strong>约束越硬越往 MPC/WBC 放</strong>；<strong>模型越不准越依赖反馈与学习</strong>（第 15 章）。</p>
+<h3 id="1465">14.6.5 本章小结</h3>
+<p>本章沿控制栈自底向上建立了人形机器人控制的方法体系：关节级的 PID 与前馈补偿决定了力矩/位置跟踪的保真度；状态空间方法（LQR 及其时变形式）为多变量平衡提供了带稳定性论证的反馈；MPC 把硬约束纳入在线优化，是连接规划与控制的枢纽；全身控制（逆动力学 QP / 分层 QP）在力矩层统一协调全身任务与接触。这些模块在第 15 章将被组装为完整的行走与运动生成系统：模式生成器与 MPC 给出质心/落脚点参考，WBC 跟踪之，关节伺服执行之。</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/wiki/chapters/chapter-13/">← 上一页<span>第 13 章 量产与规模化</span></a>
+      
+      
+      <a class="next" href="/wiki/chapters/chapter-15/">下一页 →<span>第 15 章 运动生成与 Locomotion</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#14">第 14 章 机器人控制基础</a><ul>
+<li><a href="#_1">摘要</a></li>
+<li><a href="#141">14.1 人形机器人控制问题概述</a><ul>
+<li><a href="#1411">14.1.1 控制栈分层：从功率开关到全身行为</a></li>
+<li><a href="#1412">14.1.2 人形机器人控制的四个结构性困难</a></li>
+<li><a href="#1413">14.1.3 反馈、前馈与标称/误差分解</a></li>
+</ul>
+</li>
+<li><a href="#142">14.2 关节级伺服控制</a><ul>
+<li><a href="#1421">14.2.1 级联控制：电流环/速度环/位置环</a></li>
+<li><a href="#1422-pid">14.2.2 PID 控制律与离散实现</a></li>
+<li><a href="#1423">14.2.3 工程细节：抗饱和、微分滤波与前馈</a></li>
+<li><a href="#1424">14.2.4 面向交互的力矩控制：阻抗、导纳与力/位混合</a></li>
+<li><a href="#1425-python">14.2.5 Python 算例：单关节伺服仿真——重力前馈与抗饱和的作用</a></li>
+</ul>
+</li>
+<li><a href="#143">14.3 状态空间控制与线性二次型调节器</a><ul>
+<li><a href="#1431">14.3.1 状态空间模型、线性化与离散化</a></li>
+<li><a href="#1432-lyapunov">14.3.2 稳定性概念与 Lyapunov 判据</a></li>
+<li><a href="#1433-lqr-riccati">14.3.3 LQR：形式化与代数 Riccati 方程</a></li>
+<li><a href="#1434-lqr">14.3.4 增益调度与时变 LQR</a></li>
+<li><a href="#1435-python-lqr">14.3.5 Python 算例：倒立摆平衡的 LQR 设计</a></li>
+</ul>
+</li>
+<li><a href="#144-mpc">14.4 模型预测控制（MPC）</a><ul>
+<li><a href="#1441">14.4.1 滚动时域优化原理</a></li>
+<li><a href="#1442">14.4.2 从最优控制问题到二次规划</a></li>
+<li><a href="#1443">14.4.3 实时化工程：线性化、预计算与延迟补偿</a></li>
+<li><a href="#1444-mpc">14.4.4 人形机器人中的 MPC 应用谱系</a></li>
+</ul>
+</li>
+<li><a href="#145-wbc">14.5 全身控制（WBC）</a><ul>
+<li><a href="#1451-jacobian">14.5.1 任务函数与任务 Jacobian</a></li>
+<li><a href="#1452-qp">14.5.2 加权 QP 与零空间投影</a></li>
+<li><a href="#1453-qpwbc">14.5.3 逆动力学 QP：WBC 的标准形式化</a></li>
+<li><a href="#1454-qp-wbc">14.5.4 分层 QP WBC</a></li>
+<li><a href="#1455">14.5.5 工程实现要点</a></li>
+<li><a href="#1456-python">14.5.6 Python 算例：两任务零空间投影</a></li>
+</ul>
+</li>
+<li><a href="#146">14.6 控制系统集成与选型</a><ul>
+<li><a href="#1461">14.6.1 状态估计接口</a></li>
+<li><a href="#1462">14.6.2 实时通信与调度</a></li>
+<li><a href="#1463">14.6.3 安全链与失效保护</a></li>
+<li><a href="#1464">14.6.4 方法对比与选型指南</a></li>
+<li><a href="#1465">14.6.5 本章小结</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

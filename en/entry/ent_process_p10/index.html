@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motion Control Algorithm Development and Validation · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Motion Control Algorithm Development and Validation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Motion Control Algorithm Development and Validation</h1>
+      <p class="entry-name-en">Motion Control Algorithm Development and Validation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid Robot Product Development, encompassing solution design, implementation and validation, and document delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Motion Control algorithm development and validation is the 10th phase in the full humanoid robot product development workflow, expanded into several Level-3 sub-tasks in WBS V3.</p>
+<h2 id="content">Content</h2>
+<p>This phase covers the complete engineering actions including input review, solution design, implementation/prototyping, validation closure, and documentation delivery. It is a key milestone to ensure downstream dependents receive qualified inputs.</p>
+<h2 id="key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</h2>
+<h4 id="state-estimation-and-perception-fusion">State Estimation and Perception Fusion</h4>
+<h5 id="imu-and-joint-encoder-fusion">IMU and Joint Encoder Fusion</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: EKF/UKF/Madgwick, Zero Velocity Update, Joint Kinematic Integration</li>
+<li><strong>Design Rationale</strong>: Real-time estimation of centroid position, velocity, and attitude; fundamental for balance control</li>
+<li><strong>Key Constraints</strong>: Sensor latency, covariance tuning, foot slippage</li>
+<li><strong>Completion Criteria / Deliverables</strong>: State estimator, measured trajectory error &lt; target, standing drift controllable
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P10.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "IMU and Joint Encoder Fusion"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P10.1.1.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "IMU and Joint Encoder Fusion"; demonstrate using "EKF/UKF/Madgwick, Zero Velocity Update, Joint Kinematic Integration"; clarify technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no less than 2 candidate solutions</li>
+<li>Establish an evaluation matrix with quantitative scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P10.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "IMU and Joint Encoder Fusion" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype validation</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P10.1.1.4 Validation and Issue Closure</strong>: Validate the output of "IMU and Joint Encoder Fusion"; check if completion criteria are met; record issues and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P10.1.1.5 Documentation Output and Downstream Delivery</strong>: Output final report/drawing/specification for "IMU and Joint Encoder Fusion"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="contact-state-estimation">Contact State Estimation</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Foot force/torque, acceleration jerk detection, probabilistic contact detection</li>
+<li><strong>Design Rationale</strong>: Accurate foot-ground contact detection is critical for gait transitions and balance control</li>
+<li><strong>Key Constraints</strong>: Noise, sensor location, ground stiffness</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Contact detection accuracy &gt; 98%, false positive rate &lt; 2%
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P10.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Contact State Estimation"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P10.1.2.2 Algorithm/Control Solution Design</strong>: Build mathematical models or algorithm frameworks based on "foot force/torque, acceleration jerk detection, probabilistic contact detection"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no less than 2 candidate solutions</li>
+<li>Establish an evaluation matrix with quantitative scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P10.1.2.3 Algorithm Implementation and Simulation Validation</strong>: Implement the "Contact State Estimation" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype validation</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P10.1.2.4 Algorithm Tuning and Performance Validation</strong>: Perform parameter tuning and boundary testing for the "Contact State Estimation" algorithm; verify performance under typical/extreme conditions meets indicators.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P10.1.2.5 Documentation Output and Downstream Delivery</strong>: Output final report/drawing/specification for "Contact State Estimation"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="external-forcedisturbance-estimation">External Force/Disturbance Estimation</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Momentum observer, generalized momentum, Kalman filter</li>
+<li><strong>Design Rationale</strong>: Estimate external push/pull forces for robust balance and fall prediction</li>
+<li><strong>Key Constraints</strong>: Model error, latency</li>
+<li><strong>Completion Criteria / Deliverables</strong>: External force estimation response &lt; 100 ms, steady-state error &lt; target
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P10.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "External Force/Disturbance Estimation"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P10.1.3.2 Algorithm/Control Solution Design</strong>: Build mathematical models or algorithm frameworks based on "momentum observer, generalized momentum, Kalman filter"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no less than 2 candidate solutions</li>
+<li>Establish an evaluation matrix with quantitative scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P10.1.3.3 Algorithm Implementation and Simulation Validation</strong>: Implement the "External Force/Disturbance Estimation" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype validation</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P10.1.3.4 Algorithm Tuning and Performance Validation</strong>: Perform parameter tuning and boundary testing for the "External Force/Disturbance Estimation" algorithm; verify performance under typical/extreme conditions meets indicators.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P10.1.3.5 Documentation Output and Downstream Delivery</strong>: Output final report/drawing/specification for "External Force/Disturbance Estimation"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="balance-gait-and-wbc">Balance, Gait, and WBC</h4>
+<h5 id="standing-and-disturbance-rejection-balance-control">Standing and Disturbance Rejection Balance Control</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: LQR, MPC, ZMP/Capture Point, angular momentum control</li>
+<li><strong>Design Rationale</strong>: Bipedal standing and disturbance rejection are core safety functions; MPC can handle constraints uniformly</li>
+<li><strong>Key Constraints</strong>: Real-time solving frequency ≥ 100 Hz, joint limits</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Real-world video of standing disturbance rejection, recovery capability meets indicators
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P10.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Standing and Disturbance Rejection Balance Control"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P10.2.1.2 Algorithm/Control Solution Design</strong>: Build mathematical models or algorithm frameworks based on "LQR, MPC, ZMP/Capture Point, angular momentum control"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no less than 2 candidate solutions</li>
+<li>Establish an evaluation matrix with quantitative scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P10.2.1.3 Algorithm Implementation and Simulation Validation</strong>: Implement the "Standing and Disturbance Rejection Balance Control" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype validation</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P10.2.1.4 Algorithm Tuning and Performance Validation</strong>: Perform parameter tuning and boundary testing for the "Standing and Disturbance Rejection Balance Control" algorithm; verify performance under typical/extreme conditions meets indicators.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P10.2.1.5 Documentation Output and Downstream Delivery</strong>: Output final report/drawing/specification for "Standing and Disturbance Rejection Balance Control"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="gait-planning-and-terrain-adaptation">Gait Planning and Terrain Adaptation</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: ZMP preview, Raibert heuristic, optimization-based gait, RL/IL</li>
+<li><strong>Design Rationale</strong>: From periodic walking to unstructured terrain; prioritize stability then efficiency</li>
+<li><strong>Key Constraints</strong>: Joint velocity/torque limits, energy consumption</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Walking data on flat/sloped/obstacle terrain, speed/energy consumption meet PRD
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P10.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Gait Planning and Terrain Adaptation"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P10.2.2.2 Algorithm/Control Solution Design</strong>: Build mathematical models or algorithm frameworks based on "ZMP preview, Raibert heuristic, optimization-based gait, RL/IL"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no less than 2 candidate solutions</li>
+<li>Establish an evaluation matrix with quantitative scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P10.2.2.3 Algorithm Implementation and Simulation Validation</strong>: Implement the "Gait Planning and Terrain Adaptation" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype validation</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P10.2.2.4 Algorithm Tuning and Performance Validation</strong>: Perform parameter tuning and boundary testing for the "Gait Planning and Terrain Adaptation" algorithm; verify performance under typical/extreme conditions meets indicators.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P10.2.2.5 Documentation Output and Downstream Delivery</strong>: Output final report/drawing/specification for "Gait Planning and Terrain Adaptation"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="whole-body-control-wbc">Whole-Body Control (WBC)</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: QP-based WBC, task prioritization, contact force optimization, null-space projection</li>
+<li><strong>Design Rationale</strong>: Coordinate lower limb balance, torso posture, and upper limb manipulation; satisfy friction cone constraints</li>
+<li><strong>Key Constraints</strong>: Computational real-time performance, task conflicts, friction cone</li>
+<li><strong>Completion Criteria / Deliverables</strong>: WBC controller, multi-task coordination demonstration, solving time &lt; 1 ms
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P10.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Whole-Body Control (WBC)"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P10.2.3.2 Algorithm/Control Solution Design</strong>: Build mathematical models or algorithm frameworks based on "QP-based WBC, task prioritization, contact force optimization, null-space projection"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no less than 2 candidate solutions</li>
+<li>Establish an evaluation matrix with quantitative scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P10.2.3.3 Algorithm Implementation and Simulation Validation</strong>: Implement the "Whole-Body Control (WBC)" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype validation</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P10.2.3.4 Algorithm Tuning and Performance Validation</strong>: Perform parameter tuning and boundary testing for the "Whole-Body Control (WBC)" algorithm; verify performance under typical/extreme conditions meets indicators.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P10.2.3.5 Documentation Output and Downstream Delivery</strong>: Output final report/drawing/specification for "Whole-Body Control (WBC)"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="compliance-impedance-control">Compliance / Impedance Control</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Joint impedance, Cartesian impedance, force-position hybrid control, admittance control</li>
+<li><strong>Design Rationale</strong>: Achieve safe interaction with the environment/humans, reduce collision impact</li>
+<li><strong>Key Constraints</strong>: Stability, bandwidth, force sensor noise</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Compliant contact experimental data, collision force &lt; safety threshold
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P10.2.4.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Compliance / Impedance Control"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P10.2.4.2 Algorithm/Control Solution Design</strong>: Build mathematical models or algorithm frameworks based on "joint impedance, Cartesian impedance, force-position hybrid control, admittance control"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no less than 2 candidate solutions</li>
+<li>Establish an evaluation matrix with quantitative scoring</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P10.2.4.3 Algorithm Implementation and Simulation Validation</strong>: Implement the "Compliance / Impedance Control" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Execute simulation or prototype validation</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P10.2.4.4 Algorithm Tuning and Performance Validation</strong>: Perform parameter tuning and boundary testing for the "Compliance / Impedance Control" algorithm; verify performance under typical/extreme conditions meets indicators.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P10.2.4.5 Documentation Output and Downstream Delivery</strong>: Output final report/drawing/specification for "Compliance / Impedance Control"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="sim-to-real-and-testing">Sim-to-Real and Testing</h4>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p6/">URDF modeling and Kinematics &amp; URDF</a>
+              <span class="rel-desc">P10 依赖 P6 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_capture_point/">Capture Point</a>
+              <span class="rel-desc">Motion Control Algorithm Development and Validation uses Capture Point.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4/">Design of Joint Module and Actuator &amp; Drive</a>
+              <span class="rel-desc">P10 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_joint_encoder_2024/">Joint Encoder</a>
+              <span class="rel-desc">Motion Control Algorithm Development and Validation uses Joint Encoder.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p7/">Construction and verification of Simulation platform</a>
+              <span class="rel-desc">P10 依赖 P7 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_domain_randomization/">Domain Randomization</a>
+              <span class="rel-desc">Motion Control Algorithm Development and Validation uses Domain Randomization.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a>
+              <span class="rel-desc">Motion Control Algorithm Development and Validation mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-desc">Motion Control Algorithm Development and Validation mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-desc">Motion Control Algorithm Development and Validation mentions Whole-Body Control (WBC).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_3_3/">Physical Security Unlock and Verification</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Physical Security Unlock and Verification is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_2_1/">Standing and Anti-Interference Balance Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Standing and Anti-Interference Balance Control is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p7/">Construction and verification of Simulation platform</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P7 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p12/">VLA / WAM / AI algorithm integration (AI &amp; Perception)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P12 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_2_3/">Whole-body control WBC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Whole-body control WBC is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_2_2/">Gait Planning and Terrain Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Gait Planning and Terrain Adaptation is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation mentions Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_2_4/">Smoothness/Impedance Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Smoothness/Impedance Control is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_physdiff_physics_guided_human_2022/">PhysDiff: Physics-Guided Human Motion Diffusion Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">PhysDiff: Physics-Guided Human Motion Diffusion Model discusses Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_1_3/">External Force/Disturbance Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">External Force/Disturbance Estimation is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_3_2/">Domain Randomization and Robust Training</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Domain Randomization and Robust Training is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_teshnizi_motion_planning_for_a_pair_of_2021/">Motion Planning for a Pair of Tethered Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Motion Planning for a Pair of Tethered Robots discusses Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p11/">Dexterous Hand Selection/Design and Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P11 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_1_2/">Contact State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Contact State Estimation is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p14/">Software &amp; Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P14 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_1_1/">IMU and joint encoder fusion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">IMU and joint encoder fusion is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15/">Integration &amp; V &amp; V testing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P15 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_3_1/">System Identification and Parameter Calibration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">System Identification and Parameter Calibration is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p10"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Domain Randomization and Robust Training</h3>
+          <p>Randomized parameter range, cross-domain transfer success rate</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p7/">
+          <span class="entry-type">Method</span>
+          <h3>Construction and verification of Simulation platform</h3>
+          <p>Construction and verification of Simulation platform</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_physdiff_physics_guided_human_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>PhysDiff: Physics-Guided Human Motion Diffusion Model</h3>
+          <p>PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human motion analysis and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Gait Planning and Terrain Adaptation</h3>
+          <p>Data on level-ground, sloped, and obstacle-crossing walking, as well as speed and energy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_domain_randomization/">
+          <span class="entry-type">Method</span>
+          <h3>Domain Randomization</h3>
+          <p>A sim-to-real technique that randomizes simulation parameters during training to improve policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>System Identification and Parameter Calibration</h3>
+          <p>Identification report, simulation–hardware frequency response comparison</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Standing and Anti-Interference Balance Control</h3>
+          <p>Video of the standing anti-interference physical prototype; its recovery capability meets the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Contact State Estimation</h3>
+          <p>Contact detection accuracy&amp;gt; 98%, false trigger rate &amp;lt;2%</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_3_3/">
+          <span class="entry-type">Method</span>
+          <h3>Physical Security Unlock and Verification</h3>
+          <p>Sim-to-Real migration report and physical demonstration of key actions completed.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p6/">
+          <span class="entry-type">Method</span>
+          <h3>URDF modeling and Kinematics &amp; URDF</h3>
+          <p>URDF modeling and Kinematics &amp; URDF-phase 6 of the entire Android product development process,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p12/">
+          <span class="entry-type">Method</span>
+          <h3>VLA / WAM / AI algorithm integration (AI &amp; Perception)</h3>
+          <p>VLA / WAM / AI algorithm integration (AI &amp; Perception) — the 12th phase of the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-body control WBC</h3>
+          <p>WBC controller, multi-task coordination demonstration, solution time &amp;lt;1 ms</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_capture_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Capture Point</h3>
+          <p>A point on the ground where the robot must step to bring itself to a complete stop, used as a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Zero Moment Point (ZMP)</h3>
+          <p>A point on the ground where the horizontal moment of the ground reaction force about it is zero;…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14/">
+          <span class="entry-type">Method</span>
+          <h3>Software &amp; Integration</h3>
+          <p>Software &amp; Integration-the 14th stage of the entire Android product development process, covering…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4/">
+          <span class="entry-type">Method</span>
+          <h3>Design of Joint Module and Actuator &amp; Drive</h3>
+          <p>Design of Actuator &amp; Drive-phase 4 of the entire product development process for Android, covering…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>External Force/Disturbance Estimation</h3>
+          <p>External force estimation response &amp;lt;100 ms, steady-state error &amp;lt;target</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15/">
+          <span class="entry-type">Method</span>
+          <h3>Integration &amp; V &amp; V testing</h3>
+          <p>Integration &amp; V &amp; v-phase 15 of the Android product development process, covering solution design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation</h3>
+          <p>MAPS-X introduces meta-algorithms that integrate disjoint trajectory segmentation into centralized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p11/">
+          <span class="entry-type">Method</span>
+          <h3>Dexterous Hand Selection/Design and Integration</h3>
+          <p>Dexterous Hand Selection/Design and Integration — the 11th phase of the full-cycle humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_teshnizi_motion_planning_for_a_pair_of_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Motion Planning for a Pair of Tethered Robots</h3>
+          <p>Proposes a reduced-visibility-graph A* planning algorithm for two planar point robots connected by a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>IMU and joint encoder fusion</h3>
+          <p>State estimator, measured trajectory error &amp;lt;target, standing drift controllable</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_4/">
+          <span class="entry-type">Method</span>
+          <h3>Smoothness/Impedance Control</h3>
+          <p>Smooth contact experimental data, collision force &amp;lt;safety threshold</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_joint_encoder_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Joint Encoder</h3>
+          <p>Position or velocity sensor mounted on a robot joint to provide high-resolution feedback for motor…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</a><ul>
+<li><a href="#state-estimation-and-perception-fusion">State Estimation and Perception Fusion</a><ul>
+<li><a href="#imu-and-joint-encoder-fusion">IMU and Joint Encoder Fusion</a></li>
+<li><a href="#contact-state-estimation">Contact State Estimation</a></li>
+<li><a href="#external-forcedisturbance-estimation">External Force/Disturbance Estimation</a></li>
+</ul>
+</li>
+<li><a href="#balance-gait-and-wbc">Balance, Gait, and WBC</a><ul>
+<li><a href="#standing-and-disturbance-rejection-balance-control">Standing and Disturbance Rejection Balance Control</a></li>
+<li><a href="#gait-planning-and-terrain-adaptation">Gait Planning and Terrain Adaptation</a></li>
+<li><a href="#whole-body-control-wbc">Whole-Body Control (WBC)</a></li>
+<li><a href="#compliance-impedance-control">Compliance / Impedance Control</a></li>
+</ul>
+</li>
+<li><a href="#sim-to-real-and-testing">Sim-to-Real and Testing</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

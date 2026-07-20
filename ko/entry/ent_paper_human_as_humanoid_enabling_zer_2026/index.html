@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments</h1>
+      <p class="entry-name-en">Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.32009v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2606.32009v1 Announce Type: new Abstract: Vision-language-action (VLA) models across robot embodiments require high-quality observation--action supervision to learn deployable action distributions, yet scaling such robot data remains difficult, especially for high-DoF humanoids. Teleoperation provides controller-aligned supervision, while human egocentric videos capture diverse bimanual manipulation but do not directly provide executable robot actions. We introduce Human-as-Humanoid, a human-to-humanoid supervision framework that enables near-real-time human-centric action generation, making human demonstrations usable for high-DoF humanoid VLA training by jointly aligning the robot embodiment, the sensing setup, and the action-label interface. Built on PrimeU, a human-aligned 60-DoF upper-body humanoid, Human-as-Humanoid uses synchronized ego-exo videos to pair deployment-aligned egocentric observations with exocentric motion recovery, retargets the recovered human motion through staged Inverse Kinematics (IK) into controller-aligned 60-DoF action chunks, and trains the VLA model with Forward Kinematics (FK)-aware supervision to preserve wrist and fingertip task-space geometry. This converts large-scale human demonstrations from visual observations into executable observation--action supervision for the target humanoid. Experiments validate the conversion chain at the motion-recovery, robot-action-space, and real-robot deployment levels. Human-as-Humanoid yields a 4.8--7.2x raw demonstration-throughput gain over humanoid teleoperation in our data-collection analysis, and on several downstream tasks, policies post-trained only with the converted human labels generalize to real-robot deployment without target-task robot demonstrations. The official project website is available at https://zgc-embodyai.github.io/Human-as-Humanoid.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.32009" target="_blank" rel="noopener">Human-as-Humanoid: Enabling Zero-Shot Humanoid Learning from Ego-Exo Human Videos with Human-Aligned Embodiments</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇 체현(embodiment) 전반에 걸친 Vision-language-action (VLA) 모델은 배포 가능한 행동 분포를 학습하기 위해 고품질의 관찰-행동 감독(observation-action supervision)을 필요로 하지만, 특히 고자유도(high-DoF) 휴머노이드의 경우 이러한 로봇 데이터를 확장하는 것은 여전히 어렵습니다. 원격 조작(teleoperation)은 제어기 정렬 감독(controller-aligned supervision)을 제공하는 반면, 인간의 자기중심적(egocentric) 비디오는 다양한 양손 조작을 포착하지만 실행 가능한 로봇 행동을 직접 제공하지는 않습니다. 우리는 Human-as-Humanoid를 소개합니다. 이는 인간-휴머노이드 감독 프레임워크로, 거의 실시간에 가까운 인간 중심 행동 생성을 가능하게 하며, 로봇 체현, 센싱 설정, 행동 레이블 인터페이스를 공동으로 정렬하여 고자유도 휴머노이드 VLA 훈련에 인간 시연을 사용할 수 있게 합니다. 인간 정렬 60-DoF 상체 휴머노이드인 PrimeU를 기반으로 구축된 Human-as-Humanoid는 동기화된 자아-외부(ego-exo) 비디오를 사용하여 배포 정렬된 자기중심적 관찰과 외부 중심(exocentric) 모션 복구를 짝짓고, 복구된 인간 모션을 단계적 역기구학(Inverse Kinematics, IK)을 통해 제어기 정렬된 60-DoF 행동 청크로 재타겟팅하며, 순기구학(Forward Kinematics, FK) 인식 감독으로 VLA 모델을 훈련하여 손목과 손끝의 작업 공간 기하학을 보존합니다. 이는 대규모 인간 시연을 시각적 관찰에서 대상 휴머노이드의 실행 가능한 관찰-행동 감독으로 변환합니다. 실험은 모션 복구, 로봇 행동 공간, 실제 로봇 배포 수준에서 변환 체인을 검증합니다. Human-as-Humanoid는 데이터 수집 분석에서 휴머노이드 원격 조작 대비 4.8~7.2배의 원시 시연 처리량(raw demonstration-throughput) 향상을 보여주며, 여러 하위 작업에서 변환된 인간 레이블만으로 사후 훈련된 정책은 대상 작업 로봇 시연 없이도 실제 로봇 배포에 일반화됩니다. 공식 프로젝트 웹사이트는 https://zgc-embodyai.github.io/Human-as-Humanoid에서 확인할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>로봇 체현 전반에 걸친 Vision-language-action (VLA) 모델은 배포 가능한 행동 분포를 학습하기 위해 고품질의 관찰-행동 감독을 필요로 하지만, 특히 고자유도 휴머노이드의 경우 이러한 로봇 데이터를 확장하는 것은 여전히 어렵습니다. 원격 조작은 제어기 정렬 감독을 제공하는 반면, 인간의 자기중심적 비디오는 다양한 양손 조작을 포착하지만 실행 가능한 로봇 행동을 직접 제공하지는 않습니다. 우리는 Human-as-Humanoid를 소개합니다. 이는 인간-휴머노이드 감독 프레임워크로, 거의 실시간에 가까운 인간 중심 행동 생성을 가능하게 하며, 로봇 체현, 센싱 설정, 행동 레이블 인터페이스를 공동으로 정렬하여 고자유도 휴머노이드 VLA 훈련에 인간 시연을 사용할 수 있게 합니다. 인간 정렬 60-DoF 상체 휴머노이드인 PrimeU를 기반으로 구축된 Human-as-Humanoid는 동기화된 자아-외부 비디오를 사용하여 배포 정렬된 자기중심적 관찰과 외부 중심 모션 복구를 짝짓고, 복구된 인간 모션을 단계적 역기구학을 통해 제어기 정렬된 60-DoF 행동 청크로 재타겟팅하며, 순기구학 인식 감독으로 VLA 모델을 훈련하여 손목과 손끝의 작업 공간 기하학을 보존합니다. 이는 대규모 인간 시연을 시각적 관찰에서 대상 휴머노이드의 실행 가능한 관찰-행동 감독으로 변환합니다. 실험은 모션 복구, 로봇 행동 공간, 실제 로봇 배포 수준에서 변환 체인을 검증합니다. Human-as-Humanoid는 데이터 수집 분석에서 휴머노이드 원격 조작 대비 4.8~7.2배의 원시 시연 처리량 향상을 보여주며, 여러 하위 작업에서 변환된 인간 레이블만으로 사후 훈련된 정책은 대상 작업 로봇 시연 없이도 실제 로봇 배포에 일반화됩니다. 공식 프로젝트 웹사이트는 https://zgc-embodyai.github.io/Human-as-Humanoid에서 확인할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_human_as_humanoid_enabling_zer_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>역욕동학</h3>
+          <p>원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

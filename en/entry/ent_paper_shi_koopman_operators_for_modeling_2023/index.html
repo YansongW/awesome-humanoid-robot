@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koopman Operators for Modeling and Control of Soft Robotics · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Koopman Operators for Modeling and Control of Soft Robotics</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Koopman Operators for Modeling and Control of Soft Robotics</h1>
+      <p class="entry-name-en">Koopman Operators for Modeling and Control of Soft Robotics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="AI-extracted from the arXiv full text; factual claims should be human-reviewed against the final published version before promotion to verified.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A 2023 review of Koopman operator theory and its data-driven approximations (EDMD/gEDMD) for modeling and control of soft robots, emphasizing lifting-function design, robustness, and integration with MPC and LQR control structures.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2301.09708" target="_blank" rel="noopener">Koopman Operators for Modeling and Control of Soft Robotics</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper is a review of how Koopman operator theory has been applied to the modeling and control of soft robots. The authors identify three major trends: the design of lifting functions is critical for accurate data-driven approximation; robustness to noise, uncertainty, and sparse measurements is increasingly emphasized; and Koopman linear models are being embedded into model-based controllers such as MPC and LQR. Because soft robots are built from compliant materials and exhibit infinite-dimensional, highly nonlinear behavior, first-principles modeling is difficult, motivating data-driven linearization through the Koopman operator.</p>
+<p>The review introduces the Koopman operator, its generator, and the EDMD/gEDMD approximation schemes. In EDMD, a dictionary of observables lifts the original state into a higher-dimensional space where dynamics are approximately linear, and a least-squares fit over snapshot pairs yields a finite-dimensional K operator. The generator version, gEDMD, estimates the infinitesimal generator directly from continuous-time data and derivatives. A central implementation issue is the choice of lifting dictionary; the authors categorize approaches as empirical (monomials/polynomials), mechanics-inspired (using rigid-robot analogies or topology-informed bases), and machine-learning-based (neural-network dictionaries/eigenfunctions learned from offline data).</p>
+<p>The second half of the review focuses on control. Koopman models can be embedded in MPC as prediction constraints, and in LQR as linear state-space models for state-feedback design. The authors note that most soft-robot demonstrations remain relatively simple, often rely on offline training or open-loop input sequences, and face sensing limitations because accurate velocity or higher-order derivatives are hard to measure directly. They also highlight open problems such as principled selection of lifting functions and optimal sampling rates.</p>
+<h2 id="key-contributions">Key Contributions</h2>
+<ul>
+<li>Reviews Koopman operator theory and EDMD/gEDMD data-driven approximation in the context of soft robotics.</li>
+<li>Categorizes lifting-function design into empirical, mechanics-inspired, and machine-learning-based strategies.</li>
+<li>Discusses robustness considerations including noise, uncertainty, sparse models, stability guarantees, and Kalman-filter-based disturbance estimation.</li>
+<li>Surveys Koopman-based control frameworks, especially MPC and LQR, with concrete soft-robot implementations such as grippers, continuum robots, and a soft inverted pendulum.</li>
+<li>Identifies open challenges: complex multi-DOF systems, online closed-loop robust control, limited sensing, and lack of general methods for choosing lifting functions and sampling rates.</li>
+</ul>
+<h2 id="relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</h2>
+<p>Humanoid robots increasingly incorporate soft and compliant components—such as soft fingertips, compliant limbs, and padded contact surfaces—to enable safe physical human interaction and tolerate impacts during deployment. The Koopman-operator methods reviewed here offer a data-driven path to obtain linear, control-oriented models of these compliant subsystems without deriving detailed first-principles models. This can simplify controller synthesis and re-tuning during mass production and real-world deployment, where component variability and nonlinear deformation are common.</p>
+<p>Because the review covers model identification (lifting-function design, EDMD/gEDMD), robustness to noise and uncertainty, and integration with standard model-based controllers (MPC/LQR), its content is directly applicable to the design of control stacks for humanoids that use soft hardware. The limitations it notes—especially sensing constraints, offline training dependence, and lack of general tuning rules—are also highly relevant engineering constraints for humanoid systems.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2301.09708">Koopman Operators for Modeling and Control of Soft Robotics</a> (accessed 2026-07-01)</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-desc">Koopman Operators for Modeling and Control of Soft Robotics mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_shi_koopman_operators_for_modeling_2023"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#key-contributions">Key Contributions</a></li>
+<li><a href="#relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

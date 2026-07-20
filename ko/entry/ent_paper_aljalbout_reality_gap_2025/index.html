@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로보틱스의 현실 격차: 과제, 해결책 및 모범 사례 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">로보틱스의 현실 격차: 과제, 해결책 및 모범 사례</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>로보틱스의 현실 격차: 과제, 해결책 및 모범 사례</h1>
+      <p class="entry-name-en">The Reality Gap in Robotics: Challenges, Solutions, and Best Practices</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">부품</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.20808v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>2025년 서베이로, 시뮬레이션-현실 간 현실 격차를 지각 및 동작 역학 불일치로 분류하고 도메인 랜덤화, 시스템 식별, 시뮬-현실 공동 학습 등 완화 전략을 검토함.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.20808" target="_blank" rel="noopener">The Reality Gap in Robotics: Challenges, Solutions, and Best Practices</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>머신러닝은 내비게이션, 로코모션, 매니퓰레이션 등 다양한 로보틱스 분야에서 상당한 발전을 촉진했습니다. 이러한 성과 중 상당수는 실제 환경에 배치되기 전에 로봇 시스템을 훈련하고 테스트하는 핵심 도구로서 시뮬레이션의 광범위한 사용에 의해 주도되었습니다. 그러나 시뮬레이션은 추상화와 근사치로 구성되어 있어 시뮬레이션 환경과 실제 환경 간의 차이, 즉 현실 격차(reality gap)를 필연적으로 초래합니다. 이러한 차이는 시스템이 시뮬레이션에서 실제 세계로 성공적으로 이전되는 것을 크게 저해합니다. 이 격차를 해소하는 것은 로보틱스에서 가장 시급한 과제 중 하나로 남아 있습니다. 최근 시뮬레이션-실제 전환(sim-to-real transfer)의 발전은 로코모션, 내비게이션, 매니퓰레이션을 포함한 다양한 플랫폼에서 유망한 결과를 보여주었습니다. 도메인 무작위화(domain randomization), 실제-시뮬레이션 전환(real-to-sim transfer), 상태 및 행동 추상화(state and action abstractions), 시뮬레이션-실제 공동 훈련(sim-real co-training)과 같은 기술을 활용하여 많은 연구가 현실 격차를 극복했습니다. 그러나 여전히 과제가 남아 있으며, 현실 격차의 근본 원인과 해결책에 대한 더 깊은 이해가 필요합니다. 본 설문조사에서는 시뮬레이션-실제 전환 환경에 대한 포괄적인 개요를 제시하며, 현실 격차와 시뮬레이션-실제 전환의 원인, 해결책 및 평가 지표를 강조합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>머신러닝은 내비게이션, 로코모션, 매니퓰레이션 등 다양한 로보틱스 분야에서 상당한 발전을 촉진했습니다. 이러한 성과 중 상당수는 실제 환경에 배치되기 전에 로봇 시스템을 훈련하고 테스트하는 핵심 도구로서 시뮬레이션의 광범위한 사용에 의해 주도되었습니다. 그러나 시뮬레이션은 추상화와 근사치로 구성되어 있어 시뮬레이션 환경과 실제 환경 간의 차이, 즉 현실 격차(reality gap)를 필연적으로 초래합니다. 이러한 차이는 시스템이 시뮬레이션에서 실제 세계로 성공적으로 이전되는 것을 크게 저해합니다. 이 격차를 해소하는 것은 로보틱스에서 가장 시급한 과제 중 하나로 남아 있습니다. 최근 시뮬레이션-실제 전환(sim-to-real transfer)의 발전은 로코모션, 내비게이션, 매니퓰레이션을 포함한 다양한 플랫폼에서 유망한 결과를 보여주었습니다. 도메인 무작위화(domain randomization), 실제-시뮬레이션 전환(real-to-sim transfer), 상태 및 행동 추상화(state and action abstractions), 시뮬레이션-실제 공동 훈련(sim-real co-training)과 같은 기술을 활용하여 많은 연구가 현실 격차를 극복했습니다. 그러나 여전히 과제가 남아 있으며, 현실 격차의 근본 원인과 해결책에 대한 더 깊은 이해가 필요합니다. 본 설문조사에서는 시뮬레이션-실제 전환 환경에 대한 포괄적인 개요를 제시하며, 현실 격차와 시뮬레이션-실제 전환의 원인, 해결책 및 평가 지표를 강조합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1 휴머노이드 팔의 물리 기반 전력 소비 모델 식별</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_vla_survey_2026/">로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">RUKA: 학습을 통한 휴머노이드 손 설계의 재고</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_nah_modular_robot_control_with_mot_2025/">모터 프리미티브를 이용한 모듈형 로봇 제어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">물리 정보 신경망과 무향 칼만 필터를 활용한 휴로이드 로봇의 무센서 관절 토크 추정</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">제약</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_tech_robogen/">RoboGen</a>
+              <span class="rel-desc">시뮬레이션과 실제 물리 간의 현실 격차는 RoboGen과 같은 합성 데이터 엔진이 실제 로봇으로 전환되는 효과를 제한합니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_wam_survey_2026/">월드 액션 모델: 엠바디드 AI의 다음 프론티어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">제약</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_tech_mimicgen/">MimicGen</a>
+              <span class="rel-desc">시뮬레이션과 실제 물리 간의 현실 격차는 MimicGen과 같은 데모 증강 엔진이 실제 로봇으로 전환되는 효과를 제한합니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_vla_survey_2026/">로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_zhu_cycloidal_quasi_direct_drive_a_2024/">족운동 로봇을 위한 사이클로이드 의사직구동 액추에이터 설계 및 학습 기반 토크 추정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_wam_survey_2026/">월드 액션 모델: 엠바디드 AI의 다음 프론티어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_aljalbout_reality_gap_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</h3>
+          <p>본 논문은 로봇 팔 교사가 순응적 접촉, 커리큘럼 스케줄링, 섭동, 실패 감지 및 자동 리셋을 통해 휴머노이드 학생을 지지하고 안내하여 최소한의 인간 개입으로 효율적인 실제 세계…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_tech_mimicgen/">
+          <span class="entry-type">기술</span>
+          <h3>MimicGen</h3>
+          <p>물체 자세 및 초기 조건을 변형하여 시뮬레이션에서 소량의 인간 시드 데모를 확장하는 데모 증강 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">
+          <span class="entry-type">논문</span>
+          <h3>RUKA: 학습을 통한 휴머노이드 손 설계의 재고</h3>
+          <p>RUKA는 15개의 과소 구동 자유도와 11개의 액추에이터를 갖춘 저렴한 3D 프린팅 틴돈 구동 의인화 손으로, MANUS 모션 캡처 장갑 데이터로 학습한 LSTM+MLP 모델로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhu_cycloidal_quasi_direct_drive_a_2024/">
+          <span class="entry-type">논문</span>
+          <h3>족운동 로봇을 위한 사이클로이드 의사직구동 액추에이터 설계 및 학습 기반 토크 추정</h3>
+          <p>이 논문은 족운동 로봇을 위한 10:1 사이클로이드 의사직구동(C-QDD) 액추에이터와, 사이클로이드 기어 비선형성으로 인한 시뮬레이션-현실 간격을 줄이기 위해 액추에이터 상태…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">논문</span>
+          <h3>월드 액션 모델: 엠바디드 AI의 다음 프론티어</h3>
+          <p>2026년 서베이로, World Action Models(WAMs)를 예측적 월드 모델링과 액션 생성을 통합하는 엠바디드 파욍데이션 모델로 정의하고, 기존 방법을 Cascaded…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nah_modular_robot_control_with_mot_2025/">
+          <span class="entry-type">논문</span>
+          <h3>모터 프리미티브를 이용한 모듈형 로봇 제어</h3>
+          <p>본 논문은 가상 궤적과 기계적 임피던스의 중첩을 통해 기본 동작 요소(EDA)와 동적 운동 프리미티브(DMP)를 결합하는 모듈형 로봇 제어 프레임워크를 제안하며, 모듈의 독립성과…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>제트 동력 휴머노이드 로봇을 위한 통합 다중 속도 모델 예측 제어</h3>
+          <p>본 논문은 제트 동력 휴머노이드 iRonCub를 위한 다중 속도 모델 예측 제어 프레임워크를 제안하며, 질량 중심 운동량 역학과 2차 비선형 제트 엔진 역학을 통합하고 MuJoCo…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_tech_robogen/">
+          <span class="entry-type">기술</span>
+          <h3>RoboGen</h3>
+          <p>작업을 제안하고 시뮬레이션 코드를 생성하여 합성 학습 데이터 다양성을 확장하는 LLM 기반 로봇 자동 작업 생성 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Unitree G1 휴머노이드 팔의 물리 기반 전력 소비 모델 식별</h3>
+          <p>본 논문은 Unitree G1 휴머노이드 로봇의 7자유도 왼팔 전력 소비를 위한 물리 기반 선형-매개변수 모델을 제시하며, 액추에이터 손실 항, 기준 토크 보정 및 쌍별 관절 속도…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">
+          <span class="entry-type">논문</span>
+          <h3>물리 정보 신경망과 무향 칼만 필터를 활용한 휴로이드 로봇의 무센서 관절 토크 추정</h3>
+          <p>본 논문은 전기 모터와 하모닉 드라이브를 갖춘 휴로이드 로봇을 위한 실시간 무센서 전신 토크 제어 프레임워크를 제안한다. 비선형 마찰 모델링을 위한 물리 정보 신경망(PINN)과…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">논문</span>
+          <h3>로보틱스에서의 비전-언어-액션: 데이터셋, 벤치마크 및 데이터 엔진에 대한 서베이</h3>
+          <p>2026년 서베이로, VLA의 발전은 모델 아키텍처보다 데이터 인프라와 평가 공동 설계에 더 많이 의존하고 있으며, 데이터셋, 벤치마크, 데이터 엔진 세 축으로 구성됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>关节电机 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/component/">零部件</a>
+    <span>/</span>
+    <span class="breadcrumb-current">关节电机</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">零部件</div>
+      <h1>关节电机</h1>
+      <p class="entry-name-en">Joint Motor</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#4.7.6 选型算例：髋关节电机+减速器 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>- 输出峰值扭矩：\(\tau_{peak} = 120\ \text{N·m}\) - 输出连续 RMS 转矩：\(\tau_{rms} = 35\ \text{N·m}\) - 输出最大角速度：\(\omega_{out,max} = 8\ \text{rad/s}\) - 减速器效率：\(\eta = 0.85\)</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Servomotor" target="_blank" rel="noopener">Joint Motor</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>关节电机是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>考虑一款 60 kg 级人形机器人的 <strong>髋关节屈伸</strong> 执行器，设计指标如下：</p>
+<ul>
+<li>输出峰值扭矩：<span class="arithmatex">\(\tau_{peak} = 120\ \text{N·m}\)</span></li>
+<li>输出连续 RMS 转矩：<span class="arithmatex">\(\tau_{rms} = 35\ \text{N·m}\)</span></li>
+<li>输出最大角速度：<span class="arithmatex">\(\omega_{out,max} = 8\ \text{rad/s}\)</span></li>
+<li>减速器效率：<span class="arithmatex">\(\eta = 0.85\)</span></li>
+</ul>
+<p>候选电机参数：峰值转矩 <span class="arithmatex">\(\tau_{m,peak} = 3.0\ \text{N·m}\)</span>，连续 RMS 转矩 <span class="arithmatex">\(\tau_{m,cont} = 1.0\ \text{N·m}\)</span>，最大转速 <span class="arithmatex">\(\omega_{m,max} = 300\ \text{rad/s}\)</span>。</p>
+<p><strong>步骤 1：按峰值转矩初选减速比</strong></p>
+<div class="arithmatex">\[
+G \ge \frac{\tau_{peak}}{\tau_{m,peak} \, \eta} = \frac{120}{3.0 \times 0.85} \approx 47.1
+\]</div>
+<p><strong>步骤 2：按速度要求校验上限</strong></p>
+<div class="arithmatex">\[
+G \le \frac{\omega_{m,max}}{\omega_{out,max}} = \frac{300}{8} = 37.5
+\]</div>
+<p>步骤 1 与步骤 2 冲突：电机峰值转矩不足或最高转速不足。需重新选择电机，例如换用 <span class="arithmatex">\(\tau_{m,peak}=4.5\ \text{N·m}\)</span>、<span class="arithmatex">\(\omega_{m,max}=400\ \text{rad/s}\)</span> 的电机：</p>
+<div class="arithmatex">\[
+G \ge \frac{120}{4.5 \times 0.85} \approx 31.4, \qquad
+G \le \frac{400}{8} = 50
+\]</div>
+<p>取 <span class="arithmatex">\(G = 40\)</span> 兼顾扭矩裕量与速度裕量。</p>
+<p><strong>步骤 3：校验连续 RMS 转矩</strong></p>
+<p>电机侧连续转矩需求为</p>
+<div class="arithmatex">\[
+\tau_{m,rms} = \frac{\tau_{rms}}{G \eta} = \frac{35}{40 \times 0.85} \approx 1.03\ \text{N·m}
+\]</div>
+<p>略大于电机连续转矩 1.0 N·m，可通过稍微提高 <span class="arithmatex">\(G\)</span> 至 42 或选用连续转矩 1.2 N·m 的电机解决。</p>
+<p><strong>步骤 4：热校验</strong></p>
+<p>设电机相电阻 <span class="arithmatex">\(R = 0.30\ \Omega\)</span>，热阻 <span class="arithmatex">\(R_{th} = 1.8\ \text{K/W}\)</span>，允许温升 <span class="arithmatex">\(\Delta T = 115\ \text{K}\)</span>。</p>
+<div class="arithmatex">\[
+P_{loss,allow} = \frac{\Delta T}{R_{th}} = \frac{115}{1.8} \approx 63.9\ \text{W}
+\]</div>
+<p>对应允许 RMS 电流</p>
+<div class="arithmatex">\[
+I_{rms,max} = \sqrt{\frac{P_{loss,allow}}{R}} = \sqrt{\frac{63.9}{0.30}} \approx 14.6\ \text{A}
+\]</div>
+<p>电机转矩常数 <span class="arithmatex">\(k_t = 0.12\ \text{N·m/A}\)</span>，则允许连续转矩</p>
+<div class="arithmatex">\[
+\tau_{cont,allow} = k_t I_{rms,max} = 0.12 \times 14.6 \approx 1.75\ \text{N·m}
+\]</div>
+<p>大于需求 1.03 N·m，热设计通过。</p>
+<p><strong>步骤 5：迭代优化</strong></p>
+<p>若整机对质量敏感，可绘制 <span class="arithmatex">\(G\)</span> 与电机质量、减速器质量、效率的 Pareto 前沿，选择满足全部约束且质量最小的组合。通常较高减速比允许更小电机但更重减速器；较低减速比则相反。人形机器人髋关节常在 <span class="arithmatex">\(G=30\sim80\)</span> 之间权衡。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：峰值扭矩、连续 RMS 转矩、减速比、效率、热校验、Pareto 前沿</p>
+<ul>
+<li><strong>峰值扭矩（peak torque）</strong>：短时最大输出转矩，决定电机+减速器的强度下限。</li>
+<li><strong>连续 RMS 转矩（continuous RMS torque）</strong>：周期性负载的等效热转矩。</li>
+<li><strong>减速比（gear ratio）</strong>：电机转速与输出转速之比。</li>
+<li><strong>热校验（thermal check）</strong>：验证电机在 RMS 电流下的温升是否低于绝缘极限。</li>
+<li><strong>Pareto 前沿（Pareto front）</strong>：多目标优化中不可再同时改进所有目标的解集。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["任务需求&lt;br/&gt;转矩 速度 热"] --&gt; B["初选电机"]
+    B --&gt; C["按峰值选 G&lt;br/&gt;G &gt;= tau_peak/(kt_m eta)"]
+    C --&gt; D["按速度校验 G&lt;br/&gt;G &lt;= omega_m/omega_out"]
+    D --&gt; E{"约束冲突?"}
+    E --&gt;|是| F["换电机/减速器"]
+    F --&gt; B
+    E --&gt;|否| G["热校验&lt;br/&gt;I_rms R_th"]
+    G --&gt; H{"通过?"}
+    H --&gt;|否| I["增大 G 或加强散热"]
+    I --&gt; C
+    H --&gt;|是| J["质量/效率迭代优化"]</code></pre>
+<hr />
+<h2 id="_3">参考</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Servomotor">Joint Motor</a></li>
+<li>项目 Wiki：chapter-04.md#4.7.6 选型算例：髋关节电机+减速器</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_company_cubemars_2024/">CubeMars</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">制造</span>
+              <span class="rel-desc">CubeMars生产一体化机器人关节电机和执行器。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_joint_motor_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_company_cubemars_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>CubeMars</h3>
+          <p>紧凑型一体化机器人关节电机和执行器供应商。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

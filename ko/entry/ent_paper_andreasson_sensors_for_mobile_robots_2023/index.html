@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>모바일 로봇 센서 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">모바일 로봇 센서</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>모바일 로봇 센서</h1>
+      <p class="entry-name-en">Sensors for Mobile Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span><span class="tag">제조 공정</span><span class="tag">대량 생산</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.03223v3.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>모바일 로봇에 사용되는 센서의 분류법, 주요 사양 및 하향식 개요를 제시하는 서베이 챕터로 촉각, 근접, 비전 기반 및 거리 측정 센서를 다룬다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2206.03223" target="_blank" rel="noopener">Sensors for Mobile Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>센서는 물리적 매개변수나 환경 특성(예: 온도, 거리, 속도 등)을 디지털로 측정 및 처리하여 특정 작업을 수행할 수 있는 신호로 변환하는 장치입니다. 이동 로봇은 환경의 속성을 측정하기 위해 센서가 필요하며, 이를 통해 안전한 주행, 복잡한 인식 및 이에 따른 동작, 그리고 환경 내 다른 에이전트와의 효과적인 상호작용이 가능해집니다. 이동 로봇이 사용하는 센서는 범퍼와 같은 단순한 촉각 센서부터 구조광 RGB-D 카메라와 같은 복잡한 비전 기반 센서까지 다양합니다. 이 모든 센서는 로봇의 컴퓨터에서 처리할 수 있는 디지털 출력(예: 문자열, 값 집합, 행렬 등)을 제공합니다. 이러한 출력은 일반적으로 센서에 포함된 아날로그-디지털 변환기(ADC)를 사용하여 하나 이상의 아날로그 전기 신호를 이산화함으로써 얻어집니다. 이 장에서는 이동 로봇 공학에서 가장 일반적으로 사용되는 센서를 소개하고, 그 분류, 기본 특징 및 사양에 대한 개요를 제공합니다. 기능 및 응용 유형에 대한 설명은 상향식 접근 방식을 따릅니다: 실제 센서를 설명하기 전에 센서의 기반이 되는 기본 원리와 구성 요소를 먼저 제시하며, 이러한 실제 센서는 일반적으로 여러 기술과 기본 장치를 기반으로 합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>센서는 물리적 매개변수나 환경 특성(예: 온도, 거리, 속도 등)을 디지털로 측정 및 처리하여 특정 작업을 수행할 수 있는 신호로 변환하는 장치입니다. 이동 로봇은 환경의 속성을 측정하기 위해 센서가 필요하며, 이를 통해 안전한 주행, 복잡한 인식 및 이에 따른 동작, 그리고 환경 내 다른 에이전트와의 효과적인 상호작용이 가능해집니다. 이동 로봇이 사용하는 센서는 범퍼와 같은 단순한 촉각 센서부터 구조광 RGB-D 카메라와 같은 복잡한 비전 기반 센서까지 다양합니다. 이 모든 센서는 로봇의 컴퓨터에서 처리할 수 있는 디지털 출력(예: 문자열, 값 집합, 행렬 등)을 제공합니다. 이러한 출력은 일반적으로 센서에 포함된 아날로그-디지털 변환기(ADC)를 사용하여 하나 이상의 아날로그 전기 신호를 이산화함으로써 얻어집니다. 이 장에서는 이동 로봇 공학에서 가장 일반적으로 사용되는 센서를 소개하고, 그 분류, 기본 특징 및 사양에 대한 개요를 제공합니다. 기능 및 응용 유형에 대한 설명은 상향식 접근 방식을 따릅니다: 실제 센서를 설명하기 전에 센서의 기반이 되는 기본 원리와 구성 요소를 먼저 제시하며, 이러한 실제 센서는 일반적으로 여러 기술과 기본 장치를 기반으로 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense 깊이 칩차</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_joint_encoder_2024/">관절 엔코더</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_inertial_measurement_unit_2024/">Inertial Measurement Unit</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_andreasson_sensors_for_mobile_robots_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_intel_realsense_depth_camera_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Intel RealSense 깊이 칩차</h3>
+          <p>휨로봇의 머리, 손목, 몸통 인식에 널리 사용되는 RGB-D 스테레오 칩차.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_inertial_measurement_unit_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Inertial Measurement Unit</h3>
+          <p>몸통/엉덩이에 장착된 가속도계 및 자이로스코프를 융합한 균형 및 상태 추정 센서.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_joint_encoder_2024/">
+          <span class="entry-type">부품</span>
+          <h3>관절 엔코더</h3>
+          <p>모터 제어를 위해 고해상도 피드백을 제공하기 위해 로봇 관절에 장착된 위치 또는 속도 센서.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

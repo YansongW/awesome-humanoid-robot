@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 22: Software Middleware · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 22: Software Middleware</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-22-software-middleware">Chapter 22: Software Middleware</h1>
+<h2 id="summary">Summary</h2>
+<p>Humanoid robots are among the systems with the highest software complexity in the field of robotics today: dozens of actuators throughout the body operate in closed loops with millisecond-level cycles, multiple cameras, LiDAR, and force-torque sensors stream data at various rates, and VLA large models, whole-body controllers, motion planners, and safety monitors must run cooperatively on heterogeneous computing units. The component that organizes these parts into a deterministic whole is software middleware—a foundational software layer situated above the operating system and below application algorithms. This chapter systematically elaborates on the technical system of humanoid robot software middleware: robot middleware frameworks (ROS and ROS 2, DDS data distribution service and its QoS mechanisms), real-time communication and fieldbuses (EtherCAT, CAN/CAN FD), motion planning and dynamics computation components (MoveIt, OMPL, Pinocchio, Drake, URDF/MJCF description formats), real-time operating systems (QNX, Linux RT-PREEMPT), and deployment-oriented OTA software updates and fleet management platforms. It also discusses the constraints imposed by functional safety standards (IEC 61508, ISO 13849, ISO 13482, ISO/TS 15066) on software architecture. The chapter concludes with a Python example analyzing real-time task schedulability and end-to-end latency budgets, providing an engineering methodology from requirements to architecture selection.</p>
+<p><strong>Keywords</strong>: Software Middleware; ROS 2; DDS; QoS; Real-time Communication; EtherCAT; CAN; MoveIt; OMPL; Pinocchio; Drake; URDF; MJCF; RT-PREEMPT; QNX; OTA; Fleet Management; Functional Safety</p>
+<hr />
+<h2 id="221-overview-of-software-middleware">22.1 Overview of Software Middleware</h2>
+<h3 id="2211-what-is-robot-middleware">22.1.1 What is Robot Middleware</h3>
+<p><strong>Robot middleware</strong> is a layer of software infrastructure situated between the operating system and robot applications. Its core responsibilities are fourfold:</p>
+<ul>
+<li><strong>Inter-Process Communication (IPC)</strong>: Provides a unified message passing mechanism (publish/subscribe, request/response) for software modules distributed across multiple processes and computing units, shielding underlying transport details;</li>
+<li><strong>Abstraction and Reuse</strong>: Encapsulates common capabilities such as sensor drivers, actuator interfaces, coordinate transforms, and robot descriptions into standardized components, allowing algorithm developers to avoid reinventing the wheel;</li>
+<li><strong>Concurrency and Real-time Scheduling Support</strong>: Provides executors, callback groups, and priority mechanisms, enabling multi-rate control loops to meet timing constraints under shared computational resources;</li>
+<li><strong>Toolchain</strong>: Visualization, record/replay (rosbag-like), parameter management, launch orchestration, and diagnostics constitute a complete workflow for development, debugging, and deployment.</li>
+</ul>
+<p>In a humanoid robot project without middleware, every new algorithm must solve from scratch the problems of "where does the data come from, at what timing does it arrive, and how to degrade upon failure." Development costs would grow quadratically with the number of modules. Middleware converges these cross-cutting concerns into a unified facility, making it a prerequisite for collaborative development by teams of hundreds.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Middleware, Inter-Process Communication, Cross-Cutting Concerns</p>
+<ul>
+<li><strong>Middleware</strong>: A foundational software layer between the operating system and application software, providing communication, abstraction, and common services for distributed applications; robot middleware additionally covers robot-specific needs such as sensor/actuator interfaces and coordinate transforms.</li>
+<li><strong>Inter-Process Communication (IPC)</strong>: Mechanisms for exchanging data between processes on the same machine or across machines, including shared memory, message queues, and network transport; middleware encapsulates these mechanisms into a unified programming abstraction.</li>
+<li><strong>Cross-cutting concern</strong>: Functions such as logging, time synchronization, parameter configuration, and diagnostics that "every module needs but do not belong to any single module's business logic"; the core value of middleware is to centralize the implementation of these concerns.</li>
+</ul>
+</div>
+<h3 id="2212-special-requirements-of-humanoid-robots-for-middleware">22.1.2 Special Requirements of Humanoid Robots for Middleware</h3>
+<p>Compared to fixed robotic arms or wheeled chassis, humanoid robots impose more stringent requirements on middleware:</p>
+<table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Specific Manifestation</th>
+<th>Requirement for Middleware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High-dimensional whole-body control</td>
+<td>30–60 joints, 1 kHz-level force control loops</td>
+<td>Real-time channel with microsecond-level jitter, zero-copy data transfer</td>
+</tr>
+<tr>
+<td>Heterogeneous computing</td>
+<td>Real-time control core + high-performance AI core + safety MCU coexist</td>
+<td>Unified communication abstraction across processes, chips, and networks</td>
+</tr>
+<tr>
+<td>Multi-modal high bandwidth</td>
+<td>Multiple RGB-D cameras, LiDAR, tactile arrays</td>
+<td>High message throughput and lossy/lossless QoS grading</td>
+</tr>
+<tr>
+<td>Dynamic task switching</td>
+<td>Real-time switching between walking, manipulation, and interaction modes</td>
+<td>Lifecycle management and deterministic state machine</td>
+</tr>
+<tr>
+<td>Safety-critical</td>
+<td>Falling or losing control of the whole robot may injure people</td>
+<td>Communication failure detection, watchdog, and degradation strategies</td>
+</tr>
+<tr>
+<td>Cloud collaboration</td>
+<td>OTA updates, fleet data backflow</td>
+<td>Secure isolation between vehicle-cloud channel and on-board bus</td>
+</tr>
+</tbody>
+</table>
+<p>These requirements explain why the software architecture of humanoid robots is almost invariably a "<strong>real-time layer + non-real-time layer</strong>" dual-layer structure: force control and safety logic run on the real-time layer (real-time operating system + fieldbus), while perception, planning, and large model inference run on the non-real-time layer (general-purpose Linux + middleware). The two layers exchange states and targets through strictly defined interfaces.</p>
+<h3 id="2213-layered-reference-architecture">22.1.3 Layered Reference Architecture</h3>
+<p>A typical layered reference architecture for humanoid robot software is as follows:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    subgraph APP[Application Layer]
+        A1[Task Planning &amp; VLA Inference]
+        A2[Whole-Body Control WBC]
+        A3[State Estimation &amp; Perception]
+    end
+    subgraph MW[Middleware Layer]
+        B1[ROS 2 Computation Graph&lt;br/&gt;Topics / Services / Actions]
+        B2[DDS Data Distribution&lt;br/&gt;QoS Policies]
+        B3[Motion Planning &amp; Dynamics Components&lt;br/&gt;MoveIt / OMPL / Pinocchio / Drake]
+    end
+    subgraph OS[Operating System &amp; Driver Layer]
+        C1[Linux RT-PREEMPT&lt;br/&gt;or QNX Real-time Kernel]
+        C2[Bus Drivers&lt;br/&gt;EtherCAT / CAN]
+    end
+    subgraph HW[Hardware Layer]
+        D1[Joint Actuator Group]
+        D2[Sensor Group]
+        D3[Safety Controller]
+    end
+    APP --&gt; MW --&gt; OS --&gt; HW</code></pre>
+<p>The remainder of this chapter expands outward from the middleware layer: Section 22.2 discusses the robot middleware framework itself, Section 22.3 delves downward into real-time communication and buses, Section 22.4 moves upward to introduce planning and dynamics components built on the framework, Section 22.5 discusses real-time operating systems and deployment/operations facilities, and Section 22.6 provides architecture synthesis and an example.</p>
+<h2 id="222-robot-middleware-framework-from-ros-to-ros-2">22.2 Robot Middleware Framework: From ROS to ROS 2</h2>
+<p>The robot middleware framework is the "skeleton" of the entire software stack: it determines how modules are decomposed, how data flows, and how the system starts up and degrades. This section unfolds along the thread of "Limitations of ROS 1 → Architectural response of ROS 2/DDS → Engineering usage of QoS → Organization of the computation graph," which is also the most mainstream evolution path for current humanoid robot product software stacks.</p>
+<h3 id="2221-legacy-and-limitations-of-ros-1">22.2.1 Legacy and Limitations of ROS 1</h3>
+<p>Although the Robot Operating System (ROS) has "Operating System" in its name, it is essentially a set of robot middleware: it defines abstractions such as nodes, topics, services, and the parameter server, and provides a vast ecosystem of open-source packages. Since 2007, ROS 1 has dominated the robotics research community, but its architecture has three limitations that are difficult to patch:</p>
+<ul>
+<li><strong>Single point of failure (roscore)</strong>: The discovery and registration of all nodes depend on a centralized master node. If the master fails, the entire system becomes paralyzed, failing to meet product-level reliability requirements.</li>
+<li><strong>Lack of real-time capability and QoS concepts</strong>: Communication based on TCP/UDP cannot express transmission policies such as "this state stream allows frame loss but cannot tolerate latency."</li>
+<li><strong>Lack of security</strong>: Without authentication and encryption mechanisms, it cannot be directly deployed in networked commercial products.</li>
+</ul>
+<p>These limitations are tolerable in laboratory single-robot scenarios but are fatal in product forms like humanoid robots, which involve multiple computing units, are safety-critical, and require fleet operations.</p>
+<h3 id="2222-ros-2-and-dds-data-centric-publish-subscribe">22.2.2 ROS 2 and DDS: Data-Centric Publish-Subscribe</h3>
+<p><strong>ROS 2 middleware</strong> has been completely restructured to address the above limitations. Its most critical design decision is to base the communication layer on the international standard <strong>DDS (Data Distribution Service)</strong>. DDS is a Data-Centric Publish-Subscribe (DCPS) middleware standard:</p>
+<ul>
+<li><strong>Decentralized discovery</strong>: Nodes automatically discover each other via multicast, eliminating single points of failure.</li>
+<li><strong>Global data space</strong>: Topics are modeled as data objects with keys. Subscribers declare their interest, and DDS handles distribution, supporting one-to-many and many-to-many communication.</li>
+<li><strong>Rich QoS policies</strong>: Reliability, durability, history depth, deadline, liveliness, etc., can be configured independently per topic.</li>
+<li><strong>Replaceable implementations</strong>: ROS 2 supports multiple DDS implementations through the RMW (ROS Middleware) abstraction layer, allowing vendors to choose based on real-time requirements, resource usage, or certification needs.</li>
+</ul>
+<p>For real-time control scenarios, ROS 2 also provides the <code>ros2_control</code> framework (standardization of controllers and hardware interfaces) and a real-time-friendly executor design: with proper configuration (real-time kernel, memory pre-allocation, static priority scheduling, zero-copy intra-process communication), ROS 2 nodes can support 1 kHz soft real-time control loops; more stringent hard real-time loops are handled at the fieldbus layer discussed in Section 22.3.</p>
+<p>DDS's <strong>automatic discovery</strong> mechanism deserves special mention: upon startup, a node announces its published/subscribed topics and QoS via multicast. After a successful match with a counterpart, a direct data channel is established, and subsequent data transmission no longer passes through any central node. The discovery protocol itself also performs QoS compatibility checks—for example, if a subscriber requires <code>reliable</code> but the publisher only offers <code>best_effort</code>, the match will fail and provide diagnostics. This "compile-time check of interface contracts" can intercept many integration accidents in large systems. Different DDS implementations (e.g., eProsima Fast DDS, Eclipse Cyclone DDS) have different trade-offs in discovery overhead, shared memory transport, and real-time behavior. The RMW abstraction layer decouples application code from specific implementations, facilitating replacement based on deployment scenarios.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    subgraph 发布侧
+        N1[关节状态发布节点&lt;br/&gt;1 kHz]
+        N2[相机驱动节点&lt;br/&gt;30 Hz]
+    end
+    subgraph DDS[DDS 全局数据空间]
+        T1[/joint_states&lt;br/&gt;QoS: best_effort, keep_last 1/]
+        T2[/camera/image&lt;br/&gt;QoS: reliable, keep_last 5/]
+    end
+    subgraph 订阅侧
+        S1[状态估计节点]
+        S2[全身控制节点]
+        S3[感知节点]
+    end
+    N1 --&gt; T1 --&gt; S1
+    T1 --&gt; S2
+    N2 --&gt; T2 --&gt; S3</code></pre>
+<h3 id="2223-qos-policies-customizing-transport-contracts-for-each-data-stream">22.2.3 QoS Policies: Customizing Transport Contracts for Each Data Stream</h3>
+<p>DDS's QoS (Quality of Service) mechanism allows declaring transport contracts per topic, which is the most practical feature distinguishing ROS 2 from ROS 1. Typical QoS configurations in humanoid robots are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Data Stream</th>
+<th>Reliability</th>
+<th>History</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joint states /joint_states</td>
+<td>best_effort</td>
+<td>keep_last(1)</td>
+<td>High-frequency periodic data; old frames are immediately outdated; losing a frame is better than delaying one</td>
+</tr>
+<tr>
+<td>Camera image</td>
+<td>best_effort or reliable</td>
+<td>keep_last(1–5)</td>
+<td>High bandwidth; vision algorithms usually tolerate occasional frame loss</td>
+</tr>
+<tr>
+<td>Control commands</td>
+<td>reliable</td>
+<td>keep_last(1)</td>
+<td>Commands must not be lost, but only the latest value is needed</td>
+</tr>
+<tr>
+<td>Map /map</td>
+<td>reliable + transient_local</td>
+<td>keep_last(1)</td>
+<td>Late-joining nodes must also receive the last map</td>
+</tr>
+<tr>
+<td>Safety events /estop</td>
+<td>reliable</td>
+<td>keep_all</td>
+<td>No safety event can be lost</td>
+</tr>
+</tbody>
+</table>
+<p>For large messages like camera images and point clouds, there are two performance levers beyond QoS: first, <strong>intra-process zero-copy communication</strong>—by placing publishing and subscribing nodes in the same process, messages pass only pointers, not data, reducing the transmission overhead of a single 1080p image frame from milliseconds to microseconds; second, <strong>shared memory transport</strong>—some DDS implementations use shared memory and handle passing instead of socket copying in cross-process scenarios. The data throughput of multiple RGB-D cameras on a humanoid robot's head can reach hundreds of MB per second. Whether these mechanisms are enabled directly determines whether the perception pipeline can be closed on general-purpose computing units.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Publish/Subscribe, DCPS, QoS, Zero-Copy</p>
+<ul>
+<li><strong>Publish/Subscribe</strong>: Communication parties do not address each other directly. Publishers write data to topics, subscribers declare interest, and the middleware handles matching and distribution, achieving module decoupling.</li>
+<li><strong>DCPS (Data-Centric Publish-Subscribe)</strong>: The core model of DDS, which treats communication as reading and writing data objects in a "global data space," rather than point-to-point message passing.</li>
+<li><strong>QoS (Quality of Service)</strong>: A set of parameters describing data stream transport policies, such as reliability (reliable/best_effort), durability (transient_local), history depth (keep_last/keep_all), and deadline.</li>
+<li><strong>Zero-Copy</strong>: A mechanism within the same process or shared memory domain where large messages are passed by reference rather than copying data. It is key to achieving real-time performance for high-bandwidth data streams like images and point clouds.</li>
+</ul>
+</div>
+<h3 id="2224-computation-graph-organization-nodes-lifecycle-and-actions">22.2.4 Computation Graph Organization: Nodes, Lifecycle, and Actions</h3>
+<p>ROS 2 applications are organized as a <strong>computation graph</strong>: nodes are execution units, and topics, services (synchronous request/response), and actions (asynchronous tasks with feedback and cancellability) are edges. A typical division in a humanoid robot system is: one driver node per sensor and actuator group, one group of nodes each for state estimation, perception, planning, and control, and task-level behaviors modeled with action servers (e.g., "walk to point A," "grasp object B"), facilitating cancellation and monitoring by a higher-level task planner.</p>
+<p>The <strong>lifecycle node</strong> introduced in ROS 2 is particularly important for productization: nodes go through a controlled state machine of "unconfigured → inactive → active → destructed." During system startup, all modules can be deterministically brought up in dependency order, and in case of failure, they can be degraded in order. For a commercial robot that needs to "reliably start with a single power button press," this mechanism transforms startup orchestration from a scripting trick into an architectural guarantee.</p>
+<pre class="highlight"><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; 未配置
+    未配置 --&gt; 非激活: configure（加载参数/分配资源）
+    非激活 --&gt; 激活: activate（开始发布/控制）
+    激活 --&gt; 非激活: deactivate（暂停输出）
+    非激活 --&gt; 未配置: cleanup（释放资源）
+    未配置 --&gt; 已终结: shutdown
+    激活 --&gt; 已终结: shutdown
+    已终结 --&gt; [*]</code></pre>
+<h3 id="2225-integration-with-data-infrastructure">22.2.5 Integration with Data Infrastructure</h3>
+<p>Middleware also serves as the in-vehicle carrier for the data infrastructure discussed in Chapter 21. Three integration points warrant explicit design consideration during architecture selection:</p>
+<ul>
+<li><strong>Recording and Playback</strong>: Recording tools based on middleware topics (rosbag/MCAP class) are the in-vehicle entry point for the data collection pipeline. The recording format directly determines the cost of subsequent conversion for lake ingestion.</li>
+<li><strong>Time Synchronization</strong>: A unified clock is needed across multiple computing units (Ethernet PTP or hierarchical synchronization based on EtherCAT distributed clocks); otherwise, multi-modal trajectories from different cameras cannot be aligned—this is mutually causal with the millisecond-level synchronization requirements of Chapter 21.</li>
+<li><strong>Vehicle-Cloud Channel</strong>: Fleet data backflow and OTA download packets share a constrained uplink/downlink. Traffic shaping and priority isolation must be performed at the middleware layer to prevent log backhaul from crowding out control-related traffic.</li>
+</ul>
+<h2 id="223-real-time-communication-and-fieldbuses">22.3 Real-Time Communication and Fieldbuses</h2>
+<p>Middleware solves "how modules talk to each other," while fieldbuses solve "how control instructions reach actuators within a deterministic time limit." The high joint loop closure frequency, large number of nodes, and strict synchronization requirements of humanoid robots mean that the choice of fieldbus directly determines the physical upper limit of the overall machine's control performance. This section first establishes a quantitative language for real-time performance, then analyzes the two main routes, EtherCAT and CAN, one by one.</p>
+<h3 id="2231-quantifying-real-time-performance-latency-jitter-and-schedulability">22.3.1 Quantifying Real-Time Performance: Latency, Jitter, and Schedulability</h3>
+<p><strong>Real-time</strong> does not mean "fast," but rather "<strong>deterministic</strong>": the system must respond within a provable time limit. The core indicators describing real-time performance are:</p>
+<ul>
+<li><strong>Latency</strong>: The time from the occurrence of an event to the completion of the response;</li>
+<li><strong>Jitter</strong>: The difference between the worst-case and typical latency; for a control loop, jitter is often more harmful than average latency because it directly reduces the phase margin of the control law;</li>
+<li><strong>Deadline</strong>: The time limit within which a task must be completed; missing a deadline for a hard real-time task is considered a system failure.</li>
+</ul>
+<p>Based on the consequences of missing a deadline, real-time tasks are divided into three categories: <strong>Hard real-time</strong> (missing the deadline means failure, e.g., joint torque control, emergency stop response), <strong>Soft real-time</strong> (missing the deadline degrades service quality, e.g., video streaming), and <strong>Firm real-time</strong> (the result of a missed deadline is directly discarded, e.g., one iteration of a planner). The essence of the layered architecture in humanoid robot software is to assign these three types of tasks to execution environments that match their determinism levels.</p>
+<p>The schedulability of periodic real-time tasks can be analyzed using the classic Rate-Monotonic (RM) analysis. Consider a task set with <span class="arithmatex">\(n\)</span> periodic tasks, where the computation time of the <span class="arithmatex">\(i\)</span>-th task is <span class="arithmatex">\(C_i\)</span> and its period is <span class="arithmatex">\(T_i\)</span>. Static priorities are assigned such that shorter periods get higher priorities. A sufficient condition for RM scheduling feasibility (the Liu &amp; Layland bound) is:</p>
+<div class="arithmatex">\[
+U = \sum_{i=1}^{n} \frac{C_i}{T_i} \le n\left(2^{1/n} - 1\right)
+\]</div>
+<p>As <span class="arithmatex">\(n \to \infty\)</span>, this bound converges to <span class="arithmatex">\(\ln 2 \approx 0.693\)</span>; if using Deadline Monotonic or Earliest Deadline First (EDF) scheduling, the utilization upper limit can reach 1. On the real-time core of a humanoid robot, bus communication tasks, state estimation tasks, whole-body control tasks, and logging tasks typically run concurrently. RM analysis is the first quantitative checkpoint to determine "whether this core can handle the load"—the Python example in Section 22.6 will demonstrate its usage.</p>
+<h3 id="2232-ethercat-the-main-fieldbus-for-deterministic-joint-control">22.3.2 EtherCAT: The Main Fieldbus for Deterministic Joint Control</h3>
+<p><strong>EtherCAT</strong> is currently the de facto main fieldbus for joint control in humanoid robots. Proposed by Beckhoff and based on standard Ethernet frames, its hallmark mechanism is "<strong>processing on the fly</strong>": the master sends a logical frame that passes sequentially through all slaves in a daisy chain. Each slave reads its corresponding output data area and inserts its input data as the frame passes through it, without needing to fully receive and then forward the frame as in traditional Ethernet. This mechanism offers two decisive advantages:</p>
+<ul>
+<li><strong>Extremely low and deterministic cycle time</strong>: A single network cable connects dozens of joint drives. The transmission delay of the entire frame is determined by physical propagation and the very short forwarding delay at each station. A 1 kHz full-duplex state/command exchange for 40 joints across the whole body is a standard configuration on EtherCAT;</li>
+<li><strong>Distributed Clocks (DC)</strong>: The local clocks of all slaves are synchronized with the master's reference clock, with synchronization errors typically within microseconds. This ensures that all joints sample and apply torque at the same instant—a physical foundation for the correctness of whole-body coordinated control (e.g., WBC).</li>
+</ul>
+<p>The engineering trade-offs are: it requires a real-time protocol stack on the master (usually running on RT-PREEMPT Linux or a dedicated real-time core), the wiring topology is constrained by the daisy chain, and the slave chip ecosystem is relatively concentrated. Typical humanoid robots divide all body joints into 2–4 EtherCAT branches (left leg, right leg, left arm/right arm/torso) to shorten individual chain lengths and isolate fault domains.</p>
+<p>From a protocol detail perspective, EtherCAT abstracts a logical network segment into a 4 GB "process data image." Data telegrams in the master frame are addressed by slave address or logical address, and read/write operations are completed as the frame flies through each station. The communication cycle (e.g., 250 µs or 1 ms) is the control cycle. The master protocol stack must precisely complete frame assembly, transmission, collection, and verification within each cycle—this is why it imposes stringent real-time requirements on the operating system. On the slave side, process data (target torque/position downstream; encoder, temperature, current upstream) are automatically mapped by the slave controller (ESC) hardware, and the drive firmware does not need to intervene in the transmission process itself.</p>
+<h3 id="2233-can-and-can-fd-low-cost-high-robustness-alternatives">22.3.3 CAN and CAN FD: Low-Cost, High-Robustness Alternatives</h3>
+<p><strong>CAN bus (Controller Area Network)</strong> originates from the automotive industry and is known for its multi-master arbitration, differential signaling, and strong immunity to interference. In humanoid robots, CAN/CAN FD is commonly used for:</p>
+<ul>
+<li>Motor control of joints with low bandwidth requirements (e.g., small hand joints, head joints);</li>
+<li>Low-speed sensor networks like the Battery Management System (BMS), temperature and current monitoring;</li>
+<li>Redundant channels for safety-related signals (emergency stop link).</li>
+</ul>
+<p>The nominal maximum data rate for classic CAN is 1 Mbit/s with an 8-byte payload per frame; CAN FD increases the data segment rate to several Mbit/s and expands the payload to 64 bytes, significantly alleviating the bandwidth bottleneck. Compared to EtherCAT, the latency determinism of CAN depends on bus load rate and message priority arbitration. In engineering practice, the bus load rate is typically controlled below 30% to ensure bounded worst-case latency.</p>
+<p>CAN's arbitration mechanism is the source of its determinism: each node listens to the bus while sending its message identifier (ID). If a node detects that its recessive bit is overwritten by a dominant bit, it voluntarily stops transmitting—the lower the ID value, the higher the priority. The latency of the highest-priority message can be strictly bounded and calculated, which is the theoretical basis for its use in carrying emergency stop and safety signals. The trade-off is equally clear: low-priority messages may suffer from "starvation" under high load. Therefore, planning the message IDs for a CAN network (which signals must be real-time, which can tolerate queuing) is an important task in the overall vehicle/machine network design.</p>
+<h3 id="2234-fieldbus-selection-comparison">22.3.4 Fieldbus Selection Comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>EtherCAT</th>
+<th>CAN / CAN FD</th>
+<th>Standard Ethernet (Non-Real-Time)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Typical Cycle Capability</td>
+<td>125 µs – 1 ms</td>
+<td>1 – 10 ms</td>
+<td>Uncertain (millisecond-level jitter)</td>
+</tr>
+<tr>
+<td>Topology</td>
+<td>Daisy Chain / Line</td>
+<td>Bus (Multi-Master)</td>
+<td>Star (Switch)</td>
+</tr>
+<tr>
+<td>Clock Synchronization</td>
+<td>Distributed Clocks, µs level</td>
+<td>No built-in mechanism</td>
+<td>Requires upper-layer protocols like PTP</td>
+</tr>
+<tr>
+<td>Typical Use Cases</td>
+<td>Main joint torque control backbone</td>
+<td>Low-speed joints, BMS, safety links</td>
+<td>Perception data, logging, cloud</td>
+</tr>
+<tr>
+<td>Master Requirements</td>
+<td>Real-time protocol stack</td>
+<td>Standard CAN controller</td>
+<td>No special requirements</td>
+</tr>
+</tbody>
+</table>
+<p>The common engineering practice is <strong>layered hybrid use</strong>: EtherCAT handles the joint closed-loop backbone, CAN FD handles hands and low-speed devices, Gigabit Ethernet handles interconnection between cameras/LiDARs and onboard computing units, and Wi-Fi/5G handles the vehicle-cloud link. Protocol bridging and data shaping are performed by gateway nodes between the layers.</p>
+<h2 id="224-motion-planning-and-dynamics-computation-components">22.4 Motion Planning and Dynamics Computation Components</h2>
+<p>The middleware provides "pipelines," and the high-value computations flowing through these pipelines are completed by a set of specialized components. This section introduces four types of open-source components that form the "waist" of the humanoid robot software stack: MoveIt/OMPL for geometric planning, Pinocchio for dynamics computation, Drake for optimization and verification, and the ontology description formats URDF and MJCF that run through them. The common characteristics of these components are: algorithmically mature, standardized interfaces, and all can be embedded into the ROS 2 computation graph as nodes or libraries for invocation.</p>
+<h3 id="2241-core-operator-of-kinematics-task-jacobian">22.4.1 Core Operator of Kinematics: Task Jacobian</h3>
+<p>The mapping from joint space to task space is a fundamental operation for almost all planning and control components. Let the robot joint configuration be <span class="arithmatex">\(q \in \mathbb{R}^n\)</span>, and the pose of the end-effector (or any task feature point) be <span class="arithmatex">\(x = f(q)\)</span>. Then the <strong>Task Jacobian</strong> is defined as the matrix that maps joint space velocities to task space velocities:</p>
+<div class="arithmatex">\[
+\dot{x} = J(q)\,\dot{q}, \qquad J(q) = \frac{\partial f(q)}{\partial q}
+\]</div>
+<p>Inverse kinematics (solved via pseudo-inverse <span class="arithmatex">\(J^{+}\)</span> or damped least squares iteration), operational space control (<span class="arithmatex">\(\tau = J^T F\)</span> mapping task space forces to joint torques), and task priority projection in whole-body control are all built upon this operator. Its computational efficiency—recomputing every millisecond for a humanoid robot with 40+ degrees of freedom—is precisely the reason for the existence of libraries like Pinocchio in Section 22.4.3.</p>
+<p>It is important to distinguish that the Jacobian also encodes the mechanism's <strong>singularity</strong>: when <span class="arithmatex">\(J\)</span> is near singular, a small task space velocity requires enormous joint velocities, and the numerical condition number of the kinematic solution deteriorates sharply. The redundant degrees of freedom of humanoid robots (whole-body <span class="arithmatex">\(n \gg 6\)</span>) provide the freedom to use the null space to avoid singularities while simultaneously addressing secondary tasks (such as posture maintenance, joint limit avoidance). This is also the mathematical foundation for 7-DOF arms and whole-body redundancy control (see Chapter 9 for a discussion on manipulability).</p>
+<h3 id="2242-moveit-and-ompl-the-de-facto-standard-for-sampling-based-motion-planning">22.4.2 MoveIt and OMPL: The De Facto Standard for Sampling-Based Motion Planning</h3>
+<p><strong>MoveIt Motion Planning</strong> is the most mature motion planning framework in the ROS ecosystem: it integrates collision environment representation (based on occupancy representations like octrees), forward/inverse kinematics plugins, collision detection, and planner interfaces into a single pipeline, widely used for whole-body motion planning of robotic arms and humanoid robots. Its default planner backend is <strong>OMPL (Open Motion Planning Library)</strong>: an open-source C++ library implementing sampling-based motion planning algorithms such as RRT, RRT<em>, PRM, and BIT</em>.</p>
+<p>The basic idea of sampling-based planning is to randomly sample and locally connect in the configuration space (C-space), gradually building a reachable path graph or tree, thereby avoiding explicit modeling of obstacles in high-dimensional space—this is crucial for humanoid robots with 40+ DOFs, as explicitly representing their C-space obstacles is computationally infeasible. In engineering practice, MoveIt/OMPL is commonly used in the "slow layer": generating collision-free geometric paths for the arm or whole body, which are then executed in real-time by lower-level controllers (such as WBC or MPC) that ensure dynamic feasibility. Common enhancements in humanoid scenarios include: biasing sampling with motion capture data or learned priors, using constraint manifolds to describe dual-arm closed chains and posture maintenance tasks, and using planning results as reference trajectories for model predictive control.</p>
+<p>A typical MoveIt request processing pipeline consists of five stages: planning scene update (integrating perception point clouds/occupancy maps) → collision detection (self and environment, based on libraries like FCL) → sampling planning (OMPL planner solving within a time limit) → path post-processing (time parameterization and smoothing, e.g., TOTG algorithm) → execution and online monitoring (deviation during trajectory execution and replanning for dynamic obstacles). Each stage can be replaced with a custom implementation—this plugin-based design makes MoveIt both a framework and an integration point, allowing teams to reuse only its collision pipeline while developing their own planner, or vice versa.</p>
+<h3 id="2243-pinocchio-millisecond-level-rigid-body-dynamics">22.4.3 Pinocchio: Millisecond-Level Rigid Body Dynamics</h3>
+<p><strong>Pinocchio</strong> is an open-source C++ library for efficient rigid body dynamics, kinematics, and analytical derivative computation, implementing Featherstone's Articulated Body Algorithm (ABA, <span class="arithmatex">\(O(n)\)</span> complexity) and Composite Rigid Body Algorithm (CRBA), and providing efficient evaluation of joint torques, center of mass, Jacobians, and their analytical derivatives. In humanoid robots, it is almost the standard computational kernel for whole-body control, trajectory optimization, and model-based state estimation—every control cycle of WBC requires recomputing the mass matrix <span class="arithmatex">\(M(q)\)</span>, Coriolis/gravity terms <span class="arithmatex">\(h(q, \dot{q})\)</span>, and contact Jacobians. Pinocchio reduces the time for these operations to the microsecond to tens of microseconds range, making 1 kHz whole-body control feasible on a general-purpose CPU.</p>
+<p>Its performance stems from three levels of design: first, the algorithm layer uses <span class="arithmatex">\(O(n)\)</span> recursive algorithms instead of explicitly constructing and inverting the <span class="arithmatex">\(n \times n\)</span> mass matrix; second, the implementation layer extensively uses expression templates and cache-friendly data structures to avoid dynamic memory allocation (also critical for real-time performance); third, it provides <strong>analytical derivatives</strong> (e.g., <span class="arithmatex">\(\partial M/\partial q\)</span>), enabling gradient-based trajectory optimization and MPC to avoid slow and numerically unstable finite differences. For floating-base systems like humanoid robots, Pinocchio also supports unified modeling of the base 6-DOF and joints, directly outputting the floating-base dynamics equation</p>
+<div class="arithmatex">\[
+M(q)\ddot{q} + h(q, \dot{q}) = S^T \tau + J_c^T f_c
+\]</div>
+<p>where <span class="arithmatex">\(S\)</span> is the actuation selection matrix, and <span class="arithmatex">\(J_c\)</span>, <span class="arithmatex">\(f_c\)</span> are the contact Jacobian and contact forces—this is precisely the dynamics constraint row in the whole-body control QP.</p>
+<h3 id="2244-drake-optimization-based-control-and-verification">22.4.4 Drake: Optimization-Based Control and Verification</h3>
+<p><strong>Drake System Toolbox</strong> is a system modeling toolbox led by MIT, oriented towards optimization-based control and analysis: it integrates multi-rigid-body dynamics (including contact), mathematical programming solver interfaces (QP, SOCP, SDP, etc.), and system analysis tools within a unified system graph framework. In humanoid robot R&amp;D, Drake typically plays two roles: first, as a <strong>prototyping and verification environment for optimization-based control</strong> (such as trajectory optimization, MPC, LQR-Trees); second, as an <strong>offline analysis and verification tool</strong> for performing reachability analysis and stability certificate computation for controllers. Complementing Pinocchio's "online computational kernel" positioning, Drake leans more towards the design and verification side.</p>
+<h3 id="2245-robot-description-formats-urdf-and-mjcf">22.4.5 Robot Description Formats: URDF and MJCF</h3>
+<p>All the aforementioned components rely on a machine-readable ontology description. The two current mainstream formats are:</p>
+<ul>
+<li><strong>URDF Robot Description Format</strong>: XML-based, describing links, joints, inertial parameters, and geometry (including collision and visual meshes). It is the standard robot description format in the ROS ecosystem, used as input by MoveIt, RViz, and numerous driver packages. Its limitations include poor expressiveness for actuators, sensors, and closed-loop kinematic chains, which the community mitigates with xacro macros and SRDF (semantic supplements).</li>
+<li><strong>MJCF Simulation Format</strong>: MuJoCo's XML modeling format, designed for articulated rigid body systems with contacts, actuators, and sensors. Its physical parameters (friction, damping, actuator gains) are far more complete than URDF, making it the mainstream description format for simulation training and Sim-to-Real research.</li>
+</ul>
+<p>In engineering practice, URDF is typically maintained as the "single source of truth" for the whole robot model, and automatic conversion tools are used to generate MJCF for the simulation pipeline; parameter drift (inertia, limits, friction) between the two formats is a common hidden cause of Sim-to-Real failure and requires version management and automated validation.</p>
+<p>Accompanying the ontology description is the coordinate transformation infrastructure: the <code>tf2</code> library in the ROS ecosystem maintains a time-varying transformation tree between all robot coordinate frames (base, links, cameras, map frame), allowing any node to query "the transformation from frame A to frame B at a given time." For humanoid robots, the transformation tree simultaneously serves control (foot relative to center of mass), perception (point cloud registration to the map), and data recording (unifying coordinate systems for multiple modalities), making it one of the most frequently used common components in the middleware layer.</p>
+<h2 id="225-real-time-operating-systems-and-deployment-operations">22.5 Real-Time Operating Systems and Deployment Operations</h2>
+<p>Middleware and components address "development phase" issues; when robots leave the laboratory, "runtime phase" issues—whether the operating system can provide determinism, how software can be safely updated remotely, how hundreds or thousands of robots can be uniformly operated, and how safety certification can be closed—take center stage. This section discusses these four types of runtime infrastructure.</p>
+<h3 id="2251-real-time-operating-systems-qnx-and-linux-rt-preempt">22.5.1 Real-Time Operating Systems: QNX and Linux RT-PREEMPT</h3>
+<p>General-purpose operating systems (such as standard Linux) are not designed for hard real-time: kernel preemption-disabled regions, interrupt handling, and the non-determinism of the scheduler can cause uncontrollable latency spikes. <strong>Real-Time Operating Systems (RTOS)</strong> meet strict timing requirements through kernel preemption, priority scheduling, and deterministic interrupt response. The two mainstream choices for humanoid robots are:</p>
+<ul>
+<li><strong>Linux RT-PREEMPT</strong>: A set of kernel patches that makes most of the Linux kernel preemptible, providing deterministic low-latency behavior. Its advantage is fully retaining the Linux ecosystem (drivers, ROS 2, container toolchains), compressing worst-case latency from the millisecond level to tens of microseconds. It is the mainstream solution for real-time kernels in current humanoid robots. Supporting engineering practices include CPU isolation (isolcpus), interrupt affinity binding, memory locking (mlockall), and real-time priority (SCHED_FIFO).</li>
+<li><strong>QNX</strong>: A commercial microkernel real-time operating system widely used in automotive and safety-critical systems, offering high reliability and deterministic scheduling, along with functional safety certification qualifications. Its microkernel architecture prevents driver failures from propagating to the kernel, making it suitable for safety monitoring and low-level control; the trade-off is ecosystem and licensing costs.</li>
+</ul>
+<p>A typical humanoid robot adopts a heterogeneous combination of "<strong>QNX or RT-PREEMPT real-time core for control + standard Linux core for perception and AI</strong>", with data exchanged between the two cores via shared memory or deterministic Ethernet channels. Safety-related functions (emergency stop, torque limiting, fall protection) are mandatorily placed on the real-time side.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Hard Real-Time, Preemptible Kernel, Priority Inversion, CPU Isolation</p>
+<ul>
+<li><strong>Hard Real-Time</strong>: A real-time level where missing a deadline constitutes system failure; joint force control and safety loops fall into this category.</li>
+<li><strong>Preemptible Kernel</strong>: A kernel where execution in kernel mode can be preempted by higher-priority tasks; the RT-PREEMPT patch replaces most spinlocks in the Linux kernel with sleepable locks, compressing the longest non-preemptible region to tens of microseconds.</li>
+<li><strong>Priority Inversion</strong>: A phenomenon where a high-priority task is indirectly blocked while waiting for a lock held by a low-priority task; the mainstream countermeasure is the priority inheritance mutex.</li>
+<li><strong>CPU Isolation</strong>: A configuration method (e.g., the <code>isolcpus</code> kernel parameter) that removes specified CPU cores from the general scheduling domain, dedicating them to real-time tasks; combined with interrupt affinity and memory locking, it forms the standard trio for real-time tuning.</li>
+</ul>
+</div>
+<h3 id="2252-ota-software-updates">22.5.2 OTA Software Updates</h3>
+<p><strong>Over-the-Air (OTA) Software Updates</strong> refer to the ability to wirelessly deploy control strategies, firmware, and system software to a deployed fleet of humanoid robots. It is the "last mile" for closing the data flywheel (see Chapter 21). Robot OTA is more dangerous than OTA for phones or cars: a single defective controller update could directly cause the entire robot to fall. Therefore, engineering requires:</p>
+<ul>
+<li><strong>A/B Partitioning and Rollback</strong>: New firmware is written to a spare partition; if the first boot self-test fails, it automatically rolls back to the last known good version.</li>
+<li><strong>Canary Release</strong>: First update 1%–5% of the fleet, monitor key indicators (fall rate, emergency stop count, task success rate), and gradually scale up if no regression is observed.</li>
+<li><strong>Layered Updates</strong>: AI models, application software, real-time firmware, and low-level drivers each go through different approval and release channels. Model updates can be released daily, while firmware updates must undergo complete regression testing.</li>
+<li><strong>Update Window and State Constraints</strong>: Updates are only allowed when the robot is in a charging/idle state, and a forced safe stop is required before the update begins.</li>
+</ul>
+<p>Additionally, software supply chain security also applies to robots: update packages must be signed and verified on the device (to prevent malicious firmware injection). The release pipeline should maintain a complete traceable chain from source code commits to firmware images (SBOM, Software Bill of Materials), enabling rapid identification of the affected fleet when component-level vulnerabilities are discovered.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[Candidate Version&lt;br/&gt;Offline Regression Testing] --&gt; B[Internal Fleet Canary&lt;br/&gt;1–5%]
+    B --&gt; C{Key Indicator Regression?}
+    C --&gt;|Yes| D[Auto Rollback&lt;br/&gt;Issue Isolation]
+    C --&gt;|No| E[Gradual Rollout&lt;br/&gt;10% → 50% → 100%]
+    E --&gt; F[Post-Full-Rollout Monitoring&lt;br/&gt;Telemetry &amp; Failure Reports]
+    D --&gt; G[Bug Fix&lt;br/&gt;Re-enter Regression]
+    G --&gt; A</code></pre>
+<h3 id="2253-fleet-management-platform">22.5.3 Fleet Management Platform</h3>
+<p>A <strong>Fleet Management Platform</strong> is a cloud platform for task orchestration, charging scheduling, health monitoring, and data analysis across multiple deployed humanoid robots. Its functional stack typically includes: task assignment and traffic coordination (deadlock and conflict resolution when multiple robots share a workspace), battery and charging strategy optimization (predicting energy consumption based on task queues, staggered charging), predictive maintenance (identifying precursors to joint wear based on motor current, temperature, and vibration telemetry), and software configuration management (inventory of model versions, maps, and calibration parameters for each robot). For operators, the platform's metrics directly determine the business model: <strong>Average Daily Effective Operating Time per Robot</strong> and <strong>Human Intervention Rate</strong> are two North Star metrics. The former, multiplied by per-robot output, represents revenue capacity; the latter determines the manpower size of the remote operations team.</p>
+<p>A key principle for the interface design between the fleet platform and the on-robot middleware is: <strong>Cloud commands must be rejectable</strong>. Task-level commands issued by the platform (e.g., "go to shelf A and pick up a box") only carry the target and constraints; the specific motion generation, obstacle avoidance, and safety degradation are entirely handled autonomously by the onboard system. The robot has the right to delay or reject execution when in any unsafe state and must report the reason for rejection back. This division of responsibilities—"cloud orchestration, onboard autonomy"—is isomorphic to the requirement in Section 22.5.4 that "safety functions must be independent of intelligent functions." Network unreachability or cloud failure should not cause a single robot to lose its ability to operate safely.</p>
+<h3 id="2254-constraints-of-functional-safety-standards-on-software-architecture">22.5.4 Constraints of Functional Safety Standards on Software Architecture</h3>
+<p>The entry of humanoid robots into human living spaces imposes constraints on their software architecture to comply with functional safety standards. The currently directly relevant standard families include:</p>
+<ul>
+<li><strong>IEC 61508</strong>: The foundational functional safety standard for electrical/electronic/programmable electronic safety-related systems, defining the SIL (Safety Integrity Level) framework, which is the methodological source for most safety arguments.</li>
+<li><strong>ISO 13849</strong>: A standard for safety-related parts of control systems for machinery, quantifying safety function reliability with PL (Performance Level). Joint torque limiting and emergency stop chains are typically designed according to this.</li>
+<li><strong>ISO 13482</strong>: A safety standard for personal care robots, directly covering mobile service robots that coexist closely with humans in non-industrial environments.</li>
+<li><strong>ISO/TS 15066</strong>: A technical specification for collaborative robots, defining power and force limiting principles for human-robot collaboration, providing a reference for contact safety design in humanoid robot coexistence scenarios.</li>
+</ul>
+<p>The direct implication of these standards for the software middleware layer is: <strong>Safety functions must be isolated from intelligent functions</strong>. Safety monitoring (torque/speed/spatial limits, emergency stop, fall protection) should run on an independent, certifiable safety controller with its own sensor channels and execution cut-off paths. No node on the ROS 2 computation graph (including VLA large models) should be on the critical path of the safety loop. "Intelligence can fail, but safety must be fail-safe"—this layering principle is the first check item in all humanoid robot software architecture reviews.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    subgraph Intelligent Domain[Intelligent Domain (Linux + ROS 2)]
+        A[VLA / Planning / Perception]
+    end
+    subgraph Real-Time Domain[Real-Time Domain (RTOS)]
+        B[Whole-Body Control WBC]
+    end
+    subgraph Safety Domain[Safety Domain (Safety Controller)]
+        C[Safety Monitoring&lt;br/&gt;Torque/Speed/Spatial Limits]
+        D[Emergency Stop Chain]
+    end
+    A --&gt;|Target Trajectory| B
+    B --&gt;|Torque Command| C
+    C --&gt;|Output After Validation| E[Joint Actuators]
+    C --&gt;|Cut Off on Exceedance| E
+    D --&gt;|Hardwired Cut Off| E</code></pre>
+<p>The figure above shows the corresponding three-domain architecture: any failure in the intelligent domain or real-time domain must be independently caught by the safety domain. The safety domain does not rely on the correctness of any upper-layer software, only on its own sensing and logic. During design reviews, each safety function should be able to answer three questions: What does it detect? From what is it independent? How does it remain effective when the main power fails?</p>
+<h2 id="226-architecture-synthesis-real-time-budget-and-schedulability-example">22.6 Architecture Synthesis: Real-Time Budget and Schedulability Example</h2>
+<p>When assembling the components of this chapter into a complete machine, the core questions the architect must answer are: <strong>How to allocate the end-to-end delay budget among components, and whether the real-time core can handle all periodic tasks</strong>. The following Python example demonstrates a typical real-time core schedulability analysis and joint loop delay budget decomposition:</p>
+<pre class="highlight"><code class="language-python"># Real-time core RM schedulability analysis + end-to-end delay budget
+import math
+
+# --- 1) RM schedulability analysis ---
+# Tasks: (name, computation time C_i [µs], period T_i [µs])
+tasks = [
+    ("EtherCAT master transceiver",  80,  1000),   # 1 kHz bus cycle
+    ("State estimation (EKF)",       120,  1000),   # 1 kHz
+    ("Whole-body control WBC",       350,  1000),   # 1 kHz
+    ("Safety monitoring",             30,   500),   # 2 kHz
+    ("Telemetry and logging",        200, 10000),   # 100 Hz
+]
+U = sum(C/T for _, C, T in tasks)
+n = len(tasks)
+bound = n * (2**(1/n) - 1)
+print(f"CPU utilization U = {U:.3f}")
+print(f"RM schedulability sufficient condition upper bound = {bound:.3f} (n={n})")
+print("RM judgment:", "Schedulable (sufficient condition met)" if U &lt;= bound else "Sufficient condition not met, response time analysis required")
+
+# --- 2) Joint control loop end-to-end delay budget ---
+# Link: encoder sampling -&gt; EtherCAT uplink -&gt; state estimation -&gt; WBC computation -&gt; EtherCAT downlink -&gt; actuator execution
+budget = {
+    "Encoder sampling and filtering":      50,   # µs
+    "EtherCAT uplink transmission":       100,
+    "State estimation":                   120,
+    "WBC optimization computation":       350,
+    "EtherCAT downlink transmission":     100,
+    "Actuator torque establishment":      150,
+    "Safety margin (jitter absorption)":  130,
+}
+total = sum(budget.values())
+print(f"\nEnd-to-end delay budget total: {total} µs (control cycle 1000 µs)")
+for k, v in budget.items():
+    print(f"  {k:&lt;18s} {v:&gt;4d} µs  ({v/10:.1f}%)")</code></pre>
+<p>Typical conclusions are threefold: First, in the delay budget of the 1 kHz whole-body control loop, WBC computation and bus transmission account for the majority, explaining why efficient dynamics libraries like Pinocchio and EtherCAT's fly-through processing are essential. Second, RM analysis shows the task set utilization <span class="arithmatex">\(U \approx 0.63\)</span>, below the sufficient condition upper bound of about 0.74 for <span class="arithmatex">\(n=5\)</span>; schedulability holds but the margin is not ample—once WBC computation time grows with the number of contact points, multi-core splitting or response time analysis for more detailed justification is needed. Third, jitter absorption must be explicitly included in the budget—in this example, the sum of all delays is exactly 1000 µs, equal to the control cycle itself; an "average delay design" that ignores jitter will cause worst-case timeout, a common root cause of field incidents.</p>
+<h2 id="227-chapter-summary">22.7 Chapter Summary</h2>
+<p>This chapter elaborates on the technical system of humanoid robot software middleware, with core conclusions as follows:</p>
+<ol>
+<li><strong>Middleware is the organizational principle of humanoid robot software</strong>. It converges inter-process communication, hardware abstraction, concurrent scheduling, and toolchains into a unified facility, serving as a prerequisite for hundred-person collaboration and product deployment.</li>
+<li><strong>ROS 2 + DDS constitutes the current de facto standard</strong>. The data-centric publish/subscribe, decentralized discovery, and topic-based QoS contracts enable it to simultaneously carry joint state streams, high-bandwidth vision streams, and safety event streams; lifecycle nodes and ros2_control supplement the controllable startup and hardware abstraction required for productization.</li>
+<li><strong>Real-time performance is ensured through layering</strong>. ROS 2 supports the soft real-time layer; 1 kHz-level joint closed loops are offloaded to fieldbuses such as EtherCAT (fly-through processing + distributed clocks) and CAN FD; RT-PREEMPT Linux and QNX provide a deterministic operating system foundation; RM schedulability analysis and end-to-end delay budgets are quantitative tools for architecture review.</li>
+<li><strong>Planning and dynamics components form the "waist" of the software stack</strong>. MoveIt/OMPL addresses geometric planning in high-dimensional configuration spaces, Pinocchio provides millisecond-level dynamics computation, Drake supports optimization-based control and offline verification, and the URDF/MJCF dual format bridges both control and simulation domains.</li>
+<li><strong>Deployment, operations, and safety are the final boundaries of productization</strong>. OTA updates require A/B partitions, canary releases, and rollback; fleet management platforms transform single-machine products into operable services; IEC 61508, ISO 13849, ISO 13482, and ISO/TS 15066 mandate hard isolation between safety functions and intelligent functions at the architecture level.</li>
+</ol>
+<p>At this point, the book has completed the foundational layer exposition from hardware (Chapters 1–9) to data (Chapter 21) to runtime software (this chapter); subsequent chapters will discuss the specific implementation of perception, planning, control, and learning algorithms on this foundation.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-21/">← Previous<span>Chapter 21: Data Infrastructure</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-23/">Next →<span>Chapter 23: Simulation and Physics Engines</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-22-software-middleware">Chapter 22: Software Middleware</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#221-overview-of-software-middleware">22.1 Overview of Software Middleware</a><ul>
+<li><a href="#2211-what-is-robot-middleware">22.1.1 What is Robot Middleware</a></li>
+<li><a href="#2212-special-requirements-of-humanoid-robots-for-middleware">22.1.2 Special Requirements of Humanoid Robots for Middleware</a></li>
+<li><a href="#2213-layered-reference-architecture">22.1.3 Layered Reference Architecture</a></li>
+</ul>
+</li>
+<li><a href="#222-robot-middleware-framework-from-ros-to-ros-2">22.2 Robot Middleware Framework: From ROS to ROS 2</a><ul>
+<li><a href="#2221-legacy-and-limitations-of-ros-1">22.2.1 Legacy and Limitations of ROS 1</a></li>
+<li><a href="#2222-ros-2-and-dds-data-centric-publish-subscribe">22.2.2 ROS 2 and DDS: Data-Centric Publish-Subscribe</a></li>
+<li><a href="#2223-qos-policies-customizing-transport-contracts-for-each-data-stream">22.2.3 QoS Policies: Customizing Transport Contracts for Each Data Stream</a></li>
+<li><a href="#2224-computation-graph-organization-nodes-lifecycle-and-actions">22.2.4 Computation Graph Organization: Nodes, Lifecycle, and Actions</a></li>
+<li><a href="#2225-integration-with-data-infrastructure">22.2.5 Integration with Data Infrastructure</a></li>
+</ul>
+</li>
+<li><a href="#223-real-time-communication-and-fieldbuses">22.3 Real-Time Communication and Fieldbuses</a><ul>
+<li><a href="#2231-quantifying-real-time-performance-latency-jitter-and-schedulability">22.3.1 Quantifying Real-Time Performance: Latency, Jitter, and Schedulability</a></li>
+<li><a href="#2232-ethercat-the-main-fieldbus-for-deterministic-joint-control">22.3.2 EtherCAT: The Main Fieldbus for Deterministic Joint Control</a></li>
+<li><a href="#2233-can-and-can-fd-low-cost-high-robustness-alternatives">22.3.3 CAN and CAN FD: Low-Cost, High-Robustness Alternatives</a></li>
+<li><a href="#2234-fieldbus-selection-comparison">22.3.4 Fieldbus Selection Comparison</a></li>
+</ul>
+</li>
+<li><a href="#224-motion-planning-and-dynamics-computation-components">22.4 Motion Planning and Dynamics Computation Components</a><ul>
+<li><a href="#2241-core-operator-of-kinematics-task-jacobian">22.4.1 Core Operator of Kinematics: Task Jacobian</a></li>
+<li><a href="#2242-moveit-and-ompl-the-de-facto-standard-for-sampling-based-motion-planning">22.4.2 MoveIt and OMPL: The De Facto Standard for Sampling-Based Motion Planning</a></li>
+<li><a href="#2243-pinocchio-millisecond-level-rigid-body-dynamics">22.4.3 Pinocchio: Millisecond-Level Rigid Body Dynamics</a></li>
+<li><a href="#2244-drake-optimization-based-control-and-verification">22.4.4 Drake: Optimization-Based Control and Verification</a></li>
+<li><a href="#2245-robot-description-formats-urdf-and-mjcf">22.4.5 Robot Description Formats: URDF and MJCF</a></li>
+</ul>
+</li>
+<li><a href="#225-real-time-operating-systems-and-deployment-operations">22.5 Real-Time Operating Systems and Deployment Operations</a><ul>
+<li><a href="#2251-real-time-operating-systems-qnx-and-linux-rt-preempt">22.5.1 Real-Time Operating Systems: QNX and Linux RT-PREEMPT</a></li>
+<li><a href="#2252-ota-software-updates">22.5.2 OTA Software Updates</a></li>
+<li><a href="#2253-fleet-management-platform">22.5.3 Fleet Management Platform</a></li>
+<li><a href="#2254-constraints-of-functional-safety-standards-on-software-architecture">22.5.4 Constraints of Functional Safety Standards on Software Architecture</a></li>
+</ul>
+</li>
+<li><a href="#226-architecture-synthesis-real-time-budget-and-schedulability-example">22.6 Architecture Synthesis: Real-Time Budget and Schedulability Example</a></li>
+<li><a href="#227-chapter-summary">22.7 Chapter Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

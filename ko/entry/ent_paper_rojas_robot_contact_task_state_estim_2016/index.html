@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>위치 기반 액션 문법을 활용한 로봇 접촉 작업 상태 추정 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">위치 기반 액션 문법을 활용한 로봇 접촉 작업 상태 추정</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>위치 기반 액션 문법을 활용한 로봇 접촉 작업 상태 추정</h1>
+      <p class="entry-name-en">Robot Contact Task State Estimation via Position-based Action Grammars</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">조립 통합 테스트</span><span class="tag">AI 모델 및 알고리즘</span><span class="tag">제조 공정</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1609.04946v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 Frenet 프레임 분할과 Direct Curve Coding을 통해 3D 데카르트 엔드이펙터 궤적을 고수준 액션 문법으로 변환한 뒤 선형 SVM으로 로봇 행동을 분류하고 작업 결과를 검증하여, 시뮬레이션과 실제 HIRO-NX 이팔 인간형 로봇의 스냅 조립 작업에서 작업 결과 검증 86%, 행동 모니터링 평균 72%의 정확도를 달성하였다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1609.04946" target="_blank" rel="noopener">Robot Contact Task State Estimation via Position-based Action Grammars</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>불확실성은 로봇에 자율성을 부여하는 데 있어 주요한 어려움입니다. 로봇은 예상치 못한 사건으로 인해 종종 실패합니다. 로봇 접촉 작업에서는 마르코프 체인 또는 유한 상태 기계에서 상태 전이를 정의하기 위해 경험적으로 힘 임계값을 찾도록 설계되는 경우가 많습니다. 이러한 설계는 비구조화된 환경에서 외부 교란이나 오류 모델로 인해 해당 임계값이 충족되어 거짓 양성 상태 전이가 발생할 때 실패하기 쉽습니다. 본 논문의 초점은 로봇 접촉 작업에 대한 로봇 행동 및 작업 출력의 고수준 상태 추정을 수행하는 것입니다. 우리의 접근 방식은 원시 저수준 3D 직교 좌표 궤적을 인코딩하여 고수준(HL) 행동 문법으로 변환합니다. 직교 좌표 궤적은 동적 속성 또는 "질감"이 보존되는 방식으로 분할 및 인코딩될 수 있습니다. 행동 문법이 생성되면 분류기가 훈련되어 현재 행동과 궁극적으로 작업 출력을 감지합니다. 시스템은 작업 출력 검증을 위해 86%의 정확도로 HL 상태 추정을 실행했으며, 행동 모니터링의 평균 정확도는 72%였습니다. 이 연구의 의의는 사용하기 어려운 원시 저수준 데이터를 강력한 행동 및 작업 모니터링을 가능하게 하는 HL 데이터로 변환하는 데 있습니다. 모니터링은 고수준 계획, 시연을 통한 프로그래밍, 인간-로봇 상호작용 등에서 실패 수정 또는 기타 심의에 유용합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>불확실성은 로봇에 자율성을 부여하는 데 있어 주요한 어려움입니다. 로봇은 예상치 못한 사건으로 인해 종종 실패합니다. 로봇 접촉 작업에서는 마르코프 체인 또는 유한 상태 기계에서 상태 전이를 정의하기 위해 경험적으로 힘 임계값을 찾도록 설계되는 경우가 많습니다. 이러한 설계는 비구조화된 환경에서 외부 교란이나 오류 모델로 인해 해당 임계값이 충족되어 거짓 양성 상태 전이가 발생할 때 실패하기 쉽습니다. 본 논문의 초점은 로봇 접촉 작업에 대한 로봇 행동 및 작업 출력의 고수준 상태 추정을 수행하는 것입니다. 우리의 접근 방식은 원시 저수준 3D 직교 좌표 궤적을 인코딩하여 고수준(HL) 행동 문법으로 변환합니다. 직교 좌표 궤적은 동적 속성 또는 "질감"이 보존되는 방식으로 분할 및 인코딩될 수 있습니다. 행동 문법이 생성되면 분류기가 훈련되어 현재 행동과 궁극적으로 작업 출력을 감지합니다. 시스템은 작업 출력 검증을 위해 86%의 정확도로 HL 상태 추정을 실행했으며, 행동 모니터링의 평균 정확도는 72%였습니다. 이 연구의 의의는 사용하기 어려운 원시 저수준 데이터를 강력한 행동 및 작업 모니터링을 가능하게 하는 HL 데이터로 변환하는 데 있습니다. 모니터링은 고수준 계획, 시연을 통한 프로그래밍, 인간-로봇 상호작용 등에서 실패 수정 또는 기타 심의에 유용합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_2_3/">环境适应性测试</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_2_2/">性能基准测试</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_1_3/">感知-规划-控制闭环集成</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rojas_robot_contact_task_state_estim_2016"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>感知-规划-控制闭环集成</h3>
+          <p>典型任务端到端成功率 &gt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>环境适应性测试</h3>
+          <p>环境测试报告、失效模式与改进</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>性能基准测试</h3>
+          <p>《性能测试报告》、KPI 达标率</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

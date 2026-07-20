@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>磁场定向控制（FOC） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">磁场定向控制（FOC）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>磁场定向控制（FOC）</h1>
+      <p class="entry-name-en">Field-Oriented Control (FOC)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#4.5.2 磁场定向控制（FOC）的数学结构 by scripts/backfill_nonpaper_entries.py. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="foc">磁场定向控制（FOC）的定义与定位</h3>
+<p>磁场定向控制（FOC）属于 <strong>方法</strong> 类型。 所属领域包括：零部件。 价值链层级：中游。 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。 英文名称为 <em>Field-Oriented Control (FOC)</em>。 韩文名称为 <em>자장 지향 제어(FOC)</em>。</p>
+<h3 id="foc_1">磁场定向控制（FOC）的数学与原理基础</h3>
+<p>磁场定向控制（FOC）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，磁场定向控制（FOC）通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_2">算法步骤与实现要点</h3>
+<p>在实际实现磁场定向控制（FOC）时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_3">典型应用与局限性</h3>
+<p>磁场定向控制（FOC）可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>method</li>
+<li>chapter_4</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，磁场定向控制（FOC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_field_oriented_control/">磁场定向控制</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_bldc_motor/">无刷直流电机</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_oem_figure_ai/">Figure AI</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_company_maxon_group_2024/">Maxon</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">结合</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_planetary_roller_screw/">行星滚柱丝杠</a>
+              <span class="rel-desc">Wiki 第4章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">结合</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_harmonic_reducer_2024/">谐波减速器</a>
+              <span class="rel-desc">Wiki 第4章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_admittance_control/">导纳控制</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_impedance_control/">阻抗控制</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_oem_tesla/">特斯拉</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_frameless_torque_motor_2024/">无框力矩电机</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_company_leaderdrive_2024/">绿的谐波</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_harmonic_reducer_2024/">谐波减速器</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_figure_02/">Figure 02</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_series_elastic_actuator_2024/">串联弹性执行器</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">结合</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_rv_reducer/">RV减速器</a>
+              <span class="rel-desc">Wiki 第4章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_planetary_roller_screw/">行星滚柱丝杠</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_metric_torque_density/">转矩密度</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_boston_dynamics_atlas_2024/">波士顿动力 Atlas</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_company_inovance_technology_2024/">汇川技术</a>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_component_bldc_motor/">无刷直流电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">无刷直流电机使用磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_servo_drive_2024/">伺服驱动器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">伺服驱动器提及磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_comp_servo_motor/">高性能伺服电机</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">高性能伺服电机使用磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4_3_1/">电机驱动器设计/选型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">电机驱动器设计/选型提及磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sapkota_harmonic_content_analysis_of_a_2023/">基于FPGA的软启动变频电机驱动的谐波含量分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于FPGA的软启动变频电机驱动的谐波含量分析discusses磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p4/">关节模组与驱动系统设计（Actuator &amp; Drive）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">关节模组与驱动系统设计（Actuator &amp; Drive）提及磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">软体机器人服：现状、核心技术与开放挑战</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">软体机器人服：现状、核心技术与开放挑战提及磁场定向控制（FOC）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_planetary_roller_screw/">行星滚柱丝杠</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_metric_torque_density/">转矩密度</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_foc_motor_control"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p4_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>电机驱动器设计/选型</h3>
+          <p>- P4.3.1.1 输入梳理与目标量化 - 整理「电机驱动器设计/选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_leaderdrive_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>绿的谐波</h3>
+          <p>概述 绿的谐波是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">零部件</span>
+          <h3>行星滚柱丝杠</h3>
+          <p>- Tesla Optimus：据 Tesla AI Day 2022 与后续公开信息，Optimus 躯干采用 28 个执行器（14 个旋转 + 14 个线性），旋转关节使用无框力矩电机 +…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_oem_tesla/">
+          <span class="entry-type">整机厂商</span>
+          <h3>特斯拉</h3>
+          <p>&gt; 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 &gt; 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_rv_reducer/">
+          <span class="entry-type">零部件</span>
+          <h3>RV减速器</h3>
+          <p>一种高刚性、高扭矩的摆线针轮减速器，抗冲击性与定位精度优异，常用于重载机器人臀、腰等关节。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_impedance_control/">
+          <span class="entry-type">方法</span>
+          <h3>阻抗控制</h3>
+          <p>阻抗控制（impedance control）不把位置与力分开控制，而是调节机器人末端表现出的机械阻抗（mechanical…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_oem_figure_ai/">
+          <span class="entry-type">整机厂商</span>
+          <h3>Figure AI</h3>
+          <p>&gt; 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 &gt; 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_servo_drive_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>伺服驱动器</h3>
+          <p>伺服驱动器把控制器指令转换为电机功率输出，通常采用 FOC 控制，包含电流环、速度环和位置环。关节驱动器对体积、散热、EMI 和电流环带宽要求较高，是国产替代的重点环节。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_metric_torque_density/">
+          <span class="entry-type">概念</span>
+          <h3>转矩密度</h3>
+          <p>1. 扭矩密度 \(\tau_d = \tau_{\text{peak}} / m\)（单位：N·m/kg）或 N·m/L，衡量单位质量/体积能产生多大扭矩。 2. 功率密度 \(P_d =…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_comp_servo_motor/">
+          <span class="entry-type">零部件</span>
+          <h3>高性能伺服电机</h3>
+          <p>伺服电机（Servo Motor）是一种与专用伺服驱动器配套、具备闭环位置、速度与转矩控制能力的高性能电机，广泛应用于工业机器人、数控机床、人形机器人关节、AGV…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sapkota_harmonic_content_analysis_of_a_2023/">
+          <span class="entry-type">论文</span>
+          <h3>基于FPGA的软启动变频电机驱动的谐波含量分析</h3>
+          <p>本文提出了一种基于FPGA的三相感应电机变频软启动驱动器，采用直接数字频率合成技术，比较了正弦脉宽调制、三次谐波注入脉宽调制和空间矢量脉宽调制的谐波性能与启动涌流抑制效果。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制</h3>
+          <p>一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4/">
+          <span class="entry-type">方法</span>
+          <h3>关节模组与驱动系统设计（Actuator &amp; Drive）</h3>
+          <p>关节模组与驱动系统设计（Actuator &amp; Drive）是人形机器人产品开发全流程中的第 4 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_bldc_motor/">
+          <span class="entry-type">零部件</span>
+          <h3>无刷直流电机</h3>
+          <p>无刷直流电机（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_admittance_control/">
+          <span class="entry-type">方法</span>
+          <h3>导纳控制</h3>
+          <p>概述 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。 ## 核心内容 #### 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">
+          <span class="entry-type">论文</span>
+          <h3>软体机器人服：现状、核心技术与开放挑战</h3>
+          <p>Wearable robots are undergoing a disruptive transition, from the rigid machines that populated the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_frameless_torque_motor_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>无框力矩电机</h3>
+          <p>人形机器人髋关节、肩关节往往需要几十到上百 N·m 的输出扭矩。若采用普通伺服电机加高减速比，虽可放大扭矩，但会牺牲透明度和带宽。一种方案是使用 无框力矩电机（frameless torque…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_series_elastic_actuator_2024/">
+          <span class="entry-type">技术</span>
+          <h3>串联弹性执行器</h3>
+          <p>在电机和负载之间串联弹性元件的执行器，可实现精确的力控和抗冲击能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_boston_dynamics_atlas_2024/">
+          <span class="entry-type">机器人系统</span>
+          <h3>波士顿动力 Atlas</h3>
+          <p>概述 波士顿动力 Atlas是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_figure_02/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Figure 02</h3>
+          <p>概述 Figure 02是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_maxon_group_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>Maxon</h3>
+          <p>Maxon是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_harmonic_reducer_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>谐波减速器</h3>
+          <p>谐波减速器（Harmonic Drive）是一种基于柔性齿轮弹性变形原理的精密减速装置，由波发生器（Wave Generator）、柔性齿轮（Flexspline）和刚性内齿圈（Circular…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_company_inovance_technology_2024/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>汇川技术</h3>
+          <p>概述 汇川技术是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#foc">磁场定向控制（FOC）的定义与定位</a></li>
+<li><a href="#foc_1">磁场定向控制（FOC）的数学与原理基础</a></li>
+<li><a href="#_2">算法步骤与实现要点</a></li>
+<li><a href="#_3">典型应用与局限性</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoboBallet: 그래프 신경망과 강화학습을 활용한 다중 로봇 reaching 계획 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RoboBallet: 그래프 신경망과 강화학습을 활용한 다중 로봇 reaching 계획</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>RoboBallet: 그래프 신경망과 강화학습을 활용한 다중 로봇 reaching 계획</h1>
+      <p class="entry-name-en">RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">제조 공정</span><span class="tag">대량 생산</span><span class="tag">조립 통합 테스트</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05397v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>RoboBallet는 심층 강화학습으로 그래프 신경망 정책을 학습시켜 장애물이 많은 공유 워크셀에서 여러 로봇의 작업 할당, 스케줄링 및 충돌 없는 모션 계획을 통합적으로 수행하며, 보지 못한 레이아웃에 대한 제로샷 일반화와 실시간 추론을 보여준다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.05397" target="_blank" rel="noopener">RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>현대 로봇 제조는 장애물이 많은 공유 작업 공간에서 여러 로봇이 충돌 없이 협력하여 수많은 작업을 완료해야 합니다. 개별 작업은 단독으로는 단순할 수 있지만, 시공간적 제약 하에서 자동화된 공동 작업 할당, 스케줄링 및 모션 플래닝은 실제 규모에서 고전적 방법으로는 계산적으로 다루기 어렵습니다. 산업 현장에 배치된 기존 다중 암 시스템은 인간의 직관과 경험에 의존하여 노동 집약적인 과정을 통해 수동으로 실행 가능한 궤적을 설계합니다. 이 문제를 해결하기 위해 우리는 강화 학습(RL) 프레임워크를 제안하여 자동화된 작업 및 모션 플래닝을 달성하며, 8대의 로봇이 공유 작업 공간에서 40개의 도달 작업을 수행하는 장애물이 많은 환경에서 테스트되었습니다. 여기서 모든 로봇은 모든 작업을 어떤 순서로든 수행할 수 있습니다. 우리의 접근 방식은 다양한 장애물 배치, 로봇 구성 및 작업 분포를 가진 절차적으로 생성된 환경에서 RL을 통해 훈련된 그래프 신경망(GNN) 정책을 기반으로 합니다. 이는 장면의 그래프 표현과 강화 학습을 통해 훈련된 그래프 정책 신경망을 사용하여 여러 로봇의 궤적을 생성하며, 작업 할당, 스케줄링 및 모션 플래닝의 하위 문제를 공동으로 해결합니다. 시뮬레이션에서 대규모 무작위 생성 작업 세트로 훈련된 우리의 정책은 다양한 로봇 배치, 장애물 형상 및 작업 자세를 가진 보이지 않는 설정에 제로샷 일반화를 보여줍니다. 또한 우리 솔루션의 고속 기능이 작업 셀 레이아웃 최적화에 사용될 수 있음을 입증하여 솔루션 시간을 개선합니다. 플래너의 속도와 확장성은 동적 작업 세트에 대한 빠른 적응이 필요한 내결함성 플래닝 및 온라인 인식 기반 재플래닝과 같은 새로운 기능의 문을 열어줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>현대 로봇 제조는 장애물이 많은 공유 작업 공간에서 여러 로봇이 충돌 없이 협력하여 수많은 작업을 완료해야 합니다. 개별 작업은 단독으로는 단순할 수 있지만, 시공간적 제약 하에서 자동화된 공동 작업 할당, 스케줄링 및 모션 플래닝은 실제 규모에서 고전적 방법으로는 계산적으로 다루기 어렵습니다. 산업 현장에 배치된 기존 다중 암 시스템은 인간의 직관과 경험에 의존하여 노동 집약적인 과정을 통해 수동으로 실행 가능한 궤적을 설계합니다. 이 문제를 해결하기 위해 우리는 강화 학습(RL) 프레임워크를 제안하여 자동화된 작업 및 모션 플래닝을 달성하며, 8대의 로봇이 공유 작업 공간에서 40개의 도달 작업을 수행하는 장애물이 많은 환경에서 테스트되었습니다. 여기서 모든 로봇은 모든 작업을 어떤 순서로든 수행할 수 있습니다. 우리의 접근 방식은 다양한 장애물 배치, 로봇 구성 및 작업 분포를 가진 절차적으로 생성된 환경에서 RL을 통해 훈련된 그래프 신경망(GNN) 정책을 기반으로 합니다. 이는 장면의 그래프 표현과 강화 학습을 통해 훈련된 그래프 정책 신경망을 사용하여 여러 로봇의 궤적을 생성하며, 작업 할당, 스케줄링 및 모션 플래닝의 하위 문제를 공동으로 해결합니다. 시뮬레이션에서 대규모 무작위 생성 작업 세트로 훈련된 우리의 정책은 다양한 로봇 배치, 장애물 형상 및 작업 자세를 가진 보이지 않는 설정에 제로샷 일반화를 보여줍니다. 또한 우리 솔루션의 고속 기능이 작업 셀 레이아웃 최적화에 사용될 수 있음을 입증하여 솔루션 시간을 개선합니다. 플래너의 속도와 확장성은 동적 작업 세트에 대한 빠른 적응이 필요한 내결함성 플래닝 및 온라인 인식 기반 재플래닝과 같은 새로운 기능의 문을 열어줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_lai_roboballet_planning_for_multi_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

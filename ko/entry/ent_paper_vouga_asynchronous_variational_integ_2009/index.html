@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>접촉 역학을 위한 상호작용 포텐셜의 비동기 변분 적분법 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">접촉 역학을 위한 상호작용 포텐셜의 비동기 변분 적분법</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>접촉 역학을 위한 상호작용 포텐셜의 비동기 변분 적분법</h1>
+      <p class="entry-name-en">Asynchronous Variational Integration of Interaction Potentials for Contact Mechanics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/0907.0706v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>비동기 변분 적분기(AVI)를 페널티 접촉력과 같은 상호작용 포텐셜로 확장하고, 완화된 가정 하에서 다중심플렉틱성을 증명하며, 비동기 접촉 역학(ACM) 프레임워크를 통해 얇은 구-판 충격에서 장기 에너지 안정성을 검증한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/0907.0706" target="_blank" rel="noopener">Asynchronous Variational Integration of Interaction Potentials for Contact Mechanics</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>비동기 변분 적분기(AVI)는 장시간 동안 우수한 에너지 거동을 보여주었습니다. 이 놀라운 특성은 기하학적 성질, 즉 이산 다중 심플렉틱 형식을 보존하기 때문이라는 추측이 있었습니다. AVI의 다중 심플렉틱성에 대한 기존 증명은 퍼텐셜이 탄성 유형, 즉 재료 영역에 대한 부피 적분으로 지정된다고 가정하는데, 이는 기계적 접촉을 모델링하는 데 사용되는 페널티 힘과 같은 상호작용 유형 퍼텐셜에 의해 위반됩니다. 우리는 AVI 다중 심플렉틱성 증명을 확장하여 퍼텐셜 유형에 대한 완화된 가정 하에서도 AVI가 다중 심플렉틱성을 유지함을 보여줍니다. 따라서 확장된 이론은 [3]의 알고리즘을 사용하여 탄성체(예: 얇은 쉘) 및 다물체 시스템(예: 입상 재료)에서 기계적 접촉 시뮬레이션을 장시간 동안 보존량(에너지, 운동량)의 드리프트 없이 수용합니다. 우리는 시뮬레이션된 접촉의 장시간 에너지 거동을 측정한 수치 실험 데이터를 제시하며, 상호작용 퍼텐셜의 다중 심플렉틱 적분에 기반한 방법을 최근 제안된 얇은 쉘 접촉 방법과 비교합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>비동기 변분 적분기(AVI)는 장시간 동안 우수한 에너지 거동을 보여주었습니다. 이 놀라운 특성은 기하학적 성질, 즉 이산 다중 심플렉틱 형식을 보존하기 때문이라는 추측이 있었습니다. AVI의 다중 심플렉틱성에 대한 기존 증명은 퍼텐셜이 탄성 유형, 즉 재료 영역에 대한 부피 적분으로 지정된다고 가정하는데, 이는 기계적 접촉을 모델링하는 데 사용되는 페널티 힘과 같은 상호작용 유형 퍼텐셜에 의해 위반됩니다. 우리는 AVI 다중 심플렉틱성 증명을 확장하여 퍼텐셜 유형에 대한 완화된 가정 하에서도 AVI가 다중 심플렉틱성을 유지함을 보여줍니다. 따라서 확장된 이론은 [3]의 알고리즘을 사용하여 탄성체(예: 얇은 쉘) 및 다물체 시스템(예: 입상 재료)에서 기계적 접촉 시뮬레이션을 장시간 동안 보존량(에너지, 운동량)의 드리프트 없이 수용합니다. 우리는 시뮬레이션된 접촉의 장시간 에너지 거동을 측정한 수치 실험 데이터를 제시하며, 상호작용 퍼텐셜의 다중 심플렉틱 적분에 기반한 방법을 최근 제안된 얇은 쉘 접촉 방법과 비교합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8_1_3/">非线性分析与稳定性</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vouga_asynchronous_variational_integ_2009"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8/">
+          <span class="entry-type">방법</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">방법</span>
+          <h3>유한요소해석(FEA)</h3>
+          <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>非线性分析与稳定性</h3>
+          <p>屈曲模态、大变形下的应力/应变</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</h1>
+      <p class="entry-name-en">Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.08246v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2504.08246" target="_blank" rel="noopener">Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>강화 학습(RL)은 다리 로봇을 위한 민첩하고 적응 가능한 제어기를 훈련하는 데 큰 잠재력을 보여주며, 경험을 통해 직접 복잡한 보행 동작을 학습할 수 있게 합니다. 그러나 시뮬레이션에서 훈련된 정책은 무한한 액추에이터 대역폭과 토크 제한 부재와 같은 비현실적인 가정으로 인해 실제 로봇에 전이되지 못하는 경우가 많습니다. 이러한 조건은 정책이 급격하고 고주파의 토크 변화에 의존하게 하며, 이는 유한한 대역폭을 가진 실제 액추에이터에서는 실현 불가능합니다. 전통적인 방법은 관절 속도, 가속도 및 에너지 소비와 같은 정규화 보상을 통해 공격적인 움직임을 제재함으로써 이 문제를 해결하지만, 광범위한 하이퍼파라미터 튜닝이 필요합니다. 대안으로, Lipschitz 제약 정책(LCP)은 정책 기울기를 제재하여 유한 대역폭 동작 제어를 강제하지만, 기울기 계산에 의존하여 상당한 GPU 메모리 오버헤드를 초래합니다. 이 한계를 극복하기 위해, 본 연구는 Lipschitz 연속성을 강제하기 위한 효율적인 대안으로 스펙트럼 정규화(SN)를 제안합니다. 네트워크 가중치의 스펙트럼 노름을 제약함으로써, SN은 고주파 정책 변동을 효과적으로 제한하면서 GPU 메모리 사용량을 크게 줄입니다. 시뮬레이션 및 실제 인간형 로봇에서의 실험 평가는 SN이 기울기 패널티 방법과 유사한 성능을 달성하면서 더 효율적인 병렬 훈련을 가능하게 함을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>강화 학습(RL)은 다리 로봇을 위한 민첩하고 적응 가능한 제어기를 훈련하는 데 큰 잠재력을 보여주며, 경험을 통해 직접 복잡한 보행 동작을 학습할 수 있게 합니다. 그러나 시뮬레이션에서 훈련된 정책은 무한한 액추에이터 대역폭과 토크 제한 부재와 같은 비현실적인 가정으로 인해 실제 로봇에 전이되지 못하는 경우가 많습니다. 이러한 조건은 정책이 급격하고 고주파의 토크 변화에 의존하게 하며, 이는 유한한 대역폭을 가진 실제 액추에이터에서는 실현 불가능합니다. 전통적인 방법은 관절 속도, 가속도 및 에너지 소비와 같은 정규화 보상을 통해 공격적인 움직임을 제재함으로써 이 문제를 해결하지만, 광범위한 하이퍼파라미터 튜닝이 필요합니다. 대안으로, Lipschitz 제약 정책(LCP)은 정책 기울기를 제재하여 유한 대역폭 동작 제어를 강제하지만, 기울기 계산에 의존하여 상당한 GPU 메모리 오버헤드를 초래합니다. 이 한계를 극복하기 위해, 본 연구는 Lipschitz 연속성을 강제하기 위한 효율적인 대안으로 스펙트럼 정규화(SN)를 제안합니다. 네트워크 가중치의 스펙트럼 노름을 제약함으로써, SN은 고주파 정책 변동을 효과적으로 제한하면서 GPU 메모리 사용량을 크게 줄입니다. 시뮬레이션 및 실제 인간형 로봇에서의 실험 평가는 SN이 기울기 패널티 방법과 유사한 성능을 달성하면서 더 효율적인 병렬 훈련을 가능하게 함을 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_spectral_normalization_for_lip_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

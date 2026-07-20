@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" aria-current="page">首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>人形机器人：从矿山到市场的知识图谱</h1>
+      <p class="hero-subtitle">
+        系统梳理人形机器人全产业链——材料、零部件、制造、设计、AI、软件、数据、测试、量产、应用、市场与政策。
+        探索 2143 个实体与 5892 条关系
+      </p>
+      <div class="hero-search">
+        <form action="/search/" method="get">
+          <input type="search" name="q" placeholder="输入关键词，例如：减速器、特斯拉、VLA…" autocomplete="off">
+          <button type="submit">搜索</button>
+        </form>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number">2143</span>
+          <span class="stat-label">实体</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5892</span>
+          <span class="stat-label">关系</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">26</span>
+          <span class="stat-label">实体类型</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">13</span>
+          <span class="stat-label">领域</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="roadmap-banner">
+      <div>
+        <strong>🛠️ 0→1 造一台人形机器人</strong>
+        <p>面向零基础动手者的实操路线图：从基础筑基、造一个关节、双足平台到完整人形。每一步都链接知识卡片，告诉你做什么、为什么、怎么根据自己的情况分析选型。</p>
+      </div>
+      <a href="/roadmap/" class="btn btn-primary">开始路线图</a>
+    </div>
+    <div class="wiki-banner">
+      <div>
+        <strong>📖 Wiki 项目</strong>
+        <p>本知识图谱是《人形机器人：从矿山到市场》Wiki 的底层数据系统，按“物理层 → 感知层 → 决策层 → 执行层 → 系统层 → 产业层”展开。</p>
+      </div>
+      <a href="/wiki/" class="btn btn-secondary">阅读 Wiki 目录</a>
+    </div>
+    <div class="section-header">
+      <h2>按领域探索</h2>
+      <a href="/search/" class="link-arrow">查看全部 →</a>
+    </div>
+    <div class="domain-grid">
+      
+      <a class="domain-card" href="/search/?domain=00_foundations" style="--domain-color: #7c8798">
+        <span class="domain-name">基础学科</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=01_raw_materials" style="--domain-color: #2a9d8f">
+        <span class="domain-name">原材料</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=02_components" style="--domain-color: #5d8c48">
+        <span class="domain-name">零部件</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=03_manufacturing_processes" style="--domain-color: #c38e3c">
+        <span class="domain-name">制造工艺</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=04_assembly_integration_testing" style="--domain-color: #b3592a">
+        <span class="domain-name">组装集成测试</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=05_mass_production" style="--domain-color: #a84442">
+        <span class="domain-name">量产制造</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=06_design_engineering" style="--domain-color: #7d5a8a">
+        <span class="domain-name">设计工程</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=07_ai_models_algorithms" style="--domain-color: #3d7ea6">
+        <span class="domain-name">AI 模型与算法</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=08_software_middleware" style="--domain-color: #5a8fbd">
+        <span class="domain-name">软件中间件</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=09_data_datasets" style="--domain-color: #2d5a7b">
+        <span class="domain-name">数据与数据集</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=10_evaluation_benchmarks" style="--domain-color: #c9a227">
+        <span class="domain-name">评测基准</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=11_applications_markets" style="--domain-color: #b34d73">
+        <span class="domain-name">应用与市场</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+      <a class="domain-card" href="/search/?domain=12_policy_regulation_ethics" style="--domain-color: #6b5b4f">
+        <span class="domain-name">政策法规伦理</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="container">
+    <div class="section-header">
+      <h2>按类型浏览</h2>
+    </div>
+    <div class="type-cloud">
+      
+      <a class="type-tag" href="/types/algorithm/">算法</a>
+      
+      <a class="type-tag" href="/types/application_scenario/">应用场景</a>
+      
+      <a class="type-tag" href="/types/benchmark/">评测基准</a>
+      
+      <a class="type-tag" href="/types/company/">公司</a>
+      
+      <a class="type-tag" href="/types/component/">零部件</a>
+      
+      <a class="type-tag" href="/types/component_manufacturer/">零部件制造商</a>
+      
+      <a class="type-tag" href="/types/concept/">概念</a>
+      
+      <a class="type-tag" href="/types/dataset/">数据集</a>
+      
+      <a class="type-tag" href="/types/equation/">方程</a>
+      
+      <a class="type-tag" href="/types/formalism/">形式化方法</a>
+      
+      <a class="type-tag" href="/types/foundation/">基础学科</a>
+      
+      <a class="type-tag" href="/types/market_segment/">市场细分</a>
+      
+      <a class="type-tag" href="/types/material/">材料</a>
+      
+      <a class="type-tag" href="/types/method/">方法</a>
+      
+      <a class="type-tag" href="/types/oem/">整机厂商</a>
+      
+      <a class="type-tag" href="/types/operator/">算子</a>
+      
+      <a class="type-tag" href="/types/paper/">论文</a>
+      
+      <a class="type-tag" href="/types/principle/">原理</a>
+      
+      <a class="type-tag" href="/types/report/">报告</a>
+      
+      <a class="type-tag" href="/types/robot_system/">机器人系统</a>
+      
+      <a class="type-tag" href="/types/software_platform/">软件平台</a>
+      
+      <a class="type-tag" href="/types/standard/">标准</a>
+      
+      <a class="type-tag" href="/types/technology/">技术</a>
+      
+      <a class="type-tag" href="/types/theorem/">定理</a>
+      
+      <a class="type-tag" href="/types/tier1_supplier/">Tier 1 供应商</a>
+      
+      <a class="type-tag" href="/types/tool_equipment/">工具设备</a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>精选实体</h2>
+    </div>
+    <div class="entry-grid">
+      
+      <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+        <span class="entry-type">方法</span>
+        <h3>行为克隆</h3>
+        <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        <span class="entry-meta">AI 模型与算法, 数据与数据集</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+        <span class="entry-type">方法</span>
+        <h3>全身控制（WBC）</h3>
+        <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        <span class="entry-meta">AI 模型与算法</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_concept_world_model/">
+        <span class="entry-type">概念</span>
+        <h3>世界模型</h3>
+        <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        <span class="entry-meta">AI 模型与算法</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+        <span class="entry-type">方法</span>
+        <h3>OpenVLA</h3>
+        <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        <span class="entry-meta">AI 模型与算法</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+        <span class="entry-type">方法</span>
+        <h3>Sim-to-Real迁移</h3>
+        <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        <span class="entry-meta">AI 模型与算法</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+        <span class="entry-type">算法</span>
+        <h3>近端策略优化（PPO）</h3>
+        <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        <span class="entry-meta">AI 模型与算法</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+        <span class="entry-type">方法</span>
+        <h3>模型预测控制（MPC）</h3>
+        <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        <span class="entry-meta">AI 模型与算法</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+        <span class="entry-type">方法</span>
+        <h3>动作分块变压器（ACT）</h3>
+        <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        <span class="entry-meta">AI 模型与算法, 数据与数据集</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+        <span class="entry-type">方法</span>
+        <h3>域随机化</h3>
+        <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        <span class="entry-meta">AI 模型与算法, 数据与数据集</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+        <span class="entry-type">评测基准</span>
+        <h3>HumanoidBench</h3>
+        <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        <span class="entry-meta">AI 模型与算法, 评测基准</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_method_task_planning/">
+        <span class="entry-type">方法</span>
+        <h3>任务规划</h3>
+        <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        <span class="entry-meta">AI 模型与算法</span>
+      </a>
+      
+      <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+        <span class="entry-type">方法</span>
+        <h3>扩散策略</h3>
+        <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        <span class="entry-meta">AI 模型与算法, 数据与数据集</span>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2>关系图谱</h2>
+        <p>系统梳理人形机器人全产业链——材料、零部件、制造、设计、AI、软件、数据、测试、量产、应用、市场与政策。</p>
+      </div>
+      <a href="/graph/" class="btn btn-primary">打开关系图谱</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zero Moment Point (ZMP) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/principle/">Principle</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Zero Moment Point (ZMP)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Principle</div>
+      <h1>Zero Moment Point (ZMP)</h1>
+      <p class="entry-name-en">Zero Moment Point (ZMP)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡 by scripts/backfill_nonpaper_entries.py. Body backfilled from chapter-08.md section &#39;8.4.4 零力矩点（ZMP）与动态平衡&#39; by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A point on the ground where the horizontal moment of the ground reaction force about it is zero; widely used as a dynamic stability criterion for bipedal walking.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1142/S0219843604000083" target="_blank" rel="noopener">M. Vukobratović and B. Borovac, Zero-Moment Point — Thirty Five Years of Its Life, IJHR, 2004</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1109/TSMCA.2004.832811" target="_blank" rel="noopener">P. Sardain and G. Bessonnet, Forces Acting on a Biped Robot. Center of Pressure—Zero Moment Point, IEEE Trans. SMC-A, 2004</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">is_based_on</span>
+            <a href="/en/entry/ent_formalism_euler_lagrange_equations/">Euler-Lagrange Equations</a>
+            
+              
+                
+              
+              <span class="rel-desc">The ZMP condition is derived from the moment balance of the robot&#39;s equations of motion, commonly expressed via Euler-Lagrange or Newton-Euler dynamics.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>A ground point where the horizontal component of the ground reaction force moment is zero, commonly used to assess the dynamic walking stability of bipedal robots.</p>
+<h2 id="content">Content</h2>
+<h3 id="844-zero-moment-point-zmp-and-dynamic-balance">8.4.4 Zero Moment Point (ZMP) and Dynamic Balance</h3>
+<p>The <strong>Zero Moment Point (ZMP)</strong> is a point on the ground where the horizontal moment component generated by the ground reaction force is zero[43][44]. ZMP serves as the core criterion for dynamic balance in humanoid robots: if the ZMP lies within the support polygon, the robot theoretically will not tip over around the edge of the ground.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Zero Moment Point (ZMP), Support Polygon, Ground Reaction Force, Dynamic Balance</p>
+<ul>
+<li><strong>Zero Moment Point (ZMP)</strong>: The equivalent point of action of the ground reaction force, with zero horizontal moment component.</li>
+<li><strong>Support Polygon</strong>: The convex hull formed by the contact points between the foot and the ground.</li>
+<li><strong>Ground Reaction Force (GRF)</strong>: The force exerted by the ground on the foot.</li>
+<li><strong>Dynamic Balance</strong>: The ability to maintain stability without falling during motion.</li>
+</ul>
+</div>
+<p>In a simplified model, assuming a constant center of mass height <span class="arithmatex">\(z_c\)</span>, the ZMP coordinates are:</p>
+<div class="arithmatex">\[
+x_{\text{ZMP}} = x_{\text{CoM}} - \frac{z_c}{g} \ddot{x}_{\text{CoM}}
+\]</div>
+<div class="arithmatex">\[
+y_{\text{ZMP}} = y_{\text{CoM}} - \frac{z_c}{g} \ddot{y}_{\text{CoM}}
+\]</div>
+<p>where <span class="arithmatex">\(g\)</span> is the gravitational acceleration, and <span class="arithmatex">\(\ddot{x}_{\text{CoM}}\)</span>, <span class="arithmatex">\(\ddot{y}_{\text{CoM}}\)</span> are the horizontal accelerations of the center of mass.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Center of Mass Height, Horizontal Acceleration, Gravitational Acceleration, Convex Hull</p>
+<ul>
+<li><strong>Center of Mass Height (CoM height)</strong>: The vertical distance from the center of mass to the ground.</li>
+<li><strong>Horizontal Acceleration</strong>: The acceleration component of the center of mass in the horizontal plane.</li>
+<li><strong>Gravitational Acceleration</strong>: <span class="arithmatex">\(g \approx 9.81\ \text{m/s}^2\)</span>.</li>
+<li><strong>Convex Hull</strong>: The smallest convex set containing a set of points.</li>
+</ul>
+</div>
+<h3 id="applicability-boundaries-of-the-zmp-criterion">Applicability Boundaries of the ZMP Criterion</h3>
+<p>Although ZMP is a classic criterion for dynamic balance in bipedal robots, it relies on assumptions of flat ground and rigid contact. On complex terrain, with multiple contact points, or under external disturbances, comprehensive stability assessment requires combining methods such as capture points, momentum control, and whole-body control. Furthermore, ZMP only guarantees no tipping over the support boundary and does not directly ensure global dynamic feasibility; thus, it is often used in conjunction with trajectory optimization and preview control.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_formalism_euler_lagrange_equations/">Euler-Lagrange Equations</a>
+              <span class="rel-desc">The ZMP condition is derived from the moment balance of the robot&#39;s equations of motion, commonly expressed via Euler-Lagrange dynamics.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_harmonic_reducer_2024/">Harmonic Reducer</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_forward_kinematics/">Forward Kinematics</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_gait_planning/">Gait Planning</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_concept_digital_twin/">Digital Twin</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_formalism_floating_base_dynamics/">Floating-Base Dynamics</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_formalism_floating_base_dynamics/">Floating-Base Dynamics</a>
+              <span class="rel-desc">Cross-layer link defined in Wiki chapter 8.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_inverse_kinematics/">Inverse Kinematics</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_capture_point/">Capture Point</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_concept_demo_to_product_gap/">Demo-to-Product Gap</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Demo-to-Product Gap mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shafiee_online_dcm_trajectory_generati_2019/">Online DCM Trajectory Generation for Push Recovery of Torque-Controlled Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Online DCM Trajectory Generation for Push Recovery of Torque-Controlled Humanoid Robots mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p7_2_1/">Basic standing and walking simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Basic standing and walking simulation mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_quasi_direct_drive_for_low_cos_2019/">Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_evolutionary_continuous_adapti_2025/">Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shaker_developing_a_robotic_surgery_t_2026/">Developing a Robotic Surgery Training System for Wide Accessibility and Research</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Developing a Robotic Surgery Training System for Wide Accessibility and Research discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_the_duke_humanoid_design_and_c_2024/">The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_subsystem_leg_mechanism/">Leg Mechanism</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Leg Mechanism uses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mosaic_bridging_the_sim_to_rea_2026/">MOSAIC: Bridging the Sim-to-Real Gap in Generalist Humanoid Motion Tracking and Teleoperation with Rapid Residual Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MOSAIC: Bridging the Sim-to-Real Gap in Generalist Humanoid Motion Tracking and Teleoperation with Rapid Residual Adaptation discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10/">Motion Control Algorithm Development and Validation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Motion Control Algorithm Development and Validation mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_x2_n_a_transformable_wheel_leg_2026/">X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_explosive_output_to_enhance_ju_2025/">Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_embracing_evolution_a_call_for_2025/">Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_drama_trunk_pitch_oscillations_for_j_2019/">Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_design_of_a_flying_humanoid_ro_2021/">Design of a Flying Humanoid Robot Based on Thrust Vector Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Design of a Flying Humanoid Robot Based on Thrust Vector Control discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_farazi_nimbro_robots_winning_robocup_2019/">NimbRo Robots Winning RoboCup 2018 Humanoid AdultSize Soccer Competitions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">NimbRo Robots Winning RoboCup 2018 Humanoid AdultSize Soccer Competitions uses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_whole_body_locomotion_2025/">Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement Learning mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_principle_capture_point/">Capture Point</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Capture Point mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_four_simple_proprioceptive_est_2026/">Four Simple Proprioceptive Estimators for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Four Simple Proprioceptive Estimators for Legged Robots uses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_202411_zeroth_bot_2024/">2024.11, Zeroth Bot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">2024.11, Zeroth Bot discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_toward_humanoid_brain_body_co_2025/">Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_2_2/">Gait Planning and Terrain Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Gait Planning and Terrain Adaptation mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10_2_1/">Standing and Anti-Interference Balance Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Standing and Anti-Interference Balance Control mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rpl_learning_robust_humanoid_p_2026/">RPL: Learning Robust Humanoid Perceptive Locomotion on Challenging Terrains</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RPL: Learning Robust Humanoid Perceptive Locomotion on Challenging Terrains discusses Zero Moment Point (ZMP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_floating_base_dynamics/">Floating-Base Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_forward_kinematics/">Forward Kinematics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_inverse_kinematics/">Inverse Kinematics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_principle_zero_moment_point"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_farazi_nimbro_robots_winning_robocup_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>NimbRo Robots Winning RoboCup 2018 Humanoid AdultSize Soccer Competitions</h3>
+          <p>This paper presents the open-source hardware and software designs that enabled Team NimbRo to win…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_evolutionary_continuous_adapti_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance</h3>
+          <p>Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">Formalism</span>
+          <h3>Euler-Lagrange Equations</h3>
+          <p>Second-order differential equations derived from the stationarity of the action integral, giving the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_quasi_direct_drive_for_low_cos_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation</h3>
+          <p>Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work on hardware design for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_whole_body_locomotion_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement Learning</h3>
+          <p>Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement Learning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mosaic_bridging_the_sim_to_rea_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MOSAIC: Bridging the Sim-to-Real Gap in Generalist Humanoid Motion Tracking and Teleoperation with Rapid Residual Adaptation</h3>
+          <p>MOSAIC mainly solves the data closed loop: it uses the body state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Forward Kinematics</h3>
+          <p>The computation of end-effector position and orientation from given joint angles, using a chain of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_digital_twin/">
+          <span class="entry-type">Concept</span>
+          <h3>Digital Twin</h3>
+          <p>A virtual replica of a physical asset or process that is continuously synchronized with real-world…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Gait Planning and Terrain Adaptation</h3>
+          <p>Data on level-ground, sloped, and obstacle-crossing walking, as well as speed and energy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_four_simple_proprioceptive_est_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Four Simple Proprioceptive Estimators for Legged Robots</h3>
+          <p>Four Simple Proprioceptive Estimators for Legged Robots is a paper on State Estimation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_the_duke_humanoid_design_and_c_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics</h3>
+          <p>The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Standing and Anti-Interference Balance Control</h3>
+          <p>Video of the standing anti-interference physical prototype; its recovery capability meets the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_design_of_a_flying_humanoid_ro_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Design of a Flying Humanoid Robot Based on Thrust Vector Control</h3>
+          <p>This paper presents Jet-HR2, a life-sized flying humanoid robot propelled by four ducted fans and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_subsystem_leg_mechanism/">
+          <span class="entry-type">Component</span>
+          <h3>Leg Mechanism</h3>
+          <p>The kinematic and structural design of the leg linkage, including hip, knee, and ankle joints, that…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_drama_trunk_pitch_oscillations_for_j_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots</h3>
+          <p>This 2019 arXiv paper by Drama and Badri-Spröwitz uses a trunk-equipped spring-loaded inverted…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_x2_n_a_transformable_wheel_leg_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation</h3>
+          <p>X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_capture_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Capture Point</h3>
+          <p>A point on the ground where the robot must step to bring itself to a complete stop, used as a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shaker_developing_a_robotic_surgery_t_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Developing a Robotic Surgery Training System for Wide Accessibility and Research</h3>
+          <p>This paper presents RoboScope, a low-cost master-slave robotic laparoscopy training system that uses…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10/">
+          <span class="entry-type">Method</span>
+          <h3>Motion Control Algorithm Development and Validation</h3>
+          <p>Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p7_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Basic standing and walking simulation</h3>
+          <p>Simulation video, stable walking 10m, steering/ramp passing</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shafiee_online_dcm_trajectory_generati_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Online DCM Trajectory Generation for Push Recovery of Torque-Controlled Humanoid Robots</h3>
+          <p>This paper presents an online step adapter for push recovery in bipedal walking that modifies the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">Formalism</span>
+          <h3>Floating-Base Dynamics</h3>
+          <p>A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_embracing_evolution_a_call_for_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot</h3>
+          <p>Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_explosive_output_to_enhance_ju_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint</h3>
+          <p>Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rpl_learning_robust_humanoid_p_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>RPL: Learning Robust Humanoid Perceptive Locomotion on Challenging Terrains</h3>
+          <p>RPL first recovers the scene, object, or motion representation from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Inverse Kinematics</h3>
+          <p>The computation of joint angles that realize a desired end-effector pose, often solved numerically…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_202411_zeroth_bot_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>2024.11, Zeroth Bot</h3>
+          <p>2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_toward_humanoid_brain_body_co_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery</h3>
+          <p>Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">Method</span>
+          <h3>Finite Element Analysis (FEA)</h3>
+          <p>A numerical method for predicting stress, deformation, vibration modes, and thermal behavior by…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_harmonic_reducer_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Harmonic Reducer</h3>
+          <p>Compact precision gearbox with high reduction ratio and near-zero backlash, widely used in robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_demo_to_product_gap/">
+          <span class="entry-type">Concept</span>
+          <h3>Demo-to-Product Gap</h3>
+          <p>The systematic gap between metrics optimized for staged demonstrations and those required for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_gait_planning/">
+          <span class="entry-type">Method</span>
+          <h3>Gait Planning</h3>
+          <p>The generation of footstep sequences, timing, and phase transitions that produce stable and…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#844-zero-moment-point-zmp-and-dynamic-balance">8.4.4 Zero Moment Point (ZMP) and Dynamic Balance</a></li>
+<li><a href="#applicability-boundaries-of-the-zmp-criterion">Applicability Boundaries of the ZMP Criterion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

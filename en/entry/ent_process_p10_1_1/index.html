@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IMU and joint encoder fusion · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">IMU and joint encoder fusion</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>IMU and joint encoder fusion</h1>
+      <p class="entry-name-en">IMU and joint encoder fusion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>State estimator, measured trajectory error &amp;lt;target, standing drift controllable</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p><strong>Phase/Work Package</strong>: Motion Control Algorithm Development and Verification (Motion Control)</p>
+<h2 id="content">Content</h2>
+<p><strong>Methods/Tools</strong>: EKF/UKF/Madgwick, Zero-Velocity Update, Joint Kinematics Integration</p>
+<p><strong>Design Thinking Logic</strong>: Real-time estimation of center of mass position, velocity, and attitude; serves as the foundation for balance control</p>
+<p><strong>Key Constraints</strong>: Sensor latency, covariance tuning, foot slippage</p>
+<p><strong>Completion Criteria/Deliverables</strong>: State estimator, measured trajectory error &lt; target, standing drift controllable</p>
+<p><strong>Level-3 Subtasks and Level-4 Key Actions:</strong></p>
+<ul>
+<li>P10.1.1.1 Input Review and Target Quantification</li>
+<li>
+<p>Organize upstream inputs, reference standards, and resources required for "IMU and Joint Encoder Fusion," convert completion criteria into quantifiable acceptance indicators, and define the owner and milestones.</p>
+<ul>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task owner, timeline, and risk register</li>
+</ul>
+</li>
+<li>
+<p>P10.1.1.2 Scheme/Method Design</p>
+</li>
+<li>
+<p>Develop implementation methods or candidate schemes for "IMU and Joint Encoder Fusion," using "EKF/UKF/Madgwick, Zero-Velocity Update, Joint Kinematics Integration" for demonstration, and clarify the technical roadmap and resource requirements.</p>
+<ul>
+<li>Generate at least two candidate schemes</li>
+<li>Establish an evaluation matrix with quantitative scoring</li>
+<li>Organize a review and freeze the scheme</li>
+</ul>
+</li>
+<li>
+<p>P10.1.1.3 Implementation/Prototype/Sample Fabrication</p>
+</li>
+<li>
+<p>Execute the implementation of "IMU and Joint Encoder Fusion" according to the design scheme, produce prototypes, samples, or complete key steps, and record process data.</p>
+<ul>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+</ul>
+</li>
+<li>
+<p>P10.1.1.4 Verification and Issue Closure</p>
+</li>
+<li>
+<p>Verify the output of "IMU and Joint Encoder Fusion," check whether it meets completion criteria, record issues, and track them until closure.</p>
+<ul>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+</ul>
+</li>
+<li>
+<p>P10.1.1.5 Documentation Output and Downstream Delivery</p>
+</li>
+<li>Output the final report/drawings/specifications for "IMU and Joint Encoder Fusion," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.<ul>
+<li>Write documents according to templates and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Publish and notify downstream dependents</li>
+</ul>
+</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_joint_encoder_2024/">Joint Encoder</a>
+              <span class="rel-desc">IMU and joint encoder fusion uses Joint Encoder.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p10/">Motion Control Algorithm Development and Validation</a>
+              <span class="rel-desc">IMU and joint encoder fusion is part of Motion Control Algorithm Development and Validation.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_adaptive_invariant_extended_ka_2026/">Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_inekformer_a_hybrid_state_esti_2025/">InEKFormer: A Hybrid State Estimator for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">InEKFormer: A Hybrid State Estimator for Humanoid Robots discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_suzuki_attitude_estimation_free_gnss_2023/">Attitude-Estimation-Free GNSS and IMU Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Attitude-Estimation-Free GNSS and IMU Integration discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_contact_aided_invariant_extend_2019/">Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation mentions IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion: An optimization-based multi-sensor state estimator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VINS-Fusion: An optimization-based multi-sensor state estimator discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_the_invariant_extended_kalman_2014/">The invariant extended Kalman filter as a stable observer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">The invariant extended Kalman filter as a stable observer discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_autoodom_learning_auto_regress_2025/">AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lee_attention_based_neural_augment_2026/">Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_contact_aided_invariant_extend_2026/">Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation mentions IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_contact_representatio_2026/">Learning Contact Representation for Leg Odometry</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Learning Contact Representation for Leg Odometry discusses IMU and joint encoder fusion.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Gaze Stabilization for Humanoid Robots: a Comprehensive Framework uses IMU and joint encoder fusion.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p10_1_1"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_roncone_gaze_stabilization_for_humanoi_2014/">
+          <span class="entry-type">Paper</span>
+          <h3>Gaze Stabilization for Humanoid Robots: a Comprehensive Framework</h3>
+          <p>This paper proposes a gaze stabilization framework for humanoid robots that combines a kinematic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_inekformer_a_hybrid_state_esti_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>InEKFormer: A Hybrid State Estimator for Humanoid Robots</h3>
+          <p>InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on state estimation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10/">
+          <span class="entry-type">Method</span>
+          <h3>Motion Control Algorithm Development and Validation</h3>
+          <p>Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM</h3>
+          <p>ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_autoodom_learning_auto_regress_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</h3>
+          <p>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_contact_representatio_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Contact Representation for Leg Odometry</h3>
+          <p>Learning Contact Representation for Leg Odometry is a paper on State Estimation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>VINS-Fusion: An optimization-based multi-sensor state estimator</h3>
+          <p>VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_the_invariant_extended_kalman_2014/">
+          <span class="entry-type">Paper</span>
+          <h3>The invariant extended Kalman filter as a stable observer</h3>
+          <p>The invariant extended Kalman filter as a stable observer is a 2014 work on state estimation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_contact_aided_invariant_extend_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation</h3>
+          <p>Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation is a 2019 work on state…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_suzuki_attitude_estimation_free_gnss_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Attitude-Estimation-Free GNSS and IMU Integration</h3>
+          <p>Proposes an optimization-based GNSS/IMU integration method that avoids attitude estimation by using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</h3>
+          <p>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_mobile_robot_hand_arm_teleop_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU</h3>
+          <p>A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adaptive_invariant_extended_ka_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</h3>
+          <p>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation is a paper on State…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_contact_aided_invariant_extend_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation</h3>
+          <p>Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation is a paper on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_joint_encoder_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Joint Encoder</h3>
+          <p>Position or velocity sensor mounted on a robot joint to provide high-resolution feedback for motor…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lee_attention_based_neural_augment_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Attention-Based Neural-Augmented Kalman Filter for Legged Robot State Estimation</h3>
+          <p>Proposes AttenNKF, an Invariant Extended Kalman Filter augmented with a cross-attention neural…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

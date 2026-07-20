@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Torque Density · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/concept/">Concept</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Torque Density</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Concept</div>
+      <h1>Torque Density</h1>
+      <p class="entry-name-en">Torque Density</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The ratio of continuous output torque to actuator mass or volume, a key figure of merit for compact, high-performance humanoid joints.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<h3 id="412-power-density-torque-density-and-dynamic-response">4.1.2 Power Density, Torque Density, and Dynamic Response</h3>
+<h2 id="content">Content</h2>
+<p>Treating the actuator as an energy conversion device, its core indicators can be summarized into two points:</p>
+<ol>
+<li><strong>Torque density</strong> <span class="arithmatex">\(\tau_d = \tau_{\text{peak}} / m\)</span> (unit: N·m/kg) or N·m/L, measuring how much torque can be generated per unit mass/volume.</li>
+<li><strong>Power density</strong> <span class="arithmatex">\(P_d = P_{\text{peak}} / m\)</span> (unit: W/kg), measuring how much mechanical power can be output per unit mass.</li>
+</ol>
+<p>The two are related through motor speed:</p>
+<div class="arithmatex">\[
+P = \tau \, \omega
+\]</div>
+<p>where <span class="arithmatex">\(\omega\)</span> is the angular velocity (rad/s). The motor itself typically operates most efficiently in the high-speed, low-torque region; robot joints require low speed and high torque, thus necessitating a reducer for "torque amplification." This matching is the core of the subsequent discussion in this chapter.</p>
+<p>The dynamic response of a robot can also be described by the <strong>mechanical time constant</strong>:</p>
+<div class="arithmatex">\[
+\tau_m = \frac{J \, R}{k_t^2}
+\]</div>
+<p>where <span class="arithmatex">\(J\)</span> is the equivalent moment of inertia of the rotor and load, <span class="arithmatex">\(R\)</span> is the armature resistance, and <span class="arithmatex">\(k_t\)</span> is the torque constant. The smaller the time constant, the faster the motor accelerates and decelerates.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Moment of Inertia, Mechanical Time Constant, Torque Constant</p>
+<ul>
+<li><strong>Moment of inertia</strong>: The resistance of an object to angular acceleration, analogous to mass in linear motion. The farther from the axis of rotation and the greater the mass, the larger the moment of inertia. Unit: kg·m².</li>
+<li><strong>Mechanical time constant</strong>: The time required for a motor to accelerate from rest to approximately 63% of its steady-state speed, reflecting the speed of mechanical response.</li>
+<li><strong>Torque constant</strong>: The proportionality coefficient between motor current and generated torque, <span class="arithmatex">\(\tau = k_t I\)</span>. Unit: N·m/A, its magnitude depends on the magnetic field strength and the effective length of the winding.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart LR
+    A["Task Requirements<br/>Torque Speed Bandwidth"] --&gt; B["Motor Body<br/>High Speed Low Torque"]
+    B --&gt; C["Transmission Mechanism<br/>Speed Reduction Torque Increase"]
+    C --&gt; D["Joint Output<br/>Low Speed High Torque"]
+    E["Mass/Volume Constraints"] --&gt; B
+    E --&gt; C
+    F["Heat and Endurance"] --&gt; G["Efficiency and Losses"]
+    G --&gt; B
+    G --&gt; C</p>
+<h2 id="_1">개요</h2>
+<h3 id="412">4.1.2 출력 밀도, 토크 밀도 및 동적 응답</h3>
+<h2 id="_2">핵심 내용</h2>
+<p>액추에이터를 에너지 변환 장치로 간주할 때, 핵심 지표는 다음 두 가지로 요약할 수 있습니다:</p>
+<ol>
+<li><strong>토크 밀도</strong> <span class="arithmatex">\(\tau_d = \tau_{\text{peak}} / m\)</span> (단위: N·m/kg) 또는 N·m/L로, 단위 질량/부피당 발생할 수 있는 토크를 측정합니다.</li>
+<li><strong>출력 밀도</strong> <span class="arithmatex">\(P_d = P_{\text{peak}} / m\)</span> (단위: W/kg)로, 단위 질량당 출력할 수 있는 기계적 동력을 측정합니다.</li>
+</ol>
+<p>이 두 지표는 모터 회전 속도를 통해 다음과 같이 연결됩니다:</p>
+<div class="arithmatex">\[
+P = \tau \, \omega
+\]</div>
+<p>여기서 <span class="arithmatex">\(\omega\)</span>는 각속도(rad/s)입니다. 모터 본체는 일반적으로 고회전, 저토크 영역에서 가장 효율적으로 작동합니다. 로봇 관절은 저회전, 고토크를 필요로 하므로, 반드시 감속기를 통해 "토크 증폭"을 해야 합니다. 이러한 매칭이 이 장의 핵심 논의 주제입니다.</p>
+<p>로봇의 동적 응답은 <strong>기계적 시상수</strong>로도 설명할 수 있습니다:</p>
+<div class="arithmatex">\[
+\tau_m = \frac{J \, R}{k_t^2}
+\]</div>
+<p>여기서 <span class="arithmatex">\(J\)</span>는 회전자와 부하의 등가 관성 모멘트, <span class="arithmatex">\(R\)</span>은 전기자 저항, <span class="arithmatex">\(k_t\)</span>는 토크 상수입니다. 시상수가 작을수록 모터의 가속 및 감속이 빠릅니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 관성 모멘트, 기계적 시상수, 토크 상수</p>
+<ul>
+<li><strong>관성 모멘트(moment of inertia)</strong>: 물체가 각가속도에 저항하는 능력으로, 병진 운동에서의 질량에 비유됩니다. 회전축에서 멀어질수록, 질량이 클수록 관성 모멘트가 커집니다. 단위는 kg·m²입니다.</li>
+<li><strong>기계적 시상수(mechanical time constant)</strong>: 모터가 정지 상태에서 약 63% 정상 속도까지 가속하는 데 걸리는 시간으로, 기계적 응답 속도를 나타냅니다.</li>
+<li><strong>토크 상수(torque constant)</strong>: 모터 전류와 발생 토크 사이의 비례 계수로 <span class="arithmatex">\(\tau = k_t I\)</span>입니다. 단위는 N·m/A이며, 그 크기는 자기장 강도와 권선 유효 길이에 따라 달라집니다.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart LR
+    A["작업 요구<br/>토크 속도 대역폭"] --&gt; B["모터 본체<br/>고속 저토크"]
+    B --&gt; C["전동 기구<br/>감속 증토크"]
+    C --&gt; D["관절 출력<br/>저속 고토크"]
+    E["질량/부피 제약"] --&gt; B
+    E --&gt; C
+    F["열과 배터리 지속 시간"] --&gt; G["효율과 손실"]
+    G --&gt; B
+    G --&gt; C</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">combines with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_rv_reducer/">RV Reducer</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 4. </span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">combines with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_harmonic_reducer_2024/">Harmonic Reducer</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 4. </span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_field_oriented_control/">Field-Oriented Control</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">combines with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_planetary_roller_screw/">Planetary Roller Screw</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 4. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_cervettini_a_framework_for_optimal_ankle_2025/">A Framework for Optimal Ankle Design of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Framework for Optimal Ankle Design of Humanoid Robots discusses Torque Density.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_metric_torque_density"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cervettini_a_framework_for_optimal_ankle_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Framework for Optimal Ankle Design of Humanoid Robots</h3>
+          <p>Proposes a unified methodology for designing and evaluating parallel ankle mechanisms for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control</h3>
+          <p>A motor control technique that transforms three-phase stator currents into a rotating d-q reference…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">Component</span>
+          <h3>Planetary Roller Screw</h3>
+          <p>A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_rv_reducer/">
+          <span class="entry-type">Component</span>
+          <h3>RV Reducer</h3>
+          <p>A high-rigidity, high-torque cycloidal reducer widely used in heavy-load robot joints, especially…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control (FOC)</h3>
+          <p>A motor-control method that transforms three-phase currents into a rotating dq reference frame to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_harmonic_reducer_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Harmonic Reducer</h3>
+          <p>Compact precision gearbox with high reduction ratio and near-zero backlash, widely used in robot…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#412-power-density-torque-density-and-dynamic-response">4.1.2 Power Density, Torque Density, and Dynamic Response</a></li>
+</ul>
+</li>
+<li><a href="#content">Content</a></li>
+<li><a href="#_1">개요</a><ul>
+<li><a href="#412">4.1.2 출력 밀도, 토크 밀도 및 동적 응답</a></li>
+</ul>
+</li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

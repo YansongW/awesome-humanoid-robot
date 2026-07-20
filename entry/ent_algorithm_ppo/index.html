@@ -1,0 +1,3034 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>近端策略优化（PPO） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/algorithm/">算法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">近端策略优化（PPO）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">算法</div>
+      <h1>近端策略优化（PPO）</h1>
+      <p class="entry-name-en">Proximal Policy Optimization (PPO)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">阶段 2 · 双足平台</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="ppo">近端策略优化（PPO）的定义与定位</h3>
+<p>近端策略优化（PPO）属于 <strong>算法</strong> 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。 英文名称为 <em>Proximal Policy Optimization (PPO)</em>。 韩文名称为 <em>근위 정책 최적화(PPO)</em>。</p>
+<h3 id="ppo_1">近端策略优化（PPO）的数学与原理基础</h3>
+<p>近端策略优化（PPO）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，近端策略优化（PPO）通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_2">算法步骤与实现要点</h3>
+<p>在实际实现近端策略优化（PPO）时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_3">典型应用与局限性</h3>
+<p>近端策略优化（PPO）可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_4">相关标签</h3>
+<ul>
+<li>algorithm</li>
+<li>chapter_15</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_5">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键算法之一，近端策略优化（PPO）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_convex_optimization/">凸优化</a>
+              <span class="rel-desc">近端策略优化（PPO）前置依赖凸优化。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_probability_theory/">概率论</a>
+              <span class="rel-desc">近端策略优化（PPO）前置依赖概率论。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+              <span class="rel-desc">近端策略优化（PPO）前置依赖线性代数。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bao_sim_to_real_transfer_in_deep_r_2025/">双足运动深度强化学习中的仿真到现实迁移</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">双足运动深度强化学习中的仿真到现实迁移discusses近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_spectral_normalization_for_lip_2025/">Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhu_wmpo_world_model_based_policy_2025/">WMPO</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">WMPO使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_locomotion_on_discret_2026/">Learning Locomotion on Discrete Terrain via Minimal Proximity Sensing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_amor_adaptive_character_contro_2025/">AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_omnitactune_policy_agnostic_re_2026/">OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">用于人形接触规划的自我视觉世界模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">用于人形接触规划的自我视觉世界模型提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhou_badvla_towards_backdoor_attack_2025/">BadVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">BadVLA使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_motion_skills_with_ad_2025/">Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_gait_driven_rl_framework_for_2025/">A Gait Driven RL Framework for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">A Gait Driven RL Framework for Humanoid Robots使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hou_robust_fall_recovery_for_armle_2026/">基于力引导学习的无臂双轮足机器人鲁棒跌倒恢复</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于力引导学习的无臂双轮足机器人鲁棒跌倒恢复使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humam_humanoid_motion_control_2025/">HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_walk_in_costume_ad_2025/">Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_twist_teleoperated_whole_body_2025/">TWIST｜遥控全身模仿系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">TWIST｜遥控全身模仿系统提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">HITTER｜通过分层规划和学习的人形乒乓球机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HITTER｜通过分层规划和学习的人形乒乓球机器人提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learn_weightlessness_imitate_n_2026/">Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ze_twist_teleoperated_whole_body_2025/">TWIST：遥操作全身模仿系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">TWIST：遥操作全身模仿系统使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robust_and_versatile_bipedal_j_2023/">Robust and Versatile Bipedal Jumping Control through Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_critic_architecture_matters_du_2026/">价值网络结构很重要｜人形移动操作中的双评论家与统一评论家</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">价值网络结构很重要｜人形移动操作中的双评论家与统一评论家提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_adapting_humanoid_locomotion_o_2024/">Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_towards_adaptive_humanoid_cont_2026/">多行为蒸馏不是简单拼策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">多行为蒸馏不是简单拼策略使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_manipulation_interfac_2026/">人形操作接口｜基于机器人无关示范的人形全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">人形操作接口｜基于机器人无关示范的人形全身操作使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_embracing_bulky_objects_with_h_2025/">Embracing Bulky Objects with Humanoid Robots: Whole-Body Manipulation with Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_awr_advantage_weighted_regress_2026/">优势加权回归</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">优势加权回归提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hiwet_hierarchical_world_frame_2026_1/">HiWET｜用于长时程人形移动操作的分层世界坐标系末端执行器跟踪</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">HiWET｜用于长时程人形移动操作的分层世界坐标系末端执行器跟踪使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_langwbc_language_directed_huma_2025/">LangWBC｜通过端到端学习进行语言指导的人形全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">LangWBC｜通过端到端学习进行语言指导的人形全身控制提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gentlehumanoid_learning_upper_2025/">GentleHumanoid｜学习上半身顺应性以进行丰富的人与物交互</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">GentleHumanoid｜学习上半身顺应性以进行丰富的人与物交互使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_look_before_you_leap_distillin_2026/">Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dribble_master_learning_agile_2025/">Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_adaptnet_policy_adaptation_for_2023/">AdaptNet: Policy Adaptation for Physics-Based Character Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hifar_multi_stage_curriculum_l_2025/">HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_reinforcement_learning_for_rob_2021/">用于双足机器人鲁棒参数化运动控制的强化学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">用于双足机器人鲁棒参数化运动控制的强化学习提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_towards_versatile_humanoid_tab_2025/">Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_expressive_whole_body_control_2024/">人形机器人富有表现力的全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">人形机器人富有表现力的全身控制提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_eschenbach_metric_based_imitation_learnin_2020/">基于度量的两个不同拟人机器人手臂之间的模仿学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">基于度量的两个不同拟人机器人手臂之间的模仿学习提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zollo_confidence_calibration_in_visi_2025/">Confidence Calibration in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Confidence Calibration in Vision-Language-Action Models提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deepmimic_example_guided_deep_2026/">很多人形控制论文的源头问题</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">很多人形控制论文的源头问题使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_vla_rft_vision_language_action_2025/">VLA-RFT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">VLA-RFT使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mixture_of_experts_rl_for_faul_2026/">Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_humanoid_standing_up_2025/">Learning Humanoid Standing-up Control across Diverse Postures</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_berdica_towards_reinforcement_learning_2024/">基于学习环境的软体机器人强化学习控制器研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">基于学习环境的软体机器人强化学习控制器研究提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_h_zero_cross_humanoid_locomoti_2025/">H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cabi_scaling_data_driven_robotics_w_2019/">通过奖励草图和批量强化学习扩展数据驱动的机器人技术</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">通过奖励草图和批量强化学习扩展数据驱动的机器人技术使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_freeform_preference_learning_f_2026/">Freeform Preference Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reactor_reinforcement_learning_2026/">ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_benchmarking_potential_based_r_2023/">Benchmarking Potential Based Rewards for Learning Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_add_adversarial_disentanglemen_2026/">对抗解耦与蒸馏</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">对抗解耦与蒸馏提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hex_humanoid_aligned_experts_f_2026/">HEX｜用于跨实体全身操作的人形对齐专家</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HEX｜用于跨实体全身操作的人形对齐专家提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shortcut_trajectory_planning_f_2026/">Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_booster_gym_an_end_to_end_rl_f_2025/">Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lips_large_scale_humanoid_robo_2025/">LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pace_physics_augmentation_for_2026/">迈向多样化人形乒乓球：具有预测增强的统一强化学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">迈向多样化人形乒乓球：具有预测增强的统一强化学习提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reinforcement_learning_for_ver_2024/">Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_whole_body_humanoid_l_2026/">复杂地形里，参考动作要在线生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">复杂地形里，参考动作要在线生成使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_stare_vla_progressive_stage_aw_2025/">STARE-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">STARE-VLA提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fu_minddrive_a_vision_language_ac_2025/">MindDrive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">MindDrive使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhou_autovla_a_vision_language_acti_2025/">AutoVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">AutoVLA使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_benchmarking_humanoid_imitatio_2025/">Benchmarking Humanoid Imitation Learning with Motion Difficulty</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">Benchmarking Humanoid Imitation Learning with Motion Difficulty评测于近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_finn_one_shot_visual_imitation_lear_2017/">基于元学习的一次视觉模仿学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">extends</span>
+              <span class="rel-desc">基于元学习的一次视觉模仿学习extends近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_combined_constrained_sampling_2026/">Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_torne_reconciling_reality_through_si_2024/">通过仿真调和现实：面向稳健操作的实到仿再到实方法</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">通过仿真调和现实：面向稳健操作的实到仿再到实方法使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hiwet_hierarchical_world_frame_2026/">HiWET｜用于长时程人形移动操作的分层世界坐标系末端执行器跟踪</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HiWET｜用于长时程人形移动操作的分层世界坐标系末端执行器跟踪提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">Extreme Parkour with Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Extreme Parkour with Legged Robots使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wococo_learning_whole_body_hum_2024/">WoCoCo｜通过顺序接触学习全身人形控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">WoCoCo｜通过顺序接触学习全身人形控制提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dhakate_carosac_a_reinforcement_learni_2025/">CaRoSaC：通过仿真解决电缆下垂问题的基于强化学习的缆索驱动并联机器人运动学控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">CaRoSaC：通过仿真解决电缆下垂问题的基于强化学习的缆索驱动并联机器人运动学控制使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_coordinated_humanoid_robot_loc_2025/">Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_from_w1_towards_general_humano_2026_1/">FRoM-W1｜通过语言指令实现通用人形全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">FRoM-W1｜通过语言指令实现通用人形全身控制提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_make_tracking_easy_neural_moti_2026/">Make Tracking Easy｜用于人形全身控制的神经运动重定向</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Make Tracking Easy｜用于人形全身控制的神经运动重定向提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_preference_conditioned_multi_o_2025/">Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_walk_in_minutes_us_2026/">Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">强化学习智能体与机器人中的情绪：综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">强化学习智能体与机器人中的情绪：综述discusses近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_gait_aware_quadruped_2026/">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_beamdojo_learning_agile_humano_2025/">BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_success_in_humanoid_reinforcem_2025/">Success in Humanoid Reinforcement Learning under Partial Observation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_skillblender_towards_versatile_2025/">SkillBlender｜通过技能混合实现多样化人形全身移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">SkillBlender｜通过技能混合实现多样化人形全身移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_clabaugh_long_term_personalization_of_a_2019/">面向自闭症谱系障碍儿童的居家社交辅助机器人长期个性化研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">面向自闭症谱系障碍儿童的居家社交辅助机器人长期个性化研究使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mimickit_a_reinforcement_learn_2026/">MimicKit：运动模仿与控制的强化学习框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">MimicKit：运动模仿与控制的强化学习框架使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanplus_humanoid_shadowing_a_2024/">HumanPlus｜人形影子和模仿人类</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HumanPlus｜人形影子和模仿人类提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cg_mutra_continuously_gated_mu_2026/">CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_add_physics_based_motion_imita_2025/">ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_parkour_learning_2024/">Humanoid Parkour Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Humanoid Parkour Learning使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_get_up_across_morp_2025/">Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_humanoid_arm_motion_v_2025/">Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mimicking_bench_a_benchmark_fo_2024/">Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_what_can_rl_bring_to_vla_gener_2025/">What Can RL Bring to VLA Generalization? An Empirical Study</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">What Can RL Bring to VLA Generalization? An Empirical Study提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_walk_and_fly_with_2023/">Learning to Walk and Fly with Adversarial Motion Priors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Learning to Walk and Fly with Adversarial Motion Priors使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_safevla_towards_safety_alignme_2025/">SafeVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">SafeVLA使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robotdancing_residual_action_r_2025/">RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rove_unlocking_human_intervent_2026/">ROVE｜通过强化学习解锁人形操作的人类干预</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ROVE｜通过强化学习解锁人形操作的人类干预使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_reinforcement_learning_of_cpg_2022/">软体蛇形机器人CPG调节 locomotion 控制器的强化学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">软体蛇形机器人CPG调节 locomotion 控制器的强化学习使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_emergent_active_perception_and_2025/">Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_coordex_coordinating_body_and_2026/">CoorDex：协调身体与手部先验的连续灵巧人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">CoorDex：协调身体与手部先验的连续灵巧人形移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_simgenhoi_physically_realistic_2025/">SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">TWIST｜遥控全身模仿系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">TWIST｜遥控全身模仿系统使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_steadytray_learning_object_bal_2026_1/">SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_farooq_integrating_vision_foundation_2025/">融合视觉基础模型与强化学习以增强物体交互</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">融合视觉基础模型与强化学习以增强物体交互使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_distillation_ppo_a_novel_two_s_2025/">Distillation-PPO: A Novel Two-Stage RL Framework for Humanoid Robot Perceptive Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reinforcement_learning_based_c_2026/">Reinforcement Learning-Based Control for an Inline Skating Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_steadytray_learning_object_bal_2026/">SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_guidewalk_learning_unified_aut_2026/">把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经 RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经 RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_real_world_humanoid_locomotion_2023/">Real-World Humanoid Locomotion with Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Real-World Humanoid Locomotion with Reinforcement Learning使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_clear_closed_loop_reinforcemen_2026/">CLEAR: Closed-Loop Reinforcement Learning at Scale for End-to-End Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_composite_motion_learning_with_2023/">Composite Motion Learning with Task Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Composite Motion Learning with Task Control提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mobile_television_predictive_m_2025/">Mobile-TeleVision｜用于人形全身控制的预测运动先验</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Mobile-TeleVision｜用于人形全身控制的预测运动先验提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">HOMIE｜具有同构外骨骼驾驶舱的人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HOMIE｜具有同构外骨骼驾驶舱的人形移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_discovering_self_protective_fa_2025/">Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_human_humanoid_coordi_2025/">COLA｜学习人机协调以协作搬运物体</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">COLA｜学习人机协调以协作搬运物体提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_unitracker_learning_universal_2025/">UniTracker｜学习仿人机器人通用全身运动跟踪器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">UniTracker｜学习仿人机器人通用全身运动跟踪器提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">基于集成误差的强化学习探索价值奖励</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于集成误差的强化学习探索价值奖励discusses近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liang_dichotomous_diffusion_policy_o_2025/">DIPOLE</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">DIPOLE使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_marco_robot_learning_with_crash_cons_2021/">具有碰撞约束的机器人学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">具有碰撞约束的机器人学习discusses近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_symmetric_and_low_ene_2018/">Learning Symmetric and Low-energy Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Learning Symmetric and Low-energy Locomotion使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robot_motion_diffusion_model_m_2026/">Robot Motion Diffusion Model｜机器人角色的运动生成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Robot Motion Diffusion Model｜机器人角色的运动生成提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reinforcegen_hybrid_skill_poli_2026/">ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_z_1_efficient_reinforcement_le_2026/">Z-1: Efficient Reinforcement Learning for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_closing_the_reality_gap_zero_s_2026/">Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ttt_parkour_rapid_test_time_tr_2026/">TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chasing_stability_humanoid_run_2025/">Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_agile_a_comprehensive_workflow_2026/">AGILE｜人形移动操作学习的综合工作流程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">AGILE｜人形移动操作学习的综合工作流程提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hester_a_real_time_model_based_reinfo_2011/">一种用于机器人控制的实时基于模型的强化学习架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">一种用于机器人控制的实时基于模型的强化学习架构提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ase_adversarial_skill_embeddin_2026/">对抗技能嵌入：大规模运动控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">对抗技能嵌入：大规模运动控制使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_now_you_see_that_learning_end_2026/">Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reduced_order_model_guided_rl_2025/">Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_e_sds_environment_aware_see_it_2025/">E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_multi_modal_whole_bod_2024/">Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">OmniH2O｜通用灵巧的人对人全身远程操作和学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">OmniH2O｜通用灵巧的人对人全身远程操作和学习提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_agile_striker_skills_2026/">从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_synagent_generalizable_coopera_2026/">SynAgent｜通过单独与合作的智能体协同进行可推广的合作人形操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">SynAgent｜通过单独与合作的智能体协同进行可推广的合作人形操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">HOMIE｜具有同构外骨骼驾驶舱的人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HOMIE｜具有同构外骨骼驾驶舱的人形移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_agile_and_dynamic_mot_2019/">Learning Agile and Dynamic Motor Skills for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Learning Agile and Dynamic Motor Skills for Legged Robots使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bilivla_scene_aware_vision_lan_2026/">BiliVLA: Scene-Aware Vision-Language-Action Model with Reinforcement Learning for Autonomous Biliary Endoscopic Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_faststair_learning_to_run_up_s_2026/">FastStair: Learning to Run Up Stairs with Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">FastStair: Learning to Run Up Stairs with Humanoid Robots使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_opt2skill_imitating_dynamicall_2025/">Opt2Skill｜模仿动态可行的全身轨迹以实现多样化人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Opt2Skill｜模仿动态可行的全身轨迹以实现多样化人形移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">HumanoidBench前置依赖近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rl_from_physical_feedback_alig_2025/">RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kungfubot_physics_based_humano_2025/">KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_multi_task_deep_reinforcement_2018/">Multi-task Deep Reinforcement Learning with PopArt</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Multi-task Deep Reinforcement Learning with PopArt使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_quadrupedal_locomotio_2026/">Learning Quadrupedal Locomotion over Challenging Terrain</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Learning Quadrupedal Locomotion over Challenging Terrain使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_katayama_learning_bipedal_locomotion_on_2025/">使用足部惯性测量单元在齿轮驱动人形机器人上学习双足行走</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">使用足部惯性测量单元在齿轮驱动人形机器人上学习双足行走使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_he_viral_visual_sim_to_real_at_sc_2025/">VIRAL：面向人形机器人移动操作的大规模视觉仿真到现实迁移</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">VIRAL：面向人形机器人移动操作的大规模视觉仿真到现实迁移使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deepmimic_example_guided_deep_2026_1/">深度模仿：基于示例引导的物理角色技能深度强化学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">深度模仿：基于示例引导的物理角色技能深度强化学习使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gait_conditioned_rl_with_multi_2025/">Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_warp_rm_a_warp_augmented_relat_2026/">WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_amp_adversarial_motion_priors_2021/">AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_conrft_a_reinforced_fine_tunin_2025/">ConRFT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ConRFT使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">HYPERmotion｜学习自主移动操作的混合行为规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HYPERmotion｜学习自主移动操作的混合行为规划提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deep_reinforcement_learning_fo_2024/">Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_goalkeeper_learning_f_2026/">Humanoid｜Goalkeeper 从位置条件任务运动约束中学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Humanoid｜Goalkeeper 从位置条件任务运动约束中学习使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kinematics_aware_multi_policy_2025/">Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_radosavovic_learning_humanoid_locomotion_o_2024/">挑战性地形上的人形机器人运动学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">挑战性地形上的人形机器人运动学习使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physmodpo_physically_plausible_2026/">用偏好优化把文本生成的动作磨成物理可执行的人形动作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">用偏好优化把文本生成的动作磨成物理可执行的人形动作使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_styleloco_generative_adversari_2025/">StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_dexterous_grasping_fr_2026/">Learning Dexterous Grasping from Sparse Taxonomy Guidance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Learning Dexterous Grasping from Sparse Taxonomy Guidance使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">用于机器人控制的自适应核贝叶斯优化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-desc">用于机器人控制的自适应核贝叶斯优化评测于近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_gr_rl_going_dexterous_and_prec_2025/">GR-RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">GR-RL使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pilot_a_perceptive_integrated_2026/">PILOT｜用于非结构化场景移动操作的感知集成低级控制器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">PILOT｜用于非结构化场景移动操作的感知集成低级控制器提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_gym_reinforcement_lea_2024/">Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ppo_proximal_policy_optimizati_2026/">近端策略优化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">近端策略优化提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_coordex_coordinating_body_and_2026/">CoorDex｜协调身体和手的优先顺序以实现连续灵巧的人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">CoorDex｜协调身体和手的优先顺序以实现连续灵巧的人形移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hord_robust_humanoid_control_v_2026/">HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_embedding_classical_balance_co_2026/">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_thor_towards_human_level_whole_2025/">Thor｜在强烈接触的环境中实现人类水平的全身反应</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Thor｜在强烈接触的环境中实现人类水平的全身反应提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_from_w1_towards_general_humano_2026/">FRoM-W1｜通过语言指令实现通用人形全身控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">FRoM-W1｜通过语言指令实现通用人形全身控制提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ase_large_scale_reusable_adver_2022/">ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_gentle_humanoid_locom_2025/">Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_software_nvidia_isaac_lab_2024/">NVIDIA Isaac Lab</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">NVIDIA Isaac Lab前置依赖近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_agile_striker_skills_2026_1/">学习人形机器人视觉驱动的反应式足球技能</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">学习人形机器人视觉驱动的反应式足球技能使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kraus_generative_adversarial_imitati_2026/">面向机器人群体的生成对抗模仿学习：从人类示教与训练策略中学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">面向机器人群体的生成对抗模仿学习：从人类示教与训练策略中学习提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_traversing_narrow_paths_a_two_2025/">Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_slac_simulation_pretrained_lat_2025/">SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_retargeting_matters_general_mo_2025/">Retargeting｜Matters 人形机器人的通用运动重定向</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Retargeting｜Matters 人形机器人的通用运动重定向提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_smooth_humanoid_locom_2024/">Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_versatile_humanoid_ma_2026/">通过触摸梦学习多样化人形操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">通过触摸梦学习多样化人形操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_halo_wa_hybrid_attention_laten_2026/">HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">面向任务自适应异构多机器人协作的机器人内部注意力建模</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">面向任务自适应异构多机器人协作的机器人内部注意力建模引用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robust_humanoid_walking_on_com_2025/">Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dreamcontrol_human_inspired_wh_2025/">DreamControl｜通过引导扩散实现场景交互的仿人全身人形控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">DreamControl｜通过引导扩散实现场景交互的仿人全身人形控制提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_rl_online_rl_fine_tuning_for_f_2025/">π_RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">π_RL使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mash_cooperative_heterogeneous_2025/">MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_metaworld_x_hierarchical_world_2026/">MetaWorld-X｜通过VLM协调的专家进行分层世界建模，用于人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MetaWorld-X｜通过VLM协调的专家进行分层世界建模，用于人形移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_ball_composing_pol_2025/">Learning to Ball: Composing Policies for Long-Horizon Basketball Moves</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fame_force_adaptive_rl_for_exp_2026/">FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_anticipatory_reinforcement_lea_2026/">Anticipatory Reinforcement Learning for Trajectory Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Anticipatory Reinforcement Learning for Trajectory Tracking提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_symphony_a_heuristic_normalize_2025/">Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_look_seeking_infor_2024/">Learning to Look: Seeking Information for Decision Making via Policy Factorization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fu_load_aware_locomotion_control_2026/">面向工业搬运任务的人形机器人负载感知 locomotion 控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">面向工业搬运任务的人形机器人负载感知 locomotion 控制使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physics_models_for_sim_to_real_2026/">Physics Models for Sim-to-Real Transfer in Professional-Level Robot Table Tennis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_vision_driven_reactiv_2026/">足球任务里，视觉和动作是同一件事</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">足球任务里，视觉和动作是同一件事使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_calm_conditional_adversarial_l_2026/">条件对抗潜变量模型：可控虚拟角色</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">条件对抗潜变量模型：可控虚拟角色使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xie_textop_real_time_interactive_t_2026/">TextOp：实时交互式文本驱动人形机器人运动生成与控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">TextOp：实时交互式文本驱动人形机器人运动生成与控制使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robot_crash_course_learning_so_2025/">Robot Crash Course: Learning Soft and Stylized Falling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">Robot Crash Course: Learning Soft and Stylized Falling使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_do_you_have_freestyle_expressi_2025/">Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_splitadapter_load_aware_humano_2026/">SplitAdapter｜通过因子化适应进行负载感知的人形移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">SplitAdapter｜通过因子化适应进行负载感知的人形移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_grape_generalizing_robot_polic_2024/">GRAPE</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">GRAPE使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_humanoid_manipulation_interfac_2026_1/">人形操作接口｜基于机器人无关示范的人形全身操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">人形操作接口｜基于机器人无关示范的人形全身操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kungfubot_2_learning_versatile_2025/">KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jiang_irl_vla_training_an_vision_lan_2025/">IRL-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">IRL-VLA提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ego_vision_world_model_for_hum_2026/">通过带有多模态基础模型的具体行动链推理的人形智能体用于零样本移动操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">通过带有多模态基础模型的具体行动链推理的人形智能体用于零样本移动操作提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_adapting_generalist_robot_poli_2026/">Adapting Generalist Robot Policies with Semantic Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egm_efficiently_learning_gener_2025/">EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_algorithm_ppo"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_from_w1_towards_general_humano_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FRoM-W1｜通过语言指令实现通用人形全身控制</h3>
+          <p>FRoM-W1 把语言指令、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过PPO/RL 策略训练、ACT/行为克隆模仿学习、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wococo_learning_whole_body_hum_2024/">
+          <span class="entry-type">论文</span>
+          <h3>WoCoCo｜通过顺序接触学习全身人形控制</h3>
+          <p>WoCoCo 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_gym_reinforcement_lea_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer</h3>
+          <p>Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mash_cooperative_heterogeneous_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion</h3>
+          <p>MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</h3>
+          <p>arXiv:2607.00483v1 Announce Type: new Abstract: Designing effective reward functions remains a major…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_walk_and_fly_with_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Walk and Fly with Adversarial Motion Priors</h3>
+          <p>Learning to Walk and Fly with Adversarial Motion Priors is a 2023 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">
+          <span class="entry-type">论文</span>
+          <h3>面向任务自适应异构多机器人协作的机器人内部注意力建模</h3>
+          <p>提出了innerATT，一种基于注意力机制的多智能体actor-critic方法，用于动态组建异构机器人团队以满足变化的任务需求并限制资源消耗，并在Multi-Agent Particle…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_halo_wa_hybrid_attention_laten_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HALO-WA: Hybrid-Attention Latent-Guided Online Reinforcement Learning for World-Action Models</h3>
+          <p>arXiv:2607.04265v1 Announce Type: new Abstract: World-action (WA) models can generate long-horizon…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physmodpo_physically_plausible_2026/">
+          <span class="entry-type">论文</span>
+          <h3>用偏好优化把文本生成的动作磨成物理可执行的人形动作</h3>
+          <p>PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization is a paper on 物理动画 for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_safevla_towards_safety_alignme_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SafeVLA</h3>
+          <p>SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fu_minddrive_a_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MindDrive</h3>
+          <p>MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_now_you_see_that_learning_end_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels</h3>
+          <p>Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</h3>
+          <p>arXiv:2607.09557v1 Announce Type: new Abstract: Fine grain control and positioning of autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_coordex_coordinating_body_and_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CoorDex｜协调身体和手的优先顺序以实现连续灵巧的人形移动操作</h3>
+          <p>CoorDex 把本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_symphony_a_heuristic_normalize_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots</h3>
+          <p>Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_manipulation_interfac_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>人形操作接口｜基于机器人无关示范的人形全身操作</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_steadytray_learning_object_bal_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路</h3>
+          <p>SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual RL is a paper on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_benchmarking_humanoid_imitatio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Benchmarking Humanoid Imitation Learning with Motion Difficulty</h3>
+          <p>Benchmarking Humanoid Imitation Learning with Motion Difficulty is a 2025 work on simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_adapting_generalist_robot_poli_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Adapting Generalist Robot Policies with Semantic Reinforcement Learning</h3>
+          <p>arXiv:2606.31958v1 Announce Type: new Abstract: Generalist robot policies learn a diverse repertoire…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zollo_confidence_calibration_in_visi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Confidence Calibration in Vision-Language-Action Models</h3>
+          <p>Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_multi_task_deep_reinforcement_2018/">
+          <span class="entry-type">论文</span>
+          <h3>Multi-task Deep Reinforcement Learning with PopArt</h3>
+          <p>Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based character…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jiang_irl_vla_training_an_vision_lan_2025/">
+          <span class="entry-type">论文</span>
+          <h3>IRL-VLA</h3>
+          <p>IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (IRL-VLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_omnitactune_policy_agnostic_re_2026/">
+          <span class="entry-type">论文</span>
+          <h3>OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies</h3>
+          <p>arXiv:2607.03723v1 Announce Type: new Abstract: Visual policies learned from human videos,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dhakate_carosac_a_reinforcement_learni_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CaRoSaC：通过仿真解决电缆下垂问题的基于强化学习的缆索驱动并联机器人运动学控制</h3>
+          <p>本文提出了CaRoSaC框架，将基于Unity3D/Obi…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist_teleoperated_whole_body_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST｜遥控全身模仿系统</h3>
+          <p>TWIST 主要解决数据闭环：用人类视频/动捕轨迹、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过异构动捕与合成平衡数据、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_clabaugh_long_term_personalization_of_a_2019/">
+          <span class="entry-type">论文</span>
+          <h3>面向自闭症谱系障碍儿童的居家社交辅助机器人长期个性化研究</h3>
+          <p>Socially assistive robots (SAR) have shown great potential to augment the social and educational…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hou_robust_fall_recovery_for_armle_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于力引导学习的无臂双轮足机器人鲁棒跌倒恢复</h3>
+          <p>本文提出FTSR框架，将高度相关的外部辅助力构建为可优化约束，并采用高度递进的分阶段奖励训练无臂双轮足机器人实现跌倒恢复，在JiaRan机器人上完成仿真到现实部署，并泛化至23自由度Unitree人形…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_clear_closed_loop_reinforcemen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CLEAR: Closed-Loop Reinforcement Learning at Scale for End-to-End Autonomous Driving</h3>
+          <p>arXiv:2607.02841v1 Announce Type: new Abstract: End-to-end autonomous driving (E2E-AD) aims to…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_marco_robot_learning_with_crash_cons_2021/">
+          <span class="entry-type">论文</span>
+          <h3>具有碰撞约束的机器人学习</h3>
+          <p>本文提出了EIC2，一种用于具有碰撞约束的机器人学习的约束贝叶斯优化框架：失败实验不产生数据；它使用高斯过程分类回归（GPCR）对约束建模，将离散的成功/失败标签与连续观测结合，并将约束阈值作为超参数…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</h3>
+          <p>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robotdancing_residual_action_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking</h3>
+          <p>RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_skillblender_towards_versatile_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SkillBlender｜通过技能混合实现多样化人形全身移动操作</h3>
+          <p>SkillBlender 先从相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hiwet_hierarchical_world_frame_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>HiWET｜用于长时程人形移动操作的分层世界坐标系末端执行器跟踪</h3>
+          <p>HiWET 先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hiwet_hierarchical_world_frame_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HiWET｜用于长时程人形移动操作的分层世界坐标系末端执行器跟踪</h3>
+          <p>HiWET 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">
+          <span class="entry-type">论文</span>
+          <h3>REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调</h3>
+          <p>REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_smooth_humanoid_locom_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies</h3>
+          <p>Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physics_models_for_sim_to_real_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Physics Models for Sim-to-Real Transfer in Professional-Level Robot Table Tennis</h3>
+          <p>arXiv:2606.28805v2 Announce Type: replace Abstract: At competitive speeds and spins, a table tennis…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kraus_generative_adversarial_imitati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>面向机器人群体的生成对抗模仿学习：从人类示教与训练策略中学习</h3>
+          <p>本文提出 SwarmGAIL，一种基于 GAIL 的模仿学习框架，可直接从人类示教和 PPO 生成的示教中学习去中心化群体策略，并在仿真与 TurtleBot 4 实物平台上进行了验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhou_autovla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AutoVLA</h3>
+          <p>AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_benchmarking_potential_based_r_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Benchmarking Potential Based Rewards for Learning Humanoid Locomotion</h3>
+          <p>Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_composite_motion_learning_with_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Composite Motion Learning with Task Control</h3>
+          <p>Composite Motion Learning with Task Control is a 2023 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_closing_the_reality_gap_zero_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation</h3>
+          <p>arXiv:2607.04940v1 Announce Type: new Abstract: Human-like dexterous hands with multiple fingers…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_walk_in_minutes_us_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning</h3>
+          <p>Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning is a paper on 行走运动…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_slac_simulation_pretrained_lat_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning</h3>
+          <p>SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning is…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_look_before_you_leap_distillin_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Look Before You Leap: Distilling Tree Search into Action Evaluation for Frozen VLA Models</h3>
+          <p>arXiv:2607.03751v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models acquire broad…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ase_adversarial_skill_embeddin_2026/">
+          <span class="entry-type">论文</span>
+          <h3>对抗技能嵌入：大规模运动控制</h3>
+          <p>ASE: Adversarial Skill Embeddings for Large-Scale Motion Control is a paper on 技能组合 for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_humanoid_standing_up_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Humanoid Standing-up Control across Diverse Postures</h3>
+          <p>Learning Humanoid Standing-up Control across Diverse Postures is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_get_up_across_morp_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy</h3>
+          <p>Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bilivla_scene_aware_vision_lan_2026/">
+          <span class="entry-type">论文</span>
+          <h3>BiliVLA: Scene-Aware Vision-Language-Action Model with Reinforcement Learning for Autonomous Biliary Endoscopic Navigation</h3>
+          <p>arXiv:2606.23531v2 Announce Type: replace Abstract: Endoscopic retrograde cholangiopancreatography…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_awr_advantage_weighted_regress_2026/">
+          <span class="entry-type">论文</span>
+          <h3>优势加权回归</h3>
+          <p>AWR: Advantage Weighted Regression is a paper on 基础RL for humanoid robotics. 优势加权回归.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_he_viral_visual_sim_to_real_at_sc_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VIRAL：面向人形机器人移动操作的大规模视觉仿真到现实迁移</h3>
+          <p>VIRAL 是一种视觉仿真到现实迁移框架，仅在仿真中训练特权强化学习教师策略，并将其蒸馏为仅依赖 RGB 图像的学生策略，从而实现宇树 G1 人形机器人移动操作技能的零样本真实部署。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_grape_generalizing_robot_polic_2024/">
+          <span class="entry-type">论文</span>
+          <h3>GRAPE</h3>
+          <p>GRAPE: Generalizing Robot Policy via Preference Alignment (GRAPE), is a 2024 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_preference_conditioned_multi_o_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion</h3>
+          <p>Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_whole_body_humanoid_l_2026/">
+          <span class="entry-type">论文</span>
+          <h3>复杂地形里，参考动作要在线生成</h3>
+          <p>Whole-body humanoid locomotion is challenging due to high-dimensional control, morphological…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ppo_proximal_policy_optimizati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>近端策略优化</h3>
+          <p>PPO: Proximal Policy Optimization is a paper on 基础RL for humanoid robotics. 近端策略优化.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist_teleoperated_whole_body_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST｜遥控全身模仿系统</h3>
+          <p>TWIST 主要解决数据闭环：用人类视频/动捕轨迹、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过异构动捕与合成平衡数据、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_embedding_classical_balance_co_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</h3>
+          <p>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_rl_online_rl_fine_tuning_for_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>π_RL</h3>
+          <p>πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reinforcegen_hybrid_skill_poli_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</h3>
+          <p>arXiv:2512.16861v2 Announce Type: replace Abstract: Long-horizon manipulation has been a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pilot_a_perceptive_integrated_2026/">
+          <span class="entry-type">论文</span>
+          <h3>PILOT｜用于非结构化场景移动操作的感知集成低级控制器</h3>
+          <p>PILOT 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_w1_towards_general_humano_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>FRoM-W1｜通过语言指令实现通用人形全身控制</h3>
+          <p>FRoM-W1 先从语言指令、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dreamcontrol_human_inspired_wh_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DreamControl｜通过引导扩散实现场景交互的仿人全身人形控制</h3>
+          <p>DreamControl 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_gentle_humanoid_locom_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control</h3>
+          <p>Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_critic_architecture_matters_du_2026/">
+          <span class="entry-type">论文</span>
+          <h3>价值网络结构很重要｜人形移动操作中的双评论家与统一评论家</h3>
+          <p>这篇工作把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robust_and_versatile_bipedal_j_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Robust and Versatile Bipedal Jumping Control through Reinforcement Learning</h3>
+          <p>Robust and Versatile Bipedal Jumping Control through Reinforcement Learning is a 2023 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_goalkeeper_learning_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid｜Goalkeeper 从位置条件任务运动约束中学习</h3>
+          <p>Humanoid 主要解决数据闭环：用人类视频/动捕轨迹、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hester_a_real_time_model_based_reinfo_2011/">
+          <span class="entry-type">论文</span>
+          <h3>一种用于机器人控制的实时基于模型的强化学习架构</h3>
+          <p>提出了RTMBA，一种基于模型的强化学习并行架构，利用基于样本的近似规划和三个并发线程（执行、模型学习、规划），并通过互斥锁保护共享状态，从而能够以机器人的控制频率返回动作；在Mountain…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_splitadapter_load_aware_humano_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SplitAdapter｜通过因子化适应进行负载感知的人形移动操作</h3>
+          <p>SplitAdapter 把仿真交互数据转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cg_mutra_continuously_gated_mu_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion</h3>
+          <p>arXiv:2606.08922v2 Announce Type: replace Abstract: Falling is an inherent risk for humanoid robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_warp_rm_a_warp_augmented_relat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>WARP-RM: A Warp-Augmented Relative Progress Reward Model for Data Curation</h3>
+          <p>arXiv:2606.28320v3 Announce Type: replace Abstract: Scaling imitation learning requires large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_nvidia_isaac_lab_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>NVIDIA Isaac Lab</h3>
+          <p>基于Isaac Sim的模块化学习框架，用于大规模机器人策略训练。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_locomotion_on_discret_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Locomotion on Discrete Terrain via Minimal Proximity Sensing</h3>
+          <p>arXiv:2606.31912v1 Announce Type: new Abstract: Learning-based control has revolutionized dynamic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_eschenbach_metric_based_imitation_learnin_2020/">
+          <span class="entry-type">论文</span>
+          <h3>基于度量的两个不同拟人机器人手臂之间的模仿学习</h3>
+          <p>The development of autonomous robotic systems that can learn from human demonstrations to imitate a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_katayama_learning_bipedal_locomotion_on_2025/">
+          <span class="entry-type">论文</span>
+          <h3>使用足部惯性测量单元在齿轮驱动人形机器人上学习双足行走</h3>
+          <p>该论文提出了一种强化学习框架，通过足部惯性测量单元（IMU）与躯干IMU相结合，在采用高减速比执行器且无扭矩传感器的微型人形机器人EVAL-03上实现稳健的仿真到现实双足行走。论文引入了针对观测空间的…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_ball_composing_pol_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Ball: Composing Policies for Long-Horizon Basketball Moves</h3>
+          <p>Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">基础学科</span>
+          <h3>概率论</h3>
+          <p>关于不确定性、随机变量、分布和期望的数学基础，是机器人和机器学习中所有概率模型的根基。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_booster_gym_an_end_to_end_rl_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion</h3>
+          <p>Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_coordinated_humanoid_robot_loc_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy</h3>
+          <p>Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_adapting_humanoid_locomotion_o_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training</h3>
+          <p>Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_end_to_end_humanoid_robot_safe_2025/">
+          <span class="entry-type">论文</span>
+          <h3>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy</h3>
+          <p>End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liang_dichotomous_diffusion_policy_o_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DIPOLE</h3>
+          <p>Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action model for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_discovering_self_protective_fa_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning</h3>
+          <p>Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_vision_driven_reactiv_2026/">
+          <span class="entry-type">论文</span>
+          <h3>足球任务里，视觉和动作是同一件事</h3>
+          <p>Humanoid soccer poses a representative challenge for embodied intelligence, requiring robots to…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_steadytray_learning_object_bal_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning</h3>
+          <p>SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_berdica_towards_reinforcement_learning_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于学习环境的软体机器人强化学习控制器研究</h3>
+          <p>本文提出了一种面向软体气动机械臂的基于模型的强化学习流程，通过安全驱动空间探索学习循环前向动力学模型，并在 GPU 上的并行 JAX/Gymnax 学习环境中训练 PPO 演员-评论家策略。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_e_sds_environment_aware_see_it_2025/">
+          <span class="entry-type">论文</span>
+          <h3>E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion</h3>
+          <p>E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_agile_and_dynamic_mot_2019/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Agile and Dynamic Motor Skills for Legged Robots</h3>
+          <p>Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on sim-to-real for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>用于人形接触规划的自我视觉世界模型</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_add_adversarial_disentanglemen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>对抗解耦与蒸馏</h3>
+          <p>ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid robotics. 对抗解耦与蒸馏.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_langwbc_language_directed_huma_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LangWBC｜通过端到端学习进行语言指导的人形全身控制</h3>
+          <p>LangWBC 先从语言指令、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mixture_of_experts_rl_for_faul_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion</h3>
+          <p>arXiv:2606.25965v2 Announce Type: replace Abstract: Legged robots deployed in planetary exploration…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">基础学科</span>
+          <h3>线性代数</h3>
+          <p>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mimicking_bench_a_benchmark_fo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking</h3>
+          <p>Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robust_humanoid_walking_on_com_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</h3>
+          <p>Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_finn_one_shot_visual_imitation_lear_2017/">
+          <span class="entry-type">论文</span>
+          <h3>基于元学习的一次视觉模仿学习</h3>
+          <p>In order for a robot to be a generalist that can perform a wide range of jobs, it must be able to…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HITTER｜通过分层规划和学习的人形乒乓球机器人</h3>
+          <p>HITTER 先从人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_z_1_efficient_reinforcement_le_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Z-1: Efficient Reinforcement Learning for Vision-Language-Action Models</h3>
+          <p>arXiv:2606.31846v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models offer a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rove_unlocking_human_intervent_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ROVE｜通过强化学习解锁人形操作的人类干预</h3>
+          <p>ROVE 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、扩散策略/流匹配、VLA 多模态动作模型预测可执行动作命令。关键点是保留…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robot_motion_diffusion_model_m_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Robot Motion Diffusion Model｜机器人角色的运动生成</h3>
+          <p>Robot Motion Diffusion Model 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_opt2skill_imitating_dynamicall_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Opt2Skill｜模仿动态可行的全身轨迹以实现多样化人形移动操作</h3>
+          <p>Opt2Skill 先从相机图像/多视角观测、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_dexterous_grasping_fr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Dexterous Grasping from Sparse Taxonomy Guidance</h3>
+          <p>arXiv:2604.04138v2 Announce Type: replace Abstract: Dexterous manipulation requires planning a grasp…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_emergent_active_perception_and_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning</h3>
+          <p>Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hord_robust_humanoid_control_v_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation</h3>
+          <p>HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_farooq_integrating_vision_foundation_2025/">
+          <span class="entry-type">论文</span>
+          <h3>融合视觉基础模型与强化学习以增强物体交互</h3>
+          <p>本文将Segment Anything…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rl_from_physical_feedback_alig_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control</h3>
+          <p>RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_anticipatory_reinforcement_lea_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Anticipatory Reinforcement Learning for Trajectory Tracking</h3>
+          <p>arXiv:2607.03132v1 Announce Type: cross Abstract: Deep reinforcement learning (DRL) in industrial…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_traversing_narrow_paths_a_two_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking</h3>
+          <p>Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_freeform_preference_learning_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Freeform Preference Learning for Robotic Manipulation</h3>
+          <p>arXiv:2606.32027v1 Announce Type: new Abstract: Reward design remains a central bottleneck for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_faststair_learning_to_run_up_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FastStair: Learning to Run Up Stairs with Humanoid Robots</h3>
+          <p>FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhou_badvla_towards_backdoor_attack_2025/">
+          <span class="entry-type">论文</span>
+          <h3>BadVLA</h3>
+          <p>BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_gait_aware_quadruped_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</h3>
+          <p>arXiv:2607.00442v1 Announce Type: new Abstract: Reinforcement learning (RL) for quadruped locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_agile_a_comprehensive_workflow_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AGILE｜人形移动操作学习的综合工作流程</h3>
+          <p>AGILE 先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_torne_reconciling_reality_through_si_2024/">
+          <span class="entry-type">论文</span>
+          <h3>通过仿真调和现实：面向稳健操作的实到仿再到实方法</h3>
+          <p>RialTo 从真实世界扫描即时构建数字孪生仿真环境，通过一种新颖的逆蒸馏过程将真实世界演示迁移到仿真中，并利用强化学习在最小人类监督下增强模仿学习策略的鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fame_force_adaptive_rl_for_exp_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid</h3>
+          <p>FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhu_wmpo_world_model_based_policy_2025/">
+          <span class="entry-type">论文</span>
+          <h3>WMPO</h3>
+          <p>WMPO: World Model-based Policy Optimization for Vision-Language-Action Models (WMPO), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humam_humanoid_motion_control_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba</h3>
+          <p>HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_distillation_ppo_a_novel_two_s_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Distillation-PPO: A Novel Two-Stage RL Framework for Humanoid Robot Perceptive Locomotion</h3>
+          <p>Distillation-PPO: A Novel Two-Stage RL Framework for Humanoid Robot Perceptive Locomotion is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_agile_striker_skills_2026/">
+          <span class="entry-type">论文</span>
+          <h3>从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">
+          <span class="entry-type">论文</span>
+          <h3>From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</h3>
+          <p>arXiv:2603.10263v2 Announce Type: replace Abstract: We introduce Distribution Contractive…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hex_humanoid_aligned_experts_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HEX｜用于跨实体全身操作的人形对齐专家</h3>
+          <p>HEX 的实现路径是先把本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、低层控制器目标。关键点是保留 VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reinforcement_learning_based_c_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Reinforcement Learning-Based Control for an Inline Skating Humanoid Robot</h3>
+          <p>arXiv:2606.31807v1 Announce Type: new Abstract: As humanoid robots become increasingly dynamic,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_gait_driven_rl_framework_for_2025/">
+          <span class="entry-type">论文</span>
+          <h3>A Gait Driven RL Framework for Humanoid Robots</h3>
+          <p>A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_expressive_whole_body_control_2024/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人富有表现力的全身控制</h3>
+          <p>这篇工作把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过异构动捕与合成平衡数据、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划</h3>
+          <p>RoboBallet 通过深度强化学习训练图神经网络策略，在共享的、充满障碍的工作单元中联合为多台机器人分配任务、调度并规划无碰撞运动，展现出对未见过布局的零样本泛化能力与实时推理能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_add_physics_based_motion_imita_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators</h3>
+          <p>ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_thor_towards_human_level_whole_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Thor｜在强烈接触的环境中实现人类水平的全身反应</h3>
+          <p>Thor 把相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mimickit_a_reinforcement_learn_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MimicKit：运动模仿与控制的强化学习框架</h3>
+          <p>MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control is a paper on 工程框架 for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_reinforcement_learning_of_cpg_2022/">
+          <span class="entry-type">论文</span>
+          <h3>软体蛇形机器人CPG调节 locomotion 控制器的强化学习</h3>
+          <p>本文提出了一种面向软体蛇形机器人的生物启发级联控制器，将无模型强化学习（PPOC/option框架）与Matsuoka中枢模式发生器相结合，实现了目标跟踪与平滑节律气动驱动，并在仿真与真实实验中进行了…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HOMIE｜具有同构外骨骼驾驶舱的人形移动操作</h3>
+          <p>HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_amp_adversarial_motion_priors_2021/">
+          <span class="entry-type">论文</span>
+          <h3>AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control</h3>
+          <p>AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control is a 2021 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_unitracker_learning_universal_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UniTracker｜学习仿人机器人通用全身运动跟踪器</h3>
+          <p>UniTracker 把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_combined_constrained_sampling_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation</h3>
+          <p>arXiv:2602.08557v2 Announce Type: replace Abstract: Training non-prehensile manipulation policies in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_towards_adaptive_humanoid_cont_2026/">
+          <span class="entry-type">论文</span>
+          <h3>多行为蒸馏不是简单拼策略</h3>
+          <p>Humanoid robots are promising to learn a diverse set of human-like locomotion behaviors, including…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hifar_multi_stage_curriculum_l_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery</h3>
+          <p>HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_do_you_have_freestyle_expressi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control</h3>
+          <p>Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_versatile_humanoid_ma_2026/">
+          <span class="entry-type">论文</span>
+          <h3>通过触摸梦学习多样化人形操作</h3>
+          <p>这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、扩散策略/流匹配、MM-DiT/Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于集成误差的强化学习探索价值奖励</h3>
+          <p>本文提出了一种名为VBE（集成误差价值奖励）的即插即用探索方法，通过维护一组随机动作价值函数并使用其最大预测误差作为附加价值奖励，为强化学习提供首次访问乐观性和深度探索能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_symmetric_and_low_ene_2018/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Symmetric and Low-energy Locomotion</h3>
+          <p>Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_guidewalk_learning_unified_aut_2026/">
+          <span class="entry-type">论文</span>
+          <h3>把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经 RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步</h3>
+          <p>GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kungfubot_physics_based_humano_2025/">
+          <span class="entry-type">论文</span>
+          <h3>KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills</h3>
+          <p>KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reduced_order_model_guided_rl_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</h3>
+          <p>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_calm_conditional_adversarial_l_2026/">
+          <span class="entry-type">论文</span>
+          <h3>条件对抗潜变量模型：可控虚拟角色</h3>
+          <p>CALM: Conditional Adversarial Latent Models for Directable Virtual Characters is a paper on 技能组合 for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">
+          <span class="entry-type">论文</span>
+          <h3>强化学习智能体与机器人中的情绪：综述</h3>
+          <p>This article provides the first survey of computational models of emotion in reinforcement learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_humanoid_arm_motion_v_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning</h3>
+          <p>Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_motion_skills_with_ad_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots</h3>
+          <p>Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reinforcement_learning_for_ver_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control</h3>
+          <p>Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control is a 2024 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dribble_master_learning_agile_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion</h3>
+          <p>Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_extreme_parkour_with_legged_ro_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Extreme Parkour with Legged Robots</h3>
+          <p>Extreme Parkour with Legged Robots is a paper on 行走 Locomotion for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reactor_reinforcement_learning_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting</h3>
+          <p>ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lips_large_scale_humanoid_robo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures</h3>
+          <p>LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shortcut_trajectory_planning_f_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</h3>
+          <p>arXiv:2607.09336v1 Announce Type: cross Abstract: Diffusion-based trajectory planners have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mobile_television_predictive_m_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Mobile-TeleVision｜用于人形全身控制的预测运动先验</h3>
+          <p>Mobile-TeleVision 把本体状态与关节序列、人类视频/动捕轨迹、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learn_weightlessness_imitate_n_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learn Weightlessness: Imitate Non-Self-Stabilizing Motions on Humanoid Robot</h3>
+          <p>arXiv:2604.21351v2 Announce Type: replace Abstract: The integration of imitation and reinforcement…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_reinforcement_learning_for_rob_2021/">
+          <span class="entry-type">论文</span>
+          <h3>用于双足机器人鲁棒参数化运动控制的强化学习</h3>
+          <p>提出一种无模型强化学习框架，将混合零动态（HZD）步态库与PPO及课程式动力学随机化结合，在仿真中训练可迁移到真实Cassie双足机器人的鲁棒运动策略，实现无需残差控制的目标行走速度、高度与偏航跟踪。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_simgenhoi_physically_realistic_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL</h3>
+          <p>SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_towards_versatile_humanoid_tab_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation</h3>
+          <p>Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_metaworld_x_hierarchical_world_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MetaWorld-X｜通过VLM协调的专家进行分层世界建模，用于人形移动操作</h3>
+          <p>MetaWorld-X 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、AMP/运动先验、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_retargeting_matters_general_mo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Retargeting｜Matters 人形机器人的通用运动重定向</h3>
+          <p>Retargeting 主要解决数据闭环：用人类视频/动捕轨迹、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_radosavovic_learning_humanoid_locomotion_o_2024/">
+          <span class="entry-type">论文</span>
+          <h3>挑战性地形上的人形机器人运动学习</h3>
+          <p>提出一种基于Transformer的Digit人形机器人盲态运动控制器，先通过序列建模在平地轨迹上预训练，再通过强化学习在不平坦地形上微调，实现从仿真到现实的零样本迁移，跨越自然与城市环境。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_spectral_normalization_for_lip_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion</h3>
+          <p>Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_embracing_bulky_objects_with_h_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Embracing Bulky Objects with Humanoid Robots: Whole-Body Manipulation with Reinforcement Learning</h3>
+          <p>Embracing Bulky Objects with Humanoid Robots: Whole-Body Manipulation with Reinforcement Learning is…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_synagent_generalizable_coopera_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SynAgent｜通过单独与合作的智能体协同进行可推广的合作人形操作</h3>
+          <p>SynAgent 先从相机图像/多视角观测恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fu_load_aware_locomotion_control_2026/">
+          <span class="entry-type">论文</span>
+          <h3>面向工业搬运任务的人形机器人负载感知 locomotion 控制</h3>
+          <p>本文提出了一种基于强化学习的负载感知 locomotion 框架，用于执行工业搬运与箱体操作任务的全尺寸人形机器人；该框架采用解耦的 loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_manipulation_interfac_2026/">
+          <span class="entry-type">论文</span>
+          <h3>人形操作接口｜基于机器人无关示范的人形全身操作</h3>
+          <p>这篇工作主要解决数据闭环：用人类视频/动捕轨迹、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_h_zero_cross_humanoid_locomoti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer</h3>
+          <p>H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_gr_rl_going_dexterous_and_prec_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GR-RL</h3>
+          <p>GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation (GR-RL), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egm_efficiently_learning_gener_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control</h3>
+          <p>EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_styleloco_generative_adversari_2025/">
+          <span class="entry-type">论文</span>
+          <h3>StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion</h3>
+          <p>StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deep_reinforcement_learning_fo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey</h3>
+          <p>Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gait_conditioned_rl_with_multi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion</h3>
+          <p>Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_walk_in_costume_ad_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids</h3>
+          <p>Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_human_humanoid_coordi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>COLA｜学习人机协调以协作搬运物体</h3>
+          <p>COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_conrft_a_reinforced_fine_tunin_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ConRFT</h3>
+          <p>ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy (ConRFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kinematics_aware_multi_policy_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation</h3>
+          <p>Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation is…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deepmimic_example_guided_deep_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>深度模仿：基于示例引导的物理角色技能深度强化学习</h3>
+          <p>DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper on 精确模仿 for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_multi_modal_whole_bod_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots</h3>
+          <p>Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_success_in_humanoid_reinforcem_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Success in Humanoid Reinforcement Learning under Partial Observation</h3>
+          <p>Success in Humanoid Reinforcement Learning under Partial Observation is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_agile_striker_skills_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>学习人形机器人视觉驱动的反应式足球技能</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gentlehumanoid_learning_upper_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GentleHumanoid｜学习上半身顺应性以进行丰富的人与物交互</h3>
+          <p>GentleHumanoid 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_look_seeking_infor_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Look: Seeking Information for Decision Making via Policy Factorization</h3>
+          <p>Learning to Look: Seeking Information for Decision Making via Policy Factorization is a 2024 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_what_can_rl_bring_to_vla_gener_2025/">
+          <span class="entry-type">论文</span>
+          <h3>What Can RL Bring to VLA Generalization? An Empirical Study</h3>
+          <p>What Can RL Bring to VLA Generalization? An Empirical Study (What Can RL Bring to VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kungfubot_2_learning_versatile_2025/">
+          <span class="entry-type">论文</span>
+          <h3>KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control</h3>
+          <p>KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_adaptnet_policy_adaptation_for_2023/">
+          <span class="entry-type">论文</span>
+          <h3>AdaptNet: Policy Adaptation for Physics-Based Character Control</h3>
+          <p>AdaptNet: Policy Adaptation for Physics-Based Character Control is a 2023 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ame_2_agile_and_generalized_le_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding</h3>
+          <p>AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_omnih2o_universal_and_dexterou_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OmniH2O｜通用灵巧的人对人全身远程操作和学习</h3>
+          <p>OmniH2O 主要解决数据闭环：用语言指令、相机图像/多视角观测、人类视频/动捕轨迹采集人类操作和机器人状态，再通过教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ze_twist_teleoperated_whole_body_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST：遥操作全身模仿系统</h3>
+          <p>TWIST 将人体动作捕捉数据重定向到人形机器人，并通过两阶段教师-学生 RL+BC 框架训练单一全身控制器，实现跨操作、移动和表现性任务的实时协调全身遥操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_martinez_cantin_bayesian_optimization_with_ada_2024/">
+          <span class="entry-type">论文</span>
+          <h3>用于机器人控制的自适应核贝叶斯优化</h3>
+          <p>本文提出了斯巴达贝叶斯优化（SBO），一种利用自适应局部/全局斯巴达核在无需先验知识的情况下对非平稳成本函数进行建模的高斯过程贝叶斯优化方法，并在优化基准、强化学习控制任务和无人机机翼设计上进行了评估…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cabi_scaling_data_driven_robotics_w_2019/">
+          <span class="entry-type">论文</span>
+          <h3>通过奖励草图和批量强化学习扩展数据驱动的机器人技术</h3>
+          <p>We present a framework for data-driven robotics that makes use of a large dataset of recorded robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ase_large_scale_reusable_adver_2022/">
+          <span class="entry-type">论文</span>
+          <h3>ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</h3>
+          <p>ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_make_tracking_easy_neural_moti_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Make Tracking Easy｜用于人形全身控制的神经运动重定向</h3>
+          <p>Make Tracking Easy 把本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_real_world_humanoid_locomotion_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Real-World Humanoid Locomotion with Reinforcement Learning</h3>
+          <p>Real-World Humanoid Locomotion with Reinforcement Learning is a 2023 work on locomotion for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_beamdojo_learning_agile_humano_2025/">
+          <span class="entry-type">论文</span>
+          <h3>BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds</h3>
+          <p>BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_stare_vla_progressive_stage_aw_2025/">
+          <span class="entry-type">论文</span>
+          <h3>STARE-VLA</h3>
+          <p>STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanoid_parkour_learning_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Humanoid Parkour Learning</h3>
+          <p>Parkour is a grand challenge for legged locomotion, even for quadruped robots, requiring active…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robot_crash_course_learning_so_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Robot Crash Course: Learning Soft and Stylized Falling</h3>
+          <p>Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deepmimic_example_guided_deep_2026/">
+          <span class="entry-type">论文</span>
+          <h3>很多人形控制论文的源头问题</h3>
+          <p>A longstanding goal in character animation is to combine data-driven specification of behavior with…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_quadrupedal_locomotio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Quadrupedal Locomotion over Challenging Terrain</h3>
+          <p>Learning Quadrupedal Locomotion over Challenging Terrain is a paper on 高影响力精选 High Impact Selection…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ttt_parkour_rapid_test_time_tr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour</h3>
+          <p>TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanplus_humanoid_shadowing_a_2024/">
+          <span class="entry-type">论文</span>
+          <h3>HumanPlus｜人形影子和模仿人类</h3>
+          <p>HumanPlus 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_coordex_coordinating_body_and_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CoorDex：协调身体与手部先验的连续灵巧人形移动操作</h3>
+          <p>CoorDex 是一种学习流程，它将独立的全身运动和腕部稳定的灵巧手部运动先验蒸馏为隐式动作空间，并训练一个协调的残差 PPO 策略，使配备 20 自由度 WUJI 手的 Unitree G1…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xie_textop_real_time_interactive_t_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TextOp：实时交互式文本驱动人形机器人运动生成与控制</h3>
+          <p>TextOp是一种实时文本驱动的人形机器人运动生成与控制框架，利用高层自回归潜在扩散模型从流式语言命令生成短期运动学参考轨迹，并由低层基于强化学习的全身跟踪策略在物理Unitree G1机器人上执行。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ego_vision_world_model_for_hum_2026/">
+          <span class="entry-type">论文</span>
+          <h3>通过带有多模态基础模型的具体行动链推理的人形智能体用于零样本移动操作</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>HOMIE｜具有同构外骨骼驾驶舱的人形移动操作</h3>
+          <p>HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chasing_stability_humanoid_run_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL</h3>
+          <p>Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_convex_optimization/">
+          <span class="entry-type">基础学科</span>
+          <h3>凸优化</h3>
+          <p>在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bao_sim_to_real_transfer_in_deep_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>双足运动深度强化学习中的仿真到现实迁移</h3>
+          <p>本综述章节研究如何将双足运动的深度强化学习策略从仿真迁移到真实机器人。它梳理了仿真-现实差距的来源，并从模型中心的保真度提升以及通过鲁棒性训练和在线自适应强化策略两个角度组织缓解方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pace_physics_augmentation_for_2026/">
+          <span class="entry-type">论文</span>
+          <h3>迈向多样化人形乒乓球：具有预测增强的统一强化学习</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用PPO/RL 策略训练生成关节位置/力矩命令、地形/场景表征。关键点是把PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">
+          <span class="entry-type">论文</span>
+          <h3>HYPERmotion｜学习自主移动操作的混合行为规划</h3>
+          <p>HYPERmotion 先从语言指令、相机图像/多视角观测、本体状态与关节序列恢复场景、目标或运动表征，再用PPO/RL 策略训练、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_amor_adaptive_character_contro_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning</h3>
+          <p>AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_vla_rft_vision_language_action_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-RFT</h3>
+          <p>VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#ppo">近端策略优化（PPO）的定义与定位</a></li>
+<li><a href="#ppo_1">近端策略优化（PPO）的数学与原理基础</a></li>
+<li><a href="#_2">算法步骤与实现要点</a></li>
+<li><a href="#_3">典型应用与局限性</a></li>
+<li><a href="#_4">相关标签</a></li>
+<li><a href="#_5">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

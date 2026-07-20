@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ankle Compliance Mechanism · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/component/">Component</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Ankle Compliance Mechanism</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Component</div>
+      <h1>Ankle Compliance Mechanism</h1>
+      <p class="entry-name-en">Ankle Compliance Mechanism</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.7.6 碰撞检测与柔顺控制 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A mechanical or control-based compliance design at the ankle that improves shock absorption, terrain adaptation, and energy efficiency during walking.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The ankle compliance mechanism is a critical component in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>Humanoid robots inevitably encounter accidental contact with humans or objects in human-robot collaborative environments. <strong>Collision detection</strong> and <strong>compliance control</strong> are two lines of defense to reduce collision injuries: the former detects abnormal contact as early as possible, while the latter minimizes contact forces after contact occurs [36][73].</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Collision Detection, Compliance Control, Contact Force, External Torque, Safety Reaction</p>
+<ul>
+<li><strong>Collision detection</strong>: The process of identifying unintended contact between a robot and an external object.</li>
+<li><strong>Compliance control</strong>: A control method that enables a robot to respond dynamically as desired when subjected to forces.</li>
+<li><strong>Contact force</strong>: The interactive force generated when a robot contacts the external environment.</li>
+<li><strong>External torque</strong>: The torque generated at a joint due to contact forces.</li>
+<li><strong>Safety reaction</strong>: Protective actions triggered after detecting a hazard.</li>
+</ul>
+</div>
+<p>Robots typically lack force sensors on every surface, so contact is indirectly estimated via an <strong>external torque observer</strong>. The basic idea is to compare the joint torque measured at the motor side with the nominal torque predicted by the dynamic model:</p>
+<div class="arithmatex">\[
+\boldsymbol{\tau}_{\text{ext}} = \boldsymbol{\tau}_{\text{meas}} - \left[ \mathbf{M}(\mathbf{q})\ddot{\mathbf{q}} + \mathbf{C}(\mathbf{q}, \dot{\mathbf{q}})\dot{\mathbf{q}} + \mathbf{g}(\mathbf{q}) \right]
+\]</div>
+<p><span class="arithmatex">\(\boldsymbol{\tau}_{\text{ext}}\)</span> is the estimated external torque at each joint. Due to model errors, friction, and noise, filtering and thresholding are typically required. A more robust method is collision detection based on a momentum observer, which detects collisions by comparing the deviation between actual and predicted momentum:</p>
+<div class="arithmatex">\[
+\mathbf{r}(t) = \mathbf{K}_I \left[ \mathbf{p}(t) - \int_0^t \left( \boldsymbol{\tau} - \mathbf{g}(\mathbf{q}) + \mathbf{r}(s) \right) ds \right]
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{p} = \mathbf{M}(\mathbf{q})\dot{\mathbf{q}}\)</span> is the generalized momentum, and <span class="arithmatex">\(\mathbf{K}_I\)</span> is the observer gain. The momentum observer is insensitive to acceleration measurement noise and is a common method for collision detection in humanoid robots.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: External Torque Observer, Momentum Observer, Nominal Torque, Observer Gain</p>
+<ul>
+<li><strong>External torque observer</strong>: An algorithm for estimating external joint torques.</li>
+<li><strong>Momentum observer</strong>: An observer that detects collisions based on deviations in generalized momentum.</li>
+<li><strong>Nominal torque</strong>: The joint torque predicted by the dynamic model.</li>
+<li><strong>Observer gain</strong>: A parameter that adjusts the observer's response speed and noise suppression capability.</li>
+</ul>
+</div>
+<p>Setting the collision detection threshold is critical. A threshold that is too low can cause false positives, disrupting normal operations; a threshold that is too high delays the reaction, increasing the risk of injury. Thresholds are typically determined based on biomechanical limits from ISO/TS 15066, robot speed, workspace, and task type. For example, for an arm operating at a collaborative speed below 1.5 m/s, the collision force threshold can be set to approximately 150 N.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Collision Threshold, False Positive, Biomechanical Limit, Collaborative Speed</p>
+<ul>
+<li><strong>Collision threshold</strong>: The force/torque or momentum deviation limit that triggers a safety reaction.</li>
+<li><strong>False positive</strong>: Incorrectly triggering a safety reaction in the absence of a collision.</li>
+<li><strong>Biomechanical limit</strong>: The maximum force, pressure, or energy that the human body can withstand.</li>
+<li><strong>Collaborative speed</strong>: The maximum allowable robot speed in human-robot collaboration.</li>
+</ul>
+</div>
+<p>After detecting a collision, common safety reaction strategies include:</p>
+<ol>
+<li><strong>Stop</strong>: Disable motor torque or enter position hold, suitable for low-speed, light contact.</li>
+<li><strong>Recede</strong>: Move in the opposite direction of the contact to reduce contact force, suitable for reversible motion.</li>
+<li><strong>Compliant</strong>: Switch to zero-force/admittance control mode, allowing the robot to move freely in response to external forces.</li>
+<li><strong>Emergency stop</strong>: Trigger the highest-level safety response, cutting off power.</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Normal Operation"] --&gt; B{"Collision Detection"}
+    B --&gt;|"No Collision"| A
+    B --&gt;|"Collision Detected"| C["Assess Severity"]
+    C --&gt;|"Minor"| D["Compliant/Recede"]
+    C --&gt;|"Severe"| E["Stop/E-stop"]
+    D --&gt; F["Log Event and Resume"]
+    E --&gt; G["Safe State/Manual Confirmation"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Stop, Recede, Admittance Control, Emergency Stop</p>
+<ul>
+<li><strong>Stop</strong>: The robot rapidly decelerates and halts motion.</li>
+<li><strong>Recede</strong>: The robot moves in the opposite direction of the contact force to disengage.</li>
+<li><strong>Admittance control</strong>: A control strategy that generates desired motion based on external forces.</li>
+<li><strong>Emergency stop</strong>: Triggering a safety circuit to place the robot in a safe state.</li>
+</ul>
+</div>
+<p>Implementation methods for compliance control include:</p>
+<ul>
+<li><strong>Impedance control</strong>: Adjusts the mass-damper-spring characteristics exhibited by the robot, establishing a desired relationship between contact force and displacement.</li>
+<li><strong>Admittance control</strong>: Calculates the desired motion trajectory based on measured external forces, suitable for position-controlled inner loops.</li>
+<li><strong>Torque control</strong>: Directly controls joint output torque to achieve low-stiffness response.</li>
+<li><strong>Variable stiffness control</strong>: Adjusts joint stiffness according to the task phase, balancing precision and safety.</li>
+</ul>
+<p>In humanoid robots, compliance control is used not only for human-robot interaction but also for absorbing landing impacts, adapting to uneven terrain, and fall protection.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Impedance Control, Variable Stiffness Control, Landing Impact, Fall Protection</p>
+<ul>
+<li><strong>Impedance control</strong>: Controls the impedance (mass-damping-stiffness) exhibited at the robot's end-effector.</li>
+<li><strong>Variable stiffness control</strong>: A control method that adjusts joint stiffness online.</li>
+<li><strong>Landing impact</strong>: The impact force when the foot contacts the ground.</li>
+<li><strong>Fall protection</strong>: Strategies to minimize injury when balance is lost.</li>
+</ul>
+</div>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_impedance_control/">Impedance Control</a>
+              <span class="rel-desc">Ankle Compliance Mechanism mentions Impedance Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_admittance_control/">Admittance Control</a>
+              <span class="rel-desc">Ankle Compliance Mechanism mentions Admittance Control.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_subsystem_ankle_compliance"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_method_impedance_control/">
+          <span class="entry-type">Method</span>
+          <h3>Impedance Control</h3>
+          <p>A control approach that regulates the dynamic relationship between interaction force and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_admittance_control/">
+          <span class="entry-type">Method</span>
+          <h3>Admittance Control</h3>
+          <p>A control approach that converts measured external forces into desired position or velocity…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>작업 시연을 통한 형태학적으로 다른 로봇 간 대응 관계 학습 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">작업 시연을 통한 형태학적으로 다른 로봇 간 대응 관계 학습</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>작업 시연을 통한 형태학적으로 다른 로봇 간 대응 관계 학습</h1>
+      <p class="entry-name-en">Correspondence learning between morphologically different robots via task demonstrations</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2310.13458v3.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>각 로봇에 대해 개별적인 조건적 신경 운동 기본형을 학습하고 학습된 볼록 조합을 통해 잠재 코드를 혼합하여, 단일 작업 시연으로 형태학적으로 다른 로봇 간 제로샷 궤적 생성을 가능하게 하는 대응 관계 학습 프레임워크를 제안한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2310.13458" target="_blank" rel="noopener">Correspondence learning between morphologically different robots via task demonstrations</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>우리는 다양한 로봇의 몸체, 센서, 액추에이터를 관찰합니다. 기술 세트의 공통점을 고려할 때, 로봇 환경의 다양성을 고려하면 각각의 다른 로봇에 각 기술을 독립적으로 가르치는 것은 비효율적이며 확장성이 부족합니다. 서로 다른 로봇의 감각운동 공간 간의 대응 관계를 학습할 수 있다면, 한 로봇에서 학습된 기술을 다른 로봇으로 더 직접적이고 쉽게 전이할 수 있을 것입니다. 본 논문에서는 서로 다른 형태를 가질 수 있는 두 개 이상의 로봇 간의 대응 관계를 학습하는 방법을 제안합니다. 구체적으로, 유사한 형태를 가지지만 자유도가 다른 로봇뿐만 아니라, 관절 제어 방식의 고정 기반 매니퓰레이터 로봇과 차동 구동 모바일 로봇도 제안된 프레임워크 내에서 다룰 수 있음을 보여줍니다. 고려된 로봇 간의 대응 관계를 설정하기 위해, 동일한 목표를 달성하기 위한 초기 기본 작업이 로봇에 시연됩니다. 그런 다음, 목표 달성을 위한 개별 로봇 정책과 함께 공통 잠재 표현이 학습됩니다. 초기 학습 단계 이후, 한 로봇의 새로운 작업 실행 관찰만으로도 다른 로봇이 동일한 작업을 수행하기 위한 잠재 공간 표현을 생성하기에 충분해집니다. 우리는 (1) 로봇이 동일한 작업을 수행하기 위해 동일한 경로를 따라야 할 때, (2) 로봇이 동일한 작업을 수행하기 위해 다른 궤적을 따라야 할 때, (3) 로봇에 필요한 감각운동 궤적의 복잡성이 다를 때, 로봇 간의 대응 관계가 학습되는 일련의 실험을 통해 시스템을 검증했습니다. 또한 실제 매니퓰레이터 로봇과 시뮬레이션된 모바일 로봇 간의 대응 관계 학습에 대한 개념 증명 구현을 제공합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>우리는 다양한 로봇의 몸체, 센서, 액추에이터를 관찰합니다. 기술 세트의 공통점을 고려할 때, 로봇 환경의 다양성을 고려하면 각각의 다른 로봇에 각 기술을 독립적으로 가르치는 것은 비효율적이며 확장성이 부족합니다. 서로 다른 로봇의 감각운동 공간 간의 대응 관계를 학습할 수 있다면, 한 로봇에서 학습된 기술을 다른 로봇으로 더 직접적이고 쉽게 전이할 수 있을 것입니다. 본 논문에서는 서로 다른 형태를 가질 수 있는 두 개 이상의 로봇 간의 대응 관계를 학습하는 방법을 제안합니다. 구체적으로, 유사한 형태를 가지지만 자유도가 다른 로봇뿐만 아니라, 관절 제어 방식의 고정 기반 매니퓰레이터 로봇과 차동 구동 모바일 로봇도 제안된 프레임워크 내에서 다룰 수 있음을 보여줍니다. 고려된 로봇 간의 대응 관계를 설정하기 위해, 동일한 목표를 달성하기 위한 초기 기본 작업이 로봇에 시연됩니다. 그런 다음, 목표 달성을 위한 개별 로봇 정책과 함께 공통 잠재 표현이 학습됩니다. 초기 학습 단계 이후, 한 로봇의 새로운 작업 실행 관찰만으로도 다른 로봇이 동일한 작업을 수행하기 위한 잠재 공간 표현을 생성하기에 충분해집니다. 우리는 (1) 로봇이 동일한 작업을 수행하기 위해 동일한 경로를 따라야 할 때, (2) 로봇이 동일한 작업을 수행하기 위해 다른 궤적을 따라야 할 때, (3) 로봇에 필요한 감각운동 궤적의 복잡성이 다를 때, 로봇 간의 대응 관계가 학습되는 일련의 실험을 통해 시스템을 검증했습니다. 또한 실제 매니퓰레이터 로봇과 시뮬레이션된 모바일 로봇 간의 대응 관계 학습에 대한 개념 증명 구현을 제공합니다.</p>
+    </section>
+    
+
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+
+</body>
+</html>

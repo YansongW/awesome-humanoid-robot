@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drive-WM: 자율주행을 위한 다중 시각 예측 및 세계 모델 기반 계획 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Drive-WM: 자율주행을 위한 다중 시각 예측 및 세계 모델 기반 계획</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Drive-WM: 자율주행을 위한 다중 시각 예측 및 세계 모델 기반 계획</h1>
+      <p class="entry-name-en">Drive-WM: Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.17918v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Drive-WM은 자율주행을 위한 잠재 비디오 확산 세계 모델로, 뷰 분해를 통한 시공간 모델링으로 고화질 다중 뷰 영상을 생성하고 이미지, 텍스트, 레이아웃, 자차 행동 등의 통합 조건 입력을 지원하며, 이미지 기반 보상을 이용한 트리 기반 궤적 계획에 적용되었다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2311.17918" target="_blank" rel="noopener">Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>자율 주행에서 미리 미래 사건을 예측하고 예측 가능한 위험을 평가하는 것은 자율 주행 차량이 더 나은 행동 계획을 수립하도록 하여 도로 안전성과 효율성을 향상시킵니다. 이를 위해 우리는 기존의 종단간 계획 모델과 호환되는 최초의 주행 월드 모델인 Drive-WM을 제안합니다. 뷰 분해를 통해 촉진된 공동 시공간 모델링을 통해 우리의 모델은 주행 장면에서 고충실도의 멀티뷰 비디오를 생성합니다. 강력한 생성 능력을 바탕으로, 우리는 처음으로 안전한 주행 계획을 위해 월드 모델을 적용할 가능성을 보여줍니다. 특히, Drive-WM은 서로 다른 주행 기동에 기반하여 여러 미래로 주행할 수 있게 하며, 이미지 기반 보상에 따라 최적의 궤적을 결정합니다. 실제 주행 데이터셋에 대한 평가는 우리의 방법이 고품질, 일관성 있고 제어 가능한 멀티뷰 비디오를 생성할 수 있음을 확인하며, 실제 시뮬레이션과 안전한 계획을 위한 가능성을 열어줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>자율 주행에서 미리 미래 사건을 예측하고 예측 가능한 위험을 평가하는 것은 자율 주행 차량이 더 나은 행동 계획을 수립하도록 하여 도로 안전성과 효율성을 향상시킵니다. 이를 위해 우리는 기존의 종단간 계획 모델과 호환되는 최초의 주행 월드 모델인 Drive-WM을 제안합니다. 뷰 분해를 통해 촉진된 공동 시공간 모델링을 통해 우리의 모델은 주행 장면에서 고충실도의 멀티뷰 비디오를 생성합니다. 강력한 생성 능력을 바탕으로, 우리는 처음으로 안전한 주행 계획을 위해 월드 모델을 적용할 가능성을 보여줍니다. 특히, Drive-WM은 서로 다른 주행 기동에 기반하여 여러 미래로 주행할 수 있게 하며, 이미지 기반 보상에 따라 최적의 궤적을 결정합니다. 실제 주행 데이터셋에 대한 평가는 우리의 방법이 고품질, 일관성 있고 제어 가능한 멀티뷰 비디오를 생성할 수 있음을 확인하며, 실제 시뮬레이션과 안전한 계획을 위한 가능성을 열어줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">VR 기반 인간-로봇 팀워크 시뮬레이션에서의 가변 자율성을 위한 GPT 기반 대형 언어 모델 탐구</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">협력형 창고 자동화를 위한 다중 에이전트 강화학습: 희소 보상 조정을 위한 QMIX 가치 분해</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">VR 기반 인간-로봇 협업 시뮬레이션에서 GPT 기반 대형 언어 모델을 활용한 가변 자율성 탐구</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_metaworld_x_hierarchical_world_2026/">MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_wam_survey_2026/">월드 액션 모델: 엠바디드 AI의 다음 프론티어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_genie_envisioner_a_unified_wor_2025/">Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">휴머노이드 조작 인터페이스(HuMI): 로봇 없는 시연으로부터의 전신 조작</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wang_wam_survey_2026/">월드 액션 모델: 엠바디드 AI의 다음 프론티어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">VR 기반 인간-로봇 팀워크 시뮬레이션에서의 가변 자율성을 위한 GPT 기반 대형 언어 모델 탐구</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_baek_toward_control_of_wheeled_huma_2024/">미지의 페이로드를 가진 휠형 휴머노이드 로봇 제어를 향한 실제-시뮬레이션 적응 기반 평형점 추정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">인간-로봇 인체공학적 하중 리프팅을 위한 휴머노이드 로봇 설계 최적화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wang_driving_into_the_future_multiv_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_refine_dp_diffusion_policy_fin_2026/">
+          <span class="entry-type">논문</span>
+          <h3>REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning</h3>
+          <p>REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_baek_toward_control_of_wheeled_huma_2024/">
+          <span class="entry-type">논문</span>
+          <h3>미지의 페이로드를 가진 휠형 휴머노이드 로봇 제어를 향한 실제-시뮬레이션 적응 기반 평형점 추정</h3>
+          <p>본 논문은 휠-다리 로봇이 미지의 페이로드에 대한 본체감각 응답으로부터 전체 질량과 질량 중심을 추정하고, 새로운 평형점을 명시적으로 예측하며, 입자 군집 최적화로 매개변수를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">
+          <span class="entry-type">논문</span>
+          <h3>협력형 창고 자동화를 위한 다중 에이전트 강화학습: 희소 보상 조정을 위한 QMIX 가치 분해</h3>
+          <p>본 논문은 RWARE, MPE 및 사용자 정의 Unity 3D 시뮬레이션에서 창고 다중 에이전트 강화학습 작업에 대한 QMIX, IPPO 및 MASAC을 비교하며, QMIX의 가치…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">
+          <span class="entry-type">논문</span>
+          <h3>VR 기반 인간-로봇 협업 시뮬레이션에서 GPT 기반 대형 언어 모델을 활용한 가변 자율성 탐구</h3>
+          <p>이 2024년 arXiv 논문은 OpenAI 함수 호출을 통해 GPT-4 코어로 구동되는 여러 시뮬레이션 로봇 에이전트가 사용자의 자연어 음성 명령을 받는 Unity VR…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_genie_envisioner_a_unified_wor_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation</h3>
+          <p>Genie Envisioner…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">
+          <span class="entry-type">논문</span>
+          <h3>센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</h3>
+          <p>본 논문은 다수의 웨어러블 센서 모달리티에서 RGB 비디오 학생 네트워크로 지식을 증류하여 동작 인식을 수행하는 SAKDN 프레임워크를 제안하며, Gramian Angular…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">
+          <span class="entry-type">논문</span>
+          <h3>인간-로봇 인체공학적 하중 리프팅을 위한 휴머노이드 로봇 설계 최적화</h3>
+          <p>Sartore, Rapetti, Pucci는 인간 모델을 포함한 비선형 하드웨어 설계 최적화 문제를 제안하여 협업 하중 리프팅에서 작업자들의 에너지 소비를 최소화하고, 이를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">논문</span>
+          <h3>월드 액션 모델: 엠바디드 AI의 다음 프론티어</h3>
+          <p>2026년 서베이로, World Action Models(WAMs)를 예측적 월드 모델링과 액션 생성을 통합하는 엠바디드 파욍데이션 모델로 정의하고, 기존 방법을 Cascaded…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">
+          <span class="entry-type">논문</span>
+          <h3>VR 기반 인간-로봇 팀워크 시뮬레이션에서의 가변 자율성을 위한 GPT 기반 대형 언어 모델 탐구</h3>
+          <p>본 논문은 사용자가 개별 GPT-4 인스턴스로 구동되는 여러 시뮬레이션 로봇과 자연어로 대화하고, OpenAI의 함수 호출 API를 사용하여 비구조화된 음성을 구조화된 로봇…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_agibot_world_colosseo_a_large_2025/">
+          <span class="entry-type">논문</span>
+          <h3>AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems</h3>
+          <p>AgiBot World Colosseo 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用VLM 语义规划/路由、潜变量/动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_metaworld_x_hierarchical_world_2026/">
+          <span class="entry-type">논문</span>
+          <h3>MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation</h3>
+          <p>MetaWorld-X 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、AMP/运动先验、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 조작 인터페이스(HuMI): 로봇 없는 시연으로부터의 전신 조작</h3>
+          <p>HuMI는 휴대용 로봇 불필요 데이터 수집 및 계층적 학습 프레임워크로, 인간의 전신 조작 시연을 자율 휴머노이드 조작 기술로 변환한다. 손에 든 센서화된 그리퍼와 웨어러블…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

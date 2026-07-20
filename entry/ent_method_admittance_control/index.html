@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>导纳控制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">导纳控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>导纳控制</h1>
+      <p class="entry-name-en">Admittance Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>概述 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。 ## 核心内容 #### 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性 把机器人末端抽象为一个质量-弹簧-阻尼单元，其动力学方程可由牛顿第二定律直接写出：</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。</p>
+<h2 id="_2">核心内容</h2>
+<h4 id="-">阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性</h4>
+<p>把机器人末端抽象为一个质量-弹簧-阻尼单元，其动力学方程可由牛顿第二定律直接写出：</p>
+<div class="arithmatex">\[
+M_d \, \ddot{x} + B_d \, \dot{x} + K_d \, (x - x_d) = F_{ext}
+\]</div>
+<p>其中：
+- <span class="arithmatex">\(M_d\)</span>：期望等效质量（kg），决定碰撞时加速度响应；
+- <span class="arithmatex">\(B_d\)</span>：期望等效阻尼（N·s/m 或 kg/s），决定能量耗散速率；
+- <span class="arithmatex">\(K_d\)</span>：期望等效刚度（N/m），决定位置偏差与恢复力的关系；
+- <span class="arithmatex">\(x_d\)</span>：期望轨迹位置（m）；
+- <span class="arithmatex">\(F_{ext}\)</span>：环境作用于机器人端的外部力（N）。</p>
+<p>在拉普拉斯域，该方程可写成机器人端口的<strong>机械阻抗</strong></p>
+<div class="arithmatex">\[
+Z(s) = \frac{F_{ext}(s)}{\dot{X}(s)} = M_d s + B_d + \frac{K_d}{s}
+\]</div>
+<p>其物理意义是：外界以速度 <span class="arithmatex">\(\dot{x}\)</span> “推动”机器人端口时，机器人以力 <span class="arithmatex">\(F_{ext}\)</span> 回应；阻抗 <span class="arithmatex">\(Z(s)\)</span> 就是力与速度之间的动态传递函数。阻抗越大，同样速度扰动产生的反力越大，机器人表现得越“刚硬”；阻抗越小，反力越小，表现越“柔顺”。</p>
+<p><strong>数值示例</strong>：设期望参数为 <span class="arithmatex">\(M_d=2\ \text{kg}\)</span>、<span class="arithmatex">\(B_d=50\ \text{N·s/m}\)</span>、<span class="arithmatex">\(K_d=2000\ \text{N/m}\)</span>。当机器人末端被外界以 <span class="arithmatex">\(0.01\ \text{m/s}\)</span> 的恒定速度推动时，稳态下弹簧项主导，接触力为</p>
+<div class="arithmatex">\[
+F_{ext} \approx K_d \Delta x
+\]</div>
+<p>若推动 0.1 s，位移增量 <span class="arithmatex">\(\Delta x \approx 0.001\ \text{m}\)</span>，则</p>
+<div class="arithmatex">\[
+F_{ext} \approx 2000 \times 0.001 = 2\ \text{N}
+\]</div>
+<p>而无阻抗控制时，若机器人刚性位置环刚度高达 <span class="arithmatex">\(K_{pos}=10^5\ \text{N/m}\)</span>，同样位移将产生</p>
+<div class="arithmatex">\[
+F_{ext} \approx 10^5 \times 0.001 = 100\ \text{N}
+\]</div>
+<p>这说明阻抗控制可把潜在碰撞力降低约两个数量级。更深入的阻抗控制实现与无源性分析见第 4.5.6 节；与整机平衡/接触力规划的关系见第 6 章。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["外部速度 ẋ"] --&gt; B["机械阻抗 Z(s)"]
+    B --&gt; C["反力 F_ext"]
+    D["Md, Bd, Kd"] --&gt; B
+    E["期望轨迹 xd"] --&gt; B</code></pre>
+<div class="admonition note">
+<p class="admonition-title">术语解释：机械阻抗、拉普拉斯域、等效质量、等效阻尼、等效刚度</p>
+<ul>
+<li><strong>机械阻抗（mechanical impedance）</strong>：力与速度之间的动态传递函数，单位 N·s/m。</li>
+<li><strong>拉普拉斯域（Laplace domain）</strong>：用复变量 <span class="arithmatex">\(s\)</span> 描述线性时不变系统动态的频率/算子域。</li>
+<li><strong>等效质量（equivalent mass）</strong>：阻抗控制中机器人端口表现出的虚拟质量。</li>
+<li><strong>等效阻尼（equivalent damping）</strong>：阻抗控制中机器人端口表现出的虚拟阻尼，决定能量耗散。</li>
+<li><strong>等效刚度（equivalent stiffness）</strong>：阻抗控制中机器人端口表现出的虚拟弹簧刚度。</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：柔顺性、阻抗、导纳、人机交互安全</p>
+<ul>
+<li><strong>柔顺性（compliance）</strong>：机构在外力作用下产生形变的能力。柔顺应理解为"刚度低"，例如弹簧比钢棒更柔顺。</li>
+<li><strong>阻抗（impedance）</strong>：机器人对外界施加的"阻力特性"，即力与位移/速度之间的关系。阻抗控制让机器人对外表现为一个设定的质量-弹簧-阻尼系统。</li>
+<li><strong>导纳（admittance）</strong>：阻抗的倒数，表示运动对外力的响应。位置控制为主的系统常用导纳控制实现力调节。</li>
+<li><strong>人机交互安全（human-robot interaction safety）</strong>：通过机械柔顺、力限制、碰撞检测与低惯性设计，把潜在碰撞造成的伤害降到可接受范围。</li>
+</ul>
+</div>
+<p>综合而言，一个优秀的人形机器人关节需要在图 4.1 所示的多维空间中取得折中。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["人形机器人关节设计目标"] --&gt; B["高扭矩密度"]
+    A --&gt; C["高功率密度"]
+    A --&gt; D["高带宽/低延迟"]
+    A --&gt; E["高透明度/反向驱动"]
+    A --&gt; F["高效率/低热耗"]
+    A --&gt; G["冲击安全/柔顺"]
+    B --&gt; H["需要高减速比"]
+    C --&gt; I["需要高转速电机"]
+    D --&gt; J["需要低惯量"]
+    E --&gt; K["需要低减速比"]
+    F --&gt; L["需要低损耗传动"]
+    G --&gt; M["需要弹性元件或力控"]
+    H -.冲突.-&gt; K
+    I -.冲突.-&gt; H</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li>详见 chapter-04.md。</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_series_elastic_actuator_2024/">串联弹性执行器</a>
+              <span class="rel-desc">导纳控制提及串联弹性执行器。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a>
+              <span class="rel-desc">导纳控制提及Mobile ALOHA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_impedance_control/">阻抗控制</a>
+              <span class="rel-desc">导纳控制提及阻抗控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_force_position_hybrid_control/">力位混合控制</a>
+              <span class="rel-desc">导纳控制提及力位混合控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_model_predictive_control_2024/">模型预测控制</a>
+              <span class="rel-desc">导纳控制提及模型预测控制。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_towards_adaptable_humanoid_con_2025/">Towards Adaptable Humanoid Control via Adaptive Motion Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_human_aware_physical_human_rob_2024/">基于多架空中机器人的人类感知物理人机协作搬运与操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">基于多架空中机器人的人类感知物理人机协作搬运与操作提出导纳控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_effects_of_robotic_touch_on_ol_2026/">Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_current_as_touch_proprioceptiv_2026/">Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_subsystem_ankle_compliance/">脚踝柔顺机构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">脚踝柔顺机构提及导纳控制。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_foc_motor_control/">磁场定向控制（FOC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_euler_lagrange_equations/">欧拉-拉格朗日方程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">形式化</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_planetary_roller_screw/">行星滚柱丝杠</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">同一 Wiki 章节中共同出现的关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_formalism_inverse_dynamics_qp/">逆动力学二次规划形式化</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_newton_euler_equations/">牛顿-欧拉方程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">Wiki 第14章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_admittance_control"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_newton_euler_equations/">
+          <span class="entry-type">方程</span>
+          <h3>牛顿-欧拉方程</h3>
+          <p>描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_towards_adaptable_humanoid_con_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Adaptable Humanoid Control via Adaptive Motion Tracking</h3>
+          <p>Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_series_elastic_actuator_2024/">
+          <span class="entry-type">技术</span>
+          <h3>串联弹性执行器</h3>
+          <p>在电机和负载之间串联弹性元件的执行器，可实现精确的力控和抗冲击能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制（FOC）</h3>
+          <p>将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_subsystem_ankle_compliance/">
+          <span class="entry-type">零部件</span>
+          <h3>脚踝柔顺机构</h3>
+          <p>人形机器人在人机共融环境中无法避免与人或物体发生意外接触。碰撞检测（collision detection）与柔顺控制（compliance…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_current_as_touch_proprioceptiv_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Current as Touch: Proprioceptive Contact Feedback for Compliant Dexterous Manipulation</h3>
+          <p>arXiv:2607.03529v1 Announce Type: new Abstract: Compliance is essential for dexterous manipulation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">零部件</span>
+          <h3>行星滚柱丝杠</h3>
+          <p>- Tesla Optimus：据 Tesla AI Day 2022 与后续公开信息，Optimus 躯干采用 28 个执行器（14 个旋转 + 14 个线性），旋转关节使用无框力矩电机 +…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_effects_of_robotic_touch_on_ol_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot</h3>
+          <p>arXiv:2607.09323v1 Announce Type: new Abstract: The shortage of healthcare staff is a challenge in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制</h3>
+          <p>用于生成接触丰富的全身运动的在线最优控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_euler_lagrange_equations/">
+          <span class="entry-type">形式化方法</span>
+          <h3>欧拉-拉格朗日方程</h3>
+          <p>由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">形式化方法</span>
+          <h3>逆动力学二次规划形式化</h3>
+          <p>一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_human_aware_physical_human_rob_2024/">
+          <span class="entry-type">论文</span>
+          <h3>基于多架空中机器人的人类感知物理人机协作搬运与操作</h3>
+          <p>提出了一种分层控制框架，使多架携带缆绳悬挂刚性负载的四旋翼飞行器与人类协作，在6自由度下搬运与操作负载；该方法利用无 force…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_impedance_control/">
+          <span class="entry-type">方法</span>
+          <h3>阻抗控制</h3>
+          <p>阻抗控制（impedance control）不把位置与力分开控制，而是调节机器人末端表现出的机械阻抗（mechanical…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_mobile_aloha_2024/">
+          <span class="entry-type">技术</span>
+          <h3>Mobile ALOHA</h3>
+          <p>全身移动双臂遥操作平台，用于采集家庭和仓库操作数据。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_force_position_hybrid_control/">
+          <span class="entry-type">方法</span>
+          <h3>力位混合控制</h3>
+          <p>在许多任务中，某些方向需要控制位置，而另一些方向需要控制力。例如，沿桌面推动物体时，水平方向控制位置，垂直方向控制接触力。混合力/位置控制（hybrid force/position…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#-">阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性</a></li>
+</ul>
+</li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

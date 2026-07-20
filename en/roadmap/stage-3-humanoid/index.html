@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase 3: Full Humanoid Robot – From Bipedal Platform to &#34;Hear, Walk, Grasp&#34; · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Phase 3: Full Humanoid Robot – From Bipedal Platform to &#34;Hear, Walk, Grasp&#34;</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="phase-3-full-humanoid-robot-from-bipedal-platform-to-hear-walk-grasp">Phase 3: Full Humanoid Robot – From Bipedal Platform to "Hear, Walk, Grasp"</h1>
+<blockquote>
+<p>⚠️ The content of this roadmap is compiled based on public information and theoretical knowledge, and has not been verified on actual hardware; please verify safety specifications yourself when involving electrical and mechanical operations.</p>
+</blockquote>
+<p>After Phase 2's biped can walk stably, Phase 3 adds an "upper body" on top: arms, end effectors, perception, computing power, and an intelligence layer, completing an end-to-end task – <strong>hear a command → walk to the table → pick up a cup</strong>. Each step is expanded in a three-part format: "What to do → Why → How to analyze your situation", tailored by budget/scenario/skills.</p>
+<h2 id="31-upper-body-and-arms-7-dof-arm-and-kinematics">3.1 Upper Body and Arms: 7-DOF Arm and Kinematics</h2>
+<p><strong>Step 1: Determine Configuration and Full Robot Model</strong>
+- 【What to do】Select an arm solution: standard 7 degrees of freedom per arm (shoulder 3, elbow 1, wrist 3). First, build a URDF in simulation to confirm no interference, then either purchase or build using actuators from Phase 1/2.
+- 【Why】A <a href="/entry/ent_component_7dof_arm_2024/">7-DOF robotic arm</a> mimics the redundancy of a human arm: 6 DOF can only "reach" a pose, while the 7th allows the elbow to rotate even when the end effector is stationary, enabling obstacle avoidance and singularity avoidance. Torque/weight/price <strong>must be confirmed with the supplier</strong> (see <a href="/wiki/chapters/chapter-04/">Chapter 4</a> for selection).
+- 【How to analyze your situation】For desktop grasping only: start with a single arm or even 6 DOF; dual-arm coordination and obstacle avoidance require 7 DOF. Simulate first, then machine metal parts.</p>
+<p><strong>Step 2: Kinematics and Coordinate Frames</strong>
+- 【What to do】Implement <a href="/entry/ent_method_forward_kinematics/">Forward Kinematics (FK)</a> (homogeneous transformation chain/product of exponentials) and <a href="/entry/ent_method_inverse_kinematics/">Inverse Kinematics (IK)</a> (Jacobian pseudo-inverse numerical solution or geometric analytical solution); for 7-DOF IK, add secondary objectives in the null space (raise elbow, avoid joint limits). Then integrate the arm into the full robot URDF, unifying the entire TF transform tree.
+- 【Why】After vision provides the cup's position, FK converts coordinate frames and IK calculates joint angles; numerical IK can diverge near singularities, with the standard solution being damped least squares. A humanoid has no fixed base, so end-effector accuracy = arm accuracy + torso posture error + foot slip error combined.
+- 【How to analyze your situation】Directly use mature IK solvers from the ROS ecosystem; verification sequence: simulation spot check → no load → with load. If walking is unstable, "stand still first, then operate."</p>
+<h2 id="32-end-effector-starting-with-a-gripper">3.2 End Effector: Starting with a Gripper</h2>
+<p><strong>Step 3: Start with a Gripper, Reserve Dexterous Hand Interface</strong>
+- 【What to do】The first version uses an electric parallel gripper to grasp cups; design the interface to be replaceable, allowing future upgrades to a <a href="/entry/ent_component_leap_hand/">LEAP Hand</a> or <a href="/entry/ent_component_allegro_hand/">Allegro Hand</a>.
+- 【Why】<a href="/entry/ent_component_dexterous_hand_2024/">Dexterous hand</a> vs. gripper: the former has high degrees of freedom but complex control and high cost, while the latter is simple and cheap but has limited grasping types. LEAP is a low-cost, open-source 16-DOF anthropomorphic hand (direct-drive Dynamixel + 3D printing, BOM must be confirmed with the project team); Allegro is a commercial 16-DOF four-finger hand from Wonik (torque-controlled joints, ROS compatible, price must be confirmed with the supplier). For tasks like grasping cups, a gripper's success rate is far higher than a poorly tuned dexterous hand.
+- 【How to analyze your situation】Use a gripper to get the end-to-end pipeline running; start with LEAP for manipulation learning papers; choose Allegro for commercial reliability.</p>
+<h2 id="33-perception-stack-rgb-d-lidar-and-calibration">3.3 Perception Stack: RGB-D, LiDAR, and Calibration</h2>
+<p><strong>Step 4: Depth Camera</strong>
+- 【What to do】Install one <a href="/entry/ent_component_rgbd_camera/">RGB-D camera</a> on the head/chest for primary vision, and reserve a wrist-mounted camera position for close-up vision. Mainstream options: <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense</a> D435i (approx. USD 199, range 0.1–10 m, with IMU – official datasheet) or D455 (approx. USD 299, depth accuracy &lt;2% @ 4 m); for onboard depth estimation, consider the <a href="/entry/ent_component_zed_stereo_camera_2024/">ZED Stereo Camera</a> (price must be confirmed with the supplier).
+- 【Why】Depth acquisition has three routes: structured light, ToF, and stereo vision (see RGB-D card); the D435i's minimum range of 0.1 m is suitable for desktop manipulation, and the wrist camera is a key source of manipulation data.
+- 【How to analyze your situation】Start with one D435i on a tight budget; be mindful of USB bandwidth for multiple cameras (see common pitfalls).</p>
+<p><strong>Step 5: LiDAR</strong>
+- 【What to do】If the task includes indoor navigation, install a 360° LiDAR, such as the <a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a> (approx. CNY 3,999, 265 g, horizontal 360°, 40 m @ 10% reflectivity, built-in IMU – official datasheet), for SLAM localization.
+- 【Why】RGB-D has limited range and FOV; a 360° LiDAR allows the robot to continuously localize and avoid obstacles while moving.
+- 【How to analyze your situation】For a fixed room with short routes: RGB-D odometry is sufficient; add LiDAR for cross-room navigation.</p>
+<p><strong>Step 6: Joint Calibration</strong>
+- 【What to do】Perform camera intrinsic calibration → hand-eye calibration → camera-LiDAR-IMU <a href="/entry/ent_method_calibration_joint_camera_imu/">joint calibration</a>: use a calibration target to minimize reprojection error, and refine point cloud registration with ICP.
+- 【Why】Manipulation is essentially a coordinate transformation chain: pixel → camera frame → base frame → end effector; an error in any extrinsic parameter means grasping at air.
+- 【How to analyze your situation】Start by calibrating only the head camera to run grasping; write calibration as a one-click script, and recalibrate after any disassembly or reassembly.</p>
+<h2 id="34-computing-platform-layered-computing-and-real-time-linux">3.4 Computing Platform: Layered Computing and Real-Time Linux</h2>
+<p><strong>Step 7: Real-Time Layer + Intelligence Layer</strong>
+- 【What to do】Real-time layer: an industrial PC/MCU runs the joint control loop, with the kernel patched with <a href="/entry/ent_software_rt_preempt_linux/">RT-PREEMPT</a> (making most of the kernel preemptible, providing deterministic low latency). Intelligence layer: <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a> (up to 275 TOPS @ 64 GB version, 15–60 W, dev kit approx. USD 1,999 – NVIDIA official website/third-party reference); for running humanoid foundation models, evaluate the <a href="/entry/ent_component_nvidia_jetson_thor/">Jetson Thor</a> (Blackwell architecture, designed for VLA edge inference, price must be confirmed with the supplier).
+- 【Why】Control loops require determinism, while AI inference requires throughput; mixing them on a non-real-time system causes mutual interference.
+- 【How to analyze your situation】For teleoperation + ACT-level policies, Orin 32 GB is sufficient; for VLA/GR00T N1-level inference, Orin 64 GB or Thor is needed.</p>
+<h2 id="35-intelligence-layer-ladder-teleoperation-data-imitation-learning-vla-on-device-evaluation">3.5 Intelligence Layer Ladder: Teleoperation → Data → Imitation Learning → VLA → On-Device → Evaluation</h2>
+<p><strong>Step 8: Teleoperation</strong>
+- <strong>【What to do】</strong> Build master-slave teleoperation: Refer to <a href="/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA</a> (low-cost dual-arm master-slave hardware, complete set approximately $20,000 level—see Step 10 ACT card); for mobile scenarios, draw on <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a> whole-body teleoperation ideas; when a full robot is unavailable, use the <a href="/entry/ent_technology_umi_gripper_interface_2024/">UMI gripper interface</a> (handheld gripper + camera suffices for demonstration collection).
+- <strong>【Why】</strong> Teleoperation serves three purposes: verify hardware reachability, collect imitation learning data, and establish task baselines (see <a href="/wiki/chapters/chapter-17/">Chapter 17</a>).
+- <strong>【How to analyze your situation】</strong> With a very tight budget, use UMI first to collect data; with a bipedal robot, teleoperation initially only handles the upper limbs, while the lower limbs use joystick for fixed-point control (the pragmatic division of labor in Mobile ALOHA).</p>
+<p><strong>Step 9: Data Collection</strong>
+- <strong>【What to do】</strong> Define the episode format (multi-view images, joint states, actions, language instructions, timestamps), collect data according to a unified protocol, and split into training/validation sets.
+- <strong>【Why】</strong> Format determines reusability: <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a> uses a unified RLDS format to aggregate millions of demonstration frames across embodiments, serving as the standard corpus for VLA pre-training; <a href="/entry/ent_dataset_droid/">DROID</a> demonstrates distributed multi-lab collection (limitation: only covers fixed arms).
+- <strong>【How to analyze your situation】</strong> Collecting tens to hundreds of episodes personally is sufficient to train an ACT-level single-task policy; to fine-tune a VLA, directly align with the OXE format.</p>
+<p><strong>Step 10: Imitation Learning</strong>
+- <strong>【What to do】</strong> Try three methods sequentially: <a href="/entry/ent_method_behavior_cloning/">Behavior Cloning</a> as baseline → <a href="/entry/ent_method_action_chunking_transformer/">ACT</a> (predicts approximately 100-step action chunks at once + temporal ensemble smoothing, reports 80%–90% success rate for fine dual-arm tasks—see card) → <a href="/entry/ent_method_diffusion_policy/">Diffusion Policy</a> (denoising diffusion models action distribution, supports multi-modal actions).
+- <strong>【Why】</strong> Frame-by-frame regression accumulates compounding errors; action chunking and diffusion modeling are two mainstream approaches to suppress this (see <a href="/wiki/chapters/chapter-18/">Chapter 18</a>).
+- <strong>【How to analyze your situation】</strong> For a first attempt, go directly with ACT (compatible with ALOHA data); if actions have multiple valid solutions, choose Diffusion Policy.</p>
+<p><strong>Step 11: VLA</strong>
+- <strong>【What to do】</strong> Evaluate sequentially: <a href="/entry/ent_method_openvla/">OpenVLA</a> (open-source VLA trained on OXE) → <a href="/entry/ent_method_pi0/">π0</a> (versatile policy pre-trained on multi-robot data) → <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a> (NVIDIA's general-purpose humanoid foundation model), see <a href="/wiki/chapters/chapter-19/">Chapter 19</a>.
+- <strong>【Why】</strong> VLA upgrades "understanding instructions" from a hard-coded state machine to a model capability: vision + language directly output actions.
+- <strong>【How to analyze your situation】</strong> Without a GPU cluster: use OpenVLA weights + LoRA fine-tuning on self-collected data. Pragmatic approach: VLA only handles instruction parsing and skill scheduling, while low-level grasping is executed by the policy from Step 10.</p>
+<p><strong>Step 12: On-Device Deployment</strong>
+- <strong>【What to do】</strong> Deploy the policy to an onboard Jetson: <a href="/entry/ent_tech_on_device_vla_inference/">On-device VLA inference</a> requires the model to run on built-in compute to meet latency, connectivity, and privacy constraints; methods include quantization, inference engine optimization, and reducing input resolution.
+- <strong>【Why】</strong> Mobile robots cannot assume network availability—cloud inference equals loss of control during Wi-Fi jitter.
+- <strong>【How to analyze your situation】</strong> Small models like ACT can typically run on Orin; for VLA, first quantize and measure latency; if it doesn't meet requirements, then reduce resolution or action chunk size.</p>
+<p><strong>Step 13: Evaluation</strong>
+- <strong>【What to do】</strong> For simulation, use <a href="/entry/ent_benchmark_libero/">LIBERO</a> (thematic task suite + short-horizon desktop benchmark with procedural scene variations) for regression testing; for the real robot, use a fixed task list and number of trials, re-testing after changes.
+- <strong>【Why】</strong> Tuning parameters without a benchmark is alchemy: procedural variations expose overfitting, and re-testing with a fixed protocol is necessary for horizontal comparison of changes.
+- <strong>【How to analyze your situation】</strong> For individuals: one LIBERO suite + 20 fixed real-robot tests is sufficient.</p>
+<h2 id="36-system-integration-and-engineering">3.6 System Integration and Engineering</h2>
+<p><strong>Step 14: Middleware</strong>
+- <strong>【What to do】</strong> Organize all nodes using <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> (the de facto standard middleware based on DDS publish/subscribe with real-time support): perception, estimation, planning, control, and policy inference communicate across processes, with frozen interfaces and QoS.
+- <strong>【Why】</strong> The multi-process architecture allows the control loop to safely shut down even if perception crashes.
+- <strong>【How to analyze your situation】</strong> During the prototype phase, a single launch file can start everything; before joint debugging, critical processes must be split and watchdog timers configured.</p>
+<p><strong>Step 15: Safety Circuit and OTA</strong>
+- <strong>【What to do】</strong> (a) Install a hardware <a href="/entry/ent_component_emergency_stop_system_2024/">emergency stop system</a>: a hardwired circuit that cuts power or commands a safe state when pressed, independent of all software; (b) Build a prototype <a href="/entry/ent_technology_ota_software_update_2024/">OTA software update</a> system: wirelessly push policies/firmware/system software with version management and rollback.
+- <strong>【Why】</strong> An emergency stop is the entry ticket for full-size platforms into the lab—software emergency stops are unreliable during a crash; without OTA, every policy change requires a cable connection.
+- <strong>【How to analyze your situation】</strong> For platforms that can injure someone if they fall: emergency stop + safety zone + tether during debugging are all essential; for small desktop platforms, a simple independent hardware power switch suffices.</p>
+<h2 id="37-reference-solutions-openloong-and-teaching-grade-alternatives">3.7 Reference Solutions: OpenLoong and Teaching-Grade Alternatives</h2>
+<ul>
+<li><strong>【What to do】</strong> Select a reference frame by comparing four projects with research archives (<code>data/roadmap/research/</code>, snapshot at the time of retrieval):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Size/DOF</th>
+<th>Cost</th>
+<th>Open Source &amp; Ecosystem</th>
+<th>Suitable For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenLoong/Qinglong</strong></td>
+<td>185 cm / 80 kg+, 43 active DOF (including 5-finger dexterous hand)</td>
+<td>BOM <strong>unknown</strong>, reference robot not sold</td>
+<td>Main repo Apache-2.0; MPC+WBC runnable in MuJoCo without hardware; EtherCAT, 400 TOPS main controller</td>
+<td>Universities/enterprises for full-size secondary development; individuals can use its MuJoCo framework or follow NanoLoong</td>
+</tr>
+<tr>
+<td><strong>InMoov</strong></td>
+<td>Life-size <strong>upper body</strong> (no legs, cannot walk), ~28 servos</td>
+<td>Third-party estimate USD 800–2,500</td>
+<td>CC BY-NC non-commercial; tendon-driven 5-finger hand; Arduino + MyRobotLab</td>
+<td>Low-cost experience with life-size robots; cannot learn walking</td>
+</tr>
+<tr>
+<td><strong>Poppy Humanoid</strong></td>
+<td>84 cm / 3.5 kg, 25 DOF</td>
+<td>Kit approx. €9,000</td>
+<td>CC BY-SA / GPLv3; compliant backdrivable for teaching; main repo last updated 2021</td>
+<td>Educators focused on teaching systems and HRI</td>
+</tr>
+<tr>
+<td><strong>ROBOTIS OP3</strong></td>
+<td>51 cm / 3.5 kg, 20 DOF (XM430-W350, stall torque 4.1 N·m)</td>
+<td>USD 13,764.35</td>
+<td>Software Apache-2.0, 2025 replica native ROS 2; e-Manual documentation benchmark</td>
+<td>Schools/labs with sufficient budget needing a ready-to-use robot</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>【How to analyze your situation】</strong> For institutions with full-size robots, follow OpenLoong for secondary development; for individuals with &lt; USD 1,000, choose InMoov; for classrooms, choose OP3 (hassle-free) or Poppy (good system but requires self-maintenance). The main path of this roadmap remains self-building, but the software stacks of these projects can all be reused.</li>
+</ul>
+<h2 id="38-overall-acceptance-end-to-end-task">3.8 Overall Acceptance: End-to-End Task</h2>
+<ul>
+<li><strong>【What to do】</strong> Break the task into a five-stage pipeline and debug it together: instruction parsing → navigation to the table (SLAM + planning) → RGB-D detection of the cup and pose estimation → IK + grasp planning → close gripper and confirm. Test each stage individually, then debug the entire chain together.</li>
+<li><strong>【Why】</strong> An end-to-end task is a cross-check of all subsystems; segmented observation allows pinpointing the failed stage.</li>
+<li><strong>【How to analyze your situation】</strong> If walking is unstable: first close the loop with "fixed stance + tabletop grasping" before unlocking the walking stage; for instruction parsing, start with fixed-format text.</li>
+</ul>
+<h2 id="39-timeline-and-budget-summary-phase-0-3-cumulative">3.9 Timeline and Budget Summary (Phase 0 → 3 Cumulative)</h2>
+<p>The procurement prices for Phase 3 are annotated with sources in Sections 3.3–3.5; prices for arms, dexterous hands, and Jetson Thor <strong>must be confirmed with suppliers</strong>. Cumulative perspective (details for Phases 0–2 are on their respective roadmap pages):</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Phase 3 Increment</th>
+<th>Phase 0→3 Cumulative</th>
+<th>Cumulative Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Teaching Grade (InMoov/OP3/Poppy type)</td>
+<td>USD 800–15,000 (sources in Table 3.7)</td>
+<td>Same as left, the whole machine is the main cost</td>
+<td>Estimated 1–3 months</td>
+</tr>
+<tr>
+<td>Advanced Grade (self-built, main line of this page)</td>
+<td>Perception + computing approx. USD 2,800+, plus arm/end-effector/structure (price inquiry required)</td>
+<td>Estimated thousands to tens of thousands of USD, depending on Phase 0–2 BOM</td>
+<td>Estimated cumulative 8–24 months</td>
+</tr>
+<tr>
+<td>Full-Size Grade (OpenLoong type)</td>
+<td>BOM unknown (per survey archives), requires institutional-level conditions</td>
+<td>Same as left</td>
+<td>Measured in team-years</td>
+</tr>
+</tbody>
+</table>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ol>
+<li>Kinematics: Randomly sample 100 target poses within the workspace, IK solution success rate ≥95%, real robot end-effector positioning error ≤2 cm (recommended threshold).</li>
+<li>Perception: After calibration, RGB point cloud coloring shows no obvious misalignment (reprojection error &lt; 2 pixels); cup 3D positioning error ≤1 cm.</li>
+<li>Intelligence Layer: Complete ≥50 high-quality teleoperation episodes; real robot grasping success rate under fixed protocol ≥70%.</li>
+<li>End-to-End: "Hear command → Walk to table → Grasp cup" succeeds ≥7 times out of 10 consecutive trials, each trial ≤2 minutes.</li>
+<li>Safety: Press emergency stop at any time, power supply is immediately cut off (measured &lt;1 s), reset requires manual confirmation.</li>
+<li>Engineering: After manually killing the perception process, the control loop does not interrupt, and the robot enters a safe state.</li>
+</ol>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IK solution failure/joint jump</td>
+<td>Target outside workspace; near singular configuration; joint limits not modeled</td>
+<td>Check target point in RViz; switch to damped least squares; verify URDF joint limits</td>
+</tr>
+<tr>
+<td>Whole-body shaking/tipping when reaching</td>
+<td>No center-of-mass compensation; excessive speed</td>
+<td>Reduce speed and retest; pre-plan center-of-mass trajectory; stabilize before operation</td>
+</tr>
+<tr>
+<td>ACT/BC real robot performance far worse than training</td>
+<td>Data distribution shift; compound error</td>
+<td>Supplement failure scenarios; check image and action time alignment</td>
+</tr>
+<tr>
+<td>VLA cannot run on edge device</td>
+<td>Not quantized; insufficient memory/compute</td>
+<td>Quantize and measure latency; reduce input resolution; upgrade to Orin 64 GB/Thor</td>
+</tr>
+<tr>
+<td>Emergency stop pressed but power not cut</td>
+<td>Emergency stop routed through software</td>
+<td>Emergency stop must be hardwired to cut power circuit; test independently</td>
+</tr>
+<tr>
+<td>OTA fails to boot</td>
+<td>No rollback; power loss during update</td>
+<td>A/B partition; check battery level before update; leave serial recovery channel</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li><a href="/roadmap/playbooks/sensor-selection/">Sensor Selection Guide</a> — Perception stack specifications and price tiers</li>
+<li><a href="/roadmap/playbooks/compute-selection/">Computing Platform Selection Guide</a> — Layered brain and edge inference</li>
+<li><a href="/roadmap/playbooks/actuator-selection/">Actuator Selection Guide</a> — Actuator solutions for arms and dexterous hands</li>
+<li><a href="/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/stage-2-biped/">← Previous<span>Phase 2: Bipedal Platform – From Simulation to the First Walking Robot</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/playbooks/actuator-selection/">Next →<span>Selection Guide: How to Choose an Actuator</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#phase-3-full-humanoid-robot-from-bipedal-platform-to-hear-walk-grasp">Phase 3: Full Humanoid Robot – From Bipedal Platform to "Hear, Walk, Grasp"</a><ul>
+<li><a href="#31-upper-body-and-arms-7-dof-arm-and-kinematics">3.1 Upper Body and Arms: 7-DOF Arm and Kinematics</a></li>
+<li><a href="#32-end-effector-starting-with-a-gripper">3.2 End Effector: Starting with a Gripper</a></li>
+<li><a href="#33-perception-stack-rgb-d-lidar-and-calibration">3.3 Perception Stack: RGB-D, LiDAR, and Calibration</a></li>
+<li><a href="#34-computing-platform-layered-computing-and-real-time-linux">3.4 Computing Platform: Layered Computing and Real-Time Linux</a></li>
+<li><a href="#35-intelligence-layer-ladder-teleoperation-data-imitation-learning-vla-on-device-evaluation">3.5 Intelligence Layer Ladder: Teleoperation → Data → Imitation Learning → VLA → On-Device → Evaluation</a></li>
+<li><a href="#36-system-integration-and-engineering">3.6 System Integration and Engineering</a></li>
+<li><a href="#37-reference-solutions-openloong-and-teaching-grade-alternatives">3.7 Reference Solutions: OpenLoong and Teaching-Grade Alternatives</a></li>
+<li><a href="#38-overall-acceptance-end-to-end-task">3.8 Overall Acceptance: End-to-End Task</a></li>
+<li><a href="#39-timeline-and-budget-summary-phase-0-3-cumulative">3.9 Timeline and Budget Summary (Phase 0 → 3 Cumulative)</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

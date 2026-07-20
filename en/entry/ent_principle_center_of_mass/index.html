@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Center of Mass (COM) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/principle/">Principle</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Center of Mass (COM)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Principle</div>
+      <h1>Center of Mass (COM)</h1>
+      <p class="entry-name-en">Center of Mass (COM)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The weighted average position of all mass in a body; its trajectory and height are central to balance, gait, and momentum-based control of humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<h4 id="846-centroidal-momentum-and-centroidal-angular-momentum">8.4.6 Centroidal Momentum and Centroidal Angular Momentum</h4>
+<h2 id="content">Content</h2>
+<p>A humanoid robot is a multi-link system, and its overall motion state is not only determined by the velocity of each link but can also be uniformly described by <strong>centroidal momentum</strong>. Centroidal momentum aggregates the linear and angular momenta of all the robot's links at the <strong>Center of Mass (CoM)</strong>, making it a powerful tool for analyzing dynamic motions such as walking, running, and jumping [41].</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Centroidal Momentum, Centroidal Angular Momentum, Linear Momentum, Angular Momentum, Center of Mass</p>
+<ul>
+<li><strong>Centroidal momentum</strong>: The combination of the robot's total linear momentum and total angular momentum relative to the center of mass, synthesized at the CoM.</li>
+<li><strong>Centroidal angular momentum</strong>: The total angular momentum of the robot relative to the center of mass.</li>
+<li><strong>Linear momentum</strong>: The product of mass and CoM velocity, <span class="arithmatex">\(\mathbf{P} = m \mathbf{v}_{\text{CoM}}\)</span>.</li>
+<li><strong>Angular momentum</strong>: A vector describing the state of rotational motion, <span class="arithmatex">\(\mathbf{L} = \mathbf{I}\boldsymbol{\omega}\)</span>.</li>
+<li><strong>Center of Mass (CoM)</strong>: The mass-weighted average position of the system.</li>
+</ul>
+</div>
+<p>Define the robot's generalized coordinates <span class="arithmatex">\(\mathbf{q}\)</span> and generalized velocities <span class="arithmatex">\(\mathbf{v}\)</span>. The <strong>Centroidal Momentum Matrix (CMM)</strong> <span class="arithmatex">\(\mathbf{A}_G(\mathbf{q})\)</span> maps the generalized velocities to the 6-dimensional centroidal momentum at the CoM:</p>
+<div class="arithmatex">\[
+\begin{bmatrix} \mathbf{P} \\ \mathbf{L}_G \end{bmatrix} = \mathbf{A}_G(\mathbf{q}) \, \mathbf{v}
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{P} \in \mathbb{R}^3\)</span> is the total linear momentum, and <span class="arithmatex">\(\mathbf{L}_G \in \mathbb{R}^3\)</span> is the total angular momentum relative to the CoM. The centroidal momentum matrix has clear physical significance: its row vectors represent the contribution weights of each joint velocity to the overall linear and angular momenta [41].</p>
+<p>The time derivative of centroidal momentum equals the sum of external forces:</p>
+<div class="arithmatex">\[
+\frac{d}{dt} \begin{bmatrix} \mathbf{P} \\ \mathbf{L}_G \end{bmatrix} = \begin{bmatrix} m \mathbf{g} + \sum_j \mathbf{F}_j \\ \sum_j (\mathbf{r}_j - \mathbf{r}_G) \times \mathbf{F}_j \end{bmatrix}
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{F}_j\)</span> is the <span class="arithmatex">\(j\)</span>-th external contact force, <span class="arithmatex">\(\mathbf{r}_j\)</span> is its point of application, and <span class="arithmatex">\(\mathbf{r}_G\)</span> is the CoM position. Thus, the horizontal acceleration of the CoM is determined by the horizontal component of the ground reaction force, while the rate of change of centroidal angular momentum is determined by the torque of contact forces about the CoM.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Motion of each link"] --&gt; B["Centroidal Momentum Matrix A_G"]
+    B --&gt; C["Total linear momentum P"]
+    B --&gt; D["Centroidal angular momentum L_G"]
+    C --&gt; E["P_dot = m g + sum F"]
+    D --&gt; F["L_G_dot = sum r cross F"]
+    E --&gt; G["CoM motion"]
+    F --&gt; H["Posture/rotational adjustment"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Centroidal Momentum Matrix (CMM), External Torque, Ground Reaction Force, CoM Acceleration</p>
+<ul>
+<li><strong>Centroidal Momentum Matrix (CMM)</strong>: A 6×n matrix that maps joint velocities to centroidal momentum.</li>
+<li><strong>External moment</strong>: The sum of torques from external forces about a point.</li>
+<li><strong>Ground Reaction Force (GRF)</strong>: The contact force exerted by the ground on the robot's feet.</li>
+<li><strong>CoM acceleration</strong>: The second derivative of CoM position with respect to time.</li>
+</ul>
+</div>
+<p>During the <strong>flight phase</strong>, such as in jumping or running when the robot is airborne, the only external force acting on the robot is gravity <span class="arithmatex">\(m\mathbf{g}\)</span>, so:</p>
+<div class="arithmatex">\[
+\dot{\mathbf{P}} = m \mathbf{g}, \quad \dot{\mathbf{L}}_G = \mathbf{0}
+\]</div>
+<p>This implies <strong>conservation of angular momentum</strong>: while airborne, the robot cannot change its total angular momentum through internal joint motions; it can only adjust its posture by changing the relative positions of its limbs. Gymnasts and cats falling and flipping utilize this principle. For humanoid robots in jumping landings or fall recovery, the angular momentum at takeoff must be pre-planned, as it cannot be supplemented or eliminated in the air.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Flight Phase, Conservation of Angular Momentum, Airborne, Attitude Adjustment</p>
+<ul>
+<li><strong>Flight phase</strong>: The motion phase when both of the robot's feet are off the ground.</li>
+<li><strong>Conservation of angular momentum</strong>: The total angular momentum of a system remains constant when no external torque acts on it.</li>
+<li><strong>Airborne</strong>: The state where the body is completely off the support surface.</li>
+<li><strong>Attitude adjustment</strong>: Changing the body's orientation by altering limb configuration without changing total angular momentum.</li>
+</ul>
+</div>
+<p>Controlling the angular momentum of the upper body is an important means for dynamic balance in humanoid robots. For example, when an external disturbance generates angular momentum about a certain axis of the body, a compensating torque can be produced through counter-swinging motions of the arms or torso, keeping the total angular momentum within a desired range. This strategy is widely applied in <strong>angular momentum-based balance control</strong> [41][53].</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">formalizes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_formalism_floating_base_dynamics/">Floating-Base Dynamics</a>
+              <span class="rel-desc">Cross-layer link defined in Wiki chapter 8.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_principle_center_of_mass"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">Formalism</span>
+          <h3>Floating-Base Dynamics</h3>
+          <p>A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds,…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#846-centroidal-momentum-and-centroidal-angular-momentum">8.4.6 Centroidal Momentum and Centroidal Angular Momentum</a></li>
+</ul>
+</li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces</h1>
+      <p class="entry-name-en">Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.03411v4.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2405.03411v4 Announce Type: replace Abstract: Informed sampling techniques accelerate the convergence of sampling-based motion planners by biasing sampling toward regions of the state space that are most likely to yield better solutions. However, when the current solution path contains redundant or tortuous segments, the resulting informed subset may remain unnecessarily large, slowing convergence. Our prior work addressed this issue by introducing the greedy informed set, which reduces the sampling region based on the maximum heuristic cost along the current solution path. In this article, we formally characterize the behavior of the greedy informed set within Rapidly-exploring Random Tree (RRT*)-like planners and analyze how greedy sampling affects exploration and asymptotic optimality. We then present Greedy RRT* (G-RRT*), a bi-directional anytime variant of RRT* that leverages the greedy informed set to focus sampling in the most promising regions of the search space. Experiments on abstract planning benchmarks, manipulation tasks from the MotionBenchMaker dataset, and a dual-arm Barrett WAM problem demonstrate that G-RRT* rapidly finds initial solutions and converges asymptotically to optimal paths, outperforming state-of-the-art sampling-based planners.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2405.03411" target="_blank" rel="noopener">Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Informed 샘플링 기법은 상태 공간에서 더 나은 해를 도출할 가능성이 높은 영역으로 샘플링을 편향시켜 샘플 기반 모션 플래너의 수렴을 가속화합니다. 그러나 현재 해 경로에 중복되거나 구불구불한 구간이 포함된 경우, 결과적으로 생성되는 informed 부분 집합이 불필요하게 커져 수렴 속도가 느려질 수 있습니다. 이전 연구에서는 현재 해 경로를 따라 최대 휴리스틱 비용을 기준으로 샘플링 영역을 축소하는 greedy informed 집합을 도입하여 이 문제를 해결했습니다. 본 논문에서는 Rapidly-exploring Random Tree (RRT<em>)-유사 플래너 내에서 greedy informed 집합의 동작을 공식적으로 특성화하고, greedy 샘플링이 탐색과 점근적 최적성에 미치는 영향을 분석합니다. 그런 다음 검색 공간에서 가장 유망한 영역에 샘플링을 집중시키기 위해 greedy informed 집합을 활용하는 RRT</em>의 양방향 anytime 변형인 Greedy RRT<em> (G-RRT</em>)를 제시합니다. 추상적인 계획 벤치마크, MotionBenchMaker 데이터셋의 조작 작업, 그리고 이중 암 Barrett WAM 문제에 대한 실험을 통해 G-RRT*가 초기 해를 빠르게 찾고 점근적으로 최적 경로로 수렴하여 최신 샘플 기반 플래너보다 우수한 성능을 보임을 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Informed 샘플링 기법은 상태 공간에서 더 나은 해를 도출할 가능성이 높은 영역으로 샘플링을 편향시켜 샘플 기반 모션 플래너의 수렴을 가속화합니다. 그러나 현재 해 경로에 중복되거나 구불구불한 구간이 포함된 경우, 결과적으로 생성되는 informed 부분 집합이 불필요하게 커져 수렴 속도가 느려질 수 있습니다. 이전 연구에서는 현재 해 경로를 따라 최대 휴리스틱 비용을 기준으로 샘플링 영역을 축소하는 greedy informed 집합을 도입하여 이 문제를 해결했습니다. 본 논문에서는 Rapidly-exploring Random Tree (RRT<em>)-유사 플래너 내에서 greedy informed 집합의 동작을 공식적으로 특성화하고, greedy 샘플링이 탐색과 점근적 최적성에 미치는 영향을 분석합니다. 그런 다음 검색 공간에서 가장 유망한 영역에 샘플링을 집중시키기 위해 greedy informed 집합을 활용하는 RRT</em>의 양방향 anytime 변형인 Greedy RRT<em> (G-RRT</em>)를 제시합니다. 추상적인 계획 벤치마크, MotionBenchMaker 데이터셋의 조작 작업, 그리고 이중 암 Barrett WAM 문제에 대한 실험을 통해 G-RRT*가 초기 해를 빠르게 찾고 점근적으로 최적 경로로 수렴하여 최신 샘플 기반 플래너보다 우수한 성능을 보임을 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_greedy_heuristics_for_sampling_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

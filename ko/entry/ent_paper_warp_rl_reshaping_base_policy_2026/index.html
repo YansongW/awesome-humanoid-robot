@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warp RL: Reshaping Base Policy Distributions for Dynamics Adaptation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Warp RL: Reshaping Base Policy Distributions for Dynamics Adaptation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Warp RL: Reshaping Base Policy Distributions for Dynamics Adaptation</h1>
+      <p class="entry-name-en">Warp RL: Reshaping Base Policy Distributions for Dynamics Adaptation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31043v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2606.31043v1 Announce Type: cross Abstract: Residual reinforcement learning adapts a pretrained robot policy by learning an additive correction to its actions. While effective when adaptation amounts to shifting the base policy&#39;s action distribution, additive corrections cannot change the distribution&#39;s shape, scale, or state-dependent geometry -- limitations we formalize as wrong variance, miscalibrated confidence, and non-uniform correction. We show that these matter under dynamics shift: when the base distribution is geometrically mismatched to the shifted system, residual correction can underperform even the unadapted policy. We propose \textbf{Warp RL}, a policy adaptation method that replaces additive residuals with an invertible, state-conditioned transformation of the base policy&#39;s action distribution. Instantiated with monotonic rational-quadratic spline flows [arXiv:0706.1234v1], Warp RL preserves identity initialization, strictly generalizes additive residual correction, and exposes a structured adaptation space suitable for both policy-gradient and gradient-free optimization. Across a variety of ManiSkill3 manipulation tasks with controlled dynamics shifts, Warp RL matches residual correction when translation is sufficient and substantially outperforms it when adaptation requires distributional reshaping. We further demonstrate that warping can replace additive correction in an off-policy sim-to-real pipeline, achieving comparable success rate with 30% faster task completion on a real-robot peg-insertion task.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.31043" target="_blank" rel="noopener">Warp RL: Reshaping Base Policy Distributions for Dynamics Adaptation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>잔차 강화 학습(Residual reinforcement learning)은 사전 훈련된 로봇 정책의 행동에 대한 가산적 보정(additive correction)을 학습하여 이를 적응시킵니다. 적응이 기본 정책의 행동 분포를 이동시키는 것에 해당할 때 효과적이지만, 가산적 보정은 분포의 형태, 척도 또는 상태 의존적 기하학을 변경할 수 없습니다. 이는 잘못된 분산(wrong variance), 잘못 보정된 신뢰도(miscalibrated confidence), 비균일 보정(non-uniform correction)으로 공식화하는 한계입니다. 우리는 이러한 한계가 동역학 변화(dynamics shift) 하에서 중요함을 보여줍니다: 기본 분포가 변화된 시스템과 기하학적으로 일치하지 않을 때, 잔차 보정은 적응되지 않은 정책보다도 성능이 떨어질 수 있습니다. 우리는 Warp RL을 제안합니다. 이는 가산적 잔차를 기본 정책의 행동 분포에 대한 가역적이고 상태 조건화된 변환으로 대체하는 정책 적응 방법입니다. 단조 유리-2차 스플라인 흐름(arXiv:1906.04032)으로 구현된 Warp RL은 항등 초기화(identity initialization)를 유지하고, 가산적 잔차 보정을 엄격히 일반화하며, 정책 경사 및 경사 없는 최적화 모두에 적합한 구조화된 적응 공간을 제공합니다. 제어된 동역학 변화를 가진 다양한 ManiSkill3 조작 작업에서 Warp RL은 이동(translation)만으로 충분할 때 잔차 보정과 동등한 성능을 보이고, 적응에 분포 재형성(distributional reshaping)이 필요할 때는 이를 크게 능가합니다. 또한, 오프-정책 시뮬레이션-실제(sim-to-real) 파이프라인에서 워핑(warping)이 가산적 보정을 대체할 수 있음을 입증하여, 실제 로봇 페그 삽입 작업에서 30% 더 빠른 작업 완료와 함께 유사한 성공률을 달성합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>잔차 강화 학습은 사전 훈련된 로봇 정책의 행동에 대한 가산적 보정을 학습하여 이를 적응시킵니다. 적응이 기본 정책의 행동 분포를 이동시키는 것에 해당할 때 효과적이지만, 가산적 보정은 분포의 형태, 척도 또는 상태 의존적 기하학을 변경할 수 없습니다. 이는 잘못된 분산, 잘못 보정된 신뢰도, 비균일 보정으로 공식화하는 한계입니다. 우리는 이러한 한계가 동역학 변화 하에서 중요함을 보여줍니다: 기본 분포가 변화된 시스템과 기하학적으로 일치하지 않을 때, 잔차 보정은 적응되지 않은 정책보다도 성능이 떨어질 수 있습니다. 우리는 Warp RL을 제안합니다. 이는 가산적 잔차를 기본 정책의 행동 분포에 대한 가역적이고 상태 조건화된 변환으로 대체하는 정책 적응 방법입니다. 단조 유리-2차 스플라인 흐름(arXiv:1906.04032)으로 구현된 Warp RL은 항등 초기화를 유지하고, 가산적 잔차 보정을 엄격히 일반화하며, 정책 경사 및 경사 없는 최적화 모두에 적합한 구조화된 적응 공간을 제공합니다. 제어된 동역학 변화를 가진 다양한 ManiSkill3 조작 작업에서 Warp RL은 이동만으로 충분할 때 잔차 보정과 동등한 성능을 보이고, 적응에 분포 재형성이 필요할 때는 이를 크게 능가합니다. 또한, 오프-정책 시뮬레이션-실제 파이프라인에서 워핑이 가산적 보정을 대체할 수 있음을 입증하여, 실제 로봇 페그 삽입 작업에서 30% 더 빠른 작업 완료와 함께 유사한 성공률을 달성합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_maniskill3_2024/">ManiSkill3</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_warp_rl_reshaping_base_policy_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_software_maniskill3_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>ManiSkill3</h3>
+          <p>구현 AI를 위한 GPU 병렬 로봇 시뮬레이션 및 렌더링 벤치마크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">벤치마크</span>
+          <h3>ManiSkill</h3>
+          <p>일반화 가능한 조작 기술을 위한 통합 벤치마크로, 표준화된 과제·시뮬레이션 환경·평가 프로토콜을 제공.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

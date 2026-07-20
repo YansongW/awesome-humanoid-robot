@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</h1>
+      <p class="entry-name-en">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Software &amp; Middleware</span><span class="tag">Applications &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.13782v1.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper identifies sparse &#39;Navigation Heads&#39; in a frozen Vision-Language-Action model whose attention-entropy signals indicate trajectory deviations, enabling a training-free anomaly detector and lightweight RL rollback for navigation. It reports a 44.6% deviation-detection rate with an 11.7% false-positive rate on VLN-CE R2R and RxR, and validates the full detection-to-recovery pipeline on an AgileX Scout 2.0 mobile robot.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2603.13782" target="_blank" rel="noopener">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Vision-Language-Action (VLA) models have demonstrated strong potential for predicting semantic actions in navigation tasks, demonstrating the ability to reason over complex linguistic instructions and visual contexts. However, they are fundamentally hindered by visual-reasoning hallucinations that lead to trajectory deviations. Addressing this issue has conventionally required training external critic modules or relying on complex uncertainty heuristics. In this work, we discover that monitoring a few attention heads within a frozen VLA model can accurately detect path deviations without incurring additional computational overhead. We refer to these heads, which inherently capture the spatiotemporal causality between historical visual sequences and linguistic instructions, as Navigation Heads. Using these heads, we propose an intuitive, training-free anomaly-detection framework that monitors their signals to detect hallucinations in real time. Surprisingly, among over a thousand attention heads, a combination of just three is sufficient to achieve a 44.6% deviation detection rate with a low false-positive rate of 11.7%. Furthermore, upon detecting a deviation, we bypass the heavy VLA model and trigger a lightweight Reinforcement Learning (RL) policy to safely execute a shortest-path rollback. By integrating this entire detection-to-recovery pipeline onto a physical robot, we demonstrate its practical robustness. All source code will be publicly available.</p>
+<h2 id="content">Content</h2>
+<p>Vision-Language-Action (VLA) models have demonstrated strong potential for predicting semantic actions in navigation tasks, demonstrating the ability to reason over complex linguistic instructions and visual contexts. However, they are fundamentally hindered by visual-reasoning hallucinations that lead to trajectory deviations. Addressing this issue has conventionally required training external critic modules or relying on complex uncertainty heuristics. In this work, we discover that monitoring a few attention heads within a frozen VLA model can accurately detect path deviations without incurring additional computational overhead. We refer to these heads, which inherently capture the spatiotemporal causality between historical visual sequences and linguistic instructions, as Navigation Heads. Using these heads, we propose an intuitive, training-free anomaly-detection framework that monitors their signals to detect hallucinations in real time. Surprisingly, among over a thousand attention heads, a combination of just three is sufficient to achieve a 44.6% deviation detection rate with a low false-positive rate of 11.7%. Furthermore, upon detecting a deviation, we bypass the heavy VLA model and trigger a lightweight Reinforcement Learning (RL) policy to safely execute a shortest-path rollback. By integrating this entire detection-to-recovery pipeline onto a physical robot, we demonstrate its practical robustness. All source code will be publicly available.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">Ego-Vision World Model for Humanoid Contact Planning</a>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection cites or references Ego-Vision World Model for Humanoid Contact Planning.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_self_attention_equation/">Scaled Dot-Product Self-Attention</a>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection uses or builds on Scaled Dot-Product Self-Attention.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_material_al_mg_alloy_humanoid/">Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure</a>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection uses or builds on Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</a>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection cites or references Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World</a>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection cites or references LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</a>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection cites or references EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_world_action_models_are_zero_s_2026/">World Action Models are Zero-shot Policies</a>
+              <span class="rel-desc">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection cites or references World Action Models are Zero-shot Policies.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_vla_towards_universal_2025/">Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_vla_survey_2026/">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mishra_does_elderly_enjoy_playing_bin_2021/">Does Elderly Enjoy Playing Bingo with a Robot? A Case Study with the Humanoid Robot Nadine</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Does Elderly Enjoy Playing Bingo with a Robot? A Case Study with the Humanoid Robot Nadine cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_wam_survey_2026/">World Action Models: The Next Frontier in Embodied AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">World Action Models: The Next Frontier in Embodied AI cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pi0_2024/">π0: A Vision-Language-Action Flow Model for General Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">π0: A Vision-Language-Action Flow Model for General Robot Control cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates</span>
+              <span class="rel-desc">LIBERO-Plus cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Diffusion Policy: Visuomotor Policy Learning via Action Diffusion cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_jeong_your_vision_language_action_mo_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</h3>
+          <p>Vision-language-action (VLA) models have demonstrated strong semantic understanding and zero-shot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_vla_towards_universal_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</h3>
+          <p>The implementation path of Humanoid-VLA is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</h3>
+          <p>This paper proposes SAKDN, a framework that distills knowledge from multiple wearable-sensor…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">Benchmark</span>
+          <h3>LIBERO-Plus</h3>
+          <p>A robustness benchmark for Vision-Language-Action models that extends LIBERO with 10,030 tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mishra_does_elderly_enjoy_playing_bin_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Does Elderly Enjoy Playing Bingo with a Robot? A Case Study with the Humanoid Robot Nadine</h3>
+          <p>This paper reports a nursing-home deployment of the humanoid social robot Nadine as an autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Diffusion Policy: Visuomotor Policy Learning via Action Diffusion</h3>
+          <p>Diffusion Policy represents robot visuomotor policies as conditional denoising diffusion processes…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_world_action_models_are_zero_s_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>World Action Models are Zero-shot Policies</h3>
+          <p>This work first encodes language instructions, camera images/multi-view observations, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</h3>
+          <p>A 2026 survey arguing that VLA progress now depends more on data infrastructure and evaluation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egovla_learning_vision_languag_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</h3>
+          <p>The implementation path of egofla is to first encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</h3>
+          <p>This paper presents a Unity-based VR simulation framework in which users converse via natural…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_material_al_mg_alloy_humanoid/">
+          <span class="entry-type">Material</span>
+          <h3>Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure</h3>
+          <p>A structural lightweighting material system combining high-strength aluminum alloys and magnesium…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Unified Multi-Rate Model Predictive Control for a Jet-Powered Humanoid Robot</h3>
+          <p>This paper presents a multi-rate Model Predictive Control framework for the jet-powered humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_legs_fine_tuning_teleop_free_v_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World</h3>
+          <p>The implementation path of LEGS is to first encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</h3>
+          <p>This paper proposes a multi-agent framework—Active Spatial Brain for active spatial perception and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_self_attention_equation/">
+          <span class="entry-type">Equation</span>
+          <h3>Scaled Dot-Product Self-Attention</h3>
+          <p>The core equation of the Transformer that computes a weighted sum of values based on query-key…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Exploring a GPT-based Large Language Model for Variable Autonomy in a VR-based Human-Robot Teaming Simulation</h3>
+          <p>This 2024 arXiv paper presents a Unity VR simulation in which multiple simulated robot agents, each…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pi0_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>π0: A Vision-Language-Action Flow Model for General Robot Control</h3>
+          <p>A flow-matching VLA built on a pretrained VLM, trained on diverse dexterous robot data to perform…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>World Action Models: The Next Frontier in Embodied AI</h3>
+          <p>A 2026 survey that defines World Action Models (WAMs) as embodied foundation models unifying…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ego_vision_world_model_for_hum_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Ego-Vision World Model for Humanoid Contact Planning</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

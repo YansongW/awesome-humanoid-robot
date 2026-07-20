@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finite Element Analysis · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Finite Element Analysis</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Finite Element Analysis</h1>
+      <p class="entry-name-en">Finite Element Analysis</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Manufacturing Processes</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Numerical method for structural, thermal, and modal analysis of robot links, brackets, and gearboxes before prototyping.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Finite_element_method" target="_blank" rel="noopener">Finite Element Analysis</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The application of finite element analysis in connecting rod design is covered in Section 8.5.6 as follows.</p>
+<h2 id="content">Content</h2>
+<h4 id="856-application-of-finite-element-analysis-in-connecting-rod-design">8.5.6 Application of Finite Element Analysis in Connecting Rod Design</h4>
+<p><strong>Finite Element Analysis (FEA)</strong> is a core numerical tool for predicting stress, deformation, and modal behavior of connecting rods, joint brackets, and housings under load. By discretizing a continuum into a finite number of elements, FEA transforms partial differential equations into a system of linear algebraic equations for solution, thereby identifying potential structural weaknesses during the design phase[27][28].</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Finite Element Analysis (FEA), Discretization, Element, Node, Degree of Freedom</p>
+<ul>
+<li><strong>Finite Element Analysis (FEA)</strong>: A method that discretizes a continuous structure into finite elements and numerically solves for mechanical responses.</li>
+<li><strong>Discretization</strong>: The process of decomposing continuous geometry and physical fields into a finite number of elements.</li>
+<li><strong>Element</strong>: The basic geometric building block of a finite element mesh, such as tetrahedra, hexahedra, or shell elements.</li>
+<li><strong>Node</strong>: Connection points between elements where field variables are computed.</li>
+<li><strong>Degree of Freedom (DOF)</strong>: The number of unknown displacement components to be solved at each node.</li>
+</ul>
+</div>
+<p>The standard workflow for FEA of humanoid robot connecting rods is as follows:</p>
+<ol>
+<li><strong>Geometry Import and Cleanup</strong>: Import STEP/IGES models from CAD, removing small fillets, threads, chamfers, tiny holes, and other features that do not affect the overall mechanical response.</li>
+<li><strong>Material Property Definition</strong>: Set elastic modulus <span class="arithmatex">\(E\)</span>, Poisson's ratio <span class="arithmatex">\(\nu\)</span>, density <span class="arithmatex">\(\rho\)</span>, and define anisotropic parameters for composite materials.</li>
+<li><strong>Mesh Generation</strong>: Discretize the geometry into a collection of elements. Common element types include:</li>
+<li><strong>Tetrahedron</strong>: Adapts well to complex geometries, but accuracy is typically lower than hexahedra for the same number of nodes.</li>
+<li><strong>Hexahedron</strong>: Offers high accuracy and fast convergence for regular meshes, suitable for block-like structures.</li>
+<li><strong>Shell Element</strong>: Used for thin-walled structures, significantly reducing degrees of freedom.</li>
+<li><strong>Beam Element</strong>: Used for slender rods, offering the highest computational efficiency.</li>
+<li><strong>Boundary Conditions and Loads</strong>: Constrain joint mounting surfaces or bearing seats, and apply gravity, inertial loads, joint torques, ground reaction forces, etc.</li>
+<li><strong>Solution and Post-Processing</strong>: Compute displacement, stress, strain, safety factor, and natural frequencies, identifying high-stress regions and deformation modes.</li>
+<li><strong>Convergence Verification</strong>: Gradually refine the mesh and observe whether key stress values stabilize.</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["CAD Geometry"] --&gt; B["Geometry Cleanup/Simplification"]
+    B --&gt; C["Material Properties"]
+    C --&gt; D["Mesh Generation"]
+    D --&gt; E["Boundary Conditions and Loads"]
+    E --&gt; F["FEA Solution"]
+    F --&gt; G["Stress/Deformation/Modes"]
+    G --&gt; H["Convergence Check"]
+    H --&gt;|"Not Converged"| D
+    H --&gt;|"Converged"| I["Design Decisions"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Geometry Cleanup, Mesh Convergence, Post-Processing, Boundary Condition, Load Case</p>
+<ul>
+<li><strong>Geometry Cleanup</strong>: Removing small features that do not affect analysis results to simplify the model.</li>
+<li><strong>Mesh Convergence</strong>: The phenomenon where computational results stabilize as the mesh is refined.</li>
+<li><strong>Post-Processing</strong>: Visualizing and evaluating FEA results.</li>
+<li><strong>Boundary Condition</strong>: Conditions that constrain displacement or temperature.</li>
+<li><strong>Load Case</strong>: A combination of loads acting on the structure under a specific operating state.</li>
+</ul>
+</div>
+<p>The choice of mesh type significantly impacts results. For joint brackets under complex stress states, second-order tetrahedral elements (10 nodes) can better capture bending; for slender connecting rods, hexahedral elements improve efficiency. Shell elements are suitable for housings and thin-walled tubes where wall thickness is much smaller than other dimensions.</p>
+<p><strong>Stress concentration</strong> is a common issue in connecting rod design. At geometric discontinuities—such as hole edges, notches, steps, and sharp corners—local stress can be significantly higher than nominal stress. The stress concentration factor <span class="arithmatex">\(K_t\)</span> can be defined as:</p>
+<div class="arithmatex">\[
+K_t = \frac{\sigma_{\max}}{\sigma_{\text{nom}}}
+\]</div>
+<p>where <span class="arithmatex">\(\sigma_{\max}\)</span> is the local maximum stress and <span class="arithmatex">\(\sigma_{\text{nom}}\)</span> is the nominal stress. Methods to mitigate stress concentration include: increasing fillet radii, avoiding sharp corners, using gradual cross-sectional transitions, and adding reinforcing rings around holes.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Stress Concentration, Stress Concentration Factor, Fillet, Nominal Stress</p>
+<ul>
+<li><strong>Stress Concentration</strong>: The phenomenon where local stress increases significantly due to geometric discontinuities.</li>
+<li><strong>Stress Concentration Factor</strong>: The ratio of local maximum stress to nominal stress.</li>
+<li><strong>Fillet</strong>: A smooth transition between two surfaces, used to reduce stress concentration.</li>
+<li><strong>Nominal Stress</strong>: The average stress calculated using simplified formulas.</li>
+</ul>
+</div>
+<p>Convergence verification ensures the reliability of FEA. Theoretically, as element size <span class="arithmatex">\(h \to 0\)</span>, the numerical solution should approach the exact solution. In engineering, <strong>h-convergence</strong> is commonly used: gradually refine the mesh and plot the stress at key locations against the number of elements; convergence is considered achieved when the relative change is less than 5%. For critical load-bearing components, at least two mesh refinements for comparison are recommended.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: h-Convergence, Element Size, Numerical Solution, Exact Solution, Convergence Criterion</p>
+<ul>
+<li><strong>h-Convergence</strong>: A convergence method that improves accuracy by reducing element size.</li>
+<li><strong>Element Size</strong>: The typical edge length of elements in a finite element mesh.</li>
+<li><strong>Numerical Solution</strong>: The approximate solution obtained from the discretized model.</li>
+<li><strong>Exact Solution</strong>: The theoretical solution to the continuous problem.</li>
+<li><strong>Convergence Criterion</strong>: A criterion for determining whether the numerical solution is sufficiently stable.</li>
+</ul>
+</div>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-desc">Finite Element Analysis mentions Finite Element Analysis (FEA).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">analyzes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_unitree_h1_humanoid_robot_2024/">Unitree H1 Humanoid Robot</a>
+              <span class="rel-desc">FEA analyzes Unitree H1 structural and thermal behavior before prototyping.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p8/">Structural FEA and iteration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Structural FEA and iteration is part of Finite Element Analysis.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_finite_element_analysis_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8/">
+          <span class="entry-type">Method</span>
+          <h3>Structural FEA and iteration</h3>
+          <p>Structural FEA-the 8th stage of the Android product development process, covering conceptual design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">Method</span>
+          <h3>Finite Element Analysis (FEA)</h3>
+          <p>A numerical method for predicting stress, deformation, vibration modes, and thermal behavior by…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_unitree_h1_humanoid_robot_2024/">
+          <span class="entry-type">Robot System</span>
+          <h3>Unitree H1 Humanoid Robot</h3>
+          <p>Full-size electric humanoid with 25-27 DoF, proprietary high-torque joints, peak leg-joint torque up…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#856-application-of-finite-element-analysis-in-connecting-rod-design">8.5.6 Application of Finite Element Analysis in Connecting Rod Design</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

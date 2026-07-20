@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人机交互与可解释性 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">人机交互与可解释性</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>人机交互与可解释性</h1>
+      <p class="entry-name-en">Human-Computer Interaction and Explainability</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>HMI 设计、交互原型、可用性测试报告</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p><strong>소속 단계/작업 패키지</strong>: VLA / WAM / AI 알고리즘 통합 (AI &amp; Perception)</p>
+<h2 id="_2">핵심 내용</h2>
+<p><strong>방법 / 도구</strong>: 음성/제스처/시선, 상태 표시, 의도 설명, 신뢰 보정</p>
+<p><strong>설계 사고 논리</strong>: 사용자 사용 장벽 완화, 신뢰성 및 예측 가능성 구축</p>
+<p><strong>핵심 제약 조건</strong>: 다중 모드 일관성, 응답 지연, 오작동, 문화적 차이</p>
+<p><strong>완료 기준 / 산출물</strong>: HMI 설계, 상호작용 프로토타입, 사용성 테스트 보고서</p>
+<p><strong>3단계 하위 작업 및 4단계 핵심 조치:</strong></p>
+<ul>
+<li>P12.3.2.1 입력 정리 및 목표 정량화</li>
+<li>
+<p>「인간-로봇 상호작용 및 설명 가능성」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화된 검증 지표로 변환하며, 담당자와 마일스톤을 명확히 합니다.</p>
+<ul>
+<li>모든 상위 입력 목록을 나열하고 버전 확인</li>
+<li>검증 기준을 정량화된 KPI로 변환</li>
+<li>작업 담당자, 시간 노드 및 위험 등록부 구축</li>
+</ul>
+</li>
+<li>
+<p>P12.3.2.2 방안/방법 설계</p>
+</li>
+<li>
+<p>「인간-로봇 상호작용 및 설명 가능성」에 대한 구현 방법 또는 후보 방안을 수립하고, 「음성/제스처/시선, 상태 표시, 의도 설명, 신뢰 보정」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 합니다.</p>
+<ul>
+<li>2개 이상의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 방안 확정</li>
+</ul>
+</li>
+<li>
+<p>P12.3.2.3 구현/프로토타입/시제품 제작</p>
+</li>
+<li>
+<p>설계 방안에 따라 「인간-로봇 상호작용 및 설명 가능성」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.</p>
+<ul>
+<li>모델/시제품 구축 및 핵심 매개변수 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+</ul>
+</li>
+<li>
+<p>P12.3.2.4 검증 및 문제 해결</p>
+</li>
+<li>
+<p>「인간-로봇 상호작용 및 설명 가능성」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적합니다.</p>
+<ul>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+</ul>
+</li>
+<li>
+<p>P12.3.2.5 문서 출력 및 하위 전달</p>
+</li>
+<li>「인간-로봇 상호작용 및 설명 가능성」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.<ul>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 및 버전 관리 완료</li>
+<li>게시 및 하위 의존 부서에 통지</li>
+</ul>
+</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p2_2_2/">人机交互（HMI）设计</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_from_technical_metrics_to_user_2026/">From Technical Metrics to User Perception: A User Study of a Multimodal Human-Robot Interaction System for Object Detection and Grasping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_inoue_dialogue_system_with_humanoid_2022/">휴머노이드 로봇 대화 시스템</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_schneider_ce_mrs_contrastive_explanation_2024/">CE-MRS: 다중 로봇 시스템을 위한 대비 설명</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ayub_interactive_continual_learning_2024/">가정 서비스 로봇의 장기 개인화를 위한 대화형 지속 학습 아키텍처</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_development_of_an_intuitive_gu_2025/">Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_schreiter_multimodal_interaction_and_int_2025/">산업용 로봇을 위한 다중모달 상호작용 및 의도 전달</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p12_3_2"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_development_of_an_intuitive_gu_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots</h3>
+          <p>Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_inoue_dialogue_system_with_humanoid_2022/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 로봇 대화 시스템</h3>
+          <p>음성 내용뿐만 아니라 로봇의 표정과 시선을 함께 제어하여 자연스러운 대면 고객 서비스 상호작용을 가능하게 하는 휴머노이드 로봇용 다중 모달 대화 시스템을 개발하고 2022 대화…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ayub_interactive_continual_learning_2024/">
+          <span class="entry-type">논문</span>
+          <h3>가정 서비스 로봇의 장기 개인화를 위한 대화형 지속 학습 아키텍처</h3>
+          <p>본 논문은 실시간 인간-로봇 상호작용을 통해 물체와 맥락의 의미적 지식을 학습할 수 있는 대화형 지속 학습 아키텍처를 제안하고, 두 달간의 실제 로봇 실험을 통해 검증하였다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_schneider_ce_mrs_contrastive_explanation_2024/">
+          <span class="entry-type">논문</span>
+          <h3>CE-MRS: 다중 로봇 시스템을 위한 대비 설명</h3>
+          <p>CE-MRS를 제안하여 다중 로봇 시스템의 해결책과 사용자가 제시한 대안 해결책을 비교하여 작업 할당, 스케줄링 및 동작 계획을 포괄하는 자연어 대비 설명을 생성하고 탐색·구조…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_from_technical_metrics_to_user_2026/">
+          <span class="entry-type">논문</span>
+          <h3>From Technical Metrics to User Perception: A User Study of a Multimodal Human-Robot Interaction System for Object Detection and Grasping</h3>
+          <p>arXiv:2607.00530v1 Announce Type: new Abstract: Improvements in the technical performance of…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_schreiter_multimodal_interaction_and_int_2025/">
+          <span class="entry-type">논문</span>
+          <h3>산업용 로봇을 위한 다중모달 상호작용 및 의도 전달</h3>
+          <p>본 논문은 비인간형 산업용 로봇을 위한 표현적 HRI를 설계, 강화, 평가하는 방법을 제시하며, 음성, 시선, 제스처를 결합한 다중모달 및 LLM 기반 프레임워크를 통해 호스트…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p12/">
+          <span class="entry-type">방법</span>
+          <h3>VLA / WAM / AI 算法集成（AI &amp; Perception）</h3>
+          <p>VLA / WAM / AI 算法集成（AI &amp; Perception）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p2_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>人机交互（HMI）设计</h3>
+          <p>HMI 规范、交互原型、可用性测试报告</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

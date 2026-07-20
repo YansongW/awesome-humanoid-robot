@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</h1>
+      <p class="entry-name-en">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.07306v3.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2605.07306v3 Announce Type: replace Abstract: Biological laboratory automation can reduce repetitive manual work and improve reproducibility, but reliable embodied execution in wet-lab environments remains challenging. Protocols are often unstructured, labware is frequently transparent or reflective, and multi-step procedures require state-aware execution beyond one-shot instruction following. Existing robotic systems often rely on costly hardware, fixed workflows, dedicated instruments, or robotics-oriented interfaces. Here, we introduce BioProVLA-Agent, an affordable, protocol-driven, vision-enhanced embodied multi-agent system enabled by Vision-Language-Action (VLA) models for biological manipulation. The system uses protocols as the task interface and integrates protocol parsing, visual state verification, and embodied execution in a closed-loop workflow. A Tailored LLM Protocol Agent converts protocols into verifiable subtasks; a VLM-RAG Verification Agent assesses readiness and completion using observations, robot states, retrieved knowledge, and success/failure examples; and a VLA Embodied Agent executes verified subtasks through a lightweight policy. To improve robustness under wet-lab visual perturbations, we develop AugSmolVLA, an online augmentation strategy targeting transparent labware, reflections, illumination shifts, and overexposure. We evaluate the system on a hierarchical benchmark covering 15 atomic tasks, 6 composite workflows, and 3 bimanual tasks, including tube loading, sorting, waste disposal, cap twisting, and liquid pouring. Across normal and high-exposure settings, AugSmolVLA improves execution stability over ACT, X-VLA, and the original SmolVLA, especially for precise placement, transparent-object manipulation, composite workflows, and visually degraded scenes. These results suggest a practical route toward accessible, protocol-centered, and verification-capable embodied AI for biological manipulation.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2605.07306" target="_blank" rel="noopener">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>생물학 실험실 자동화는 반복적인 수작업을 줄이고 재현성을 향상시킬 수 있지만, 습식 실험 환경에서 신뢰할 수 있는 구현 실행은 여전히 어려운 과제입니다. 프로토콜은 종종 비구조화되어 있고, 실험 기구는 자주 투명하거나 반사성이 있으며, 다단계 절차는 일회성 명령 수행을 넘어 상태 인식 실행을 필요로 합니다. 기존 로봇 시스템은 종종 고가의 하드웨어, 고정된 워크플로우, 전용 기기 또는 로봇 중심 인터페이스에 의존합니다. 여기서 우리는 생물학적 조작을 위한 Vision-Language-Action(VLA) 모델로 구현된 저렴하고 프로토콜 기반이며 시각이 강화된 구현형 멀티 에이전트 시스템인 BioProVLA-Agent를 소개합니다. 이 시스템은 프로토콜을 작업 인터페이스로 사용하며, 프로토콜 파싱, 시각 상태 검증, 구현 실행을 폐쇄 루프 워크플로우로 통합합니다. 맞춤형 LLM 프로토콜 에이전트는 프로토콜을 검증 가능한 하위 작업으로 변환하고, VLM-RAG 검증 에이전트는 관찰, 로봇 상태, 검색된 지식, 성공/실패 예시를 사용하여 준비 상태와 완료를 평가하며, VLA 구현 에이전트는 경량 정책을 통해 검증된 하위 작업을 실행합니다. 습식 실험 시각적 교란 하에서의 견고성을 개선하기 위해, 우리는 투명 실험 기구, 반사, 조명 변화, 과다 노출을 대상으로 하는 온라인 증강 전략인 AugSmolVLA를 개발합니다. 우리는 튜브 로딩, 분류, 폐기물 처리, 캡 비틀기, 액체 따르기를 포함한 15개의 원자 작업, 6개의 복합 워크플로우, 3개의 양손 작업을 포괄하는 계층적 벤치마크에서 시스템을 평가합니다. 정상 및 고노출 설정에서 AugSmolVLA는 ACT, X-VLA, 원본 SmolVLA보다 실행 안정성을 향상시키며, 특히 정밀 배치, 투명 객체 조작, 복합 워크플로우, 시각적 저하 장면에서 두드러집니다. 이러한 결과는 생물학적 조작을 위한 접근 가능하고 프로토콜 중심이며 검증 가능한 구현형 AI로 가는 실용적인 경로를 시사합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>생물학 실험실 자동화는 반복적인 수작업을 줄이고 재현성을 향상시킬 수 있지만, 습식 실험 환경에서 신뢰할 수 있는 구현 실행은 여전히 어려운 과제입니다. 프로토콜은 종종 비구조화되어 있고, 실험 기구는 자주 투명하거나 반사성이 있으며, 다단계 절차는 일회성 명령 수행을 넘어 상태 인식 실행을 필요로 합니다. 기존 로봇 시스템은 종종 고가의 하드웨어, 고정된 워크플로우, 전용 기기 또는 로봇 중심 인터페이스에 의존합니다. 여기서 우리는 생물학적 조작을 위한 Vision-Language-Action(VLA) 모델로 구현된 저렴하고 프로토콜 기반이며 시각이 강화된 구현형 멀티 에이전트 시스템인 BioProVLA-Agent를 소개합니다. 이 시스템은 프로토콜을 작업 인터페이스로 사용하며, 프로토콜 파싱, 시각 상태 검증, 구현 실행을 폐쇄 루프 워크플로우로 통합합니다. 맞춤형 LLM 프로토콜 에이전트는 프로토콜을 검증 가능한 하위 작업으로 변환하고, VLM-RAG 검증 에이전트는 관찰, 로봇 상태, 검색된 지식, 성공/실패 예시를 사용하여 준비 상태와 완료를 평가하며, VLA 구현 에이전트는 경량 정책을 통해 검증된 하위 작업을 실행합니다. 습식 실험 시각적 교란 하에서의 견고성을 개선하기 위해, 우리는 투명 실험 기구, 반사, 조명 변화, 과다 노출을 대상으로 하는 온라인 증강 전략인 AugSmolVLA를 개발합니다. 우리는 튜브 로딩, 분류, 폐기물 처리, 캡 비틀기, 액체 따르기를 포함한 15개의 원자 작업, 6개의 복합 워크플로우, 3개의 양손 작업을 포괄하는 계층적 벤치마크에서 시스템을 평가합니다. 정상 및 고노출 설정에서 AugSmolVLA는 ACT, X-VLA, 원본 SmolVLA보다 실행 안정성을 향상시키며, 특히 정밀 배치, 투명 객체 조작, 복합 워크플로우, 시각적 저하 장면에서 두드러집니다. 이러한 결과는 생물학적 조작을 위한 접근 가능하고 프로토콜 중심이며 검증 가능한 구현형 AI로 가는 실용적인 경로를 시사합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bioprovla_agent_an_affordable_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</h3>
+          <p>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">
+          <span class="entry-type">논문</span>
+          <h3>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</h3>
+          <p>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (X-VLA),…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

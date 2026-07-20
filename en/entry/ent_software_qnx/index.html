@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QNX · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/software_platform/">Software Platform</a>
+    <span>/</span>
+    <span class="breadcrumb-current">QNX</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Software Platform</div>
+      <h1>QNX</h1>
+      <p class="entry-name-en">QNX</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Software &amp; Middleware</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#6.4.3 实时操作系统：Linux PREEMPT_RT, Xenomai, QNX, Zephyr by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">Stage 2 · Biped Platform</span>
+        <span class="roadmap-badge-role">Optional</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A commercial microkernel real-time operating system widely used in automotive and safety-critical systems, offering high reliability and deterministic scheduling.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>QNX is an important software platform in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>General-purpose operating systems (such as standard Linux) are not designed for hard real-time. Real-time operating systems (RTOS) meet microsecond-level timing requirements through kernel preemption, priority scheduling, and deterministic interrupt response.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: Real-time operating system, preemption, priority, interrupt latency, scheduler</p>
+<ul>
+<li><strong>Real-time operating system (RTOS)</strong>: An operating system capable of meeting deterministic time constraints.</li>
+<li><strong>Preemption</strong>: A high-priority task can interrupt a low-priority task and execute immediately.</li>
+<li><strong>Priority</strong>: An attribute that determines the order in which tasks are executed.</li>
+<li><strong>Interrupt latency</strong>: The time from when an interrupt occurs to when the interrupt service routine begins execution.</li>
+<li><strong>Scheduler</strong>: A kernel component that decides which task runs at which moment.</li>
+</ul>
+</div>
+<p><strong>Linux PREEMPT_RT</strong>. By applying real-time patches to mainline Linux, most code in the kernel becomes preemptible, and interrupts can be threaded. It retains the rich ecosystem of Linux while providing scheduling latency in the tens of microseconds, making it a common choice for robot main controllers.</p>
+<p><strong>Xenomai</strong>. Provides a dual-kernel real-time extension on Linux, where real-time tasks run on the Cobalt real-time kernel and non-real-time tasks run on the Linux kernel. Xenomai's scheduling latency can be as low as microseconds, but configuration and maintenance are more complex.</p>
+<p><strong>QNX</strong>. A microkernel real-time operating system owned by BlackBerry, widely used in automotive, medical, and industrial fields. Its microkernel architecture implements file systems, network stacks, etc., as user-space services, with the kernel retaining only minimal functionality, offering high reliability and security.</p>
+<p><strong>Zephyr</strong>. An open-source RTOS hosted by the Linux Foundation, designed for resource-constrained embedded devices, supporting multiple architectures, and commonly used in sensor nodes and motor controllers.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: Microkernel, dual-kernel real-time, interrupt threading, scheduling latency</p>
+<ul>
+<li><strong>Microkernel</strong>: Only the most basic services (processes, memory, IPC) are retained in kernel space, while other services run in user space.</li>
+<li><strong>Dual-kernel real-time</strong>: An architecture where an independent real-time kernel runs alongside a general-purpose OS.</li>
+<li><strong>Interrupt threading</strong>: Running interrupt handlers as kernel threads, which can be preempted by higher-priority real-time tasks.</li>
+<li><strong>Scheduling latency</strong>: The time from when a task becomes runnable to when it actually starts execution.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["Application Tasks"] --&gt; B["Real-time Kernel Scheduler"]
+    B --&gt; C["Preemptible Kernel"]
+    C --&gt; D["Hardware Interrupts"]
+    E["Linux Services"] -.-&gt;|"Non-real-time"| C</p>
+<h2 id="_1">개요</h2>
+<p>QNX는 휴머노이드 로봇 분야의 중요한 소프트웨어 플랫폼입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>범용 운영체제(예: 표준 Linux)는 하드 리얼타임을 위해 설계되지 않았습니다. 실시간 운영체제(RTOS)는 커널 선점, 우선순위 스케줄링 및 결정적 인터럽트 응답을 통해 마이크로초 단위의 타이밍 요구 사항을 충족합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 실시간 운영체제, 선점, 우선순위, 인터럽트 지연, 스케줄러</p>
+<ul>
+<li><strong>실시간 운영체제(RTOS)</strong>: 결정적 시간 제약을 충족할 수 있는 운영체제.</li>
+<li><strong>선점(preemption)</strong>: 높은 우선순위의 태스크가 낮은 우선순위의 태스크를 중단하고 즉시 실행될 수 있는 것.</li>
+<li><strong>우선순위(priority)</strong>: 태스크 실행 순서를 결정하는 속성.</li>
+<li><strong>인터럽트 지연(interrupt latency)</strong>: 인터럽트 발생부터 인터럽트 서비스 루틴 진입까지의 시간.</li>
+<li><strong>스케줄러(scheduler)</strong>: 어떤 태스크가 언제 실행될지 결정하는 커널 구성 요소.</li>
+</ul>
+</div>
+<p><strong>Linux PREEMPT_RT</strong>. 메인라인 Linux에 실시간 패치를 적용하여 커널 내 대부분의 코드를 선점 가능하게 하고, 인터럽트도 스레드화합니다. Linux의 풍부한 생태계를 유지하면서 수십 마이크로초의 스케줄링 지연을 제공하여 로봇 메인 컨트롤러의 일반적인 선택입니다.</p>
+<p><strong>Xenomai</strong>. Linux 위에 듀얼 커널 실시간 확장을 제공하며, 실시간 태스크는 Cobalt 실시간 커널에서 실행되고, 비실시간 태스크는 Linux 커널에서 실행됩니다. Xenomai의 스케줄링 지연은 마이크로초 수준까지 낮출 수 있지만, 구성 및 유지보수가 복잡합니다.</p>
+<p><strong>QNX</strong>. BlackBerry가 소유한 마이크로커널 실시간 운영체제로, 자동차, 의료 및 산업 분야에서 널리 사용됩니다. 마이크로커널 아키텍처는 파일 시스템, 네트워크 스택 등을 사용자 공간 서비스로 두고, 커널은 최소 기능만 유지하여 높은 신뢰성과 보안성을 제공합니다.</p>
+<p><strong>Zephyr</strong>. Linux Foundation이 호스팅하는 오픈 소스 RTOS로, 리소스가 제한된 임베디드 장치를 대상으로 하며, 다양한 아키텍처를 지원하고 센서 노드 및 모터 컨트롤러에 자주 사용됩니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 마이크로커널, 듀얼 커널 실시간, 인터럽트 스레드화, 스케줄링 지연</p>
+<ul>
+<li><strong>마이크로커널(microkernel)</strong>: 커널 공간에 가장 기본적인 서비스(프로세스, 메모리, IPC)만 유지하고, 다른 서비스는 사용자 공간에서 실행.</li>
+<li><strong>듀얼 커널 실시간(dual-kernel real-time)</strong>: 범용 OS 옆에 독립적인 실시간 커널을 실행하는 아키텍처.</li>
+<li><strong>인터럽트 스레드화(interrupt threading)</strong>: 인터럽트 핸들러를 커널 스레드로 실행하여 더 높은 우선순위의 실시간 태스크에 의해 선점될 수 있도록 함.</li>
+<li><strong>스케줄링 지연(scheduling latency)</strong>: 태스크가 실행 가능 상태가 된 시점부터 실제 실행이 시작될 때까지의 시간.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["애플리케이션 태스크"] --&gt; B["실시간 커널 스케줄러"]
+    B --&gt; C["선점 가능 커널"]
+    C --&gt; D["하드웨어 인터럽트"]
+    E["Linux 서비스"] -.-&gt;|"비실시간"| C</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_rt_preempt_linux/">Linux RT-PREEMPT</a>
+              <span class="rel-desc">QNX has prerequisite Linux RT-PREEMPT.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_ros_2_middleware_2024/">ROS 2 Middleware</a>
+              <span class="rel-desc">QNX has prerequisite ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">enables</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_moveit_motion_planning_2024/">MoveIt Motion Planning</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 22. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_darup_encrypted_control_for_networke_2020/">Encrypted control for networked systems: An illustrative introduction and current challenges</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Encrypted control for networked systems: An illustrative introduction and current challenges discusses QNX.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_software_qnx"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>ROS 2 Middleware</h3>
+          <p>De facto robot middleware with DDS-based pub/sub and real-time support.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_rt_preempt_linux/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Linux RT-PREEMPT</h3>
+          <p>A Linux kernel patchset that makes most of the kernel preemptible to provide deterministic,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_moveit_motion_planning_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>MoveIt Motion Planning</h3>
+          <p>Motion-planning framework commonly used for manipulation arms and whole-body planning.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_darup_encrypted_control_for_networke_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Encrypted control for networked systems: An illustrative introduction and current challenges</h3>
+          <p>A tutorial-style paper that unifies encrypted controller architectures and derives encrypted…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

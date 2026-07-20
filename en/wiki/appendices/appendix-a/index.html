@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Appendix A Entity and Relationship Quick Reference · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Appendix A Entity and Relationship Quick Reference</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="appendix-a-entity-and-relationship-quick-reference">Appendix A Entity and Relationship Quick Reference</h1>
+<blockquote>
+<p>This appendix is automatically generated from the knowledge graph data by <code>scripts/build_appendices.py</code> and is updated with the KG.</p>
+</blockquote>
+<p>An overview of entity types, relationship types, and core entities in the knowledge graph.</p>
+<h2 id="a1-entity-type-distribution">A.1 Entity Type Distribution</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Chinese</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>paper</code></td>
+<td>Paper</td>
+<td>1594</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>Method</td>
+<td>210</td>
+</tr>
+<tr>
+<td><code>report</code></td>
+<td>Report</td>
+<td>86</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td>Component</td>
+<td>49</td>
+</tr>
+<tr>
+<td><code>technology</code></td>
+<td>Technology</td>
+<td>28</td>
+</tr>
+<tr>
+<td><code>component_manufacturer</code></td>
+<td>Component Manufacturer</td>
+<td>19</td>
+</tr>
+<tr>
+<td><code>concept</code></td>
+<td>Concept</td>
+<td>17</td>
+</tr>
+<tr>
+<td><code>software_platform</code></td>
+<td>Software Platform</td>
+<td>16</td>
+</tr>
+<tr>
+<td><code>robot_system</code></td>
+<td>Robot System</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>dataset</code></td>
+<td>Dataset</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>principle</code></td>
+<td>Principle</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>benchmark</code></td>
+<td>Benchmark</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td>Company</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>algorithm</code></td>
+<td>Algorithm</td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>formalism</code></td>
+<td>Formal Method</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>standard</code></td>
+<td>Standard</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>equation</code></td>
+<td>Equation</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>foundation</code></td>
+<td>Foundational Discipline</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>material</code></td>
+<td>Material</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>application_scenario</code></td>
+<td>Application Scenario</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>oem</code></td>
+<td>OEM</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>tier1_supplier</code></td>
+<td>Tier 1 Supplier</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>operator</code></td>
+<td>Operator</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>theorem</code></td>
+<td>Theorem</td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>tool_equipment</code></td>
+<td>Tool/Equipment</td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>market_segment</code></td>
+<td>Market Segment</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td>—</td>
+<td><strong>2126</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="a2-relationship-type-distribution">A.2 Relationship Type Distribution</h2>
+<table>
+<thead>
+<tr>
+<th>Relationship Type</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cites</code></td>
+<td>562</td>
+</tr>
+<tr>
+<td><code>mentions</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>is_based_on</code></td>
+<td>64</td>
+</tr>
+<tr>
+<td><code>uses</code></td>
+<td>60</td>
+</tr>
+<tr>
+<td><code>requires</code></td>
+<td>42</td>
+</tr>
+<tr>
+<td><code>evaluates_on</code></td>
+<td>38</td>
+</tr>
+<tr>
+<td><code>evaluates</code></td>
+<td>28</td>
+</tr>
+<tr>
+<td><code>is_part_of</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>produces</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>implemented_on</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>integrates</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>enables</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>has_prerequisite</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>manufacturer_of</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>supplies</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>sources_from</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>applies_to</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>uses_dataset</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>combines_with</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>formalizes</code></td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>is_regulated_by</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>constrains</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>models</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>derived_from</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>includes</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>verified_by</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>solves</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>is_alternative_to</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>uses_data</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>serves</code></td>
+<td>2</td>
+</tr>
+<tr>
+<td><code>validates_on</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>uses_technology</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>analyzes</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>uses_product_of</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>tested_with</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>addresses</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>is_version_of</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><code>instantiates</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>1063</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="a3-domain-distribution">A.3 Domain Distribution</h2>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Entity Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foundational Disciplines</td>
+<td>36</td>
+</tr>
+<tr>
+<td>Raw Materials</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Components</td>
+<td>358</td>
+</tr>
+<tr>
+<td>Manufacturing Processes</td>
+<td>83</td>
+</tr>
+<tr>
+<td>Assembly, Integration &amp; Testing</td>
+<td>38</td>
+</tr>
+<tr>
+<td>Mass Production</td>
+<td>81</td>
+</tr>
+<tr>
+<td>Design Engineering</td>
+<td>400</td>
+</tr>
+<tr>
+<td>AI Models &amp; Algorithms</td>
+<td>1595</td>
+</tr>
+<tr>
+<td>Software Middleware</td>
+<td>1029</td>
+</tr>
+<tr>
+<td>Data &amp; Datasets</td>
+<td>118</td>
+</tr>
+<tr>
+<td>Benchmarks</td>
+<td>84</td>
+</tr>
+<tr>
+<td>Applications &amp; Markets</td>
+<td>312</td>
+</tr>
+<tr>
+<td>Policies, Regulations &amp; Ethics</td>
+<td>41</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a4-top-50-core-entities-by-number-of-relations">A.4 Top 50 Core Entities (by Number of Relations)</h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Entity</th>
+<th>Type</th>
+<th>Number of Relations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="/entry/ent_qp_standard_form/">Standard Quadratic Programming (QP)</a></td>
+<td>Formal Method</td>
+<td>43</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="/entry/ent_paper_dial_decoupling_intent_and_act_2026/">DIAL｜Decoupling Intent and Action via End-to-End VLA with Latent World Modeling</a></td>
+<td>Paper</td>
+<td>35</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="/entry/ent_paper_liang_humanoid_whole_body_manipulati_2026/">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</a></td>
+<td>Paper</td>
+<td>31</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a></td>
+<td>Benchmark</td>
+<td>24</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">Exploring Variable Autonomy in Virtual Reality Human-Robot Team Collaboration Simulation Based on GPT Large Language Models</a></td>
+<td>Paper</td>
+<td>23</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="/entry/ent_paper_wang_vla_survey_2026/">Robot Vision-Language-Action: A Survey of Datasets, Benchmarks, and Data Engines</a></td>
+<td>Paper</td>
+<td>21</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">Unitree H1 Humanoid Robot</a></td>
+<td>Robot System</td>
+<td>21</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="/entry/ent_paper_active_stereo_camera_outperfor_2026/">Active Stereo Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation</a></td>
+<td>Paper</td>
+<td>21</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">Humanoid Whole-Body Badminton Based on Multi-Stage Reinforcement Learning</a></td>
+<td>Paper</td>
+<td>21</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a></td>
+<td>Method</td>
+<td>21</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="/entry/ent_paper_wang_wam_survey_2026/">World Action Model: The Next Frontier of Embodied Intelligence</a></td>
+<td>Paper</td>
+<td>20</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo｜A Large-Scale Manipulation Platform for Scalable and Intelligent Embodied Systems</a></td>
+<td>Paper</td>
+<td>20</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoid Robots</a></td>
+<td>Paper</td>
+<td>20</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">RUKA: Rethinking the Design of Humanoid Hand Robots through Learning</a></td>
+<td>Paper</td>
+<td>20</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="/entry/ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024/">Torque Estimation for Humanoid Robots Without Joint Torque Sensors Based on Unscented Kalman Filter</a></td>
+<td>Paper</td>
+<td>20</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="/entry/ent_paper_openvla_2024/">OpenVLA: An Open-Source Vision-Language-Action Model</a></td>
+<td>Paper</td>
+<td>19</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">Your Vision-Language-Action Model Already Has Attention Heads for Path Deviation Detection</a></td>
+<td>Paper</td>
+<td>19</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">LingBot-VLA｜A Pragmatic VLA Foundation Model</a></td>
+<td>Paper</td>
+<td>18</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filter for Humanoid Robots: From Poisson Safety Function to CBF-Constrained Model Predictive Control</a></td>
+<td>Paper</td>
+<td>18</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">Contact Sensing for Legged Robots Based on Joint Torque Sensors and Force/Torque Sensors</a></td>
+<td>Paper</td>
+<td>18</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="/entry/ent_tier1_supplier_tuopujituan/">Tuopu Group</a></td>
+<td>Tier 1 Supplier</td>
+<td>18</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a></td>
+<td>Robot System</td>
+<td>17</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment Dataset</a></td>
+<td>Dataset</td>
+<td>17</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">A ROS-Based Software Framework for the NimbRo-OP Humanoid Open Platform</a></td>
+<td>Paper</td>
+<td>17</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="/entry/ent_component_planetary_roller_screw/">Planetary Roller Screw</a></td>
+<td>Component</td>
+<td>17</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a></td>
+<td>Method</td>
+<td>17</td>
+</tr>
+<tr>
+<td>27</td>
+<td><a href="/entry/ent_paper_roboomni_2025/">RoboOmni: Active Robotic Manipulation in Full-Modal Context</a></td>
+<td>Paper</td>
+<td>16</td>
+</tr>
+<tr>
+<td>28</td>
+<td><a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a></td>
+<td>Benchmark</td>
+<td>16</td>
+</tr>
+<tr>
+<td>29</td>
+<td><a href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Physics-Based Power Consumption Model Identification for the Unitree G1 Humanoid Robot Arm</a></td>
+<td>Paper</td>
+<td>16</td>
+</tr>
+<tr>
+<td>30</td>
+<td><a href="/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">Human-Level Actuation Capabilities for Humanoid Robots</a></td>
+<td>Paper</td>
+<td>16</td>
+</tr>
+<tr>
+<td>31</td>
+<td><a href="/entry/ent_paper_meng_expert_insight_based_modeling_2025/">Expert Insight-Based Modeling of Rare Earth Supply Disruption as a Non-Kinetic Strategic Deterrent: A Simulation-Driven Systematic Framework</a></td>
+<td>Paper</td>
+<td>16</td>
+</tr>
+<tr>
+<td>32</td>
+<td><a href="/entry/ent_formalism_floating_base_dynamics/">Floating Base Dynamics</a></td>
+<td>Formal Method</td>
+<td>16</td>
+</tr>
+<tr>
+<td>33</td>
+<td><a href="/entry/ent_component_nvidia_jetson_thor/">NVIDIA Jetson Thor</a></td>
+<td>Component</td>
+<td>15</td>
+</tr>
+<tr>
+<td>34</td>
+<td><a href="/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">Sensorless Joint Torque Estimation for Humanoid Robots Based on Physics-Informed Neural Networks and Unscented Kalman Filter</a></td>
+<td>Paper</td>
+<td>15</td>
+</tr>
+<tr>
+<td>35</td>
+<td><a href="/entry/ent_paper_neto_high_level_robot_programming_b_2013/">CAD-Based High-Level Robot Programming: Coping with Unpredictable Environments</a></td>
+<td>Paper</td>
+<td>15</td>
+</tr>
+<tr>
+<td>36</td>
+<td><a href="/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">A Continuum of Physics-Based Lithium-Ion Battery Models: A Review</a></td>
+<td>Paper</td>
+<td>15</td>
+</tr>
+<tr>
+<td>37</td>
+<td><a href="/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a></td>
+<td>Principle</td>
+<td>15</td>
+</tr>
+<tr>
+<td>38</td>
+<td><a href="/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">Humanoid Manipulation Interface (HuMI): Whole-Body Manipulation Without Robot Demonstrations</a></td>
+<td>Paper</td>
+<td>14</td>
+</tr>
+<tr>
+<td>39</td>
+<td><a href="/entry/ent_paper_pi0_2024/">π0: A Vision-Language-Action Flow Model for General Robot Control</a></td>
+<td>Paper</td>
+<td>14</td>
+</tr>
+<tr>
+<td>40</td>
+<td><a href="/entry/ent_paper_beyondmimic_from_motion_tracki_2025/">BeyondMimic｜From Motion Tracking to Diverse Humanoid Control via Guided Diffusion</a></td>
+<td>Paper</td>
+<td>14</td>
+</tr>
+<tr>
+<td>41</td>
+<td><a href="/entry/ent_benchmark_libero/">LIBERO</a></td>
+<td>Benchmark</td>
+<td>14</td>
+</tr>
+<tr>
+<td>42</td>
+<td><a href="/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/">Exploring Variable Autonomy in VR-Based Human-Robot Collaboration Simulation Using GPT Large Language Models</a></td>
+<td>Paper</td>
+<td>14</td>
+</tr>
+<tr>
+<td>43</td>
+<td><a href="/entry/ent_paper_wang_driving_into_the_future_multiv_2023/">Drive-WM: Multi-View Visual Prediction and World Model Planning for Autonomous Driving</a></td>
+<td>Paper</td>
+<td>14</td>
+</tr>
+<tr>
+<td>44</td>
+<td><a href="/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">Gemini Robotics｜Bringing AI into the Physical World</a></td>
+<td>Paper</td>
+<td>13</td>
+</tr>
+<tr>
+<td>45</td>
+<td><a href="/entry/ent_paper_aljalbout_reality_gap_2025/">The Reality Gap in Robotics: Challenges, Solutions, and Best Practices</a></td>
+<td>Paper</td>
+<td>13</td>
+</tr>
+<tr>
+<td>46</td>
+<td><a href="/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">Optimization of Humanoid Robot Design for Ergonomically Collaborative Load Lifting</a></td>
+<td>Paper</td>
+<td>13</td>
+</tr>
+<tr>
+<td>47</td>
+<td><a href="/entry/ent_paper_benzi_energy_tank_based_control_fram_2023/">Energy Tank Control Framework Satisfying ISO/TS 15066 Constraints</a></td>
+<td>Paper</td>
+<td>13</td>
+</tr>
+<tr>
+<td>48</td>
+<td><a href="/entry/ent_method_forward_kinematics/">Forward Kinematics</a></td>
+<td>Method</td>
+<td>13</td>
+</tr>
+<tr>
+<td>49</td>
+<td><a href="/entry/ent_method_inverse_kinematics/">Inverse Kinematics</a></td>
+<td>Method</td>
+<td>13</td>
+</tr>
+<tr>
+<td>50</td>
+<td><a href="/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">Online Balanced Motion Generation for Humanoid Robots</a></td>
+<td>Paper</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-30/">← Previous<span>Chapter 30: Future Outlook</span></a>
+      
+      
+      <a class="next" href="/en/wiki/appendices/appendix-b/">Next →<span>Appendix B Key Dataset List</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#appendix-a-entity-and-relationship-quick-reference">Appendix A Entity and Relationship Quick Reference</a><ul>
+<li><a href="#a1-entity-type-distribution">A.1 Entity Type Distribution</a></li>
+<li><a href="#a2-relationship-type-distribution">A.2 Relationship Type Distribution</a></li>
+<li><a href="#a3-domain-distribution">A.3 Domain Distribution</a></li>
+<li><a href="#a4-top-50-core-entities-by-number-of-relations">A.4 Top 50 Core Entities (by Number of Relations)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design of Joint Module and Actuator &amp; Drive · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Design of Joint Module and Actuator &amp; Drive</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Design of Joint Module and Actuator &amp; Drive</h1>
+      <p class="entry-name-en">Design of Joint Module and Actuator &amp; Drive</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span><span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Design of Actuator &amp; Drive-phase 4 of the entire product development process for Android, covering conceptual design, implementation verification, and document delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The Joint Module and Drive System Design (Actuator &amp; Drive) is the 4th stage in the full-process development of humanoid robot products, expanded into several Level-3 sub-tasks in WBS V3.</p>
+<h2 id="content">Content</h2>
+<p>This stage covers complete engineering actions such as input review, concept design, implementation/prototyping, verification closure, and documentation delivery, serving as a critical milestone to ensure downstream dependents receive qualified inputs.</p>
+<h2 id="key-sub-tasks-and-technical-content">Key Sub-Tasks and Technical Content</h2>
+<h4 id="joint-requirements-and-topology">Joint Requirements and Topology</h4>
+<h5 id="joint-performance-requirement-refinement">Joint Performance Requirement Refinement</h5>
+<ul>
+<li><strong>Method / Tool</strong>: P3.1.3 output + safety factor, thermal margin, bandwidth requirement</li>
+<li><strong>Design Rationale</strong>: Peak torque = dynamic peak × 1.5–2.0 safety factor; continuous torque based on sustained walking conditions</li>
+<li><strong>Key Constraints</strong>: Motor thermal time constant, heat dissipation capability, back-drive transparency</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Final torque/speed/bandwidth requirement table v2 for each joint
+<strong>Level-3 Sub-Tasks:</strong></li>
+<li><strong>P4.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Joint Performance Requirement Refinement," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P4.1.1.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "Joint Performance Requirement Refinement," using "P3.1.3 output + safety factor, thermal margin, bandwidth requirement" for demonstration, and clarify technical route and resource needs.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P4.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Joint Performance Requirement Refinement" according to the design solution, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P4.1.1.4 Verification and Issue Closure</strong>: Verify the output of "Joint Performance Requirement Refinement," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P4.1.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Joint Performance Requirement Refinement," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="actuator-topology-selection">Actuator Topology Selection</h5>
+<ul>
+<li><strong>Method / Tool</strong>: QDD, harmonic drive, planetary + frameless motor, direct drive comparison table</li>
+<li><strong>Design Rationale</strong>: High-dynamic joints (hip/ankle) favor QDD; high-torque small-volume joints (shoulder/wrist) favor harmonic drive</li>
+<li><strong>Key Constraints</strong>: Back-drive transparency, stiffness, backlash, efficiency, noise</li>
+<li><strong>Completion Criteria / Deliverable</strong>: "Actuator Topology Decision Matrix": selection per joint, rationale, backup solution
+<strong>Level-3 Sub-Tasks:</strong></li>
+<li><strong>P4.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Actuator Topology Selection," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P4.1.2.2 Candidate Solution Establishment and Evaluation</strong>: Build a candidate solution library for "Actuator Topology Selection," use "QDD, harmonic drive, planetary + frameless motor, direct drive comparison table" for quantitative evaluation, and determine the final solution considering cost, performance, supply chain, and maintainability.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P4.1.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Actuator Topology Selection" according to the design solution, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P4.1.2.4 Verification and Issue Closure</strong>: Verify the output of "Actuator Topology Selection," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P4.1.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Actuator Topology Selection," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="motor-and-reducer">Motor and Reducer</h4>
+<h5 id="motor-selection">Motor Selection</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Torque density, thermal resistance, encoder resolution, peak current, efficiency map comparison</li>
+<li><strong>Design Rationale</strong>: Prioritize high torque density frameless/integrated motors; verify winding temperature rise and demagnetization</li>
+<li><strong>Key Constraints</strong>: Drive bus voltage, current capability, lead time</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Motor specification sheet, selection comparison table, thermal verification
+<strong>Level-3 Sub-Tasks:</strong></li>
+<li><strong>P4.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Motor Selection," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P4.2.1.2 Candidate Solution Establishment and Evaluation</strong>: Build a candidate solution library for "Motor Selection," use "torque density, thermal resistance, encoder resolution, peak current, efficiency map comparison" for quantitative evaluation, and determine the final solution considering cost, performance, supply chain, and maintainability.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P4.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Motor Selection" according to the design solution, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P4.2.1.4 Verification and Issue Closure</strong>: Verify the output of "Motor Selection," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P4.2.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Motor Selection," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="reducer-and-transmission-selection">Reducer and Transmission Selection</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Comparison of harmonic, planetary, cycloidal, timing belt, leadscrew; backlash/stiffness/life testing</li>
+<li><strong>Design Rationale</strong>: Output torque/position sensor configuration determines control accuracy; transmission chain stiffness affects bandwidth</li>
+<li><strong>Key Constraints</strong>: Harmonic flexspline fatigue, planetary wear, noise, cost</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Reducer specification, transmission chain drawing, stiffness/backlash budget
+<strong>Level-3 Sub-Tasks:</strong></li>
+<li><strong>P4.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Reducer and Transmission Selection," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P4.2.2.2 Candidate Solution Establishment and Evaluation</strong>: Build a candidate solution library for "Reducer and Transmission Selection," use "comparison of harmonic, planetary, cycloidal, timing belt, leadscrew; backlash/stiffness/life testing" for quantitative evaluation, and determine the final solution considering cost, performance, supply chain, and maintainability.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P4.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Reducer and Transmission Selection" according to the design solution, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P4.2.2.4 Verification and Issue Closure</strong>: Verify the output of "Reducer and Transmission Selection," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P4.2.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Reducer and Transmission Selection," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="bearing-and-output-interface-design">Bearing and Output Interface Design</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Bearing life calculation, cross roller/angular contact combination, fit tolerance analysis</li>
+<li><strong>Design Rationale</strong>: Joint output end bears combined radial/axial/torque loads; bearing arrangement determines life</li>
+<li><strong>Key Constraints</strong>: Machining accuracy, assembly sequence, maintainability</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Bearing selection table, interface drawing, life verification
+<strong>Level-3 Sub-Tasks:</strong></li>
+<li><strong>P4.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Bearing and Output Interface Design," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P4.2.3.2 Concept and Detailed Design</strong>: Complete concept design, detailed design, and interface definition for "Bearing and Output Interface Design," use "bearing life calculation, cross roller/angular contact combination, fit tolerance analysis" to verify feasibility, and output drawings/algorithms/logic frameworks.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P4.2.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Bearing and Output Interface Design" according to the design solution, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P4.2.3.4 Verification and Issue Closure</strong>: Verify the output of "Bearing and Output Interface Design," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P4.2.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Bearing and Output Interface Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="driver-and-sensor-integration">Driver and Sensor Integration</h4>
+<h5 id="motor-driver-designselection">Motor Driver Design/Selection</h5>
+<ul>
+<li><strong>Method / Tool</strong>: FOC driver, SiC/GaN solution, peak/continuous current, thermal design</li>
+<li><strong>Design Rationale</strong>: Integrating the driver inside the joint shortens cables and reduces EMI; heat dissipation must be considered</li>
+<li><strong>Key Constraints</strong>: Space, heat dissipation, EMI, functional safety</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Driver specification, electrical schematic, thermal simulation/test
+<strong>Level-3 Sub-Tasks:</strong></li>
+<li><strong>P4.3.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Motor Driver Design/Selection," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P4.3.1.2 Candidate Solution Establishment and Evaluation</strong>: Build a candidate solution library for "Motor Driver Design/Selection," use "FOC driver, SiC/GaN solution, peak/continuous current, thermal design" for quantitative evaluation, and determine the final solution considering cost, performance, supply chain, and maintainability.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P4.3.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Motor Driver Design/Selection" according to the design solution, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P4.3.1.4 Verification and Issue Closure</strong>: Verify the output of "Motor Driver Design/Selection," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P4.3.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Motor Driver Design/Selection," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="positiontorque-sensor-solution">Position/Torque Sensor Solution</h5>
+<ul>
+<li><strong>Method / Tool</strong>: Absolute/incremental encoder, magnetic/optical encoder, torque sensor, dual-encoder solution</li>
+<li><strong>Design Rationale</strong>: Dual encoders improve control accuracy; torque sensors enable compliant control</li>
+<li><strong>Key Constraints</strong>: Cost, accuracy, resistance to oil contamination and vibration, wiring</li>
+<li><strong>Completion Criteria / Deliverable</strong>: Sensor solution, accuracy budget, installation drawing
+<strong>Level-3 Sub-Tasks:</strong></li>
+<li><strong>P4.3.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Position/Torque Sensor Solution," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P4.3.2.2 Concept/Method Design</strong>: Develop implementation methods or candidate solutions for "Position/Torque Sensor Solution," using "absolute/incremental encoder, magnetic/optical encoder, torque sensor, dual-encoder solution" for demonstration, and clarify technical route and resource needs.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Form at least 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize review and freeze the solution</li>
+<li><strong>P4.3.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Position/Torque Sensor Solution" according to the design solution, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P4.3.2.4 Verification and Issue Closure</strong>: Verify the output of "Position/Torque Sensor Solution," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P4.3.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Position/Torque Sensor Solution," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and cite raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4_4_1/">Life and failure analysis of joints</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive is part of Life and failure analysis of joints.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4_2_3/">Design of bearing and output interface</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive is part of Design of bearing and output interface.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p3/">System Architecture and Electromechanical Master Design (System / Preliminary Design)</a>
+              <span class="rel-desc">P4 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4_3_3/">Joint Module Integration and bench test</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive is part of Joint Module Integration and bench test.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_fmea/">Failure Mode and Effects Analysis (FMEA)</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive mentions Failure Mode and Effects Analysis (FMEA).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4_1_1/">Specification of joint performance requirements</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive has prerequisite Specification of joint performance requirements.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4_4_2/">Joint Safety and failure protection</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive is part of Joint Safety and failure protection.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4_3_1/">Design/selection of motor driver</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive is part of Design/selection of motor driver.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive mentions Field-Oriented Control (FOC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4_3_2/">Position/torque sensor scheme</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive is part of Position/torque sensor scheme.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4_2_2/">Selection of reducer and transmission</a>
+              <span class="rel-desc">Design of Joint Module and Actuator &amp; Drive has prerequisite Selection of reducer and transmission.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_1_2/">Selection of actuator topology</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Selection of actuator topology is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p13/">Electronics &amp; Power Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P13 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_3_3/">Joint Module Integration and bench test</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Joint Module Integration and bench test is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_4_1/">Life and failure analysis of joints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Life and failure analysis of joints is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_4_2/">Joint Safety and failure protection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Joint Safety and failure protection is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_2_2/">Selection of reducer and transmission</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Selection of reducer and transmission is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">Soft robotic suits: State of the art, core technologies and open challenges</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Soft robotic suits: State of the art, core technologies and open challenges discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5/">Ontological Structure Engineering and Prototyping (Mechanical Structure)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P5 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mahapatra_3d_printed_cable_driven_contin_2020/">3D printed cable-driven continuum robots with generally routed cables: modeling and experiments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">3D printed cable-driven continuum robots with generally routed cables: modeling and experiments discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p9/">Thermal Management simulation and iteration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P9 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">Real time state monitoring and fault diagnosis system for motor based on LabVIEW</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Real time state monitoring and fault diagnosis system for motor based on LabVIEW discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_1_1/">Specification of joint performance requirements</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Specification of joint performance requirements is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p10/">Motion Control Algorithm Development and Validation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P10 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_bonfiglioli_2024/">Bonfiglioli</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Bonfiglioli discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_abdolmalaki_geometric_jacobians_derivation_2017/">Geometric Jacobians Derivation and Kinematic Singularity Analysis for Smokie Robot Manipulator &amp; the Barrett WAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Geometric Jacobians Derivation and Kinematic Singularity Analysis for Smokie Robot Manipulator &amp; the Barrett WAM discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_3_2/">Position/torque sensor scheme</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Position/torque sensor scheme is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_abdolmalaki_development_of_direct_kinemati_2017/">Development of Direct Kinematics and Workspace Representation for Smokie Robot Manipulator &amp; the Barrett WAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Development of Direct Kinematics and Workspace Representation for Smokie Robot Manipulator &amp; the Barrett WAM discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_avery_shape_sensing_of_variable_stif_2019/">Shape Sensing of Variable Stiffness Soft Robots using Electrical Impedance Tomography</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Shape Sensing of Variable Stiffness Soft Robots using Electrical Impedance Tomography discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_modal_based_kinematics_and_con_2019/">Modal-based Kinematics and Contact Detection of Soft Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Modal-based Kinematics and Contact Detection of Soft Robots discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_2_1/">Motor type selection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Motor type selection is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_2_3/">Design of bearing and output interface</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Design of bearing and output interface is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yigit_kinematic_analysis_and_design_2023/">Kinematic Analysis and Design of a Novel (6+3)-DoF Parallel Robot with Fixed Actuators</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Kinematic Analysis and Design of a Novel (6+3)-DoF Parallel Robot with Fixed Actuators discusses Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p4_3_1/">Design/selection of motor driver</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Design/selection of motor driver is part of Design of Joint Module and Actuator &amp; Drive.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p4"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>Design/selection of motor driver</h3>
+          <p>Driver specifications, electrical schematics, thermal simulation/testing</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_4_2/">
+          <span class="entry-type">Method</span>
+          <h3>Joint Safety and failure protection</h3>
+          <p>Fail-safe strategies, FMEA updates, security testing</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Selection of actuator topology</h3>
+          <p>“Actuator topology decision matrix”: each joint selection, reasons, backup program</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_3_3/">
+          <span class="entry-type">Method</span>
+          <h3>Joint Module Integration and bench test</h3>
+          <p>“Joint test report”: torque-current, efficiency chart, temperature rise curve, bandwidth</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9/">
+          <span class="entry-type">Method</span>
+          <h3>Thermal Management simulation and iteration</h3>
+          <p>Thermal Management simulation and iteration-phase 9 of the entire Android product development…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5/">
+          <span class="entry-type">Method</span>
+          <h3>Ontological Structure Engineering and Prototyping (Mechanical Structure)</h3>
+          <p>Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Motor type selection</h3>
+          <p>Motor specification, type selection comparison table, heat check</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3/">
+          <span class="entry-type">Method</span>
+          <h3>System Architecture and Electromechanical Master Design (System / Preliminary Design)</h3>
+          <p>System Architecture and Electromechanical Design (System / Preliminary Design) —— Phase 3 of the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Selection of reducer and transmission</h3>
+          <p>Reducer specification, chain drawing, stiffness/backlash budget</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mahapatra_3d_printed_cable_driven_contin_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>3D printed cable-driven continuum robots with generally routed cables: modeling and experiments</h3>
+          <p>Compares a discrete optimization-based kinematic model with a Cosserat-rod static model for six…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control (FOC)</h3>
+          <p>A motor-control method that transforms three-phase currents into a rotating dq reference frame to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yigit_kinematic_analysis_and_design_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Kinematic Analysis and Design of a Novel (6+3)-DoF Parallel Robot with Fixed Actuators</h3>
+          <p>Presents a kinematically redundant (6+3)-DoF parallel robot built from three identical base-mounted…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10/">
+          <span class="entry-type">Method</span>
+          <h3>Motion Control Algorithm Development and Validation</h3>
+          <p>Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Real time state monitoring and fault diagnosis system for motor based on LabVIEW</h3>
+          <p>Presents a LabVIEW-based real-time monitoring and multi-fault pre-diagnosis system for three-phase…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Design of bearing and output interface</h3>
+          <p>Bearing selection table, interface drawing, life check</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_fmea/">
+          <span class="entry-type">Method</span>
+          <h3>Failure Mode and Effects Analysis (FMEA)</h3>
+          <p>A bottom-up reliability method that identifies potential failure modes, their causes and effects,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_abdolmalaki_geometric_jacobians_derivation_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometric Jacobians Derivation and Kinematic Singularity Analysis for Smokie Robot Manipulator &amp; the Barrett WAM</h3>
+          <p>Derives the 6×6 geometric Jacobians and kinematic singularities of the 6-DOF Smokie OUR and Barrett…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_avery_shape_sensing_of_variable_stif_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Shape Sensing of Variable Stiffness Soft Robots using Electrical Impedance Tomography</h3>
+          <p>This paper presents a proprioceptive soft actuator that uses conductive saline as both the actuation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_xiloyannis_soft_robotic_suits_state_of_th_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Soft robotic suits: State of the art, core technologies and open challenges</h3>
+          <p>A 2021 arXiv survey that defines soft robotic suits, proposes a taxonomy, and reviews actuation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_modal_based_kinematics_and_con_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Modal-based Kinematics and Contact Detection of Soft Robots</h3>
+          <p>Proposes modal-based forward and instantaneous kinematics for a 1-DoF pneumatic bellow soft actuator…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots</h3>
+          <p>Presents a printable self-sustained compliant oscillator built from two mechanically coupled…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Specification of joint performance requirements</h3>
+          <p>Final torque/Speed/bandwidth requirements for each joint V 2</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_4_1/">
+          <span class="entry-type">Method</span>
+          <h3>Life and failure analysis of joints</h3>
+          <p>Life Test Plan, failure mode analysis, maintenance cycle proposal</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_abdolmalaki_development_of_direct_kinemati_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Development of Direct Kinematics and Workspace Representation for Smokie Robot Manipulator &amp; the Barrett WAM</h3>
+          <p>This paper derives Denavit-Hartenberg parameters and direct-kinematics transformation matrices for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p13/">
+          <span class="entry-type">Method</span>
+          <h3>Electronics &amp; Power Systems</h3>
+          <p>Electronics &amp; Power Systems—Phase 13 of the full lifecycle for humanoid robot product development,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_bonfiglioli_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Bonfiglioli</h3>
+          <p>Italian manufacturer of gearboxes and drive systems used in industrial and mobile robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Position/torque sensor scheme</h3>
+          <p>Sensor scheme, accuracy budget, installation drawings</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#key-sub-tasks-and-technical-content">Key Sub-Tasks and Technical Content</a><ul>
+<li><a href="#joint-requirements-and-topology">Joint Requirements and Topology</a><ul>
+<li><a href="#joint-performance-requirement-refinement">Joint Performance Requirement Refinement</a></li>
+<li><a href="#actuator-topology-selection">Actuator Topology Selection</a></li>
+</ul>
+</li>
+<li><a href="#motor-and-reducer">Motor and Reducer</a><ul>
+<li><a href="#motor-selection">Motor Selection</a></li>
+<li><a href="#reducer-and-transmission-selection">Reducer and Transmission Selection</a></li>
+<li><a href="#bearing-and-output-interface-design">Bearing and Output Interface Design</a></li>
+</ul>
+</li>
+<li><a href="#driver-and-sensor-integration">Driver and Sensor Integration</a><ul>
+<li><a href="#motor-driver-designselection">Motor Driver Design/Selection</a></li>
+<li><a href="#positiontorque-sensor-solution">Position/Torque Sensor Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation</h1>
+      <p class="entry-name-en">Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04940v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.04940v1 Announce Type: new Abstract: Human-like dexterous hands with multiple fingers offer human-level manipulation capabilities but remain difficult to train the control policies that can deploy on real hardware due to contact-rich physics and imperfect actuation. We present a sim-to-real reinforcement learning method that leverages dense tactile feedback combined with joint torque sensing to explicitly regulate physical interactions. To enable effective sim-to-real transfer, we introduce (i) a computationally fast tactile simulation that computes distances between dense virtual tactile units and the object via parallel forward kinematics, providing high-rate, high-resolution touch signals needed by RL; (ii) a current-to-torque calibration that eliminates the need for torque sensors on dexterous hands by mapping motor current to joint torque; and (iii) actuator dynamics modeling with randomization to account for non-ideal torque-speed effects and bridge the actuation gaps. Using an asymmetric actor-critic PPO pipeline, we train policies entirely in simulation and deploy them directly to a five-finger hand. The resulting policies demonstrate two essential human-hand skills: (1) command-based controllable grasp force tracking and (2) reorientation of objects in the hand, both of which are robustly executed without fine-tuning on the robot. By combining tactile and torque in the observation space with scalable sensing and actuation modeling, our system provides a practical solution to achieve reliable dexterous manipulation. To our knowledge, this is the first demonstration of controllable grasping on a multi-finger dexterous hand trained entirely in simulation and transferred zero-shot on real hardware.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.04940" target="_blank" rel="noopener">Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>인간과 유사한 다지(dexterous) 손은 인간 수준의 조작 능력을 제공하지만, 접촉이 많은 물리적 상호작용과 불완전한 구동(actuation)으로 인해 실제 하드웨어에 배포 가능한 제어 정책을 훈련시키는 것은 여전히 어렵습니다. 우리는 밀집 촉각 피드백과 관절 토크 감지를 결합하여 물리적 상호작용을 명시적으로 조절하는 시뮬레이션-실제(sim-to-real) 강화 학습 방법을 제시합니다. 효과적인 시뮬레이션-실제 전이를 위해 다음을 도입합니다: (i) 병렬 순기구학(parallel forward kinematics)을 통해 밀집 가상 촉각 유닛과 객체 간 거리를 계산하여 강화 학습에 필요한 고속, 고해상도 촉각 신호를 제공하는 계산적으로 빠른 촉각 시뮬레이션; (ii) 모터 전류를 관절 토크로 매핑하여 다지 손의 토크 센서 필요성을 없애는 전류-토크 보정; (iii) 비이상적 토크-속도 효과를 고려하고 구동 격차를 해소하기 위한 무작위화가 포함된 액추에이터 동역학 모델링. 비대칭 액터-크리틱 PPO(asymmetric actor-critic PPO) 파이프라인을 사용하여 정책을 전적으로 시뮬레이션에서 훈련하고 이를 다섯 손가락 손에 직접 배포합니다. 결과 정책은 두 가지 필수 인간 손 기술을 보여줍니다: (1) 명령 기반 제어 가능한 파지력 추적 및 (2) 손 안에서 객체의 방향 재조정, 이 두 가지 모두 로봇에서 미세 조정 없이 강건하게 실행됩니다. 관찰 공간에서 촉각과 토크를 확장 가능한 감지 및 구동 모델링과 결합함으로써, 우리 시스템은 신뢰할 수 있는 정밀 조작을 달성하기 위한 실용적인 솔루션을 제공합니다. 우리가 아는 한, 이는 전적으로 시뮬레이션에서 훈련되고 실제 하드웨어에서 제로샷(zero-shot)으로 전이된 다지 손에서 제어 가능한 파지를 최초로 시연한 것입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>인간과 유사한 다지 손은 인간 수준의 조작 능력을 제공하지만, 접촉이 많은 물리적 상호작용과 불완전한 구동으로 인해 실제 하드웨어에 배포 가능한 제어 정책을 훈련시키는 것은 여전히 어렵습니다. 우리는 밀집 촉각 피드백과 관절 토크 감지를 결합하여 물리적 상호작용을 명시적으로 조절하는 시뮬레이션-실제 강화 학습 방법을 제시합니다. 효과적인 시뮬레이션-실제 전이를 위해 다음을 도입합니다: (i) 병렬 순기구학을 통해 밀집 가상 촉각 유닛과 객체 간 거리를 계산하여 강화 학습에 필요한 고속, 고해상도 촉각 신호를 제공하는 계산적으로 빠른 촉각 시뮬레이션; (ii) 모터 전류를 관절 토크로 매핑하여 다지 손의 토크 센서 필요성을 없애는 전류-토크 보정; (iii) 비이상적 토크-속도 효과를 고려하고 구동 격차를 해소하기 위한 무작위화가 포함된 액추에이터 동역학 모델링. 비대칭 액터-크리틱 PPO 파이프라인을 사용하여 정책을 전적으로 시뮬레이션에서 훈련하고 이를 다섯 손가락 손에 직접 배포합니다. 결과 정책은 두 가지 필수 인간 손 기술을 보여줍니다: (1) 명령 기반 제어 가능한 파지력 추적 및 (2) 손 안에서 객체의 방향 재조정, 이 두 가지 모두 로봇에서 미세 조정 없이 강건하게 실행됩니다. 관찰 공간에서 촉각과 토크를 확장 가능한 감지 및 구동 모델링과 결합함으로써, 우리 시스템은 신뢰할 수 있는 정밀 조작을 달성하기 위한 실용적인 솔루션을 제공합니다. 우리가 아는 한, 이는 전적으로 시뮬레이션에서 훈련되고 실제 하드웨어에서 제로샷으로 전이된 다지 손에서 제어 가능한 파지를 최초로 시연한 것입니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_closing_the_reality_gap_zero_s_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</h1>
+      <p class="entry-name-en">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Evaluation &amp; Benchmarks</span><span class="tag">Components</span><span class="tag">Applications &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Upstream</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.21133v2.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper proposes a multi-agent framework—Active Spatial Brain for active spatial perception and planning, and Generalizable Action Cerebellum for decoupled lower-body locomotion and upper-body dexterous manipulation—that enables spatial-aware humanoid whole-body manipulation without task-specific real-robot data. It is validated on a spatial intelligence benchmark and on a real Unitree G1 humanoid robot.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2605.21133" target="_blank" rel="noopener">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>In this paper, we explore spatial-aware humanoid whole-body manipulation task. Compared with tabletop settings, this task poses two key challenges: 1) Spatial understanding is challenging in complex 3D environments with diverse spatial relations. 2) Action generation is difficult to generalize, as limited and costly real-robot data restricts data-driven models generalization. To address these challenges, we propose a generalizable humanoid loco-manipulation framework that leverages the spatial perception and action generation capabilities of multi-agent large models. Specifically, our framework includes two components: Active Spatial Brain for active spatial perception and decision-making, and Generalizable Action Cerebellum for executable robot action generation. The first component actively perceives the spatial scene and makes decisions on task planning and subtask decomposition. The second component generate executable robot actions based on the decisions made by the first module without needs of task-specific real robot data. To benchmark our framework, we design a set of spatial manipulation tasks from two perspectives: evaluating spatial perception and understanding, and assessing real-robot task performance. The results demonstrate strong performance on both aspects across diverse tasks and environments.</p>
+<h2 id="content">Content</h2>
+<p>In this paper, we explore spatial-aware humanoid whole-body manipulation task. Compared with tabletop settings, this task poses two key challenges: 1) Spatial understanding is challenging in complex 3D environments with diverse spatial relations. 2) Action generation is difficult to generalize, as limited and costly real-robot data restricts data-driven models generalization. To address these challenges, we propose a generalizable humanoid loco-manipulation framework that leverages the spatial perception and action generation capabilities of multi-agent large models. Specifically, our framework includes two components: Active Spatial Brain for active spatial perception and decision-making, and Generalizable Action Cerebellum for executable robot action generation. The first component actively perceives the spatial scene and makes decisions on task planning and subtask decomposition. The second component generate executable robot actions based on the decisions made by the first module without needs of task-specific real robot data. To benchmark our framework, we design a set of spatial manipulation tasks from two perspectives: evaluating spatial perception and understanding, and assessing real-robot task performance. The results demonstrate strong performance on both aspects across diverse tasks and environments.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</a>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</a>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</a>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">evaluates on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum evaluates or benchmarks HumanoidBench.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</a>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</a>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</a>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_gentlehumanoid_learning_upper_2025/">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</a>
+              <span class="rel-desc">Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum cites or references GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wholebodyvla_towards_unified_l_2025_1/">WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_physically_consistent_humanoid_2025/">Physically Consistent Humanoid Loco-Manipulation using Latent Diffusion Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Physically Consistent Humanoid Loco-Manipulation using Latent Diffusion Models cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation in Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation in Humanoid Robots cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kaidanov_the_role_of_domain_randomizati_2024/">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_handoff_humanoid_agentic_task_2026/">HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cybo_waiter_a_physical_agentic_2026/">Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_vla_towards_universal_2025/">Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">Online Balanced Motion Generation for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Online Balanced Motion Generation for Humanoid Robots cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hiwet_hierarchical_world_frame_2026/">HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_metaworld_x_hierarchical_world_2026/">MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hiwet_hierarchical_world_frame_2026_1/">HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wholebodyvla_towards_unified_l_2025/">WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_harmon_whole_body_motion_gener_2024/">HARMON: Whole-Body Motion Generation of Humanoid Robots from Language Descriptions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">HARMON: Whole-Body Motion Generation of Humanoid Robots from Language Descriptions cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_psi_0_an_open_foundation_model_2026/">$\Psi_0$: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">$\Psi_0$: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egoprimo_egocentric_motion_gen_2026/">EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_stageact_stage_conditioned_imi_2025/">StageACT: Stage-Conditioned Imitation for Robust Humanoid Door Opening</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">StageACT: Stage-Conditioned Imitation for Robust Humanoid Door Opening cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omg_omni_modal_motion_generati_2026/">OMG: Omni-Modal Motion Generation for Generalist Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">OMG: Omni-Modal Motion Generation for Generalist Humanoid Control cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates</span>
+              <span class="rel-desc">HumanoidBench cites or references Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_liang_humanoid_whole_body_manipulati_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_leverb_humanoid_whole_body_con_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction</h3>
+          <p>Vision-language-action (VLA) models have demonstrated strong semantic understanding and zero-shot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_physically_consistent_humanoid_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Physically Consistent Humanoid Loco-Manipulation using Latent Diffusion Models</h3>
+          <p>This work first recovers scenes, objects, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_vla_towards_universal_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration</h3>
+          <p>The implementation path of Humanoid-VLA is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wholebodyvla_towards_unified_l_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control</h3>
+          <p>The implementation path of WholeBodyVLA is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Semantics-aware Adaptive Knowledge Distillation for Sensor-to-Vision Action Recognition</h3>
+          <p>This paper proposes SAKDN, a framework that distills knowledge from multiple wearable-sensor…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omg_omni_modal_motion_generati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>OMG: Omni-Modal Motion Generation for Generalist Humanoid Control</h3>
+          <p>Humanoid whole-body control has made significant progress in recent years, yet existing approaches…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kaidanov_the_role_of_domain_randomizati_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control</h3>
+          <p>This paper studies how dataset diversity and size affect Diffusion Policies for whole-body humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_handoff_humanoid_agentic_task_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers</h3>
+          <p>Handoff transforms ontological states and joint sequences into trackable body targets, and through…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</h3>
+          <p>This paper compares QMIX, IPPO, and MASAC on warehouse multi-agent reinforcement learning tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Online Balanced Motion Generation for Humanoid Robots</h3>
+          <p>Proposes an analytic whole-body motion generator for low-cost humanoid robots with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gentlehumanoid_learning_upper_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</h3>
+          <p>Gentlehumanoid first recovers scenes, targets, or motion representations from camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_stageact_stage_conditioned_imi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>StageACT: Stage-Conditioned Imitation for Robust Humanoid Door Opening</h3>
+          <p>StageACT mainly solves the data closed loop: using camera images/multi-view observation, ontology…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_humanoid_whole_body_badminton_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning</h3>
+          <p>A unified whole-body reinforcement-learning controller enables a 21-DoF humanoid to play badminton…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cybo_waiter_a_physical_agentic_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation</h3>
+          <p>Cybo-Waiter first recovers scene, target, or motion representations from language instructions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">Benchmark</span>
+          <h3>HumanoidBench</h3>
+          <p>A simulated benchmark for whole-body humanoid locomotion and manipulation based on the Unitree H1…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation in Humanoid Robots</h3>
+          <p>This paper proposes a real-time sensorless whole-body torque control framework for humanoid robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_psi_0_an_open_foundation_model_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>$\Psi_0$: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation</h3>
+          <p>The implementation path of PSI0 is to encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hiwet_hierarchical_world_frame_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation</h3>
+          <p>HiWET first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hiwet_hierarchical_world_frame_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation</h3>
+          <p>HiWET converts the body state with joint sequences, simulated interaction data, contact…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wholebodyvla_towards_unified_l_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control</h3>
+          <p>The implementation path of WholeBodyVLA is to first encode camera images/multi-view observations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Your Vision-Language-Action Model Already Has Attention Heads For Path Deviation Detection</h3>
+          <p>This paper identifies sparse &#39;Navigation Heads&#39; in a frozen Vision-Language-Action model whose…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egoprimo_egocentric_motion_gen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control</h3>
+          <p>The implementation path of EgoPriMo is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bena_geometry_aware_predictive_safe_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Geometry-Aware Predictive Safety Filters on Humanoids: From Poisson Safety Functions to CBF Constrained MPC</h3>
+          <p>This paper proposes a predictive safety filter that combines nonlinear model predictive control…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_2/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</h3>
+          <p>HYPERmotion first recovers scene, target, or motion representations from language instructions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_harmon_whole_body_motion_gener_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>HARMON: Whole-Body Motion Generation of Humanoid Robots from Language Descriptions</h3>
+          <p>Humanoid robots, with their human-like embodiment, have the potential to integrate seamlessly into…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_metaworld_x_hierarchical_world_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation</h3>
+          <p>The implementation path of MetaWorld-X is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Manipulation Interface (HuMI): Humanoid Whole-Body Manipulation from Robot-Free Demonstrations</h3>
+          <p>HuMI is a portable, robot-free data-collection and hierarchical-learning framework that translates…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

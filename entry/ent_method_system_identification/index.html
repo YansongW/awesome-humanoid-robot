@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>系统辨识 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">系统辨识</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>系统辨识</h1>
+      <p class="entry-name-en">System Identification</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">数据与数据集</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">阶段 2 · 双足平台</span>
+        <span class="roadmap-badge-role">拓展</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="_2">系统辨识的定义与定位</h3>
+<p>系统辨识属于 <strong>方法</strong> 类型。 所属领域包括：AI 模型与算法, 数据与数据集。 价值链层级：智能层。 根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。 英文名称为 <em>System Identification</em>。 韩文名称为 <em>시스템 동정</em>。</p>
+<h3 id="_3">系统辨识的数学与原理基础</h3>
+<p>系统辨识建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，系统辨识通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_4">算法步骤与实现要点</h3>
+<p>在实际实现系统辨识时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_5">典型应用与局限性</h3>
+<p>系统辨识可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_6">相关标签</h3>
+<ul>
+<li>method</li>
+<li>chapter_18</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_7">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，系统辨识在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_probability_theory/">概率论</a>
+              <span class="rel-desc">系统辨识前置依赖概率论。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+              <span class="rel-desc">系统辨识前置依赖线性代数。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_rma_rapid_motor_adaptation_for_2026/">RMA: Rapid Motor Adaptation for Legged Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_impedance_guided_programmable_2026/">Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lee_attention_based_neural_augment_2026/">基于注意力机制的神经增强卡尔曼滤波用于足式机器人状态估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于注意力机制的神经增强卡尔曼滤波用于足式机器人状态估计使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_task_adaptive_design_of_modula_2026/">Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jorgensen_thermal_recovery_of_multi_limb_2019/">具有电动执行器的多肢机器人的热恢复</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">具有电动执行器的多肢机器人的热恢复使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_closing_sim_to_real_gap_for_he_2026/">带负载的人形机器人不是同一个系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">带负载的人形机器人不是同一个系统使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p10_3_1/">系统辨识与参数校准</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">系统辨识与参数校准前置依赖系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_adaptive_invariant_extended_ka_2026/">Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_physically_grounded_3d_generat_2026/">Physically Grounded 3D Generative Reconstruction under Hand Occlusion using Proprioception and Multi-Contact Touch</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_hybrid_autoencoder_for_robus_2026/">A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_towards_bridging_the_gap_syste_2025/">Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_float_drone_for_physical_inter_2026/">FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_balance_motor_ther_2026/">Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tendon_actuated_robots_with_a_2026/">Tendon-Actuated Robots with a Tapered, Flexible Polymer Backbone: Design, Fabrication, and Modeling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_teetaert_a_sliding_window_filter_for_on_2025/">用于在线连续时间连续体机器人状态估计的滑动窗口滤波器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">用于在线连续时间连续体机器人状态估计的滑动窗口滤波器使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_source_seeking_control_of_unic_2021/">基于3D打印柔性压阻传感器的独轮机器人源搜索控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">基于3D打印柔性压阻传感器的独轮机器人源搜索控制使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_oehler_accurate_pose_prediction_on_si_2023/">粗糙地形移动地面机器人有符号距离场精确姿态预测</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">粗糙地形移动地面机器人有符号距离场精确姿态预测使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_adaptive_robotic_information_g_2023/">基于非平稳高斯过程的自适应机器人信息获取</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于非平稳高斯过程的自适应机器人信息获取discusses系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hossen_care_finding_root_causes_of_co_2023/">CARE：在高度可配置机器人中查找配置问题的根本原因</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">CARE：在高度可配置机器人中查找配置问题的根本原因使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_domain_adaptation/">域适应</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">域适应提及系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_levy_meta_learning_online_dynamics_2025/">Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_phypush_one_push_is_all_you_ne_2026/">PhyPush: One Push is All You Need for Sensorless Physical Property Estimation with Physics-Guided Transformers</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_hardware_in_the_loop/">硬件在环测试（HIL）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">硬件在环测试（HIL）前置依赖系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_3d_cal_an_open_source_software_2026/">3D Cal: An Open-Source Software Library for Depth Reconstruction on Vision-Based Tactile Sensors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">Sim-to-Real迁移前置依赖系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_suzuki_attitude_estimation_free_gnss_2023/">无需姿态估计的GNSS/IMU融合定位</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">无需姿态估计的GNSS/IMU融合定位discusses系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_unified_structural_hydrodynami_2026/">Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zheng_model_based_control_of_planar_2022/">受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_aerodynamics_for_the_2025/">Learning Aerodynamics for the Control of Flying Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_inekformer_a_hybrid_state_esti_2025/">InEKFormer: A Hybrid State Estimator for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_petit_bayesian_optimization_for_deve_2020/">基于参数边界缩减的元学习与贝叶斯优化在发展机器人学中的应用</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于参数边界缩减的元学习与贝叶斯优化在发展机器人学中的应用discusses系统辨识。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bridging_the_sim_to_real_gap_f_2025/">Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion: An optimization-based multi-sensor state estimator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sampling_based_system_identifi_2025/">Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_contact_representatio_2026/">Learning Contact Representation for Leg Odometry</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_action_chunking_with_transform_2023/">基于Transformer的动作分块</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">实现于</span>
+              <span class="rel-desc">Wiki 第18章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_action_token_prediction/">动作 token 预测</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">实例化</span>
+              <span class="rel-desc">Wiki 第18章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">实现于</span>
+              <span class="rel-desc">Wiki 第18章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">扩散策略：通过动作扩散实现视觉运动策略学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">实现于</span>
+              <span class="rel-desc">Wiki 第18章提取的跨层关系。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">实现于</span>
+              <span class="rel-desc">Wiki 第18章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_system_identification"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_closing_sim_to_real_gap_for_he_2026/">
+          <span class="entry-type">论文</span>
+          <h3>带负载的人形机器人不是同一个系统</h3>
+          <p>Humanoid robots deployed in real-world scenarios often need to carry unknown payloads, which…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_levy_meta_learning_online_dynamics_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving</h3>
+          <p>Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving (Meta-Learning Online…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_task_adaptive_design_of_modula_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</h3>
+          <p>arXiv:2607.09548v1 Announce Type: new Abstract: Aerial manipulation with multirotor platforms…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">
+          <span class="entry-type">论文</span>
+          <h3>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</h3>
+          <p>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_source_seeking_control_of_unic_2021/">
+          <span class="entry-type">论文</span>
+          <h3>基于3D打印柔性压阻传感器的独轮机器人源搜索控制</h3>
+          <p>We present the design and experimental validation of source seeking control algorithms for a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_towards_bridging_the_gap_syste_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots</h3>
+          <p>Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chi_diffusion_policy_visuomotor_po_2023/">
+          <span class="entry-type">论文</span>
+          <h3>扩散策略：通过动作扩散实现视觉运动策略学习</h3>
+          <p>扩散策略将机器人视觉运动策略表示为动作空间上的条件去噪扩散过程，学习动作分布的分数梯度，并在视觉观测条件下通过随机朗之万动力学迭代去噪生成动作。该文在四个操作基准的15项任务以及真实机器人系统上进行了…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_contact_representatio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Contact Representation for Leg Odometry</h3>
+          <p>Learning Contact Representation for Leg Odometry is a paper on State Estimation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>系统辨识与参数校准</h3>
+          <p>- P10.3.1.1 输入梳理与目标量化 - 整理「系统辨识与参数校准」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_teetaert_a_sliding_window_filter_for_on_2025/">
+          <span class="entry-type">论文</span>
+          <h3>用于在线连续时间连续体机器人状态估计的滑动窗口滤波器</h3>
+          <p>本文提出了一种用于连续体机器人概率在线状态估计的连续时间滑动窗口滤波器，利用因子图边缘化和高斯-牛顿优化，在肌腱驱动连续体机器人上实现了比实时更快且接近批量平滑器精度的估计。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_preprint_dynamic_modeling_gait_2026/">
+          <span class="entry-type">论文</span>
+          <h3>[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator</h3>
+          <p>arXiv:2607.00569v1 Announce Type: new Abstract: In this article, we present dynamic modeling, gait…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bridging_the_sim_to_real_gap_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation</h3>
+          <p>Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation is a 2025 work on sim-to-real for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_coral_auv_cfd_oriented_reinfor_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CORAL-AUV: CFD Oriented Reinforcement Learning for Autonomous Underwater Vehicles</h3>
+          <p>arXiv:2607.09557v1 Announce Type: new Abstract: Fine grain control and positioning of autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hossen_care_finding_root_causes_of_co_2023/">
+          <span class="entry-type">论文</span>
+          <h3>CARE：在高度可配置机器人中查找配置问题的根本原因</h3>
+          <p>CARE 是一种基于因果推理的方法，从观测机器人轨迹中学习因果图模型，以诊断由错误配置导致的功能故障的根本原因，并在 Husky、Turtlebot 3 和 Gazebo 上进行了评估。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zheng_model_based_control_of_planar_2022/">
+          <span class="entry-type">论文</span>
+          <h3>受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制</h3>
+          <p>Zheng等人提出了一种五执行器平面压电软体机器人的基于模型全形状控制器，利用连续软体模型与贝叶斯优化选择执行器电压以逼近目标形状，并采用基于距离损失的隐式形状规划器在头顶障碍物下爬行，同时通过在线线…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nuexo_a_wearable_exoskeleton_c_2025/">
+          <span class="entry-type">论文</span>
+          <h3>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots</h3>
+          <p>NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sampling_based_system_identifi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning</h3>
+          <p>Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_phypush_one_push_is_all_you_ne_2026/">
+          <span class="entry-type">论文</span>
+          <h3>PhyPush: One Push is All You Need for Sensorless Physical Property Estimation with Physics-Guided Transformers</h3>
+          <p>arXiv:2605.26284v2 Announce Type: replace Abstract: Accurately estimating object mass and friction…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_physically_grounded_3d_generat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Physically Grounded 3D Generative Reconstruction under Hand Occlusion using Proprioception and Multi-Contact Touch</h3>
+          <p>arXiv:2604.09100v2 Announce Type: replace-cross Abstract: We propose a multimodal, physically…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_adaptive_robotic_information_g_2023/">
+          <span class="entry-type">论文</span>
+          <h3>基于非平稳高斯过程的自适应机器人信息获取</h3>
+          <p>本文提出了一种名为Attentive…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tendon_actuated_robots_with_a_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Tendon-Actuated Robots with a Tapered, Flexible Polymer Backbone: Design, Fabrication, and Modeling</h3>
+          <p>arXiv:2603.19124v3 Announce Type: replace Abstract: This paper presents the design, modeling, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_aerodynamics_for_the_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Aerodynamics for the Control of Flying Humanoid Robots</h3>
+          <p>Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_3d_cal_an_open_source_software_2026/">
+          <span class="entry-type">论文</span>
+          <h3>3D Cal: An Open-Source Software Library for Depth Reconstruction on Vision-Based Tactile Sensors</h3>
+          <p>arXiv:2511.03078v3 Announce Type: replace Abstract: Tactile sensing plays a key role in enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">基础学科</span>
+          <h3>概率论</h3>
+          <p>关于不确定性、随机变量、分布和期望的数学基础，是机器人和机器学习中所有概率模型的根基。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_unified_structural_hydrodynami_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots</h3>
+          <p>arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_petit_bayesian_optimization_for_deve_2020/">
+          <span class="entry-type">论文</span>
+          <h3>基于参数边界缩减的元学习与贝叶斯优化在发展机器人学中的应用</h3>
+          <p>本文提出了一种发展型机器人框架，该框架结合了长期记忆与推理模块——贝叶斯优化、三维视觉相似度和参数边界缩减——利用来自相似历史任务最佳迭代的缩减边界来热启动新任务的连续约束超参数优化。作者在7个仿真对…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">方法</span>
+          <h3>动作 token 预测</h3>
+          <p>一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_hybrid_autoencoder_for_robus_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion</h3>
+          <p>A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jorgensen_thermal_recovery_of_multi_limb_2019/">
+          <span class="entry-type">论文</span>
+          <h3>具有电动执行器的多肢机器人的热恢复</h3>
+          <p>提出了一种数据驱动、基于作力的一阶热模型以及接触约束热逆运动学方法，用于寻找使过热执行器降温的机器人构型，并在NASA Valkyrie人形机器人上进行了实验验证。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rma_rapid_motor_adaptation_for_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RMA: Rapid Motor Adaptation for Legged Robots</h3>
+          <p>RMA: Rapid Motor Adaptation for Legged Robots is a paper on 仿真到真实 for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_impedance_guided_programmable_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials</h3>
+          <p>arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_inekformer_a_hybrid_state_esti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>InEKFormer: A Hybrid State Estimator for Humanoid Robots</h3>
+          <p>InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on state estimation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_float_drone_for_physical_inter_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FLOAT Drone for Physical Interaction: Lateral Airflow Reduction, Wrench Modeling, and Adaptive Control</h3>
+          <p>arXiv:2607.04260v1 Announce Type: new Abstract: Aerial physical interaction represents a promising…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VINS-Fusion: An optimization-based multi-sensor state estimator</h3>
+          <p>VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_suzuki_attitude_estimation_free_gnss_2023/">
+          <span class="entry-type">论文</span>
+          <h3>无需姿态估计的GNSS/IMU融合定位</h3>
+          <p>提出了一种基于优化的GNSS/IMU融合定位方法，仅利用加速度计幅值与速度矢量角度变化约束来避免姿态估计，从而降低对IMU安装标定的敏感性，并提升多路径与GNSS中断时的鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_oehler_accurate_pose_prediction_on_si_2023/">
+          <span class="entry-type">论文</span>
+          <h3>粗糙地形移动地面机器人有符号距离场精确姿态预测</h3>
+          <p>提出一种迭代几何方法，利用欧氏有符号距离场（ESDF）在不平整地形上对带主动翻转器的移动地面机器人进行三维姿态预测，在真实履带机器人上达到平均3.11厘米和3.91度的精度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">基础学科</span>
+          <h3>线性代数</h3>
+          <p>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_adaptive_invariant_extended_ka_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation</h3>
+          <p>Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation is a paper on State…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">方法</span>
+          <h3>域适应</h3>
+          <p>将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_balance_motor_ther_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Balance Motor Thermal Safety and Quadrupedal Locomotion Performance with Residual Policy</h3>
+          <p>arXiv:2605.27046v3 Announce Type: replace Abstract: Motor thermal management is often overlooked in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_hardware_in_the_loop/">
+          <span class="entry-type">方法</span>
+          <h3>硬件在环测试（HIL）</h3>
+          <p>真实硬件控制器与被控对象实时仿真模型交互的验证方法，可安全、可重复地测试控制软件。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lee_attention_based_neural_augment_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于注意力机制的神经增强卡尔曼滤波用于足式机器人状态估计</h3>
+          <p>提出 AttenNKF，一种用交叉注意力神经补偿器增强的不变扩展卡尔曼滤波器；该补偿器根据连续足端打滑程度估计打滑引起的误差，并在滤波更新后作为补偿量施加，以改善打滑条件下足式机器人的状态估计。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_action_chunking_with_transform_2023/">
+          <span class="entry-type">方法</span>
+          <h3>基于Transformer的动作分块</h3>
+          <p>基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#_2">系统辨识的定义与定位</a></li>
+<li><a href="#_3">系统辨识的数学与原理基础</a></li>
+<li><a href="#_4">算法步骤与实现要点</a></li>
+<li><a href="#_5">典型应用与局限性</a></li>
+<li><a href="#_6">相关标签</a></li>
+<li><a href="#_7">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

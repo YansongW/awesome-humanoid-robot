@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>관계 그래프 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" aria-current="page">그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="graph-page">
+  <aside class="graph-sidebar">
+    <div class="sidebar-header">
+      <h1>관계 그래프</h1>
+      <p>2143개 개체와 5892개 관계 탐색</p>
+    </div>
+    <div class="sidebar-section">
+      <h3>개체 검색</h3>
+      <input type="search" id="graph-search" placeholder="개체 검색…" autocomplete="off">
+      <div id="graph-search-results" class="graph-search-results"></div>
+    </div>
+    <div class="sidebar-section">
+      <h3>영역 필터</h3>
+      <div class="domain-filter-list" id="domain-filters">
+        <label><input type="checkbox" value="all" checked> 전체</label>
+        
+        <label><input type="checkbox" value="00_foundations"> 기초 학문</label>
+        
+        <label><input type="checkbox" value="01_raw_materials"> 원자재</label>
+        
+        <label><input type="checkbox" value="02_components"> 부품</label>
+        
+        <label><input type="checkbox" value="03_manufacturing_processes"> 제조 공정</label>
+        
+        <label><input type="checkbox" value="04_assembly_integration_testing"> 조립 통합 테스트</label>
+        
+        <label><input type="checkbox" value="05_mass_production"> 대량 생산</label>
+        
+        <label><input type="checkbox" value="06_design_engineering"> 설계 공학</label>
+        
+        <label><input type="checkbox" value="07_ai_models_algorithms"> AI 모델 및 알고리즘</label>
+        
+        <label><input type="checkbox" value="08_software_middleware"> 소프트웨어 미들웨어</label>
+        
+        <label><input type="checkbox" value="09_data_datasets"> 데이터 및 데이터셋</label>
+        
+        <label><input type="checkbox" value="10_evaluation_benchmarks"> 평가 및 벤치마크</label>
+        
+        <label><input type="checkbox" value="11_applications_markets"> 응용 및 시장</label>
+        
+        <label><input type="checkbox" value="12_policy_regulation_ethics"> 정책 규제 윤리</label>
+        
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <h3>범례</h3>
+      <ul class="graph-legend" id="graph-legend">
+        
+        <li><span class="legend-dot" style="background:#7c8798"></span> 기초 학문</li>
+        
+        <li><span class="legend-dot" style="background:#2a9d8f"></span> 원자재</li>
+        
+        <li><span class="legend-dot" style="background:#5d8c48"></span> 부품</li>
+        
+        <li><span class="legend-dot" style="background:#c38e3c"></span> 제조 공정</li>
+        
+        <li><span class="legend-dot" style="background:#b3592a"></span> 조립 통합 테스트</li>
+        
+        <li><span class="legend-dot" style="background:#a84442"></span> 대량 생산</li>
+        
+        <li><span class="legend-dot" style="background:#7d5a8a"></span> 설계 공학</li>
+        
+        <li><span class="legend-dot" style="background:#3d7ea6"></span> AI 모델 및 알고리즘</li>
+        
+        <li><span class="legend-dot" style="background:#5a8fbd"></span> 소프트웨어 미들웨어</li>
+        
+        <li><span class="legend-dot" style="background:#2d5a7b"></span> 데이터 및 데이터셋</li>
+        
+        <li><span class="legend-dot" style="background:#c9a227"></span> 평가 및 벤치마크</li>
+        
+        <li><span class="legend-dot" style="background:#b34d73"></span> 응용 및 시장</li>
+        
+        <li><span class="legend-dot" style="background:#6b5b4f"></span> 정책 규제 윤리</li>
+        
+      </ul>
+    </div>
+    <div class="sidebar-actions">
+      <button class="btn btn-secondary" id="reset-graph">보기 초기화</button>
+      <button class="btn btn-secondary" id="fit-graph">창에 맞춤</button>
+    </div>
+  </aside>
+  <main class="graph-main">
+    <div class="graph-toolbar">
+      <div class="graph-view-title" id="graph-current-view">클리스터 뷰</div>
+      <div class="graph-view-switcher">
+        <button class="graph-view-btn active" id="view-clusters" type="button" title="클리스터 뷰">
+          <span>클리스터 뷰</span>
+          <small class="view-hint">추천</small>
+        </button>
+        <button class="graph-view-btn" id="view-full" type="button" title="전체 그래프">
+          <span>전체 그래프</span>
+        </button>
+      </div>
+    </div>
+    <div id="full-graph" class="full-cy-graph"></div>
+    <div class="graph-tooltip" id="graph-tooltip"></div>
+  </main>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+<script>
+window.DOMAIN_LABELS = {
+  
+  "00_foundations": "기초 학문",
+  
+  "01_raw_materials": "원자재",
+  
+  "02_components": "부품",
+  
+  "03_manufacturing_processes": "제조 공정",
+  
+  "04_assembly_integration_testing": "조립 통합 테스트",
+  
+  "05_mass_production": "대량 생산",
+  
+  "06_design_engineering": "설계 공학",
+  
+  "07_ai_models_algorithms": "AI 모델 및 알고리즘",
+  
+  "08_software_middleware": "소프트웨어 미들웨어",
+  
+  "09_data_datasets": "데이터 및 데이터셋",
+  
+  "10_evaluation_benchmarks": "평가 및 벤치마크",
+  
+  "11_applications_markets": "응용 및 시장",
+  
+  "12_policy_regulation_ethics": "정책 규제 윤리",
+  
+};
+window.GRAPH_TEXT = {
+  loading: "그래프 로드 중…",
+  empty: "표시할 관계 데이터가 없습니다.",
+  noRelations: "관계 데이터가 없습니다",
+  clusterCount: "{name}\n{count}개 개체",
+  clusterPruned: "(상위 {count}개 핵심 개체 표시)",
+  clusterTotal: "({count})",
+  confirmFull: "현재 {total}개 노드가 있습니다. 전체 그래프는 최상위 연결 {count}개 노드만 표시하여 부드럽게 유지합니다. 계속하시겠습니까?",
+  entityCount: "{count}개 개체",
+  backToClusters: "클리스터 뷰",
+};
+</script>
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+</body>
+</html>

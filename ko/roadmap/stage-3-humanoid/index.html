@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3단계: 완전한 휴머노이드 로봇 – 이족 보행 플랫폼에서 &#34;듣고, 걸어가고, 집어 올리기&#34;까지 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">3단계: 완전한 휴머노이드 로봇 – 이족 보행 플랫폼에서 &#34;듣고, 걸어가고, 집어 올리기&#34;까지</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="3">3단계: 완전한 휴머노이드 로봇 – 이족 보행 플랫폼에서 "듣고, 걸어가고, 집어 올리기"까지</h1>
+<blockquote>
+<p>⚠️ 본 로드맵 내용은 공개 자료와 이론적 지식을 바탕으로 정리되었으며, 실제 기기로 검증되지 않았습니다. 전기 및 기계 작업 시 안전 규정을 직접 확인하시기 바랍니다.</p>
+</blockquote>
+<p>2단계의 이족 보행이 안정적으로 가능해지면, 3단계에서는 그 위에 "상반신"을 추가합니다: 팔, 말단, 인식, 연산 능력 및 지능 계층을 통해 엔드투엔드 작업을 완료합니다 – <strong>명령을 듣고 → 책상까지 걸어가서 → 컵을 집어 올리기</strong>. 각 단계는 "무엇을 할 것인가 → 왜 하는가 → 당신의 상황에서 어떻게 분석할 것인가"의 3단계 형식으로 전개되며, 예산/시나리오/기술에 따라 조정됩니다.</p>
+<h2 id="31-7">3.1 상체와 팔: 7자유도 암과 운동학</h2>
+<p><strong>1단계: 구조 결정 및 전체 기계 모델</strong>
+- 【무엇을 할 것인가】팔 방안 선택: 표준 각 팔 7자유도(어깨 3, 팔꿈치 1, 손목 3), 먼저 시뮬레이션에서 URDF를 구축하여 간섭이 없는지 확인한 후, 구매하거나 1/2단계 액추에이터를 사용하여 자체 제작합니다.
+- 【왜 하는가】<a href="/entry/ent_component_7dof_arm_2024/">7자유도 로봇 팔</a>은 인간 팔의 여유도를 모방합니다: 6자유도는 "도달" 자세만 가능하지만, 7번째 자유도는 말단이 움직이지 않을 때에도 팔꿈치를 회전시켜 장애물을 회피하고 특이점을 피할 수 있습니다. 토크/자체 중량/가격은 <strong>공급업체에 직접 확인해야 합니다</strong>(선정 기준은 <a href="/wiki/chapters/chapter-04/">4장</a> 참조).
+- 【당신의 상황에서 어떻게 분석할 것인가】책상 위 집기만 수행: 먼저 단일 팔 또는 6자유도로 시작; 양손 협력 및 장애물 회피가 필요할 때만 7자유도가 필수입니다. 먼저 시뮬레이션 후 금속 부품을 가공합니다.</p>
+<p><strong>2단계: 운동학 및 좌표계</strong>
+- 【무엇을 할 것인가】<a href="/entry/ent_method_forward_kinematics/">정방향 운동학(FK)</a>(동차 변환 체인/지수 곱)과 <a href="/entry/ent_method_inverse_kinematics/">역방향 운동학(IK)</a>(야코비안 유사 역행렬 수치 해법 또는 기하학적 해석 해법) 구현; 7자유도 IK는 영공간에 2차 목표(팔꿈치 올리기, 리미트에서 멀어지기)를 추가합니다. 그런 다음 팔을 전체 기계 URDF에 연결하고 전신 TF 변환 트리를 통합합니다.
+- 【왜 하는가】비전이 컵 위치를 제공하면 FK를 통해 좌표계를 변환하고 IK를 통해 관절 각도를 구합니다; 특이점 근처에서 수치 IK는 발산할 수 있으며, 표준 해법은 감쇠 최소 제곱법입니다. 휴머노이드는 고정 베이스가 없으므로 말단 정밀도 = 팔 정밀도 + 몸통 자세 오차 + 발끝 미끄러짐의 합입니다.
+- 【당신의 상황에서 어떻게 분석할 것인가】ROS 생태계의 성숙한 IK 솔버를 직접 사용; 검증 순서: 시뮬레이션 샘플링 → 무부하 → 부하. 보행이 불안정하면 "먼저 멈추고, 그 다음 조작"합니다.</p>
+<h2 id="32">3.2 말단 실행기: 그리퍼에서 시작</h2>
+<p><strong>3단계: 그리퍼로 시작, 다기능 손 인터페이스预留</strong>
+- 【무엇을 할 것인가】첫 번째 버전은 전동 평행 그리퍼로 컵을 집습니다; 인터페이스는 교체 가능하게 설계하여 추후 <a href="/entry/ent_component_leap_hand/">LEAP 다기능 손</a> 또는 <a href="/entry/ent_component_allegro_hand/">Allegro 다기능 손</a>으로 업그레이드할 수 있습니다.
+- 【왜 하는가】<a href="/entry/ent_component_dexterous_hand_2024/">다기능 손</a> vs 그리퍼: 전자는 자유도가 높지만 제어가 복잡하고 비용이 높으며, 후자는 간단하고 저렴하지만 집을 수 있는 유형이 제한적입니다. LEAP은 저비용 오픈소스 16자유도 의수형 손(직구동 Dynamixel + 3D 프린팅, BOM은 프로젝트 측에 확인 필요); Allegro는 Wonik 상용 16자유도 4손가락 손(토크 제어 관절, ROS 호환, 가격은 공급업체에 확인 필요). 컵 집기와 같은 작업에서는 그리퍼의 성공률이 제대로 조정되지 않은 다기능 손보다 훨씬 높습니다.
+- 【당신의 상황에서 어떻게 분석할 것인가】엔드투엔드 실행에는 그리퍼 사용; 동작 학습 논문 작성은 LEAP에서 시작; 상용 신뢰성이 필요하면 Allegro 선택.</p>
+<h2 id="33-rgb-d">3.3 인식 스택: RGB-D, 라이다 및 캘리브레이션</h2>
+<p><strong>4단계: 깊이 카메라</strong>
+- 【무엇을 할 것인가】머리/가슴에 <a href="/entry/ent_component_rgbd_camera/">RGB-D 카메라</a> 1대를 주 시야로 장착하고, 손목에는 근접 카메라 위치를预留합니다. 주요 선택: <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense</a> D435i(약 USD 199, 측정 범위 0.1–10 m, IMU 내장 – 공식 데이터시트) 또는 D455(약 USD 299, 깊이 정밀도 &lt;2% @ 4 m); 온보드 깊이 추정이 필요하면 <a href="/entry/ent_component_zed_stereo_camera_2024/">ZED 스테레오 카메라</a> 고려(가격은 공급업체에 확인 필요).
+- 【왜 하는가】깊이 획득에는 구조광, ToF, 스테레오 비전의 세 가지 경로가 있습니다(RGB-D 카드 참조); D435i의 최소 거리 0.1 m는 책상 위 작업에 적합하며, 손목 카메라는 조작 데이터의 핵심 소스입니다.
+- 【당신의 상황에서 어떻게 분석할 것인가】예산이 부족하면 D435i 1대로 시작; 여러 카메라는 USB 대역폭에 주의(일반적인 문제 참조).</p>
+<p><strong>5단계: 라이다</strong>
+- 【무엇을 할 것인가】작업에 실내 내비게이션이 포함되면 360° 라이다를 장착합니다. 예: <a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a>(약 CNY 3,999, 265 g, 수평 360°, 40 m @ 10% 반사율, IMU 내장 – 공식 데이터시트), SLAM 위치 추정 실행.
+- 【왜 하는가】RGB-D의 측정 범위와 FOV는 제한적이며, 360° LiDAR를 통해 로봇이 이동 중에도 지속적으로 위치를 추정하고 장애물을 회피할 수 있습니다.
+- 【당신의 상황에서 어떻게 분석할 것인가】방이 고정되어 있고 경로가 짧은 경우: RGB-D 오도메트리로 충분; 방을 이동해야 하면 LiDAR 추가.</p>
+<p><strong>6단계: 공동 캘리브레이션</strong>
+- 【무엇을 할 것인가】순서대로 카메라 내부 파라미터 → 핸드-아이 캘리브레이션 → 카메라-LiDAR-IMU <a href="/entry/ent_method_calibration_joint_camera_imu/">공동 캘리브레이션</a>: 캘리브레이션 타겟을 사용하여 재투영 오차를 최소화하고, ICP로 포인트 클라우드 정합을 정밀 조정합니다.
+- 【왜 하는가】조작의 본질은 좌표 변환 체인입니다: 픽셀 → 카메라 좌표계 → 베이스 좌표계 → 말단, 어느 한 링크의 외부 파라미터가 잘못되면 허공을 집게 됩니다.
+- 【당신의 상황에서 어떻게 분석할 것인가】먼저 머리 카메라만 캘리브레이션해도 집기 실행 가능; 캘리브레이션은 원클릭 스크립트로 작성하고, 분해 후에는 반드시 다시 캘리브레이션해야 합니다.</p>
+<h2 id="34-linux">3.4 컴퓨팅 플랫폼: 계층형 연산 능력과 실시간 Linux</h2>
+<p><strong>7단계: 실시간 계층 + 지능 계층</strong>
+- 【무엇을 할 것인가】실시간 계층: 산업용 PC/MCU가 관절 제어 루프를 실행하며, 커널에 <a href="/entry/ent_software_rt_preempt_linux/">RT-PREEMPT</a> 패치를 적용(커널의 대부분을 선점 가능하게 하여 결정적 저지연 제공). 지능 계층: <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a>(최대 275 TOPS @ 64 GB 버전, 15–60 W, 개발 키트 약 USD 1,999 – NVIDIA 공식 웹사이트/제3자 참고); 휴머노이드 기반 모델 실행 시 <a href="/entry/ent_component_nvidia_jetson_thor/">Jetson Thor</a> 평가(Blackwell 아키텍처, VLA 엣지 추론용, 가격은 공급업체에 확인 필요).
+- 【왜 하는가】제어 루프는 결정성을 요구하고, AI 추론은 처리량을 요구하며, 비실시간 시스템에서 혼합하면 서로 성능을 저하시킵니다.
+- 【당신의 상황에서 어떻게 분석할 것인가】원격 조작 + ACT 수준 정책에는 Orin 32 GB로 충분; VLA/GR00T N1 수준 추론에는 Orin 64 GB 또는 Thor가 필요합니다.</p>
+<h2 id="35-vla">3.5 지능형 계층 사다리: 원격 조작 → 데이터 → 모방 학습 → VLA → 엣지 → 평가</h2>
+<p><strong>8단계: 원격 조작</strong>
+- 【무엇을】주종 원격 조작 구축: <a href="/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA</a> 참고 (저비용 양팔 주종 하드웨어, 전체 세트 약 2만 달러 수준 – 10단계 ACT 카드 참조); 이동 시나리오는 <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a> 전신 원격 조작 아이디어 차용; 완제품이 없을 경우 <a href="/entry/ent_technology_umi_gripper_interface_2024/">UMI 그리퍼 인터페이스</a> 사용 (휴대용 그리퍼 + 카메라로 시연 데이터 수집 가능).
+- 【왜】원격 조작은 일석삼조: 하드웨어 접근성 검증, 모방 학습 데이터 수집, 작업 기준선(baseline) 구축 (<a href="/wiki/chapters/chapter-17/">17장</a> 참조).
+- 【상황별 분석】예산이 매우 부족하면 UMI로 먼저 데이터 수집; 이족 보행 로봇이 있으면 원격 조작은 먼저 상체만 담당하고 하체는 조이스틱 고정 지점 사용 (Mobile ALOHA의 실용적인 분업).</p>
+<p><strong>9단계: 데이터 수집</strong>
+- 【무엇을】에피소드(episode) 형식 정의 (다중 시점 이미지, 관절 상태, 동작, 언어 명령, 타임스탬프), 통일된 프로토콜로 수집 및 훈련/검증 세트 분할.
+- 【왜】형식이 재사용성을 결정: <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a>는 통일된 RLDS 형식으로 본체 간 수백만 개의 시연 프레임을 집계, VLA 사전 훈련 표준 말뭉치; <a href="/entry/ent_dataset_droid/">DROID</a>는 분산형 다중 실험실 수집 시범 (한계: 고정 팔만 커버).
+- 【상황별 분석】개인이 수십에서 수백 개 수집하면 ACT 수준의 단일 작업 정책 훈련 가능; VLA 미세 조정 시 OXE 형식에 직접 정렬.</p>
+<p><strong>10단계: 모방 학습</strong>
+- 【무엇을】순서대로 세 가지 방법 시도: <a href="/entry/ent_method_behavior_cloning/">행동 복제(Behavior Cloning)</a>로 기준선(baseline) 구축 → <a href="/entry/ent_method_action_chunking_transformer/">ACT</a> (약 100단계 동작 청크 한 번 예측 + 시간 통합 평활화, 정밀 양팔 작업에서 80%–90% 성공률 보고 – 카드 참조) → <a href="/entry/ent_method_diffusion_policy/">Diffusion Policy</a> (잡음 제거 확산으로 동작 분포 모델링, 다중 모드 동작 지원).
+- 【왜】프레임별 회귀는 복합 오류 누적; 동작 청킹과 확산 모델링은 두 가지 주요 억제 경로 (<a href="/wiki/chapters/chapter-18/">18장</a> 참조).
+- 【상황별 분석】처음 시도 시 바로 ACT 사용 (ALOHA 데이터와 호환); 동작에 여러 합법적 해법이 있을 경우 Diffusion Policy 선택.</p>
+<p><strong>11단계: VLA</strong>
+- 【무엇을】순차 평가: <a href="/entry/ent_method_openvla/">OpenVLA</a> (OXE 기반 훈련된 오픈소스 VLA) → <a href="/entry/ent_method_pi0/">π0</a> (다중 로봇 데이터로 사전 훈련된 다재다능 정책) → <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a> (NVIDIA 범용 휴머노이드 기반 모델), <a href="/wiki/chapters/chapter-19/">19장</a> 참조.
+- 【왜】VLA는 "명령 이해"를 하드코딩된 상태 머신에서 모델 능력으로 업그레이드: 시각 + 언어가 직접 동작 출력.
+- 【상황별 분석】GPU 클러스터 없음: OpenVLA 가중치 + 자체 수집 데이터 LoRA 미세 조정. 실용적 경로: VLA는 명령 해석과 스킬 스케줄링만 담당, 하위 그리핑은 10단계 정책이 실행.</p>
+<p><strong>12단계: 엣지 배포</strong>
+- 【무엇을】정책을 기내 Jetson에 배포: <a href="/entry/ent_tech_on_device_vla_inference/">엣지 VLA 추론</a>은 모델이 내장 연산 능력에서 실행되어 지연 시간, 연결성 및 개인정보 보호 제약 조건을 충족해야 함; 수단에는 양자화, 추론 엔진 최적화, 입력 해상도 감소 포함.
+- 【왜】이동 로봇은 네트워크 사용 가능을 가정할 수 없음 – Wi-Fi 지터 시 클라우드 추론은 통제 불능과 동일.
+- 【상황별 분석】ACT 수준 소형 모델은 Orin에서 일반적으로 실행 가능; VLA는 먼저 양자화하여 지연 시간 측정, 기준 미달 시 해상도/동작 청크 감소.</p>
+<p><strong>13단계: 평가</strong>
+- 【무엇을】시뮬레이션은 <a href="/entry/ent_benchmark_libero/">LIBERO</a> 사용 (주제별 작업 제품군 + 프로그래밍 방식 장면 변화가 있는 단거리 데스크탑 벤치마크) 회귀 테스트; 실제 로봇은 고정 작업 목록과 횟수, 변경 후 재테스트.
+- 【왜】기준 없는 매개변수 조정은 미신: 프로그래밍 방식 변화는 과적합 노출, 고정 프로토콜 재테스트만이 변경 사항의 수평 비교 가능.
+- 【상황별 분석】개인: LIBERO 제품군 하나 + 실제 로봇 20회 고정 테스트면 충분.</p>
+<h2 id="36">3.6 시스템 통합 및 엔지니어링</h2>
+<p><strong>14단계: 미들웨어</strong>
+- 【무엇을】<a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> (DDS 기반 발행/구독, 실시간 지원 포함 사실상 표준 미들웨어)로 모든 노드 구성: 인식, 추정, 계획, 제어, 정책 추론을 프로세스 간 통신, 인터페이스와 QoS 고정.
+- 【왜】프로세스 분할 아키텍처는 인식이 중단되어도 제어 루프가 안전하게 정지 가능.
+- 【상황별 분석】프로토타입 단계에서는 단일 launch로 전체 실행 가능; 연동 테스트 전에 반드시 핵심 프로세스 분할 및 워치독 설정.</p>
+<p><strong>15단계: 안전 회로 및 OTA</strong>
+- 【무엇을】(a) 하드웨어 <a href="/entry/ent_component_emergency_stop_system_2024/">비상 정지 시스템</a> 장착: 하드와이어 회로, 누르면 동력원 차단 또는 안전 상태 명령, 모든 소프트웨어와 독립; (b) <a href="/entry/ent_technology_ota_software_update_2024/">OTA 소프트웨어 업데이트</a> 프로토타입 구축: 무선으로 정책/펌웨어/시스템 소프트웨어 푸시, 버전 관리 및 롤백 포함.
+- 【왜】비상 정지는 전체 크기 플랫폼이 실험실에 들어가기 위한 입장권 – 소프트웨어 비상 정지는 다운 시 신뢰할 수 없음; OTA 없이는 정책 변경 시마다 케이블 연결 필요.
+- 【상황별 분석】넘어져서 사람을 다치게 할 수 있는 플랫폼: 비상 정지 + 안전 구역 + 디버깅 기간 안전 로프 필수; 데스크탑 소형 플랫폼은 독립 하드웨어 전원 스위치로 단순화 가능.</p>
+<h2 id="37-openloong">3.7 참조 솔루션: OpenLoong 및 교육용 대안</h2>
+<ul>
+<li>【무엇을】조사 아카이브가 있는 네 프로젝트를 참조 프레임으로 비교 (<code>data/roadmap/research/</code>, 검색 시점 스냅샷):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>프로젝트</th>
+<th>크기/자유도</th>
+<th>비용</th>
+<th>오픈소스 및 생태계</th>
+<th>적합 대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OpenLoong/칭룽</strong></td>
+<td>185 cm / 80 kg+, 43 능동 자유도 (5지 손 포함)</td>
+<td>BOM <strong>미상</strong>, 공식 버전 미판매</td>
+<td>메인 저장소 Apache-2.0; MPC+WBC를 MuJoCo에서 하드웨어 없이 실행 가능; EtherCAT, 400 TOPS 메인 컨트롤러</td>
+<td>대학/기업 전체 크기 2차 개발; 개인은 MuJoCo 프레임워크 사용 또는 NanoLoong 주목</td>
+</tr>
+<tr>
+<td><strong>InMoov</strong></td>
+<td>실제 크기 <strong>상반신</strong> (다리 없어 보행 불가), 약 28 서보</td>
+<td>타사 추정 USD 800–2,500</td>
+<td>CC BY-NC 비상업; 텐돈 구동 5지 손; Arduino + MyRobotLab</td>
+<td>저비용으로 실제 크기 로봇 체험; 보행 학습 불가</td>
+</tr>
+<tr>
+<td><strong>Poppy Humanoid</strong></td>
+<td>84 cm / 3.5 kg, 25 자유도</td>
+<td>키트 약 €9,000</td>
+<td>CC BY-SA / GPLv3; 순응 역구동으로 시범 가능; 메인 저장소 2021년 업데이트 중단</td>
+<td>교육 체계와 HRI 중시하는 교육자</td>
+</tr>
+<tr>
+<td><strong>ROBOTIS OP3</strong></td>
+<td>51 cm / 3.5 kg, 20 자유도 (XM430-W350, 정지 토크 4.1 N·m)</td>
+<td>USD 13,764.35</td>
+<td>소프트웨어 Apache-2.0, 2025 복각판 네이티브 ROS 2; e-Manual 문서 벤치마크</td>
+<td>예산 충분하고 개봉 즉시 사용 가능한 완제기를 원하는 학교/실험실</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>【상황별 분석】기관 전체 크기는 OpenLoong 2차 개발; 개인 &lt; USD 1,000은 InMoov 선택; 교실은 OP3 (편리) 또는 Poppy (체계는 좋지만 자체 유지보수 필요). 본 로드맵의 주축은 여전히 자체 구축이지만, 이들 프로젝트의 소프트웨어 스택은 모두 활용 가능.</li>
+</ul>
+<h2 id="38">3.8 전체 검수: 엔드 투 엔드 작업</h2>
+<ul>
+<li>【무엇을】작업을 5단계 파이프라인으로 분할 및 연동 조정: 명령 해석 → 책상까지 내비게이션 (SLAM + 계획) → RGB-D로 컵 감지 및 자세 추정 → IK + 그리핑 계획 → 그리퍼 닫기 및 확인. 각 단계 개별 테스트 후 전체 체인 연동 테스트.</li>
+<li>【왜】엔드 투 엔드 작업은 모든 하위 시스템의 교차 검증; 단계별 관찰로 실패 단계 위치 파악 가능.</li>
+<li>【상황별 분석】보행 불안정: 먼저 "고정 자세 + 데스크탑 그리핑"으로 폐루프 구성 후 보행 단계 해제; 명령 해석은 먼저 고정 문장 텍스트 사용.</li>
+</ul>
+<h2 id="39-0-3">3.9 타임라인 및 예산 요약 (단계 0 → 3 누적)</h2>
+<p>단계 3 조달 가격은 3.3–3.5절에서 가까운 출처를 표기했습니다. 팔, 다섯 손가락 로봇 핸드, Jetson Thor 가격은 <strong>공급업체에 직접 확인해야 합니다</strong>. 누적 관점(단계 0–2 세부 사항은 각 로드맵 페이지 참조):</p>
+<table>
+<thead>
+<tr>
+<th>경로</th>
+<th>단계 3 증분</th>
+<th>단계 0→3 누적</th>
+<th>누적 타임라인</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>교육용(InMoov/OP3/Poppy 계열)</td>
+<td>USD 800–15,000(출처는 3.7 표 참조)</td>
+<td>좌동, 본체가 주요 비용</td>
+<td>추정 1–3개월</td>
+</tr>
+<tr>
+<td>고급형(자체 구축, 본 페이지 주 경로)</td>
+<td>센싱+연산 약 USD 2,800부터, 팔/말단/구조 추가(가격 문의 필요)</td>
+<td>추정 수천~수만 달러, 단계 0–2 BOM에 따라 다름</td>
+<td>추정 누적 8–24개월</td>
+</tr>
+<tr>
+<td>전신형(OpenLoong 계열)</td>
+<td>BOM 미상(조사 기록 기준), 기관급 조건 필요</td>
+<td>좌동</td>
+<td>팀 단위 연 단위</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">검수 기준</h2>
+<ol>
+<li>운동학: 작업 공간 내 무작위 100개 목표 자세 추출, IK 해결 성공률 ≥95%, 실제 기계 말단 오차 ≤2 cm(권장 임계값).</li>
+<li>센싱: 캘리브레이션 후 RGB 포인트 클라우드 색상화에 명확한 오차 없음(재투영 오차 &lt; 2 픽셀); 컵 3D 위치 오차 ≤1 cm.</li>
+<li>지능층: ≥50개 고품질 원격 조작 에피소드 완료; 실제 기계 고정 프로토콜 하에서 잡기 성공률 ≥70%.</li>
+<li>엔드 투 엔드: "명령 듣기 → 테이블로 이동 → 컵 잡기" 연속 10회 실험 중 성공 ≥7회, 단회 ≤2분.</li>
+<li>안전: 언제든지 비상 정지 버튼 누르면 동력 전원 즉시 차단(실측 &lt;1초), 재설정은 수동 확인 필요.</li>
+<li>엔지니어링: 수동으로 센싱 프로세스 종료 후 제어 루프 중단 없음, 로봇 안전 상태 진입.</li>
+</ol>
+<h2 id="_2">일반적인 문제점 및 점검</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능 원인</th>
+<th>점검 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IK 해결 실패/관절 점프</td>
+<td>목표가 작업 공간 밖; 특이 자세 통과; 제한 미반영</td>
+<td>RViz에서 목표점 확인; 감쇠 최소 제곱법으로 변경; URDF 제한 확인</td>
+</tr>
+<tr>
+<td>팔 뻗을 때 전체 흔들림/전도</td>
+<td>질량 중심 보상 미실시; 속도 과다</td>
+<td>속도 낮춰 재측정; 질량 중심 궤적 사전 계획; 정지 후 조작</td>
+</tr>
+<tr>
+<td>ACT/BC 실제 기계가 훈련보다 크게 나쁨</td>
+<td>데이터 분포 이동; 복합 오차</td>
+<td>실패 시나리오 추가 수집; 이미지와 동작 시간 정렬 확인</td>
+</tr>
+<tr>
+<td>VLA 엣지에서 실행 불가</td>
+<td>양자화 미실시; VRAM/연산 능력 부족</td>
+<td>양자화 후 지연 시간 측정; 입력 해상도 낮춤; Orin 64 GB/Thor로 업그레이드</td>
+</tr>
+<tr>
+<td>비상 정지 눌러도 전원 차단 안 됨</td>
+<td>비상 정지가 소프트웨어 경로로 처리됨</td>
+<td>비상 정지는 반드시 하드와이어로 동력 회로 차단, 독립 테스트</td>
+</tr>
+<tr>
+<td>OTA 후 부팅 안 됨</td>
+<td>롤백 없음; 업데이트 중 전원 차단</td>
+<td>A/B 파티션; 업데이트 전 배터리 잔량 확인; 직렬 포트 복구 채널 유지</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li><a href="/roadmap/playbooks/sensor-selection/">센서 선택 매뉴얼</a> —— 센싱 스택의 사양 및 가격대</li>
+<li><a href="/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선택 매뉴얼</a> —— 계층형 두뇌와 엣지 추론</li>
+<li><a href="/roadmap/playbooks/actuator-selection/">액추에이터 선택 매뉴얼</a> —— 팔과 다섯 손가락 로봇 핸드의 액추에이터 솔루션</li>
+<li><a href="/roadmap/index/">로드맵 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/stage-2-biped/">← 이전<span>단계 2: 이족 보행 플랫폼 – 시뮬레이션에서 첫 번째로 걷는 로봇까지</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/playbooks/actuator-selection/">다음 →<span>선정 핸드북: 액추에이터(Actuator) 선정 방법</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#3">3단계: 완전한 휴머노이드 로봇 – 이족 보행 플랫폼에서 "듣고, 걸어가고, 집어 올리기"까지</a><ul>
+<li><a href="#31-7">3.1 상체와 팔: 7자유도 암과 운동학</a></li>
+<li><a href="#32">3.2 말단 실행기: 그리퍼에서 시작</a></li>
+<li><a href="#33-rgb-d">3.3 인식 스택: RGB-D, 라이다 및 캘리브레이션</a></li>
+<li><a href="#34-linux">3.4 컴퓨팅 플랫폼: 계층형 연산 능력과 실시간 Linux</a></li>
+<li><a href="#35-vla">3.5 지능형 계층 사다리: 원격 조작 → 데이터 → 모방 학습 → VLA → 엣지 → 평가</a></li>
+<li><a href="#36">3.6 시스템 통합 및 엔지니어링</a></li>
+<li><a href="#37-openloong">3.7 참조 솔루션: OpenLoong 및 교육용 대안</a></li>
+<li><a href="#38">3.8 전체 검수: 엔드 투 엔드 작업</a></li>
+<li><a href="#39-0-3">3.9 타임라인 및 예산 요약 (단계 0 → 3 누적)</a></li>
+<li><a href="#_1">검수 기준</a></li>
+<li><a href="#_2">일반적인 문제점 및 점검</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Structural FEA and iteration · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Structural FEA and iteration</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Structural FEA and iteration</h1>
+      <p class="entry-name-en">Structural FEA and iteration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Manufacturing Processes</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Structural FEA-the 8th stage of the Android product development process, covering conceptual design, implementation verification, and document delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Structural FEA (Finite Element Analysis) is the 8th stage in the full-process development of humanoid robot products, expanded into several Level-3 sub-tasks in WBS V3.</p>
+<h2 id="content">Content</h2>
+<p>This stage covers complete engineering actions such as input review, scheme design, implementation/prototyping, verification closed-loop, and documentation delivery, serving as a critical milestone to ensure downstream dependents receive qualified inputs.</p>
+<h2 id="key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</h2>
+<h4 id="loads-and-simulation-models">Loads and Simulation Models</h4>
+<h5 id="load-case-definition">Load Case Definition</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Statics, dynamic impact, drop, typical motion reaction forces, fatigue load spectrum</li>
+<li><strong>Design Logic</strong>: The most severe load case determines structural design; includes single-leg support, fall impact, maximum payload grasping</li>
+<li><strong>Key Constraints</strong>: Load path, safety factor, test verification</li>
+<li><strong>Completion Criteria/Deliverables</strong>: "Load Case Table": load magnitude, direction, application point, occurrence probability
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P8.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Load Case Definition," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P8.1.1.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Load Case Definition," using "Statics, dynamic impact, drop, typical motion reaction forces, fatigue load spectrum" for demonstration, and clarify technical route and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P8.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Load Case Definition" according to the design scheme, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P8.1.1.4 Verification and Issue Closure</strong>: Verify the output of "Load Case Definition," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P8.1.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Load Case Definition," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="fea-model-preparation">FEA Model Preparation</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: HyperMesh / ANSA / Abaqus / ANSYS, mesh convergence analysis</li>
+<li><strong>Design Logic</strong>: Simplify non-load-bearing features, reasonable mesh division, material properties, contact/tie settings</li>
+<li><strong>Key Constraints</strong>: Mesh quality, computation time, resources</li>
+<li><strong>Completion Criteria/Deliverables</strong>: High-quality FEA model, mesh quality report, boundary condition list
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P8.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "FEA Model Preparation," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P8.1.2.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "FEA Model Preparation," using "HyperMesh / ANSA / Abaqus / ANSYS, mesh convergence analysis" for demonstration, and clarify technical route and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P8.1.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "FEA Model Preparation" according to the design scheme, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P8.1.2.4 Verification and Issue Closure</strong>: Verify the output of "FEA Model Preparation," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P8.1.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "FEA Model Preparation," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="nonlinear-analysis-and-stability">Nonlinear Analysis and Stability</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Contact nonlinearity, geometric nonlinearity, buckling analysis</li>
+<li><strong>Design Logic</strong>: Thin-walled structures may buckle under impact; large deformation requires consideration of geometric nonlinearity</li>
+<li><strong>Key Constraints</strong>: Convergence difficulty, computational cost</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Buckling modes, stress/strain under large deformation
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P8.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Nonlinear Analysis and Stability," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P8.1.3.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Nonlinear Analysis and Stability," using "Contact nonlinearity, geometric nonlinearity, buckling analysis" for demonstration, and clarify technical route and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P8.1.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Nonlinear Analysis and Stability" according to the design scheme, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P8.1.3.4 Verification and Issue Closure</strong>: Verify the output of "Nonlinear Analysis and Stability," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P8.1.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Nonlinear Analysis and Stability," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h4 id="strength-fatigue-and-optimization">Strength, Fatigue, and Optimization</h4>
+<h5 id="static-and-dynamic-stress-and-deformation-analysis">Static and Dynamic Stress and Deformation Analysis</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Linear elastic/elastoplastic analysis, von Mises, deformation contour</li>
+<li><strong>Design Logic</strong>: Verify whether stress in critical components is below material yield/fatigue limit, and whether deformation affects motion</li>
+<li><strong>Key Constraints</strong>: Local stress concentration, weld/bolt simulation</li>
+<li><strong>Completion Criteria/Deliverables</strong>: "FEA Stress Report": stress, deformation, safety factor
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P8.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Static and Dynamic Stress and Deformation Analysis," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P8.2.1.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Static and Dynamic Stress and Deformation Analysis," using "Linear elastic/elastoplastic analysis, von Mises, deformation contour" for demonstration, and clarify technical route and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P8.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Static and Dynamic Stress and Deformation Analysis" according to the design scheme, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P8.2.1.4 Verification and Issue Closure</strong>: Verify the output of "Static and Dynamic Stress and Deformation Analysis," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P8.2.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Static and Dynamic Stress and Deformation Analysis," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="fatigue-and-life-prediction">Fatigue and Life Prediction</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: S-N curve, Miner cumulative damage, rainflow counting</li>
+<li><strong>Design Logic</strong>: Evaluate life for high-cycle fatigue locations (joint lugs, link hole edges)</li>
+<li><strong>Key Constraints</strong>: Load spectrum uncertainty, material fatigue data</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Fatigue analysis report, critical component cycle life &gt; target
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P8.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Fatigue and Life Prediction," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P8.2.2.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Fatigue and Life Prediction," using "S-N curve, Miner cumulative damage, rainflow counting" for demonstration, and clarify technical route and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P8.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Fatigue and Life Prediction" according to the design scheme, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P8.2.2.4 Verification and Issue Closure</strong>: Verify the output of "Fatigue and Life Prediction," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P8.2.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Fatigue and Life Prediction," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="lightweighting-and-topology-optimization">Lightweighting and Topology Optimization</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Topology optimization, size optimization, rib/ribbed plate arrangement, composite material substitution</li>
+<li><strong>Design Logic</strong>: Reduce weight while maintaining sufficient stress margin, lowering overall inertia and energy consumption</li>
+<li><strong>Key Constraints</strong>: Manufacturing process limitations, cost</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Optimized CAD, weight reduction ratio &gt; target, strength still satisfied
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P8.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Lightweighting and Topology Optimization," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P8.2.3.2 Scheme/Method Design</strong>: Develop implementation methods or candidate schemes for "Lightweighting and Topology Optimization," using "Topology optimization, size optimization, rib/ribbed plate arrangement, composite material substitution" for demonstration, and clarify technical route and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P8.2.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation of "Lightweighting and Topology Optimization" according to the design scheme, produce prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P8.2.3.4 Verification and Issue Closure</strong>: Verify the output of "Lightweighting and Topology Optimization," check if completion criteria are met, record issues, and track until closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P8.2.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Lightweighting and Topology Optimization," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h5 id="simulation-test-closed-loop-iteration">Simulation-Test Closed-Loop Iteration</h5>
+<ul>
+<li><strong>Methods/Tools</strong>: Prototype loading test, strain gauges, displacement sensors, comparison with FEA</li>
+<li><strong>Design Logic</strong>: Correct simulation boundary conditions and material parameters through testing, forming a closed loop</li>
+<li><strong>Key Constraints</strong>: Test fixtures, loading accuracy</li>
+<li><strong>Completion Criteria/Deliverables</strong>: Simulation vs. test error &lt; 15%, design iteration records
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P8.2.4.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Simulation-Test Closed-Loop Iteration," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P8.2.4.2 Interface and Integration Strategy Design</strong>: Review subsystem interfaces, data flow, and timing involved in "Simulation-Test Closed-Loop Iteration," define integration sequence, rollback strategy, and exception handling mechanism.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate at least 2 candidate schemes</li>
+<li>Establish evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the scheme</li>
+<li><strong>P8.2.4.3 Modeling/Simulation and Prototype Implementation</strong>: Build simulation/mathematical models or prototypes for "Simulation-Test Closed-Loop Iteration," using "Prototype loading test, strain gauges, displacement sensors, comparison with FEA" to perform calculations or experiments, and record key parameters and boundary conditions.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build model/prototype and record key parameters</li>
+<li>Execute simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P8.2.4.4 Test Execution and Result Analysis</strong>: Execute tests for "Simulation-Test Closed-Loop Iteration" according to acceptance criteria, calculate pass rate/error/deviation, perform root cause analysis, and form improvement list.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plan and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P8.2.4.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawing/specification for "Simulation-Test Closed-Loop Iteration," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependents</li>
+</ul>
+<h2 id="completion-criteria">Completion Criteria</h2>
+<p>All Level-3 sub-tasks in this stage have passed acceptance review, and key deliverables are version-controlled and formally delivered to downstream dependents.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p8_1_2/">FEA model preparation</a>
+              <span class="rel-desc">Structural FEA and iteration has prerequisite FEA model preparation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p8_2_3/">Lightweight and topology optimization</a>
+              <span class="rel-desc">Structural FEA and iteration has prerequisite Lightweight and topology optimization.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-desc">Structural FEA and iteration mentions Finite Element Analysis (FEA).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p8_1_3/">Nonlinear analysis and stability</a>
+              <span class="rel-desc">Structural FEA and iteration mentions Nonlinear analysis and stability.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5/">Ontological Structure Engineering and Prototyping (Mechanical Structure)</a>
+              <span class="rel-desc">P8 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p8_2_1/">Static and dynamic stress and deformation analysis</a>
+              <span class="rel-desc">Structural FEA and iteration mentions Static and dynamic stress and deformation analysis.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p3/">System Architecture and Electromechanical Master Design (System / Preliminary Design)</a>
+              <span class="rel-desc">P8 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_finite_element_analysis_2024/">Finite Element Analysis</a>
+              <span class="rel-desc">Structural FEA and iteration is part of Finite Element Analysis.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p8_1_3/">Nonlinear analysis and stability</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Nonlinear analysis and stability is part of Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p8_2_2/">Fatigue and life prediction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Fatigue and life prediction is part of Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p8_2_3/">Lightweight and topology optimization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Lightweight and topology optimization is part of Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_aero_hand_open_2026/">Aero Hand Open</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Aero Hand Open discusses Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_1_2/">Joint mounting interface and housing design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Joint mounting interface and housing design mentions Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_3_1/">Pilot Run</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Pilot Run mentions Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p8_1_2/">FEA model preparation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">FEA model preparation is part of Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p8_2_1/">Static and dynamic stress and deformation analysis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Static and dynamic stress and deformation analysis is part of Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vouga_asynchronous_variational_integ_2009/">Asynchronous Variational Integration of Interaction Potentials for Contact Mechanics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Asynchronous Variational Integration of Interaction Potentials for Contact Mechanics discusses Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p8_1_1/">Definition of load case</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Definition of load case is part of Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Production Ramp mentions Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p8_2_4/">Simulation-experiment closed-loop iteration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Simulation-experiment closed-loop iteration is part of Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p15/">Integration &amp; V &amp; V testing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P15 依赖 P8 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design discusses Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_olaf_bringing_an_animated_char_2025/">Olaf: Bringing an Animated Character to Life in the Physical World</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Olaf: Bringing an Animated Character to Life in the Physical World uses Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_1_1/">Central skeleton and limb link design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Central skeleton and limb link design mentions Structural FEA and iteration.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16/">Pilot &amp; Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Pilot &amp; Production Ramp mentions Structural FEA and iteration.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p8"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Central skeleton and limb link design</h3>
+          <p>3D structural model, key section design, BOM first draft</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Static and dynamic stress and deformation analysis</h3>
+          <p>FEA stress report: stress, deformation, safety factor</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Lightweight and topology optimization</h3>
+          <p>After optimization, the ratio of CAD and weight loss &gt; target and strength are still satisfied</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vouga_asynchronous_variational_integ_2009/">
+          <span class="entry-type">Paper</span>
+          <h3>Asynchronous Variational Integration of Interaction Potentials for Contact Mechanics</h3>
+          <p>Extends asynchronous variational integrators (AVIs) to interaction potentials such as penalty…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5/">
+          <span class="entry-type">Method</span>
+          <h3>Ontological Structure Engineering and Prototyping (Mechanical Structure)</h3>
+          <p>Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8_2_4/">
+          <span class="entry-type">Method</span>
+          <h3>Simulation-experiment closed-loop iteration</h3>
+          <p>Error between simulation and test is less than 15% , design iteration record</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">Concept</span>
+          <h3>Production Ramp</h3>
+          <p>Transition from pilot-line builds to volume manufacturing while improving yield, cycle time, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3/">
+          <span class="entry-type">Method</span>
+          <h3>System Architecture and Electromechanical Master Design (System / Preliminary Design)</h3>
+          <p>System Architecture and Electromechanical Design (System / Preliminary Design) —— Phase 3 of the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Fatigue and life prediction</h3>
+          <p>Fatigue Analysis report, key parts cycle life &gt; Target</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_aero_hand_open_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Aero Hand Open</h3>
+          <p>Aero Hand Open is a 2026 work on hardware design for humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_olaf_bringing_an_animated_char_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Olaf: Bringing an Animated Character to Life in the Physical World</h3>
+          <p>Olaf: Bringing an Animated Character to Life in the Physical World is a 2025 work on hardware design…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_finite_element_analysis_2024/">
+          <span class="entry-type">Method</span>
+          <h3>Finite Element Analysis</h3>
+          <p>Numerical method for structural, thermal, and modal analysis of robot links, brackets, and gearboxes…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design</h3>
+          <p>Introduces monotone subsystem decomposition, a constraint-programming method that computes…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Definition of load case</h3>
+          <p>“Load condition table”: load size, direction, action point, occurrence probability</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Nonlinear analysis and stability</h3>
+          <p>Buckling mode, stress/strain under large deformation</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Joint mounting interface and housing design</h3>
+          <p>Joint interface drawings, housing 3D, sealing scheme</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot Run</h3>
+          <p>Summary Report of trial production, through rate, problem closed-loop rate</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p15/">
+          <span class="entry-type">Method</span>
+          <h3>Integration &amp; V &amp; V testing</h3>
+          <p>Integration &amp; V &amp; v-phase 15 of the Android product development process, covering solution design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>FEA model preparation</h3>
+          <p>High-quality FEA models, mesh quality reports, checklists of boundary conditions</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot &amp; Production Ramp</h3>
+          <p>Pilot &amp; Production Ramp-stage 16 of the Android product development process, covering concept…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">Method</span>
+          <h3>Finite Element Analysis (FEA)</h3>
+          <p>A numerical method for predicting stress, deformation, vibration modes, and thermal behavior by…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</a><ul>
+<li><a href="#loads-and-simulation-models">Loads and Simulation Models</a><ul>
+<li><a href="#load-case-definition">Load Case Definition</a></li>
+<li><a href="#fea-model-preparation">FEA Model Preparation</a></li>
+<li><a href="#nonlinear-analysis-and-stability">Nonlinear Analysis and Stability</a></li>
+</ul>
+</li>
+<li><a href="#strength-fatigue-and-optimization">Strength, Fatigue, and Optimization</a><ul>
+<li><a href="#static-and-dynamic-stress-and-deformation-analysis">Static and Dynamic Stress and Deformation Analysis</a></li>
+<li><a href="#fatigue-and-life-prediction">Fatigue and Life Prediction</a></li>
+<li><a href="#lightweighting-and-topology-optimization">Lightweighting and Topology Optimization</a></li>
+<li><a href="#simulation-test-closed-loop-iteration">Simulation-Test Closed-Loop Iteration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#completion-criteria">Completion Criteria</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

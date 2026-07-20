@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UKF 기반 관절 토크 센서가 없는 휴머노이드 로봇을 위한 센서 융합 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">UKF 기반 관절 토크 센서가 없는 휴머노이드 로봇을 위한 센서 융합</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>UKF 기반 관절 토크 센서가 없는 휴머노이드 로봇을 위한 센서 융합</h1>
+      <p class="entry-name-en">UKF-Based Sensor Fusion for Joint-Torque Sensorless Humanoid Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">소프트웨어 미들웨어</span><span class="tag">부품</span><span class="tag">대량 생산</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.18380v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>관절 토크 센서가 없는 휴머노이드 로봇의 온라인 관절 토크 추정을 위한 무향 칼만 필터 기반 센서 융합법을 제안하고, ergoCub 휴머노이드의 이중 토크 제어 아키텍처에서 실험적으로 검증한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2402.18380" target="_blank" rel="noopener">UKF-Based Sensor Fusion for Joint-Torque Sensorless Humanoid Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 조인트 토크 센서가 없는 휴머노이드 로봇의 조인트 토크 온라인 추정을 위해 Unscented Kalman Filtering 기반의 새로운 센서 융합을 제안합니다. 특징 수준에서 제안된 접근 방식은 다중 모드 측정(예: 전류, 가속도 등)과 외부 접촉과 같은 직접 측정 불가능한 효과를 고려하여, 인간-로봇 상호작용을 위한 제어 아키텍처에서 즉시 사용 가능한 조인트 토크를 도출합니다. 제안된 센서 융합은 분산된 비공동 배치 힘/토크 센서도 통합할 수 있어, 기본 로봇 센서 구성에 대해 유연한 프레임워크를 제공합니다. 접근 방식의 검증을 위해, 제안된 센서 융합이 작업 공간 토크 제어를 목표로 하는 2단계 토크 제어 아키텍처에 어떻게 통합될 수 있는지 보여줍니다. 제안된 접근 방식의 성능은 현재 Istituto Italiano di Tecnologia에서 개발 중인 새로운 휴머노이드 로봇 ergoCub에 대한 광범위한 테스트를 통해 입증됩니다. 또한 기존의 최첨단 접근 방식인 재귀적 Newton-Euler 알고리즘과 우리의 전략을 비교합니다. 결과는 외부 접촉이 있는 경우에도 우리의 방법이 0.05 Nm에서 2.5 Nm 범위의 낮은 평균 제곱근 오차로 토크 추적을 달성함을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>본 논문은 조인트 토크 센서가 없는 휴머노이드 로봇의 조인트 토크 온라인 추정을 위해 Unscented Kalman Filtering 기반의 새로운 센서 융합을 제안합니다. 특징 수준에서 제안된 접근 방식은 다중 모드 측정(예: 전류, 가속도 등)과 외부 접촉과 같은 직접 측정 불가능한 효과를 고려하여, 인간-로봇 상호작용을 위한 제어 아키텍처에서 즉시 사용 가능한 조인트 토크를 도출합니다. 제안된 센서 융합은 분산된 비공동 배치 힘/토크 센서도 통합할 수 있어, 기본 로봇 센서 구성에 대해 유연한 프레임워크를 제공합니다. 접근 방식의 검증을 위해, 제안된 센서 융합이 작업 공간 토크 제어를 목표로 하는 2단계 토크 제어 아키텍처에 어떻게 통합될 수 있는지 보여줍니다. 제안된 접근 방식의 성능은 현재 Istituto Italiano di Tecnologia에서 개발 중인 새로운 휴머노이드 로봇 ergoCub에 대한 광범위한 테스트를 통해 입증됩니다. 또한 기존의 최첨단 접근 방식인 재귀적 Newton-Euler 알고리즘과 우리의 전략을 비교합니다. 결과는 외부 접촉이 있는 경우에도 우리의 방법이 0.05 Nm에서 2.5 Nm 범위의 낮은 평균 제곱근 오차로 토크 추적을 달성함을 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">NimbRo-OP 휴머노이드 개방형 플랫폼을 위한 ROS 기반 소프트웨어 프레임워크</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">물리 정보 신경망과 무향 칼만 필터를 활용한 휴로이드 로봇의 무센서 관절 토크 추정</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_gallant_voxel_grid_based_human_2025/">Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_meng_expert_insight_based_modeling_2025/">전문가 통찰 기반 희토류 공급 중단의 비동력 전략 억제 모델링: 시뮬레이션 중심 체계적 프레임워크</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">VR 기반 인간-로봇 팀워크 시뮬레이션에서의 가변 자율성을 위한 GPT 기반 대형 언어 모델 탐구</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">토크 제어 휴머노이드 로봇에서의 마찰 활용</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">인간-로봇 인체공학적 하중 리프팅을 위한 휴머노이드 로봇 설계 최적화</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_li_usability_of_a_robots_realisti_2020/">자폐 아동 치료에서 로봇의 사실적 표정 및 주변 장치의 사용성</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_kolzenberg_a_four_parameter_model_for_the_2022/">작동 중 배터리 노화 예측을 위한 고체 전해질 계면(SEI) 4개 매개변수 모델</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gheorghe_integration_testing_of_heterot_2014/">이종 시스템의 통합 테스트</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_pucci_automatic_gain_tuning_of_a_mom_2016/">휴머노이드 로봇을 위한 모멘텀 기반 균형 제어기의 자동 이득 튜닝</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">휴머노이드를 위한 인간 수준 구동</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">인간형 로봇의 견고한 보행을 위한 계층적 차수 축소 모델 예측 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">물리 정보 신경망과 무향 칼만 필터를 활용한 휴로이드 로봇의 무센서 관절 토크 추정</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">인간-로봇 인체공학적 하중 리프팅을 위한 휴머노이드 로봇 설계 최적화</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">NimbRo-OP 휴머노이드 개방형 플랫폼을 위한 ROS 기반 소프트웨어 프레임워크</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_sorrentino_ukf_based_sensor_fusion_for_jo_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_meng_expert_insight_based_modeling_2025/">
+          <span class="entry-type">논문</span>
+          <h3>전문가 통찰 기반 희토류 공급 중단의 비동력 전략 억제 모델링: 시뮬레이션 중심 체계적 프레임워크</h3>
+          <p>Wei Meng의 2025년 arXiv 논문은 희토류 자원 의존성을 군사 장비·기술 세대·전투 능력에 매핑하는 REG-CAP 프레임워크를 제안하고,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">
+          <span class="entry-type">논문</span>
+          <h3>토크 제어 휴머노이드 로봇에서의 마찰 활용</h3>
+          <p>관절 마찰을 상쇄하는 대신 안정화 감쇄 항으로 활용하는 토크 제어 프레임워크를 제안하고, iCub 휴머노이드 로봇에서 고정 기반 및 부유 기반 확장을 검증함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_neto_high_level_robot_programming_b_2013/">
+          <span class="entry-type">논문</span>
+          <h3>CAD 기반 고수준 로봇 프로그래밍: 예측 불가능한 환경 대응</h3>
+          <p>본 논문은 Autodesk Inventor에서 경로를 그려 비전문 사용자가 산업용 로봇을 프로그래밍할 수 있는 CAD 기반 인간-로봇 인터페이스를 제안하며, 레이저 카메라와…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gheorghe_integration_testing_of_heterot_2014/">
+          <span class="entry-type">논문</span>
+          <h3>이종 시스템의 통합 테스트</h3>
+          <p>이 논문은 근본적으로 다른 기술로 구성된 이종 시스템을 모델링하기 위해 통신 스트림 X-머신 시스템(CSXMS) 기반의 형식화 프레임워크를 제안하고, 통합 테스트를 위한 자동…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ghansah_hierarchical_reduced_order_mod_2025/">
+          <span class="entry-type">논문</span>
+          <h3>인간형 로봇의 견고한 보행을 위한 계층적 차수 축소 모델 예측 제어</h3>
+          <p>ALIP 보행 간 동역학에 기반한 40Hz 비선형 보행 계획기와 팔 및 몸통 동역학을 포함하는 500Hz 선형 MPC를 결합한 인간형 로봇 보행을 위한 계층적 차수 축소 MPC…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_semantics_aware_adaptive_knowl_2021/">
+          <span class="entry-type">논문</span>
+          <h3>센서-비전 동작 인식을 위한 의미 인지 적응형 지식 증류</h3>
+          <p>본 논문은 다수의 웨어러블 센서 모달리티에서 RGB 비디오 학생 네트워크로 지식을 증류하여 동작 인식을 수행하는 SAKDN 프레임워크를 제안하며, Gramian Angular…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sunbeam_human_level_actuation_for_huma_2025/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드를 위한 인간 수준 구동</h3>
+          <p>ISB 기반 자유도 아틀라스, 인간 등가 영역(HEE) 및 인간 수준 구동 점수(HLAS)를 통해 휴머노이드의 &#39;인간 수준&#39; 구동을 측정 가능하게 하는 재현 가능한 벤치마크…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sartore_optimization_of_humanoid_robot_2022/">
+          <span class="entry-type">논문</span>
+          <h3>인간-로봇 인체공학적 하중 리프팅을 위한 휴머노이드 로봇 설계 최적화</h3>
+          <p>Sartore, Rapetti, Pucci는 인간 모델을 포함한 비선형 하드웨어 설계 최적화 문제를 제안하여 협업 하중 리프팅에서 작업자들의 에너지 소비를 최소화하고, 이를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_usability_of_a_robots_realisti_2020/">
+          <span class="entry-type">논문</span>
+          <h3>자폐 아동 치료에서 로봇의 사실적 표정 및 주변 장치의 사용성</h3>
+          <p>본 논문은 19명의 자폐 아동이 치료사와 함께 Zeno 휴머노이드 로봇을 이용한 감정 학습 활동에 참여한 사용성 테스트를 보고하며, 코퍼스 기반 사실적 표정과 실시간 거울 표정을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gallant_voxel_grid_based_human_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</h3>
+          <p>Gallant…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kolzenberg_a_four_parameter_model_for_the_2022/">
+          <span class="entry-type">논문</span>
+          <h3>작동 중 배터리 노화 예측을 위한 고체 전해질 계면(SEI) 4개 매개변수 모델</h3>
+          <p>본 논문은 세 가지 매개변수화 프로토콜과 양극 개회로 전압 곡선만을 사용하여 리튬 이온 배터리 용량 감소를 예측하는 물리 기반 SEI 성장 4개 매개변수 모델을 제시하며, 25개의…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">
+          <span class="entry-type">논문</span>
+          <h3>VR 기반 인간-로봇 팀워크 시뮬레이션에서의 가변 자율성을 위한 GPT 기반 대형 언어 모델 탐구</h3>
+          <p>본 논문은 사용자가 개별 GPT-4 인스턴스로 구동되는 여러 시뮬레이션 로봇과 자연어로 대화하고, OpenAI의 함수 호출 API를 사용하여 비구조화된 음성을 구조화된 로봇…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pucci_automatic_gain_tuning_of_a_mom_2016/">
+          <span class="entry-type">논문</span>
+          <h3>휴머노이드 로봇을 위한 모멘텀 기반 균형 제어기의 자동 이득 튜닝</h3>
+          <p>휴머노이드 로봇을 위한 모멘텀 기반 균형 제어기의 자동 이득 튜닝 기법을 제안하며, 폐쇄 루프 구속 관절 공간 동역학을 선형화하고 이득을 최적화하여 원하는 강성과 감쇄 특성을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_grinberg_contact_sensing_via_joint_torq_2025/">
+          <span class="entry-type">논문</span>
+          <h3>관절 토크 센서 및 힘/토크 센서를 활용한 다리 로봇 접촉 감지</h3>
+          <p>본 논문은 저렴한 변형 게이지 관절 토크 센서와 하나의 고관절 장착 힘/토크 센서를 융합하여 로봇 다리의 접촉을 감지하고 위치를 추정하며 접촉력을 추정하는 일반화된 운동량 기반…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_allgeuer_a_ros_based_software_framework_2013/">
+          <span class="entry-type">논문</span>
+          <h3>NimbRo-OP 휴머노이드 개방형 플랫폼을 위한 ROS 기반 소프트웨어 프레임워크</h3>
+          <p>본 논문은 NimbRo-OP 휴머노이드 로봇을 위한 모듈화된 ROS 기반 소프트웨어 프레임워크를 제시하며, 2013년 RoboCup에서 시연된 축구 기술을 구현하기 위한 하드웨어…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">
+          <span class="entry-type">논문</span>
+          <h3>물리 정보 신경망과 무향 칼만 필터를 활용한 휴로이드 로봇의 무센서 관절 토크 추정</h3>
+          <p>본 논문은 전기 모터와 하모닉 드라이브를 갖춘 휴로이드 로봇을 위한 실시간 무센서 전신 토크 제어 프레임워크를 제안한다. 비선형 마찰 모델링을 위한 물리 정보 신경망(PINN)과…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

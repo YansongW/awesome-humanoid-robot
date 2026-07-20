@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROS 2 Middleware · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/software_platform/">Software Platform</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ROS 2 Middleware</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Software Platform</div>
+      <h1>ROS 2 Middleware</h1>
+      <p class="entry-name-en">ROS 2 Middleware</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Software &amp; Middleware</span><span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-0-foundations/">
+        <span class="roadmap-badge-stage">Stage 0 · Foundations</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">Stage 3 · Full Humanoid</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>De facto robot middleware with DDS-based pub/sub and real-time support.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://www.ros.org/" target="_blank" rel="noopener">ROS 2 Middleware</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>A de facto standard robot middleware based on DDS publish/subscribe and real-time support.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-ros-2-middleware">Definition and Positioning of ROS 2 Middleware</h3>
+<p>ROS 2 Middleware belongs to the <strong>software platform</strong> type. Its domains include: software middleware, design engineering. Value chain level: intelligence layer, midstream. It is a de facto standard robot middleware based on DDS publish/subscribe and real-time support. Its English name is <em>ROS 2 Middleware</em>. Its Korean name is <em>ROS 2 미들웨어</em>.</p>
+<h3 id="working-principle-and-technical-architecture-of-ros-2-middleware">Working Principle and Technical Architecture of ROS 2 Middleware</h3>
+<p>The core mechanism of ROS 2 Middleware determines its performance boundaries in humanoid robot systems. Understanding its internal structure, signal flow, and control interfaces facilitates system integration and optimization.
+During the selection and integration process, attention must be paid to its compatibility with controllers, communication buses, power systems, and mechanical structures.</p>
+<h3 id="key-parameters-and-selection-criteria">Key Parameters and Selection Criteria</h3>
+<p>In engineering practice, selecting ROS 2 Middleware requires comprehensive consideration of performance indicators, reliability, cost, supply chain maturity, and compatibility with the overall system.
+Key parameters typically include precision, bandwidth, torque, power consumption, weight, interface protocols, and environmental adaptability.
+For different application scenarios, trade-offs between performance and cost may be necessary, with appropriate redundancy and safety margins reserved.</p>
+<h3 id="typical-applications-and-development-trends">Typical Applications and Development Trends</h3>
+<p>ROS 2 Middleware has been widely used in prototype validation, academic research, and early commercial products of humanoid robots.
+As the industry chain matures in the future, its integration level, intelligence, and cost-effectiveness are expected to continue improving.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>dds</li>
+<li>middleware</li>
+<li>real_time</li>
+<li>ros2</li>
+<li>software_platform</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key software platforms in the humanoid robot industry chain, ROS 2 Middleware plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and validation, collectively determining overall system performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_moveit_motion_planning_2024/">MoveIt Motion Planning</a>
+              <span class="rel-desc">MoveIt runs on top of ROS 2 for manipulation planning.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_adorno_dq_robotics_a_library_for_robo_2020/">DQ Robotics: a Library for Robot Modeling and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DQ Robotics: a Library for Robot Modeling and Control mentions ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_busch_enabling_the_deployment_of_any_2023/">Enabling the Deployment of Any-Scale Robotic Applications in Microservice Architectures through Automated Containerization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Enabling the Deployment of Any-Scale Robotic Applications in Microservice Architectures through Automated Containerization uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bravo_arrabal_strengthening_multi_robot_syst_2025/">Strengthening Multi-Robot Systems for SAR: Co-Designing Robotics and Communication Towards 6G</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Strengthening Multi-Robot Systems for SAR: Co-Designing Robotics and Communication Towards 6G uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_concept_perception_stack/">Perception Stack</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Perception Stack uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liang_end_user_programming_of_low_an_2021/">End-User Programming of Low- and High-Level Actions for Robotic Task Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">End-User Programming of Low- and High-Level Actions for Robotic Task Planning uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">RoboKube: Establishing a New Foundation for the Cloud Native Evolution in Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">RoboKube: Establishing a New Foundation for the Cloud Native Evolution in Robotics uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_paul_performance_evaluation_of_ros2_2024/">Performance Evaluation of ROS2-DDS middleware implementations facilitating Cooperative Driving in Autonomous Vehicle</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates on</span>
+              <span class="rel-desc">Performance Evaluation of ROS2-DDS middleware implementations facilitating Cooperative Driving in Autonomous Vehicle is evaluated on ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_andreasson_software_architectures_for_mob_2023/">Software Architectures for Mobile Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Software Architectures for Mobile Robots discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gao_real_time_service_subscription_2025/">Real-Time Service Subscription and Adaptive Offloading Control in Vehicular Edge Computing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Real-Time Service Subscription and Adaptive Offloading Control in Vehicular Edge Computing uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_macenski_robot_operating_system_2_desig_2022/">Robot Operating System 2: Design, Architecture, and Uses In The Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Robot Operating System 2: Design, Architecture, and Uses In The Wild discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">Service-Oriented Robotic Computing for Cloud Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Service-Oriented Robotic Computing for Cloud Robotics discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_neto_high_level_programming_and_con_2013/">High-level programming and control for industrial robotics: using a hand-held accelerometer-based input device for gesture and posture recognition</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">High-level programming and control for industrial robotics: using a hand-held accelerometer-based input device for gesture and posture recognition uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chen_enhanced_visual_feedback_with_2022/">Enhanced Visual Feedback with Decoupled Viewpoint Control in Immersive Humanoid Robot Teleoperation using SLAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Enhanced Visual Feedback with Decoupled Viewpoint Control in Immersive Humanoid Robot Teleoperation using SLAM uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_han_innovative_research_on_iot_arc_2024/">Innovative Research on IoT Architecture and Robotic Operating Platforms: Applications of Large Language Models and Generative AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Innovative Research on IoT Architecture and Robotic Operating Platforms: Applications of Large Language Models and Generative AI uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_darup_encrypted_control_for_networke_2020/">Encrypted control for networked systems: An illustrative introduction and current challenges</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Encrypted control for networked systems: An illustrative introduction and current challenges discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_robotis_op3/">ROBOTIS OP3 (DARwIn-OP Series)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">The 2025 re-release of ROBOTIS OP3 natively moved to ROS2, with the DYNAMIXEL SDK and official ROS packages.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kronauer_latency_analysis_of_ros2_multi_2021/">Latency Analysis of ROS2 Multi-Node Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">Latency Analysis of ROS2 Multi-Node Systems studies ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_software_rt_preempt_linux/">Linux RT-PREEMPT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Linux RT-PREEMPT has prerequisite ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">ModuLoop: Low-Level Code Generation using Modular Synthesizer and Closed-Loop Debugger for Robotic Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">ModuLoop: Low-Level Code Generation using Modular Synthesizer and Closed-Loop Debugger for Robotic Control uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_can_bus_2024/">CAN Bus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">CAN Bus mentions ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_syarif_design_and_implementation_of_c_2016/">Design and Implementation of Computational Platform for Social-Humanoid Robot Lumen as an Exhibition Guide in Electrical Engineering Days 2015</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Design and Implementation of Computational Platform for Social-Humanoid Robot Lumen as an Exhibition Guide in Electrical Engineering Days 2015 discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_prorok_graph_neural_networks_for_lear_2018/">Graph Neural Networks for Learning Robot Team Coordination</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Graph Neural Networks for Learning Robot Team Coordination discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_barua_a_perspective_on_robotic_telep_2022/">A Perspective on Robotic Telepresence and Teleoperation using Cognition: Are we there yet?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Perspective on Robotic Telepresence and Teleoperation using Cognition: Are we there yet? discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_technology_ota_software_update_2024/">OTA Software Update</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">OTA Software Update has prerequisite ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021/">A wearable sensor vest for social humanoid robots with GPGPU, IoT, and modular software architecture</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">A wearable sensor vest for social humanoid robots with GPGPU, IoT, and modular software architecture uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lee_harness_engineering_for_physic_2026/">Harness Engineering for Physical AI: Robot Middleware Is the Harness Layer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Harness Engineering for Physical AI: Robot Middleware Is the Harness Layer discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">On-Device VLA Inference has prerequisite ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_martinez_rozas_skyeye_team_at_mbzirc_2020_a_t_2021/">Skyeye Team at MBZIRC 2020: A team of aerial and ground robots for GPS-denied autonomous fire extinguishing in an urban building scenario</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Skyeye Team at MBZIRC 2020: A team of aerial and ground robots for GPS-denied autonomous fire extinguishing in an urban building scenario uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gutierrez_real_time_linux_communications_2018/">Real-time Linux communications: an evaluation of the Linux communication stack for real-time robotic applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Real-time Linux communications: an evaluation of the Linux communication stack for real-time robotic applications discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tahir_mobile_robot_control_and_auton_2023/">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_daudelin_an_integrated_system_for_perce_2018/">An Integrated System for Perception-Driven Autonomy with Modular Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">An Integrated System for Perception-Driven Autonomy with Modular Robots discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_yang_taming_silent_failures_a_frame_2025/">Taming Silent Failures: A Framework for Verifiable AI Reliability</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Taming Silent Failures: A Framework for Verifiable AI Reliability uses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_software_gazebo/">Gazebo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Gazebo has prerequisite ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kaigom_metarobotics_for_industry_and_2024/">Metarobotics for Industry and Society: Vision, Technologies, and Opportunities</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Metarobotics for Industry and Society: Vision, Technologies, and Opportunities discusses ROS 2 Middleware.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_software_qnx/">QNX</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">QNX has prerequisite ROS 2 Middleware.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_software_ros_2_middleware_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_concept_perception_stack/">
+          <span class="entry-type">Concept</span>
+          <h3>Perception Stack</h3>
+          <p>The software subsystem that processes sensor data to estimate states, detect objects, and build…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_gazebo/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Gazebo</h3>
+          <p>An open-source 3D robotics simulator that provides physics engines, sensor models, and scene…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_han_innovative_research_on_iot_arc_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Innovative Research on IoT Architecture and Robotic Operating Platforms: Applications of Large Language Models and Generative AI</h3>
+          <p>This 2024 RICAI paper proposes an IoT-enabled robotic operating platform that integrates large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_busch_enabling_the_deployment_of_any_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Enabling the Deployment of Any-Scale Robotic Applications in Microservice Architectures through Automated Containerization</h3>
+          <p>This paper proposes a microservice-based containerization workflow for ROS/ROS 2 robotic…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bravo_arrabal_strengthening_multi_robot_syst_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Strengthening Multi-Robot Systems for SAR: Co-Designing Robotics and Communication Towards 6G</h3>
+          <p>Presents field-tested Search and Rescue use cases that co-design mobile robots and 5G/6G edge-cloud…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_barua_a_perspective_on_robotic_telep_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>A Perspective on Robotic Telepresence and Teleoperation using Cognition: Are we there yet?</h3>
+          <p>This 2022 arXiv perspective surveys robotic telepresence and teleoperation systems, arguing for a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_qnx/">
+          <span class="entry-type">Software Platform</span>
+          <h3>QNX</h3>
+          <p>A commercial microkernel real-time operating system widely used in automotive and safety-critical…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yang_taming_silent_failures_a_frame_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Taming Silent Failures: A Framework for Verifiable AI Reliability</h3>
+          <p>This paper introduces FAME (Formal Assurance and Monitoring Environment), a framework that combines…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_prorok_graph_neural_networks_for_lear_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Graph Neural Networks for Learning Robot Team Coordination</h3>
+          <p>This paper applies Graph Neural Networks (GNNs) to multi-robot coordination, modeling robot teams as…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>A wearable sensor vest for social humanoid robots with GPGPU, IoT, and modular software architecture</h3>
+          <p>This paper presents an affordable wearable sensor vest and a modular ROS-based open-source software…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_paul_performance_evaluation_of_ros2_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Performance Evaluation of ROS2-DDS middleware implementations facilitating Cooperative Driving in Autonomous Vehicle</h3>
+          <p>This paper empirically evaluates same-domain and cross-domain ROS2-DDS communication latency across…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adorno_dq_robotics_a_library_for_robo_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>DQ Robotics: a Library for Robot Modeling and Control</h3>
+          <p>Introduces DQ Robotics, an open-source library that implements dual quaternion algebra for robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_macenski_robot_operating_system_2_desig_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Operating System 2: Design, Architecture, and Uses In The Wild</h3>
+          <p>A 2022 review paper that presents the ground-up architectural redesign of ROS 2 around DDS…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_darup_encrypted_control_for_networke_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Encrypted control for networked systems: An illustrative introduction and current challenges</h3>
+          <p>A tutorial-style paper that unifies encrypted controller architectures and derives encrypted…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chen_enhanced_visual_feedback_with_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Enhanced Visual Feedback with Decoupled Viewpoint Control in Immersive Humanoid Robot Teleoperation using SLAM</h3>
+          <p>This paper presents a decoupled viewpoint control system for immersive teleoperation of the HRP-4CR…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_robotis_op3/">
+          <span class="entry-type">Robot System</span>
+          <h3>ROBOTIS OP3 (DARwIn-OP Series)</h3>
+          <p>A 510 mm, 3.5 kg open-platform humanoid robot from ROBOTIS, the third generation of the NSF-funded…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_moveit_motion_planning_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>MoveIt Motion Planning</h3>
+          <p>Motion-planning framework commonly used for manipulation arms and whole-body planning.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_can_bus_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>CAN Bus</h3>
+          <p>Field bus connecting joint motor drives to the central controller in humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gao_real_time_service_subscription_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Real-Time Service Subscription and Adaptive Offloading Control in Vehicular Edge Computing</h3>
+          <p>This paper formulates the Deadline-Constrained Task Offloading and Resource Allocation Problem…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_daudelin_an_integrated_system_for_perce_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>An Integrated System for Perception-Driven Autonomy with Modular Robots</h3>
+          <p>Presents a modular robot system that combines centralized perception, mapping, and LTL-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kaigom_metarobotics_for_industry_and_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Metarobotics for Industry and Society: Vision, Technologies, and Opportunities</h3>
+          <p>The paper introduces Metarobotics as a software-defined framework that integrates beyond-URLLC (6G),…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_andreasson_software_architectures_for_mob_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Software Architectures for Mobile Robots</h3>
+          <p>A survey chapter that reviews software architectures and middleware frameworks for mobile robots,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gutierrez_real_time_linux_communications_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Real-time Linux communications: an evaluation of the Linux communication stack for real-time robotic applications</h3>
+          <p>This 2018 paper empirically evaluates UDP round-trip latency on PREEMPT-RT Linux using multi-core…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kronauer_latency_analysis_of_ros2_multi_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Latency Analysis of ROS2 Multi-Node Systems</h3>
+          <p>This paper characterizes end-to-end latency in ROS2 multi-node chains using default settings and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_syarif_design_and_implementation_of_c_2016/">
+          <span class="entry-type">Paper</span>
+          <h3>Design and Implementation of Computational Platform for Social-Humanoid Robot Lumen as an Exhibition Guide in Electrical Engineering Days 2015</h3>
+          <p>This paper presents Lumen Server, an AMQP/RabbitMQ-based middleware that connects the NAO robot with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_tech_on_device_vla_inference/">
+          <span class="entry-type">Technology</span>
+          <h3>On-Device VLA Inference</h3>
+          <p>The practice of running Vision-Language-Action models directly on robot-embedded edge compute rather…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Service-Oriented Robotic Computing for Cloud Robotics</h3>
+          <p>A survey of service-oriented architecture and Web services for cloud robotics, distinguishing the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tahir_mobile_robot_control_and_auton_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</h3>
+          <p>Proposes a collaborative Simulation Twin (ST) framework that offloads SLAM-based path planning to a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_ota_software_update_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>OTA Software Update</h3>
+          <p>Over-the-air deployment of control policies, firmware, and system software to deployed humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboKube: Establishing a New Foundation for the Cloud Native Evolution in Robotics</h3>
+          <p>This paper proposes RoboKube, a Kubernetes-based framework for deploying containerized ROS 2…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lee_harness_engineering_for_physic_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Harness Engineering for Physical AI: Robot Middleware Is the Harness Layer</h3>
+          <p>The paper argues that robot middleware should serve as the harness layer for Physical AI, hosting…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liang_end_user_programming_of_low_an_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>End-User Programming of Low- and High-Level Actions for Robotic Task Planning</h3>
+          <p>Introduces iRoPro, an interactive Programming-by-Demonstration framework that lets end-users teach…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_martinez_rozas_skyeye_team_at_mbzirc_2020_a_t_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Skyeye Team at MBZIRC 2020: A team of aerial and ground robots for GPS-denied autonomous fire extinguishing in an urban building scenario</h3>
+          <p>Presents a heterogeneous multi-robot system of up to three UAVs and one UGV that autonomously…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_neto_high_level_programming_and_con_2013/">
+          <span class="entry-type">Paper</span>
+          <h3>High-level programming and control for industrial robotics: using a hand-held accelerometer-based input device for gesture and posture recognition</h3>
+          <p>A 2013 paper presenting a programming-by-demonstration system where a Wii Remote&#39;s 3-axis…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_rt_preempt_linux/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Linux RT-PREEMPT</h3>
+          <p>A Linux kernel patchset that makes most of the kernel preemptible to provide deterministic,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ModuLoop: Low-Level Code Generation using Modular Synthesizer and Closed-Loop Debugger for Robotic Control</h3>
+          <p>Proposes a closed-loop modular code synthesizer that converts natural-language commands into…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-ros-2-middleware">Definition and Positioning of ROS 2 Middleware</a></li>
+<li><a href="#working-principle-and-technical-architecture-of-ros-2-middleware">Working Principle and Technical Architecture of ROS 2 Middleware</a></li>
+<li><a href="#key-parameters-and-selection-criteria">Key Parameters and Selection Criteria</a></li>
+<li><a href="#typical-applications-and-development-trends">Typical Applications and Development Trends</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

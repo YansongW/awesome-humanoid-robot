@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenVLA: An Open-Source Vision-Language-Action Model · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">OpenVLA: An Open-Source Vision-Language-Action Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>OpenVLA: An Open-Source Vision-Language-Action Model</h1>
+      <p class="entry-name-en">OpenVLA: An Open-Source Vision-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Data &amp; Datasets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.09246v3.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A 7B-parameter open-source VLA pretrained on 970k real-world robot demonstrations from the Open X-Embodiment dataset, combining Llama 2, DINOv2, and SigLIP for generalist manipulation.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2406.09246" target="_blank" rel="noopener">OpenVLA: An Open-Source Vision-Language-Action Model</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">is_based_on</span>
+            <a href="/en/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment Dataset</a>
+            
+              
+                
+              
+              <span class="rel-desc">OpenVLA is pretrained on 970k real-world robot demonstrations from the Open X-Embodiment dataset.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/en/entry/ent_dataset_droid/">DROID</a>
+            
+              
+                
+              
+              <span class="rel-desc">The OpenVLA paper discusses DROID as part of the diverse robot demonstration data used for pretraining.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Large policies pretrained on a combination of Internet-scale vision-language data and diverse robot demonstrations have the potential to change how we teach robots new skills: rather than training new behaviors from scratch, we can fine-tune such vision-language-action (VLA) models to obtain robust, generalizable policies for visuomotor control. Yet, widespread adoption of VLAs for robotics has been challenging as 1) existing VLAs are largely closed and inaccessible to the public, and 2) prior work fails to explore methods for efficiently fine-tuning VLAs for new tasks, a key component for adoption. Addressing these challenges, we introduce OpenVLA, a 7B-parameter open-source VLA trained on a diverse collection of 970k real-world robot demonstrations. OpenVLA builds on a Llama 2 language model combined with a visual encoder that fuses pretrained features from DINOv2 and SigLIP. As a product of the added data diversity and new model components, OpenVLA demonstrates strong results for generalist manipulation, outperforming closed models such as RT-2-X (55B) by 16.5% in absolute task success rate across 29 tasks and multiple robot embodiments, with 7x fewer parameters. We further show that we can effectively fine-tune OpenVLA for new settings, with especially strong generalization results in multi-task environments involving multiple objects and strong language grounding abilities, and outperform expressive from-scratch imitation learning methods such as Diffusion Policy by 20.4%. We also explore compute efficiency; as a separate contribution, we show that OpenVLA can be fine-tuned on consumer GPUs via modern low-rank adaptation methods and served efficiently via quantization without a hit to downstream success rate. Finally, we release model checkpoints, fine-tuning notebooks, and our PyTorch codebase with built-in support for training VLAs at scale on Open X-Embodiment datasets.</p>
+<h2 id="content">Content</h2>
+<p>Large policies pretrained on a combination of Internet-scale vision-language data and diverse robot demonstrations have the potential to change how we teach robots new skills: rather than training new behaviors from scratch, we can fine-tune such vision-language-action (VLA) models to obtain robust, generalizable policies for visuomotor control. Yet, widespread adoption of VLAs for robotics has been challenging as 1) existing VLAs are largely closed and inaccessible to the public, and 2) prior work fails to explore methods for efficiently fine-tuning VLAs for new tasks, a key component for adoption. Addressing these challenges, we introduce OpenVLA, a 7B-parameter open-source VLA trained on a diverse collection of 970k real-world robot demonstrations. OpenVLA builds on a Llama 2 language model combined with a visual encoder that fuses pretrained features from DINOv2 and SigLIP. As a product of the added data diversity and new model components, OpenVLA demonstrates strong results for generalist manipulation, outperforming closed models such as RT-2-X (55B) by 16.5% in absolute task success rate across 29 tasks and multiple robot embodiments, with 7x fewer parameters. We further show that we can effectively fine-tune OpenVLA for new settings, with especially strong generalization results in multi-task environments involving multiple objects and strong language grounding abilities, and outperform expressive from-scratch imitation learning methods such as Diffusion Policy by 20.4%. We also explore compute efficiency; as a separate contribution, we show that OpenVLA can be fine-tuned on consumer GPUs via modern low-rank adaptation methods and served efficiently via quantization without a hit to downstream success rate. Finally, we release model checkpoints, fine-tuning notebooks, and our PyTorch codebase with built-in support for training VLAs at scale on Open X-Embodiment datasets.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">based on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment Dataset</a>
+              <span class="rel-desc">OpenVLA is pretrained on 970k real-world robot demonstrations from the Open X-Embodiment dataset.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model cites or references AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">evaluates on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model evaluates or benchmarks HumanoidBench.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">A Pragmatic VLA Foundation Model</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model cites or references A Pragmatic VLA Foundation Model.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_dial_decoupling_intent_and_act_2026/">DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model cites or references DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model mentions OpenVLA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_diffusion_policy/">Diffusion Policy</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model compares with Diffusion Policy.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_wang_vla_survey_2026/">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model cites or references Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model mentions RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_roboomni_2025/">RoboOmni: Proactive Robot Manipulation in Omni-modal Context</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model cites or references RoboOmni: Proactive Robot Manipulation in Omni-modal Context.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model cites or references EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_pi0_2024/">π0: A Vision-Language-Action Flow Model for General Robot Control</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model cites or references π0: A Vision-Language-Action Flow Model for General Robot Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model mentions OpenVLA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_dataset_droid/">DROID</a>
+              <span class="rel-desc">The OpenVLA paper discusses DROID as part of the diverse robot demonstration data used for pretraining.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_diffusion_policy_2023/">Diffusion Policy</a>
+              <span class="rel-desc">OpenVLA: An Open-Source Vision-Language-Action Model compares with Diffusion Policy.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_roboomni_2025/">RoboOmni: Proactive Robot Manipulation in Omni-modal Context</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">RoboOmni: Proactive Robot Manipulation in Omni-modal Context cites or references OpenVLA: An Open-Source Vision-Language-Action Model.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System cites or references OpenVLA: An Open-Source Vision-Language-Action Model.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_action_token_prediction/">Action Token Prediction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Action Token Prediction cites OpenVLA: An Open-Source Vision-Language-Action Model.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_benchmark_humanoid_foundation_model/">Humanoid Foundation Model Benchmark</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates</span>
+              <span class="rel-desc">The Humanoid Foundation Model Benchmark directory lists and rates OpenVLA as one of the evaluated VLA models.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">On-device VLA inference is based on model architectures such as OpenVLA.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates</span>
+              <span class="rel-desc">HumanoidBench cites or references OpenVLA: An Open-Source Vision-Language-Action Model.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos cites or references OpenVLA: An Open-Source Vision-Language-Action Model.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_vla_survey_2026/">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines cites or references OpenVLA: An Open-Source Vision-Language-Action Model.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">evaluates</span>
+              <span class="rel-desc">LIBERO cites or references OpenVLA: An Open-Source Vision-Language-Action Model.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pi0_2024/">π0: A Vision-Language-Action Flow Model for General Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">The π0 paper references OpenVLA as a contemporary open-source VLA in the related-work landscape.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_transformer_action_decoder/">Transformer Action Decoder Formalism</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Transformer Action Decoder Formalism cites OpenVLA: An Open-Source Vision-Language-Action Model.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_openvla_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">Method</span>
+          <h3>Diffusion Policy</h3>
+          <p>A visuomotor policy that represents action distributions as denoising diffusion models, enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_dataset_open_x_embodiment/">
+          <span class="entry-type">Dataset</span>
+          <h3>Open X-Embodiment Dataset</h3>
+          <p>A large-scale aggregated robot-learning dataset combining demonstrations from diverse real-world…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_humanoid_foundation_model/">
+          <span class="entry-type">Benchmark</span>
+          <h3>Humanoid Foundation Model Benchmark</h3>
+          <p>An independent, publicly accessible benchmark that rates and compares AI foundation models for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_roboomni_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboOmni: Proactive Robot Manipulation in Omni-modal Context</h3>
+          <p>A 2025 VLA system that fuses vision, speech, and environmental sounds to infer user intentions…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</h3>
+          <p>A 2026 survey arguing that VLA progress now depends more on data infrastructure and evaluation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egovla_learning_vision_languag_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos</h3>
+          <p>The implementation path of egofla is to first encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">Method</span>
+          <h3>Diffusion Policy</h3>
+          <p>Visuomotor policy represented as a conditional denoising diffusion process, enabling multimodal…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_openvla/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>An open-source vision-language-action model trained on the Open X-Embodiment dataset for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_dataset_droid/">
+          <span class="entry-type">Dataset</span>
+          <h3>DROID</h3>
+          <p>A distributed, diverse real-world robot manipulation dataset collected across multiple labs and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_agibot_world_colosseo_a_large_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems</h3>
+          <p>The implementation path of AgiBot World Colosseo is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_transformer_action_decoder/">
+          <span class="entry-type">Formalism</span>
+          <h3>Transformer Action Decoder Formalism</h3>
+          <p>A formal generative framework that decodes robot actions from visual-language context using a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</h3>
+          <p>The implementation path of TWIST2 is to first encode camera images/multi-view observations, human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">Benchmark</span>
+          <h3>HumanoidBench</h3>
+          <p>A simulated benchmark for whole-body humanoid locomotion and manipulation based on the Unitree H1…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_libero/">
+          <span class="entry-type">Benchmark</span>
+          <h3>LIBERO</h3>
+          <p>A benchmark and dataset for learning library-generalizable robot manipulation skills from…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_tech_on_device_vla_inference/">
+          <span class="entry-type">Technology</span>
+          <h3>On-Device VLA Inference</h3>
+          <p>The practice of running Vision-Language-Action models directly on robot-embedded edge compute rather…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">Method</span>
+          <h3>Action Token Prediction</h3>
+          <p>A method that frames robot action generation as an autoregressive next-token prediction problem,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dial_decoupling_intent_and_act_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA</h3>
+          <p>The implementation path of DIAL is to first encode language instructions, camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pi0_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>π0: A Vision-Language-Action Flow Model for General Robot Control</h3>
+          <p>A flow-matching VLA built on a pretrained VLM, trained on diverse dexterous robot data to perform…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>A Pragmatic VLA Foundation Model</h3>
+          <p>The implementation path of LingBot-VLA is to first encode language instructions, camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>7B-parameter open VLA trained on 970k episodes from Open X-Embodiment.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

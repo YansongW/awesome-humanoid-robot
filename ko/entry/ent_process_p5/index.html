@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>本体结构工程与原型（Mechanical Structure） · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">本体结构工程与原型（Mechanical Structure）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>本体结构工程与原型（Mechanical Structure）</h1>
+      <p class="entry-name-en">Ontological Structure Engineering and Prototyping (Mechanical Structure)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">제조 공정</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>本体结构工程与原型（Mechanical Structure）</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본체 구조 공학과 프로토타입(Mechanical Structure)은 휴머노이드 로봇 제품 개발 전 과정 중 5번째 단계이며, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.</p>
+<p>이 단계는 입력 검토, 설계, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 확보할 수 있도록 하는 핵심 마일스톤입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h4 id="_3">상세 구조 설계</h4>
+<h5 id="_4">중앙 골격 및 사지 링크 설계</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: SolidWorks / NX / CATIA, 위상 최적화, 치수 최적화</li>
+<li><strong>설계 사고 논리</strong>: 중앙 골격은 동체 하중을 지지하고 다리로 전달하며, 사지 링크는 높은 강성과 낮은 중량이 요구됨</li>
+<li><strong>핵심 제약 조건</strong>: 강성, 강도, 중량, 조립 접근성</li>
+<li><strong>완료 기준 / 산출물</strong>: 3D 구조 모델, 주요 단면 설계, BOM 초안
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P5.1.1.1 입력 검토 및 목표 정량화</strong>: 「중앙 골격 및 사지 링크 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부를 구축</li>
+<li><strong>P5.1.1.2 개념 및 상세 설계</strong>: 「중앙 골격 및 사지 링크 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「SolidWorks / NX / CATIA, 위상 최적화, 치수 최적화」를 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보 방안을 마련</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 방안을 확정</li>
+<li><strong>P5.1.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「중앙 골격 및 사지 링크 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품을 구축하고 핵심 파라미터를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P5.1.1.4 검증 및 문제 폐쇄</strong>: 「중앙 골격 및 사지 링크 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P5.1.1.5 문서 출력 및 하위 인도</strong>: 「중앙 골격 및 사지 링크 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 인용</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_5">관절 장착 인터페이스 및 하우징 설계</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 인터페이스 공차 분석, 위치 결정 핀/플랜지 설계, 밀봉 설계</li>
+<li><strong>설계 사고 논리</strong>: 관절과 구조 사이에는 정밀한 동축성, 반복적인 분해/조립이 가능해야 하며, 방진 및 방수가 필요함</li>
+<li><strong>핵심 제약 조건</strong>: 가공 정밀도, 밀봉 등급, 유지보수 공간</li>
+<li><strong>완료 기준 / 산출물</strong>: 관절 인터페이스 도면, 하우징 3D, 밀봉 방안
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P5.1.2.1 입력 검토 및 목표 정량화</strong>: 「관절 장착 인터페이스 및 하우징 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부를 구축</li>
+<li><strong>P5.1.2.2 개념 및 상세 설계</strong>: 「관절 장착 인터페이스 및 하우징 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「인터페이스 공차 분석, 위치 결정 핀/플랜지 설계, 밀봉 설계」를 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보 방안을 마련</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 방안을 확정</li>
+<li><strong>P5.1.2.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「관절 장착 인터페이스 및 하우징 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품을 구축하고 핵심 파라미터를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P5.1.2.4 검증 및 문제 폐쇄</strong>: 「관절 장착 인터페이스 및 하우징 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P5.1.2.5 문서 출력 및 하위 인도</strong>: 「관절 장착 인터페이스 및 하우징 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 인용</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_6">외관 커버 및 분할선 설계</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: A면 분할선, 스냅/나사 은폐, 분리형 패널</li>
+<li><strong>설계 사고 논리</strong>: 커버는 외관, 방열, 유지보수 개구부, 낙하 보호를 모두 고려해야 함</li>
+<li><strong>핵심 제약 조건</strong>: ID 확정, 금형/프린팅 공정, 조립 순서</li>
+<li><strong>완료 기준 / 산출물</strong>: 커버 3D, 분할선 방안, 유지보수 개구부 배치
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P5.1.3.1 입력 검토 및 목표 정량화</strong>: 「외관 커버 및 분할선 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부를 구축</li>
+<li><strong>P5.1.3.2 개념 및 상세 설계</strong>: 「외관 커버 및 분할선 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「A면 분할선, 스냅/나사 은폐, 분리형 패널」을 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보 방안을 마련</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 방안을 확정</li>
+<li><strong>P5.1.3.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「외관 커버 및 분할선 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품을 구축하고 핵심 파라미터를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P5.1.3.4 검증 및 문제 폐쇄</strong>: 「외관 커버 및 분할선 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P5.1.3.5 문서 출력 및 하위 인도</strong>: 「외관 커버 및 분할선 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 인용</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_7">재료 및 공정</h4>
+<h5 id="_8">구조 재료 선정</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 알루미늄 합금 7075/6061, 탄소 섬유, 티타늄 합금, 엔지니어링 플라스틱 비교</li>
+<li><strong>설계 사고 논리</strong>: 고하중 링크는 알루미늄 합금/CNC를 사용하고, 외부 케이스/브래킷은 SLS/MJF 3D 프린팅 또는 사출 성형을 사용함</li>
+<li><strong>핵심 제약 조건</strong>: 강도, 강성, 밀도, 비용, 양산 가능성</li>
+<li><strong>완료 기준 / 산출물</strong>: 《재료 선정표》: 각 부품의 재료, 공정, 이유
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P5.2.1.1 입력 검토 및 목표 정량화</strong>: 「구조 재료 선정」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부를 구축</li>
+<li><strong>P5.2.1.2 후보 방안 수립 및 평가</strong>: 「구조 재료 선정」을 위한 후보 방안 라이브러리를 구축하고, 「알루미늄 합금 7075/6061, 탄소 섬유, 티타늄 합금, 엔지니어링 플라스틱 비교」를 사용하여 정량적으로 평가하며, 비용, 성능, 공급망, 유지보수성을 고려하여 최종 방안을 결정함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보 방안을 마련</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 방안을 확정</li>
+<li><strong>P5.2.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「구조 재료 선정」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품을 구축하고 핵심 파라미터를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P5.2.1.4 검증 및 문제 폐쇄</strong>: 「구조 재료 선정」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P5.2.1.5 문서 출력 및 하위 인도</strong>: 「구조 재료 선정」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 인용</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="dfam">적층 제조를 위한 설계 (DfAM)</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: SLS/MJF/SLA 설계 규격, 지지대 최적화, 격자 구조</li>
+<li><strong>설계 사고 논리</strong>: 프로토타입 단계에서 많은 구조 부품이 3D 프린팅을 사용하므로, 프린팅 공정에 맞게 최적화해야 함</li>
+<li><strong>핵심 제약 조건</strong>: 프린팅 재료 강도, 층간 결합, 치수 정밀도, 표면 품질</li>
+<li><strong>완료 기준 / 산출물</strong>: DfAM 체크리스트, 3D 프린팅 부품 도면, 프린팅 파라미터
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P5.2.2.1 입력 검토 및 목표 정량화</strong>: 「적층 제조를 위한 설계 (DfAM)」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부를 구축</li>
+<li><strong>P5.2.2.2 개념 및 상세 설계</strong>: 「적층 제조를 위한 설계 (DfAM)」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「SLS/MJF/SLA 설계 규격, 지지대 최적화, 격자 구조」를 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보 방안을 마련</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 방안을 확정</li>
+<li><strong>P5.2.2.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「적층 제조를 위한 설계 (DfAM)」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품을 구축하고 핵심 파라미터를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P5.2.2.4 검증 및 문제 폐쇄</strong>: 「적층 제조를 위한 설계 (DfAM)」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P5.2.2.5 문서 출력 및 하위 인도</strong>: 「적층 제조를 위한 설계 (DfAM)」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 인용</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h5 id="_9">양산 공정 평가</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 다이캐스팅, 사출 성형, 판금, CNC, 복합재 성형 공정 비교</li>
+<li><strong>설계 사고 논리</strong>: 프로토타입 검증 후 3D 프린팅 부품을 양산 가능한 공정으로 전환해야 함</li>
+<li><strong>핵심 제약 조건</strong>: 금형 비용, 최소 주문량, 수율, 사이클 타임</li>
+<li><strong>완료 기준 / 산출물</strong>: 양산 공정 로드맵, 핵심 부품 공정 선택
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P5.2.3.1 입력 검토 및 목표 정량화</strong>: 「양산 공정 평가」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부를 구축</li>
+<li><strong>P5.2.3.2 방안/방법 설계</strong>: 「양산 공정 평가」를 위한 구현 방법 또는 후보 방안을 수립하고, 「다이캐스팅, 사출 성형, 판금, CNC, 복합재 성형 공정 비교」를 사용하여 논증하며, 기술 로드맵과 리소스 요구 사항을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보 방안을 마련</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 방안을 확정</li>
+<li><strong>P5.2.3.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「양산 공정 평가」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품을 구축하고 핵심 파라미터를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P5.2.3.4 검증 및 문제 폐쇄</strong>: 「양산 공정 평가」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P5.2.3.5 문서 출력 및 하위 인도</strong>: 「양산 공정 평가」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 인용</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+<h4 id="_10">배선, 유지보수 및 조립</h4>
+<h5 id="_11">케이블 및 배관 배선 설계</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 3D 와이어 하네스 배선, 굽힘 반경 검토, 고정점 설계</li>
+<li><strong>설계 사고 논리</strong>: 동력/신호/냉각 배관이 관절 운동 시 당겨지거나 마모되지 않도록 하고, 유지보수 여유 길이를 확보함</li>
+<li><strong>핵심 제약 조건</strong>: 굽힘 수명, EMC 차폐, 방열, 교체 가능성</li>
+<li><strong>완료 기준 / 산출물</strong>: 《배선 설계 규격》: 케이블 모델, 고정점, 굽힘 반경, 경로
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P5.3.1.1 입력 검토 및 목표 정량화</strong>: 「케이블 및 배관 배선 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 변환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부를 구축</li>
+<li><strong>P5.3.1.2 개념 및 상세 설계</strong>: 「케이블 및 배관 배선 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「3D 와이어 하네스 배선, 굽힘 반경 검토, 고정점 설계」를 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>2개 이상의 후보 방안을 마련</li>
+<li>평가 매트릭스를 구축하고 정량적으로 점수화</li>
+<li>검토를 조직하고 방안을 확정</li>
+<li><strong>P5.3.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「케이블 및 배관 배선 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>모델/시제품을 구축하고 핵심 파라미터를 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증을 수행</li>
+<li>이상 및 편차를 기록</li>
+<li><strong>P5.3.1.4 검증 및 문제 폐쇄</strong>: 「케이블 및 배관 배선 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>테스트/검토 계획 및 통과 기준을 수립</li>
+<li>테스트를 수행하고 원시 데이터를 기록</li>
+<li>문제 목록 및 개선 조치를 출력</li>
+<li><strong>P5.3.1.5 문서 출력 및 하위 인도</strong>: 「케이블 및 배관 배선 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+<strong>4레벨 핵심 작업:</strong></li>
+<li>템플릿에 따라 문서를 작성하고 원시 데이터를 인용</li>
+<li>내부 검토 및 버전 관리를 완료</li>
+<li>게시하고 하위 의존 부서에 통지</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5_1_3/">外观覆盖件与分缝设计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">일부</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5_2_2/">面向增材制造的设计（DfAM）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_design_for_assembly/">조립 용이성 설계(DFA)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p4/">关节模组与驱动系统设计（Actuator &amp; Drive）</a>
+              <span class="rel-desc">P5 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p2/">工业设计与外观工程（ID / A-Surface）</a>
+              <span class="rel-desc">P5 依赖 P2 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5_1_1/">中心骨架与四肢连杆设计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p5_1_2/">关节安装接口与壳体设计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-desc">P5 依赖 P3 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p9/">热管理仿真与迭代（Thermal Management）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P9 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_1_2/">关节安装接口与壳体设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_2_3/">面向量产工艺评估</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p6/">URDF 建模与运动学校核（Kinematics &amp; URDF）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P6 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_3_1/">线缆与管路布线设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16/">小批量试产与量产准备（Pilot &amp; Production Ramp）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_3_3/">可维护性与维修性设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p16_3_1/">小批量试产（Pilot Run）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_2_2/">面向增材制造的设计（DfAM）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_2_1/">结构材料选型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_1_1/">中心骨架与四肢连杆设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p8/">结构强度仿真与迭代（Structural FEA）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P8 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_1_3/">外观覆盖件与分缝设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_olaf_bringing_an_animated_char_2025/">Olaf: Bringing an Animated Character to Life in the Physical World</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p5_3_2/">装配顺序与工装夹具规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p5"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p2/">
+          <span class="entry-type">방법</span>
+          <h3>工业设计与外观工程（ID / A-Surface）</h3>
+          <p>工业设计与外观工程（ID / A-Surface）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>中心骨架与四肢连杆设计</h3>
+          <p>3D 结构模型、关键截面设计、BOM 初稿</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>外观覆盖件与分缝设计</h3>
+          <p>覆盖件 3D、分缝方案、维护开口布局</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p9/">
+          <span class="entry-type">방법</span>
+          <h3>热管理仿真与迭代（Thermal Management）</h3>
+          <p>热管理仿真与迭代（Thermal Management）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">개념</span>
+          <h3>Production Ramp</h3>
+          <p>파일럿 라인에서 볼륨 제조로 전환하면서 수율, 사이클 타임 및 비용을 개선하는 과정.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p3/">
+          <span class="entry-type">방법</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_olaf_bringing_an_animated_char_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Olaf: Bringing an Animated Character to Life in the Physical World</h3>
+          <p>Olaf: Bringing an Animated Character to Life in the Physical World is a 2025 work on hardware design…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_3_3/">
+          <span class="entry-type">방법</span>
+          <h3>可维护性与维修性设计</h3>
+          <p>维护手册草案、MTTR 目标、快拆件清单</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p6/">
+          <span class="entry-type">방법</span>
+          <h3>URDF 建模与运动学校核（Kinematics &amp; URDF）</h3>
+          <p>URDF 建模与运动学校核（Kinematics &amp; URDF）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">
+          <span class="entry-type">논문</span>
+          <h3>효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해</h3>
+          <p>대규모 카탈로그에서 제약 프로그래밍을 사용해 파레토 최적 부품 선택을 계산하고, 일관성 조건 하에서 서브시스템 파레토 전면이 전체 시스템의 전역 최적 파레토 전면을 결정함을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_3_1/">
+          <span class="entry-type">방법</span>
+          <h3>线缆与管路布线设计</h3>
+          <p>《布线设计规范》：线缆型号、固定点、弯曲半径、走向</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>关节安装接口与壳体设计</h3>
+          <p>关节接口图纸、壳体 3D、密封方案</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p4/">
+          <span class="entry-type">방법</span>
+          <h3>关节模组与驱动系统设计（Actuator &amp; Drive）</h3>
+          <p>关节模组与驱动系统设计（Actuator &amp; Drive）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_design_for_assembly/">
+          <span class="entry-type">방법</span>
+          <h3>조립 용이성 설계(DFA)</h3>
+          <p>부품 수를 줄이고 결합을 단순화하며 조립 시간을 단축하여 생산 비용을 낮추고 신뢰성을 높이는 설계 방법론.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16_3_1/">
+          <span class="entry-type">방법</span>
+          <h3>小批量试产（Pilot Run）</h3>
+          <p>试产总结报告、直通率、问题闭环率</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p8/">
+          <span class="entry-type">방법</span>
+          <h3>结构强度仿真与迭代（Structural FEA）</h3>
+          <p>结构强度仿真与迭代（Structural FEA）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>面向增材制造的设计（DfAM）</h3>
+          <p>DfAM 检查清单、3D 打印件图纸、打印参数</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>结构材料选型</h3>
+          <p>《材料选型表》：各部件材料、工艺、原因</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>面向量产工艺评估</h3>
+          <p>量产工艺路线图、关键件工艺选择</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p5_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>装配顺序与工装夹具规划</h3>
+          <p>装配顺序图、工装清单、SOP 草案</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p16/">
+          <span class="entry-type">방법</span>
+          <h3>小批量试产与量产准备（Pilot &amp; Production Ramp）</h3>
+          <p>小批量试产与量产准备（Pilot &amp; Production Ramp）</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">상세 구조 설계</a><ul>
+<li><a href="#_4">중앙 골격 및 사지 링크 설계</a></li>
+<li><a href="#_5">관절 장착 인터페이스 및 하우징 설계</a></li>
+<li><a href="#_6">외관 커버 및 분할선 설계</a></li>
+</ul>
+</li>
+<li><a href="#_7">재료 및 공정</a><ul>
+<li><a href="#_8">구조 재료 선정</a></li>
+<li><a href="#dfam">적층 제조를 위한 설계 (DfAM)</a></li>
+<li><a href="#_9">양산 공정 평가</a></li>
+</ul>
+</li>
+<li><a href="#_10">배선, 유지보수 및 조립</a><ul>
+<li><a href="#_11">케이블 및 배관 배선 설계</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

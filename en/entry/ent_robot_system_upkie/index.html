@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Upkie Wheeled Biped Robot · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/robot_system/">Robot System</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Upkie Wheeled Biped Robot</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Robot System</div>
+      <h1>Upkie Wheeled Biped Robot</h1>
+      <p class="entry-name-en">Upkie Wheeled Biped Robot</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span><span class="tag">Design Engineering</span><span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="内容整理自调研档案 data/roadmap/research/upkie.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、Hackaday 项目页、PyPI 文档与 FOSDEM 2026 演讲页。身高/重量未见官方统一数值，标注为未知。">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-recommended" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">Stage 2 · Biped Platform</span>
+        <span class="roadmap-badge-role">Recommended</span>
+      </a>
+      
+    </div>
+    
+
+    
+    <p class="untranslated-notice">This page has not been translated yet — the original Chinese content is shown below.</p>
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A fully open-source wheeled biped robot built from about 3,000 USD of off-the-shelf components plus 3D-printed parts, using mjbots quasi-direct-drive actuators and a Raspberry Pi 4, with Python-first software and out-of-the-box PID, MPC and reinforcement-learning balancing examples.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://github.com/upkie/upkie" target="_blank" rel="noopener">upkie/upkie GitHub Repository</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://hackaday.io/project/185729-upkie-wheeled-biped-robots" target="_blank" rel="noopener">Upkie Wheeled Biped Robots on Hackaday</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://pypi.org/project/upkie/" target="_blank" rel="noopener">upkie on PyPI</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Upkie 是社区驱动的开源轮足双足机器人（wheeled biped），核心作者为 Stéphane Caron（Inria）等，建立在 mjbots 开源执行器生态之上，含 Upkie Zero / Upkie Standard / 2026 硬件 v2 等构型。整机约 3,000 美元现成组件 + 60 小时以上 3D 打印即可复现（官方 Hackaday 口径），6 个自由度（每腿 3：髋、膝、驱动轮）；身高/重量未见官方统一数值（来源：调研档案 upkie.md，下同）。</p>
+<p>许可证为 Apache-2.0（轮胎网格 CC BY 4.0），所用 mjbots 执行器的固件/硬件/软件同样全开源——从电机固件到上层控制全链路可改。GitHub 仓库 <code>upkie/upkie</code> 386 stars / 52 forks（2026-07-01 快照，仍高频更新），<code>upkie/parts</code>（CAD/打印件）与 <code>upkie/upkie_description</code>（URDF）同步维护，被 awesome-open-source-robots 等知名清单收录。轮足形态靠轮保持平衡、靠腿应对不平地形，相比纯步行双足控制难度与机械风险显著降低。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">关键参数</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>数值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自由度</td>
+<td>6（每腿 3：髋、膝、驱动轮）</td>
+<td>调研档案</td>
+</tr>
+<tr>
+<td>硬件成本</td>
+<td>约 $3,000 现成组件 + 60 小时以上 3D 打印</td>
+<td>Hackaday 官方项目页</td>
+</tr>
+<tr>
+<td>主控</td>
+<td>Raspberry Pi 4 + mjbots pi3hat（CAN 扩展板）+ 电源分配板</td>
+<td>调研档案</td>
+</tr>
+<tr>
+<td>传感器</td>
+<td>IMU 集成于 pi3hat；可选 OAK-D Lite 相机支架等社区配件</td>
+<td>调研档案</td>
+</tr>
+<tr>
+<td>身高 / 重量</td>
+<td>未知（桌面级轮足，因构型而异）</td>
+<td>调研档案</td>
+</tr>
+<tr>
+<td>新手友好度</td>
+<td>4 / 5（调研档案评估）</td>
+<td>调研档案</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">执行器方案</h3>
+<ul>
+<li>mjbots qdd100 准直驱（quasi-direct-drive）无刷伺服 ×4（髋/膝）+ moteus 驱动器（轮），全部固件开源、可力控。</li>
+<li>轮足混合形态：靠轮保持平衡、靠腿应对不平地形，摔机代价小，成功率高。</li>
+</ul>
+<h3 id="_5">软件栈</h3>
+<ul>
+<li>Python 或 C++，Linux/macOS 开发、部署到机上树莓派；<code>pixi</code>/<code>uv</code> 一条命令即可跑仿真示例（PyBullet），仿真零成本上手，无需先买硬件。</li>
+<li>开箱自带三种平衡控制范式示例：PID、MPC（qpmpc）、强化学习（Stable-Baselines3）；Gymnasium 标准接口；另有社区 GPU RL 方案（MjLab Upkie）。</li>
+<li>不依赖 ROS（可用 xacro/URDF 描述，兼容 Pinocchio 等库）。</li>
+</ul>
+<h3 id="_6">文档与社区</h3>
+<ul>
+<li>逐步构建指南（step-by-step build instructions）+ Hackaday 项目页 + GitHub Discussions/聊天室；FOSDEM 2026 有官方经验分享演讲并现场发布硬件 v2（躯干一体化打印、腿部重新设计、宽度缩减 6 cm）。</li>
+<li>中文创客社区（DFRobot 等）有翻译报道。</li>
+</ul>
+<h3 id="_7">适合人群</h3>
+<ul>
+<li>适合：想在真实硬件上学平衡控制/RL 部署的个人开发者与课程项目；可作为进阶纯双足（如 Berkeley Humanoid Lite）前的练兵平台。</li>
+<li>门槛：60+ 小时打印与装配仍需耐心；轮足不是"走路"的人形，若目标是仿人步态研究则不匹配。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li><a href="https://github.com/upkie/upkie">upkie/upkie GitHub 仓库</a></li>
+<li><a href="https://hackaday.io/project/185729-upkie-wheeled-biped-robots">Hackaday 官方项目页（$3,000 组件、60+ 小时打印）</a></li>
+<li><a href="https://pypi.org/project/upkie/">PyPI 文档</a></li>
+<li><a href="https://fosdem.org/2026/schedule/event/8PUMMD-open-source-robotics-practice-upkie-wheeled-bipeds/">FOSDEM 2026 演讲页</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-desc">Upkie ships with an out-of-the-box MPC (qpmpc) balancing controller example, alongside PID and reinforcement-learning examples.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_technology_quasi_direct_drive_actuator_2024/">Quasi Direct Drive Actuator</a>
+              <span class="rel-desc">Upkie uses four mjbots qdd100 quasi-direct-drive brushless servos (hip/knee) plus moteus drivers (wheels), all with open-source firmware and force control capability.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo Physics Engine</a>
+              <span class="rel-desc">Upkie Wheeled Biped Robot has prerequisite MuJoCo Physics Engine.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_robot_system_toddlerbot/">ToddlerBot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">ToddlerBot has prerequisite Upkie Wheeled Biped Robot.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_robot_system_upkie"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_toddlerbot/">
+          <span class="entry-type">Robot System</span>
+          <h3>ToddlerBot</h3>
+          <p>An open-source child-size humanoid robot from Stanford University, 0.56 m tall and 3.4 kg, with 30…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_technology_quasi_direct_drive_actuator_2024/">
+          <span class="entry-type">Technology</span>
+          <h3>Quasi Direct Drive Actuator</h3>
+          <p>Actuator design using low-ratio gears with high-torque motors to achieve high bandwidth and force…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_mujoco_physics_engine_2022/">
+          <span class="entry-type">Software Platform</span>
+          <h3>MuJoCo Physics Engine</h3>
+          <p>High-fidelity physics engine with rich contact dynamics, widely used for humanoid control research.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">关键参数</a></li>
+<li><a href="#_4">执行器方案</a></li>
+<li><a href="#_5">软件栈</a></li>
+<li><a href="#_6">文档与社区</a></li>
+<li><a href="#_7">适合人群</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

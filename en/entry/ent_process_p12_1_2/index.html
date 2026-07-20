@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLAM and Scene Understanding · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SLAM and Scene Understanding</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>SLAM and Scene Understanding</h1>
+      <p class="entry-name-en">SLAM and Scene Understanding</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Positioning accuracy, map consistency, and semantic annotation accuracy</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p><strong>Phase/Work Package</strong>: VLA / WAM / AI Algorithm Integration (AI &amp; Perception)</p>
+<h2 id="content">Content</h2>
+<p><strong>Methods/Tools</strong>: Visual/LiDAR SLAM, Semantic Segmentation, 3D Scene Graph</p>
+<p><strong>Design Logic</strong>: The robot needs to know where it is, what is around it, and how to reach the target</p>
+<p><strong>Key Constraints</strong>: Dynamic environment, computational resources, map updates</p>
+<p><strong>Completion Criteria/Deliverables</strong>: Localization accuracy, map consistency, semantic annotation accuracy</p>
+<p><strong>Level-3 Subtasks and Level-4 Key Actions:</strong></p>
+<ul>
+<li>P12.1.2.1 Input Review and Target Quantification</li>
+<li>
+<p>Organize the upstream inputs, reference standards, and resources required for "SLAM and Scene Understanding," convert completion criteria into quantifiable acceptance indicators, and clarify the Owner and milestones.</p>
+<ul>
+<li>List all upstream inputs and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+</ul>
+</li>
+<li>
+<p>P12.1.2.2 Solution/Method Design</p>
+</li>
+<li>
+<p>Develop implementation methods or candidate solutions for "SLAM and Scene Understanding," conduct feasibility studies using "Visual/LiDAR SLAM, Semantic Segmentation, 3D Scene Graph," and clarify the technical roadmap and resource requirements.</p>
+<ul>
+<li>Formulate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and quantify scoring</li>
+<li>Organize review and freeze the solution</li>
+</ul>
+</li>
+<li>
+<p>P12.1.2.3 Implementation/Prototype/Sample Fabrication</p>
+</li>
+<li>
+<p>Execute the implementation of "SLAM and Scene Understanding" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.</p>
+<ul>
+<li>Build models/prototypes and record key parameters</li>
+<li>Conduct simulation or prototype validation</li>
+<li>Record anomalies and deviations</li>
+</ul>
+</li>
+<li>
+<p>P12.1.2.4 Verification and Issue Closure</p>
+</li>
+<li>
+<p>Verify the outputs of "SLAM and Scene Understanding," check whether they meet the completion criteria, record issues, and track them until closure.</p>
+<ul>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+</ul>
+</li>
+<li>
+<p>P12.1.2.5 Documentation and Downstream Delivery</p>
+</li>
+<li>Output the final report/drawings/specifications for "SLAM and Scene Understanding," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.<ul>
+<li>Write documents according to templates and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p12/">VLA / WAM / AI algorithm integration (AI &amp; Perception)</a>
+              <span class="rel-desc">SLAM and Scene Understanding is part of VLA / WAM / AI algorithm integration (AI &amp; Perception).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_suzuki_mobile_robot_localization_with_2019/">Mobile Robot Localization with GNSS Multipath Detection using Pseudorange Residuals</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Mobile Robot Localization with GNSS Multipath Detection using Pseudorange Residuals discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoid_occupancy_enabling_a_2025/">Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fischer_bio_inspired_robot_perception_2021/">Bio-inspired Robot Perception Coupled With Robot-modeled Human Perception</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Bio-inspired Robot Perception Coupled With Robot-modeled Human Perception discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lanza_multi_sensory_integration_in_a_2020/">Multi-sensory Integration in a Quantum-Like Robot Perception Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Multi-sensory Integration in a Quantum-Like Robot Perception Model discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_colledanchise_act_perceive_and_plan_in_belie_2020/">Act, Perceive, and Plan in Belief Space for Robot Localization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Act, Perceive, and Plan in Belief Space for Robot Localization discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_teetaert_continuum_robot_localization_u_2026/">Continuum Robot Localization using Distributed Time-of-Flight Sensors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Continuum Robot Localization using Distributed Time-of-Flight Sensors discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wise_a_certifiably_correct_algorith_2026/">A Certifiably Correct Algorithm for Generalized Robot-World and Hand-Eye Calibration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Certifiably Correct Algorithm for Generalized Robot-World and Hand-Eye Calibration discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kimera_an_open_source_library_2026/">Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping mentions SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_armor_egocentric_perception_fo_2024/">ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_volumetric_environment_represe_2024/">Volumetric Environment Representation for Vision-Language Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Volumetric Environment Representation for Vision-Language Navigation discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p12/">VLA / WAM / AI algorithm integration (AI &amp; Perception)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">VLA / WAM / AI algorithm integration (AI &amp; Perception) mentions SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_bin_real_time_polygonal_semantic_m_2024/">Real-Time Polygonal Semantic Mapping for Humanoid Robot Stair Climbing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Real-Time Polygonal Semantic Mapping for Humanoid Robot Stair Climbing uses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hughes_foundations_of_spatial_percept_2023/">Foundations of Spatial Perception for Robotics: Hierarchical Representations and Real-time Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Foundations of Spatial Perception for Robotics: Hierarchical Representations and Real-time Systems discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360 LiDAR</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Livox Mid-360 LiDAR uses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_thinking_in_360_humanoid_visua_2025/">Thinking in 360: Humanoid Visual Search in the Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Thinking in 360: Humanoid Visual Search in the Wild discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoidpano_hybrid_spherical_2025/">HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_saccon_automated_generation_of_mdps_u_2025/">Automated Generation of MDPs Using Logic Programming and LLMs for Robotic Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Automated Generation of MDPs Using Logic Programming and LLMs for Robotic Applications mentions SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_active_metric_semantic_mapping_2023/">Active Metric-Semantic Mapping by Multiple Aerial Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Active Metric-Semantic Mapping by Multiple Aerial Robots discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_egoactor_grounding_task_planni_2026/">EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models uses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_embodmocap_in_the_wild_4d_huma_2026/">EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents mentions SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion: An optimization-based multi-sensor state estimator</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VINS-Fusion: An optimization-based multi-sensor state estimator discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zhao_occupancy_slam_simultaneously_2024/">Occupancy-SLAM: Simultaneously Optimizing Robot Poses and Continuous Occupancy Map</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Occupancy-SLAM: Simultaneously Optimizing Robot Poses and Continuous Occupancy Map discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_thinking_in_360_humanoid_visua_2026/">Thinking in 360°: Humanoid Visual Search in the Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Thinking in 360°: Humanoid Visual Search in the Wild discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_autoodom_learning_auto_regress_2025/">AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humblot_renaux_navigation_oriented_scene_unde_2022/">Navigation-Oriented Scene Understanding for Robotic Autonomy: Learning to Segment Driveability in Egocentric Images</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Navigation-Oriented Scene Understanding for Robotic Autonomy: Learning to Segment Driveability in Egocentric Images discusses SLAM and Scene Understanding.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p12_1_2"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_component_livox_mid_360_lidar_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Livox Mid-360 LiDAR</h3>
+          <p>Compact 360-degree LiDAR commonly mounted on the head or torso of humanoid robots.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_active_metric_semantic_mapping_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Active Metric-Semantic Mapping by Multiple Aerial Robots</h3>
+          <p>This paper presents PAMS, an active metric-semantic mapping framework in which multiple…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_autoodom_learning_auto_regress_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</h3>
+          <p>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoid_occupancy_enabling_a_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots</h3>
+          <p>Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wise_a_certifiably_correct_algorith_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>A Certifiably Correct Algorithm for Generalized Robot-World and Hand-Eye Calibration</h3>
+          <p>Presents a fast, certifiably globally optimal algorithm for generalized robot-world and hand-eye…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_thinking_in_360_humanoid_visua_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Thinking in 360°: Humanoid Visual Search in the Wild</h3>
+          <p>Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fischer_bio_inspired_robot_perception_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Bio-inspired Robot Perception Coupled With Robot-modeled Human Perception</h3>
+          <p>A 2021 research statement by Tobias Fischer presenting bio-inspired computer vision algorithms for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humblot_renaux_navigation_oriented_scene_unde_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Navigation-Oriented Scene Understanding for Robotic Autonomy: Learning to Segment Driveability in Egocentric Images</h3>
+          <p>The paper proposes a supervised segmentation framework that labels egocentric outdoor images with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_embodmocap_in_the_wild_4d_huma_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents</h3>
+          <p>EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents is a 2026 work on human…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhao_occupancy_slam_simultaneously_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Occupancy-SLAM: Simultaneously Optimizing Robot Poses and Continuous Occupancy Map</h3>
+          <p>An optimization-based SLAM approach that jointly optimizes robot trajectory and a continuous…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_armor_egocentric_perception_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</h3>
+          <p>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p12/">
+          <span class="entry-type">Method</span>
+          <h3>VLA / WAM / AI algorithm integration (AI &amp; Perception)</h3>
+          <p>VLA / WAM / AI algorithm integration (AI &amp; Perception) — the 12th phase of the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lanza_multi_sensory_integration_in_a_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-sensory Integration in a Quantum-Like Robot Perception Model</h3>
+          <p>Generalizes a quantum-like robot perception model to multi-sensory inputs using a multi-qubit…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_egoactor_grounding_task_planni_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models</h3>
+          <p>EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_thinking_in_360_humanoid_visua_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Thinking in 360: Humanoid Visual Search in the Wild</h3>
+          <p>Thinking in 360: Humanoid Visual Search in the Wild is a 2025 work on navigation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kimera_an_open_source_library_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping</h3>
+          <p>Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping is a 2026 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hughes_foundations_of_spatial_percept_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Foundations of Spatial Perception for Robotics: Hierarchical Representations and Real-time Systems</h3>
+          <p>This paper formalizes hierarchical 3D scene graphs as scalable spatial representations and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM</h3>
+          <p>ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_volumetric_environment_represe_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Volumetric Environment Representation for Vision-Language Navigation</h3>
+          <p>Volumetric Environment Representation for Vision-Language Navigation (VER), is a 2024 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_saccon_automated_generation_of_mdps_u_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Automated Generation of MDPs Using Logic Programming and LLMs for Robotic Applications</h3>
+          <p>This paper presents a framework that combines few-shot-prompted large language models with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_bin_real_time_polygonal_semantic_m_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Real-Time Polygonal Semantic Mapping for Humanoid Robot Stair Climbing</h3>
+          <p>This paper proposes a real-time polygonal planar semantic mapping system for humanoid robot stair…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_teetaert_continuum_robot_localization_u_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Continuum Robot Localization using Distributed Time-of-Flight Sensors</h3>
+          <p>This paper presents a continuous-time factor-graph-based MAP estimation framework that fuses sparse…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>VINS-Fusion: An optimization-based multi-sensor state estimator</h3>
+          <p>VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoidpano_hybrid_spherical_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots</h3>
+          <p>HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_colledanchise_act_perceive_and_plan_in_belie_2020/">
+          <span class="entry-type">Paper</span>
+          <h3>Act, Perceive, and Plan in Belief Space for Robot Localization</h3>
+          <p>This paper proposes an interleaved acting-and-planning framework that reduces robot pose uncertainty…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_suzuki_mobile_robot_localization_with_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Mobile Robot Localization with GNSS Multipath Detection using Pseudorange Residuals</h3>
+          <p>This paper proposes a particle-filter-based GNSS localization method that detects and excludes…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>천 객체의 표준화 및 로봇 조작과의 관련성 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">천 객체의 표준화 및 로봇 조작과의 관련성</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>천 객체의 표준화 및 로봇 조작과의 관련성</h1>
+      <p class="entry-name-en">Standardization of Cloth Objects and its Relevance in Robotic Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">평가 및 벤치마크</span><span class="tag">AI 모델 및 알고리즘</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.04608v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 섬유 산업 표준에 기반한 비파괴적이고 사용하기 쉬운 측정 프레임워크를 제안하여 천의 물리적 및 기계적 특성을 특성화하고, Franka-Emika Panda 로봇으로 수행된 다섯 가지 로봇 조작 프리미티브에 강성, 탄성, 마찰이 미치는 영향을 평가한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2403.04608" target="_blank" rel="noopener">Standardization of Cloth Objects and its Relevance in Robotic Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>로봇공학 분야는 변형 가능한 물체를 조작하는 데 있어 본질적인 어려움에 직면해 있으며, 특히 탄성, 강성, 마찰과 같은 직물 특성을 이해하고 표준화하는 데 어려움을 겪고 있습니다. 이러한 특성의 중요성은 직물 조작 영역에서 명백하지만, 실제 응용에서 이를 정확하게 분류하고 이해하는 것은 여전히 어려운 과제입니다. 본 연구는 두 가지 주요 목표를 설정합니다: (1) 로봇공학 응용에 적합한 직물 객체 특성화 프레임워크를 제공하고, (2) 이러한 특성이 로봇 조작 작업에 미치는 영향을 연구하는 것입니다. 예비 결과는 프레임워크가 직물 특성을 특성화하고 직물 세트를 비교할 수 있는 능력을 검증하며, 다섯 가지 조작 기본 동작의 결과에 다양한 특성이 미치는 영향을 밝혀냅니다. 일반적으로 의류 조작에 대한 결과는 평가에 사용된 의류에 대한 더 나은 설명과 함께 보고되어야 한다고 생각합니다. 본 논문은 이러한 측정값 세트를 제안합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>로봇공학 분야는 변형 가능한 물체를 조작하는 데 있어 본질적인 어려움에 직면해 있으며, 특히 탄성, 강성, 마찰과 같은 직물 특성을 이해하고 표준화하는 데 어려움을 겪고 있습니다. 이러한 특성의 중요성은 직물 조작 영역에서 명백하지만, 실제 응용에서 이를 정확하게 분류하고 이해하는 것은 여전히 어려운 과제입니다. 본 연구는 두 가지 주요 목표를 설정합니다: (1) 로봇공학 응용에 적합한 직물 객체 특성화 프레임워크를 제공하고, (2) 이러한 특성이 로봇 조작 작업에 미치는 영향을 연구하는 것입니다. 예비 결과는 프레임워크가 직물 특성을 특성화하고 직물 세트를 비교할 수 있는 능력을 검증하며, 다섯 가지 조작 기본 동작의 결과에 다양한 특성이 미치는 영향을 밝혀냅니다. 일반적으로 의류 조작에 대한 결과는 평가에 사용된 의류에 대한 더 나은 설명과 함께 보고되어야 한다고 생각합니다. 본 논문은 이러한 측정값 세트를 제안합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_grasp_taxonomy/">GRASP 분류법</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_garcia_camacho_standardization_of_cloth_objec_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_grasp_taxonomy/">
+          <span class="entry-type">표준</span>
+          <h3>GRASP 분류법</h3>
+          <p>인간 및 로봇 손의 그립을 분류하는 표준화된 체계로, 능숙한 조작 연구에서 그립 다양성과 커버리지를 평가하는 데 사용됩니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">벤치마크</span>
+          <h3>ManiSkill</h3>
+          <p>일반화 가능한 조작 기술을 위한 통합 벤치마크로, 표준화된 과제·시뮬레이션 환경·평가 프로토콜을 제공.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

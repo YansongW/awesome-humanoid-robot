@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation</h1>
+      <p class="entry-name-en">Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.20188v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation (DuoCore-FS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Astribot.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.20188" target="_blank" rel="noopener">Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2512.20188" target="_blank" rel="noopener">DuoCore-FS source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>대부분의 Vision-Language-Action(VLA) 시스템은 의미 추론을 위한 Vision-Language Model(VLM)과 연속적인 동작 신호를 생성하는 동작 전문가를 통합하지만, 두 모듈 모두 일반적으로 단일 통합 주파수로 실행됩니다. 그 결과, 정책 성능은 대규모 VLM의 낮은 추론 속도에 의해 제약을 받습니다. 이러한 강제적인 동기식 실행은 더 많은 관절, 더 큰 동작 공간, 그리고 동적으로 변화하는 시야를 포함하는 전신 로봇 조작에서 제어 안정성과 실시간 성능을 심각하게 제한합니다. 우리는 진정한 비동기식 Fast-Slow VLA 프레임워크(DuoCore-FS)를 도입하여, 시스템을 고주파 동작 생성을 위한 빠른 경로와 풍부한 VLM 추론을 위한 느린 경로로 구성합니다. 이 시스템은 두 가지 주요 특징으로 구분됩니다. 첫째, 잠재 표현 버퍼가 느린 시스템과 빠른 시스템을 연결합니다. 이 버퍼는 명령 의미와 장면-명령 컨텍스트에 정렬된 동작 추론 표현을 저장하여 빠른 경로에 고수준 지침을 제공합니다. 둘째, 전신 동작 토크나이저가 전신 동작의 간결하고 통합된 표현을 제공합니다. 중요하게도, VLM과 동작 전문가는 여전히 종단 간 공동 학습되어, 비동기 실행을 가능하게 하면서 통합 정책 학습을 유지합니다. DuoCore-FS는 3B 파라미터 VLM을 지원하면서 30Hz의 전신 동작 청크 생성을 달성하며, 이는 유사한 모델 크기의 이전 VLA 모델보다 약 3배 빠릅니다. 실제 전신 조작 실험은 동기식 Fast-Slow VLA 기준선에 비해 향상된 작업 성공률과 현저히 개선된 응답성을 보여줍니다. DuoCore-FS의 구현(학습, 추론 및 배포 포함)은 Astribot 로봇 플랫폼의 일부로 Astribot에서 상업 사용자에게 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>대부분의 Vision-Language-Action(VLA) 시스템은 의미 추론을 위한 Vision-Language Model(VLM)과 연속적인 동작 신호를 생성하는 동작 전문가를 통합하지만, 두 모듈 모두 일반적으로 단일 통합 주파수로 실행됩니다. 그 결과, 정책 성능은 대규모 VLM의 낮은 추론 속도에 의해 제약을 받습니다. 이러한 강제적인 동기식 실행은 더 많은 관절, 더 큰 동작 공간, 그리고 동적으로 변화하는 시야를 포함하는 전신 로봇 조작에서 제어 안정성과 실시간 성능을 심각하게 제한합니다. 우리는 진정한 비동기식 Fast-Slow VLA 프레임워크(DuoCore-FS)를 도입하여, 시스템을 고주파 동작 생성을 위한 빠른 경로와 풍부한 VLM 추론을 위한 느린 경로로 구성합니다. 이 시스템은 두 가지 주요 특징으로 구분됩니다. 첫째, 잠재 표현 버퍼가 느린 시스템과 빠른 시스템을 연결합니다. 이 버퍼는 명령 의미와 장면-명령 컨텍스트에 정렬된 동작 추론 표현을 저장하여 빠른 경로에 고수준 지침을 제공합니다. 둘째, 전신 동작 토크나이저가 전신 동작의 간결하고 통합된 표현을 제공합니다. 중요하게도, VLM과 동작 전문가는 여전히 종단 간 공동 학습되어, 비동기 실행을 가능하게 하면서 통합 정책 학습을 유지합니다. DuoCore-FS는 3B 파라미터 VLM을 지원하면서 30Hz의 전신 동작 청크 생성을 달성하며, 이는 유사한 모델 크기의 이전 VLA 모델보다 약 3배 빠릅니다. 실제 전신 조작 실험은 동기식 Fast-Slow VLA 기준선에 비해 향상된 작업 성공률과 현저히 개선된 응답성을 보여줍니다. DuoCore-FS의 구현(학습, 추론 및 배포 포함)은 Astribot 로봇 플랫폼의 일부로 Astribot에서 상업 사용자에게 제공됩니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zou_asynchronous_fast_slow_vision_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">벤치마크</span>
+          <h3>HumanoidBench</h3>
+          <p>Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해 40개 이상의 작업을 제공함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

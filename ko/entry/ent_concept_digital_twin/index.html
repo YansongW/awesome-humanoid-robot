@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>디지털 트윈 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/concept/">개념</a>
+    <span>/</span>
+    <span class="breadcrumb-current">디지털 트윈</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">개념</div>
+      <h1>디지털 트윈</h1>
+      <p class="entry-name-en">Digital Twin</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.8.3 数字孪生：从虚拟样机到在线映射 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+    <p class="untranslated-notice">이 페이지는 아직 번역되지 않았습니다. 아래에 중국어 원문을 표시합니다.</p>
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>数字孪生是人形机器人领域的重要概念。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p><strong>数字孪生（digital twin）</strong>是物理实体在数字空间的实时映射，可用于设计验证、虚拟调试、健康监测与预测性维护。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：数字孪生、虚拟样机、虚拟调试、预测性维护、在线映射</p>
+<ul>
+<li><strong>数字孪生（digital twin）</strong>：物理系统的高保真数字映射，可实时同步状态。</li>
+<li><strong>虚拟样机（virtual prototype）</strong>：在软件中构建的产品模型，用于仿真验证。</li>
+<li><strong>虚拟调试（virtual commissioning）</strong>：在虚拟环境中验证控制逻辑与软件。</li>
+<li><strong>预测性维护（predictive maintenance）</strong>：基于状态监测预测故障并提前维护。</li>
+<li><strong>在线映射（online mapping）</strong>：物理状态实时反馈到数字模型的过程。</li>
+</ul>
+</div>
+<p>人形机器人数字孪生工作流通常包括：</p>
+<ol>
+<li><strong>高保真模型</strong>：CAD/CAE 模型 + 多体动力学 + 传感器模型。</li>
+<li><strong>仿真平台</strong>：Isaac Sim、Gazebo、MuJoCo、Webots 等。</li>
+<li><strong>数据接口</strong>：ROS 2、DDS、EtherCAT 等实现虚实数据同步。</li>
+<li><strong>在线标定</strong>：通过真实传感器数据修正模型参数。</li>
+<li><strong>闭环优化</strong>：在数字空间中测试控制策略，再部署到实体。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：高保真模型、仿真平台、数据接口、在线标定、闭环优化</p>
+<ul>
+<li><strong>高保真模型（high-fidelity model）</strong>：接近真实物理行为的详细模型。</li>
+<li><strong>仿真平台（simulation platform）</strong>：提供物理引擎与可视化环境的软件。</li>
+<li><strong>数据接口（data interface）</strong>：不同系统之间交换数据的协议与 API。</li>
+<li><strong>在线标定（online calibration）</strong>：利用实际数据修正模型参数。</li>
+<li><strong>闭环优化（closed-loop optimization）</strong>：根据反馈持续改进设计或控制。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["物理机器人"] --&gt;|"传感器数据"| B["数据接口"]
+    B --&gt; C["数字孪生模型"]
+    C --&gt; D["仿真/分析/预测"]
+    D --&gt; E["优化策略"]
+    E --&gt;|"控制指令"| A
+    C -.-&gt;|"可视化/监控"| F["运维平台"]</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+<li>项目 Wiki：chapter-08.md#8.8.3 数字孪生：从虚拟样机到在线映射</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_adaptation/">도메인 적응</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_concept_perception_stack/">인식 스택</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_wei_aero_adaptive_and_efficient_ru_2026/">AERO: 에너지 수확 IoT를 위한 적응적이고 효율적인 런타임 인식 OTA 업데이트</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_martinez_rozas_skyeye_team_at_mbzirc_2020_a_t_2021/">Skyeye 팀 MBZIRC 2020: GPS 차단 도시 건축물 환경에서 자율 소화를 위한 공중 및 지상 로봇 팀</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_morton_frax_fast_robot_kinematics_and_2026/">frax: JAX 기반의 고속 로봇 운동학 및 동역학 라이브러리</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_report_industry_underwater_ribbon_cutting_ushe_2026/">Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gao_real_time_service_subscription_2025/">차량 에지 컴퓨팅에서의 실시간 서비스 구독 및 적응형 오프로딩 제어</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_tahir_mobile_robot_control_and_auton_2023/">협업 시뮬레이션 트윈을 통한 이동 로봇 제어 및 자율성</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_daudelin_an_integrated_system_for_perce_2018/">모듈형 로봇을 위한 지각 기반 자율 통합 시스템</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">ModuLoop: 모듈형 신디사이저 및 폐쇄형 루프 디버거를 활용한 로봇 제어 저수준 코드 생성</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">RoboKube: 로보틱스의 클라우드 네이티브 진화를 위한 새로운 기반 구축</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_technology_vention_and_teradyne_robotics_2026/">Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_software_humanoidverse_2024/">HumanoidVerse</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_yang_taming_silent_failures_a_frame_2025/">조용한 실패 다루기: 검증 가능한 AI 신뢰성을 위한 프레임워크</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_stolzle_guiding_soft_robots_with_motor_2024/">운동 상상 뇌신호 및 임피던스 제어를 이용한 소프트 로봇 유도</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_gong_augmented_reality_enhanced_rob_2025/">사용자 시연 수집을 위한 증강 현실 기반 로봇 원격 조작</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_halder_secure_ota_software_updates_in_2019/">커넥티드 차량의 보안 OTA 소프트웨어 업데이트: 서베이</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_alirezazadeh_optimal_algorithm_allocation_f_2021/">로봇 네트워크 클라우드 시스템을 위한 최적 알고리즘 할당</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_software_genesis_generative_physics_eng_2024/">Genesis 생성형 물리 엔진</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021/">GPGPU, IoT 및 모듈형 소프트웨어 아키텍처를 갖춘 사회적 휴머노이드 로봇용 웨어러블 센서 조끼</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_kaigom_metarobotics_for_industry_and_2024/">산업과 사회를 위한 메타로보틱스: 비전, 기술 및 기회</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_bravo_arrabal_strengthening_multi_robot_syst_2025/">SAR를 위한 다중 로봇 시스템 강화: 6G를 향한 로봇공학과 통신의 공동 설계</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">클라우드 로보틱스를 위한 서비스 지향 로봇 컴퓨팅</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360 LiDAR</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_darup_encrypted_control_for_networke_2020/">네트워크된 시스템을 위한 암호화된 제어: 설명적 소개와 현재 과제</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_han_innovative_research_on_iot_arc_2024/">IoT 아키텍처 및 로봇 운영 플랫폼의 혁신적 연구: 대형 언어 모델과 생성형 AI의 응용</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_chen_enhanced_visual_feedback_with_2022/">SLAM을 이용한 몰입형 휴머노이드 로봇 원격조작에서 분리된 시점 제어를 통한 향상된 시각 피드백</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_lee_harness_engineering_for_physic_2026/">Physical AI를 위한 Harness Engineering: Robot Middleware가 Harness Layer이다</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_barua_a_perspective_on_robotic_telep_2022/">인지를 활용한 로봇 원격현존 및 원격조작에 대한 관점: 우리는 아직 도달했는가?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_formalism_floating_base_dynamics/">부유 기반 동역학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_forward_kinematics/">정욕동학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_concept_digital_twin"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_livox_mid_360_lidar_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Livox Mid-360 LiDAR</h3>
+          <p>휨로봇 머리나 몸통에 장착되는 컴팩트한 360도 LiDAR.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_perception_stack/">
+          <span class="entry-type">개념</span>
+          <h3>인식 스택</h3>
+          <p>센서 데이터를 처리하여 상태를 추정·물체를 검출·환경 표현을 구축하고 의사결정에 입력을 제공하는 소프트웨어 하위 시스템.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_genesis_generative_physics_eng_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>Genesis 생성형 물리 엔진</h3>
+          <p>로보틱스 등을 위한 신흥 생성형 범용 물리 엔진.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_han_innovative_research_on_iot_arc_2024/">
+          <span class="entry-type">논문</span>
+          <h3>IoT 아키텍처 및 로봇 운영 플랫폼의 혁신적 연구: 대형 언어 모델과 생성형 AI의 응용</h3>
+          <p>이 2024년 RICAI 논문은 대형 언어 모델, 생성형 AI, 엣지 컴퓨팅 및 5G 네트워크를 통합하여 제조, 의료 및 서비스 애플리케이션에서 실시간 의사결정, 자연어 상호작용…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bravo_arrabal_strengthening_multi_robot_syst_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SAR를 위한 다중 로봇 시스템 강화: 6G를 향한 로봇공학과 통신의 공동 설계</h3>
+          <p>X-IoCA 아키텍처 내에서 혼합 무선 센서 네트워크, ROS 기반 스마트폰, MEC 기반 SLAM, 네트워크화된 UGV/UAV 협업을 통합하여 이동 로봇과 5G/6G…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_barua_a_perspective_on_robotic_telep_2022/">
+          <span class="entry-type">논문</span>
+          <h3>인지를 활용한 로봇 원격현존 및 원격조작에 대한 관점: 우리는 아직 도달했는가?</h3>
+          <p>이 2022년 arXiv 관점/설문조사 논문은 로봇 원격현존 및 원격조작 시스템을 검토하며, 대용량 연산과 실시간 응답의 균형을 위해 하이브리드 클라우드-엣지 아키텍처를 주장하고,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_yang_taming_silent_failures_a_frame_2025/">
+          <span class="entry-type">논문</span>
+          <h3>조용한 실패 다루기: 검증 가능한 AI 신뢰성을 위한 프레임워크</h3>
+          <p>본 논문은 오프라인 형식적 종합과 온라인 실행 시점 모니터링을 결합하여 안임계 시스템의 AI 구성 요소에서 조용한 실패를 탐지하는 FAME(Formal Assurance and…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_stolzle_guiding_soft_robots_with_motor_2024/">
+          <span class="entry-type">논문</span>
+          <h3>운동 상상 뇌신호 및 임피던스 제어를 이용한 소프트 로봇 유도</h3>
+          <p>본 논문은 3채널 웨어러블 EEG 운동 상상 뇌-기계 인터페이스를 사용하여 평면 Handed Shearing Auxetic 소프트 로봇의 가상 데카르트 어트랙터를 조향하고, 새로운…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021/">
+          <span class="entry-type">논문</span>
+          <h3>GPGPU, IoT 및 모듈형 소프트웨어 아키텍처를 갖춘 사회적 휴머노이드 로봇용 웨어러블 센서 조끼</h3>
+          <p>본 논문은 사회적 휴머노이드 로봇을 위한 저렴한 웨어러블 센서 조끼와 IoT 연결을 갖춘 모듈형 ROS 기반 오픈소스 소프트웨어 아키텍처를 제안하며, 촉각, 온도, 제스처, 거리…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_humanoidverse_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>HumanoidVerse</h3>
+          <p>Sim-to-Real 휨로봇 학습을 목표로 하는 다중 시뮬레이터 학습 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_morton_frax_fast_robot_kinematics_and_2026/">
+          <span class="entry-type">논문</span>
+          <h3>frax: JAX 기반의 고속 로봇 운동학 및 동역학 라이브러리</h3>
+          <p>frax는 CPU, GPU, TPU에서 동작하는 완전히 벡터화된 로봇 운동학 및 동역학을 위한 순수 Python JAX 라이브러리로, CPU에서는 마이크로초 단위 지연을,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>정욕동학</h3>
+          <p>주어진 관절 각도로부터 동차 변환 사슬 또는 지수곱을 이용해 말단 동작기 위치·방향을 계산하는 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_halder_secure_ota_software_updates_in_2019/">
+          <span class="entry-type">논문</span>
+          <h3>커넥티드 차량의 보안 OTA 소프트웨어 업데이트: 서베이</h3>
+          <p>2019년에 발표된 서베이로, 커넥티드 차량을 위한 보안 OTA 소프트웨어 업데이트 기술을 분류 및 비교하고 암호화 방법, 하드웨어 보안 모듈, 보안 요구사항, 규제 및 산업…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_report_industry_underwater_ribbon_cutting_ushe_2026/">
+          <span class="entry-type">보고서</span>
+          <h3>Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory</h3>
+          <p>Event marked milestone for Narragansett Bay Campus</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_darup_encrypted_control_for_networke_2020/">
+          <span class="entry-type">논문</span>
+          <h3>네트워크된 시스템을 위한 암호화된 제어: 설명적 소개와 현재 과제</h3>
+          <p>동형 암호화와 안전한 다자간 계산을 사용하여 선형 상태 피드백, 모델 예측 및 분산 제어기의 암호화된 형식을 도출하고 암호화된 제어기 아키텍처를 통합한 튜토리얼 형식의 논문이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_chen_enhanced_visual_feedback_with_2022/">
+          <span class="entry-type">논문</span>
+          <h3>SLAM을 이용한 몰입형 휴머노이드 로봇 원격조작에서 분리된 시점 제어를 통한 향상된 시각 피드백</h3>
+          <p>본 논문은 HRP-4CR 휴머노이드 로봇의 몰입형 원격조작을 위한 분리된 시점 제어 시스템을 제안하며, ZED Mini 카메라의 실시간 포인트 클라우드 스트리밍과 SLAM 재구성…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">기술</span>
+          <h3>EtherCAT</h3>
+          <p>결정론적 관절 제어를 위한 고성능 산업용 이더넷 필드 버스.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gao_real_time_service_subscription_2025/">
+          <span class="entry-type">논문</span>
+          <h3>차량 에지 컴퓨팅에서의 실시간 서비스 구독 및 적응형 오프로딩 제어</h3>
+          <p>본 논문은 차량 에지 컴퓨팅에서 마감 시간 제약이 있는 작업 오프로딩 및 자원 할당 문제(DOAP)를 공식화하고, LP 라운딩과 국소 비율 기법을 사용하는 1/4 근사 알고리즘…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_vention_and_teradyne_robotics_2026/">
+          <span class="entry-type">기술</span>
+          <h3>Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells</h3>
+          <p>Live demonstrations at Automate 2026 showcase the integration, featuring Vention&#39;s Rapid Operator…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_daudelin_an_integrated_system_for_perce_2018/">
+          <span class="entry-type">논문</span>
+          <h3>모듈형 로봇을 위한 지각 기반 자율 통합 시스템</h3>
+          <p>중앙 집중식 인지, 매핑 및 LTL 기반 고수준 계획을 분산형 SMORES-EP 하드웨어와 결합하여 로봇이 미지 환경을 자율 탐색하고, 언제 어떻게 재구성할지 결정하며, 물체를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kaigom_metarobotics_for_industry_and_2024/">
+          <span class="entry-type">논문</span>
+          <h3>산업과 사회를 위한 메타로보틱스: 비전, 기술 및 기회</h3>
+          <p>본 논문은 초저지연 초신뢰 통신을 넘어선 6G, 홀로포테이션, 인지형 디지털 트윈, 다중 접근 엣지 컴퓨팅, 연합 기반 모델 및 블록체인을 통합하여 사회와 산업 전반에 걸쳐…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gong_augmented_reality_enhanced_rob_2025/">
+          <span class="entry-type">논문</span>
+          <h3>사용자 시연 수집을 위한 증강 현실 기반 로봇 원격 조작</h3>
+          <p>HMD와 컨트롤러를 이용해 ABB 산업용 및 협동 로봇을 원격으로 제어하고, 실시간 포인트 클라우드 렌더링을 통해 작업 공간에 들어가지 않고도 시연 기반 프로그래밍 데이터를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">형식화 방법</span>
+          <h3>부유 기반 동역학</h3>
+          <p>이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_tahir_mobile_robot_control_and_auton_2023/">
+          <span class="entry-type">논문</span>
+          <h3>협업 시뮬레이션 트윈을 통한 이동 로봇 제어 및 자율성</h3>
+          <p>SLAM 기반 경로 계획을 원격 시뮬레이션 에이전트에 오프로드하고 물리 로봇의 속도 추적 및 예측 힘 피드백을 통해 양방향 동기화하는 협업 시뮬레이션 트윈(ST) 프레임워크를…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_koubaa_service_oriented_robotic_compu_2019/">
+          <span class="entry-type">논문</span>
+          <h3>클라우드 로보틱스를 위한 서비스 지향 로봇 컴퓨팅</h3>
+          <p>본 논문은 서비스 지향 아키텍처와 웹 서비스를 활용한 클라우드 로보틱스를 개괄하며, 로봇 시스템 가상화와 클라우드 기반 서비스로의 계산 오프로딩을 구분한다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>역욕동학</h3>
+          <p>원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_robokube_establishing_a_new_fo_2024/">
+          <span class="entry-type">논문</span>
+          <h3>RoboKube: 로보틱스의 클라우드 네이티브 진화를 위한 새로운 기반 구축</h3>
+          <p>본 논문은 디바이스-엣지-클라우드 연속체에서 컨테이너화된 ROS 2 애플리케이션을 배포하기 위한 Kubernetes 기반 프레임워크인 RoboKube를 제안하고, UR5…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lee_harness_engineering_for_physic_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Physical AI를 위한 Harness Engineering: Robot Middleware가 Harness Layer이다</h3>
+          <p>본 논문은 로봇 미들웨어가 Physical AI를 위한 하네스 레이어로 작동해야 하며, Projection, Isolation, Transfer의 세 가지 공존하는 강제 메커니즘을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_martinez_rozas_skyeye_team_at_mbzirc_2020_a_t_2021/">
+          <span class="entry-type">논문</span>
+          <h3>Skyeye 팀 MBZIRC 2020: GPS 차단 도시 건축물 환경에서 자율 소화를 위한 공중 및 지상 로봇 팀</h3>
+          <p>최대 3대의 UAV와 1대의 UGV로 구성된 이종 다중 로봇 시스템을 제시하며, LIDAR 기반 GPS 차단 위치 추정, 수정된 Lazy Theta* 경로 계획기, 열 감지 및…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_alirezazadeh_optimal_algorithm_allocation_f_2021/">
+          <span class="entry-type">논문</span>
+          <h3>로봇 네트워크 클라우드 시스템을 위한 최적 알고리즘 할당</h3>
+          <p>로봇, 안개 노드, 클라우드 노드 간 알고리즘 할당을 위해 반격자 의존성 그래프와 분기한계 탐색을 사용하여 작업 총 완료 시간과 로봇 메모리 사용량을 동시에 최소화하는 이산 최적화…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wei_aero_adaptive_and_efficient_ru_2026/">
+          <span class="entry-type">논문</span>
+          <h3>AERO: 에너지 수확 IoT를 위한 적응적이고 효율적인 런타임 인식 OTA 업데이트</h3>
+          <p>AERO는 런타임 인식 Over-The-Air 업데이트 메커니즘을 제안하여 펌웨어 업데이트 작업을 방향성 비순환 그래프로 모델링하고, 간헐적인 에너지와 시간 제약 하에서 일상…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 적응</h3>
+          <p>소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">방법</span>
+          <h3>유한요소해석(FEA)</h3>
+          <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_yoon_moduloop_low_level_code_genera_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ModuLoop: 모듈형 신디사이저 및 폐쇄형 루프 디버거를 활용한 로봇 제어 저수준 코드 생성</h3>
+          <p>자연어 명령을 실행 가능한 저수준 Python 제어 모듈로 변환하고 런타임 프로브를 통해 반복적으로 디버깅하는 폐쇄 루프 모듈형 코드 합성기를 제안하며, RGB-D 카메라와 UR3…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

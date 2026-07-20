@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unitree G1 휴머노이드 팔의 물리 기반 전력 소비 모델 식별 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Unitree G1 휴머노이드 팔의 물리 기반 전력 소비 모델 식별</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Unitree G1 휴머노이드 팔의 물리 기반 전력 소비 모델 식별</h1>
+      <p class="entry-name-en">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">설계 공학</span><span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.15915v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 Unitree G1 휴머노이드 로봇의 7자유도 왼팔 전력 소비를 위한 물리 기반 선형-매개변수 모델을 제시하며, 액추에이터 손실 항, 기준 토크 보정 및 쌍별 관절 속도 상호작용 항을 포함하여 943개의 실제 로봇 궤적에서 검증합니다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.15915" target="_blank" rel="noopener">Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>관련 개체</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">integrates</span>
+            <a href="/ko/entry/ent_robot_system_unitree_g1/">Unitree G1 휴머노이드 로봇</a>
+            
+              
+                
+              
+              <span class="rel-desc">전력 소비 모델의 실험 플랫폼 및 연구 대상.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">integrates</span>
+            <a href="/ko/entry/ent_component_bldc_motor/">브러시리스 DC 모터</a>
+            
+              
+                
+              
+              <span class="rel-desc">Unitree G1 팔 관절에 사용되는 액추에이터 기술.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">integrates</span>
+            <a href="/ko/entry/ent_component_harmonic_drive_reducer/">하모닉 드라이브 감속기</a>
+            
+              
+                
+              
+              <span class="rel-desc">팔 관절의 변속 부품으로 가속/제동 비대칭 거동이 언급됨.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">integrates</span>
+            <a href="/ko/entry/ent_component_unitree_dex3_1_hand/">Unitree Dex3-1 민첩한 손</a>
+            
+              
+                
+              
+              <span class="rel-desc">실험 중 왼팔에 장착된 엔드 이펙터.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">integrates</span>
+            <a href="/ko/entry/ent_component_battery_management_system/">배터리 관리 시스템</a>
+            
+              
+                
+              
+              <span class="rel-desc">모델 식별에 사용되는 전력 측정을 제공하는 온보드 시스템.</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">integrates</span>
+            <a href="/ko/entry/ent_component_main_board_power_sensor/">메인보드 전력 센서</a>
+            
+              
+                
+              
+              <span class="rel-desc">회귀 분석용 전력 데이터 수집에 사용된 센서.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>배터리로 구동되는 휴머노이드 로봇의 에너지 인식 모션 계획, 배터리 관리 및 열 모니터링을 위해서는 전력 소비량의 정확한 예측이 필수적입니다. 본 논문에서는 Unitree~G1 휴머노이드 로봇의 7자유도 왼팔에 대한 물리 기반 선형 파라미터 모델을 제시합니다. 제안된 공식은 액추에이터 손실 항과 중력 보상 부하 변화를 포착하는 기준 토크 보정을 결합하여 음의 순 전력 궤적을 정확히 예측할 수 있게 합니다. 또한, 다중 관절 동시 움직임 시 전력 결합을 모델링하기 위해 쌍별 상호작용 항을 도입했습니다. 모델 파라미터는 실제 Unitree~G1에서 수집된 실험 데이터를 기반으로 식별되었으며, 온보드 전력 측정값을 회귀 목표로 사용했습니다. 단일 관절 및 여러 속도 수준에서의 조정된 팔 움직임을 포함하는 897개 궤적에 대해 식별된 모델은 RMSE 1.07(W)에서 <span class="arithmatex">\(R^2 = 0.933\)</span>을 달성했습니다. 이전에 보지 못한 속도로 실행된 46개 궤적에 대한 검증에서는 <span class="arithmatex">\(R^2 = 0.965\)</span>를 보여, 식별 데이터셋을 넘어선 강력한 일반화 능력을 입증했습니다. 식별된 파라미터 분석 결과, 팔 전체에 걸쳐 뚜렷한 전력 소비 특성이 나타났으며, 점성 마찰이 대부분의 관절(어깨 피치 및 세 손목 관절)을 지배하고, 구리 손실이 어깨 요와 팔꿈치를 지배하며, 어깨 롤은 쿨롱 마찰이 유일하게 지배하는 것으로 나타났습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>배터리로 구동되는 휴머노이드 로봇의 에너지 인식 모션 계획, 배터리 관리 및 열 모니터링을 위해서는 전력 소비량의 정확한 예측이 필수적입니다. 본 논문에서는 Unitree~G1 휴머노이드 로봇의 7자유도 왼팔에 대한 물리 기반 선형 파라미터 모델을 제시합니다. 제안된 공식은 액추에이터 손실 항과 중력 보상 부하 변화를 포착하는 기준 토크 보정을 결합하여 음의 순 전력 궤적을 정확히 예측할 수 있게 합니다. 또한, 다중 관절 동시 움직임 시 전력 결합을 모델링하기 위해 쌍별 상호작용 항을 도입했습니다. 모델 파라미터는 실제 Unitree~G1에서 수집된 실험 데이터를 기반으로 식별되었으며, 온보드 전력 측정값을 회귀 목표로 사용했습니다. 단일 관절 및 여러 속도 수준에서의 조정된 팔 움직임을 포함하는 897개 궤적에 대해 식별된 모델은 RMSE 1.07(W)에서 <span class="arithmatex">\(R^2 = 0.933\)</span>을 달성했습니다. 이전에 보지 못한 속도로 실행된 46개 궤적에 대한 검증에서는 <span class="arithmatex">\(R^2 = 0.965\)</span>를 보여, 식별 데이터셋을 넘어선 강력한 일반화 능력을 입증했습니다. 식별된 파라미터 분석 결과, 팔 전체에 걸쳐 뚜렷한 전력 소비 특성이 나타났으며, 점성 마찰이 대부분의 관절(어깨 피치 및 세 손목 관절)을 지배하고, 구리 손실이 어깨 요와 팔꿈치를 지배하며, 어깨 롤은 쿨롱 마찰이 유일하게 지배하는 것으로 나타났습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">통합</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_bldc_motor/">브러시리스 DC 모터</a>
+              <span class="rel-desc">BLDC 모터는 모델링된 손실 실행기 체인의 일부입니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">통합</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_main_board_power_sensor/">메인보드 전력 센서</a>
+              <span class="rel-desc">메인보드 전력 센서는 회귀 목표로 사용되는 온보드 전력 측정을 제공합니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">통합</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_unitree_dex3_1_hand/">Unitree Dex3-1 민첩한 손</a>
+              <span class="rel-desc">실험 중 Dex3-1 핸드가 왼팔에 장착되었습니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_gallant_voxel_grid_based_human_2025/">Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_simple_simulation_based_policy_2026/">SIMPLE: Simulation-Based Policy Learning and Evaluation for Humanoid Loco-manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_cybo_waiter_a_physical_agentic_2026/">Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_omniretarget_interaction_prese_2026/">OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">토크 제어 휴머노이드 로봇에서의 마찰 활용</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">통합</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_battery_management_system/">배터리 관리 시스템</a>
+              <span class="rel-desc">배터리 관리 시스템은 온보드 전력 측정 체인의 일부입니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">통합</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_harmonic_drive_reducer/">하모닉 드라이브 감속기</a>
+              <span class="rel-desc">하모닉 드라이브 감속기는 팔 관절에 사용되며 가속/제동 비대칭 거동을 보입니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">VR 기반 인간-로봇 팀워크 시뮬레이션에서의 가변 자율성을 위한 GPT 기반 대형 언어 모델 탐구</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">통합</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_system_unitree_g1/">Unitree G1 휴머노이드 로봇</a>
+              <span class="rel-desc">본 논문은 실제 Unitree G1 로봇을 사용하여 전력 소비 모델을 식별하고 검증합니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">물리 정보 신경망과 무향 칼만 필터를 활용한 휴로이드 로봇의 무센서 관절 토크 추정</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_component_bldc_motor/">브러시리스 DC 모터</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_aljalbout_reality_gap_2025/">로보틱스의 현실 격차: 과제, 해결책 및 모범 사례</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_unitree_g1/">Unitree G1 휴머노이드 로봇</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_battery_management_system/">배터리 관리 시스템</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_kolzenberg_a_four_parameter_model_for_the_2022/">작동 중 배터리 노화 예측을 위한 고체 전해질 계면(SEI) 4개 매개변수 모델</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_harmonic_drive_reducer/">하모닉 드라이브 감속기</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_unitree_dex3_1_hand/">Unitree Dex3-1 민첩한 손</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_component_main_board_power_sensor/">메인보드 전력 센서</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_deniz_identification_of_a_physics_ba_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">
+          <span class="entry-type">논문</span>
+          <h3>물리 정보 신경망과 무향 칼만 필터를 활용한 휴로이드 로봇의 무센서 관절 토크 추정</h3>
+          <p>본 논문은 전기 모터와 하모닉 드라이브를 갖춘 휴로이드 로봇을 위한 실시간 무센서 전신 토크 제어 프레임워크를 제안한다. 비선형 마찰 모델링을 위한 물리 정보 신경망(PINN)과…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_battery_management_system/">
+          <span class="entry-type">부품</span>
+          <h3>배터리 관리 시스템</h3>
+          <p>로봇 및 전기차에서 안전하고 효율적인 에너지 저장 및 공급을 보장하기 위해 배터리 셀을 모니터링, 보호 및 균형 조정하는 전자 하위 시스템.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nava_exploiting_friction_in_torque_2018/">
+          <span class="entry-type">논문</span>
+          <h3>토크 제어 휴머노이드 로봇에서의 마찰 활용</h3>
+          <p>관절 마찰을 상쇄하는 대신 안정화 감쇄 항으로 활용하는 토크 제어 프레임워크를 제안하고, iCub 휴머노이드 로봇에서 고정 기반 및 부유 기반 확장을 검증함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_aljalbout_reality_gap_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로보틱스의 현실 격차: 과제, 해결책 및 모범 사례</h3>
+          <p>2025년 서베이로, 시뮬레이션-현실 간 현실 격차를 지각 및 동작 역학 불일치로 분류하고 도메인 랜덤화, 시스템 식별, 시뮬-현실 공동 학습 등 완화 전략을 검토함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_omniretarget_interaction_prese_2026/">
+          <span class="entry-type">논문</span>
+          <h3>OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction</h3>
+          <p>OmniRetarget 先从本体状态与关节序列、人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_cybo_waiter_a_physical_agentic_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation</h3>
+          <p>Cybo-Waiter 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用扩散策略/流匹配、VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_gallant_voxel_grid_based_human_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains</h3>
+          <p>Gallant…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Unitree G1 휴머노이드 로봇</h3>
+          <p>Unitree Robotics가 개발한 컴팩트한 양산형 휴머노이드 로봇으로, 23~43자유도, 35kg 몸체, 2m/s 보행 속도를 갖추며 연구, 교육 및 경량 산업 작업을 위해…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/">
+          <span class="entry-type">논문</span>
+          <h3>VR 기반 인간-로봇 팀워크 시뮬레이션에서의 가변 자율성을 위한 GPT 기반 대형 언어 모델 탐구</h3>
+          <p>본 논문은 사용자가 개별 GPT-4 인스턴스로 구동되는 여러 시뮬레이션 로봇과 자연어로 대화하고, OpenAI의 함수 호출 API를 사용하여 비구조화된 음성을 구조화된 로봇…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_main_board_power_sensor/">
+          <span class="entry-type">부품</span>
+          <h3>메인보드 전력 센서</h3>
+          <p>메인 컨트롤러 보드 수준에서 전압, 전류, 전력 소비를 측정하여 시스템 수준의 에너지 모니터링 및 모델 검증을 가능하게 하는 센싱 모듈.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_bldc_motor/">
+          <span class="entry-type">부품</span>
+          <h3>브러시리스 DC 모터</h3>
+          <p>기계적 브러시가 아닌 전자적 정류로 구동되는 전동기로, 높은 효율, 긴 수명, 높은 전력 밀도를 제공하며 로봇 관절 및 휴머노이드 액추에이터의 주 동력원으로 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_planella_a_continuum_of_physics_based_l_2022/">
+          <span class="entry-type">논문</span>
+          <h3>물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰</h3>
+          <p>고충실도 미시규모 모델에서 단일 입자 모델까지의 연속 전기화학 배터리 모델을 유도하는 통합적 환원 프레임워크를 제시하고, 가정들과 한계, 열-전기화학 결합 확장에 대해 비판적으로…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kolzenberg_a_four_parameter_model_for_the_2022/">
+          <span class="entry-type">논문</span>
+          <h3>작동 중 배터리 노화 예측을 위한 고체 전해질 계면(SEI) 4개 매개변수 모델</h3>
+          <p>본 논문은 세 가지 매개변수화 프로토콜과 양극 개회로 전압 곡선만을 사용하여 리튬 이온 배터리 용량 감소를 예측하는 물리 기반 SEI 성장 4개 매개변수 모델을 제시하며, 25개의…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_unitree_dex3_1_hand/">
+          <span class="entry-type">부품</span>
+          <h3>Unitree Dex3-1 민첩한 손</h3>
+          <p>Unitree G1-EDU 휴머노이드 로봇을 위한 힘 제어식 3지 민첩한 엔드 이펙터 옵션으로, 물체 조작을 위해 손당 7+2자유도를 추가함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_harmonic_drive_reducer/">
+          <span class="entry-type">부품</span>
+          <h3>하모닉 드라이브 감속기</h3>
+          <p>플렉스플라인, 서큘러 스플라인, 웨이브 제너레이터를 기반으로 한 고감속비, 제로 백래시 기어 감속기로, 컴팩트한 크기와 높은 토크 용량, 정밀한 동력 전달 때문에 휴머노이드…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_simple_simulation_based_policy_2026/">
+          <span class="entry-type">논문</span>
+          <h3>SIMPLE: Simulation-Based Policy Learning and Evaluation for Humanoid Loco-manipulation</h3>
+          <p>SIMPLE 的实现路径是先把相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据编码成多模态表征，再用VLA…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

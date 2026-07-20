@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>端侧 VLA 推理 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/technology/">技术</a>
+    <span>/</span>
+    <span class="breadcrumb-current">端侧 VLA 推理</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">技术</div>
+      <h1>端侧 VLA 推理</h1>
+      <p class="entry-name-en">On-Device VLA Inference</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="AI-extracted from VLA-Perf paper and NVIDIA deployment blog; specific latency claims depend on model and quantization configuration. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">阶段 2 · 双足平台</span>
+        <span class="roadmap-badge-role">拓展</span>
+      </a>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">阶段 3 · 完整人形</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>概述 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.18397" target="_blank" rel="noopener">How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/" target="_blank" rel="noopener">Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using a Sim-to-Real Workflow</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">uses</span>
+            <a href="/entry/ent_method_action_token_prediction/">动作 token 预测</a>
+            
+              
+                
+              
+              <span class="rel-desc">端侧 VLA 推理部署依赖动作 token 预测的模型。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">is_based_on</span>
+            <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+            
+              
+                
+              
+              <span class="rel-desc">端侧 VLA 推理建立在 OpenVLA 等架构之上。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="vla">端侧 VLA 推理的定义与定位</h3>
+<p>端侧 VLA 推理属于 <strong>技术</strong> 类型。 所属领域包括：AI 模型与算法, 软件中间件, 零部件。 价值链层级：智能层。 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。 英文名称为 <em>On-Device VLA Inference</em>。 韩文名称为 <em>온디바이스 VLA 추론</em>。</p>
+<h3 id="vla_1">端侧 VLA 推理的工作原理与技术架构</h3>
+<p>端侧 VLA 推理的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
+在选型与集成过程中，需要关注其与控制器、通信总线、电源系统与机械结构的兼容性。</p>
+<h3 id="_3">关键参数与选型要点</h3>
+<p>在工程实践中，选用端侧 VLA 推理需要综合考虑性能指标、可靠性、成本、供应链成熟度以及与整机系统的兼容性。
+关键参数通常包括精度、带宽、扭矩、功耗、重量、接口协议与环境适应性等。
+针对不同应用场景，可能需要在性能与成本之间进行权衡，并预留适当的冗余与安全裕量。</p>
+<h3 id="_4">典型应用与发展趋势</h3>
+<p>端侧 VLA 推理已广泛应用于人形机器人的原型验证、学术研究与早期商业化产品中。
+未来随着产业链成熟，其集成度、智能化水平与成本效益有望持续提升。</p>
+<h3 id="_5">相关标签</h3>
+<ul>
+<li>vla</li>
+<li>on_device_inference</li>
+<li>edge_compute</li>
+<li>latency</li>
+<li>real_time_control</li>
+<li>humanoid</li>
+</ul>
+<h3 id="_6">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键技术之一，端侧 VLA 推理在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2602.18397">How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf</a></li>
+<li><a href="https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/">Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using a Sim-to-Real Workflow</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              <span class="rel-desc">端侧 VLA 推理引用GR00T N1。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">端侧 VLA 推理引用英伟达。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_token_prediction/">动作 token 预测</a>
+              <span class="rel-desc">端侧 VLA 推理将动作 token 预测作为其核心动作生成方法。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+              <span class="rel-desc">端侧 VLA 推理基于 OpenVLA 等模型架构。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ota_software_update_2024/">OTA 软件更新</a>
+              <span class="rel-desc">端侧 VLA 推理提及OTA 软件更新。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 中间件</a>
+              <span class="rel-desc">端侧 VLA 推理前置依赖ROS 2 中间件。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_nvidia_jetson_thor/">NVIDIA Jetson Thor</a>
+              <span class="rel-desc">端侧 VLA 推理引用NVIDIA Jetson Thor。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_park_quantization_aware_imitation_l_2024/">QAIL+QBC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">QAIL+QBCdiscusses端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hu_deead_dynamic_early_exit_of_vi_2025/">DeeAD</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">DeeADdiscusses端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_kv_efficient_vla_a_method_to_s_2025/">KV-Efficient VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ma_running_vlas_at_real_time_spee_2025/">Running VLAs at Real-time Speed</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLASHdiscusses端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_nvidia_jetson_thor/">NVIDIA Jetson Thor</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使能</span>
+              <span class="rel-desc">Jetson Thor 的机载 AI 算力支持不依赖外部服务器的实时 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ni_swiftvla_unlocking_spatiotempo_2025/">SwiftVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">SwiftVLAdiscusses端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_embodiedcpp_a_portable_inferen_2026/">Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rhinovla_technical_report_2026/">RhinoVLA Technical Report</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wu_vla_an_an_efficient_and_onboar_2025/">VLA-AN</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLA-ANdiscusses端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_autoprune_each_complexity_dese_2025/">AutoPrune</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">AutoPrunediscusses端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhao_vla_rail_a_real_time_asynchron_2025/">VLA-RAIL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-desc">VLA-RAILintroduces端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fang_sqap_vla_a_synergistic_quantiz_2025/">SQAP-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">SQAP-VLAdiscusses端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">VLA-Pruner</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLA-Prunerdiscusses端侧 VLA 推理。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_williams_lite_vla_efficient_vision_lang_2025/">Lite VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Lite VLA提出端侧 VLA 推理。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_tech_on_device_vla_inference"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA：一个开源的视觉-语言-动作模型</h3>
+          <p>一个 70 亿参数的开源 VLA 模型，基于 Open X-Embodiment 数据集的 97 万条真实机器人演示进行预训练，融合 Llama 2、DINOv2 和 SigLIP 以实现通用操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fang_sqap_vla_a_synergistic_quantiz_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SQAP-VLA</h3>
+          <p>SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Pruner</h3>
+          <p>VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rhinovla_technical_report_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RhinoVLA Technical Report</h3>
+          <p>arXiv:2606.07383v2 Announce Type: replace Abstract: Vision-Language-Action (VLA) models have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wu_vla_an_an_efficient_and_onboar_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-AN</h3>
+          <p>VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_williams_lite_vla_efficient_vision_lang_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Lite VLA</h3>
+          <p>Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots (Lite VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ni_swiftvla_unlocking_spatiotempo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SwiftVLA</h3>
+          <p>SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_kv_efficient_vla_a_method_to_s_2025/">
+          <span class="entry-type">论文</span>
+          <h3>KV-Efficient VLA</h3>
+          <p>KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ROS 2 中间件</h3>
+          <p>基于DDS的发布/订阅和实时支持的事实标准机器人中间件。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">方法</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_vla_rail_a_real_time_asynchron_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-RAIL</h3>
+          <p>VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots (VLA-RAIL), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_nvidia_jetson_thor/">
+          <span class="entry-type">零部件</span>
+          <h3>NVIDIA Jetson Thor</h3>
+          <p>NVIDIA 面向人形机器人和物理 AI 机器人的旗舰边缘 AI 计算模块，基于 Blackwell 架构，支持在设备端运行多模态生成式 AI、视觉语言模型和 VLA 策略。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_autoprune_each_complexity_dese_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AutoPrune</h3>
+          <p>AutoPrune: Each Complexity Deserves a Pruning Policy (AutoPrune), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">方法</span>
+          <h3>动作 token 预测</h3>
+          <p>一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ota_software_update_2024/">
+          <span class="entry-type">技术</span>
+          <h3>OTA 软件更新</h3>
+          <p>向已部署的人形机器人机群无线部署控制策略、固件和系统软件。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_park_quantization_aware_imitation_l_2024/">
+          <span class="entry-type">论文</span>
+          <h3>QAIL+QBC</h3>
+          <p>Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control (QAIL+QBC), is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_deead_dynamic_early_exit_of_vi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DeeAD</h3>
+          <p>DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving (DeeAD), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLASH</h3>
+          <p>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ma_running_vlas_at_real_time_spee_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Running VLAs at Real-time Speed</h3>
+          <p>Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_embodiedcpp_a_portable_inferen_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots</h3>
+          <p>arXiv:2607.02501v2 Announce Type: replace Abstract: Embodied AI models now span…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#vla">端侧 VLA 推理的定义与定位</a></li>
+<li><a href="#vla_1">端侧 VLA 推理的工作原理与技术架构</a></li>
+<li><a href="#_3">关键参数与选型要点</a></li>
+<li><a href="#_4">典型应用与发展趋势</a></li>
+<li><a href="#_5">相关标签</a></li>
+<li><a href="#_6">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poppy Humanoid · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/robot_system/">로봇 시스템</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Poppy Humanoid</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">로봇 시스템</div>
+      <h1>Poppy Humanoid</h1>
+      <p class="entry-name-en">Poppy Humanoid</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span><span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="内容整理自调研档案 data/roadmap/research/poppy-humanoid.md（访问日期 2026-07-01）。主 GitHub 仓库最后 push 为 2021-12-06，官方文档最后更新 2022-12-20，维护基本停滞；成本为 2014 年官方口径与后续社区估算。">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-optional" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">3단계 · 완전한 휴로봇</span>
+        <span class="roadmap-badge-role">선택</span>
+      </a>
+      
+    </div>
+    
+
+    
+    <p class="untranslated-notice">이 페이지는 아직 번역되지 않았습니다. 아래에 중국어 원문을 표시합니다.</p>
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>An open-source 3D-printed humanoid robot created by Inria&#39;s Flowers team, about 84 cm and 3.5 kg with 25 degrees of freedom including a 5-DoF bio-inspired spine, driven by 25 ROBOTIS Dynamixel servos and programmed in Python or Scratch via the pypot library, designed for education and HRI research.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://github.com/poppy-project/poppy-humanoid" target="_blank" rel="noopener">poppy-project/poppy-humanoid GitHub Repository</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://docs.poppy-project.org/en/" target="_blank" rel="noopener">Poppy Project Documentation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Poppy Humanoid 是法国 Inria Bordeaux Sud-Ouest 的 Flowers 团队（联合 Ensta ParisTech）于 2012 年发起的开源 3D 打印人形机器人，源于 Matthieu Lapeyre 的博士论文（导师 Pierre-Yves Oudeyer），ERC Explorer 资助，现由非营利组织 Poppy Station 维护社区。整机约 84 cm / 3.5 kg，25 个自由度（含 5 自由度全驱动仿生脊柱，屈膝式腿构型）（来源：调研档案 poppy-humanoid.md，下同）。</p>
+<p>许可证：硬件 CC BY-SA 4.0、软件 GPLv3、文档 CC-BY-SA 4.0。成本：约 €7,500–8,000（2014 年官方口径，其中电机约 €5,000）；Génération Robots 套件约 €9,000；社区估算全套约 €9,588——高成本主要来自 25 台高端舵机。GitHub <code>poppy-project/poppy-humanoid</code> 约 1,007 stars / 281 forks，但主仓库最后 push 为 2021-12-06，官方文档最后更新 2022-12-20，维护基本停滞。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">关键参数</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>数值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>身高 / 重量</td>
+<td>约 84 cm / 约 3.5 kg</td>
+<td>2014 年媒体报道</td>
+</tr>
+<tr>
+<td>自由度</td>
+<td>25（含 5 自由度全驱动仿生脊柱）</td>
+<td>官方文档</td>
+</tr>
+<tr>
+<td>硬件成本</td>
+<td>约 €7,500–8,000（2014 官方口径）；套件约 €9,000；社区估算约 €9,588</td>
+<td>媒体 / 经销商 / 社区估算</td>
+</tr>
+<tr>
+<td>主控</td>
+<td>Raspberry Pi 3/4（或 Odroid），经 USB2AX / U2D2 接 Dynamixel 总线</td>
+<td>官方文档</td>
+</tr>
+<tr>
+<td>传感器（2014 完整版）</td>
+<td>16 个 FSR 力传感器、2 个 PS Eye 相机、1 个 IMU、4.3 英寸 LCD 屏、双麦克风</td>
+<td>媒体报道</td>
+</tr>
+<tr>
+<td>供电</td>
+<td>早期版本需外接电源（无电池），移动性受限</td>
+<td>调研档案</td>
+</tr>
+<tr>
+<td>新手友好度</td>
+<td>3.5 / 5（调研档案评估）</td>
+<td>调研档案</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">执行器与机械</h3>
+<ul>
+<li>25 台 ROBOTIS Dynamixel 智能舵机，TTL 串行总线级联；按关节扭矩需求混用 AX 系列（肢体小关节）与 MX 系列（躯干/大腿等高扭矩关节），装配手册注明 MX-28 已迭代为 MX-28AT。</li>
+<li>高减速比舵机 + 串联弹性/柔顺模式：可手动反驱（compliant mode），适合"手把手"示教编程，这是 Poppy 教学设计的核心卖点。</li>
+<li>全身结构件 3D 打印（家用打印机即可），骨架轻量化、仿生比例。</li>
+</ul>
+<h3 id="_5">软件栈</h3>
+<ul>
+<li>pypot（项目自研 Python Dynamixel 库）+ 各机器人专属 Python 包；支持 Jupyter Notebook、Scratch/Snap! 图形化编程、REST API/Web 控制。</li>
+<li>仿真：CoppeliaSim（原 V-REP）官方模型 + 轻量 3D Web 查看器，可零硬件开发调试；提供 ROS 桥接（社区维护）；预配置系统镜像（SD 卡刷入即用）。</li>
+<li>文档：docs.poppy-project.org 结构化文档（入门/装配/安装/编程四部分），25 步装配手册 + 25 集装配视频。</li>
+</ul>
+<h3 id="_6">适合人群</h3>
+<ul>
+<li>适合：看重教学体系与人机交互（而非运动性能）的教育者；想做具身认知/HRI 研究的团队——Python/Scratch 双轨、柔顺反驱示教、仿真先行、装配视频完整，教育与科研案例丰富（发展机器人学、HRI、行走研究数十篇论文）。</li>
+<li>门槛：约 €9,000 的套件价格远超当代替代品；主仓库停更意味着新系统/新 Python 版本兼容性要自己踩坑；25 台 Dynamixel 的采购与维护成本高；想做行走/RL 的新手建议转看 ToddlerBot 等新一代平台。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li><a href="https://github.com/poppy-project/poppy-humanoid">poppy-project/poppy-humanoid GitHub 仓库</a></li>
+<li><a href="https://docs.poppy-project.org/en/">Poppy 官方文档</a></li>
+<li><a href="https://docs.poppy-project.org/en/assembly-guides/poppy-humanoid/">25 步装配手册</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_forward_kinematics/">정욕동학</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_dynamixel_xl330_m288_t/">ROBOTIS DYNAMIXEL XL330-M288-T</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_dynamixel_xm430_w210_t/">ROBOTIS DYNAMIXEL XM430-W210-T</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_inmoov/">InMoov</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_robot_system_poppy_humanoid"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_dynamixel_xl330_m288_t/">
+          <span class="entry-type">부품</span>
+          <h3>ROBOTIS DYNAMIXEL XL330-M288-T</h3>
+          <p>ROBOTIS X 시리즈의 컴팩트한 저비용 스마트 서보 액추에이터로, TTL 통신, 0.52 N·m 정지 토크, 288.4:1 감속비를 갖추어 소형 로봇 관절 및 손가락에 적합함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_dynamixel_xm430_w210_t/">
+          <span class="entry-type">부품</span>
+          <h3>ROBOTIS DYNAMIXEL XM430-W210-T</h3>
+          <p>ROBOTIS X 시리즈의 중형 스마트 서보 액추에이터로, TTL 통신, 3.0 N·m 정지 토크, 절대형 인코더 피드백 및 다양한 제어 모드를 갖추어 로봇 관절에 적합함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_inmoov/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>InMoov</h3>
+          <p>The first open-source 3D-printed life-size humanoid robot, started in 2012 by French sculptor Gael…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>역욕동학</h3>
+          <p>원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>정욕동학</h3>
+          <p>주어진 관절 각도로부터 동차 변환 사슬 또는 지수곱을 이용해 말단 동작기 위치·방향을 계산하는 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">关键参数</a></li>
+<li><a href="#_4">执行器与机械</a></li>
+<li><a href="#_5">软件栈</a></li>
+<li><a href="#_6">适合人群</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

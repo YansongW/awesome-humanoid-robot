@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation</h1>
+      <p class="entry-name-en">StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.23721v2.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2602.23721v2 Announce Type: replace Abstract: Vision-language-action (VLA) models integrate visual observations and language instructions to predict robot actions, demonstrating promising generalization in manipulation tasks. However, most existing approaches primarily rely on direct mappings from 2D visual inputs to action sequences, without explicitly modeling the underlying 3D spatial structure or temporal world dynamics. Such representations may limit spatial reasoning and long-horizon decision-making in dynamic environments. To address this limitation, we propose StemVLA, a novel framework that explicitly incorporates both future-oriented 3D spatial knowledge and historical 4D spatiotemporal representations into action prediction. First, instead of relying solely on observed images, StemVLA forecasts structured 3D future spatial-geometric world knowledge, enabling the model to anticipate upcoming scene geometry and object configurations. Second, to capture temporal consistency and motion dynamics, we feed historical image frames into a pretrained video-geometry transformer backbone to extract implicit 3D world representations, and further aggregate them across time using a temporal attention module, termed VideoFormer [20], forming a unified 4D historical spatiotemporal representation. By jointly modeling 2D observations, predicted 3D future structure, and aggregated 4D temporal dynamics, StemVLA enables more comprehensive world understanding for robot manipulation. Extensive experiments in simulation demonstrate that Stem-VLA achieves an average accuracy of 92.0% across the LIBERO subsets, and 86.0% on the long-horizon LIBERO-Long subset.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.23721" target="_blank" rel="noopener">StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Vision-language-action (VLA) 모델은 시각적 관찰과 언어 명령을 통합하여 로봇의 행동을 예측하며, 조작 작업에서 유망한 일반화 능력을 보여줍니다. 그러나 기존 접근법 대부분은 주로 2D 시각적 입력에서 행동 시퀀스로의 직접적인 매핑에 의존하며, 기본적인 3D 공간 구조나 시간적 세계 역학을 명시적으로 모델링하지 않습니다. 이러한 표현은 동적 환경에서의 공간 추론과 장기적 의사 결정을 제한할 수 있습니다. 이러한 한계를 해결하기 위해, 우리는 미래 지향적 3D 공간 지식과 과거 4D 시공간 표현을 행동 예측에 명시적으로 통합하는 새로운 프레임워크인 StemVLA를 제안합니다. 첫째, 관찰된 이미지에만 의존하는 대신, StemVLA는 구조화된 3D 미래 공간-기하학적 세계 지식을 예측하여 모델이 다가올 장면 기하학과 객체 구성을 예측할 수 있도록 합니다. 둘째, 시간적 일관성과 운동 역학을 포착하기 위해, 과거 이미지 프레임을 사전 훈련된 비디오-기하학 트랜스포머 백본에 입력하여 암시적 3D 세계 표현을 추출하고, 이를 VideoFormer [20]라는 시간적 주의 모듈을 사용하여 시간에 걸쳐 집계하여 통합된 4D 과거 시공간 표현을 형성합니다. 2D 관찰, 예측된 3D 미래 구조, 집계된 4D 시간적 역학을 공동으로 모델링함으로써, StemVLA는 로봇 조작을 위한 보다 포괄적인 세계 이해를 가능하게 합니다. 시뮬레이션에서의 광범위한 실험을 통해 Stem-VLA는 LIBERO 하위 집합에서 평균 정확도 92.0%, 장기적 LIBERO-Long 하위 집합에서 86.0%를 달성함을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>Vision-language-action (VLA) 모델은 시각적 관찰과 언어 명령을 통합하여 로봇의 행동을 예측하며, 조작 작업에서 유망한 일반화 능력을 보여줍니다. 그러나 기존 접근법 대부분은 주로 2D 시각적 입력에서 행동 시퀀스로의 직접적인 매핑에 의존하며, 기본적인 3D 공간 구조나 시간적 세계 역학을 명시적으로 모델링하지 않습니다. 이러한 표현은 동적 환경에서의 공간 추론과 장기적 의사 결정을 제한할 수 있습니다. 이러한 한계를 해결하기 위해, 우리는 미래 지향적 3D 공간 지식과 과거 4D 시공간 표현을 행동 예측에 명시적으로 통합하는 새로운 프레임워크인 StemVLA를 제안합니다. 첫째, 관찰된 이미지에만 의존하는 대신, StemVLA는 구조화된 3D 미래 공간-기하학적 세계 지식을 예측하여 모델이 다가올 장면 기하학과 객체 구성을 예측할 수 있도록 합니다. 둘째, 시간적 일관성과 운동 역학을 포착하기 위해, 과거 이미지 프레임을 사전 훈련된 비디오-기하학 트랜스포머 백본에 입력하여 암시적 3D 세계 표현을 추출하고, 이를 VideoFormer [20]라는 시간적 주의 모듈을 사용하여 시간에 걸쳐 집계하여 통합된 4D 과거 시공간 표현을 형성합니다. 2D 관찰, 예측된 3D 미래 구조, 집계된 4D 시간적 역학을 공동으로 모델링함으로써, StemVLA는 로봇 조작을 위한 보다 포괄적인 세계 이해를 가능하게 합니다. 시뮬레이션에서의 광범위한 실험을 통해 Stem-VLA는 LIBERO 하위 집합에서 평균 정확도 92.0%, 장기적 LIBERO-Long 하위 집합에서 86.0%를 달성함을 보여줍니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_stemvlaan_open_source_vision_l_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

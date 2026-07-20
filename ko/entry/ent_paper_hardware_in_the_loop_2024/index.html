@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hardware-in-the-Loop · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Hardware-in-the-Loop</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>Hardware-in-the-Loop</h1>
+      <p class="entry-name-en">Hardware-in-the-Loop</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">조립 통합 테스트</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>완전한 통합 전 실제 액추에이터와 컨트롤러를 실시간 시뮬레이션 모델에 대해 테스트하는 방법.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation" target="_blank" rel="noopener">Hardware-in-the-Loop</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>완전 통합 전에 물리적 액추에이터와 컨트롤러를 실시간 시뮬레이션 모델과 연결하여 테스트하는 방법입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">하드웨어 인 더 루프 시뮬레이션의 정의와 위치</h3>
+<p>하드웨어 인 더 루프 시뮬레이션은 <strong>방법</strong> 유형에 속합니다. 관련 분야로는 조립 통합 테스트, 소프트웨어 미들웨어가 있습니다. 가치 사슬 계층은 지능형 계층, 미드스트림입니다. 완전 통합 전에 물리적 액추에이터와 컨트롤러를 실시간 시뮬레이션 모델과 연결하여 테스트하는 방법입니다. 영어 명칭은 <em>Hardware-in-the-Loop</em>입니다. 한국어 명칭은 <em>Hardware-in-the-Loop</em>입니다.</p>
+<h3 id="_4">하드웨어 인 더 루프 시뮬레이션의 수학적 및 원리적 기초</h3>
+<p>하드웨어 인 더 루프 시뮬레이션은 관련 수학 이론과 물리 법칙에 기반합니다. 그 전제 조건, 제약 사항 및 유도 과정을 이해하는 것이 이 방법을 올바르게 적용하기 위한 전제입니다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수, 수렴성 또는 안정성 보장에 주목해야 합니다.
+인간형 로봇과 같은 고차원, 저구동, 강결합 시스템에서 하드웨어 인 더 루프 시뮬레이션은 일반적으로 실시간성, 정밀도 및 강건성 사이에서 균형을 맞춰야 합니다.</p>
+<h3 id="_5">알고리즘 단계와 구현 요점</h3>
+<p>하드웨어 인 더 루프 시뮬레이션을 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 합니다.
+수치적 방법, 선형 대수 솔버 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있습니다.
+동시에 모델 오차, 센서 노이즈 및 액추에이터 포화와 같은 엔지니어링 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 해야 합니다.</p>
+<h3 id="_6">전형적인 응용과 한계</h3>
+<p>하드웨어 인 더 루프 시뮬레이션은 인간형 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있습니다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제입니다.</p>
+<h3 id="_7">관련 태그</h3>
+<ul>
+<li>hil</li>
+<li>method</li>
+<li>simulation</li>
+<li>testing</li>
+<li>validation</li>
+</ul>
+<h3 id="_8">인간형 로봇 시스템에서의 역할</h3>
+<p>인간형 로봇 산업 체인에서 핵심 방법 중 하나로서 하드웨어 인 더 루프 시뮬레이션은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">테스트 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_system_tesla_optimus/">테슬라 옵티머스</a>
+              <span class="rel-desc">HIL 테스트는 완전한 조립 전 Tesla Optimus 컨트롤러를 검증하는 데 사용됩니다.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p15_1_3/">感知-规划-控制闭环集成</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p14_3_2/">软硬件在环测试（HIL/SIL）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_hardware_in_the_loop_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p14_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>软硬件在环测试（HIL/SIL）</h3>
+          <p>HIL/SIL 测试报告、关键用例 100% 覆盖</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">기술</span>
+          <h3>EtherCAT</h3>
+          <p>결정론적 관절 제어를 위한 고성능 산업용 이더넷 필드 버스.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_tesla_optimus/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>테슬라 옵티머스</h3>
+          <p>테슬라의 범용 휴인oid 로봇 프로그램으로, 공장 배치와 대량 생산을 목표로 합니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>感知-规划-控制闭环集成</h3>
+          <p>典型任务端到端成功率 &gt; 目标</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">하드웨어 인 더 루프 시뮬레이션의 정의와 위치</a></li>
+<li><a href="#_4">하드웨어 인 더 루프 시뮬레이션의 수학적 및 원리적 기초</a></li>
+<li><a href="#_5">알고리즘 단계와 구현 요점</a></li>
+<li><a href="#_6">전형적인 응용과 한계</a></li>
+<li><a href="#_7">관련 태그</a></li>
+<li><a href="#_8">인간형 로봇 시스템에서의 역할</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

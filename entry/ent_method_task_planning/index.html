@@ -1,0 +1,1535 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>任务规划 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">任务规划</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>任务规划</h1>
+      <p class="entry-name-en">Task Planning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation to en/ko. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="_2">任务规划的定义与定位</h3>
+<p>任务规划属于 <strong>方法</strong> 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。 英文名称为 <em>Task Planning</em>。 韩文名称为 <em>작업 계획</em>。</p>
+<h3 id="_3">任务规划的数学与原理基础</h3>
+<p>任务规划建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，任务规划通常需要在实时性、精度与鲁棒性之间取得平衡。</p>
+<h3 id="_4">算法步骤与实现要点</h3>
+<p>在实际实现任务规划时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。</p>
+<h3 id="_5">典型应用与局限性</h3>
+<p>任务规划可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。</p>
+<h3 id="_6">相关标签</h3>
+<ul>
+<li>method</li>
+<li>chapter_20</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="_7">在人形机器人系统中的作用</h3>
+<p>作为人形机器人产业链中的关键方法之一，任务规划在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_task_adaptive_design_of_modula_2026/">Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yao_3d_visual_illusion_depth_estim_2025/">三维视觉错觉深度估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">三维视觉错觉深度估计提及任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_schneider_ce_mrs_contrastive_explanation_2024/">CE-MRS：多机器人系统的对比解释</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CE-MRS：多机器人系统的对比解释discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">MAPS-X：基于轨迹分段的可解释多机器人运动规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MAPS-X：基于轨迹分段的可解释多机器人运动规划discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_enhancing_the_llm_based_robot_2024/">通过人机协作增强基于大语言模型的机器人操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">通过人机协作增强基于大语言模型的机器人操作提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_human_like_badminton_2026/">Learning Human-Like Badminton Skills for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_aerial_manipulation_contact_me_2026/">Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_3d_affordances_for_bl_2026/">Learning 3D Affordances for Blade Insertion in Cluttered Stowing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ace_agentic_control_for_embodi_2026/">ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pellier_hddl_21_towards_defining_a_for_2023/">HDDL 2.1：面向时序HTN规划的形式化与语义定义</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">HDDL 2.1：面向时序HTN规划的形式化与语义定义提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_walker_desiderata_for_planning_system_2019/">通用服务机器人规划系统的期望特性</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">通用服务机器人规划系统的期望特性提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">多四足机器人协同牵引缆绳负载的导航与操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">多四足机器人协同牵引缆绳负载的导航与操作discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_category_level_last_m_2026/">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_joglekar_towards_natural_language_drive_2024/">Towards Natural Language-Driven Assembly Using Foundation Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_taniguchi_autonomous_planning_based_on_s_2021/">基于空间概念的服务机器人家庭整理自主规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">基于空间概念的服务机器人家庭整理自主规划提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_codex_learning_compositional_d_2026/">CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vinanzi_casper_cognitive_architecture_2022/">CASPER：面向机器人社会感知与参与的认知架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">CASPER：面向机器人社会感知与参与的认知架构提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lin_onetwovla_a_unified_vision_lan_2025/">OneTwoVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">OneTwoVLAdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_uni_navid_a_video_based_vision_2024/">Uni-NaVid</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Uni-NaViddiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lu_uniugp_unifying_understanding_2025/">UniUGP</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">UniUGPdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robocycle_autonomous_dual_arm_2026/">ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robostriker_hierarchical_decis_2026/">RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jamieson_active_reward_learning_for_co_2020/">带宽受限环境下协同机器人视觉探索的主动奖励学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">带宽受限环境下协同机器人视觉探索的主动奖励学习discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_thinking_in_360_humanoid_visua_2025/">Thinking in 360: Humanoid Visual Search in the Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reinforcegen_hybrid_skill_poli_2026/">ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_suriani_play_everywhere_a_temporal_log_2024/">随处可玩：一种基于时序逻辑的游戏环境无关机器人足球方法</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">随处可玩：一种基于时序逻辑的游戏环境无关机器人足球方法提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_vlm_see_robot_do_human_demo_vi_2025/">SeeDo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">SeeDo提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tan_roboos_next_a_unified_memory_b_2025/">RoboOS-NeXT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RoboOS-NeXTdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jenamani_robotic_motion_planning_using_2020/">基于学习临界源与局部采样的机器人运动规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">基于学习临界源与局部采样的机器人运动规划提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_garg_semantics_for_robotic_mapping_2020/">机器人建图、感知与交互中的语义研究综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">机器人建图、感知与交互中的语义研究综述discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_intention_inferring_tendencies_2025/">INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_task_and_motion_planning_for_h_2025/">Task and Motion Planning for Humanoid Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_graphcot_vla_a_3d_spatial_awar_2025/">GraphCoT-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">GraphCoT-VLAdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_senbaslar_rlss_real_time_decentralized_c_2023/">RLSS：基于线性空间分离的实时去中心化无网络协作多机器人轨迹规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">RLSS：基于线性空间分离的实时去中心化无网络协作多机器人轨迹规划discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lamon_a_unified_architecture_for_dyn_2023/">混合人机团队中动态角色分配与协作任务规划的统一架构</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">混合人机团队中动态角色分配与协作任务规划的统一架构提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hierarchical_vision_language_p_2025/">Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fang_automated_task_updates_of_temp_2022/">异构机器人时序逻辑规范的自动任务更新</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">异构机器人时序逻辑规范的自动任务更新discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hemken_how_to_raise_a_robot_a_case_fo_2023/">如何培养机器人——面向人形辅助机器人约束任务规划的神经符号人工智能案例</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">如何培养机器人——面向人形辅助机器人约束任务规划的神经符号人工智能案例discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_occluding_the_solution_space_p_2026/">Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chae_multi_robot_motion_planning_fr_2026/">基于热启发扩散的视觉语言多机器人运动规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">基于热启发扩散的视觉语言多机器人运动规划提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_to_ball_composing_pol_2025/">Learning to Ball: Composing Policies for Long-Horizon Basketball Moves</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_large_video_planner_enables_ge_2025/">LVP</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">LVPdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_openha_a_series_of_open_source_2025/">OpenHA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">OpenHAdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deng_mqa_answering_the_question_via_2020/">MQA：通过机器人操作回答问题</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">MQA：通过机器人操作回答问题使用任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cabto_context_aware_behavior_t_2026/">CABTO: Context-Aware Behavior Tree Grounding for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_wam_flow_parallel_coarse_to_fi_2025/">WAM-Flow</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">WAM-Flowdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_macktoobian_learning_optimal_topology_for_2023/">面向自组网机器人的最优拓扑学习</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向自组网机器人的最优拓扑学习discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_composite_motion_learning_with_2023/">Composite Motion Learning with Task Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sarkar_planning_robot_motion_using_de_2019/">利用深度视觉预测规划机器人运动</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">利用深度视觉预测规划机器人运动discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_behavior_architecture_for_fa_2024/">A Behavior Architecture for Fast Humanoid Robot Door Traversals</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_saad_coalitional_game_theory_for_co_2009/">通信网络中的联盟博弈论：教程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">通信网络中的联盟博弈论：教程提及任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shree_exploiting_natural_language_fo_2021/">利用自然语言实现高效风险感知多机器人搜索救援规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">利用自然语言实现高效风险感知多机器人搜索救援规划使用任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_structured_4d_latent_predictiv_2026/">Structured 4D Latent Predictive Model for Robot Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">大规模集群的多机器人隐式控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">大规模集群的多机器人隐式控制discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hierarchical_planning_and_cont_2023/">Hierarchical Planning and Control for Box Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_neuro_symbolic_reasoning/">符号-神经混合推理</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">符号-神经混合推理提及任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_neau_grasp_vla_graph_based_symbolic_2025/">GraSP-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">GraSP-VLA提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dualthor_a_dual_arm_humanoid_s_2025/">DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cvpr_2025_oral_tokenhsi_unifie_2025/">CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_saccon_automated_generation_of_mdps_u_2025/">利用逻辑编程与大语言模型自动生成机器人应用中的马尔可夫决策过程</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">利用逻辑编程与大语言模型自动生成机器人应用中的马尔可夫决策过程studies任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mao_robomatrix_a_skill_centric_hie_2024/">RoboMatrix</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">RoboMatrix提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_murai_a_robot_web_for_distributed_ma_2022/">面向分布式多设备定位的机器人网络</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">面向分布式多设备定位的机器人网络discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tang_collaborative_planar_pushing_o_2024/">多机器人在复杂场景中协同推动多面体物体</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">多机器人在复杂场景中协同推动多面体物体discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_a_backbone_for_long_horizon_ro_2024/">面向长程机器人任务理解的骨干框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">面向长程机器人任务理解的骨干框架提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_thinking_in_360_humanoid_visua_2026/">Thinking in 360°: Humanoid Visual Search in the Wild</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_learning_social_navigation_fro_2025/">Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lallement_hatp_an_htn_planner_for_roboti_2014/">HATP：面向机器人学的HTN规划器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">HATP：面向机器人学的HTN规划器提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_instruct2act_mapping_multi_mod_2023/">Instruct2Act</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Instruct2Actdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_armor_egocentric_perception_fo_2024/">ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nomad_goal_masked_diffusion_po_2023/">NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_focusnav_spatial_selective_att_2026/">FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egoactor_grounding_task_planni_2026/">EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_beyond_point_attached_semantic_2026/">Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_greedy_heuristics_for_sampling_2026/">Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_automating_the_design_of_embod_2026/">Automating the Design of Embodied Agent Architectures</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">壁面跟随机器人控制的机器学习算法比较研究</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">壁面跟随机器人控制的机器学习算法比较研究提及任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ldhp_library_driven_hierarchic_2026/">LDHP: Library-Driven Hierarchical Planning for Non-prehensile Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bian_large_language_model_based_tas_2025/">基于大语言模型的服务机器人任务规划：综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">studies</span>
+              <span class="rel-desc">基于大语言模型的服务机器人任务规划：综述studies任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_joint_discovery_of_object_and_2026/">Joint Discovery of Object and Action Symbols through Effect Prediction for Robotic Manipulation Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_websiteembodied_chain_of_actio_2025/">[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dec_marvel_decentralized_multi_2026/">Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">通过验证定位估计改进基于视觉地点识别的机器人导航</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">通过验证定位估计改进基于视觉地点识别的机器人导航discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_corelin_constraint_based_reaso_2026/">CoReLIN: Constraint-based Reasoning for Zero-shot Lifelong Interactive Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chiang_mobility_vla_multimodal_instru_2024/">Mobility VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Mobility VLAdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_team_gemini_robotics_15_pushing_the_2025/">Gemini Robotics 1.5：以高级具身推理、思考和动作迁移推动通才机器人前沿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Gemini Robotics 1.5：以高级具身推理、思考和动作迁移推动通才机器人前沿discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_maniagent_an_agentic_framework_2025/">ManiAgent</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">ManiAgent使用任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_momagen_generating_demonstrati_2025/">MoMaGen</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MoMaGendiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_a_modular_vision_language_acti_2026/">A Modular Vision-Language-Action Robotics Framework for Indoor Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hu_deploying_and_evaluating_llms_2023/">部署与评估用于服务移动机器人编程的大语言模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">部署与评估用于服务移动机器人编程的大语言模型discusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_honig_path_planning_with_kinematic_c_2017/">机器人群组运动学约束路径规划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">机器人群组运动学约束路径规划提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_cot4ad_a_vision_language_actio_2025/">CoT4AD</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">CoT4ADdiscusses任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_being_0_a_humanoid_robotic_age_2025/">Being-0｜具有视觉语言模型和模块化技能的人形机器人智能体</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-desc">Being-0｜具有视觉语言模型和模块化技能的人形机器人智能体提出任务规划。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cortex_a_bidirectionally_align_2026/">Cortex: A Bidirectionally Aligned Embodied Agent Framework for Long-horizon Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使能</span>
+              <span class="rel-desc">Wiki 第20章提取的跨层关系。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_task_planning"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_tang_collaborative_planar_pushing_o_2024/">
+          <span class="entry-type">论文</span>
+          <h3>多机器人在复杂场景中协同推动多面体物体</h3>
+          <p>该2024年arXiv论文提出了一种混合优化框架，使多个移动机器人能够在障碍物密集的复杂环境中协同推动多面体物体，结合了准静态接触模式生成、分层混合搜索和在线非线性模型预测控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ldhp_library_driven_hierarchic_2026/">
+          <span class="entry-type">论文</span>
+          <h3>LDHP: Library-Driven Hierarchical Planning for Non-prehensile Dexterous Manipulation</h3>
+          <p>arXiv:2603.13844v2 Announce Type: replace Abstract: Non-prehensile manipulation is essential for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_neuro_symbolic_reasoning/">
+          <span class="entry-type">方法</span>
+          <h3>符号-神经混合推理</h3>
+          <p>将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tan_roboos_next_a_unified_memory_b_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboOS-NeXT</h3>
+          <p>RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_task_adaptive_design_of_modula_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Task-Adaptive Design of Modular Aerial Manipulators Under Airflow Exposure Constraints</h3>
+          <p>arXiv:2607.09548v1 Announce Type: new Abstract: Aerial manipulation with multirotor platforms…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_thinking_in_360_humanoid_visua_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Thinking in 360°: Humanoid Visual Search in the Wild</h3>
+          <p>Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation for humanoid robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_garg_semantics_for_robotic_mapping_2020/">
+          <span class="entry-type">论文</span>
+          <h3>机器人建图、感知与交互中的语义研究综述</h3>
+          <p>For robots to navigate and interact more richly with the world around them, they will likely require…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_murai_a_robot_web_for_distributed_ma_2022/">
+          <span class="entry-type">论文</span>
+          <h3>面向分布式多设备定位的机器人网络</h3>
+          <p>We show that a distributed network of robots or other devices which make measurements of each other…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_joint_discovery_of_object_and_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Joint Discovery of Object and Action Symbols through Effect Prediction for Robotic Manipulation Planning</h3>
+          <p>arXiv:2607.00031v1 Announce Type: new Abstract: To perform complex manipulation planning, autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chae_multi_robot_motion_planning_fr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>基于热启发扩散的视觉语言多机器人运动规划</h3>
+          <p>语言条件热启发扩散（LHD）是一种端到端视觉语言规划器，仅利用原始RGB图像和自然语言指令生成无碰撞的多机器人轨迹；它通过热方程扩散核将静态避障成本摊入训练阶段，并采用轻量级机器人间引导项实现安全协调…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hemken_how_to_raise_a_robot_a_case_fo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>如何培养机器人——面向人形辅助机器人约束任务规划的神经符号人工智能案例</h3>
+          <p>Humanoid robots will be able to assist humans in their daily life, in particular due to their…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_instruct2act_mapping_multi_mod_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Instruct2Act</h3>
+          <p>Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_saccon_automated_generation_of_mdps_u_2025/">
+          <span class="entry-type">论文</span>
+          <h3>利用逻辑编程与大语言模型自动生成机器人应用中的马尔可夫决策过程</h3>
+          <p>本研究提出一个框架，结合少样本提示的大语言模型、基于Prolog的知识抽取、可达性分析与Storm模型检测器，从自然语言描述的机器人场景中自动生成马尔可夫决策过程及可执行策略。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_taniguchi_autonomous_planning_based_on_s_2021/">
+          <span class="entry-type">论文</span>
+          <h3>基于空间概念的服务机器人家庭整理自主规划</h3>
+          <p>本文提出一种基于似然比的规划方法，从整理后环境的多模态观测中学习三维物品-位置共现分布，使服务机器人能够决定家庭物品的整理顺序和目标位置。该基于ROS的集成系统在模拟环境中复现了WRS 2018…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bian_large_language_model_based_tas_2025/">
+          <span class="entry-type">论文</span>
+          <h3>基于大语言模型的服务机器人任务规划：综述</h3>
+          <p>With the rapid advancement of large language models (LLMs) and robotics, service robots are…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_deploying_and_evaluating_llms_2023/">
+          <span class="entry-type">论文</span>
+          <h3>部署与评估用于服务移动机器人编程的大语言模型</h3>
+          <p>提出 CODEBOTLER，一个开源且与机器人无关的工具，通过少样本提示大语言模型，使用基于技能抽象的 Python 嵌入式领域特定语言为服务移动机器人生成程序；并提出…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shree_exploiting_natural_language_fo_2021/">
+          <span class="entry-type">论文</span>
+          <h3>利用自然语言实现高效风险感知多机器人搜索救援规划</h3>
+          <p>本文在合成灾难图像-描述数据集上微调ViLBERT视觉-语言模型，根据自然语言指令和机器人图像估计场景危险程度，并将危险估计嵌入到分布式风险感知混合整数线性规划多机器人搜索救援路径规划中。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kottinger_maps_x_explainable_multi_robot_2021/">
+          <span class="entry-type">论文</span>
+          <h3>MAPS-X：基于轨迹分段的可解释多机器人运动规划</h3>
+          <p>Traditional multi-robot motion planning (MMP) focuses on computing trajectories for multiple robots…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jenamani_robotic_motion_planning_using_2020/">
+          <span class="entry-type">论文</span>
+          <h3>基于学习临界源与局部采样的机器人运动规划</h3>
+          <p>提出GenerateCriticalSources、LCS-RRT与CS-RRT方法：以核对低分辨率占用栅格进行预处理，训练条件变分自编码器（LEGO-Global）为每个瓶颈区域生成一个临界源，再通…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_momagen_generating_demonstrati_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MoMaGen</h3>
+          <p>MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_schneider_ce_mrs_contrastive_explanation_2024/">
+          <span class="entry-type">论文</span>
+          <h3>CE-MRS：多机器人系统的对比解释</h3>
+          <p>As the complexity of multi-robot systems grows to incorporate a greater number of robots, more…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_graphcot_vla_a_3d_spatial_awar_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GraphCoT-VLA</h3>
+          <p>GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for Robotic Manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_composite_motion_learning_with_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Composite Motion Learning with Task Control</h3>
+          <p>Composite Motion Learning with Task Control is a 2023 work on physics-based character animation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_saad_coalitional_game_theory_for_co_2009/">
+          <span class="entry-type">论文</span>
+          <h3>通信网络中的联盟博弈论：教程</h3>
+          <p>Game theoretical techniques have recently become prevalent in many engineering applications, notably…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nomad_goal_masked_diffusion_po_2023/">
+          <span class="entry-type">论文</span>
+          <h3>NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration</h3>
+          <p>NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023 work on navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_intention_inferring_tendencies_2025/">
+          <span class="entry-type">论文</span>
+          <h3>INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM</h3>
+          <p>INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deng_mqa_answering_the_question_via_2020/">
+          <span class="entry-type">论文</span>
+          <h3>MQA：通过机器人操作回答问题</h3>
+          <p>提出操作问答（MQA）任务：机器人通过在杂乱料箱中主动推动物体来改变场景，直到能够回答自然语言计数问题；框架包含基于视觉问答（VQA）的问答模块和基于深度Q网络（DQN）的操作模块。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_collaborative_navigation_and_m_2022/">
+          <span class="entry-type">论文</span>
+          <h3>多四足机器人协同牵引缆绳负载的导航与操作</h3>
+          <p>This paper tackles the problem of robots collaboratively towing a load with cables to a specified…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_openha_a_series_of_open_source_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenHA</h3>
+          <p>OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft (OpenHA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_automating_the_design_of_embod_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Automating the Design of Embodied Agent Architectures</h3>
+          <p>arXiv:2606.30111v2 Announce Type: replace Abstract: Embodied agents are typically built as…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_modular_vision_language_acti_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Modular Vision-Language-Action Robotics Framework for Indoor Environments</h3>
+          <p>arXiv:2606.31144v1 Announce Type: new Abstract: This paper presents an integrated system for the CMU…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_cot4ad_a_vision_language_actio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CoT4AD</h3>
+          <p>CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_enhancing_the_llm_based_robot_2024/">
+          <span class="entry-type">论文</span>
+          <h3>通过人机协作增强基于大语言模型的机器人操作</h3>
+          <p>Large Language Models (LLMs) are gaining popularity in the field of robotics. However, LLM-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_human_like_badminton_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Human-Like Badminton Skills for Humanoid Robots</h3>
+          <p>Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lu_uniugp_unifying_understanding_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UniUGP</h3>
+          <p>UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving (UniUGP),…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fang_automated_task_updates_of_temp_2022/">
+          <span class="entry-type">论文</span>
+          <h3>异构机器人时序逻辑规范的自动任务更新</h3>
+          <p>本文针对执行现有线性时序逻辑（LTL）任务的异构机器人定义了任务更新问题，并提出了一种框架：通过将剩余当前任务 Büchi 自动机与新任务 Büchi…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reinforcegen_hybrid_skill_poli_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ReinforceGen: Hybrid Skill Policies with Automated Data Generation and Reinforcement Learning</h3>
+          <p>arXiv:2512.16861v2 Announce Type: replace Abstract: Long-horizon manipulation has been a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_honig_path_planning_with_kinematic_c_2017/">
+          <span class="entry-type">论文</span>
+          <h3>机器人群组运动学约束路径规划</h3>
+          <p>Path planning for multiple robots is well studied in the AI and robotics communities. For a given…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ace_agentic_control_for_embodi_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ACE: Agentic Control for Embodied Manipulation via Zero-shot Workflow Reasoning</h3>
+          <p>arXiv:2607.04162v1 Announce Type: new Abstract: Open-ended tabletop manipulation requires agents to…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egoactor_grounding_task_planni_2026/">
+          <span class="entry-type">论文</span>
+          <h3>EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models</h3>
+          <p>EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_category_level_last_m_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</h3>
+          <p>arXiv:2512.11173v4 Announce Type: replace Abstract: Achieving precise positioning of the mobile…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_neau_grasp_vla_graph_based_symbolic_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GraSP-VLA</h3>
+          <p>GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning with VLA Policies…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_uni_navid_a_video_based_vision_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Uni-NaVid</h3>
+          <p>Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_to_ball_composing_pol_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning to Ball: Composing Policies for Long-Horizon Basketball Moves</h3>
+          <p>Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hierarchical_vision_language_p_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation</h3>
+          <p>Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_beyond_point_attached_semantic_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation</h3>
+          <p>arXiv:2607.03163v1 Announce Type: new Abstract: Generalizable robot manipulation requires stable 3D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chiang_mobility_vla_multimodal_instru_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Mobility VLA</h3>
+          <p>Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_task_and_motion_planning_for_h_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Task and Motion Planning for Humanoid Loco-manipulation</h3>
+          <p>Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lin_onetwovla_a_unified_vision_lan_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OneTwoVLA</h3>
+          <p>OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning (OneTwoVLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_macktoobian_learning_optimal_topology_for_2023/">
+          <span class="entry-type">论文</span>
+          <h3>面向自组网机器人的最优拓扑学习</h3>
+          <p>In this paper, we synthesize a data-driven method to predict the optimal topology of an ad-hoc robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robocycle_autonomous_dual_arm_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications</h3>
+          <p>arXiv:2607.03616v1 Announce Type: new Abstract: As urban waste volumes escalate and labor shortages…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dualthor_a_dual_arm_humanoid_s_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning</h3>
+          <p>DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yao_3d_visual_illusion_depth_estim_2025/">
+          <span class="entry-type">论文</span>
+          <h3>三维视觉错觉深度估计</h3>
+          <p>本文揭示最先进的单目、双目和多视角深度估计模型会被三维视觉错觉严重误导，并提出一种利用视觉语言模型常识推理自适应融合单目与双目深度线索的框架。作者引入了包含近3K场景和200K图像的3D-Visual…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lamon_a_unified_architecture_for_dyn_2023/">
+          <span class="entry-type">论文</span>
+          <h3>混合人机团队中动态角色分配与协作任务规划的统一架构</h3>
+          <p>The growing deployment of human-robot collaborative processes in several industrial applications,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_vlm_see_robot_do_human_demo_vi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SeeDo</h3>
+          <p>VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model (SeeDo), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mosaic_skill_centric_manipulat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MOSAIC: Skill-Centric Manipulation Planning with Physics Simulation</h3>
+          <p>arXiv:2504.16738v3 Announce Type: replace Abstract: Planning long-horizon manipulation motions using…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cvpr_2025_oral_tokenhsi_unifie_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization</h3>
+          <p>CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_aerial_manipulation_contact_me_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Aerial Manipulation: Contact, Medium Coupling, and the Geometry of Readiness</h3>
+          <p>arXiv:2607.04719v1 Announce Type: new Abstract: Aerial robots are increasingly moving from remote…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_armor_egocentric_perception_fo_2024/">
+          <span class="entry-type">论文</span>
+          <h3>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning</h3>
+          <p>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jamieson_active_reward_learning_for_co_2020/">
+          <span class="entry-type">论文</span>
+          <h3>带宽受限环境下协同机器人视觉探索的主动奖励学习</h3>
+          <p>一种基于POMDP的自主视觉探索框架，利用后悔最小化的主动奖励学习来决定带宽受限机器人何时查询人类操作员，并在合成Voronoi主题图和珊瑚礁照片镶嵌图上进行了评估。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sebastian_multi_robot_implicit_control_o_2022/">
+          <span class="entry-type">论文</span>
+          <h3>大规模集群的多机器人隐式控制</h3>
+          <p>This paper solves the problem of herding countless evaders by means of a few robots. The objective…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robostriker_hierarchical_decis_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing</h3>
+          <p>RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing is a 2026 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lai_roboballet_planning_for_multi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划</h3>
+          <p>RoboBallet 通过深度强化学习训练图神经网络策略，在共享的、充满障碍的工作单元中联合为多台机器人分配任务、调度并规划无碰撞运动，展现出对未见过布局的零样本泛化能力与实时推理能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_walker_desiderata_for_planning_system_2019/">
+          <span class="entry-type">论文</span>
+          <h3>通用服务机器人规划系统的期望特性</h3>
+          <p>General-purpose service robots are expected to undertake a broad range of tasks at the request of…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_large_video_planner_enables_ge_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LVP</h3>
+          <p>Large Video Planner Enables Generalizable Robot Control (LVP), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dec_marvel_decentralized_multi_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints</h3>
+          <p>arXiv:2607.09060v1 Announce Type: new Abstract: Multi-UAV exploration is often constrained by…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cabto_context_aware_behavior_t_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CABTO: Context-Aware Behavior Tree Grounding for Robot Manipulation</h3>
+          <p>arXiv:2603.16809v2 Announce Type: replace Abstract: Behavior Trees (BTs) offer a powerful paradigm…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_suriani_play_everywhere_a_temporal_log_2024/">
+          <span class="entry-type">论文</span>
+          <h3>随处可玩：一种基于时序逻辑的游戏环境无关机器人足球方法</h3>
+          <p>Robots playing soccer often rely on hard-coded behaviors that struggle to generalize when the game…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vinanzi_casper_cognitive_architecture_2022/">
+          <span class="entry-type">论文</span>
+          <h3>CASPER：面向机器人社会感知与参与的认知架构</h3>
+          <p>CASPER是一个符号化认知架构，利用定性空间关系识别低层动作、推断高层目标，并为社交机器人生成协作辅助计划。作者在Webots厨房仿真环境中使用TIAGo++机器人进行评估，结果表明机器人能够预测人…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_maniagent_an_agentic_framework_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ManiAgent</h3>
+          <p>ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_claxton_improving_visual_place_recogni_2024/">
+          <span class="entry-type">论文</span>
+          <h3>通过验证定位估计改进基于视觉地点识别的机器人导航</h3>
+          <p>本文提出了一种用于视觉地点识别（VPR）的多层感知器（MLP）完整性监控器，将匹配分类为容差内或容差外，并将其集成到两种实时机器人导航方法中，在室内和室外环境中使用Clearpath…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hammad_a_comparative_study_on_machine_2019/">
+          <span class="entry-type">论文</span>
+          <h3>壁面跟随机器人控制的机器学习算法比较研究</h3>
+          <p>这篇2019年ROBIO论文使用UCI壁面跟随机器人导航数据集的24、4和2传感器格式，比较了经典机器学习和深度学习分类器在预测壁面跟随机器人方向上的性能，其中决策树在简化格式上达到100%平均准确率…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_joglekar_towards_natural_language_drive_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Natural Language-Driven Assembly Using Foundation Models</h3>
+          <p>Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural Language-Driven…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_corelin_constraint_based_reaso_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CoReLIN: Constraint-based Reasoning for Zero-shot Lifelong Interactive Navigation</h3>
+          <p>arXiv:2602.20055v2 Announce Type: replace Abstract: Robot navigation typically assumes an…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_wam_flow_parallel_coarse_to_fi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>WAM-Flow</h3>
+          <p>WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_being_0_a_humanoid_robotic_age_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Being-0｜具有视觉语言模型和模块化技能的人形机器人智能体</h3>
+          <p>Being-0 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tafrishi_a_novel_assistive_controller_b_2022/">
+          <span class="entry-type">论文</span>
+          <h3>面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器</h3>
+          <p>本2022年arXiv论文提出了一种基于微分几何的辅助控制器，仅利用操纵杆输入和当前车辆状态，帮助用户操控差动轮式移动机器人（尤其是电动轮椅），无需预先指定期望状态。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_3d_affordances_for_bl_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning 3D Affordances for Blade Insertion in Cluttered Stowing</h3>
+          <p>arXiv:2607.02549v1 Announce Type: cross Abstract: Many manipulation tasks require reasoning about…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lallement_hatp_an_htn_planner_for_roboti_2014/">
+          <span class="entry-type">论文</span>
+          <h3>HATP：面向机器人学的HTN规划器</h3>
+          <p>HATP是一个面向机器人学的层次任务网络规划框架，引入了以智能体为中心的领域语言、基于社会规则的计划过滤、用户自定义代价函数，以及在三維环境中验证的符号-几何交错规划。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hierarchical_planning_and_cont_2023/">
+          <span class="entry-type">论文</span>
+          <h3>Hierarchical Planning and Control for Box Loco-Manipulation</h3>
+          <p>Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_a_backbone_for_long_horizon_ro_2024/">
+          <span class="entry-type">论文</span>
+          <h3>面向长程机器人任务理解的骨干框架</h3>
+          <p>本文提出基于动素（Therblig）的骨干框架TBBF，将长程机器人操作任务离线分解为基本动素单元，并通过动作注册与大语言模型引导的视觉校正在线将轨迹迁移到新场景。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_senbaslar_rlss_real_time_decentralized_c_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RLSS：基于线性空间分离的实时去中心化无网络协作多机器人轨迹规划</h3>
+          <p>Trajectory planning for multiple robots in shared environments is a challenging problem especially…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_codex_learning_compositional_d_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CoDex: Learning Compositional Dexterous Functional Manipulation without Demonstrations</h3>
+          <p>arXiv:2606.31909v1 Announce Type: new Abstract: In this work, we study Compositional Dexterous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_thinking_in_360_humanoid_visua_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Thinking in 360: Humanoid Visual Search in the Wild</h3>
+          <p>Thinking in 360: Humanoid Visual Search in the Wild is a 2025 work on navigation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_structured_4d_latent_predictiv_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Structured 4D Latent Predictive Model for Robot Planning</h3>
+          <p>arXiv:2607.01166v1 Announce Type: new Abstract: Video predictive models are emerging as a powerful…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_greedy_heuristics_for_sampling_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Greedy Heuristics for Sampling-Based Motion Planning in High-Dimensional State Spaces</h3>
+          <p>arXiv:2405.03411v4 Announce Type: replace Abstract: Informed sampling techniques accelerate the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_team_gemini_robotics_15_pushing_the_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Gemini Robotics 1.5：以高级具身推理、思考和动作迁移推动通才机器人前沿</h3>
+          <p>Gemini Robotics 1.5 提出了一个具备动作迁移能力的多本体视觉-语言-动作模型，以及将动作与自然语言推理交织的 Thinking VLA，并配套 Gemini Robotics-ER…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pellier_hddl_21_towards_defining_a_for_2023/">
+          <span class="entry-type">论文</span>
+          <h3>HDDL 2.1：面向时序HTN规划的形式化与语义定义</h3>
+          <p>提出一种 lifted 时序 HTN 规划形式化及执行语义，通过借鉴 PDDL 2.1 与 ANML，将 HDDL 扩展为支持持续动作、时序任务网络与分解约束。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mao_robomatrix_a_skill_centric_hie_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RoboMatrix</h3>
+          <p>RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task Planning and Execution in…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cortex_a_bidirectionally_align_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Cortex: A Bidirectionally Aligned Embodied Agent Framework for Long-horizon Manipulation</h3>
+          <p>arXiv:2607.05377v1 Announce Type: new Abstract: While recent Vision-Language-Action (VLA) models…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_focusnav_spatial_selective_att_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation</h3>
+          <p>FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation is a 2026…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_websiteembodied_chain_of_actio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation</h3>
+          <p>[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_social_navigation_fro_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications</h3>
+          <p>Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_occluding_the_solution_space_p_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Occluding the Solution Space: Planner-Agnostic Adversarial Attacks on Tolerance-Aware Manipulation</h3>
+          <p>arXiv:2607.03758v1 Announce Type: new Abstract: Adversarial attacks on motion planning are crucial…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sarkar_planning_robot_motion_using_de_2019/">
+          <span class="entry-type">论文</span>
+          <h3>利用深度视觉预测规划机器人运动</h3>
+          <p>提出了PROM-Net，一种轻量级无监督编码器-解码器卷积LSTM网络，可从原始视频预测多达10帧未来画面，并建议将这些预测集成到模型预测控制器中，用于动态环境中的机器人运动规划。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_behavior_architecture_for_fa_2024/">
+          <span class="entry-type">论文</span>
+          <h3>A Behavior Architecture for Fast Humanoid Robot Door Traversals</h3>
+          <p>A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work on loco-manipulation…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#_2">任务规划的定义与定位</a></li>
+<li><a href="#_3">任务规划的数学与原理基础</a></li>
+<li><a href="#_4">算法步骤与实现要点</a></li>
+<li><a href="#_5">典型应用与局限性</a></li>
+<li><a href="#_6">相关标签</a></li>
+<li><a href="#_7">在人形机器人系统中的作用</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

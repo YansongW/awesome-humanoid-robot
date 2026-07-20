@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>자율주행 차량의 협력 주행을 위한 ROS2-DDS 미들웨어 구현체의 성능 평가 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">자율주행 차량의 협력 주행을 위한 ROS2-DDS 미들웨어 구현체의 성능 평가</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>자율주행 차량의 협력 주행을 위한 ROS2-DDS 미들웨어 구현체의 성능 평가</h1>
+      <p class="entry-name-en">Performance Evaluation of ROS2-DDS middleware implementations facilitating Cooperative Driving in Autonomous Vehicle</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">소프트웨어 미들웨어</span><span class="tag">평가 및 벤치마크</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.07485v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 이종 물리적 장치와 다양한 데이터 유형을 사용하여 Eclipse Cyclone DDS, eProsima Fast-DDS, RTI Connext DDS의 동일 도메인 및 교차 도메인 ROS2-DDS 통신 지연 시간을 실증적으로 평가한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2412.07485" target="_blank" rel="noopener">Performance Evaluation of ROS2-DDS middleware implementations facilitating Cooperative Driving in Autonomous Vehicle</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>자율주행차 및 자율주행 패러다임에서, 차량 간 무선 통신을 통한 협력적 인식 또는 센서 정보 교환은 새로운 차원을 더했습니다. 일반적으로 자율주행차는 기능 안전성으로 인해 실시간, 고신뢰성 센서 입력을 요구하는 특수한 유형의 로봇입니다. 자율주행차는 주행 결정을 내리고 주변 차량과 공유하기 위해 다양한 요구 센서 데이터를 제공하는 상당한 수의 센서를 장착하고 있습니다. ROS2에서 통신 미들웨어로 Data Distribution Service(DDS)를 포함한 것은 신뢰할 수 있는 실시간 분산 시스템으로서의 잠재적 능력을 입증했습니다. DDS에는 도메인이라고 알려진 범위 지정 메커니즘이 있습니다. ROS2 프로세스가 시작될 때마다 DDS 참가자가 생성됩니다. 단일 도메인에서 허용되는 참가자 수에는 제한이 있다는 점에 유의하는 것이 중요합니다. 차량 내 다수의 센서와 해당 메시지를 효율적으로 처리하려면 단일 차량에서 여러 ROS2 노드를 사용해야 합니다. 또한, 협력적 인식 패러다임에서 차량이 단일 ROS2 노드로 기능할 때 상당한 수의 ROS2 노드가 필요할 수 있습니다. 이러한 ROS2 노드는 DDS 참가자 제한으로 인해 단일 도메인의 일부가 될 수 없으므로, 서로 다른 도메인 간 통신은 불가피합니다. 더욱이, 다양한 벤더별 DDS 구현이 있으며, 각 벤더는 자체 구성을 가지고 있어 ROS2 노드 간의 필연적인 통신 촉매제 역할을 합니다. 차량, 로봇 또는 ROS2 노드 간의 통신은 벤더별 구성, 데이터 유형, 데이터 크기 및 미들웨어로 사용되는 DDS 구현에 직접적으로 의존합니다. 본 연구에서는 다양한 센서 데이터 유형에 대한 다양한 벤더별 DDS 구현의 서로 다른 도메인 통신의 한계, 기능 및 전망을 평가하고 조사합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>자율주행차 및 자율주행 패러다임에서, 차량 간 무선 통신을 통한 협력적 인식 또는 센서 정보 교환은 새로운 차원을 더했습니다. 일반적으로 자율주행차는 기능 안전성으로 인해 실시간, 고신뢰성 센서 입력을 요구하는 특수한 유형의 로봇입니다. 자율주행차는 주행 결정을 내리고 주변 차량과 공유하기 위해 다양한 요구 센서 데이터를 제공하는 상당한 수의 센서를 장착하고 있습니다. ROS2에서 통신 미들웨어로 Data Distribution Service(DDS)를 포함한 것은 신뢰할 수 있는 실시간 분산 시스템으로서의 잠재적 능력을 입증했습니다. DDS에는 도메인이라고 알려진 범위 지정 메커니즘이 있습니다. ROS2 프로세스가 시작될 때마다 DDS 참가자가 생성됩니다. 단일 도메인에서 허용되는 참가자 수에는 제한이 있다는 점에 유의하는 것이 중요합니다. 차량 내 다수의 센서와 해당 메시지를 효율적으로 처리하려면 단일 차량에서 여러 ROS2 노드를 사용해야 합니다. 또한, 협력적 인식 패러다임에서 차량이 단일 ROS2 노드로 기능할 때 상당한 수의 ROS2 노드가 필요할 수 있습니다. 이러한 ROS2 노드는 DDS 참가자 제한으로 인해 단일 도메인의 일부가 될 수 없으므로, 서로 다른 도메인 간 통신은 불가피합니다. 더욱이, 다양한 벤더별 DDS 구현이 있으며, 각 벤더는 자체 구성을 가지고 있어 ROS2 노드 간의 필연적인 통신 촉매제 역할을 합니다. 차량, 로봇 또는 ROS2 노드 간의 통신은 벤더별 구성, 데이터 유형, 데이터 크기 및 미들웨어로 사용되는 DDS 구현에 직접적으로 의존합니다. 본 연구에서는 다양한 센서 데이터 유형에 대한 다양한 벤더별 DDS 구현의 서로 다른 도메인 통신의 한계, 기능 및 전망을 평가하고 조사합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_ros_2_middleware_2024/">ROS 2 미들웨어</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p14_1_2/">实时控制框架</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p14_3_2/">软硬件在环测试（HIL/SIL）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_paul_performance_evaluation_of_ros2_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>ROS 2 미들웨어</h3>
+          <p>DDS 기반 pub/sub 및 실시간 지원을 갖춘 사실상의 로봇 미들웨어.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p14_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>软硬件在环测试（HIL/SIL）</h3>
+          <p>HIL/SIL 测试报告、关键用例 100% 覆盖</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p14_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>实时控制框架</h3>
+          <p>实时性能测试报告、最大抖动 &lt; 目标</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

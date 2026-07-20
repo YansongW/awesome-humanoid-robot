@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>灵巧手选型/设计与集成（Dexterous Hand） · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">灵巧手选型/设计与集成（Dexterous Hand）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>灵巧手选型/设计与集成（Dexterous Hand）</h1>
+      <p class="entry-name-en">Dexterous Hand Selection/Design and Integration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>灵巧手选型/设计与集成（Dexterous Hand）</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>덱스터러스 핸드(Dexterous Hand) 선정/설계 및 통합은 휴머노이드 로봇 제품 개발 전 과정 중 11번째 단계이며, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>이 단계는 입력 정리, 설계 방안, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포괄하며, 하위 의존 부서가 적격한 입력을 확보할 수 있도록 하는 핵심 지점입니다.</p>
+<h2 id="_3">주요 하위 작업 및 기술 내용</h2>
+<h4 id="_4">손 구조 및 구동</h4>
+<h5 id="dof">손 DOF 및 기능 정의</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 작업 분석, 파지 분류, 생체 모방 비교</li>
+<li><strong>설계 사고 논리</strong>: 엄지 맞섬, 손가락 굴곡/외전; 대상 물체에 따라 완전 자유도 또는 저구동 결정</li>
+<li><strong>핵심 제약 조건</strong>: 무게, 부피, 케이블 수량, 비용</li>
+<li><strong>완료 기준 / 산출물</strong>: 《손 사양서》: DOF, 관절 범위, 손끝 힘, 파지 유형 범위
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P11.1.1.1 입력 정리 및 목표 정량화</strong>: 「손 DOF 및 기능 정의」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P11.1.1.2 방안/방법 설계</strong>: 「손 DOF 및 기능 정의」에 대한 구현 방법 또는 후보 방안을 수립하고, 「작업 분석, 파지 분류, 생체 모방 비교」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>2개 이상의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P11.1.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「손 DOF 및 기능 정의」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P11.1.1.4 검증 및 문제 폐쇄</strong>: 「손 DOF 및 기능 정의」 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P11.1.1.5 문서 출력 및 하위 인도</strong>: 「손 DOF 및 기능 정의」 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 완료 및 버전 관리</li>
+<li>게시 및 하위 의존 부서 통지</li>
+</ul>
+<h5 id="_5">구동 및 전동 방안</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 텐던 구동, 초소형 모터 직접 구동, 링크 구동, 유압/공압 비교</li>
+<li><strong>설계 사고 논리</strong>: 텐던은 부피가 작지만 복잡함; 직접 구동은 유지보수가 쉽지만 부피가 큼; 저구동은 비용 절감</li>
+<li><strong>핵심 제약 조건</strong>: 신뢰성, 유지보수성, 백래시, 힘 제어 정밀도</li>
+<li><strong>완료 기준 / 산출물</strong>: 구동 방안 결정 보고서, 전동 체인 도면
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P11.1.2.1 입력 정리 및 목표 정량화</strong>: 「구동 및 전동 방안」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P11.1.2.2 방안/방법 설계</strong>: 「구동 및 전동 방안」에 대한 구현 방법 또는 후보 방안을 수립하고, 「텐던 구동, 초소형 모터 직접 구동, 링크 구동, 유압/공압 비교」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>2개 이상의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P11.1.2.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「구동 및 전동 방안」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P11.1.2.4 검증 및 문제 폐쇄</strong>: 「구동 및 전동 방안」 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P11.1.2.5 문서 출력 및 하위 인도</strong>: 「구동 및 전동 방안」 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 완료 및 버전 관리</li>
+<li>게시 및 하위 의존 부서 통지</li>
+</ul>
+<h5 id="_6">촉각 및 힘 센서 통합</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 배열 촉각, 손끝 6축 힘, 관절 토크, 미끄러짐 감지</li>
+<li><strong>설계 사고 논리</strong>: 정밀 조작은 촉각 피드백에 의존; 힘 제어는 안전 보장</li>
+<li><strong>핵심 제약 조건</strong>: 배선, 신호 처리, 비용, 공간</li>
+<li><strong>완료 기준 / 산출물</strong>: 센서 배치 방안, 신호 처리 체인, 교정 방법
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P11.1.3.1 입력 정리 및 목표 정량화</strong>: 「촉각 및 힘 센서 통합」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P11.1.3.2 인터페이스 및 통합 전략 설계</strong>: 「촉각 및 힘 센서 통합」과 관련된 하위 시스템 인터페이스, 데이터 흐름 및 타이밍을 정리하고, 통합 순서, 롤백 전략 및 예외 처리 메커니즘을 수립합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>2개 이상의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P11.1.3.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「촉각 및 힘 센서 통합」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P11.1.3.4 검증 및 문제 폐쇄</strong>: 「촉각 및 힘 센서 통합」 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P11.1.3.5 문서 출력 및 하위 인도</strong>: 「촉각 및 힘 센서 통합」 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 완료 및 버전 관리</li>
+<li>게시 및 하위 의존 부서 통지</li>
+</ul>
+<h4 id="_7">파지 계획 및 제어 통합</h4>
+<h5 id="_8">파지 자세 생성 및 힘 폐쇄 분석</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: GraspIt / OpenRAVE, 힘 폐쇄 판별, 대항 파지</li>
+<li><strong>설계 사고 논리</strong>: 물체 모델 또는 포인트 클라우드 기반 안정적인 파지 생성; 포위 파지 및 정밀 집게 파지 지원</li>
+<li><strong>핵심 제약 조건</strong>: 실시간성, 물체 다양성, 모델 불확실성</li>
+<li><strong>완료 기준 / 산출물</strong>: 파지 라이브러리/전략, 대표 물체 성공률 &gt; 목표
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P11.2.1.1 입력 정리 및 목표 정량화</strong>: 「파지 자세 생성 및 힘 폐쇄 분석」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P11.2.1.2 방안/방법 설계</strong>: 「파지 자세 생성 및 힘 폐쇄 분석」에 대한 구현 방법 또는 후보 방안을 수립하고, 「GraspIt / OpenRAVE, 힘 폐쇄 판별, 대항 파지」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>2개 이상의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P11.2.1.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「파지 자세 생성 및 힘 폐쇄 분석」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P11.2.1.4 검증 및 문제 폐쇄</strong>: 「파지 자세 생성 및 힘 폐쇄 분석」 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P11.2.1.5 문서 출력 및 하위 인도</strong>: 「파지 자세 생성 및 힘 폐쇄 분석」 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 완료 및 버전 관리</li>
+<li>게시 및 하위 의존 부서 통지</li>
+</ul>
+<h5 id="_9">손가락 임피던스 및 힘 제어</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 관절/손끝 임피던스 제어, 어드미턴스 제어, 힘-위치 혼합</li>
+<li><strong>설계 사고 논리</strong>: 유연한 파지 구현, 물체 또는 손가락 손상 방지</li>
+<li><strong>핵심 제약 조건</strong>: 대역폭, 안정성, 센서 노이즈</li>
+<li><strong>완료 기준 / 산출물</strong>: 힘 제어 실험 데이터, 취약 물체 파지 영상
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P11.2.2.1 입력 정리 및 목표 정량화</strong>: 「손가락 임피던스 및 힘 제어」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P11.2.2.2 방안/방법 설계</strong>: 「손가락 임피던스 및 힘 제어」에 대한 구현 방법 또는 후보 방안을 수립하고, 「관절/손끝 임피던스 제어, 어드미턴스 제어, 힘-위치 혼합」을 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>2개 이상의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P11.2.2.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「손가락 임피던스 및 힘 제어」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P11.2.2.4 검증 및 문제 폐쇄</strong>: 「손가락 임피던스 및 힘 제어」 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P11.2.2.5 문서 출력 및 하위 인도</strong>: 「손가락 임피던스 및 힘 제어」 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 완료 및 버전 관리</li>
+<li>게시 및 하위 의존 부서 통지</li>
+</ul>
+<h5 id="-">팔 통합 및 손-눈 보정</h5>
+<ul>
+<li><strong>방법 / 도구</strong>: 손목 인터페이스 설계, 손-눈 보정, 케이블 관리, 공동 제어</li>
+<li><strong>설계 사고 논리</strong>: 손목은 손과 팔의 인터페이스로서 하중, 통신, 열 관리를 고려해야 함</li>
+<li><strong>핵심 제약 조건</strong>: 손목 자유도, 배선, 보정 정밀도</li>
+<li><strong>완료 기준 / 산출물</strong>: 통합 테스트 보고서, 손-눈 보정 오차 &lt; 목표
+<strong>3레벨 하위 작업:</strong></li>
+<li><strong>P11.2.3.1 입력 정리 및 목표 정량화</strong>: 「팔 통합 및 손-눈 보정」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모든 상위 입력 목록을 작성하고 버전을 확인</li>
+<li>검수 기준을 정량화 가능한 KPI로 전환</li>
+<li>작업 Owner, 시간 노드 및 위험 등록부 구축</li>
+<li><strong>P11.2.3.2 인터페이스 및 통합 전략 설계</strong>: 「팔 통합 및 손-눈 보정」과 관련된 하위 시스템 인터페이스, 데이터 흐름 및 타이밍을 정리하고, 통합 순서, 롤백 전략 및 예외 처리 메커니즘을 수립합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>2개 이상의 후보 방안 도출</li>
+<li>평가 매트릭스 구축 및 정량적 점수 부여</li>
+<li>검토 조직 및 방안 확정</li>
+<li><strong>P11.2.3.3 구현/프로토타입/시제품 제작</strong>: 설계 방안에 따라 「팔 통합 및 손-눈 보정」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>모델/시제품 구축 및 핵심 파라미터 기록</li>
+<li>시뮬레이션 또는 프로토타입 검증 수행</li>
+<li>이상 및 편차 기록</li>
+<li><strong>P11.2.3.4 검증 및 문제 폐쇄</strong>: 「팔 통합 및 손-눈 보정」 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료까지 추적합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>테스트/검토 계획 및 통과 기준 수립</li>
+<li>테스트 수행 및 원시 데이터 기록</li>
+<li>문제 목록 및 개선 조치 출력</li>
+<li><strong>P11.2.3.5 문서 출력 및 하위 인도</strong>: 「팔 통합 및 손-눈 보정」 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+<strong>4레벨 핵심 동작:</strong></li>
+<li>템플릿에 따라 문서 작성 및 원시 데이터 인용</li>
+<li>내부 검토 완료 및 버전 관리</li>
+<li>게시 및 하위 의존 부서 통지</li>
+</ul>
+<h2 id="_10">완료 기준</h2>
+<p>본 단계의 모든 3레벨 하위 작업이 검수 검토를 통과하고, 핵심 산출물 버전이 관리되어 하위 의존 부서에 공식적으로 인도됩니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p11_1_3/">触觉与力觉传感器集成</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p11_2_3/">与手臂集成与手眼标定</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-desc">P11 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p11_2_1/">抓取姿态生成与力闭合分析</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_force_closure/">힘 폐쇄</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">필요</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p10/">运动控制算法开发与验证（Motion Control）</a>
+              <span class="rel-desc">P11 依赖 P10 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">develops</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_dexterous_hand_2024/">민첩한 손</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p11_1_1/">手部 DOF 与功能定义</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p11_1_3/">触觉与力觉传感器集成</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p11_2_1/">抓取姿态生成与力闭合分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p12/">VLA / WAM / AI 算法集成（AI &amp; Perception）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P12 依赖 P11 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p11_1_1/">手部 DOF 与功能定义</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p11_2_3/">与手臂集成与手眼标定</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p11_1_2/">驱动与传动方案</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p15/">整机集成与验证测试（Integration &amp; V&amp;V）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">필요</span>
+              <span class="rel-desc">P15 依赖 P11 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p11_2_2/">手指阻抗与力控</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">일부</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p11"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_force_closure/">
+          <span class="entry-type">원리</span>
+          <h3>힘 폐쇄</h3>
+          <p>접촉 구성을 변경하지 않고 접촉력이 물체의 임의 외력 렌치를 평형시킬 수 있는 그래프 조건.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10/">
+          <span class="entry-type">방법</span>
+          <h3>运动控制算法开发与验证（Motion Control）</h3>
+          <p>运动控制算法开发与验证（Motion Control）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p3/">
+          <span class="entry-type">방법</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p11_2_1/">
+          <span class="entry-type">방법</span>
+          <h3>抓取姿态生成与力闭合分析</h3>
+          <p>抓取库/策略、典型物体成功率 &gt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p11_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>手部 DOF 与功能定义</h3>
+          <p>《手部规格书》：DOF、关节范围、指尖力、抓取类型覆盖</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p11_1_3/">
+          <span class="entry-type">방법</span>
+          <h3>触觉与力觉传感器集成</h3>
+          <p>传感器布置方案、信号处理链、标定方法</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p11_2_3/">
+          <span class="entry-type">방법</span>
+          <h3>与手臂集成与手眼标定</h3>
+          <p>集成测试报告、手眼标定误差 &lt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_dexterous_hand_2024/">
+          <span class="entry-type">부품</span>
+          <h3>민첩한 손</h3>
+          <p>인간과 유사한 파지 및 손 안에서의 조작을 위해 설계된 독립적인 관절 제어가 가능한 다지 로봇 엔드 이펙터.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p12/">
+          <span class="entry-type">방법</span>
+          <h3>VLA / WAM / AI 算法集成（AI &amp; Perception）</h3>
+          <p>VLA / WAM / AI 算法集成（AI &amp; Perception）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p11_1_2/">
+          <span class="entry-type">방법</span>
+          <h3>驱动与传动方案</h3>
+          <p>驱动方案决策报告、传动链图纸</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p15/">
+          <span class="entry-type">방법</span>
+          <h3>整机集成与验证测试（Integration &amp; V&amp;V）</h3>
+          <p>整机集成与验证测试（Integration &amp; V&amp;V）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p11_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>手指阻抗与力控</h3>
+          <p>力控实验数据、易碎物体抓取视频</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+<li><a href="#_3">주요 하위 작업 및 기술 내용</a><ul>
+<li><a href="#_4">손 구조 및 구동</a><ul>
+<li><a href="#dof">손 DOF 및 기능 정의</a></li>
+<li><a href="#_5">구동 및 전동 방안</a></li>
+<li><a href="#_6">촉각 및 힘 센서 통합</a></li>
+</ul>
+</li>
+<li><a href="#_7">파지 계획 및 제어 통합</a><ul>
+<li><a href="#_8">파지 자세 생성 및 힘 폐쇄 분석</a></li>
+<li><a href="#_9">손가락 임피던스 및 힘 제어</a></li>
+<li><a href="#-">팔 통합 및 손-눈 보정</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_10">완료 기준</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

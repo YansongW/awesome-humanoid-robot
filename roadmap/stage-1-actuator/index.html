@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>阶段一：造一个关节（执行器） · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">阶段一：造一个关节（执行器）</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="_1">阶段一：造一个关节（执行器）</h1>
+<blockquote>
+<p>⚠️ 本路线图内容基于公开资料与理论知识整理，未经实机验证；涉及电气与机械操作时请自行核实安全规范。</p>
+</blockquote>
+<p>人形机器人整机动辄 20–50 个自由度，但每个自由度拆到底都是同一道题：<strong>电机 + 减速 + 传感 + 驱动 + 控制，装在一个壳体里，输出可控的扭矩和角度</strong>。本阶段目标：在台架上造出一个通过验收的关节模组——吃透它，整腿整臂都是复制加工程化。</p>
+<p>两条已被公开验证的路线贯穿本页，建议全程对照：</p>
+<ul>
+<li><strong>ODRI（Open Dynamic Robot Initiative）BLMC 力控执行器</strong>：现成无框电机 + 双编码器 + 自研 MicroDriver 驱动卡，低减速比、高扭矩透明度，全链路 BSD 开源（来源：<code>data/roadmap/research/open-dynamic-robot-initiative.md</code>，调研访问 2026-07-01）。</li>
+<li><strong>Berkeley Humanoid Lite 6512/5010 摆线准直驱执行器</strong>：3D 打印摆线针轮减速器 + 无人机无刷电机，6512 单台 BOM 约 $188（美国）/ $157（中国）（来源：<code>data/roadmap/research/berkeley-humanoid-lite.md</code>，出自 arXiv:2504.17249 及 EECS-2025-207 技术报告）。</li>
+</ul>
+<p>理论背景先读 <a href="/wiki/chapters/chapter-04/">第 4 章 执行器：人形机器人的"肌肉"</a>，控制理论见 <a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a>。</p>
+<h2 id="1">步骤 1：明确关节指标</h2>
+<p>【做什么】买任何东西之前，先写下五个数字：峰值扭矩（peak torque）、额定转速、质量预算、背隙（backlash）上限、单关节成本上限。桌面级单关节典型区间（锚点数据注明来源，其余为工程建议值，需按你的设计校核）：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>桌面级典型区间</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>峰值扭矩</td>
+<td>0.5–3 N·m 级</td>
+<td><a href="/entry/ent_component_dynamixel_xl330_m288_t/">Dynamixel XL330-M288-T</a> 堵转扭矩 0.52 N·m、<a href="/entry/ent_component_dynamixel_xm430_w210_t/">Dynamixel XM430-W210-T</a> 堵转扭矩 3.0 N·m（来源：实体卡片/ROBOTIS e-Manual）</td>
+</tr>
+<tr>
+<td>输出转速</td>
+<td>电机转速 ÷ 减速比</td>
+<td>算术示例：某 50 W <a href="/entry/ent_comp_servo_motor/">伺服电机</a>最高 6000 rpm（实体卡片），配 288:1 减速（XL330 减速比 288.4:1）约得 20 rpm 输出；按所选电机重算</td>
+</tr>
+<tr>
+<td>质量预算</td>
+<td>建议 ≤ 整机质量预算的 3–5%/关节</td>
+<td>工程经验建议值，非供应商数据；具体型号质量需自行向供应商确认</td>
+</tr>
+<tr>
+<td>背隙</td>
+<td>精密级趋近零，舵机级明显可感</td>
+<td><a href="/entry/ent_component_harmonic_drive_reducer/">谐波减速器</a>核心优势为零背隙（实体卡片）；塑料齿轮舵机背隙较大，具体角值需自行向供应商确认</td>
+</tr>
+<tr>
+<td>单关节成本</td>
+<td>$157–188 可造 QDD</td>
+<td>Berkeley 6512 执行器 BOM：电机 $129 + 驱动板 $19 + 编码器 $3 + 结构件（berkeley-humanoid-lite 调研档案）</td>
+</tr>
+</tbody>
+</table>
+<p>【为什么】指标之间互相打架：扭矩靠减速比换，减速比高了转速和可反驱性就没了；扭矩密度靠大直径电机换，质量预算就爆了。物理根源见<a href="/entry/ent_component_frameless_torque_motor_2024/">无框力矩电机</a>卡片的公式 τ = 2πr²l·B_gap·J_s——扭矩随半径平方增长，所以关节电机都做成"大饼"。髋、肩主关节往往需要几十到上百 N·m（无框力矩电机实体卡片），桌面级机器人把体重降下来，就是在给关节指标松绑。</p>
+<p>【你的情况怎么分析】先答三问：① 关节要抬多重、动多快？杠杆臂长 × 末端负载，再加 1.5–2 倍安全系数，就是峰值扭矩下限。② 总预算 ÷ 自由度数 = 单关节成本上限——$160 以下基本只能走 Berkeley 式自研 QDD 或舵机。③ 要不要力控？要，就把"可反驱、低减速比"写进硬指标；不要，高减速比方案选择面大得多。</p>
+<h2 id="2">步骤 2：执行器拓扑选型</h2>
+<p>【做什么】在四种主流拓扑里选一种，先做单关节验证：</p>
+<table>
+<thead>
+<tr>
+<th>拓扑</th>
+<th>背隙</th>
+<th>扭矩密度</th>
+<th>可反驱性</th>
+<th>成本</th>
+<th>适合谁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>智能舵机（<a href="/entry/ent_component_dynamixel_xl330_m288_t/">XL330</a> / <a href="/entry/ent_component_dynamixel_xm430_w210_t/">XM430</a>）</td>
+<td>较大</td>
+<td>低-中</td>
+<td>差（288:1 等高减速比）</td>
+<td>需自行向供应商确认</td>
+<td>零基础、先跑通整机</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_harmonic_drive_reducer/">谐波减速器</a> + 电机</td>
+<td>零背隙（实体卡片）</td>
+<td>高</td>
+<td>差-中</td>
+<td>需自行向供应商确认</td>
+<td>精度优先的上肢方案</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">准直驱 QDD</a></td>
+<td>小</td>
+<td>中</td>
+<td>好（力透明）</td>
+<td>$157–188（Berkeley 档案）</td>
+<td>要力控、做 RL 运动研究</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_frameless_torque_motor_2024/">无框力矩电机</a>直驱</td>
+<td>零（无减速器）</td>
+<td>高</td>
+<td>最好</td>
+<td>需自行向供应商确认</td>
+<td>有机械加工能力</td>
+</tr>
+</tbody>
+</table>
+<p>【为什么】选拓扑本质是在"精度-透明-成本"三角里选边。高减速比（舵机、谐波）用小电机换大扭矩，但输出端"摸"不到电机电流，力只能估；QDD 用低减速比保带宽和力透明度（QDD 实体卡片），代价是电机本身必须大——Berkeley 直接用 150 KV 无人机电机（MAD M6C12，$129，berkeley-humanoid-lite 档案）。ODRI 的 BLMC 是这条路的科研标杆：现成无框电机 + 低减速比，靠双编码器做本体感知力控（odri 调研档案）。</p>
+<p>【你的情况怎么分析】按技能与预算对号入座：零基础、想快点让关节动起来——XM430 级舵机，一发指令就转。会 FDM 打印、能烧固件、目标 RL 行走——照抄 Berkeley 6512，结构件用桌面 FDM 打印机打 PLA 即可（berkeley-humanoid-lite 档案）。有运控/电力电子功底——研读 ODRI 的 <code>open_robot_actuator_hardware</code> 仓库（BSD 许可）。要工业级精度且预算宽——谐波路线，价格交期需自行向供应商确认。</p>
+<h2 id="3">步骤 3：电机本体与驱动器</h2>
+<p>【做什么】电机二选一：<a href="/entry/ent_component_bldc_motor/">无刷直流电机（BLDC）</a>或交流永磁同步<a href="/entry/ent_comp_servo_motor/">伺服电机</a>（PMSM 类）；驱动器要么买成品<a href="/entry/ent_component_servo_drive_2024/">伺服驱动器</a>，要么用支持 <a href="/entry/ent_method_foc_motor_control/">FOC（磁场定向控制）</a>的开源驱动板（Berkeley 用 ST B-G431B-ESC1，$19，亦兼容 Moteus / ODrive / VESC——berkeley-humanoid-lite 档案）。</p>
+<p>【为什么】BLDC 反电动势为梯形波，配六步换相（每 60° 电角度切一次导通相），控制简单成本低；PMSM 反电动势为正弦波，配 FOC 转矩脉动更小、效率更高（BLDC 实体卡片）。<a href="/entry/ent_method_field_oriented_control/">FOC</a> 把三相电流变换到随转子旋转的 d-q 坐标系，转矩与磁链解耦，让交流电机获得类直流电机的调速性能（FOC 实体卡片）。关节驱动器通常就是"FOC + 电流/速度/位置三环"，对体积、散热、EMI 和电流环带宽要求高（伺服驱动器实体卡片）。</p>
+<p>【你的情况怎么分析】预算紧、有动手能力：航模 BLDC + 开源 FOC 板是最便宜的入场券，Berkeley 已验证 "$129 电机 + $19 驱动板" 组合能跑零样本 sim-to-real 的 RL 行走。完全不想碰功率电子：买一体化伺服或智能舵机，精力留给控制算法。打算自研驱动板：先读 ODRI MicroDriver 设计文件再决定——门槛高，odri 档案对新手友好度只评 2/5。</p>
+<h2 id="4">步骤 4：位置传感——关节编码器</h2>
+<p>【做什么】至少装一个输出端<a href="/entry/ent_component_joint_encoder_2024/">关节编码器</a>；做力控就上双编码器：电机端一个（FOC 换相与速度环用）、输出端一个（真实关节角用）。低成本磁编码器即可起步——Berkeley 用 AS5600，单价 $3（berkeley-humanoid-lite 档案）。</p>
+<p>【为什么】编码器分辨率直接决定速度环可控带宽与位置精度——工业伺服的参考点是安川 Sigma-7 内置 24 位串行编码器（伺服电机实体卡片）。双编码器的价值在于"看穿"减速器：输出端编码器能量出减速器形变与背隙，ODRI 正是靠电机端/输出端双编码器实现本体感知力控（odri 调研档案）。高减速比方案只装电机端编码器会系统性高估精度。</p>
+<p>【你的情况怎么分析】舵机路线：自带反馈够用，别折腾。QDD 力控路线：电机端编码器是 FOC 的命根子，必须装稳装准；输出端编码器预算够就上（磁编码器方案 = 几美元级芯片 + 径向磁钢 + 打印支架）。磁编码器对安装同轴度和相线电磁干扰敏感，布线远离大电流相线。</p>
+<h2 id="5can-vs-ethercat">步骤 5：通信总线——CAN vs EtherCAT</h2>
+<p>【做什么】桌面级默认选 <a href="/entry/ent_technology_can_bus_2024/">CAN 总线</a>：Berkeley Humanoid Lite 四肢各一条 CAN 2.0 总线（1 Mbps，经 USB-CAN 适配器接主控），执行器与 IMU 通信 250 Hz，单总线最多挂 64 台设备（berkeley-humanoid-lite 档案）。进阶再评估 <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>。</p>
+<p>【为什么】CAN 便宜、抗干扰、生态成熟，1 Mbps 带十几个关节跑 250–500 Hz 足够；短板是带宽和确定性。EtherCAT 的杀手锏是"processing on the fly"——从站在帧经过时立即读写，不整帧接收再转发，确定性远好于 CAN（EtherCAT 实体卡片），代价是从站芯片贵、主站要实时系统。舵机路线走 TTL 半双工串口（XL330/XM430 均为 TTL 通信，实体卡片），最省事但速率与拓扑受限。</p>
+<p>【你的情况怎么分析】关节数 ≤ 12、控制频率 ≤ 500 Hz：CAN，别犹豫，USB-CAN 适配器几十元就能开工。要多关节高带宽力控（≥ 1 kHz）：评估 EtherCAT，但先确认能搞定实时 Linux 主站（可参考 ODRI Master Board 的思路，odri 调研档案）。更多讨论见 <a href="/wiki/chapters/chapter-06/">第 6 章 计算、电源与热管理</a>。</p>
+<h2 id="6">步骤 6：闭环控制阶梯</h2>
+<p>【做什么】按阶梯逐级爬，每级验证通过再上一级：</p>
+<ol>
+<li><strong><a href="/entry/ent_method_pid_control/">PID 控制</a></strong>：位置环 PID，让轴转到指定角度；比例-积分-微分三项调跟踪误差，是后续一切的地基。</li>
+<li><strong><a href="/entry/ent_principle_current_velocity_position_loops/">电流-速度-位置三环级联</a></strong>：最内电流环（力矩环）、中间速度环、最外位置环；每层带宽约为下一层的 5–10 倍以保证稳定（三环实体卡片）。</li>
+<li><strong><a href="/entry/ent_method_impedance_control/">阻抗控制</a></strong>：不再分位置/力，让关节表现出期望的"质量-阻尼-弹簧"特性：F = M_d(ẍ_d−ẍ) + D_d(ẋ_d−ẋ) + K_d(x_d−x)（公式来源：阻抗控制实体卡片）。</li>
+</ol>
+<p>【为什么】单环 PID 管得住位置，管不住"手感"——碰撞时电机照样硬顶。三环级联把扭矩（电流）变成可独立分配的指令，是阻抗控制的前提；阻抗控制让关节受扰时按期望动态柔顺响应，这正是 QDD/ODRI 类执行器存在的意义。理论细节见 <a href="/wiki/chapters/chapter-14/">第 14 章 机器人控制基础</a>与 <a href="/wiki/chapters/chapter-08/">第 8 章 人形机器人设计原理</a>。</p>
+<p>【你的情况怎么分析】舵机路线：三环封在舵机内部，你只有位置指令接口，精力放在轨迹规划。自研 QDD：FOC 板（B-G431B / ODrive 等）一般自带电流环与速度环，你写外层位置环 + 前馈即可；阻抗控制要求电流环带宽高、通讯延迟低，先做"虚拟弹簧"实验（设 K_d、手掰输出轴感受恢复力）再上复杂控制。</p>
+<h2 id="7">步骤 7：台架调试与验收</h2>
+<p>【做什么】把关节固定上台架（型材 + 夹具，输出轴挂已知质量的砝码杆作负载），依次做四项测试。判据为工程建议值，需按你的指标表回改：</p>
+<ol>
+<li><strong>阶跃响应</strong>：30° 阶跃，录角度曲线。判据：上升时间 &lt; 0.2 s，超调 &lt; 10%，稳态误差 &lt; 0.5°。</li>
+<li><strong>正弦跟踪</strong>：1 Hz、±20° 正弦指令。判据：幅值衰减 &lt; 10%，相位滞后 &lt; 15°；扫频到 −3 dB 可量化带宽。</li>
+<li><strong>反驱手感</strong>（仅 QDD/直驱）：断电可轻松掰动；上电设零刚度，应能"零重力"拖动。高减速比舵机此项直接不合格——拓扑决定的，调参救不了。</li>
+<li><strong>温升</strong>：额定负载连续运行 30 min，电机壳温建议 &lt; 60 °C（绝缘等级上限需向电机供应商确认）。耐久参考：Berkeley 用 60 小时耐久测试验证打印摆线齿轮可靠性（berkeley-humanoid-lite 档案），自研减速器照此量级抽测。</li>
+</ol>
+<p>【为什么】阶跃看刚性与阻尼，正弦看带宽，反驱看透明度，温升看热设计余量——四项合起来就是"能不能装进腿里"的全部关键信息。台架阶段发现问题只拆一颗电机，装进整机再发现就是拆一条腿。测试方法见 <a href="/wiki/chapters/chapter-11/">第 11 章 装配、集成与测试</a>。</p>
+<p>【你的情况怎么分析】没有示波器？用驱动器的 USB 上位机（ODrive Tool、Dynamixel Wizard 等）录曲线，够用。负载砝码按"峰值扭矩 ÷ 杆长"反推质量。时间紧就把阶跃 + 温升做扎实，正弦扫频留到整机阶段再补。</p>
+<h2 id="_2">验收标准</h2>
+<ul>
+<li>[ ] 指标表书面化：峰值扭矩/转速/质量/背隙/成本五项有数字、有来源（或标注"需自行向供应商确认"）。</li>
+<li>[ ] 拓扑选型有书面理由：说明在"精度-透明-成本"三角中选了哪条边，为什么不选其他路线。</li>
+<li>[ ] 通信链路打通：主控以目标频率（CAN 建议 ≥ 250 Hz，参照 Berkeley 方案）稳定收发，连续 1 h 无掉线。</li>
+<li>[ ] 阶跃响应：30° 阶跃，超调 &lt; 10%、稳态误差 &lt; 0.5°（或指标表自定值）。</li>
+<li>[ ] 正弦跟踪：1 Hz ±20°，幅值衰减 &lt; 10%（或自定值），曲线有记录存档。</li>
+<li>[ ] QDD/直驱方案：徒手反驱顺滑；双编码器方案电机端与输出端读数偏差已量化。</li>
+<li>[ ] 温升：额定负载 30 min，壳温 &lt; 60 °C 或供应商给定上限以内。</li>
+<li>[ ] 减速器装配：全程无卡滞、无异响，空载电流与首件实测基线一致。</li>
+</ul>
+<h2 id="_3">常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAN 总线丢帧、多节点通信随机中断</td>
+<td>终端电阻缺失或重复</td>
+<td>断电测 CANH-CANL 间电阻：两端各 120 Ω 时应约 60 Ω；无穷大 = 没接，远低于 60 Ω = 接多了</td>
+</tr>
+<tr>
+<td>编码器读数跳动、速度环抖动</td>
+<td>地环路 / 屏蔽接地不当 / 磁编码器受相线干扰</td>
+<td>信号地单点接地；编码器线双绞屏蔽、远离相线</td>
+</tr>
+<tr>
+<td>FOC 自整定失败，电机嗡鸣不转</td>
+<td>极对数填错 / 相序错 / 编码器电角度偏置未标定</td>
+<td>核对极对数；开环小电流旋转测试确认相序；重做编码器偏置校准</td>
+</tr>
+<tr>
+<td>减速器装配后卡顿、发热、空载电流大</td>
+<td>轴承/齿轮预紧过度、轴线不同心、打印件翘曲</td>
+<td>分段交叉拧紧并逐段手动盘车；拆检同轴度；对比装配前后空载电流</td>
+</tr>
+<tr>
+<td>阶跃响应超调大、振铃</td>
+<td>位置环增益过高、缺速度前馈、负载惯量超预期</td>
+<td>降 P 增 D 或加前馈；实测负载惯量重新整定</td>
+</tr>
+<tr>
+<td>堵转几分钟后电机烫手</td>
+<td>持续电流超额定、无热保护</td>
+<td>核对相电流（非电源电流）与电机额定值；加电流限幅与 I²t 热保护</td>
+</tr>
+<tr>
+<td>多台执行器同时上电后总线混乱</td>
+<td>出厂默认节点 ID 重复</td>
+<td>逐台单独上电改写 ID 并贴标签，再组网</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">配套阅读</h2>
+<ul>
+<li><a href="/roadmap/playbooks/actuator-selection/">执行器选型手册</a> —— 更完整的路线对比、厂家速查与验证方法</li>
+<li><a href="/roadmap/playbooks/compute-selection/">计算平台选型手册</a> —— 底层实时控制层的板卡选择</li>
+<li><a href="/roadmap/index/">路线图总览</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/stage-0-foundations/">← 上一页<span>Stage 0 基础筑基：拿到造人形机器人的入场券</span></a>
+      
+      
+      <a class="next" href="/roadmap/stage-2-biped/">下一页 →<span>阶段 2：双足平台——从仿真到第一台会走的机器人</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">阶段一：造一个关节（执行器）</a><ul>
+<li><a href="#1">步骤 1：明确关节指标</a></li>
+<li><a href="#2">步骤 2：执行器拓扑选型</a></li>
+<li><a href="#3">步骤 3：电机本体与驱动器</a></li>
+<li><a href="#4">步骤 4：位置传感——关节编码器</a></li>
+<li><a href="#5can-vs-ethercat">步骤 5：通信总线——CAN vs EtherCAT</a></li>
+<li><a href="#6">步骤 6：闭环控制阶梯</a></li>
+<li><a href="#7">步骤 7：台架调试与验收</a></li>
+<li><a href="#_2">验收标准</a></li>
+<li><a href="#_3">常见坑与排查</a></li>
+<li><a href="#_4">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

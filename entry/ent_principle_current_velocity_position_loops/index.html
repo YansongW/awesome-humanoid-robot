@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电流环/速度环/位置环 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/principle/">原理</a>
+    <span>/</span>
+    <span class="breadcrumb-current">电流环/速度环/位置环</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">原理</div>
+      <h1>电流环/速度环/位置环</h1>
+      <p class="entry-name-en">Current / Velocity / Position Control Loops</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#4.5.5 电流环、速度环、位置环的级联控制 by scripts/backfill_nonpaper_entries.py. Body backfilled from chapter-04.md section &#39;4.5.5 电流环、速度环、位置环的级联控制&#39; by scripts/backfill_critical_entities.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">阶段 1 · 造一个关节</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>4.5.5 电流环、速度环、位置环的级联控制 实际关节驱动通常采用三级级联控制：最内层 电流环（力矩环），中间 速度环，最外层 位置环。每一层带宽约为下一层的 5-10 倍，以保证稳定性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>伺服驱动的级联反馈控制层级：内环电流环控制转矩，中间速度环控制转速，外环位置环控制关节角度。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="455">4.5.5 电流环、速度环、位置环的级联控制</h3>
+<p>实际关节驱动通常采用三级级联控制：最内层 <strong>电流环</strong>（力矩环），中间 <strong>速度环</strong>，最外层 <strong>位置环</strong>。每一层带宽约为下一层的 5-10 倍，以保证稳定性。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：电流环、速度环、位置环、PI 控制器、前馈、抗饱和、带宽级联</p>
+<ul>
+<li><strong>电流环（current loop）</strong>：以电机相电流为被控量的最快内环，直接决定输出力矩。</li>
+<li><strong>速度环（velocity loop）</strong>：以电机转速为被控量，输出电流指令。</li>
+<li><strong>位置环（position loop）</strong>：以关节角度为被控量，输出速度指令。</li>
+<li><strong>PI 控制器（proportional-integral controller）</strong>：由比例项和积分项组成的经典控制器，用于消除稳态误差。</li>
+<li><strong>前馈（feedforward）</strong>：根据期望轨迹提前计算并加入控制量，提高跟踪性能。</li>
+<li><strong>抗饱和（anti-windup）</strong>：防止积分器在饱和时过度累积，避免退出饱和后的大超调。</li>
+<li><strong>带宽级联（bandwidth cascade）</strong>：内环带宽远高于外环，确保外环指令能被内环快速跟踪。</li>
+</ul>
+</div>
+<p>电流环带宽通常可达 1-5 kHz；速度环 50-500 Hz；位置环 5-100 Hz，具体取决于负载惯量、刚度和采样率。</p>
+<h3 id="_3">在人形机器人关节控制中的重要性</h3>
+<p>人形机器人关节通常需要同时实现高动态响应和精确的位置跟踪。三级级联控制通过分层带宽设计，使内环快速抑制电流扰动、中环保证速度平滑、外环实现轨迹跟踪，是多自由度人形机器人稳定运动的基础。合理整定三环参数并加入前馈与抗饱和机制，可以显著提升行走、操作和碰撞恢复能力。</p>
+<h2 id="_4">参考</h2>
+<ul>
+<li>项目 Wiki：wiki/docs/chapters/chapter-04.md 第「4.5.5 电流环、速度环、位置环的级联控制」节</li>
+<li>Wiki extraction</li>
+</ul>
+<p>电流环/速度环/位置环作为人形机器人产业链中的关键组成部分，其相关理论与工程实践仍在持续发展。深入理解其原理、边界条件与典型应用场景，对于将实验室样机转化为可量产产品具有重要意义。</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p10_2_3/">全身控制 WBC</a>
+              <span class="rel-desc">电流环/速度环/位置环提及全身控制 WBC。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_servo_drive_2024/">伺服驱动器</a>
+              <span class="rel-desc">电流环/速度环/位置环前置依赖伺服驱动器。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_pid_control/">PID控制</a>
+              <span class="rel-desc">电流环/速度环/位置环前置依赖PID控制。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">基于内环力矩与速度反馈的机器人阻抗控制及无源性分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于内环力矩与速度反馈的机器人阻抗控制及无源性分析discusses电流环/速度环/位置环。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">全身控制（WBC）提及电流环/速度环/位置环。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_component_servo_drive_2024/">伺服驱动器</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              <span class="rel-desc">伺服驱动器使用电流环/速度环/位置环。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_method_field_oriented_control/">磁场定向控制</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">磁场定向控制提及电流环/速度环/位置环。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_oem_unitree_robotics/">宇树科技</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-desc">宇树科技前置依赖电流环/速度环/位置环。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_principle_current_velocity_position_loops"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">整机厂商</span>
+          <h3>宇树科技</h3>
+          <p>&gt; 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 &gt; 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_servo_drive_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>伺服驱动器</h3>
+          <p>伺服驱动器把控制器指令转换为电机功率输出，通常采用 FOC 控制，包含电流环、速度环和位置环。关节驱动器对体积、散热、EMI 和电流环带宽要求较高，是国产替代的重点环节。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">方法</span>
+          <h3>磁场定向控制</h3>
+          <p>一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_pid_control/">
+          <span class="entry-type">方法</span>
+          <h3>PID控制</h3>
+          <p>一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">
+          <span class="entry-type">论文</span>
+          <h3>基于内环力矩与速度反馈的机器人阻抗控制及无源性分析</h3>
+          <p>本文分析了内环力矩带宽、速度滤波和采样频率如何限制阻抗控制电动关节的稳定刚度与阻尼范围（Z-width），并提出一种利用正速度反馈扩大力矩环带宽而无需复杂控制器的设计方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制 WBC</h3>
+          <p>- P10.2.3.1 输入梳理与目标量化 - 整理「全身控制 WBC」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#455">4.5.5 电流环、速度环、位置环的级联控制</a></li>
+<li><a href="#_3">在人形机器人关节控制中的重要性</a></li>
+</ul>
+</li>
+<li><a href="#_4">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

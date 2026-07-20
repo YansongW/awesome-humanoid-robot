@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ontological Structure Engineering and Prototyping (Mechanical Structure) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Ontological Structure Engineering and Prototyping (Mechanical Structure)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Ontological Structure Engineering and Prototyping (Mechanical Structure)</h1>
+      <p class="entry-name-en">Ontological Structure Engineering and Prototyping (Mechanical Structure)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span><span class="tag">Manufacturing Processes</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process, covering solution design, implementation verification, and documentation delivery.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Mechanical Structure is the 5th phase in the full-process development of humanoid robot products, expanded into several Level-3 sub-tasks in WBS V3.</p>
+<p>This phase covers complete engineering actions including input review, conceptual design, implementation/prototyping, verification closure, and documentation delivery. It is a critical milestone to ensure downstream dependencies receive qualified inputs.</p>
+<h2 id="content">Content</h2>
+<h3 id="key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</h3>
+<h4 id="detailed-structural-design">Detailed Structural Design</h4>
+<h5 id="central-skeleton-and-limb-link-design">Central Skeleton and Limb Link Design</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: SolidWorks / NX / CATIA, topology optimization, size optimization</li>
+<li><strong>Design Rationale</strong>: The central skeleton carries the torso load and transmits it to the legs; limb links require high stiffness and low weight</li>
+<li><strong>Key Constraints</strong>: Stiffness, strength, weight, assembly accessibility</li>
+<li><strong>Completion Criteria / Deliverables</strong>: 3D structural model, critical cross-section design, preliminary BOM
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P5.1.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Central Skeleton and Limb Link Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P5.1.1.2 Conceptual and Detailed Design</strong>: Complete the conceptual design, detailed design, and interface definition for "Central Skeleton and Limb Link Design," verify feasibility using "SolidWorks / NX / CATIA, topology optimization, size optimization," and output drawings/algorithms/logical frameworks.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize a review and freeze the solution</li>
+<li><strong>P5.1.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Central Skeleton and Limb Link Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P5.1.1.4 Verification and Issue Closure</strong>: Verify the outputs of "Central Skeleton and Limb Link Design," check if completion criteria are met, record issues, and track them to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P5.1.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawings/specifications for "Central Skeleton and Limb Link Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="joint-mounting-interface-and-housing-design">Joint Mounting Interface and Housing Design</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Interface tolerance analysis, locating pin/flange design, sealing design</li>
+<li><strong>Design Rationale</strong>: Joints and structures require precise coaxial alignment, repeatable assembly/disassembly, and dust/water resistance</li>
+<li><strong>Key Constraints</strong>: Machining precision, sealing level, maintenance space</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Joint interface drawings, housing 3D model, sealing solution
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P5.1.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Joint Mounting Interface and Housing Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P5.1.2.2 Conceptual and Detailed Design</strong>: Complete the conceptual design, detailed design, and interface definition for "Joint Mounting Interface and Housing Design," verify feasibility using "interface tolerance analysis, locating pin/flange design, sealing design," and output drawings/algorithms/logical frameworks.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize a review and freeze the solution</li>
+<li><strong>P5.1.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Joint Mounting Interface and Housing Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P5.1.2.4 Verification and Issue Closure</strong>: Verify the outputs of "Joint Mounting Interface and Housing Design," check if completion criteria are met, record issues, and track them to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P5.1.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawings/specifications for "Joint Mounting Interface and Housing Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="exterior-cover-and-seam-design">Exterior Cover and Seam Design</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Class-A surface seams, snap-fit/screw concealment, removable panels</li>
+<li><strong>Design Rationale</strong>: Covers must balance aesthetics, heat dissipation, maintenance access, and drop protection</li>
+<li><strong>Key Constraints</strong>: Frozen ID, mold/printing process, assembly sequence</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Cover 3D model, seam solution, maintenance access layout
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P5.1.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Exterior Cover and Seam Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P5.1.3.2 Conceptual and Detailed Design</strong>: Complete the conceptual design, detailed design, and interface definition for "Exterior Cover and Seam Design," verify feasibility using "Class-A surface seams, snap-fit/screw concealment, removable panels," and output drawings/algorithms/logical frameworks.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize a review and freeze the solution</li>
+<li><strong>P5.1.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Exterior Cover and Seam Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P5.1.3.4 Verification and Issue Closure</strong>: Verify the outputs of "Exterior Cover and Seam Design," check if completion criteria are met, record issues, and track them to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P5.1.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawings/specifications for "Exterior Cover and Seam Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h4 id="materials-and-processes">Materials and Processes</h4>
+<h5 id="structural-material-selection">Structural Material Selection</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Comparison of aluminum alloys 7075/6061, carbon fiber, titanium alloy, engineering plastics</li>
+<li><strong>Design Rationale</strong>: High-load links use aluminum alloy/CNC; housings/brackets use SLS/MJF 3D printing or injection molding</li>
+<li><strong>Key Constraints</strong>: Strength, stiffness, density, cost, batch manufacturing feasibility</li>
+<li><strong>Completion Criteria / Deliverables</strong>: "Material Selection Table": material, process, and rationale for each component
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P5.2.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Structural Material Selection," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P5.2.1.2 Candidate Solution Establishment and Evaluation</strong>: Build a candidate solution library for "Structural Material Selection," perform quantitative evaluation using "comparison of aluminum alloys 7075/6061, carbon fiber, titanium alloy, engineering plastics," and determine the final solution considering cost, performance, supply chain, and maintainability.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize a review and freeze the solution</li>
+<li><strong>P5.2.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Structural Material Selection" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P5.2.1.4 Verification and Issue Closure</strong>: Verify the outputs of "Structural Material Selection," check if completion criteria are met, record issues, and track them to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P5.2.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawings/specifications for "Structural Material Selection," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="design-for-additive-manufacturing-dfam">Design for Additive Manufacturing (DfAM)</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: SLS/MJF/SLA design guidelines, support optimization, lattice structures</li>
+<li><strong>Design Rationale</strong>: Many structural parts in the prototype phase use 3D printing and require optimization for the printing process</li>
+<li><strong>Key Constraints</strong>: Printed material strength, interlayer bonding, dimensional accuracy, surface quality</li>
+<li><strong>Completion Criteria / Deliverables</strong>: DfAM checklist, 3D printed part drawings, printing parameters
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P5.2.2.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Design for Additive Manufacturing (DfAM)," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P5.2.2.2 Conceptual and Detailed Design</strong>: Complete the conceptual design, detailed design, and interface definition for "Design for Additive Manufacturing (DfAM)," verify feasibility using "SLS/MJF/SLA design guidelines, support optimization, lattice structures," and output drawings/algorithms/logical frameworks.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize a review and freeze the solution</li>
+<li><strong>P5.2.2.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Design for Additive Manufacturing (DfAM)" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P5.2.2.4 Verification and Issue Closure</strong>: Verify the outputs of "Design for Additive Manufacturing (DfAM)," check if completion criteria are met, record issues, and track them to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P5.2.2.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawings/specifications for "Design for Additive Manufacturing (DfAM)," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h5 id="mass-production-process-assessment">Mass Production Process Assessment</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: Comparison of die casting, injection molding, sheet metal, CNC, composite molding processes</li>
+<li><strong>Design Rationale</strong>: After prototype verification, 3D printed parts need to be converted to mass-producible processes</li>
+<li><strong>Key Constraints</strong>: Mold cost, minimum order quantity, yield rate, cycle time</li>
+<li><strong>Completion Criteria / Deliverables</strong>: Mass production process roadmap, key part process selection
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P5.2.3.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Mass Production Process Assessment," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P5.2.3.2 Solution/Method Design</strong>: Develop implementation methods or candidate solutions for "Mass Production Process Assessment," conduct feasibility studies using "comparison of die casting, injection molding, sheet metal, CNC, composite molding processes," and clarify the technical roadmap and resource requirements.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize a review and freeze the solution</li>
+<li><strong>P5.2.3.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Mass Production Process Assessment" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P5.2.3.4 Verification and Issue Closure</strong>: Verify the outputs of "Mass Production Process Assessment," check if completion criteria are met, record issues, and track them to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P5.2.3.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawings/specifications for "Mass Production Process Assessment," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+<h4 id="wiring-maintenance-and-assembly">Wiring, Maintenance, and Assembly</h4>
+<h5 id="cable-and-hose-routing-design">Cable and Hose Routing Design</h5>
+<ul>
+<li><strong>Methods / Tools</strong>: 3D harness routing, bend radius verification, fixing point design</li>
+<li><strong>Design Rationale</strong>: Power/signal/cooling lines must not pull or wear during joint movement; reserve maintenance length</li>
+<li><strong>Key Constraints</strong>: Bending fatigue life, EMC shielding, heat dissipation, replaceability</li>
+<li><strong>Completion Criteria / Deliverables</strong>: "Wiring Design Specification": cable type, fixing points, bend radius, routing path
+<strong>Level-3 Sub-tasks:</strong></li>
+<li><strong>P5.3.1.1 Input Review and Target Quantification</strong>: Organize upstream inputs, reference standards, and resources required for "Cable and Hose Routing Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+<strong>Level-4 Key Actions:</strong></li>
+<li>List all upstream input items and confirm versions</li>
+<li>Convert acceptance criteria into quantifiable KPIs</li>
+<li>Establish task Owner, timeline, and risk register</li>
+<li><strong>P5.3.1.2 Conceptual and Detailed Design</strong>: Complete the conceptual design, detailed design, and interface definition for "Cable and Hose Routing Design," verify feasibility using "3D harness routing, bend radius verification, fixing point design," and output drawings/algorithms/logical frameworks.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Generate no fewer than 2 candidate solutions</li>
+<li>Establish an evaluation matrix and assign quantitative scores</li>
+<li>Organize a review and freeze the solution</li>
+<li><strong>P5.3.1.3 Implementation/Prototype/Sample Fabrication</strong>: Execute the implementation work for "Cable and Hose Routing Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Build models/prototypes and record key parameters</li>
+<li>Perform simulation or prototype verification</li>
+<li>Record anomalies and deviations</li>
+<li><strong>P5.3.1.4 Verification and Issue Closure</strong>: Verify the outputs of "Cable and Hose Routing Design," check if completion criteria are met, record issues, and track them to closure.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Develop test/review plans and pass criteria</li>
+<li>Execute tests and record raw data</li>
+<li>Output issue list and improvement measures</li>
+<li><strong>P5.3.1.5 Documentation Output and Downstream Delivery</strong>: Output the final report/drawings/specifications for "Cable and Hose Routing Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+<strong>Level-4 Key Actions:</strong></li>
+<li>Write documents per template and reference raw data</li>
+<li>Complete internal review and version control</li>
+<li>Release and notify downstream dependencies</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5_1_3/">Exterior covering and split design</a>
+              <span class="rel-desc">Ontological Structure Engineering and Prototyping (Mechanical Structure) is part of Exterior covering and split design.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5_2_2/">Design for Additive Manufacturing (DfAM)</a>
+              <span class="rel-desc">Ontological Structure Engineering and Prototyping (Mechanical Structure) is part of Design for Additive Manufacturing (DfAM).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_design_for_assembly/">Design for Assembly (DFA)</a>
+              <span class="rel-desc">Ontological Structure Engineering and Prototyping (Mechanical Structure) mentions Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p4/">Design of Joint Module and Actuator &amp; Drive</a>
+              <span class="rel-desc">P5 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p2/">Industrial Design and Appearance Engineering (ID / A-Surface)</a>
+              <span class="rel-desc">P5 依赖 P2 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5_1_1/">Central skeleton and limb link design</a>
+              <span class="rel-desc">Ontological Structure Engineering and Prototyping (Mechanical Structure) mentions Central skeleton and limb link design.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p5_1_2/">Joint mounting interface and housing design</a>
+              <span class="rel-desc">Ontological Structure Engineering and Prototyping (Mechanical Structure) mentions Joint mounting interface and housing design.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">requires</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p3/">System Architecture and Electromechanical Master Design (System / Preliminary Design)</a>
+              <span class="rel-desc">P5 依赖 P3 完成后才能启动</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p9/">Thermal Management simulation and iteration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P9 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_1_2/">Joint mounting interface and housing design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Joint mounting interface and housing design is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_2_3/">Process evaluation for mass production</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Process evaluation for mass production is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p6/">URDF modeling and Kinematics &amp; URDF</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P6 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_3_1/">Wiring design of cable and pipe</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Wiring design of cable and pipe is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16/">Pilot &amp; Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Pilot &amp; Production Ramp mentions Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_3_3/">Design for maintainability and maintainability</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Design for maintainability and maintainability is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_3_1/">Pilot Run</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Pilot Run mentions Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_2_2/">Design for Additive Manufacturing (DfAM)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Design for Additive Manufacturing (DfAM) is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design discusses Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_2_1/">Structural material selection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Structural material selection is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_1_1/">Central skeleton and limb link design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Central skeleton and limb link design is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p8/">Structural FEA and iteration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">requires</span>
+              <span class="rel-desc">P8 依赖 P5 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_1_3/">Exterior covering and split design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Exterior covering and split design is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_production_ramp_2024/">Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Production Ramp mentions Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_olaf_bringing_an_animated_char_2025/">Olaf: Bringing an Animated Character to Life in the Physical World</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Olaf: Bringing an Animated Character to Life in the Physical World discusses Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_3_2/">Assembly sequence and fixture planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">part of</span>
+              <span class="rel-desc">Assembly sequence and fixture planning is part of Ontological Structure Engineering and Prototyping (Mechanical Structure).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p5"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p2/">
+          <span class="entry-type">Method</span>
+          <h3>Industrial Design and Appearance Engineering (ID / A-Surface)</h3>
+          <p>Industrial Design and Appearance Engineering (ID / A-Surface) —— Phase 2 of the humanoid robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>Central skeleton and limb link design</h3>
+          <p>3D structural model, key section design, BOM first draft</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_1_3/">
+          <span class="entry-type">Method</span>
+          <h3>Exterior covering and split design</h3>
+          <p>3D coverings, split plans, maintenance opening layout</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p9/">
+          <span class="entry-type">Method</span>
+          <h3>Thermal Management simulation and iteration</h3>
+          <p>Thermal Management simulation and iteration-phase 9 of the entire Android product development…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_production_ramp_2024/">
+          <span class="entry-type">Concept</span>
+          <h3>Production Ramp</h3>
+          <p>Transition from pilot-line builds to volume manufacturing while improving yield, cycle time, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p3/">
+          <span class="entry-type">Method</span>
+          <h3>System Architecture and Electromechanical Master Design (System / Preliminary Design)</h3>
+          <p>System Architecture and Electromechanical Design (System / Preliminary Design) —— Phase 3 of the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_olaf_bringing_an_animated_char_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Olaf: Bringing an Animated Character to Life in the Physical World</h3>
+          <p>Olaf: Bringing an Animated Character to Life in the Physical World is a 2025 work on hardware design…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_3_3/">
+          <span class="entry-type">Method</span>
+          <h3>Design for maintainability and maintainability</h3>
+          <p>Draft maintenance manual, MTTR target, quick parts list</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p6/">
+          <span class="entry-type">Method</span>
+          <h3>URDF modeling and Kinematics &amp; URDF</h3>
+          <p>URDF modeling and Kinematics &amp; URDF-phase 6 of the entire Android product development process,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wilhelm_monotone_subsystem_decompositi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Monotone Subsystem Decomposition for Efficient Multi-Objective Robot Design</h3>
+          <p>Introduces monotone subsystem decomposition, a constraint-programming method that computes…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>Wiring design of cable and pipe</h3>
+          <p>“Wiring design code”: Cable model, fixed point, bending radius, trend</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_1_2/">
+          <span class="entry-type">Method</span>
+          <h3>Joint mounting interface and housing design</h3>
+          <p>Joint interface drawings, housing 3D, sealing scheme</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p4/">
+          <span class="entry-type">Method</span>
+          <h3>Design of Joint Module and Actuator &amp; Drive</h3>
+          <p>Design of Actuator &amp; Drive-phase 4 of the entire product development process for Android, covering…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_design_for_assembly/">
+          <span class="entry-type">Method</span>
+          <h3>Design for Assembly (DFA)</h3>
+          <p>A design methodology that reduces part count, simplifies joining, and shortens assembly time to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_3_1/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot Run</h3>
+          <p>Summary Report of trial production, through rate, problem closed-loop rate</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p8/">
+          <span class="entry-type">Method</span>
+          <h3>Structural FEA and iteration</h3>
+          <p>Structural FEA-the 8th stage of the Android product development process, covering conceptual design,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_2_2/">
+          <span class="entry-type">Method</span>
+          <h3>Design for Additive Manufacturing (DfAM)</h3>
+          <p>DfAM checklist, 3D print drawings, print parameters</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_2_1/">
+          <span class="entry-type">Method</span>
+          <h3>Structural material selection</h3>
+          <p>Material Selection Table: Materials, Processes, and Reasons for Each Component</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Process evaluation for mass production</h3>
+          <p>Mass production process roadmap, key parts of the process selection</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Assembly sequence and fixture planning</h3>
+          <p>Assembly sequence diagram, tooling list, SOP draft</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot &amp; Production Ramp</h3>
+          <p>Pilot &amp; Production Ramp-stage 16 of the Android product development process, covering concept…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#key-sub-tasks-and-technical-content">Key Sub-tasks and Technical Content</a><ul>
+<li><a href="#detailed-structural-design">Detailed Structural Design</a><ul>
+<li><a href="#central-skeleton-and-limb-link-design">Central Skeleton and Limb Link Design</a></li>
+<li><a href="#joint-mounting-interface-and-housing-design">Joint Mounting Interface and Housing Design</a></li>
+<li><a href="#exterior-cover-and-seam-design">Exterior Cover and Seam Design</a></li>
+</ul>
+</li>
+<li><a href="#materials-and-processes">Materials and Processes</a><ul>
+<li><a href="#structural-material-selection">Structural Material Selection</a></li>
+<li><a href="#design-for-additive-manufacturing-dfam">Design for Additive Manufacturing (DfAM)</a></li>
+<li><a href="#mass-production-process-assessment">Mass Production Process Assessment</a></li>
+</ul>
+</li>
+<li><a href="#wiring-maintenance-and-assembly">Wiring, Maintenance, and Assembly</a><ul>
+<li><a href="#cable-and-hose-routing-design">Cable and Hose Routing Design</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation</h1>
+      <p class="entry-name-en">ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">상위</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>ToddlerBot 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、分层技能/专家策略转成可训练、可复用的地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://toddlerbot.github.io" target="_blank" rel="noopener">ToddlerBot project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>데이터 기반의 학습 기반 로보틱스 연구는 정책 실행 플랫폼이자 정책 훈련을 위한 체화된 데이터 수집 도구 역할을 하는 새로운 로봇 하드웨어 설계 접근법을 요구합니다. 우리는 로보틱스 및 AI 연구에서 확장 가능한 정책 학습을 위해 설계된 저비용 오픈소스 휴머노이드 로봇 플랫폼인 ToddlerBot을 소개합니다. ToddlerBot은 고품질 시뮬레이션 및 실제 데이터의 원활한 획득을 가능하게 합니다. 플러그 앤 플레이 영점 보정과 전이 가능한 모터 시스템 식별은 높은 충실도의 디지털 트윈을 보장하여 시뮬레이션에서 실제 세계로의 제로샷 정책 전이를 가능하게 합니다. 사용자 친화적인 원격 조작 인터페이스는 인간 시연으로부터 운동 기술을 학습하기 위한 간소화된 실제 데이터 수집을 용이하게 합니다. 데이터 수집 능력과 인간형 설계를 활용하여 ToddlerBot은 전신 로코-조작을 수행하기 위한 이상적인 플랫폼입니다. 또한 ToddlerBot의 소형 크기(0.56m, 3.4kg)는 실제 환경에서 안전한 작동을 보장합니다. 완전히 3D 프린팅된 오픈소스 설계와 상용 부품을 통해 재현성을 달성하여 총 비용을 6,000 USD 미만으로 유지합니다. 포괄적인 문서는 기본 기술 전문 지식으로 조립 및 유지보수를 가능하게 하며, 이는 시스템의 성공적인 독립적 복제를 통해 검증되었습니다. 우리는 팔 길이, 탑재량, 내구성 테스트, 로코-조작 작업, 그리고 두 로봇이 함께 장난감 세션을 정리하는 협력적 장기 시나리오를 통해 ToddlerBot의 능력을 입증합니다. ML 호환성, 성능 및 재현성을 발전시킴으로써 ToddlerBot은 로보틱스 연구에서 확장 가능한 학습과 동적 정책 실행을 위한 강력한 플랫폼을 제공합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>데이터 기반의 학습 기반 로보틱스 연구는 정책 실행 플랫폼이자 정책 훈련을 위한 체화된 데이터 수집 도구 역할을 하는 새로운 로봇 하드웨어 설계 접근법을 요구합니다. 우리는 로보틱스 및 AI 연구에서 확장 가능한 정책 학습을 위해 설계된 저비용 오픈소스 휴머노이드 로봇 플랫폼인 ToddlerBot을 소개합니다. ToddlerBot은 고품질 시뮬레이션 및 실제 데이터의 원활한 획득을 가능하게 합니다. 플러그 앤 플레이 영점 보정과 전이 가능한 모터 시스템 식별은 높은 충실도의 디지털 트윈을 보장하여 시뮬레이션에서 실제 세계로의 제로샷 정책 전이를 가능하게 합니다. 사용자 친화적인 원격 조작 인터페이스는 인간 시연으로부터 운동 기술을 학습하기 위한 간소화된 실제 데이터 수집을 용이하게 합니다. 데이터 수집 능력과 인간형 설계를 활용하여 ToddlerBot은 전신 로코-조작을 수행하기 위한 이상적인 플랫폼입니다. 또한 ToddlerBot의 소형 크기(0.56m, 3.4kg)는 실제 환경에서 안전한 작동을 보장합니다. 완전히 3D 프린팅된 오픈소스 설계와 상용 부품을 통해 재현성을 달성하여 총 비용을 6,000 USD 미만으로 유지합니다. 포괄적인 문서는 기본 기술 전문 지식으로 조립 및 유지보수를 가능하게 하며, 이는 시스템의 성공적인 독립적 복제를 통해 검증되었습니다. 우리는 팔 길이, 탑재량, 내구성 테스트, 로코-조작 작업, 그리고 두 로봇이 함께 장난감 세션을 정리하는 협력적 장기 시나리오를 통해 ToddlerBot의 능력을 입증합니다. ML 호환성, 성능 및 재현성을 발전시킴으로써 ToddlerBot은 로보틱스 연구에서 확장 가능한 학습과 동적 정책 실행을 위한 강력한 플랫폼을 제공합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_ficht_nimbro_op2_grown_up_3d_printed_2017/">NimbRo-OP2: 연구를 위한 3D 프린팅 오픈 성인 크기 휴머노이드 플랫폼</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_open_television_teleoperation_2024_1/">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">인용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_toddlerbot_open_source_ml_comp_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ficht_nimbro_op2_grown_up_3d_printed_2017/">
+          <span class="entry-type">논문</span>
+          <h3>NimbRo-OP2: 연구를 위한 3D 프린팅 오픈 성인 크기 휴머노이드 플랫폼</h3>
+          <p>본 논문은 약 135cm 키와 18kg 무게의 저렴하고 완전히 오픈소스인 3D 프린팅 성인 크기 휴머노이드 로봇 플랫폼인 NimbRo-OP2를 소개하고, RoboCup 2017…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_open_television_teleoperation_2024_1/">
+          <span class="entry-type">논문</span>
+          <h3>Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</h3>
+          <p>Open-TeleVision…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</h3>
+          <p>본 논문은 로봇 팔 교사가 순응적 접촉, 커리큘럼 스케줄링, 섭동, 실패 감지 및 자동 리셋을 통해 휴머노이드 학생을 지지하고 안내하여 최소한의 인간 개입으로 효율적인 실제 세계…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

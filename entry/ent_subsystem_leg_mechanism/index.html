@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>腿部机构 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/component/">零部件</a>
+    <span>/</span>
+    <span class="breadcrumb-current">腿部机构</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">零部件</div>
+      <h1>腿部机构</h1>
+      <p class="entry-name-en">Leg Mechanism</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-09.md#9.2.13 下肢关键尺寸与公差 by scripts/backfill_nonpaper_entries.py.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>!!! note &#34;术语解释：连杆长度、关节轴线偏移、轴承座孔公差、同轴度、H7/g6、形位公差&#34; - 连杆长度（link length）：相邻关节轴线之间的垂直距离。 - 关节轴线偏移（joint axis offset）：实际旋转轴线与名义轴线之间的位置偏差。 - 轴承座孔公差（bearing housing tolerance）：安装轴承的孔的直径允许变动范围。 - 同轴度（coaxiality）：两轴或孔轴线重合程度的形位公差。 - H7/g6：孔 H7、轴 g6 的配合代号，表示间隙配合。 - 形位公差（geometric dimensioning and tolerancing, GD&amp;T）：控制零件几何特征相对理想形状、方向、位置和跳动允许的变动量。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>腿部机构是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>下肢连杆长度、关节轴线偏移与配合公差直接决定运动学精度、装配可行性与动态性能。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：连杆长度、关节轴线偏移、轴承座孔公差、同轴度、H7/g6、形位公差</p>
+<ul>
+<li><strong>连杆长度（link length）</strong>：相邻关节轴线之间的垂直距离。</li>
+<li><strong>关节轴线偏移（joint axis offset）</strong>：实际旋转轴线与名义轴线之间的位置偏差。</li>
+<li><strong>轴承座孔公差（bearing housing tolerance）</strong>：安装轴承的孔的直径允许变动范围。</li>
+<li><strong>同轴度（coaxiality）</strong>：两轴或孔轴线重合程度的形位公差。</li>
+<li><strong>H7/g6</strong>：孔 H7、轴 g6 的配合代号，表示间隙配合。</li>
+<li><strong>形位公差（geometric dimensioning and tolerancing, GD&amp;T）</strong>：控制零件几何特征相对理想形状、方向、位置和跳动允许的变动量。</li>
+</ul>
+</div>
+<p><strong>典型连杆长度范围</strong>：以身高 1.6–1.8 m 的人形机器人为例：</p>
+<table>
+<thead>
+<tr>
+<th>尺寸</th>
+<th>范围</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大腿长 <span class="arithmatex">\(l_{\text{thigh}}\)</span></td>
+<td>0.38–0.45 m</td>
+<td>髋-膝轴线距离</td>
+</tr>
+<tr>
+<td>小腿长 <span class="arithmatex">\(l_{\text{shank}}\)</span></td>
+<td>0.38–0.45 m</td>
+<td>膝-踝轴线距离</td>
+</tr>
+<tr>
+<td>足长</td>
+<td>0.22–0.28 m</td>
+<td>足跟-足尖</td>
+</tr>
+<tr>
+<td>足宽</td>
+<td>0.08–0.12 m</td>
+<td>影响侧倾稳定</td>
+</tr>
+<tr>
+<td>髋间距</td>
+<td>0.16–0.22 m</td>
+<td>双髋关节轴线距离</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关节轴线偏移</strong>：髋、膝、踝三轴在矢状面的共面度误差应控制在 <span class="arithmatex">\(\pm 0.3\,\text{mm}\)</span> 以内，否则步态中会出现侧向摆动力矩。髋 yaw 轴与 pitch/roll 轴正交度建议 <span class="arithmatex">\(\le 0.05°\)</span>。</p>
+<p><strong>轴承座孔公差</strong>：滚动轴承外圈与座孔常用 H7/k6（过渡配合）或 H7/g6（间隙配合便于装配）。关节输出轴与轴承内圈常用 k6/m6（轻微过盈）。轴承座孔圆柱度要求 <span class="arithmatex">\(\le 0.01\,\text{mm}\)</span>，同轴度相对装配基准 <span class="arithmatex">\(\le 0.02\,\text{mm}\)</span>。</p>
+<p><strong>配合示例</strong>：铝合金壳体中安装深沟球轴承 6206，外圈直径 <span class="arithmatex">\(D=62\,\text{mm}\)</span>：座孔选 H7（<span class="arithmatex">\(+0.030/0\)</span>），外圈配合后为轻微间隙或过渡；轴颈选 k6（<span class="arithmatex">\(+0.021/+0.002\)</span>）以保证内圈随轴转动。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["下肢连杆"] --&gt; B["大腿 L1"]
+    A --&gt; C["小腿 L2"]
+    A --&gt; D["足 L3"]
+    B --&gt; E["髋-膝同轴度 ≤0.02 mm"]
+    C --&gt; E
+    D --&gt; F["踝-足平面度 ≤0.02 mm"]
+    E --&gt; G["轴承座孔 H7/k6"]</code></pre>
+<p><strong>GD&amp;T 在下肢的应用示例</strong>：以膝关节输出法兰为例：</p>
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>公差</th>
+<th>基准</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>法兰端面平面度</td>
+<td><span class="arithmatex">\(0.02\,\text{mm}\)</span></td>
+<td>—</td>
+<td>与小腿端面贴合</td>
+</tr>
+<tr>
+<td>端面对轴颈垂直度</td>
+<td><span class="arithmatex">\(0.03\,\text{mm}\)</span></td>
+<td>A</td>
+<td>保证小腿轴线正交</td>
+</tr>
+<tr>
+<td>轴颈圆柱度</td>
+<td><span class="arithmatex">\(0.01\,\text{mm}\)</span></td>
+<td>A</td>
+<td>轴承配合精度</td>
+</tr>
+<tr>
+<td>螺栓孔位置度</td>
+<td><span class="arithmatex">\(\phi 0.1\,\text{mm}\)</span></td>
+<td>A</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p><strong>公差链示例</strong>：从髋关节到踝关节的同轴度公差链包括：髋壳体轴承座同轴度、大腿管两端法兰同轴度、膝壳体同轴度、小腿管同轴度、踝壳体同轴度。若每项控制在 <span class="arithmatex">\(\pm 0.02\,\text{mm}\)</span>，则 worst-case 累积为 <span class="arithmatex">\(\pm 0.10\,\text{mm}\)</span>，需通过选配或调整垫片补偿。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["髋壳体"] --&gt;|"±0.02"| B["大腿管"]
+    B --&gt;|"±0.02"| C["膝壳体"]
+    C --&gt;|"±0.02"| D["小腿管"]
+    D --&gt;|"±0.02"| E["踝壳体"]
+    E --&gt; F["同轴度累积 ±0.10"]</code></pre>
+<h2 id="_3">参考</h2>
+<ul>
+<li>Wiki extraction</li>
+<li>项目 Wiki：chapter-09.md#9.2.13 下肢关键尺寸与公差</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_principle_zero_moment_point/">零力矩点（ZMP）</a>
+              <span class="rel-desc">腿部机构使用零力矩点（ZMP）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_inverse_kinematics/">逆运动学</a>
+              <span class="rel-desc">腿部机构使用逆运动学。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_forward_kinematics/">正运动学</a>
+              <span class="rel-desc">腿部机构使用正运动学。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_subsystem_leg_mechanism"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">方法</span>
+          <h3>逆运动学</h3>
+          <p>根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">原理</span>
+          <h3>零力矩点（ZMP）</h3>
+          <p>8.4.4 零力矩点（ZMP）与动态平衡 零力矩点（Zero Moment Point, ZMP）是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">方法</span>
+          <h3>正运动学</h3>
+          <p>根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

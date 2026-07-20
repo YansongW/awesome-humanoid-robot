@@ -1,0 +1,2957 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 3 章 关键材料 · Wiki · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" aria-current="page">Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">第 3 章 关键材料</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="3">第 3 章 关键材料</h1>
+<h2 id="_1">摘要</h2>
+<p>人形机器人的功率密度、动态响应、续航与安全边界，本质上由其上游材料的电子结构、晶体学特征、缺陷态及界面行为共同决定。本章从凝聚态物理、物理冶金、电化学与半导体物理等基础学科出发，围绕四类核心材料体系展开：稀土永磁材料、结构材料、电化学能源材料以及宽禁带半导体材料。每一类材料均从晶体结构与电子结构、关键物理量与性能指标、物理/化学机理、失效模式、表征方法、供应链格局以及人形机器人场景下的设计约束等维度进行系统阐述，并引用经过核实的实验与产业文献加以佐证。</p>
+<p><strong>关键词</strong>：人形机器人；Nd-Fe-B；磁晶各向异性；晶界扩散；铝合金时效；镁合金腐蚀；锂离子电池；固态电解质；SiC；GaN</p>
+<hr />
+<h2 id="31">3.1 稀土永磁材料</h2>
+<h3 id="311">3.1.1 磁性的物理起源：自旋、轨道与交换作用</h3>
+<p>磁性源于原子中未配对电子的两种内禀角动量：自旋角动量与轨道角动量。二者分别对应自旋磁矩与轨道磁矩。在固体中，相邻原子的磁矩并非通过经典磁偶极相互作用排列，而是通过<strong>交换作用</strong>（exchange interaction）耦合。</p>
+<p>交换作用的能量可近似写为 Heisenberg 形式：</p>
+<div class="arithmatex">\[
+E_{ex} = -2J \sum_{\langle i,j \rangle} \mathbf{S}_i \cdot \mathbf{S}_j
+\]</div>
+<p>其中 <span class="arithmatex">\(J\)</span> 为交换积分，<span class="arithmatex">\(\mathbf{S}_i\)</span>、<span class="arithmatex">\(\mathbf{S}_j\)</span> 为相邻原子的自旋。<span class="arithmatex">\(J &gt; 0\)</span> 时磁矩平行排列形成铁磁体；<span class="arithmatex">\(J &lt; 0\)</span> 时反平行排列形成反铁磁体。过渡金属 Fe、Co、Ni 的 <span class="arithmatex">\(3d\)</span> 电子波函数重叠较大，交换积分 <span class="arithmatex">\(J\)</span> 显著，因此具有高居里温度和高饱和磁化强度。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：自旋、轨道角动量、交换作用、居里温度、饱和磁化强度</p>
+<ul>
+<li><strong>自旋（spin）</strong>：电子的内禀角动量，可形象理解为电子绕自身轴的旋转。自旋量子数 <span class="arithmatex">\(s = 1/2\)</span>，产生自旋磁矩 <span class="arithmatex">\(\mu_s = -g_s \mu_B s\)</span>，其中 <span class="arithmatex">\(g_s \approx 2\)</span> 为朗德因子，<span class="arithmatex">\(\mu_B\)</span> 为玻尔磁子。其本质是狄拉克方程描述的相对论量子效应。</li>
+<li><strong>轨道角动量（orbital angular momentum）</strong>：电子绕原子核运动产生的角动量，产生轨道磁矩。在晶体中，轨道运动受晶体场影响，部分被“淬灭”。</li>
+<li><strong>交换作用（exchange interaction）</strong>：量子力学效应，源于泡利不相容原理对多电子波函数反对称性的要求。它不是经典电磁相互作用，而是电子间库仑相互作用的量子表现，决定了磁矩是平行（铁磁）还是反平行（反铁磁）排列。</li>
+<li><strong>居里温度（Curie temperature）</strong>：热运动足以破坏交换作用有序排列的温度，高于此温度材料变为顺磁体。</li>
+<li><strong>饱和磁化强度（saturation magnetization, <span class="arithmatex">\(M_s\)</span>）</strong>：当所有可排列磁矩在外场作用下完全一致时单位体积的磁矩。它由单位体积内未配对电子数决定，是材料能提供的最大磁通密度的上限。</li>
+</ul>
+</div>
+<p>稀土元素 Nd、Dy、Tb 的磁性主要来自局域化的 <span class="arithmatex">\(4f\)</span> 电子。由于 <span class="arithmatex">\(4f\)</span> 电子被 <span class="arithmatex">\(5s^2 5p^6\)</span> 外层电子屏蔽，晶体场对 <span class="arithmatex">\(4f\)</span> 电子的作用较弱，但自旋-轨道耦合极强，导致稀土离子具有较大的总角动量 <span class="arithmatex">\(\mathbf{J}\)</span> 和磁矩。稀土离子与过渡金属 <span class="arithmatex">\(3d\)</span> 电子之间的 <span class="arithmatex">\(4f-3d\)</span> 交换作用（<span class="arithmatex">\(J_{4f-3d}\)</span>）是 R-TM-B（R = 稀土，TM = 过渡金属）永磁材料获得高居里温度的关键。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[未配对电子自旋&lt;br/&gt;产生局域磁矩] --&gt; B[泡利不相容原理&lt;br/&gt;限制多电子波函数]
+    B --&gt; C[库仑交换积分 J]
+    C --&gt;|J &gt; 0| D[铁磁耦合&lt;br/&gt;磁矩平行排列]
+    C --&gt;|J &lt; 0| E[反铁磁耦合&lt;br/&gt;磁矩反平行排列]
+    D --&gt; F[自发磁化&lt;br/&gt;居里温度以下]</code></pre>
+<h3 id="312">3.1.2 磁晶各向异性与单离子模型</h3>
+<p><strong>磁晶各向异性</strong>是指磁化强度沿不同晶向时能量不同的现象，其物理根源在于自旋-轨道耦合与晶体场的联合作用。对于单轴各向异性，各向异性能密度可写为</p>
+<div class="arithmatex">\[
+E_K = K_1 \sin^2\theta + K_2 \sin^4\theta + \cdots
+\]</div>
+<p>其中 <span class="arithmatex">\(\theta\)</span> 为磁化方向与<strong>易磁化轴</strong>（easy axis）的夹角，<span class="arithmatex">\(K_1\)</span>、<span class="arithmatex">\(K_2\)</span> 为磁晶各向异性常数。当 <span class="arithmatex">\(K_1 &gt; 0\)</span> 时，易轴沿 <span class="arithmatex">\(c\)</span> 轴方向；当 <span class="arithmatex">\(K_1 &lt; 0\)</span> 时，易面垂直于 <span class="arithmatex">\(c\)</span> 轴。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：磁晶各向异性、易磁化轴、各向异性场、自旋-轨道耦合、晶体场、单离子模型、Stevens 因子</p>
+<ul>
+<li><strong>磁晶各向异性（magnetocrystalline anisotropy）</strong>：磁化方向与晶体学方向绑定的现象。可理解为电子云在晶体中的非球形分布使得某些方向磁化更“省力”。</li>
+<li><strong>易磁化轴（easy axis）</strong>：磁化方向与该轴一致时磁晶各向异性能最低的方向；反之为难磁化轴（hard axis）。</li>
+<li><strong>各向异性场（anisotropy field, <span class="arithmatex">\(H_A\)</span>）</strong>：等效于把磁化方向从易轴转到难轴所需克服的磁场，<span class="arithmatex">\(H_A = 2K_1/(\mu_0 M_s)\)</span>。它量化了磁矩“锁定”在易轴上的强度。</li>
+<li><strong>自旋-轨道耦合（spin-orbit coupling）</strong>：电子自旋磁矩与轨道运动产生的磁场之间的相互作用，是磁晶各向异性的核心来源。表达式为 <span class="arithmatex">\(\lambda \mathbf{L} \cdot \mathbf{S}\)</span>，<span class="arithmatex">\(\lambda\)</span> 为耦合常数。</li>
+<li><strong>晶体场（crystal field）</strong>：周围原子或离子对中心离子电子云产生的静电势。它使稀土离子的能级简并解除（Stark 分裂）。</li>
+<li><strong>单离子模型（single-ion model）</strong>：认为整个晶体的磁晶各向异性是各个稀土离子各向异性的叠加。每个稀土离子在晶体场中形成特定的能级结构，磁化方向改变时其自由能随之改变。</li>
+<li><strong>Stevens 因子</strong>：描述稀土离子 <span class="arithmatex">\(4f\)</span> 电子云形状的参数，决定该离子对晶体场的响应方式，从而决定其磁晶各向异性的符号和大小。</li>
+</ul>
+</div>
+<p>稀土离子的磁晶各向异性可用单离子模型解释：晶体场使稀土离子的 <span class="arithmatex">\(2J+1\)</span> 个简并态发生分裂，磁化方向不同时电子占据的能级不同，从而产生各向异性能。Nd<span class="arithmatex">\(^{3+}\)</span> 在 Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 中的易轴沿 <span class="arithmatex">\([001]\)</span> 方向，而 Dy<span class="arithmatex">\(^{3+}\)</span>、Tb<span class="arithmatex">\(^{3+}\)</span> 由于不同的 Stevens 因子和晶体场参数，具有更强的单轴各向异性。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[晶体场&lt;br/&gt;静电势] --&gt; B[4f 电子能级分裂]
+    C[自旋-轨道耦合&lt;br/&gt;λL·S] --&gt; D[自旋方向与轨道绑定]
+    B --&gt; E[磁化方向改变&lt;br/&gt;电子占据能级变化]
+    D --&gt; E
+    E --&gt; F[磁晶各向异性能&lt;br/&gt;存在易轴/难轴]</code></pre>
+<h3 id="313-brown">3.1.3 磁畴、畴壁与 Brown 佯谬</h3>
+<p>大块铁磁体内部会形成<strong>磁畴</strong>以降低退磁场能量。磁畴壁厚度 <span class="arithmatex">\(\delta_w\)</span> 由交换能 <span class="arithmatex">\(A\)</span> 与各向异性能 <span class="arithmatex">\(K_1\)</span> 的竞争决定：</p>
+<div class="arithmatex">\[
+\delta_w = \pi \sqrt{\frac{A}{K_1}}
+\]</div>
+<p>Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 的交换刚度 <span class="arithmatex">\(A \approx 7.7\)</span> pJ/m，<span class="arithmatex">\(K_1 \approx 4.6\)</span> MJ/m<span class="arithmatex">\(^3\)</span>，估算 <span class="arithmatex">\(\delta_w \approx 4\)</span> nm。实际磁畴尺寸由退磁场、晶粒尺寸和缺陷共同决定。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：磁畴、畴壁、Bloch 壁、退磁场、交换刚度、矫顽力、Brown 佯谬</p>
+<ul>
+<li><strong>磁畴（magnetic domain）</strong>：铁磁体内部自发磁化方向一致的小区域。不同磁畴的磁化方向不同，整体对外显示较低的自由磁极密度，从而降低退磁场能。</li>
+<li><strong>畴壁（domain wall）</strong>：相邻磁畴之间的过渡层，磁化方向在纳米尺度内逐渐旋转。</li>
+<li><strong>Bloch 壁（Bloch wall）</strong>：磁化方向在壁面内旋转，壁面上无自由磁极的一类畴壁。在块体材料中常见。</li>
+<li><strong>退磁场（demagnetizing field）</strong>：由材料表面自由磁极产生的、与磁化方向相反的内部磁场。其大小与样品形状有关，表示为 <span class="arithmatex">\(\mathbf{H}_d = -N \mathbf{M}\)</span>，<span class="arithmatex">\(N\)</span> 为退磁因子。</li>
+<li><strong>交换刚度（exchange stiffness, <span class="arithmatex">\(A\)</span>）</strong>：描述相邻原子磁矩保持平行趋势的强度，来源于交换作用，单位为 J/m。</li>
+<li><strong>矫顽力（coercivity, <span class="arithmatex">\(H_c\)</span> 或 <span class="arithmatex">\(H_{cj}\)</span>）</strong>：使宏观磁化强度降为零所需施加的反向磁场。它反映材料抵抗反磁化的能力。</li>
+<li><strong>Brown 佯谬（Brown's paradox）</strong>：理想均匀单晶的理论矫顽力应接近各向异性场，而实际烧结磁体矫顽力远低于此值，说明缺陷与非理想结构主导了反磁化过程。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[大块铁磁体&lt;br/&gt;高退磁场能] --&gt; B[分磁畴&lt;br/&gt;降低自由磁极]
+    B --&gt; C[磁畴间形成畴壁]
+    C --&gt; D[交换能 A 希望壁厚]
+    C --&gt; E[各向异性能 K 希望壁薄]
+    D --&gt; F[Bloch 壁厚度&lt;br/&gt;δ_w ≈ π√(A/K)]
+    E --&gt; F</code></pre>
+<p>Brown 佯谬指出：对于理想的均匀单晶椭球体，反磁化必须通过一致转动实现，理论矫顽力应接近各向异性场 <span class="arithmatex">\(H_A = 2K_1/(\mu_0 M_s)\)</span>（约 7 T 对于 Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B）。然而实际烧结 Nd-Fe-B 磁体的矫顽力通常仅为 1-3 T，远低于理论值。这一差异说明实际磁体中存在晶粒表面缺陷、晶界相不连续、局部成分波动等结构非理想性，使得反磁化畴能够在远低于 <span class="arithmatex">\(H_A\)</span> 的磁场下成核。因此，矫顽力优化的本质是微观结构工程，而非单纯提高本征各向异性。</p>
+<h3 id="314-nd_2fe_14b">3.1.4 Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 的晶体结构与内禀磁性</h3>
+<p>Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 主相具有复杂的四方结构，<strong>空间群</strong> <span class="arithmatex">\(P4_2/mnm\)</span>（No. 136），每个<strong>晶胞</strong>含 68 个原子：8 Nd、56 Fe、4 B。Fe 原子占据 6 个不等价晶位（<span class="arithmatex">\(16k_1\)</span>、<span class="arithmatex">\(16k_2\)</span>、<span class="arithmatex">\(8j_1\)</span>、<span class="arithmatex">\(8j_2\)</span>、<span class="arithmatex">\(4e\)</span>、<span class="arithmatex">\(4c\)</span>），不同晶位的局部配位环境和交换作用不同，共同贡献高饱和磁化强度。B 原子占据由 Nd 原子构成的三棱柱间隙，稳定了高 Fe 含量的四方相，并提高了居里温度。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：空间群、晶胞、内禀磁性、磁能积、剩磁、方形度</p>
+<ul>
+<li><strong>空间群（space group）</strong>：描述晶体中原子排列对称性的完整数学群，同时包含平移、旋转、反映等对称操作。</li>
+<li><strong>晶胞（unit cell）</strong>：晶体结构的最小重复单元，通过平移可填满整个空间。</li>
+<li><strong>内禀磁性（intrinsic magnetic properties）</strong>：只取决于化学成分和晶体结构、与微观形貌无关的性质，如 <span class="arithmatex">\(M_s\)</span>、<span class="arithmatex">\(K_1\)</span>、<span class="arithmatex">\(T_C\)</span>。</li>
+<li><strong>磁能积（energy product, <span class="arithmatex">\((BH)_{\max}\)</span>）</strong>：退磁曲线第二象限中磁感应强度 <span class="arithmatex">\(B\)</span> 与磁场强度 <span class="arithmatex">\(H\)</span> 乘积的最大值，是衡量永磁体储能密度的核心指标。</li>
+<li><strong>剩磁（remanence, <span class="arithmatex">\(B_r\)</span>）</strong>：外磁场降为零后材料保留的磁感应强度。它取决于 <span class="arithmatex">\(M_s\)</span> 和晶粒取向度。</li>
+<li><strong>方形度（squareness, <span class="arithmatex">\(H_k/H_{cj}\)</span>）</strong>：描述退磁曲线在膝部以上是否接近矩形。方形度越好，电机工作点越稳定。</li>
+</ul>
+</div>
+<p>Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 的内禀磁性参数如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>数值</th>
+<th>物理意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>居里温度 <span class="arithmatex">\(T_C\)</span></td>
+<td>585 K（312 °C）</td>
+<td>铁磁-顺磁转变温度</td>
+</tr>
+<tr>
+<td>室温饱和磁化强度 <span class="arithmatex">\(\mu_0 M_s\)</span></td>
+<td>1.61 T</td>
+<td>决定最大剩磁</td>
+</tr>
+<tr>
+<td>磁晶各向异性场 <span class="arithmatex">\(\mu_0 H_A\)</span></td>
+<td>~7 T</td>
+<td>易轴稳定性</td>
+</tr>
+<tr>
+<td>各向异性常数 <span class="arithmatex">\(K_1\)</span></td>
+<td>4.6 MJ/m<span class="arithmatex">\(^3\)</span></td>
+<td>反磁化能量势垒</td>
+</tr>
+<tr>
+<td>理论最大磁能积 <span class="arithmatex">\((BH)_{\max}\)</span></td>
+<td>~512 kJ/m<span class="arithmatex">\(^3\)</span>（64 MGOe）</td>
+<td>单晶理想值</td>
+</tr>
+<tr>
+<td>商用烧结磁体 <span class="arithmatex">\((BH)_{\max}\)</span></td>
+<td>270-440 kJ/m<span class="arithmatex">\(^3\)</span></td>
+<td>受取向度、密度限制</td>
+</tr>
+</tbody>
+</table>
+<p>实际烧结磁体的剩磁 <span class="arithmatex">\(B_r\)</span> 和矫顽力 <span class="arithmatex">\(H_{cj}\)</span> 受取向度、密度和晶界控制。高性能磁体通过气流磨获得 <span class="arithmatex">\(3-5\)</span> <span class="arithmatex">\(\mu\)</span>m 的扁平粉末颗粒，在 1.5-2 T 磁场中取向后压制，再在 1050-1100 °C 烧结，晶粒尺寸通常控制在 <span class="arithmatex">\(5-8\)</span> <span class="arithmatex">\(\mu\)</span>m。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[高剩磁 Br] --&gt; B[高 Ms + 高取向度]
+    C[高矫顽力 Hcj] --&gt; D[高各向异性 + 良好晶界]
+    B --&gt; E[磁能积 (BH)max]
+    D --&gt; E
+    E --&gt; F[电机转矩密度]
+    subgraph "退磁曲线特征点"
+    G[Br]
+    H[Knee 点]
+    I[Hcj]
+    end
+    E --&gt; G
+    E --&gt; H
+    E --&gt; I</code></pre>
+<h3 id="315">3.1.5 矫顽力机制：成核型、钉扎型与晶界工程</h3>
+<p>烧结 Nd-Fe-B 磁体的矫顽力机制主要可归为两类：</p>
+<ol>
+<li>
+<p><strong>成核控制型（nucleation-controlled）</strong>：反磁化畴首先在晶粒表面或近表面缺陷处成核，随后畴壁快速扫过整个晶粒。矫顽力取决于成核场，晶粒表面缺陷和晶界相的化学成分是关键。</p>
+</li>
+<li>
+<p><strong>钉扎控制型（pinning-controlled）</strong>：畴壁在运动过程中被晶界、析出相或缺陷钉扎。热变形纳米晶 Nd-Fe-B 磁体通常属于此类。</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：成核、钉扎、反磁化畴、晶界工程</p>
+<ul>
+<li><strong>成核（nucleation）</strong>：在热力学驱动力下，反向磁化的小区域在缺陷或表面处萌生。成核场越低，矫顽力越小。</li>
+<li><strong>钉扎（pinning）</strong>：畴壁在运动时被局部势阱（晶界相、析出物、应力场）捕获，需要额外能量才能挣脱。</li>
+<li><strong>反磁化畴（reverse domain）</strong>：磁化方向与外场方向相反的磁畴，是矫顽力损耗的物理载体。</li>
+<li><strong>晶界工程（grain boundary engineering）</strong>：通过调控晶界相成分、厚度和连续性，优化晶粒间磁隔离与缺陷钝化，从而提升矫顽力。</li>
+</ul>
+</div>
+<p>对于常规烧结磁体，成核控制占主导。晶粒表面的缺陷（如氧化、贫 Nd 层、机械损伤）会显著降低成核场。晶界扩散工艺通过在晶粒表层形成高各向异性壳层，提高了缺陷区域的局部各向异性场，从而抑制反磁化畴的成核。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[反向磁场增加] --&gt; B{矫顽力机制}
+    B --&gt;|成核控制| C[表面缺陷处&lt;br/&gt;反磁化畴成核]
+    C --&gt; D[畴壁扫过晶粒]
+    B --&gt;|钉扎控制| E[畴壁被晶界/析出相钉扎]
+    E --&gt; F[需更高场才能脱钉]
+    G[晶界工程] --&gt; C
+    G --&gt; E</code></pre>
+<h3 id="316-dytb">3.1.6 晶界扩散：Dy/Tb 核壳结构与扩散动力学</h3>
+<p>重稀土元素 Dy、Tb 替代 Nd 后可形成 (Nd,Dy)<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 或 (Nd,Tb)<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B，其室温各向异性场分别约为 15 T 和 22 T，远高于 Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 的 ~7 T。通过<strong>晶界扩散工艺</strong>（Grain Boundary Diffusion Process, GBDP），可在不显著降低剩磁的前提下，将 Dy/Tb 引入晶粒表层形成富重稀土壳层（core-shell structure），从而大幅提升矫顽力。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：晶界扩散（GBDP）、核壳结构、化学诱导液膜迁移（CILFM）、扩散、晶界、三维原子探针（APT）</p>
+<ul>
+<li><strong>晶界扩散（GBDP）</strong>：将重稀土源涂覆在磁体表面，经热处理使原子沿晶界快速进入磁体内部，在晶粒表层形成高各向异性壳层的工艺。</li>
+<li><strong>核壳结构（core-shell structure）</strong>：晶粒中心保持低重稀土的 Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 主相（核），边缘形成富 Dy/Tb 的高各向异性层（壳）。</li>
+<li><strong>化学诱导液膜迁移（CILFM）</strong>：富稀土液相在晶界处因化学势/表面张力梯度而迁移，带动溶质原子快速扩散并形成壳层。</li>
+<li><strong>扩散（diffusion）</strong>：原子在化学势梯度驱动下从高浓度区向低浓度区迁移，遵循 Fick 定律。晶界扩散速率远高于晶内扩散。</li>
+<li><strong>晶界（grain boundary）</strong>：取向不同的晶粒之间的界面，原子排列疏松，扩散通道多，能量较高。</li>
+<li><strong>三维原子探针（APT）</strong>：利用电场蒸发离子并通过飞行时间质谱确定原子种类与位置的表征技术，可达近原子级分辨率。</li>
+</ul>
+</div>
+<p>GBDP 的典型工艺：将 Dy/Tb 源（金属、氟化物 DyF<span class="arithmatex">\(_3\)</span>、氢化物 TbH<span class="arithmatex">\(_3\)</span> 或低熔点合金）涂覆于磁体表面，然后在 800-950 °C 进行扩散热处理，使重稀土沿晶界向内部渗透，并在主相晶粒边缘形成 (Nd,HRE)<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 壳层。Hono 等通过三维原子探针（APT）证实，GBDP 后 Dy 主要分布在晶粒表层 1-2 μm 范围内，形成高各向异性场壳层，有效抑制了反磁化畴的成核。</p>
+<p>扩散过程受化学诱导液膜迁移（Chemically Induced Liquid Film Migration, CILFM）控制：富稀土液相在晶界处形成，由于表面张力/化学势梯度驱动液膜迁移，使得重稀土元素沿晶界快速扩散并形成壳层。2025 年 Lee 等报道了采用 TaF<span class="arithmatex">\(_5\)</span> 两步扩散与 Pr<span class="arithmatex">\(_{70}\)</span>Cu<span class="arithmatex">\(_{15}\)</span>Al<span class="arithmatex">\(_{10}\)</span>Ga<span class="arithmatex">\(_5\)</span> 合金的复合工艺，通过在第一扩散步形成六方 TaB<span class="arithmatex">\(_2\)</span> 晶间析出相抑制 CILFM，使第二扩散步形成更薄、Pr 浓度更高的壳层，在无重稀土条件下实现矫顽力 <span class="arithmatex">\(\mu_0 H_c = 2.35\)</span> T。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[Dy/Tb 源涂覆] --&gt; B[800-950 °C 热处理]
+    B --&gt; C[晶界形成富稀土液相]
+    C --&gt; D[化学诱导液膜迁移 CILFM]
+    D --&gt; E[重稀土沿晶界渗入]
+    E --&gt; F[主相晶粒边缘形成&lt;br/&gt;(Nd,HRE)2Fe14B 壳层]
+    F --&gt; G[核：低 HRE 主相]
+    F --&gt; H[壳：高 HRE 高 H_A]
+    H --&gt; I[矫顽力提升]</code></pre>
+<p><strong>表 3-1 典型 Nd-Fe-B 晶界扩散工艺与磁性能</strong></p>
+<table>
+<thead>
+<tr>
+<th>扩散源</th>
+<th>磁体基体</th>
+<th>主要效果</th>
+<th>文献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dy 蒸镀</td>
+<td>烧结 Nd-Fe-B</td>
+<td><span class="arithmatex">\(H_{cj}\)</span> 提升，剩磁轻微下降</td>
+<td>Huang &amp; Mo, Vacuum 2024</td>
+</tr>
+<tr>
+<td>Tb 扩散 + Ga 协同</td>
+<td>烧结 Nd-Fe-B</td>
+<td><span class="arithmatex">\(H_{cj}\)</span> 提升 53.15%，剩磁不降</td>
+<td>Wang et al., PMC11820678</td>
+</tr>
+<tr>
+<td>TaF<span class="arithmatex">\(_5\)</span> + Pr-Al-Cu-Ga</td>
+<td>烧结 Nd-Fe-B</td>
+<td>无重稀土，<span class="arithmatex">\(\mu_0 H_c = 2.35\)</span> T</td>
+<td>Lee et al., Acta Mater. 2025</td>
+</tr>
+<tr>
+<td>Dy-Al-Cu 合金</td>
+<td>烧结 Nd-Fe-Co-B</td>
+<td>矫顽力、热稳定性与耐蚀性协同提升</td>
+<td>Liu et al., JMMM 2024</td>
+</tr>
+<tr>
+<td>Tb-Pr-Ce-Cu 扩散</td>
+<td>烧结 Nd-Fe-B</td>
+<td>降低 Tb 用量同时提升矫顽力</td>
+<td>Zhan et al., Mater. Today Commun. 2025</td>
+</tr>
+</tbody>
+</table>
+<h3 id="317">3.1.7 温度特性、矫顽力温度系数与电机选型</h3>
+<p>电机运行时绕组温度可达 100-180 °C，因此永磁体的高温稳定性至关重要。Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 的 <span class="arithmatex">\(K_1\)</span> 和 <span class="arithmatex">\(M_s\)</span> 随温度升高而下降，导致矫顽力降低。矫顽力温度系数 <span class="arithmatex">\(\beta\)</span> 定义为</p>
+<div class="arithmatex">\[
+\beta = \frac{H_{cj}(T_2) - H_{cj}(T_1)}{H_{cj}(T_1)(T_2 - T_1)} \times 100\%
+\]</div>
+<p>典型烧结 Nd-Fe-B 的 <span class="arithmatex">\(\beta\)</span> 约为 -0.5 到 -0.8 %/°C。Dy/Tb 的引入可改善高温矫顽力，商用等级分为 N（≤80 °C）、M（≤100 °C）、H（≤120 °C）、SH（≤150 °C）、UH（≤180 °C）、EH（≤200 °C）和 AH（≤230 °C）。人形机器人关节电机若长时间高负荷运行，通常需选用 UH 或 EH 等级。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：矫顽力温度系数、剩磁温度系数、工作点、膝点、涡流损耗</p>
+<ul>
+<li><strong>矫顽力温度系数（<span class="arithmatex">\(\beta\)</span>）</strong>：单位温度变化引起矫顽力相对变化的百分比，负值表示升温矫顽力下降。</li>
+<li><strong>剩磁温度系数（<span class="arithmatex">\(\alpha\)</span>）</strong>：单位温度变化引起剩磁相对变化的百分比。</li>
+<li><strong>工作点（operating point）</strong>：电机运行时在永磁体退磁曲线上对应的 <span class="arithmatex">\(B\)</span>、<span class="arithmatex">\(H\)</span> 坐标。</li>
+<li><strong>膝点（knee point）</strong>：退磁曲线上从近似线性区进入快速下降区的拐点。若工作点低于膝点，撤去外场后磁体无法恢复原有磁化，发生不可逆退磁。</li>
+<li><strong>涡流损耗（eddy current loss）</strong>：交变磁场在导电磁体内部感应的环流产生焦耳热，与电阻率和磁体分割方式有关。</li>
+</ul>
+</div>
+<p>除矫顽力外，电机设计还需关注：
+- <strong>剩磁 <span class="arithmatex">\(B_r\)</span></strong>：决定气隙磁密和转矩常数。
+- <strong>方形度 <span class="arithmatex">\(H_k/H_{cj}\)</span></strong>：影响电机效率和工作点稳定性。
+- <strong>电阻率</strong>：影响涡流损耗，高频电机需高电阻率磁体。
+- <strong>温度系数 <span class="arithmatex">\(\alpha\)</span> 和 <span class="arithmatex">\(\beta\)</span></strong>：分别描述剩磁和矫顽力随温度的变化。</p>
+<p>按一台全尺寸机器人使用 30-50 个电机、每个电机 50-100 g Nd-Fe-B 估算，单机 Nd-Fe-B 用量约 1.5-4 kg。若 Dy/Tb 含量按 3-8 wt% 计，单机 Dy/Tb 氧化物需求为 50-300 g。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[电机绕组升温] --&gt; B[K1 与 Ms 下降]
+    B --&gt; C[矫顽力 Hcj 下降]
+    C --&gt; D[退磁曲线下移]
+    D --&gt; E[工作点接近膝点]
+    E --&gt;|工作点低于膝点| F[不可逆退磁]
+    G[选用 UH/EH 等级&lt;br/&gt;或 Dy/Tb 掺杂] --&gt; H[高温矫顽力裕度]
+    H --&gt; I[避免膝点以下运行]</code></pre>
+<h3 id="318">3.1.8 腐蚀机理与防护</h3>
+<p>烧结 Nd-Fe-B 由多相构成：主相 Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B、富 Nd 晶界相和少量 Nd<span class="arithmatex">\(_2\)</span>O<span class="arithmatex">\(_3\)</span>、B<span class="arithmatex">\(_6\)</span>O 等。富 Nd 晶界相化学活性高，标准电极电位低，在潮湿环境中与 Fe 基主相形成<strong>微电偶</strong>，导致晶界优先腐蚀。腐蚀产物疏松多孔，不能提供保护，反而会加速磁性能退化。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：微电偶腐蚀、标准电极电位、晶界相、镀层、合金化</p>
+<ul>
+<li><strong>微电偶腐蚀（micro-galvanic corrosion）</strong>：两种电位不同的相在电解质中接触，低电位相作为阳极被氧化，高电位相作为阴极促进还原反应（如吸氧或析氢）。</li>
+<li><strong>标准电极电位（standard electrode potential, <span class="arithmatex">\(E^0\)</span>）</strong>：标准状态下某电对相对于标准氢电极（SHE）的平衡电位，电位越低越易被氧化。</li>
+<li><strong>晶界相（grain boundary phase）</strong>：分布在晶粒边界、成分不同于主相的富 Nd 相，对矫顽力和耐蚀性都有影响。</li>
+<li><strong>镀层（coating）</strong>：在磁体表面沉积金属或有机层以隔绝环境介质。</li>
+<li><strong>合金化（alloying）</strong>：在磁体中添加 Co、Ga、Cu 等元素改变晶界相成分，提高化学稳定性。</li>
+</ul>
+</div>
+<p>防护策略包括：</p>
+<ol>
+<li><strong>表面镀层</strong>：电镀锌、镍-铜-镍多层镀、环氧树脂涂层。Ni-Cu-Ni 镀层耐蚀性较好，但镀层孔隙和边缘效应仍需控制。</li>
+<li><strong>合金化改性</strong>：添加 Co 提高晶界相耐蚀性；添加 Ga、Cu 改善晶界相润湿性和化学稳定性。</li>
+<li><strong>晶界扩散优化</strong>：改善晶界相连续性和化学稳定性，Mo 等研究指出优化扩散和时效热处理可同时提升矫顽力、热稳定性和耐腐蚀性。</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[富 Nd 晶界相&lt;br/&gt;低 E°] --&gt;|阳极| B[Nd → Nd3+ + e-]
+    C[Fe 基主相 / Nd2Fe14B&lt;br/&gt;高 E°] --&gt;|阴极| D[O2 + 2H2O + 4e- → 4OH-]
+    E[潮湿电解质] --&gt; A
+    E --&gt; C
+    B --&gt; F[疏松腐蚀产物]
+    F --&gt; G[晶界优先腐蚀&lt;br/&gt;磁性能退化]
+    H[防护：Ni-Cu-Ni 镀层&lt;br/&gt;Co/Ga/Cu 合金化] --&gt; I[隔绝电解质 + 稳定晶界]</code></pre>
+<h3 id="319">3.1.9 回收与再生：城市矿山视角</h3>
+<p>Nd-Fe-B 磁体含 30-32 wt% 稀土（Nd、Pr、Dy、Tb），从电子废弃物中回收稀土具有重要的资源与战略意义。主要回收路线包括：</p>
+<ul>
+<li><strong>湿法冶金</strong>：酸浸、萃取分离，可回收高纯度稀土，但产生废酸需处理。</li>
+<li><strong>火法冶金</strong>：熔盐电解或高温还原，适合大规模处理。</li>
+<li><strong>氢破碎-脱氢-再复合（HDDR）</strong>：利用氢化-歧化-脱氢-再复合反应，直接再生磁粉。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：湿法冶金、火法冶金、HDDR、城市矿山</p>
+<ul>
+<li><strong>湿法冶金（hydrometallurgy）</strong>：利用水溶液中的酸碱或络合反应溶解、分离、回收金属的方法。</li>
+<li><strong>火法冶金（pyrometallurgy）</strong>：在高温下通过熔炼、还原或电解回收金属的方法。</li>
+<li><strong>HDDR（Hydrogenation-Disproportionation-Desorption-Recombination）</strong>：利用氢与 Nd-Fe-B 反应使其分解，再脱氢复合成细小晶粒磁粉的工艺。</li>
+<li><strong>城市矿山（urban mining）</strong>：将废旧电子产品和工业废弃物视为可回收金属资源的理念。</li>
+</ul>
+</div>
+<p>Kovačič 2025 年的综述系统总结了烧结 Nd-Fe-B 腐蚀与回收的最新进展，指出未来回收技术需兼顾稀土回收率、能耗和环境影响。</p>
+<h3 id="3110">3.1.10 微磁学模拟与矫顽力预测</h3>
+<p>微磁学模拟是理解 Nd-Fe-B 矫顽力机制和优化微观结构的重要工具。Landau-Lifshitz-Gilbert（LLG）方程是微磁学的基本方程：</p>
+<div class="arithmatex">\[
+\frac{\partial \mathbf{m}}{\partial t} = -\gamma \mathbf{m} \times \mathbf{H}_{eff} + \alpha \mathbf{m} \times \frac{\partial \mathbf{m}}{\partial t}
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathbf{m}\)</span> 为归一化磁化强度，<span class="arithmatex">\(\gamma\)</span> 为旋磁比，<span class="arithmatex">\(\alpha\)</span> 为 Gilbert 阻尼系数，<span class="arithmatex">\(\mathbf{H}_{eff}\)</span> 为有效场，包括交换场、各向异性场、退磁场和外加磁场。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：微磁学、LLG 方程、旋磁比、Gilbert 阻尼、有效场</p>
+<ul>
+<li><strong>微磁学（micromagnetics）</strong>：在连续介质近似下求解磁化矢量时空演化的理论框架，尺度介于原子磁矩与宏观磁畴之间。</li>
+<li><strong>LLG 方程（Landau-Lifshitz-Gilbert equation）</strong>：描述磁化矢量在外场和阻尼作用下进动与弛豫的动力学方程。</li>
+<li><strong>旋磁比（gyromagnetic ratio, <span class="arithmatex">\(\gamma\)</span>）</strong>：磁矩与角动量之比，决定磁矩在磁场中的进动频率。</li>
+<li><strong>Gilbert 阻尼（Gilbert damping, <span class="arithmatex">\(\alpha\)</span>）</strong>：描述磁化进动能量耗散到晶格的速率。</li>
+<li><strong>有效场（effective field）</strong>：所有作用于磁矩的场的总和，可通过能量泛函对磁化的变分得到。</li>
+</ul>
+</div>
+<p>通过微磁学模拟可以研究：
+- 晶粒尺寸对矫顽力的影响：存在一个最佳晶粒尺寸范围（通常为 3-8 μm），过大晶粒增加缺陷概率，过小晶粒增强交换耦合。
+- 晶界相厚度与磁隔离效果：理想晶界相厚度应足以去耦相邻晶粒，但过厚会降低剩磁。
+- 核壳结构的优化：Dy/Tb 壳层的厚度和浓度分布对矫顽力和剩磁的 trade-off。</p>
+<p>2025 年 Lee 等的研究结合微磁学模拟表明，抑制 CILFM 形成的薄而高 Pr 浓度壳层，可使晶粒表面的成核场显著提高，这是无重稀土磁体获得高矫顽力的关键。</p>
+<h3 id="3111">3.1.11 永磁电机中的磁路设计与损耗</h3>
+<p>人形机器人关节电机通常采用<strong>永磁同步电机</strong>（Permanent Magnet Synchronous Motor, PMSM）或无框力矩电机。永磁体的磁性能直接影响电机设计：</p>
+<ul>
+<li><strong>气隙磁密</strong> <span class="arithmatex">\(B_g\)</span>：由永磁体剩磁 <span class="arithmatex">\(B_r\)</span> 和磁路结构决定，典型值为 0.8-1.2 T。</li>
+<li><strong>转矩常数</strong> <span class="arithmatex">\(K_t\)</span>：与气隙磁密、绕组匝数和电机几何尺寸相关。</li>
+<li><strong>退磁曲线</strong>：在高温和大电流去磁化磁场下，需确保工作点位于 knee 点以上。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：永磁同步电机、气隙磁密、转矩常数、退磁曲线</p>
+<ul>
+<li><strong>永磁同步电机（PMSM）</strong>：转子由永磁体励磁、定子绕组通交流电产生旋转磁场，两者同步旋转的电机。</li>
+<li><strong>气隙磁密（air-gap flux density）</strong>：电机定转子气隙中的磁感应强度，直接决定电磁转矩。</li>
+<li><strong>转矩常数（torque constant, <span class="arithmatex">\(K_t\)</span>）</strong>：单位电流产生的转矩，与气隙磁密和绕组有效匝数成正比。</li>
+<li><strong>退磁曲线（demagnetization curve）</strong>：第二象限的 <span class="arithmatex">\(B-H\)</span> 曲线，描述永磁体在反向场下的磁化行为。</li>
+</ul>
+</div>
+<p>电机损耗包括铜损、铁损、机械损耗和永磁体涡流损耗。高频运行下，永磁体涡流损耗显著，可通过分割磁体、提高磁体电阻率或采用粘结磁体来降低。</p>
+<h4 id="31111">3.1.11.1 简化磁路模型与气隙磁密</h4>
+<p>永磁电机设计通常从等效磁路出发。对由永磁体、气隙和铁芯组成的闭合磁路，忽略铁芯磁阻，磁通连续性要求</p>
+<div class="arithmatex">\[
+\Phi_g = B_g A_g = B_m A_m
+\]</div>
+<p>而安培环路定律给出</p>
+<div class="arithmatex">\[
+H_m l_m + H_g l_g = 0
+\]</div>
+<p>其中 <span class="arithmatex">\(H_g = B_g / \mu_0\)</span>。Nd-Fe-B 永磁体的去磁曲线在工作区可近似为线性：</p>
+<div class="arithmatex">\[
+B_m = \mu_0 \mu_r H_m + B_r
+\]</div>
+<p>其中 <span class="arithmatex">\(\mu_r\)</span> 为<strong>回复磁导率</strong>（recoil permeability），烧结 Nd-Fe-B 的 <span class="arithmatex">\(\mu_r \approx 1.04-1.08\)</span>。联立上式可得气隙磁密</p>
+<div class="arithmatex">\[
+B_g = \frac{B_r}{\frac{A_g}{A_m} + \mu_r \frac{l_g}{l_m}}
+\]</div>
+<p>实际设计中需用 Carter 系数 <span class="arithmatex">\(k_c\)</span> 修正槽口对气隙磁阻的影响：<span class="arithmatex">\(l_{g,\text{eff}} = k_c k_s g\)</span>，其中 <span class="arithmatex">\(k_s\)</span> 为饱和系数（通常 1.1-1.3）。当 <span class="arithmatex">\(A_g/A_m \approx 1\)</span>、<span class="arithmatex">\(l_g/l_m \ll 1\)</span> 时，<span class="arithmatex">\(B_g \approx B_r\)</span>；但为抵抗电枢反应去磁，永磁体厚度 <span class="arithmatex">\(l_m\)</span> 通常取 <span class="arithmatex">\(l_m/l_g = 5-10\)</span>。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：磁动势、磁阻、磁导、回复磁导率、Carter 系数</p>
+<ul>
+<li><strong>磁动势（magnetomotive force, MMF）</strong>：驱动磁通通过的“磁势”，永磁体提供的 MMF 为 <span class="arithmatex">\(F_m = H_m l_m\)</span>。</li>
+<li><strong>磁阻（reluctance, <span class="arithmatex">\(\mathcal{R}\)</span>）</strong>：磁路对磁通的阻碍，<span class="arithmatex">\(\mathcal{R}=l/(\mu A)\)</span>，与电阻地位对应。</li>
+<li><strong>磁导（permeance, <span class="arithmatex">\(P\)</span>）</strong>：磁阻的倒数，<span class="arithmatex">\(P=\mu A/l\)</span>。</li>
+<li><strong>回复磁导率（recoil permeability, <span class="arithmatex">\(\mu_r\)</span>）</strong>：永磁体局部去磁后再加载时 <span class="arithmatex">\(B-H\)</span> 小回线的斜率与 <span class="arithmatex">\(\mu_0\)</span> 之比。</li>
+<li><strong>Carter 系数（Carter coefficient, <span class="arithmatex">\(k_c\)</span>）</strong>：考虑开槽后气隙磁阻增大的经验系数，通常 <span class="arithmatex">\(k_c \approx 1.0-1.3\)</span>。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[电机规格&lt;br/&gt;转矩/转速/电压] --&gt; B[磁路几何设计]
+    B --&gt; C[永磁体尺寸&lt;br/&gt;lm, Am]
+    C --&gt; D[等效磁路计算]
+    D --&gt; E[Bg = Br/(Ag/Am + μr·lg/lm)]
+    E --&gt; F[绕组匝数与极对数]
+    F --&gt; G[热校核与效率图]</code></pre>
+<h4 id="31112">3.1.11.2 转矩方程与反电动势</h4>
+<p>对于表面贴装式 PMSM（SPMSM），交直轴电感近似相等（<span class="arithmatex">\(L_d \approx L_q\)</span>），电磁转矩主要由永磁磁链 <span class="arithmatex">\(\lambda_m\)</span> 与交轴电流 <span class="arithmatex">\(i_q\)</span> 产生：</p>
+<div class="arithmatex">\[
+T_e = \frac{3}{2} p \lambda_m i_q
+\]</div>
+<p>其中 <span class="arithmatex">\(p\)</span> 为极对数。永磁磁链与气隙磁密的关系为</p>
+<div class="arithmatex">\[
+\lambda_m = N_{ph} k_w \frac{2}{\pi} \tau l B_g
+\]</div>
+<p>其中 <span class="arithmatex">\(N_{ph}\)</span> 为每相串联匝数，<span class="arithmatex">\(k_w\)</span> 为绕组系数，<span class="arithmatex">\(\tau\)</span> 为极距，<span class="arithmatex">\(l\)</span> 为铁芯轴向长度。反电动势幅值为</p>
+<div class="arithmatex">\[
+E_{ph} = \omega_e \lambda_m = p \Omega_m \lambda_m
+\]</div>
+<p>转矩常数 <span class="arithmatex">\(K_t = T_e / I_q = \frac{3}{2} p \lambda_m\)</span>（峰值电流与峰值转矩对应）。对于正弦波驱动，线电压有效值满足</p>
+<div class="arithmatex">\[
+V_{LL,rms} \approx \sqrt{E_{ph}^2 + (\omega_e L_s I)^2}
+\]</div>
+<p>在高速弱磁区还需满足电压极限椭圆约束。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：磁链、反电动势、极对数、弱磁、绕组系数</p>
+<ul>
+<li><strong>磁链（flux linkage, <span class="arithmatex">\(\lambda\)</span>）</strong>：线圈匝链的总磁通，<span class="arithmatex">\(\lambda = N \Phi\)</span>。</li>
+<li><strong>反电动势（back-EMF）</strong>：转子旋转时切割磁感线在定子绕组中感应的电压。</li>
+<li><strong>极对数（pole-pair number, <span class="arithmatex">\(p\)</span>）</strong>：电机一对 N-S 磁极对应的空间周期数。</li>
+<li><strong>弱磁（field weakening）</strong>：通过施加直轴去磁电流 <span class="arithmatex">\(i_d &lt; 0\)</span> 扩展电机恒功率运行区。</li>
+<li><strong>绕组系数（winding factor, <span class="arithmatex">\(k_w\)</span>）</strong>：考虑分布、短距和斜槽后绕组有效匝数的折扣系数。</li>
+</ul>
+</div>
+<h4 id="31113">3.1.11.3 损耗构成与效率图</h4>
+<p>电机总损耗可分解为</p>
+<div class="arithmatex">\[
+P_{loss} = P_{Cu} + P_{Fe} + P_{pm} + P_{mech}
+\]</div>
+<ul>
+<li>铜损：<span class="arithmatex">\(P_{Cu} = 3 I^2 R_s\)</span>，其中 <span class="arithmatex">\(R_s\)</span> 为相电阻，随温度升高而增大：<span class="arithmatex">\(R_s(T) = R_{25}[1+\alpha_{Cu}(T-25)]\)</span>。</li>
+<li>铁损：采用修正 Steinmetz 方程</li>
+</ul>
+<div class="arithmatex">\[
+P_{Fe} = k_h f B_m^\alpha + k_e (f B_m)^2 + k_a (f B_m)^{1.5}
+\]</div>
+<p>其中 <span class="arithmatex">\(k_h\)</span>、<span class="arithmatex">\(k_e\)</span>、<span class="arithmatex">\(k_a\)</span> 由硅钢片厂商提供，<span class="arithmatex">\(\alpha\)</span> 典型为 1.6-2.2。
+- 永磁体涡流损耗：</p>
+<div class="arithmatex">\[
+P_{pm} = \frac{\pi^2}{20 \rho_{pm}} \frac{(B_m f)^2 t^4}{V_{pm}} \quad \text{（薄板近似）}
+\]</div>
+<p>其中 <span class="arithmatex">\(\rho_{pm}\)</span> 为永磁体电阻率，<span class="arithmatex">\(t\)</span> 为磁体分割厚度。
+- 机械损耗：轴承摩擦与风阻，通常占比较小。</p>
+<p>效率为</p>
+<div class="arithmatex">\[
+\eta = \frac{P_{out}}{P_{out}+P_{loss}}
+\]</div>
+<p>人形机器人关节常在低速大转矩与高速小转矩之间切换，设计时应让额定点落在效率图的高效区（<span class="arithmatex">\(\eta \ge 90\%\)</span>）。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：Steinmetz 方程、铜损、铁损、涡流损耗、效率图</p>
+<ul>
+<li><strong>Steinmetz 方程</strong>：经验铁损模型，将磁滞损耗、涡流损耗和异常损耗分别表示为频率与磁密的幂函数。</li>
+<li><strong>铜损（copper loss）</strong>：绕组电阻因电流产生的焦耳热。</li>
+<li><strong>铁损（core loss）</strong>：交变磁场在铁芯中产生的磁滞和涡流损耗。</li>
+<li><strong>涡流损耗（eddy-current loss）</strong>：导电材料在交变磁场中感应环流产生的损耗。</li>
+<li><strong>效率图（efficiency map）</strong>：不同转速-转矩工作点的效率等高线图，是电机选型的核心工具。</li>
+</ul>
+</div>
+<h4 id="31114">3.1.11.4 关节电机设计数值示例</h4>
+<p>考虑一个额定功率 200 W、额定转速 3000 rpm 的机器人膝关节电机。给定 Nd-Fe-B 剩磁 <span class="arithmatex">\(B_r = 1.2\)</span> T，回复磁导率 <span class="arithmatex">\(\mu_r = 1.05\)</span>，气隙 <span class="arithmatex">\(l_g = 0.5\)</span> mm，磁体长度 <span class="arithmatex">\(l_m = 4\)</span> mm，极弧系数 <span class="arithmatex">\(A_g/A_m = 1.1\)</span>。估算气隙磁密、转矩常数与额定电流。</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+# 永磁体与磁路参数
+Br = 1.2          # T
+mu_r = 1.05
+lg = 0.5e-3       # m
+lm = 4.0e-3       # m
+Ag_over_Am = 1.1
+p = 4             # 极对数
+N_ph = 60         # 每相串联匝数
+kw = 0.93         # 绕组系数
+tau = 0.020       # 极距 m
+l_core = 0.030    # 轴向长度 m
+
+# 气隙磁密
+Bg = Br / (Ag_over_Am + mu_r * lg / lm)
+print(f"Bg = {Bg:.3f} T")
+
+# 永磁磁链
+lambda_m = N_ph * kw * (2/np.pi) * tau * l_core * Bg
+print(f"lambda_m = {lambda_m:.4f} Wb")
+
+# 额定角速度
+Omega_m = 3000 * 2*np.pi / 60  # rad/s
+E_ph = p * Omega_m * lambda_m
+print(f"相反电动势幅值 = {E_ph:.2f} V")
+
+# 转矩常数
+Kt = 1.5 * p * lambda_m          # Nm/A_peak
+T_rated = 0.64                   # 200 W @ 3000 rpm
+Iq_rated = T_rated / Kt
+print(f"Kt = {Kt:.3f} Nm/A")
+print(f"额定 Iq = {Iq_rated:.2f} A")
+
+# 损耗估算
+Rs = 0.12         # Ω
+I = Iq_rated
+P_Cu = 3 * I**2 * Rs
+P_out = T_rated * Omega_m
+eta = P_out / (P_out + P_Cu)
+print(f"铜损 = {P_Cu:.1f} W, 效率（仅铜损）= {eta*100:.1f}%")</code></pre>
+<p>上述脚本输出约为 <span class="arithmatex">\(B_g \approx 0.95\)</span> T，<span class="arithmatex">\(K_t \approx 0.31\)</span> Nm/A，额定电流约 2.1 A。若绕组电阻为 0.12 Ω，仅铜损即可达 1.5 W，对应效率约 99.3%（忽略铁损与机械损），说明小功率关节在额定点效率可做得很高，但峰值转矩下铜损会快速上升。</p>
+<h3 id="3112">3.1.12 稀土永磁供应链与价格机制</h3>
+<p>稀土永磁供应链包括采矿、选矿、分离冶炼、合金制备、磁体制造、表面处理和应用终端。中国在该产业链中占据主导地位：</p>
+<table>
+<thead>
+<tr>
+<th>环节</th>
+<th>中国全球份额</th>
+<th>关键企业/地区</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>稀土矿开采</td>
+<td>60-70%</td>
+<td>北方稀土、中国稀土集团</td>
+</tr>
+<tr>
+<td>分离冶炼</td>
+<td>~90%</td>
+<td>中国五矿、盛和资源</td>
+</tr>
+<tr>
+<td>NdFeB 磁材</td>
+<td>85-93%</td>
+<td>中科三环、金力永磁、宁波韵升</td>
+</tr>
+<tr>
+<td>重稀土加工</td>
+<td>~99%</td>
+<td>中国南方离子型稀土矿</td>
+</tr>
+</tbody>
+</table>
+<p>2025 年 4 月中国对 Dy、Tb 等中重稀土实施出口许可管制，导致国际市场高矫顽力磁体价格波动。Adamas Intelligence 预测，若需求趋势延续而供应增长不及预期，到 2035 年全球 NdFeB 年缺口可能达到 20.6 万吨。人形机器人作为新增需求来源，虽然当前单机用量不大，但会进一步收紧本已紧张的供应链。</p>
+<hr />
+<h2 id="32">3.2 结构材料</h2>
+<h3 id="321">3.2.1 金属强化机制：位错运动的阻碍</h3>
+<p>金属的强度可通过多种机制提高，其核心是阻碍<strong>位错</strong>运动。位错是晶体中原子排列的线缺陷，其滑移是金属塑性变形的主要方式。位错的运动可用柏氏矢量 <span class="arithmatex">\(\mathbf{b}\)</span> 描述。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：位错、柏氏矢量、滑移、塑性变形</p>
+<ul>
+<li><strong>位错（dislocation）</strong>：晶体中原子排列的线缺陷，使局部滑移在远低于完整晶体理论剪切应力的条件下发生。</li>
+<li><strong>柏氏矢量（Burgers vector, <span class="arithmatex">\(\mathbf{b}\)</span>）</strong>：描述位错引起晶格畸变程度和方向的矢量，其模长等于一个原子间距量级。</li>
+<li><strong>滑移（slip）</strong>：位错沿特定晶面和晶向运动，导致晶体宏观形状改变。</li>
+<li><strong>塑性变形（plastic deformation）</strong>：卸载后不可恢复的永久形变，由位错增殖和运动主导。</li>
+</ul>
+</div>
+<p>主要强化机制包括：</p>
+<p><strong>固溶强化</strong>：溶质原子引起晶格畸变，与位错发生弹性交互作用。Fleischer 模型给出强化增量与溶质浓度 <span class="arithmatex">\(c\)</span> 的关系：</p>
+<div class="arithmatex">\[
+\Delta\tau_{ss} \propto c^{2/3}
+\]</div>
+<p>对于稀固溶体，强化增量近似与 <span class="arithmatex">\(c^{1/2}\)</span> 成正比。溶质原子与基体原子的尺寸错配和模量错配越大，强化效果越强。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：固溶强化、溶质原子、晶格畸变</p>
+<ul>
+<li><strong>固溶强化（solid-solution strengthening）</strong>：溶质原子随机分布在基体晶格中，通过弹性应力场阻碍位错运动。</li>
+<li><strong>溶质原子（solute atom）</strong>：溶解在基体中的异类原子。</li>
+<li><strong>晶格畸变（lattice distortion）</strong>：由于原子尺寸或键合差异导致周围晶格发生弹性变形。</li>
+</ul>
+</div>
+<p><strong>析出强化</strong>：第二相颗粒阻碍位错切过或绕过。当颗粒不可剪切时，按 Orowan 机制，绕过颗粒的临界切应力为</p>
+<div class="arithmatex">\[
+\tau_{Orowan} = \frac{Gb}{2\pi\lambda} \ln\frac{r}{r_0}
+\]</div>
+<p>其中 <span class="arithmatex">\(G\)</span> 为剪切模量，<span class="arithmatex">\(b\)</span> 为柏氏矢量，<span class="arithmatex">\(\lambda\)</span> 为颗粒间距，<span class="arithmatex">\(r\)</span> 为颗粒半径。峰值时效时，细小弥散的共格或半共格析出相提供最大强化效果；过时效时颗粒粗化，<span class="arithmatex">\(\lambda\)</span> 增大，强化效果下降。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：析出强化、Orowan 机制、共格/半共格、峰值时效、过时效</p>
+<ul>
+<li><strong>析出强化（precipitation strengthening）</strong>：基体中弥散析出第二相颗粒阻碍位错运动。</li>
+<li><strong>Orowan 机制</strong>：位错绕过不可剪切颗粒，在颗粒周围留下位错环，需要额外应力。</li>
+<li><strong>共格/半共格析出相（coherent/semi-coherent precipitate）</strong>：析出相与基体晶格连续或部分连续匹配，界面能低，强化效果显著。</li>
+<li><strong>峰值时效（peak aging）</strong>：析出相尺寸和密度达到最佳强化效果的时效状态。</li>
+<li><strong>过时效（overaging）</strong>：析出相粗化、间距增大，强度下降但韧性/耐蚀性常改善。</li>
+</ul>
+</div>
+<p><strong>细晶强化</strong>：Hall-Petch 关系给出屈服强度与晶粒尺寸 <span class="arithmatex">\(d\)</span> 的关系：</p>
+<div class="arithmatex">\[
+\sigma_y = \sigma_0 + k_y d^{-1/2}
+\]</div>
+<p>晶粒细化同时提高强度和韧性，因为晶界阻碍位错运动并钝化裂纹。但过细的晶粒可能降低高温蠕变抗力。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：细晶强化、Hall-Petch 关系、屈服强度</p>
+<ul>
+<li><strong>细晶强化（grain refinement strengthening）</strong>：通过减小晶粒尺寸增加晶界面积，阻碍位错滑移。</li>
+<li><strong>Hall-Petch 关系</strong>：屈服强度随晶粒尺寸平方根倒数线性增加的经验关系。</li>
+<li><strong>屈服强度（yield strength）</strong>：材料开始发生塑性变形时的应力。</li>
+</ul>
+</div>
+<p><strong>加工硬化</strong>：位错密度 <span class="arithmatex">\(\rho\)</span> 增加导致流变应力上升：</p>
+<div class="arithmatex">\[
+\sigma = \sigma_0 + \alpha M G b \sqrt{\rho}
+\]</div>
+<p>其中 <span class="arithmatex">\(\alpha\)</span> 为常数，<span class="arithmatex">\(M\)</span> 为 Taylor 因子。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：加工硬化、位错密度、Taylor 因子</p>
+<ul>
+<li><strong>加工硬化（work hardening）</strong>：塑性变形增加位错密度，使后续变形需要更高应力。</li>
+<li><strong>位错密度（dislocation density, <span class="arithmatex">\(\rho\)</span>）</strong>：单位体积内位错线的总长度。</li>
+<li><strong>Taylor 因子（Taylor factor）</strong>：将单晶临界分切应力与多晶宏观屈服应力联系起来的取向平均因子。</li>
+</ul>
+</div>
+<p><strong>织构强化</strong>：利用晶体学取向控制滑移系开动。对于 HCP 金属如镁，通过控制织构使易滑移方向与主应力方向错开，可提高屈服强度但降低塑性。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[外力施加] --&gt; B[位错运动]
+    B --&gt; C{强化机制}
+    C --&gt;|溶质原子| D[固溶强化]
+    C --&gt;|纳米析出相| E[析出强化&lt;br/&gt;Orowan 绕过]
+    C --&gt;|晶界| F[细晶强化&lt;br/&gt;Hall-Petch]
+    C --&gt;|位错缠结| G[加工硬化]
+    C --&gt;|晶体取向| H[织构强化]
+    D --&gt; I[提高流变应力]
+    E --&gt; I
+    F --&gt; I
+    G --&gt; I
+    H --&gt; I</code></pre>
+<h3 id="322">3.2.2 铝合金：时效析出序列与牌号选择</h3>
+<p>铝合金是人形机器人结构件用量最大的金属材料。按主要合金元素分为 2xxx（Al-Cu）、5xxx（Al-Mg）、6xxx（Al-Mg-Si）、7xxx（Al-Zn-Mg-Cu）等系列。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：铝合金系列、固溶处理、时效处理</p>
+<ul>
+<li><strong>铝合金系列</strong>：按主要合金元素分类的国际牌号体系，1xxx 为纯铝，2xxx 以 Cu 为主，5xxx 以 Mg 为主，6xxx 以 Mg-Si 为主，7xxx 以 Zn-Mg-Cu 为主。</li>
+<li><strong>固溶处理（solution treatment）</strong>：将合金加热到单相区使溶质原子充分溶解，然后快速淬火保留过饱和固溶体。</li>
+<li><strong>时效处理（aging）</strong>：在室温或升温条件下使过饱和固溶体析出强化相的热处理。</li>
+</ul>
+</div>
+<p><strong>6xxx 系（Al-Mg-Si）</strong> 因良好的挤压性、焊接性和耐蚀性，广泛用于框架和外壳。其强化相为 Mg<span class="arithmatex">\(_2\)</span>Si，固溶处理后时效析出序列为：</p>
+<div class="arithmatex">\[
+\text{SSSS} \rightarrow \text{GP 区} \rightarrow \beta'' \rightarrow \beta' \rightarrow \beta\text{(Mg}_2\text{Si)}
+\]</div>
+<p><span class="arithmatex">\(\beta''\)</span> 相与基体共格，提供主要强化效果；<span class="arithmatex">\(T6\)</span> 处理（固溶+人工时效）可获得强度与成形性的良好平衡。典型 6061-T6 的屈服强度约 276 MPa，抗拉强度约 310 MPa。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：GP 区、β''、β'、β(Mg2Si)、T6 处理</p>
+<ul>
+<li><strong>GP 区（Guinier-Preston zone）</strong>：溶质原子在铝基体中富集的纳米尺度贫/富集区，是析出的前驱体。</li>
+<li><strong><span class="arithmatex">\(\beta''\)</span></strong>：与基体共格的亚稳析出相，尺寸小、密度高，是 6xxx 合金峰值时效的主要强化相。</li>
+<li><strong><span class="arithmatex">\(\beta'\)</span></strong>：半共格的过渡析出相。</li>
+<li><strong><span class="arithmatex">\(\beta\)</span>（Mg<span class="arithmatex">\(_2\)</span>Si）</strong>：稳定平衡相，粗化后强化效果下降。</li>
+<li><strong>T6 处理</strong>：固溶淬火后人工时效至峰值强度。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[过饱和固溶体 SSSS] --&gt; B[GP 区&lt;br/&gt;溶质原子偏聚]
+    B --&gt; C[β'' 亚稳相&lt;br/&gt;共格 + 高强化]
+    C --&gt; D[β' 过渡相]
+    D --&gt; E[β Mg2Si 平衡相&lt;br/&gt;粗化 强化下降]
+    C --&gt;|峰值时效| F[最高强度]
+    E --&gt;|过时效| G[强度下降韧性改善]</code></pre>
+<p><strong>7xxx 系（Al-Zn-Mg-Cu）</strong> 强度最高，用于高应力关节和传动件。主要强化相为 <span class="arithmatex">\(\eta'\)</span>-MgZn<span class="arithmatex">\(_2\)</span> 和 T-Al<span class="arithmatex">\(_2\)</span>Mg<span class="arithmatex">\(_3\)</span>Zn<span class="arithmatex">\(_3\)</span>。7050、7075 等牌号经 T6/T7/T8 处理后屈服强度可达 500 MPa 以上。Starink 与 Wang（2003）建立了过时效 7xxx 合金屈服强度的物理模型，考虑了析出相粗化、固溶强化和织构的影响。但 7xxx 合金对应力腐蚀敏感，需通过过时效（T7）或晶粒细化改善。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：应力腐蚀、T7 处理</p>
+<ul>
+<li><strong>应力腐蚀开裂（stress corrosion cracking, SCC）</strong>：在拉应力和腐蚀环境共同作用下发生的脆性开裂。</li>
+<li><strong>T7 处理</strong>：固溶淬火后过时效处理，用于提高耐应力腐蚀性能。</li>
+</ul>
+</div>
+<p><strong>压铸铝合金</strong>：一体化压铸技术在人形机器人结构制造中崭露头角。压铸铝合金需控制 Fe 含量以减少 <span class="arithmatex">\(\beta\)</span>-Al<span class="arithmatex">\(_5\)</span>FeSi 针状相对韧性的不利影响；同时需控制 Cu 含量以改善耐蚀性。Al-Si-Mg 系（如 A356、A380）和 Al-Si-Cu-Mg 系是常用压铸合金。</p>
+<h3 id="323-hcp">3.2.3 镁合金：HCP 结构、变形机制与织构</h3>
+<p>镁合金密度 1.7-1.8 g/cm<span class="arithmatex">\(^3\)</span>，约为铝的 2/3、钢的 1/4，是最轻的结构金属。其 HCP 结构带来独特的力学与腐蚀行为。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：HCP 结构、c/a 比、临界分切应力（CRSS）、孪生、织构</p>
+<ul>
+<li><strong>HCP（hexagonal close-packed）</strong>：六方最密堆积结构，原子排列呈 ABAB 堆垛。</li>
+<li><strong>c/a 比</strong>：HCP 晶胞高度 <span class="arithmatex">\(c\)</span> 与底面边长 <span class="arithmatex">\(a\)</span> 之比，理想值为 <span class="arithmatex">\(\sqrt{8/3} \approx 1.633\)</span>。</li>
+<li><strong>临界分切应力（CRSS）</strong>：使某一滑移系开动所需的分解切应力。</li>
+<li><strong>孪生（twinning）</strong>：晶体的一部分沿特定界面发生均匀切变，形成镜面对称取向，用于协调难以滑移方向的变形。</li>
+<li><strong>织构（texture）</strong>：多晶材料中晶粒取向分布的择优取向。</li>
+</ul>
+</div>
+<p><strong>晶体学与变形机制</strong>：<span class="arithmatex">\(\alpha\)</span>-Mg 的 <span class="arithmatex">\(c/a = 1.624\)</span>，略小于理想球堆垛的 1.633。室温下基面滑移 <span class="arithmatex">\(\langle 11\bar{2}0 \rangle(0001)\)</span> 的临界分切应力（CRSS）最低（约 0.5-0.7 MPa），是主要变形模式。柱面滑移 <span class="arithmatex">\(\langle 11\bar{2}0 \rangle(10\bar{1}0)\)</span>、锥面滑移 <span class="arithmatex">\(\langle 11\bar{2}2 \rangle(11\bar{2}\bar{1})\)</span> 及 <span class="arithmatex">\(\langle c+a \rangle\)</span> 位错需在较高温度或应力下开动，其 CRSS 比基面滑移高 1-2 个数量级。</p>
+<p>孪生是协调 <span class="arithmatex">\(c\)</span> 轴变形的重要机制。拉伸孪晶 <span class="arithmatex">\(\{10\bar{1}2\}\langle 10\bar{1}\bar{1} \rangle\)</span> 在压缩平行于 <span class="arithmatex">\(c\)</span> 轴或拉伸垂直于 <span class="arithmatex">\(c\)</span> 轴时容易启动；压缩孪晶 <span class="arithmatex">\(\{10\bar{1}1\}\langle 10\bar{1}\bar{2} \rangle\)</span> 则需要更高应力。孪生导致的孪晶界和位错交互作用显著影响加工硬化行为。</p>
+<p>由于滑移系少且 CRSS 差异大，镁合金室温塑性差、各向异性强、成形后织构显著。常用改善策略包括：
+- <strong>晶粒细化</strong>：提高 Hall-Petch 强化效果，促进非基面滑移。
+- <strong>稀土元素合金化</strong>：Gd、Y、Ce、Nd 等可降低柱面/锥面滑移与基面滑移的 CRSS 比值，提高室温塑性（即“稀土织构弱化效应”）。
+- <strong>热处理</strong>：T4/T5/T6 处理调控第二相分布。</p>
+<h4 id="3231-hcp-schmid">3.2.3.1 HCP 滑移系的几何约束与 Schmid 定律</h4>
+<p>金属发生宏观塑性变形需要 5 个独立的滑移系（von Mises 准则），以协调任意应变张量。HCP 镁在室温下只有基面滑移 <span class="arithmatex">\(\langle 11\bar{2}0 \rangle(0001)\)</span> 的 CRSS 足够低，而基面滑移只能提供 2 个独立滑移系。因此，当外加应力方向不利于基面滑移时，材料必须通过孪生或非基面滑移来协调变形，导致屈服应力升高、塑性下降和各向异性增强。</p>
+<p>Schmid 定律将宏观屈服与外加分切应力联系起来。对于单向拉伸或压缩，作用在某一滑移系上的分切应力为</p>
+<div class="arithmatex">\[
+\tau = \sigma \cos\phi \cos\lambda = m \, \sigma
+\]</div>
+<p>其中 <span class="arithmatex">\(\sigma\)</span> 为外加轴向应力，<span class="arithmatex">\(\phi\)</span> 为载荷轴与滑移面法向的夹角，<span class="arithmatex">\(\lambda\)</span> 为载荷轴与滑移方向的夹角，<span class="arithmatex">\(m = \cos\phi \cos\lambda\)</span> 称为 <strong>Schmid 因子</strong>。当 <span class="arithmatex">\(\tau\)</span> 达到该滑移系的 CRSS 时，滑移启动。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：独立滑移系、Schmid 定律、Schmid 因子、von Mises 准则</p>
+<ul>
+<li><strong>独立滑移系（independent slip system）</strong>：能够产生独立塑性应变分量的滑移系组合。多晶材料均匀变形至少需要 5 个。</li>
+<li><strong>Schmid 定律（Schmid's law）</strong>：滑移启动的条件是作用在滑移系上的分切应力达到临界值 CRSS。</li>
+<li><strong>Schmid 因子（Schmid factor）</strong>：将宏观应力转换为分切应力的几何因子，<span class="arithmatex">\(m = \cos\phi \cos\lambda\)</span>。</li>
+<li><strong>von Mises 准则</strong>：多晶材料实现任意形状改变至少需要 5 个独立滑移系的经典判据。</li>
+</ul>
+</div>
+<p>对于镁的基面滑移，当载荷平行于 <span class="arithmatex">\(c\)</span> 轴时，<span class="arithmatex">\(\cos\phi = 0\)</span>，基面滑移无法开动；此时必须通过 <span class="arithmatex">\(\{10\bar{1}2\}\)</span> 拉伸孪生或高温下的非基面滑移来协调 <span class="arithmatex">\(c\)</span> 轴方向的应变。这就是 HCP 镁室温成形性差的几何根源。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[HCP 镁室温滑移系少] --&gt; B[基面滑移仅 2 个独立系]
+    B --&gt; C[载荷平行 c 轴时 m≈0]
+    C --&gt; D[无法协调 c 轴应变]
+    D --&gt; E[屈服升高/塑性下降]
+    E --&gt; F[孪生或高温非基面滑移启动]</code></pre>
+<h4 id="3232">3.2.3.2 孪生的晶体学与剪切量</h4>
+<p>孪生是 HCP 镁协调 <span class="arithmatex">\(c\)</span> 轴压缩或垂直 <span class="arithmatex">\(c\)</span> 轴拉伸的重要机制。以 <span class="arithmatex">\(\{10\bar{1}2\}\langle 10\bar{1}\bar{1} \rangle\)</span> 拉伸孪生为例，其剪切量 <span class="arithmatex">\(\gamma\)</span> 可由晶体几何导出：</p>
+<div class="arithmatex">\[
+\gamma = \frac{|c/a|^2 - 3}{\sqrt{3}\, c/a}
+\]</div>
+<p>对于 <span class="arithmatex">\(\alpha\)</span>-Mg，<span class="arithmatex">\(c/a \approx 1.624\)</span>，代入得</p>
+<div class="arithmatex">\[
+\gamma = \frac{1.624^2 - 3}{\sqrt{3} \times 1.624} \approx 0.129
+\]</div>
+<p>即孪生使晶体沿孪生面产生约 12.9% 的均匀剪切。孪生开始后晶格取向发生突变，原本不利于基面滑移的取向可能变得有利，从而释放应力；但孪晶界本身也是位错运动的障碍，会导致显著的加工硬化和循环加载下的孪生-退孪生疲劳损伤。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：孪生剪切量、孪晶界、退孪生</p>
+<ul>
+<li><strong>孪生剪切量（twinning shear, <span class="arithmatex">\(\gamma\)</span>）</strong>：孪生过程中晶体沿孪生面发生的特征切变量，由晶体结构决定。</li>
+<li><strong>孪晶界（twin boundary）</strong>：基体与孪晶之间的共格界面，可作为位错运动的障碍。</li>
+<li><strong>退孪生（detwinning）</strong>：反向加载时孪晶消失、取向恢复的过程，是镁合金循环软化的重要机制。</li>
+</ul>
+</div>
+<h4 id="3233">3.2.3.3 稀土元素弱化织构的物理机制</h4>
+<p>稀土元素（RE）如 Gd、Y、Ce、Nd 添加到镁中可显著弱化变形织构并提高室温延展性。传统观点认为其作用包括：</p>
+<ol>
+<li><strong>降低非基面滑移的 CRSS</strong>：RE 原子半径较大，改变层错能（SFE）和位错芯结构，使锥面 <span class="arithmatex">\(\langle c+a \rangle\)</span> 位错更容易分解和运动，从而增加独立滑移系数目。</li>
+<li><strong>改变晶粒生长取向</strong>：RE 元素偏聚于晶界或形成稀土相，抑制特定取向晶粒的生长，使基面织构漫散化。</li>
+<li><strong>促进动态再结晶</strong>：RE 降低再结晶温度并改变再结晶织构，形成随机取向的新晶粒。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：层错能、位错芯、动态再结晶、织构弱化</p>
+<ul>
+<li><strong>层错能（stacking fault energy, SFE）</strong>：密排面堆垛顺序发生错排时单位面积的能量代价，影响位错分解和非基面滑移。</li>
+<li><strong>位错芯（dislocation core）</strong>：位错中心附近原子严重畸变的区域，其结构决定位错是保守滑移还是非保守攀移。</li>
+<li><strong>动态再结晶（dynamic recrystallization, DRX）</strong>：变形过程中同时发生再结晶，可细化晶粒并弱化织构。</li>
+<li><strong>织构弱化（texture weakening）</strong>：使晶粒取向分布更随机，降低力学性能各向异性。</li>
+</ul>
+</div>
+<p>下面 Python 脚本计算 HCP 镁基面滑移与拉伸孪生的 Schmid 因子随载荷方向的变化，并展示 <span class="arithmatex">\(c\)</span> 轴取向对屈服各向异性的影响：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# HCP 基面滑移系 (0001)[11-20] 与拉伸孪生 {10-12}&lt;10-1-1&gt;
+# 设 c 轴沿 z，a1 沿 x；载荷轴在 x-z 平面内与 c 轴夹角为 theta
+theta_deg = np.linspace(0, 90, 91)
+theta = np.deg2rad(theta_deg)
+
+# 基面滑移：滑移面法向 n = [0,0,1]，滑移方向 b = [1,0,0]
+# 载荷轴 L = [sinθ, 0, cosθ]
+cos_phi_base = np.cos(theta)   # n·L
+cos_lambda_base = np.sin(theta) # b·L
+m_base = np.abs(cos_phi_base * cos_lambda_base)
+
+# 拉伸孪生 {10-12}&lt;10-1-1&gt;：近似取孪生面法向与孪生方向
+# 简化模型：孪生面法向 n_t ≈ [sqrt(3)/2, 0, c/a] 归一化，
+# 孪生方向 d_t ≈ [-c/a, 0, sqrt(3)/2] 归一化（c/a=1.624）
+coa = 1.624
+n_t = np.array([np.sqrt(3)/2, 0, coa])
+n_t = n_t / np.linalg.norm(n_t)
+d_t = np.array([-coa, 0, np.sqrt(3)/2])
+d_t = d_t / np.linalg.norm(d_t)
+
+L = np.vstack([np.sin(theta), np.zeros_like(theta), np.cos(theta)]).T
+cos_phi_twin = np.abs(L @ n_t)
+cos_lambda_twin = np.abs(L @ d_t)
+m_twin = cos_phi_twin * cos_lambda_twin
+
+plt.figure(figsize=(8,4))
+plt.plot(theta_deg, m_base, label='基面滑移 Schmid 因子')
+plt.plot(theta_deg, m_twin, label='{10-12} 拉伸孪生 Schmid 因子')
+plt.xlabel('载荷轴与 c 轴夹角 θ (°)')
+plt.ylabel('Schmid 因子 |m|')
+plt.title('HCP 镁基面滑移与拉伸孪生的取向敏感性')
+plt.legend(); plt.grid(True); plt.tight_layout(); plt.show()
+
+# 估算：基面 CRSS = 0.6 MPa，则 θ=45° 时宏观屈服应力 σ = CRSS/m
+print(f"θ=45° 基面 m={m_base[45]:.3f}, 估算屈服应力={0.6/m_base[45]:.1f} MPa")
+print(f"θ=0°  基面 m={m_base[0]:.3f}, 无法靠基面滑移变形")</code></pre>
+<p>输出显示，基面滑移的 Schmid 因子在 <span class="arithmatex">\(\theta = 45°\)</span> 附近最大，对应最低的宏观屈服应力；而当 <span class="arithmatex">\(\theta \rightarrow 0°\)</span> 时基面滑移因子趋于零，必须通过孪生或柱面/锥面滑移来变形，屈服应力因此急剧升高。这解释了轧制镁板在横向与法向性能的巨大差异，也说明了通过 RE 合金化激活非基面滑移对改善成形性的重要性。人形机器人外壳与支架若采用镁合金压铸件，必须结合后续成形与热处理调控织构，相关内容可参见第 8 章 8.3 节结构轻量化设计。</p>
+<h3 id="324">3.2.4 镁合金的腐蚀电化学与表面防护</h3>
+<p>镁合金耐蚀性差是限制其广泛应用的核心问题，根源包括：</p>
+<ol>
+<li><strong>热力学不稳定性</strong>：标准电极电位 <span class="arithmatex">\(E^0_{Mg^{2+}/Mg} = -2.37\)</span> V vs SHE，是工程金属中最低的之一。</li>
+<li><strong>保护性氧化膜差</strong>：表面 MgO/Mg(OH)<span class="arithmatex">\(_2\)</span> 膜在含 Cl<span class="arithmatex">\(^-\)</span> 环境中不稳定，Cl<span class="arithmatex">\(^-\)</span> 会置换 OH<span class="arithmatex">\(^-\)</span> 形成可溶性 MgCl<span class="arithmatex">\(_2\)</span>。</li>
+<li><strong>第二相微电偶腐蚀</strong>：AZ 系合金中的 <span class="arithmatex">\(\beta\)</span>-Mg<span class="arithmatex">\(_{17}\)</span>Al<span class="arithmatex">\(_{12}\)</span> 相电极电位高于 <span class="arithmatex">\(\alpha\)</span>-Mg 基体，形成微电偶加速基体腐蚀。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：腐蚀电位、腐蚀电流密度、微弧氧化、化学转化膜、高电流脉冲电子束（HCPEB）</p>
+<ul>
+<li><strong>腐蚀电位（corrosion potential, <span class="arithmatex">\(E_{corr}\)</span>）</strong>：金属在腐蚀体系中自发的混合电位，阳极与阴极反应速率相等。</li>
+<li><strong>腐蚀电流密度（corrosion current density, <span class="arithmatex">\(i_{corr}\)</span>）</strong>：与腐蚀电位对应的电流密度，反映腐蚀速率。</li>
+<li><strong>微弧氧化（MAO/PEO）</strong>：在电解液中通过微弧放电在金属表面原位生成陶瓷氧化膜。</li>
+<li><strong>化学转化膜（chemical conversion coating）</strong>：通过化学或电化学反应在金属表面形成保护性化合物膜。</li>
+<li><strong>高电流脉冲电子束（HCPEB）</strong>：利用高能脉冲电子束快速熔化并凝固表面，细化晶粒、均匀化组织。</li>
+</ul>
+</div>
+<p>Song &amp; Atrens（2003）系统建立了镁合金腐蚀的框架，指出杂质元素 Fe、Ni、Cu、Co 的容忍极限极低（通常 &lt; 50 ppm）， because they form efficient cathodic sites for hydrogen evolution. 提高纯度和控制 Fe/Mn 比是改善耐蚀性的基础。</p>
+<h4 id="3241-pourbaix">3.2.4.1 腐蚀热力学与 Pourbaix 图</h4>
+<p>镁在水溶液中的主要反应为</p>
+<div class="arithmatex">\[
+\text{Mg} \rightarrow \text{Mg}^{2+} + 2e^-, \quad E^0 = -2.37\ \text{V vs SHE}
+\]</div>
+<div class="arithmatex">\[
+\text{Mg} + 2\text{H}_2\text{O} \rightarrow \text{Mg(OH)}_2 + \text{H}_2
+\]</div>
+<p>Pourbaix 图描述电位-pH 下的稳定相。在中性水中，镁的电位远低于析氢线，热力学上持续析氢；当 pH &gt; 10.5 时，<span class="arithmatex">\(\text{Mg(OH)}_2\)</span> 膜生成，可提供一定钝化。但在含 Cl<span class="arithmatex">\(^-\)</span> 环境中，<span class="arithmatex">\(\text{Mg(OH)}_2 + 2\text{Cl}^- \rightarrow \text{MgCl}_2 + 2\text{OH}^-\)</span>，钝化膜局部溶解形成点蚀坑。机器人若在高湿度或汗液/清洁液环境中工作，Cl<span class="arithmatex">\(^-\)</span> 侵入是主要失效路径。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：Pourbaix 图、钝化膜、点蚀、析氢反应</p>
+<ul>
+<li><strong>Pourbaix 图</strong>：以电位和 pH 为坐标表示元素在水溶液中稳定相的热力学相图。</li>
+<li><strong>钝化膜（passive film）</strong>：金属表面生成的致密氧化物/氢氧化物膜，能显著降低腐蚀速率。</li>
+<li><strong>点蚀（pitting corrosion）</strong>：局部钝化膜破坏后形成小孔并加速溶解的局部腐蚀形式。</li>
+<li><strong>析氢反应（hydrogen evolution reaction, HER）</strong>：<span class="arithmatex">\(2\text{H}_2\text{O} + 2e^- \rightarrow \text{H}_2 + 2\text{OH}^-\)</span>，在镁表面作为阴极反应主导腐蚀。</li>
+</ul>
+</div>
+<h4 id="3242-butler-volmer-tafel">3.2.4.2 腐蚀动力学：Butler-Volmer 方程与 Tafel 外推</h4>
+<p>电极反应速率由 Butler-Volmer 方程描述：</p>
+<div class="arithmatex">\[
+i = i_0 \left\{ \exp\left[\frac{(1-\beta)nF\eta}{RT}\right] - \exp\left[-\frac{\beta nF\eta}{RT}\right] \right\}
+\]</div>
+<p>其中 <span class="arithmatex">\(i_0\)</span> 为交换电流密度，<span class="arithmatex">\(\beta\)</span> 为对称因子，<span class="arithmatex">\(\eta = E - E_{eq}\)</span> 为过电位。在强极化区可简化为 Tafel 方程：</p>
+<div class="arithmatex">\[
+\eta_a = b_a \log\left(\frac{i}{i_0}\right), \quad \eta_c = -b_c \log\left(\frac{|i|}{i_0}\right)
+\]</div>
+<p>Tafel 斜率 <span class="arithmatex">\(b_a = 2.303 RT/[(1-\beta)nF]\)</span>，<span class="arithmatex">\(b_c = 2.303 RT/(\beta nF)\)</span>。腐蚀电位 <span class="arithmatex">\(E_{corr}\)</span> 处阳极溶解电流与阴极析氢电流相等，其数值即为 <span class="arithmatex">\(i_{corr}\)</span>。通过极化曲线线性外推两条 Tafel 线交点，可测定 <span class="arithmatex">\(i_{corr}\)</span>。</p>
+<p>Stern-Geary 关系给出了极化电阻 <span class="arithmatex">\(R_p\)</span> 与 <span class="arithmatex">\(i_{corr}\)</span> 的联系：</p>
+<div class="arithmatex">\[
+i_{corr} = \frac{b_a b_c}{2.303(b_a + |b_c|) R_p}
+\]</div>
+<p>腐蚀速率常用质量损失或厚度损失表示：</p>
+<div class="arithmatex">\[
+CR = \frac{K \cdot i_{corr} \cdot EW}{\rho}
+\]</div>
+<p>对于 <span class="arithmatex">\(i_{corr}\)</span> 单位为 <span class="arithmatex">\(\mu\text{A/cm}^2\)</span>、<span class="arithmatex">\(\rho\)</span> 为 <span class="arithmatex">\(\text{g/cm}^3\)</span>，取 <span class="arithmatex">\(K = 0.00327\)</span> 时，<span class="arithmatex">\(CR\)</span> 单位为 mm/year。以 AZ91D 为例，<span class="arithmatex">\(i_{corr} \approx 10-100\ \mu\text{A/cm}^2\)</span> 对应年腐蚀深度约 0.02-0.2 mm，这对壁厚仅 2-3 mm 的机器人外壳不可忽略。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：交换电流密度、Tafel 斜率、极化电阻、Stern-Geary 方程、腐蚀速率</p>
+<ul>
+<li><strong>交换电流密度（exchange current density, <span class="arithmatex">\(i_0\)</span>）</strong>：平衡状态下正逆反应电流密度相等时的电流密度。</li>
+<li><strong>Tafel 斜率（Tafel slope）</strong>：强极化区过电位与电流对数关系的斜率，反映反应动力学。</li>
+<li><strong>极化电阻（polarization resistance, <span class="arithmatex">\(R_p\)</span>）</strong>：腐蚀电位附近极化曲线线性区的斜率，<span class="arithmatex">\(R_p = (\mathrm{d}E/\mathrm{d}i)_{E_{corr}}\)</span>。</li>
+<li><strong>Stern-Geary 方程</strong>：用 <span class="arithmatex">\(R_p\)</span> 与 Tafel 斜率估算 <span class="arithmatex">\(i_{corr}\)</span> 的经典关系。</li>
+<li><strong>腐蚀速率（corrosion rate, <span class="arithmatex">\(CR\)</span>）</strong>：单位时间材料损失厚度，常用 mm/year。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[阳极极化曲线&lt;br/&gt;Mg → Mg2+ + 2e-] --&gt; C[Tafel 线交点]
+    B[阴极极化曲线&lt;br/&gt;2H2O + 2e- → H2 + 2OH-] --&gt; C
+    C --&gt; D[Ecorr, icorr]
+    D --&gt; E[CR = K·icorr·EW/ρ]
+    E --&gt;|未防护 AZ91D| F[0.02-0.2 mm/y]
+    E --&gt;|MAO+封孔| G[&lt;0.001 mm/y]</code></pre>
+<h4 id="3243">3.2.4.3 表面处理选择原则与寿命预测</h4>
+<p>表面处理的核心是同时降低阴极活性、隔绝电解质、抑制 Cl<span class="arithmatex">\(^-\)</span> 渗透。常用方案性能对比如下：</p>
+<table>
+<thead>
+<tr>
+<th>工艺</th>
+<th>膜层成分</th>
+<th>耐蚀性提升</th>
+<th>主要局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAO/PEO</td>
+<td>MgO/MgAl<span class="arithmatex">\(_2\)</span>O<span class="arithmatex">\(_4\)</span>/Mg<span class="arithmatex">\(_2\)</span>SiO<span class="arithmatex">\(_4\)</span></td>
+<td>显著，但需封孔</td>
+<td>膜多孔、粗糙</td>
+</tr>
+<tr>
+<td>化学转化膜</td>
+<td>Ce/La 氧化物、植酸盐</td>
+<td>中等</td>
+<td>膜薄、机械耐磨差</td>
+</tr>
+<tr>
+<td>化学镀 Ni-P</td>
+<td>非晶/纳米晶 Ni-P</td>
+<td>优异</td>
+<td>前处理酸洗会活化基体</td>
+</tr>
+<tr>
+<td>HCPEB 熔凝</td>
+<td>细晶/过饱和固溶</td>
+<td>改善基体</td>
+<td>设备成本高</td>
+</tr>
+<tr>
+<td>纳米颗粒复合阳极氧化</td>
+<td>Al<span class="arithmatex">\(_2\)</span>O<span class="arithmatex">\(_3\)</span>+SiC/TiO<span class="arithmatex">\(_2\)</span></td>
+<td>膜致密、Cl<span class="arithmatex">\(^-\)</span> 阻挡</td>
+<td>工艺一致性待提升</td>
+</tr>
+</tbody>
+</table>
+<p>在实际机器人部件设计中，可将 MAO 作为底层提供耐磨与附着，再用环氧-石墨烯封孔层提供化学阻隔，最后喷涂聚氨酯面层，实现 1000 h 中性盐雾（NSS）寿命。</p>
+<p>下面的 Python 脚本根据 Tafel 外推数据估算 <span class="arithmatex">\(i_{corr}\)</span> 与腐蚀速率，并对比防护前后的寿命提升：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+# 假设 AZ91D 在 3.5 wt% NaCl 中的 Tafel 参数
+ba = 0.060      # V/decade (anodic)
+bc = 0.120      # V/decade (cathodic)
+Rp_untreated = 250.0   # Ω·cm^2
+Rp_coated = 25000.0    # Ω·cm^2 (MAO+封孔)
+
+# Stern-Geary 计算 icorr (A/cm^2)
+def icorr_from_Rp(Rp, ba, bc):
+    return (ba * bc) / (2.303 * (ba + bc) * Rp)
+
+i_untreated = icorr_from_Rp(Rp_untreated, ba, bc)
+i_coated = icorr_from_Rp(Rp_coated, ba, bc)
+print(f"未处理 icorr = {i_untreated*1e6:.1f} μA/cm^2")
+print(f"防护后 icorr = {i_coated*1e6:.2f} μA/cm^2")
+
+# 腐蚀速率 (mm/year)，AZ91D 等效原子量 EW≈12.2 g, ρ≈1.81 g/cm^3
+K = 0.00327
+EW = 12.2
+rho = 1.81
+def CR(i_ua_cm2):
+    return K * i_ua_cm2 * EW / rho
+
+CR_untreated = CR(i_untreated*1e6)
+CR_coated = CR(i_coated*1e6)
+print(f"未处理腐蚀速率 = {CR_untreated:.3f} mm/y")
+print(f"防护后腐蚀速率 = {CR_coated:.5f} mm/y")
+print(f"防护后寿命提升倍数 ≈ {CR_untreated/CR_coated:.0f}x")</code></pre>
+<p>该示例显示，若 MAO+封孔将 <span class="arithmatex">\(R_p\)</span> 从 250 提高到 25000 Ω·cm<span class="arithmatex">\(^2\)</span>，腐蚀速率可从约 0.165 mm/y 降至 0.0017 mm/y，寿命提升约 100 倍。</p>
+<h3 id="325">3.2.5 碳纤维复合材料：各向异性与层合板理论</h3>
+<p>碳纤维增强聚合物基复合材料（CFRP）具有极高的比强度和比刚度，其力学性能强烈依赖于纤维方向。单向 CFRP 在纤维方向上的弹性模量 <span class="arithmatex">\(E_1\)</span> 和横向模量 <span class="arithmatex">\(E_2\)</span> 差异巨大：</p>
+<div class="arithmatex">\[
+E_1 \approx E_f V_f + E_m (1 - V_f)
+$$
+$$
+\frac{1}{E_2} \approx \frac{V_f}{E_f} + \frac{1 - V_f}{E_m}
+\]</div>
+<p>其中 <span class="arithmatex">\(E_f\)</span>、<span class="arithmatex">\(E_m\)</span> 分别为纤维和基体模量，<span class="arithmatex">\(V_f\)</span> 为纤维体积分数。典型 T700/环氧树脂单向层板的 <span class="arithmatex">\(E_1 \approx 140\)</span> GPa，<span class="arithmatex">\(E_2 \approx 10\)</span> GPa。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：CFRP、纤维体积分数、基体、层合板、经典层合板理论（CLT）</p>
+<ul>
+<li><strong>CFRP（Carbon Fiber Reinforced Polymer）</strong>：以碳纤维为增强体、聚合物为基体的复合材料。</li>
+<li><strong>纤维体积分数（fiber volume fraction, <span class="arithmatex">\(V_f\)</span>）</strong>：复合材料中纤维体积所占比例，直接决定刚度和强度。</li>
+<li><strong>基体（matrix）</strong>：包裹纤维并传递载荷的聚合物相，同时保护纤维免受环境侵蚀。</li>
+<li><strong>层合板（laminate）</strong>：由多层按不同方向铺设的单向层板组成的复合材料板。</li>
+<li><strong>经典层合板理论（CLT）</strong>：基于 Kirchhoff 直法线假设，通过 A、B、D 刚度矩阵描述层合板面内、耦合与弯曲行为的理论。</li>
+</ul>
+</div>
+<p>层合板设计需通过铺层角度（0°、±45°、90°）组合满足多向载荷要求。经典层合板理论（CLT）基于 Kirchhoff 假设，通过 A、B、D 矩阵描述面内、耦合和弯曲刚度。层间剪切和分层是 CFRP 的主要失效模式，界面相（sizing/agent）的化学设计对层间性能至关重要。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：分层、界面相、上浆剂</p>
+<ul>
+<li><strong>分层（delamination）</strong>：层合板中相邻铺层之间的开裂失效。</li>
+<li><strong>界面相（interphase）</strong>：纤维表面与基体之间形成的具有一定化学结构和力学性能的过渡区域。</li>
+<li><strong>上浆剂（sizing）</strong>：涂覆在纤维表面的化学涂层，改善纤维与基体界面的润湿和粘结。</li>
+</ul>
+</div>
+<h3 id="326">3.2.6 拓扑优化与多材料集成</h3>
+<p>拓扑优化以结构柔顺度最小化或固有频率最大化为目标，在满足应力/位移约束下优化材料分布。其数学形式为</p>
+<div class="arithmatex">\[
+\min_\rho C(\rho) = \mathbf{F}^T \mathbf{U}
+$$
+$$
+\text{s.t.} \quad \mathbf{K}(\rho)\mathbf{U} = \mathbf{F}, \quad 0 &lt; \rho_{\min} \le \rho \le 1, \quad \int_\Omega \rho \, d\Omega \le V^*
+\]</div>
+<p>其中 <span class="arithmatex">\(\rho\)</span> 为单元伪密度，<span class="arithmatex">\(\mathbf{K}\)</span> 为刚度矩阵。SIMP 方法通过惩罚中间密度值促进 0/1 离散解。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：拓扑优化、SIMP、伪密度、柔顺度、刚度矩阵</p>
+<ul>
+<li><strong>拓扑优化（topology optimization）</strong>：在给定设计域和约束下，寻找最优材料分布的结构优化方法。</li>
+<li><strong>SIMP（Solid Isotropic Material with Penalization）</strong>：用伪密度插值弹性模量并对中间密度施加惩罚的拓扑优化方法。</li>
+<li><strong>伪密度（pseudo-density, <span class="arithmatex">\(\rho\)</span>）</strong>：每个有限单元内材料相对密度的设计变量，0 表示空，1 表示实体。</li>
+<li><strong>柔顺度（compliance）</strong>：结构在外力作用下总应变能，柔顺度最小化等价于刚度最大化。</li>
+<li><strong>刚度矩阵（stiffness matrix, <span class="arithmatex">\(\mathbf{K}\)</span>）</strong>：有限元法中联系节点位移与节点力的矩阵。</li>
+</ul>
+</div>
+<p>多材料拓扑优化进一步引入不同材料的密度/刚度组合，可在同一零件中实现铝合金骨架+镁合金填充+碳纤维局部加强的复合结构。这对于承载路径复杂、重量敏感的人形机器人关节具有重要价值。</p>
+<h4 id="3261-simp">3.2.6.1 SIMP 插值与敏度推导</h4>
+<p>在 SIMP 法中，单元弹性模量与伪密度的关系为</p>
+<div class="arithmatex">\[
+E_e(\rho_e) = E_{\min} + \rho_e^p (E_0 - E_{\min})
+\]</div>
+<p>其中 <span class="arithmatex">\(p \ge 3\)</span> 为惩罚因子，<span class="arithmatex">\(E_{\min}\)</span> 为避免刚度矩阵奇异的微小模量。全局刚度矩阵为各单元刚度矩阵的组装：</p>
+<div class="arithmatex">\[
+\mathbf{K}(\rho) = \sum_{e} E_e(\rho_e) \mathbf{k}_e^0
+\]</div>
+<p>总柔顺度为</p>
+<div class="arithmatex">\[
+C(\rho) = \mathbf{U}^T \mathbf{K} \mathbf{U} = \sum_e E_e(\rho_e) \mathbf{u}_e^T \mathbf{k}_e^0 \mathbf{u}_e
+\]</div>
+<p>对 <span class="arithmatex">\(\rho_e\)</span> 求导可得单元敏度</p>
+<div class="arithmatex">\[
+\frac{\partial C}{\partial \rho_e} = -p \rho_e^{p-1} (E_0 - E_{\min}) \mathbf{u}_e^T \mathbf{k}_e^0 \mathbf{u}_e
+\]</div>
+<p>负号表明增大密度会减小柔顺度（提高刚度）。优化采用 optimality criteria (OC) 更新：</p>
+<div class="arithmatex">\[
+\rho_e^{\text{new}} =
+\begin{cases}
+\rho_{\min}, &amp; \rho_e B_e^\eta \le \rho_{\min} \\
+\rho_e B_e^\eta, &amp; \rho_{\min} &lt; \rho_e B_e^\eta &lt; 1 \\
+1, &amp; \rho_e B_e^\eta \ge 1
+\end{cases}
+\]</div>
+<p>其中 <span class="arithmatex">\(B_e = -\partial C/\partial \rho_e / (\lambda V_e)\)</span>，<span class="arithmatex">\(\lambda\)</span> 通过二分法调整以满足体积约束 <span class="arithmatex">\(\sum_e \rho_e V_e = V^*\)</span>。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：敏度分析、最优性准则（OC）、惩罚因子、体积分数、拉格朗日乘子</p>
+<ul>
+<li><strong>敏度分析（sensitivity analysis）</strong>：计算目标函数对设计变量导数的过程，决定优化方向。</li>
+<li><strong>最优性准则（optimality criteria, OC）</strong>：基于 KKT 条件推导的启发式设计变量更新准则。</li>
+<li><strong>惩罚因子（penalization factor, <span class="arithmatex">\(p\)</span>）</strong>：SIMP 中使中间密度材料刚度偏低的幂指数，越大越趋近 0/1 解。</li>
+<li><strong>体积分数（volume fraction）</strong>：优化后保留材料体积与设计域总体积之比。</li>
+<li><strong>拉格朗日乘子（Lagrange multiplier, <span class="arithmatex">\(\lambda\)</span>）</strong>：将体积约束引入目标函数后对应的影子价格。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[设计域+载荷/约束] --&gt; B[初始化均匀密度]
+    B --&gt; C[有限元求解 KU=F]
+    C --&gt; D[计算柔顺度与敏度]
+    D --&gt; E[敏度过滤]
+    E --&gt; F[OC 更新密度]
+    F --&gt; G{体积约束满足?}
+    G --&gt;|否| H[调整 λ] --&gt; C
+    G --&gt;|是| I{收敛?}
+    I --&gt;|否| C
+    I --&gt;|是| J[输出拓扑]</code></pre>
+<h4 id="3262">3.2.6.2 敏度过滤与可制造性约束</h4>
+<p>有限元离散化带来的数值不稳定包括棋盘格（checkerboard）和网格依赖性。密度过滤通过以单元为中心、半径 <span class="arithmatex">\(r_{\min}\)</span> 的加权平均抑制这些问题：</p>
+<div class="arithmatex">\[
+\tilde{\rho}_e = \frac{\sum_{i \in N_e} w_{ei} \rho_i}{\sum_{i \in N_e} w_{ei}}, \quad w_{ei} = \max(0, r_{\min} - d_{ei})
+\]</div>
+<p>其中 <span class="arithmatex">\(N_e\)</span> 为过滤邻域，<span class="arithmatex">\(d_{ei}\)</span> 为单元中心距离。过滤后的敏度通过链式法则修正。进一步可引入投影法（projection）和 Heaviside 过滤，得到更清晰的黑/白边界。制造约束包括最小尺寸、悬垂角（overhang angle）和连通性，确保结果可直接用于金属增材制造（SLM、DMLS）。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：网格依赖性、棋盘格、过滤半径、投影法、悬垂角</p>
+<ul>
+<li><strong>网格依赖性（mesh dependency）</strong>：拓扑优化结果随网格细化而出现更细支杆的现象。</li>
+<li><strong>棋盘格（checkerboard）</strong>：单元密度交替为 0/1 的数值伪影，造成非物理的拓扑。</li>
+<li><strong>过滤半径（filter radius, <span class="arithmatex">\(r_{\min}\)</span>）</strong>：密度/敏度加权平均的邻域半径，控制最小结构尺寸。</li>
+<li><strong>投影法（projection method）</strong>：将过滤后的灰度密度投影为接近 0/1 的锐化方法。</li>
+<li><strong>悬垂角（overhang angle）</strong>：增材制造中无需支撑即可打印的最大悬空角度，金属 SLM 通常约 45°。</li>
+</ul>
+</div>
+<h4 id="3263">3.2.6.3 人形机器人肢段轻量化算例</h4>
+<p>以下 Python 脚本实现经典 88-line SIMP 拓扑优化，对一个受端部载荷的悬臂板（类比机器人小臂）进行柔顺度最小化设计。输出为伪密度分布，其中保留区域形成主承力路径。</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# SIMP 拓扑优化：悬臂板，左侧固定，右下角受向下载荷
+nelx, nely = 60, 20  # 单元数
+volfrac = 0.4        # 体积分数
+penal = 3.0          # 惩罚因子
+rmin = 2.5           # 过滤半径
+E0, Emin = 1.0, 1e-9
+nu = 0.3
+
+def lk():
+    """四节点平面应力单元刚度矩阵"""
+    A11 = np.array([[12, 3, -6, -3], [3, 12, 3, 0], [-6, 3, 12, -3], [-3, 0, -3, 12]])
+    A12 = np.array([[-6, -3, 0, 3], [-3, -6, -3, -6], [0, -3, -6, 3], [3, -6, 3, -6]])
+    B11 = np.array([[-4, 3, -2, 9], [3, -4, -9, 4], [-2, -9, -4, -3], [9, 4, -3, -4]])
+    B12 = np.array([[2, -3, 4, -9], [-3, 2, 9, -2], [4, 9, 2, 3], [-9, -2, 3, 2]])
+    KE = 1/(1-nu**2)/12 * (np.vstack([np.hstack([A11, A12]),
+                                       np.hstack([A12.T, B11])]) +
+                           np.vstack([np.hstack([B11, B12]),
+                                       np.hstack([B12.T, A11.T])]))
+    return KE
+
+KE = lk()
+N = (nely+1)*(nelx+1)
+dof = 2
+F = np.zeros((N*dof, 1))
+U = np.zeros((N*dof, 1))
+fixed = np.arange(0, 2*(nely+1))  # 左侧全固定
+free = np.setdiff1d(np.arange(N*dof), fixed)
+# 右下角向下载荷
+F[-1, 0] = -1.0
+x = np.ones((nely, nelx)) * volfrac
+
+def FE(nelx, nely, x, penal):
+    K = np.zeros((N*dof, N*dof))
+    for elx in range(nelx):
+        for ely in range(nely):
+            n1 = (nely+1)*elx + ely
+            n2 = (nely+1)*(elx+1) + ely
+            edof = np.array([2*n1, 2*n1+1, 2*n2, 2*n2+1,
+                             2*n2+2, 2*n2+3, 2*n1+2, 2*n1+3])
+            K[np.ix_(edof, edof)] += (Emin + x[ely, elx]**penal*(E0-Emin)) * KE
+    K = (K + K.T) / 2
+    return K
+
+def check(nelx, nely, rmin, x, dc):
+    dcn = np.zeros_like(dc)
+    for i in range(nelx):
+        for j in range(nely):
+            imin, imax = max(int(i-np.floor(rmin)), 0), min(int(i+np.floor(rmin))+1, nelx)
+            jmin, jmax = max(int(j-np.floor(rmin)), 0), min(int(j+np.floor(rmin))+1, nely)
+            for ii in range(imin, imax):
+                for jj in range(jmin, jmax):
+                    fac = max(0, rmin - np.sqrt((i-ii)**2 + (j-jj)**2))
+                    dcn[j, i] += fac * x[jj, ii] * dc[jj, ii]
+            sumfac = 0.0
+            for ii in range(imin, imax):
+                for jj in range(jmin, jmax):
+                    fac = max(0, rmin - np.sqrt((i-ii)**2 + (j-jj)**2))
+                    sumfac += fac
+            dcn[j, i] /= (x[j, i] * sumfac) if sumfac else 1
+    return dcn
+
+def OC(nelx, nely, x, volfrac, dc):
+    l1, l2 = 0, 1e5
+    move = 0.2
+    while l2 - l1 &gt; 1e-4:
+        lmid = 0.5 * (l2 + l1)
+        xnew = np.maximum(0.001,
+                          np.maximum(x - move,
+                                     np.minimum(1.0,
+                                                np.minimum(x + move,
+                                                           x * np.sqrt(-dc / lmid)))))
+        if np.sum(xnew) - volfrac * nelx * nely &gt; 0:
+            l1 = lmid
+        else:
+            l2 = lmid
+    return xnew
+
+for iter in range(100):
+    K = FE(nelx, nely, x, penal)
+    U[free] = np.linalg.solve(K[np.ix_(free, free)], F[free])
+    c = 0.0
+    dc = np.zeros((nely, nelx))
+    for elx in range(nelx):
+        for ely in range(nely):
+            n1 = (nely+1)*elx + ely
+            n2 = (nely+1)*(elx+1) + ely
+            edof = np.array([2*n1, 2*n1+1, 2*n2, 2*n2+1,
+                             2*n2+2, 2*n2+3, 2*n1+2, 2*n1+3])
+            Ue = U[edof].flatten()
+            ce = np.dot(Ue, KE @ Ue)
+            c += (Emin + x[ely, elx]**penal*(E0-Emin)) * ce
+            dc[ely, elx] = -penal * x[ely, elx]**(penal-1) * (E0-Emin) * ce
+    dc = check(nelx, nely, rmin, x, dc)
+    x = OC(nelx, nely, x, volfrac, dc)
+
+plt.imshow(1 - x, cmap='gray', origin='lower')
+plt.title('Topology optimized robot arm link (black = material)')
+plt.xlabel('x'); plt.ylabel('y')
+plt.tight_layout(); plt.show()</code></pre>
+<p>该脚本在 60×20 网格上迭代 100 次，得到类桁架结构。实际工程中会先拓扑优化获得传力路径，再进行形状/尺寸优化并引入圆角、孔洞等工艺细节。</p>
+<h4 id="3264">3.2.6.4 多材料拓扑优化与增材制造集成</h4>
+<p>多材料拓扑优化将不同材料 <span class="arithmatex">\(m\)</span> 的伪密度 <span class="arithmatex">\(\rho_{m,e}\)</span> 独立插值：</p>
+<div class="arithmatex">\[
+E_e = E_{\min} + \sum_m \rho_{m,e}^{p_m} E_m^0
+\]</div>
+<p>常用多材料插值模型包括 SIMP 推广、DMO（Discrete Material Optimization）和 RAMP。多材料优化的结果可指导增材制造中梯度材料的打印：例如机器人髋关节支架采用 Ti-6Al-4V 作为高应力骨架、AlSi10Mg 作为填充减重、局部嵌入连续碳纤维增强件。制造约束需在优化中同步考虑：金属 SLM 要求悬垂角 <span class="arithmatex">\(\ge 45^\circ\)</span> 以减少支撑，最小孔径和壁厚需大于光斑直径（约 0.2-0.4 mm）。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：多材料插值、DMO、RAMP、梯度材料、SLM</p>
+<ul>
+<li><strong>多材料插值（multi-material interpolation）</strong>：在同一设计变量框架下描述多种材料刚度贡献的数学方法。</li>
+<li><strong>DMO（Discrete Material Optimization）</strong>：将材料选择问题转化为连续密度变量的优化方法。</li>
+<li><strong>RAMP（Rational Approximation of Material Properties）</strong>：另一种弹性模量插值模型，可缓解 SIMP 在低体积分数时的灰色问题。</li>
+<li><strong>梯度材料（functionally graded material, FGM）</strong>：成分/性能在空间连续变化的材料。</li>
+<li><strong>SLM（Selective Laser Melting）</strong>：激光选区熔化金属增材制造工艺。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[载荷/边界条件] --&gt; B[SIMP 拓扑优化]
+    B --&gt; C[传力路径概念设计]
+    C --&gt; D[多材料选择]
+    D --&gt; E[增材制造约束]
+    E --&gt; F[可打印几何]
+    F --&gt; G[SLM/CFRP 混合制造]
+    G --&gt; H[机器人关节支架]</code></pre>
+<h3 id="327">3.2.7 疲劳、断裂与冲击行为</h3>
+<p>人形机器人结构件承受循环载荷和冲击载荷，疲劳与断裂性能至关重要。金属材料的疲劳寿命通常用 S-N 曲线描述：</p>
+<div class="arithmatex">\[
+N_f = \left(\frac{\sigma_a}{\sigma_f'}\right)^{1/b}
+\]</div>
+<p>其中 <span class="arithmatex">\(N_f\)</span> 为疲劳寿命，<span class="arithmatex">\(\sigma_a\)</span> 为应力幅，<span class="arithmatex">\(\sigma_f'\)</span> 为疲劳强度系数，<span class="arithmatex">\(b\)</span> 为疲劳强度指数。该式称为 <strong>Basquin 关系</strong>，在高周疲劳区（通常 <span class="arithmatex">\(N_f &gt; 10^4\)</span>）较好地描述了应力幅与寿命的反幂关系。对数坐标下，<span class="arithmatex">\(\log\sigma_a\)</span> 与 <span class="arithmatex">\(\log N_f\)</span> 呈线性，斜率为 <span class="arithmatex">\(b\)</span>（典型值为 -0.05 到 -0.12）。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：S-N 曲线、Basquin 关系、疲劳极限、断裂韧性、冲击后压缩强度（CAI）</p>
+<ul>
+<li><strong>S-N 曲线</strong>：应力幅与疲劳失效循环次数的关系曲线。</li>
+<li><strong>Basquin 关系</strong>：高周疲劳中应力幅与循环次数的幂律关系，<span class="arithmatex">\(\sigma_a = \sigma_f' (2N_f)^b\)</span>。</li>
+<li><strong>疲劳极限（fatigue limit）</strong>：材料在无限循环下不发生疲劳破坏的最大应力幅。</li>
+<li><strong>断裂韧性（fracture toughness, <span class="arithmatex">\(K_{IC}\)</span>）</strong>：材料抵抗裂纹扩展的能力，量化了裂纹尖端应力场强度临界值。</li>
+<li><strong>冲击后压缩强度（CAI）</strong>：复合材料受冲击后剩余压缩强度，用于评估损伤容限。</li>
+</ul>
+</div>
+<h4 id="3271">3.2.7.1 断裂力学与裂纹尖端应力场</h4>
+<p>含裂纹构件的强度不能仅由材料强度决定，而应由裂纹尖端的应力场强度控制。Irwin 定义了 <strong>应力强度因子</strong> <span class="arithmatex">\(K_I\)</span>：</p>
+<div class="arithmatex">\[
+K_I = Y \sigma \sqrt{\pi a}
+\]</div>
+<p>其中 <span class="arithmatex">\(\sigma\)</span> 为远场应力，<span class="arithmatex">\(a\)</span> 为裂纹尺寸，<span class="arithmatex">\(Y\)</span> 为几何修正因子。当 <span class="arithmatex">\(K_I\)</span> 达到材料的 <strong>断裂韧性</strong> <span class="arithmatex">\(K_{IC}\)</span> 时，裂纹失稳扩展。对于铝合金 7075-T6，<span class="arithmatex">\(K_{IC} \approx 27\)</span> MPa·<span class="arithmatex">\(m^{1/2}\)</span>；对于 6061-T6，<span class="arithmatex">\(K_{IC} \approx 29\)</span> MPa·<span class="arithmatex">\(m^{1/2}\)</span>。</p>
+<p>裂纹尖端塑性区尺寸可估计为</p>
+<div class="arithmatex">\[
+r_p = \frac{1}{\pi}\left(\frac{K_I}{\sigma_y}\right)^2
+\]</div>
+<p>当 <span class="arithmatex">\(r_p\)</span> 远小于裂纹尺寸和试样尺寸时，线弹性断裂力学（LEFM）适用；否则需采用弹塑性断裂力学（J 积分或裂纹尖端张开位移 CTOD）。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：应力强度因子、Irwin 塑性区、线弹性断裂力学、J 积分</p>
+<ul>
+<li><strong>应力强度因子（stress intensity factor, <span class="arithmatex">\(K\)</span>）</strong>：描述裂纹尖端弹性应力场强度的参量，下标 I、II、III 对应张开、滑开、撕开型裂纹。</li>
+<li><strong>Irwin 塑性区（Irwin plastic zone）</strong>：裂纹尖端因应力超过屈服强度而形成的塑性区域尺寸估计。</li>
+<li><strong>线弹性断裂力学（LEFM）</strong>：基于线弹性假设分析裂纹尖端应力场的断裂力学分支。</li>
+<li><strong>J 积分（J-integral）</strong>：弹塑性断裂力学中表征裂纹尖端能量释放率的回路积分，适用于大范围屈服。</li>
+</ul>
+</div>
+<h4 id="3272-paris">3.2.7.2 疲劳裂纹扩展：Paris 定律</h4>
+<p>疲劳裂纹扩展速率由 Paris 定律描述：</p>
+<div class="arithmatex">\[
+\frac{da}{dN} = C (\Delta K)^m
+\]</div>
+<p>其中 <span class="arithmatex">\(\Delta K = K_{\max} - K_{\min}\)</span> 为应力强度因子幅，<span class="arithmatex">\(C\)</span> 和 <span class="arithmatex">\(m\)</span> 为材料常数。典型铝合金的 <span class="arithmatex">\(m \approx 2.5-4\)</span>。Paris 定律适用于稳定扩展区（II 区）；当 <span class="arithmatex">\(\Delta K\)</span> 低于门槛值 <span class="arithmatex">\(\Delta K_{th}\)</span> 时裂纹不扩展，当 <span class="arithmatex">\(K_{\max}\)</span> 接近 <span class="arithmatex">\(K_{IC}\)</span> 时进入快速失稳扩展区（III 区）。</p>
+<p>对于人形机器人关节，若初始裂纹尺寸 <span class="arithmatex">\(a_0 = 0.5\)</span> mm，临界裂纹尺寸 <span class="arithmatex">\(a_c\)</span> 由 <span class="arithmatex">\(K_{IC} = Y \sigma_{\max}\sqrt{\pi a_c}\)</span> 决定，则疲劳寿命可通过积分 Paris 定律估算：</p>
+<div class="arithmatex">\[
+N_f = \int_{a_0}^{a_c} \frac{da}{C(\Delta K)^m}
+\]</div>
+<h4 id="3273-miner">3.2.7.3 累积损伤：Miner 线性法则</h4>
+<p>当结构承受变幅循环载荷时，可采用 Miner 线性累积损伤法则：</p>
+<div class="arithmatex">\[
+D = \sum_i \frac{n_i}{N_{f,i}}
+\]</div>
+<p>其中 <span class="arithmatex">\(n_i\)</span> 为第 <span class="arithmatex">\(i\)</span> 级应力幅下的实际循环次数，<span class="arithmatex">\(N_{f,i}\)</span> 为该应力幅下由 S-N 曲线得到的失效循环次数。当 <span class="arithmatex">\(D \ge 1\)</span> 时预测疲劳失效。Miner 法则忽略了载荷顺序效应和平均应力影响，实际工程常取安全系数 <span class="arithmatex">\(D_{allow} = 0.3-0.5\)</span>。</p>
+<p>下面 Python 脚本演示如何使用 Basquin 关系和 Miner 法则估算机器人在变幅载荷下的疲劳寿命：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+# 材料参数：假设某 6061-T6 铝合金 Basquin 参数
+sigma_f_prime = 620e6  # Pa
+b = -0.11              # Basquin 指数
+
+# S-N 曲线
+def Nf(sigma_a):
+    """给定应力幅 (Pa)，返回失效循环次数"""
+    return (sigma_a / sigma_f_prime) ** (1/b)
+
+# 变幅载荷谱：[(应力幅 Pa, 循环次数), ...]
+load_spectrum = [
+    (120e6, 5000),   # 高应力，少循环
+    (80e6, 50000),   # 中应力
+    (50e6, 200000),  # 低应力，多循环
+]
+
+damage = 0.0
+for sigma_a, n in load_spectrum:
+    N = Nf(sigma_a)
+    d = n / N
+    damage += d
+    print(f"σ_a={sigma_a/1e6:.0f} MPa: N_f={N:.2e}, n/N={d:.4f}")
+
+print(f"总累积损伤 D = {damage:.4f}")
+print(f"剩余寿命系数 = {1/damage:.2f}")</code></pre>
+<p>输出示例显示，高应力循环对损伤的贡献远大于低应力循环，体现了疲劳损伤对高应力幅的高度敏感性。机器人关节轴承、减速器输出轴等关键承力件应依据此类方法进行疲劳寿命校核，详情见第 8 章 8.4 节结构可靠性设计。</p>
+<h4 id="3274-cai">3.2.7.4 复合材料冲击损伤与 CAI</h4>
+<p>CFRP 受低速冲击时，表面可能仅出现轻微凹痕，但内部已发生基体开裂、纤维-基体界面脱粘和分层。冲击损伤显著降低压缩强度，因为分层在压缩载荷下会引起局部屈曲。<strong>冲击后压缩强度（CAI）</strong> 定义为冲击后试样剩余抗压强度与原始抗压强度之比，通常用落锤冲击试验后测量。</p>
+<p>CAI 与基体韧性、铺层设计和界面强度密切相关。增韧树脂（如热塑性增韧环氧）、三维编织或 Z-pin 增强可提高 CAI。人形机器人腿部、躯干等可能受碰撞的部位，选材时需同时考虑静态强度、疲劳寿命和冲击损伤容限。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[循环载荷] --&gt; B[局部塑性/滑移]
+    B --&gt; C[微裂纹萌生]
+    C --&gt; D[裂纹稳定扩展&lt;br/&gt;Paris 定律]
+    D --&gt; E[裂纹长度达到临界值]
+    E --&gt; F[K_I = K_IC 失稳断裂]
+    G[冲击载荷] --&gt; H[基体开裂/分层]
+    H --&gt; I[CAI 下降]
+    I --&gt; J[压缩载荷下局部屈曲]</code></pre>
+<h3 id="328">3.2.8 连接技术与表面工程</h3>
+<p>异种材料连接是人形机器人结构设计的难点。铝合金与镁合金、金属与 CFRP 的连接需同时考虑电化学相容性、热膨胀匹配和力学载荷传递。</p>
+<h4 id="3281">3.2.8.1 电偶腐蚀的热力学与动力学约束</h4>
+<p>当两种不同电位的金属在电解质中接触时，低电位金属作为阳极被氧化，高电位金属作为阴极促进还原反应。电偶腐蚀电流可由混合电位理论估算。假设铝（<span class="arithmatex">\(E_{Al} \approx -0.8\)</span> V vs SHE，钝化态）与镁（<span class="arithmatex">\(E_{Mg} \approx -1.7\)</span> V vs SHE）直接接触，阳极镁的溶解电流密度会显著增大。</p>
+<p>在简化模型中，电偶电流密度 <span class="arithmatex">\(i_g\)</span> 满足</p>
+<div class="arithmatex">\[
+i_g = \frac{E_{cathode} - E_{anode}}{R_{solution} + R_{contact}}
+\]</div>
+<p>其中 <span class="arithmatex">\(R_{solution}\)</span> 为电解质电阻，<span class="arithmatex">\(R_{contact}\)</span> 为界面接触电阻。实际腐蚀速率取决于阴极反应（通常是氧还原或析氢）的极限扩散电流。工程上通常要求电位差小于 0.25 V 方可直接接触，或采用绝缘垫片、阳极氧化层、镀镍层等隔离。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：电偶腐蚀、混合电位理论、阴极反应、极限扩散电流</p>
+<ul>
+<li><strong>电偶腐蚀（galvanic corrosion）</strong>：两种不同电位金属在电解质中形成原电池，低电位金属加速腐蚀。</li>
+<li><strong>混合电位理论（mixed potential theory）</strong>：腐蚀体系中阳极和阴极极化曲线交点决定腐蚀电位和电流。</li>
+<li><strong>阴极反应（cathodic reaction）</strong>：在阴极表面发生的还原反应，如 <span class="arithmatex">\(O_2 + 2H_2O + 4e^- \rightarrow 4OH^-\)</span>。</li>
+<li><strong>极限扩散电流（limiting diffusion current）</strong>：反应物扩散速率成为速率控制步骤时的最大电流。</li>
+</ul>
+</div>
+<h4 id="3282">3.2.8.2 热膨胀失配应力</h4>
+<p>温度变化在异种材料连接处产生热应力。对于由两种材料组成的层合结构，当温度变化 <span class="arithmatex">\(\Delta T\)</span> 时，若二者无法自由变形，界面正应力可近似为</p>
+<div class="arithmatex">\[
+\sigma = \frac{E_1 E_2}{E_1 + E_2} (\alpha_1 - \alpha_2) \Delta T
+\]</div>
+<p>其中 <span class="arithmatex">\(E_i\)</span> 为弹性模量，<span class="arithmatex">\(\alpha_i\)</span> 为热膨胀系数。以铝（<span class="arithmatex">\(\alpha_{Al} = 23 \times 10^{-6}\)</span> /K，<span class="arithmatex">\(E_{Al} = 70\)</span> GPa）与 CFRP 单向层板纵向（<span class="arithmatex">\(\alpha_{CFRP} \approx 0\)</span> /K，<span class="arithmatex">\(E_{CFRP} \approx 140\)</span> GPa）连接为例，温度变化 <span class="arithmatex">\(\Delta T = -80\)</span> K（从固化温度冷却到室温）：</p>
+<div class="arithmatex">\[
+\sigma = \frac{70 \times 140}{70 + 140} \times 10^9 \times (23 - 0) \times 10^{-6} \times 80 \approx 85\ \text{MPa}
+\]</div>
+<p>该残余拉应力足以在界面附近引发基体开裂或分层，因此 CFRP-金属连接常采用渐变异质结构、胶接加机械紧固或热膨胀适配合金来缓解。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：热膨胀系数、残余应力、热失配</p>
+<ul>
+<li><strong>热膨胀系数（coefficient of thermal expansion, CTE）</strong>：温度变化引起材料长度变化的比率。</li>
+<li><strong>残余应力（residual stress）</strong>：无外载时存在于材料内部的自平衡应力。</li>
+<li><strong>热失配（thermal mismatch）</strong>：异种材料 CTE 不同导致的变形不协调。</li>
+</ul>
+</div>
+<h4 id="3283">3.2.8.3 搅拌摩擦焊的物理机制</h4>
+<p>搅拌摩擦焊（FSW）是一种固态连接技术，特别适合铝、镁等低熔点轻合金。焊接过程中，旋转的搅拌针插入接缝并沿焊缝移动，摩擦热使材料达到塑性状态（通常为熔点的 0.6-0.9 倍），材料在搅拌针周围发生剧烈塑性流动并重新混合，形成致密的焊接接头。</p>
+<p>FSW 接头可分为四个区域：
+1. <strong>焊核区（nugget zone）</strong>：搅拌针正下方，发生动态再结晶，晶粒细小。
+2. <strong>热机械影响区（TMAZ）</strong>：受搅拌和热的共同作用，晶粒发生弯曲和拉长。
+3. <strong>热影响区（HAZ）</strong>：仅受热循环影响，发生析出相粗化或软化。
+4. <strong>母材（base metal）</strong>：未受影响的原始组织。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：焊核区、热机械影响区、热影响区、动态再结晶</p>
+<ul>
+<li><strong>焊核区（nugget zone）</strong>：FSW 接头中心经历最高温度和最大变形的区域。</li>
+<li><strong>热机械影响区（thermo-mechanically affected zone, TMAZ）</strong>：同时受温度和机械搅拌影响的过渡区。</li>
+<li><strong>热影响区（heat-affected zone, HAZ）</strong>：仅受热循环影响、未发生塑性变形的区域。</li>
+<li><strong>动态再结晶（dynamic recrystallization）</strong>：变形过程中形成的新无应变晶粒。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[旋转搅拌头插入] --&gt; B[摩擦生热]
+    B --&gt; C[材料塑性化]
+    C --&gt; D[搅拌针带动塑性流动]
+    D --&gt; E[材料混合+动态再结晶]
+    E --&gt; F[焊核区细晶组织]
+    F --&gt; G[固态连接完成]</code></pre>
+<h4 id="3284">3.2.8.4 连接方式选择与表面工程</h4>
+<p>常用连接方式适用范围如下：</p>
+<table>
+<thead>
+<tr>
+<th>连接方式</th>
+<th>适用材料</th>
+<th>优点</th>
+<th>主要局限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机械紧固</td>
+<td>金属、CFRP</td>
+<td>可拆卸、便于维护</td>
+<td>应力集中、电偶腐蚀风险</td>
+</tr>
+<tr>
+<td>胶接</td>
+<td>金属-CFRP</td>
+<td>应力分布均匀、可绝缘</td>
+<td>耐温/耐湿有限、固化周期长</td>
+</tr>
+<tr>
+<td>铆接</td>
+<td>铝、镁薄板</td>
+<td>工艺成熟</td>
+<td>增重、孔边应力集中</td>
+</tr>
+<tr>
+<td>搅拌摩擦焊</td>
+<td>Al/Mg 合金</td>
+<td>固态连接、无气孔裂纹</td>
+<td>设备刚性要求高、背部支撑</td>
+</tr>
+<tr>
+<td>激光焊</td>
+<td>Al、钢</td>
+<td>能量集中、变形小</td>
+<td>高反射材料需特殊工艺</td>
+</tr>
+</tbody>
+</table>
+<p>表面工程方面，除前述镁合金表面处理外，铝合金阳极氧化、微弧氧化、化学镀镍等也广泛应用。对于 CFRP，表面等离子处理、上浆剂优化可改善树脂基体与纤维的界面结合。异种材料连接与表面防护的最终方案需与整机装配工艺和服役环境协同设计，详情见第 9 章 9.2 节结构集成与装配。</p>
+<h3 id="329">3.2.9 轻量化指标与选材策略</h3>
+<p>结构材料选择需综合以下指标：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>定义</th>
+<th>材料对比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>比强度</td>
+<td><span class="arithmatex">\(\sigma/\rho\)</span></td>
+<td>镁合金 &gt; 铝合金 &gt; 钢</td>
+</tr>
+<tr>
+<td>比刚度</td>
+<td><span class="arithmatex">\(E/\rho\)</span></td>
+<td>CFRP &gt; 镁合金 &gt; 铝合金</td>
+</tr>
+<tr>
+<td>比吸能</td>
+<td>单位质量吸收能量</td>
+<td>镁合金、CFRP 优异</td>
+</tr>
+<tr>
+<td>疲劳比</td>
+<td>疲劳极限/抗拉强度</td>
+<td>铝合金 0.3-0.4，钢 0.4-0.5</td>
+</tr>
+<tr>
+<td>成本比</td>
+<td>单位性能成本</td>
+<td>铝合金最优</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">术语解释：比强度、比刚度、比吸能、疲劳比</p>
+<ul>
+<li><strong>比强度（specific strength）</strong>：强度与密度之比，衡量单位质量材料的承载能力。</li>
+<li><strong>比刚度（specific stiffness）</strong>：弹性模量与密度之比，衡量单位质量材料的抗变形能力。</li>
+<li><strong>比吸能（specific energy absorption）</strong>：单位质量吸收的冲击能量，反映缓冲吸震能力。</li>
+<li><strong>疲劳比（fatigue ratio）</strong>：疲劳极限与抗拉强度之比，反映材料在循环载荷下的效率。</li>
+</ul>
+</div>
+<p>实际选材需在性能、成本、工艺、回收性之间权衡。例如，高应力关节可选用 7075-T6 或 CFRP；大面积覆盖件可选用镁合金压铸件或工程塑料；需要高导热部位可选用铝合金。</p>
+<h3 id="3210">3.2.10 结构材料供应链与生命周期评估</h3>
+<p>结构材料的供应链风险主要体现在铝、镁初级冶炼能耗与原矿品位下降。再生铝碳排放比原生铝低约 78-95%，因此机器人结构件应优先采用高比例再生铝。镁冶炼目前主要依赖皮江法（Pidgeon process），能耗高且产生 CO<span class="arithmatex">\(_2\)</span>，电解法炼镁是长期降碳方向。</p>
+<p>生命周期评估（LCA）框架可帮助识别材料选择对碳足迹、资源耗竭和生态毒性的影响。材料选择需考虑全生命周期环境影响：</p>
+<ul>
+<li><strong>原生铝 vs 再生铝</strong>：再生铝碳排放比原生铝低约 78-95%。</li>
+<li><strong>镁合金冶炼</strong>：皮江法能耗高，电解法可显著降低碳排放。</li>
+<li><strong>碳纤维回收</strong>：热解或溶剂回收碳纤维可部分保留性能，但成本仍高。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：生命周期评估（LCA）、碳足迹、生态毒性</p>
+<ul>
+<li><strong>生命周期评估（LCA）</strong>：量化产品从原材料获取、制造、使用到废弃全过程环境影响的系统化方法。</li>
+<li><strong>碳足迹（carbon footprint）</strong>：活动或产品引起的温室气体排放总量。</li>
+<li><strong>生态毒性（ecotoxicity）</strong>：材料或其降解产物对生态系统生物的危害程度。</li>
+</ul>
+</div>
+<hr />
+<h2 id="33">3.3 电化学能源材料</h2>
+<h3 id="331">3.3.1 电极热力学与锂离子嵌入反应</h3>
+<p>锂离子电池基于 Li<span class="arithmatex">\(^+\)</span> 在正负极活性材料晶格中的可逆嵌入/脱出。电极电位由电化学反应的吉布斯自由能变化决定：</p>
+<div class="arithmatex">\[
+E = -\frac{\Delta G}{nF}
+\]</div>
+<p>其中 <span class="arithmatex">\(n\)</span> 为转移电子数，<span class="arithmatex">\(F\)</span> 为法拉第常数。正极材料提供高电位（3-5 V vs Li/Li<span class="arithmatex">\(^+\)</span>），负极材料提供低电位（&lt;1 V vs Li/Li<span class="arithmatex">\(^+\)</span>），两者电位差构成电池电压。更精确地，电极电位可由 Nernst 方程描述：</p>
+<div class="arithmatex">\[
+E = E^0 - \frac{RT}{nF} \ln Q
+\]</div>
+<p>其中 <span class="arithmatex">\(Q\)</span> 为反应商。嵌入反应中 Li<span class="arithmatex">\(^+\)</span> 活度的变化直接改变了 <span class="arithmatex">\(Q\)</span>，从而改变电极电位。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：嵌入反应、电极电位、吉布斯自由能、电化学势、Nernst 方程、法拉第常数</p>
+<ul>
+<li><strong>嵌入反应（intercalation）</strong>：客体离子（如 Li<span class="arithmatex">\(^+\)</span>）可逆地插入并脱出宿主晶格层间或通道中的反应，宿主骨架基本保持不变。</li>
+<li><strong>电极电位（electrode potential）</strong>：电极与参比电极之间的电势差，反映氧化还原反应的趋势。</li>
+<li><strong>吉布斯自由能（Gibbs free energy, <span class="arithmatex">\(G\)</span>）</strong>：恒温恒压下系统可做非体积功的能量，<span class="arithmatex">\(\Delta G &lt; 0\)</span> 表示过程自发。</li>
+<li><strong>电化学势（electrochemical potential）</strong>：化学势与静电势能之和，带电粒子在相平衡时电化学势相等。</li>
+<li><strong>Nernst 方程</strong>：描述电极电位随反应物活度变化的方程，是热力学平衡条件在电化学中的具体表达。</li>
+<li><strong>法拉第常数（Faraday constant, <span class="arithmatex">\(F\)</span>）</strong>：1 摩尔电子所带电荷量，约 96485 C/mol。</li>
+</ul>
+</div>
+<p>锂离子嵌入反应可写为</p>
+<div class="arithmatex">\[
+\text{Li}_{1-x}\text{MO}_2 + x\text{Li}^+ + x\text{e}^- \rightleftharpoons \text{LiMO}_2
+\]</div>
+<p>其中 M 为过渡金属。嵌入过程要求宿主材料具有稳定的晶体框架、快速的 Li<span class="arithmatex">\(^+\)</span> 扩散通道和可接受的电子电导率。Li<span class="arithmatex">\(^+\)</span> 在固相中的扩散遵循 Fick 第二定律，扩散系数 <span class="arithmatex">\(D_{Li^+}\)</span> 通常在 10<span class="arithmatex">\(^{-15}\)</span>-10<span class="arithmatex">\(^{-10}\)</span> cm<span class="arithmatex">\(^2\)</span>/s 范围。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：Fick 定律、扩散系数、化学势梯度</p>
+<ul>
+<li><strong>Fick 定律</strong>：描述扩散通量与浓度梯度关系的经验定律。第一定律给出稳态通量，第二定律给出非稳态浓度演化。</li>
+<li><strong>扩散系数（diffusion coefficient, <span class="arithmatex">\(D\)</span>）</strong>：表征粒子在介质中扩散快慢的物理量，与温度和活化能有关。</li>
+<li><strong>化学势梯度（chemical potential gradient）</strong>：驱动粒子从高化学势区向低化学势区迁移的真实热力学力。</li>
+</ul>
+</div>
+<h3 id="332">3.3.2 正极材料：层状氧化物与橄榄石结构</h3>
+<p><strong>NMC（LiNi<span class="arithmatex">\(_x\)</span>Mn<span class="arithmatex">\(_y\)</span>Co<span class="arithmatex">\(_z\)</span>O<span class="arithmatex">\(_2\)</span>）</strong> 属 <span class="arithmatex">\(\alpha\)</span>-NaFeO<span class="arithmatex">\(_2\)</span> 型层状结构，空间群 <span class="arithmatex">\(R\bar{3}m\)</span>。Li<span class="arithmatex">\(^+\)</span> 占据 3a 位，过渡金属占据 3b 位，氧占据 6c 位。Li<span class="arithmatex">\(^+\)</span> 在二维层间迁移，扩散系数约 10<span class="arithmatex">\(^{-12}\)</span>–10<span class="arithmatex">\(^{-14}\)</span> m<span class="arithmatex">\(^2\)</span>/s。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：NMC、层状氧化物、空间群、Li/Ni 混排、晶格氧释放、表面重构</p>
+<ul>
+<li><strong>NMC</strong>：镍钴锰酸锂三元层状正极材料，通过调整 Ni/Mn/Co 比例平衡容量、稳定性和成本。</li>
+<li><strong>层状氧化物（layered oxide）</strong>：过渡金属层与锂层交替排列的二维结构，锂在层间二维扩散。</li>
+<li><strong>空间群（space group）</strong>：晶体对称性的数学描述。</li>
+<li><strong>Li/Ni 混排</strong>：Ni<span class="arithmatex">\(^{2+}\)</span> 离子半径与 Li<span class="arithmatex">\(^+\)</span> 接近，易占据 Li 位，堵塞 Li<span class="arithmatex">\(^+\)</span> 扩散通道。</li>
+<li><strong>晶格氧释放（lattice oxygen release）</strong>：高脱锂态下晶格氧被氧化为 O<span class="arithmatex">\(_2\)</span> 并逸出，导致结构破坏和热失控。</li>
+<li><strong>表面重构（surface reconstruction）</strong>：正极表面在电化学循环中转变为岩盐相等新结构，增加界面阻抗。</li>
+</ul>
+</div>
+<p>高镍化（NMC622→NMC811→NMC90）通过提高 Ni 含量增加可逆容量，但带来：</p>
+<ul>
+<li><strong>Li/Ni 混排</strong>：Ni<span class="arithmatex">\(^{2+}\)</span> 离子半径与 Li<span class="arithmatex">\(^+\)</span> 接近，易占据 Li 位，堵塞 Li<span class="arithmatex">\(^+\)</span> 扩散通道。</li>
+<li><strong>晶格氧释放</strong>：高脱锂态下晶格氧氧化释放 O<span class="arithmatex">\(_2\)</span>，引发热失控。</li>
+<li><strong>表面重构</strong>：近表面形成岩盐相 NiO 层，增加界面阻抗。</li>
+<li><strong>微裂纹</strong>：各向异性晶格膨胀/收缩导致二次颗粒内部微裂纹，加速电解液渗透和副反应。</li>
+</ul>
+<p>缓解策略包括：体相掺杂（Al、Mg、Ti、Zr）、表面包覆（Al<span class="arithmatex">\(_2\)</span>O<span class="arithmatex">\(_3\)</span>、Li<span class="arithmatex">\(_2\)</span>ZrO<span class="arithmatex">\(_3\)</span>、磷酸盐）、核壳结构与浓度梯度设计。</p>
+<p><strong>LiFePO<span class="arithmatex">\(_4\)</span></strong> 属橄榄石结构，空间群 <span class="arithmatex">\(Pnma\)</span>。其热稳定性优异、循环寿命长、成本低，但本征电子电导率低（约 10<span class="arithmatex">\(^{-9}\)</span> S/cm），需通过碳包覆和纳米化改善。LiFePO<span class="arithmatex">\(_4\)</span> 的理论容量为 170 mAh/g，实际可达 160 mAh/g 以上。其充放电机制为两相反应（LiFePO<span class="arithmatex">\(_4\)</span> ↔ FePO<span class="arithmatex">\(_4\)</span> + Li<span class="arithmatex">\(^+\)</span> + e<span class="arithmatex">\(^-\)</span>），反应界面移动受 Li<span class="arithmatex">\(^+\)</span> 一维扩散控制。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：橄榄石结构、碳包覆、两相反应、一维扩散</p>
+<ul>
+<li><strong>橄榄石结构（olivine structure）</strong>：由 FeO<span class="arithmatex">\(_6\)</span> 八面体和 PO<span class="arithmatex">\(_4\)</span> 四面体构成的三维框架，Li<span class="arithmatex">\(^+\)</span> 沿一维通道迁移。</li>
+<li><strong>碳包覆（carbon coating）</strong>：在正极颗粒表面沉积导电碳层，提高电子电导率和界面稳定性。</li>
+<li><strong>两相反应（two-phase reaction）</strong>：充放电过程中存在贫锂相和富锂相两相共存，反应前沿移动。</li>
+<li><strong>一维扩散（one-dimensional diffusion）</strong>：Li<span class="arithmatex">\(^+\)</span> 只能沿特定晶向通道迁移，扩散路径受限。</li>
+</ul>
+</div>
+<h3 id="333">3.3.3 负极材料：石墨、硅碳与锂金属</h3>
+<p><strong>石墨</strong>是目前最成熟的负极材料，理论容量 372 mAh/g（对应 LiC<span class="arithmatex">\(_6\)</span>）。Li<span class="arithmatex">\(^+\)</span> 嵌入石墨层间形成不同阶化合物（stage I-V）。石墨负极的体积变化小（&lt;12%），循环稳定，但容量已接近理论极限。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：石墨、阶化合物、硅碳复合、锂枝晶、剪切模量</p>
+<ul>
+<li><strong>石墨（graphite）</strong>：碳原子层状排列的负极材料，Li<span class="arithmatex">\(^+\)</span> 嵌入层间形成石墨插层化合物。</li>
+<li><strong>阶化合物（stage compound）</strong>：石墨层间 Li<span class="arithmatex">\(^+\)</span> 周期性占据不同层数的结构，stage I 表示每两层碳层间都嵌锂。</li>
+<li><strong>硅碳复合（Si/C composite）</strong>：将纳米硅分散在碳基体中，利用碳缓冲硅体积膨胀并维持导电网络。</li>
+<li><strong>锂枝晶（Li dendrite）</strong>：锂金属负极表面因局部电场和浓度不均形成的针状锂沉积，可刺穿隔膜导致短路。</li>
+<li><strong>剪切模量（shear modulus, <span class="arithmatex">\(G\)</span>）</strong>：材料抵抗剪切变形的能力，固态电解质高剪切模量可机械抑制枝晶。</li>
+</ul>
+</div>
+<p><strong>硅</strong>的理论容量高达 4,200 mAh/g（对应 Li<span class="arithmatex">\(_{22}\)</span>Si<span class="arithmatex">\(_5\)</span>），但完全锂化时体积膨胀约 300%，导致：
+- 颗粒粉化、电接触丧失
+- SEI 膜持续破裂与再生，消耗活性锂和电解液
+- 固体电解质界面膜增厚，界面阻抗增大</p>
+<p>工业界采用硅碳复合（Si/C）或氧化亚硅（SiO<span class="arithmatex">\(_x\)</span>）策略，将硅含量控制在 5-15 wt%，在能量密度提升与循环稳定性之间取得平衡。</p>
+<p><strong>锂金属</strong>负极具有最高比容量（3,860 mAh/g）和最低电位，是固态电池的理想负极。但锂枝晶生长导致短路和热失控风险，是制约其应用的核心科学问题。固态电解质的高剪切模量可机械抑制枝晶，但晶界、空隙和局部电流密度不均仍可能诱发枝晶穿透。Monroe 和 Newman 的经典判据指出，当电解质剪切模量约为锂金属两倍时可抑制枝晶，但实际中界面不均匀性使该判据过于乐观。</p>
+<h3 id="334-sei">3.3.4 液态电解质与 SEI 膜</h3>
+<p>液态电解质通常由碳酸酯溶剂（EC、DMC、EMC、DEC）和锂盐（LiPF<span class="arithmatex">\(_6\)</span>、LiFSI、LiTFSI）组成。其离子电导率约 10<span class="arithmatex">\(^{-3}\)</span>–10<span class="arithmatex">\(^{-2}\)</span> S/cm，但在高温或高电压下可能发生氧化分解。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：液态电解质、碳酸酯溶剂、锂盐、离子电导率</p>
+<ul>
+<li><strong>液态电解质（liquid electrolyte）</strong>：由溶剂和锂盐组成的离子导电液体，在正负极之间传输 Li<span class="arithmatex">\(^+\)</span>。</li>
+<li><strong>碳酸酯溶剂（carbonate solvent）</strong>：如 EC（碳酸乙烯酯）、DMC（碳酸二甲酯）等，提供锂离子溶剂化环境。</li>
+<li><strong>锂盐（lithium salt）</strong>：如 LiPF<span class="arithmatex">\(_6\)</span>，在溶剂中解离出 Li<span class="arithmatex">\(^+\)</span> 和阴离子，提供载流子。</li>
+<li><strong>离子电导率（ionic conductivity）</strong>：电解质传导离子的能力，单位为 S/cm。</li>
+</ul>
+</div>
+<p>SEI 膜是电解液在负极表面还原形成的钝化层，主要成分为 Li<span class="arithmatex">\(_2\)</span>CO<span class="arithmatex">\(_3\)</span>、LiF、ROLi、RCOOLi 等。Peled 首次提出 SEI 概念，指出理想的 SEI 应具有：</p>
+<ul>
+<li>高 Li<span class="arithmatex">\(^+\)</span> 电导率（降低极化）</li>
+<li>电子绝缘性（防止电解液持续还原）</li>
+<li>机械柔韧性（适应负极体积变化）</li>
+<li>热稳定性（高温下不分解放热）</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：SEI 膜、钝化层、电解液添加剂</p>
+<ul>
+<li><strong>SEI（Solid Electrolyte Interphase）</strong>：电极表面由电解液分解形成的固态钝化膜，允许 Li<span class="arithmatex">\(^+\)</span> 通过但阻止电子和溶剂分子持续反应。</li>
+<li><strong>钝化层（passivation layer）</strong>：能阻止或减缓进一步化学反应的保护性薄膜。</li>
+<li><strong>电解液添加剂（electrolyte additive）</strong>：少量加入电解液中以调控 SEI 成分、抑制副反应的功能性物质，如 VC、FEC。</li>
+</ul>
+</div>
+<p>通过电解液添加剂（VC、FEC、LiPO<span class="arithmatex">\(_2\)</span>F<span class="arithmatex">\(_2\)</span>、LiDFOB）可调控 SEI 成分与结构，显著改善循环寿命。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[外电路负载] --&gt; B[Li+ 从正极脱出]
+    B --&gt; C[Li+ 经电解质迁移]
+    C --&gt; D[Li+ 嵌入负极石墨]
+    D --&gt; E[电子经外电路回到正极]
+    F[首次充电] --&gt; G[电解液在负极还原]
+    G --&gt; H[形成 SEI 膜]
+    H --&gt; I[Li+ 导通 / 电子隔绝]
+    I --&gt; J[保护负极 + 消耗活性锂]</code></pre>
+<h3 id="335">3.3.5 固态电解质：硫化物、氧化物与聚合物</h3>
+<p>固态电池以固态电解质替代液态电解液和隔膜，有望同时提高能量密度和安全性。固态电解质按化学体系分为硫化物、氧化物、聚合物和卤化物。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：固态电解质、电化学窗口、对锂稳定性、空气稳定性</p>
+<ul>
+<li><strong>固态电解质（solid electrolyte）</strong>：在固态下传导离子的材料，兼具隔膜和离子导体功能。</li>
+<li><strong>电化学窗口（electrochemical window）</strong>：电解质在不发生氧化还原分解的电位范围，窗口越宽越能匹配高电压正极。</li>
+<li><strong>对锂稳定性（stability against Li metal）</strong>：电解质与锂金属接触时不发生持续副反应的能力。</li>
+<li><strong>空气稳定性（air stability）</strong>：电解质在空气中不吸水、不分解、不产生有毒气体的能力。</li>
+</ul>
+</div>
+<p><strong>硫化物固态电解质</strong>（如 Li<span class="arithmatex">\(_{10}\)</span>GeP<span class="arithmatex">\(_2\)</span>S<span class="arithmatex">\(_{12}\)</span>、Li<span class="arithmatex">\(_6\)</span>PS<span class="arithmatex">\(_5\)</span>Cl、Li<span class="arithmatex">\(_3\)</span>PS<span class="arithmatex">\(_4\)</span>）具有最高的室温离子电导率，可达 10<span class="arithmatex">\(^{-2}\)</span> S/cm，接近液态电解液。其导电机理为 Li<span class="arithmatex">\(^+\)</span> 在由 PS<span class="arithmatex">\(_4\)</span>/GeS<span class="arithmatex">\(_4\)</span> 四面体构成的骨架中通过空位或间隙迁移。然而硫化物对水分极敏感，会释放 H<span class="arithmatex">\(_2\)</span>S 并降低离子电导；且与正极材料存在化学/电化学不相容，需通过表面包覆缓冲。</p>
+<p><strong>氧化物固态电解质</strong>（如 LLZO、LATP、LLTO、LiPON）化学稳定性好、电化学窗口宽、机械强度高。立方相 LLZO（Li<span class="arithmatex">\(_7\)</span>La<span class="arithmatex">\(_3\)</span>Zr<span class="arithmatex">\(_2\)</span>O<span class="arithmatex">\(_{12}\)</span>）的室温离子电导率约 10<span class="arithmatex">\(^{-4}\)</span>–10<span class="arithmatex">\(^{-3}\)</span> S/cm，对锂金属稳定。但氧化物脆性大、界面接触差、需要高温烧结，加工成本高。</p>
+<p><strong>聚合物固态电解质</strong>（如 PEO-LiTFSI）柔性好、界面接触佳，但室温离子电导率低（10<span class="arithmatex">\(^{-6}\)</span>–10<span class="arithmatex">\(^{-5}\)</span> S/cm），需加热至 60 °C 以上才能实用化。其导电机理为 Li<span class="arithmatex">\(^+\)</span> 与醚氧链段配位，并随聚合物链段运动迁移。聚合物-无机复合电解质（如 PEO + LLZO/LATP）是当前研究热点，可兼顾柔性与离子电导率。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[固态电解质导电机理] --&gt; B[硫化物/氧化物]
+    B --&gt; C[晶格中 Li+ 空位/间隙]
+    C --&gt; D[Li+ 跃迁过势垒]
+    A --&gt; E[聚合物]
+    E --&gt; F[Li+ 与醚氧配位]
+    F --&gt; G[链段运动带动迁移]
+    H[高电导率] --&gt; I[硫化物优]
+    J[柔性/界面接触] --&gt; K[聚合物优]
+    L[化学/电化学稳定性] --&gt; M[氧化物优]</code></pre>
+<p><strong>表 3-2 主要固态电解质体系对比</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>代表材料</th>
+<th>室温离子电导率 (S/cm)</th>
+<th>对锂稳定性</th>
+<th>空气稳定性</th>
+<th>主要挑战</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>硫化物</td>
+<td>Li<span class="arithmatex">\(_6\)</span>PS<span class="arithmatex">\(_5\)</span>Cl, LGPS</td>
+<td>10<span class="arithmatex">\(^{-3}\)</span>–10<span class="arithmatex">\(^{-2}\)</span></td>
+<td>中等</td>
+<td>差（释放 H<span class="arithmatex">\(_2\)</span>S）</td>
+<td>水分敏感、界面副反应</td>
+</tr>
+<tr>
+<td>氧化物</td>
+<td>LLZO, LATP</td>
+<td>10<span class="arithmatex">\(^{-4}\)</span>–10<span class="arithmatex">\(^{-3}\)</span></td>
+<td>好</td>
+<td>好</td>
+<td>脆性、界面接触、加工温度高</td>
+</tr>
+<tr>
+<td>聚合物</td>
+<td>PEO-LiTFSI</td>
+<td>10<span class="arithmatex">\(^{-6}\)</span>–10<span class="arithmatex">\(^{-5}\)</span></td>
+<td>好</td>
+<td>好</td>
+<td>室温电导率低、氧化稳定性差</td>
+</tr>
+<tr>
+<td>卤化物</td>
+<td>Li<span class="arithmatex">\(_3\)</span>YCl<span class="arithmatex">\(_6\)</span>, Li<span class="arithmatex">\(_3\)</span>YBr<span class="arithmatex">\(_6\)</span></td>
+<td>10<span class="arithmatex">\(^{-4}\)</span>–10<span class="arithmatex">\(^{-3}\)</span></td>
+<td>好</td>
+<td>中等</td>
+<td>高压正极稳定性、成本</td>
+</tr>
+</tbody>
+</table>
+<h3 id="336">3.3.6 热失控机理与电池组设计</h3>
+<p>锂离子电池热失控是放热链式反应的结果，涉及：</p>
+<ol>
+<li>SEI 分解（约 90-120 °C）</li>
+<li>负极与电解液反应</li>
+<li>隔膜熔融/收缩（PE 隔膜约 130 °C）</li>
+<li>正极释氧（NMC811 约 200-250 °C）</li>
+<li>电解液燃烧（EC/DMC 闪点约 30-40 °C）</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：热失控、隔膜、闪点、放热链式反应</p>
+<ul>
+<li><strong>热失控（thermal runaway）</strong>：电池内部放热反应速率超过散热速率，温度持续上升并引发连锁反应的现象。</li>
+<li><strong>隔膜（separator）</strong>：分隔正负极并允许离子通过的微孔膜，熔融收缩会导致内短路。</li>
+<li><strong>闪点（flash point）</strong>：液体蒸气可被点燃的最低温度。</li>
+<li><strong>放热链式反应（exothermic chain reaction）</strong>：前一步反应放热引发下一步反应，形成正反馈。</li>
+</ul>
+</div>
+<p>固态电池通过消除可燃液态电解质、采用高热稳定性电解质，可从根本上抑制热失控。但固态电池仍存在锂枝晶、界面接触电阻、电解质-电极化学不相容等安全问题。</p>
+<h4 id="3361">3.3.6.1 热失控临界条件与能量平衡</h4>
+<p>电池温度演化由能量守恒方程描述：</p>
+<div class="arithmatex">\[
+\rho C_p \frac{dT}{dt} = \dot{q}_{gen} - \dot{q}_{cool}
+\]</div>
+<p>其中 <span class="arithmatex">\(\rho C_p\)</span> 为电芯体积比热容，<span class="arithmatex">\(\dot{q}_{gen}\)</span> 为单位体积产热功率，<span class="arithmatex">\(\dot{q}_{cool}\)</span> 为单位体积散热功率。产热项包括焦耳热和熵热：</p>
+<div class="arithmatex">\[
+\dot{q}_{gen} = I^2 R_{int} + I T \frac{dE_{ocv}}{dT}
+\]</div>
+<p>焦耳热与电流平方成正比；熵热项在充电/放电时符号相反，但通常仅为焦耳热的 5-15%。热失控的临界条件是产热速率对温度的导数超过散热速率对温度的导数：</p>
+<div class="arithmatex">\[
+\frac{\partial \dot{q}_{gen}}{\partial T} &gt; \frac{\partial \dot{q}_{cool}}{\partial T}
+\]</div>
+<p>一旦满足该条件，温度正反馈无法被环境散热抵消，即进入热失控。SEI 分解、负极-电解液反应和正极释氧的活化能分别为 80-130 kJ/mol、100-200 kJ/mol 和 150-300 kJ/mol，温度越高反应越快，形成指数级放热。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：绝热温升、自加热速率、热阻、对流换热系数</p>
+<ul>
+<li><strong>绝热温升（adiabatic temperature rise, <span class="arithmatex">\(\Delta T_{ad}\)</span>）</strong>：在无散热条件下反应释放全部热量导致的温升，<span class="arithmatex">\(\Delta T_{ad} = Q_{total}/(m C_p)\)</span>。</li>
+<li><strong>自加热速率（self-heating rate, <span class="arithmatex">\(\mathrm{d}T/\mathrm{d}t\)</span>）</strong>：单位时间内电池自身温度升高速度，加速量热仪（ARC）直接测量。</li>
+<li><strong>热阻（thermal resistance, <span class="arithmatex">\(R_{th}\)</span>）</strong>：热量传递路径上的温升与热流之比，<span class="arithmatex">\(R_{th} = \Delta T / P\)</span>。</li>
+<li><strong>对流换热系数（heat transfer coefficient, <span class="arithmatex">\(h\)</span>）</strong>：流体与固体表面间单位面积、单位温差的热流量，自然对流约 5-25 W/(m<span class="arithmatex">\(^2\)</span>·K)。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[局部过温] --&gt; B[SEI 分解 90-120 °C]
+    B --&gt; C[负极-电解液反应]
+    C --&gt; D[隔膜收缩 130 °C]
+    D --&gt; E[内短路]
+    E --&gt; F[正极释氧 200-250 °C]
+    F --&gt; G[电解液燃烧]
+    G --&gt; H[热失控]
+    H --&gt;|链式放热| A</code></pre>
+<h4 id="3362">3.3.6.2 电池包尺寸与热设计数值实例</h4>
+<p>假设人形机器人躯干可承载 48 V、20 Ah 的电池包，电芯单体为 3.7 V、5 Ah 的 NMC 圆柱电池，能量密度 250 Wh/kg：</p>
+<ul>
+<li>总能量：<span class="arithmatex">\(E = 48 \times 20 = 960\)</span> Wh</li>
+<li>电池质量：<span class="arithmatex">\(m = 960 / 250 = 3.84\)</span> kg</li>
+<li>串联数：<span class="arithmatex">\(48 / 3.7 \approx 13\)</span> 串</li>
+<li>并联数：<span class="arithmatex">\(20 / 5 = 4\)</span> 并</li>
+<li>总电芯数：<span class="arithmatex">\(13 \times 4 = 52\)</span> 颗</li>
+</ul>
+<p>若机器人瞬时功率需求 960 W，则平均放电倍率 <span class="arithmatex">\(C = 960 / 960 = 1\)</span> C；关节高动态峰值功率可达 3-5 kW，对应 3-5 C 脉冲。若电芯内阻 <span class="arithmatex">\(R_{int} = 20\)</span> mΩ，4 并后等效内阻约 5 mΩ，峰值 5 C 时焦耳热功率：</p>
+<div class="arithmatex">\[
+P_{Joule} = I^2 R_{int} = (5 \times 20)^2 \times 0.005 = 50\ \text{W}
+\]</div>
+<p>下面脚本计算电芯在不同倍率和冷却条件下的稳态温升：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+# 电芯参数（以 21700 NMC 为例）
+C_cell = 5.0        # Ah
+V_cell = 3.7        # V
+R_int = 20e-3       # Ω
+m_cell = 0.070      # kg
+cp = 1000           # J/(kg·K)
+surface_area = 2*np.pi*0.0105*0.070  # m^2 (21700 近似)
+
+# 倍率与电流
+C_rates = np.array([1, 2, 3, 5, 8])
+I = C_rates * C_cell  # A
+P_joule = I**2 * R_int  # W
+
+# 冷却条件：自然对流 h=10 W/m^2K；强制风冷 h=40；液冷 h=200
+for h, label in [(10, '自然对流'), (40, '强制风冷'), (200, '液冷')]:
+    dT = P_joule / (h * surface_area)
+    print(f"{label}: 8C 温升 ≈ {dT[-1]:.1f} K")</code></pre>
+<p>输出显示，8C 脉冲下自然对流温升可达数十开尔文，必须采用液冷或相变材料将电芯温差控制在 5 K 以内，以避免局部电芯提前老化。</p>
+<h3 id="337">3.3.7 电池管理系统与状态估计</h3>
+<p>电池管理系统（BMS）是保障机器人电池安全与性能的核心。关键功能包括：</p>
+<ul>
+<li><strong>荷电状态估计（SOC）</strong>：常用开路电压法、安时积分法和卡尔曼滤波法。</li>
+<li><strong>健康状态估计（SOH）</strong>：通过容量衰减和内阻增长评估。</li>
+<li><strong>均衡控制</strong>：主动均衡或被动均衡，防止串联电芯间 SOC 不一致。</li>
+<li><strong>热管理</strong>：监测电芯温度，控制加热/冷却系统。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：BMS、SOC、SOH、均衡控制</p>
+<ul>
+<li><strong>BMS（Battery Management System）</strong>：监测并管理电池电压、电流、温度，估计状态并执行保护控制的电子系统。</li>
+<li><strong>SOC（State of Charge）</strong>：电池剩余容量与额定容量之比，类比油量表。</li>
+<li><strong>SOH（State of Health）</strong>：电池当前最大容量或内阻相对于新电池的健康程度。</li>
+<li><strong>均衡控制（cell balancing）</strong>：在串联电池组中使各电芯 SOC 趋于一致，防止过充过放。</li>
+</ul>
+</div>
+<p>对于高动态人形机器人，BMS 还需支持高倍率脉冲放电、快速状态更新和故障安全保护。</p>
+<h4 id="3371">3.3.7.1 等效电路模型</h4>
+<p>Thevenin 等效电路是 BMS 状态估计的基础。端电压可表示为</p>
+<div class="arithmatex">\[
+V_t(t) = E_{ocv}\bigl(SOC(t)\bigr) - I(t) R_0 - V_p(t)
+\]</div>
+<p>其中 <span class="arithmatex">\(R_0\)</span> 为欧姆内阻，<span class="arithmatex">\(V_p\)</span> 为极化电压，满足</p>
+<div class="arithmatex">\[
+\frac{dV_p}{dt} = -\frac{V_p}{\tau_p} + \frac{I R_p}{\tau_p}, \quad \tau_p = R_p C_p
+\]</div>
+<p>参数 <span class="arithmatex">\(R_0, R_p, C_p\)</span> 可通过 HPPC（Hybrid Pulse Power Characterization）测试在不同 SOC 和温度下辨识。开路电压 <span class="arithmatex">\(E_{ocv}(SOC)\)</span> 通常用 7-13 阶多项式或查表表示，其斜率 <span class="arithmatex">\(dE_{ocv}/dSOC\)</span> 直接影响 SOC 估计精度。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：开路电压、极化电压、时间常数、HPPC</p>
+<ul>
+<li><strong>开路电压（open-circuit voltage, OCV）</strong>：电池在无电流通过且达到平衡时的端电压，与 SOC 一一对应。</li>
+<li><strong>极化电压（polarization voltage）</strong>：由电化学反应和离子扩散滞后引起的电压降。</li>
+<li><strong>时间常数（time constant, <span class="arithmatex">\(\tau\)</span>）</strong>：RC 回路响应特征时间，<span class="arithmatex">\(\tau = RC\)</span>。</li>
+<li><strong>HPPC（Hybrid Pulse Power Characterization）</strong>：通过施加脉冲电流辨识电池内阻和功率特性的标准测试。</li>
+</ul>
+</div>
+<h4 id="3372-soc">3.3.7.2 扩展卡尔曼滤波 SOC 估计</h4>
+<p>纯安时积分会随电流传感器偏差和容量估计误差累积，需要与电压反馈融合。扩展卡尔曼滤波（EKF）以 SOC 和极化电压为状态：</p>
+<div class="arithmatex">\[
+\mathbf{x} = \begin{bmatrix} SOC \\ V_p \end{bmatrix}
+\]</div>
+<p>状态方程</p>
+<div class="arithmatex">\[
+SOC_{k+1} = SOC_k - \frac{I_k \Delta t}{Q_n}, \quad V_{p,k+1} = e^{-\Delta t/\tau_p} V_{p,k} + R_p(1-e^{-\Delta t/\tau_p}) I_k
+\]</div>
+<p>观测方程</p>
+<div class="arithmatex">\[
+V_{t,k} = E_{ocv}(SOC_k) - I_k R_0 - V_{p,k}
+\]</div>
+<p>EKF 通过线性化 <span class="arithmatex">\(E_{ocv}\)</span> 的雅可比进行预测-更新循环，将电压误差反馈到 SOC，抑制安时积分漂移。人形机器人高动态电流噪声大，EKF 的过程噪声协方差 <span class="arithmatex">\(Q\)</span> 和测量噪声协方差 <span class="arithmatex">\(R\)</span> 需在线调整。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[电流 I, 电压 Vt] --&gt; B[EKF 预测]
+    B --&gt; C[OCV 查表]
+    C --&gt; D[观测更新]
+    D --&gt; E[SOC, Vp 估计]
+    E --&gt; F[均衡/热管理/安全保护]
+    F --&gt; G[故障预警]</code></pre>
+<p>下面的 Python 脚本演示一个简化的 EKF SOC 估计流程：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+Qn = 5.0            # 额定容量 Ah
+dt = 1.0            # s
+R0 = 0.020          # Ω
+Rp = 0.010          # Ω
+tau_p = 30.0        # s
+Cp = tau_p / Rp
+
+# 简化 OCV-SOC 关系 (V)
+def ocv(soc):
+    return 3.0 + 0.8*soc + 0.1*np.sin(2*np.pi*soc)
+
+def docv_dsoc(soc):
+    return 0.8 + 0.1*2*np.pi*np.cos(2*np.pi*soc)
+
+# 状态 [SOC; Vp]
+x = np.array([[0.7], [0.0]])
+P = np.eye(2) * 1e-3
+Q = np.diag([1e-5, 1e-4])
+R = 1e-3
+
+# 模拟：10 A 放电 10 min，电压测量带噪声
+I = 10.0
+N = 600
+socs = []
+for k in range(N):
+    # 预测
+    A = np.array([[1.0, 0.0],
+                  [0.0, np.exp(-dt/tau_p)]])
+    B = np.array([[-dt/(Qn*3600)],
+                  [Rp*(1 - np.exp(-dt/tau_p))]])
+    x = A @ x + B * I
+    P = A @ P @ A.T + Q
+
+    # 观测
+    Vt_true = ocv(x[0,0]) - I*R0 - x[1,0]
+    Vt_meas = Vt_true + np.random.normal(0, np.sqrt(R))
+
+    # 更新
+    H = np.array([[docv_dsoc(x[0,0]), -1.0]])
+    y = Vt_meas - (ocv(x[0,0]) - I*R0 - x[1,0])
+    S = H @ P @ H.T + R
+    K = P @ H.T / S
+    x = x + K * y
+    P = (np.eye(2) - K @ H) @ P
+    socs.append(x[0,0])
+
+print(f"最终 SOC 估计: {socs[-1]*100:.2f}%")
+print(f"纯安时积分 SOC: {(0.7 - I*N*dt/(Qn*3600))*100:.2f}%")</code></pre>
+<p>该脚本中 EKF 融合电压反馈，即使存在测量噪声，SOC 估计仍能收敛；纯安时积分则会因初始误差和电流噪声快速发散。</p>
+<h3 id="338">3.3.8 固态电池制造工艺与挑战</h3>
+<p>固态电池制造工艺与液态电池显著不同：</p>
+<ul>
+<li><strong>硫化物电解质</strong>：需在全惰性气氛（Ar 或 N<span class="arithmatex">\(_2\)</span>）中加工，避免 H<span class="arithmatex">\(_2\)</span>S 生成；采用冷等静压、热压或溶液法成膜。</li>
+<li><strong>氧化物电解质</strong>：需高温烧结（&gt;1000 °C），脆性大，通常制成薄膜或复合电解质。</li>
+<li><strong>聚合物电解质</strong>：可通过溶液浇铸、挤出或 3D 打印成型，柔性好但离子电导率低。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：冷等静压、热压、界面接触阻抗</p>
+<ul>
+<li><strong>冷等静压（cold isostatic pressing, CIP）</strong>：在常温下从各个方向均匀施加流体压力使粉末致密化。</li>
+<li><strong>热压（hot pressing）</strong>：在高温下同时加热和加压烧结，促进致密化和界面结合。</li>
+<li><strong>界面接触阻抗（interfacial contact resistance）</strong>：由于固-固界面不紧密接触产生的额外电阻。</li>
+</ul>
+</div>
+<p>关键挑战包括：固-固界面接触阻抗、电极/电解质热膨胀匹配、规模化生产成本和一致性控制。</p>
+<h3 id="339">3.3.9 电池材料供应链与回收</h3>
+<p>电池关键材料供应链呈现高度地理集中：锂资源主要由南美“锂三角”和澳大利亚主导；钴矿产量的 70% 以上来自刚果（金）；中国主导正极材料、电池制造和回收产能。</p>
+<p>电池回收是降低资源依赖的关键：</p>
+<ul>
+<li><strong>湿法冶金回收 Li、Co、Ni、Mn</strong></li>
+<li><strong>火法冶金回收 Cu、Al、Fe</strong></li>
+<li><strong>直接再生正极材料</strong>正在成为研究热点，可降低再制造成本和能耗。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：直接再生、资源耗竭、供应链韧性</p>
+<ul>
+<li><strong>直接再生（direct recycling）</strong>：将废旧电极材料经修复后重新用于电池，尽量保持晶体结构。</li>
+<li><strong>资源耗竭（resource depletion）</strong>：不可再生资源被消耗殆尽的趋势。</li>
+<li><strong>供应链韧性（supply chain resilience）</strong>：供应链在扰动下维持功能和快速恢复的能力。</li>
+</ul>
+</div>
+<hr />
+<h2 id="34">3.4 宽禁带半导体材料</h2>
+<h3 id="341">3.4.1 能带理论与载流子输运</h3>
+<p>半导体中的电子能量形成能带结构，价带顶与导带底之间的能量差称为<strong>带隙</strong> <span class="arithmatex">\(E_g\)</span>。Si 的 <span class="arithmatex">\(E_g = 1.12\)</span> eV，SiC 的 <span class="arithmatex">\(E_g = 2.3-3.3\)</span> eV（随多型体变化），GaN 的 <span class="arithmatex">\(E_g = 3.4\)</span> eV。宽禁带带来更高的本征温度、更高的击穿电场和更低的本征载流子浓度：</p>
+<div class="arithmatex">\[
+n_i = \sqrt{N_c N_v} \exp\left(-\frac{E_g}{2k_B T}\right)
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：能带、价带、导带、带隙、本征载流子浓度、击穿电场、导通电阻</p>
+<ul>
+<li><strong>能带（energy band）</strong>：晶体中电子允许能量值的连续分布带，由周期性势场中薛定谔方程解形成。</li>
+<li><strong>价带（valence band）</strong>：绝对零度时填满电子的最高能带。</li>
+<li><strong>导带（conduction band）</strong>：价带之上的空能带，电子进入后可自由导电。</li>
+<li><strong>带隙（bandgap, <span class="arithmatex">\(E_g\)</span>）</strong>：价带顶到导带底的能量差，决定材料的光学和电学阈值。</li>
+<li><strong>本征载流子浓度（intrinsic carrier concentration, <span class="arithmatex">\(n_i\)</span>）</strong>：本征半导体中热激发产生的电子-空穴对浓度。</li>
+<li><strong>击穿电场（breakdown electric field, <span class="arithmatex">\(E_c\)</span>）</strong>：材料发生雪崩或隧穿击穿前的最大电场。</li>
+<li><strong>导通电阻（on-resistance, <span class="arithmatex">\(R_{on}\)</span>）</strong>：器件导通时的电阻，直接影响导通损耗。</li>
+</ul>
+</div>
+<p>击穿电场 <span class="arithmatex">\(E_c\)</span> 与带隙相关，近似满足</p>
+<div class="arithmatex">\[
+E_c \propto E_g^{3/2}
+\]</div>
+<p>SiC 的临界击穿电场约 2-3 MV/cm，是 Si 的 10 倍；GaN 约 3-4 MV/cm。更高的击穿电场允许使用更薄的漂移区，从而降低导通电阻 <span class="arithmatex">\(R_{on,sp}\)</span>：</p>
+<div class="arithmatex">\[
+R_{on,sp} \propto \frac{1}{E_c^3}
+\]</div>
+<p>即击穿电压相同时，SiC 的 <span class="arithmatex">\(R_{on,sp}\)</span> 约为 Si 的 1/300-1/400。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[宽禁带 Eg↑] --&gt; B[击穿电场 Ec↑]
+    B --&gt; C[漂移区可更薄]
+    C --&gt; D[导通电阻 Ron,sp↓]
+    D --&gt; E[导通损耗↓]
+    A --&gt; F[本征载流子 ni↓]
+    F --&gt; G[高温漏电流↓]
+    E --&gt; H[高压 / 高温 / 高频优势]
+    G --&gt; H</code></pre>
+<h3 id="342">3.4.2 碳化硅：多型体、热导率与功率器件</h3>
+<p>SiC 存在 200 多种多型体，最常见的是 4H-SiC 和 6H-SiC。4H-SiC 因具有较高的电子迁移率（<span class="arithmatex">\(\mu_n \approx 800-1000\)</span> cm<span class="arithmatex">\(^2\)</span>/(V·s)）和各向同性较好，成为功率器件首选。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：多型体、4H-SiC、电子迁移率、MOSFET、阈值电压、界面态</p>
+<ul>
+<li><strong>多型体（polytype）</strong>：化学成分相同但堆垛顺序不同的晶体结构变体。</li>
+<li><strong>4H-SiC</strong>：SiC 的一种六方多型体，具有较高电子迁移率和各向同性。</li>
+<li><strong>电子迁移率（electron mobility, <span class="arithmatex">\(\mu_n\)</span>）</strong>：单位电场下电子的平均漂移速度，决定器件导通电阻和开关速度。</li>
+<li><strong>MOSFET（Metal-Oxide-Semiconductor Field-Effect Transistor）</strong>：金属-氧化物-半导体场效应晶体管。</li>
+<li><strong>阈值电压（threshold voltage, <span class="arithmatex">\(V_{th}\)</span>）</strong>：使沟道反型并导通所需的栅极电压。</li>
+<li><strong>界面态（interface state）</strong>：半导体/氧化物界面处的电子能级，会捕获载流子导致迁移率下降和阈值漂移。</li>
+</ul>
+</div>
+<p>SiC MOSFET 的优异特性包括：</p>
+<ul>
+<li><strong>高温工作</strong>：结温可达 175-200 °C，远高于 Si 的 150 °C。</li>
+<li><strong>高开关频率</strong>：开关损耗低，可将逆变器开关频率从 10-20 kHz 提升至 50-100 kHz。</li>
+<li><strong>低导通电阻</strong>：相同耐压等级下 <span class="arithmatex">\(R_{DS(on)}\)</span> 显著低于 Si MOSFET 和 IGBT。</li>
+</ul>
+<p>SiC 的高热导率（4H-SiC 约 490 W/(m·K)）有利于散热，但 MOS 界面处存在较高的界面态密度，导致沟道迁移率降低和阈值电压漂移。通过氮化退火、氧化后退火等工艺可改善界面质量。</p>
+<h3 id="343">3.4.3 氮化镓：极化效应与二维电子气</h3>
+<p>GaN 通常以纤锌矿结构外延生长在异质衬底（Si、SiC、蓝宝石）上。由于纤锌矿结构缺乏反演对称性，GaN/AlGaN 异质界面存在<strong>自发极化</strong>（spontaneous polarization）和<strong>压电极化</strong>（piezoelectric polarization）。极化不连续在界面处诱导高浓度二维电子气（2DEG）：</p>
+<div class="arithmatex">\[
+n_s = \frac{\sigma_{pol}}{e} - \frac{\varepsilon}{e^2 d}\left(e\phi_B + E_F - \Delta E_c\right)
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">术语解释：纤锌矿、自发极化、压电极化、二维电子气（2DEG）、HEMT</p>
+<ul>
+<li><strong>纤锌矿（wurtzite）</strong>：一种六方晶体结构，缺乏中心反演对称性，因此存在自发极化。</li>
+<li><strong>自发极化（spontaneous polarization）</strong>：晶体本身因非中心对称结构而具有的固有电极化。</li>
+<li><strong>压电极化（piezoelectric polarization）</strong>：晶格失配产生应变，由于压电效应而产生的附加极化。</li>
+<li><strong>二维电子气（2DEG）</strong>：被限制在异质界面附近薄层内的高迁移率电子气。</li>
+<li><strong>HEMT（High Electron Mobility Transistor）</strong>：利用 2DEG 作为沟道的高电子迁移率晶体管。</li>
+</ul>
+</div>
+<p>其中 <span class="arithmatex">\(\sigma_{pol}\)</span> 为极化电荷面密度，<span class="arithmatex">\(\phi_B\)</span> 为肖特基势垒，<span class="arithmatex">\(d\)</span> 为 AlGaN 势垒层厚度。2DEG 电子迁移率可达 1500-2000 cm<span class="arithmatex">\(^2\)</span>/(V·s)，浓度达 10<span class="arithmatex">\(^{13}\)</span> cm<span class="arithmatex">\(^{-2}\)</span>，使 GaN HEMT 具有极低的导通电阻和极高的开关速度。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[纤锌矿无反演对称] --&gt; B[自发极化 Psp]
+    C[AlGaN/GaN 晶格失配] --&gt; D[压电极化 Ppz]
+    B --&gt; E[界面极化电荷不连续]
+    D --&gt; E
+    E --&gt; F[高浓度 2DEG]
+    F --&gt; G[高迁移率沟道]
+    G --&gt; H[低 Ron + 高开关速度]</code></pre>
+<p>GaN HEMT 按栅极结构分为耗尽型（d-mode）、增强型（e-mode）和 cascode 结构。e-mode GaN 通过 p-GaN 帽层或凹槽栅实现常关特性，更适合功率电子应用。</p>
+<h3 id="344">3.4.4 功率器件损耗机制与驱动器设计</h3>
+<p>电机驱动逆变器的总损耗包括导通损耗和开关损耗：</p>
+<div class="arithmatex">\[
+P_{loss} = P_{cond} + P_{sw}
+$$
+$$
+P_{cond} = I_{rms}^2 R_{DS(on)}
+$$
+$$
+P_{sw} = f_{sw}(E_{on} + E_{off})
+\]</div>
+<p>其中 <span class="arithmatex">\(f_{sw}\)</span> 为开关频率，<span class="arithmatex">\(E_{on}\)</span>、<span class="arithmatex">\(E_{off}\)</span> 为单次开关能量。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：导通损耗、开关损耗、THD、逆变器</p>
+<ul>
+<li><strong>导通损耗（conduction loss）</strong>：器件导通时由于导通电阻产生的焦耳热损耗。</li>
+<li><strong>开关损耗（switching loss）</strong>：器件开通和关断过程中电压电流交叠产生的能量损耗。</li>
+<li><strong>THD（Total Harmonic Distortion）</strong>：电流或电压波形相对正弦波的畸变程度。</li>
+<li><strong>逆变器（inverter）</strong>：将直流电转换为交流电的功率电子装置。</li>
+</ul>
+</div>
+<p><strong>SiC 与 GaN 在机器人驱动中的互补性</strong>：</p>
+<ul>
+<li><strong>SiC MOSFET</strong>：适用于高压（≥650 V）、大功率、连续运行的主驱关节。在 20 kHz 开关频率下，SiC 逆变器效率可达 97.2%，结温升约 45 °C。</li>
+<li><strong>GaN HEMT</strong>：适用于低压（≤650 V）、高频（100 kHz-1 MHz）、小体积的关节驱动。在 100 kHz 下，GaN 逆变器开关损耗比 SiC 低约 40%，电流 THD 从 3.8% 降至 2.5%，转矩响应时间从 0.12 s 缩短至 0.05 s。</li>
+</ul>
+<p>EPC 2025 年推出的 EPC91120 人形机器人关节 GaN 电机驱动逆变器，直径 32 mm，峰值电流 42 A，效率超过 80%，体现了 GaN 在高集成度关节驱动中的优势。</p>
+<h4 id="3441">3.4.4.1 导通与开关损耗解析模型</h4>
+<p>MOSFET 的导通损耗随结温变化显著，通常近似为</p>
+<div class="arithmatex">\[
+P_{cond} = I_{rms}^2 R_{DS(on),25^\circ C} \bigl[1 + \delta (T_j - 25)\bigr]
+\]</div>
+<p>其中 <span class="arithmatex">\(\delta \approx 0.0038\ /^\circ\text{C}\)</span> 为 SiC MOSFET 的温度系数，GaN HEMT 的温度系数略低。</p>
+<p>开关损耗可写成与电压、电流和栅极电荷相关的经验式：</p>
+<div class="arithmatex">\[
+P_{sw} = f_{sw} \frac{(E_{on} + E_{off}) V_{DC} I_{rms}}{V_{ref} I_{ref}}
+\]</div>
+<p>对于 GaN 等无反向恢复器件，体二极管反向恢复损耗 <span class="arithmatex">\(P_{rr}\)</span> 可忽略；SiC MOSFET 的体二极管在死区时间内续流会产生反向恢复电荷 <span class="arithmatex">\(Q_{rr}\)</span>，其损耗为</p>
+<div class="arithmatex">\[
+P_{rr} = Q_{rr} V_{DC} f_{sw}
+\]</div>
+<p>死区时间 <span class="arithmatex">\(t_d\)</span> 内的体二极管导通损耗</p>
+<div class="arithmatex">\[
+P_{dt} = 2 V_f I_L f_{sw} t_d
+\]</div>
+<p>其中 <span class="arithmatex">\(V_f\)</span> 为体二极管正向压降。逆变器总损耗还包括驱动损耗 <span class="arithmatex">\(P_{drv} = Q_g V_{gs} f_{sw}\)</span> 和输出电容损耗 <span class="arithmatex">\(P_{oss} = \frac{1}{2} C_{oss} V_{DC}^2 f_{sw}\)</span>，在小功率 GaN 关节中这些分量不可忽略。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：反向恢复电荷、死区时间、体二极管、栅极电荷、输出电容</p>
+<ul>
+<li><strong>反向恢复电荷（reverse recovery charge, <span class="arithmatex">\(Q_{rr}\)</span>）</strong>：二极管从正向导通切换到反向截止时扫出的少数载流子电荷。</li>
+<li><strong>死区时间（dead time）</strong>：上下桥臂切换时两个器件同时关断的间隔，防止直通短路。</li>
+<li><strong>体二极管（body diode）</strong>：MOSFET 源漏 PN 结形成的寄生二极管，用于续流。</li>
+<li><strong>栅极电荷（gate charge, <span class="arithmatex">\(Q_g\)</span>）</strong>：开通器件所需注入栅极的电荷，决定驱动损耗和开关速度。</li>
+<li><strong>输出电容（output capacitance, <span class="arithmatex">\(C_{oss}\)</span>）</strong>：器件关断时漏源之间的等效电容，影响开关损耗和软开关条件。</li>
+</ul>
+</div>
+<h4 id="3442-48-v">3.4.4.2 48 V 关节驱动器损耗对比实例</h4>
+<p>考虑一个 48 V 直流母线、额定相电流 10 A（RMS）、输出功率约 500 W 的人形机器人关节。分别评估 SiC MOSFET（20 kHz）和 GaN HEMT（200 kHz）方案。器件参数如下表：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>SiC MOSFET</th>
+<th>GaN HEMT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(R_{DS(on)}\)</span> @ 25 °C</td>
+<td>25 mΩ</td>
+<td>15 mΩ</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E_{on}+E_{off}\)</span> @ 25 A, 48 V</td>
+<td>80 μJ</td>
+<td>15 μJ</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(Q_{rr}\)</span></td>
+<td>50 nC</td>
+<td>~0</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(Q_g\)</span></td>
+<td>15 nC</td>
+<td>3 nC</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(V_f\)</span>（体二极管）</td>
+<td>3.3 V</td>
+<td>~0（无体二极管）</td>
+</tr>
+</tbody>
+</table>
+<p>导通损耗、开关损耗和效率可由下式估算。下面的 Python 脚本直接比较两种方案：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+Vdc = 48.0          # V
+I_rms = 10.0        # A per phase
+f_sw_sic = 20e3     # Hz
+f_sw_gan = 200e3    # Hz
+Tj = 100.0          # °C
+delta = 0.0038      # /°C
+
+# SiC 参数
+Rds_sic = 25e-3
+Esw_sic = 80e-6     # J @ 25A, 48V (按 I_rms/I_ref=10/25 缩放)
+Qrr_sic = 50e-9
+Qg_sic = 15e-9
+Vf_sic = 3.3
+td = 200e-9         # s
+
+# GaN 参数
+Rds_gan = 15e-3
+Esw_gan = 15e-6     # J @ 10A, 48V
+Qrr_gan = 0
+Qg_gan = 3e-9
+Vf_gan = 0
+
+def inverter_loss(Rds, Esw, Qrr, Qg, Vf, fsw):
+    P_cond = 3 * I_rms**2 * Rds * (1 + delta*(Tj-25))
+    # 每桥臂每开关周期两次切换，三相共 6 开关
+    P_sw = 6 * fsw * Esw * (Vdc/48) * (I_rms/25 if Rds==25e-3 else I_rms/10)
+    P_rr = 6 * Qrr * Vdc * fsw
+    P_dt = 6 * Vf * I_rms * fsw * td
+    P_drv = 6 * Qg * 12 * fsw  # 12 V 驱动
+    return P_cond, P_sw, P_rr, P_dt, P_drv
+
+Pout = 3 * Vdc/np.sqrt(2) * I_rms  # 近似三相输出功率
+for name, params in [('SiC', (Rds_sic, Esw_sic, Qrr_sic, Qg_sic, Vf_sic, f_sw_sic)),
+                     ('GaN', (Rds_gan, Esw_gan, Qrr_gan, Qg_gan, Vf_gan, f_sw_gan))]:
+    Pc, Psw, Prr, Pdt, Pdrv = inverter_loss(*params)
+    Ptot = Pc + Psw + Prr + Pdt + Pdrv
+    eta = Pout / (Pout + Ptot)
+    print(f"{name}: Pcond={Pc:.2f} W, Psw={Psw:.2f} W, "
+          f"Ptot={Ptot:.2f} W, η={eta*100:.2f}%")</code></pre>
+<p>该脚本输出显示，在 48 V/10 A 工况下，GaN 方案虽开关频率提高 10 倍，但由于 <span class="arithmatex">\(\mu\Omega\)</span> 级导通电阻和极低开关能量，总损耗可低于 SiC 方案，效率可达 98% 以上。更高的开关频率允许减小电机电感和滤波电容，使人形机器人关节驱动器体积从 100 cm<span class="arithmatex">\(^3\)</span> 级降至 10 cm<span class="arithmatex">\(^3\)</span> 级。</p>
+<h4 id="3443">3.4.4.3 热阻约束与散热设计</h4>
+<p>器件结温由热阻网络决定：</p>
+<div class="arithmatex">\[
+T_j = T_a + P_{loss} (R_{th,jc} + R_{th,cs} + R_{th,sa})
+\]</div>
+<p>其中 <span class="arithmatex">\(R_{th,jc}\)</span> 为结到壳热阻，<span class="arithmatex">\(R_{th,cs}\)</span> 为壳到散热器接触热阻，<span class="arithmatex">\(R_{th,sa}\)</span> 为散热器到环境热阻。以 GaN HEMT 为例，若总热阻 <span class="arithmatex">\(R_{th,ja} = 25\ ^\circ\text{C/W}\)</span>，总损耗 5 W，环境温度 40 °C，则结温 <span class="arithmatex">\(T_j = 40 + 5 \times 25 = 165\ ^\circ\text{C}\)</span>。GaN 器件最高结温通常 150-175 °C，因此高功率关节必须采用低热阻封装和主动散热。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：热阻、结温、接触热阻、散热器</p>
+<ul>
+<li><strong>热阻（thermal resistance, <span class="arithmatex">\(R_{th}\)</span>）</strong>：单位热功率引起的温升，单位为 K/W 或 °C/W。</li>
+<li><strong>结温（junction temperature, <span class="arithmatex">\(T_j\)</span>）</strong>：半导体器件有源区的温度，决定可靠性和寿命。</li>
+<li><strong>接触热阻（contact thermal resistance）</strong>：由于界面不平整和空气隙导致的附加热阻，常用导热硅脂或相变材料降低。</li>
+<li><strong>散热器（heat sink）</strong>：扩大散热面积、增强对流换热的金属构件。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[三相逆变器] --&gt; B[导通损耗]
+    A --&gt; C[开关损耗]
+    A --&gt; D[死区/反向恢复损耗]
+    A --&gt; E[驱动/输出电容损耗]
+    B --&gt; F[总损耗 Ptot]
+    C --&gt; F
+    D --&gt; F
+    E --&gt; F
+    F --&gt; G[Tj = Ta + Ptot·Rth]
+    G --&gt;|Tj &lt; Tjmax| H[热设计合格]
+    G --&gt;|Tj &gt; Tjmax| I[增大散热/降低损耗]</code></pre>
+<h3 id="345">3.4.5 可靠性问题：栅氧、动态导通电阻与宇宙射线</h3>
+<p>宽禁带功率器件的可靠性问题与硅器件有所不同：</p>
+<ul>
+<li><strong>SiC MOS 栅氧可靠性</strong>：SiC/SiO<span class="arithmatex">\(_2\)</span> 界面态密度高，导致阈值电压漂移和沟道迁移率退化。高温栅偏（HTGB）和高温高湿反偏（H3TRB）测试是评估栅氧可靠性的标准方法。</li>
+<li><strong>GaN 动态导通电阻（dynamic R<span class="arithmatex">\(_{DS(on)}\)</span>）</strong>：由于表面态和缓冲层陷阱捕获电子，GaN HEMT 在高频开关后导通电阻会暂时增加，影响效率和热设计。</li>
+<li><strong>宇宙射线单粒子烧毁（SEB）</strong>：高电压 SiC 器件对宇宙射线诱导的单粒子效应敏感，需通过电场优化和冗余设计提高鲁棒性。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：栅氧可靠性、动态导通电阻、宇宙射线单粒子烧毁、HTGB、H3TRB</p>
+<ul>
+<li><strong>栅氧可靠性（gate oxide reliability）</strong>：栅极氧化物在长期偏置和温度应力下保持绝缘性能的能力。</li>
+<li><strong>动态导通电阻（dynamic on-resistance）</strong>：开关瞬态后由于陷阱电荷释放较慢导致的导通电阻暂时升高。</li>
+<li><strong>宇宙射线单粒子烧毁（SEB）</strong>：高能粒子在器件内产生电子-空穴对，触发寄生双极晶体管导通导致热损坏。</li>
+<li><strong>HTGB（High Temperature Gate Bias）</strong>：高温栅偏应力测试。</li>
+<li><strong>H3TRB（High Humidity High Temperature Reverse Bias）</strong>：高温高湿反偏测试。</li>
+</ul>
+</div>
+<h3 id="346">3.4.6 栅极驱动与封装技术</h3>
+<p>宽禁带器件的快速开关速度对栅极驱动和封装提出严苛要求：</p>
+<ul>
+<li><strong>栅极驱动</strong>：需最小化栅极回路电感，防止寄生振荡和误导通；GaN 器件栅极电压窗口窄（通常 0-5 V 或 -3-7 V），对驱动精度要求高。</li>
+<li><strong>封装</strong>：低寄生电感封装（如 QFN、PQFN、嵌入式封装、双面散热封装）对于充分发挥 GaN/SiC 高频优势至关重要。</li>
+<li><strong>EMC 设计</strong>：高 dv/dt 和 di/dt 导致 EMI 问题，需优化 PCB 布局、屏蔽和滤波。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：栅极驱动、寄生电感、QFN、EMC、dv/dt、di/dt</p>
+<ul>
+<li><strong>栅极驱动（gate driver）</strong>：为功率器件栅极提供快速充放电电流的电路，决定开关速度和可靠性。</li>
+<li><strong>寄生电感（parasitic inductance）</strong>：封装和 PCB 走线中不可避免的电感，会与快速电流变化产生电压尖峰。</li>
+<li><strong>QFN（Quad Flat No-lead）</strong>：一种低寄生电感表面贴装封装。</li>
+<li><strong>EMC（Electromagnetic Compatibility）</strong>：设备在电磁环境中正常工作且不对其他设备产生不可接受干扰的能力。</li>
+<li><strong>dv/dt、di/dt</strong>：电压/电流随时间的变化率，宽禁带器件开关速度快导致其值很高。</li>
+</ul>
+</div>
+<h3 id="347">3.4.7 互连、传感与系统集成材料</h3>
+<p>人形机器人还依赖多种功能材料实现感知、信号传输与互连。这些材料虽不如功率半导体醒目，但直接决定机器人的感知精度、线缆寿命和系统可靠性。</p>
+<h4 id="3471">3.4.7.1 应变片的压阻效应与电桥输出</h4>
+<p>金属箔应变片利用 <strong>压阻效应</strong>：材料受应变时电阻发生变化。对于各向同性金属，电阻相对变化为</p>
+<div class="arithmatex">\[
+\frac{\Delta R}{R} = K \varepsilon
+\]</div>
+<p>其中 <span class="arithmatex">\(K\)</span> 为灵敏系数，<span class="arithmatex">\(\varepsilon\)</span> 为应变。金属箔应变片的 <span class="arithmatex">\(K\)</span> 约 2.0-2.2，来源于几何尺寸变化（泊松效应）和电阻率的微小变化。半导体硅应变片的 <span class="arithmatex">\(K\)</span> 可达 50-150，源于能带结构对应变的强响应，但温度敏感性高。</p>
+<p>实际测量中常采用惠斯通电桥（Wheatstone bridge）提高灵敏度并抑制温度漂移。对于四分之一桥（单工作片），输出电压为</p>
+<div class="arithmatex">\[
+\frac{V_{out}}{V_{in}} = \frac{K \varepsilon}{4}
+\]</div>
+<p>对于全桥（四工作片），输出为四分之一桥的 4 倍，且可抵消温度引起的热输出。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：压阻效应、灵敏系数、惠斯通电桥、热输出</p>
+<ul>
+<li><strong>压阻效应（piezoresistive effect）</strong>：材料电阻随机械应变变化的现象。</li>
+<li><strong>灵敏系数（gauge factor, <span class="arithmatex">\(K\)</span>）</strong>：单位应变引起的电阻相对变化。</li>
+<li><strong>惠斯通电桥（Wheatstone bridge）</strong>：由四个电阻组成的测量电路，可检测微小电阻变化。</li>
+<li><strong>热输出（thermal output）</strong>：温度变化引起的虚假应变信号。</li>
+</ul>
+</div>
+<h4 id="3472-mems-imu">3.4.7.2 MEMS IMU 的物理原理</h4>
+<p>MEMS 惯性测量单元（IMU）通常集成三轴加速度计和三轴陀螺仪。</p>
+<p><strong>加速度计</strong>基于牛顿第二定律：可动质量块 <span class="arithmatex">\(m\)</span> 在外界加速度 <span class="arithmatex">\(a\)</span> 下受到惯性力 <span class="arithmatex">\(F = ma\)</span>，导致支撑梁变形。变形量通过电容变化检测：</p>
+<div class="arithmatex">\[
+\Delta C = \varepsilon_0 A \left(\frac{1}{d_0 - \Delta d} - \frac{1}{d_0}\right) \approx \varepsilon_0 A \frac{\Delta d}{d_0^2}
+\]</div>
+<p>其中 <span class="arithmatex">\(d_0\)</span> 为初始间隙，<span class="arithmatex">\(A\)</span> 为极板面积，<span class="arithmatex">\(\varepsilon_0\)</span> 为真空介电常数。</p>
+<p><strong>陀螺仪</strong>基于科里奥利力（Coriolis force）。当质量块以速度 <span class="arithmatex">\(v\)</span> 沿驱动轴振动，同时绕输入轴以角速度 <span class="arithmatex">\(\Omega\)</span> 旋转时，受到科里奥利力</p>
+<div class="arithmatex">\[
+F_c = -2m \, \boldsymbol{\Omega} \times \boldsymbol{v}
+\]</div>
+<p>该力使质量块沿敏感轴位移，通过电容变化测得角速度。石英 MEMS 陀螺仪利用石英的压电效应同时实现驱动和检测，温度稳定性优于硅 MEMS。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：科里奥利力、电容检测、驱动轴、敏感轴</p>
+<ul>
+<li><strong>科里奥利力（Coriolis force）</strong>：旋转参考系中观察到的惯性力，正比于角速度与质点速度的叉乘。</li>
+<li><strong>电容检测（capacitive sensing）</strong>：通过极板间距变化引起电容变化来测量微小位移。</li>
+<li><strong>驱动轴（drive axis）</strong>：MEMS 陀螺仪中质量块被激励振动的方向。</li>
+<li><strong>敏感轴（sense axis）</strong>：科里奥利力导致位移并被检测的方向。</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[外界加速度 a] --&gt; B[惯性力 F=ma]
+    B --&gt; C[支撑梁变形]
+    C --&gt; D[电容变化 ΔC]
+    D --&gt; E[电压输出]
+    F[角速度 Ω] --&gt; G[驱动振动 v]
+    G --&gt; H[科里奥利力 Fc=2mΩv]
+    H --&gt; I[敏感轴位移]
+    I --&gt; J[电容检测]
+    J --&gt; K[角速度输出]</code></pre>
+<h4 id="3473-cmos">3.4.7.3 CMOS 图像传感器的光电转换</h4>
+<p>CMOS 图像传感器由像素阵列、读出电路和模数转换器组成。每个像素的核心是硅光电二极管，当光子能量 <span class="arithmatex">\(E = h\nu\)</span> 大于硅带隙 <span class="arithmatex">\(E_g = 1.12\)</span> eV 时，产生电子-空穴对。波长 <span class="arithmatex">\(\lambda = 550\)</span> nm 的可见光对应光子能量约 2.25 eV，可被硅有效吸收。</p>
+<p>量子效率（QE）定义为产生的电子数与入射光子数之比，受光电二极管深度、抗反射涂层和像素填充因子影响。典型 CMOS 传感器的 QE 在可见光波段为 50-70%。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：量子效率、填充因子、读出噪声、动态范围</p>
+<ul>
+<li><strong>量子效率（quantum efficiency, QE）</strong>：每个入射光子产生的光电子数比例。</li>
+<li><strong>填充因子（fill factor）</strong>：像素中感光区面积占整个像素面积的比例。</li>
+<li><strong>读出噪声（read noise）</strong>：读出电路引入的电子噪声，决定低光照性能。</li>
+<li><strong>动态范围（dynamic range）</strong>：传感器能同时记录的最强与最弱信号之比。</li>
+</ul>
+</div>
+<h4 id="3474">3.4.7.4 柔性线缆与接插件材料</h4>
+<p>高柔性线缆导体采用高纯无氧铜（OFHC，纯度 99.99%）或镀银铜以降低电阻并提高耐弯折性。反复弯折下的疲劳寿命与导体截面积、绞合节距和绝缘层模量有关。绝缘层选用 TPE、TPU、硅胶或铁氟龙以兼顾柔性与耐温。接插件接触件使用 Cu-Be、Cu-Ni-Sn 等铜合金镀金，壳体采用高强度工程塑料或铝合金，锁紧机构使用不锈钢弹簧。</p>
+<p>下面 Python 脚本演示应变片电桥输出与 MEMS 加速度计电容变化的估算：</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+
+# 应变片参数
+K = 2.1          # 灵敏系数
+strain = 500e-6  # 微应变 500 με
+Vin = 5.0        # 电桥激励电压 V
+
+# 四分之一桥输出
+Vout_quarter = Vin * K * strain / 4
+print(f"四分之一桥输出: {Vout_quarter*1e3:.3f} mV")
+
+# 全桥输出
+Vout_full = Vin * K * strain
+print(f"全桥输出: {Vout_full*1e3:.3f} mV")
+
+# MEMS 加速度计电容变化
+m = 1e-9         # 质量块 1 µg 级 (kg)
+a = 9.8          # 1 g 加速度 (m/s^2)
+k = 10.0         # 支撑梁等效刚度 N/m
+eps0 = 8.854e-12 # F/m
+A = 1e-9         # 极板面积 m^2
+d0 = 2e-6        # 初始间隙 m
+
+dx = m * a / k
+dC = eps0 * A * dx / d0**2
+print(f"1g 加速度下位移 {dx*1e9:.3f} nm, 电容变化 {dC*1e18:.2f} aF")</code></pre>
+<p>该示例表明，MEMS 加速度计在 1 g 加速度下的位移仅为纳米量级，电容变化为阿法（aF）量级，必须采用高灵敏度读出电路和差分检测来抑制噪声。应变片、IMU 与视觉传感器在机器人感知系统中的融合使用方法见第 5 章 5.2 节多模态传感融合。</p>
+<h3 id="348">3.4.8 半导体供应链与地缘风险</h3>
+<p>宽禁带半导体供应链集中在衬底、外延、器件制造环节。SiC 衬底由 Wolfspeed、Coherent、II-VI、天岳先进、天科合达等主导；GaN-on-Si 外延和器件由 EPC、Infineon、Navitas、GaN Systems 等主导。衬底缺陷密度、外延均匀性和晶圆尺寸是产能扩张的瓶颈。</p>
+<p>关键矿产与地理集中性还体现在：</p>
+<ul>
+<li><strong>稀土</strong>：中国占全球稀土开采 60-70%、分离冶炼约 90%、NdFeB 磁材制造 85-93%。2025 年 4 月起中国对 Dy、Tb 等中重稀土实施出口许可管制。</li>
+<li><strong>锂</strong>：南美“锂三角”（阿根廷、玻利维亚、智利）和澳大利亚主导锂资源；中国主导锂电池正极材料和电池制造。</li>
+<li><strong>钴</strong>：刚果（金）占全球钴矿产量的 70% 以上。</li>
+<li><strong>高纯石英与半导体级硅</strong>：美国、挪威、日本等占据高端材料。</li>
+</ul>
+<p>2025 年以来稀土出口管制已导致：高温度等级磁体供应紧张、国际市场价格一度涨至国内价格的 6 倍、交货周期延长。Tesla、Figure 等企业开始寻求美国 Mountain Pass、澳大利亚 Lynas 等替代来源，但产能建设需 3-5 年。</p>
+<hr />
+<h2 id="_2">本章符号表</h2>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>常用单位</th>
+<th>首次出现章节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(J\)</span></td>
+<td>交换积分</td>
+<td>eV 或 J</td>
+<td>3.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathbf{S}\)</span></td>
+<td>自旋角动量</td>
+<td><span class="arithmatex">\( \hbar \)</span></td>
+<td>3.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(M_s\)</span></td>
+<td>饱和磁化强度</td>
+<td>A/m 或 T</td>
+<td>3.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T_C\)</span></td>
+<td>居里温度</td>
+<td>K 或 °C</td>
+<td>3.1.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K_1, K_2\)</span></td>
+<td>磁晶各向异性常数</td>
+<td>J/m<span class="arithmatex">\(^3\)</span></td>
+<td>3.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(H_A\)</span></td>
+<td>各向异性场</td>
+<td>A/m 或 T</td>
+<td>3.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\delta_w\)</span></td>
+<td>磁畴壁厚度</td>
+<td>m</td>
+<td>3.1.3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(A\)</span></td>
+<td>交换刚度</td>
+<td>J/m</td>
+<td>3.1.3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(H_c, H_{cj}\)</span></td>
+<td>矫顽力</td>
+<td>A/m 或 T</td>
+<td>3.1.3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\((BH)_{\max}\)</span></td>
+<td>最大磁能积</td>
+<td>kJ/m<span class="arithmatex">\(^3\)</span> 或 MGOe</td>
+<td>3.1.4</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(B_r\)</span></td>
+<td>剩磁</td>
+<td>T</td>
+<td>3.1.4</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\alpha, \beta\)</span></td>
+<td>剩磁/矫顽力温度系数</td>
+<td>%/°C</td>
+<td>3.1.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(B_g\)</span></td>
+<td>气隙磁密</td>
+<td>T</td>
+<td>3.1.11.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mu_r\)</span></td>
+<td>回复磁导率</td>
+<td>1</td>
+<td>3.1.11.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K_t\)</span></td>
+<td>转矩常数</td>
+<td>Nm/A</td>
+<td>3.1.11.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_y\)</span></td>
+<td>屈服强度</td>
+<td>MPa</td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(d\)</span></td>
+<td>晶粒尺寸</td>
+<td>m 或 <span class="arithmatex">\(\mu\)</span>m</td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(k_y\)</span></td>
+<td>Hall-Petch 斜率</td>
+<td>MPa·<span class="arithmatex">\(m^{1/2}\)</span></td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(G\)</span></td>
+<td>剪切模量</td>
+<td>GPa</td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(b\)</span></td>
+<td>柏氏矢量</td>
+<td>m</td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\rho\)</span></td>
+<td>位错密度</td>
+<td>m<span class="arithmatex">\(^{-2}\)</span></td>
+<td>3.2.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(c/a\)</span></td>
+<td>HCP 晶胞轴比</td>
+<td>1</td>
+<td>3.2.3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\tau\)</span></td>
+<td>分切应力</td>
+<td>MPa</td>
+<td>3.2.3.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(m\)</span></td>
+<td>Schmid 因子</td>
+<td>1</td>
+<td>3.2.3.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\gamma\)</span></td>
+<td>孪生剪切量</td>
+<td>1</td>
+<td>3.2.3.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(i_{corr}\)</span></td>
+<td>腐蚀电流密度</td>
+<td><span class="arithmatex">\(\mu\)</span>A/cm<span class="arithmatex">\(^2\)</span></td>
+<td>3.2.4.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R_p\)</span></td>
+<td>极化电阻</td>
+<td><span class="arithmatex">\(\Omega\)</span>·cm<span class="arithmatex">\(^2\)</span></td>
+<td>3.2.4.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E_1, E_2\)</span></td>
+<td>复合材料纵向/横向模量</td>
+<td>GPa</td>
+<td>3.2.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(V_f\)</span></td>
+<td>纤维体积分数</td>
+<td>1</td>
+<td>3.2.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\rho_e\)</span></td>
+<td>伪密度</td>
+<td>1</td>
+<td>3.2.6.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C\)</span></td>
+<td>柔顺度</td>
+<td>J</td>
+<td>3.2.6.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_f\)</span></td>
+<td>疲劳寿命</td>
+<td>循环次数</td>
+<td>3.2.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_f'\)</span></td>
+<td>疲劳强度系数</td>
+<td>MPa</td>
+<td>3.2.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(b\)</span></td>
+<td>Basquin 指数</td>
+<td>1</td>
+<td>3.2.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K_I, K_{IC}\)</span></td>
+<td>应力强度因子/断裂韧性</td>
+<td>MPa·<span class="arithmatex">\(m^{1/2}\)</span></td>
+<td>3.2.7.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\Delta K\)</span></td>
+<td>应力强度因子幅</td>
+<td>MPa·<span class="arithmatex">\(m^{1/2}\)</span></td>
+<td>3.2.7.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(D\)</span></td>
+<td>累积疲劳损伤</td>
+<td>1</td>
+<td>3.2.7.3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\alpha\)</span></td>
+<td>热膨胀系数</td>
+<td>K<span class="arithmatex">\(^{-1}\)</span></td>
+<td>3.2.8.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E\)</span></td>
+<td>电极电位/弹性模量</td>
+<td>V 或 GPa</td>
+<td>3.3.1/3.2.5</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(F\)</span></td>
+<td>法拉第常数</td>
+<td>C/mol</td>
+<td>3.3.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(D_{Li^+}\)</span></td>
+<td>锂离子扩散系数</td>
+<td>m<span class="arithmatex">\(^2\)</span>/s</td>
+<td>3.3.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(SOC, SOH\)</span></td>
+<td>荷电状态/健康状态</td>
+<td>1</td>
+<td>3.3.7</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E_g\)</span></td>
+<td>半导体带隙</td>
+<td>eV</td>
+<td>3.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(n_i\)</span></td>
+<td>本征载流子浓度</td>
+<td>cm<span class="arithmatex">\(^{-3}\)</span></td>
+<td>3.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(E_c\)</span></td>
+<td>击穿电场</td>
+<td>V/cm 或 MV/cm</td>
+<td>3.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R_{on,sp}\)</span></td>
+<td>比导通电阻</td>
+<td>m<span class="arithmatex">\(\Omega\)</span>·cm<span class="arithmatex">\(^2\)</span></td>
+<td>3.4.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(n_s\)</span></td>
+<td>二维电子气浓度</td>
+<td>cm<span class="arithmatex">\(^{-2}\)</span></td>
+<td>3.4.3</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(K\)</span></td>
+<td>应变片灵敏系数</td>
+<td>1</td>
+<td>3.4.7.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(QE\)</span></td>
+<td>量子效率</td>
+<td>1</td>
+<td>3.4.7.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">本章小结</h2>
+<p>本章从基础学科视角重新审视了人形机器人的关键材料：</p>
+<ol>
+<li>
+<p><strong>稀土永磁材料是人形机器人电机的核心</strong>。Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B 提供了目前最高的磁能积，但其矫顽力远低于理论各向异性场（Brown 佯谬），必须通过晶界扩散、晶界相优化等微观结构工程提高高温稳定性。</p>
+</li>
+<li>
+<p><strong>结构材料的选择是强化机制、密度与耐蚀性的综合平衡</strong>。铝合金依赖时效析出强化；镁合金的 HCP 结构决定了其变形与腐蚀行为；碳纤维复合材料通过铺层设计实现各向异性优化。</p>
+</li>
+<li>
+<p><strong>电池材料的安全性根植于电极-电解液界面的热化学稳定性</strong>。固态电解质通过消除可燃液体电解质提升本征安全，但硫化物/氧化物/聚合物体系各自面临离子电导率、界面接触和空气稳定性的 trade-off。</p>
+</li>
+<li>
+<p><strong>SiC 与 GaN 为机器人高频驱动提供互补路径</strong>。SiC 适合高压大功率主驱，GaN 适合低压高频小体积关节驱动。</p>
+</li>
+<li>
+<p><strong>材料问题已超越技术范畴，成为供应链安全与地缘战略议题</strong>。稀土、锂、钴等关键矿产的地理集中性和出口管制，要求产业界同时推进材料高效利用、回收循环和供应商多元化。</p>
+</li>
+</ol>
+<hr />
+<h2 id="_4">本章知识图谱锚点</h2>
+<p><strong>核心实体</strong></p>
+<table>
+<thead>
+<tr>
+<th>实体类型</th>
+<th>代表实体</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>material</code></td>
+<td>Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B、Dy、Tb、Pr-Al-Cu 晶界扩散源、6061-T6、7075-T6、AZ91D、AM60、ZM5、CFRP、PEEK、NMC811、LiFePO<span class="arithmatex">\(_4\)</span>、石墨、Si/C、Li<span class="arithmatex">\(_6\)</span>PS<span class="arithmatex">\(_5\)</span>Cl、LLZO、PEO-LiTFSI、4H-SiC、GaN HEMT</td>
+</tr>
+<tr>
+<td><code>company</code></td>
+<td>北方稀土、中科三环、金力永磁、宁波韵升、Hitachi Metals、TDK、MP Materials、Lynas、南山铝业、文灿集团、宁德时代、中创新航、亿纬锂能、英飞凌、EPC、Infineon、NVIDIA、Tesla</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td>永磁同步电机、无框力矩电机、结构件、电池包、GaN 逆变器、SiC MOSFET、IMU、力传感器</td>
+</tr>
+<tr>
+<td><code>technology</code></td>
+<td>晶界扩散（GBDP）、铝合金时效、微弧氧化、SEI 工程、固态电解质、拓扑优化、SIMP 方法</td>
+</tr>
+<tr>
+<td><code>principle/formalism</code></td>
+<td>磁晶各向异性、Hall-Petch 强化、Orowan 机制、吉布斯相律、能带理论、极化诱导 2DEG</td>
+</tr>
+<tr>
+<td><code>market</code></td>
+<td>稀土永磁市场、人形机器人锂电池市场、GaN 功率半导体市场</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心关系</strong></p>
+<table>
+<thead>
+<tr>
+<th>关系类型</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is_part_of</code></td>
+<td>材料是零部件的组成部分</td>
+<td>Nd<span class="arithmatex">\(_2\)</span>Fe<span class="arithmatex">\(_{14}\)</span>B → 永磁电机</td>
+</tr>
+<tr>
+<td><code>is_alloyed_with</code></td>
+<td>合金化/掺杂关系</td>
+<td>Nd-Fe-B + Dy/Tb → 高矫顽力磁体</td>
+</tr>
+<tr>
+<td><code>is_treated_by</code></td>
+<td>材料经某工艺处理</td>
+<td>AZ91D → 微弧氧化 → 耐蚀层</td>
+</tr>
+<tr>
+<td><code>is_strengthened_by</code></td>
+<td>强化机制</td>
+<td>7xxx 铝合金 → 析出强化</td>
+</tr>
+<tr>
+<td><code>conducts_ion</code></td>
+<td>离子传导关系</td>
+<td>LLZO → Li<span class="arithmatex">\(^+\)</span></td>
+</tr>
+<tr>
+<td><code>has_interface</code></td>
+<td>界面关系</td>
+<td>负极石墨 ↔ SEI 膜</td>
+</tr>
+<tr>
+<td><code>supplies</code></td>
+<td>供应链关系</td>
+<td>中国 → NdFeB 磁材 → 全球电机厂商</td>
+</tr>
+</tbody>
+</table>
+<p><strong>跨层链路示例</strong></p>
+<pre class="highlight"><code>Dy/Tb 原子占位 (Nd,HRE)2Fe14B 壳层
+    → 晶界扩散后矫顽力提升
+    → 永磁电机高温退磁裕度增加
+    → 人形机器人关节可承受更高电流/扭矩
+    → 整机动态性能提升</code></pre>
+<p><strong>关键思考问题</strong></p>
+<ol>
+<li>Nd-Fe-B 磁体的矫顽力远低于各向异性场的 Brown 佯谬根源是什么？晶界扩散如何从结构上解决这一问题？</li>
+<li>镁合金的 HCP 结构如何限制其室温塑性，又有哪些合金化或工艺策略可以克服？</li>
+<li>高镍三元正极的热失控链式反应包含哪些关键步骤？固态电解质能否彻底消除这些风险？</li>
+<li>SiC 与 GaN 的能带结构差异如何决定其在电机驱动中的互补定位？</li>
+<li>若某关键稀土元素出口受限，机器人产业可在材料、设计和回收三个层面采取哪些应对策略？</li>
+</ol>
+<hr />
+<h2 id="_5">参考文献与数据来源</h2>
+<p>[1] Sagawa, M., Fujimura, S., Togawa, N., Yamamoto, H., &amp; Matsuura, Y. (1984). New material for permanent magnets on a base of Nd and Fe. <em>Journal of Applied Physics</em>, 55(6), 2083-2087.</p>
+<p>[2] Hono, K., &amp; Sepehri-Amin, H. (2012). Strategy for high-coercivity Nd-Fe-B magnets. <em>Scripta Materialia</em>, 67(6), 530-535.</p>
+<p>[3] Sepehri-Amin, H., Ohkubo, T., &amp; Hono, K. (2013). The mechanism of coercivity enhancement by the grain boundary diffusion process of Nd-Fe-B sintered magnets. <em>Acta Materialia</em>, 61(6), 1982-1990.</p>
+<p>[4] Chen, F. (2020). Recent progress of grain boundary diffusion process of Nd-Fe-B magnets. <em>Journal of Magnetism and Magnetic Materials</em>, 514, 167227.</p>
+<p>[5] Lee, S., Kim, G., Lee, K., Kim, S., Kim, T., Lee, S., Kim, D., Lee, W., &amp; Lee, J. (2025). A novel two-step grain boundary diffusion process using TaF<span class="arithmatex">\(_5\)</span> and Pr<span class="arithmatex">\(_{70}\)</span>Cu<span class="arithmatex">\(_{15}\)</span>Al<span class="arithmatex">\(_{10}\)</span>Ga<span class="arithmatex">\(_5\)</span> for realizing high-coercivity in Nd-Fe-B-sintered magnets without use of heavy rare-earth. <em>Acta Materialia</em>, 285, 120660.</p>
+<p>[6] Wang, L., et al. (2025). Enhanced coercivity and Tb distribution optimization in sintered Nd-Fe-B magnets by Tb grain boundary diffusion. <em>PMC</em>, PMC11820678.</p>
+<p>[7] Mo, C., Wang, M., Ou, S., &amp; Huang, C. (2025). Optimizing grain boundary diffusion and aging heat treatment for enhancing coercivity, thermal stability, and corrosion resistance in NdFeB permanent magnets. <em>Journal of Materials Science: Materials in Electronics</em>, 36, 1888.</p>
+<p>[8] Kovačič, T. P. (2025). Corrosion of sintered NdFeB permanent magnets. <em>Journal of The Electrochemical Society</em>, 172(4), 041506.</p>
+<p>[9] Gutfleisch, O., et al. (2011). Magnetic materials and devices for the 21st century: stronger, lighter, and more energy efficient. <em>Advanced Materials</em>, 23(7), 821-842.</p>
+<p>[10] Polmear, I. J., StJohn, D., Nie, J. F., &amp; Qian, M. (2017). <em>Light Alloys: Metallurgy of the Light Metals</em> (5th ed.). Butterworth-Heinemann.</p>
+<p>[11] Starink, M. J., &amp; Wang, S. C. (2003). A model for the yield strength of overaged Al-Zn-Mg-Cu alloys. <em>Acta Materialia</em>, 51(17), 5131-5150.</p>
+<p>[12] Avedesian, M. M., &amp; Baker, H. (Eds.). (1999). <em>ASM Specialty Handbook: Magnesium and Magnesium Alloys</em>. ASM International.</p>
+<p>[13] Wu, T., et al. (2023). Corrosion and protection of magnesium alloys. <em>Coatings</em>, 13(9), 1533.</p>
+<p>[14] Song, G. L., &amp; Atrens, A. (2003). Understanding magnesium corrosion: a framework for improved alloy performance. <em>Advanced Engineering Materials</em>, 5(12), 837-858.</p>
+<p>[15] Bettles, C. J., &amp; Gibson, M. A. (2005). Current wrought magnesium alloys: strengths and weaknesses. <em>JOM</em>, 57(5), 46-49.</p>
+<p>[16] Goodenough, J. B., &amp; Park, K. S. (2013). The Li-ion rechargeable battery: a perspective. <em>Journal of the American Chemical Society</em>, 135(4), 1167-1176.</p>
+<p>[17] Tarascon, J. M., &amp; Armand, M. (2001). Issues and challenges facing rechargeable lithium batteries. <em>Nature</em>, 414(6861), 359-367.</p>
+<p>[18] Janek, J., &amp; Zeier, W. G. (2016). A solid future for battery development. <em>Nature Energy</em>, 1(9), 16141.</p>
+<p>[19] Manthiram, A. (2017). An outlook on lithium ion battery technology. <em>ACS Central Science</em>, 3(10), 1063-1069.</p>
+<p>[20] Manthiram, A., Song, B., &amp; Li, W. (2017). A reflection on lithium-ion battery cathode chemistry. <em>Nature Communications</em>, 8, 15914.</p>
+<p>[21] Li, Z., Fu, J., Zhou, X., &amp; Zhang, Q. (2023). Ionic conduction in polymer-based solid electrolytes. <em>Advanced Science</em>, 10(10), 2201718.</p>
+<p>[22] Ai, S., Wu, X., Wang, J., et al. (2024). Research progress on solid-state electrolytes in solid-state lithium batteries: Classification, ionic conductive mechanism, interfacial challenges. <em>Nanomaterials</em>, 14(22), 1773.</p>
+<p>[23] Goodenough, J. B., &amp; Kim, Y. (2010). Challenges for rechargeable Li batteries. <em>Chemistry of Materials</em>, 22(3), 587-603.</p>
+<p>[24] Baliga, B. J. (2013). <em>Gallium Nitride and Silicon Carbide Power Devices</em>. World Scientific.</p>
+<p>[25] Millan, J., Godignon, P., Perpina, X., Perez-Tomas, A., &amp; Rebollo, J. (2014). A survey of wide bandgap power semiconductor devices. <em>IEEE Transactions on Power Electronics</em>, 29(5), 2155-2163.</p>
+<p>[26] Charpe, P. P., &amp; Shrirao, N. M. (2025). Comparative simulation study of SiC and GaN power devices in high-efficiency motor drive applications. <em>National Journal of Electric Drives and Control Systems</em>, 1(3), 24-32.</p>
+<p>[27] Risbud, D., &amp; Zuniga, M. (2025). Wide bandgap power switches (GaN HEMT and SiC power MOSFETs) for hard- and soft-switching applications, a long-term perspective. <em>CS MANTECH 2025</em>.</p>
+<p>[28] Li, K., Evans, P., &amp; Johnson, M. SiC/GaN power semiconductor devices theoretical comparison and experimental evaluation. University of Nottingham. (Technical report.)</p>
+<p>[29] Infineon Technologies. (2025). GaN power semiconductors for motor drives and robotics.</p>
+<p>[30] Efficient Power Conversion (EPC). (2025). EPC91120: Compact high-efficiency GaN motor drive inverter tailored for humanoid robotics.</p>
+<p>[31] Magfine. (2026-03-27). Humanoid robots need a lot of magnets: rare earth demand analysis.</p>
+<p>[32] Adamas Intelligence. Rare earth magnet market outlook and supply deficit forecasts.</p>
+<p>[33] IDTechEx. (2025). <em>Rare Earth Magnets 2026-2036: Technologies, Supply, Markets, Forecasts</em>.</p>
+<p>[34] Optimusk.blog. (2026-06-01). Tesla Optimus supply chain analysis.</p>
+<p>[35] Rare Earth Exchanges. (2026-01-10). China's humanoid robot surge and rare earths.</p>
+<p>[36] CN Changsong. (2026-01-06). Aluminum sheets in humanoid robots: material selection and technological breakthroughs.</p>
+<p>[37] AI Robots Eidos. (2026-06-20). Magnesium alloys enabling lightweight robots.</p>
+<p>[38] Cnevpost / TrendForce. (2026-01-28). Demand for solid-state batteries in humanoid robots could reach 74 GWh by 2035.</p>
+<p>[39] CM Batteries. (2026-06-15). The complete guide to humanoid robot battery selection.</p>
+<p>[40] Fraunhofer IPA. (2025). Humanoid value chain study.</p>
+<p>[41] Hendershot, J. R., &amp; Miller, T. J. E. (1994). <em>Design of Brushless Permanent-Magnet Motors</em>. Magna Physics Publishing and Clarendon Press.</p>
+<p>[42] Gieras, J. F. (2010). <em>Permanent Magnet Motor Technology: Design and Applications</em> (3rd ed.). CRC Press.</p>
+<p>[43] Bendsøe, M. P., &amp; Sigmund, O. (2003). <em>Topology Optimization: Theory, Methods, and Applications</em>. Springer.</p>
+<p>[44] Andreassen, E., Clausen, A., Schevenels, M., Lazarov, B. S., &amp; Sigmund, O. (2011). Efficient topology optimization in MATLAB using 88 lines of code. <em>Structural and Multidisciplinary Optimization</em>, 43(1), 1-16.</p>
+<p>[45] Stern, M., &amp; Geary, A. L. (1957). Electrochemical polarization: I. A theoretical analysis of the shape of polarization curves. <em>Journal of The Electrochemical Society</em>, 104(1), 56-63.</p>
+<p>[46] Pourbaix, M. (1974). <em>Atlas of Electrochemical Equilibria in Aqueous Solutions</em> (2nd English ed.). National Association of Corrosion Engineers.</p>
+<p>[47] Plett, G. L. (2015). <em>Battery Management Systems, Volume I: Battery Modeling</em>. Artech House.</p>
+<p>[48] Huria, T., Ceraolo, M., Gazzarri, J., &amp; Jackey, R. (2013). Simplified extended Kalman filter observer for SOC estimation of commercial power-oriented lithium-polymer batteries. *SAE Technical Paper 2013-01-1544.</p>
+<p>[49] Infineon Technologies. (2020). <em>Application Note AN-2015-10: MOSFET power losses calculation using the data-sheet parameters</em>.</p>
+<p>[50] Reusch, D., &amp; Strydom, J. (2014). Understanding the effect of PCB layout on circuit performance in a high-frequency GaN-based point of load converter. <em>IEEE Applied Power Electronics Conference and Exposition (APEC)</em>, 1574-1578.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/wiki/chapters/chapter-02/">← 上一页<span>第 2 章 知识图谱构建方法论</span></a>
+      
+      
+      <a class="next" href="/wiki/chapters/chapter-04/">下一页 →<span>第 4 章 执行器：人形机器人的&#34;肌肉&#34;</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#3">第 3 章 关键材料</a><ul>
+<li><a href="#_1">摘要</a></li>
+<li><a href="#31">3.1 稀土永磁材料</a><ul>
+<li><a href="#311">3.1.1 磁性的物理起源：自旋、轨道与交换作用</a></li>
+<li><a href="#312">3.1.2 磁晶各向异性与单离子模型</a></li>
+<li><a href="#313-brown">3.1.3 磁畴、畴壁与 Brown 佯谬</a></li>
+<li><a href="#314-nd_2fe_14b">3.1.4 Nd\(_2\)Fe\(_{14}\)B 的晶体结构与内禀磁性</a></li>
+<li><a href="#315">3.1.5 矫顽力机制：成核型、钉扎型与晶界工程</a></li>
+<li><a href="#316-dytb">3.1.6 晶界扩散：Dy/Tb 核壳结构与扩散动力学</a></li>
+<li><a href="#317">3.1.7 温度特性、矫顽力温度系数与电机选型</a></li>
+<li><a href="#318">3.1.8 腐蚀机理与防护</a></li>
+<li><a href="#319">3.1.9 回收与再生：城市矿山视角</a></li>
+<li><a href="#3110">3.1.10 微磁学模拟与矫顽力预测</a></li>
+<li><a href="#3111">3.1.11 永磁电机中的磁路设计与损耗</a><ul>
+<li><a href="#31111">3.1.11.1 简化磁路模型与气隙磁密</a></li>
+<li><a href="#31112">3.1.11.2 转矩方程与反电动势</a></li>
+<li><a href="#31113">3.1.11.3 损耗构成与效率图</a></li>
+<li><a href="#31114">3.1.11.4 关节电机设计数值示例</a></li>
+</ul>
+</li>
+<li><a href="#3112">3.1.12 稀土永磁供应链与价格机制</a></li>
+</ul>
+</li>
+<li><a href="#32">3.2 结构材料</a><ul>
+<li><a href="#321">3.2.1 金属强化机制：位错运动的阻碍</a></li>
+<li><a href="#322">3.2.2 铝合金：时效析出序列与牌号选择</a></li>
+<li><a href="#323-hcp">3.2.3 镁合金：HCP 结构、变形机制与织构</a><ul>
+<li><a href="#3231-hcp-schmid">3.2.3.1 HCP 滑移系的几何约束与 Schmid 定律</a></li>
+<li><a href="#3232">3.2.3.2 孪生的晶体学与剪切量</a></li>
+<li><a href="#3233">3.2.3.3 稀土元素弱化织构的物理机制</a></li>
+</ul>
+</li>
+<li><a href="#324">3.2.4 镁合金的腐蚀电化学与表面防护</a><ul>
+<li><a href="#3241-pourbaix">3.2.4.1 腐蚀热力学与 Pourbaix 图</a></li>
+<li><a href="#3242-butler-volmer-tafel">3.2.4.2 腐蚀动力学：Butler-Volmer 方程与 Tafel 外推</a></li>
+<li><a href="#3243">3.2.4.3 表面处理选择原则与寿命预测</a></li>
+</ul>
+</li>
+<li><a href="#325">3.2.5 碳纤维复合材料：各向异性与层合板理论</a></li>
+<li><a href="#326">3.2.6 拓扑优化与多材料集成</a><ul>
+<li><a href="#3261-simp">3.2.6.1 SIMP 插值与敏度推导</a></li>
+<li><a href="#3262">3.2.6.2 敏度过滤与可制造性约束</a></li>
+<li><a href="#3263">3.2.6.3 人形机器人肢段轻量化算例</a></li>
+<li><a href="#3264">3.2.6.4 多材料拓扑优化与增材制造集成</a></li>
+</ul>
+</li>
+<li><a href="#327">3.2.7 疲劳、断裂与冲击行为</a><ul>
+<li><a href="#3271">3.2.7.1 断裂力学与裂纹尖端应力场</a></li>
+<li><a href="#3272-paris">3.2.7.2 疲劳裂纹扩展：Paris 定律</a></li>
+<li><a href="#3273-miner">3.2.7.3 累积损伤：Miner 线性法则</a></li>
+<li><a href="#3274-cai">3.2.7.4 复合材料冲击损伤与 CAI</a></li>
+</ul>
+</li>
+<li><a href="#328">3.2.8 连接技术与表面工程</a><ul>
+<li><a href="#3281">3.2.8.1 电偶腐蚀的热力学与动力学约束</a></li>
+<li><a href="#3282">3.2.8.2 热膨胀失配应力</a></li>
+<li><a href="#3283">3.2.8.3 搅拌摩擦焊的物理机制</a></li>
+<li><a href="#3284">3.2.8.4 连接方式选择与表面工程</a></li>
+</ul>
+</li>
+<li><a href="#329">3.2.9 轻量化指标与选材策略</a></li>
+<li><a href="#3210">3.2.10 结构材料供应链与生命周期评估</a></li>
+</ul>
+</li>
+<li><a href="#33">3.3 电化学能源材料</a><ul>
+<li><a href="#331">3.3.1 电极热力学与锂离子嵌入反应</a></li>
+<li><a href="#332">3.3.2 正极材料：层状氧化物与橄榄石结构</a></li>
+<li><a href="#333">3.3.3 负极材料：石墨、硅碳与锂金属</a></li>
+<li><a href="#334-sei">3.3.4 液态电解质与 SEI 膜</a></li>
+<li><a href="#335">3.3.5 固态电解质：硫化物、氧化物与聚合物</a></li>
+<li><a href="#336">3.3.6 热失控机理与电池组设计</a><ul>
+<li><a href="#3361">3.3.6.1 热失控临界条件与能量平衡</a></li>
+<li><a href="#3362">3.3.6.2 电池包尺寸与热设计数值实例</a></li>
+</ul>
+</li>
+<li><a href="#337">3.3.7 电池管理系统与状态估计</a><ul>
+<li><a href="#3371">3.3.7.1 等效电路模型</a></li>
+<li><a href="#3372-soc">3.3.7.2 扩展卡尔曼滤波 SOC 估计</a></li>
+</ul>
+</li>
+<li><a href="#338">3.3.8 固态电池制造工艺与挑战</a></li>
+<li><a href="#339">3.3.9 电池材料供应链与回收</a></li>
+</ul>
+</li>
+<li><a href="#34">3.4 宽禁带半导体材料</a><ul>
+<li><a href="#341">3.4.1 能带理论与载流子输运</a></li>
+<li><a href="#342">3.4.2 碳化硅：多型体、热导率与功率器件</a></li>
+<li><a href="#343">3.4.3 氮化镓：极化效应与二维电子气</a></li>
+<li><a href="#344">3.4.4 功率器件损耗机制与驱动器设计</a><ul>
+<li><a href="#3441">3.4.4.1 导通与开关损耗解析模型</a></li>
+<li><a href="#3442-48-v">3.4.4.2 48 V 关节驱动器损耗对比实例</a></li>
+<li><a href="#3443">3.4.4.3 热阻约束与散热设计</a></li>
+</ul>
+</li>
+<li><a href="#345">3.4.5 可靠性问题：栅氧、动态导通电阻与宇宙射线</a></li>
+<li><a href="#346">3.4.6 栅极驱动与封装技术</a></li>
+<li><a href="#347">3.4.7 互连、传感与系统集成材料</a><ul>
+<li><a href="#3471">3.4.7.1 应变片的压阻效应与电桥输出</a></li>
+<li><a href="#3472-mems-imu">3.4.7.2 MEMS IMU 的物理原理</a></li>
+<li><a href="#3473-cmos">3.4.7.3 CMOS 图像传感器的光电转换</a></li>
+<li><a href="#3474">3.4.7.4 柔性线缆与接插件材料</a></li>
+</ul>
+</li>
+<li><a href="#348">3.4.8 半导体供应链与地缘风险</a></li>
+</ul>
+</li>
+<li><a href="#_2">本章符号表</a></li>
+<li><a href="#_3">本章小结</a></li>
+<li><a href="#_4">本章知识图谱锚点</a></li>
+<li><a href="#_5">参考文献与数据来源</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

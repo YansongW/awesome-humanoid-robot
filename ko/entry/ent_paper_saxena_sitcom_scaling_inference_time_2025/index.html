@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SITCOM: Scaling Inference-Time COMpute for VLAs · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SITCOM: Scaling Inference-Time COMpute for VLAs</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SITCOM: Scaling Inference-Time COMpute for VLAs</h1>
+      <p class="entry-name-en">SITCOM: Scaling Inference-Time COMpute for VLAs</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.04041v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>SITCOM: Scaling Inference-Time COMpute for VLAs (SITCOM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.04041" target="_blank" rel="noopener">SITCOM: Scaling Inference-Time COMpute for VLAs (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2510.04041" target="_blank" rel="noopener">SITCOM source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>강건한 로봇 제어 정책을 학습하는 것은 레이블이 지정된 데이터 수집의 높은 비용, 보지 못한 환경에 대한 제한된 일반화, 장기적인 계획 수립의 어려움 등으로 인해 여전히 주요 과제로 남아 있습니다. Vision-Language-Action(VLA) 모델은 자연어 명령을 단일 단계 제어 명령으로 변환하는 유망한 해결책을 제공하지만, 종종 선행 예측 메커니즘이 부족하고 동적 작업에서 오류가 누적되는 문제를 겪습니다. 이 프로젝트에서는 모델 예측 제어 알고리즘에서 영감을 받아 사전 학습된 VLA에 모델 기반 롤아웃과 보상 기반 궤적 선택을 추가하는 Scaling Inference-Time COMpute for VLAs(SITCOM) 프레임워크를 소개합니다. SITCOM은 학습된 동역학 모델을 활용하여 다중 단계 행동 롤아웃을 시뮬레이션하고 실제 실행을 위한 최적의 후보 계획을 선택함으로써, 일회성 VLA를 강건한 장기 계획 수립자로 변환합니다. 우리는 대규모 BridgeV2 데이터로 학습되고 SIMPLER 환경에서 미세 조정된 효율적인 트랜스포머 기반 동역학 모델을 개발하여 Real2Sim 격차를 해소하고, 시뮬레이터의 보상을 사용하여 후보 롤아웃을 평가합니다. SIMPLER 환경의 여러 작업과 설정에 걸친 포괄적인 평가를 통해, SITCOM이 좋은 보상 함수와 결합될 때 학습된 동역학 모델을 사용하여 작업 완료율을 48%에서 72%로 크게 향상시킬 수 있음을 입증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>강건한 로봇 제어 정책을 학습하는 것은 레이블이 지정된 데이터 수집의 높은 비용, 보지 못한 환경에 대한 제한된 일반화, 장기적인 계획 수립의 어려움 등으로 인해 여전히 주요 과제로 남아 있습니다. Vision-Language-Action(VLA) 모델은 자연어 명령을 단일 단계 제어 명령으로 변환하는 유망한 해결책을 제공하지만, 종종 선행 예측 메커니즘이 부족하고 동적 작업에서 오류가 누적되는 문제를 겪습니다. 이 프로젝트에서는 모델 예측 제어 알고리즘에서 영감을 받아 사전 학습된 VLA에 모델 기반 롤아웃과 보상 기반 궤적 선택을 추가하는 Scaling Inference-Time COMpute for VLAs(SITCOM) 프레임워크를 소개합니다. SITCOM은 학습된 동역학 모델을 활용하여 다중 단계 행동 롤아웃을 시뮬레이션하고 실제 실행을 위한 최적의 후보 계획을 선택함으로써, 일회성 VLA를 강건한 장기 계획 수립자로 변환합니다. 우리는 대규모 BridgeV2 데이터로 학습되고 SIMPLER 환경에서 미세 조정된 효율적인 트랜스포머 기반 동역학 모델을 개발하여 Real2Sim 격차를 해소하고, 시뮬레이터의 보상을 사용하여 후보 롤아웃을 평가합니다. SIMPLER 환경의 여러 작업과 설정에 걸친 포괄적인 평가를 통해, SITCOM이 좋은 보상 함수와 결합될 때 학습된 동역학 모델을 사용하여 작업 완료율을 48%에서 72%로 크게 향상시킬 수 있음을 입증합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">기반</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_saxena_sitcom_scaling_inference_time_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">방법</span>
+          <h3>Model Predictive Control</h3>
+          <p>접촉이 풍부한 전신 동작을 생성하기 위한 온라인 최적 제어 접근법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

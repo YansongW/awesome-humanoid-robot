@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>고장 모드 및 영향 분석(FMEA) · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/method/">방법</a>
+    <span>/</span>
+    <span class="breadcrumb-current">고장 모드 및 영향 분석(FMEA)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">방법</div>
+      <h1>고장 모드 및 영향 분석(FMEA)</h1>
+      <p class="entry-name-en">Failure Mode and Effects Analysis (FMEA)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">대량 생산</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>잠재적 고장 모드·원인·영향을 식별하고 위험 완화 조치의 우선순위를 정하는 상향식 신뢰성 방법.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>8.6.6 신뢰성 공학과 고장 모드 분석 관련 내용은 다음과 같습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h4 id="866">8.6.6 신뢰성 공학과 고장 모드 분석</h4>
+<p>휴머노이드 로봇은 장기 운전 중 기계적 마모, 전자 부품 노화, 소프트웨어 결함 및 환경 응력 등 다양한 고장 위험에 직면합니다. <strong>신뢰성 공학(reliability engineering)</strong>은 정량적 방법을 통해 시스템 신뢰성을 예측, 할당 및 개선하며, 전 생애 주기 비용을 절감하고 안전 운전을 보장하는 핵심 요소입니다[90][91][95].</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 신뢰성 공학, 고장, 생애 주기 비용, 환경 응력</p>
+<ul>
+<li><strong>신뢰성 공학(reliability engineering)</strong>: 제품이 규정된 조건에서 규정된 시간 동안 기능을 수행할 수 있는 능력을 연구하고 향상시키는 학문.</li>
+<li><strong>고장(failure)</strong>: 제품이 규정된 기능을 상실하는 사건.</li>
+<li><strong>생애 주기 비용(LCC)</strong>: 제품의 전체 수명 주기 동안의 총 비용.</li>
+<li><strong>환경 응력(environmental stress)</strong>: 온도, 습도, 진동, 분진 등 외부 작용.</li>
+</ul>
+</div>
+<p><strong>신뢰성 함수</strong> <span class="arithmatex">\(R(t)\)</span>는 제품이 시간 <span class="arithmatex">\(t\)</span> 동안 고장 나지 않을 확률로 정의됩니다:</p>
+<div class="arithmatex">\[
+R(t) = P(T &gt; t)
+\]</div>
+<p>여기서 <span class="arithmatex">\(T\)</span>는 고장 전 시간입니다. 이에 대응하는 <strong>누적 고장 분포 함수</strong>는 <span class="arithmatex">\(F(t) = 1 - R(t)\)</span>입니다. <strong>고장률</strong>(hazard rate 또는 failure rate) <span class="arithmatex">\(\lambda(t)\)</span>는 다음과 같습니다:</p>
+<div class="arithmatex">\[
+\lambda(t) = \frac{f(t)}{R(t)} = -\frac{d}{dt} \ln R(t)
+\]</div>
+<p>여기서 <span class="arithmatex">\(f(t) = dF/dt\)</span>는 고장 확률 밀도입니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 신뢰성 함수, 누적 고장 분포, 고장률, 고장 확률 밀도</p>
+<ul>
+<li><strong>신뢰성 함수(reliability function)</strong>: 제품이 시간 t 동안 정상 작동할 확률.</li>
+<li><strong>누적 고장 분포(cumulative distribution function, CDF)</strong>: 시간 t 이전에 고장 날 확률.</li>
+<li><strong>고장률(failure rate)</strong>: 단위 시간당 고장 확률.</li>
+<li><strong>고장 확률 밀도(probability density function, PDF)</strong>: 고장 시간의 확률 밀도.</li>
+</ul>
+</div>
+<p>일반적인 전자 및 기계 제품의 고장률은 시간에 따라 <strong>욕조 곡선(bathtub curve)</strong>을 나타냅니다:</p>
+<ol>
+<li><strong>초기 고장기(infant mortality)</strong>: 고장률이 높으며, 일반적으로 제조 결함이나 조립 오류로 인해 발생하며, 번인(burn-in)을 통해 감소시킬 수 있습니다.</li>
+<li><strong>우발 고장기(useful life)</strong>: 고장률이 거의 일정하며, 제품의 주요 작동 단계입니다.</li>
+<li><strong>마모 고장기(wear-out)</strong>: 피로, 마모, 노화로 인해 고장률이 시간에 따라 증가합니다.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 욕조 곡선, 초기 고장, 우발 고장, 마모 고장, 번인</p>
+<ul>
+<li><strong>욕조 곡선(bathtub curve)</strong>: 고장률의 시간적 변화를 나타내는 U자형 곡선.</li>
+<li><strong>초기 고장(infant mortality)</strong>: 제품 초기 단계의 높은 고장률.</li>
+<li><strong>우발 고장(random failure)</strong>: 우발적이고 예측 불가능한 고장.</li>
+<li><strong>마모 고장(wear-out failure)</strong>: 장기 사용 후 성능 저하로 인한 고장.</li>
+<li><strong>번인(burn-in)</strong>: 초기 운전을 통해 잠재적 결함을 제거하는 과정.</li>
+</ul>
+</div>
+<p>고장률이 상수 <span class="arithmatex">\(\lambda\)</span>일 때, 신뢰성 함수는 지수 분포를 따릅니다:</p>
+<div class="arithmatex">\[
+R(t) = e^{-\lambda t}
+\]</div>
+<p><strong>평균 고장 간격(MTBF, Mean Time Between Failures)</strong>은 다음과 같습니다:</p>
+<div class="arithmatex">\[
+\text{MTBF} = \frac{1}{\lambda}
+\]</div>
+<p>수리 불가능한 제품의 경우 <strong>MTTF(Mean Time To Failure)</strong>를 사용합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 지수 분포, 평균 고장 간격, 평균 고장 전 시간</p>
+<ul>
+<li><strong>지수 분포(exponential distribution)</strong>: 일정 고장률 하의 수명 분포.</li>
+<li><strong>평균 고장 간격(MTBF)</strong>: 수리 가능한 제품의 두 고장 사이 평균 시간.</li>
+<li><strong>평균 고장 전 시간(MTTF)</strong>: 수리 불가능한 제품의 고장 전 평균 시간.</li>
+</ul>
+</div>
+<p><strong>고장 모드 및 영향 분석(FMEA, Failure Mode and Effects Analysis)</strong>은 잠재적 고장을 체계적으로 식별하고, 위험을 평가하며, 우선적으로 개선하는 방법입니다. 각 고장 모드는 세 가지 차원에서 평가됩니다:</p>
+<table>
+<thead>
+<tr>
+<th>차원</th>
+<th>기호</th>
+<th>의미</th>
+<th>일반적인 점수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>심각도</td>
+<td>S</td>
+<td>고장 결과의 심각한 정도</td>
+<td>1–10</td>
+</tr>
+<tr>
+<td>발생도</td>
+<td>O</td>
+<td>고장 원인 발생 가능성</td>
+<td>1–10</td>
+</tr>
+<tr>
+<td>검출도</td>
+<td>D</td>
+<td>현재 통제 조치가 고장을 검출하는 능력</td>
+<td>1–10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>위험 우선 순위 수(RPN)</strong>는 다음과 같습니다:</p>
+<div class="arithmatex">\[
+\text{RPN} = S \times O \times D
+\]</div>
+<p>RPN이 높을수록 개선 조치를 우선적으로 취해야 합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 고장 모드, 심각도, 발생도, 검출도, 위험 우선 순위 수</p>
+<ul>
+<li><strong>고장 모드(failure mode)</strong>: 제품 고장의 구체적인 표현 형태.</li>
+<li><strong>심각도(severity)</strong>: 고장 결과의 심각한 정도.</li>
+<li><strong>발생도(occurrence)</strong>: 고장 원인이 발생하는 빈도.</li>
+<li><strong>검출도(detection)</strong>: 고장 원인 또는 모드를 발견하는 능력.</li>
+<li><strong>위험 우선 순위 수(RPN)</strong>: S, O, D의 곱으로, 위험 순위를 매기는 데 사용.</li>
+</ul>
+</div>
+<p>휴머노이드 로봇의 일반적인 FMEA 예시:</p>
+<table>
+<thead>
+<tr>
+<th>하위 시스템</th>
+<th>고장 모드</th>
+<th>잠재적 영향</th>
+<th>S</th>
+<th>O</th>
+<th>D</th>
+<th>RPN</th>
+<th>개선 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>무릎 관절 하모닉 감속기</td>
+<td>플렉스 스플라인 피로 균열</td>
+<td>관절 고착, 넘어짐</td>
+<td>9</td>
+<td>4</td>
+<td>5</td>
+<td>180</td>
+<td>피로 시험, 정기 교체</td>
+</tr>
+<tr>
+<td>배터리 팩</td>
+<td>셀 열 폭주</td>
+<td>화재, 기기 전체 손상</td>
+<td>10</td>
+<td>2</td>
+<td>4</td>
+<td>80</td>
+<td>BMS, 열 퓨즈, 난연 재료</td>
+</tr>
+<tr>
+<td>발목 6축 힘 센서</td>
+<td>영점 드리프트</td>
+<td>균형 제어 불안정</td>
+<td>8</td>
+<td>5</td>
+<td>4</td>
+<td>160</td>
+<td>온라인 보정, 중복 센서</td>
+</tr>
+<tr>
+<td>비상 정지 회로</td>
+<td>접점 용착</td>
+<td>안전 정지 불가</td>
+<td>10</td>
+<td>2</td>
+<td>3</td>
+<td>60</td>
+<td>이중 채널, 자체 점검</td>
+</tr>
+<tr>
+<td>주 제어기</td>
+<td>소프트웨어 충돌</td>
+<td>운동 제어 상실</td>
+<td>9</td>
+<td>3</td>
+<td>3</td>
+<td>81</td>
+<td>워치독, 안전 모니터</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 플렉스 스플라인 피로, 열 폭주, 영점 드리프트, 접점 용착, 워치독</p>
+<ul>
+<li><strong>플렉스 스플라인 피로(flexspline fatigue)</strong>: 하모닉 감속기 플렉스 스플라인의 반복 피로.</li>
+<li><strong>열 폭주(thermal runaway)</strong>: 배터리 온도가 통제 불능 상태가 되는 연쇄 반응.</li>
+<li><strong>영점 드리프트(zero drift)</strong>: 센서 영점이 시간에 따라 변하는 현상.</li>
+<li><strong>접점 용착(contact welding)</strong>: 릴레이 접점이 용융되어 붙는 현상.</li>
+<li><strong>워치독(watchdog)</strong>: 프로그램 실행을 모니터링하고 이상 시 리셋하는 회로.</li>
+</ul>
+</div>
+<p><strong>신뢰성 블록 다이어그램(RBD, Reliability Block Diagram)</strong>은 시스템 각 구성 요소의 신뢰성 논리 관계를 그래픽으로 나타냅니다:</p>
+<ul>
+<li><strong>직렬 시스템</strong>: 하나의 구성 요소가 고장 나면 시스템이 고장 납니다. 총 신뢰성은 각 구성 요소 신뢰성의 곱입니다:
+  $$
+  R_s(t) = \prod_{i=1}^{n} R_i(t)
+  $$</li>
+<li><strong>병렬 시스템</strong>: 모든 구성 요소가 고장 나야 시스템이 고장 납니다. 총 비신뢰성은 각 구성 요소 비신뢰성의 곱입니다:
+  $$
+  R_s(t) = 1 - \prod_{i=1}^{n} [1 - R_i(t)]
+  $$</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 신뢰성 블록 다이어그램, 직렬 시스템, 병렬 시스템, 이중화</p>
+<ul>
+<li><strong>신뢰성 블록 다이어그램(RBD)</strong>: 시스템 신뢰성 논리 관계를 나타내는 블록 다이어그램.</li>
+<li><strong>직렬 시스템(series system)</strong>: 모든 구성 요소가 정상 작동해야 하는 시스템.</li>
+<li><strong>병렬 시스템(parallel system)</strong>: 적어도 하나의 구성 요소가 정상 작동하는 시스템.</li>
+<li><strong>이중화(redundancy)</strong>: 반복 구성을 통해 신뢰성을 높이는 방법.</li>
+</ul>
+</div>
+<p><strong>이중화 설계</strong>는 휴머노이드 로봇의 안전성을 높이는 중요한 수단입니다:</p>
+<ul>
+<li><strong>능동 이중화(active redundancy)</strong>: 여러 구성 요소가 동시에 작동, 예: 이중 엔코더, 이중 채널 비상 정지.</li>
+<li><strong>대기 이중화(standby redundancy)</strong>: 주 구성 요소가 고장 난 후 대기 구성 요소가 전환되어 작동.</li>
+<li><strong>이종 이중화(diverse redundancy)</strong>: 동일 기능을 위해 다른 유형의 부품을 사용하여 공통 원인 고장 위험을 낮춤.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 능동 이중화, 대기 이중화, 이종 이중화, 공통 원인 고장</p>
+<ul>
+<li><strong>능동 이중화(active redundancy)</strong>: 병렬로 동시에 작동하는 이중화.</li>
+<li><strong>대기 이중화(standby redundancy)</strong>: 대기 구성 요소가 평소에는 작동하지 않음.</li>
+<li><strong>이종 이중화(diverse redundancy)</strong>: 다른 원리나 출처의 이중화를 사용.</li>
+<li><strong>공통 원인 고장(common cause failure)</strong>: 동일한 원인으로 여러 구성 요소가 동시에 고장 나는 현상.</li>
+</ul>
+</div>
+<p>피로와 마모가 지배적인 부품의 수명은 종종 <strong>와이블 분포(Weibull distribution)</strong>로 설명됩니다:</p>
+<div class="arithmatex">\[
+R(t) = \exp\left[-\left(\frac{t}{\eta}\right)^\beta\right]
+\]</div>
+<p>여기서 <span class="arithmatex">\(\eta\)</span>는 특성 수명, <span class="arithmatex">\(\beta\)</span>는 형상 매개변수입니다. <span class="arithmatex">\(\beta &lt; 1\)</span>일 때는 초기 고장기에 해당하고, <span class="arithmatex">\(\beta = 1\)</span>일 때는 지수 분포로 축소되며, <span class="arithmatex">\(\beta &gt; 1\)</span>일 때는 마모 고장기에 해당합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 와이블 분포, 특성 수명, 형상 매개변수</p>
+<ul>
+<li><strong>와이블 분포(Weibull distribution)</strong>: 수명 데이터를 설명하는 유연한 분포.</li>
+<li><strong>특성 수명(characteristic life)</strong>: 와이블 분포의 척도 매개변수.</li>
+<li><strong>형상 매개변수(shape parameter)</strong>: 와이블 분포의 형태를 결정하는 매개변수.</li>
+</ul>
+</div>
+<p><strong>Python 예제: 시스템 신뢰성 및 이중화 효과</strong></p>
+<p>다음 코드는 모터, 감속기, 드라이버, 제어기로 구성된 직렬 관절 시스템의 신뢰성을 계산하고, 단일 채널과 이중 채널 이중화 비상 정지 회로의 신뢰성을 비교합니다.</p>
+<p>```python
+import numpy as np
+import matplotlib.pyplot as plt</p>
+<h2 id="overview">Overview</h2>
+<p>8.6.6 Reliability Engineering and Failure Mode Analysis related content is as follows.</p>
+<h2 id="content">Content</h2>
+<h4 id="866-reliability-engineering-and-failure-mode-analysis">8.6.6 Reliability Engineering and Failure Mode Analysis</h4>
+<p>Humanoid robots face multiple failure risks during long-term operation, including mechanical wear, electronic aging, software defects, and environmental stress. <strong>Reliability engineering</strong> uses quantitative methods to predict, allocate, and improve system reliability, and is key to reducing life-cycle costs and ensuring safe operation[90][91][95].</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Reliability Engineering, Failure, Life-Cycle Cost, Environmental Stress</p>
+<ul>
+<li><strong>Reliability engineering</strong>: The discipline that studies and improves a product's ability to perform its required function under stated conditions for a specified period of time.</li>
+<li><strong>Failure</strong>: The event when a product loses its ability to perform a required function.</li>
+<li><strong>Life-cycle cost (LCC)</strong>: The total cost of a product over its entire life cycle.</li>
+<li><strong>Environmental stress</strong>: External factors such as temperature, humidity, vibration, and dust.</li>
+</ul>
+</div>
+<p>The <strong>reliability function</strong> <span class="arithmatex">\(R(t)\)</span> is defined as the probability that a product survives without failure for a time <span class="arithmatex">\(t\)</span>:</p>
+<div class="arithmatex">\[
+R(t) = P(T &gt; t)
+\]</div>
+<p>where <span class="arithmatex">\(T\)</span> is the time to failure. The corresponding <strong>cumulative distribution function of failure</strong> is <span class="arithmatex">\(F(t) = 1 - R(t)\)</span>. The <strong>hazard rate</strong> or <strong>failure rate</strong> <span class="arithmatex">\(\lambda(t)\)</span> is:</p>
+<div class="arithmatex">\[
+\lambda(t) = \frac{f(t)}{R(t)} = -\frac{d}{dt} \ln R(t)
+\]</div>
+<p>where <span class="arithmatex">\(f(t) = dF/dt\)</span> is the failure probability density.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Reliability Function, Cumulative Distribution Function of Failure, Failure Rate, Failure Probability Density</p>
+<ul>
+<li><strong>Reliability function</strong>: The probability that a product operates normally for a time <span class="arithmatex">\(t\)</span>.</li>
+<li><strong>Cumulative distribution function (CDF)</strong>: The probability of failure before time <span class="arithmatex">\(t\)</span>.</li>
+<li><strong>Failure rate</strong>: The probability of failure per unit time.</li>
+<li><strong>Probability density function (PDF)</strong>: The probability density of failure times.</li>
+</ul>
+</div>
+<p>The failure rate of typical electronic and mechanical products over time follows a <strong>bathtub curve</strong>:</p>
+<ol>
+<li><strong>Infant mortality</strong>: High failure rate, usually caused by manufacturing defects or assembly errors, can be reduced through burn-in.</li>
+<li><strong>Useful life</strong>: Failure rate is approximately constant; this is the main operating period of the product.</li>
+<li><strong>Wear-out</strong>: Failure rate increases over time, caused by fatigue, wear, and aging.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Bathtub Curve, Infant Mortality, Random Failure, Wear-out Failure, Burn-in</p>
+<ul>
+<li><strong>Bathtub curve</strong>: A U-shaped curve showing the failure rate over time.</li>
+<li><strong>Infant mortality</strong>: The high failure rate of a product early in its life.</li>
+<li><strong>Random failure</strong>: Occasional, unpredictable failures.</li>
+<li><strong>Wear-out failure</strong>: Failures caused by performance degradation after prolonged use.</li>
+<li><strong>Burn-in</strong>: A process of operating a product early in its life to eliminate potential defects.</li>
+</ul>
+</div>
+<p>When the failure rate is constant <span class="arithmatex">\(\lambda\)</span>, the reliability function follows an exponential distribution:</p>
+<div class="arithmatex">\[
+R(t) = e^{-\lambda t}
+\]</div>
+<p>The <strong>Mean Time Between Failures (MTBF)</strong> is:</p>
+<div class="arithmatex">\[
+\text{MTBF} = \frac{1}{\lambda}
+\]</div>
+<p>For non-repairable products, <strong>MTTF (Mean Time To Failure)</strong> is used.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Exponential Distribution, Mean Time Between Failures, Mean Time To Failure</p>
+<ul>
+<li><strong>Exponential distribution</strong>: The life distribution under a constant failure rate.</li>
+<li><strong>Mean Time Between Failures (MTBF)</strong>: The average time between failures for repairable products.</li>
+<li><strong>Mean Time To Failure (MTTF)</strong>: The average time to failure for non-repairable products.</li>
+</ul>
+</div>
+<p><strong>Failure Mode and Effects Analysis (FMEA)</strong> is a method to systematically identify potential failures, assess risks, and prioritize improvements. Each failure mode is scored on three dimensions:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Typical Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Severity</td>
+<td>S</td>
+<td>The severity of the failure consequence</td>
+<td>1–10</td>
+</tr>
+<tr>
+<td>Occurrence</td>
+<td>O</td>
+<td>The likelihood of the failure cause occurring</td>
+<td>1–10</td>
+</tr>
+<tr>
+<td>Detection</td>
+<td>D</td>
+<td>The ability of current controls to detect the failure</td>
+<td>1–10</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Risk Priority Number (RPN)</strong> is:</p>
+<div class="arithmatex">\[
+\text{RPN} = S \times O \times D
+\]</div>
+<p>The higher the RPN, the more urgent the need for improvement actions.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Failure Mode, Severity, Occurrence, Detection, Risk Priority Number</p>
+<ul>
+<li><strong>Failure mode</strong>: The specific way in which a product fails.</li>
+<li><strong>Severity</strong>: The seriousness of the failure consequence.</li>
+<li><strong>Occurrence</strong>: The frequency of the failure cause.</li>
+<li><strong>Detection</strong>: The ability to detect the failure cause or mode.</li>
+<li><strong>Risk Priority Number (RPN)</strong>: The product of S, O, and D, used for risk ranking.</li>
+</ul>
+</div>
+<p>Example FMEA for a humanoid robot:</p>
+<table>
+<thead>
+<tr>
+<th>Subsystem</th>
+<th>Failure Mode</th>
+<th>Potential Effect</th>
+<th>S</th>
+<th>O</th>
+<th>D</th>
+<th>RPN</th>
+<th>Improvement Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Knee joint harmonic reducer</td>
+<td>Flexspline fatigue crack</td>
+<td>Joint lock-up, fall</td>
+<td>9</td>
+<td>4</td>
+<td>5</td>
+<td>180</td>
+<td>Fatigue testing, periodic replacement</td>
+</tr>
+<tr>
+<td>Battery pack</td>
+<td>Cell thermal runaway</td>
+<td>Fire, total robot destruction</td>
+<td>10</td>
+<td>2</td>
+<td>4</td>
+<td>80</td>
+<td>BMS, thermal fuse, flame-retardant materials</td>
+</tr>
+<tr>
+<td>Ankle 6-axis force sensor</td>
+<td>Zero drift</td>
+<td>Balance control instability</td>
+<td>8</td>
+<td>5</td>
+<td>4</td>
+<td>160</td>
+<td>Online calibration, redundant sensing</td>
+</tr>
+<tr>
+<td>Emergency stop circuit</td>
+<td>Contact welding</td>
+<td>Inability to stop safely</td>
+<td>10</td>
+<td>2</td>
+<td>3</td>
+<td>60</td>
+<td>Dual-channel, self-test</td>
+</tr>
+<tr>
+<td>Main controller</td>
+<td>Software crash</td>
+<td>Motion loss of control</td>
+<td>9</td>
+<td>3</td>
+<td>3</td>
+<td>81</td>
+<td>Watchdog, safety monitor</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Flexspline Fatigue, Thermal Runaway, Zero Drift, Contact Welding, Watchdog</p>
+<ul>
+<li><strong>Flexspline fatigue</strong>: Cyclic fatigue of the flexspline in a harmonic drive.</li>
+<li><strong>Thermal runaway</strong>: A chain reaction of uncontrolled temperature increase in a battery.</li>
+<li><strong>Zero drift</strong>: The shift of a sensor's zero point over time.</li>
+<li><strong>Contact welding</strong>: The welding together of relay contacts.</li>
+<li><strong>Watchdog</strong>: A circuit that monitors program execution and resets the system upon anomaly.</li>
+</ul>
+</div>
+<p>A <strong>Reliability Block Diagram (RBD)</strong> graphically represents the reliability logic relationships among system units:</p>
+<ul>
+<li><strong>Series system</strong>: The system fails if any unit fails. Total reliability is the product of the reliabilities of each unit:
+  $$
+  R_s(t) = \prod_{i=1}^{n} R_i(t)
+  $$</li>
+<li><strong>Parallel system</strong>: The system fails only if all units fail. Total unreliability is the product of the unreliabilities of each unit:
+  $$
+  R_s(t) = 1 - \prod_{i=1}^{n} [1 - R_i(t)]
+  $$</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Reliability Block Diagram, Series System, Parallel System, Redundancy</p>
+<ul>
+<li><strong>Reliability Block Diagram (RBD)</strong>: A diagram showing the reliability logic relationships of a system.</li>
+<li><strong>Series system</strong>: A system where all units must function for the system to function.</li>
+<li><strong>Parallel system</strong>: A system where at least one unit must function for the system to function.</li>
+<li><strong>Redundancy</strong>: The use of duplicate components to improve reliability.</li>
+</ul>
+</div>
+<p><strong>Redundancy design</strong> is an important means of improving the safety of humanoid robots:</p>
+<ul>
+<li><strong>Active redundancy</strong>: Multiple units operate simultaneously, e.g., dual encoders, dual-channel emergency stop.</li>
+<li><strong>Standby redundancy</strong>: A backup unit is switched in when the primary unit fails.</li>
+<li><strong>Diverse redundancy</strong>: Using different types of components to perform the same function, reducing the risk of common cause failures.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Active Redundancy, Standby Redundancy, Diverse Redundancy, Common Cause Failure</p>
+<ul>
+<li><strong>Active redundancy</strong>: Redundancy where all units operate in parallel.</li>
+<li><strong>Standby redundancy</strong>: Redundancy where the backup unit is normally inactive.</li>
+<li><strong>Diverse redundancy</strong>: Redundancy using components based on different principles or from different sources.</li>
+<li><strong>Common cause failure</strong>: A failure where a single cause leads to the failure of multiple units simultaneously.</li>
+</ul>
+</div>
+<p>For components dominated by fatigue and wear, life is often described by the <strong>Weibull distribution</strong>:</p>
+<div class="arithmatex">\[
+R(t) = \exp\left[-\left(\frac{t}{\eta}\right)^\beta\right]
+\]</div>
+<p>where <span class="arithmatex">\(\eta\)</span> is the characteristic life, and <span class="arithmatex">\(\beta\)</span> is the shape parameter. When <span class="arithmatex">\(\beta &lt; 1\)</span>, it corresponds to the infant mortality period; <span class="arithmatex">\(\beta = 1\)</span> reduces to the exponential distribution; <span class="arithmatex">\(\beta &gt; 1\)</span> corresponds to the wear-out period.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Weibull Distribution, Characteristic Life, Shape Parameter</p>
+<ul>
+<li><strong>Weibull distribution</strong>: A flexible distribution for describing life data.</li>
+<li><strong>Characteristic life</strong>: The scale parameter in the Weibull distribution.</li>
+<li><strong>Shape parameter</strong>: The parameter that determines the shape of the Weibull distribution.</li>
+</ul>
+</div>
+<p><strong>Python Example: System Reliability and Redundancy Benefit</strong></p>
+<p>The following code calculates the reliability of a series joint system consisting of a motor, reducer, driver, and controller, and compares the reliability of a single-channel vs. a dual-channel redundant emergency stop circuit.</p>
+<p>```python
+import numpy as np
+import matplotlib.pyplot as plt</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_system_figure_02/">피규어 02</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_process_p0_2_2/">风险登记册与应对计划</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p13/">电子电气与能源系统（Electronics &amp; Power）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p3_3_2/">可靠性目标与分配</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p4_4_1/">关节寿命与失效分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p4_4_2/">关节安全与故障保护</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p4/">关节模组与驱动系统设计（Actuator &amp; Drive）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_process_p13_3_1/">硬件急停与安全链</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">언급</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_fmea"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p4_4_2/">
+          <span class="entry-type">방법</span>
+          <h3>关节安全与故障保护</h3>
+          <p>故障保护策略、FMEA 更新、安全测试</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p3/">
+          <span class="entry-type">방법</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p4_4_1/">
+          <span class="entry-type">방법</span>
+          <h3>关节寿命与失效分析</h3>
+          <p>寿命测试计划、失效模式分析、维护周期建议</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p13_3_1/">
+          <span class="entry-type">방법</span>
+          <h3>硬件急停与安全链</h3>
+          <p>安全系统原理图、FMEA、急停响应时间 &lt; 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p3_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>可靠性目标与分配</h3>
+          <p>可靠性目标分配表、关键件 MTBF 目标</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_figure_02/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>피규어 02</h3>
+          <p>Figure AI가 물류 및 제조업용으로 개발한 휴인oid 로봇으로, 온보드 비전-언어 모델과 16자유도 손을 갖추고 있습니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p0_2_2/">
+          <span class="entry-type">방법</span>
+          <h3>风险登记册与应对计划</h3>
+          <p>Top-10 风险清单、 Owner、Mitigation Plan、Trigger</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p13/">
+          <span class="entry-type">방법</span>
+          <h3>电子电气与能源系统（Electronics &amp; Power）</h3>
+          <p>电子电气与能源系统（Electronics &amp; Power）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p4/">
+          <span class="entry-type">방법</span>
+          <h3>关节模组与驱动系统设计（Actuator &amp; Drive）</h3>
+          <p>关节模组与驱动系统设计（Actuator &amp; Drive）</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#866">8.6.6 신뢰성 공학과 고장 모드 분석</a></li>
+</ul>
+</li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#866-reliability-engineering-and-failure-mode-analysis">8.6.6 Reliability Engineering and Failure Mode Analysis</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>선정 매뉴얼: 센서(Sensor) 어떻게 고를까 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">선정 매뉴얼: 센서(Sensor) 어떻게 고를까</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="sensor">선정 매뉴얼: 센서(Sensor) 어떻게 고를까</h1>
+<blockquote>
+<p>⚠️ 본 로드맵 내용은 공개 자료와 이론적 지식을 바탕으로 정리되었으며, 실제 기기로 검증되지 않았습니다. 전기 및 기계 작업 시 안전 규정을 직접 확인하시기 바랍니다.</p>
+</blockquote>
+<p>센서 선정 시 흔한 실수는 "완성체 제조사의 홍보 영상대로 갖추는 것"입니다: RealSense를 달고, 6축 힘 센서를 사고, 촉각 어레이도 장착하려 하다가 데이터를 제때 처리하지 못하거나, 구매 후 제어 주파수가 USB 대역폭에 막혀 버리는 경우가 발생합니다. 본 매뉴얼의 접근 방식은 반대입니다: 먼저 로봇이 수행해야 할 작업을 "반드시 알아야 할 물리량"으로 분해한 후, 각 물리량에 대해 충분히 사용 가능한 센서를 선택합니다. 원리 배경은 <a href="/wiki/chapters/chapter-05/">제5장 센싱 및 인지 하드웨어</a>를, 공급업체 현황은 <a href="/wiki/chapters/chapter-07/">제7장 공급업체 지도</a>를 참조하십시오.</p>
+<h2 id="1">1. 인지 요구사항 분해: 로봇이 반드시 "알아야" 할 것</h2>
+<p>센서를 세 가지 계층으로 나누고, 각 계층에서 "정말 필요한가?"를 질문합니다:</p>
+<h3 id="1-proprioception">제1계층: 고유 감각(Proprioception) – 관절 각도와 몸체 자세</h3>
+<p>【할 일】각 능동 관절의 위치 피드백 방식(모터 엔코더, 출력단 엔코더 또는 이중 엔코더)과 몸체/발의 IMU 구성(장착 개수, 샘플링 속도)을 나열합니다.</p>
+<p>【이유】고유 감각은 제어 폐루프의 핵심이며, 이것이 없으면 로봇은 "자신의 다리가 어디 있는지"조차 알 수 없습니다. <a href="/entry/ent_component_joint_encoder_2024/">관절 엔코더 Joint Encoder</a>는 모터 제어에 고해상도 위치 피드백을 제공합니다. 주목할 점은 "어디에 장착하느냐"입니다: 모터 엔코더는 감속기 백래시와 유연 변형을 볼 수 없으므로, 정밀 힘 제어 플랫폼은 출력단 엔코더를 추가하여 이중 엔코더를 구성합니다 – Open Dynamic Robot Initiative의 BLMC 액추에이터가 "이중 엔코더(모터단/출력단)" 설계입니다(출처: 조사 파일 open-dynamic-robot-initiative.md). 저예산方案도 가능합니다: Berkeley Humanoid Lite는 $3의 AS5600 자기 엔코더를 사용하고(출처: 조사 파일 berkeley-humanoid-lite.md), 몸체 자세는 휴대폰급 BNO085 IMU 하나로 제로샷 sim-to-real 보행을 완료했습니다(동일 파일). <a href="/entry/ent_component_imu_2024/">IMU</a>는 자세 추정을 담당하며, 엔코더 및 비전과 융합하여 고주파 관성 참조를 제공합니다.</p>
+<p>【상황 분석 방법】위치 제어 서보 모터 방식(예: Dynamixel)은 엔코더가 내장되어 있어 이 계층은 비용이 들지 않습니다. 자체 개발 QDD 관절은 최소한 모터 엔코더가 필요하며, 출력단 엔코더가 필요한지는 힘 제어를 수행하는지 여부에 달려 있습니다(수행한다면 → 필요). IMU는 몸체급 하나로 시작하면 됩니다. 동적 보행 연구를 한다면 발에 IMU 또는 접촉 센서를 추가하는 것이 좋습니다. BRUCE 이족 로봇이 IMU 샘플링을 2kHz로 한 것도 이 목적입니다(출처: 조사 파일 bruce-westwood.md).</p>
+<h3 id="2-force-sensing">제2계층: 힘 감각(Force Sensing) – 말단 힘, 발목 힘, 손끝 촉각</h3>
+<p>【할 일】세 가지를 결정합니다: 손목/발목에 <a href="/entry/ent_component_six_axis_force_torque_sensor_2024/">6축 힘/토크 센서 Six-axis F/T Sensor</a>를 장착할지(어느 플랜지에, 범위는 얼마로), <a href="/entry/ent_component_tactile_sensor_array_2024/">촉각 센서 어레이 Tactile Sensor Array</a>를 장착할지, 아니면 먼저 액추에이터 전류 루프로 힘을 추정하여 대체할지.</p>
+<p>【이유】6축 힘 센서는 3방향 힘과 3방향 토크를 동시에 측정하며, 힘 제어 조립, 드래그 티칭, 이족 발목 ZMP 추정에 필수적입니다 – THORMANG3는 양쪽 발목에 ATI Mini58을 각각 장착했습니다(출처: 조사 파일 thormang3.md). 하지만 로봇 전체에서 가장 비싼 센서 중 하나이며, 범위와 정밀도는 서로 상충합니다(범위를 너무 크게 잡으면 분해능이 낭비됩니다). 촉각 어레이는 접촉 압력/전단/질감을 측정하여 정밀 조작의 미끄러짐 감지를 지원합니다. 예산이 부족할 경우 FSR 어레이로 시작할 수 있습니다 – Poppy 휴머노이드 로봇은 2014년에 16개의 FSR 힘 센서를 구성했습니다(출처: 조사 파일 poppy-humanoid.md).</p>
+<p>【상황 분석 방법】보행만 하고 조작은 하지 않는다 → 전류 루프 힘 추정 + 발 끝 스위치식 접촉 센서로 충분하며, 6축 힘 센서 비용을 절약합니다. 조립/연마류 조작 연구를 한다 → 손목 6축 힘 센서에 투자할 가치가 있으며, 범위는 "최대 접촉력 × 2"로 선택합니다. 정밀 손 조작 연구를 한다 → 촉각 어레이가 손목 6축 힘 센서보다 우선입니다. 조작 미끄러짐은 주로 손끝에서 발생하기 때문입니다.</p>
+<h3 id="3-exteroception">제3계층: 외부 감각(Exteroception) – 외부 세계 보기</h3>
+<p>【할 일】외부 감각 작업의 유형을 명확히 합니다: 근거리 조작 장면 이해(0.3–3m), 실내 내비게이션 매핑(3–20m), 또는 실외/대공간. 세 가지는 완전히 다른 센서에 해당합니다.</p>
+<p>【이유】<a href="/entry/ent_component_rgbd_camera/">RGB-D 카메라</a>의 세 가지 깊이 방식 – 구조광, ToF, 스테레오 비전 – 은 각각 적용 가능한 거리와 조명 제약이 있습니다: 구조광은 정밀도가 높지만 강한 빛에 약하고, 스테레오는 수동적이지만 텍스처에 의존합니다. 머리 비전의 주류는 <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense</a>(D435i/D455는 Qinglong, G1 등 플랫폼에서 채택, 출처: openloong-qinglong 조사 파일, Unitree 카드)입니다. 내비게이션 매핑의 주력은 라이다이며, <a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a>은 360° 전방위, 265g으로 사족/휴머노이드 SLAM의 인기 선택입니다(출처: Livox 카드).</p>
+<p>【상황 분석 방법】데스크탑 조작만 한다 → RGB-D 하나면 충분하며, 라이다는 낭비입니다. 실내 보행 내비게이션을 한다 → RGB-D(근거리 장애물 회피) + 360° LiDAR(매핑)이 성숙한 조합입니다. 순수 비전 연구(VLA, 비주얼 서보) → 예산을 카메라 프레임 속도와 글로벌 셔터에 투자하고, LiDAR를 쌓지 마십시오.</p>
+<h2 id="2">2. 부품별 선정표: 핵심 지표 → 로봇에 미치는 영향 → 가격대</h2>
+<h3 id="encoder">엔코더 (Encoder)</h3>
+<table>
+<thead>
+<tr>
+<th>핵심 지표</th>
+<th>로봇에 미치는 영향</th>
+<th>가격대 참고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>분해능 (비트 수)</td>
+<td>위치 제어 정밀도와 속도 추정 품질 결정; 17비트 이상 관절에서 안정적인 저속 힘 제어 가능</td>
+<td>자기 엔코더 AS5600 (12비트) 약 $3 (BHL 파일); 고분해능 광전/앱솔루트형은 문의 필요</td>
+</tr>
+<tr>
+<td>앱솔루트 vs 인크리멘탈</td>
+<td>앱솔루트형은 전원 켜면 각도 인식, 휴머노이드 관절 많아 인크리멘탈형은 매번 전원 켤 때 귀환(초기화)이 번거로움</td>
+<td>앱솔루트형 비쌈, 필요에 따라 선택</td>
+</tr>
+<tr>
+<td>설치 위치 (모터단/출력단)</td>
+<td>출력단 엔코더는 감속기 백래시와 플렉스플라인 변형을 '볼 수' 있게 하여 힘 제어 투명성의 전제 조건</td>
+<td>이중 엔코더 = 2배 비용, 힘 제어 플랫폼에 적합 (ODRI 파일)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imu">IMU</h3>
+<table>
+<thead>
+<tr>
+<th>핵심 지표</th>
+<th>로봇에 미치는 영향</th>
+<th>가격대 참고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자이로 바이어스 안정성</td>
+<td>자세 적분 드리프트 속도 결정; <a href="/entry/ent_component_imu_2024/">IMU 카드</a> 예시 ADIS16475는 2°/hr (운용 중)</td>
+<td>스마트폰급 (BNO085, BHL 사용) 수십 위안대; 산업용 MEMS (ADIS16475급) 가격 미공개로 문의 필요; FOG급 별도</td>
+</tr>
+<tr>
+<td>각 랜덤 워크 (ARW)</td>
+<td>노이즈가 자세 추정에 직접 유입, ADIS16475는 0.15°/√hr</td>
+<td>상동</td>
+</tr>
+<tr>
+<td>축간 정렬 오차</td>
+<td>다중 센서 융합 시 설치 정렬 작업량, ADIS16475 ±0.1° 출고 시 보정 완료</td>
+<td>저가형 IMU는 자체 보정 필요</td>
+</tr>
+<tr>
+<td>샘플링 속도/인터페이스</td>
+<td>균형 제어 루프는 고주파 자세 필요, SPI가 I²C보다 지연 낮음; ADIS16475는 SPI</td>
+<td>BRUCE는 2 kHz 구현 (파일)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6">6축 힘/토크 센서</h3>
+<table>
+<thead>
+<tr>
+<th>핵심 지표</th>
+<th>로봇에 미치는 영향</th>
+<th>가격대 참고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>측정 범위 (F/M)</td>
+<td>'최대 접촉력 × 2'로 선정; 신위안성 MLL 일반 50/50/100 N, 2/2/4 N·m, <a href="/entry/ent_component_ati_force_torque_sensor_2024/">OnRobot HEX-E QC</a> ±100/±200 N, ±10 N·m (출처: 두 카드)</td>
+<td>국산 아날로그형 (MLL급) 문의 필요; 수입 ATI Nano25 (±250 N)급 가격 현저히 높음</td>
+</tr>
+<tr>
+<td>정밀도/결합 오차</td>
+<td>6축 분리 후 힘 제어 신뢰도 결정; MLL 정밀도 ≤0.5% FS, 결합 오차 ≤2% FS</td>
+<td>고정밀 모델 더 비쌈</td>
+</tr>
+<tr>
+<td>과부하 용량</td>
+<td>양발 발목은 충격 필연적, MLL ≥300% FS, HEX-E 약 500% FS</td>
+<td>과부하 여유 = 수명</td>
+</tr>
+<tr>
+<td>샘플링 속도와 인터페이스</td>
+<td>힘 제어 루프는 ≥1 kHz 필요; MLL 최대 1000 Hz (수집기 포함), HEX-E는 EtherNet/IP 등 산업용 버스 사용</td>
+<td>수집기/버스 게이트웨이 별도</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">촉각 어레이</h3>
+<table>
+<thead>
+<tr>
+<th>핵심 지표</th>
+<th>로봇에 미치는 영향</th>
+<th>가격대 참고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>공간 분해능 (택셀 밀도)</td>
+<td>접촉 형상과 질감 식별 가능 여부 결정, 미끄러짐 사전 예측 지원</td>
+<td>FSR 이산점 가장 저렴 (Poppy 16점 사용); 어레이형 문의 필요</td>
+</tr>
+<tr>
+<td>측정 차원</td>
+<td>법선 압력만 측정 vs 3축 힘 (전단 포함) – 전단은 미끄러짐 전조</td>
+<td>3축 어레이 훨씬 비쌈, 파지 연구에만 필요</td>
+</tr>
+<tr>
+<td>곡면 부착과 배선</td>
+<td>손끝 곡면 설치와 배선은 공학적 주요 난제, 종종 센서 자체보다 공수 더 듬</td>
+<td>플렉서블 PCB 방식 평가</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rgb-d-realsense-vs-zed">RGB-D 카메라 (RealSense vs ZED)</h3>
+<table>
+<thead>
+<tr>
+<th>핵심 지표</th>
+<th>로봇에 미치는 영향</th>
+<th>가격대 참고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이상 측정 범위와 정밀도</td>
+<td>조작 시나리오는 0.3–1 m 구간 정밀도 중요: <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">RealSense</a> D435i 0.1–10 m, &lt;2% @2 m; D455 0.6–6 m, &lt;2% @4 m (출처: RealSense 카드, 공식 데이터시트)</td>
+<td>D435i 약 USD 199, D455 약 USD 299 (공개 시장 참고, 카드 기준)</td>
+</tr>
+<tr>
+<td>셔터 방식</td>
+<td>머리 움직임 시 글로벌 셔터 (D455)가 롤링 셔터 왜곡 방지</td>
+<td>일반적으로 글로벌 셔터 모델 약간 비쌈</td>
+</tr>
+<tr>
+<td>내장 IMU</td>
+<td>시각-관성 융합 (VIO)으로 외장 IMU 절약: D435i 내장 BMI055</td>
+<td>i 접미사 모델에만 있음</td>
+</tr>
+<tr>
+<td>연산 의존성</td>
+<td><a href="/entry/ent_component_zed_stereo_camera_2024/">ZED 스테레오 카메라</a> 온보드 깊이+공간 AI, 그러나 깊이 계산은 호스트 GPU 생태계 의존 (출처: ZED 카드); 가격은 공급업체에 직접 문의 필요</td>
+<td>RealSense 생태계 (librealsense+ROS) 연산 진입 장벽 낮음, ZED는 NVIDIA 호스트 필요</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lidar">라이다 (LiDAR)</h3>
+<table>
+<thead>
+<tr>
+<th>핵심 지표</th>
+<th>로봇에 미치는 영향</th>
+<th>가격대 참고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FOV</td>
+<td><a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a> 수평 360°, 수직 -7°~52°, 하나로 상체 주시 가능 (출처: Livox 카드)</td>
+<td>Mid-360 약 CNY 3,999 (공식 스토어, 카드 기준)</td>
+</tr>
+<tr>
+<td>탐지 거리와 정밀도</td>
+<td>40 m @10% 반사율, ≤2 cm @10 m – 실내 내비게이션 매핑 충분</td>
+<td>좌동</td>
+</tr>
+<tr>
+<td>포인트 주파수와 프레임 속도</td>
+<td>200,000 포인트/초, 10 Hz, 동적 장면 업데이트 속도 결정</td>
+<td>좌동</td>
+</tr>
+<tr>
+<td>무게/소비 전력</td>
+<td>265 g, 6.5 W, 머리/상체에 수용 가능; 내장 ICM40609 IMU로 LIO 가능</td>
+<td>좌동</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3">3. 캘리브레이션과 시간 동기화: 센서 구매는 절반만 완료</h2>
+<p>【할 일】캘리브레이션 계획 수립: 카메라 내부 파라미터 (체커보드), 카메라-LiDAR 외부 파라미터, 카메라-IMU 외부 파라미터 및 시간 오프셋, 관절 영점, 그리고 통일된 시간 소스 (PTP 또는 하드웨어 트리거) 약속.</p>
+<p>【이유】다중 센서 융합의 모든 알고리즘은 '외부 파라미터 알려짐, 클록 동기화'를 가정합니다. <a href="/entry/ent_method_calibration_joint_camera_imu/">공동 캘리브레이션 Joint-Camera-IMU Calibration</a> 카드는 표준 절차를 제공합니다: 캘리브레이션 타겟 다중 자세 수집 → 카메라 코너 검출 + LiDAR 평면/코너 추출 → PnP 초기값 + ICP/비선형 최적화 → 재투영 오차 최소화 검증; 캘리브레이션 타겟 없을 시 장면 가장자리 정렬 또는 상호 정보량 기반 온라인 리파인먼트 사용. 시간 오프셋이 제대로 보정되지 않으면 움직임 중 융합 결과는 '고스트 현상' 발생, VIO 발산, 포인트 컬러링 오류 모두 이에서 비롯. 통합 및 테스트 시스템 방법은 <a href="/wiki/chapters/chapter-11/">제11장 조립, 통합 및 테스트</a> 참조.</p>
+<p>【상황별 분석】단일 RGB-D 시작 시 카메라 내부 파라미터만 필요; LiDAR 추가 시 반드시 카메라-LiDAR 외부 파라미터 필요 (카드 방법 그대로 적용 가능); VIO/다중 IMU 융합 시 시간 캘리브레이션 추가. 검증 지표는 재투영 오차 사용, 눈으로 '대충 맞춰졌다'고 판단하지 말 것.</p>
+<h2 id="4">4. 두 가지 권장 구성</h2>
+<h3 id="_2">초보자 최소 세트 (목표: 걷기 가능, 볼 수 있음, 고장 안 남)</h3>
+<ul>
+<li>관절 피드백: 스마트 서보 내장 엔코더, 또는 자체 개발 관절에 AS5600급 자기 엔코더 ($3/개, BHL 파일 기준).</li>
+<li>자세: 스마트폰급 IMU 1개 (BNO085급), 먼저 자세 추정 동작 확인.</li>
+<li>외부 인식: RealSense D435i 1개 (약 USD 199, 카드 기준) – 깊이+RGB+IMU 일체형, 생태계 가장 성숙.</li>
+<li>힘 감지: 우선 미사용, 전류 루프로 힘 추정; 발바닥은 스위치/FSR로 지면 접촉 판단.</li>
+<li>분석 논리: 이 구성은 모든 비용을 '제어 루프 필수 요소'에 집중, 보행과 파지 시연 모두 충분; 병목 현상 명확해지면 (자세 드리프트 큼, 파지 미끄러짐 감지 안 됨) 항목별 업그레이드.</li>
+</ul>
+<h3 id="_3">연구용 세트 (목표: 힘 제어/조작/내비게이션 논문급 데이터)</h3>
+<ul>
+<li>관절 피드백: 이중 엔코더 (모터단+출력단), 출력단은 고분해능 앱솔루트형.</li>
+<li>자세: 산업용 MEMS IMU (ADIS16475급: ARW 0.15°/√hr, 바이어스 2°/hr, ±0.1° 정렬, 카드 기준) + 상체/발 분산 배치, 샘플링 1–2 kHz 목표.</li>
+<li>힘 감지: 손목 6축 힘 (국산 MLL급 또는 ATI/OnRobot급) + 양발 발목 6축 힘 (THORMANG3 구성 선례), 로봇 핸드에 촉각 어레이 추가.</li>
+<li>외부 인식: RealSense D455 (글로벌 셔터, 약 USD 299) 또는 ZED (GPU 호스트 있을 때) + Livox Mid-360 (약 CNY 3,999)로 360° 매핑.</li>
+<li>캘리브레이션: 전체 내부/외부 파라미터/시간 동기화 캘리브레이션, 재투영 오차 검증 포함.</li>
+<li>분석 논리: 연구용 핵심은 '데이터 신뢰도' – 센서 비싼 것이 목적이 아니라, 캘리브레이션 가능, 추적 가능, 클록 동기화가 중요.</li>
+</ul>
+<h2 id="_4">검증 기준</h2>
+<ul>
+<li>'물리량 → 센서 → 설치 위치 → 인터페이스 → 샘플링 속도' 목록 보유, 각 항목에 '없으면 어떻게 되는가' 답변 가능.</li>
+<li>각 센서의 핵심 지표 (측정 범위/정밀도/대역폭)가 작업 요구사항과 일대일 대응, 카드 또는 데이터시트로 추적 가능; 공개 가격 없는 것은 '공급업체에 직접 문의 필요' 표시.</li>
+<li>캘리브레이션 계획 실행: 카메라 내부 파라미터 완료, LiDAR 장착 시 카메라-LiDAR 외부 파라미터 완료 및 재투영 오차 기록.</li>
+<li>전체 센서 타임스탬프 동일 클록 소스로 통일, 융합 노드에서 육안으로 확인 가능한 시간 오차 없음.</li>
+</ul>
+<h2 id="_5">일반적인 문제점 및 점검 방법</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>점검 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자세 추정이 느리게 표류하고, 갈수록 틀어짐</td>
+<td>IMU 바이어스 안정성이 부족하거나 온도 보정이 되지 않음</td>
+<td>바이어스 안정성 지표 확인; 정지 상태에서 바이어스 추정, 필요 시 산업용 IMU로 업그레이드</td>
+</tr>
+<tr>
+<td>보행 중 VIO/융합 발산</td>
+<td>카메라-IMU 시간 오프셋이 보정되지 않음</td>
+<td>시간 동기화 보정 수행; 타임스탬프 출처가 통일되었는지 확인</td>
+</tr>
+<tr>
+<td>포인트 클라우드 색상 오정렬, 고스트 현상</td>
+<td>카메라-LiDAR 외부 파라미터가 오래됨 (충돌 후)</td>
+<td>다중 자세 보정 재실행, 재투영 오차가 수렴하는지 확인</td>
+</tr>
+<tr>
+<td>6축 힘 센서 판독값 제로점 표류</td>
+<td>온도 드리프트 또는 타레(tare) 미실시; 설치 응력 유입</td>
+<td>전원 인가 후 예열 후 타레(tare) 실행; 플랜지 설치 예압력 확인</td>
+</tr>
+<tr>
+<td>6축 힘 센서 범위가 항상 포화됨</td>
+<td>"일반 힘" 기준으로 선정했으나 "충격 × 2"가 아님</td>
+<td>발목 충격 피크값 확인; 더 큰 범위로 교체하거나 과부하 보호 전략 추가</td>
+</tr>
+<tr>
+<td>깊이 이미지가 햇빛 아래에서 넓은 구멍 발생</td>
+<td>구조광/능동 IR이 강한 빛에 취약 (기술적 한계)</td>
+<td>깊이 기술 경로 확인; 실외에서는 수동 스테레오 또는 LiDAR로 교체</td>
+</tr>
+<tr>
+<td>촉각 어레이 데이터 노이즈가 큼</td>
+<td>리드선 굽힘 간섭, 전원 공급 리플</td>
+<td>리드선 고정 배선; 오실로스코프로 전원 공급 확인, 필터링 추가</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">관련 자료</h2>
+<ul>
+<li><a href="/roadmap/stage-3-humanoid/">단계 3 · 완전 휴머노이드</a> —— 인식 스택 통합 및 보정 실전</li>
+<li><a href="/roadmap/stage-2-biped/">단계 2 · 이족 플랫폼</a> —— 균형 제어에서 고유 감각 센서의 역할</li>
+<li><a href="/roadmap/index/">로드맵 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/playbooks/compute-selection/">← 이전<span>계산 플랫폼 선정: 로봇에 &#34;계층형 두뇌&#34; 장착하기</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/playbooks/sim-setup/">다음 →<span>시뮬레이션 환경 처음부터 구축하기: 먼저 디지털 세계에서 만 번 넘어져 보자</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#sensor">선정 매뉴얼: 센서(Sensor) 어떻게 고를까</a><ul>
+<li><a href="#1">1. 인지 요구사항 분해: 로봇이 반드시 "알아야" 할 것</a><ul>
+<li><a href="#1-proprioception">제1계층: 고유 감각(Proprioception) – 관절 각도와 몸체 자세</a></li>
+<li><a href="#2-force-sensing">제2계층: 힘 감각(Force Sensing) – 말단 힘, 발목 힘, 손끝 촉각</a></li>
+<li><a href="#3-exteroception">제3계층: 외부 감각(Exteroception) – 외부 세계 보기</a></li>
+</ul>
+</li>
+<li><a href="#2">2. 부품별 선정표: 핵심 지표 → 로봇에 미치는 영향 → 가격대</a><ul>
+<li><a href="#encoder">엔코더 (Encoder)</a></li>
+<li><a href="#imu">IMU</a></li>
+<li><a href="#6">6축 힘/토크 센서</a></li>
+<li><a href="#_1">촉각 어레이</a></li>
+<li><a href="#rgb-d-realsense-vs-zed">RGB-D 카메라 (RealSense vs ZED)</a></li>
+<li><a href="#lidar">라이다 (LiDAR)</a></li>
+</ul>
+</li>
+<li><a href="#3">3. 캘리브레이션과 시간 동기화: 센서 구매는 절반만 완료</a></li>
+<li><a href="#4">4. 두 가지 권장 구성</a><ul>
+<li><a href="#_2">초보자 최소 세트 (목표: 걷기 가능, 볼 수 있음, 고장 안 남)</a></li>
+<li><a href="#_3">연구용 세트 (목표: 힘 제어/조작/내비게이션 논문급 데이터)</a></li>
+</ul>
+</li>
+<li><a href="#_4">검증 기준</a></li>
+<li><a href="#_5">일반적인 문제점 및 점검 방법</a></li>
+<li><a href="#_6">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

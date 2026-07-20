@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 10: Manufacturing Process System · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 10: Manufacturing Process System</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-10-manufacturing-process-system">Chapter 10: Manufacturing Process System</h1>
+<h2 id="summary">Summary</h2>
+<p>Between a humanoid robot's transition from drawings to mass production lies a complete manufacturing process system: the same joint housing can be CNC-machined in the prototype stage but must shift to die casting or forging at a scale of tens of thousands; the micro gears of the same dexterous hand may come from Metal Injection Molding (MIM), while the covers come from injection molds. This chapter bridges the design and subsystem engineering from Chapters 8–9, systematically elaborating on the four mainstream manufacturing processes for humanoid robots—CNC precision machining, injection molding, die casting and metal forming, and additive manufacturing (3D printing)—covering their process principles, precision and cost characteristics, and applicable components. It further discusses Design for Manufacturing (DFM) and Design for Assembly (DFA), tolerance chain analysis and GD&amp;T, mold/tooling and First Article Inspection (FAI), and uses key components such as harmonic reducers, frameless torque motors, planetary roller screws, and coreless motors as examples to illustrate how process selection couples with the supplier ecosystem of Harmonic Drive, Leaderdrive, Nabtesco, Kollmorgen, Inovance Technology, Moons', Tuopu Group, Sanhua Intelligent Controls, etc. This chapter serves as the process foundation for Chapter 11 "Assembly, Integration, and Testing".</p>
+<p><strong>Keywords</strong>: Manufacturing process; CNC machining; Injection molding; Die casting; Additive manufacturing; DFM; DFA; Tolerance chain; GD&T; MBD; FAI; PPAP</p>
+<hr />
+<h2 id="101-overview-of-the-manufacturing-process-system">10.1 Overview of the Manufacturing Process System</h2>
+<h3 id="1011-from-subsystem-design-to-mass-production-the-position-of-the-process-system">10.1.1 From Subsystem Design to Mass Production: The Position of the Process System</h3>
+<p>Chapter 9 decomposes the humanoid robot into independently verifiable subsystems such as the lower limbs, upper limbs, hands, torso, head/neck, and joint modules. However, subsystem design freeze only defines "geometry and interfaces"; it does not answer "with what equipment, at what takt time, and at what cost to produce it." The manufacturing process system is precisely the bridge connecting design and mass production: it transforms the CAD model into process routing, tooling, inspection specifications, and cost structure, and undergoes yield and consistency verification during the Pilot Run.</p>
+<p>In the humanoid robot product development WBS (Work Breakdown Structure) of this knowledge graph, manufacturing-related tasks span multiple phases:</p>
+<ul>
+<li><strong>P5 Mechanical Structure Engineering &amp; Prototype</strong>: Complete the design of the central skeleton and limb linkages (P5.1.1), joint mounting interfaces and housings (P5.1.2), exterior covers and parting lines (P5.1.3), and perform structural material selection (P5.2.1), Design for Additive Manufacturing (DfAM, P5.2.2), and evaluation for mass production processes (P5.2.3), outputting the "Material Selection Table" and mass production process roadmap.</li>
+<li><strong>P8 Structural FEA &amp; Iteration</strong>: Verify critical cross-sections through Finite Element Analysis (FEA); the mesh and load assumptions must match the achievable wall thicknesses, fillets, and ribs of subsequent processes.</li>
+<li><strong>P16 Pilot Run &amp; Production Ramp</strong>: Execute DFM/DFA reviews (P16.1.1), mold and tooling design (P16.1.2), supplier selection and audit (P16.2.1), up to PPAP/Production Readiness Assessment (P16.3.3).</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Chapters 8-9&lt;br/&gt;Design &amp; Subsystem Freeze"] --&gt; B["Process Routing Decision&lt;br/&gt;CNC/Injection/Die Casting/Additive"]
+    B --&gt; C["DFM/DFA Review&lt;br/&gt;Engineering Change Loop"]
+    C --&gt; D["Mold &amp; Tooling Design&lt;br/&gt;FAI First Article Inspection"]
+    D --&gt; E["Pilot Run&lt;br/&gt;Yield &amp; Consistency"]
+    E --&gt; F["PPAP Production Ready&lt;br/&gt;Chapter 11 Assembly &amp; Test"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Process Routing, Tooling, First Article Inspection, PPAP</p>
+<ul>
+<li><strong>Process routing</strong>: The sequence of operations a part undergoes from raw material to finished product, including equipment, cycle time, and inspection points.</li>
+<li><strong>Tooling</strong>: The collective term for specialized process equipment such as molds, fixtures, and gages.</li>
+<li><strong>First Article Inspection (FAI)</strong>: Full dimensional measurement of the first part produced after a tooling or process change to verify conformance to drawing requirements.</li>
+<li><strong>PPAP (Production Part Approval Process)</strong>: A mass production part approval procedure originating from the automotive industry, requiring suppliers to submit evidence packages including design records, process flow diagrams, PFMEA, control plans, measurement system analysis, and full dimensional reports.</li>
+</ul>
+</div>
+<h3 id="1012-process-routing-decision-framework-volume-precision-cost-and-lead-time">10.1.2 Process Routing Decision Framework: Volume, Precision, Cost, and Lead Time</h3>
+<p>The process selection for humanoid robot components is essentially a multi-objective decision problem, with dominant variables including:</p>
+<ol>
+<li><strong>Annual Demand (Volume)</strong>: Determines whether the fixed investment in mold-based processes (injection molding, die casting, forging, MIM) can be amortized;</li>
+<li><strong>Precision and Tolerance Grade</strong>: Reducer parts, screw pairs, etc., require IT5–IT7 grades; covers typically require only IT13;</li>
+<li><strong>Material</strong>: The available process sets differ for aluminum alloys, magnesium alloys, titanium alloys, engineering plastics, and carbon fiber composites;</li>
+<li><strong>Structural Complexity</strong>: Internal channels, lattice structures, and integrated irregular parts are often only feasible with additive manufacturing;</li>
+<li><strong>Lead Time and Iteration Speed</strong>: The R&amp;D phase emphasizes rapid iteration; the mass production phase emphasizes takt time and consistency.</li>
+</ol>
+<p>The unit cost of a process can be roughly decomposed into a volume-independent fixed part and a volume-proportional variable part:</p>
+<div class="arithmatex">\[
+C_{\text{unit}}(N) = \frac{C_{\text{tooling}} + C_{\text{setup}}}{N} + C_{\text{material}} + C_{\text{cycle}} \cdot t_{\text{cycle}} + C_{\text{finish}}
+\]</div>
+<p>Where <span class="arithmatex">\(N\)</span> is the total production quantity, <span class="arithmatex">\(C_{\text{tooling}}\)</span> is the mold/tooling cost, and <span class="arithmatex">\(t_{\text{cycle}}\)</span> is the cycle time per part. When <span class="arithmatex">\(N\)</span> is small, tool-less processes (CNC, 3D printing) are advantageous; when <span class="arithmatex">\(N\)</span> exceeds a certain <strong>break-even volume</strong> <span class="arithmatex">\(N^*\)</span>, mold-based processes become advantageous. Typically, the break-even point for injection molding and die casting is in the range of thousands to tens of thousands of parts, depending on mold complexity and machine hour rates.</p>
+<h3 id="1013-component-to-process-mapping-table">10.1.3 Component-to-Process Mapping Table</h3>
+<p>Components in the humanoid robot BOM can be mapped to mainstream processes according to the four categories: "Structural – Transmission – Electrical – Exterior":</p>
+<table>
+<thead>
+<tr>
+<th>Component Category</th>
+<th>Typical Part</th>
+<th>Prototype Phase Process</th>
+<th>Mass Production Phase Process</th>
+<th>Key Precision Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structural Load-Bearing</td>
+<td>Pelvis skeleton, Thigh/Shin linkage, Joint housing</td>
+<td>CNC aluminum, Carbon fiber layup</td>
+<td>Die casting, Forging + CNC finishing</td>
+<td>Bearing seat IT6–IT7, Geometric tolerance 0.02–0.05 mm</td>
+</tr>
+<tr>
+<td>Transmission Parts</td>
+<td>Harmonic flexspline/circular spline, Planetary gear, Planetary roller screw</td>
+<td>CNC + Grinding</td>
+<td>Forging/Powder metallurgy/MIM + Fine grinding</td>
+<td>Tooth surface IT5–IT6, Screw lead accuracy micron level</td>
+</tr>
+<tr>
+<td>Electrical Components</td>
+<td>Frameless torque motor stator/rotor, Coreless motor winding</td>
+<td>Purchased standard parts</td>
+<td>Professional motor factory stamping/winding line</td>
+<td>Lamination tolerance, Air gap uniformity</td>
+</tr>
+<tr>
+<td>Exterior Covers</td>
+<td>Shell, Guard panel, Trim part</td>
+<td>3D printing, Vacuum casting</td>
+<td>Injection molding, Thermoforming</td>
+<td>Class A surface, Fit gap 0.3–0.8 mm</td>
+</tr>
+<tr>
+<td>Wiring &amp; Connectors</td>
+<td>Power harness, Communication harness, Connector</td>
+<td>Manual wiring</td>
+<td>Semi-automatic crimping + Continuity test</td>
+<td>Crimp pull force, Contact resistance</td>
+</tr>
+<tr>
+<td>Dexterous Hand Micro Parts</td>
+<td>Micro gear, Tendon pulley, Finger linkage</td>
+<td>CNC, 3D printing</td>
+<td>MIM, Precision injection molding</td>
+<td>Module 0.2–0.5 gear precision</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1014-digital-thread-of-the-process-system-mbd-and-single-source-of-truth">10.1.4 Digital Thread of the Process System: MBD and Single Source of Truth</h3>
+<p>The traditional "2D drawing + 3D model" dual-track system is prone to inconsistencies during version iterations. <strong>Model-Based Definition (MBD)</strong> embeds geometry, kinematics, mass properties, Geometric Dimensioning and Tolerancing (GD&amp;T), and manufacturing annotations into a single digital master model, enabling design, process, and inspection to share the same authoritative data source. For products like humanoid robots with many joints and dense interfaces, the value of MBD is particularly prominent: bearing seat tolerances and coaxiality requirements on joint housings can be directly read by CMM programs, avoiding manual transcription errors; mass properties in the URDF model can also be consistent with material and process information in MBD, providing prior knowledge for system identification in Chapter 11.</p>
+<h2 id="102-cnc-precision-machining">10.2 CNC Precision Machining</h2>
+<h3 id="1021-process-principles-and-capability-limits">10.2.1 Process Principles and Capability Limits</h3>
+<p>CNC precision machining is a subtractive process that uses computer numerical control cutting to remove material from a blank to obtain high-precision structural parts, encompassing milling, turning, boring, and grinding. Its fundamental constraint arises from the deformation of the tool-workpiece system caused by cutting force <span class="arithmatex">\(F_c\)</span>: for a tool with an overhang length <span class="arithmatex">\(L\)</span>, the tip deflection is approximately</p>
+<div class="arithmatex">\[
+\delta = \frac{F_c L^3}{3EI}
+\]</div>
+<p>This determines the upper limit of machining accuracy for slender features and thin-walled parts. The joint housings of humanoid robots are often thin-walled, deep-cavity structures. During machining, wall thickness vibration (chatter) and tool deflection are the main sources of error. Engineering practice typically suppresses these through layered cutting, reduced depth of cut, dedicated vacuum chucks, or support using low-melting-point alloy filling.</p>
+<h3 id="1022-accuracy-grades-and-tolerance-cost-law">10.2.2 Accuracy Grades and Tolerance-Cost Law</h3>
+<p>Machining accuracy is characterized by tolerance grades (IT grades). Generally, tightening the tolerance by one grade causes costs to rise approximately exponentially, because tighter tolerances require more precise machine tools, lower cutting parameters, more operations, and higher scrap rates:</p>
+<div class="arithmatex">\[
+C \approx C_0 \cdot \left(\frac{T_0}{T}\right)^{\alpha}, \quad \alpha \approx 1.5 \sim 2
+\]</div>
+<p>Here, <span class="arithmatex">\(T\)</span> is the tolerance band width, and <span class="arithmatex">\(C_0\)</span> is the baseline cost. This is the economic rationale behind "tolerance relaxation" in DFM: tight tolerances should only be retained on dimensions that truly require fits, without compromising function.</p>
+<table>
+<thead>
+<tr>
+<th>Process</th>
+<th>Typically Achievable Tolerance Grade</th>
+<th>Typical Surface Roughness Ra (μm)</th>
+<th>Typical Application in Humanoid Robots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General Milling/Turning</td>
+<td>IT9–IT11</td>
+<td>1.6–6.3</td>
+<td>Brackets, covers, non-fitting structures</td>
+</tr>
+<tr>
+<td>Precision Milling/Boring</td>
+<td>IT7–IT8</td>
+<td>0.8–1.6</td>
+<td>Bearing seats in joint housings, reducer mounting surfaces</td>
+</tr>
+<tr>
+<td>Grinding</td>
+<td>IT5–IT6</td>
+<td>0.2–0.8</td>
+<td>Ball screw raceways, gear journals, flexspline mating surfaces</td>
+</tr>
+<tr>
+<td>Lapping/Honing</td>
+<td>IT4–IT5</td>
+<td>0.05–0.4</td>
+<td>Precision bearing seats, hydraulic coupling parts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1023-typical-machined-parts-for-humanoid-robots">10.2.3 Typical Machined Parts for Humanoid Robots</h3>
+<ul>
+<li><strong>Joint Housings and Pelvic Frame</strong>: Mostly 5-axis milled parts from 6061/7075 aluminum alloy (aluminum-magnesium alloy system, see Chapter 3). The coaxiality and perpendicularity of bearing seats and reducer mounting surfaces must be controlled to 0.02–0.05 mm to ensure the transmission accuracy and lifespan of the joint module.</li>
+<li><strong>Planetary Roller Screw</strong>: As a core component of linear actuators like those in Tesla Optimus, the thread raceways of the screw, rollers, and nut require precision grinding. Lead accuracy is typically at the micron level, and surfaces require hardening treatment to withstand high Hertzian contact stress. The high process threshold for this component makes it a current supply chain bottleneck (see Chapter 7).</li>
+<li><strong>Harmonic Drive Parts</strong>: The thin-walled cup of the flexspline requires extremely low wall thickness variation and roundness error. The internal teeth of the circular spline require gear shaping or fine grinding after wire-cut EDM.</li>
+</ul>
+<h3 id="1024-key-dfm-points-for-machining">10.2.4 Key DFM Points for Machining</h3>
+<p>Core rules for Design for Manufacturing (DFM) in machining scenarios include: avoiding deep cavities and narrow slots (depth-to-width ratio generally not exceeding 4:1); internal fillet radii not smaller than the tool radius; adding process stiffening ribs or symmetrical structures to thin-walled parts to relieve stress; standardizing hole diameters to reduce tool changes; and completing mating surfaces in a single setup to ensure geometric accuracy. These rules should be formalized into an enterprise's "DFM Checklist" and verified item by item during the DFM/DFA review in WBS P16.1.1.</p>
+<hr />
+<h2 id="103-injection-molding">10.3 Injection Molding</h2>
+<h3 id="1031-process-principles-and-mold-system">10.3.1 Process Principles and Mold System</h3>
+<p>Injection molding involves injecting molten plastic under high pressure into a closed mold cavity, where it cools and solidifies before the mold opens to eject the part. The process variables—melt temperature, mold temperature, injection pressure and speed, holding pressure and time, and cooling time—collectively determine the dimensional accuracy and defect propensity of the product. The mold system consists of the cavity/core, runner system, cooling channels, and ejection mechanism. The development cycle for a complex cover mold is typically 8–16 weeks, with costs ranging from hundreds of thousands to millions of RMB. This dictates that injection molding is only suitable for parts with a sufficiently large, confirmed production volume.</p>
+<h3 id="1032-cover-design-and-parting-line-design">10.3.2 Cover Design and Parting Line Design</h3>
+<p>The exterior covering of humanoid robots is the primary application of injection molding. The WBS task P5.1.3 "Exterior Covering and Parting Line Design" requires outputting the 3D model of the covering, the parting line scheme, and the maintenance opening layout. Key engineering considerations include:</p>
+<ul>
+<li><strong>Parting Line Location</strong>: Should be placed in visually insensitive areas, maintaining a safe clearance from the joint motion envelope to avoid interference and pinch points.</li>
+<li><strong>Wall Thickness Uniformity</strong>: Typical wall thickness is 2.0–3.0 mm. Abrupt changes in wall thickness should have gradual transitions to prevent sink marks and warpage.</li>
+<li><strong>Draft Angle</strong>: Generally not less than 1°–3° for cosmetic surfaces; textured surfaces require larger angles.</li>
+<li><strong>Snap-fits and Bosses</strong>: Integrate snap-fits per DFA principles to reduce the number of fasteners, but the assembly/disassembly cycle life must be verified.</li>
+</ul>
+<p>Regarding materials, common cover materials include ABS, PC/ABS alloy, or glass-fiber reinforced nylon. Heat shields near motors and batteries may consider materials with higher flame retardancy ratings.</p>
+<h3 id="1033-typical-defects-and-process-window">10.3.3 Typical Defects and Process Window</h3>
+<table>
+<thead>
+<tr>
+<th>Defect</th>
+<th>Cause</th>
+<th>Countermeasure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short Shot</td>
+<td>Premature solidification of melt front, poor venting</td>
+<td>Increase melt/mold temperature, add gates, optimize venting</td>
+</tr>
+<tr>
+<td>Flash</td>
+<td>Insufficient clamping force, worn parting line</td>
+<td>Increase clamping force, repair mold, reduce injection pressure</td>
+</tr>
+<tr>
+<td>Sink Mark</td>
+<td>Non-uniform wall thickness, insufficient holding pressure</td>
+<td>Reduce wall thickness, increase holding pressure, core out ribs</td>
+</tr>
+<tr>
+<td>Warpage</td>
+<td>Uneven cooling, orientation stress</td>
+<td>Balance cooling channels, optimize gate location, annealing</td>
+</tr>
+<tr>
+<td>Weld Line</td>
+<td>Convergence of multiple melt fronts</td>
+<td>Adjust gates, increase convergence temperature, add overflow wells</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1034-cost-model-and-volume-threshold">10.3.4 Cost Model and Volume Threshold</h3>
+<p>The unit cost of injection molding is dominated by mold amortization. Let the mold cost be <span class="arithmatex">\(C_{\text{mold}}\)</span>, its lifespan be <span class="arithmatex">\(N_{\text{life}}\)</span> cycles, and the material and machine time cost per part be <span class="arithmatex">\(C_{\text{part}}\)</span>. Then:</p>
+<div class="arithmatex">\[
+C_{\text{unit}} \approx \frac{C_{\text{mold}}}{\min(N, N_{\text{life}})} + C_{\text{part}}
+\]</div>
+<p>When the planned production volume for the entire robot is in the hundreds of units, covers are better suited for 3D printing, vacuum casting (silicone mold), or CNC prototyping. The unit cost advantage of injection molding only becomes apparent when production reaches tens of thousands of units. This represents the typical evolution path for covering processes in the humanoid robot industry across the "prototype—low volume—mass production" phases.</p>
+<hr />
+<h2 id="104-die-casting-and-metal-forming">10.4 Die Casting and Metal Forming</h2>
+<h3 id="1041-high-pressure-die-casting-principles">10.4.1 High-Pressure Die Casting Principles</h3>
+<p>High-pressure die casting (HPDC) injects molten aluminum/magnesium alloy into a steel mold at high speed and high pressure, forming complex thin-walled structural parts in a single shot. Its advantages include fast cycle times (tens of seconds per cycle), near-net-shape capability, and good dimensional consistency. Limitations include high mold investment, susceptibility to internal porosity (detrimental to subsequent heat treatment and high airtightness requirements), and limitations on minimum wall thickness. For humanoid robot joint housings and torso frames, transitioning from CNC to die casting when production volumes reach several thousand units can typically reduce unit costs by an order of magnitude.</p>
+<h3 id="1042-giga-casting-and-large-structural-parts">10.4.2 Giga Casting and Large Structural Parts</h3>
+<p>The "giga casting" concept validated by the automotive industry is penetrating the humanoid robot sector: integrating a torso frame originally assembled from dozens of sheet metal/machined parts into one or two large die castings can significantly reduce part count, assembly time, and accumulated tolerances (consistent with the trend analysis in Section 9.11.3 of Chapter 9). In the supply chain layout for Tesla Optimus, Tuopu Group, as a supplier of actuator assemblies and structural parts, and Sanhua Intelligent Controls, as a partner for mechatronic actuators, both possess large-scale die casting and precision manufacturing capabilities, illustrating the industrial logic of "automotive component processes migrating to humanoid robots."</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Giga Casting, Near-Net-Shape, Heat-Treatment-Free Alloy</p>
+<ul>
+<li><strong>Giga Casting</strong>: A process using ultra-large die casting machines to form multiple structural parts into a single large casting in one shot.</li>
+<li><strong>Near-Net-Shape</strong>: A process where the formed part requires only minimal machining to reach its final dimensions.</li>
+<li><strong>Heat-Treatment-Free Alloy</strong>: An alloy designed so that the casting meets strength requirements in the as-cast state, avoiding deformation from heat treatment, suitable for large integrated parts.</li>
+</ul>
+</div>
+<h3 id="1043-forging-powder-metallurgy-and-metal-injection-molding">10.4.3 Forging, Powder Metallurgy, and Metal Injection Molding</h3>
+<ul>
+<li><strong>Forging</strong>: Refines grain structure and densifies the material through plastic deformation, suitable for connecting rods and joint forks subjected to high fatigue loads. A typical process is "forged blank + CNC finishing."</li>
+<li><strong>Powder Metallurgy (PM)</strong>: Suitable for high-volume small gears and oil-impregnated bearings, offering high material utilization but limited impact toughness.</li>
+<li><strong>Metal Injection Molding (MIM)</strong>: Involves mixing metal powder with a binder, injection molding, then debinding and sintering. It is particularly suitable for micro-gears, tendon pulleys, and other small, complex-shaped parts in dexterous hands—parts with small modules, high volumes, and complex geometries where CNC machining is uneconomical.</li>
+</ul>
+<h3 id="1044-magnesium-alloys-and-semi-solid-forming">10.4.4 Magnesium Alloys and Semi-Solid Forming</h3>
+<p>Magnesium alloys have a density approximately two-thirds that of aluminum alloys, making them attractive for weight-sensitive limb structures (their metallurgical characteristics were discussed in Chapter 3). However, their casting and processing must address issues of flammability and corrosion. Semi-solid processing (thixocasting), which injects a semi-solid slurry, results in less gas entrapment, lower shrinkage porosity, and allows for heat treatment strengthening. It is an advanced option for high-performance magnesium/aluminum alloy structural parts, currently in the early stages of adoption in the humanoid robot field.</p>
+<h2 id="105-additive-manufacturing-3d-printing">10.5 Additive Manufacturing (3D Printing)</h2>
+<h3 id="1051-process-families-and-capability-comparison">10.5.1 Process Families and Capability Comparison</h3>
+<p>Additive Manufacturing (AM) builds parts by depositing material layer by layer. The main process families include:</p>
+<table>
+<thead>
+<tr>
+<th>Process</th>
+<th>Material</th>
+<th>Accuracy/Surface</th>
+<th>Typical Applications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDM/FFF (Fused Deposition Modeling)</td>
+<td>PLA, ABS, PA-CF</td>
+<td>Low, visible layer lines</td>
+<td>Concept models, tooling fixtures, non-standard jigs</td>
+</tr>
+<tr>
+<td>SLA/DLP (Stereolithography)</td>
+<td>Photopolymer resin</td>
+<td>High, good surface finish</td>
+<td>Appearance verification, precision prototypes</td>
+</tr>
+<tr>
+<td>SLS/MJF (Selective Laser Sintering)</td>
+<td>PA12, TPU</td>
+<td>Medium</td>
+<td>Functional prototypes, low-volume covers</td>
+</tr>
+<tr>
+<td>SLM/LPBF (Laser Powder Bed Fusion)</td>
+<td>AlSi10Mg, Ti6Al4V, 316L</td>
+<td>High, requires post-processing for mating surfaces</td>
+<td>Topology-optimized structural parts, integrated joint components</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1052-design-for-additive-manufacturing-dfam">10.5.2 Design for Additive Manufacturing (DfAM)</h3>
+<p>WBS P5.2.2 explicitly requires the output of a DfAM checklist, printed part drawings, and printing parameters. The core of DfAM is not "taking an existing part and printing it," but rather redesigning to leverage the geometric freedom of additive processes:</p>
+<ol>
+<li><strong>Topology Optimization and Lattice Infill</strong>: Replace solid material with lattice structures while meeting stiffness constraints, enabling 30%–60% weight reduction for limb linkages.</li>
+<li><strong>Part Consolidation</strong>: Integrate brackets, cable clips, and sensor mounts into a single part, directly applying the DFA principle of reducing part count.</li>
+<li><strong>Conformal Cooling Channels</strong>: Print conformal cooling channels inside joint housings, complementing the thermal management design from Chapter 9.</li>
+<li><strong>Orientation and Support Design</strong>: Build orientation determines the direction of interlayer strength and the cost of support removal; anisotropy must be explicitly modeled in strength verification.</li>
+</ol>
+<h3 id="1053-post-processing-and-properties-of-metal-printed-parts">10.5.3 Post-Processing and Properties of Metal Printed Parts</h3>
+<p>SLM aluminum/titanium alloy parts typically require Hot Isostatic Pressing (HIP) to eliminate internal porosity, stress relief annealing, CNC finishing for mating surfaces, and surface blasting/anodizing. The fatigue performance of as-printed parts is generally lower than that of forged parts. Critical load-bearing components should establish batch traceability through mechanical testing of witness coupons and test bars from the same build.</p>
+<h3 id="1054-positioning-in-the-prototype-low-volume-mass-production-spectrum">10.5.4 Positioning in the "Prototype – Low Volume – Mass Production" Spectrum</h3>
+<p>The appropriate role for additive manufacturing in humanoid robots is: rapid iteration during the R&amp;D phase (1–7 day delivery), complex and custom parts during low-volume production, and tooling, fixtures, and spare parts on the mass production line. When production volumes exceed several hundred to thousands of units, most parts, except for those geometrically impossible to mold, should transition to traditional tooling processes.</p>
+<hr />
+<h2 id="106-dfm-dfa-and-cost-engineering">10.6 DFM, DFA, and Cost Engineering</h2>
+<h3 id="1061-design-for-manufacturing-dfm-methodology">10.6.1 Design for Manufacturing (DFM) Methodology</h3>
+<p><strong>Design for Manufacturing (DFM)</strong> is an engineering design method that makes parts and assemblies easy, repeatable, and economical to manufacture at scale. Its practical form for humanoid robots is a set of process-specific checklists (one each for machining, sheet metal, injection molding, die casting, additive manufacturing, and PCBA), which are reviewed item by item during detailed design reviews, resulting in Engineering Change Requests (ECRs). The primary economic levers of DFM are: loosening tolerances, standardizing materials and blank specifications, combining operations, and avoiding features that require special equipment.</p>
+<h3 id="1062-design-for-assembly-dfa-and-part-count-reduction">10.6.2 Design for Assembly (DFA) and Part Count Reduction</h3>
+<p><strong>Design for Assembly (DFA)</strong> reduces production costs and improves reliability by decreasing the number of parts, simplifying joining methods, and shortening assembly time. Its classic criterion (Boothroyd-Dewhurst method) asks three questions for each part: Must this part move relative to others? Must it be made of a different material? Must it be separate for maintenance or assembly? If the answer to all three is "no," the part should be considered for consolidation. Humanoid robot joint modules are high-value targets for DFA: integrating the motor, reducer, encoder, and driver into a single joint (e.g., integrated joint modules from manufacturers like CubeMars, ZeroErr) is essentially DFA at the supply chain level—the OEM transfers assembly complexity to the specialized module manufacturer in exchange for improved overall assembly cycle time and consistency.</p>
+<p>The efficiency of DFA can be measured using assembly efficiency:</p>
+<div class="arithmatex">\[
+\eta_{\text{DFA}} = \frac{N_{\min} \cdot t_{\text{basic}}}{t_{\text{total}}}
+\]</div>
+<p>where <span class="arithmatex">\(N_{\min}\)</span> is the theoretical minimum number of parts, <span class="arithmatex">\(t_{\text{basic}}\)</span> is the basic assembly time per part, and <span class="arithmatex">\(t_{\text{total}}\)</span> is the actual total assembly time. This metric can be estimated during the P5.3.2 "Assembly Sequence and Fixture Planning" phase and verified during the assembly line planning in Chapter 11.</p>
+<h3 id="1063-dfmdfa-review-and-engineering-change-loop">10.6.3 DFM/DFA Review and Engineering Change Loop</h3>
+<p>WBS P16.1.1 "DFM/DFA Review" requires the output of a DFM/DFA report, an engineering change list, and a cost impact assessment. The review should involve design, process, quality, procurement, and suppliers. Typical outputs include:</p>
+<table>
+<thead>
+<tr>
+<th>Review Finding</th>
+<th>Change Type</th>
+<th>Cost/Cycle Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joint housing bearing tolerance too tight (IT5)</td>
+<td>Relax to functional requirement IT6</td>
+<td>Reduced machining cost, lower scrap rate</td>
+</tr>
+<tr>
+<td>Too many screw bosses on covers</td>
+<td>Change to snap-fits + fewer screws</td>
+<td>Reduced mold complexity, lower assembly time</td>
+</tr>
+<tr>
+<td>Change linkage from 3-piece welded assembly to single die-cast part</td>
+<td>Process route change</td>
+<td>Increased mold investment, significantly lower unit cost</td>
+</tr>
+<tr>
+<td>No cable routing channel across joints</td>
+<td>Add structural channel + snap-fits</td>
+<td>Improved reliability, assembly error-proofing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1064-bom-cost-engineering-and-vave">10.6.4 BOM Cost Engineering and VA/VE</h3>
+<p><strong>BOM Cost Engineering</strong> systematically analyzes and optimizes the Bill of Materials cost by balancing component selection, supplier negotiation, yield rates, and design trade-offs. <strong>Value Analysis / Value Engineering (VA/VE)</strong> aims to reduce costs while maintaining function, or enhance function within an acceptable cost. In P16.3.2 "Cost Accounting and Cost Reduction," these are combined with should-cost modeling (see Chapter 7) to form a closed loop: "Target Cost → Design Cost Reduction → Procurement Cost Reduction → Yield Cost Reduction." The primary cost-reduction battlegrounds for current-generation humanoid robots are typically actuators (which account for the largest share of the total BOM), reducers, and computing platforms—these are precisely the areas where DFM/DFA and VA/VE should be prioritized.</p>
+<h2 id="107-tolerance-chains-gdt-and-measurement">10.7 Tolerance Chains, GD&amp;T, and Measurement</h2>
+<h3 id="1071-tolerance-chain-stack-up-worst-case-and-statistical-methods">10.7.1 Tolerance Chain Stack-Up: Worst-Case and Statistical Methods</h3>
+<p><strong>Tolerance chain/stack-up</strong> analysis answers the question: when <span class="arithmatex">\(n\)</span> parts are assembled in series, what is the tolerance of the closed loop (e.g., joint clearance, end-effector position error)? The worst-case method provides an absolute guarantee:</p>
+<div class="arithmatex">\[
+T_0 = \sum_{i=1}^{n} T_i
+\]</div>
+<p>The statistical method (RSS, root sum square) provides a more economical estimate under the assumption of independent dimensions and normal distribution:</p>
+<div class="arithmatex">\[
+T_0 = \sqrt{\sum_{i=1}^{n} T_i^2}
+\]</div>
+<p>The worst-case method is conservative but costly; the statistical method allows looser individual part tolerances at the cost of a small probability of out-of-tolerance conditions, requiring process capability (see Chapter 11 Cpk) to ensure the assumptions hold. Engineering convention is: use the worst-case method for safety-related and kinematic-critical chains, and the statistical method for general assembly chains.</p>
+<h3 id="1072-gdt-and-model-based-definition">10.7.2 GD&amp;T and Model-Based Definition</h3>
+<p>Geometric Dimensioning and Tolerancing (GD&amp;T) uses symbols such as position, concentricity, perpendicularity, and profile to precisely convey functional requirements to manufacturing and inspection. Its annotation system (ASME Y14.5 / ISO GPS series) has become the de facto standard for precision electromechanical products. In conjunction with MBD from Section 10.1.4, GD&amp;T annotations are directly attached to features of the 3D model, and CMM inspection programs can be semi-automatically generated, achieving "design-manufacturing-inspection" homology.</p>
+<h3 id="1073-key-tolerance-chain-case-joint-concentricity-and-leg-kinematic-accuracy">10.7.3 Key Tolerance Chain Case: Joint Concentricity and Leg Kinematic Accuracy</h3>
+<p>The end-effector positioning error of a humanoid robot is amplified stepwise by "link manufacturing error + joint assembly error + encoder error." Taking the leg as an example, if the thigh and shank are each approximately 400 mm long, an angular deviation caused by a single bearing seat concentricity error of 0.02 mm is approximately <span class="arithmatex">\(0.02/400 \approx 5\times10^{-5}\)</span> rad. After amplification by two links, the foot-end position deviation remains on the order of 0.1 mm; what truly dominates foot-end accuracy is often the reducer backlash (typical harmonic drive backlash is less than 1 arcmin, but increases with long-term wear) and thermal expansion of the links. Below is a Python example for statistical tolerance chain stack-up:</p>
+<pre class="highlight"><code class="language-python">import math
+
+# Tolerance chain for a joint module: tolerances for each link (mm, half-width of symmetric tolerance band)
+chain = {
+    "Bearing seat machining tolerance": 0.010,
+    "Bearing clearance equivalent": 0.008,
+    "Reducer mounting surface perpendicularity equivalent": 0.012,
+    "Housing fit clearance": 0.015,
+}
+
+T_worst = sum(chain.values())                      # Worst-case method
+T_rss = math.sqrt(sum(t**2 for t in chain.values()))  # Statistical method (RSS)
+
+for name, t in chain.items():
+    print(f"{name}: ±{t:.3f} mm")
+print(f"Worst-case closed loop tolerance: ±{T_worst:.3f} mm")
+print(f"Statistical closed loop tolerance: ±{T_rss:.3f} mm")</code></pre>
+<p>The output shows that the closed loop tolerance from the statistical method is approximately half that from the worst-case method. This difference represents "tolerance relaxation margin," which can be directly translated into reduced per-part machining costs.</p>
+<h3 id="1074-measurement-systems-cmm-optical-scanning-and-on-machine-measurement">10.7.4 Measurement Systems: CMM, Optical Scanning, and On-Machine Measurement</h3>
+<p>Measurement capability must match tolerance requirements: generally, the uncertainty of the measurement system should be better than 1/10 of the tolerance being measured (the 10:1 gage principle). Common methods for humanoid robot structural parts include coordinate measuring machines (CMM) for full dimensional measurement (used for FAI), blue light/laser scanning comparison (for cover panel profile), on-machine probes (for closed-loop machining processes), and dedicated backlash/transmission error test stands for joint modules. The measurement system itself must be validated through GR&amp;R (Gage Repeatability and Reproducibility) analysis, typically requiring %GR&amp;R to be less than 10% (for critical characteristics) or 30% (for general characteristics).</p>
+<hr />
+<h2 id="108-manufacturing-processes-and-supplier-ecosystem-for-key-components">10.8 Manufacturing Processes and Supplier Ecosystem for Key Components</h2>
+<h3 id="1081-reducers-precision-manufacturing-under-flexspline-deformation">10.8.1 Reducers: Precision Manufacturing Under Flexspline Deformation</h3>
+<p>Harmonic reducers rely on the elastic deformation of the flexspline to transmit motion, with performance determined by tooth profile accuracy, flexspline fatigue life, and backlash. The flexspline blank undergoes forging, precision turning, gear shaping/hobbing, and heat treatment, with tooth surface accuracy requirements of IT5–IT6 grade. This is the process barrier that has allowed <strong>Harmonic Drive Systems</strong> to maintain a long-term dominant position in the high-end market, and it is also the area where Chinese manufacturers like <strong>Leaderdrive</strong> have been continuously making breakthroughs, increasing their share in the humanoid robot supply chain. RV reducers (cycloidal pin wheel planetary transmission), represented by <strong>Nabtesco</strong>, also have high barriers in cycloidal wheel grinding and crankshaft phase accuracy; <strong>Wittenstein</strong> (Germany) and <strong>Bonfiglioli</strong> (Italy) have deep expertise in precision planetary reducers.</p>
+<h3 id="1082-motors-frameless-torque-motors-and-hollow-cup-motors">10.8.2 Motors: Frameless Torque Motors and Hollow Cup Motors</h3>
+<p><strong>Frameless torque motors</strong> embed the stator and rotor directly into the joint structure. Their manufacturing core involves precision stamping and lamination of silicon steel sheets, high slot-fill factor winding, and magnet (Nd-Fe-B, see Chapter 3) bonding processes. <strong>Kollmorgen</strong> is a traditional leader in this category, while Chinese automation companies like <strong>Inovance Technology</strong> are rapidly entering the field. <strong>Hollow cup motors</strong> for dexterous hands require specialized winding equipment for their coreless cup-shaped windings; <strong>Mingzhi Appliance</strong> and <strong>Maxon Group</strong> (Switzerland) are representative suppliers in this area. The consistency indicators of mass-produced motors (back EMF constant, cogging torque, phase resistance dispersion) directly determine the pass rate of the joint module EOL test in Chapter 11.</p>
+<h3 id="1083-lead-screws-and-actuator-assemblies">10.8.3 Lead Screws and Actuator Assemblies</h3>
+<p>The precision grinding of the thread raceways of planetary roller screws and the sorting of roller consistency are the core of their manufacturing process, with current global production capacity being limited. Tier-1 suppliers such as <strong>Tuopu Group</strong> and <strong>Sanhua Intelligent Controls</strong> are planning the integrated manufacturing of linear actuator assemblies (motor + lead screw + sensor + housing), combining screw grinding, assembly, and factory testing into a turnkey product. For the OEM, this is analogous to the integrated joint module—a manufacturing strategy of "outsourcing assemblies to simplify assembly and clarify responsibility interfaces."</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Key Component Manufacturing"] --&gt; B["Reducer&lt;br/&gt;Harmonic Drive / Leaderdrive / Nabtesco"]
+    A --&gt; C["Motor&lt;br/&gt;Kollmorgen / Inovance Technology / Maxon / Mingzhi Appliance"]
+    A --&gt; D["Lead Screw &amp; Assembly&lt;br/&gt;Tuopu Group / Sanhua Intelligent Controls"]
+    A --&gt; E["Integrated Joint Module&lt;br/&gt;CubeMars / ZeroErr / Nidec"]
+    B --&gt; F["Process Barriers: Precision Grinding/Heat Treatment/Sorting"]
+    C --&gt; F
+    D --&gt; F
+    E --&gt; G["OEM: Outsource Assembly&lt;br/&gt;Simplify Assembly &amp; Responsibility Interface"]
+    F --&gt; G</code></pre>
+<hr />
+<h2 id="109-molds-tooling-and-first-article-inspection">10.9 Molds, Tooling, and First Article Inspection</h2>
+<h3 id="1091-mold-and-tooling-design">10.9.1 Mold and Tooling Design</h3>
+<p>WBS item P16.1.2 "Mold and Tooling Design" requires the output of mold/tooling drawings, an FAI plan, and acceptance criteria. The hierarchy of the tooling system is: forming molds (injection molds, die-casting molds, forging dies) → machining fixtures (CNC tooling) → assembly fixtures (see Chapter 11) → inspection gages (dedicated go/no-go gages, profile gages). Tooling development is a critical path for production preparation: the design and manufacturing cycle for a die-casting mold is typically 12–20 weeks. Process feasibility must be confirmed before design freeze; otherwise, design changes directly translate into mold modification costs and schedule delays.</p>
+<h3 id="1092-first-article-inspection-fai-and-ppap-integration">10.9.2 First Article Inspection (FAI) and PPAP Integration</h3>
+<p>First Article Inspection performs full dimensional measurement and material verification on the first part produced from the tooling, confirming that "the mold is correct." After FAI passes, small-batch validation begins, ultimately feeding into the PPAP evidence package (design records, engineering change documents, process flow diagram, PFMEA, control plan, MSA, full dimensional report, initial process study). Among these, <strong>PFMEA (Process Failure Mode and Effects Analysis)</strong> is the application of the FMEA method to manufacturing processes: for each operation, it evaluates the severity (S), occurrence (O), and detection (D) of potential failure modes, ranking them by the Risk Priority Number <span class="arithmatex">\(RPN = S \times O \times D\)</span> to drive improvements. <strong>Supplier qualification</strong>—auditing component manufacturers for quality, capacity, traceability, and compliance before mass production—ensures that the external supply chain is also integrated into this system, corresponding to WBS item P16.2.1 "Supplier Selection and Audit."</p>
+<h2 id="1010-chapter-summary">10.10 Chapter Summary</h2>
+<p>This chapter systematically elaborates on the manufacturing process system for humanoid robots. The main conclusions are as follows:</p>
+<ol>
+<li>
+<p><strong>The process system is the bridge between design and mass production</strong>: In the WBS, manufacturing tasks run through P5 (Body Structure Engineering), P8 (Structural FEA), and P16 (Mass Production Preparation); MBD provides a single digital data source, connecting design, manufacturing, and inspection.</p>
+</li>
+<li>
+<p><strong>Each of the four major processes has its own economic range</strong>: CNC machining is suitable for prototypes and precision transmission parts, with accuracy reaching IT5, but costs rise approximately exponentially as tolerances tighten; injection molding is suitable for mass-produced (tens of thousands of units) cover parts; die casting and mega-casting are suitable for structural parts in quantities of several thousand or more; additive manufacturing dominates rapid iteration, complex parts, and tooling. The break-even batch size is the core criterion for process switching.</p>
+</li>
+<li>
+<p><strong>DFM/DFA are upfront levers for cost and quality</strong>: Tolerance relaxation, part count reduction, and assembly efficiency measurement should be reviewed before design freeze; BOM cost engineering and VA/VE solidify cost reduction as a process.</p>
+</li>
+<li>
+<p><strong>The tolerance chain determines the upper limit of overall machine accuracy</strong>: The worst-case method ensures safety, while the statistical method releases cost potential; joint coaxiality, reducer backlash, and thermal expansion are the dominant contributors to foot-end accuracy; the measurement system must satisfy the 10:1 principle and be validated by GR&amp;R.</p>
+</li>
+<li>
+<p><strong>Process barriers for key components shape the supply chain landscape</strong>: Precision processes such as harmonic drive flexsplines, planetary roller screw raceways, and coreless windings are long-term barriers for manufacturers like Harmonic Drive, Nabtesco, and Maxon, and are also breakthrough directions for Chinese suppliers like Leaderdrive, Inovance Technology, Moons' Industries, Tuopu Group, and Sanhua Intelligent Controls.</p>
+</li>
+</ol>
+<hr />
+<h2 id="10101-chapter-symbol-table">10.10.1 Chapter Symbol Table</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Unit</th>
+<th>First Appearance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(C_{\text{unit}}\)</span></td>
+<td>Unit cost</td>
+<td>RMB/piece</td>
+<td>10.1.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C_{\text{tooling}}, C_{\text{mold}}\)</span></td>
+<td>Tooling/Mold cost</td>
+<td>RMB</td>
+<td>10.1.2, 10.3.4</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N, N^*, N_{\text{life}}\)</span></td>
+<td>Production quantity, Break-even batch, Mold life</td>
+<td>pieces</td>
+<td>10.1.2, 10.3.4</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(F_c, \delta, L\)</span></td>
+<td>Cutting force, Tool deflection, Overhang length</td>
+<td>N, mm, mm</td>
+<td>10.2.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T, T_0, T_i\)</span></td>
+<td>Tolerance zone, Closing link tolerance, Component link tolerance</td>
+<td>mm</td>
+<td>10.2.2, 10.7.1</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta_{\text{DFA}}\)</span></td>
+<td>Assembly efficiency</td>
+<td>Dimensionless</td>
+<td>10.6.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(N_{\min}, t_{\text{basic}}, t_{\text{total}}\)</span></td>
+<td>Theoretical minimum number of parts, Basic assembly time, Total assembly time</td>
+<td>pieces, s, s</td>
+<td>10.6.2</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(S, O, D, RPN\)</span></td>
+<td>Severity, Occurrence, Detection, Risk Priority Number</td>
+<td>Dimensionless</td>
+<td>10.9.2</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="1011-chapter-knowledge-graph-anchors">10.11 Chapter Knowledge Graph Anchors</h2>
+<h3 id="10111-core-entities-and-relationship-table">10.11.1 Core Entities and Relationship Table</h3>
+<table>
+<thead>
+<tr>
+<th>Entity Type</th>
+<th>Representative Entity (KG Entry)</th>
+<th>Attribute Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manufacturing Process</td>
+<td>CNC Precision Machining (ent_process_cnc_machining), Injection Molding, Die Casting, Additive Manufacturing</td>
+<td>Accuracy, Batch range, Cost structure</td>
+</tr>
+<tr>
+<td>Design Method</td>
+<td>Design for Manufacturing (DFM), Design for Assembly (DFA), Model-Based Definition (MBD)</td>
+<td>Checklist, Review milestone</td>
+</tr>
+<tr>
+<td>WBS Process</td>
+<td>P5 Body Structure Engineering &amp; Prototyping, P16 Small Batch Trial Production &amp; Mass Production Preparation</td>
+<td>Deliverables, Acceptance criteria</td>
+</tr>
+<tr>
+<td>Component</td>
+<td>Planetary Roller Screw, Harmonic Drive, Frameless Torque Motor, Coreless Motor</td>
+<td>Accuracy grade, Process barrier</td>
+</tr>
+<tr>
+<td>Supplier</td>
+<td>Harmonic Drive, Leaderdrive, Nabtesco, Kollmorgen, Inovance Technology, Maxon, Moons' Industries, Tuopu Group, Sanhua Intelligent Controls, Wittenstein, Bonfiglioli, CubeMars, ZeroErr</td>
+<td>Product category, Process capability</td>
+</tr>
+<tr>
+<td>Quality Method</td>
+<td>FAI, PPAP, PFMEA, Supplier Qualification</td>
+<td>Evidence package, Audit dimension</td>
+</tr>
+</tbody>
+</table>
+<p>Relationship Example:</p>
+<table>
+<thead>
+<tr>
+<th>Head Entity</th>
+<th>Relationship</th>
+<th>Tail Entity</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joint Housing</td>
+<td>Uses</td>
+<td>Die Casting / CNC</td>
+<td>Process selected based on batch size</td>
+</tr>
+<tr>
+<td>Dexterous Hand Micro Gear</td>
+<td>Uses</td>
+<td>MIM</td>
+<td>Economic process for small module complex parts</td>
+</tr>
+<tr>
+<td>DFM/DFA Review</td>
+<td>Outputs</td>
+<td>Engineering Change List</td>
+<td>P16.1.1 Deliverable</td>
+</tr>
+<tr>
+<td>Planetary Roller Screw</td>
+<td>Depends on</td>
+<td>Precision Grinding</td>
+<td>Raceway accuracy in microns</td>
+</tr>
+<tr>
+<td>MBD</td>
+<td>Connects</td>
+<td>Design—Manufacturing—Inspection</td>
+<td>Single digital master model</td>
+</tr>
+<tr>
+<td>PFMEA</td>
+<td>Drives</td>
+<td>Control Plan</td>
+<td>RPN ranking for improvement</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10112-cross-layer-connection-example-from-material-to-production-ready">10.11.2 Cross-Layer Connection Example: From Material to Production Ready</h3>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Chapter 3&lt;br/&gt;Al-Mg Alloy / Nd-Fe-B"] --&gt; B["Chapter 10&lt;br/&gt;Die Casting / CNC / Grinding / Additive"]
+    B --&gt; C["DFM/DFA + Tolerance Chain"]
+    C --&gt; D["Supplier Qualification + FAI"]
+    D --&gt; E["Chapter 11&lt;br/&gt;Assembly / Integration / EOL Test"]
+    E --&gt; F["Chapter 16 WBS&lt;br/&gt;PPAP Production Ready"]</code></pre>
+<h3 id="10113-five-key-questions-for-this-chapter">10.11.3 Five Key Questions for This Chapter</h3>
+<ol>
+<li>
+<p><strong>Why use CNC for prototypes and switch to die casting for mass production?</strong> Mold-based processes spread fixed costs over large volumes, reducing unit cost with <span class="arithmatex">\(1/N\)</span>; below the break-even point, tool-less CNC is more economical and supports rapid design iterations.</p>
+</li>
+<li>
+<p><strong>Why are tighter tolerances not always better?</strong> Machining costs rise approximately exponentially as tolerances tighten; the statistical method for tolerance chains shows that most assembly chains can achieve the same closing link requirement with looser individual part tolerances, making excess precision pure waste.</p>
+</li>
+<li>
+<p><strong>Why can integrated joint modules simultaneously reduce cost and improve quality?</strong> It is DFA at the supply chain level: part count and assembly steps are consolidated within the module manufacturer, providing the robot OEM with shorter assembly cycle times, clearer responsibility interfaces, and more consistent incoming material quality.</p>
+</li>
+<li>
+<p><strong>What is the correct positioning of additive manufacturing in humanoid robot mass production?</strong> Rapid iteration, geometrically complex parts, small batch custom parts, and production line tooling; except for structures that cannot be molded, high-volume parts should revert to mold-based processes.</p>
+</li>
+<li>
+<p><strong>What problems do FAI and PPAP solve?</strong> FAI verifies "the tooling produced the first piece correctly," while PPAP verifies "the process can consistently produce every piece correctly." Together, they close manufacturing risks before mass production begins.</p>
+</li>
+</ol>
+<h2 id="references-and-data-sources">References and Data Sources</h2>
+<ol>
+<li>Kalpakjian S, Schmid S R. <em>Manufacturing Engineering and Technology</em> (8th ed.). Pearson, 2020. (Manufacturing Process Textbook)</li>
+<li>Groover M P. <em>Fundamentals of Modern Manufacturing: Materials, Processes, and Systems</em> (7th ed.). Wiley, 2018. (Manufacturing Systems)</li>
+<li>Boothroyd G, Dewhurst P, Knight W A. <em>Product Design for Manufacture and Assembly</em> (3rd ed.). CRC Press, 2010. (DFMA Classic)</li>
+<li>Shigley J E, Mischke C R, Budynas R G. <em>Mechanical Engineering Design</em> (7th ed.). McGraw-Hill, 2004. (Mechanical Design)</li>
+<li>ASME Y14.5-2018. <em>Dimensioning and Tolerancing</em>. American Society of Mechanical Engineers, 2018. (GD&amp;T Standard)</li>
+<li>ISO 2768-1:1989. <em>General tolerances</em>. International Organization for Standardization, 1989. (General Tolerances)</li>
+<li>ISO 286-1:2010. <em>Geometrical product specifications (GPS) — ISO code system for tolerances on linear sizes</em>. ISO, 2010. (IT Tolerance Grades)</li>
+<li>AIAG. <em>Production Part Approval Process (PPAP)</em> (4th ed.). Automotive Industry Action Group, 2006. (PPAP Manual)</li>
+<li>AIAG. <em>Potential Failure Mode and Effects Analysis (FMEA)</em> (4th ed.). AIAG, 2008. (FMEA Manual)</li>
+<li>AIAG. <em>Statistical Process Control (SPC)</em> (2nd ed.). AIAG, 2005. (SPC Manual)</li>
+<li>IATF 16949:2016. <em>Quality management system requirements for automotive production and relevant service parts organizations</em>. IATF, 2016. (Automotive Quality System)</li>
+<li>ISO/ASTM 52900:2021. <em>Additive manufacturing — General principles — Fundamentals and vocabulary</em>. ISO, 2021. (Additive Manufacturing Terminology)</li>
+<li>Gibson I, Rosen D, Stucker B. <em>Additive Manufacturing Technologies</em> (3rd ed.). Springer, 2021. (Additive Manufacturing)</li>
+<li>Ashby M F. <em>Materials Selection in Mechanical Design</em> (4th ed.). Butterworth-Heinemann, 2011. (Material and Process Selection)</li>
+<li>Harmonic Drive Systems Inc. <em>Corporate and product information</em>. https://www.hds.co.jp/. (Harmonic Drive Public Information)</li>
+<li>Nabtesco Corporation. <em>Precision reduction gears</em>. https://www.nabtesco.com/. (RV Reducer Public Information)</li>
+<li>Leaderdrive (Leaderdrive). <em>Company public information</em>. https://www.leaderdrive.com/. (Harmonic Drive Public Information)</li>
+<li>Kollmorgen. <em>Frameless motors and servo drives</em>. https://www.kollmorgen.com/. (Frameless Motor Public Information)</li>
+<li>Inovance Technology (Inovance Technology). <em>Company public information</em>. https://www.inovance.com/. (Servo and Motor Public Information)</li>
+<li>Maxon Group. <em>Precision drive systems</em>. https://www.maxongroup.com/. (Precision Motor Public Information)</li>
+<li>Tuopu Group (Tuopu Group). <em>Company public information</em>. (Actuator Assembly and Structural Component Public Information)</li>
+<li>Sanhua Intelligent Controls (Sanhua Intelligent Controls). <em>Company public information</em>. https://www.sanhuagroup.com/. (Electromechanical Actuator Public Information)</li>
+<li>Tesla. <em>AI Day 2022: Optimus Robot</em>. 2022. https://www.tesla.com/AI. (Optimus Actuator and Manufacturing Public Introduction)</li>
+<li>Wittenstein SE. <em>Precision gearboxes and servo systems</em>. https://www.wittenstein.de/. (Precision Reducer Public Information)</li>
+<li>Mingzhi Appliance (Mingzhi Appliance). <em>Company public information</em>. (Coreless Motor Public Information)</li>
+</ol>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-09/">← Previous<span>Chapter 9: Key Subsystem Design</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-11/">Next →<span>Chapter 11 Assembly, Integration, and Testing</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-10-manufacturing-process-system">Chapter 10: Manufacturing Process System</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#101-overview-of-the-manufacturing-process-system">10.1 Overview of the Manufacturing Process System</a><ul>
+<li><a href="#1011-from-subsystem-design-to-mass-production-the-position-of-the-process-system">10.1.1 From Subsystem Design to Mass Production: The Position of the Process System</a></li>
+<li><a href="#1012-process-routing-decision-framework-volume-precision-cost-and-lead-time">10.1.2 Process Routing Decision Framework: Volume, Precision, Cost, and Lead Time</a></li>
+<li><a href="#1013-component-to-process-mapping-table">10.1.3 Component-to-Process Mapping Table</a></li>
+<li><a href="#1014-digital-thread-of-the-process-system-mbd-and-single-source-of-truth">10.1.4 Digital Thread of the Process System: MBD and Single Source of Truth</a></li>
+</ul>
+</li>
+<li><a href="#102-cnc-precision-machining">10.2 CNC Precision Machining</a><ul>
+<li><a href="#1021-process-principles-and-capability-limits">10.2.1 Process Principles and Capability Limits</a></li>
+<li><a href="#1022-accuracy-grades-and-tolerance-cost-law">10.2.2 Accuracy Grades and Tolerance-Cost Law</a></li>
+<li><a href="#1023-typical-machined-parts-for-humanoid-robots">10.2.3 Typical Machined Parts for Humanoid Robots</a></li>
+<li><a href="#1024-key-dfm-points-for-machining">10.2.4 Key DFM Points for Machining</a></li>
+</ul>
+</li>
+<li><a href="#103-injection-molding">10.3 Injection Molding</a><ul>
+<li><a href="#1031-process-principles-and-mold-system">10.3.1 Process Principles and Mold System</a></li>
+<li><a href="#1032-cover-design-and-parting-line-design">10.3.2 Cover Design and Parting Line Design</a></li>
+<li><a href="#1033-typical-defects-and-process-window">10.3.3 Typical Defects and Process Window</a></li>
+<li><a href="#1034-cost-model-and-volume-threshold">10.3.4 Cost Model and Volume Threshold</a></li>
+</ul>
+</li>
+<li><a href="#104-die-casting-and-metal-forming">10.4 Die Casting and Metal Forming</a><ul>
+<li><a href="#1041-high-pressure-die-casting-principles">10.4.1 High-Pressure Die Casting Principles</a></li>
+<li><a href="#1042-giga-casting-and-large-structural-parts">10.4.2 Giga Casting and Large Structural Parts</a></li>
+<li><a href="#1043-forging-powder-metallurgy-and-metal-injection-molding">10.4.3 Forging, Powder Metallurgy, and Metal Injection Molding</a></li>
+<li><a href="#1044-magnesium-alloys-and-semi-solid-forming">10.4.4 Magnesium Alloys and Semi-Solid Forming</a></li>
+</ul>
+</li>
+<li><a href="#105-additive-manufacturing-3d-printing">10.5 Additive Manufacturing (3D Printing)</a><ul>
+<li><a href="#1051-process-families-and-capability-comparison">10.5.1 Process Families and Capability Comparison</a></li>
+<li><a href="#1052-design-for-additive-manufacturing-dfam">10.5.2 Design for Additive Manufacturing (DfAM)</a></li>
+<li><a href="#1053-post-processing-and-properties-of-metal-printed-parts">10.5.3 Post-Processing and Properties of Metal Printed Parts</a></li>
+<li><a href="#1054-positioning-in-the-prototype-low-volume-mass-production-spectrum">10.5.4 Positioning in the "Prototype – Low Volume – Mass Production" Spectrum</a></li>
+</ul>
+</li>
+<li><a href="#106-dfm-dfa-and-cost-engineering">10.6 DFM, DFA, and Cost Engineering</a><ul>
+<li><a href="#1061-design-for-manufacturing-dfm-methodology">10.6.1 Design for Manufacturing (DFM) Methodology</a></li>
+<li><a href="#1062-design-for-assembly-dfa-and-part-count-reduction">10.6.2 Design for Assembly (DFA) and Part Count Reduction</a></li>
+<li><a href="#1063-dfmdfa-review-and-engineering-change-loop">10.6.3 DFM/DFA Review and Engineering Change Loop</a></li>
+<li><a href="#1064-bom-cost-engineering-and-vave">10.6.4 BOM Cost Engineering and VA/VE</a></li>
+</ul>
+</li>
+<li><a href="#107-tolerance-chains-gdt-and-measurement">10.7 Tolerance Chains, GD&amp;T, and Measurement</a><ul>
+<li><a href="#1071-tolerance-chain-stack-up-worst-case-and-statistical-methods">10.7.1 Tolerance Chain Stack-Up: Worst-Case and Statistical Methods</a></li>
+<li><a href="#1072-gdt-and-model-based-definition">10.7.2 GD&amp;T and Model-Based Definition</a></li>
+<li><a href="#1073-key-tolerance-chain-case-joint-concentricity-and-leg-kinematic-accuracy">10.7.3 Key Tolerance Chain Case: Joint Concentricity and Leg Kinematic Accuracy</a></li>
+<li><a href="#1074-measurement-systems-cmm-optical-scanning-and-on-machine-measurement">10.7.4 Measurement Systems: CMM, Optical Scanning, and On-Machine Measurement</a></li>
+</ul>
+</li>
+<li><a href="#108-manufacturing-processes-and-supplier-ecosystem-for-key-components">10.8 Manufacturing Processes and Supplier Ecosystem for Key Components</a><ul>
+<li><a href="#1081-reducers-precision-manufacturing-under-flexspline-deformation">10.8.1 Reducers: Precision Manufacturing Under Flexspline Deformation</a></li>
+<li><a href="#1082-motors-frameless-torque-motors-and-hollow-cup-motors">10.8.2 Motors: Frameless Torque Motors and Hollow Cup Motors</a></li>
+<li><a href="#1083-lead-screws-and-actuator-assemblies">10.8.3 Lead Screws and Actuator Assemblies</a></li>
+</ul>
+</li>
+<li><a href="#109-molds-tooling-and-first-article-inspection">10.9 Molds, Tooling, and First Article Inspection</a><ul>
+<li><a href="#1091-mold-and-tooling-design">10.9.1 Mold and Tooling Design</a></li>
+<li><a href="#1092-first-article-inspection-fai-and-ppap-integration">10.9.2 First Article Inspection (FAI) and PPAP Integration</a></li>
+</ul>
+</li>
+<li><a href="#1010-chapter-summary">10.10 Chapter Summary</a></li>
+<li><a href="#10101-chapter-symbol-table">10.10.1 Chapter Symbol Table</a></li>
+<li><a href="#1011-chapter-knowledge-graph-anchors">10.11 Chapter Knowledge Graph Anchors</a><ul>
+<li><a href="#10111-core-entities-and-relationship-table">10.11.1 Core Entities and Relationship Table</a></li>
+<li><a href="#10112-cross-layer-connection-example-from-material-to-production-ready">10.11.2 Cross-Layer Connection Example: From Material to Production Ready</a></li>
+<li><a href="#10113-five-key-questions-for-this-chapter">10.11.3 Five Key Questions for This Chapter</a></li>
+</ul>
+</li>
+<li><a href="#references-and-data-sources">References and Data Sources</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

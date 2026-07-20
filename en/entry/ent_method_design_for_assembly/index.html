@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Design for Assembly (DFA) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Design for Assembly (DFA)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Design for Assembly (DFA)</h1>
+      <p class="entry-name-en">Design for Assembly (DFA)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Manufacturing Processes</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-08.md#8.6.1 DFM、DFA 与 DFS by scripts/backfill_nonpaper_entries.py. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A design methodology that reduces part count, simplifies joining, and shortens assembly time to lower production cost and improve reliability.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>A design approach that reduces the number of parts, simplifies connection methods, and shortens assembly time, thereby lowering production costs and improving reliability.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-design-for-assembly-dfa">Definition and Positioning of Design for Assembly (DFA)</h3>
+<p>Design for Assembly (DFA) belongs to the <strong>method</strong> type. Its domain includes: manufacturing processes. Value chain level: upstream. A design approach that reduces the number of parts, simplifies connection methods, and shortens assembly time, thereby lowering production costs and improving reliability. Its English name is <em>Design for Assembly (DFA)</em>. Its Korean name is <em>조립 용이성 설계(DFA)</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-design-for-assembly-dfa">Mathematical and Theoretical Foundations of Design for Assembly (DFA)</h3>
+<p>Design for Assembly (DFA) is built upon relevant mathematical theories and physical laws. Understanding its assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and guarantees of convergence or stability.
+In humanoid robots—a high-dimensional, underactuated, and strongly coupled system—Design for Assembly (DFA) typically requires balancing real-time performance, precision, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</h3>
+<p>When implementing Design for Assembly (DFA) in practice, it is necessary to define initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Appropriate selection of numerical methods, linear algebra solvers, and parallel computing strategies can significantly enhance computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable algorithm operation on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>Design for Assembly (DFA) can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptability remain key issues to address in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>method</li>
+<li>chapter_10</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key methods in the humanoid robot industry chain, Design for Assembly (DFA) plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_value_analysis_value_engineering/">Value Analysis / Value Engineering (VA/VE)</a>
+              <span class="rel-desc">Design for Assembly (DFA) mentions Value Analysis / Value Engineering (VA/VE).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_design_for_manufacturing/">Design for Manufacturing (DFM)</a>
+              <span class="rel-desc">Design for Assembly (DFA) mentions Design for Manufacturing (DFM).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_process_p5/">Ontological Structure Engineering and Prototyping (Mechanical Structure)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Ontological Structure Engineering and Prototyping (Mechanical Structure) mentions Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16_1_1/">DFM/DFA review</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DFM/DFA review mentions Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p5_3_2/">Assembly sequence and fixture planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Assembly sequence and fixture planning mentions Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_bom_cost_engineering/">BOM Cost Engineering</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">BOM Cost Engineering mentions Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_p16/">Pilot &amp; Production Ramp</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Pilot &amp; Production Ramp mentions Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_santos_a_robotic_system_to_automate_t_2024/">A Robotic System to Automate the Disassembly of PCB Components</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Robotic System to Automate the Disassembly of PCB Components discusses Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_process_cnc_machining/">CNC Precision Machining</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">CNC Precision Machining uses Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kawaharazuka_mevius2_practical_open_source_2026/">MEVIUS2: Practical Open-Source Quadruped Robot with Sheet Metal Welding and Multimodal Perception</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">MEVIUS2: Practical Open-Source Quadruped Robot with Sheet Metal Welding and Multimodal Perception discusses Design for Assembly (DFA).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_inverse_kinematics/">Inverse Kinematics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_forward_kinematics/">Forward Kinematics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_formalism_floating_base_dynamics/">Floating-Base Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_design_for_assembly"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_santos_a_robotic_system_to_automate_t_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>A Robotic System to Automate the Disassembly of PCB Components</h3>
+          <p>Santos, Marques, and Neto present a robotic system that automates desoldering and extraction of PCB…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_cnc_machining/">
+          <span class="entry-type">Technology</span>
+          <h3>CNC Precision Machining</h3>
+          <p>Computer-numerical-control machining processes that produce high-precision structural parts such as…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Forward Kinematics</h3>
+          <p>The computation of end-effector position and orientation from given joint angles, using a chain of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5_3_2/">
+          <span class="entry-type">Method</span>
+          <h3>Assembly sequence and fixture planning</h3>
+          <p>Assembly sequence diagram, tooling list, SOP draft</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_bom_cost_engineering/">
+          <span class="entry-type">Method</span>
+          <h3>BOM Cost Engineering</h3>
+          <p>The systematic analysis and optimization of bill-of-materials cost by balancing component selection,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16_1_1/">
+          <span class="entry-type">Method</span>
+          <h3>DFM/DFA review</h3>
+          <p>DFM/DFA reports, engineering change lists, cost impact assessments</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p16/">
+          <span class="entry-type">Method</span>
+          <h3>Pilot &amp; Production Ramp</h3>
+          <p>Pilot &amp; Production Ramp-stage 16 of the Android product development process, covering concept…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_floating_base_dynamics/">
+          <span class="entry-type">Formalism</span>
+          <h3>Floating-Base Dynamics</h3>
+          <p>A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_design_for_manufacturing/">
+          <span class="entry-type">Method</span>
+          <h3>Design for Manufacturing (DFM)</h3>
+          <p>An engineering practice of designing parts and assemblies so that they are easy, repeatable, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">Method</span>
+          <h3>Finite Element Analysis (FEA)</h3>
+          <p>A numerical method for predicting stress, deformation, vibration modes, and thermal behavior by…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Inverse Kinematics</h3>
+          <p>The computation of joint angles that realize a desired end-effector pose, often solved numerically…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p5/">
+          <span class="entry-type">Method</span>
+          <h3>Ontological Structure Engineering and Prototyping (Mechanical Structure)</h3>
+          <p>Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_value_analysis_value_engineering/">
+          <span class="entry-type">Method</span>
+          <h3>Value Analysis / Value Engineering (VA/VE)</h3>
+          <p>A structured methodology to improve product value by either reducing cost while preserving function…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kawaharazuka_mevius2_practical_open_source_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>MEVIUS2: Practical Open-Source Quadruped Robot with Sheet Metal Welding and Multimodal Perception</h3>
+          <p>Kawaharazuka et al. present MEVIUS2, a Spot-sized open-source quadruped robot built primarily with…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-design-for-assembly-dfa">Definition and Positioning of Design for Assembly (DFA)</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-design-for-assembly-dfa">Mathematical and Theoretical Foundations of Design for Assembly (DFA)</a></li>
+<li><a href="#algorithm-steps-and-implementation-key-points">Algorithm Steps and Implementation Key Points</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

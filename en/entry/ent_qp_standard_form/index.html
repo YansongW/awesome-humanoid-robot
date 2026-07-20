@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Standard Quadratic Program (QP) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/formalism/">Formalism</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Standard Quadratic Program (QP)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Formalism</div>
+      <h1>Standard Quadratic Program (QP)</h1>
+      <p class="entry-name-en">Standard Quadratic Program (QP)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body backfilled from chapter-08.md#8.4.10.3 基于 QP 的全身控制公式 by scripts/backfill_nonpaper_entries.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A convex optimization problem where a quadratic objective is minimized subject to linear equality and inequality constraints.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1007/978-0-387-40065-5" target="_blank" rel="noopener">J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Standard Quadratic Programming (QP) is an important formalization method in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<p>The mainstream implementation of modern WBC is <strong>whole-body QP control</strong>. It unifies all tasks into a quadratic programming problem while explicitly imposing constraints such as dynamics, friction cones, joint torque limits, and joint position limits.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Whole-body QP control, Quadratic Programming, Equality constraint, Inequality constraint</p>
+<ul>
+<li><strong>Whole-body QP control</strong>: A method that uses quadratic programming to solve whole-body control inputs.</li>
+<li><strong>Quadratic Programming (QP)</strong>: An optimization problem with a quadratic objective function and linear constraints.</li>
+<li><strong>Equality constraint</strong>: A linear equality that must be satisfied exactly.</li>
+<li><strong>Inequality constraint</strong>: An inequality restriction that must be satisfied.</li>
+</ul>
+</div>
+<p>The optimization variables typically include generalized acceleration <span class="arithmatex">\(\dot{\mathbf{v}}\)</span>, joint torques <span class="arithmatex">\(\boldsymbol{\tau}\)</span>, and contact forces <span class="arithmatex">\(\mathbf{F}_c\)</span>. The objective function is the weighted sum of task tracking errors plus regularization terms:</p>
+<div class="arithmatex">\[
+\min_{\dot{\mathbf{v}}, \boldsymbol{\tau}, \mathbf{F}_c} \quad \sum_i w_i \left\| \mathbf{J}_i \dot{\mathbf{v}} + \dot{\mathbf{J}}_i \mathbf{v} - \ddot{\mathbf{x}}_i^* \right\|^2 + w_{\tau}\|\boldsymbol{\tau}\|^2 + w_{f}\|\mathbf{F}_c\|^2
+\]</div>
+<p>The constraints include:</p>
+<p><strong>Dynamic constraint</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{M}\dot{\mathbf{v}} + \mathbf{C}\mathbf{v} + \mathbf{g} = \mathbf{S}^T \boldsymbol{\tau} + \sum_c \mathbf{J}_{c}^T \mathbf{F}_c
+\]</div>
+<p><strong>Friction cone constraint</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{F}_c \in \mathcal{C}(\mu)
+\]</div>
+<p><strong>Joint torque limits</strong>:</p>
+<div class="arithmatex">\[
+\boldsymbol{\tau}_{\min} \leq \boldsymbol{\tau} \leq \boldsymbol{\tau}_{\max}
+\]</div>
+<p><strong>Joint position limits (velocity level)</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{q}_{\min} \leq \mathbf{q} + \Delta t \, \dot{\mathbf{q}} \leq \mathbf{q}_{\max}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Dynamic constraint, Friction cone constraint, Joint torque limit, Joint position limit</p>
+<ul>
+<li><strong>Dynamic constraint</strong>: An equality given by Newton-Euler or Lagrange equations.</li>
+<li><strong>Friction cone constraint</strong>: The constraint that contact forces must lie within the friction cone.</li>
+<li><strong>Torque limit</strong>: The maximum/minimum torque that an actuator can provide.</li>
+<li><strong>Joint limit</strong>: The allowable range of joint angles.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["Task Desired x*_i"] --&gt; B["QP Solver"]
+    C["Dynamic Constraint"] --&gt; B
+    D["Friction Cone Constraint"] --&gt; B
+    E["Torque/Joint Limits"] --&gt; B
+    B --&gt; F["Optimization Variables"]
+    F --&gt; G["Generalized Acceleration v_dot"]
+    F --&gt; H["Joint Torques tau"]
+    F --&gt; I["Contact Forces F_c"]
+    G --&gt; J["Numerical Integration to v, q"]
+    H --&gt; K["Actuator Commands"]
+    I --&gt; L["Stability/Slip Verification"]</p>
+<h2 id="_1">개요</h2>
+<p>표준 이차 계획법(QP)은 휴머노이드 로봇 분야에서 중요한 형식화 방법입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>현대 WBC의 주류 구현은 <strong>전신 QP 제어</strong>입니다. 이는 모든 작업을 이차 계획법 문제로 통합하고, 동시에 동역학, 마찰 원뿔, 관절 토크 한계, 관절 제한 등의 제약 조건을 명시적으로 적용합니다.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 전신 QP 제어, 이차 계획법, 등식 제약 조건, 부등식 제약 조건</p>
+<ul>
+<li><strong>전신 QP 제어(whole-body QP control)</strong>: 이차 계획법을 사용하여 전신 제어 입력을 계산하는 방법.</li>
+<li><strong>이차 계획법(Quadratic Programming, QP)</strong>: 목적 함수가 이차 함수이고 제약 조건이 선형인 최적화 문제.</li>
+<li><strong>등식 제약 조건(equality constraint)</strong>: 정확히 충족되어야 하는 선형 등식.</li>
+<li><strong>부등식 제약 조건(inequality constraint)</strong>: 충족되어야 하는 부등식 제한.</li>
+</ul>
+</div>
+<p>최적화 변수는 일반적으로 일반화 가속도 <span class="arithmatex">\(\dot{\mathbf{v}}\)</span>, 관절 토크 <span class="arithmatex">\(\boldsymbol{\tau}\)</span>, 접촉력 <span class="arithmatex">\(\mathbf{F}_c\)</span>를 포함합니다. 목적 함수는 각 작업 추적 오차의 가중 합과 정규화 항으로 구성됩니다:</p>
+<div class="arithmatex">\[
+\min_{\dot{\mathbf{v}}, \boldsymbol{\tau}, \mathbf{F}_c} \quad \sum_i w_i \left\| \mathbf{J}_i \dot{\mathbf{v}} + \dot{\mathbf{J}}_i \mathbf{v} - \ddot{\mathbf{x}}_i^* \right\|^2 + w_{\tau}\|\boldsymbol{\tau}\|^2 + w_{f}\|\mathbf{F}_c\|^2
+\]</div>
+<p>제약 조건은 다음과 같습니다:</p>
+<p><strong>동역학 제약 조건</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{M}\dot{\mathbf{v}} + \mathbf{C}\mathbf{v} + \mathbf{g} = \mathbf{S}^T \boldsymbol{\tau} + \sum_c \mathbf{J}_{c}^T \mathbf{F}_c
+\]</div>
+<p><strong>마찰 원뿔 제약 조건</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{F}_c \in \mathcal{C}(\mu)
+\]</div>
+<p><strong>관절 토크 한계</strong>:</p>
+<div class="arithmatex">\[
+\boldsymbol{\tau}_{\min} \leq \boldsymbol{\tau} \leq \boldsymbol{\tau}_{\max}
+\]</div>
+<p><strong>관절 제한 (속도 수준)</strong>:</p>
+<div class="arithmatex">\[
+\mathbf{q}_{\min} \leq \mathbf{q} + \Delta t \, \dot{\mathbf{q}} \leq \mathbf{q}_{\max}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 동역학 제약 조건, 마찰 원뿔 제약 조건, 관절 토크 한계, 관절 제한</p>
+<ul>
+<li><strong>동역학 제약 조건(dynamic constraint)</strong>: 뉴턴-오일러 또는 라그랑주 방정식으로 주어지는 등식.</li>
+<li><strong>마찰 원뿔 제약 조건(friction cone constraint)</strong>: 접촉력이 마찰 원뿔 내에 있어야 하는 제약 조건.</li>
+<li><strong>관절 토크 한계(torque limit)</strong>: 액추에이터가 제공할 수 있는 최대/최소 토크.</li>
+<li><strong>관절 제한(joint limit)</strong>: 관절 각도의 허용 범위.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["작업 기대값 x*_i"] --&gt; B["QP 솔버"]
+    C["동역학 제약 조건"] --&gt; B
+    D["마찰 원뿔 제약 조건"] --&gt; B
+    E["토크/관절 제한"] --&gt; B
+    B --&gt; F["최적화 변수"]
+    F --&gt; G["일반화 가속도 v_dot"]
+    F --&gt; H["관절 토크 tau"]
+    F --&gt; I["접촉력 F_c"]
+    G --&gt; J["수치 적분으로 v, q 획득"]
+    H --&gt; K["액추에이터 명령"]
+    I --&gt; L["안정성/미끄럼 방지 검증"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-desc">Standard Quadratic Program (QP) mentions Whole-Body Control (WBC).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hand_eye_autonomous_delivery_l_2025/">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_textop_real_time_interactive_t_2026_1/">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_agile_a_comprehensive_workflow_2026/">AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hand_eye_autonomous_delivery_l_2025_1/">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025/">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pilot_a_perceptive_integrated_2026/">PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_amo_adaptive_motion_optimizati_2025_1/">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_pro_hoi_perceptive_root_guided_2026/">Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_safeflow_real_time_text_driven_2026/">SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoidexo_scalable_whole_bod_2025/">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_gentlehumanoid_learning_upper_2025/">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_striker_skills_2026/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_skillblender_towards_versatile_2025/">SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_visualmimic_visual_humanoid_lo_2025/">VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper__2025/">Humanoid Robot Motion and Operation｜Progress and Challenges in Control Planning and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">人形机器人运动与操作 is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vofa_visual_object_goal_pushin_2026/">VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025_1/">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_thor_towards_human_level_whole_2025/">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_scalable_and_general_whole_bod_2026/">Scalable and General Whole-Body Control for Cross-Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Scalable and General Whole-Body Control for Cross-Humanoid Locomotion is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoidexo_scalable_whole_bod_2025_1/">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ulc_a_unified_and_fine_grained_2026/">ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hover_versatile_neural_whole_b_2025/">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_omg_omni_modal_motion_generati_2026/">OMG: Omni-Modal Motion Generation for Generalist Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">OMG: Omni-Modal Motion Generation for Generalist Humanoid Control is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_agile_striker_skills_2026_1/">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">solves</span>
+              <span class="rel-desc">Each MPC iteration solves a quadratic program when the system dynamics and constraints are linearized.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_behavior_foundation_model_for_2025/">Behavior Foundation Model for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Behavior Foundation Model for Humanoid Robots is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_splitadapter_load_aware_humano_2026/">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_textop_real_time_interactive_t_2026/">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_adversarial_locomotion_and_mot_2025/">Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_opening_the_sim_to_real_door_f_2025/">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_experts_to_a_generalist_t_2025/">From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_any2any_efficient_cross_embodi_2026/">Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_opening_the_sim_to_real_door_f_2025_1/">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ceer_compliant_end_effector_an_2026/">CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation is based on or uses Standard Quadratic Program (QP).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_qp_standard_form"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vofa_visual_object_goal_pushin_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids</h3>
+          <p>VOFA converts camera images/multi-view observations, body state and joint sequences, and simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_omg_omni_modal_motion_generati_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>OMG: Omni-Modal Motion Generation for Generalist Humanoid Control</h3>
+          <p>Humanoid whole-body control has made significant progress in recent years, yet existing approaches…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_textop_real_time_interactive_t_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</h3>
+          <p>TextOp mainly solves the data closed loop: using language instructions, teleoperation/exoskeleton…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_textop_real_time_interactive_t_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control</h3>
+          <p>TextOp primarily addresses data closed loops: using language instructions, teleoperation/exoskeleton…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_visualmimic_visual_humanoid_lo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation</h3>
+          <p>VisualMimic first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</h3>
+          <p>Falcon primarily addresses data closed-loop: capturing human operations and robot states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_agile_a_comprehensive_workflow_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning</h3>
+          <p>AGILE first recovers scene, target or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pilot_a_perceptive_integrated_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes</h3>
+          <p>Pilot first recovers the scene, target, or motion representation from ontological states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adversarial_locomotion_and_mot_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning</h3>
+          <p>This work mainly addresses the data closed loop: collecting human operation and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_amo_adaptive_motion_optimizati_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</h3>
+          <p>Humanoid robots derive much of their dexterity from hyper-dexterous whole-body movements, enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_experts_to_a_generalist_t_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots</h3>
+          <p>This work transforms camera images/multi-view observations, proprioceptive states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_striker_skills_2026_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_gentlehumanoid_learning_upper_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction</h3>
+          <p>Gentlehumanoid first recovers scenes, targets, or motion representations from camera…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unleashing_humanoid_reaching_p_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space</h3>
+          <p>This work mainly addresses the data closed loop: collecting human operation and robot state using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM mainly solves the closed-loop data problem: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_agile_striker_skills_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_thor_towards_human_level_whole_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments</h3>
+          <p>Thor converts camera images/multi-view observations, body state and joint sequences, contact…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_splitadapter_load_aware_humano_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation</h3>
+          <p>SplitAdapter converts simulated interaction data into trackable body targets and uses PPO/RL policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</h3>
+          <p>HOMIE mainly solves the data closed loop: using ontology state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper__2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Humanoid Robot Motion and Operation｜Progress and Challenges in Control Planning and Learning</h3>
+          <p>This work first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_opening_the_sim_to_real_door_f_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</h3>
+          <p>This work mainly addresses data closed loops: acquisition of human operation and robotic states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hand_eye_autonomous_delivery_l_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</h3>
+          <p>This work first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_safeflow_real_time_text_driven_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating</h3>
+          <p>SafeFlow first recovers the scene, target, or motion representation from the ontological state and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_pro_hoi_perceptive_root_guided_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction</h3>
+          <p>Pro-hoi first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_skillblender_towards_versatile_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending</h3>
+          <p>SkillBlender first recovers scene, target, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_homie_humanoid_loco_manipulati_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit</h3>
+          <p>HOMIE mainly solves the data closed loop: it uses ontology state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_scalable_and_general_whole_bod_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Scalable and General Whole-Body Control for Cross-Humanoid Locomotion</h3>
+          <p>This work mainly addresses data closed loops: acquisition of human operation and robotic states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_any2any_efficient_cross_embodi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking</h3>
+          <p>Any2Any converts visual, state, and action data into trackable body targets and outputs full-body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hover_versatile_neural_whole_b_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots</h3>
+          <p>HOVER first recovers scene, goal, or motion representations from ontology states and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hand_eye_autonomous_delivery_l_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching</h3>
+          <p>This work first recovers scenes, targets, or motion representations from camera images/multi-view…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_falcon_learning_force_adaptive_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation</h3>
+          <p>Falcon primarily addresses data closed-loop: capturing human manipulation and robot states with body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_amo_adaptive_motion_optimizati_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control</h3>
+          <p>Humanoid robots derive much of their dexterity from hyper-dexterous whole-body movements, enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_demohlm_from_one_demonstration_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation</h3>
+          <p>DemoHLM mainly solves the closed-loop data problem: using camera images/multi-view observation,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ceer_compliant_end_effector_an_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation</h3>
+          <p>CEER mainly solves the data closed loop: using ontology state and joint sequence,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hypermotion_learning_hybrid_be_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation</h3>
+          <p>HYPERmotion first recovers scene, target, or motion representations from language instructions,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_behavior_foundation_model_for_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Behavior Foundation Model for Humanoid Robots</h3>
+          <p>This work mainly addresses the data closed loop: collecting human operation and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_hitter_a_humanoid_table_tennis_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning</h3>
+          <p>HITTER first recovers scene, target, or motion representations from human video/kinetach…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoidexo_scalable_whole_bod_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</h3>
+          <p>HumanoidExo primarily addresses data closure: acquiring human operations and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_opening_the_sim_to_real_door_f_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer</h3>
+          <p>This work mainly addresses data closed loops: acquisition of human operation and robotic states with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ulc_a_unified_and_fine_grained_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation</h3>
+          <p>Loco-Manipulation for humanoid robots aims to enable robots to integrate mobility with upper-body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoidexo_scalable_whole_bod_2025_1/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton</h3>
+          <p>HumanoidExo primarily addresses data closure: collecting human operations and robot states using…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sumo_dynamic_and_generalizable_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation</h3>
+          <p>Sumo transforms the body state, joint sequence, and simulation interaction data into a trackable…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

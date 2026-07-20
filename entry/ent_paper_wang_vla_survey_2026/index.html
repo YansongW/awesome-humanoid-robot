@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机器人视觉-语言-动作：数据集、基准与数据引擎综述 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">机器人视觉-语言-动作：数据集、基准与数据引擎综述</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>机器人视觉-语言-动作：数据集、基准与数据引擎综述</h1>
+      <p class="entry-name-en">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">数据与数据集</span><span class="tag">评测基准</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.23001v1.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Despite remarkable progress in Vision--Language--Action (VLA) models, a central bottleneck remains underexamined: the data infrastructure that underlies embodied learning. In this survey, we argue that future advances in VLA will depend less on model architecture and more on the co-design of high-fidelity data engines and structured evaluation protocols. To this end, we present a systematic, data-centric analysis of VLA research organized around three pillars: datasets, benchmarks, and data engines. For datasets, we categorize real-world and synthetic corpora along embodiment diversity, modali</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2604.23001" target="_blank" rel="noopener">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment 数据集</a>
+            
+              
+                
+              
+              <span class="rel-desc">该综述引用 Open X-Embodiment 作为常用的跨具身预训练数据集。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_dataset_droid/">DROID 机器人操作数据集</a>
+            
+              
+                
+              
+              <span class="rel-desc">该综述引用 DROID 作为强调视觉与环境变化的分布式真实世界数据集。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+            
+              
+                
+              
+              <span class="rel-desc">该综述讨论 HumanoidBench 作为全身运动与操作的仿真基准。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+            
+              
+                
+              
+              <span class="rel-desc">该综述引用 LIBERO 作为代表性短程桌面 VLA 基准。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_tech_mimicgen/">MimicGen</a>
+            
+              
+                
+              
+              <span class="rel-desc">该综述讨论 MimicGen 作为扩展仿真器数据的演示增强方法。</span>
+            
+          </li>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_tech_robogen/">RoboGen</a>
+            
+              
+                
+              
+              <span class="rel-desc">该综述讨论 RoboGen 作为由大语言模型驱动的仿真自动任务生成框架。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Despite remarkable progress in Vision--Language--Action (VLA) models, a central bottleneck remains underexamined: the data infrastructure that underlies embodied learning. In this survey, we argue that future advances in VLA will depend less on model architecture and more on the co-design of high-fidelity data engines and structured evaluation protocols. To this end, we present a systematic, data-centric analysis of VLA research organized around three pillars: datasets, benchmarks, and data engines. For datasets, we categorize real-world and synthetic corpora along embodiment diversity, modality composition, and action space formulation, revealing a persistent fidelity-cost trade-off that fundamentally constrains large-scale collection. For benchmarks, we analyze task complexity and environment structure jointly, exposing structural gaps in compositional generalization and long-horizon reasoning evaluation that existing protocols fail to address. For data engines, we examine simulation-based, video-reconstruction, and automated task-generation paradigms, identifying their shared limitations in physical grounding and sim-to-real transfer. Synthesizing these analyses, we distill four open challenges: representation alignment, multimodal supervision, reasoning assessment, and scalable data generation. Addressing them, we argue, requires treating data infrastructure as a first-class research problem rather than a background concern.</p>
+<h2 id="_2">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2604.23001v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_tech_mimicgen/">MimicGen</a>
+              <span class="rel-desc">Wang 等人（2026）将 MimicGen 作为扩展仿真器数据的演示增强方法进行讨论。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment 数据集</a>
+              <span class="rel-desc">Wang 等人（2026）将 Open X-Embodiment 引用为 VLA 模型广泛使用的跨具身预训练数据集。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">你的视觉-语言-动作模型已具备路径偏离检测的注意力头</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-desc">Wang 等人（2026）将 HumanoidBench 作为全身人形运动与操作的仿真基准进行讨论。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_dataset_droid/">DROID 机器人操作数据集</a>
+              <span class="rel-desc">Wang 等人（2026）将 DROID 引用为强调视觉与环境变化的分布式真实世界数据集。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_dial_decoupling_intent_and_act_2026/">DIAL｜通过端到端VLA的潜在世界建模解耦意图和行动</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-desc">Wang 等人（2026）将 LIBERO 引用为代表性短程桌面 VLA 基准。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_aljalbout_reality_gap_2025/">机器人中的现实鸿沟：挑战、解决方案与最佳实践</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">Gemini Robotics｜将人工智能带入物理世界</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo｜用于可扩展和智能具身系统的大规模操作平台</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">LingBot-VLA｜务实的VLA基础模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_tech_robogen/">RoboGen</a>
+              <span class="rel-desc">Wang 等人（2026）将 RoboGen 作为由大语言模型驱动的仿真自动任务生成框架进行讨论。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">LIBERO引用机器人视觉-语言-动作：数据集、基准与数据引擎综述。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment 数据集</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">Open X-Embodiment 数据集引用机器人视觉-语言-动作：数据集、基准与数据引擎综述。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_tech_mimicgen/">MimicGen</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">MimicGen引用机器人视觉-语言-动作：数据集、基准与数据引擎综述。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pi0_2024/">π0：用于通用机器人控制的视觉-语言-动作流模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_aljalbout_reality_gap_2025/">机器人中的现实鸿沟：挑战、解决方案与最佳实践</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_tech_robogen/">RoboGen</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">RoboGen引用机器人视觉-语言-动作：数据集、基准与数据引擎综述。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_dataset_droid/">DROID 机器人操作数据集</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">DROID 机器人操作数据集引用机器人视觉-语言-动作：数据集、基准与数据引擎综述。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">基于</span>
+              <span class="rel-desc">WAM 综述在 VLA 综述基础上，进一步关注联合预测未来状态与动作的模型。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_roboomni_2025/">RoboOmni：全模态上下文中的主动式机器人操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评估</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wang_vla_survey_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_egovla_learning_vision_languag_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型</h3>
+          <p>EgoVLA 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、潜变量/动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jeong_your_vision_language_action_mo_2026/">
+          <span class="entry-type">论文</span>
+          <h3>你的视觉-语言-动作模型已具备路径偏离检测的注意力头</h3>
+          <p>本文在冻结的视觉-语言-动作模型中识别出稀疏的“导航头”，其注意力熵信号可指示轨迹偏离，从而实现了无需训练的异常检测器和轻量强化学习回退机制。在VLN-CE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dial_decoupling_intent_and_act_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DIAL｜通过端到端VLA的潜在世界建模解耦意图和行动</h3>
+          <p>DIAL 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA：一个开源的视觉-语言-动作模型</h3>
+          <p>一个 70 亿参数的开源 VLA 模型，基于 Open X-Embodiment 数据集的 97 万条真实机器人演示进行预训练，融合 Llama 2、DINOv2 和 SigLIP 以实现通用操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_aljalbout_reality_gap_2025/">
+          <span class="entry-type">论文</span>
+          <h3>机器人中的现实鸿沟：挑战、解决方案与最佳实践</h3>
+          <p>Machine learning has facilitated significant advancements across various robotics domains, including…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_tech_mimicgen/">
+          <span class="entry-type">技术</span>
+          <h3>MimicGen</h3>
+          <p>一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_a_pragmatic_vla_foundation_mod_2026/">
+          <span class="entry-type">论文</span>
+          <h3>LingBot-VLA｜务实的VLA基础模型</h3>
+          <p>LingBot-VLA 的实现路径是先把语言指令、相机图像/多视角观测编码成多模态表征，再用VLA 多模态动作模型、VLM 语义规划/路由预测可执行动作命令。关键点是保留 VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Gemini Robotics｜将人工智能带入物理世界</h3>
+          <p>Gemini Robotics 的实现路径是先把语言指令、相机图像/多视角观测编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测全身轨迹/动作序列、动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_open_x_embodiment/">
+          <span class="entry-type">数据集</span>
+          <h3>Open X-Embodiment 数据集</h3>
+          <p>概述 一个大规模聚合机器人学习数据集，整合来自多种真实机器人平台和机构的演示数据，广泛用于跨具身 VLA 预训练。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界动作模型：具身智能的下一个前沿</h3>
+          <p>2026 年综述，将 World Action Models（WAMs）定义为统一预测性世界建模与动作生成的具身基础模型，并将现有方法组织为级联式（Cascaded）与联合式（Joint）架构。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_agibot_world_colosseo_a_large_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AgiBot World Colosseo｜用于可扩展和智能具身系统的大规模操作平台</h3>
+          <p>AgiBot World Colosseo 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用VLM 语义规划/路由、潜变量/动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_tech_robogen/">
+          <span class="entry-type">技术</span>
+          <h3>RoboGen</h3>
+          <p>一种由大语言模型驱动的机器人自动任务生成框架，提出任务并生成仿真代码以扩展合成训练数据的多样性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pi0_2024/">
+          <span class="entry-type">论文</span>
+          <h3>π0：用于通用机器人控制的视觉-语言-动作流模型</h3>
+          <p>Robot learning holds tremendous promise to unlock the full potential of flexible, general, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_droid/">
+          <span class="entry-type">数据集</span>
+          <h3>DROID 机器人操作数据集</h3>
+          <p>一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_roboomni_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboOmni：全模态上下文中的主动式机器人操作</h3>
+          <p>Recent advances in Multimodal Large Language Models (MLLMs) have driven rapid progress in…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

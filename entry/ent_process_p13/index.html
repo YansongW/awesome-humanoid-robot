@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电子电气与能源系统（Electronics &amp; Power） · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/method/">方法</a>
+    <span>/</span>
+    <span class="breadcrumb-current">电子电气与能源系统（Electronics &amp; Power）</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">方法</div>
+      <h1>电子电气与能源系统（Electronics &amp; Power）</h1>
+      <p class="entry-name-en">Electronics &amp; Power Systems</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>电子电气与能源系统（Electronics &amp; Power）是人形机器人产品开发全流程中的第 13 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <span>全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<p>该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。</p>
+<h2 id="_2">关键子任务与技术内容</h2>
+<h4 id="_3">计算与通信硬件</h4>
+<h5 id="_4">计算平台架构与选型</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：Jetson / Intel NUC / 自研载板 / FPGA / MCU 分布</li>
+<li><strong>设计思考逻辑</strong>：AI 任务用 GPU，实时控制用 MCU/FPGA，安全监控独立</li>
+<li><strong>关键约束</strong>：功耗、散热、重量、实时性、功能安全</li>
+<li><strong>完成标准 / 输出物</strong>：计算架构图、各节点算力/功耗预算、安全分区
+<strong>三级子任务：</strong></li>
+<li><strong>P13.1.1.1 输入梳理与目标量化</strong>：整理「计算平台架构与选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P13.1.1.2 候选方案建立与评估</strong>：针对「计算平台架构与选型」建立候选方案库，使用「Jetson / Intel NUC / 自研载板 / FPGA / MCU 分布」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.1.1.3 实施/原型/样件制作</strong>：根据设计方案执行「计算平台架构与选型」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P13.1.1.4 验证与问题闭环</strong>：对「计算平台架构与选型」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P13.1.1.5 文档输出与下游交付</strong>：输出「计算平台架构与选型」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="pcb">自研/外购 PCB 设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：载板、关节驱动板、传感器接口板、安全监控板</li>
+<li><strong>设计思考逻辑</strong>：将计算、通信、电源、安全功能固化到可靠硬件</li>
+<li><strong>关键约束</strong>：EMC、SI/PI、热、空间、可制造性</li>
+<li><strong>完成标准 / 输出物</strong>：原理图、PCB、BOM、DFM 报告
+<strong>三级子任务：</strong></li>
+<li><strong>P13.1.2.1 输入梳理与目标量化</strong>：整理「自研/外购 PCB 设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P13.1.2.2 概念与详细设计</strong>：完成「自研/外购 PCB 设计」的概念设计、详细设计与接口定义，使用「载板、关节驱动板、传感器接口板、安全监控板」验证可行性，输出图纸/算法/逻辑框架。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.1.2.3 实施/原型/样件制作</strong>：根据设计方案执行「自研/外购 PCB 设计」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P13.1.2.4 验证与问题闭环</strong>：对「自研/外购 PCB 设计」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P13.1.2.5 文档输出与下游交付</strong>：输出「自研/外购 PCB 设计」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_5">通信网络与同步</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：CAN-FD、EtherCAT、Ethernet、TSN、PTP 时间同步</li>
+<li><strong>设计思考逻辑</strong>：关节控制需要高实时性，视觉/AI 需要高带宽；关键信号冗余</li>
+<li><strong>关键约束</strong>：线缆数量、EMC、成本、可扩展性</li>
+<li><strong>完成标准 / 输出物</strong>：通信拓扑图、协议分配、带宽/延迟预算、同步精度
+<strong>三级子任务：</strong></li>
+<li><strong>P13.1.3.1 输入梳理与目标量化</strong>：整理「通信网络与同步」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P13.1.3.2 方案/方法设计</strong>：针对「通信网络与同步」制定实施方法或候选方案，使用「CAN-FD、EtherCAT、Ethernet、TSN、PTP 时间同步」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.1.3.3 实施/原型/样件制作</strong>：根据设计方案执行「通信网络与同步」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P13.1.3.4 验证与问题闭环</strong>：对「通信网络与同步」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P13.1.3.5 文档输出与下游交付</strong>：输出「通信网络与同步」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="_6">电源与能源</h4>
+<h5 id="bms">电池包设计与 BMS</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：锂电池选型、模组设计、SOC/SOH 估算、快充策略、热失控防护</li>
+<li><strong>设计思考逻辑</strong>：续航与重量平衡；BMS 需过充/过放/过温保护</li>
+<li><strong>关键约束</strong>：安全认证、热失控、循环寿命、成本</li>
+<li><strong>完成标准 / 输出物</strong>：电池包方案、BMS 规格、续航估算、安全测试
+<strong>三级子任务：</strong></li>
+<li><strong>P13.2.1.1 输入梳理与目标量化</strong>：整理「电池包设计与 BMS」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P13.2.1.2 概念与详细设计</strong>：完成「电池包设计与 BMS」的概念设计、详细设计与接口定义，使用「锂电池选型、模组设计、SOC/SOH 估算、快充策略、热失控防护」验证可行性，输出图纸/算法/逻辑框架。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.2.1.3 实施/原型/样件制作</strong>：根据设计方案执行「电池包设计与 BMS」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P13.2.1.4 验证与问题闭环</strong>：对「电池包设计与 BMS」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P13.2.1.5 文档输出与下游交付</strong>：输出「电池包设计与 BMS」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="dc-dc">电源分配与 DC-DC</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：母线电压选择、DC-DC 模块、滤波、OR-ing、冗余</li>
+<li><strong>设计思考逻辑</strong>：电机母线与逻辑电源隔离；故障时安全断电</li>
+<li><strong>关键约束</strong>：压降、效率、EMI、安全标准</li>
+<li><strong>完成标准 / 输出物</strong>：电源分配图、DC-DC 选型、效率/热测试
+<strong>三级子任务：</strong></li>
+<li><strong>P13.2.2.1 输入梳理与目标量化</strong>：整理「电源分配与 DC-DC」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P13.2.2.2 方案/方法设计</strong>：针对「电源分配与 DC-DC」制定实施方法或候选方案，使用「母线电压选择、DC-DC 模块、滤波、OR-ing、冗余」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.2.2.3 实施/原型/样件制作</strong>：根据设计方案执行「电源分配与 DC-DC」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P13.2.2.4 验证与问题闭环</strong>：对「电源分配与 DC-DC」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P13.2.2.5 文档输出与下游交付</strong>：输出「电源分配与 DC-DC」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_7">充电与能源管理</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：充电桩/座、无线充电、充电协议、能量回收</li>
+<li><strong>设计思考逻辑</strong>：补能体验影响可用性；需兼容目标场景</li>
+<li><strong>关键约束</strong>：安全、标准、成本、空间</li>
+<li><strong>完成标准 / 输出物</strong>：充电方案、充电时间、BMS 通信协议
+<strong>三级子任务：</strong></li>
+<li><strong>P13.2.3.1 输入梳理与目标量化</strong>：整理「充电与能源管理」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P13.2.3.2 方案/方法设计</strong>：针对「充电与能源管理」制定实施方法或候选方案，使用「充电桩/座、无线充电、充电协议、能量回收」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.2.3.3 实施/原型/样件制作</strong>：根据设计方案执行「充电与能源管理」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P13.2.3.4 验证与问题闭环</strong>：对「充电与能源管理」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P13.2.3.5 文档输出与下游交付</strong>：输出「充电与能源管理」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h4 id="emc">安全与 EMC</h4>
+<h5 id="_8">硬件急停与安全链</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：硬件急停、看门狗、熔断、安全 PLC/继电器、双通道</li>
+<li><strong>设计思考逻辑</strong>：任何软件失效都能通过硬件切断动力；符合功能安全</li>
+<li><strong>关键约束</strong>：响应时间、可靠性、误触发</li>
+<li><strong>完成标准 / 输出物</strong>：安全系统原理图、FMEA、急停响应时间 &lt; 目标
+<strong>三级子任务：</strong></li>
+<li><strong>P13.3.1.1 输入梳理与目标量化</strong>：整理「硬件急停与安全链」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P13.3.1.2 方案/方法设计</strong>：针对「硬件急停与安全链」制定实施方法或候选方案，使用「硬件急停、看门狗、熔断、安全 PLC/继电器、双通道」进行论证，明确技术路线与资源需求。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.3.1.3 实施/原型/样件制作</strong>：根据设计方案执行「硬件急停与安全链」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P13.3.1.4 验证与问题闭环</strong>：对「硬件急停与安全链」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P13.3.1.5 文档输出与下游交付</strong>：输出「硬件急停与安全链」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="emcemi">EMC/EMI 设计与测试</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：屏蔽、滤波、接地、PCB 布局、辐射/传导测试</li>
+<li><strong>设计思考逻辑</strong>：大功率电机驱动与高速计算共存，EMC 风险高</li>
+<li><strong>关键约束</strong>：CE/FCC/UL 标准、重量、成本</li>
+<li><strong>完成标准 / 输出物</strong>：EMC 设计规范、预测试报告、整改记录
+<strong>三级子任务：</strong></li>
+<li><strong>P13.3.2.1 输入梳理与目标量化</strong>：整理「EMC/EMI 设计与测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+<strong>四级关键动作：</strong></li>
+<li>列出所有上游输入清单并确认版本</li>
+<li>将验收标准转化为可量化 KPI</li>
+<li>建立任务 Owner、时间节点与风险登记</li>
+<li><strong>P13.3.2.2 概念与详细设计</strong>：完成「EMC/EMI 设计与测试」的概念设计、详细设计与接口定义，使用「屏蔽、滤波、接地、PCB 布局、辐射/传导测试」验证可行性，输出图纸/算法/逻辑框架。
+<strong>四级关键动作：</strong></li>
+<li>形成不少于 2 个候选方案</li>
+<li>建立评估矩阵并量化打分</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.3.2.3 实施/原型/样件制作</strong>：根据设计方案执行「EMC/EMI 设计与测试」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+<strong>四级关键动作：</strong></li>
+<li>建立模型/样机并记录关键参数</li>
+<li>执行仿真或原型验证</li>
+<li>记录异常与偏差</li>
+<li><strong>P13.3.2.4 测试执行与结果分析</strong>：按照验收标准执行「EMC/EMI 设计与测试」测试，统计通过率/误差/偏差，进行根因分析并形成改进清单。
+<strong>四级关键动作：</strong></li>
+<li>制定测试/评审计划与通过准则</li>
+<li>执行测试并记录原始数据</li>
+<li>输出问题清单与改进措施</li>
+<li><strong>P13.3.2.5 文档输出与下游交付</strong>：输出「EMC/EMI 设计与测试」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写文档并引用原始数据</li>
+<li>完成内部评审与版本控制</li>
+<li>发布并通知下游依赖方</li>
+</ul>
+<h5 id="_9">网络安全架构设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：Secure Boot、通信加密（TLS/AES）、访问控制、OTA 签名、漏洞管理流程</li>
+<li><strong>设计思考逻辑</strong>：联网机器人面临固件篡改、数据窃取、远程攻击风险，需要纵深防御</li>
+<li><strong>关键约束</strong>：实时性、算力、密钥管理、法规（如 UN R155）</li>
+<li><strong>完成标准 / 输出物</strong>：安全启动链、OTA 签名验证、漏洞响应流程
+<strong>三级子任务：</strong></li>
+<li><strong>P13.3.3.1 输入梳理与目标量化</strong>：整理「网络安全架构设计」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P13.3.3.2 方案/方法设计</strong>：针对「网络安全架构设计」制定实施方法或候选方案，使用「Secure Boot、通信加密（TLS/AES）、访问控制、OTA 签名、漏洞管理流程」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.3.3.3 实施/建模/实验</strong>：根据方案执行「网络安全架构设计」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P13.3.3.4 验证与优化</strong>：对「网络安全架构设计」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P13.3.3.5 文档输出与下游交付</strong>：输出「网络安全架构设计」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h5 id="_10">功能安全详细设计</h5>
+<ul>
+<li><strong>方法 / 工具</strong>：安全 PLC/安全继电器、双通道编码器、STO（Safe Torque Off）、故障安全状态机</li>
+<li><strong>设计思考逻辑</strong>：将功能安全概念落地为硬件与软件的故障检测、响应与降级机制</li>
+<li><strong>关键约束</strong>：SIL/PL 等级、响应时间、成本</li>
+<li><strong>完成标准 / 输出物</strong>：FUSA 详细设计文档、故障注入测试通过、STO 响应时间达标
+<strong>三级子任务：</strong></li>
+<li><strong>P13.3.4.1 输入梳理与目标量化</strong>：整理「功能安全详细设计」所需输入、参考标准，将验收标准转化为可量化 KPI。
+<strong>四级关键动作：</strong></li>
+<li>列出上游输入与验收指标</li>
+<li>确认版本与责任人</li>
+<li>建立追踪表</li>
+<li><strong>P13.3.4.2 方案/方法设计</strong>：针对「功能安全详细设计」制定实施方法或候选方案，使用「安全 PLC/安全继电器、双通道编码器、STO（Safe Torque Off）、故障安全状态机」论证。
+<strong>四级关键动作：</strong></li>
+<li>形成候选方案</li>
+<li>建立评估矩阵</li>
+<li>组织评审并冻结方案</li>
+<li><strong>P13.3.4.3 实施/建模/实验</strong>：根据方案执行「功能安全详细设计」的实施工作，建立模型、样机或完成实验。
+<strong>四级关键动作：</strong></li>
+<li>明确输入/方法/输出</li>
+<li>执行并记录关键数据</li>
+<li>与上下游确认接口</li>
+<li><strong>P13.3.4.4 验证与优化</strong>：对「功能安全详细设计」结果进行验证，分析偏差并迭代优化。
+<strong>四级关键动作：</strong></li>
+<li>制定测试计划</li>
+<li>执行测试并记录</li>
+<li>输出问题清单与改进</li>
+<li><strong>P13.3.4.5 文档输出与下游交付</strong>：输出「功能安全详细设计」最终报告/规范，更新 ICD/BOM/SOP/需求追溯链。
+<strong>四级关键动作：</strong></li>
+<li>按模板编写</li>
+<li>内部评审</li>
+<li>发布并通知下游</li>
+</ul>
+<h2 id="_11">完成标准</h2>
+<p>本阶段所有三级子任务均通过验收评审，关键输出物版本受控并正式交付给下游依赖方。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p4/">关节模组与驱动系统设计（Actuator &amp; Drive）</a>
+              <span class="rel-desc">P13 依赖 P4 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p13_3_1/">硬件急停与安全链</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）is_part_of硬件急停与安全链。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_fmea/">失效模式与影响分析（FMEA）</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）提及失效模式与影响分析（FMEA）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p13_2_2/">电源分配与 DC-DC</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）is_part_of电源分配与 DC-DC。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p13_2_1/">电池包设计与 BMS</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）is_part_of电池包设计与 BMS。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p13_1_2/">自研/外购 PCB 设计</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）is_part_of自研/外购 PCB 设计。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p3/">系统架构与机电总体设计（System / Preliminary Design）</a>
+              <span class="rel-desc">P13 依赖 P3 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_design_for_manufacturing/">可制造性设计（DFM）</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）提及可制造性设计（DFM）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p13_2_3/">充电与能源管理</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）is_part_of充电与能源管理。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">属于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p13_3_2/">EMC/EMI 设计与测试</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）is_part_ofEMC/EMI 设计与测试。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>
+              <span class="rel-desc">电子电气与能源系统（Electronics &amp; Power）使用EtherCAT。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_process_p13_3_2/">EMC/EMI 设计与测试</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">EMC/EMI 设计与测试is_part_of电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13_3_1/">硬件急停与安全链</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">硬件急停与安全链is_part_of电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sapkota_harmonic_content_analysis_of_a_2023/">基于FPGA的软启动变频电机驱动的谐波含量分析</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于FPGA的软启动变频电机驱动的谐波含量分析discusses电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13_2_1/">电池包设计与 BMS</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">电池包设计与 BMSis_part_of电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p9/">热管理仿真与迭代（Thermal Management）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P9 依赖 P13 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p14/">软件中间件与系统集成（Software &amp; Integration）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">依赖</span>
+              <span class="rel-desc">P14 依赖 P13 完成后才能启动</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13_1_3/">通信网络与同步</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">通信网络与同步is_part_of电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13_2_3/">充电与能源管理</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">充电与能源管理is_part_of电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13_1_2/">自研/外购 PCB 设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">自研/外购 PCB 设计is_part_of电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_avery_shape_sensing_of_variable_stif_2019/">基于电阻抗断层扫描的变刚度软体机器人形状感知</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于电阻抗断层扫描的变刚度软体机器人形状感知discusses电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">基于LabVIEW的电机实时状态监测与故障诊断系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">基于LabVIEW的电机实时状态监测与故障诊断系统discusses电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13_2_2/">电源分配与 DC-DC</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">电源分配与 DC-DCis_part_of电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_process_p13_1_1/">计算平台架构与选型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">属于</span>
+              <span class="rel-desc">计算平台架构与选型is_part_of电子电气与能源系统（Electronics &amp; Power）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_process_p13"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p13_2_3/">
+          <span class="entry-type">方法</span>
+          <h3>充电与能源管理</h3>
+          <p>- P13.2.3.1 输入梳理与目标量化 - 整理「充电与能源管理」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>EMC/EMI 设计与测试</h3>
+          <p>- P13.3.2.1 输入梳理与目标量化 - 整理「EMC/EMI 设计与测试」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sapkota_harmonic_content_analysis_of_a_2023/">
+          <span class="entry-type">论文</span>
+          <h3>基于FPGA的软启动变频电机驱动的谐波含量分析</h3>
+          <p>本文提出了一种基于FPGA的三相感应电机变频软启动驱动器，采用直接数字频率合成技术，比较了正弦脉宽调制、三次谐波注入脉宽调制和空间矢量脉宽调制的谐波性能与启动涌流抑制效果。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p3/">
+          <span class="entry-type">方法</span>
+          <h3>系统架构与机电总体设计（System / Preliminary Design）</h3>
+          <p>系统架构与机电总体设计（System / Preliminary Design）是人形机器人产品开发全流程中的第 3 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13_2_2/">
+          <span class="entry-type">方法</span>
+          <h3>电源分配与 DC-DC</h3>
+          <p>- P13.2.2.1 输入梳理与目标量化 - 整理「电源分配与 DC-DC」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_real_time_state_monitoring_and_2018/">
+          <span class="entry-type">论文</span>
+          <h3>基于LabVIEW的电机实时状态监测与故障诊断系统</h3>
+          <p>提出了一种基于LabVIEW的三相电机实时状态监测与多故障预诊断系统，利用NI cDAQ硬件采集振动、转速、温度、电流和电压信号，并采用阶次分析算法，实现本地与云端MySQL存储。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p14/">
+          <span class="entry-type">方法</span>
+          <h3>软件中间件与系统集成（Software &amp; Integration）</h3>
+          <p>软件中间件与系统集成（Software &amp; Integration）是人形机器人产品开发全流程中的第 14 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>硬件急停与安全链</h3>
+          <p>- P13.3.1.1 输入梳理与目标量化 - 整理「硬件急停与安全链」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13_1_2/">
+          <span class="entry-type">方法</span>
+          <h3>自研/外购 PCB 设计</h3>
+          <p>- P13.1.2.1 输入梳理与目标量化 - 整理「自研/外购 PCB 设计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>通信网络与同步</h3>
+          <p>- P13.1.3.1 输入梳理与目标量化 - 整理「通信网络与同步」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p4/">
+          <span class="entry-type">方法</span>
+          <h3>关节模组与驱动系统设计（Actuator &amp; Drive）</h3>
+          <p>关节模组与驱动系统设计（Actuator &amp; Drive）是人形机器人产品开发全流程中的第 4 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_fmea/">
+          <span class="entry-type">方法</span>
+          <h3>失效模式与影响分析（FMEA）</h3>
+          <p>概述 8.6.6 可靠性工程与失效模式分析相关内容如下。 ## 核心内容 #### 8.6.6 可靠性工程与失效模式分析…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>计算平台架构与选型</h3>
+          <p>- P13.1.1.1 输入梳理与目标量化 - 整理「计算平台架构与选型」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_avery_shape_sensing_of_variable_stif_2019/">
+          <span class="entry-type">论文</span>
+          <h3>基于电阻抗断层扫描的变刚度软体机器人形状感知</h3>
+          <p>Soft robotic systems offer benefits over traditional rigid systems through reduced contact trauma…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p9/">
+          <span class="entry-type">方法</span>
+          <h3>热管理仿真与迭代（Thermal Management）</h3>
+          <p>热管理仿真与迭代（Thermal Management）是人形机器人产品开发全流程中的第 9 个阶段，在 WBS V3 中展开为若干三级子任务。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_design_for_manufacturing/">
+          <span class="entry-type">方法</span>
+          <h3>可制造性设计（DFM）</h3>
+          <p>使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_technology_ethercat_2024/">
+          <span class="entry-type">技术</span>
+          <h3>EtherCAT</h3>
+          <p>EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p13_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>电池包设计与 BMS</h3>
+          <p>- P13.2.1.1 输入梳理与目标量化 - 整理「电池包设计与 BMS」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a></li>
+<li><a href="#_2">关键子任务与技术内容</a><ul>
+<li><a href="#_3">计算与通信硬件</a><ul>
+<li><a href="#_4">计算平台架构与选型</a></li>
+<li><a href="#pcb">自研/外购 PCB 设计</a></li>
+<li><a href="#_5">通信网络与同步</a></li>
+</ul>
+</li>
+<li><a href="#_6">电源与能源</a><ul>
+<li><a href="#bms">电池包设计与 BMS</a></li>
+<li><a href="#dc-dc">电源分配与 DC-DC</a></li>
+<li><a href="#_7">充电与能源管理</a></li>
+</ul>
+</li>
+<li><a href="#emc">安全与 EMC</a><ul>
+<li><a href="#_8">硬件急停与安全链</a></li>
+<li><a href="#emcemi">EMC/EMI 设计与测试</a></li>
+<li><a href="#_9">网络安全架构设计</a></li>
+<li><a href="#_10">功能安全详细设计</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_11">完成标准</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

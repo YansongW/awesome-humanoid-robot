@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Floating-Base Dynamics · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/formalism/">Formalism</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Floating-Base Dynamics</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Formalism</div>
+      <h1>Floating-Base Dynamics</h1>
+      <p class="entry-name-en">Floating-Base Dynamics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Design Engineering</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds, where the base pose is part of the generalized coordinates.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<h4 id="847-floating-base-dynamics">8.4.7 Floating Base Dynamics</h4>
+<h2 id="content">Content</h2>
+<p>Unlike fixed-base industrial robotic arms, humanoid robots have a base (torso) that can move freely in space. Therefore, the system configuration is described using <strong>floating base</strong> coordinates:</p>
+<div class="arithmatex">\[
+\mathbf{q} = (\mathbf{p}_{\text{base}}, \mathbf{R}_{\text{base}}, \mathbf{q}_{\text{joints}})
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{p}_{\text{base}} \in \mathbb{R}^3\)</span> is the base position, <span class="arithmatex">\(\mathbf{R}_{\text{base}} \in SO(3)\)</span> is the base orientation, and <span class="arithmatex">\(\mathbf{q}_{\text{joints}} \in \mathbb{R}^{n_j}\)</span> are the joint angles[4][6].</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Floating Base, Floating Base Coordinates, Base Position, Base Orientation, Generalized Coordinates</p>
+<ul>
+<li><strong>Floating base</strong>: A robot base that can freely translate and rotate in space.</li>
+<li><strong>Base position</strong>: The position of the floating base coordinate system origin in the inertial frame.</li>
+<li><strong>Base orientation</strong>: The rotation of the floating base coordinate system relative to the inertial frame.</li>
+<li><strong>Generalized coordinates</strong>: The minimal set of independent variables describing the system configuration.</li>
+</ul>
+</div>
+<p>A key characteristic of floating base systems is <strong>underactuation</strong>: the 6 degrees of freedom of the base have no direct actuators and can only be indirectly controlled through contact forces with the ground. This makes a humanoid robot essentially a system driven by contact forces.</p>
+<p>The standard form of the floating base dynamics equation is:</p>
+<div class="arithmatex">\[
+\mathbf{M}(\mathbf{q}) \dot{\mathbf{v}} + \mathbf{C}(\mathbf{q}, \mathbf{v}) \mathbf{v} + \mathbf{g}(\mathbf{q}) = \mathbf{S}^T \boldsymbol{\tau} + \sum_{c} \mathbf{J}_c^T(\mathbf{q}) \mathbf{F}_c
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\mathbf{M}(\mathbf{q})\)</span>: The <span class="arithmatex">\(n \times n\)</span> mass matrix including the floating base and joints.</li>
+<li><span class="arithmatex">\(\mathbf{C}(\mathbf{q}, \mathbf{v})\)</span>: The Coriolis and centrifugal force terms.</li>
+<li><span class="arithmatex">\(\mathbf{g}(\mathbf{q})\)</span>: The gravity term.</li>
+<li><span class="arithmatex">\(\mathbf{S}\)</span>: The selection matrix, mapping joint torques <span class="arithmatex">\(\boldsymbol{\tau}\)</span> to generalized coordinate space (acting only on joints, not on the floating base).</li>
+<li><span class="arithmatex">\(\mathbf{J}_c\)</span>: The Jacobian matrix for the <span class="arithmatex">\(c\)</span>-th contact point.</li>
+<li><span class="arithmatex">\(\mathbf{F}_c\)</span>: The <span class="arithmatex">\(c\)</span>-th contact force.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Underactuation, Selection Matrix, Contact Jacobian, Generalized Force</p>
+<ul>
+<li><strong>Underactuation</strong>: A situation where the system has more degrees of freedom than independent control inputs.</li>
+<li><strong>Selection matrix</strong>: A matrix that distinguishes between actuated joints and unactuated floating base degrees of freedom.</li>
+<li><strong>Contact Jacobian</strong>: The Jacobian matrix mapping generalized velocities to contact point velocities.</li>
+<li><strong>Generalized force</strong>: Forces or torques corresponding to generalized coordinates.</li>
+</ul>
+</div>
+<p>This equation can also be written in block form separating the floating base and joints:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+\mathbf{M}_{b} &amp; \mathbf{M}_{bj} \\
+\mathbf{M}_{jb} &amp; \mathbf{M}_{j}
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\mathbf{v}}_b \\
+\ddot{\mathbf{q}}_j
+\end{bmatrix}
++
+\begin{bmatrix}
+\mathbf{h}_b \\
+\mathbf{h}_j
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbf{0} \\
+\boldsymbol{\tau}
+\end{bmatrix}
++
+\sum_c
+\begin{bmatrix}
+\mathbf{J}_{c,b}^T \\
+\mathbf{J}_{c,j}^T
+\end{bmatrix}
+\mathbf{F}_c
+\]</div>
+<p>The upper block (floating base) has no <span class="arithmatex">\(\boldsymbol{\tau}\)</span> term, which is the mathematical manifestation of underactuation: the base acceleration <span class="arithmatex">\(\dot{\mathbf{v}}_b\)</span> is entirely determined by the contact forces <span class="arithmatex">\(\mathbf{F}_c\)</span>.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Floating Base Dynamics"] --&gt; B["Base 6-DOF No Actuators"]
+    B --&gt; C["Underactuated System"]
+    C --&gt; D["Contact Forces F_c Indirectly Control Base"]
+    D --&gt; E["M v_dot + C v + g = S^T tau + J_c^T F_c"]
+    E --&gt; F["Gait/Balance Controller Design"]</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Partitioned Mass Matrix, Coriolis Term, Floating Base Acceleration, Joint Acceleration</p>
+<ul>
+<li><strong>Partitioned mass matrix</strong>: Representing the submatrices corresponding to the floating base and joints separately.</li>
+<li><strong>Coriolis term</strong>: Inertial terms arising from the coupling of coordinate rotation and relative motion.</li>
+<li><strong>Floating base acceleration</strong>: The combination of base linear acceleration and angular acceleration.</li>
+<li><strong>Joint acceleration</strong>: The second derivative of joint angles with respect to time.</li>
+</ul>
+</div>
+<p>Contact constraints further restrict the system motion. If a contact point is fixed to the ground (no slip, no lift-off), the contact point velocity is zero:</p>
+<div class="arithmatex">\[
+\mathbf{J}_c \mathbf{v} = \mathbf{0}
+\]</div>
+<p>Differentiating yields the acceleration-level constraint:</p>
+<div class="arithmatex">\[
+\mathbf{J}_c \dot{\mathbf{v}} + \dot{\mathbf{J}}_c \mathbf{v} = \mathbf{0}
+\]</div>
+<p>This constraint, combined with the dynamics equation, allows for the simultaneous solution of joint torques and contact forces. This is the mathematical foundation for Model Predictive Control (MPC) and Whole-Body Control (WBC) in humanoid robots.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Contact Constraint, No-Slip Constraint, Acceleration-Level Constraint, Model Predictive Control (MPC)</p>
+<ul>
+<li><strong>Contact constraint</strong>: Equality or inequality constraints limiting the kinematic quantities of a contact point.</li>
+<li><strong>No-slip constraint</strong>: A constraint requiring the tangential velocity of the contact point to be zero.</li>
+<li><strong>Acceleration-level constraint</strong>: A constraint imposed on acceleration rather than velocity.</li>
+<li><strong>Model Predictive Control (MPC)</strong>: A method that optimizes control inputs over a future time horizon in a receding horizon manner based on a dynamic model.</li>
+</ul>
+</div>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">is_prerequisite_for</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-desc">Floating-Base Dynamics is prerequisite for Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_formalism_inverse_dynamics_qp/">Inverse-Dynamics QP Formulation</a>
+              <span class="rel-desc">Floating-Base Dynamics mentions Inverse-Dynamics QP Formulation.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_inverse_kinematics/">Inverse Kinematics</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_model_predictive_control_2024/">Model Predictive Control</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_concept_digital_twin/">Digital Twin</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_capture_point/">Capture Point</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_design_for_assembly/">Design for Assembly (DFA)</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_design_for_manufacturing/">Design for Manufacturing (DFM)</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_forward_kinematics/">Forward Kinematics</a>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_ironcub_3_the_jet_powered_flyi_2025/">iRonCub 3: The Jet-Powered Flying Humanoid Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">iRonCub 3: The Jet-Powered Flying Humanoid Robot uses Floating-Base Dynamics.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_drama_trunk_pitch_oscillations_for_j_2019/">Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots uses Floating-Base Dynamics.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_the_duke_humanoid_design_and_c_2024/">The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics uses Floating-Base Dynamics.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_uniact_unified_motion_generati_2025/">UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots uses Floating-Base Dynamics.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_arachchige_dynamic_modeling_and_validatio_2023/">Dynamic Modeling and Validation of Soft Robotic Snake Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Dynamic Modeling and Validation of Soft Robotic Snake Locomotion uses Floating-Base Dynamics.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_exceeding_the_maximum_speed_li_2025/">Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids discusses Floating-Base Dynamics.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_li_design_of_a_flying_humanoid_ro_2021/">Design of a Flying Humanoid Robot Based on Thrust Vector Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Design of a Flying Humanoid Robot Based on Thrust Vector Control discusses Floating-Base Dynamics.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_principle_center_of_mass/">Center of Mass (COM)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">formalizes</span>
+              <span class="rel-desc">Cross-layer link defined in Wiki chapter 8.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Cross-layer link defined in Wiki chapter 8.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_inverse_kinematics/">Inverse Kinematics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_fea_finite_element_analysis/">Finite Element Analysis (FEA)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_forward_kinematics/">Forward Kinematics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_formalism_floating_base_dynamics"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_exceeding_the_maximum_speed_li_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids</h3>
+          <p>Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_design_for_manufacturing/">
+          <span class="entry-type">Method</span>
+          <h3>Design for Manufacturing (DFM)</h3>
+          <p>An engineering practice of designing parts and assemblies so that they are easy, repeatable, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Forward Kinematics</h3>
+          <p>The computation of end-effector position and orientation from given joint angles, using a chain of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_digital_twin/">
+          <span class="entry-type">Concept</span>
+          <h3>Digital Twin</h3>
+          <p>A virtual replica of a physical asset or process that is continuously synchronized with real-world…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_center_of_mass/">
+          <span class="entry-type">Principle</span>
+          <h3>Center of Mass (COM)</h3>
+          <p>The weighted average position of all mass in a body; its trajectory and height are central to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_the_duke_humanoid_design_and_c_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics</h3>
+          <p>The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_li_design_of_a_flying_humanoid_ro_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Design of a Flying Humanoid Robot Based on Thrust Vector Control</h3>
+          <p>This paper presents Jet-HR2, a life-sized flying humanoid robot propelled by four ducted fans and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_formalism_inverse_dynamics_qp/">
+          <span class="entry-type">Formalism</span>
+          <h3>Inverse-Dynamics QP Formulation</h3>
+          <p>A quadratic-program formulation that computes generalized accelerations, contact forces, and joint…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_drama_trunk_pitch_oscillations_for_j_2019/">
+          <span class="entry-type">Paper</span>
+          <h3>Trunk Pitch Oscillations for Joint Load Redistribution in Humans and Humanoid Robots</h3>
+          <p>This 2019 arXiv paper by Drama and Badri-Spröwitz uses a trunk-equipped spring-loaded inverted…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_capture_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Capture Point</h3>
+          <p>A point on the ground where the robot must step to bring itself to a complete stop, used as a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">Method</span>
+          <h3>Finite Element Analysis (FEA)</h3>
+          <p>A numerical method for predicting stress, deformation, vibration modes, and thermal behavior by…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_arachchige_dynamic_modeling_and_validatio_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Dynamic Modeling and Validation of Soft Robotic Snake Locomotion</h3>
+          <p>Presents a complete spatial dynamic model of a pneumatic soft robotic snake using a floating-base…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_design_for_assembly/">
+          <span class="entry-type">Method</span>
+          <h3>Design for Assembly (DFA)</h3>
+          <p>A design methodology that reduces part count, simplifies joining, and shortens assembly time to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Inverse Kinematics</h3>
+          <p>The computation of joint angles that realize a desired end-effector pose, often solved numerically…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ironcub_3_the_jet_powered_flyi_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>iRonCub 3: The Jet-Powered Flying Humanoid Robot</h3>
+          <p>iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware design for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control</h3>
+          <p>Online optimal-control approach for generating contact-rich whole-body motion.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_uniact_unified_motion_generati_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots</h3>
+          <p>UniAct converts language instructions into trackable body targets and trains or combines whole-body…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Zero Moment Point (ZMP)</h3>
+          <p>A point on the ground where the horizontal moment of the ground reaction force about it is zero;…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#847-floating-base-dynamics">8.4.7 Floating Base Dynamics</a></li>
+</ul>
+</li>
+<li><a href="#content">Content</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

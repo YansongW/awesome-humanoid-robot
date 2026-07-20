@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selection Guide: How to Choose a Sensor · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Selection Guide: How to Choose a Sensor</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="selection-guide-how-to-choose-a-sensor">Selection Guide: How to Choose a Sensor</h1>
+<blockquote>
+<p>⚠️ The content of this roadmap is compiled based on public information and theoretical knowledge, and has not been verified with actual hardware; please verify safety specifications yourself when involving electrical or mechanical operations.</p>
+</blockquote>
+<p>A common mistake in sensor selection is to "match the robot manufacturer's promotional video": buying a RealSense, a six-axis force/torque sensor, and even a tactile array, only to find that the data cannot be processed in time, or that the control frequency is throttled by the USB bandwidth. This guide takes the opposite approach: first, break down the tasks your robot must accomplish into "what physical quantities must be known," then select the sensor that is just sufficient for each type of physical quantity. For the theoretical background, see <a href="/wiki/chapters/chapter-05/">Chapter 5: Sensing and Perception Hardware</a>; for the supplier landscape, see <a href="/wiki/chapters/chapter-07/">Chapter 7: Supplier Map</a>.</p>
+<h2 id="1-perception-requirement-decomposition-what-must-your-robot-know">1. Perception Requirement Decomposition: What Must Your Robot "Know"</h2>
+<p>Divide sensors into three layers and answer "Do I really need it?" layer by layer:</p>
+<h3 id="layer-1-proprioception-joint-angles-and-body-posture">Layer 1: Proprioception — Joint Angles and Body Posture</h3>
+<p><strong>[What to do]</strong> Define the position feedback scheme for each active joint (motor-side encoder, output-side encoder, or dual encoders), and the IMU configuration for the torso/feet (number of units, sampling rate).</p>
+<p><strong>[Why]</strong> Proprioception is the lifeline of the control loop; without it, the robot doesn't even know "where its own legs are." <a href="/entry/ent_component_joint_encoder_2024/">Joint Encoder</a> provides high-resolution position feedback for motor control. A key consideration is "which end to mount it on": a motor-side encoder cannot see gearbox backlash or flexural deformation. Platforms requiring precise force control add an output-side encoder to form a dual-encoder setup — the Open Dynamic Robot Initiative's BLMC actuator uses a "dual encoder (motor-side/output-side)" design (source: research file open-dynamic-robot-initiative.md). Low-budget solutions also exist: Berkeley Humanoid Lite uses a $3 AS5600 magnetic encoder (source: research file berkeley-humanoid-lite.md), and its torso posture uses a single phone-grade BNO085 IMU to achieve zero-shot sim-to-real walking (same file). <a href="/entry/ent_component_imu_2024/">IMU</a> handles attitude estimation, providing high-frequency inertial reference fused with encoder and vision data.</p>
+<p><strong>[How to analyze your situation]</strong> For position-controlled servo solutions (e.g., Dynamixel), the encoder is built-in, so this layer costs nothing. For self-developed QDD joints, at least a motor-side encoder is needed; whether an output-side encoder is required depends on whether you do force control (yes → needed). Start with one torso-level IMU; for dynamic walking research, adding foot IMUs or contact sensing is recommended — BRUCE biped achieves 2 kHz IMU sampling for this purpose (source: research file bruce-westwood.md).</p>
+<h3 id="layer-2-force-sensing-end-effector-force-ankle-force-fingertip-tactile">Layer 2: Force Sensing — End-effector Force, Ankle Force, Fingertip Tactile</h3>
+<p><strong>[What to do]</strong> Decide three things: whether to use a <a href="/entry/ent_component_six_axis_force_torque_sensor_2024/">Six-axis F/T Sensor</a> at the wrist/ankle (which flange, what range); whether to use a <a href="/entry/ent_component_tactile_sensor_array_2024/">Tactile Sensor Array</a> at the dexterous hand fingertips; or whether to initially estimate force using the actuator's current loop.</p>
+<p><strong>[Why]</strong> A six-axis force/torque sensor measures three force components and three torque components simultaneously. It is essential for force-controlled assembly, drag teaching, and ZMP estimation in bipedal ankles — THORMANG3 uses one ATI Mini58 in each ankle (source: research file thormang3.md). However, it is one of the most expensive sensors on the robot, and its range and precision conflict (a larger range wastes resolution). Tactile arrays measure contact pressure/shear/texture, supporting slip detection for dexterous manipulation; when budget is tight, FSR arrays can be used as an entry point — the Poppy humanoid in 2014 used 16 FSR force sensors (source: research file poppy-humanoid.md).</p>
+<p><strong>[How to analyze your situation]</strong> Only walking, no manipulation → current loop force estimation + foot switch contact sensing is sufficient, saving the cost of six-axis F/T. For assembly/grinding manipulation research → a wrist six-axis F/T is worth the investment; select the range as "maximum contact force × 2." For dexterous hand grasping research → prioritize tactile arrays over wrist six-axis F/T, because slip during grasping primarily occurs at the fingertips.</p>
+<h3 id="layer-3-exteroception-seeing-the-outside-world">Layer 3: Exteroception — Seeing the Outside World</h3>
+<p><strong>[What to do]</strong> Clarify the type of exteroception task: close-range operation scene understanding (0.3–3 m), indoor navigation and mapping (3–20 m), or outdoor/large spaces. These three correspond to completely different sensors.</p>
+<p><strong>[Why]</strong> <a href="/entry/ent_component_rgbd_camera/">RGB-D cameras</a> have three depth technologies — structured light, ToF, and stereo — each with applicable distance and lighting constraints: structured light is accurate but sensitive to strong light; stereo is passive but relies on texture. The mainstream head vision solution is <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense</a> (D435i/D455 used by platforms like Qinglong and G1, sources: openloong-qinglong research file, Unitree card); the main sensor for navigation and mapping is LiDAR. The <a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a> offers 360° surround view at 265 g, making it a popular choice for quadruped/humanoid SLAM (source: Livox card).</p>
+<p><strong>[How to analyze your situation]</strong> Only desktop grasping → one RGB-D camera is enough; LiDAR is wasteful. For indoor walking navigation → RGB-D (close-range obstacle avoidance) + 360° LiDAR (mapping) is a mature combination. For pure vision research (VLA, visual servoing) → allocate budget to camera frame rate and global shutter, rather than stacking LiDARs.</p>
+<h2 id="ii-component-selection-table-key-indicators-how-they-affect-your-robot-price-range">II. Component Selection Table: Key Indicators → How They Affect Your Robot → Price Range</h2>
+<h3 id="encoder">Encoder</h3>
+<table>
+<thead>
+<tr>
+<th>Key Indicator</th>
+<th>How It Affects Your Robot</th>
+<th>Price Range Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resolution (Bits)</td>
+<td>Determines position control accuracy and speed estimation quality; joints with 17 bits or more can achieve smooth low-speed force control</td>
+<td>Magnetic encoder AS5600 (12 bit) approx. $3 (BHL archive); high-resolution optical/absolute types require inquiry</td>
+</tr>
+<tr>
+<td>Absolute vs Incremental</td>
+<td>Absolute encoders know the angle on power-up; humanoid robots have many joints, and incremental encoders require painful homing each time</td>
+<td>Absolute encoders are more expensive, choose as needed</td>
+</tr>
+<tr>
+<td>Mounting Position (Motor Side / Output Side)</td>
+<td>Output-side encoders let you "see" gearbox backlash and flexspline deformation, a prerequisite for force control transparency</td>
+<td>Dual encoders = double the cost, worthwhile for force control platforms (ODRI archive)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imu">IMU</h3>
+<table>
+<thead>
+<tr>
+<th>Key Indicator</th>
+<th>How It Affects Your Robot</th>
+<th>Price Range Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gyro Bias Stability</td>
+<td>Determines attitude integration drift speed; <a href="/entry/ent_component_imu_2024/">IMU Card</a> example ADIS16475 is 2°/hr (in operation)</td>
+<td>Phone-grade (BNO085, used by BHL) tens of RMB; industrial MEMS (ADIS16475 class) price undisclosed, requires inquiry; FOG-grade separate</td>
+</tr>
+<tr>
+<td>Angular Random Walk (ARW)</td>
+<td>Noise directly enters attitude estimation; ADIS16475 is 0.15°/√hr</td>
+<td>Same as above</td>
+</tr>
+<tr>
+<td>Cross-Axis Alignment Error</td>
+<td>Installation alignment effort for multi-sensor fusion; ADIS16475 ±0.1° factory calibrated</td>
+<td>Low-end IMUs require self-calibration</td>
+</tr>
+<tr>
+<td>Sampling Rate / Interface</td>
+<td>Balance control loops require high-frequency attitude; SPI has lower latency than I²C; ADIS16475 uses SPI</td>
+<td>BRUCE achieves 2 kHz (archive)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="six-axis-forcetorque-sensor">Six-Axis Force/Torque Sensor</h3>
+<table>
+<thead>
+<tr>
+<th>Key Indicator</th>
+<th>How It Affects Your Robot</th>
+<th>Price Range Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Range (F/M)</td>
+<td>Select based on "maximum contact force × 2"; Shenyuansheng MLL typical 50/50/100 N, 2/2/4 N·m; <a href="/entry/ent_component_ati_force_torque_sensor_2024/">OnRobot HEX-E QC</a> ±100/±200 N, ±10 N·m (source: two cards)</td>
+<td>Domestic analog type (MLL class) requires inquiry; imported ATI Nano25 (±250 N) class significantly more expensive</td>
+</tr>
+<tr>
+<td>Accuracy / Crosstalk Error</td>
+<td>Determines credibility of decoupled six-axis force control; MLL accuracy ≤0.5% FS, crosstalk error ≤2% FS</td>
+<td>Higher accuracy models are more expensive</td>
+</tr>
+<tr>
+<td>Overload Capacity</td>
+<td>Bipedal ankles inevitably experience impacts; MLL ≥300% FS, HEX-E approx. 500% FS</td>
+<td>Overload margin = lifespan</td>
+</tr>
+<tr>
+<td>Sampling Rate &amp; Interface</td>
+<td>Force control loop requires ≥1 kHz; MLL max 1000 Hz (with acquisition unit), HEX-E uses EtherNet/IP and other industrial buses</td>
+<td>Acquisition unit/bus gateway costs extra</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tactile-array">Tactile Array</h3>
+<table>
+<thead>
+<tr>
+<th>Key Indicator</th>
+<th>How It Affects Your Robot</th>
+<th>Price Range Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spatial Resolution (Taxel Density)</td>
+<td>Determines ability to discern contact shape and texture, supporting slip prediction</td>
+<td>Discrete FSR points are cheapest (Poppy uses 16 points); array type requires inquiry</td>
+</tr>
+<tr>
+<td>Measurement Dimension</td>
+<td>Normal pressure only vs. triaxial force (including shear) – shear is a precursor to slip</td>
+<td>Triaxial arrays are much more expensive, only needed for grasping research</td>
+</tr>
+<tr>
+<td>Curved Surface Attachment &amp; Wiring</td>
+<td>Curved fingertip mounting and routing is a major engineering challenge, often more labor-intensive than the sensor itself</td>
+<td>Evaluate flexible PCB solutions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rgb-d-camera-realsense-vs-zed">RGB-D Camera (RealSense vs ZED)</h3>
+<table>
+<thead>
+<tr>
+<th>Key Indicator</th>
+<th>How It Affects Your Robot</th>
+<th>Price Range Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ideal Range &amp; Accuracy</td>
+<td>Manipulation scenarios focus on 0.3–1 m accuracy: <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">RealSense</a> D435i is 0.1–10 m, &lt;2% @2 m; D455 is 0.6–6 m, &lt;2% @4 m (source: RealSense card, official datasheet)</td>
+<td>D435i approx. USD 199, D455 approx. USD 299 (public market reference, card specification)</td>
+</tr>
+<tr>
+<td>Shutter Type</td>
+<td>Head is moving; global shutter (D455) avoids rolling shutter distortion</td>
+<td>Global shutter models are generally slightly more expensive</td>
+</tr>
+<tr>
+<td>Built-in IMU</td>
+<td>Visual-inertial fusion (VIO) saves an external IMU: D435i has built-in BMI055</td>
+<td>Only available in 'i' suffix models</td>
+</tr>
+<tr>
+<td>Compute Dependency</td>
+<td><a href="/entry/ent_component_zed_stereo_camera_2024/">ZED Stereo Camera</a> onboard depth + spatial AI, but depth computation relies on host GPU ecosystem (source: ZED card); price requires direct supplier confirmation</td>
+<td>RealSense ecosystem (librealsense+ROS) has zero compute barrier; ZED requires NVIDIA host</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lidar">LiDAR</h3>
+<table>
+<thead>
+<tr>
+<th>Key Indicator</th>
+<th>How It Affects Your Robot</th>
+<th>Price Range Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FOV</td>
+<td><a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a> horizontal 360°, vertical -7°~52°, one unit covers torso surround view (source: Livox card)</td>
+<td>Mid-360 approx. CNY 3,999 (official store, card specification)</td>
+</tr>
+<tr>
+<td>Detection Range &amp; Accuracy</td>
+<td>40 m @10% reflectivity, ≤2 cm @10 m – more than sufficient for indoor navigation and mapping</td>
+<td>Same as left</td>
+</tr>
+<tr>
+<td>Point Rate &amp; Frame Rate</td>
+<td>200,000 points/sec, 10 Hz, determines dynamic scene update rate</td>
+<td>Same as left</td>
+</tr>
+<tr>
+<td>Weight / Power Consumption</td>
+<td>265 g, 6.5 W, acceptable for head/torso; built-in ICM40609 IMU enables LIO</td>
+<td>Same as left</td>
+</tr>
+</tbody>
+</table>
+<h2 id="iii-calibration-time-synchronization-buying-the-right-sensor-is-only-half-the-job">III. Calibration &amp; Time Synchronization: Buying the Right Sensor is Only Half the Job</h2>
+<p>[What to Do] Develop a calibration plan: camera intrinsics (checkerboard), camera-LiDAR extrinsics, camera-IMU extrinsics and time offset, joint zero positions, and agree on a unified time source (PTP or hardware trigger).</p>
+<p>[Why] All algorithms for multi-sensor fusion assume "extrinsics known, clocks synchronized." The <a href="/entry/ent_method_calibration_joint_camera_imu/">Joint Camera-IMU Calibration</a> card provides the standard workflow: multi-pose calibration target acquisition → camera corner detection + LiDAR plane/corner extraction → PnP initial value + ICP/nonlinear optimization → minimize reprojection error for verification; when no calibration target is available, scene edge alignment or mutual information methods can be used for online refinement. If the time offset is not calibrated, fusion results during motion become "ghosted" – VIO divergence and point cloud color misalignment originate from this. See <a href="/wiki/chapters/chapter-11/">Chapter 11: Assembly, Integration, and Testing</a> for systematic integration and testing methods.</p>
+<p>[How to Analyze Your Situation] Starting with a single RGB-D only requires camera intrinsics; adding LiDAR necessitates camera-LiDAR extrinsics (the card method can be directly applied); VIO/multi-IMU fusion requires additional time calibration. Use reprojection error as the acceptance metric, don't rely on visual "looks roughly aligned."</p>
+<h2 id="iv-two-recommended-configurations">IV. Two Recommended Configurations</h2>
+<h3 id="beginner-minimum-kit-goal-walk-see-not-break-easily">Beginner Minimum Kit (Goal: Walk, See, Not Break Easily)</h3>
+<ul>
+<li>Joint Feedback: Smart servo built-in encoder, or self-developed joint using AS5600-class magnetic encoder ($3/unit, BHL archive specification).</li>
+<li>Attitude: One phone-grade IMU (BNO085 class), first get attitude estimation working.</li>
+<li>External Perception: One RealSense D435i (approx. USD 199, card specification) – depth + RGB + IMU all-in-one, most mature ecosystem.</li>
+<li>Force Sensing: Not initially; use current loop for force estimation; foot end can use switch/FSR for ground contact detection.</li>
+<li>Analysis Logic: This setup spends every dollar on "essentials for control loop closure," sufficient for walking and grasping demos; upgrade item by item when bottlenecks become clear (large attitude drift, inability to detect grasp slip).</li>
+</ul>
+<h3 id="research-grade-kit-goal-force-control-manipulation-navigation-paper-quality-data">Research-Grade Kit (Goal: Force Control / Manipulation / Navigation Paper-Quality Data)</h3>
+<ul>
+<li>Joint Feedback: Dual encoders (motor side + output side), output side using high-resolution absolute type.</li>
+<li>Attitude: Industrial MEMS IMU (ADIS16475 class: ARW 0.15°/√hr, bias 2°/hr, ±0.1° alignment, card specification) + distributed placement on torso/feet, sampling towards 1–2 kHz.</li>
+<li>Force Sensing: Wrist six-axis force (domestic MLL class or ATI/OnRobot class) + bipedal ankle six-axis force (THORMANG3 configuration precedent), dexterous hand with tactile array.</li>
+<li>External Perception: RealSense D455 (global shutter, approx. USD 299) or ZED (when GPU host is available) + Livox Mid-360 (approx. CNY 3,999) for 360° mapping.</li>
+<li>Calibration: Full set of intrinsic/extrinsic/time synchronization calibration, reprojection error included in acceptance.</li>
+<li>Analysis Logic: The core of research-grade is "data credibility" – expensive sensors are not the goal; calibratability, traceability, and clock synchronization are.</li>
+</ul>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>Have a checklist of "physical quantity → sensor → mounting position → interface → sampling rate," where each item can answer "what happens without it."</li>
+<li>Key indicators (range/accuracy/bandwidth) of each sensor correspond one-to-one with task requirements and are traceable to cards or datasheets; items without public prices are marked "requires direct supplier confirmation."</li>
+<li>Calibration plan implemented: camera intrinsics completed; if LiDAR is installed, camera-LiDAR extrinsics completed and reprojection error recorded.</li>
+<li>All sensor timestamps unified to the same clock source; fusion nodes show no visible temporal misalignment.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slow drift in attitude estimation, increasingly skewed walking</td>
+<td>Insufficient IMU bias stability or lack of temperature compensation calibration</td>
+<td>Check bias stability indicator; estimate bias while stationary, upgrade to industrial-grade IMU if necessary</td>
+</tr>
+<tr>
+<td>VIO/fusion divergence during walking</td>
+<td>Camera-IMU time offset not calibrated</td>
+<td>Perform time synchronization calibration; check if timestamp sources are unified</td>
+</tr>
+<tr>
+<td>Point cloud coloring misalignment, ghosting</td>
+<td>Camera-LiDAR extrinsic parameters outdated (after collision)</td>
+<td>Re-perform multi-pose calibration, check if reprojection error converges</td>
+</tr>
+<tr>
+<td>Six-axis force reading zero drift</td>
+<td>Temperature drift or failure to tare; installation stress interference</td>
+<td>Tare after power-on warm-up; check flange preload</td>
+</tr>
+<tr>
+<td>Six-axis force range always saturated</td>
+<td>Range selected based on "typical force" rather than "impact × 2"</td>
+<td>Verify ankle impact peak; replace with larger range or add overload protection strategy</td>
+</tr>
+<tr>
+<td>Large depth map voids in sunlight</td>
+<td>Structured light/active IR susceptible to strong light (inherent to the approach)</td>
+<td>Check depth technology approach; switch to passive stereo or LiDAR for outdoor use</td>
+</tr>
+<tr>
+<td>High noise in tactile array data</td>
+<td>Wire bending interference, power supply ripple</td>
+<td>Secure wire routing; check power supply with oscilloscope, add filtering</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-reading">Related Reading</h2>
+<ul>
+<li><a href="/roadmap/stage-3-humanoid/">Stage 3 · Full Humanoid</a> — Perception Stack Integration and Calibration Practice</li>
+<li><a href="/roadmap/stage-2-biped/">Stage 2 · Biped Platform</a> — Role of Proprioceptive Sensors in Balance Control</li>
+<li><a href="/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/playbooks/compute-selection/">← Previous<span>Computing Platform Selection: Equipping a Robot with a &#34;Layered Brain&#34;</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/playbooks/sim-setup/">Next →<span>Building a Simulation Environment from Scratch: Fall Ten Thousand Times in the Digital World First</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#selection-guide-how-to-choose-a-sensor">Selection Guide: How to Choose a Sensor</a><ul>
+<li><a href="#1-perception-requirement-decomposition-what-must-your-robot-know">1. Perception Requirement Decomposition: What Must Your Robot "Know"</a><ul>
+<li><a href="#layer-1-proprioception-joint-angles-and-body-posture">Layer 1: Proprioception — Joint Angles and Body Posture</a></li>
+<li><a href="#layer-2-force-sensing-end-effector-force-ankle-force-fingertip-tactile">Layer 2: Force Sensing — End-effector Force, Ankle Force, Fingertip Tactile</a></li>
+<li><a href="#layer-3-exteroception-seeing-the-outside-world">Layer 3: Exteroception — Seeing the Outside World</a></li>
+</ul>
+</li>
+<li><a href="#ii-component-selection-table-key-indicators-how-they-affect-your-robot-price-range">II. Component Selection Table: Key Indicators → How They Affect Your Robot → Price Range</a><ul>
+<li><a href="#encoder">Encoder</a></li>
+<li><a href="#imu">IMU</a></li>
+<li><a href="#six-axis-forcetorque-sensor">Six-Axis Force/Torque Sensor</a></li>
+<li><a href="#tactile-array">Tactile Array</a></li>
+<li><a href="#rgb-d-camera-realsense-vs-zed">RGB-D Camera (RealSense vs ZED)</a></li>
+<li><a href="#lidar">LiDAR</a></li>
+</ul>
+</li>
+<li><a href="#iii-calibration-time-synchronization-buying-the-right-sensor-is-only-half-the-job">III. Calibration &amp; Time Synchronization: Buying the Right Sensor is Only Half the Job</a></li>
+<li><a href="#iv-two-recommended-configurations">IV. Two Recommended Configurations</a><ul>
+<li><a href="#beginner-minimum-kit-goal-walk-see-not-break-easily">Beginner Minimum Kit (Goal: Walk, See, Not Break Easily)</a></li>
+<li><a href="#research-grade-kit-goal-force-control-manipulation-navigation-paper-quality-data">Research-Grade Kit (Goal: Force Control / Manipulation / Navigation Paper-Quality Data)</a></li>
+</ul>
+</li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#related-reading">Related Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

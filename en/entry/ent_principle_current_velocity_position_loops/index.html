@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Current / Velocity / Position Control Loops · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/principle/">Principle</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Current / Velocity / Position Control Loops</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Principle</div>
+      <h1>Current / Velocity / Position Control Loops</h1>
+      <p class="entry-name-en">Current / Velocity / Position Control Loops</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#4.5.5 电流环、速度环、位置环的级联控制 by scripts/backfill_nonpaper_entries.py. Body backfilled from chapter-04.md section &#39;4.5.5 电流环、速度环、位置环的级联控制&#39; by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-1-actuator/">
+        <span class="roadmap-badge-stage">Stage 1 · Build One Joint</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The nested feedback-control hierarchy for servo drives, where an inner current loop regulates torque, a velocity loop regulates speed, and an outer position loop regulates joint angle.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The cascaded feedback control hierarchy of servo drives: the inner current loop controls torque, the intermediate velocity loop controls rotational speed, and the outer position loop controls joint angle.</p>
+<h2 id="content">Content</h2>
+<h3 id="455-cascaded-control-of-current-loop-velocity-loop-and-position-loop">4.5.5 Cascaded Control of Current Loop, Velocity Loop, and Position Loop</h3>
+<p>Practical joint drives typically employ a three-level cascaded control structure: the innermost <strong>current loop</strong> (torque loop), the intermediate <strong>velocity loop</strong>, and the outermost <strong>position loop</strong>. The bandwidth of each layer is approximately 5-10 times that of the next layer to ensure stability.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Current Loop, Velocity Loop, Position Loop, PI Controller, Feedforward, Anti-Windup, Bandwidth Cascade</p>
+<ul>
+<li><strong>Current loop</strong>: The fastest inner loop that controls the motor phase current, directly determining the output torque.</li>
+<li><strong>Velocity loop</strong>: Controls the motor speed as the controlled variable, outputting the current command.</li>
+<li><strong>Position loop</strong>: Controls the joint angle as the controlled variable, outputting the velocity command.</li>
+<li><strong>PI controller (proportional-integral controller)</strong>: A classic controller consisting of a proportional term and an integral term, used to eliminate steady-state error.</li>
+<li><strong>Feedforward</strong>: Pre-calculates and adds a control quantity based on the desired trajectory to improve tracking performance.</li>
+<li><strong>Anti-windup</strong>: Prevents the integrator from excessive accumulation during saturation, avoiding large overshoot after exiting saturation.</li>
+<li><strong>Bandwidth cascade</strong>: The inner loop bandwidth is significantly higher than that of the outer loop, ensuring that the outer loop commands can be quickly tracked by the inner loop.</li>
+</ul>
+</div>
+<p>The bandwidth of the current loop can typically reach 1-5 kHz; the velocity loop 50-500 Hz; and the position loop 5-100 Hz, depending on load inertia, stiffness, and sampling rate.</p>
+<h3 id="importance-in-humanoid-robot-joint-control">Importance in Humanoid Robot Joint Control</h3>
+<p>Humanoid robot joints typically require both high dynamic response and precise position tracking. The three-level cascaded control, through hierarchical bandwidth design, enables the inner loop to quickly suppress current disturbances, the intermediate loop to ensure smooth velocity, and the outer loop to achieve trajectory tracking. This forms the foundation for stable motion in multi-degree-of-freedom humanoid robots. Properly tuning the parameters of the three loops and incorporating feedforward and anti-windup mechanisms can significantly enhance walking, manipulation, and collision recovery capabilities.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_process_p10_2_3/">Whole-body control WBC</a>
+              <span class="rel-desc">Current / Velocity / Position Control Loops mentions Whole-body control WBC.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_servo_drive_2024/">Servo Drive</a>
+              <span class="rel-desc">Current / Velocity / Position Control Loops has prerequisite Servo Drive.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_pid_control/">PID Control</a>
+              <span class="rel-desc">Current / Velocity / Position Control Loops has prerequisite PID Control.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">Robot Impedance Control and Passivity Analysis with Inner Torque and Velocity Feedback Loops</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Robot Impedance Control and Passivity Analysis with Inner Torque and Velocity Feedback Loops discusses Current / Velocity / Position Control Loops.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Whole-Body Control (WBC) mentions Current / Velocity / Position Control Loops.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_servo_drive_2024/">Servo Drive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Servo Drive uses Current / Velocity / Position Control Loops.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_field_oriented_control/">Field-Oriented Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Field-Oriented Control mentions Current / Velocity / Position Control Loops.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_oem_unitree_robotics/">Unitree Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">Unitree Robotics has prerequisite Current / Velocity / Position Control Loops.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_principle_current_velocity_position_loops"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_oem_unitree_robotics/">
+          <span class="entry-type">OEM</span>
+          <h3>Unitree Robotics</h3>
+          <p>Chinese robotics company developing quadruped and humanoid robots, including the Unitree H1 and G1…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_servo_drive_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Servo Drive</h3>
+          <p>Electronic amplifier that converts low-power command signals into high-current motor control for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_field_oriented_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control</h3>
+          <p>A motor control technique that transforms three-phase stator currents into a rotating d-q reference…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_pid_control/">
+          <span class="entry-type">Method</span>
+          <h3>PID Control</h3>
+          <p>A foundational feedback control method that computes a control signal as a linear combination of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_focchi_robot_impedance_control_and_pa_2016/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Impedance Control and Passivity Analysis with Inner Torque and Velocity Feedback Loops</h3>
+          <p>This paper analyzes how inner-loop torque bandwidth, velocity filtering, and sampling rate constrain…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_process_p10_2_3/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-body control WBC</h3>
+          <p>WBC controller, multi-task coordination demonstration, solution time &amp;lt;1 ms</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#455-cascaded-control-of-current-loop-velocity-loop-and-position-loop">4.5.5 Cascaded Control of Current Loop, Velocity Loop, and Position Loop</a></li>
+<li><a href="#importance-in-humanoid-robot-joint-control">Importance in Humanoid Robot Joint Control</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

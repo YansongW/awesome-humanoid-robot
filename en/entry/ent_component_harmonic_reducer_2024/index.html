@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harmonic Reducer · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/component/">Component</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Harmonic Reducer</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Component</div>
+      <h1>Harmonic Reducer</h1>
+      <p class="entry-name-en">Harmonic Reducer</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from kg/entities/ent_component_harmonic_drive.md by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Compact precision gearbox with high reduction ratio and near-zero backlash, widely used in robot rotary joints.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Harmonic_drive" target="_blank" rel="noopener">Harmonic Reducer</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Harmonic drives are a critical component in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.</p>
+<h2 id="content">Content</h2>
+<h2 id="harmonic-drive">Harmonic Drive</h2>
+<h3 id="overview_1">Overview</h3>
+<p>A harmonic drive is a precision reduction device based on the principle of elastic deformation of a flexible gear. It consists of a wave generator, a flexspline, and a circular spline. Its core advantages include zero backlash, high reduction ratio, high torque density, and high positioning accuracy. It is widely used in industrial robots, collaborative robots, humanoid robot joints, CNC machine tool rotary tables, semiconductor equipment, and medical robots.</p>
+<h3 id="working-principle-and-technical-architecture">Working Principle and Technical Architecture</h3>
+<p>The wave generator is an elliptical cam with a thin-walled bearing on its outer circumference; its rotation causes periodic elliptical deformation of the flexspline. The external teeth of the flexspline mesh with the internal teeth of the circular spline. Since the tooth count difference between the two is typically 2 teeth, for each full rotation of the flexspline, it advances only 2 tooth pitches relative to the circular spline, thereby achieving a large reduction ratio.</p>
+<p>The reduction ratio can be expressed as:</p>
+<div class="arithmatex">\[
+i = \frac{N_f}{N_c - N_f}
+\]</div>
+<p>where <span class="arithmatex">\(N_c\)</span> is the number of teeth on the circular spline and <span class="arithmatex">\(N_f\)</span> is the number of teeth on the flexspline. Taking the CSF-32-100-2UH as an example, <span class="arithmatex">\(i=100:1\)</span>.</p>
+<p>The relationship between output torque and input torque is:</p>
+<div class="arithmatex">\[
+T_{\text{out}} = i \cdot T_{\text{in}} \cdot \eta
+\]</div>
+<p>where <span class="arithmatex">\(\eta\)</span> is the transmission efficiency. The typical efficiency of a harmonic drive is approximately 80%–90%. Torsional stiffness is usually described by a piecewise linear model: <span class="arithmatex">\(K_1\)</span> within <span class="arithmatex">\(T_1\)</span>, <span class="arithmatex">\(K_2\)</span> between <span class="arithmatex">\(T_1\)</span> and <span class="arithmatex">\(T_2\)</span>, and <span class="arithmatex">\(K_3\)</span> above <span class="arithmatex">\(T_2\)</span>.</p>
+<h3 id="key-parameter-table">Key Parameter Table</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value/Range</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Representative Model</td>
+<td>CSF-32-100-2UH</td>
+<td>Harmonic Drive Systems</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Size 32</td>
+<td>Outer diameter approx. 110 mm</td>
+</tr>
+<tr>
+<td>Reduction Ratio</td>
+<td>30:1 – 160:1 (series range)</td>
+<td>100:1 used in this table</td>
+</tr>
+<tr>
+<td>Rated Torque L10</td>
+<td>137 N·m</td>
+<td>CSF-32-100-2UH</td>
+</tr>
+<tr>
+<td>Average Torque Limit</td>
+<td>216 N·m</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Repeated Peak Torque</td>
+<td>333 N·m</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Instantaneous Peak Torque</td>
+<td>647 N·m</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Maximum Input Speed</td>
+<td>3500 rpm</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Standard Accuracy</td>
+<td>≤1 arcmin</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Backlash</td>
+<td>Near zero</td>
+<td>Characteristic of harmonic drive</td>
+</tr>
+<tr>
+<td>Torsional Stiffness K1/K2/K3</td>
+<td>67,000 / 110,000 / 120,000 N·m/rad</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Allowable Moment Load</td>
+<td>313 N·m</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Radial Dynamic Load Capacity</td>
+<td>15,000 N</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>3.2 kg</td>
+<td>CSF-32-100-2UH</td>
+</tr>
+<tr>
+<td>Lubrication</td>
+<td>Special grease</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Price</td>
+<td>Not disclosed</td>
+<td>Requires inquiry</td>
+</tr>
+</tbody>
+</table>
+<h3 id="application-scenarios">Application Scenarios</h3>
+<ul>
+<li><strong>Industrial Robots</strong>: High-precision reduction in the wrists and forearm joints of six-axis robots.</li>
+<li><strong>Collaborative Robots and Humanoid Robots</strong>: Torque amplification and precision positioning in shoulder, elbow, hip, and wrist joints.</li>
+<li><strong>CNC Machine Tools</strong>: Fourth/fifth-axis rotary tables and indexing heads.</li>
+<li><strong>Semiconductor and Medical</strong>: Wafer rotary tables and surgical robot joints.</li>
+</ul>
+<h3 id="supply-chain-relationships">Supply Chain Relationships</h3>
+<ul>
+<li><strong>Major Manufacturers</strong>: Harmonic Drive Systems (Japan), Leaderdrive (China), Laifu (China), etc.</li>
+<li><strong>Key Upstream Materials</strong>: Alloy steel (flexspline/circular spline), cross roller bearings, special grease, aluminum housing.</li>
+<li><strong>Downstream Integration</strong>: Industrial robot OEMs, humanoid robot integrators, CNC machine tool manufacturers, semiconductor equipment suppliers, medical robot manufacturers.</li>
+<li><strong>Knowledge Graph Relationships</strong>:</li>
+<li><code>ent_company_harmonic_drive</code> — <code>manufactures</code> → <code>ent_component_harmonic_drive</code></li>
+<li><code>ent_product_estun_robot</code> — <code>uses</code> → <code>ent_component_harmonic_drive</code></li>
+</ul>
+<h3 id="sources-and-verification">Sources and Verification</h3>
+<ul>
+<li>The Harmonic Drive Systems official website is the source for the brand and product series.</li>
+<li>The Electromate product page provides dimensions, weight (0.89 kg), reduction ratio 50:1, maximum continuous torque 76 N·m, maximum input speed 7000 rpm, and accuracy &lt;1 arcmin for the CSF-32-50-2A-GR.</li>
+<li>The Tradebearings technical specification page provides the rated torque of 137 N·m, repeated peak torque of 333 N·m, instantaneous peak torque of 647 N·m, torsional stiffness, allowable moment load, and weight of 3.2 kg for the CSF-32-100-2UH.</li>
+<li>Appendix D Wiki confirms the supply chain position of harmonic drives in robot joints.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">manufactured_by</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_company_leaderdrive_2024/">Leaderdrive</a>
+              <span class="rel-desc">Harmonic Reducer manufactured by Leaderdrive.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">manufactured_by</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_company_harmonic_drive_systems_2024/">Harmonic Drive Systems</a>
+              <span class="rel-desc">Harmonic Reducer manufactured by Harmonic Drive Systems.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">part of</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_rotary_actuator_2024/">Rotary Actuator</a>
+              <span class="rel-desc">Harmonic reducer is a core sub-component of rotary joint actuators.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_company_harmonic_drive_systems_2024/">Harmonic Drive Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">manufacturer of</span>
+              <span class="rel-desc">Harmonic Drive Systems manufactures harmonic reducers.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">Materials that make robots smart</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Materials that make robots smart discusses Harmonic Reducer.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_leaderdrive_2024/">Leaderdrive</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">manufacturer of</span>
+              <span class="rel-desc">Leaderdrive is a Chinese harmonic reducer manufacturer.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_company_bonfiglioli_2024/">Bonfiglioli</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Bonfiglioli uses Harmonic Reducer.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_cervettini_a_framework_for_optimal_ankle_2025/">A Framework for Optimal Ankle Design of Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Framework for Optimal Ankle Design of Humanoid Robots discusses Harmonic Reducer.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_metric_torque_density/">Torque Density</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">combines with</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 4. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">combines with</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 4. </span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_foc_motor_control/">Field-Oriented Control (FOC)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_component_planetary_roller_screw/">Planetary Roller Screw</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Co-occurrence relationship extracted from the same Wiki chapter section.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_harmonic_reducer_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_correll_materials_that_make_robots_sma_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Materials that make robots smart</h3>
+          <p>This paper argues that embodied artificial intelligence is also a materials problem, defines…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_leaderdrive_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Leaderdrive</h3>
+          <p>Chinese harmonic drive manufacturer with growing market share in domestic robot supply chains.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_cervettini_a_framework_for_optimal_ankle_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>A Framework for Optimal Ankle Design of Humanoid Robots</h3>
+          <p>Proposes a unified methodology for designing and evaluating parallel ankle mechanisms for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_bonfiglioli_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Bonfiglioli</h3>
+          <p>Italian manufacturer of gearboxes and drive systems used in industrial and mobile robotics.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_planetary_roller_screw/">
+          <span class="entry-type">Component</span>
+          <h3>Planetary Roller Screw</h3>
+          <p>A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_metric_torque_density/">
+          <span class="entry-type">Concept</span>
+          <h3>Torque Density</h3>
+          <p>The ratio of continuous output torque to actuator mass or volume, a key figure of merit for compact,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_company_harmonic_drive_systems_2024/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>Harmonic Drive Systems</h3>
+          <p>Leading Japanese manufacturer of harmonic/strain-wave gearboxes for robot joints.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_foc_motor_control/">
+          <span class="entry-type">Method</span>
+          <h3>Field-Oriented Control (FOC)</h3>
+          <p>A motor-control method that transforms three-phase currents into a rotating dq reference frame to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Zero Moment Point (ZMP)</h3>
+          <p>A point on the ground where the horizontal moment of the ground reaction force about it is zero;…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_rotary_actuator_2024/">
+          <span class="entry-type">Component</span>
+          <h3>Rotary Actuator</h3>
+          <p>Actuator producing rotational motion, typically composed of frameless torque motor, harmonic…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a></li>
+<li><a href="#harmonic-drive">Harmonic Drive</a><ul>
+<li><a href="#overview_1">Overview</a></li>
+<li><a href="#working-principle-and-technical-architecture">Working Principle and Technical Architecture</a></li>
+<li><a href="#key-parameter-table">Key Parameter Table</a></li>
+<li><a href="#application-scenarios">Application Scenarios</a></li>
+<li><a href="#supply-chain-relationships">Supply Chain Relationships</a></li>
+<li><a href="#sources-and-verification">Sources and Verification</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

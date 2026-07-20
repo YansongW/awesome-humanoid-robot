@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open X-Embodiment Dataset · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/dataset/">Dataset</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Open X-Embodiment Dataset</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Dataset</div>
+      <h1>Open X-Embodiment Dataset</h1>
+      <p class="entry-name-en">Open X-Embodiment Dataset</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Data &amp; Datasets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Dataset scope and usage are documented in the original RSS 2023 paper and confirmed by Wang et al. 2026 VLA survey. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">Stage 3 · Full Humanoid</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A large-scale aggregated robot-learning dataset combining demonstrations from diverse real-world robot platforms and institutions, widely used for cross-embodiment VLA pretraining.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2310.08864" target="_blank" rel="noopener">Open X-Embodiment: Robotic Learning Datasets and RT-X Models</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://www.open-x-embodiment.org/" target="_blank" rel="noopener">Open X-Embodiment Collaboration</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>Related</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/en/entry/ent_paper_wang_vla_survey_2026/">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</a>
+            
+              
+                
+              
+              <span class="rel-desc">Wang et al. 2026 survey cites Open X-Embodiment as a widely used cross-embodiment pretraining dataset.</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>Open X-Embodiment (OXE) is one of the largest public aggregations of robot demonstration data. It pools data from multiple institutions, robot morphologies, and control interfaces into a unified format suitable for training generalist vision-language-action models.</p>
+<h2 id="key-characteristics">Key Characteristics</h2>
+<ul>
+<li><strong>Cross-embodiment</strong>: combines data from many robot platforms with different action spaces (EEF, joint, delta, absolute, etc.).</li>
+<li><strong>Large scale</strong>: millions of demonstration frames across thousands of tasks.</li>
+<li><strong>Diversity</strong>: covers manipulation tasks in multiple environments with varying camera views and language instructions.</li>
+<li><strong>Trade-offs</strong>: the heterogeneity that enables generalization also introduces alignment challenges across embodiments.</li>
+</ul>
+<h2 id="format">Format</h2>
+<p>Data is released in a standardized RLDS format with video, language instruction, robot state, and action traces.</p>
+<h2 id="relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</h2>
+<p>Open X-Embodiment is the most common pretraining corpus for VLA models that may later be fine-tuned on humanoid platforms. However, humanoid-specific whole-body control and balancing data is under-represented compared to arm-only manipulation.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_probability_theory/">Probability Theory</a>
+              <span class="rel-desc">Open X-Embodiment Dataset has prerequisite Probability Theory.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_wang_vla_survey_2026/">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</a>
+              <span class="rel-desc">Open X-Embodiment Dataset cites Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">Open X-Embodiment Dataset mentions OpenVLA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_software_nvidia_isaac_lab_2024/">NVIDIA Isaac Lab</a>
+              <span class="rel-desc">Open X-Embodiment data can be mixed with synthetic data in Isaac Lab.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_collaboration_open_x_embodiment_robotic_lear_2023/">Open X-Embodiment: Robotic Learning Datasets and RT-X Models</a>
+              <span class="rel-desc">Open X-Embodiment Dataset cites Open X-Embodiment: Robotic Learning Datasets and RT-X Models.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_linear_algebra/">Linear Algebra</a>
+              <span class="rel-desc">Open X-Embodiment Dataset has prerequisite Linear Algebra.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_pi0/">π0 (Pi Zero)</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 19. </span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 19. </span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 19. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_openvla_2024/">OpenVLA: An Open-Source Vision-Language-Action Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">OpenVLA is pretrained on 970k real-world robot demonstrations from the Open X-Embodiment dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wang_vla_survey_2026/">Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Wang et al. (2026) cite Open X-Embodiment as a widely used cross-embodiment pretraining dataset for VLA models.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">Online Balanced Motion Generation for Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">sources from</span>
+              <span class="rel-desc">Online Balanced Motion Generation for Humanoid Robots sources data from or uses Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_jiang_kaiwu_a_multimodal_manipulatio_2025/">Kaiwu: A Multimodal Manipulation Dataset and Framework for Robot Learning and Human-Robot Interaction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Kaiwu: A Multimodal Manipulation Dataset and Framework for Robot Learning and Human-Robot Interaction cites Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wu_robomind_benchmark_on_multi_em_2025/">RoboMIND: Benchmark on Multi-embodiment Intelligence Normative Data for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">RoboMIND: Benchmark on Multi-embodiment Intelligence Normative Data for Robot Manipulation mentions Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses dataset</span>
+              <span class="rel-desc">Open X-Embodiment data is used to train OpenVLA.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_dataset_ario_dataset_2024/">ARIO Dataset</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">ARIO Dataset mentions Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_long_on_llms_driven_synthetic_data_2024/">On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey discusses Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-desc">OpenVLA has prerequisite Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_soncini_the_rosario_dataset_v2_multimo_2025/">The Rosario Dataset v2: Multimodal Dataset for Agricultural Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">The Rosario Dataset v2: Multimodal Dataset for Agricultural Robotics mentions Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_team_octo_an_open_source_generalist_2024/">Octo: An Open-Source Generalist Robot Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses dataset</span>
+              <span class="rel-desc">Open X-Embodiment data is used to train Octo generalist policy.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_agibot_world_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">The paper compares policies pre-trained on AgiBot World against those trained on Open X-Embodiment.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">RUKA: Rethinking the Design of Humanoid Hands with Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">sources from</span>
+              <span class="rel-desc">RUKA: Rethinking the Design of Humanoid Hands with Learning sources data from or uses Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_open_television_teleoperation_2024/">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">sources from</span>
+              <span class="rel-desc">Open-TeleVision: Teleoperation with Immersive Active Visual Feedback sources data from or uses Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rt_2_vision_language_action_mo_2023/">RT-2 Vision-Language-Action Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses dataset</span>
+              <span class="rel-desc">Open X-Embodiment data is used to train RT-2 and RT-X.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nelson_open_h_embodiment_a_large_scal_2026/">Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">The paper cites Open-X-Embodiment as related large-scale cross-embodiment robotic learning infrastructure.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lisondra_embodied_ai_with_foundation_mo_2025/">Embodied AI with Foundation Models for Mobile Service Robots: A Systematic Review</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">The review lists Open X-Embodiment as a dataset used in the reviewed robot-learning literature.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_collaboration_open_x_embodiment_robotic_lear_2023/">Open X-Embodiment: Robotic Learning Datasets and RT-X Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Open X-Embodiment: Robotic Learning Datasets and RT-X Models cites Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_dass_pato_policy_assisted_teleopera_2023/">PATO: Policy Assisted TeleOperation for Scalable Robot Data Collection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">PATO: Policy Assisted TeleOperation for Scalable Robot Data Collection discusses Open X-Embodiment Dataset.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_nvidia_gr00t_n1_an_open_foundation_mo_2025/">GR00T N1: An Open Foundation Model for Generalist Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">GR00T N1 uses the Open X-Embodiment dataset as part of its heterogeneous training data pyramid.</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_sharma_world_gymnast_training_robots_2026/">World-Gymnast: Training Robots with Reinforcement Learning in a World Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses dataset</span>
+              <span class="rel-desc">Both OpenVLA and the WorldGym variant are pretrained on the Open X-Embodiment dataset.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_dataset_open_x_embodiment"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>OpenVLA: An Open-Source Vision-Language-Action Model</h3>
+          <p>A 7B-parameter open-source VLA pretrained on 970k real-world robot demonstrations from the Open…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_sharma_world_gymnast_training_robots_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>World-Gymnast: Training Robots with Reinforcement Learning in a World Model</h3>
+          <p>World-Gymnast fine-tunes a vision-language-action (VLA) policy via Group Relative Policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RUKA: Rethinking the Design of Humanoid Hands with Learning</h3>
+          <p>RUKA is a low-cost, 3D-printed, tendon-driven anthropomorphic hand with 15 underactuated degrees of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_jiang_kaiwu_a_multimodal_manipulatio_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Kaiwu: A Multimodal Manipulation Dataset and Framework for Robot Learning and Human-Robot Interaction</h3>
+          <p>Kaiwu is a large-scale, real-world multimodal manipulation dataset and collection framework for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nelson_open_h_embodiment_a_large_scal_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics</h3>
+          <p>Introduces Open-H-Embodiment, a 780-hour multimodal dataset of synchronized medical robotic video,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wu_robomind_benchmark_on_multi_em_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>RoboMIND: Benchmark on Multi-embodiment Intelligence Normative Data for Robot Manipulation</h3>
+          <p>Introduces RoboMIND, a 107k-trajectory human-teleoperated manipulation dataset collected on a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines</h3>
+          <p>A 2026 survey arguing that VLA progress now depends more on data infrastructure and evaluation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_open_television_teleoperation_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Open-TeleVision: Teleoperation with Immersive Active Visual Feedback</h3>
+          <p>Open-TeleVision primarily addresses data closed loops: capturing human operations and robotic states…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_nvidia_gr00t_n1_an_open_foundation_mo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>GR00T N1: An Open Foundation Model for Generalist Humanoid Robots</h3>
+          <p>GR00T N1 is a dual-system Vision-Language-Action (VLA) foundation model for humanoid robots,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_long_on_llms_driven_synthetic_data_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>On LLMs-Driven Synthetic Data Generation, Curation, and Evaluation: A Survey</h3>
+          <p>A 2024 survey that organizes research on LLM-driven synthetic data generation, curation, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ficht_online_balanced_motion_generat_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Online Balanced Motion Generation for Humanoid Robots</h3>
+          <p>Proposes an analytic whole-body motion generator for low-cost humanoid robots with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_openvla/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>An open-source vision-language-action model trained on the Open X-Embodiment dataset for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_dass_pato_policy_assisted_teleopera_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>PATO: Policy Assisted TeleOperation for Scalable Robot Data Collection</h3>
+          <p>PATO is a policy-assisted teleoperation system that uses a learned hierarchical assistive policy to…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_pi0/">
+          <span class="entry-type">Method</span>
+          <h3>π0 (Pi Zero)</h3>
+          <p>A generalist visuomotor policy pretrained on diverse robotic data and fine-tuned for dexterous,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">Method</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA&#39;s general-purpose humanoid robot foundation model designed to enable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_collaboration_open_x_embodiment_robotic_lear_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Open X-Embodiment: Robotic Learning Datasets and RT-X Models</h3>
+          <p>Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_nvidia_isaac_lab_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>NVIDIA Isaac Lab</h3>
+          <p>Modular learning framework built on Isaac Sim for large-scale robot policy training.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">Method</span>
+          <h3>RT-2 Vision-Language-Action Model</h3>
+          <p>VLA model that transfers web-scale vision-language knowledge to robotic control.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_dataset_ario_dataset_2024/">
+          <span class="entry-type">Dataset</span>
+          <h3>ARIO Dataset</h3>
+          <p>Unified data standard and ~3M-episode dataset combining real, simulated, and converted robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_team_octo_an_open_source_generalist_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Octo: An Open-Source Generalist Robot Policy</h3>
+          <p>Octo: An Open-Source Generalist Robot Policy (Octo), is a 2024 generalized vision-language-action…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">Foundation</span>
+          <h3>Probability Theory</h3>
+          <p>The mathematical foundation for reasoning about uncertainty, random variables, distributions, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lisondra_embodied_ai_with_foundation_mo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Embodied AI with Foundation Models for Mobile Service Robots: A Systematic Review</h3>
+          <p>A 2025 systematic review analyzing how large language, vision-language, multimodal, and…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_soncini_the_rosario_dataset_v2_multimo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>The Rosario Dataset v2: Multimodal Dataset for Agricultural Robotics</h3>
+          <p>A two-hour-plus, hardware-synchronized multi-sensor dataset collected in a soybean field, providing…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>7B-parameter open VLA trained on 970k episodes from Open X-Embodiment.</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">Foundation</span>
+          <h3>Linear Algebra</h3>
+          <p>The branch of mathematics concerning vector spaces, linear transformations, matrices, and systems of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_agibot_world_agibot_world_colosseo_a_large_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems</h3>
+          <p>Introduces AgiBot World, a million-trajectory humanoid manipulation dataset collected by 100+ AgiBot…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#key-characteristics">Key Characteristics</a></li>
+<li><a href="#format">Format</a></li>
+<li><a href="#relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

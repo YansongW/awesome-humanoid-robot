@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models</h1>
+      <p class="entry-name-en">RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.02062v1.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models (RICL), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Pennsylvania, and published at CoRL25.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.02062" target="_blank" rel="noopener">RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2508.02062" target="_blank" rel="noopener">RICL source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>멀티태스크 '비전-언어-행동'(VLA) 모델은 최근 로봇 공학을 위한 범용 기반 모델로서 점점 더 유망함을 보여주며, 새로운 환경에서 새로운 작업에 대해 즉시 상당한 성능을 달성하고 있습니다. 그러나 이러한 모델이 진정으로 유용하려면 최종 사용자가 쉽게 개선할 수 있는 방법을 갖추어야 합니다. 언어 및 비전 모델의 경우, 문맥 내 학습(ICL) 능력이 등장하여 매개변수 미세 조정 없이도 새로운 작업을 쉽게 가르칠 수 있는 다재다능하고 매우 유용한 인터페이스로 입증되었습니다. 불행히도, 모방 학습 목표로 사전 훈련된 VLA는 자연스럽게 ICL 능력을 획득하지 못합니다. 본 논문에서는 올바른 미세 조정 방법과 소규모 로봇 시연 데이터셋을 사용하여 사후에 이러한 VLA에 문맥 내 적응성을 주입할 수 있음을 보여줍니다. 문맥 내 학습을 위한 재훈련(RICL) 후, 우리 시스템은 최종 사용자가 새로운 작업에 대해 소량(10-20개)의 시연을 제공할 수 있게 합니다. 그런 다음 RICL은 해당 시연의 가장 관련성 높은 부분을 VLA 문맥으로 가져와 ICL을 활용하여 새로운 작업을 수행하고 작업 성능을 향상시킵니다. 우리는 RICL을 적용하여 <span class="arithmatex">\(π_{0}\)</span>-FAST VLA에 ICL을 주입했으며, 매개변수 업데이트 없이 작업당 20개의 시연만으로 다양한 새로운 조작 작업에서 큰 문맥 내 개선이 가능함을 보여줍니다. 대상 작업 시연에 대한 매개변수 업데이트가 가능한 경우, RICL 미세 조정은 성능을 더욱 향상시킵니다. 우리는 논문과 함께 RICL-<span class="arithmatex">\(π_{0}\)</span>-FAST의 코드와 모델 가중치를 공개하여, 처음으로 새로운 조작 작업을 위한 간단한 문맥 내 학습 인터페이스를 제공합니다. 웹사이트: https://ricl-vla.github.io.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>멀티태스크 '비전-언어-행동'(VLA) 모델은 최근 로봇 공학을 위한 범용 기반 모델로서 점점 더 유망함을 보여주며, 새로운 환경에서 새로운 작업에 대해 즉시 상당한 성능을 달성하고 있습니다. 그러나 이러한 모델이 진정으로 유용하려면 최종 사용자가 쉽게 개선할 수 있는 방법을 갖추어야 합니다. 언어 및 비전 모델의 경우, 문맥 내 학습(ICL) 능력이 등장하여 매개변수 미세 조정 없이도 새로운 작업을 쉽게 가르칠 수 있는 다재다능하고 매우 유용한 인터페이스로 입증되었습니다. 불행히도, 모방 학습 목표로 사전 훈련된 VLA는 자연스럽게 ICL 능력을 획득하지 못합니다. 본 논문에서는 올바른 미세 조정 방법과 소규모 로봇 시연 데이터셋을 사용하여 사후에 이러한 VLA에 문맥 내 적응성을 주입할 수 있음을 보여줍니다. 문맥 내 학습을 위한 재훈련(RICL) 후, 우리 시스템은 최종 사용자가 새로운 작업에 대해 소량(10-20개)의 시연을 제공할 수 있게 합니다. 그런 다음 RICL은 해당 시연의 가장 관련성 높은 부분을 VLA 문맥으로 가져와 ICL을 활용하여 새로운 작업을 수행하고 작업 성능을 향상시킵니다. 우리는 RICL을 적용하여 <span class="arithmatex">\(π_{0}\)</span>-FAST VLA에 ICL을 주입했으며, 매개변수 업데이트 없이 작업당 20개의 시연만으로 다양한 새로운 조작 작업에서 큰 문맥 내 개선이 가능함을 보여줍니다. 대상 작업 시연에 대한 매개변수 업데이트가 가능한 경우, RICL 미세 조정은 성능을 더욱 향상시킵니다. 우리는 논문과 함께 RICL-<span class="arithmatex">\(π_{0}\)</span>-FAST의 코드와 모델 가중치를 공개하여, 처음으로 새로운 조작 작업을 위한 간단한 문맥 내 학습 인터페이스를 제공합니다. 웹사이트: https://ricl-vla.github.io.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">FAST: Efficient Action Tokenization for Vision-Language-Action Models</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_sridhar_ricl_adding_in_context_adaptab_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">
+          <span class="entry-type">논문</span>
+          <h3>FAST: Efficient Action Tokenization for Vision-Language-Action Models</h3>
+          <p>FAST: Efficient Action Tokenization for Vision-Language-Action Models (FAST), is a 2025 large…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>
