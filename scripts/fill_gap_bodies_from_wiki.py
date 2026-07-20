@@ -34,7 +34,7 @@ EXTRA_KEYWORDS = {
     "ent_principle_current_velocity_position_loops": ["电流环", "速度环", "位置环", "级联控制"],
     "ent_metric_torque_density": ["扭矩密度", "转矩密度", "功率密度"],
     "ent_component_rgbd_camera": ["RGB-D", "深度相机", "深度感知"],
-    "ent_component_lidar_livox_mid360": ["激光雷达", "LiDAR", "固态激光雷达"],
+    "ent_component_livox_mid_360_lidar_2024": ["激光雷达", "LiDAR", "固态激光雷达"],
     "ent_component_safety_mcu": ["安全 MCU", "功能安全", "安全微控制器"],
     "ent_method_thermal_simulation": ["热仿真", "热分析", "热网络"],
     "ent_tier1_supplier_sanhuazhikong": ["三花"],

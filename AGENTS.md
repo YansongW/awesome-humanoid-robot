@@ -66,6 +66,6 @@ DeepSeek：endpoint `https://api.deepseek.com/chat/completions`，model `deepsee
 - 部分 company/component 实体是"新闻稿卡"（标题式命名）——属于 report 内容；
   已重定型一批（见 `scripts/fix_headline_entity_types.py` 与 `.staging/retype_manifest_*.json`），
   其余已挂边的留待后续专项。
-- `ent_component_lidar_livox_mid360` 与 `ent_component_livox_mid_360_lidar_2024` 疑似重复实体（未合并，仅挂边）。
+- `ent_component_lidar_livox_mid360` 已并入 `ent_component_livox_mid_360_lidar_2024`（2026-07-20，见 `.staging/merge_livox_manifest_*.json`）。
 - en/ko 的 Wiki 章节与路线图页是机翻/回退中文，翻译管线同实体正文。
 - 所有构建指导内容"未经实机验证"，页面须保留该声明。
