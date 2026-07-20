@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% set active_nav = 'roadmap' %}
+
+{% block title %}{{ ui.nav_roadmap }} · {{ ui.site_title }}{% endblock %}
+
+{% macro render_tree(node, depth=0) %}
+  {% if not node.is_dir %}
+    <a class="wiki-list-item wiki-list-item-level-{{ depth }}" href="{{ bp }}/{{ node.url }}/">
+      <h3>{{ node.title }}</h3>
+      <span class="wiki-list-arrow">→</span>
+    </a>
+  {% else %}
+    {% if node.url %}
+      <a class="wiki-list-item wiki-list-item-level-{{ depth }}" href="{{ bp }}/{{ node.url }}/">
+        <h3>{{ node.title }}</h3>
+        <span class="wiki-list-arrow">→</span>
+      </a>
+    {% else %}
+      <div class="wiki-list-section wiki-list-section-level-{{ depth }}">
+        <h3 class="wiki-list-section-title">{{ node.title }}</h3>
+      </div>
+    {% endif %}
+    {% if node.children %}
+      {% for child in node.children %}
+        {{ render_tree(child, depth + 1) }}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
+<div class="container">
+  <section class="hero hero-compact">
+    <div class="container">
+      <div class="hero-content">
+        <h1>{{ ui.roadmap_banner_title }}</h1>
+        <p class="hero-subtitle">{{ ui.roadmap_banner_text }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="wiki-page-list">
+        {% if roadmap_tree %}
+          {% for child in roadmap_tree.children %}
+            {{ render_tree(child, 0) }}
+          {% endfor %}
+        {% else %}
+          {% for page in roadmap_pages %}
+          {% if not page.stub %}
+          <a class="wiki-list-item" href="{{ bp }}/{{ page.url }}/">
+            <h3>{{ page.title }}</h3>
+            <span class="wiki-list-arrow">→</span>
+          </a>
+          {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

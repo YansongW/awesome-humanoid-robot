@@ -47,7 +47,7 @@
 |----|-----------|------|
 | 🔍 **查** —— 知识图谱 | "有什么？谁在做？它和什么相连？" | [kg.rounds-tech.com/search/](https://kg.rounds-tech.com/search/) · [关系全图](https://kg.rounds-tech.com/graph/) |
 | 📖 **学** —— Wiki 教科书 | "为什么是这样？各部分如何拼起来？" | [kg.rounds-tech.com/wiki/](https://kg.rounds-tech.com/wiki/) |
-| 🛠️ **造** —— 0→1 路线图 | "以我的预算和基础，下一步该做什么？" | [kg.rounds-tech.com/wiki/roadmap/](https://kg.rounds-tech.com/wiki/roadmap/) |
+| 🛠️ **造** —— 0→1 路线图 | "以我的预算和基础，下一步该做什么？" | [kg.rounds-tech.com/roadmap/](https://kg.rounds-tech.com/roadmap/) |
 
 **0→1 路线图**是把一切串起来的一层：四个阶段（基础筑基 → 造一个关节 → 双足平台 → 完整人形）外加执行器/传感器/计算平台/仿真四本选型手册。每一步都是三段式——*做什么*、*为什么*（链接知识卡片）、*你的情况怎么分析*——并附验收标准与排坑表。参与路线图的卡片会带阶段徽章，点击跳回对应步骤。所有建造指导都基于真实可溯源的开源方案调研（ToddlerBot、Berkeley Humanoid Lite、Upkie、OpenLoong 等，见 `data/roadmap/research/`），并明确标注为未经实机验证的理论指导。
 

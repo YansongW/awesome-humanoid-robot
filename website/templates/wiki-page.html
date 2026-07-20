@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% set active_nav = 'wiki' %}
+{% set active_nav = active_nav | default('wiki') %}
 
-{% block title %}{{ page.title }} · Wiki · {{ ui.site_title }}{% endblock %}
+{% block title %}{{ page.title }} · {{ section_name | default('Wiki') }} · {{ ui.site_title }}{% endblock %}
 
 {% block head %}
 {% if page.body_html and ('arithmatex' in page.body_html or 'language-mermaid' in page.body_html) %}
@@ -16,7 +16,7 @@
   <nav class="breadcrumb" aria-label="{{ ui.breadcrumb_aria_label }}">
     <a href="{{ bp }}/">{{ ui.nav_home }}</a>
     <span>/</span>
-    <a href="{{ bp }}/wiki/">Wiki</a>
+    <a href="{{ bp }}/{{ section_url | default('wiki') }}/">{{ section_name | default('Wiki') }}</a>
     <span>/</span>
     <span class="breadcrumb-current">{{ page.title }}</span>
   </nav>

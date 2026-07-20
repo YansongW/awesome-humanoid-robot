@@ -1,5 +1,5 @@
 # ============================================================================
-# builder_track：0→1 造人形机器人路线图（wiki/docs/roadmap/）配套文献工作流
+# builder_track：0→1 造人形机器人路线图（roadmap/docs/）配套文献工作流
 # 阶段定位：基础筑基 → 单关节 → 双足平台 → 完整人形（本工作流服务全阶段的载体选型）
 # 目标读者：第一次动手造机器人的新手，优先开源、可复现、有 BOM/图纸的方案
 # ============================================================================
@@ -40,7 +40,7 @@ sources:
   - semantic_scholar
 metadata:
   track: builder_track
-  roadmap: wiki/docs/roadmap/
+  roadmap: roadmap/docs/
   audience: 动手造机器人的新手（0→1 路线图）
 relevance_context: >-
   Relevant if it presents a concrete, buildable humanoid or biped robot

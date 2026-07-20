@@ -1,5 +1,5 @@
 # ============================================================================
-# builder_track：0→1 造人形机器人路线图（wiki/docs/roadmap/）配套文献工作流
+# builder_track：0→1 造人形机器人路线图（roadmap/docs/）配套文献工作流
 # 阶段定位：贯穿单关节 → 双足平台 → 完整人形的仿真先行工作流
 # 目标读者：需要先搭仿真再烧真机的新手，强调仿真器选型与 sim-to-real 落地细节
 # ============================================================================
@@ -41,7 +41,7 @@ sources:
   - semantic_scholar
 metadata:
   track: builder_track
-  roadmap: wiki/docs/roadmap/
+  roadmap: roadmap/docs/
   audience: 动手造机器人的新手（0→1 路线图）
 relevance_context: >-
   Relevant if it helps a first-time builder stand up a simulation environment

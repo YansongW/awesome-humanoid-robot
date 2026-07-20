@@ -1,4 +1,4 @@
-"""Load and render wiki pages from the wiki/ directory."""
+"""Load and render wiki (wiki/) and roadmap (roadmap/) content pages."""
 
 from __future__ import annotations
 
@@ -10,13 +10,14 @@ import markdown
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 WIKI_DIR = ROOT / "wiki" / "docs"
+ROADMAP_DIR = ROOT / "roadmap" / "docs"
 
 
-def slugify_path(path: Path) -> str:
-    """Convert a wiki file path to a URL path."""
-    rel = path.relative_to(WIKI_DIR)
+def slugify_path(path: Path, base_dir: Path = WIKI_DIR, prefix: str = "wiki") -> str:
+    """Convert a content file path to a URL path."""
+    rel = path.relative_to(base_dir)
     parts = list(rel.with_suffix("").parts)
-    return "wiki/" + "/".join(parts)
+    return prefix + "/" + "/".join(parts)
 
 
 def strip_frontmatter(text: str) -> str:
@@ -38,7 +39,6 @@ def extract_title(text: str) -> str:
 # sidebar/index readable: chapters first, then appendices, with appendix-d
 # sub-pages nested under appendix-d rather than flattened.
 DIR_TITLES: dict[str, str] = {
-    "roadmap": "0→1 造机路线图",
     "chapters": "正文",
     "appendices": "附录",
     "appendix-d": "附录 D 主要供应商与企业名录",
@@ -49,9 +49,7 @@ DIR_TITLES: dict[str, str] = {
 
 
 def _sort_key(name: str) -> tuple[int, str]:
-    """Order: roadmap -> chapters -> appendices -> everything else."""
-    if name == "roadmap":
-        return (0, name)
+    """Order: chapters -> appendices -> everything else."""
     if name == "chapters":
         return (1, name)
     if name == "appendices":
@@ -132,8 +130,8 @@ def build_wiki_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
     return finalize(root)
 
 
-def rewrite_md_links(text: str) -> str:
-    """Rewrite relative .md links (e.g. chapters/chapter-01.md#sec) to /wiki/ URLs."""
+def rewrite_md_links(text: str, prefix: str = "wiki") -> str:
+    """Rewrite relative .md links (e.g. chapters/chapter-01.md#sec) to /<prefix>/ URLs."""
 
     def repl(m: re.Match) -> str:
         label, href = m.group(1), m.group(2)
@@ -143,7 +141,7 @@ def rewrite_md_links(text: str) -> str:
         if not mm:
             return m.group(0)
         path, anchor = mm.group(1), mm.group(2) or ""
-        return f"[{label}](/wiki/{path}/{anchor})"
+        return f"[{label}](/{prefix}/{path}/{anchor})"
 
     return re.sub(r"(?<!!)\[([^\]]*)\]\(([^)\s]+)\)", repl, text)
 
@@ -153,13 +151,15 @@ def is_stub_page(text: str) -> bool:
     return len(text.strip()) < 500 or "正在撰写中" in text
 
 
-def build_wiki_pages() -> list[dict[str, Any]]:
-    """Load all wiki Markdown files and convert them to HTML.
+def _render_pages(base_dir: Path, prefix: str) -> list[dict[str, Any]]:
+    """Load Markdown files under ``base_dir`` and convert them to HTML.
 
-    Returns a list of page dicts with title, url, body_html, toc_html, stub flag,
-    and metadata.
+    Relative .md links are rewritten to ``/<prefix>/`` URLs. Returns a list of
+    page dicts with title, url, body_html, toc_html, stub flag, and metadata.
+    Prev/next links are NOT set here — each product applies its own reading
+    order.
     """
-    if not WIKI_DIR.exists():
+    if not base_dir.exists():
         return []
 
     md = markdown.Markdown(
@@ -181,7 +181,7 @@ def build_wiki_pages() -> list[dict[str, Any]]:
     )
 
     pages = []
-    for path in sorted(WIKI_DIR.rglob("*.md")):
+    for path in sorted(base_dir.rglob("*.md")):
         # KG entity/relationship files are YAML metadata, not human-readable wiki pages.
         if "kg/relationships" in path.as_posix() or "kg/entities" in path.as_posix():
             continue
@@ -194,8 +194,8 @@ def build_wiki_pages() -> list[dict[str, Any]]:
         title = extract_title(text)
         # TODO: when per-language wiki directories are introduced, filter here.
         # For now all languages share the same wiki source.
-        url = slugify_path(path)
-        text = rewrite_md_links(text)
+        url = slugify_path(path, base_dir, prefix)
+        text = rewrite_md_links(text, prefix)
         body_html = md.convert(text)
         toc_html = md.toc if "<li>" in (md.toc or "") else ""
         md.reset()
@@ -209,13 +209,24 @@ def build_wiki_pages() -> list[dict[str, Any]]:
                 "stub": is_stub_page(text),
             }
         )
+    return pages
+
+
+def _link_prev_next(pages: list[dict[str, Any]]) -> None:
+    """Set prev_page/next_page on each page following the list order."""
+    for i, page in enumerate(pages):
+        page["prev_page"] = pages[i - 1] if i > 0 else None
+        page["next_page"] = pages[i + 1] if i < len(pages) - 1 else None
+
+
+def build_wiki_pages() -> list[dict[str, Any]]:
+    """Load all wiki Markdown files and convert them to HTML."""
+    pages = _render_pages(WIKI_DIR, "wiki")
 
     # Prev/next navigation across substantive pages in reading order:
-    # roadmap -> chapters -> appendices -> everything else.
+    # chapters -> appendices -> everything else.
     def order_key(p: dict[str, Any]) -> tuple[int, str]:
         rel = Path(p["path"]).relative_to(WIKI_DIR).as_posix()
-        if rel.startswith("roadmap/"):
-            return (0, rel)
         if rel.startswith("chapters/"):
             return (1, rel)
         if rel.startswith("appendices/"):
@@ -224,7 +235,67 @@ def build_wiki_pages() -> list[dict[str, Any]]:
 
     readable = [p for p in pages if not p["stub"]]
     readable.sort(key=order_key)
-    for i, page in enumerate(readable):
-        page["prev_page"] = readable[i - 1] if i > 0 else None
-        page["next_page"] = readable[i + 1] if i < len(readable) - 1 else None
+    _link_prev_next(readable)
     return pages
+
+
+# Fixed reading order of the 0→1 roadmap: overview, four stages, then the
+# four selection playbooks. Also drives prev/next links and the index page.
+ROADMAP_ORDER = [
+    "index",
+    "stage-0-foundations",
+    "stage-1-actuator",
+    "stage-2-biped",
+    "stage-3-humanoid",
+    "playbooks/actuator-selection",
+    "playbooks/compute-selection",
+    "playbooks/sensor-selection",
+    "playbooks/sim-setup",
+]
+
+
+def build_roadmap_pages() -> list[dict[str, Any]]:
+    """Load the 0→1 roadmap pages (roadmap/docs/) and convert them to HTML.
+
+    Roadmap is a separate product from the wiki: URLs live under /roadmap/
+    and prev/next follows the fixed ROADMAP_ORDER chain. Pages are returned
+    in that order.
+    """
+    pages = _render_pages(ROADMAP_DIR, "roadmap")
+
+    def order_key(p: dict[str, Any]) -> tuple[int, str]:
+        rel = Path(p["path"]).relative_to(ROADMAP_DIR).with_suffix("").as_posix()
+        return (ROADMAP_ORDER.index(rel) if rel in ROADMAP_ORDER else len(ROADMAP_ORDER), rel)
+
+    readable = [p for p in pages if not p["stub"]]
+    readable.sort(key=order_key)
+    _link_prev_next(readable)
+    return sorted(pages, key=order_key)
+
+
+def build_roadmap_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
+    """Build the roadmap index tree: overview + stages flat, playbooks nested.
+
+    Expects pages in ROADMAP_ORDER (as returned by ``build_roadmap_pages``).
+    Node shape matches what the ``render_tree`` macro in the index templates
+    consumes: ``title``, ``url`` (files only), ``children`` (dirs only),
+    ``is_dir``, ``path``.
+    """
+    root: dict[str, Any] = {"title": "Roadmap", "is_dir": True, "children": [], "path": ""}
+    playbooks: dict[str, Any] = {"title": "选型手册", "is_dir": True, "children": [], "path": "playbooks"}
+    for page in pages:
+        if page.get("stub"):
+            continue
+        node = {
+            "title": page["title"],
+            "url": page["url"],
+            "is_dir": False,
+            "path": page["url"][len("roadmap/"):],
+        }
+        if node["path"].startswith("playbooks/"):
+            playbooks["children"].append(node)
+        else:
+            root["children"].append(node)
+    if playbooks["children"]:
+        root["children"].append(playbooks)
+    return root

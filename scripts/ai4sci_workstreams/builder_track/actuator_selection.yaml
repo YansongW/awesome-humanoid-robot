@@ -1,5 +1,5 @@
 # ============================================================================
-# builder_track：0→1 造人形机器人路线图（wiki/docs/roadmap/）配套文献工作流
+# builder_track：0→1 造人形机器人路线图（roadmap/docs/）配套文献工作流
 # 阶段定位：单关节阶段的核心——为第一个关节模组选型并跑通扭矩控制
 # 目标读者：需要在电机/减速器/驱动器之间做取舍的新手，强调可买到的现货方案
 # ============================================================================
@@ -40,7 +40,7 @@ sources:
   - semantic_scholar
 metadata:
   track: builder_track
-  roadmap: wiki/docs/roadmap/
+  roadmap: roadmap/docs/
   audience: 动手造机器人的新手（0→1 路线图）
 relevance_context: >-
   Relevant if it helps a first-time builder choose or build a robot joint

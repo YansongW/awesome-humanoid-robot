@@ -627,6 +627,67 @@ class Renderer:
         ensure_dir(page_dir)
         (page_dir / "index.html").write_text(html, encoding="utf-8")
 
+    def render_roadmap_index(self, roadmap_pages: list[dict], roadmap_tree: dict | None = None) -> None:
+        template = self.env.get_template("roadmap-index.html")
+        html = template.render(**self._ctx(
+            title=f"{self.ui['nav_roadmap']} · {self.ui['site_title']}",
+            roadmap_pages=roadmap_pages,
+            roadmap_tree=roadmap_tree,
+        ))
+        roadmap_dir = self.dist_dir / "roadmap"
+        ensure_dir(roadmap_dir)
+        (roadmap_dir / "index.html").write_text(html, encoding="utf-8")
+
+    def render_roadmap_page(self, page: dict) -> None:
+        template = self.env.get_template("wiki-page.html")
+        html = template.render(**self._ctx(
+            title=f"{page['title']} · {self.ui['nav_roadmap']} · {self.ui['site_title']}",
+            page=page,
+            # Roadmap source is Chinese-only, same as the wiki.
+            untranslated=self.lang != "zh",
+            active_nav="roadmap",
+            section_name=self.ui["nav_roadmap"],
+            section_url="roadmap",
+        ))
+        page_dir = self.dist_dir / page["url"].rstrip("/")
+        ensure_dir(page_dir)
+        (page_dir / "index.html").write_text(html, encoding="utf-8")
+
+    def render_roadmap_redirects(self, roadmap_pages: list[dict]) -> None:
+        """Meta-refresh placeholders at the old /wiki/roadmap/** URLs."""
+        bp = "" if self.lang == "zh" else f"/{self.lang}"
+        moved = {
+            "zh": "本页已迁移至路线图独立站点",
+            "en": "This page has moved to the standalone roadmap site",
+            "ko": "이 페이지는 독립 로드맵 사이트로 이동되었습니다",
+        }.get(self.lang, "This page has moved")
+
+        def write_redirect(old_rel: str, new_path: str) -> None:
+            target_dir = self.dist_dir / old_rel
+            ensure_dir(target_dir)
+            html = (
+                "<!doctype html>\n"
+                f'<html lang="{"zh-CN" if self.lang == "zh" else ("ko-KR" if self.lang == "ko" else "en-US")}">\n'
+                "<head>\n"
+                '<meta charset="utf-8">\n'
+                f'<meta http-equiv="refresh" content="0; url={new_path}">\n'
+                f'<link rel="canonical" href="{SITE_BASE_URL}{new_path}">\n'
+                f"<title>{moved} · Rounds Tech KG</title>\n"
+                "</head>\n"
+                "<body>\n"
+                f'<p>{moved}: <a href="{new_path}">{new_path}</a></p>\n'
+                "</body>\n"
+                "</html>\n"
+            )
+            (target_dir / "index.html").write_text(html, encoding="utf-8")
+
+        for page in roadmap_pages:
+            slug = page["url"][len("roadmap/"):]
+            write_redirect(f"wiki/roadmap/{slug}", f"{bp}/roadmap/{slug}/")
+        # The old bare /wiki/roadmap/ URL (linked from the old nav) has no page
+        # slug of its own; redirect it to the new roadmap index.
+        write_redirect("wiki/roadmap", f"{bp}/roadmap/")
+
     def render_404(self) -> None:
         template = self.env.get_template("404.html")
         html = template.render(**self._ctx(
@@ -658,7 +719,7 @@ class Renderer:
                 encoding="utf-8",
             )
 
-    def write_sitemap(self, wiki_pages: list[dict] | None = None) -> None:
+    def write_sitemap(self, wiki_pages: list[dict] | None = None, roadmap_pages: list[dict] | None = None) -> None:
         from datetime import datetime, timezone
 
         lines = ['<?xml version="1.0" encoding="UTF-8"?>']
@@ -681,12 +742,16 @@ class Renderer:
         _url("/search/", "0.8")
         _url("/graph/", "0.8")
         _url("/wiki/", "0.9")
+        _url("/roadmap/", "0.9")
         for t in sorted({e.type for e in self.store.entries.values()}):
             _url(f"/types/{t}/", "0.5")
         for entry in self.store.entries.values():
             _url(f"/{entry.url}", "0.6")
         if wiki_pages:
             for page in wiki_pages:
+                _url(f"/{page['url']}", "0.7")
+        if roadmap_pages:
+            for page in roadmap_pages:
                 _url(f"/{page['url']}", "0.7")
         lines.append("</urlset>")
         (self.dist_dir / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
@@ -700,6 +765,8 @@ class Renderer:
         wiki_pages: list[dict] | None = None,
         subgraphs: dict[str, dict] | None = None,
         wiki_tree: dict | None = None,
+        roadmap_pages: list[dict] | None = None,
+        roadmap_tree: dict | None = None,
     ) -> None:
         self.copy_static_assets()
         self.render_home(stats)
@@ -714,10 +781,15 @@ class Renderer:
             self.render_wiki_index(wiki_pages, wiki_tree)
             for page in wiki_pages:
                 self.render_wiki_page(page)
+        if roadmap_pages:
+            self.render_roadmap_index(roadmap_pages, roadmap_tree)
+            for page in roadmap_pages:
+                self.render_roadmap_page(page)
+            self.render_roadmap_redirects(roadmap_pages)
         self.write_json_data(search_index, "search-index.json")
         self.write_json_data(relations_data, "relations.json")
         self.write_json_data(cluster_data, "clusters.json")
         self.write_json_data(build_names_index(self.store.entries), "names.json")
         if subgraphs:
             self.write_subgraphs(subgraphs)
-        self.write_sitemap(wiki_pages)
+        self.write_sitemap(wiki_pages, roadmap_pages)

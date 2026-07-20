@@ -47,7 +47,7 @@ The system is organized as three layers that answer different questions:
 |-------|--------------------|-------|
 | 🔍 **Search** — the knowledge graph | "What exists? Who makes it? What does it connect to?" | [kg.rounds-tech.com/search/](https://kg.rounds-tech.com/search/) · [graph view](https://kg.rounds-tech.com/graph/) |
 | 📖 **Learn** — the Wiki textbook | "Why does it work this way? How do the pieces fit?" | [kg.rounds-tech.com/wiki/](https://kg.rounds-tech.com/wiki/) |
-| 🛠️ **Build** — the 0→1 roadmap | "What do I do next, with my budget and my skills?" | [kg.rounds-tech.com/wiki/roadmap/](https://kg.rounds-tech.com/wiki/roadmap/) |
+| 🛠️ **Build** — the 0→1 roadmap | "What do I do next, with my budget and my skills?" | [kg.rounds-tech.com/roadmap/](https://kg.rounds-tech.com/roadmap/) |
 
 The **0→1 roadmap** is the layer that ties everything together for builders: four stages (foundations → build one joint → biped platform → full humanoid) plus selection playbooks for actuators, sensors, compute and simulation. Every step is three-part — *what to do*, *why* (via linked KG cards), and *how to analyze your own case* — with acceptance criteria and troubleshooting tables. Entity cards that participate in the roadmap carry stage badges linking back to the relevant step. All build guidance is grounded in real, sourced research on open-source platforms (ToddlerBot, Berkeley Humanoid Lite, Upkie, OpenLoong and more — see `data/roadmap/research/`) and is clearly marked as theory-based guidance that has not been validated on physical hardware.
 

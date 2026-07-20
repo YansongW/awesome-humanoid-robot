@@ -9,7 +9,7 @@
 
 - **查**：知识图谱（`research/` 实体 + `data/relationships/` 关系）→ 静态站检索/图谱页
 - **学**：Wiki 教科书（`wiki/docs/chapters/` 30 章 + `appendices/` 7 篇）
-- **造**：0→1 路线图（`wiki/docs/roadmap/` 9 页 + `data/roadmap_mapping.yaml` 卡片绑定）
+- **造**：0→1 路线图（`roadmap/docs/` 9 页 + `data/roadmap_mapping.yaml` 卡片绑定）
 
 ## 数据铁律（最重要）
 

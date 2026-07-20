@@ -79,7 +79,7 @@ def roadmap_page(request: Request):
         {
             "request": request,
             "stages": store.roadmap_tree(),
-            "roadmap_url": "https://kg.rounds-tech.com/wiki/roadmap/",
+            "roadmap_url": "https://kg.rounds-tech.com/roadmap/",
         },
     )
 

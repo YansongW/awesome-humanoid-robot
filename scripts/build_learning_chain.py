@@ -146,7 +146,7 @@ def main() -> None:
                         reason = pr.get("reason_zh") or pr.get("reason_en") or ""
                         rel = make_rel(ents[eid], ents[pid], "has_prerequisite", "p7_learning_chain",
                                        "medium", reason[:300],
-                                       "https://kg.rounds-tech.com/wiki/roadmap/", "0→1 路线图学习链")
+                                       "https://kg.rounds-tech.com/roadmap/", "0→1 路线图学习链")
                         if rel["$id"] not in out_rels:
                             out_rels[rel["$id"]] = rel
                             existing.add((eid, pid))

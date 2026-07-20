@@ -1,5 +1,5 @@
 # ============================================================================
-# builder_track：0→1 造人形机器人路线图（wiki/docs/roadmap/）配套文献工作流
+# builder_track：0→1 造人形机器人路线图（roadmap/docs/）配套文献工作流
 # 阶段定位：双足平台阶段——让机器人站起来的经典与现代控制方法
 # 目标读者：需要在 ZMP/MPC/WBC/RL 之间选择入门路线的新手，强调可复现实现
 # ============================================================================
@@ -40,7 +40,7 @@ sources:
   - semantic_scholar
 metadata:
   track: builder_track
-  roadmap: wiki/docs/roadmap/
+  roadmap: roadmap/docs/
   audience: 动手造机器人的新手（0→1 路线图）
 relevance_context: >-
   Relevant if it teaches or compares bipedal locomotion control approaches

@@ -47,7 +47,7 @@
 |----|-----------|------|
 | 🔍 **검색** — 지식 그래프 | "무엇이 있는가? 누가 만드는가? 무엇과 연결되는가?" | [kg.rounds-tech.com/search/](https://kg.rounds-tech.com/search/) · [그래프](https://kg.rounds-tech.com/graph/) |
 | 📖 **학습** — Wiki 교과서 | "왜 이렇게 동작하는가? 조각들이 어떻게 맞물리는가?" | [kg.rounds-tech.com/wiki/](https://kg.rounds-tech.com/wiki/) |
-| 🛠️ **제작** — 0→1 로드맵 | "내 예산과 실력으로 다음에 무엇을 해야 하는가?" | [kg.rounds-tech.com/wiki/roadmap/](https://kg.rounds-tech.com/wiki/roadmap/) |
+| 🛠️ **제작** — 0→1 로드맵 | "내 예산과 실력으로 다음에 무엇을 해야 하는가?" | [kg.rounds-tech.com/roadmap/](https://kg.rounds-tech.com/roadmap/) |
 
 **0→1 로드맵**은 모든 것을 하나로 잇는 층입니다: 네 단계(기초 다지기 → 관절 하나 → 이족 플랫폼 → 완전한 휴로봇)와 액추에이터/센서/컴퓨팅/시뮬레이션 네 권의 선정 매뉴얼. 모든 단계는 세 부분 구조——*무엇을 할지*, *왜인지*(지식 카드 링크), *내 상황에서 어떻게 분석할지*——이며 검수 기준과 트러블슈팅 표를 갖춥니다. 로드맵에 참여하는 카드에는 단계 배지가 표시되어 해당 단계로 돌아갈 수 있습니다. 모든 제작 안내는 실제 출처가 있는 오픈소스 플랫폼 조사(ToddlerBot, Berkeley Humanoid Lite, Upkie, OpenLoong 등, `data/roadmap/research/` 참조)에 기반하며, 실기 검증을 거치지 않은 이론적 안내임을 명시합니다.
 

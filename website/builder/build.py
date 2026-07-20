@@ -12,13 +12,20 @@ sys.path.insert(0, str(ROOT))
 from website.builder.loader import KGStore
 from website.builder.renderer import Renderer
 from website.builder.search_index import build_cluster_data, build_relations_data, build_search_index, build_subgraph_data
-from website.builder.wiki_loader import build_wiki_pages, build_wiki_tree
+from website.builder.wiki_loader import build_roadmap_pages, build_roadmap_tree, build_wiki_pages, build_wiki_tree
 
 
 LANGUAGES = ["zh", "en", "ko"]
 
 
-def build_language(lang: str, dist_dir: Path, wiki_pages: list | None = None, wiki_tree: dict | None = None) -> None:
+def build_language(
+    lang: str,
+    dist_dir: Path,
+    wiki_pages: list | None = None,
+    wiki_tree: dict | None = None,
+    roadmap_pages: list | None = None,
+    roadmap_tree: dict | None = None,
+) -> None:
     print(f"\nBuilding language: {lang}")
     store = KGStore(lang=lang)
     store.load()
@@ -44,7 +51,7 @@ def build_language(lang: str, dist_dir: Path, wiki_pages: list | None = None, wi
 
     print("Rendering static pages...")
     renderer = Renderer(store, lang, dist_dir)
-    renderer.render_all(search_index, relations_data, cluster_data, stats, wiki_pages, subgraphs, wiki_tree)
+    renderer.render_all(search_index, relations_data, cluster_data, stats, wiki_pages, subgraphs, wiki_tree, roadmap_pages, roadmap_tree)
 
 
 def main() -> int:
@@ -53,8 +60,12 @@ def main() -> int:
         wiki_pages = build_wiki_pages()
         wiki_tree = build_wiki_tree(wiki_pages) if wiki_pages else None
         print(f"Loaded {len(wiki_pages)} wiki pages.")
+        print("Loading roadmap pages...")
+        roadmap_pages = build_roadmap_pages()
+        roadmap_tree = build_roadmap_tree(roadmap_pages) if roadmap_pages else None
+        print(f"Loaded {len(roadmap_pages)} roadmap pages.")
     except Exception as exc:
-        print(f"Failed to load wiki pages: {exc}", file=sys.stderr)
+        print(f"Failed to load content pages: {exc}", file=sys.stderr)
         return 1
 
     base_dist = Path(__file__).resolve().parent.parent / "dist"
@@ -62,7 +73,7 @@ def main() -> int:
     for lang in LANGUAGES:
         dist_dir = base_dist if lang == "zh" else base_dist / lang
         try:
-            build_language(lang, dist_dir, wiki_pages, wiki_tree)
+            build_language(lang, dist_dir, wiki_pages, wiki_tree, roadmap_pages, roadmap_tree)
         except Exception as exc:
             print(f"Failed to build language '{lang}': {exc}", file=sys.stderr)
             return 1

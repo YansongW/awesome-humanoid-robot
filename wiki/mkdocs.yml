@@ -84,17 +84,6 @@ extra_javascript:
 nav:
   - 首页: index.md
   - 全书目录: table-of-contents.md
-  - 0→1 造机路线图:
-    - 路线图总览: roadmap/index.md
-    - 阶段 0 · 基础筑基: roadmap/stage-0-foundations.md
-    - 阶段 1 · 造一个关节: roadmap/stage-1-actuator.md
-    - 阶段 2 · 双足平台: roadmap/stage-2-biped.md
-    - 阶段 3 · 完整人形: roadmap/stage-3-humanoid.md
-    - 选型手册:
-      - 执行器选型: roadmap/playbooks/actuator-selection.md
-      - 传感器选型: roadmap/playbooks/sensor-selection.md
-      - 计算平台选型: roadmap/playbooks/compute-selection.md
-      - 仿真环境搭建: roadmap/playbooks/sim-setup.md
   - 第一部分：总论与方法论:
     - 第 1 章 绪论：为什么是人形机器人？: chapters/chapter-01.md
     - 第 2 章 知识图谱构建方法论: chapters/chapter-02.md
