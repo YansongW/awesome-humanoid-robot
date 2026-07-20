@@ -68,3 +68,7 @@ This paper studies the Tensegrity eXploratory Robot (TeXploR), a rolling tensegr
 ## Relevance to Humanoid Robotics
 
 Although TeXploR is a rolling tensegrity platform rather than a bipedal humanoid, the modeling advances are directly useful for compliant humanoid subsystems. The closed-form multi-contact equilibrium analysis and geometric treatment of cable-driven, curved compliant links can inform the design of lightweight impact-resistant joints, end effectors, and deployable limbs in future humanoids. The work also demonstrates how to handle hybrid contact-state transitions through internal mass redistribution, a problem shared by humanoid balance and foot-roll control.
+
+## References
+
+- [Geometric Static Modeling Framework for Piecewise-Continuous Curved-Link Multi Point-of-Contact Tensegrity Robots](https://arxiv.org/abs/2407.01865) (accessed 2026-07-01)

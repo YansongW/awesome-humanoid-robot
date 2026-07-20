@@ -80,3 +80,7 @@ Evaluation covers 7 simulated objects (A, C1, D, P1, hammer_j, m784, cokeSmallGr
 ## Relevance to Humanoid Robotics
 
 Although the experiments focus on a fixed-base industrial arm rather than a humanoid, the core methodology is directly transferable to humanoid manipulation. Humanoid robots deployed in diverse real-world settings must repeatedly tune grasping and motion parameters for new objects, environments, and tasks; reusing reduced parameter bounds from visually similar prior tasks can shorten tuning time and improve reliability. The long-term-memory perspective also aligns with lifelong developmental learning, a recurring requirement for general-purpose humanoid platforms that accumulate experience over time.
+
+## References
+
+- [Bayesian Optimization for Developmental Robotics with Meta-Learning by Parameters Bounds Reduction](https://arxiv.org/abs/2007.15375) (accessed 2026-07-01)

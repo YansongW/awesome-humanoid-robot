@@ -64,3 +64,7 @@ The review introduces the mathematical fundamentals of sim-to-real transfer usin
 ## Relevance to Humanoid Robotics
 
 The paper is highly relevant to humanoid robotics because humanoid systems are expensive, fragile, and data-hungry, making purely real-world training impractical at scale. The surveyed domain randomization and sim-to-real transfer techniques enable control policies for bipedal locomotion and manipulation to be learned cheaply in simulation and then transferred to physical hardware. This training paradigm is critical for scalable development, mass production, and deployment of humanoid robots. The review's coverage of physics engines, randomization strategies, and transferability metrics provides a methodological map that directly supports humanoid control-policy engineering.
+
+## References
+
+- [Robot Learning from Randomized Simulations: A Review](https://arxiv.org/abs/2111.00956) (accessed 2026-07-01)

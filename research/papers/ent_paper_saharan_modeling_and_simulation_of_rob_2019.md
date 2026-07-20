@@ -69,3 +69,7 @@ The actuator force from a TCP muscle is distributed as joint torques across the 
 ## Relevance to Humanoid Robotics
 
 The paper directly supports scalable design and control of humanoid robot hands by providing a reusable dynamic modeling and simulation framework for low-cost, 3D-printed fingers actuated by artificial muscles. TCP muscles offer a lightweight and inexpensive alternative to conventional motors and pneumatic actuators, making them attractive for compact humanoid manipulation hardware. The Simulink implementation enables rapid numerical exploration of design parameters and control strategies before physical prototyping.
+
+## References
+
+- [Modeling and Simulation of Robotic Finger Powered by Nylon Artificial Muscles- Equations with Simulink model](https://arxiv.org/abs/1901.09486) (accessed 2026-07-01)

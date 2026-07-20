@@ -70,3 +70,7 @@ Evaluation was carried out in small indoor arenas (3 m × 3 m and 6 m × 6 m) us
 ## Relevance to Humanoid Robotics
 
 {'en': 'The ST framework is directly relevant to humanoid robotics because it offloads compute-intensive autonomy algorithms to a remote simulated twin, reducing the onboard processing and networking burden on the physical robot. This can lower hardware costs and enable scalable deployment of humanoids with limited payload or battery capacity. However, the paper’s experiments use a small wheeled robot; whether the same latency, balance, and safety guarantees transfer to bipedal locomotion remains to be validated.', 'zh': 'ST框架对人形机器人具有直接相关性，因为它将计算密集型的自主算法卸载到远程仿真孪生体，从而减轻物理机器人的机载处理与网络负担。这有助于降低硬件成本，并支持载荷或电池容量有限的人形机器人规模化部署。但论文实验仅使用小型轮式机器人，该方法能否迁移到双足行走并保证相同的延迟、平衡与安全性仍需验证。', 'ko': 'ST 프레임워크는 연산 집약적인 자율 알고리즘을 원격 시뮬레이션 트윈에 오프로드하여 물리 로봇의 온보드 처리 및 네트워크 부담을 줄이므로 인간형 로봇과 직접적으로 관련이 있다. 이는 하드웨어 비용을 낮추고 탑재 하중이나 배터리 용량이 제한된 인간형 로봇의 확장 가능한 배포를 가능하게 한다. 그러나 논문의 실험은 소형 휠 로봇을 사용하였으므로, 동일한 지연 시간, 균형 및 안전성 보장이 이족 보행에도 적용되는지는 추가 검증이 필요하다.'}
+
+## References
+
+- [Mobile Robot Control and Autonomy Through Collaborative Simulation Twin](https://arxiv.org/abs/2303.06172) (accessed 2026-07-01)

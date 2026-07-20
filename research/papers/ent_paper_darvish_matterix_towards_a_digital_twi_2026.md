@@ -75,3 +75,7 @@ Developing and validating new laboratory workflows is currently bottlenecked by 
 ## Relevance to Humanoid Robotics
 
 Although MATTERIX targets chemistry-lab automation rather than humanoid robots, its digital-twin methodology is directly relevant to humanoid robotics research and deployment. The framework demonstrates multi-agent coordination, long-horizon workflow verification, contact-rich manipulation of diverse objects, and sim-to-real transfer using perception-driven policies—all capabilities needed when scaling humanoid robots in laboratories, manufacturing cells, or other semi-structured environments. Its combination of physics simulation, semantic state modeling, and hierarchical skill composition offers a reusable blueprint for validating and iterating humanoid behaviors without requiring expensive physical trials.
+
+## References
+
+- [MATTERIX: Towards a Digital Twin for Robotics-Assisted Chemistry Lab Automation](https://arxiv.org/abs/2601.13232) (accessed 2026-07-01)

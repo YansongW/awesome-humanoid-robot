@@ -73,3 +73,7 @@ The paper emphasizes operation on real-world observations rather than synthetic 
 The work is explicitly motivated by robot deployment in unstructured real-world environments and targets downstream robot planning, learning, and human-robot collaboration. By lowering the barrier between real-world capture and simulation-ready articulated object models, it is directly relevant to humanoid manipulation pipelines that need interactive object models.
 
 The URDF export to NVIDIA Isaac Sim supports sim-to-real transfer, a common need in humanoid control and learning. The use of commodity RGB-D capture (Apple iPhone Pro with Record3D) further suggests a scalable pathway for building object-level digital twins for embodied AI systems, including humanoid robots operating in everyday environments.
+
+## References
+
+- [ArtiTwinSplat: Interactable Digital Twin Reconstruction via Gaussian Splatting from RGB-D videos](https://arxiv.org/abs/2606.24628) (accessed 2026-07-01)

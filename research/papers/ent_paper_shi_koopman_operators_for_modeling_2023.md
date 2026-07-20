@@ -73,3 +73,7 @@ The second half of the review focuses on control. Koopman models can be embedded
 Humanoid robots increasingly incorporate soft and compliant components—such as soft fingertips, compliant limbs, and padded contact surfaces—to enable safe physical human interaction and tolerate impacts during deployment. The Koopman-operator methods reviewed here offer a data-driven path to obtain linear, control-oriented models of these compliant subsystems without deriving detailed first-principles models. This can simplify controller synthesis and re-tuning during mass production and real-world deployment, where component variability and nonlinear deformation are common.
 
 Because the review covers model identification (lifting-function design, EDMD/gEDMD), robustness to noise and uncertainty, and integration with standard model-based controllers (MPC/LQR), its content is directly applicable to the design of control stacks for humanoids that use soft hardware. The limitations it notes—especially sensing constraints, offline training dependence, and lack of general tuning rules—are also highly relevant engineering constraints for humanoid systems.
+
+## References
+
+- [Koopman Operators for Modeling and Control of Soft Robotics](https://arxiv.org/abs/2301.09708) (accessed 2026-07-01)
