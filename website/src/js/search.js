@@ -101,6 +101,7 @@
     const name = (e.name || '').toLowerCase();
     const nameEn = (e.name_en || '').toLowerCase();
     const summary = (e.summary || '').toLowerCase();
+    const tags = (e.tags || []).map(t => String(t).toLowerCase());
     const eid = (e.id || '').toLowerCase();
     const type = (e.type || '').toLowerCase();
 
@@ -113,7 +114,9 @@
       else if (eid === q) { score += 200; strongMatches++; }
       else if (name.includes(q)) { score += 120; strongMatches++; }
       else if (nameEn.includes(q)) { score += 100; strongMatches++; }
+      else if (tags.some(t => t === q)) { score += 90; strongMatches++; }
       else if (eid.includes(q)) { score += 60; }
+      else if (tags.some(t => t.includes(q))) { score += 50; }
       else if (summary.includes(q)) { score += 40; }
     }
 
@@ -127,12 +130,14 @@
       const inNameEn = nameEn.split(WORD_RE).includes(t) || nameEn.includes(t);
       const inId = eid.split(/[^a-z0-9_]+/).includes(t) || eid.includes(t);
       const inSummary = summary.includes(t);
+      const inTags = tags.some(tg => tg.includes(t));
       const inType = type.includes(t);
       const inDomain = e.domains && e.domains.some(d => d.toLowerCase().includes(t));
 
       if (isLatin) {
         // Require a whole-token match somewhere; otherwise penalize.
         const whole = inName || inNameEn || inId || inType || inDomain ||
+          tags.some(tg => tg.split(WORD_RE).includes(t)) ||
           summary.split(WORD_RE).includes(t);
         if (whole) {
           if (inName) { score += 20; strongMatches++; }
@@ -140,6 +145,7 @@
           else if (inId) { score += 10; strongMatches++; }
           else if (inType) { score += 8; strongMatches++; }
           else if (inDomain) { score += 6; strongMatches++; }
+          else if (inTags) { score += 5; strongMatches++; }
           else if (inSummary) { score += 4; }
         } else {
           score -= 8;
@@ -151,6 +157,7 @@
         else if (inId) { score += 8; strongMatches++; }
         else if (inType) { score += 6; strongMatches++; }
         else if (inDomain) { score += 4; strongMatches++; }
+        else if (inTags) { score += 4; strongMatches++; }
         else if (inSummary) { score += 3; }
       }
     }
@@ -167,8 +174,10 @@
     if (primaryName.length > 80) score -= 10;
     if (primaryName.length > 140) score -= 15;
 
-    // Require at least one strong match unless the raw query appears in summary.
-    if (strongMatches === 0 && !(q && summary.includes(q))) return 0;
+    // Require at least one strong match unless the raw query appears in the
+    // summary or tags (weak but legitimate matches must survive).
+    if (strongMatches === 0 &&
+        !(q && (summary.includes(q) || tags.some(t => t.includes(q))))) return 0;
 
     return score;
   }
@@ -186,29 +195,20 @@
 
     const qTokens = uniqueTokens(q);
 
-    // Use inverted index to get candidates.
+    // Scan every entry so summary/tag-only matches are never missed; the
+    // inverted index only contributes a candidate-match-count boost.
     const candidates = findCandidates(qTokens);
     const scores = [];
 
-    for (const [idx, matchCount] of candidates.entries()) {
+    for (let idx = 0; idx < searchData.entries.length; idx++) {
       const e = searchData.entries[idx];
       if (!e) continue;
       if (typeFilter !== 'all' && e.type !== typeFilter) continue;
       if (activeDomain && !(e.domains || []).includes(activeDomain)) continue;
       // For multi-token queries, require at least one token match (already
       // guaranteed) but do not require all tokens to match.
-      const score = scoreEntry(e, q, qTokens, matchCount);
+      const score = scoreEntry(e, q, qTokens, candidates.get(idx) || 0);
       if (score > 0) scores.push({ entry: e, score });
-    }
-
-    // Fallback: if the inverted index returned nothing, try a slow scan.
-    if (scores.length === 0 && q) {
-      for (const e of searchData.entries) {
-        if (typeFilter !== 'all' && e.type !== typeFilter) continue;
-        if (activeDomain && !(e.domains || []).includes(activeDomain)) continue;
-        const score = scoreEntry(e, q, qTokens, 0);
-        if (score > 0) scores.push({ entry: e, score });
-      }
     }
 
     scores.sort((a, b) => b.score - a.score);
@@ -387,6 +387,17 @@
       });
     }
   }
+
+  // Expose the pure scoring core for the BYOK ask page (ask.js). The search
+  // page drives everything through the closures above; on pages without the
+  // search DOM, loadIndex() below returns immediately and only this
+  // namespace is used.
+  window.KGSearch = {
+    setData(data) { searchData = data; },
+    search,
+    scoreEntry,
+    uniqueTokens,
+  };
 
   loadIndex();
 })();

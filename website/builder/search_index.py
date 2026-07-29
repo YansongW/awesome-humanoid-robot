@@ -8,8 +8,12 @@ from typing import Any
 from website.builder.loader import DOMAIN_LABELS, Entry, domain_label, tokenize, type_label
 
 
-def _short_summary(summary: str, max_len: int = 90) -> str:
-    """Return a short, single-line summary suitable for search result cards."""
+def _short_summary(summary: str, max_len: int = 500) -> str:
+    """Return a single-line summary, capped so the search index stays compact.
+
+    The client truncates further for display, so keep as much text as
+    reasonable for substring scoring.
+    """
     text = (summary or "").replace("\n", " ").replace("\r", " ")
     while "  " in text:
         text = text.replace("  ", " ")
@@ -40,7 +44,7 @@ def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str,
     Returns:
         {
             "entries": [
-                {"i": 0, "id": ..., "name": ..., "name_en": ..., "type": ..., "type_label": ..., "summary": ..., "domains": [...], "domain_labels": [...], "layers": [...], "url": ...},
+                {"i": 0, "id": ..., "name": ..., "name_en": ..., "type": ..., "type_label": ..., "summary": ..., "tags": [...], "domains": [...], "domain_labels": [...], "layers": [...], "url": ...},
                 ...
             ],
             "index": {
@@ -62,6 +66,7 @@ def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str,
             "type": e.type,
             "type_label": type_label(e.type, lang),
             "summary": _short_summary(e.summary),
+            "tags": e.tags,
             "domains": e.domains,
             "domain_labels": [domain_label(d, lang) for d in e.domains],
             "url": e.url,
@@ -77,6 +82,7 @@ def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str,
             e.id,
             e.type,
             " ".join(e.domains),
+            " ".join(e.tags),
         ]
         for src in token_sources:
             for t in _field_tokens(src):
