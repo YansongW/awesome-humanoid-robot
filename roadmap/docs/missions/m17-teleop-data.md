@@ -22,7 +22,7 @@
 - **无整机也能采**：[UMI 夹爪接口](/entry/ent_technology_umi_gripper_interface_2024/)——手持夹爪 + 腕部相机，人拿着夹爪做演示即可采训练数据（卡片口径）。
 - **移动人形务实分工**：下肢摇杆定点 + 上肢主从，借鉴 [Mobile ALOHA](/entry/ent_technology_mobile_aloha_2024/) 的全身遥操作思路（Stage 3 口径）——别指望一边遥操作走路一边做精细抓握。
 
-锚点：[ToddlerBot](/entry/ent_robot_system_toddlerbot/) 用同构示教臂（握把内嵌 FSR 力敏电阻）+ 掌机摇杆按键，2.0 版加 Meta Quest 2 VR 遥操作；Berkeley Humanoid Lite 用 SteamVR 基站 + 手柄遥操作双臂完成魔方、写字、搭积木演示（均为 `data/roadmap/research/` 调研档案口径）。
+锚点：[ToddlerBot](/entry/ent_robot_system_toddlerbot/) 用同构示教臂（握把内嵌 FSR 力敏电阻）+ 掌机摇杆按键，2.0 版加 Meta Quest 2 VR 遥操作；Berkeley Humanoid Lite 用 SteamVR 基站 + 手柄遥操作双臂完成魔方、写字、搭积木演示（见 [ToddlerBot 论文](https://arxiv.org/html/2502.00893v2) 与 [Berkeley Humanoid Lite GitHub](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)）。
 
 【为什么】遥操作一石三鸟：验证硬件可达性、采集模仿学习数据、建立任务 baseline（Stage 3）。VR 路线有两个硬约束：**延迟**（端到端延迟到百毫秒量级操作员手感明显变差，工程经验值，按你的系统实测）与**晕动症**——先小流量测延迟，再排长时采集。
 

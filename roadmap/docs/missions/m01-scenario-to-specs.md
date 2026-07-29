@@ -40,7 +40,7 @@
 
 【为什么】峰值扭矩是决定电机与减速器的第一约束，估小了带不动，估大了白白花钱和加重。[无框力矩电机](/entry/ent_component_frameless_torque_motor_2024/)卡片给出的物理根源是 τ ∝ r²l（扭矩随半径平方增长）——扭矩需求翻倍，电机直径只要 ×1.41，这就是关节电机都做成"大饼"的原因。执行器层的系统论述见 [第 4 章 执行器](/wiki/chapters/chapter-04/)。
 
-【你的情况怎么分析】没有 CAD 重量数据时，用类比法：Berkeley Humanoid Lite 整机约 16 kg、12 自由度（`data/roadmap/research/berkeley-humanoid-lite.md`），你的桌面机按体重比例缩放关节扭矩。算出来扭矩 < 3 N·m 的关节可用智能舵机（[XM430 堵转 3.0 N·m](/entry/ent_component_dynamixel_xm430_w210_t/)）；3–15 N·m 考虑 QDD 自研（M02）；再大就是工业无框电机的世界。
+【你的情况怎么分析】没有 CAD 重量数据时，用类比法：Berkeley Humanoid Lite 整机约 16 kg、12 自由度（[论文](https://arxiv.org/html/2504.17249v1)），你的桌面机按体重比例缩放关节扭矩。算出来扭矩 < 3 N·m 的关节可用智能舵机（[XM430 堵转 3.0 N·m](/entry/ent_component_dynamixel_xm430_w210_t/)）；3–15 N·m 考虑 QDD 自研（M02）；再大就是工业无框电机的世界。
 
 ## 步骤 3：从任务到速度与占空比——算转速和热
 
@@ -62,7 +62,7 @@
 | 示例：肩屈伸 | 1 旋转 | ≥ 8.3（步骤 2 算例） | ≥ 30 | ≤ 400（整机的 3–5%/关节，工程建议值） | 精密级趋零（见[谐波减速器](/entry/ent_component_harmonic_drive_reducer/)卡片） | 总预算 ÷ 自由度 |
 | …（每个关节一行） | | | | | | |
 
-两条全局约束同时写下：**总自由度**（桌面臂 5–7、双足 10–16、全身 20+）与**整机质量/成本上限**。锚点：Berkeley 6512 QDD 单关节 BOM 约 $157–188（`data/roadmap/research/berkeley-humanoid-lite.md`）；成品人形 ROBOTIS OP3 售 $13,764.35（`data/roadmap/research/robotis-op3-darwin-op.md` 页面快照）。
+两条全局约束同时写下：**总自由度**（桌面臂 5–7、双足 10–16、全身 20+）与**整机质量/成本上限**。锚点：Berkeley 6512 QDD 单关节 BOM 约 $157–188（[EECS-2025-207 技术报告](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf)）；成品人形 ROBOTIS OP3 售 $13,764.35（[ROBOTIS US 商店页](https://www.robotis.us/robotis-op3-us/) 页面快照）。
 
 【为什么】这张表是后面六个任务（M02–M07）的"合同"：电机选型对扭矩列，减速比对转速/背隙列，结构对质量列，采购对成本列。没有它，每个零件都要重新吵一次架。
 

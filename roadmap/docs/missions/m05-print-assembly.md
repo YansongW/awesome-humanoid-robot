@@ -12,7 +12,7 @@
 
 | 零件 | 首选 | 备选/说明 |
 |---|---|---|
-| 摆线齿轮/传动件 | PLA（高填充打印） | Berkeley 摆线齿轮全部桌面 FDM + PLA 制造，通过 60 小时耐久测试（`data/roadmap/research/berkeley-humanoid-lite.md`）；进阶用尼龙/PA-CF |
+| 摆线齿轮/传动件 | PLA（高填充打印） | Berkeley 摆线齿轮全部桌面 FDM + PLA 制造，通过 60 小时耐久测试（[arXiv:2504.17249](https://arxiv.org/abs/2504.17249)）；进阶用尼龙/PA-CF |
 | 壳体/端盖 | PETG | 靠近电机、耐温要求高时换 ABS/ASA |
 | 支架/结构件 | PETG | 高刚度需求换 PA-CF |
 | 缓冲垫/足垫/限位垫 | TPU | 靠弹性吃饭，越软越要慢速打印 |

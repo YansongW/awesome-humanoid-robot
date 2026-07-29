@@ -10,7 +10,7 @@
 
 【做什么】不要第一天就训自己的模型。先在 [Isaac Lab](/entry/ent_software_nvidia_isaac_lab_2024/)（或 MuJoCo Playground）里跑通官方人形/四足行走环境：默认配置训几百 iter，确认 reward 曲线上升、评测能走。然后把自己的 URDF/MJCF 换进去，**先用官方奖励函数**训一版。
 
-【为什么】官方环境帮你隔离变量：管线（obs/action/reward/reset）先证明是对的，剩下的问题就都是"我的模型/奖励"的问题。Berkeley Humanoid Lite 的 RL 行走就是先复现参考管线再迁移自研模型，最终做到零样本 sim-to-real（`data/roadmap/research/berkeley-humanoid-lite.md`）。
+【为什么】官方环境帮你隔离变量：管线（obs/action/reward/reset）先证明是对的，剩下的问题就都是"我的模型/奖励"的问题。Berkeley Humanoid Lite 的 RL 行走就是先复现参考管线再迁移自研模型，最终做到零样本 sim-to-real（[arXiv:2504.17249](https://arxiv.org/abs/2504.17249)）。
 
 【你的情况怎么分析】GPU 显存不够跑 4096 并行环境：砍到 512–1024，曲线会慢但能吃；没有 NVIDIA GPU：MuJoCo + CPU 也能训（慢一个量级），先把环境逻辑调对。
 

@@ -12,7 +12,7 @@
 
 | 驱动板 | 固件路线 | 备注 |
 |---|---|---|
-| ST B-G431B-ESC1 | Berkeley Humanoid Lite 开源 FOC 固件 | 板子 $19；真机底层代码在其仓库 `berkeley_humanoid_lite_lowlevel` 子目录（C 语言、独立于训练栈——`data/roadmap/research/berkeley-humanoid-lite.md`） |
+| ST B-G431B-ESC1 | Berkeley Humanoid Lite 开源 FOC 固件 | 板子 $19；真机底层代码在其仓库 `berkeley_humanoid_lite_lowlevel` 子目录（C 语言、独立于训练栈——[Berkeley Humanoid Lite GitHub](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)） |
 | ODrive | ODrive 官方固件 + odrivetool | Berkeley 方案亦兼容 ODrive / moteus / VESC（调研档案） |
 | moteus | moteus 官方固件 + tview | 固件与上位机版本要配套 |
 

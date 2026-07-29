@@ -4,7 +4,7 @@
 
 **前置条件**：M08 验收通过（零件到齐、工具就位、锂电存放合规）；有 Stage 1（M05/M07）的装配与台架测试经验；读过 [阶段 2 总览](../stage-2-biped.md) 的安全红线（急停、吊架、锂电三条）。
 
-理论背景：[第 11 章 装配、集成与测试](/wiki/chapters/chapter-11/)、[第 6 章 计算、电源与热管理](/wiki/chapters/chapter-06/)、[第 10 章 制造工艺体系](/wiki/chapters/chapter-10/)。平台事实引自 `data/roadmap/research/` 调研档案。
+理论背景：[第 11 章 装配、集成与测试](/wiki/chapters/chapter-11/)、[第 6 章 计算、电源与热管理](/wiki/chapters/chapter-06/)、[第 10 章 制造工艺体系](/wiki/chapters/chapter-10/)。平台事实引自[公开调研档案](https://github.com/YansongW/awesome-humanoid-robot/tree/main/data/roadmap/research/)。
 
 ## 步骤 1：分模块装配——单腿 → 单臂 → 躯干 → 总装
 

@@ -16,7 +16,7 @@ Kt (N·m/A) ≈ 60 / (2π × KV (rpm/V))
 
 再由 M01 的关节峰值扭矩反推电机侧相电流：`τ_motor = τ_joint ÷ i ÷ η`（i 为预选减速比，η 为传动效率），`I = τ_motor ÷ Kt`。
 
-完整算例（沿用 M01 的 8.3 N·m 关节，预选 i = 9、η = 0.8；电机候选取 Berkeley 6512 同款 MAD M6C12 150KV——型号名即 KV 值，$129，来源 `data/roadmap/research/berkeley-humanoid-lite.md`）：
+完整算例（沿用 M01 的 8.3 N·m 关节，预选 i = 9、η = 0.8；电机候选取 Berkeley 6512 同款 MAD M6C12 150KV——型号名即 KV 值，$129，来源 [EECS-2025-207 技术报告 BOM](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf)）：
 
 ```
 Kt      = 60 / (2π × 150) ≈ 0.064 N·m/A
@@ -44,7 +44,7 @@ Kt_min  = 1.15 / 20        ≈ 0.058 N·m/A → KV 上限 ≈ 60 / (2π × 0.058
 候选 150 KV ∈ [19, 165] ✓；空载转速 150 × 22.2 = 3330 rpm ≫ 270 rpm
 ```
 
-再定母线电压档位：LiPo 按串联数 3S（11.1 V）/6S（22.2 V）/12S（44.4 V）分档。Berkeley Humanoid Lite 全机用 6S 4000 mAh LiPo，续航约 30 分钟（`data/roadmap/research/berkeley-humanoid-lite.md`）——22 V 级是桌面人形的甜区：同功率下电流比 3S 小一半，线损发热都低，又不像 12S 对驱动板耐压与安全防护提出更高要求。
+再定母线电压档位：LiPo 按串联数 3S（11.1 V）/6S（22.2 V）/12S（44.4 V）分档。Berkeley Humanoid Lite 全机用 6S 4000 mAh LiPo，续航约 30 分钟（[Berkeley Humanoid Lite 论文](https://arxiv.org/html/2504.17249v1)）——22 V 级是桌面人形的甜区：同功率下电流比 3S 小一半，线损发热都低，又不像 12S 对驱动板耐压与安全防护提出更高要求。
 
 【为什么】KV 下限保证"转得到"，KV 上限保证"烧不了"——上限的本质是 Kt 下限，而电流是硬约束：驱动板限流触顶就掉扭矩，发热超限就烧绕组。电压档位则同时决定转速天花板与全线电流水平，是电机选型的隐含自变量。
 
@@ -78,7 +78,7 @@ P_mech    = 8.3 N·m × 3.14 rad/s    ≈ 26 W    ← 输出端峰值机械功�
 | [无框力矩电机](/entry/ent_component_frameless_torque_motor_2024/) | ODRI 用现成无框电机（odri 档案） | 最高 | 中（嵌进关节结构） | 需自行向供应商确认 | 有机械加工能力 |
 | 一体化[伺服](/entry/ent_comp_servo_motor/)/智能舵机 | [XM430-W210-T](/entry/ent_component_dynamixel_xm430_w210_t/) 堵转 3.0 N·m | 低-中 | 最高（即插即用） | 需按型号询价 | 零基础先跑通 |
 
-【为什么】外转子把气隙半径撑到结构极限，是 τ ∝ r²l 的直接兑现；无框电机再进一步，省掉外壳与输出轴把电机"揉进"关节——ODRI 的 BLMC 执行器正是这条路（现成无框电机 + 自研驱动卡，`data/roadmap/research/open-dynamic-robot-initiative.md`）。一体化方案用扭矩密度换省心，把减速、驱动、反馈全封在一个壳里。
+【为什么】外转子把气隙半径撑到结构极限，是 τ ∝ r²l 的直接兑现；无框电机再进一步，省掉外壳与输出轴把电机"揉进"关节——ODRI 的 BLMC 执行器正是这条路（现成无框电机 + 自研驱动卡，[ODRI 执行器硬件仓库](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)）。一体化方案用扭矩密度换省心，把减速、驱动、反馈全封在一个壳里。
 
 【你的情况怎么分析】按预算对号：单关节 < ¥400 → 舵机（XM430 级）；¥1,000 上下 → 航模 BLDC + 打印减速器（Berkeley 6512 已用 $129 电机 + 打印摆线跑出 RL 行走，档案）；追求性能且有加工条件 → 无框电机，但注意 ODRI 路线新手友好度只评 2/5（odri 档案），慎入。
 

@@ -11,7 +11,7 @@
 【做什么】四件事按序落地：
 
 1. **策略导出**：按训练框架导出 jit（PyTorch `torch.jit`）或 ONNX，固定输入/输出维度并冻结权重；导出后立即在仿真里用导出件重跑鲁棒评测，确认分数无损。
-2. **机载推理**：策略跑在机器人主控上。两条对标路线：Berkeley Humanoid Lite 在 Intel N95 上用 C 语言底层部署（`berkeley_humanoid_lite_lowlevel` 子目录独立于训练栈，单独拷机即可，`data/roadmap/research/berkeley-humanoid-lite.md`）；ToddlerBot 在 Jetson Orin NX 16GB 上纯 Python 部署（`data/roadmap/research/toddlerbot.md`）。
+2. **机载推理**：策略跑在机器人主控上。两条对标路线：Berkeley Humanoid Lite 在 Intel N95 上用 C 语言底层部署（`berkeley_humanoid_lite_lowlevel` 子目录独立于训练栈，单独拷机即可，[Berkeley Humanoid Lite GitHub](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)）；ToddlerBot 在 Jetson Orin NX 16GB 上纯 Python 部署（[ToddlerBot GitHub](https://github.com/hshi74/toddlerbot)）。
 3. **频率分层**：策略 50 Hz 级推理出关节目标位置，底层 PD 高频跟踪——对标档案：ToddlerBot 30 台电机全状态反馈 50 Hz（toddlerbot.md），Berkeley 执行器与 IMU 的 CAN 通信 250 Hz（berkeley-humanoid-lite.md）。
 4. **进程划分与看门狗**：推理、控制、通信分进程；通信/控制进程互发心跳，任一进程超时未响应即触发关节卸力。
 

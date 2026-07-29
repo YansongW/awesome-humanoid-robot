@@ -4,7 +4,7 @@
 
 **前置条件**：[M01 · 需求场景数学化](m01-scenario-to-specs.md) 的指标表已填完；读过 [阶段 2 总览](../stage-2-biped.md) 的方案对比与决策树（本任务是它的手把手展开版）；预算有明确上限数字。
 
-理论背景：[第 26 章 整机系统案例](/wiki/chapters/chapter-26/)、[第 4 章 执行器](/wiki/chapters/chapter-04/) 与 [第 7 章 供应商地图](/wiki/chapters/chapter-07/)。本页全部平台数据引自 `data/roadmap/research/` 调研档案（访问日期 2026-07-01），档案标"未知"的项如实保留。
+理论背景：[第 26 章 整机系统案例](/wiki/chapters/chapter-26/)、[第 4 章 执行器](/wiki/chapters/chapter-04/) 与 [第 7 章 供应商地图](/wiki/chapters/chapter-07/)。本页全部平台数据引自[公开调研档案](https://github.com/YansongW/awesome-humanoid-robot/tree/main/data/roadmap/research/)（访问日期 2026-07-01），档案标"未知"的项如实保留。
 
 ## 步骤 1：候选平台全面对比
 

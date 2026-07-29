@@ -16,7 +16,7 @@
 
 （表据 [第 23 章](/wiki/chapters/chapter-23/) 23.3.8 节平台能力对比整理。）另有易混淆的角色：[Pinocchio](/entry/ent_software_pinocchio/) 不是仿真器，而是高效刚体动力学/运动学与解析导数计算的开源 C++ 库——做 MPC/WBC 时几乎必用它算动力学项，与仿真器互补。
 
-**【为什么】** 各引擎立身之本不同：MuJoCo 把接触动力学表述为凸优化问题，接触平滑、物理一致性好，长期是腿足控制与深度 RL 论文的事实标准（第 23 章 23.3.1 节）；Isaac Sim 的核心优势是照片级渲染、支撑 GR00T 合成数据管道（来源：[Isaac Sim](/entry/ent_software_nvidia_isaac_sim_2024/) 卡片），Isaac Lab 在其上提供 RL 环境、奖励、域随机化的模块化抽象，内置 H1/G1 等人形任务示例；Gazebo 物理平庸但 ROS 生态无人能替；Drake 胜在动力学与数学规划的严谨联合；Genesis 把软体/可变形体统一进可微 GPU 框架，生态仍在积累。开源项目的实际选择可作锚点：ToddlerBot 用 MuJoCo/MJX 跑 PPO；Berkeley Humanoid Lite 基于 Isaac Lab；OpenLoong 的 MPC+WBC 框架部署在 MuJoCo；Upkie 用 PyBullet 零成本入门（来源：data/roadmap/research/ 各档案）。
+**【为什么】** 各引擎立身之本不同：MuJoCo 把接触动力学表述为凸优化问题，接触平滑、物理一致性好，长期是腿足控制与深度 RL 论文的事实标准（第 23 章 23.3.1 节）；Isaac Sim 的核心优势是照片级渲染、支撑 GR00T 合成数据管道（来源：[Isaac Sim](/entry/ent_software_nvidia_isaac_sim_2024/) 卡片），Isaac Lab 在其上提供 RL 环境、奖励、域随机化的模块化抽象，内置 H1/G1 等人形任务示例；Gazebo 物理平庸但 ROS 生态无人能替；Drake 胜在动力学与数学规划的严谨联合；Genesis 把软体/可变形体统一进可微 GPU 框架，生态仍在积累。开源项目的实际选择可作锚点：ToddlerBot 用 MuJoCo/MJX 跑 PPO；Berkeley Humanoid Lite 基于 Isaac Lab；OpenLoong 的 MPC+WBC 框架部署在 MuJoCo；Upkie 用 PyBullet 零成本入门（见 [ToddlerBot](https://github.com/hshi74/toddlerbot)、[Berkeley Humanoid Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)、[OpenLoong-Dyn-Control](https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md)、[Upkie](https://github.com/upkie/upkie) 各自仓库）。
 
 **【你的情况怎么分析】** 按目标决策：
 
@@ -30,21 +30,21 @@
 
 **【做什么】** 四个动作：
 
-1. **格式转换**：从 CAD 或现成仓库得到 [URDF（机器人描述格式）](/entry/ent_technology_urdf_robot_description_format_2024/)——ROS 生态的标准 XML 格式，描述连杆、关节、惯性与几何；再转为 [MJCF（MuJoCo 仿真格式）](/entry/ent_technology_mjcf_simulation_format_2024/)（MuJoCo 的 `compile` 可直接加载 URDF）。进 Isaac 还需再转一层 USD。Berkeley Humanoid Lite 同时维护 URDF/MJCF/USD 三种格式（来源：data/roadmap/research/berkeley-humanoid-lite.md），"三格式齐全"的习惯值得照抄。
+1. **格式转换**：从 CAD 或现成仓库得到 [URDF（机器人描述格式）](/entry/ent_technology_urdf_robot_description_format_2024/)——ROS 生态的标准 XML 格式，描述连杆、关节、惯性与几何；再转为 [MJCF（MuJoCo 仿真格式）](/entry/ent_technology_mjcf_simulation_format_2024/)（MuJoCo 的 `compile` 可直接加载 URDF）。进 Isaac 还需再转一层 USD。Berkeley Humanoid Lite 同时维护 URDF/MJCF/USD 三种格式（来源：[Berkeley Humanoid Lite GitHub](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)），"三格式齐全"的习惯值得照抄。
 2. **碰撞体简化**：绝不可把高面数视觉网格直接当碰撞体——碰撞检测会慢一到两个数量级，用凸包分解或球/胶囊/盒等 primitive 近似替代（来源：第 23 章 23.4.3 节）。
 3. **惯性参数核对**：质量属性按"CAD 理论值 → 称重实测值 → 系统辨识修正值"分级采信，整机质心误差控制在毫米级，否则平衡控制器在实机上会持续"惊讶"（来源：第 23 章 23.4.4 节）。
 4. **接触参数标定**：足底与地面的接触刚度、阻尼、摩擦系数按"足底材料-地面材料"成对标定，并纳入后续域随机化范围（来源：第 23 章 23.4.4 节）。
 
 **【为什么】** URDF 为可视化与 ROS 工具链而生，只支持树状结构、执行器模型弱；MJCF 为仿真与控制而生——编译期自动计算惯性、原生闭链等式约束、执行器与传感器是一等公民（来源：第 23 章 23.4.1/23.4.2 节）。转换每步都有信息损耗：惯性张量丢失、关节方向与限位约定差异、渲染材质与物理材质是两套体系（来源：第 23 章 23.4.3 节）。模型"以假乱真"靠的不是引擎而是这些建模细节。
 
-**【你的情况怎么分析】** 复刻开源机型：直接用官方维护的描述文件（如 Upkie 的 `upkie_description` URDF 仓库，来源：data/roadmap/research/upkie.md），精力放在核对零位与执行器参数上。自研机型：先导出简化 URDF 跑通站立再迭代细化，不要等 CAD 完美才进仿真。关节零位标定是仿真与实机对齐的第一步，ToddlerBot 为此设计了 3D 打印零点校准治具，1 分钟完成校准（来源：data/roadmap/research/toddlerbot.md）。
+**【你的情况怎么分析】** 复刻开源机型：直接用官方维护的描述文件（如 Upkie 的 [upkie_description](https://github.com/upkie/upkie_description) URDF 仓库），精力放在核对零位与执行器参数上。自研机型：先导出简化 URDF 跑通站立再迭代细化，不要等 CAD 完美才进仿真。关节零位标定是仿真与实机对齐的第一步，ToddlerBot 为此设计了 3D 打印零点校准治具，1 分钟完成校准（来源：[ToddlerBot 论文](https://arxiv.org/html/2502.00893v2)）。
 
 ## 第三步：跑通控制仿真流程
 
 **【做什么】** 按三级火箭推进，每级有明确的"过关"标志：
 
-1. **PID 站立**：用关节位置环 PID 让机器人站直不倒。过关标志：静态站立 60 秒以上，轻推能恢复。2. **MPC 行走**：接入基于模型的步态控制。可用 Pinocchio 算动力学、配 QP 求解器搭 MPC；或直接复现 OpenLoong-Dyn-Control——基于 MPC + WBC，含行走、跳跃、盲踩障碍三个示例，可部署于 MuJoCo（来源：data/roadmap/research/openloong-qinglong.md）。过关标志：平地连续行走 100 步不摔、步速可调。
-3. **RL 训练**：用 [PPO（近端策略优化）](/entry/ent_algorithm_ppo/) 训练行走/全身策略——它限制策略更新步长以避免破坏性更新、提高样本效率，是腿足 RL 的默认起点（来源：PPO 卡片）。Upkie 工程自带 PID、MPC、强化学习（Stable-Baselines3）三种平衡控制范式示例与 Gymnasium 接口（来源：data/roadmap/research/upkie.md），是对比三种范式的现成教材。训练方法详见 [第 18 章](/wiki/chapters/chapter-18/)。
+1. **PID 站立**：用关节位置环 PID 让机器人站直不倒。过关标志：静态站立 60 秒以上，轻推能恢复。2. **MPC 行走**：接入基于模型的步态控制。可用 Pinocchio 算动力学、配 QP 求解器搭 MPC；或直接复现 OpenLoong-Dyn-Control——基于 MPC + WBC，含行走、跳跃、盲踩障碍三个示例，可部署于 MuJoCo（来源：[OpenLoong-Dyn-Control](https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md)）。过关标志：平地连续行走 100 步不摔、步速可调。
+3. **RL 训练**：用 [PPO（近端策略优化）](/entry/ent_algorithm_ppo/) 训练行走/全身策略——它限制策略更新步长以避免破坏性更新、提高样本效率，是腿足 RL 的默认起点（来源：PPO 卡片）。Upkie 工程自带 PID、MPC、强化学习（Stable-Baselines3）三种平衡控制范式示例与 Gymnasium 接口（来源：[Upkie GitHub](https://github.com/upkie/upkie)），是对比三种范式的现成教材。训练方法详见 [第 18 章](/wiki/chapters/chapter-18/)。
 
 **【为什么】** 三级火箭顺序不能乱：PID 站立验证**模型正确性**（零位、轴向、质量属性）；MPC 验证**动力学建模**（执行器模型、接触参数）；RL 是在确认"仿真可信"之后，才用算力换策略性能。ToddlerBot 与 BHL 都实现了 RL 行走策略的零样本 sim-to-real（来源：各自调研档案），前提正是模型校准做在了前面。
 
@@ -54,7 +54,7 @@
 
 **【做什么】** 三件工具，按"收缩差距、钝化敏感、工程兜底"的顺序配齐：
 
-1. **[系统辨识（System Identification）](/entry/ent_method_system_identification/)**：用测量数据建模型，把仿真"拉向"现实。单关节用扫频/阶跃激励拟合增益、延迟、摩擦曲线；整机在约束下采集激励轨迹优化惯性参数（第 23 章 23.7.3 节）。ToddlerBot 的经验：同型号电机只做 1 次 sysID 即可迁移到全部 30 台电机（来源：data/roadmap/research/toddlerbot.md）。2. **[域随机化（Domain Randomization）](/entry/ent_method_domain_randomization/)**：训练时随机化仿真参数，让策略对剩余误差不敏感。人形典型随机化项：连杆质量与质心（±10% 量级）、关节摩擦与阻尼、地面摩擦、执行器增益与延迟、传感器噪声、外力推扰（第 23 章 23.7.2 节）。范围由 sysID 给先验——过宽学出保守策略，过窄迁移失败；可搭配观测历史让策略隐式在线辨识参数，或用"先窄后宽"的课程式收敛。
+1. **[系统辨识（System Identification）](/entry/ent_method_system_identification/)**：用测量数据建模型，把仿真"拉向"现实。单关节用扫频/阶跃激励拟合增益、延迟、摩擦曲线；整机在约束下采集激励轨迹优化惯性参数（第 23 章 23.7.3 节）。ToddlerBot 的经验：同型号电机只做 1 次 sysID 即可迁移到全部 30 台电机（来源：[ToddlerBot 论文](https://arxiv.org/html/2502.00893v2)）。2. **[域随机化（Domain Randomization）](/entry/ent_method_domain_randomization/)**：训练时随机化仿真参数，让策略对剩余误差不敏感。人形典型随机化项：连杆质量与质心（±10% 量级）、关节摩擦与阻尼、地面摩擦、执行器增益与延迟、传感器噪声、外力推扰（第 23 章 23.7.2 节）。范围由 sysID 给先验——过宽学出保守策略，过窄迁移失败；可搭配观测历史让策略隐式在线辨识参数，或用"先窄后宽"的课程式收敛。
 3. **[硬件在环（HIL）](/entry/ent_method_hardware_in_the_loop/)**：上机前的在环阶梯——SiL（软件在环验证逻辑）→ HIL（控制软件跑在真实车载平台上，经真实 EtherCAT/CAN 总线与实时仿真器闭环，验证实时性与通信时序）→ 单关节/单腿台架 → 吊架保护下整机首测（第 23 章 23.7.4 节）。
 **【为什么】** 现实差距分三类：可参数化差距（质量、摩擦、延迟——sysID 收缩、域随机化覆盖）、结构性差距（齿隙、迟滞、软体变形——建模补充或结构规避）、感知分布差距（渲染与真实图像差异——视觉域随机化或真实数据混合）（第 23 章 23.7.1 节）。HIL 对仿真有特殊要求：必须按墙上时间同步推进（实时率 RTF = 1），超时即表现为控制器侧总线丢帧，故 HIL 用确定性调度与精简模型，而非 RL 训练的高吞吐变体（第 23 章 23.7.4 节）。
 
@@ -75,10 +75,10 @@
 
 **【做什么】** 按引擎准备硬件并安装：
 
-- **MuJoCo 路线**：纯 CPU 即可，`pip install mujoco` 起步；ToddlerBot 证明"仿真 + RL 训练 + 部署"全链路可纯 Python、pip 一键安装（Python >= 3.10）（来源：data/roadmap/research/toddlerbot.md）。GPU 只对 MJX 大规模并行训练必要。
+- **MuJoCo 路线**：纯 CPU 即可，`pip install mujoco` 起步；ToddlerBot 证明"仿真 + RL 训练 + 部署"全链路可纯 Python、pip 一键安装（Python >= 3.10）（来源：[ToddlerBot GitHub](https://github.com/hshi74/toddlerbot)）。GPU 只对 MJX 大规模并行训练必要。
 - **Isaac Sim/Lab 路线**：需支持 RTX 光追的 NVIDIA 显卡与匹配的驱动/CUDA 版本；具体显卡型号与显存下限随版本变化，需自行向供应商（官方文档）确认当前版本要求。
 - **Genesis 路线**：GPU 加速，安装前确认其当前版本对 CUDA 的要求。
-- **Upkie 式零成本上手**：`pixi`/`uv` 一条命令跑仿真示例，适合买硬件前先学控制（来源：data/roadmap/research/upkie.md）。
+- **Upkie 式零成本上手**：`pixi`/`uv` 一条命令跑仿真示例，适合买硬件前先学控制（来源：[Upkie PyPI](https://pypi.org/project/upkie/)）。
 
 **【为什么】** 安装的坑九成集中在三处：NVIDIA 驱动与 CUDA toolkit 版本错配、headless 服务器缺显示环境（需 EGL/Vulkan 离屏渲染配置）、Python 环境混用导致动态库冲突。先让引擎官方示例跑起来，再加载自己的模型——隔离"环境问题"与"模型问题"。
 **【你的情况怎么分析】** 只有笔记本（无 N 卡）：MuJoCo + CPU 训练完全可行，小型 MLP 策略以天计可接受；有一张 RTX 游戏卡：Isaac Lab 与 Genesis 都能跑，显存决定并行环境数；有服务器/多卡：才考虑 Isaac Gym 式数千并行环境与端到端 GPU 管线（观测与动作张量不出显存，第 23 章 23.3.3 节）。

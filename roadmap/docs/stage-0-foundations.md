@@ -61,7 +61,7 @@ Stage 0 的目标不是"学完所有基础"——那是个无底洞，无数人�
 
 【做什么】① Python 达到熟练：NumPy 向量化、matplotlib 画图、会写 class；② C++ 达到"能读能改"：指针/引用、头文件、编译链接；③ git 日常操作：clone、branch、commit、push、提 PR；④ 安装 ROS 2 LTS，跑通 talker/listener 并自写一对发布/订阅节点；⑤ 了解 FDM 3D 打印的基本流程（建模→切片→打印）与强度常识。
 
-【为什么】人形软件栈的事实标准是 [ROS 2 中间件](/entry/ent_software_ros_2_middleware_2024/)——基于 DDS 的发布/订阅机制、支持实时（来源：ros.org，见卡片），后续阶段你的仿真、驱动、状态估计都以节点/topic 组织。底层实时环用 C++、算法原型用 Python，是行业默认分工。3D 打印则是后面整机阶段的制造主力：开源人形 Berkeley Humanoid Lite 的结构件与摆线减速器均为打印件，整机 BOM 美国采购约 $4,312、中国约 $3,236（来源：`data/roadmap/research/berkeley-humanoid-lite.md`）——你现在学的切片与公差常识，届时直接变成钱和时间。软件生态全景见 Wiki [第 22 章 软件中间件](/wiki/chapters/chapter-22/)。
+【为什么】人形软件栈的事实标准是 [ROS 2 中间件](/entry/ent_software_ros_2_middleware_2024/)——基于 DDS 的发布/订阅机制、支持实时（来源：ros.org，见卡片），后续阶段你的仿真、驱动、状态估计都以节点/topic 组织。底层实时环用 C++、算法原型用 Python，是行业默认分工。3D 打印则是后面整机阶段的制造主力：开源人形 Berkeley Humanoid Lite 的结构件与摆线减速器均为打印件，整机 BOM 美国采购约 $4,312、中国约 $3,236（来源：[EECS-2025-207 技术报告](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf)）——你现在学的切片与公差常识，届时直接变成钱和时间。软件生态全景见 Wiki [第 22 章 软件中间件](/wiki/chapters/chapter-22/)。
 
 【你的情况怎么分析】纯软件背景：Python/git 自检通过就跳，时间投给 C++ 内存与实时概念、ROS 2 的节点/topic/service 三件套；硬件背景：从 NumPy 入门 Python 最划算，离 MATLAB 思维最近；零基础：先 Python 后 git，C++ 暂缓到需要时再学，学了不用会忘。
 
@@ -71,7 +71,7 @@ Stage 0 的目标不是"学完所有基础"——那是个无底洞，无数人�
 
 【做什么】本阶段不画板子，只建立三组概念：**供电**（电压轨、电流预算、线径与压降、保险与开关）、**地**（共地、地环路）、**信号**（数字电平、差分传输、抗干扰）。然后重点理解 [CAN 总线](/entry/ent_technology_can_bus_2024/) 的角色：它是连接人形机器人关节电机驱动器与中央控制器的现场总线（来源：卡片，Wikipedia CAN bus 2024）。可选动手项：买一块入门 CAN 适配器（价格需自行向供应商确认），用 can-utils 抓一段真实总线数据看看帧结构。
 
-【为什么】到了整机阶段，你面对的将是十几到二十几个关节驱动器挂在总线上：Berkeley Humanoid Lite 就是用 CAN 连接各执行器，主控是一台 Intel N95 迷你 PC（约 $129，置于躯干，同时跑底层控制与 RL 策略；来源：`data/roadmap/research/berkeley-humanoid-lite.md`）。而整机调试时一半以上的"灵异问题"出在电气层：压降、共地、终端电阻、线束。现在建立概念，后面少烧板。电源系统工程细节见 Wiki [第 6 章 计算、电源与热管理](/wiki/chapters/chapter-06/)。
+【为什么】到了整机阶段，你面对的将是十几到二十几个关节驱动器挂在总线上：Berkeley Humanoid Lite 就是用 CAN 连接各执行器，主控是一台 Intel N95 迷你 PC（约 $129，置于躯干，同时跑底层控制与 RL 策略；来源：[EECS-2025-207 技术报告 BOM](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf)）。而整机调试时一半以上的"灵异问题"出在电气层：压降、共地、终端电阻、线束。现在建立概念，后面少烧板。电源系统工程细节见 Wiki [第 6 章 计算、电源与热管理](/wiki/chapters/chapter-06/)。
 
 【你的情况怎么分析】EE/自动化背景：本节 30 分钟过完概念即可；软件与零基础：不要求会设计电路，但必须做到"敢量、会量"——会用万用表量电压、量通断，知道 24 V 母线短路意味着什么。安全提示：锂电池与母线电容不是玩具，任何带电操作前自行核实安全规范，没把握就请有硬件经验的人在场。
 
@@ -81,9 +81,9 @@ Stage 0 的目标不是"学完所有基础"——那是个无底洞，无数人�
 
 【做什么】① 安装 [MuJoCo 物理引擎](/entry/ent_software_mujoco_physics_engine_2022/)；② 找一份开源人形/双足的 [URDF 机器人描述格式](/entry/ent_technology_urdf_robot_description_format_2024/) 文件通读——URDF 是用 XML 描述机器人连杆、关节、惯性与几何的格式（来源：wiki.ros.org/urdf，见卡片）；③ 把模型加载进 MuJoCo（或用项目自带的 MJCF）；④ 写一个最朴素的位置 PD 控制器：给定站立姿态的关节目标角，让双足模型原地站住 10 秒。
 
-【为什么】MuJoCo 是具有丰富接触动力学的高保真物理引擎，广泛用于人形控制研究（来源：mujoco.org，见卡片）——双足站立的核心难点恰是脚底接触与平衡，正对它的强项。读懂 URDF 则是打开任何开源人形仓库的第一把钥匙：真实开源项目会同时维护 URDF/MJCF/USD 三种描述格式（Berkeley Humanoid Lite，来源：`data/roadmap/research/berkeley-humanoid-lite.md`），看懂这个格式，你就读得懂别人机器人的"骨架图纸"。仿真技术栈的系统论述见 Wiki [第 23 章 仿真与物理引擎](/wiki/chapters/chapter-23/)。
+【为什么】MuJoCo 是具有丰富接触动力学的高保真物理引擎，广泛用于人形控制研究（来源：mujoco.org，见卡片）——双足站立的核心难点恰是脚底接触与平衡，正对它的强项。读懂 URDF 则是打开任何开源人形仓库的第一把钥匙：真实开源项目会同时维护 URDF/MJCF/USD 三种描述格式（Berkeley Humanoid Lite，来源：[Berkeley Humanoid Lite GitHub](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)），看懂这个格式，你就读得懂别人机器人的"骨架图纸"。仿真技术栈的系统论述见 Wiki [第 23 章 仿真与物理引擎](/wiki/chapters/chapter-23/)。
 
-【你的情况怎么分析】没有 GPU 不影响——站立级刚体仿真 CPU 足够。选模型优先"小尺寸、文档全"的开源双足（调研档案 `data/roadmap/research/` 里有 Berkeley Humanoid Lite、ToddlerBot 等候选，附成本与门槛分析），别一上来就啃全尺寸机型。**本阶段只能完成一件事的话，就完成这件**——它同时验收力学、编程和工具链三件事。
+【你的情况怎么分析】没有 GPU 不影响——站立级刚体仿真 CPU 足够。选模型优先"小尺寸、文档全"的开源双足（[公开调研档案](https://github.com/YansongW/awesome-humanoid-robot/tree/main/data/roadmap/research/)里有 Berkeley Humanoid Lite、ToddlerBot 等候选，附成本与门槛分析），别一上来就啃全尺寸机型。**本阶段只能完成一件事的话，就完成这件**——它同时验收力学、编程和工具链三件事。
 
 **学到什么程度算够**：即下方验收标准第 1、2 条——本步骤就是 Stage 0 的毕业设计。
 

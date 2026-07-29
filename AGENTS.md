@@ -25,6 +25,12 @@
 5. **来源纪律**：具体参数（价格/扭矩/自由度等）必须有来源 URL；
    查不到的写"未知/需自行确认"，禁止编造；无来源的估算值一律标注"工程建议值"，
    需按读者的具体设计校核。
+6. **公开页面禁止内部路径引用**：`roadmap/docs*/`、`wiki/docs*/`、实体正文等面向读者的内容，
+   来源一律用一手 URL（GitHub 仓库/arXiv/官方页），禁止以仓库内部路径
+   （如 `data/roadmap/research/xxx.md`）作为来源标注；内部溯源路径只允许出现在
+   frontmatter `verification.notes`。指向公开仓库目录的 GitHub 链接
+   （`github.com/YansongW/awesome-humanoid-robot/tree/main/...`）不受此限。
+   CI（deploy.yml "Check for internal repo paths"）会对违规字面引用 fail。
 
 ## 目录速览
 

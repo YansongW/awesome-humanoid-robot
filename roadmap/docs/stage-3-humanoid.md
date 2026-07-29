@@ -104,7 +104,7 @@
 
 ## 3.7 参考方案：OpenLoong 与教学级替代
 
-- 【做什么】对照四个有调研档案的项目选参照系（`data/roadmap/research/`，检索时点快照）：
+- 【做什么】对照四个有调研档案的项目选参照系（[OpenLoong](https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md)、[InMoov](https://inmoov.fr/project/)、[Poppy](https://github.com/poppy-project/poppy-humanoid)、[ROBOTIS OP3](https://emanual.robotis.com/docs/en/platform/op3/introduction/)，检索时点快照）：
 
 | 项目 | 体型/自由度 | 成本 | 开源与生态 | 适合谁 |
 |---|---|---|---|---|

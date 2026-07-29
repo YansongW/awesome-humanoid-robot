@@ -12,9 +12,9 @@
 
 | 候选 | 定位 | 出处/锚点 |
 |---|---|---|
-| ST B-G431B-ESC1 | 最便宜的 FOC 入门板，$19 | Berkeley 6512 执行器标配（`data/roadmap/research/berkeley-humanoid-lite.md`） |
+| ST B-G431B-ESC1 | 最便宜的 FOC 入门板，$19 | Berkeley 6512 执行器标配（[Berkeley Humanoid Lite GitHub](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)） |
 | ODrive / Moteus / VESC | 第三方开源驱动器，生态成熟 | Berkeley 结构兼容这三款（同档案） |
-| ODRI MicroDriver | 科研级自研驱动卡，设计文件 BSD 全开源 | `data/roadmap/research/open-dynamic-robot-initiative.md`，新手友好度 2/5 |
+| ODRI MicroDriver | 科研级自研驱动卡，设计文件 BSD 全开源 | [ODRI 执行器硬件仓库](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)，新手友好度 2/5 |
 
 选定后做两道硬校核，写进图纸扉页：
 

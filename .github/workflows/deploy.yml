@@ -31,6 +31,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r website/requirements.txt
 
+      - name: Check for internal repo paths in public pages
+        # Public pages must cite first-hand URLs, never internal repo paths.
+        # The GitHub tree link to the (public) archive directory is allowed.
+        run: |
+          if grep -rn "data/roadmap/research/" roadmap/docs roadmap/docs-en roadmap/docs-ko wiki/docs wiki/docs-en wiki/docs-ko 2>/dev/null \
+              | grep -v "https://github.com/YansongW/awesome-humanoid-robot/tree/main/data/roadmap/research/" \
+              | grep -q .; then
+            echo "::error::Internal repo path 'data/roadmap/research/' cited in public pages (see matches above)"
+            grep -rn "data/roadmap/research/" roadmap/docs roadmap/docs-en roadmap/docs-ko wiki/docs wiki/docs-en wiki/docs-ko 2>/dev/null \
+              | grep -v "https://github.com/YansongW/awesome-humanoid-robot/tree/main/data/roadmap/research/"
+            exit 1
+          fi
+
       - name: Audit knowledge graph quality
         run: |
           python scripts/audit_entry_quality.py --json-only

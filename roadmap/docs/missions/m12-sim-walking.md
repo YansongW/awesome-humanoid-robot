@@ -45,7 +45,7 @@ x_zmp = x_com - (z_com / 9.81) * x_ddot_com
 
 ## 步骤 3：经典路线实操——跑通 OpenLoong MPC+WBC
 
-【做什么】跑通 OpenLoong-Dyn-Control：部署在 [MuJoCo](/entry/ent_software_mujoco_physics_engine_2022/) 上的 MPC+WBC 全身控制框架，自带**行走/跳跃/盲踩障碍**三个示例，已在实物样机实现行走与盲踩障碍，Apache-2.0（`data/roadmap/research/openloong-qinglong.md`）：
+【做什么】跑通 OpenLoong-Dyn-Control：部署在 [MuJoCo](/entry/ent_software_mujoco_physics_engine_2022/) 上的 MPC+WBC 全身控制框架，自带**行走/跳跃/盲踩障碍**三个示例，已在实物样机实现行走与盲踩障碍，Apache-2.0（[OpenLoong-Dyn-Control](https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md)）：
 
 ```bash
 git clone https://github.com/loongOpen/OpenLoong-Dyn-Control.git

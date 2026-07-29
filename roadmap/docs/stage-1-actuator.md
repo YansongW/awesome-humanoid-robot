@@ -4,8 +4,8 @@
 
 两条已被公开验证的路线贯穿本页，建议全程对照：
 
-- **ODRI（Open Dynamic Robot Initiative）BLMC 力控执行器**：现成无框电机 + 双编码器 + 自研 MicroDriver 驱动卡，低减速比、高扭矩透明度，全链路 BSD 开源（来源：`data/roadmap/research/open-dynamic-robot-initiative.md`，调研访问 2026-07-01）。
-- **Berkeley Humanoid Lite 6512/5010 摆线准直驱执行器**：3D 打印摆线针轮减速器 + 无人机无刷电机，6512 单台 BOM 约 $188（美国）/ $157（中国）（来源：`data/roadmap/research/berkeley-humanoid-lite.md`，出自 arXiv:2504.17249 及 EECS-2025-207 技术报告）。
+- **ODRI（Open Dynamic Robot Initiative）BLMC 力控执行器**：现成无框电机 + 双编码器 + 自研 MicroDriver 驱动卡，低减速比、高扭矩透明度，全链路 BSD 开源（来源：[ODRI 执行器硬件仓库](https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware)，调研访问 2026-07-01）。
+- **Berkeley Humanoid Lite 6512/5010 摆线准直驱执行器**：3D 打印摆线针轮减速器 + 无人机无刷电机，6512 单台 BOM 约 $188（美国）/ $157（中国）（来源：[arXiv:2504.17249](https://arxiv.org/abs/2504.17249) 及 [EECS-2025-207 技术报告](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf)）。
 
 理论背景先读 [第 4 章 执行器：人形机器人的"肌肉"](/wiki/chapters/chapter-04/)，控制理论见 [第 14 章 机器人控制基础](/wiki/chapters/chapter-14/)。
 

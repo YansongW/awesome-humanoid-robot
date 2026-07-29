@@ -16,7 +16,7 @@
 
 同时做 **USB 带宽预算**：单颗 D435i 深度 + RGB 全开的流量在百 MB/s 量级（工程建议值，按你的分辨率/帧率实测）；多相机挂同一 USB 控制器会互相抢带宽掉帧——按"一颗相机独占一个 USB 3 控制器"分配，或降分辨率/帧率。
 
-【为什么】深度获取有三条路线：结构光/主动双目（室内近距精度好、怕强光）、ToF、被动双目（不吃阳光但依赖纹理），取舍见 [RGB-D 卡片](/entry/ent_component_rgbd_camera/)。锚点：[ToddlerBot](/entry/ent_robot_system_toddlerbot/) 用双鱼眼相机 + 胸部 IMU（`data/roadmap/research/toddlerbot.md`）；D435i 被青龙、G1 等平台用作头部视觉（传感器选型手册）。
+【为什么】深度获取有三条路线：结构光/主动双目（室内近距精度好、怕强光）、ToF、被动双目（不吃阳光但依赖纹理），取舍见 [RGB-D 卡片](/entry/ent_component_rgbd_camera/)。锚点：[ToddlerBot](/entry/ent_robot_system_toddlerbot/) 用双鱼眼相机 + 胸部 IMU（[ToddlerBot 项目主页](https://toddlerbot.github.io/)）；D435i 被青龙、G1 等平台用作头部视觉（传感器选型手册）。
 
 【你的情况怎么分析】只做"固定站姿 + 桌面抓取"：一颗 D435i + 腕部相机就够，LiDAR 是纯浪费；要走到桌边再抓：加 Mid-360。预算极限：先单 D435i，腕部相机后补，但机械上把安装位与走线预留出来。
 

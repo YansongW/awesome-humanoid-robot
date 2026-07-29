@@ -24,7 +24,7 @@ conda create -n isaaclab python=3.10 -y && conda activate isaaclab
 git clone https://github.com/isaac-sim/IsaacLab.git
 ```
 
-【为什么】官方示例帮你隔离"环境问题"与"模型问题"——示例跑不起来是装错了，示例能跑、你的模型不能跑才是模型错了。选型逻辑（详见[仿真手册](../playbooks/sim-setup.md)）：MuJoCo 接触质量高，是腿足控制研究的事实标准；Isaac Lab GPU 大规模并行，为 RL 训练而生。开源锚点：ToddlerBot 用 MuJoCo/MJX、Berkeley Humanoid Lite 基于 Isaac Lab、OpenLoong 的 MPC+WBC 部署在 MuJoCo（`data/roadmap/research/` 各档案）。
+【为什么】官方示例帮你隔离"环境问题"与"模型问题"——示例跑不起来是装错了，示例能跑、你的模型不能跑才是模型错了。选型逻辑（详见[仿真手册](../playbooks/sim-setup.md)）：MuJoCo 接触质量高，是腿足控制研究的事实标准；Isaac Lab GPU 大规模并行，为 RL 训练而生。开源锚点：ToddlerBot 用 MuJoCo/MJX、Berkeley Humanoid Lite 基于 Isaac Lab、OpenLoong 的 MPC+WBC 部署在 MuJoCo（见 [ToddlerBot](https://github.com/hshi74/toddlerbot)、[Berkeley Humanoid Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite)、[OpenLoong-Dyn-Control](https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md) 各自仓库）。
 
 【你的情况怎么分析】无 N 卡：MuJoCo 一条路走到底，控制研究与 CPU 小规模 RL 都够；有 RTX 卡且走 RL 路线：都装，MuJoCo 调模型、Isaac Lab 训策略（Berkeley 即此组合）；要 ROS 全栈集成测试：另加 [Gazebo](/entry/ent_software_gazebo/)，别纠结它的物理精度。
 

@@ -23,21 +23,21 @@
 2. **【为什么】** 这一步背后的原理，并链接到对应知识卡片与 Wiki 章节，想深挖有入口；
 3. **【你的情况怎么分析】** 引导你按自己的预算、场景、技能背景做取舍——同样的目标，纯软件背景和机械背景的走法不一样。
 
-数据纪律：文中出现的具体参数（价格、扭矩、自由度、功耗等）一律就近标注来源（实体卡片或 `data/roadmap/research/` 调研档案）；查不到可靠来源的，写明"需自行向供应商确认"，不编数。
+数据纪律：文中出现的具体参数（价格、扭矩、自由度、功耗等）一律就近标注一手来源 URL（实体卡片或官方仓库/论文链接）；查不到可靠来源的，写明"需自行向供应商确认"，不编数。
 
 ## 四阶段地图
 
 | 阶段 | 目标 | 预计时间（业余投入） | 预算量级 | 验收（判据摘要） |
 |------|------|---------------------|----------|------------------|
 | **Stage 0 基础筑基**[→ 页面](stage-0-foundations.md) | 拿到入场券：数学四件套、Python/C++ 与 ROS 2、电路概念、读懂 URDF | 6–10 周（每周 8–10 h） | ≈ ¥0：软件全部开源；可选 3D 打印打样体验，费用需自行向供应商确认 | 读懂一份双足 URDF；在 MuJoCo 里让双足模型站立 ≥ 10 s |
-| **Stage 1 造一个关节**[→ 页面](stage-1-actuator.md) | 在台架上造出一个通过验收的执行器模组：电机 + 减速 + 传感 + 驱动 + 控制全链路吃透 | 4–8 周（估计） | 单关节数百至数千元量级：准直驱（QDD）方案单台 BOM 约 $157–188（Berkeley 6512，来源：`data/roadmap/research/berkeley-humanoid-lite.md`）；舵机/谐波方案价格需自行向供应商确认 | 指标表书面化；30° 阶跃超调 < 10%；1 Hz 正弦跟踪幅值衰减 < 10%；通信链路连续 1 h 无掉线 |
-| **Stage 2 双足平台**[→ 页面](stage-2-biped.md) | 仿真先行跑通控制栈，再复刻一台开源双足/轮足平台，实现平地稳定行走 | 3–6 个月（估计） | 平台决定预算：Upkie 约 $3,000、Berkeley Humanoid Lite 约 $3,236–4,312、ToddlerBot 约 $6,000（来源：`data/roadmap/research/` 对应档案）；约 ¥2 万–5 万量级，汇率与采购渠道浮动需自行核算 | 仿真连续行走 10 min 不摔倒；实机站立 ≥ 5 min、平地连续行走 ≥ 10 min、轻推可恢复、急停可演示 |
+| **Stage 1 造一个关节**[→ 页面](stage-1-actuator.md) | 在台架上造出一个通过验收的执行器模组：电机 + 减速 + 传感 + 驱动 + 控制全链路吃透 | 4–8 周（估计） | 单关节数百至数千元量级：准直驱（QDD）方案单台 BOM 约 $157–188（Berkeley 6512，来源：[EECS-2025-207 技术报告 BOM](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf)）；舵机/谐波方案价格需自行向供应商确认 | 指标表书面化；30° 阶跃超调 < 10%；1 Hz 正弦跟踪幅值衰减 < 10%；通信链路连续 1 h 无掉线 |
+| **Stage 2 双足平台**[→ 页面](stage-2-biped.md) | 仿真先行跑通控制栈，再复刻一台开源双足/轮足平台，实现平地稳定行走 | 3–6 个月（估计） | 平台决定预算：Upkie 约 $3,000、Berkeley Humanoid Lite 约 $3,236–4,312、ToddlerBot 约 $6,000（来源：各平台官方页面：[Upkie](https://hackaday.io/project/185729-upkie-wheeled-biped-robots)、[Berkeley Humanoid Lite](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf)、[ToddlerBot](https://arxiv.org/html/2502.00893v2)）；约 ¥2 万–5 万量级，汇率与采购渠道浮动需自行核算 | 仿真连续行走 10 min 不摔倒；实机站立 ≥ 5 min、平地连续行走 ≥ 10 min、轻推可恢复、急停可演示 |
 | **Stage 3 完整人形**[→ 页面](stage-3-humanoid.md) | 在双足之上长出上半身：手臂、末端执行器、感知栈与智能层，完成端到端任务 | 6 个月以上，持续迭代 | 增量数千至数万元（臂/手/相机/算力板，按所选方案自行核算） | 听到口头指令 → 自主走到桌边 → 识别并抓起杯子；IK 随机抽样求解成功率 ≥ 95%、末端到位误差 ≤ 2 cm |
 
 两点说明：
 
 - **时间是估计值**，按每周 8–10 小时业余投入折算；脱产做约可压缩到 1/3。它受你的背景影响极大，见下一节。
-- **预算不含**你已有的通用设备（电脑、万用表、烙铁）。商用成品平台是另一个价位世界：ROBOTIS OP3 售价 $13,764.35（来源：`data/roadmap/research/robotis-op3-darwin-op.md`，2026 年页面快照），这也是本路线图 Stage 2 推荐开源平台而非成品机的原因之一。
+- **预算不含**你已有的通用设备（电脑、万用表、烙铁）。商用成品平台是另一个价位世界：ROBOTIS OP3 售价 $13,764.35（来源：[ROBOTIS US 商店页](https://www.robotis.us/robotis-op3-us/)，2026 年页面快照），这也是本路线图 Stage 2 推荐开源平台而非成品机的原因之一。
 
 ## 任务页索引（M01–M20）
 
@@ -52,8 +52,8 @@
 说清楚"不做什么"，比许诺"做什么"更能保护你的时间：
 
 - **不是论文导读清单**。前沿算法（VLA、世界模型等）在 Wiki 第 18–20 章有系统论述，路线图只在"造机需要时"指向它们。先让机器站起来，再谈聪明。
-- **不是从零自研一切的路线**。Stage 2 明确建议站在成熟开源平台上做首机：自己从零设计 20+ 自由度的结构与驱动，是团队级、多机迭代级的工作量，不是个人首机的合理目标。调研档案 `data/roadmap/research/` 里对 Berkeley Humanoid Lite、ToddlerBot、Poppy、ROBOTIS OP3 等候选平台有逐一的成本与门槛分析，选型时直接读。
-- **不是购买建议与安全手册**。所有平台对比只陈述来源可查的事实与 trade-off；下单前自行核实最新价格、许可（部分开源设计文件为非商业许可，如 ToddlerBot，来源：`data/roadmap/research/toddlerbot.md`）与合规要求。
+- **不是从零自研一切的路线**。Stage 2 明确建议站在成熟开源平台上做首机：自己从零设计 20+ 自由度的结构与驱动，是团队级、多机迭代级的工作量，不是个人首机的合理目标。[公开调研档案](https://github.com/YansongW/awesome-humanoid-robot/tree/main/data/roadmap/research/)里对 Berkeley Humanoid Lite、ToddlerBot、Poppy、ROBOTIS OP3 等候选平台有逐一的成本与门槛分析，选型时直接读。
+- **不是购买建议与安全手册**。所有平台对比只陈述来源可查的事实与 trade-off；下单前自行核实最新价格、许可（部分开源设计文件为非商业许可，如 ToddlerBot，来源：[ToddlerBot GitHub](https://github.com/hshi74/toddlerbot)）与合规要求。
 - **不保证直线前进**。实际情况常是 Stage 1 烧了一个驱动器回 Stage 0 步骤 3 重学电气、Stage 2 仿真调不通回步骤 1 补力学。路线图的价值是让你知道自己在哪、下一步去哪，而不是禁止回头。
 
 ## 按你的背景选入口
@@ -64,7 +64,7 @@
 
 1. 数学四件套里只补[经典力学](/entry/ent_foundation_classical_mechanics/)，其余用 Stage 0 的判据自检，过了就跳；
 2. 把省下的时间投给 Stage 0 的步骤 3（电路与 CAN）和步骤 4（仿真站立）——前者是你 Stage 1 上真硬件不烧板的保险，后者是你的力学直觉训练场；
-3. 3D 打印常识不要跳过，Stage 2 的结构件高度依赖打印（Berkeley Humanoid Lite 连摆线减速器都是打印的，来源：`data/roadmap/research/berkeley-humanoid-lite.md`）。
+3. 3D 打印常识不要跳过，Stage 2 的结构件高度依赖打印（Berkeley Humanoid Lite 连摆线减速器都是打印的，来源：[Berkeley Humanoid Lite 论文](https://arxiv.org/abs/2504.17249)）。
 
 ### 硬件背景（机械 / 电子 / 自动化工程师）
 
