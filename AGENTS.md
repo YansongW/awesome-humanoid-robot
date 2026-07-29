@@ -9,7 +9,7 @@
 
 - **查**：知识图谱（`research/` 实体 + `data/relationships/` 关系）→ 静态站检索/图谱页
 - **学**：Wiki 教科书（`wiki/docs/chapters/` 30 章 + `appendices/` 7 篇）
-- **造**：0→1 路线图（`roadmap/docs/` 9 页 + `data/roadmap_mapping.yaml` 卡片绑定）
+- **造**：0→1 路线图（`roadmap/docs/` 4 阶段页 + `missions/` M01–M20 任务页 + `playbooks/` 4 手册 + `data/roadmap_mapping.yaml` 卡片绑定）
 
 ## 数据铁律（最重要）
 
@@ -23,7 +23,8 @@
 4. **YAML 安全**：frontmatter 写入后必须 round-trip 校验（`yaml.safe_load`）；
    含 `---`、表格分隔符、冒号的字符串必须加引号。
 5. **来源纪律**：具体参数（价格/扭矩/自由度等）必须有来源 URL；
-   查不到的写"未知/需自行确认"，禁止编造。路线图/Wiki 建造指导一律标注"未经实机验证"。
+   查不到的写"未知/需自行确认"，禁止编造；无来源的估算值一律标注"工程建议值"，
+   需按读者的具体设计校核。
 
 ## 目录速览
 
@@ -70,4 +71,4 @@ DeepSeek：endpoint `https://api.deepseek.com/chat/completions`，model `deepsee
   其余已挂边的留待后续专项。
 - `ent_component_lidar_livox_mid360` 已并入 `ent_component_livox_mid_360_lidar_2024`（2026-07-20，见 `.staging/merge_livox_manifest_*.json`）。
 - en/ko 的 Wiki 章节与路线图页是机翻/回退中文，翻译管线同实体正文。
-- 所有构建指导内容"未经实机验证"，页面须保留该声明。
+- 路线图/Wiki 是面向公众的客观知识产品：页面只讲方法与可溯源事实，不挂统一免责声明，也不记录任何团队的实机建造过程；具体的实机建造（指标表、选型决策、实测数据）在独立工作区进行，不回写公共页面。

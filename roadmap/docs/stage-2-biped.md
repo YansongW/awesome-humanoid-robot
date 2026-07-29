@@ -1,8 +1,20 @@
 # 阶段 2：双足平台——从仿真到第一台会走的机器人
 
-> ⚠️ 本路线图内容基于公开资料与理论知识整理，未经实机验证；涉及电气与机械操作时请自行核实安全规范。
-
 双足（biped）是"人形"的灵魂，也是 0→1 摔机率最高的环节。本阶段目标：选一台开源双足/轮足平台，先在仿真跑通控制栈，再花钱复刻，最终在平地稳定行走。所有方案数据均来自 `data/roadmap/research/` 调研档案（访问日期 2026-07-01，逐条标注来源）。
+
+## 本阶段任务清单（M08–M14）
+
+本页是阶段地图，任务页是施工手册——每一步的完整算例、三段式细节与可打勾的验收清单都在任务页里：
+
+| 任务 | 内容 | 对应本页小节 |
+|---|---|---|
+| [M08 · 平台选型与采购](missions/m08-platform-selection.md) | 五大开源平台十列对比、决策树、许可核查、BOM 台账 | 第 3 节 |
+| [M09 · 整机装配、线束与电源](missions/m09-mechanical-assembly.md) | 分模块装配、电源树/信号树、电池与急停、smoke test | 第 4 节 Step 1–3、6；第 6 节 |
+| [M10 · URDF 建模与导出](missions/m10-urdf-modeling.md) | 运动学树、惯性参数、限位、碰撞几何、模型包校验 | 第 4 节 Step 5 |
+| [M11 · 仿真环境与模型转换](missions/m11-sim-setup.md) | MuJoCo/Isaac 安装、URDF→MJCF/USD、执行器与接触建模 | 第 1 节 |
+| [M12 · 仿真站立与行走](missions/m12-sim-walking.md) | PD 站立、ZMP/LIPM、OpenLoong MPC+WBC 实操、路线决策 | 第 2 节 |
+| [M13 · 强化学习训练](missions/m13-rl-training.md) | obs/action/reward 设计、域随机化、checkpoint 鲁棒评选 | 第 2 节第五级 |
+| [M14 · sim-to-real 部署与行走验收](missions/m14-sim-to-real.md) | 部署管线、观测对齐、sysID、分阶段解锁、六关验收 | 第 4 节 Step 4–8；第 5 节 |
 
 ---
 

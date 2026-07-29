@@ -261,19 +261,47 @@ def build_wiki_pages(lang: str = "zh") -> list[dict[str, Any]]:
     return pages
 
 
-# Fixed reading order of the 0→1 roadmap: overview, four stages, then the
-# four selection playbooks. Also drives prev/next links and the index page.
+# Fixed reading order of the 0→1 roadmap: overview, four stage pages with
+# their missions interleaved, then the four selection playbooks. Also drives
+# prev/next links and the index page.
 ROADMAP_ORDER = [
     "index",
     "stage-0-foundations",
     "stage-1-actuator",
+    "missions/m01-scenario-to-specs",
+    "missions/m02-motor-sizing",
+    "missions/m03-reducer-design",
+    "missions/m04-driver-sensing-wiring",
+    "missions/m05-print-assembly",
+    "missions/m06-firmware-calibration",
+    "missions/m07-bench-acceptance",
     "stage-2-biped",
+    "missions/m08-platform-selection",
+    "missions/m09-mechanical-assembly",
+    "missions/m10-urdf-modeling",
+    "missions/m11-sim-setup",
+    "missions/m12-sim-walking",
+    "missions/m13-rl-training",
+    "missions/m14-sim-to-real",
     "stage-3-humanoid",
+    "missions/m15-upper-body",
+    "missions/m16-perception-stack",
+    "missions/m17-teleop-data",
+    "missions/m18-imitation-learning",
+    "missions/m19-e2e-task",
+    "missions/m20-reliability-safety",
     "playbooks/actuator-selection",
     "playbooks/compute-selection",
     "playbooks/sensor-selection",
     "playbooks/sim-setup",
 ]
+
+# Stage page slug -> its missions (drives the grouped index tree).
+ROADMAP_STAGE_MISSIONS = {
+    "stage-1-actuator": [f"missions/m0{i}" for i in range(1, 8)],
+    "stage-2-biped": [f"missions/m{i}" for i in range(8, 15)],
+    "stage-3-humanoid": [f"missions/m{i}" for i in range(15, 21)],
+}
 
 
 def build_roadmap_pages(lang: str = "zh") -> list[dict[str, Any]]:
@@ -297,28 +325,48 @@ def build_roadmap_pages(lang: str = "zh") -> list[dict[str, Any]]:
 
 
 def build_roadmap_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
-    """Build the roadmap index tree: overview + stages flat, playbooks nested.
+    """Build the roadmap index tree: overview + stage pages with their
+    missions nested underneath, playbooks grouped at the end.
 
-    Expects pages in ROADMAP_ORDER (as returned by ``build_roadmap_pages``).
+    Expects pages in ROADMAP_ORDER (as returned by ``build_roadmap_pages``),
+    where each stage page immediately precedes its missions.
     Node shape matches what the ``render_tree`` macro in the index templates
     consumes: ``title``, ``url`` (files only), ``children`` (dirs only),
     ``is_dir``, ``path``.
     """
     root: dict[str, Any] = {"title": "Roadmap", "is_dir": True, "children": [], "path": ""}
     playbooks: dict[str, Any] = {"title": "选型手册", "is_dir": True, "children": [], "path": "playbooks"}
+    stage_dirs: dict[str, dict[str, Any]] = {}
+
+    def mission_stage(rel_noext: str) -> str | None:
+        for slug, prefixes in ROADMAP_STAGE_MISSIONS.items():
+            if any(rel_noext.startswith(pre) for pre in prefixes):
+                return slug
+        return None
+
     for page in pages:
         if page.get("stub"):
             continue
+        rel_noext = Path(page["rel"]).with_suffix("").as_posix()
         node = {
             "title": page["title"],
             "url": page["url"],
             "is_dir": False,
-            "path": page["url"][len("roadmap/"):],
+            "path": rel_noext,
         }
-        if node["path"].startswith("playbooks/"):
+        if rel_noext.startswith("playbooks/"):
             playbooks["children"].append(node)
+        elif rel_noext in ROADMAP_STAGE_MISSIONS:
+            # A stage page: becomes a directory holding its missions.
+            dir_node = {**node, "is_dir": True, "children": []}
+            stage_dirs[rel_noext] = dir_node
+            root["children"].append(dir_node)
         else:
-            root["children"].append(node)
+            slug = mission_stage(rel_noext)
+            if slug and slug in stage_dirs:
+                stage_dirs[slug]["children"].append(node)
+            else:
+                root["children"].append(node)
     if playbooks["children"]:
         root["children"].append(playbooks)
     return root

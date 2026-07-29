@@ -1,9 +1,7 @@
 # 0→1 造人形机器人：路线图总览
 
-> ⚠️ 本路线图内容基于公开资料与理论知识整理，未经实机验证；涉及电气与机械操作时请自行核实安全规范。
-
-!!! warning "先读这个，再谈造机器人"
-    这是一条涉及**真实硬件**的路线：锂电池、24–48 V 母线、kg 级摆动的金属结构件、堵转时足以夹伤手指的关节扭矩。本路线图的任何一页都不是安全手册的替代品。上电前请自行核实电气与机械安全规范；没有把握的操作，找有硬件经验的人在场再看一次。所有价格、交期、供应商信息以你下单时的实际情况为准。
+!!! note "安全不是免责声明，是流程的一部分"
+    这条路线涉及真实硬件：锂电池、24–48 V 母线、kg 级摆动的金属结构件、堵转时足以夹伤手指的关节扭矩。安全不靠声明，而是编进流程里——电气验收见 [M09 首次通电 smoke test](missions/m09-mechanical-assembly.md)，行走保护见 [M14 分阶段解锁](missions/m14-sim-to-real.md)，长期安全工程见 [M20 可靠性、维护与安全](missions/m20-reliability-safety.md)。
 
 ## 这个仓库的三种用法：查、学、造
 
@@ -40,6 +38,14 @@
 
 - **时间是估计值**，按每周 8–10 小时业余投入折算；脱产做约可压缩到 1/3。它受你的背景影响极大，见下一节。
 - **预算不含**你已有的通用设备（电脑、万用表、烙铁）。商用成品平台是另一个价位世界：ROBOTIS OP3 售价 $13,764.35（来源：`data/roadmap/research/robotis-op3-darwin-op.md`，2026 年页面快照），这也是本路线图 Stage 2 推荐开源平台而非成品机的原因之一。
+
+## 任务页索引（M01–M20）
+
+四个阶段总览是地图，20 个任务页才是施工手册：每页 4–6 个三段式步骤（做什么/为什么/你的情况怎么分析）、代入数字的完整算例、可打勾的验收标准与排查表；每个概念就近链接知识卡片与 Wiki 章节，每台设备数据都标注调研档案来源。建议按箭头顺序逐个过关：
+
+- **Stage 1 · 造一个关节**：[M01 需求场景数学化](missions/m01-scenario-to-specs.md) → [M02 电机计算与选型](missions/m02-motor-sizing.md) → [M03 减速器设计与计算](missions/m03-reducer-design.md) → [M04 驱动器、传感与线束](missions/m04-driver-sensing-wiring.md) → [M05 3D 打印与机械装配](missions/m05-print-assembly.md) → [M06 固件与标定](missions/m06-firmware-calibration.md) → [M07 台架测试与验收](missions/m07-bench-acceptance.md)
+- **Stage 2 · 双足平台**：[M08 平台选型与采购](missions/m08-platform-selection.md) → [M09 整机装配、线束与电源](missions/m09-mechanical-assembly.md) → [M10 URDF 建模与导出](missions/m10-urdf-modeling.md) → [M11 仿真环境与模型转换](missions/m11-sim-setup.md) → [M12 仿真站立与行走](missions/m12-sim-walking.md) → [M13 强化学习训练](missions/m13-rl-training.md) → [M14 sim-to-real 部署与行走验收](missions/m14-sim-to-real.md)
+- **Stage 3 · 完整人形**：[M15 上肢与末端执行器](missions/m15-upper-body.md) → [M16 感知栈搭建](missions/m16-perception-stack.md) → [M17 遥操作与数据采集](missions/m17-teleop-data.md) → [M18 模仿学习训练与部署](missions/m18-imitation-learning.md) → [M19 端到端任务集成](missions/m19-e2e-task.md) → [M20 可靠性、维护与安全工程](missions/m20-reliability-safety.md)
 
 ## 这条路线图的边界
 

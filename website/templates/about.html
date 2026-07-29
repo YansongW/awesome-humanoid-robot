@@ -40,8 +40,8 @@
     <h2>技术栈</h2>
     <p>知识图谱以 Markdown + YAML Frontmatter 存储（<code>research/</code>、<code>data/relationships/</code>），schema 受控（<code>data/schema/v1/</code>）；静态站由 <code>website/builder/</code> 构建，支持中/英/韩三语；本地 GUI 由 <code>web/</code>（FastAPI）提供检索、子图可视化与基于图谱的 LLM 问答；摄取与挖掘流水线见 <code>scripts/</code>（AI4Sci 工作流 + 关系挖掘）。仓库根目录 <code>Makefile</code> 提供全部常用命令（<code>make help</code>）。</p>
 
-    <h2>免责声明</h2>
-    <p>路线图与 Wiki 中的动手指导内容基于公开资料与理论知识整理，<strong>未经实机验证</strong>；涉及电气、机械与锂电池操作时，请自行核实安全规范并遵守当地法规。项目内容不构成工程交付物或安全认证依据。</p>
+    <h2>内容说明</h2>
+    <p>路线图与 Wiki 中的动手指导内容基于公开资料、可溯源的开源方案调研与理论知识整理；无来源的数值一律标注"工程建议值"，需按读者自己的设计校核。涉及电气、机械与锂电池操作时，请遵守安全规范与当地法规。</p>
 
     {% elif lang == 'en' %}
     <h1>About This Project</h1>
@@ -77,8 +77,8 @@
     <h2>Tech Stack</h2>
     <p>The knowledge graph is stored as Markdown + YAML frontmatter (<code>research/</code>, <code>data/relationships/</code>) with a controlled schema (<code>data/schema/v1/</code>). The static site is built by <code>website/builder/</code> in Chinese, English and Korean. A local GUI (<code>web/</code>, FastAPI) offers search, subgraph visualization and LLM Q&amp;A over the graph. Ingestion and relationship-mining pipelines live in <code>scripts/</code>. Common commands are available via the root <code>Makefile</code> (<code>make help</code>).</p>
 
-    <h2>Disclaimer</h2>
-    <p>Hands-on guidance in the roadmap and Wiki is compiled from public sources and theory, and <strong>has not been validated on physical hardware</strong>. When working with electronics, machinery or lithium batteries, verify safety practices yourself and follow local regulations. Nothing here constitutes an engineering deliverable or safety certification.</p>
+    <h2>Content Note</h2>
+    <p>Hands-on guidance in the roadmap and Wiki is compiled from public sources, fully-sourced research on open-source platforms, and theory. Any number without a source is labeled as an engineering estimate — verify it against your own design. When working with electronics, machinery or lithium batteries, follow safety practices and local regulations.</p>
 
     {% else %}
     <h1>프로젝트 소개</h1>
@@ -114,8 +114,8 @@
     <h2>기술 스택</h2>
     <p>지식 그래프는 Markdown + YAML 프런트매터(<code>research/</code>, <code>data/relationships/</code>)로 저장되며 스키마는 <code>data/schema/v1/</code>로 관리됩니다. 정적 사이트는 <code>website/builder/</code>가 중/영/한 3개 언어로 빌드하고, 로컬 GUI(<code>web/</code>, FastAPI)는 검색·서브그래프 시각화·LLM Q&amp;A를 제공합니다. 수집·마이닝 파이프라인은 <code>scripts/</code>에 있으며, 루트 <code>Makefile</code>(<code>make help</code>)로 주요 명령을 실행할 수 있습니다.</p>
 
-    <h2>면책 조항</h2>
-    <p>로드맵과 Wiki의 실습 안내는 공개 자료와 이론을 바탕으로 정리되었으며 <strong>실기 검증을 거치지 않았습니다</strong>. 전기·기계·리튬 배터리 작업 시 안전 규정을 직접 확인하고 현지 법규를 준수하세요. 이 콘텐츠는 엔지니어링 납품물이나 안전 인증 근거가 아닙니다.</p>
+    <h2>내용 안내</h2>
+    <p>로드맵과 Wiki의 실습 안내는 공개 자료·출처가 명확한 오픈소스 플랫폼 조사·이론을 바탕으로 정리되었습니다. 출처가 없는 수치는 "엔지니어링 권장값"으로 표기하므로 각자의 설계에 맞게 검증해야 합니다. 전기·기계·리튬 배터리 작업 시 안전 규정과 현지 법규를 준수하세요.</p>
     {% endif %}
   </article>
 </div>

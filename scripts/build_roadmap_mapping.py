@@ -38,6 +38,30 @@ PLAYBOOK_STAGE = {
     "sensor-selection.md": "stage-3-humanoid",
 }
 
+# Mission pages (roadmap/docs/missions/) -> their stage; links bind as core.
+MISSION_STAGE = {
+    "m01-scenario-to-specs.md": "stage-1-actuator",
+    "m02-motor-sizing.md": "stage-1-actuator",
+    "m03-reducer-design.md": "stage-1-actuator",
+    "m04-driver-sensing-wiring.md": "stage-1-actuator",
+    "m05-print-assembly.md": "stage-1-actuator",
+    "m06-firmware-calibration.md": "stage-1-actuator",
+    "m07-bench-acceptance.md": "stage-1-actuator",
+    "m08-platform-selection.md": "stage-2-biped",
+    "m09-mechanical-assembly.md": "stage-2-biped",
+    "m10-urdf-modeling.md": "stage-2-biped",
+    "m11-sim-setup.md": "stage-2-biped",
+    "m12-sim-walking.md": "stage-2-biped",
+    "m13-rl-training.md": "stage-2-biped",
+    "m14-sim-to-real.md": "stage-2-biped",
+    "m15-upper-body.md": "stage-3-humanoid",
+    "m16-perception-stack.md": "stage-3-humanoid",
+    "m17-teleop-data.md": "stage-3-humanoid",
+    "m18-imitation-learning.md": "stage-3-humanoid",
+    "m19-e2e-task.md": "stage-3-humanoid",
+    "m20-reliability-safety.md": "stage-3-humanoid",
+}
+
 # Explicit role overrides: entity_id -> {stage: role}
 PLATFORM_ROLES = {
     "ent_robot_system_toddlerbot": {"stage-2-biped": "recommended"},
@@ -141,6 +165,13 @@ def main() -> None:
 
     for page, stage in PAGE_STAGE.items():
         path = ROADMAP_DIR / page
+        if not path.exists():
+            continue
+        for eid in page_links(path):
+            bind(eid, stage, "core")
+
+    for page, stage in MISSION_STAGE.items():
+        path = ROADMAP_DIR / "missions" / page
         if not path.exists():
             continue
         for eid in page_links(path):

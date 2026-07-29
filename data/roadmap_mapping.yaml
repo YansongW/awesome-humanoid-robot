@@ -74,7 +74,7 @@ entities:
     role: optional
   ent_company_maxon_group_2024:
   - stage: stage-1-actuator
-    role: optional
+    role: core
   ent_component_7dof_arm_2024:
   - stage: stage-3-humanoid
     role: core
@@ -84,6 +84,13 @@ entities:
   ent_component_ati_force_torque_sensor_2024:
   - stage: stage-3-humanoid
     role: optional
+  ent_component_battery_management_system:
+  - stage: stage-1-actuator
+    role: core
+  - stage: stage-2-biped
+    role: core
+  - stage: stage-3-humanoid
+    role: core
   ent_component_bldc_motor:
   - stage: stage-1-actuator
     role: core
@@ -96,6 +103,8 @@ entities:
   ent_component_dynamixel_xm430_w210_t:
   - stage: stage-1-actuator
     role: core
+  - stage: stage-3-humanoid
+    role: core
   ent_component_emergency_stop_system_2024:
   - stage: stage-2-biped
     role: core
@@ -107,6 +116,9 @@ entities:
   ent_component_harmonic_drive_reducer:
   - stage: stage-1-actuator
     role: core
+  ent_component_harmonic_reducer_2024:
+  - stage: stage-1-actuator
+    role: core
   ent_component_hollow_cup_motor_2024:
   - stage: stage-1-actuator
     role: optional
@@ -114,7 +126,7 @@ entities:
   - stage: stage-2-biped
     role: core
   - stage: stage-3-humanoid
-    role: optional
+    role: core
   ent_component_intel_realsense_depth_camera_2024:
   - stage: stage-3-humanoid
     role: core
@@ -142,6 +154,9 @@ entities:
   ent_component_planetary_roller_screw:
   - stage: stage-1-actuator
     role: optional
+  ent_component_power_distribution_system_2024:
+  - stage: stage-2-biped
+    role: core
   ent_component_rgbd_camera:
   - stage: stage-3-humanoid
     role: core
@@ -151,6 +166,8 @@ entities:
   ent_component_safety_mcu:
   - stage: stage-2-biped
     role: optional
+  - stage: stage-3-humanoid
+    role: core
   ent_component_servo_drive_2024:
   - stage: stage-1-actuator
     role: core
@@ -180,6 +197,9 @@ entities:
     role: core
   ent_foundation_probability_theory:
   - stage: stage-0-foundations
+    role: core
+  ent_mat_neodymium_magnet:
+  - stage: stage-1-actuator
     role: core
   ent_method_action_chunking_transformer:
   - stage: stage-3-humanoid
@@ -217,6 +237,8 @@ entities:
   ent_method_impedance_control:
   - stage: stage-1-actuator
     role: core
+  - stage: stage-2-biped
+    role: core
   ent_method_inverse_kinematics:
   - stage: stage-3-humanoid
     role: core
@@ -237,13 +259,25 @@ entities:
     role: core
   ent_method_system_identification:
   - stage: stage-2-biped
-    role: optional
+    role: core
+  ent_method_thermal_simulation:
+  - stage: stage-1-actuator
+    role: core
   ent_method_whole_body_control:
   - stage: stage-2-biped
     role: core
   ent_oem_unitree_robotics:
   - stage: stage-1-actuator
     role: optional
+  ent_paper_202501_mujoco_playground_2025:
+  - stage: stage-2-biped
+    role: core
+  ent_paper_orb_slam3_an_accurate_open_sou_2026:
+  - stage: stage-3-humanoid
+    role: core
+  ent_paper_vins_fusion_an_optimization_ba_2026:
+  - stage: stage-3-humanoid
+    role: core
   ent_paper_zero_moment_point_2024:
   - stage: stage-2-biped
     role: core
@@ -252,45 +286,62 @@ entities:
     role: core
   ent_robot_system_berkeley_humanoid_lite:
   - stage: stage-2-biped
-    role: recommended
+    role: core
   ent_robot_system_bruce:
   - stage: stage-2-biped
-    role: optional
+    role: core
   ent_robot_system_inmoov:
+  - stage: stage-2-biped
+    role: core
   - stage: stage-3-humanoid
     role: optional
   ent_robot_system_odri_bolt:
   - stage: stage-1-actuator
     role: recommended
+  - stage: stage-2-biped
+    role: core
   ent_robot_system_openloong:
   - stage: stage-2-biped
-    role: optional
+    role: core
   - stage: stage-3-humanoid
     role: recommended
   ent_robot_system_poppy_humanoid:
+  - stage: stage-2-biped
+    role: core
   - stage: stage-3-humanoid
     role: optional
   ent_robot_system_robotis_op3:
   - stage: stage-3-humanoid
     role: optional
+  ent_robot_system_tesla_optimus:
+  - stage: stage-1-actuator
+    role: core
   ent_robot_system_thormang3:
   - stage: stage-3-humanoid
     role: optional
   ent_robot_system_toddlerbot:
   - stage: stage-2-biped
-    role: recommended
+    role: core
+  - stage: stage-3-humanoid
+    role: core
   ent_robot_system_upkie:
   - stage: stage-2-biped
-    role: recommended
+    role: core
+  ent_robot_unitree_h1_humanoid_robot_2024:
+  - stage: stage-1-actuator
+    role: core
   ent_software_drake_systems_toolbox_2024:
   - stage: stage-2-biped
     role: optional
   ent_software_gazebo:
   - stage: stage-2-biped
-    role: optional
+    role: core
   ent_software_genesis_generative_physics_eng_2024:
   - stage: stage-2-biped
     role: optional
+  ent_software_lerobot_2024:
+  - stage: stage-3-humanoid
+    role: core
   ent_software_mujoco_physics_engine_2022:
   - stage: stage-0-foundations
     role: core
@@ -301,10 +352,10 @@ entities:
     role: core
   ent_software_nvidia_isaac_sim_2024:
   - stage: stage-2-biped
-    role: optional
+    role: core
   ent_software_pinocchio:
   - stage: stage-2-biped
-    role: optional
+    role: core
   ent_software_qnx:
   - stage: stage-2-biped
     role: optional
@@ -321,6 +372,8 @@ entities:
   ent_tech_li_battery_humanoid:
   - stage: stage-2-biped
     role: core
+  - stage: stage-3-humanoid
+    role: core
   ent_tech_on_device_vla_inference:
   - stage: stage-2-biped
     role: optional
@@ -334,6 +387,8 @@ entities:
     role: core
   - stage: stage-1-actuator
     role: core
+  - stage: stage-2-biped
+    role: core
   ent_technology_ethercat_2024:
   - stage: stage-1-actuator
     role: core
@@ -341,7 +396,7 @@ entities:
     role: optional
   ent_technology_mjcf_simulation_format_2024:
   - stage: stage-2-biped
-    role: optional
+    role: core
   ent_technology_mobile_aloha_2024:
   - stage: stage-3-humanoid
     role: core
@@ -351,6 +406,8 @@ entities:
   ent_technology_quasi_direct_drive_actuator_2024:
   - stage: stage-1-actuator
     role: core
+  - stage: stage-2-biped
+    role: core
   ent_technology_umi_gripper_interface_2024:
   - stage: stage-3-humanoid
     role: core
@@ -358,4 +415,4 @@ entities:
   - stage: stage-0-foundations
     role: core
   - stage: stage-2-biped
-    role: optional
+    role: core
