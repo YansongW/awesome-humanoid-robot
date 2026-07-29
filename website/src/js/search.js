@@ -397,6 +397,7 @@
     search,
     scoreEntry,
     uniqueTokens,
+    findCandidates,
   };
 
   loadIndex();

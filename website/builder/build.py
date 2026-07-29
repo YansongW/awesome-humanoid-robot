@@ -53,7 +53,10 @@ def build_language(
     print("Rendering static pages...")
     renderer = Renderer(store, lang, dist_dir)
     renderer.render_all(search_index, relations_data, cluster_data, stats, wiki_pages, subgraphs, wiki_tree, roadmap_pages, roadmap_tree)
-    renderer.write_json_data(build_qa_corpus(store), "qa-corpus.json")
+    qa = build_qa_corpus(store)
+    renderer.write_json_data(qa["manifest"], "qa-corpus/manifest.json")
+    for fname, shard in qa["files"].items():
+        renderer.write_json_data(shard, f"qa-corpus/{fname}")
 
 
 def main() -> int:

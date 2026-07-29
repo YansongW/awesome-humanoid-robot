@@ -30,11 +30,19 @@
 
   var TOP_K = 8;
   var MAX_HISTORY_MESSAGES = 12; // last 6 rounds (user + assistant)
+  var MAX_SAVED_MESSAGES = 50; // sessionStorage history cap
+
+  // Chat-only re-ranking: keep papers/news from flooding the RAG context.
+  var TYPE_WEIGHTS = {
+    component: 1.3, technology: 1.3, concept: 1.3, method: 1.3, robot_system: 1.3,
+    paper: 0.7, news: 0.7,
+  };
 
   var PROMPTS = {
     zh: {
       system: '你是一个熟悉人形机器人行业的知识图谱助手。请严格依据下面提供的知识图谱内容回答问题。' +
-        '如果资料中没有足够信息，请明确说明。回答请使用中文，并在相关处引用条目 ID（如 ent_process_p4_1_1）。',
+        '如果资料中没有足够信息，请明确说明。回答请使用中文，并在相关处引用条目 ID（如 ent_process_p4_1_1）。' +
+        '对比类问题优先用表格呈现；严禁引用资料之外的条目 ID。',
       labels: { type: '类型', summary: '摘要', content: '内容', relations: '关系' },
       wrap: function (context, question) {
         return '知识图谱资料：\n\n' + context + '\n\n用户问题：' + question + '\n\n请回答：';
@@ -43,7 +51,8 @@
     en: {
       system: 'You are a knowledge-graph assistant familiar with the humanoid robot industry. ' +
         'Answer strictly based on the knowledge graph material provided below. If the material is ' +
-        'insufficient, say so explicitly. Answer in English and cite entry IDs (e.g. ent_process_p4_1_1) where relevant.',
+        'insufficient, say so explicitly. Answer in English and cite entry IDs (e.g. ent_process_p4_1_1) where relevant. ' +
+        'For comparison questions, prefer a table. Never cite entry IDs that are not present in the provided material.',
       labels: { type: 'Type', summary: 'Summary', content: 'Content', relations: 'Relations' },
       wrap: function (context, question) {
         return 'Knowledge graph material:\n\n' + context + '\n\nUser question: ' + question + '\n\nPlease answer:';
@@ -51,7 +60,8 @@
     },
     ko: {
       system: '당신은 휴로봇 산업에 정통한 지식 그래프 어시스턴트입니다. 아래 제공된 지식 그래프 자료만을 근거로 ' +
-        '답변하세요. 자료가 부족하면 명확히 밝히세요. 한국어로 답변하고, 관련된 곳에 개체 ID(예: ent_process_p4_1_1)를 인용하세요.',
+        '답변하세요. 자료가 부족하면 명확히 밝히세요. 한국어로 답변하고, 관련된 곳에 개체 ID(예: ent_process_p4_1_1)를 인용하세요. ' +
+        '비교 질문에는 표를 우선 사용하고, 제공된 자료에 없는 개체 ID는 절대 인용하지 마세요.',
       labels: { type: '유형', summary: '요약', content: '내용', relations: '관계' },
       wrap: function (context, question) {
         return '지식 그래프 자료:\n\n' + context + '\n\n사용자 질문: ' + question + '\n\n답변해 주세요:';
@@ -88,6 +98,9 @@
 
     var settingsToggle = el('button', 'btn btn-secondary', strings.settings || 'Settings');
     settingsToggle.type = 'button';
+    var clearHistoryBtn = el('button', 'btn btn-secondary', strings.clearHistory || 'Clear chat');
+    clearHistoryBtn.type = 'button';
+    clearHistoryBtn.title = strings.clearHistory || 'Clear chat';
     var sendBtn = el('button', 'ask-send-btn', strings.send || 'Send');
     sendBtn.type = 'submit';
     var stopBtn = el('button', 'btn btn-secondary hidden', strings.stop || 'Stop');
@@ -95,6 +108,7 @@
 
     var actions = el('div', 'ask-actions');
     actions.appendChild(settingsToggle);
+    actions.appendChild(clearHistoryBtn);
     actions.appendChild(sendBtn);
     actions.appendChild(stopBtn);
 
@@ -205,8 +219,10 @@
     /* ---------- retrieval (reuses search.js scoring) ---------- */
 
     var searchIndexPromise = null;
-    var corpusPromise = null;
-    var history = []; // {role: 'user'|'assistant', content: string}
+    var corpusManifestPromise = null;
+    var corpusShards = {}; // filename -> Promise<shard>
+    var corpusShardsLoaded = {}; // filename -> shard (for sync lookup after await)
+    var history = []; // {role: 'user'|'assistant', content: string, sources?: [...]}
     var streaming = false;
     var abortController = null;
     var lastFocusNames = []; // panel mode: recently highlighted entries (<= 3)
@@ -223,20 +239,93 @@
       return searchIndexPromise;
     }
 
-    function ensureCorpus() {
-      if (!corpusPromise) {
-        corpusPromise = fetch(basePath + '/data/qa-corpus.json')
+    function ensureCorpusManifest() {
+      if (!corpusManifestPromise) {
+        corpusManifestPromise = fetch(basePath + '/data/qa-corpus/manifest.json')
           .then(function (res) {
-            if (!res.ok) throw new Error('Failed to load Q&A corpus');
+            if (!res.ok) throw new Error('Failed to load Q&A corpus manifest');
             return res.json();
           });
       }
-      return corpusPromise;
+      return corpusManifestPromise;
     }
 
+    function ensureCorpusFile(fname) {
+      if (!corpusShards[fname]) {
+        corpusShards[fname] = fetch(basePath + '/data/qa-corpus/' + fname)
+          .then(function (res) {
+            if (!res.ok) throw new Error('Failed to load Q&A corpus shard');
+            return res.json();
+          })
+          .then(function (shard) { corpusShardsLoaded[fname] = shard; return shard; });
+      }
+      return corpusShards[fname];
+    }
+
+    // Fetch only the shard files covering the retrieved entries (per the
+    // manifest), then look each record up by id.
+    function fetchCorpusFor(entries) {
+      return ensureCorpusManifest().then(function (manifest) {
+        var files = [];
+        var plan = entries.map(function (e) {
+          var d = (e.domains && e.domains[0]) || 'unknown';
+          var listed = manifest[d] || [d + '.json'];
+          var fname;
+          if (listed.length === 1) {
+            fname = listed[0];
+          } else {
+            var typed = d + '--' + e.type;
+            if (listed.indexOf(typed + '.json') !== -1) {
+              fname = typed + '.json';
+            } else {
+              // Type group split into char-sum buckets (same hash as builder).
+              var buckets = listed.filter(function (f) { return f.indexOf(typed + '--') === 0; });
+              if (buckets.length) {
+                var h = 0;
+                for (var i = 0; i < e.id.length; i++) h += e.id.charCodeAt(i);
+                fname = typed + '--' + (h % buckets.length) + '.json';
+              } else {
+                fname = listed[0];
+              }
+            }
+          }
+          if (files.indexOf(fname) === -1) files.push(fname);
+          return { id: e.id, fname: fname };
+        });
+        return Promise.all(files.map(ensureCorpusFile)).then(function () {
+          var out = {};
+          plan.forEach(function (p) {
+            var shard = corpusShardsLoaded[p.fname];
+            if (shard && shard[p.id]) out[p.id] = shard[p.id];
+          });
+          return out;
+        });
+      });
+    }
+
+    // Score with the shared search core, then re-rank (chat only): downweight
+    // papers/news, upweight knowledge-bearing entity types, and drop
+    // duplicate names keeping the highest-scored entry.
     function retrieve(question) {
       return ensureSearchIndex().then(function () {
-        return window.KGSearch.search(question, 'all').slice(0, TOP_K);
+        var q = question.trim().toLowerCase();
+        var qTokens = window.KGSearch.uniqueTokens(q);
+        var candidates = window.KGSearch.findCandidates(qTokens);
+        var pool = window.KGSearch.search(question, 'all').slice(0, 50);
+        pool.forEach(function (e) {
+          var base = window.KGSearch.scoreEntry(e, q, qTokens, candidates.get(e.i) || 0);
+          e._wscore = base * (TYPE_WEIGHTS[e.type] || 1);
+        });
+        pool.sort(function (a, b) { return b._wscore - a._wscore; });
+        var seen = {};
+        var out = [];
+        for (var i = 0; i < pool.length && out.length < TOP_K; i++) {
+          var key = (pool[i].name || pool[i].id).toLowerCase();
+          if (seen[key]) continue;
+          seen[key] = true;
+          out.push(pool[i]);
+        }
+        return out;
       });
     }
 
@@ -499,7 +588,7 @@
       input.value = '';
       setStreaming(true);
       abortController = new AbortController();
-      var bubble = appendMessage('assistant', strings.thinking || '…');
+      var bubble = appendMessage('assistant', strings.stageRetrieving || strings.thinking || '…');
 
       try {
         var retrieved = await retrieve(question);
@@ -507,10 +596,12 @@
           bubble.innerHTML = renderMarkdown(strings.noContext || '');
           history.push({ role: 'user', content: question });
           history.push({ role: 'assistant', content: strings.noContext || '' });
+          saveHistory();
           return;
         }
 
-        var corpus = await ensureCorpus();
+        bubble.innerHTML = renderMarkdown(strings.stageLoading || strings.thinking || '…');
+        var corpus = await fetchCorpusFor(retrieved);
         var contextParts = [];
         var sources = [];
         for (var i = 0; i < retrieved.length; i++) {
@@ -529,9 +620,12 @@
         }
 
         var messages = [{ role: 'system', content: prompt.system }]
-          .concat(history.slice(-MAX_HISTORY_MESSAGES))
+          .concat(history.slice(-MAX_HISTORY_MESSAGES).map(function (m) {
+            return { role: m.role, content: m.content };
+          }))
           .concat([{ role: 'user', content: userContent }]);
 
+        bubble.innerHTML = renderMarkdown(strings.stageGenerating || strings.thinking || '…');
         var answer = await streamChat(cfg, messages, function (text) {
           bubble.innerHTML = renderMarkdown(text);
           scrollToBottom();
@@ -540,7 +634,8 @@
         bubble.innerHTML = renderMarkdown(answer);
         renderSources(bubble, sources);
         history.push({ role: 'user', content: question });
-        history.push({ role: 'assistant', content: answer });
+        history.push({ role: 'assistant', content: answer, sources: sources });
+        saveHistory();
       } catch (err) {
         if (err && err.name === 'AbortError') {
           bubble.innerHTML += '<p class="ask-stopped">' + escapeHtml(strings.stopped || '(stopped)') + '</p>';
@@ -551,6 +646,36 @@
         setStreaming(false);
         scrollToBottom();
       }
+    }
+
+    /* ---------- session history (survives in-tab navigation/refresh) ---------- */
+
+    var HISTORY_KEY = 'kg_ask_history_' + lang;
+
+    function saveHistory() {
+      try {
+        sessionStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(-MAX_SAVED_MESSAGES)));
+      } catch (ignore) { /* storage blocked or full */ }
+    }
+
+    function restoreHistory() {
+      var saved = [];
+      try { saved = JSON.parse(sessionStorage.getItem(HISTORY_KEY) || '[]'); } catch (ignore) { saved = []; }
+      if (!saved || !saved.length) return;
+      history = saved.slice(-MAX_SAVED_MESSAGES);
+      history.forEach(function (m) {
+        var bubble = appendMessage(m.role, m.content);
+        if (m.role === 'assistant' && m.sources && m.sources.length) {
+          renderSources(bubble, m.sources);
+        }
+      });
+    }
+
+    function clearHistory() {
+      history = [];
+      try { sessionStorage.removeItem(HISTORY_KEY); } catch (ignore) { /* noop */ }
+      messagesEl.innerHTML = '';
+      messagesEl.appendChild(el('div', 'empty-state', strings.empty || ''));
     }
 
     /* ---------- wiring ---------- */
@@ -575,11 +700,13 @@
       settingsPanel.classList.toggle('hidden');
       settingsStatus.textContent = '';
     });
+    clearHistoryBtn.addEventListener('click', clearHistory);
     providerSel.addEventListener('change', onProviderChange);
     saveBtn.addEventListener('click', saveSettings);
     clearBtn.addEventListener('click', clearSettings);
 
     loadSettingsForm();
+    restoreHistory();
   }
 
   window.KGAsk = { mount: mount };

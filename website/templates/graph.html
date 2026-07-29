@@ -54,6 +54,10 @@
     </div>
     <div id="full-graph" class="full-cy-graph"></div>
     <div class="graph-tooltip" id="graph-tooltip"></div>
+    <div id="graph-focus-bar" class="graph-focus-bar hidden">
+      <span id="graph-focus-names" class="graph-focus-names"></span>
+      <button id="graph-focus-back" class="btn btn-secondary" type="button">{{ ui.graph_focus_back }}</button>
+    </div>
   </main>
   <button id="graph-ask-toggle" class="graph-ask-toggle" type="button">🤖 {{ ui.nav_ask }}</button>
   <div id="graph-ask-panel" class="graph-ask-panel hidden">
@@ -83,6 +87,7 @@ window.GRAPH_TEXT = {
   confirmFull: "{{ ui.graph_confirm_full }}",
   entityCount: "{{ ui.graph_entity_count }}",
   backToClusters: "{{ ui.cluster_view }}",
+  focusView: "{{ ui.graph_focus_view }}",
 };
 window.ASK_TEXT = {
   empty: "{{ ui.ask_empty }}",
@@ -112,6 +117,10 @@ window.ASK_TEXT = {
   highlightAll: "{{ ui.ask_highlight_all }}",
   openEntry: "{{ ui.ask_open_entry }}",
   focusPrefix: "{{ ui.ask_focus_prefix }}",
+  clearHistory: "{{ ui.ask_clear_history }}",
+  stageRetrieving: "{{ ui.ask_stage_retrieving }}",
+  stageLoading: "{{ ui.ask_stage_loading }}",
+  stageGenerating: "{{ ui.ask_stage_generating }}",
 };
 </script>
 <script src="/js/search.js"></script>
@@ -142,6 +151,28 @@ window.ASK_TEXT = {
     panel.classList.add('hidden');
     toggle.classList.remove('hidden');
   });
+
+  // Draggable panel: grab the header to reposition, clamped to the viewport.
+  var header = panel.querySelector('.graph-ask-panel-header');
+  var drag = null;
+  header.addEventListener('mousedown', function (e) {
+    if (e.target.closest('button')) return;
+    var rect = panel.getBoundingClientRect();
+    drag = { dx: e.clientX - rect.left, dy: e.clientY - rect.top };
+    panel.style.right = 'auto';
+    panel.style.bottom = 'auto';
+    panel.style.left = rect.left + 'px';
+    panel.style.top = rect.top + 'px';
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', function (e) {
+    if (!drag) return;
+    var maxX = window.innerWidth - panel.offsetWidth;
+    var maxY = window.innerHeight - panel.offsetHeight;
+    panel.style.left = Math.max(0, Math.min(e.clientX - drag.dx, maxX)) + 'px';
+    panel.style.top = Math.max(0, Math.min(e.clientY - drag.dy, maxY)) + 'px';
+  });
+  document.addEventListener('mouseup', function () { drag = null; });
 })();
 </script>
 <script src="/lib/cytoscape/cytoscape.min.js"></script>

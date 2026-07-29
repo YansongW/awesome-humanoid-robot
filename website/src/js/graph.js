@@ -33,6 +33,7 @@
     confirmFull: 'There are {total} nodes; the full graph will show only the top {count} most-connected nodes. Continue?',
     entityCount: '{count} entities',
     backToClusters: 'Cluster view',
+    focusView: 'Focus view: {names}',
   };
 
   function t(key, vars) {
@@ -97,16 +98,16 @@
   let fullGraphData = null;
   let clusterData = null;
   let tooltipEl = null;
+  let fullGraphPromise = null;
 
-  async function loadData() {
+  // First paint only needs the small clusters.json; the 2+ MB relations.json
+  // is deferred until the full view (or a cluster drill-down) is requested,
+  // with an idle-time prefetch to smooth the switch.
+  async function loadClusters() {
     try {
-      const [relationsRes, clustersRes] = await Promise.all([
-        fetch(basePath + '/data/relations.json'),
-        fetch(basePath + '/data/clusters.json'),
-      ]);
-      if (!relationsRes.ok || !clustersRes.ok) throw new Error('Failed to load graph data');
-      fullGraphData = await relationsRes.json();
-      clusterData = await clustersRes.json();
+      const res = await fetch(basePath + '/data/clusters.json');
+      if (!res.ok) throw new Error('Failed to load cluster data');
+      clusterData = await res.json();
       const labels = window.DOMAIN_LABELS || {};
       for (const node of clusterData.nodes) {
         const id = node.data.id;
@@ -116,9 +117,26 @@
       }
     } catch (err) {
       console.error(err);
-      fullGraphData = { nodes: [], edges: [] };
       clusterData = { nodes: [], edges: [] };
     }
+  }
+
+  function ensureFullGraph() {
+    if (fullGraphData) return Promise.resolve(fullGraphData);
+    if (!fullGraphPromise) {
+      fullGraphPromise = fetch(basePath + '/data/relations.json')
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to load graph data');
+          return res.json();
+        })
+        .then(data => { fullGraphData = data; return data; })
+        .catch(err => {
+          console.error(err);
+          fullGraphData = { nodes: [], edges: [] };
+          return fullGraphData;
+        });
+    }
+    return fullGraphPromise;
   }
 
   function makeStylesheet() {
@@ -240,6 +258,22 @@
         },
       },
       {
+        // Persistent highlight for ask-panel focus targets; unlike
+        // .highlighted this class is never removed by hover handlers.
+        selector: '.focus-highlight',
+        style: {
+          'border-width': 6,
+          'border-color': t.accent,
+          'width': 40,
+          'height': 40,
+          'background-color': t.accent,
+          'color': '#fff',
+          'text-background-color': t.accent,
+          'text-border-color': t.accent,
+          'z-index': 998,
+        },
+      },
+      {
         selector: '.dimmed',
         style: {
           'opacity': 0.12,
@@ -265,7 +299,7 @@
         fit: true,
         padding: 36,
         randomize: false,
-        numIter: isLarge ? 1500 : 3000,
+        numIter: isLarge ? 500 : 3000,
         coolingFactor: isLarge ? 0.9 : 0.95,
       });
     } else if (name === 'circle') {
@@ -300,7 +334,7 @@
   function updateDomainFilterState() {
     const domainFilters = document.getElementById('domain-filters');
     if (!domainFilters) return;
-    const disabled = currentMode === 'clusters';
+    const disabled = currentMode !== 'full';
     domainFilters.querySelectorAll('input[type="checkbox"]').forEach(cb => {
       cb.disabled = disabled;
     });
@@ -342,6 +376,24 @@
 
   function showLoading(container) {
     container.innerHTML = `<div class="graph-loading"><div class="spinner"></div><span>${escapeHtml(t('loading'))}</span></div>`;
+  }
+
+  // True while the ask panel holds a non-empty conversation; entry links
+  // then open in a new tab so in-memory chat state is never lost.
+  function chatHasHistory() {
+    try {
+      const lang = document.body.dataset.lang || 'zh';
+      const raw = sessionStorage.getItem('kg_ask_history_' + lang);
+      return !!(raw && JSON.parse(raw).length);
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function openEntry(id) {
+    const url = basePath + '/entry/' + id + '/';
+    if (chatHasHistory()) window.open(url, '_blank', 'noopener');
+    else window.location.href = url;
   }
 
   function initGraph(container, mode) {
@@ -388,8 +440,7 @@
     });
 
     cy.on('tap', 'node[!isCluster]', evt => {
-      const id = evt.target.id();
-      window.location.href = basePath + '/entry/' + id + '/';
+      openEntry(evt.target.id());
     });
 
     cy.on('mouseover', 'node', evt => {
@@ -420,6 +471,11 @@
   const MAX_SUBGRAPH_NODES = 250;
 
   function showClusterMembers(clusterId) {
+    if (!fullGraphData) {
+      // First drill-down: pull the deferred relations data, then retry.
+      ensureFullGraph().then(() => showClusterMembers(clusterId));
+      return;
+    }
     const cluster = clusterData.nodes.find(n => n.data.id === clusterId);
     if (!cluster) return;
     const members = new Set(cluster.data.members || []);
@@ -465,7 +521,7 @@
     });
 
     cy.on('tap', 'node', evt => {
-      window.location.href = basePath + '/entry/' + evt.target.id() + '/';
+      openEntry(evt.target.id());
     });
 
     cy.on('mouseover', 'node', evt => {
@@ -571,51 +627,138 @@
     tooltipEl = document.getElementById('graph-tooltip');
 
     const titleEl = document.getElementById('graph-current-view');
+    const focusBar = document.getElementById('graph-focus-bar');
+    const focusNames = document.getElementById('graph-focus-names');
     let graphReady = false;
     let pendingFocusIds = null;
+    let savedModeBeforeFocus = null;
 
-    // Highlight entry nodes requested by the ask panel (KGAsk). Switches to
-    // the full view first when needed (same confirm flow as the view-full
-    // button), then selects the targets, dims everything outside their 1-hop
-    // neighborhood, and fits the view to them. Unknown ids are skipped.
-    function runFocus() {
-      const ids = pendingFocusIds || [];
-      if (!ids.length || !fullGraphData) return;
+    function backToClusters() {
+      if (focusBar) focusBar.classList.add('hidden');
+      savedModeBeforeFocus = null;
+      if (titleEl) {
+        titleEl.classList.remove('cluster-drilldown');
+        titleEl.textContent = UI.backToClusters || 'Cluster view';
+      }
+      initGraph(fullGraph, 'clusters');
+      updateActiveButton('view-clusters');
+    }
 
-      function doHighlight() {
-        if (!cy) return;
-        cy.elements().removeClass('dimmed');
-        cy.nodes().unselect();
-        let focus = cy.collection();
-        ids.forEach(id => {
-          const node = cy.getElementById(id);
-          if (node.length) {
-            node.select();
-            node.addClass('highlighted');
-            focus = focus.union(node);
+    // Full view is explicit-only: load the deferred relations data behind a
+    // loading state, confirm, then let the mask paint before the heavy
+    // synchronous layout runs.
+    function switchToFullView() {
+      if (focusBar) focusBar.classList.add('hidden');
+      savedModeBeforeFocus = null;
+      showLoading(fullGraph);
+      ensureFullGraph().then(() => {
+        const visibleCount = Math.min(fullGraphData.nodes.length, MAX_FULL_GRAPH_NODES);
+        if (fullGraphData.nodes.length > MAX_FULL_GRAPH_NODES) {
+          const msg = t('confirmFull', { total: fullGraphData.nodes.length, count: visibleCount });
+          if (!confirm(msg)) {
+            backToClusters();
+            return;
           }
-        });
-        if (!focus.length) return;
-        const neighborhood = focus.closedNeighborhood();
-        cy.elements().not(neighborhood).addClass('dimmed');
-        cy.fit(focus, 80);
-        if (cy.zoom() > 1.5) cy.zoom(1.5);
-      }
+        }
+        if (titleEl) titleEl.classList.remove('cluster-drilldown');
+        setTimeout(() => {
+          initGraph(fullGraph, 'full');
+          updateActiveButton('view-full');
+        }, 50);
+      });
+    }
 
-      if (currentMode === 'full' && cy) {
-        doHighlight();
-        return;
+    // Highlight entry nodes requested by the ask panel (KGAsk) as a small
+    // "focus view": merge the 1-hop subgraphs of the requested entries
+    // (deduped by id, so common neighbors appear as shared nodes) instead of
+    // switching to the expensive full view. Unknown ids are skipped.
+    async function runFocus() {
+      const ids = pendingFocusIds || [];
+      if (!ids.length) return;
+
+      const subgraphs = await Promise.all(ids.map(id =>
+        fetch(`${basePath}/data/subgraphs/${id}.json`)
+          .then(r => (r.ok ? r.json() : null))
+          .catch(() => null)
+      ));
+
+      const nodeById = new Map();
+      const edgeById = new Map();
+      const sourceNames = [];
+      for (const sg of subgraphs) {
+        if (!sg) continue;
+        for (const n of sg.nodes || []) {
+          if (!nodeById.has(n.data.id)) nodeById.set(n.data.id, n);
+        }
+        for (const e of sg.edges || []) {
+          if (!edgeById.has(e.data.id)) edgeById.set(e.data.id, e);
+        }
+        const center = (sg.nodes || []).find(n => n.data.id === sg.center_id);
+        if (center) sourceNames.push(center.data.name || sg.center_id);
       }
-      const visibleCount = Math.min(fullGraphData.nodes.length, MAX_FULL_GRAPH_NODES);
-      if (fullGraphData.nodes.length > MAX_FULL_GRAPH_NODES) {
-        const msg = t('confirmFull', { total: fullGraphData.nodes.length, count: visibleCount });
-        if (!confirm(msg)) return;
+      const presentIds = ids.filter(id => nodeById.has(id));
+      if (!presentIds.length) return;
+
+      if (currentMode !== 'focus') savedModeBeforeFocus = currentMode;
+      if (cy) { cy.destroy(); cy = null; }
+      currentMode = 'focus';
+
+      cy = cytoscape({
+        container: fullGraph,
+        elements: [...nodeById.values(), ...edgeById.values()],
+        style: makeStylesheet(),
+        minZoom: 0.15,
+        maxZoom: 4,
+        wheelSensitivity: 0.2,
+      });
+
+      cy.on('tap', 'node', evt => openEntry(evt.target.id()));
+      cy.on('mouseover', 'node', evt => {
+        evt.target.addClass('highlighted');
+        const name = evt.target.data('name') || evt.target.id();
+        const type = evt.target.data('type') || '';
+        showTooltip(`<strong>${escapeHtml(name)}</strong>${type ? '<br><span>' + escapeHtml(type) + '</span>' : ''}`, evt.renderedPosition, fullGraph);
+      });
+      cy.on('mouseout', 'node', evt => {
+        evt.target.removeClass('highlighted');
+        hideTooltip();
+      });
+      cy.on('tapstart drag', () => hideTooltip());
+
+      runLayout('cose', nodeById.size);
+      presentIds.forEach(id => {
+        const node = cy.getElementById(id);
+        if (node.length) node.addClass('focus-highlight');
+      });
+      // Give the layout a moment to settle before fitting to the sources.
+      setTimeout(() => {
+        if (!cy) return;
+        let focus = cy.collection();
+        presentIds.forEach(id => {
+          const node = cy.getElementById(id);
+          if (node.length) focus = focus.union(node);
+        });
+        if (focus.length) cy.fit(focus, 80);
+      }, 600);
+
+      if (focusBar && focusNames) {
+        focusNames.textContent = t('focusView', { names: sourceNames.join('、') });
+        focusBar.classList.remove('hidden');
       }
       if (titleEl) titleEl.classList.remove('cluster-drilldown');
-      initGraph(fullGraph, 'full');
-      updateActiveButton('view-full');
-      // Give the layout a moment to settle before fitting to the targets.
-      setTimeout(doHighlight, 600);
+      updateActiveButton(null);
+      updateDomainFilterState();
+    }
+
+    // Restore the view the user came from (cluster or full) when leaving the
+    // focus view.
+    function backFromFocus() {
+      const mode = savedModeBeforeFocus || 'clusters';
+      if (mode === 'full') {
+        switchToFullView();
+      } else {
+        backToClusters();
+      }
     }
 
     window.KGGraph = {
@@ -625,20 +768,16 @@
       },
     };
 
-    loadData().then(() => {
+    loadClusters().then(() => {
       initGraph(fullGraph, 'clusters');
       graphReady = true;
       if (pendingFocusIds && pendingFocusIds.length) runFocus();
-
-      function backToClusters() {
-        if (titleEl) {
-          titleEl.classList.remove('cluster-drilldown');
-          titleEl.textContent = UI.backToClusters || 'Cluster view';
-        }
-        initGraph(fullGraph, 'clusters');
-        updateActiveButton('view-clusters');
+      // Warm the deferred relations data while the browser is idle.
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => ensureFullGraph(), { timeout: 8000 });
       }
 
+      document.getElementById('graph-focus-back')?.addEventListener('click', backFromFocus);
       document.getElementById('view-clusters')?.addEventListener('click', backToClusters);
       if (titleEl) {
         titleEl.addEventListener('click', () => {
@@ -647,16 +786,7 @@
           }
         });
       }
-      document.getElementById('view-full')?.addEventListener('click', () => {
-        const visibleCount = Math.min(fullGraphData.nodes.length, MAX_FULL_GRAPH_NODES);
-        if (fullGraphData.nodes.length > MAX_FULL_GRAPH_NODES) {
-          const msg = t('confirmFull', { total: fullGraphData.nodes.length, count: visibleCount });
-          if (!confirm(msg)) return;
-        }
-        if (titleEl) titleEl.classList.remove('cluster-drilldown');
-        initGraph(fullGraph, 'full');
-        updateActiveButton('view-full');
-      });
+      document.getElementById('view-full')?.addEventListener('click', switchToFullView);
 
       document.getElementById('fit-graph')?.addEventListener('click', () => cy && cy.fit());
       document.getElementById('reset-graph')?.addEventListener('click', () => {
@@ -694,16 +824,24 @@
       const graphSearchResults = document.getElementById('graph-search-results');
       if (graphSearch) {
         let searchData = { entries: [] };
-        // Lightweight names-only index (falls back to the full search index).
-        fetch(basePath + '/data/names.json')
-          .then(r => { if (!r.ok) throw new Error(); return r.json(); })
-          .then(d => { searchData = { entries: d }; })
-          .catch(() => {
-            fetch(basePath + '/data/search-index.json')
-              .then(r => r.json())
-              .then(d => { searchData = d; })
-              .catch(() => {});
-          });
+        let namesPromise = null;
+        // Lightweight names-only index, deferred until the box is first used
+        // (falls back to the full search index).
+        function ensureNamesIndex() {
+          if (!namesPromise) {
+            namesPromise = fetch(basePath + '/data/names.json')
+              .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+              .then(d => { searchData = { entries: d }; })
+              .catch(() => {
+                fetch(basePath + '/data/search-index.json')
+                  .then(r => r.json())
+                  .then(d => { searchData = d; })
+                  .catch(() => {});
+              });
+          }
+          return namesPromise;
+        }
+        graphSearch.addEventListener('focus', ensureNamesIndex);
 
         let graphSearchTimer = null;
         graphSearch.addEventListener('input', () => {

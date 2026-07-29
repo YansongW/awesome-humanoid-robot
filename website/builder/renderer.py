@@ -152,6 +152,12 @@ UI_STRINGS = {
         "ask_open_entry": "打开条目",
         "ask_focus_prefix": "当前图谱焦点：",
         "ask_panel_collapse": "收起面板",
+        "ask_clear_history": "清空对话",
+        "ask_stage_retrieving": "检索中…",
+        "ask_stage_loading": "加载资料…",
+        "ask_stage_generating": "生成中…",
+        "graph_focus_back": "返回全局视图",
+        "graph_focus_view": "焦点视图：{names}",
     },
     "en": {
         "site_title": "Humanoid Robot Knowledge Graph",
@@ -278,6 +284,12 @@ UI_STRINGS = {
         "ask_open_entry": "Open entry",
         "ask_focus_prefix": "Current graph focus: ",
         "ask_panel_collapse": "Collapse panel",
+        "ask_clear_history": "Clear chat",
+        "ask_stage_retrieving": "Retrieving…",
+        "ask_stage_loading": "Loading sources…",
+        "ask_stage_generating": "Generating…",
+        "graph_focus_back": "Back to global view",
+        "graph_focus_view": "Focus view: {names}",
     },
     "ko": {
         "site_title": "휴로봇 지식 그래프",
@@ -404,6 +416,12 @@ UI_STRINGS = {
         "ask_open_entry": "개체 열기",
         "ask_focus_prefix": "현재 그래프 포커스: ",
         "ask_panel_collapse": "패널 접기",
+        "ask_clear_history": "대화 지우기",
+        "ask_stage_retrieving": "검색 중…",
+        "ask_stage_loading": "자료 로드 중…",
+        "ask_stage_generating": "생성 중…",
+        "graph_focus_back": "전체 보기로",
+        "graph_focus_view": "포커스 뷰: {names}",
     },
 }
 
@@ -810,6 +828,7 @@ class Renderer:
 
     def write_json_data(self, data: dict, filename: str) -> None:
         path = self.dist_dir / "data" / filename
+        path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     def write_subgraphs(self, subgraphs: dict[str, dict]) -> None:
