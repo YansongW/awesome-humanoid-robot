@@ -12,8 +12,21 @@
     <p class="ask-subtitle">{{ ui.ask_subtitle }}</p>
   </section>
 
-  <section id="ask-root" class="ask-root"
+  <section id="ask-root"
     data-base-path="{{ bp }}"
+    data-empty="{{ ui.ask_empty }}"
+    data-input-placeholder="{{ ui.ask_input_placeholder }}"
+    data-send="{{ ui.ask_send }}"
+    data-stop="{{ ui.ask_stop }}"
+    data-settings="{{ ui.ask_settings }}"
+    data-settings-title="{{ ui.ask_settings_title }}"
+    data-provider="{{ ui.ask_provider }}"
+    data-provider-custom="{{ ui.ask_provider_custom }}"
+    data-base-url="{{ ui.ask_base_url }}"
+    data-model="{{ ui.ask_model }}"
+    data-save="{{ ui.ask_save }}"
+    data-clear="{{ ui.ask_clear }}"
+    data-privacy-note="{{ ui.ask_privacy_note }}"
     data-sources="{{ ui.ask_sources }}"
     data-thinking="{{ ui.ask_thinking }}"
     data-no-key="{{ ui.ask_no_key }}"
@@ -25,51 +38,6 @@
     data-error-generic="{{ ui.ask_error_generic }}"
     data-settings-saved="{{ ui.ask_settings_saved }}"
     data-settings-cleared="{{ ui.ask_settings_cleared }}">
-
-    <div id="ask-messages" class="ask-messages">
-      <div class="empty-state">{{ ui.ask_empty }}</div>
-    </div>
-
-    <form id="ask-form" class="ask-form">
-      <textarea id="ask-input" rows="2" placeholder="{{ ui.ask_input_placeholder }}" autocomplete="off"></textarea>
-      <div class="ask-actions">
-        <button type="button" id="ask-settings-toggle" class="btn btn-secondary">{{ ui.ask_settings }}</button>
-        <button type="submit" id="ask-send-btn" class="ask-send-btn">{{ ui.ask_send }}</button>
-        <button type="button" id="ask-stop-btn" class="btn btn-secondary hidden">{{ ui.ask_stop }}</button>
-      </div>
-    </form>
-
-    <div id="ask-settings" class="ask-settings hidden">
-      <h2>{{ ui.ask_settings_title }}</h2>
-      <p class="ask-privacy-note">{{ ui.ask_privacy_note }}</p>
-      <div class="ask-settings-grid">
-        <label class="ask-field">
-          <span>{{ ui.ask_provider }}</span>
-          <select id="ask-provider">
-            <option value="deepseek">DeepSeek</option>
-            <option value="openai">OpenAI</option>
-            <option value="custom">{{ ui.ask_provider_custom }}</option>
-          </select>
-        </label>
-        <label class="ask-field">
-          <span>API Key</span>
-          <input type="password" id="ask-api-key" autocomplete="off" placeholder="sk-…">
-        </label>
-        <label class="ask-field">
-          <span>{{ ui.ask_base_url }}</span>
-          <input type="text" id="ask-base-url" autocomplete="off" placeholder="https://api.deepseek.com">
-        </label>
-        <label class="ask-field">
-          <span>{{ ui.ask_model }}</span>
-          <input type="text" id="ask-model" autocomplete="off" placeholder="deepseek-chat">
-        </label>
-      </div>
-      <div class="ask-settings-actions">
-        <button type="button" id="ask-settings-save" class="ask-send-btn">{{ ui.ask_save }}</button>
-        <button type="button" id="ask-settings-clear" class="btn btn-secondary">{{ ui.ask_clear }}</button>
-        <span id="ask-settings-status" class="ask-settings-status"></span>
-      </div>
-    </div>
   </section>
 </div>
 {% endblock %}

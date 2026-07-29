@@ -55,6 +55,14 @@
     <div id="full-graph" class="full-cy-graph"></div>
     <div class="graph-tooltip" id="graph-tooltip"></div>
   </main>
+  <button id="graph-ask-toggle" class="graph-ask-toggle" type="button">🤖 {{ ui.nav_ask }}</button>
+  <div id="graph-ask-panel" class="graph-ask-panel hidden">
+    <div class="graph-ask-panel-header">
+      <span>{{ ui.nav_ask }}</span>
+      <button id="graph-ask-collapse" class="graph-ask-collapse" type="button" aria-label="{{ ui.ask_panel_collapse }}" title="{{ ui.ask_panel_collapse }}">×</button>
+    </div>
+    <div id="graph-ask-root" data-base-path="{{ bp }}"></div>
+  </div>
 </div>
 {% endblock %}
 
@@ -76,6 +84,65 @@ window.GRAPH_TEXT = {
   entityCount: "{{ ui.graph_entity_count }}",
   backToClusters: "{{ ui.cluster_view }}",
 };
+window.ASK_TEXT = {
+  empty: "{{ ui.ask_empty }}",
+  inputPlaceholder: "{{ ui.ask_input_placeholder }}",
+  send: "{{ ui.ask_send }}",
+  stop: "{{ ui.ask_stop }}",
+  settings: "{{ ui.ask_settings }}",
+  settingsTitle: "{{ ui.ask_settings_title }}",
+  provider: "{{ ui.ask_provider }}",
+  providerCustom: "{{ ui.ask_provider_custom }}",
+  baseUrl: "{{ ui.ask_base_url }}",
+  model: "{{ ui.ask_model }}",
+  save: "{{ ui.ask_save }}",
+  clear: "{{ ui.ask_clear }}",
+  privacyNote: "{{ ui.ask_privacy_note }}",
+  sources: "{{ ui.ask_sources }}",
+  thinking: "{{ ui.ask_thinking }}",
+  noKey: "{{ ui.ask_no_key }}",
+  noContext: "{{ ui.ask_no_context }}",
+  stopped: "{{ ui.ask_stopped }}",
+  errorNetwork: "{{ ui.ask_error_network }}",
+  errorAuth: "{{ ui.ask_error_auth }}",
+  errorRate: "{{ ui.ask_error_rate }}",
+  errorGeneric: "{{ ui.ask_error_generic }}",
+  settingsSaved: "{{ ui.ask_settings_saved }}",
+  settingsCleared: "{{ ui.ask_settings_cleared }}",
+  highlightAll: "{{ ui.ask_highlight_all }}",
+  openEntry: "{{ ui.ask_open_entry }}",
+  focusPrefix: "{{ ui.ask_focus_prefix }}",
+};
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/ask.js"></script>
+<script>
+(function () {
+  var toggle = document.getElementById('graph-ask-toggle');
+  var panel = document.getElementById('graph-ask-panel');
+  var mounted = false;
+  toggle.addEventListener('click', function () {
+    panel.classList.remove('hidden');
+    toggle.classList.add('hidden');
+    if (!mounted && window.KGAsk) {
+      mounted = true;
+      window.KGAsk.mount(document.getElementById('graph-ask-root'), {
+        mode: 'panel',
+        strings: window.ASK_TEXT,
+        onSourceClick: function (entryId) {
+          if (window.KGGraph) window.KGGraph.focusEntries([entryId]);
+        },
+        onHighlightAll: function (entryIds) {
+          if (window.KGGraph) window.KGGraph.focusEntries(entryIds);
+        },
+      });
+    }
+  });
+  document.getElementById('graph-ask-collapse').addEventListener('click', function () {
+    panel.classList.add('hidden');
+    toggle.classList.remove('hidden');
+  });
+})();
 </script>
 <script src="/lib/cytoscape/cytoscape.min.js"></script>
 <script src="/js/graph.js"></script>

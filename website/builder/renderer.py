@@ -148,6 +148,10 @@ UI_STRINGS = {
         "ask_error_generic": "请求失败：{detail}",
         "ask_settings_saved": "已保存。",
         "ask_settings_cleared": "已清除。",
+        "ask_highlight_all": "在图中高亮全部",
+        "ask_open_entry": "打开条目",
+        "ask_focus_prefix": "当前图谱焦点：",
+        "ask_panel_collapse": "收起面板",
     },
     "en": {
         "site_title": "Humanoid Robot Knowledge Graph",
@@ -270,6 +274,10 @@ UI_STRINGS = {
         "ask_error_generic": "Request failed: {detail}",
         "ask_settings_saved": "Saved.",
         "ask_settings_cleared": "Cleared.",
+        "ask_highlight_all": "Highlight all in graph",
+        "ask_open_entry": "Open entry",
+        "ask_focus_prefix": "Current graph focus: ",
+        "ask_panel_collapse": "Collapse panel",
     },
     "ko": {
         "site_title": "휴로봇 지식 그래프",
@@ -392,6 +400,10 @@ UI_STRINGS = {
         "ask_error_generic": "요청 실패: {detail}",
         "ask_settings_saved": "저장되었습니다.",
         "ask_settings_cleared": "지워졌습니다.",
+        "ask_highlight_all": "그래프에서 모두 강조",
+        "ask_open_entry": "개체 열기",
+        "ask_focus_prefix": "현재 그래프 포커스: ",
+        "ask_panel_collapse": "패널 접기",
     },
 }
 

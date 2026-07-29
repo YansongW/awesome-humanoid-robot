@@ -294,6 +294,19 @@
 
   const activeDomains = new Set();
 
+  // Enable/disable the domain filter checkboxes (full view only). Defined at
+  // IIFE scope: initGraph/showClusterMembers call this too, and resolving the
+  // element lazily keeps it safe on pages without the filter sidebar.
+  function updateDomainFilterState() {
+    const domainFilters = document.getElementById('domain-filters');
+    if (!domainFilters) return;
+    const disabled = currentMode === 'clusters';
+    domainFilters.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      cb.disabled = disabled;
+    });
+    domainFilters.classList.toggle('disabled', disabled);
+  }
+
   const MAX_FULL_GRAPH_NODES = 250;
 
   function getFilteredFullElements() {
@@ -557,10 +570,65 @@
   if (fullGraph && typeof cytoscape !== 'undefined') {
     tooltipEl = document.getElementById('graph-tooltip');
 
+    const titleEl = document.getElementById('graph-current-view');
+    let graphReady = false;
+    let pendingFocusIds = null;
+
+    // Highlight entry nodes requested by the ask panel (KGAsk). Switches to
+    // the full view first when needed (same confirm flow as the view-full
+    // button), then selects the targets, dims everything outside their 1-hop
+    // neighborhood, and fits the view to them. Unknown ids are skipped.
+    function runFocus() {
+      const ids = pendingFocusIds || [];
+      if (!ids.length || !fullGraphData) return;
+
+      function doHighlight() {
+        if (!cy) return;
+        cy.elements().removeClass('dimmed');
+        cy.nodes().unselect();
+        let focus = cy.collection();
+        ids.forEach(id => {
+          const node = cy.getElementById(id);
+          if (node.length) {
+            node.select();
+            node.addClass('highlighted');
+            focus = focus.union(node);
+          }
+        });
+        if (!focus.length) return;
+        const neighborhood = focus.closedNeighborhood();
+        cy.elements().not(neighborhood).addClass('dimmed');
+        cy.fit(focus, 80);
+        if (cy.zoom() > 1.5) cy.zoom(1.5);
+      }
+
+      if (currentMode === 'full' && cy) {
+        doHighlight();
+        return;
+      }
+      const visibleCount = Math.min(fullGraphData.nodes.length, MAX_FULL_GRAPH_NODES);
+      if (fullGraphData.nodes.length > MAX_FULL_GRAPH_NODES) {
+        const msg = t('confirmFull', { total: fullGraphData.nodes.length, count: visibleCount });
+        if (!confirm(msg)) return;
+      }
+      if (titleEl) titleEl.classList.remove('cluster-drilldown');
+      initGraph(fullGraph, 'full');
+      updateActiveButton('view-full');
+      // Give the layout a moment to settle before fitting to the targets.
+      setTimeout(doHighlight, 600);
+    }
+
+    window.KGGraph = {
+      focusEntries(ids) {
+        pendingFocusIds = (Array.isArray(ids) ? ids : [ids]).filter(Boolean);
+        if (graphReady) runFocus();
+      },
+    };
+
     loadData().then(() => {
       initGraph(fullGraph, 'clusters');
-
-      const titleEl = document.getElementById('graph-current-view');
+      graphReady = true;
+      if (pendingFocusIds && pendingFocusIds.length) runFocus();
 
       function backToClusters() {
         if (titleEl) {
@@ -600,14 +668,6 @@
       });
 
       const domainFilters = document.getElementById('domain-filters');
-      function updateDomainFilterState() {
-        if (!domainFilters) return;
-        const disabled = currentMode === 'clusters';
-        domainFilters.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-          cb.disabled = disabled;
-        });
-        domainFilters.classList.toggle('disabled', disabled);
-      }
       if (domainFilters) {
         domainFilters.addEventListener('change', () => {
           const allCb = domainFilters.querySelector('input[value="all"]');

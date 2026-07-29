@@ -4,32 +4,16 @@
  * localStorage and requests go directly from the browser to the provider.
  * Retrieval reuses the search-page scoring via window.KGSearch (search.js),
  * then fetches data/qa-corpus.json lazily for RAG context.
+ *
+ * Exported as a reusable component: window.KGAsk.mount(container, opts).
+ *   opts.mode           'fullPage' (standalone /ask/ page) | 'panel' (graph page)
+ *   opts.onSourceClick  (entryId, event) => void — panel mode chip action
+ *   opts.onHighlightAll (entryIds) => void — panel mode "highlight all" action
+ *   opts.strings        i18n object; defaults to the container's data-* attrs
  */
 
 (function () {
   'use strict';
-
-  var root = document.getElementById('ask-root');
-  if (!root || !window.KGSearch) return;
-
-  var basePath = root.dataset.basePath || '';
-  var lang = document.body.dataset.lang || 'zh';
-  var strings = root.dataset;
-
-  var messagesEl = document.getElementById('ask-messages');
-  var form = document.getElementById('ask-form');
-  var input = document.getElementById('ask-input');
-  var sendBtn = document.getElementById('ask-send-btn');
-  var stopBtn = document.getElementById('ask-stop-btn');
-  var settingsPanel = document.getElementById('ask-settings');
-  var settingsToggle = document.getElementById('ask-settings-toggle');
-  var providerSel = document.getElementById('ask-provider');
-  var apiKeyInput = document.getElementById('ask-api-key');
-  var baseUrlInput = document.getElementById('ask-base-url');
-  var modelInput = document.getElementById('ask-model');
-  var saveBtn = document.getElementById('ask-settings-save');
-  var clearBtn = document.getElementById('ask-settings-clear');
-  var settingsStatus = document.getElementById('ask-settings-status');
 
   var LS = {
     provider: 'kg_ask_provider',
@@ -74,391 +58,535 @@
       },
     },
   };
-  var prompt = PROMPTS[lang] || PROMPTS.zh;
 
-  var searchIndexPromise = null;
-  var corpusPromise = null;
-  var history = []; // {role: 'user'|'assistant', content: string}
-  var streaming = false;
-  var abortController = null;
-
-  /* ---------- settings ---------- */
-
-  function getConfig() {
-    var provider = localStorage.getItem(LS.provider) || 'deepseek';
-    var preset = PROVIDERS[provider] || PROVIDERS.deepseek;
-    return {
-      provider: provider,
-      apiKey: localStorage.getItem(LS.apiKey) || '',
-      baseUrl: localStorage.getItem(LS.baseUrl) || preset.baseUrl,
-      model: localStorage.getItem(LS.model) || preset.model,
-    };
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text != null) node.textContent = text;
+    return node;
   }
 
-  function loadSettingsForm() {
-    var cfg = getConfig();
-    providerSel.value = cfg.provider in PROVIDERS ? cfg.provider : 'deepseek';
-    apiKeyInput.value = cfg.apiKey;
-    baseUrlInput.value = cfg.baseUrl;
-    modelInput.value = cfg.model;
-  }
+  function mount(container, opts) {
+    opts = opts || {};
+    var mode = opts.mode || 'fullPage';
+    var basePath = container.dataset.basePath || '';
+    var lang = document.body.dataset.lang || 'zh';
+    var strings = opts.strings || container.dataset;
+    var prompt = PROMPTS[lang] || PROMPTS.zh;
 
-  function onProviderChange() {
-    var preset = PROVIDERS[providerSel.value] || PROVIDERS.custom;
-    baseUrlInput.value = preset.baseUrl;
-    modelInput.value = preset.model;
-  }
+    /* ---------- DOM (same structure/classes as the old static markup) ---------- */
 
-  function saveSettings() {
-    localStorage.setItem(LS.provider, providerSel.value);
-    localStorage.setItem(LS.apiKey, apiKeyInput.value.trim());
-    localStorage.setItem(LS.baseUrl, baseUrlInput.value.trim());
-    localStorage.setItem(LS.model, modelInput.value.trim());
-    if (settingsStatus) settingsStatus.textContent = strings.settingsSaved || '';
-  }
+    container.classList.add('ask-root');
 
-  function clearSettings() {
-    Object.keys(LS).forEach(function (k) { localStorage.removeItem(LS[k]); });
-    loadSettingsForm();
-    if (settingsStatus) settingsStatus.textContent = strings.settingsCleared || '';
-  }
+    var messagesEl = el('div', 'ask-messages');
+    messagesEl.appendChild(el('div', 'empty-state', strings.empty || ''));
 
-  /* ---------- retrieval (reuses search.js scoring) ---------- */
+    var input = el('textarea');
+    input.rows = 2;
+    input.placeholder = strings.inputPlaceholder || '';
+    input.autocomplete = 'off';
 
-  function ensureSearchIndex() {
-    if (!searchIndexPromise) {
-      searchIndexPromise = fetch(basePath + '/data/search-index.json')
-        .then(function (res) {
-          if (!res.ok) throw new Error('Failed to load search index');
-          return res.json();
-        })
-        .then(function (data) { window.KGSearch.setData(data); });
+    var settingsToggle = el('button', 'btn btn-secondary', strings.settings || 'Settings');
+    settingsToggle.type = 'button';
+    var sendBtn = el('button', 'ask-send-btn', strings.send || 'Send');
+    sendBtn.type = 'submit';
+    var stopBtn = el('button', 'btn btn-secondary hidden', strings.stop || 'Stop');
+    stopBtn.type = 'button';
+
+    var actions = el('div', 'ask-actions');
+    actions.appendChild(settingsToggle);
+    actions.appendChild(sendBtn);
+    actions.appendChild(stopBtn);
+
+    var form = el('form', 'ask-form');
+    form.appendChild(input);
+    form.appendChild(actions);
+
+    var settingsPanel = el('div', 'ask-settings hidden');
+    settingsPanel.appendChild(el('h2', null, strings.settingsTitle || 'API Settings'));
+    settingsPanel.appendChild(el('p', 'ask-privacy-note', strings.privacyNote || ''));
+
+    var grid = el('div', 'ask-settings-grid');
+
+    function field(labelText, control) {
+      var label = el('label', 'ask-field');
+      label.appendChild(el('span', null, labelText));
+      label.appendChild(control);
+      return label;
     }
-    return searchIndexPromise;
-  }
 
-  function ensureCorpus() {
-    if (!corpusPromise) {
-      corpusPromise = fetch(basePath + '/data/qa-corpus.json')
-        .then(function (res) {
-          if (!res.ok) throw new Error('Failed to load Q&A corpus');
-          return res.json();
+    var providerSel = el('select');
+    [['deepseek', 'DeepSeek'], ['openai', 'OpenAI'], ['custom', strings.providerCustom || 'Custom']]
+      .forEach(function (p) {
+        var opt = el('option', null, p[1]);
+        opt.value = p[0];
+        providerSel.appendChild(opt);
+      });
+
+    var apiKeyInput = el('input');
+    apiKeyInput.type = 'password';
+    apiKeyInput.autocomplete = 'off';
+    apiKeyInput.placeholder = 'sk-…';
+
+    var baseUrlInput = el('input');
+    baseUrlInput.type = 'text';
+    baseUrlInput.autocomplete = 'off';
+    baseUrlInput.placeholder = 'https://api.deepseek.com';
+
+    var modelInput = el('input');
+    modelInput.type = 'text';
+    modelInput.autocomplete = 'off';
+    modelInput.placeholder = 'deepseek-chat';
+
+    grid.appendChild(field(strings.provider || 'Provider', providerSel));
+    grid.appendChild(field('API Key', apiKeyInput));
+    grid.appendChild(field(strings.baseUrl || 'Base URL', baseUrlInput));
+    grid.appendChild(field(strings.model || 'Model', modelInput));
+
+    var saveBtn = el('button', 'ask-send-btn', strings.save || 'Save');
+    saveBtn.type = 'button';
+    var clearBtn = el('button', 'btn btn-secondary', strings.clear || 'Clear');
+    clearBtn.type = 'button';
+    var settingsStatus = el('span', 'ask-settings-status');
+
+    var settingsActions = el('div', 'ask-settings-actions');
+    settingsActions.appendChild(saveBtn);
+    settingsActions.appendChild(clearBtn);
+    settingsActions.appendChild(settingsStatus);
+
+    settingsPanel.appendChild(grid);
+    settingsPanel.appendChild(settingsActions);
+
+    container.appendChild(messagesEl);
+    container.appendChild(form);
+    container.appendChild(settingsPanel);
+
+    /* ---------- settings ---------- */
+
+    function getConfig() {
+      var provider = localStorage.getItem(LS.provider) || 'deepseek';
+      var preset = PROVIDERS[provider] || PROVIDERS.deepseek;
+      return {
+        provider: provider,
+        apiKey: localStorage.getItem(LS.apiKey) || '',
+        baseUrl: localStorage.getItem(LS.baseUrl) || preset.baseUrl,
+        model: localStorage.getItem(LS.model) || preset.model,
+      };
+    }
+
+    function loadSettingsForm() {
+      var cfg = getConfig();
+      providerSel.value = cfg.provider in PROVIDERS ? cfg.provider : 'deepseek';
+      apiKeyInput.value = cfg.apiKey;
+      baseUrlInput.value = cfg.baseUrl;
+      modelInput.value = cfg.model;
+    }
+
+    function onProviderChange() {
+      var preset = PROVIDERS[providerSel.value] || PROVIDERS.custom;
+      baseUrlInput.value = preset.baseUrl;
+      modelInput.value = preset.model;
+    }
+
+    function saveSettings() {
+      localStorage.setItem(LS.provider, providerSel.value);
+      localStorage.setItem(LS.apiKey, apiKeyInput.value.trim());
+      localStorage.setItem(LS.baseUrl, baseUrlInput.value.trim());
+      localStorage.setItem(LS.model, modelInput.value.trim());
+      settingsStatus.textContent = strings.settingsSaved || '';
+    }
+
+    function clearSettings() {
+      Object.keys(LS).forEach(function (k) { localStorage.removeItem(LS[k]); });
+      loadSettingsForm();
+      settingsStatus.textContent = strings.settingsCleared || '';
+    }
+
+    /* ---------- retrieval (reuses search.js scoring) ---------- */
+
+    var searchIndexPromise = null;
+    var corpusPromise = null;
+    var history = []; // {role: 'user'|'assistant', content: string}
+    var streaming = false;
+    var abortController = null;
+    var lastFocusNames = []; // panel mode: recently highlighted entries (<= 3)
+
+    function ensureSearchIndex() {
+      if (!searchIndexPromise) {
+        searchIndexPromise = fetch(basePath + '/data/search-index.json')
+          .then(function (res) {
+            if (!res.ok) throw new Error('Failed to load search index');
+            return res.json();
+          })
+          .then(function (data) { window.KGSearch.setData(data); });
+      }
+      return searchIndexPromise;
+    }
+
+    function ensureCorpus() {
+      if (!corpusPromise) {
+        corpusPromise = fetch(basePath + '/data/qa-corpus.json')
+          .then(function (res) {
+            if (!res.ok) throw new Error('Failed to load Q&A corpus');
+            return res.json();
+          });
+      }
+      return corpusPromise;
+    }
+
+    function retrieve(question) {
+      return ensureSearchIndex().then(function () {
+        return window.KGSearch.search(question, 'all').slice(0, TOP_K);
+      });
+    }
+
+    function entryContext(rec) {
+      var lines = [
+        '【' + (rec.name || rec.id) + '】 (ID: ' + rec.id + ')',
+        prompt.labels.type + ': ' + rec.type,
+        prompt.labels.summary + ': ' + (rec.summary || ''),
+      ];
+      if (rec.body) lines.push(prompt.labels.content + ':\n' + rec.body);
+      if (rec.relations && rec.relations.length) {
+        var relLines = rec.relations.map(function (r) {
+          return r.direction === 'out'
+            ? '  → ' + r.type + ' → ' + r.other_name + ' (' + r.other_id + ')'
+            : '  ← ' + r.type + ' ← ' + r.other_name + ' (' + r.other_id + ')';
         });
+        lines.push(prompt.labels.relations + ':\n' + relLines.join('\n'));
+      }
+      return lines.join('\n');
     }
-    return corpusPromise;
-  }
 
-  function retrieve(question) {
-    return ensureSearchIndex().then(function () {
-      return window.KGSearch.search(question, 'all').slice(0, TOP_K);
-    });
-  }
+    /* ---------- LLM streaming (OpenAI-compatible SSE) ---------- */
 
-  function entryContext(rec) {
-    var lines = [
-      '【' + (rec.name || rec.id) + '】 (ID: ' + rec.id + ')',
-      prompt.labels.type + ': ' + rec.type,
-      prompt.labels.summary + ': ' + (rec.summary || ''),
-    ];
-    if (rec.body) lines.push(prompt.labels.content + ':\n' + rec.body);
-    if (rec.relations && rec.relations.length) {
-      var relLines = rec.relations.map(function (r) {
-        return r.direction === 'out'
-          ? '  → ' + r.type + ' → ' + r.other_name + ' (' + r.other_id + ')'
-          : '  ← ' + r.type + ' ← ' + r.other_name + ' (' + r.other_id + ')';
-      });
-      lines.push(prompt.labels.relations + ':\n' + relLines.join('\n'));
+    function humanError(err) {
+      if (err && err.status === 401 || err && err.status === 403) return strings.errorAuth;
+      if (err && err.status === 429) return strings.errorRate;
+      if (err && err.network) return strings.errorNetwork;
+      return (strings.errorGeneric || 'Request failed: {detail}').replace('{detail}', String(err && err.message || err));
     }
-    return lines.join('\n');
-  }
 
-  /* ---------- LLM streaming (OpenAI-compatible SSE) ---------- */
-
-  function humanError(err) {
-    if (err && err.status === 401 || err && err.status === 403) return strings.errorAuth;
-    if (err && err.status === 429) return strings.errorRate;
-    if (err && err.network) return strings.errorNetwork;
-    return (strings.errorGeneric || 'Request failed: {detail}').replace('{detail}', String(err && err.message || err));
-  }
-
-  async function streamChat(cfg, messages, onUpdate, signal) {
-    var res;
-    try {
-      res = await fetch(cfg.baseUrl.replace(/\/+$/, '') + '/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + cfg.apiKey,
-        },
-        body: JSON.stringify({
-          model: cfg.model,
-          messages: messages,
-          temperature: 0.2,
-          max_tokens: 2048,
-          stream: true,
-        }),
-        signal: signal,
-      });
-    } catch (err) {
-      if (err && err.name === 'AbortError') throw err;
-      var netErr = new Error('network error');
-      netErr.network = true;
-      throw netErr;
-    }
-    if (!res.ok) {
-      var detail = '';
+    async function streamChat(cfg, messages, onUpdate, signal) {
+      var res;
       try {
-        var body = await res.json();
-        detail = body && body.error && body.error.message ? body.error.message : '';
-      } catch (ignore) { /* non-JSON error body */ }
-      var httpErr = new Error(detail || ('HTTP ' + res.status));
-      httpErr.status = res.status;
-      throw httpErr;
-    }
-
-    var reader = res.body.getReader();
-    var decoder = new TextDecoder('utf-8');
-    var buffer = '';
-    var full = '';
-    for (;;) {
-      var chunk = await reader.read();
-      if (chunk.done) break;
-      buffer += decoder.decode(chunk.value, { stream: true });
-      var nl;
-      while ((nl = buffer.indexOf('\n')) !== -1) {
-        var line = buffer.slice(0, nl).trim();
-        buffer = buffer.slice(nl + 1);
-        if (line.indexOf('data:') !== 0) continue;
-        var payload = line.slice(5).trim();
-        if (payload === '[DONE]') return full;
+        res = await fetch(cfg.baseUrl.replace(/\/+$/, '') + '/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + cfg.apiKey,
+          },
+          body: JSON.stringify({
+            model: cfg.model,
+            messages: messages,
+            temperature: 0.2,
+            max_tokens: 2048,
+            stream: true,
+          }),
+          signal: signal,
+        });
+      } catch (err) {
+        if (err && err.name === 'AbortError') throw err;
+        var netErr = new Error('network error');
+        netErr.network = true;
+        throw netErr;
+      }
+      if (!res.ok) {
+        var detail = '';
         try {
-          var parsed = JSON.parse(payload);
-          var choice = parsed.choices && parsed.choices[0];
-          var delta = choice && choice.delta && choice.delta.content;
-          if (delta) {
-            full += delta;
-            onUpdate(full);
-          }
-        } catch (ignore) { /* keepalive or partial JSON line */ }
+          var body = await res.json();
+          detail = body && body.error && body.error.message ? body.error.message : '';
+        } catch (ignore) { /* non-JSON error body */ }
+        var httpErr = new Error(detail || ('HTTP ' + res.status));
+        httpErr.status = res.status;
+        throw httpErr;
       }
+
+      var reader = res.body.getReader();
+      var decoder = new TextDecoder('utf-8');
+      var buffer = '';
+      var full = '';
+      for (;;) {
+        var chunk = await reader.read();
+        if (chunk.done) break;
+        buffer += decoder.decode(chunk.value, { stream: true });
+        var nl;
+        while ((nl = buffer.indexOf('\n')) !== -1) {
+          var line = buffer.slice(0, nl).trim();
+          buffer = buffer.slice(nl + 1);
+          if (line.indexOf('data:') !== 0) continue;
+          var payload = line.slice(5).trim();
+          if (payload === '[DONE]') return full;
+          try {
+            var parsed = JSON.parse(payload);
+            var choice = parsed.choices && parsed.choices[0];
+            var delta = choice && choice.delta && choice.delta.content;
+            if (delta) {
+              full += delta;
+              onUpdate(full);
+            }
+          } catch (ignore) { /* keepalive or partial JSON line */ }
+        }
+      }
+      return full;
     }
-    return full;
-  }
 
-  /* ---------- lightweight Markdown rendering ---------- */
+    /* ---------- lightweight Markdown rendering ---------- */
 
-  function escapeHtml(text) {
-    var div = document.createElement('div');
-    div.textContent = text == null ? '' : String(text);
-    return div.innerHTML;
-  }
+    function escapeHtml(text) {
+      var div = document.createElement('div');
+      div.textContent = text == null ? '' : String(text);
+      return div.innerHTML;
+    }
 
-  function renderInline(text) {
-    var html = escapeHtml(text);
-    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-    html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-    html = html.replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
-    html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
-      '<a href="$2" target="_blank" rel="noopener">$1</a>');
-    return html;
-  }
+    function renderInline(text) {
+      var html = escapeHtml(text);
+      html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+      html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+      html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+        '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      return html;
+    }
 
-  function renderMarkdown(text) {
-    // Split out fenced code blocks first so their content is never formatted.
-    var parts = String(text || '').split(/```/);
-    var out = [];
-    for (var i = 0; i < parts.length; i++) {
-      var part = parts[i];
-      if (i % 2 === 1) {
-        var code = part.replace(/^[a-zA-Z0-9+#-]*\n/, '');
-        out.push('<pre><code>' + escapeHtml(code.replace(/\n$/, '')) + '</code></pre>');
-        continue;
-      }
-      var lines = part.split('\n');
-      var listType = null;
-      for (var j = 0; j < lines.length; j++) {
-        var line = lines[j];
-        var heading = line.match(/^(#{1,4})\s+(.*)$/);
-        var ulItem = line.match(/^\s*[-*•]\s+(.*)$/);
-        var olItem = line.match(/^\s*\d+[.)]\s+(.*)$/);
+    function renderMarkdown(text) {
+      // Split out fenced code blocks first so their content is never formatted.
+      var parts = String(text || '').split(/```/);
+      var out = [];
+      for (var i = 0; i < parts.length; i++) {
+        var part = parts[i];
+        if (i % 2 === 1) {
+          var code = part.replace(/^[a-zA-Z0-9+#-]*\n/, '');
+          out.push('<pre><code>' + escapeHtml(code.replace(/\n$/, '')) + '</code></pre>');
+          continue;
+        }
+        var lines = part.split('\n');
+        var listType = null;
         var closeList = function () {
           if (listType) { out.push('</' + listType + '>'); listType = null; }
         };
-        if (heading) {
-          closeList();
-          var level = Math.min(heading[1].length + 2, 6);
-          out.push('<h' + level + '>' + renderInline(heading[2]) + '</h' + level + '>');
-        } else if (ulItem || olItem) {
-          var want = ulItem ? 'ul' : 'ol';
-          if (listType !== want) {
+        for (var j = 0; j < lines.length; j++) {
+          var line = lines[j];
+          var heading = line.match(/^(#{1,4})\s+(.*)$/);
+          var ulItem = line.match(/^\s*[-*•]\s+(.*)$/);
+          var olItem = line.match(/^\s*\d+[.)]\s+(.*)$/);
+          if (heading) {
             closeList();
-            out.push('<' + want + '>');
-            listType = want;
+            var level = Math.min(heading[1].length + 2, 6);
+            out.push('<h' + level + '>' + renderInline(heading[2]) + '</h' + level + '>');
+          } else if (ulItem || olItem) {
+            var want = ulItem ? 'ul' : 'ol';
+            if (listType !== want) {
+              closeList();
+              out.push('<' + want + '>');
+              listType = want;
+            }
+            out.push('<li>' + renderInline((ulItem || olItem)[1]) + '</li>');
+          } else if (line.trim() === '') {
+            closeList();
+          } else {
+            closeList();
+            out.push('<p>' + renderInline(line) + '</p>');
           }
-          out.push('<li>' + renderInline((ulItem || olItem)[1]) + '</li>');
-        } else if (line.trim() === '') {
-          closeList();
-        } else {
-          closeList();
-          out.push('<p>' + renderInline(line) + '</p>');
         }
+        closeList();
       }
-      if (listType) { out.push('</' + listType + '>'); listType = null; }
-    }
-    return out.join('\n');
-  }
-
-  /* ---------- chat UI ---------- */
-
-  function scrollToBottom() {
-    messagesEl.scrollTop = messagesEl.scrollHeight;
-  }
-
-  function clearEmptyState() {
-    var empty = messagesEl.querySelector('.empty-state');
-    if (empty) empty.remove();
-  }
-
-  function appendMessage(role, text) {
-    clearEmptyState();
-    var item = document.createElement('div');
-    item.className = 'ask-message ask-' + role;
-    var bubble = document.createElement('div');
-    bubble.className = 'ask-bubble';
-    if (role === 'assistant') {
-      bubble.innerHTML = renderMarkdown(text);
-    } else {
-      bubble.textContent = text;
-    }
-    item.appendChild(bubble);
-    messagesEl.appendChild(item);
-    scrollToBottom();
-    return bubble;
-  }
-
-  function appendNote(text) {
-    clearEmptyState();
-    var note = document.createElement('div');
-    note.className = 'ask-note';
-    note.textContent = text;
-    messagesEl.appendChild(note);
-    scrollToBottom();
-  }
-
-  function renderSources(bubble, sources) {
-    if (!sources.length) return;
-    var wrap = document.createElement('div');
-    wrap.className = 'ask-sources';
-    var label = document.createElement('span');
-    label.className = 'ask-sources-label';
-    label.textContent = strings.sources || 'Sources';
-    wrap.appendChild(label);
-    for (var i = 0; i < sources.length; i++) {
-      var chip = document.createElement('a');
-      chip.className = 'ask-source-chip';
-      chip.href = basePath + '/entry/' + sources[i].id + '/';
-      chip.textContent = sources[i].name;
-      chip.title = sources[i].id;
-      wrap.appendChild(chip);
-    }
-    bubble.appendChild(wrap);
-    scrollToBottom();
-  }
-
-  function setStreaming(on) {
-    streaming = on;
-    sendBtn.classList.toggle('hidden', on);
-    stopBtn.classList.toggle('hidden', !on);
-    input.disabled = on;
-    if (!on) input.focus();
-  }
-
-  async function handleSubmit() {
-    var question = input.value.trim();
-    if (!question || streaming) return;
-
-    var cfg = getConfig();
-    if (!cfg.apiKey) {
-      settingsPanel.classList.remove('hidden');
-      appendNote(strings.noKey || 'Please configure your API key first.');
-      return;
+      return out.join('\n');
     }
 
-    appendMessage('user', question);
-    input.value = '';
-    setStreaming(true);
-    abortController = new AbortController();
-    var bubble = appendMessage('assistant', strings.thinking || '…');
+    /* ---------- chat UI ---------- */
 
-    try {
-      var retrieved = await retrieve(question);
-      if (!retrieved.length) {
-        bubble.innerHTML = renderMarkdown(strings.noContext || '');
-        history.push({ role: 'user', content: question });
-        history.push({ role: 'assistant', content: strings.noContext || '' });
+    function scrollToBottom() {
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function clearEmptyState() {
+      var empty = messagesEl.querySelector('.empty-state');
+      if (empty) empty.remove();
+    }
+
+    function appendMessage(role, text) {
+      clearEmptyState();
+      var item = el('div', 'ask-message ask-' + role);
+      var bubble = el('div', 'ask-bubble');
+      if (role === 'assistant') {
+        bubble.innerHTML = renderMarkdown(text);
+      } else {
+        bubble.textContent = text;
+      }
+      item.appendChild(bubble);
+      messagesEl.appendChild(item);
+      scrollToBottom();
+      return bubble;
+    }
+
+    function appendNote(text) {
+      clearEmptyState();
+      messagesEl.appendChild(el('div', 'ask-note', text));
+      scrollToBottom();
+    }
+
+    function recordFocus(names) {
+      lastFocusNames = names.filter(Boolean).slice(0, 3);
+    }
+
+    function renderSources(bubble, sources) {
+      if (!sources.length) return;
+      var wrap = el('div', 'ask-sources');
+      wrap.appendChild(el('span', 'ask-sources-label', strings.sources || 'Sources'));
+
+      if (mode === 'panel') {
+        var allBtn = el('button', 'ask-highlight-all', strings.highlightAll || 'Highlight all in graph');
+        allBtn.type = 'button';
+        allBtn.addEventListener('click', function () {
+          recordFocus(sources.map(function (s) { return s.name; }));
+          var ids = sources.map(function (s) { return s.id; });
+          if (opts.onHighlightAll) opts.onHighlightAll(ids);
+          else if (opts.onSourceClick) ids.forEach(function (id) { opts.onSourceClick(id, null); });
+        });
+        wrap.appendChild(allBtn);
+      }
+
+      sources.forEach(function (s) {
+        if (mode === 'panel') {
+          // Chip body highlights the node in the graph; the ↗ link opens the
+          // entry page.
+          var chip = el('span', 'ask-source-chip ask-source-chip-btn');
+          var nameBtn = el('button', 'ask-source-name', s.name);
+          nameBtn.type = 'button';
+          nameBtn.title = s.id;
+          nameBtn.addEventListener('click', function (ev) {
+            recordFocus([s.name]);
+            if (opts.onSourceClick) opts.onSourceClick(s.id, ev);
+          });
+          var openLink = el('a', 'ask-source-open', '↗');
+          openLink.href = basePath + '/entry/' + s.id + '/';
+          openLink.title = strings.openEntry || 'Open entry';
+          chip.appendChild(nameBtn);
+          chip.appendChild(openLink);
+          wrap.appendChild(chip);
+        } else {
+          var link = el('a', 'ask-source-chip', s.name);
+          link.href = basePath + '/entry/' + s.id + '/';
+          link.title = s.id;
+          wrap.appendChild(link);
+        }
+      });
+      bubble.appendChild(wrap);
+      scrollToBottom();
+    }
+
+    function setStreaming(on) {
+      streaming = on;
+      sendBtn.classList.toggle('hidden', on);
+      stopBtn.classList.toggle('hidden', !on);
+      input.disabled = on;
+      if (!on) input.focus();
+    }
+
+    async function handleSubmit() {
+      var question = input.value.trim();
+      if (!question || streaming) return;
+
+      var cfg = getConfig();
+      if (!cfg.apiKey) {
+        settingsPanel.classList.remove('hidden');
+        appendNote(strings.noKey || 'Please configure your API key first.');
         return;
       }
 
-      var corpus = await ensureCorpus();
-      var contextParts = [];
-      var sources = [];
-      for (var i = 0; i < retrieved.length; i++) {
-        var rec = corpus[retrieved[i].id];
-        if (!rec) continue;
-        contextParts.push(entryContext(rec));
-        sources.push({ id: rec.id, name: rec.name || rec.id });
-      }
+      appendMessage('user', question);
+      input.value = '';
+      setStreaming(true);
+      abortController = new AbortController();
+      var bubble = appendMessage('assistant', strings.thinking || '…');
 
-      var messages = [{ role: 'system', content: prompt.system }]
-        .concat(history.slice(-MAX_HISTORY_MESSAGES))
-        .concat([{ role: 'user', content: prompt.wrap(contextParts.join('\n\n---\n\n'), question) }]);
+      try {
+        var retrieved = await retrieve(question);
+        if (!retrieved.length) {
+          bubble.innerHTML = renderMarkdown(strings.noContext || '');
+          history.push({ role: 'user', content: question });
+          history.push({ role: 'assistant', content: strings.noContext || '' });
+          return;
+        }
 
-      var answer = await streamChat(cfg, messages, function (text) {
-        bubble.innerHTML = renderMarkdown(text);
+        var corpus = await ensureCorpus();
+        var contextParts = [];
+        var sources = [];
+        for (var i = 0; i < retrieved.length; i++) {
+          var rec = corpus[retrieved[i].id];
+          if (!rec) continue;
+          contextParts.push(entryContext(rec));
+          sources.push({ id: rec.id, name: rec.name || rec.id });
+        }
+
+        var userContent = prompt.wrap(contextParts.join('\n\n---\n\n'), question);
+        // Panel mode: tell the model which entries are currently highlighted,
+        // so follow-ups like "and their common neighbors?" make sense.
+        if (mode === 'panel' && lastFocusNames.length) {
+          userContent = (strings.focusPrefix || 'Current graph focus: ') +
+            lastFocusNames.join(', ') + '\n' + userContent;
+        }
+
+        var messages = [{ role: 'system', content: prompt.system }]
+          .concat(history.slice(-MAX_HISTORY_MESSAGES))
+          .concat([{ role: 'user', content: userContent }]);
+
+        var answer = await streamChat(cfg, messages, function (text) {
+          bubble.innerHTML = renderMarkdown(text);
+          scrollToBottom();
+        }, abortController.signal);
+
+        bubble.innerHTML = renderMarkdown(answer);
+        renderSources(bubble, sources);
+        history.push({ role: 'user', content: question });
+        history.push({ role: 'assistant', content: answer });
+      } catch (err) {
+        if (err && err.name === 'AbortError') {
+          bubble.innerHTML += '<p class="ask-stopped">' + escapeHtml(strings.stopped || '(stopped)') + '</p>';
+        } else {
+          bubble.innerHTML = '<p class="ask-error">' + escapeHtml(humanError(err)) + '</p>';
+        }
+      } finally {
+        setStreaming(false);
         scrollToBottom();
-      }, abortController.signal);
-
-      bubble.innerHTML = renderMarkdown(answer);
-      renderSources(bubble, sources);
-      history.push({ role: 'user', content: question });
-      history.push({ role: 'assistant', content: answer });
-    } catch (err) {
-      if (err && err.name === 'AbortError') {
-        bubble.innerHTML += '<p class="ask-stopped">' + escapeHtml(strings.stopped || '(stopped)') + '</p>';
-      } else {
-        bubble.innerHTML = '<p class="ask-error">' + escapeHtml(humanError(err)) + '</p>';
       }
-    } finally {
-      setStreaming(false);
-      scrollToBottom();
     }
-  }
 
-  /* ---------- wiring ---------- */
+    /* ---------- wiring ---------- */
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    handleSubmit();
-  });
-
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       handleSubmit();
-    }
-  });
+    });
 
-  stopBtn.addEventListener('click', function () {
-    if (abortController) abortController.abort();
-  });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) {
+        e.preventDefault();
+        handleSubmit();
+      }
+    });
 
-  settingsToggle.addEventListener('click', function () {
-    settingsPanel.classList.toggle('hidden');
-    if (settingsStatus) settingsStatus.textContent = '';
-  });
-  providerSel.addEventListener('change', onProviderChange);
-  saveBtn.addEventListener('click', saveSettings);
-  clearBtn.addEventListener('click', clearSettings);
+    stopBtn.addEventListener('click', function () {
+      if (abortController) abortController.abort();
+    });
 
-  loadSettingsForm();
+    settingsToggle.addEventListener('click', function () {
+      settingsPanel.classList.toggle('hidden');
+      settingsStatus.textContent = '';
+    });
+    providerSel.addEventListener('change', onProviderChange);
+    saveBtn.addEventListener('click', saveSettings);
+    clearBtn.addEventListener('click', clearSettings);
+
+    loadSettingsForm();
+  }
+
+  window.KGAsk = { mount: mount };
+
+  // Auto-mount on the standalone /ask/ page; the graph page mounts explicitly.
+  var autoRoot = document.getElementById('ask-root');
+  if (autoRoot && window.KGSearch) {
+    mount(autoRoot, { mode: 'fullPage' });
+  }
 })();

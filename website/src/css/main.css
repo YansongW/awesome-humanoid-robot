@@ -2279,3 +2279,139 @@ a:hover { text-decoration: underline; }
   font-size: 0.85rem;
   color: var(--color-success);
 }
+
+/* Graph page: floating ask panel (Graph + Chat) */
+.graph-ask-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 500;
+  padding: 0.7rem 1.3rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: background 0.2s;
+}
+
+.graph-ask-toggle:hover { background: var(--color-accent-hover); }
+
+.graph-ask-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 500;
+  width: min(400px, 92vw);
+  height: min(600px, 72vh);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.graph-ask-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 600;
+}
+
+.graph-ask-collapse {
+  padding: 0 0.3rem;
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.graph-ask-collapse:hover { color: var(--color-text); }
+
+.graph-ask-panel .ask-root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+}
+
+.graph-ask-panel .ask-messages {
+  flex: 1;
+  min-height: 0;
+  max-height: none;
+  padding: 0.85rem;
+  border: none;
+  border-radius: 0;
+}
+
+.graph-ask-panel .ask-form {
+  margin-top: 0;
+  padding: 0.6rem 0.75rem 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-raised);
+}
+
+.graph-ask-panel .ask-actions { padding-bottom: 0.6rem; }
+
+.graph-ask-panel .ask-settings {
+  margin: 0.5rem 0.75rem 0.75rem;
+  max-height: 55%;
+  overflow-y: auto;
+}
+
+.graph-ask-panel .ask-bubble { font-size: 0.9rem; }
+
+/* Panel-mode source chips: name highlights in graph, ↗ opens the entry. */
+.ask-highlight-all {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  background: var(--color-accent-ghost);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ask-highlight-all:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.ask-source-chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding-right: 0.4rem;
+}
+
+.ask-source-name {
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.ask-source-chip:hover .ask-source-name { color: var(--color-accent); }
+
+.ask-source-open {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.ask-source-open:hover { color: var(--color-accent); }
