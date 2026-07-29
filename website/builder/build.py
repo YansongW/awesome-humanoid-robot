@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT))
 
 from website.builder.loader import KGStore
+from website.builder.qa_corpus import build_qa_corpus
 from website.builder.renderer import Renderer
 from website.builder.search_index import build_cluster_data, build_relations_data, build_search_index, build_subgraph_data
 from website.builder.wiki_loader import build_roadmap_pages, build_roadmap_tree, build_wiki_pages, build_wiki_tree
@@ -52,6 +53,7 @@ def build_language(
     print("Rendering static pages...")
     renderer = Renderer(store, lang, dist_dir)
     renderer.render_all(search_index, relations_data, cluster_data, stats, wiki_pages, subgraphs, wiki_tree, roadmap_pages, roadmap_tree)
+    renderer.write_json_data(build_qa_corpus(store), "qa-corpus.json")
 
 
 def main() -> int:

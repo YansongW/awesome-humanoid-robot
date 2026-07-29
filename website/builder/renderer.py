@@ -121,6 +121,33 @@ UI_STRINGS = {
         "entries_of_type": "{count} 个实体",
         "back_to_top": "回到顶部",
         "roadmap_label": "0→1 路线图定位",
+        "nav_ask": "AI 问答",
+        "ask_title": "AI 问答",
+        "ask_subtitle": "基于站内知识图谱的检索增强问答。自带 API key（BYOK），浏览器直连服务商，零后端。",
+        "ask_input_placeholder": "输入你的问题，例如：触觉传感器有哪些主流方案？",
+        "ask_send": "发送",
+        "ask_stop": "停止",
+        "ask_settings": "设置",
+        "ask_settings_title": "API 设置",
+        "ask_provider": "服务商",
+        "ask_provider_custom": "自定义（OpenAI 兼容）",
+        "ask_base_url": "Base URL",
+        "ask_model": "模型",
+        "ask_save": "保存",
+        "ask_clear": "清除已保存配置",
+        "ask_privacy_note": "你的 API key 仅保存在本浏览器的 localStorage 中，请求由浏览器直连服务商，不经过本站服务器。",
+        "ask_empty": "向知识图谱提问吧。回答将基于站内知识卡片生成，并附参考条目。",
+        "ask_thinking": "正在思考…",
+        "ask_no_key": "请先在「设置」中填写 API key。",
+        "ask_no_context": "知识图谱中没有找到与问题相关的条目，请换个更具体的关键词试试。",
+        "ask_sources": "参考条目",
+        "ask_stopped": "（已停止）",
+        "ask_error_network": "网络错误：无法连接服务商，请检查网络或 Base URL。",
+        "ask_error_auth": "认证失败（401）：请检查 API key 是否正确。",
+        "ask_error_rate": "请求受限（429）：已触发服务商限流，请稍后再试。",
+        "ask_error_generic": "请求失败：{detail}",
+        "ask_settings_saved": "已保存。",
+        "ask_settings_cleared": "已清除。",
     },
     "en": {
         "site_title": "Humanoid Robot Knowledge Graph",
@@ -216,6 +243,33 @@ UI_STRINGS = {
         "entries_of_type": "{count} entries",
         "back_to_top": "Back to top",
         "roadmap_label": "0→1 Roadmap",
+        "nav_ask": "AI Q&A",
+        "ask_title": "AI Q&A",
+        "ask_subtitle": "Retrieval-augmented Q&A over this knowledge graph. Bring your own API key (BYOK) — your browser talks to the provider directly, no backend involved.",
+        "ask_input_placeholder": "Ask a question, e.g. What are the mainstream tactile sensor approaches?",
+        "ask_send": "Send",
+        "ask_stop": "Stop",
+        "ask_settings": "Settings",
+        "ask_settings_title": "API Settings",
+        "ask_provider": "Provider",
+        "ask_provider_custom": "Custom (OpenAI-compatible)",
+        "ask_base_url": "Base URL",
+        "ask_model": "Model",
+        "ask_save": "Save",
+        "ask_clear": "Clear saved config",
+        "ask_privacy_note": "Your API key is stored only in this browser's localStorage. Requests go directly from your browser to the provider — they never pass through this site's servers.",
+        "ask_empty": "Ask the knowledge graph anything. Answers are grounded in the on-site knowledge cards, with source entries attached.",
+        "ask_thinking": "Thinking…",
+        "ask_no_key": "Please enter your API key in “Settings” first.",
+        "ask_no_context": "No entries related to your question were found in the knowledge graph. Try more specific keywords.",
+        "ask_sources": "Sources",
+        "ask_stopped": "(stopped)",
+        "ask_error_network": "Network error: could not reach the provider. Check your connection or Base URL.",
+        "ask_error_auth": "Authentication failed (401): please check your API key.",
+        "ask_error_rate": "Rate limited (429): the provider is throttling requests — please try again later.",
+        "ask_error_generic": "Request failed: {detail}",
+        "ask_settings_saved": "Saved.",
+        "ask_settings_cleared": "Cleared.",
     },
     "ko": {
         "site_title": "휴로봇 지식 그래프",
@@ -311,6 +365,33 @@ UI_STRINGS = {
         "entries_of_type": "{count}개 개체",
         "back_to_top": "맨 위로",
         "roadmap_label": "0→1 로드맵",
+        "nav_ask": "AI 문답",
+        "ask_title": "AI 문답",
+        "ask_subtitle": "이 지식 그래프 기반의 검색 증강 문답입니다. API key를 직접 입력하면(BYOK) 브라우저가 제공사에 직접 연결하며 백엔드를 거치지 않습니다.",
+        "ask_input_placeholder": "질문을 입력하세요. 예: 촉각 센서의 주류 방식에는 어떤 것이 있나요?",
+        "ask_send": "보내기",
+        "ask_stop": "중지",
+        "ask_settings": "설정",
+        "ask_settings_title": "API 설정",
+        "ask_provider": "제공자",
+        "ask_provider_custom": "사용자 지정(OpenAI 호환)",
+        "ask_base_url": "Base URL",
+        "ask_model": "모델",
+        "ask_save": "저장",
+        "ask_clear": "저장된 설정 지우기",
+        "ask_privacy_note": "API key는 이 브라우저의 localStorage에만 저장되며, 요청은 브라우저에서 제공사로 직접 전송되어 본 사이트 서버를 거치지 않습니다.",
+        "ask_empty": "지식 그래프에 질문해 보세요. 답변은 사이트 내 지식 카드를 근거로 생성되며 참고 개체가 함께 표시됩니다.",
+        "ask_thinking": "생각 중…",
+        "ask_no_key": "먼저 '설정'에서 API key를 입력하세요.",
+        "ask_no_context": "지식 그래프에서 질문과 관련된 개체를 찾지 못했습니다. 더 구체적인 키워드로 시도해 보세요.",
+        "ask_sources": "참고 개체",
+        "ask_stopped": "(중지됨)",
+        "ask_error_network": "네트워크 오류: 제공사에 연결할 수 없습니다. 네트워크 또는 Base URL을 확인하세요.",
+        "ask_error_auth": "인증 실패(401): API key를 확인하세요.",
+        "ask_error_rate": "요청 제한(429): 제공사의 속도 제한에 걸렸습니다. 잠시 후 다시 시도하세요.",
+        "ask_error_generic": "요청 실패: {detail}",
+        "ask_settings_saved": "저장되었습니다.",
+        "ask_settings_cleared": "지워졌습니다.",
     },
 }
 
@@ -592,6 +673,15 @@ class Renderer:
         ensure_dir(search_dir)
         (search_dir / "index.html").write_text(html, encoding="utf-8")
 
+    def render_ask_page(self) -> None:
+        template = self.env.get_template("ask.html")
+        html = template.render(**self._ctx(
+            title=f"{self.ui['ask_title']} · {self.ui['site_title']}",
+        ))
+        ask_dir = self.dist_dir / "ask"
+        ensure_dir(ask_dir)
+        (ask_dir / "index.html").write_text(html, encoding="utf-8")
+
     def render_graph_page(self, stats: dict) -> None:
         template = self.env.get_template("graph.html")
         domains = sorted({d for e in self.store.entries.values() for d in e.domains})
@@ -740,6 +830,7 @@ class Renderer:
 
         _url("/", "1.0")
         _url("/search/", "0.8")
+        _url("/ask/", "0.8")
         _url("/graph/", "0.8")
         _url("/wiki/", "0.9")
         _url("/roadmap/", "0.9")
@@ -772,6 +863,7 @@ class Renderer:
         self.render_home(stats)
         self.render_about(stats)
         self.render_search_page()
+        self.render_ask_page()
         self.render_graph_page(stats)
         self.render_404()
         self.render_types_pages()
