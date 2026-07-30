@@ -446,6 +446,7 @@ def write_report(n_pages, checked_urls):
             if len(msgs) > limit:
                 lines.append(f"- … and {len(msgs) - limit} more")
             lines.append("")
+    os.makedirs(os.path.dirname(REPORT), exist_ok=True)
     with open(REPORT, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines))
 
