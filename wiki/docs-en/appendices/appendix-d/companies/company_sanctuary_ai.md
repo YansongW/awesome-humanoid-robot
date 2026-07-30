@@ -16,7 +16,7 @@
 | **Website** | [https://www.sanctuary.ai](https://www.sanctuary.ai) |
 | **Supply Chain Role** | General-purpose humanoid robots, embodied intelligence, AI systems |
 | **Enterprise Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Sanctuary AI official website, The Robot Report, third-party specification summaries |
 
 ## Company Profile

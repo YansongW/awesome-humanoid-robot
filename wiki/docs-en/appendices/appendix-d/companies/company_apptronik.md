@@ -16,7 +16,7 @@
 | **Website** | [https://apptronik.com](https://apptronik.com) |
 | **Supply Chain Role** | General-purpose humanoid robots, NASA collaboration background |
 | **Enterprise Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Apptronik official website, Apollo product page, public funding and collaboration reports |
 
 ## Company Overview

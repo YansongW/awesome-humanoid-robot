@@ -16,7 +16,7 @@
 | **Website** | [https://www.booster.tech](https://www.booster.tech) |
 | **Supply Chain Role** | OEM / Humanoid Robot Development Platform |
 | **Enterprise Attributes** | Tsinghua background, developer/competition platform, RoboCup champion |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Booster official website, Bipedal documentation, STAR Market Daily/36Kr |
 
 ## Company Overview

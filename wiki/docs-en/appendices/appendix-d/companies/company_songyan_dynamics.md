@@ -16,7 +16,7 @@
 | **Website** | [https://noetixrobotics.com](https://noetixrobotics.com) |
 | **Supply Chain Role** | OEM / General-purpose Humanoid Robot + Bionic Robot |
 | **Enterprise Attributes** | High-dynamic motion, small size, low cost, Tsinghua background |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Songyan Dynamics official website, Baidu Baike, OFweek/Weikehao |
 
 ## Company Profile

@@ -16,7 +16,7 @@
 | **Website** | [https://agilityrobotics.com](https://agilityrobotics.com) |
 | **Supply Chain Role** | Logistics humanoid robot OEM, RaaS |
 | **Enterprise Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Agility Robotics official website, Digit product page, public deployment reports |
 
 ## Company Overview

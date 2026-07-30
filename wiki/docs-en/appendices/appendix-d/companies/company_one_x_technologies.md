@@ -16,7 +16,7 @@
 | **Website** | [https://www.1x.tech](https://www.1x.tech) |
 | **Supply Chain Role** | Consumer-grade humanoid robots, embodied learning |
 | **Enterprise Attribute** | Startup (invested by OpenAI, etc.) |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | 1X Technologies official website, public product pages, third-party specification summaries |
 
 ## Company Overview

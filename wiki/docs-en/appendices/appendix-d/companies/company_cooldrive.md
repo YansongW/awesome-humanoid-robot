@@ -16,7 +16,7 @@
 | **Official Website** | [https://www.cooldrive.com.cn](https://www.cooldrive.com.cn) |
 | **Supply Chain Role** | Servo Drive / Motion Control / Core Components for Humanoid Robots |
 | **Enterprise Attribute** | Domestic Brand, Representative of High-End Servo Drives |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | CoolDrive official website, product manuals, WAIC 2026 reports, public press releases |
 
 ## Company Profile

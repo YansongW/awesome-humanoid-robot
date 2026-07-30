@@ -33,12 +33,12 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02332v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02332v1. 2026-07-29 修正：sources.url 裸 arXiv ID 补全为 https://arxiv.org/abs/ 完整 URL（事实性错误修正，manifest 见 .staging/source_url_fix_manifest.md）。
 sources:
 - id: src_001
   type: website
   title: 'HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion Guidance and Windowed Payload Curriculum'
-  url: '2607.02332'
+  url: 'https://arxiv.org/abs/2607.02332'
   date: '2026'
   accessed_at: '2026-07-14'
 ---

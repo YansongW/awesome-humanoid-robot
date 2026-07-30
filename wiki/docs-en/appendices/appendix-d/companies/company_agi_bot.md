@@ -16,7 +16,7 @@
 | **Website** | [https://www.zhiyuan-robot.com](https://www.zhiyuan-robot.com) |
 | **Supply Chain Role** | Complete Machine OEM / General-Purpose Humanoid Robot |
 | **Company Type** | Startup Unicorn, Leader in Embodied Intelligence |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | AgiBot Official Website, IT Home, Robothub, Public Reports |
 
 ## Company Profile

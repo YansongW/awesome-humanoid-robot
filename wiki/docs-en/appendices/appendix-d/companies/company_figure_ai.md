@@ -16,7 +16,7 @@
 | **Website** | [https://www.figure.ai](https://www.figure.ai) |
 | **Supply Chain Role** | Humanoid Robot OEM, Embodied Intelligence |
 | **Enterprise Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Figure AI official website, public funding and deployment reports, third-party specification compilations |
 
 ## Company Overview

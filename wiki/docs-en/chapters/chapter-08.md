@@ -6699,8 +6699,8 @@ ISO 13849 defines the safety function categories (Category) for emergency stops,
 
 | Category | Structural Requirements | Diagnostic Coverage (DC) | Typical Implementation |
 |---|---|---|---|
-| Category B | Single channel | None | Normal stop button |
-| Category 1 | Single channel + high-reliability components | None | High MTTFd single channel |
+| Category B | Single channel | — | Normal stop button |
+| Category 1 | Single channel + high-reliability components | — | High MTTFd single channel |
 | Category 2 | Single channel + periodic testing | Low | Single channel with self-test |
 | Category 3 | Dual channel, single-fault tolerance | Medium | Dual-channel emergency stop, cross-monitoring |
 | Category 4 | Dual channel, single-fault tolerance with diagnosis of most faults | High | Dual channel + high DC |

@@ -403,7 +403,7 @@ The roadmap should be testable by observable indicators. It is recommended to co
 | Energy | Actual Task Endurance | ~2 hours | 4–6 hours | Shift-Level (8 hours) |
 | Intelligence | Task Family Generalization (Success Rate for New Tasks in Same Family) | <70% | ≥90% | ≥95% (Including Long-Horizon) |
 | Industry | Global Annual Shipments | Tens of Thousands | Hundreds of Thousands | Millions |
-| Standards | Humanoid-Specific Safety Standards | None | Submitted for Approval/First Edition | Mature Certification System |
+| Standards | Humanoid-Specific Safety Standards | — | Submitted for Approval/First Edition | Mature Certification System |
 
 The numbers in the table are **target ranges** synthesized from industry analyst estimates and engineering extrapolations, intended to depict magnitudes rather than precise commitments.
 

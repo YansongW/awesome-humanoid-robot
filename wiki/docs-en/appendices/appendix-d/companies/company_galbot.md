@@ -16,7 +16,7 @@
 | **Website** | [https://www.galbot.com](https://www.galbot.com) |
 | **Supply Chain Role** | Complete Machine OEM / Wheeled Dual-Arm Humanoid Robot |
 | **Enterprise Attribute** | Startup, Peking University Background, Embodied Intelligence Large Model |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Galbot Official Website, User Manual, East Money Information, WAIC Reports |
 
 ## Company Profile

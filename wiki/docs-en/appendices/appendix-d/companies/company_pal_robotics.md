@@ -16,7 +16,7 @@
 | **Website** | [https://pal-robotics.com](https://pal-robotics.com) |
 | **Supply Chain Role** | Research humanoid robots, open-source ROS platform, service robots |
 | **Company Type** | Private company |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | PAL Robotics official website, TALOS product page, official datasheet |
 
 ## Company Overview

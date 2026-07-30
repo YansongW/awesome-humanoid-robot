@@ -16,7 +16,7 @@
 | **Website** | [https://www.elite-robot.com](https://www.elite-robot.com) |
 | **Supply Chain Role** | Complete Machine OEM / Collaborative Robots / Humanoid Robot Components |
 | **Enterprise Type** | Domestic Brand, Core Collaborative Robot Manufacturer |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Elite Robot official website, product manuals, WAIC 2026 reports, public press releases |
 
 ## Company Overview

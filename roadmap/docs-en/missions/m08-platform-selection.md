@@ -51,9 +51,9 @@ Then use the **five-item self-check list** to find your match:
 | Budget ceiling | < $3.5k | Upkie |
 | Budget ceiling | $3.5–7k | ToddlerBot or Berkeley (decided by rows below) |
 | Weekly available hours | < 5 h | ToddlerBot (most hand-holding documentation); Berkeley printing ~1 week + assembly ~3 days (berkeley-humanoid-lite.md) |
-| 3D printer | None | Use online printing service; note Upkie requires 60+ hours printing (upkie.md) |
+| 3D printer | — | Use online printing service; note Upkie requires 60+ hours printing (upkie.md) |
 | GPU | No NVIDIA GPU | MuJoCo route (ToddlerBot / OpenLoong examples); Isaac Lab route requires RTX-class GPU |
-| Soldering experience | None | Servo bus platform (ToddlerBot); Berkeley requires soldering CAN, flashing firmware |
+| Soldering experience | — | Servo bus platform (ToddlerBot); Berkeley requires soldering CAN, flashing firmware |
 
 [Why] The core KPI for the first biped is "getting it to walk," not achieving everything at once. The order of the decision tree is deliberate: budget is a hard constraint, so it's cut first; hands-on ability is the main cause of failure, so it's next; the goal is only used to sort among the remaining options—those who choose in reverse order (looking at the goal first) mostly get stuck at "can afford but can't build."
 

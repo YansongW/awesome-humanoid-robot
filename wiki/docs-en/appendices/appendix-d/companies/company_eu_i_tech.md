@@ -16,7 +16,7 @@
 | **Website** | [https://eyoubot.com](https://eyoubot.com) |
 | **Supply Chain Role** | Motors & Drives / Integrated Servo Joint Modules |
 | **Company Type** | Tier 1 Supplier of Humanoid Robot Joint Modules |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | EYouBot official website, OFweek, Sohu/OFweek 2026 new product reports |
 
 ## Company Profile

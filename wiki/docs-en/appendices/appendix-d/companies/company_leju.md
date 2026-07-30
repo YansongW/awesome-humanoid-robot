@@ -16,7 +16,7 @@
 | **Official Website** | [https://www.lejurobot.com](https://www.lejurobot.com) |
 | **Supply Chain Role** | Full machine OEM / OpenHarmony humanoid robots |
 | **Enterprise Attributes** | HIT background, open-source ecosystem, Huawei partner |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Leju official website, IT Home, 36Kr, Robot Online |
 
 ## Company Profile

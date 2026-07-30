@@ -16,7 +16,7 @@
 | **Website** | [https://scale.com](https://scale.com) |
 | **Supply Chain Role** | AI/Robotics Data Annotation, Data Engine, Model Evaluation, RLHF |
 | **Company Type** | Startup (Unlisted) |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Scale AI Official Website, Scale Blog, Public Funding Reports |
 
 ## Company Overview

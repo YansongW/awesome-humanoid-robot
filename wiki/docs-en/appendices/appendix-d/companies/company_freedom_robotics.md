@@ -16,7 +16,7 @@
 | **Website** | [https://freedomrobotics.ai](https://freedomrobotics.ai) |
 | **Supply Chain Role** | Robot remote control, fleet management, software development infrastructure |
 | **Enterprise Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Freedom Robotics official website, The Robot Report, Built In SF |
 
 ## Company Overview

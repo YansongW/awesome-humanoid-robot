@@ -16,7 +16,7 @@
 | **Website** | [https://www.robotera.com](https://www.robotera.com) |
 | **Supply Chain Role** | Complete Machine OEM / High-Performance General-Purpose Humanoid Robot |
 | **Company Type** | Incubated by the Institute for Interdisciplinary Information Sciences (IIIS), Tsinghua University |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Star1 Official Website, IT Home, Phoenix New Media, Brand 100 Network |
 
 ## Company Profile

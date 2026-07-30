@@ -16,7 +16,7 @@
 | **Website** | [https://www.seer-group.com](https://www.seer-group.com) |
 | **Supply Chain Role** | Computing Platform / Mobile Robot Controller and Embodied Intelligence Controller |
 | **Company Type** | Platform-type embodied intelligent robot company, leading robot controller manufacturer |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | SEER Robotics official website, China Industrial Control Network, Sohu 2026 Review, EEFocus |
 
 ## Company Overview

@@ -16,7 +16,7 @@
 | **Official Website** | [https://rokoko.com](https://rokoko.com) |
 | **Supply Chain Role** | Inertial motion capture, animation data, human-computer interaction data collection |
 | **Enterprise Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Rokoko official website, CGW News, Animation Xpress |
 
 ## Company Overview

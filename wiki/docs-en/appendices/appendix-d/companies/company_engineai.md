@@ -16,7 +16,7 @@
 | **Website** | [https://www.engineai.com.cn](https://www.engineai.com.cn) |
 | **Supply Chain Role** | OEM / General-purpose Humanoid Robot |
 | **Company Attributes** | High-dynamic, Open-source, Anthropomorphic Gait |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | EngineAI Official Website, Official FAQ, Qubit/Robot Lecture Hall |
 
 ## Company Overview

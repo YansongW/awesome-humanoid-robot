@@ -16,7 +16,7 @@
 | **Website** | [https://inorbit.ai](https://inorbit.ai) |
 | **Supply Chain Role** | Robot Operations (RobOps), Fleet Orchestration, Remote Operations |
 | **Enterprise Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | InOrbit website, Automate.org, Gartner Cool Vendor report |
 
 ## Company Profile

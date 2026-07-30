@@ -16,7 +16,7 @@
 | **Website** | [https://www.taung.cn](https://www.taung.cn) |
 | **Supply Chain Role** | OEM / Commercial Cleaning Robots |
 | **Enterprise Type** | National High-Tech Enterprise, Commercial Cleaning Robot Company |
-| **Parent/Group** | None |
+| **Parent/Group** | — |
 | **Data Sources** | Taung Intelligence official website, 36Kr, Sina, Robot Lecture Hall |
 
 ## Company Profile

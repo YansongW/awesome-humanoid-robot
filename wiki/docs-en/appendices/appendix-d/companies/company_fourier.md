@@ -16,7 +16,7 @@
 | **Website** | [https://www.fftai.cn](https://www.fftai.cn) |
 | **Supply Chain Role** | OEM / Rehabilitation Robots + General-Purpose Humanoid Robots |
 | **Enterprise Attribute** | Leading rehabilitation robot company expanding into general-purpose robots |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Fourier official website, IT Home, Securities Times, Arterial Network |
 
 ## Company Profile

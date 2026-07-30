@@ -291,10 +291,10 @@ HumanPlus (2024) emphasizes a full-stack "shadowing + imitation" approach: a mon
 | ALOHA | 2023 | Master-slave guiding arms | Dual-arm workstation | Partial (current) | ACT behavior cloning | Low cost, easy to replicate |
 | Mobile ALOHA | 2024 | Master-slave guiding arms + chassis | Mobile dual-arm | Partial | Behavior cloning | Long-horizon mobile manipulation |
 | iCub3 Avatar | 2022 | VR + motion capture suit + force feedback gloves | iCub3 | Full-body multi-point | — | Fully immersive remote embodiment |
-| OmniH2O | 2024 | VR/Motion capture | Unitree H1 | None | Teacher-student RL + BC | Unified teleoperation-autonomous learning |
-| HumanPlus | 2024 | Monocular RGB | 33-DoF humanoid (modified H1) | None | Shadowing + BC | No wearable, high data efficiency |
-| TWIST | 2025 | Motion capture | Unitree G1, Booster T1 | None | RL+BC single whole-body controller | Cross-task coordinated whole-body control |
-| Open-TeleVision | 2024 | VR headset | Dual-arm humanoid upper body | None | ACT/Diffusion policy | Active visual feedback |
+| OmniH2O | 2024 | VR/Motion capture | Unitree H1 | — | Teacher-student RL + BC | Unified teleoperation-autonomous learning |
+| HumanPlus | 2024 | Monocular RGB | 33-DoF humanoid (modified H1) | — | Shadowing + BC | No wearable, high data efficiency |
+| TWIST | 2025 | Motion capture | Unitree G1, Booster T1 | — | RL+BC single whole-body controller | Cross-task coordinated whole-body control |
+| Open-TeleVision | 2024 | VR headset | Dual-arm humanoid upper body | — | ACT/Diffusion policy | Active visual feedback |
 
 ### 17.5.6 Common Lessons from Cases
 

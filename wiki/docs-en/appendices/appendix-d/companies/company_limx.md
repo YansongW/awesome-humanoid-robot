@@ -16,7 +16,7 @@
 | **Website** | [https://www.limxdynamics.com](https://www.limxdynamics.com) |
 | **Supply Chain Role** | Complete Machine OEM / Full-Size General-Purpose Humanoid Robots, Multi-Morphology Robots |
 | **Enterprise Attributes** | Invested by Alibaba/JD.com; Motion Intelligence and Legged Robots |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | LimX Dynamics Official Website, DoNews, IT Home, 36Kr |
 
 ## Company Profile

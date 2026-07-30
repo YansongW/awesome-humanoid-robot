@@ -16,7 +16,7 @@
 | **Website** | [https://formant.io](https://formant.io) |
 | **Supply Chain Role** | Robot data platform, remote operations, fleet management, teleoperation |
 | **Enterprise Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Formant official website, BMW i Ventures investment news, The Robot Report |
 
 ## Company Profile

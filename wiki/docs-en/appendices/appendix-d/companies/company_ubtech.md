@@ -16,7 +16,7 @@
 | **Official Website** | [https://www.ubtrobot.com](https://www.ubtrobot.com) / [commercial.ubtrobot.com](https://www.commercial.ubtrobot.com/) |
 | **Supply Chain Role** | Complete Machine OEM / Industrial & Service Humanoid Robots |
 | **Enterprise Attribute** | Listed Company (HKEX 09880.HK), National-level Specialized and New "Little Giant" |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | UBTECH Official Website, HKEX Announcements, IT Home, WAIC Public Reports |
 
 ## Company Profile

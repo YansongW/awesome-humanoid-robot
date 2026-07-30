@@ -16,7 +16,7 @@
 | **Website** | [https://www.rokae.com](https://www.rokae.com) |
 | **Supply Chain Role** | OEM / Industrial Robots / Collaborative Robots / Humanoid Robot Components |
 | **Enterprise Attribute** | Domestic brand, representative of high-speed and high-precision robots |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | ROKAE official website, product brochures, WAIC 2026 reports, public press releases |
 
 ## Company Overview

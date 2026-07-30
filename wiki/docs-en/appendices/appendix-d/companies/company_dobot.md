@@ -16,7 +16,7 @@
 | **Website** | [https://www.dobot.cn](https://www.dobot.cn) |
 | **Supply Chain Role** | Complete Machine OEM / Collaborative Robots + Humanoid Robots + Teleoperation Training Platform |
 | **Enterprise Attribute** | Leading collaborative robot company extending into embodied intelligence |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Yuejiang official website, Dobot X-Trainer user manual and brochure, 36Kr |
 
 ## Company Overview

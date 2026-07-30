@@ -16,7 +16,7 @@
 | **Website** | [https://x2robot.com](https://x2robot.com) |
 | **Supply Chain Role** | Complete Machine + Large Model / General Wheeled Humanoid Robot + Embodied Intelligence Large Model |
 | **Enterprise Attribute** | End-to-End Embodied Intelligence Large Model WALL-A/B, Software-Hardware Integration |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Xvariable official website, product pages, About Us |
 
 ## Company Profile

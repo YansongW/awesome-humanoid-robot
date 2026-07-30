@@ -16,7 +16,7 @@
 | **Website** | [https://senseglove.com](https://senseglove.com) |
 | **Supply Chain Role** | Force feedback gloves, haptic feedback, teleoperation human-machine interface |
 | **Company Type** | Startup |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | SenseGlove official website, product pages, public reports |
 
 ## Company Profile

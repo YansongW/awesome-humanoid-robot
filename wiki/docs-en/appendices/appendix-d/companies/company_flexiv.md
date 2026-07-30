@@ -16,7 +16,7 @@
 | **Website** | [https://www.flexiv.cn](https://www.flexiv.cn) |
 | **Supply Chain Role** | OEM / Adaptive Robot Manufacturer |
 | **Enterprise Type** | General Intelligent Robot Unicorn |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Flexiv official website, Baidu Baike, China International Industry Fair exhibitor materials, TechNode |
 
 ## Company Profile

@@ -16,7 +16,7 @@
 | **Website** | [https://www.kusaauto.com](https://www.kusaauto.com) |
 | **Supply Chain Role** | OEM / Urban Service Robots |
 | **Company Type** | Urban Service Robot Innovation Enterprise |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Kusa Technology official website, CNR, GSR Ventures, NetEase Hao |
 
 ## Company Profile

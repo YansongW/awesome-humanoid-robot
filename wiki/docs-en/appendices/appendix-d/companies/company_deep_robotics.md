@@ -16,7 +16,7 @@
 | **Website** | [https://www.deeprobotics.cn](https://www.deeprobotics.cn) |
 | **Supply Chain Role** | Complete machine OEM / Quadruped robots + Humanoid robots, Joint modules |
 | **Enterprise Attribute** | Leader in power inspection, specialized legged robots for extreme environments |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | DEEPRobotics official website, public reports, business review of nearly 30 embodied intelligence companies |
 
 ## Company Profile

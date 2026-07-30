@@ -16,7 +16,7 @@
 | **Website** | [https://www.realman-robotics.com](https://www.realman-robotics.com) |
 | **Supply Chain Role** | Complete Machine OEM / Collaborative Robot / Humanoid Robot Components / Ultra-Lightweight Humanoid Robotic Arm |
 | **Company Type** | Domestic brand, specializing in ultra-lightweight humanoid robotic arms |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | RealMan official website, product manuals, WAIC 2026 reports, public press releases |
 
 ## Company Profile

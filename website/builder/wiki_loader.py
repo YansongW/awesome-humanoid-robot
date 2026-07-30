@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import posixpath
 import re
 from pathlib import Path
 from typing import Any
@@ -135,18 +136,30 @@ def build_wiki_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
     return finalize(root)
 
 
-def rewrite_md_links(text: str, prefix: str = "wiki") -> str:
-    """Rewrite relative .md links (e.g. chapters/chapter-01.md#sec) to /<prefix>/ URLs."""
+def rewrite_md_links(text: str, prefix: str = "wiki", page_dir: str = "") -> str:
+    """Rewrite relative .md links to /<prefix>/ URLs.
+
+    Links are resolved against ``page_dir`` — the posix-style directory of the
+    page containing them, relative to the content root — so e.g. a link to
+    ``companies/company_x.md`` inside ``appendices/appendix-d/`` becomes
+    ``/wiki/appendices/appendix-d/companies/company_x/`` (previously the
+    page's own directory was dropped, producing broken root-level URLs).
+    """
 
     def repl(m: re.Match) -> str:
         label, href = m.group(1), m.group(2)
         if href.startswith(("http://", "https://", "#", "/", "mailto:")):
             return m.group(0)
-        mm = re.match(r"^(?:\.\./)*(.+?)\.md(#.*)?$", href)
+        mm = re.match(r"^(.+?)\.md(#.*)?$", href)
         if not mm:
             return m.group(0)
         path, anchor = mm.group(1), mm.group(2) or ""
-        return f"[{label}](/{prefix}/{path}/{anchor})"
+        full = posixpath.normpath(posixpath.join(page_dir, path))
+        # Links escaping the content root keep the previous lenient behavior
+        # (leading "../" segments dropped).
+        while full.startswith("../"):
+            full = full[3:]
+        return f"[{label}](/{prefix}/{full}/{anchor})"
 
     return re.sub(r"(?<!!)\[([^\]]*)\]\(([^)\s]+)\)", repl, text)
 
@@ -191,6 +204,9 @@ def _render_pages(base_dir: Path, prefix: str, page_lang: str = "zh") -> list[di
         # KG entity/relationship files are YAML metadata, not human-readable wiki pages.
         if "kg/relationships" in path.as_posix() or "kg/entities" in path.as_posix():
             continue
+        # Underscore-prefixed files/dirs are authoring templates, not pages.
+        if any(part.startswith("_") for part in path.relative_to(base_dir).parts):
+            continue
         text = path.read_text(encoding="utf-8")
         text = strip_frontmatter(text)
         # Skip files that only contain frontmatter (e.g. stub KG entities) so they
@@ -201,7 +217,8 @@ def _render_pages(base_dir: Path, prefix: str, page_lang: str = "zh") -> list[di
         # TODO: when per-language wiki directories are introduced, filter here.
         # For now all languages share the same wiki source.
         url = slugify_path(path, base_dir, prefix)
-        text = rewrite_md_links(text, prefix)
+        page_dir = path.relative_to(base_dir).parent.as_posix()
+        text = rewrite_md_links(text, prefix, "" if page_dir == "." else page_dir)
         body_html = md.convert(text)
         toc_html = md.toc if "<li>" in (md.toc or "") else ""
         md.reset()
@@ -241,9 +258,27 @@ def _link_prev_next(pages: list[dict[str, Any]]) -> None:
         page["next_page"] = pages[i + 1] if i < len(pages) - 1 else None
 
 
+def _prefix_body_links(pages: list[dict[str, Any]], lang: str) -> None:
+    """Point in-content site links at the current language subtree.
+
+    Markdown links are written root-absolute (/wiki/..., /roadmap/...); on
+    en/ko builds they would otherwise jump to the zh pages. Template chrome
+    already uses the bp prefix — this does the same for rendered bodies.
+    """
+    if lang == "zh":
+        return
+    for page in pages:
+        page["body_html"] = (
+            page["body_html"]
+            .replace('href="/wiki/', f'href="/{lang}/wiki/')
+            .replace('href="/roadmap/', f'href="/{lang}/roadmap/')
+        )
+
+
 def build_wiki_pages(lang: str = "zh") -> list[dict[str, Any]]:
     """Load wiki pages for ``lang`` (zh source overlaid with translated mirrors)."""
     pages = _pages_for_lang("wiki", WIKI_DIR, "wiki", lang)
+    _prefix_body_links(pages, lang)
 
     # Prev/next navigation across substantive pages in reading order:
     # chapters -> appendices -> everything else.
@@ -313,6 +348,7 @@ def build_roadmap_pages(lang: str = "zh") -> list[dict[str, Any]]:
     zh source where available.
     """
     pages = _pages_for_lang("roadmap", ROADMAP_DIR, "roadmap", lang)
+    _prefix_body_links(pages, lang)
 
     def order_key(p: dict[str, Any]) -> tuple[int, str]:
         rel = Path(p["rel"]).with_suffix("").as_posix()

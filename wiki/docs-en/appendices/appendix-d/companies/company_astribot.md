@@ -16,7 +16,7 @@
 | **Website** | [https://www.astribot.com](https://www.astribot.com) |
 | **Supply Chain Role** | OEM / Wheeled Humanoid Robot + Operational AI Robot |
 | **Enterprise Attributes** | Cable-driven transmission, Design for AI, AI Robot Assistant |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Astribot official website, RobotScope, Baidu Baike |
 
 ## Company Profile

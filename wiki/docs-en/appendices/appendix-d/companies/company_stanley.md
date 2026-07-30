@@ -16,7 +16,7 @@
 | **Website** | [https://www.standard-robots.com](https://www.standard-robots.com) |
 | **Supply Chain Role** | Complete Machine OEM / Industrial Intelligent Mobile Robots |
 | **Company Type** | Industrial AMR Solution Provider, National High-Tech Enterprise |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Standard Robots Official Website, Wuxi Release (WAIC 2025 Report), World Robot Games Report |
 
 ## Company Profile

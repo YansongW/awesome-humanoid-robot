@@ -16,7 +16,7 @@
 | **Website** | [https://www.unitree.com](https://www.unitree.com) |
 | **Supply Chain Role** | OEM / Quadruped + Humanoid Robots, Self-developed Joint Motors |
 | **Company Type** | Unicorn, Global Sales Leader in Quadruped Robots |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Unitree Official Website, IT Home, Robozaps, Third-party Product Databases |
 
 ## Company Overview

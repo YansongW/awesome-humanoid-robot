@@ -16,7 +16,7 @@
 | **Website** | [https://www.dmrobot.com](https://www.dmrobot.com) |
 | **Supply Chain Role** | OEM / General-purpose Humanoid Robots |
 | **Company Type** | Startup, Specializing in Tactile Perception and Dexterous Manipulation |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Daimeng official website, Sohu WAIC 2026 report, Lenovo Capital, New Strategy Robot Network |
 
 ## Company Overview

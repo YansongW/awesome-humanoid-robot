@@ -87,6 +87,9 @@ jobs:
       - name: Build static site
         run: python -m website.builder.build
 
+      - name: Audit built site (broken links / template residue)
+        run: python scripts/audit_site_dist.py --report .staging/site_audit/report.md
+
       - name: Add CNAME
         run: echo "kg.rounds-tech.com" > website/dist/CNAME
 

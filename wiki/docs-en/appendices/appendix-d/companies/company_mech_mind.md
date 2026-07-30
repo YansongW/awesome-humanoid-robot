@@ -16,7 +16,7 @@
 | **Official Website** | [https://www.mech-mind.com.cn](https://www.mech-mind.com.cn) |
 | **Supply Chain Role** | Sensors / AI+3D Vision and Embodied Intelligence "Eye-Brain-Hand" |
 | **Company Type** | AI+Robotics Unicorn, Leading Enterprise in Embodied Intelligent Robotics |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Mech-Mind official website, WAIC 2026 official reports, Ringier Industry Resources |
 
 ## Company Overview

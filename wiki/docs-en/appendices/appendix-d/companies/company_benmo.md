@@ -16,7 +16,7 @@
 | **Website** | [https://directdrive.com](https://directdrive.com) |
 | **Supply Chain Role** | Core Components + Complete Machine OEM / Direct Drive Motor Modules + Wheel-Legged Robots |
 | **Company Attributes** | Direct Drive Technology, Gearless, Wheel-Legged Robots |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | Benmo Technology official website, Benmo company introduction PDF, Hard氪 reports |
 
 ## Company Profile

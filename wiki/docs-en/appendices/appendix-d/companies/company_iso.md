@@ -16,7 +16,7 @@
 | **Website** | [https://www.iso.org](https://www.iso.org) |
 | **Supply Chain Role** | Robot standards, safety standards, testing specifications, conformity assessment |
 | **Company Type** | Non-governmental international organization |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | ISO official website, ISO/TC 299 technical committee page |
 
 ## Company Profile

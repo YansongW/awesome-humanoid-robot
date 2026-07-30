@@ -16,7 +16,7 @@
 | **Website** | [https://www.dexforce.com](https://www.dexforce.com) |
 | **Supply Chain Role** | Sensors / Embodied AI & 3D Vision |
 | **Enterprise Type** | National High-Tech Enterprise, Embodied Intelligence Solution Provider |
-| **Parent/Group** | None |
+| **Parent/Group** | — |
 | **Data Source** | Cross-Dimension official website, WAIC 2026 exhibitor list, Jiqizhixin, PingWest |
 
 ## Company Overview

@@ -16,7 +16,7 @@
 | **Website** | [https://www.linkerbot.cn](https://www.linkerbot.cn) |
 | **Supply Chain Role** | Structural components / Dexterous hand end-effectors |
 | **Company Type** | Dexterous hand unicorn, leader in high-DOF end-effectors |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Sources** | Linkerbot official website, 36Kr PitchHub, WRC exhibitor information, Xinhua Net |
 
 ## Company Profile

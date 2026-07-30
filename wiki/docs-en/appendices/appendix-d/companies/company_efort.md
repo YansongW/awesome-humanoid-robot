@@ -16,7 +16,7 @@
 | **Website** | [https://www.efort.com.cn](https://www.efort.com.cn) |
 | **Supply Chain Role** | OEM / Industrial Robots + Humanoid Robots |
 | **Enterprise Attribute** | Leading domestic industrial robot manufacturer, listed on the STAR Market (688165) |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | EFORT official website, investor interaction platform, data charts |
 
 ## Company Overview

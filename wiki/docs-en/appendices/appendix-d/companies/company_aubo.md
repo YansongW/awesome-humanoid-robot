@@ -16,7 +16,7 @@
 | **Website** | [https://www.aubo-robotics.cn](https://www.aubo-robotics.cn) |
 | **Supply Chain Role** | OEM / Collaborative Robots / Humanoid Robot Components |
 | **Company Type** | Domestic Brand, Core Collaborative Robot Manufacturer |
-| **Parent Company/Group** | None |
+| **Parent Company/Group** | — |
 | **Data Source** | AUBO official website, product manuals, WAIC 2026 reports, public press releases |
 
 ## Company Profile
