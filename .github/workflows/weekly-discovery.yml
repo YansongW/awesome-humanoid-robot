@@ -1,0 +1,76 @@
+name: Weekly Paper Discovery
+
+# Layer 1 of the weekly evolution pipeline: discover new humanoid-robotics
+# papers on arXiv, draft entity cards with DeepSeek, validate against the
+# entry schema, and open a PR for human review. Never pushes to main directly.
+
+on:
+  schedule:
+    # Every Monday 02:23 UTC (off the top of the hour).
+    - cron: "23 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: weekly-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Run weekly discovery
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/weekly_discovery.py
+
+      - name: Read run summary
+        id: meta
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          d = json.loads(Path(".staging/weekly_discovery/last_run.json").read_text())
+          print(f"new_cards={d['new_cards']} date={d['date']} report={d['report']}")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+              fh.write(f"new_cards={d['new_cards']}\n")
+              fh.write(f"date={d['date']}\n")
+              fh.write(f"report={d['report']}\n")
+          PY
+
+      - name: Upload discovery report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-discovery-report
+          path: .staging/weekly_discovery/
+
+      - name: Open pull request with new cards
+        # No new cards -> no empty PR.
+        if: steps.meta.outputs.new_cards != '0'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: weekly/discovery-${{ steps.meta.outputs.date }}
+          commit-message: "chore: weekly paper discovery ${{ steps.meta.outputs.date }} (${{ steps.meta.outputs.new_cards }} new cards)"
+          title: "每周新论文摄取 ${{ steps.meta.outputs.date }}：${{ steps.meta.outputs.new_cards }} 篇"
+          body-path: .staging/weekly_discovery/${{ steps.meta.outputs.report }}
+          labels: weekly-discovery, papers
+          add-paths: research/papers/

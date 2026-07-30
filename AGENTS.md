@@ -66,6 +66,7 @@ make roadmap-check   # 重新生成路线图↔卡片绑定
 | `scripts/build_roadmap_mapping.py` | 从路线图页面链接再生成 `entities:` 绑定 | 改路线图页面后必跑 |
 | `scripts/translate_entry_bodies.py` | DeepSeek 翻译实体正文 en/ko | 幂等，可中断续跑；密钥在 `~/Desktop/.ai_credentials.txt`（**禁止打印**） |
 | `scripts/auto_promote_staging.py` | 提升 staging 实体/关系到生产 | 带 schema 校验与端点检查 |
+| `scripts/weekly_discovery.py [--dry-run] [--since YYYY-MM-DD]` | 每周 arXiv 新论文发现 → DeepSeek 起草中文卡 → schema 校验 → 写卡+报告 | 上限 30 篇/周；报告在 `.staging/weekly_discovery/`；CI 每周一自动跑并开 PR（`.github/workflows/weekly-discovery.yml`，需 secret `DEEPSEEK_API_KEY`） |
 
 DeepSeek：endpoint `https://api.deepseek.com/chat/completions`，model `deepseek-chat`。
 
