@@ -16,6 +16,8 @@
   const resultsCountTemplate = section ? (section.dataset.resultsCount || '{count} results') : '{count} results';
   const emptyMessage = section ? (section.dataset.emptyMessage || 'Enter keywords or select a type to start searching.') : 'Enter keywords or select a type to start searching.';
   const loadingMessage = section ? (section.dataset.loading || 'Loading search index…') : 'Loading search index…';
+  const indexErrorMessage = section ? (section.dataset.indexError || 'Failed to load the search index.') : 'Failed to load the search index.';
+  const retryLabel = section ? (section.dataset.retry || 'Retry') : 'Retry';
 
   let searchData = { entries: [], index: {} };
   let activeType = 'all';
@@ -75,7 +77,21 @@
       if (!searchData.index) searchData.index = {};
       init();
     } catch (err) {
-      resultsList.innerHTML = `<div class="empty-state">${escapeHtml(err.message)}</div>`;
+      // Never show raw error text to users; details go to the console.
+      console.error(err);
+      resultsList.innerHTML = '';
+      const box = document.createElement('div');
+      box.className = 'empty-state search-index-error';
+      const msg = document.createElement('span');
+      msg.textContent = indexErrorMessage;
+      const retry = document.createElement('button');
+      retry.type = 'button';
+      retry.className = 'btn btn-secondary search-index-retry';
+      retry.textContent = retryLabel;
+      retry.addEventListener('click', () => loadIndex());
+      box.appendChild(msg);
+      box.appendChild(retry);
+      resultsList.appendChild(box);
     }
   }
 
@@ -294,10 +310,129 @@
     return div.innerHTML;
   }
 
-  function performSearch(append = false) {
+  /* ---------- Search-first AI: inline answer module above the results ---------- */
+
+  const askRoot = document.getElementById('search-ask-root');
+  let askModuleQuery = null; // query the current module instance belongs to
+  let askModuleKind = null; // 'hint' | 'trigger' | 'mounted'
+  let askModuleInstance = null; // KGAsk mount handle (for unmount/abort)
+
+  // Question-shaped queries get an automatic answer; keyword queries only get
+  // a one-click trigger so we never burn the user's tokens uninvited.
+  function isQuestionLike(text) {
+    const t = text.trim();
+    if (!t) return false;
+    if (/[？?]\s*$/.test(t)) return true;
+    if (/^(什么|怎麼|怎么|怎样|怎樣|如何|为什么|為什麼|为何|為何|哪些|哪个|哪個|区别|區別|能不能|可不可以|可以|是不是|是)/.test(t)) return true;
+    return /^(what|how|why|which|compare|comparison|difference|differentiate|vs)\b/i.test(t);
+  }
+
+  function queryHash(q) {
+    let h = 0;
+    const s = q.trim().toLowerCase();
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return h.toString(36);
+  }
+
+  function disposeAskModule() {
+    if (askModuleInstance) {
+      askModuleInstance.unmount();
+      askModuleInstance = null;
+    }
+  }
+
+  function mountAskInline(q, extra) {
+    if (!askRoot || !window.KGAsk) return;
+    disposeAskModule();
+    askRoot.innerHTML = '';
+    askModuleInstance = window.KGAsk.mount(askRoot, Object.assign({
+      mode: 'inline',
+      historyScope: queryHash(q),
+      onConfigSaved: () => {
+        // Key saved from the hint/settings flow: offer the trigger now.
+        if (askModuleQuery === q) renderAskTrigger(q);
+      },
+    }, extra || {})) || null;
+    askModuleQuery = q;
+    askModuleKind = 'mounted';
+  }
+
+  function renderAskHint(q) {
+    // No API key configured: a one-line hint plus a gear that opens the
+    // settings panel — never blocks the classic results.
+    disposeAskModule();
+    askRoot.innerHTML = '';
+    const hint = document.createElement('div');
+    hint.className = 'search-ask-hint';
+    const text = document.createElement('span');
+    text.textContent = (askRoot.dataset.askSetupHint || '');
+    const gear = document.createElement('button');
+    gear.type = 'button';
+    gear.className = 'search-ask-gear';
+    gear.textContent = '⚙';
+    gear.title = askRoot.dataset.settings || 'Settings';
+    gear.setAttribute('aria-label', askRoot.dataset.settings || 'Settings');
+    gear.addEventListener('click', () => {
+      mountAskInline(q, { openSettings: true, prefill: q });
+    });
+    hint.appendChild(text);
+    hint.appendChild(gear);
+    askRoot.appendChild(hint);
+    askModuleQuery = q;
+    askModuleKind = 'hint';
+  }
+
+  function renderAskTrigger(q) {
+    disposeAskModule();
+    askRoot.innerHTML = '';
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'search-ask-trigger';
+    btn.textContent = askRoot.dataset.askWithAi || '✨ Answer with AI';
+    btn.addEventListener('click', () => {
+      mountAskInline(q, { initialQuestion: q });
+    });
+    askRoot.appendChild(btn);
+    askModuleQuery = q;
+    askModuleKind = 'trigger';
+  }
+
+  // Auto-asking is only allowed on an explicit question submission (initial
+  // ?q= load or form submit). The debounced input path and filter clicks pass
+  // allowAutoAsk=false, so typing can never burn tokens by itself.
+  function updateAskModule(query, allowAutoAsk) {
+    if (!askRoot) return;
+    const q = query.trim();
+    if (!q) {
+      disposeAskModule();
+      askRoot.innerHTML = '';
+      askModuleQuery = null;
+      askModuleKind = null;
+      return;
+    }
+    const hasKey = !!(localStorage.getItem('kg_ask_api_key') || '').trim();
+    if (askModuleQuery === q) {
+      // Same query: typing showed a trigger; an explicit submit upgrades it
+      // to an automatic answer. Anything else keeps the running thread.
+      if (allowAutoAsk && askModuleKind === 'trigger' && hasKey && isQuestionLike(q)) {
+        mountAskInline(q, { initialQuestion: q });
+      }
+      return;
+    }
+    if (!hasKey) {
+      renderAskHint(q);
+    } else if (isQuestionLike(q) && allowAutoAsk) {
+      mountAskInline(q, { initialQuestion: q });
+    } else {
+      renderAskTrigger(q);
+    }
+  }
+
+  function performSearch(append = false, allowAutoAsk = false) {
     const query = searchInput ? searchInput.value : '';
     const results = search(query, activeType);
     renderResults(results, query, append);
+    if (!append) updateAskModule(query, allowAutoAsk);
   }
 
   function setUrlQuery(q) {
@@ -334,7 +469,7 @@
         }
         resultsTitle.textContent = title;
       }
-      performSearch();
+      performSearch(false, true);
     } else {
       if (resultsTitle) resultsTitle.textContent = '';
       if (resultsList) resultsList.innerHTML = `<div class="empty-state">${escapeHtml(emptyMessage)}</div>`;
@@ -360,7 +495,7 @@
         const q = searchInput ? searchInput.value : '';
         setUrlQuery(q);
         if (resultsTitle) resultsTitle.textContent = q ? `“${q}”` : '';
-        performSearch();
+        performSearch(false, true);
         if (searchInput) searchInput.blur();
       });
     }
@@ -381,8 +516,9 @@
       });
     }
 
-    if (loadMoreBtn) {
-      loadMoreBtn.addEventListener('click', () => {
+    const loadMoreButton = loadMoreBtn ? loadMoreBtn.querySelector('button') : null;
+    if (loadMoreButton) {
+      loadMoreButton.addEventListener('click', () => {
         renderResults(currentResults, currentQuery, true);
       });
     }
@@ -398,6 +534,8 @@
     scoreEntry,
     uniqueTokens,
     findCandidates,
+    isQuestionLike,
+    updateAskModule,
   };
 
   loadIndex();

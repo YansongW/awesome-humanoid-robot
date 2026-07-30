@@ -59,10 +59,10 @@
       <button id="graph-focus-back" class="btn btn-secondary" type="button">{{ ui.graph_focus_back }}</button>
     </div>
   </main>
-  <button id="graph-ask-toggle" class="graph-ask-toggle" type="button">🤖 {{ ui.nav_ask }}</button>
-  <div id="graph-ask-panel" class="graph-ask-panel hidden">
+  <button id="graph-ask-toggle" class="graph-ask-toggle" type="button" aria-expanded="false" aria-controls="graph-ask-panel">🤖 {{ ui.ask_widget_title }}</button>
+  <div id="graph-ask-panel" class="graph-ask-panel hidden" role="dialog" aria-label="{{ ui.ask_widget_title }}">
     <div class="graph-ask-panel-header">
-      <span>{{ ui.nav_ask }}</span>
+      <span>{{ ui.ask_widget_title }}</span>
       <button id="graph-ask-collapse" class="graph-ask-collapse" type="button" aria-label="{{ ui.ask_panel_collapse }}" title="{{ ui.ask_panel_collapse }}">×</button>
     </div>
     <div id="graph-ask-root" data-base-path="{{ bp }}"></div>
@@ -74,53 +74,57 @@
 <script>
 window.DOMAIN_LABELS = {
   {% for d in domains %}
-  "{{ d }}": "{{ d | domain_label(lang) }}",
+  {{ d | tojson }}: {{ d | domain_label(lang) | tojson }},
   {% endfor %}
 };
 window.GRAPH_TEXT = {
-  loading: "{{ ui.graph_loading }}",
-  empty: "{{ ui.graph_empty }}",
-  noRelations: "{{ ui.graph_no_relations }}",
-  clusterCount: "{{ ui.graph_cluster_count }}",
-  clusterPruned: "{{ ui.graph_cluster_pruned }}",
-  clusterTotal: "{{ ui.graph_cluster_total }}",
-  confirmFull: "{{ ui.graph_confirm_full }}",
-  entityCount: "{{ ui.graph_entity_count }}",
-  backToClusters: "{{ ui.cluster_view }}",
-  focusView: "{{ ui.graph_focus_view }}",
+  loading: {{ ui.graph_loading | tojson }},
+  empty: {{ ui.graph_empty | tojson }},
+  noRelations: {{ ui.graph_no_relations | tojson }},
+  clusterCount: {{ ui.graph_cluster_count | tojson }},
+  clusterPruned: {{ ui.graph_cluster_pruned | tojson }},
+  clusterTotal: {{ ui.graph_cluster_total | tojson }},
+  confirmFull: {{ ui.graph_confirm_full | tojson }},
+  entityCount: {{ ui.graph_entity_count | tojson }},
+  backToClusters: {{ ui.cluster_view | tojson }},
+  focusView: {{ ui.graph_focus_view | tojson }},
+  focusSep: {{ ui.graph_focus_sep | tojson }},
+  focusViewTitle: {{ ui.graph_focus_view_title | tojson }},
+  fullViewTitle: {{ ui.full_view | tojson }},
 };
 window.ASK_TEXT = {
-  empty: "{{ ui.ask_empty }}",
-  inputPlaceholder: "{{ ui.ask_input_placeholder }}",
-  send: "{{ ui.ask_send }}",
-  stop: "{{ ui.ask_stop }}",
-  settings: "{{ ui.ask_settings }}",
-  settingsTitle: "{{ ui.ask_settings_title }}",
-  provider: "{{ ui.ask_provider }}",
-  providerCustom: "{{ ui.ask_provider_custom }}",
-  baseUrl: "{{ ui.ask_base_url }}",
-  model: "{{ ui.ask_model }}",
-  save: "{{ ui.ask_save }}",
-  clear: "{{ ui.ask_clear }}",
-  privacyNote: "{{ ui.ask_privacy_note }}",
-  sources: "{{ ui.ask_sources }}",
-  thinking: "{{ ui.ask_thinking }}",
-  noKey: "{{ ui.ask_no_key }}",
-  noContext: "{{ ui.ask_no_context }}",
-  stopped: "{{ ui.ask_stopped }}",
-  errorNetwork: "{{ ui.ask_error_network }}",
-  errorAuth: "{{ ui.ask_error_auth }}",
-  errorRate: "{{ ui.ask_error_rate }}",
-  errorGeneric: "{{ ui.ask_error_generic }}",
-  settingsSaved: "{{ ui.ask_settings_saved }}",
-  settingsCleared: "{{ ui.ask_settings_cleared }}",
-  highlightAll: "{{ ui.ask_highlight_all }}",
-  openEntry: "{{ ui.ask_open_entry }}",
-  focusPrefix: "{{ ui.ask_focus_prefix }}",
-  clearHistory: "{{ ui.ask_clear_history }}",
-  stageRetrieving: "{{ ui.ask_stage_retrieving }}",
-  stageLoading: "{{ ui.ask_stage_loading }}",
-  stageGenerating: "{{ ui.ask_stage_generating }}",
+  empty: {{ ui.ask_empty | tojson }},
+  inputPlaceholder: {{ ui.ask_input_placeholder | tojson }},
+  send: {{ ui.ask_send | tojson }},
+  stop: {{ ui.ask_stop | tojson }},
+  settings: {{ ui.ask_settings | tojson }},
+  settingsTitle: {{ ui.ask_settings_title | tojson }},
+  provider: {{ ui.ask_provider | tojson }},
+  providerCustom: {{ ui.ask_provider_custom | tojson }},
+  baseUrl: {{ ui.ask_base_url | tojson }},
+  model: {{ ui.ask_model | tojson }},
+  save: {{ ui.ask_save | tojson }},
+  clear: {{ ui.ask_clear | tojson }},
+  privacyNote: {{ ui.ask_privacy_note | tojson }},
+  sources: {{ ui.ask_sources | tojson }},
+  thinking: {{ ui.ask_thinking | tojson }},
+  noKey: {{ ui.ask_no_key | tojson }},
+  noContext: {{ ui.ask_no_context | tojson }},
+  stopped: {{ ui.ask_stopped | tojson }},
+  errorNetwork: {{ ui.ask_error_network | tojson }},
+  errorAuth: {{ ui.ask_error_auth | tojson }},
+  errorRate: {{ ui.ask_error_rate | tojson }},
+  errorGeneric: {{ ui.ask_error_generic | tojson }},
+  settingsSaved: {{ ui.ask_settings_saved | tojson }},
+  settingsCleared: {{ ui.ask_settings_cleared | tojson }},
+  highlightAll: {{ ui.ask_highlight_all | tojson }},
+  openEntry: {{ ui.ask_open_entry | tojson }},
+  focusPrefix: {{ ui.ask_focus_prefix | tojson }},
+  clearHistory: {{ ui.ask_clear_history | tojson }},
+  stageRetrieving: {{ ui.ask_stage_retrieving | tojson }},
+  stageLoading: {{ ui.ask_stage_loading | tojson }},
+  stageGenerating: {{ ui.ask_stage_generating | tojson }},
+  backToBottom: {{ ui.ask_back_to_bottom | tojson }},
 };
 </script>
 <script src="/js/search.js"></script>
@@ -133,10 +137,12 @@ window.ASK_TEXT = {
   toggle.addEventListener('click', function () {
     panel.classList.remove('hidden');
     toggle.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
     if (!mounted && window.KGAsk) {
       mounted = true;
       window.KGAsk.mount(document.getElementById('graph-ask-root'), {
         mode: 'panel',
+        historyScope: 'graph',
         strings: window.ASK_TEXT,
         onSourceClick: function (entryId) {
           if (window.KGGraph) window.KGGraph.focusEntries([entryId]);
@@ -146,10 +152,18 @@ window.ASK_TEXT = {
         },
       });
     }
+    var askInput = panel.querySelector('#graph-ask-root textarea');
+    if (askInput) askInput.focus();
   });
-  document.getElementById('graph-ask-collapse').addEventListener('click', function () {
+  function closePanel() {
     panel.classList.add('hidden');
     toggle.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.focus();
+  }
+  document.getElementById('graph-ask-collapse').addEventListener('click', closePanel);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.classList.contains('hidden')) closePanel();
   });
 
   // Draggable panel: grab the header to reposition, clamped to the viewport.

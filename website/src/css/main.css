@@ -2464,3 +2464,208 @@ a:hover { text-decoration: underline; }
     bottom: 16px;
   }
 }
+
+/* Search-first AI: inline answer module on the search page */
+.search-ask-root:empty {
+  display: none;
+}
+
+.search-ask-root {
+  margin-bottom: 1.5rem;
+}
+
+.search-ask-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius);
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.search-ask-gear {
+  padding: 0.15rem 0.4rem;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.search-ask-gear:hover { opacity: 1; }
+
+.search-ask-trigger {
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  background: var(--color-accent-ghost);
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.search-ask-trigger:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Inline mode: a full-width card blending into the results page (no floating
+   panel chrome). */
+.ask-inline .ask-messages {
+  max-height: 480px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.ask-inline .ask-form {
+  margin-top: 0;
+  padding: 0.75rem 1rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  background: var(--color-surface-raised);
+}
+
+.ask-inline .ask-actions { padding-bottom: 0.5rem; }
+
+.ask-inline .ask-settings {
+  margin: 0.5rem 0 0;
+}
+
+.ask-inline .ask-messages:has(.empty-state:only-child) {
+  display: none;
+}
+
+.ask-inline .ask-messages:has(.empty-state:only-child) + .ask-form {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.ask-explore-graph {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  background: var(--color-accent-ghost);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.ask-explore-graph:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* B3: pipe tables inside ask bubbles */
+.ask-table-wrap {
+  margin: 0.5em 0;
+  overflow-x: auto;
+}
+
+.ask-bubble table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+}
+
+.ask-bubble th, .ask-bubble td {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ask-bubble th {
+  background: var(--color-surface-muted);
+  font-weight: 600;
+}
+
+/* C2: inline module header */
+.ask-inline-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.35rem 0.25rem;
+  font-size: 0.85rem;
+}
+
+.ask-inline-title { font-weight: 600; }
+
+.ask-inline-count { color: var(--color-text-muted); }
+
+.ask-inline-disclaimer {
+  margin-left: auto;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+/* C3: floating back-to-bottom button */
+.ask-root { position: relative; }
+
+.ask-back-to-bottom {
+  position: absolute;
+  right: 16px;
+  bottom: 96px;
+  z-index: 20;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  background: var(--color-surface-raised);
+  color: var(--color-text-secondary);
+  box-shadow: var(--shadow);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* C1: inline messages must not eat the first screen */
+.ask-inline .ask-messages { min-height: 0; }
+
+/* C7: visible focus style for the big search input */
+.big-search input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -2px;
+}
+
+/* D2: settings shortcut inside error bubbles */
+.ask-open-settings { margin-top: 0.5rem; }
+
+/* D4: unified small radius on ask controls */
+.ask-send-btn,
+.ask-form textarea,
+.ask-field input,
+.ask-field select {
+  border-radius: var(--radius-sm);
+}
+
+/* D8: action row wrap + touch-friendly entry links */
+.ask-actions { flex-wrap: wrap; }
+
+.ask-source-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+/* D9: no chrome on an empty graph-search result box */
+.graph-search-results:empty {
+  display: none;
+}
+
+/* B4: dark-theme accent buttons need dark text for contrast */
+[data-theme="dark"] .graph-ask-toggle,
+[data-theme="dark"] .ask-send-btn,
+[data-theme="dark"] .big-search button,
+[data-theme="dark"] .filter-tag.active,
+[data-theme="dark"] .filter-tag:hover,
+[data-theme="dark"] .ask-highlight-all:hover,
+[data-theme="dark"] .search-ask-trigger:hover,
+[data-theme="dark"] .ask-explore-graph:hover {
+  color: #1f1d1a;
+}

@@ -87,8 +87,11 @@
     /* ---------- DOM (same structure/classes as the old static markup) ---------- */
 
     container.classList.add('ask-root');
+    container.classList.add('ask-' + mode);
 
     var messagesEl = el('div', 'ask-messages');
+    messagesEl.setAttribute('role', 'log');
+    messagesEl.setAttribute('aria-live', 'polite');
     messagesEl.appendChild(el('div', 'empty-state', strings.empty || ''));
 
     var input = el('textarea');
@@ -171,9 +174,24 @@
     settingsPanel.appendChild(grid);
     settingsPanel.appendChild(settingsActions);
 
+    var headerCount = null;
+    if (mode === 'inline') {
+      var headerEl = el('div', 'ask-inline-header');
+      headerEl.appendChild(el('span', 'ask-inline-title', '✨ ' + (strings.askWithAi || 'AI')));
+      headerCount = el('span', 'ask-inline-count', '');
+      headerEl.appendChild(headerCount);
+      headerEl.appendChild(el('span', 'ask-inline-disclaimer', strings.inlineDisclaimer || ''));
+      container.appendChild(headerEl);
+    }
+
     container.appendChild(messagesEl);
     container.appendChild(form);
     container.appendChild(settingsPanel);
+
+    // Floating "back to bottom" button for long streaming answers (C3).
+    var backToBottomBtn = el('button', 'ask-back-to-bottom hidden', strings.backToBottom || '↓ Back to bottom');
+    backToBottomBtn.type = 'button';
+    container.appendChild(backToBottomBtn);
 
     /* ---------- settings ---------- */
 
@@ -208,6 +226,7 @@
       localStorage.setItem(LS.baseUrl, baseUrlInput.value.trim());
       localStorage.setItem(LS.model, modelInput.value.trim());
       settingsStatus.textContent = strings.settingsSaved || '';
+      if (opts.onConfigSaved) opts.onConfigSaved();
     }
 
     function clearSettings() {
@@ -225,7 +244,16 @@
     var history = []; // {role: 'user'|'assistant', content: string, sources?: [...]}
     var streaming = false;
     var abortController = null;
+    var disposed = false; // set by unmount(): all DOM writes become no-ops
     var lastFocusNames = []; // panel mode: recently highlighted entries (<= 3)
+
+    function throwIfAborted() {
+      if (abortController && abortController.signal.aborted) {
+        var err = new Error('aborted');
+        err.name = 'AbortError';
+        throw err;
+      }
+    }
 
     function ensureSearchIndex() {
       if (!searchIndexPromise) {
@@ -350,10 +378,11 @@
     /* ---------- LLM streaming (OpenAI-compatible SSE) ---------- */
 
     function humanError(err) {
+      if (err) console.error(err);
       if (err && err.status === 401 || err && err.status === 403) return strings.errorAuth;
       if (err && err.status === 429) return strings.errorRate;
       if (err && err.network) return strings.errorNetwork;
-      return (strings.errorGeneric || 'Request failed: {detail}').replace('{detail}', String(err && err.message || err));
+      return strings.errorGeneric || 'The request failed. Please try again later.';
     }
 
     async function streamChat(cfg, messages, onUpdate, signal) {
@@ -438,6 +467,42 @@
       return html;
     }
 
+    function isTableRow(line) {
+      return /^\s*\|.*\|\s*$/.test(line) || (/^\s*\S.*\|.*\S\s*$/.test(line) && line.indexOf('|') !== -1);
+    }
+
+    function isTableDivider(line) {
+      return /^\s*\|?\s*:?-{2,}[\s:|-]*\|?\s*$/.test(line) && line.indexOf('-') !== -1;
+    }
+
+    function splitTableRow(line) {
+      var cells = line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|');
+      return cells.map(function (c) { return c.trim(); });
+    }
+
+    // GFM-style pipe table: header row, |---| divider, body rows.
+    function renderTable(rows) {
+      var header = splitTableRow(rows[0]);
+      var aligns = splitTableRow(rows[1]).map(function (cell) {
+        if (/^:-+:$/.test(cell)) return 'center';
+        if (/^-+:$/.test(cell)) return 'right';
+        return '';
+      });
+      var html = '<div class="ask-table-wrap"><table><thead><tr>';
+      header.forEach(function (cell, i) {
+        html += '<th' + (aligns[i] ? ' style="text-align:' + aligns[i] + '"' : '') + '>' + renderInline(cell) + '</th>';
+      });
+      html += '</tr></thead><tbody>';
+      rows.slice(2).forEach(function (row) {
+        html += '<tr>';
+        splitTableRow(row).forEach(function (cell, i) {
+          html += '<td' + (aligns[i] ? ' style="text-align:' + aligns[i] + '"' : '') + '>' + renderInline(cell) + '</td>';
+        });
+        html += '</tr>';
+      });
+      return html + '</tbody></table></div>';
+    }
+
     function renderMarkdown(text) {
       // Split out fenced code blocks first so their content is never formatted.
       var parts = String(text || '').split(/```/);
@@ -456,6 +521,19 @@
         };
         for (var j = 0; j < lines.length; j++) {
           var line = lines[j];
+          // Pipe table: a header row directly followed by a |---| divider.
+          if (isTableRow(line) && j + 1 < lines.length && isTableDivider(lines[j + 1])) {
+            closeList();
+            var rows = [line, lines[j + 1]];
+            j += 2;
+            while (j < lines.length && isTableRow(lines[j]) && lines[j].trim() !== '') {
+              rows.push(lines[j]);
+              j++;
+            }
+            j--; // step back: the loop increments past the last table row
+            out.push(renderTable(rows));
+            continue;
+          }
           var heading = line.match(/^(#{1,4})\s+(.*)$/);
           var ulItem = line.match(/^\s*[-*•]\s+(.*)$/);
           var olItem = line.match(/^\s*\d+[.)]\s+(.*)$/);
@@ -485,9 +563,21 @@
 
     /* ---------- chat UI ---------- */
 
-    function scrollToBottom() {
-      messagesEl.scrollTop = messagesEl.scrollHeight;
+    function showBackToBottom(show) {
+      backToBottomBtn.classList.toggle('hidden', !show);
     }
+
+    function scrollToBottom(force) {
+      var gap = messagesEl.scrollHeight - messagesEl.scrollTop - messagesEl.clientHeight;
+      if (force || gap < 80) {
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+        showBackToBottom(false);
+      } else {
+        showBackToBottom(true);
+      }
+    }
+
+    backToBottomBtn.addEventListener('click', function () { scrollToBottom(true); });
 
     function clearEmptyState() {
       var empty = messagesEl.querySelector('.empty-state');
@@ -495,6 +585,7 @@
     }
 
     function appendMessage(role, text) {
+      if (disposed) return el('div');
       clearEmptyState();
       var item = el('div', 'ask-message ask-' + role);
       var bubble = el('div', 'ask-bubble');
@@ -505,11 +596,12 @@
       }
       item.appendChild(bubble);
       messagesEl.appendChild(item);
-      scrollToBottom();
+      scrollToBottom(role === 'user');
       return bubble;
     }
 
     function appendNote(text) {
+      if (disposed) return;
       clearEmptyState();
       messagesEl.appendChild(el('div', 'ask-note', text));
       scrollToBottom();
@@ -520,7 +612,7 @@
     }
 
     function renderSources(bubble, sources) {
-      if (!sources.length) return;
+      if (disposed || !sources.length) return;
       var wrap = el('div', 'ask-sources');
       wrap.appendChild(el('span', 'ask-sources-label', strings.sources || 'Sources'));
 
@@ -534,6 +626,13 @@
           else if (opts.onSourceClick) ids.forEach(function (id) { opts.onSourceClick(id, null); });
         });
         wrap.appendChild(allBtn);
+      }
+
+      if (mode === 'inline') {
+        // Deep-link into the graph focus view with all sources.
+        var explore = el('a', 'ask-explore-graph', strings.exploreInGraph || 'Explore in graph');
+        explore.href = basePath + '/graph/?focus=' + sources.map(function (s) { return s.id; }).join(',');
+        wrap.appendChild(explore);
       }
 
       sources.forEach(function (s) {
@@ -562,6 +661,10 @@
         }
       });
       bubble.appendChild(wrap);
+      if (headerCount) {
+        headerCount.textContent = (strings.basedOnEntries || 'Based on {count} entries')
+          .replace('{count}', sources.length);
+      }
       scrollToBottom();
     }
 
@@ -592,6 +695,7 @@
 
       try {
         var retrieved = await retrieve(question);
+        throwIfAborted();
         if (!retrieved.length) {
           bubble.innerHTML = renderMarkdown(strings.noContext || '');
           history.push({ role: 'user', content: question });
@@ -602,6 +706,7 @@
 
         bubble.innerHTML = renderMarkdown(strings.stageLoading || strings.thinking || '…');
         var corpus = await fetchCorpusFor(retrieved);
+        throwIfAborted();
         var contextParts = [];
         var sources = [];
         for (var i = 0; i < retrieved.length; i++) {
@@ -641,6 +746,14 @@
           bubble.innerHTML += '<p class="ask-stopped">' + escapeHtml(strings.stopped || '(stopped)') + '</p>';
         } else {
           bubble.innerHTML = '<p class="ask-error">' + escapeHtml(humanError(err)) + '</p>';
+          if (err && (err.status === 401 || err.status === 403)) {
+            var openSettingsBtn = el('button', 'btn btn-secondary ask-open-settings', strings.settings || 'Settings');
+            openSettingsBtn.type = 'button';
+            openSettingsBtn.addEventListener('click', function () {
+              settingsPanel.classList.remove('hidden');
+            });
+            bubble.appendChild(openSettingsBtn);
+          }
         }
       } finally {
         setStreaming(false);
@@ -650,7 +763,9 @@
 
     /* ---------- session history (survives in-tab navigation/refresh) ---------- */
 
-    var HISTORY_KEY = 'kg_ask_history_' + lang;
+    // Scope isolates threads: the graph panel uses '_graph', the search-page
+    // inline module uses a per-query hash.
+    var HISTORY_KEY = 'kg_ask_history_' + lang + (opts.historyScope ? '_' + opts.historyScope : '');
 
     function saveHistory() {
       try {
@@ -705,15 +820,39 @@
     saveBtn.addEventListener('click', saveSettings);
     clearBtn.addEventListener('click', clearSettings);
 
+    // C7: close the settings panel via Esc or an outside click.
+    document.addEventListener('keydown', function (e) {
+      if (disposed) return;
+      if (e.key === 'Escape' && !settingsPanel.classList.contains('hidden')) {
+        settingsPanel.classList.add('hidden');
+      }
+    });
+    document.addEventListener('click', function (e) {
+      if (disposed) return;
+      if (!settingsPanel.classList.contains('hidden') &&
+          !settingsPanel.contains(e.target) && e.target !== settingsToggle) {
+        settingsPanel.classList.add('hidden');
+      }
+    });
+
     loadSettingsForm();
     restoreHistory();
+    if (opts.openSettings) settingsPanel.classList.remove('hidden');
+    if (opts.prefill) input.value = opts.prefill;
+    // Auto-ask only when there is no restored thread for this scope.
+    if (opts.initialQuestion && !history.length) {
+      input.value = opts.initialQuestion;
+      handleSubmit();
+    }
+
+    // C9: let the host tear this instance down (query switch, panel close).
+    return {
+      unmount: function () {
+        disposed = true;
+        if (abortController) abortController.abort();
+      },
+    };
   }
 
   window.KGAsk = { mount: mount };
-
-  // Auto-mount on the standalone /ask/ page; the graph page mounts explicitly.
-  var autoRoot = document.getElementById('ask-root');
-  if (autoRoot && window.KGSearch) {
-    mount(autoRoot, { mode: 'fullPage' });
-  }
 })();

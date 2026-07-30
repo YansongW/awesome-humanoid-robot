@@ -57,7 +57,7 @@ UI_STRINGS = {
         "full_view": "全图视图",
         "recommended": "推荐",
         "search_title": "搜索知识图谱",
-        "search_input_placeholder": "输入关键词，例如：减速器、特斯拉、VLA…",
+        "search_input_placeholder": "搜索条目，或直接提问…",
         "filter_by_type": "按类型筛选：",
         "all": "全部",
         "results_title": "全部实体",
@@ -121,9 +121,10 @@ UI_STRINGS = {
         "entries_of_type": "{count} 个实体",
         "back_to_top": "回到顶部",
         "roadmap_label": "0→1 路线图定位",
-        "nav_ask": "AI 问答",
-        "ask_title": "AI 问答",
-        "ask_subtitle": "基于站内知识图谱的检索增强问答。自带 API key（BYOK），浏览器直连服务商，零后端。",
+        "ask_widget_title": "AI 问答",
+        "ask_with_ai": "✨ 用 AI 回答",
+        "ask_setup_hint": "配置 API key 后，AI 可直接回答你的问题",
+        "explore_in_graph": "在图谱中探索",
         "ask_input_placeholder": "输入你的问题，例如：触觉传感器有哪些主流方案？",
         "ask_send": "发送",
         "ask_stop": "停止",
@@ -143,9 +144,9 @@ UI_STRINGS = {
         "ask_sources": "参考条目",
         "ask_stopped": "（已停止）",
         "ask_error_network": "网络错误：无法连接服务商，请检查网络或 Base URL。",
-        "ask_error_auth": "认证失败（401）：请检查 API key 是否正确。",
+        "ask_error_auth": "认证失败：请检查 API key 是否正确。",
         "ask_error_rate": "请求受限（429）：已触发服务商限流，请稍后再试。",
-        "ask_error_generic": "请求失败：{detail}",
+        "ask_error_generic": "请求失败，请稍后重试。",
         "ask_settings_saved": "已保存。",
         "ask_settings_cleared": "已清除。",
         "ask_highlight_all": "在图中高亮全部",
@@ -156,8 +157,15 @@ UI_STRINGS = {
         "ask_stage_retrieving": "检索中…",
         "ask_stage_loading": "加载资料…",
         "ask_stage_generating": "生成中…",
-        "graph_focus_back": "返回全局视图",
+        "graph_focus_back": "返回上一视图",
         "graph_focus_view": "焦点视图：{names}",
+        "graph_focus_sep": "、",
+        "graph_focus_view_title": "焦点视图",
+        "search_index_error": "搜索索引加载失败，请检查网络后重试。",
+        "search_retry": "重试",
+        "ask_inline_disclaimer": "AI 生成，仅供参考",
+        "ask_based_on_entries": "基于 {count} 个条目",
+        "ask_back_to_bottom": "↓ 回到底部",
     },
     "en": {
         "site_title": "Humanoid Robot Knowledge Graph",
@@ -189,7 +197,7 @@ UI_STRINGS = {
         "full_view": "Full graph",
         "recommended": "Recommended",
         "search_title": "Search Knowledge Graph",
-        "search_input_placeholder": "Enter keywords, e.g. reducer, Tesla, VLA…",
+        "search_input_placeholder": "Search entries, or just ask…",
         "filter_by_type": "Filter by type:",
         "all": "All",
         "results_title": "All entities",
@@ -253,9 +261,10 @@ UI_STRINGS = {
         "entries_of_type": "{count} entries",
         "back_to_top": "Back to top",
         "roadmap_label": "0→1 Roadmap",
-        "nav_ask": "AI Q&A",
-        "ask_title": "AI Q&A",
-        "ask_subtitle": "Retrieval-augmented Q&A over this knowledge graph. Bring your own API key (BYOK) — your browser talks to the provider directly, no backend involved.",
+        "ask_widget_title": "AI Q&A",
+        "ask_with_ai": "✨ Answer with AI",
+        "ask_setup_hint": "Add an API key and AI will answer your questions directly",
+        "explore_in_graph": "Explore in the graph",
         "ask_input_placeholder": "Ask a question, e.g. What are the mainstream tactile sensor approaches?",
         "ask_send": "Send",
         "ask_stop": "Stop",
@@ -268,16 +277,16 @@ UI_STRINGS = {
         "ask_save": "Save",
         "ask_clear": "Clear saved config",
         "ask_privacy_note": "Your API key is stored only in this browser's localStorage. Requests go directly from your browser to the provider — they never pass through this site's servers.",
-        "ask_empty": "Ask the knowledge graph anything. Answers are grounded in the on-site knowledge cards, with source entries attached.",
+        "ask_empty": "Ask the knowledge graph anything. Answers are grounded in the site's knowledge cards, with source entries attached.",
         "ask_thinking": "Thinking…",
         "ask_no_key": "Please enter your API key in “Settings” first.",
         "ask_no_context": "No entries related to your question were found in the knowledge graph. Try more specific keywords.",
         "ask_sources": "Sources",
         "ask_stopped": "(stopped)",
         "ask_error_network": "Network error: could not reach the provider. Check your connection or Base URL.",
-        "ask_error_auth": "Authentication failed (401): please check your API key.",
+        "ask_error_auth": "Authentication failed: please check your API key.",
         "ask_error_rate": "Rate limited (429): the provider is throttling requests — please try again later.",
-        "ask_error_generic": "Request failed: {detail}",
+        "ask_error_generic": "The request failed. Please try again later.",
         "ask_settings_saved": "Saved.",
         "ask_settings_cleared": "Cleared.",
         "ask_highlight_all": "Highlight all in graph",
@@ -288,8 +297,15 @@ UI_STRINGS = {
         "ask_stage_retrieving": "Retrieving…",
         "ask_stage_loading": "Loading sources…",
         "ask_stage_generating": "Generating…",
-        "graph_focus_back": "Back to global view",
+        "graph_focus_back": "Back to previous view",
         "graph_focus_view": "Focus view: {names}",
+        "graph_focus_sep": ", ",
+        "graph_focus_view_title": "Focus view",
+        "search_index_error": "Failed to load the search index. Check your connection and retry.",
+        "search_retry": "Retry",
+        "ask_inline_disclaimer": "AI-generated, for reference only",
+        "ask_based_on_entries": "Based on {count} entries",
+        "ask_back_to_bottom": "↓ Back to bottom",
     },
     "ko": {
         "site_title": "휴로봇 지식 그래프",
@@ -317,11 +333,11 @@ UI_STRINGS = {
         "legend": "범례",
         "reset_view": "보기 초기화",
         "fit_window": "창에 맞춤",
-        "cluster_view": "클리스터 뷰",
+        "cluster_view": "클러스터 뷰",
         "full_view": "전체 그래프",
         "recommended": "추천",
         "search_title": "지식 그래프 검색",
-        "search_input_placeholder": "키워드 입력, 예: 감속기, Tesla, VLA…",
+        "search_input_placeholder": "항목 검색 또는 질문하기…",
         "filter_by_type": "유형별 필터:",
         "all": "전체",
         "results_title": "전체 개체",
@@ -385,10 +401,11 @@ UI_STRINGS = {
         "entries_of_type": "{count}개 개체",
         "back_to_top": "맨 위로",
         "roadmap_label": "0→1 로드맵",
-        "nav_ask": "AI 문답",
-        "ask_title": "AI 문답",
-        "ask_subtitle": "이 지식 그래프 기반의 검색 증강 문답입니다. API key를 직접 입력하면(BYOK) 브라우저가 제공사에 직접 연결하며 백엔드를 거치지 않습니다.",
-        "ask_input_placeholder": "질문을 입력하세요. 예: 촉각 센서의 주류 방식에는 어떤 것이 있나요?",
+        "ask_widget_title": "AI Q&A",
+        "ask_with_ai": "✨ AI 답변",
+        "ask_setup_hint": "API key를 설정하면 AI가 바로 답변합니다",
+        "explore_in_graph": "그래프에서 탐색",
+        "ask_input_placeholder": "질문을 입력하세요. 예: 촉각 센서의 주요 기술 방식에는 어떤 것이 있나요?",
         "ask_send": "보내기",
         "ask_stop": "중지",
         "ask_settings": "설정",
@@ -407,9 +424,9 @@ UI_STRINGS = {
         "ask_sources": "참고 개체",
         "ask_stopped": "(중지됨)",
         "ask_error_network": "네트워크 오류: 제공사에 연결할 수 없습니다. 네트워크 또는 Base URL을 확인하세요.",
-        "ask_error_auth": "인증 실패(401): API key를 확인하세요.",
+        "ask_error_auth": "인증 실패: API key를 확인하세요.",
         "ask_error_rate": "요청 제한(429): 제공사의 속도 제한에 걸렸습니다. 잠시 후 다시 시도하세요.",
-        "ask_error_generic": "요청 실패: {detail}",
+        "ask_error_generic": "요청에 실패했습니다. 잠시 후 다시 시도하세요.",
         "ask_settings_saved": "저장되었습니다.",
         "ask_settings_cleared": "지워졌습니다.",
         "ask_highlight_all": "그래프에서 모두 강조",
@@ -417,11 +434,18 @@ UI_STRINGS = {
         "ask_focus_prefix": "현재 그래프 포커스: ",
         "ask_panel_collapse": "패널 접기",
         "ask_clear_history": "대화 지우기",
-        "ask_stage_retrieving": "검색 중…",
+        "ask_stage_retrieving": "관련 개체 찾는 중…",
         "ask_stage_loading": "자료 로드 중…",
         "ask_stage_generating": "생성 중…",
-        "graph_focus_back": "전체 보기로",
+        "graph_focus_back": "이전 보기로",
         "graph_focus_view": "포커스 뷰: {names}",
+        "graph_focus_sep": ", ",
+        "graph_focus_view_title": "포커스 뷰",
+        "search_index_error": "검색 색인을 불러오지 못했습니다. 네트워크 확인 후 다시 시도하세요.",
+        "search_retry": "다시 시도",
+        "ask_inline_disclaimer": "AI 생성 내용으로, 참고용입니다",
+        "ask_based_on_entries": "{count}개 개체 기반",
+        "ask_back_to_bottom": "↓ 맨 아래로",
     },
 }
 
@@ -704,10 +728,28 @@ class Renderer:
         (search_dir / "index.html").write_text(html, encoding="utf-8")
 
     def render_ask_page(self) -> None:
-        template = self.env.get_template("ask.html")
-        html = template.render(**self._ctx(
-            title=f"{self.ui['ask_title']} · {self.ui['site_title']}",
-        ))
+        """/ask/ is retired (Search-first AI): redirect to the search page."""
+        bp = "" if self.lang == "zh" else f"/{self.lang}"
+        target = f"{bp}/search/"
+        moved = {
+            "zh": "AI 问答已并入搜索页",
+            "en": "AI Q&A has moved into the search page",
+            "ko": "AI 문답이 검색 페이지에 통합되었습니다",
+        }.get(self.lang, "This page has moved")
+        html = (
+            "<!doctype html>\n"
+            f'<html lang="{"zh-CN" if self.lang == "zh" else ("ko-KR" if self.lang == "ko" else "en-US")}">\n'
+            "<head>\n"
+            '<meta charset="utf-8">\n'
+            f'<meta http-equiv="refresh" content="0; url={target}">\n'
+            f'<link rel="canonical" href="{SITE_BASE_URL}{target}">\n'
+            f"<title>{moved} · Rounds Tech KG</title>\n"
+            "</head>\n"
+            "<body>\n"
+            f'<p>{moved}: <a href="{target}">{target}</a></p>\n'
+            "</body>\n"
+            "</html>\n"
+        )
         ask_dir = self.dist_dir / "ask"
         ensure_dir(ask_dir)
         (ask_dir / "index.html").write_text(html, encoding="utf-8")

@@ -34,6 +34,9 @@
     entityCount: '{count} entities',
     backToClusters: 'Cluster view',
     focusView: 'Focus view: {names}',
+    focusSep: ', ',
+    focusViewTitle: 'Focus view',
+    fullViewTitle: 'Full graph',
   };
 
   function t(key, vars) {
@@ -383,7 +386,7 @@
   function chatHasHistory() {
     try {
       const lang = document.body.dataset.lang || 'zh';
-      const raw = sessionStorage.getItem('kg_ask_history_' + lang);
+      const raw = sessionStorage.getItem('kg_ask_history_' + lang + '_graph');
       return !!(raw && JSON.parse(raw).length);
     } catch (err) {
       return false;
@@ -660,7 +663,10 @@
             return;
           }
         }
-        if (titleEl) titleEl.classList.remove('cluster-drilldown');
+        if (titleEl) {
+          titleEl.classList.remove('cluster-drilldown');
+          titleEl.textContent = t('fullViewTitle');
+        }
         setTimeout(() => {
           initGraph(fullGraph, 'full');
           updateActiveButton('view-full');
@@ -742,10 +748,13 @@
       }, 600);
 
       if (focusBar && focusNames) {
-        focusNames.textContent = t('focusView', { names: sourceNames.join('、') });
+        focusNames.textContent = t('focusView', { names: sourceNames.join(t('focusSep')) });
         focusBar.classList.remove('hidden');
       }
-      if (titleEl) titleEl.classList.remove('cluster-drilldown');
+      if (titleEl) {
+        titleEl.classList.remove('cluster-drilldown');
+        titleEl.textContent = t('focusViewTitle');
+      }
       updateActiveButton(null);
       updateDomainFilterState();
     }
@@ -768,10 +777,22 @@
       },
     };
 
+    showLoading(fullGraph);
     loadClusters().then(() => {
       initGraph(fullGraph, 'clusters');
       graphReady = true;
       if (pendingFocusIds && pendingFocusIds.length) runFocus();
+      // Deep link: /graph/?focus=id1,id2 opens the focus view directly.
+      if (!pendingFocusIds && typeof URLSearchParams !== 'undefined') {
+        const focusParam = new URLSearchParams(window.location.search).get('focus');
+        if (focusParam) {
+          const ids = focusParam.split(',').map(s => s.trim()).filter(Boolean);
+          if (ids.length) {
+            pendingFocusIds = ids;
+            runFocus();
+          }
+        }
+      }
       // Warm the deferred relations data while the browser is idle.
       if ('requestIdleCallback' in window) {
         requestIdleCallback(() => ensureFullGraph(), { timeout: 8000 });

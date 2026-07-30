@@ -33,7 +33,45 @@
     </div>
   </section>
 
-  <section class="search-results-section" data-base-path="{{ bp }}" data-no-results="{{ ui.no_results_for }}" data-results-count="{{ ui.results_count }}" data-empty-message="{{ ui.search_empty }}" data-loading="{{ ui.search_loading }}">
+  <section id="search-ask-root" class="search-ask-root"
+    data-base-path="{{ bp }}"
+    data-ask-with-ai="{{ ui.ask_with_ai }}"
+    data-ask-setup-hint="{{ ui.ask_setup_hint }}"
+    data-explore-in-graph="{{ ui.explore_in_graph }}"
+    data-empty="{{ ui.ask_empty }}"
+    data-input-placeholder="{{ ui.ask_input_placeholder }}"
+    data-send="{{ ui.ask_send }}"
+    data-stop="{{ ui.ask_stop }}"
+    data-settings="{{ ui.ask_settings }}"
+    data-settings-title="{{ ui.ask_settings_title }}"
+    data-provider="{{ ui.ask_provider }}"
+    data-provider-custom="{{ ui.ask_provider_custom }}"
+    data-base-url="{{ ui.ask_base_url }}"
+    data-model="{{ ui.ask_model }}"
+    data-save="{{ ui.ask_save }}"
+    data-clear="{{ ui.ask_clear }}"
+    data-privacy-note="{{ ui.ask_privacy_note }}"
+    data-sources="{{ ui.ask_sources }}"
+    data-thinking="{{ ui.ask_thinking }}"
+    data-no-key="{{ ui.ask_no_key }}"
+    data-no-context="{{ ui.ask_no_context }}"
+    data-stopped="{{ ui.ask_stopped }}"
+    data-error-network="{{ ui.ask_error_network }}"
+    data-error-auth="{{ ui.ask_error_auth }}"
+    data-error-rate="{{ ui.ask_error_rate }}"
+    data-error-generic="{{ ui.ask_error_generic }}"
+    data-settings-saved="{{ ui.ask_settings_saved }}"
+    data-settings-cleared="{{ ui.ask_settings_cleared }}"
+    data-clear-history="{{ ui.ask_clear_history }}"
+    data-stage-retrieving="{{ ui.ask_stage_retrieving }}"
+    data-stage-loading="{{ ui.ask_stage_loading }}"
+    data-stage-generating="{{ ui.ask_stage_generating }}"
+    data-inline-disclaimer="{{ ui.ask_inline_disclaimer }}"
+    data-based-on-entries="{{ ui.ask_based_on_entries }}"
+    data-back-to-bottom="{{ ui.ask_back_to_bottom }}">
+  </section>
+
+  <section class="search-results-section" data-base-path="{{ bp }}" data-no-results="{{ ui.no_results_for }}" data-results-count="{{ ui.results_count }}" data-empty-message="{{ ui.search_empty }}" data-loading="{{ ui.search_loading }}" data-index-error="{{ ui.search_index_error }}" data-retry="{{ ui.search_retry }}">
     <div class="results-header">
       <h2 id="results-title">{{ ui.results_title }}</h2>
       <span id="results-count" class="results-count"></span>
@@ -50,4 +88,5 @@
 
 {% block scripts %}
 <script src="/js/search.js"></script>
+<script src="/js/ask.js"></script>
 {% endblock %}
