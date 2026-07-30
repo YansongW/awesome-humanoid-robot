@@ -11,7 +11,7 @@ summary:
   en: This paper presents a generalized momentum-based observer framework that fuses low-cost strain-gauge joint torque sensors
     with a single hip-mounted force/torque sensor to detect, localize, and estimate contact forces along robot legs, achieving
     sub-centimeter localization accuracy and force errors below 0.2 N in hardware experiments.
-  zh: 本文提出了一种广义动量观测器框架，融合低成本应变片关节力矩传感器和单个髋部安装的力/力矩传感器，以检测、定位并估计机器人腿部沿线的接触力，硬件实验实现了亚厘米级定位精度和低于0.2 N的力误差。
+  zh: 本文提出一种融合低成本应变式关节扭矩传感器与单个髋部力/扭矩传感器的广义动量观测器框架，用于检测、定位并估计机器人腿部的接触力。硬件实验表明，该方法可实现亚厘米级接触定位精度，且力误差低于0.2 N。
   ko: 본 논문은 저렴한 변형 게이지 관절 토크 센서와 하나의 고관절 장착 힘/토크 센서를 융합하여 로봇 다리의 접촉을 감지하고 위치를 추정하며 접촉력을 추정하는 일반화된 운동량 기반 관측기 프레임워크를 제안하며,
     하드웨어 실험에서 센티미터 미만의 접촉 위치 정확도와 0.2 N 이하의 힘 오차를 달성했다.
 domains:
@@ -41,7 +41,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10843v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10843v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -53,13 +54,24 @@ theoretical_depth:
 - system
 ---
 ## 概述
-This paper presents a method for detecting and localizing contact along robot legs using distributed joint torque sensors and a single hip-mounted force-torque (FT) sensor using a generalized momentum-based observer framework. We designed a low-cost strain-gauge-based joint torque sensor that can be installed on every joint to provide direct torque measurements, eliminating the need for complex friction models and providing more accurate torque readings than estimation based on motor current. Simulation studies on a floating-based 2-DoF robot leg verified that the proposed framework accurately recovers contact force and location along the thigh and shin links. Through a calibration procedure, our torque sensor achieved an average 96.4% accuracy relative to ground truth measurements. Building upon the torque sensor, we performed hardware experiments on a 2-DoF manipulator, which showed sub-centimeter contact localization accuracy and force errors below 0.2 N.
+该研究设计了一种可安装于每个关节的低成本应变式扭矩传感器，直接测量扭矩值，避免了复杂摩擦模型的依赖，比基于电机电流的估算更精确。通过标定流程，该传感器平均准确率达96.4%。在浮基2自由度机器人腿的仿真中，框架成功恢复了沿大腿和小腿连杆的接触力与位置。随后在2自由度机械臂上的硬件实验验证了亚厘米级定位精度与低于0.2 N的力误差。
 
 ## 核心内容
-This paper presents a method for detecting and localizing contact along robot legs using distributed joint torque sensors and a single hip-mounted force-torque (FT) sensor using a generalized momentum-based observer framework. We designed a low-cost strain-gauge-based joint torque sensor that can be installed on every joint to provide direct torque measurements, eliminating the need for complex friction models and providing more accurate torque readings than estimation based on motor current. Simulation studies on a floating-based 2-DoF robot leg verified that the proposed framework accurately recovers contact force and location along the thigh and shin links. Through a calibration procedure, our torque sensor achieved an average 96.4% accuracy relative to ground truth measurements. Building upon the torque sensor, we performed hardware experiments on a 2-DoF manipulator, which showed sub-centimeter contact localization accuracy and force errors below 0.2 N.
+### 方法概述
+- 采用广义动量观测器框架，融合分布式关节扭矩传感器与单个髋部力/扭矩传感器。
+- 关节扭矩传感器基于应变片设计，成本低，可直接提供扭矩读数，无需摩擦模型补偿。
 
-## 参考
-- http://arxiv.org/abs/2510.10843v1
+### 传感器标定
+- 通过标定流程，传感器测量值与真实值之间的平均准确率达到96.4%。
+
+### 仿真验证
+- 在浮基2自由度机器人腿模型上进行仿真，验证了框架能准确恢复沿大腿和小腿连杆的接触力与位置。
+
+### 硬件实验
+- 在2自由度机械臂上开展实验，接触定位精度达到亚厘米级，力误差低于0.2 N。
+
+## Overview
+This paper presents a method for detecting and localizing contact along robot legs using distributed joint torque sensors and a single hip-mounted force-torque (FT) sensor using a generalized momentum-based observer framework. We designed a low-cost strain-gauge-based joint torque sensor that can be installed on every joint to provide direct torque measurements, eliminating the need for complex friction models and providing more accurate torque readings than estimation based on motor current. Simulation studies on a floating-based 2-DoF robot leg verified that the proposed framework accurately recovers contact force and location along the thigh and shin links. Through a calibration procedure, our torque sensor achieved an average 96.4% accuracy relative to ground truth measurements. Building upon the torque sensor, we performed hardware experiments on a 2-DoF manipulator, which showed sub-centimeter contact localization accuracy and force errors below 0.2 N.
 
 ## Overview
 This paper presents a method for detecting and localizing contact along robot legs using distributed joint torque sensors and a single hip-mounted force-torque (FT) sensor within a generalized momentum-based observer framework. We designed a low-cost strain-gauge-based joint torque sensor that can be installed on every joint to provide direct torque measurements, eliminating the need for complex friction models and offering more accurate torque readings than motor current-based estimation. Simulation studies on a floating-based 2-DoF robot leg verified that the proposed framework accurately recovers contact force and location along the thigh and shin links. Through a calibration procedure, our torque sensor achieved an average 96.4% accuracy relative to ground truth measurements. Building upon the torque sensor, we conducted hardware experiments on a 2-DoF manipulator, demonstrating sub-centimeter contact localization accuracy and force errors below 0.2 N.
@@ -72,3 +84,6 @@ This paper presents a method for detecting and localizing contact along robot le
 
 ## 핵심 내용
 본 논문은 분산형 관절 토크 센서와 단일 엉덩이 장착 힘-토크(FT) 센서를 활용하여 일반화된 운동량 기반 관측기 프레임워크를 통해 로봇 다리의 접촉을 감지하고 위치를 파악하는 방법을 제시합니다. 우리는 모든 관절에 설치 가능한 저비용 스트레인 게이지 기반 관절 토크 센서를 설계하여 직접 토크 측정을 제공함으로써 복잡한 마찰 모델의 필요성을 없애고 모터 전류 기반 추정보다 더 정확한 토크 값을 제공합니다. 부유 기반 2자유도(2-DoF) 로봇 다리에 대한 시뮬레이션 연구를 통해 제안된 프레임워크가 대퇴부와 경골 링크를 따라 접촉력과 위치를 정확하게 복원함을 확인했습니다. 교정 절차를 통해 당사의 토크 센서는 실제 측정값 대비 평균 96.4%의 정확도를 달성했습니다. 토크 센서를 기반으로 2자유도 매니퓰레이터에서 하드웨어 실험을 수행한 결과, 서브센티미터 수준의 접촉 위치 정확도와 0.2N 미만의 힘 오차를 보였습니다.
+
+## 参考
+- http://arxiv.org/abs/2510.10843v1

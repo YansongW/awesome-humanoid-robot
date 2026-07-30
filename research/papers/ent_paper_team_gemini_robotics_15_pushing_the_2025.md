@@ -12,7 +12,7 @@ summary:
   en: Gemini Robotics 1.5 introduces a multi-embodiment Vision-Language-Action model with Motion Transfer and a Thinking VLA
     that interleaves actions with natural-language reasoning, alongside Gemini Robotics-ER 1.5, an embodied reasoning model
     for spatial understanding and task planning.
-  zh: Gemini Robotics 1.5 提出了一个具备动作迁移能力的多本体视觉-语言-动作模型，以及将动作与自然语言推理交织的 Thinking VLA，并配套 Gemini Robotics-ER 1.5 具身推理模型用于空间理解与任务规划。
+  zh: Gemini Robotics 1.5 是 Google DeepMind 推出的新一代通用机器人模型家族，包含多形态视觉-语言-动作模型与运动转移机制，以及先进的具身推理模型 Gemini Robotics-ER 1.5。核心贡献在于通过动作与自然语言推理的交错执行实现“先思考后行动”，并在空间理解与任务规划上达到新高度。
   ko: Gemini Robotics 1.5는 동작 전이를 갖춘 다중 구체화 비전-언어-행동 모델과 자연어 추론과 행동을 교차하는 Thinking VLA를 소개하며, 공간 이해와 작업 계획을 위한 Gemini Robotics-ER
     1.5 구체화 추론 모델을 함께 제시한다.
 domains:
@@ -40,7 +40,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.03342v3.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.03342v3. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -53,13 +54,24 @@ theoretical_depth:
 - method
 ---
 ## 概述
-General-purpose robots need a deep understanding of the physical world, advanced reasoning, and general and dexterous control. This report introduces the latest generation of the Gemini Robotics model family: Gemini Robotics 1.5, a multi-embodiment Vision-Language-Action (VLA) model, and Gemini Robotics-ER 1.5, a state-of-the-art Embodied Reasoning (ER) model. We are bringing together three major innovations. First, Gemini Robotics 1.5 features a novel architecture and a Motion Transfer (MT) mechanism, which enables it to learn from heterogeneous, multi-embodiment robot data and makes the VLA more general. Second, Gemini Robotics 1.5 interleaves actions with a multi-level internal reasoning process in natural language. This enables the robot to "think before acting" and notably improves its ability to decompose and execute complex, multi-step tasks, and also makes the robot's behavior more interpretable to the user. Third, Gemini Robotics-ER 1.5 establishes a new state-of-the-art for embodied reasoning, i.e., for reasoning capabilities that are critical for robots, such as visual and spatial understanding, task planning, and progress estimation. Together, this family of models takes us a step towards an era of physical agents-enabling robots to perceive, think and then act so they can solve complex multi-step tasks.
+Gemini Robotics 1.5 家族由两个核心模型组成：多形态视觉-语言-动作模型与具身推理模型 Gemini Robotics-ER 1.5。前者通过创新的运动转移机制，能够从异构的多形态机器人数据中学习，提升通用性；后者则在视觉空间理解、任务规划与进度估计等关键具身推理能力上达到当前最优水平。该家族模型通过将动作与多级自然语言推理过程交错执行，使机器人能够分解并完成复杂多步任务，同时提升行为可解释性。
 
 ## 核心内容
-General-purpose robots need a deep understanding of the physical world, advanced reasoning, and general and dexterous control. This report introduces the latest generation of the Gemini Robotics model family: Gemini Robotics 1.5, a multi-embodiment Vision-Language-Action (VLA) model, and Gemini Robotics-ER 1.5, a state-of-the-art Embodied Reasoning (ER) model. We are bringing together three major innovations. First, Gemini Robotics 1.5 features a novel architecture and a Motion Transfer (MT) mechanism, which enables it to learn from heterogeneous, multi-embodiment robot data and makes the VLA more general. Second, Gemini Robotics 1.5 interleaves actions with a multi-level internal reasoning process in natural language. This enables the robot to "think before acting" and notably improves its ability to decompose and execute complex, multi-step tasks, and also makes the robot's behavior more interpretable to the user. Third, Gemini Robotics-ER 1.5 establishes a new state-of-the-art for embodied reasoning, i.e., for reasoning capabilities that are critical for robots, such as visual and spatial understanding, task planning, and progress estimation. Together, this family of models takes us a step towards an era of physical agents-enabling robots to perceive, think and then act so they can solve complex multi-step tasks.
+### 模型架构与创新
+- **多形态视觉-语言-动作模型**：采用新型架构，支持从不同形态的机器人数据中学习，通过**运动转移机制**实现跨形态技能迁移，增强模型的通用性。
+- **思考型 VLA**：在动作生成过程中交错插入多级自然语言推理，使机器人能够“先思考后行动”，显著提升复杂多步任务的分解与执行能力，同时让用户更易理解机器人的行为逻辑。
 
-## 参考
-- http://arxiv.org/abs/2510.03342v3
+### 具身推理模型
+- **Gemini Robotics-ER 1.5**：在具身推理领域达到新最优水平，核心能力包括：
+  - 视觉与空间理解
+  - 任务规划
+  - 进度估计
+
+### 实验与结论
+- 该模型家族使机器人能够感知、思考并行动，从而解决复杂的多步任务，标志着向通用物理智能体时代迈出重要一步。
+
+## Overview
+General-purpose robots need a deep understanding of the physical world, advanced reasoning, and general and dexterous control. This report introduces the latest generation of the Gemini Robotics model family: Gemini Robotics 1.5, a multi-embodiment Vision-Language-Action (VLA) model, and Gemini Robotics-ER 1.5, a state-of-the-art Embodied Reasoning (ER) model. We are bringing together three major innovations. First, Gemini Robotics 1.5 features a novel architecture and a Motion Transfer (MT) mechanism, which enables it to learn from heterogeneous, multi-embodiment robot data and makes the VLA more general. Second, Gemini Robotics 1.5 interleaves actions with a multi-level internal reasoning process in natural language. This enables the robot to "think before acting" and notably improves its ability to decompose and execute complex, multi-step tasks, and also makes the robot's behavior more interpretable to the user. Third, Gemini Robotics-ER 1.5 establishes a new state-of-the-art for embodied reasoning, i.e., for reasoning capabilities that are critical for robots, such as visual and spatial understanding, task planning, and progress estimation. Together, this family of models takes us a step towards an era of physical agents-enabling robots to perceive, think and then act so they can solve complex multi-step tasks.
 
 ## Overview
 General-purpose robots require a profound understanding of the physical world, advanced reasoning capabilities, and general, dexterous control. This report introduces the latest generation of the Gemini Robotics model family: Gemini Robotics 1.5, a multi-embodiment Vision-Language-Action (VLA) model, and Gemini Robotics-ER 1.5, a state-of-the-art Embodied Reasoning (ER) model. We bring together three major innovations. First, Gemini Robotics 1.5 features a novel architecture and a Motion Transfer (MT) mechanism, enabling it to learn from heterogeneous, multi-embodiment robot data and making the VLA more general. Second, Gemini Robotics 1.5 interleaves actions with a multi-level internal reasoning process in natural language. This allows the robot to "think before acting," significantly improving its ability to decompose and execute complex, multi-step tasks, while also making its behavior more interpretable to users. Third, Gemini Robotics-ER 1.5 establishes a new state-of-the-art for embodied reasoning—i.e., reasoning capabilities critical for robots, such as visual and spatial understanding, task planning, and progress estimation. Together, this family of models takes us a step closer to an era of physical agents, enabling robots to perceive, think, and then act to solve complex multi-step tasks.
@@ -72,3 +84,6 @@ General-purpose robots require a profound understanding of the physical world, a
 
 ## 핵심 내용
 범용 로봇은 물리적 세계에 대한 깊은 이해, 고급 추론 능력, 그리고 일반적이고 정교한 제어 능력을 필요로 합니다. 본 보고서는 Gemini Robotics 모델 패밀리의 최신 세대를 소개합니다: 다중 체현 비전-언어-행동(VLA) 모델인 Gemini Robotics 1.5와 최첨단 체현 추론(ER) 모델인 Gemini Robotics-ER 1.5입니다. 우리는 세 가지 주요 혁신을 통합했습니다. 첫째, Gemini Robotics 1.5는 새로운 아키텍처와 모션 전이(MT) 메커니즘을 특징으로 하여, 이질적이고 다중 체현 로봇 데이터로부터 학습할 수 있게 하고 VLA를 더욱 일반화합니다. 둘째, Gemini Robotics 1.5는 자연어로 다단계 내부 추론 과정을 행동과 인터리브합니다. 이를 통해 로봇이 "행동하기 전에 생각"할 수 있게 하여 복잡한 다단계 작업을 분해하고 실행하는 능력을 현저히 향상시키며, 사용자에게 로봇의 행동을 더 해석 가능하게 만듭니다. 셋째, Gemini Robotics-ER 1.5는 체현 추론, 즉 로봇에게 중요한 추론 능력(예: 시각적 및 공간적 이해, 작업 계획, 진행 상황 추정)에서 새로운 최첨단을 확립합니다. 이 모델 패밀리는 함께 물리적 에이전트의 시대를 향한 한 걸음을 내딛게 하여, 로봇이 복잡한 다단계 작업을 해결할 수 있도록 인지하고, 생각한 후 행동할 수 있게 합니다.
+
+## 参考
+- http://arxiv.org/abs/2510.03342v3

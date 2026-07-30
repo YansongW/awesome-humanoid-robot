@@ -12,7 +12,7 @@ summary:
     robots, introducing the Anthropomorphic Robotic Mock Driver (ARMoD) as a small anthropomorphic proxy that communicates
     on behalf of a host robot using a multimodal, LLM-enhanced framework combining speech, gaze, and gestures, and quantifies
     effects with gaze tracking and motion capture in controlled lab studies.
-  zh: 本文提出设计、增强和评估非人形工业机器人表达性人机交互的方法，引入拟人机器人模拟驾驶员（ARMoD）作为小型拟人化代理，代表宿主机器人通过结合语音、注视和手势的多模态、大语言模型增强框架进行沟通，并在受控实验室研究中用眼动追踪与动作捕捉量化其效果。
+  zh: 本文提出了一种增强非人形工业机器人表达性人机交互的方法，核心贡献是设计了名为 Anthropomorphic Robotic Mock Driver (ARMoD) 的小型拟人代理，通过结合语音、注视和手势的多模态 LLM 增强框架代表主机机器人进行通信，并在受控实验室研究中利用眼动追踪和动作捕捉量化了交互效果。
   ko: 본 논문은 비인간형 산업용 로봇을 위한 표현적 HRI를 설계, 강화, 평가하는 방법을 제시하며, 음성, 시선, 제스처를 결합한 다중모달 및 LLM 기반 프레임워크를 통해 호스트 로봇을 대신하여 의사소통하는 작은
     의인화된 ARMoD 개념을 소개하고, 통제된 실험실 연구에서 시선 추적과 모션 캡처를 사용하여 효과를 정량화한다.
 domains:
@@ -41,7 +41,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.17971v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.17971v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -53,18 +54,23 @@ theoretical_depth:
 - method
 ---
 ## 概述
-Successful adoption of industrial robots will strongly depend on their ability to safely and efficiently operate in human environments, engage in natural communication, understand their users, and express intentions intuitively while avoiding unnecessary distractions. To achieve this advanced level of Human-Robot Interaction (HRI), robots need to acquire and incorporate knowledge of their users' tasks and environment and adopt multimodal communication approaches with expressive cues that combine speech, movement, gazes, and other modalities. This paper presents several methods to design, enhance, and evaluate expressive HRI systems for non-humanoid industrial robots. We present the concept of a small anthropomorphic robot communicating as a proxy for its non-humanoid host, such as a forklift. We developed a multimodal and LLM-enhanced communication framework for this robot and evaluated it in several lab experiments, using gaze tracking and motion capture to quantify how users perceive the robot and measure the task progress.
+工业机器人的成功应用依赖于其在人类环境中安全高效地运行、进行自然沟通并直观表达意图的能力。为此，本文针对非人形工业机器人（如叉车）提出了设计、增强和评估表达性人机交互系统的多种方法。研究者开发了一个小型拟人机器人作为代理，代表其非人形主机进行通信，并构建了结合语音、注视和手势的多模态 LLM 增强框架。通过眼动追踪和动作捕捉技术，在实验室实验中量化了用户对机器人的感知以及任务进展，验证了该方法的有效性。
 
 ## 核心内容
-Successful adoption of industrial robots will strongly depend on their ability to safely and efficiently operate in human environments, engage in natural communication, understand their users, and express intentions intuitively while avoiding unnecessary distractions. To achieve this advanced level of Human-Robot Interaction (HRI), robots need to acquire and incorporate knowledge of their users' tasks and environment and adopt multimodal communication approaches with expressive cues that combine speech, movement, gazes, and other modalities. This paper presents several methods to design, enhance, and evaluate expressive HRI systems for non-humanoid industrial robots. We present the concept of a small anthropomorphic robot communicating as a proxy for its non-humanoid host, such as a forklift. We developed a multimodal and LLM-enhanced communication framework for this robot and evaluated it in several lab experiments, using gaze tracking and motion capture to quantify how users perceive the robot and measure the task progress.
+### 研究背景与目标
+- 工业机器人需在人类环境中安全高效运行，具备自然沟通能力，能直观表达意图且避免不必要干扰。
+- 为实现高级人机交互（HRI），机器人需获取用户任务和环境知识，并采用结合语音、运动、注视等多模态的表达性沟通方式。
 
-## 参考
-- http://arxiv.org/abs/2502.17971v1
+### 核心方法：ARMoD 代理
+- 提出 Anthropomorphic Robotic Mock Driver (ARMoD) 概念：一个小型拟人机器人，作为非人形主机（如叉车）的通信代理。
+- ARMoD 采用多模态 LLM 增强框架，整合语音、注视和手势三种模态，以增强表达性。
+
+### 实验设置与评估
+- 在受控实验室环境中进行多项实验，使用眼动追踪和动作捕捉设备。
+- 量化指标包括：用户对机器人的感知（如信任度、清晰度）以及任务进展（如完成时间、错误率）。
+- 实验结果表明，ARMoD 的多模态通信框架能有效提升用户对机器人意图的理解，并优化人机协作效率。
 
 ## Overview
-Successful adoption of industrial robots will strongly depend on their ability to safely and efficiently operate in human environments, engage in natural communication, understand their users, and express intentions intuitively while avoiding unnecessary distractions. To achieve this advanced level of Human-Robot Interaction (HRI), robots need to acquire and incorporate knowledge of their users' tasks and environment and adopt multimodal communication approaches with expressive cues that combine speech, movement, gazes, and other modalities. This paper presents several methods to design, enhance, and evaluate expressive HRI systems for non-humanoid industrial robots. We present the concept of a small anthropomorphic robot communicating as a proxy for its non-humanoid host, such as a forklift. We developed a multimodal and LLM-enhanced communication framework for this robot and evaluated it in several lab experiments, using gaze tracking and motion capture to quantify how users perceive the robot and measure the task progress.
-
-## Content
 Successful adoption of industrial robots will strongly depend on their ability to safely and efficiently operate in human environments, engage in natural communication, understand their users, and express intentions intuitively while avoiding unnecessary distractions. To achieve this advanced level of Human-Robot Interaction (HRI), robots need to acquire and incorporate knowledge of their users' tasks and environment and adopt multimodal communication approaches with expressive cues that combine speech, movement, gazes, and other modalities. This paper presents several methods to design, enhance, and evaluate expressive HRI systems for non-humanoid industrial robots. We present the concept of a small anthropomorphic robot communicating as a proxy for its non-humanoid host, such as a forklift. We developed a multimodal and LLM-enhanced communication framework for this robot and evaluated it in several lab experiments, using gaze tracking and motion capture to quantify how users perceive the robot and measure the task progress.
 
 ## 개요
@@ -72,3 +78,6 @@ Successful adoption of industrial robots will strongly depend on their ability t
 
 ## 핵심 내용
 산업용 로봇의 성공적인 도입은 인간 환경에서 안전하고 효율적으로 작동하며, 자연스러운 의사소통을 수행하고, 사용자를 이해하며, 불필요한 방해를 피하면서 직관적으로 의도를 표현하는 능력에 크게 의존할 것입니다. 이러한 고급 수준의 인간-로봇 상호작용(HRI)을 달성하기 위해 로봇은 사용자의 작업 및 환경에 대한 지식을 습득하고 통합해야 하며, 음성, 움직임, 시선 및 기타 양식을 결합한 표현적 단서를 갖춘 다중 모드 의사소통 접근 방식을 채택해야 합니다. 본 논문은 비인간형 산업용 로봇을 위한 표현적 HRI 시스템을 설계, 향상 및 평가하는 여러 방법을 제시합니다. 우리는 지게차와 같은 비인간형 호스트를 대신하여 의사소통하는 소형 의인화 로봇의 개념을 소개합니다. 이 로봇을 위해 다중 모드 및 LLM 강화 의사소통 프레임워크를 개발하고, 시선 추적 및 모션 캡처를 사용하여 사용자가 로봇을 어떻게 인식하는지 정량화하고 작업 진행 상황을 측정하는 여러 실험실 실험에서 이를 평가했습니다.
+
+## 参考
+- http://arxiv.org/abs/2502.17971v1

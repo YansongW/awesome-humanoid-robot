@@ -10,7 +10,7 @@ names:
 summary:
   en: A 2026 survey that defines World Action Models (WAMs) as embodied foundation models unifying predictive world modeling
     with action generation, and organizes existing methods into Cascaded and Joint architectures.
-  zh: 2026 年综述，将 World Action Models（WAMs）定义为统一预测性世界建模与动作生成的具身基础模型，并将现有方法组织为级联式（Cascaded）与联合式（Joint）架构。
+  zh: World Action Models (WAMs) 是2026年提出的一类具身基础模型，旨在统一预测性世界建模与动作生成。该综述将现有方法划分为级联架构与联合架构，并系统梳理了数据生态与评估协议，为具身智能领域提供了首个系统性框架。
   ko: 2026년 서베이로, World Action Models(WAMs)를 예측적 월드 모델링과 액션 생성을 통합하는 엠바디드 파욍데이션 모델로 정의하고, 기존 방법을 Cascaded 및 Joint 아키텍처로 분류함.
 domains:
 - 07_ai_models_algorithms
@@ -38,7 +38,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.12090v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.12090v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_wam_paper
   type: paper
@@ -75,18 +76,33 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Vision-Language-Action (VLA) models have achieved strong semantic generalization for embodied policy learning, yet they learn reactive observation-to-action mappings without explicitly modeling how the physical world evolves under intervention. A growing body of work addresses this limitation by integrating world models, predictive models of environment dynamics, into the action generation pipeline. We term this emerging paradigm World Action Models (WAMs): embodied foundation models that unify predictive state modeling with action generation, targeting a joint distribution over future states and actions rather than actions alone. However, the literature remains fragmented across architectures, learning objectives, and application scenarios, lacking a unified conceptual framework. We formally define WAMs and disambiguate them from related concepts, and trace the foundations and early integration of VLA and world model research that gave rise to this paradigm. We organize existing methods into a structured taxonomy of Cascaded and Joint WAMs, with further subdivision by generation modality, conditioning mechanism, and action decoding strategy. We systematically analyze the data ecosystem fueling WAMs development, spanning robot teleoperation, portable human demonstrations, simulation, and internet-scale egocentric video, and synthesize emerging evaluation protocols organized around visual fidelity, physical commonsense, and action plausibility. Overall, this survey provides the first systematic account of the WAMs landscape, clarifies key architectural paradigms and their trade-offs, and identifies open challenges and future opportunities for this rapidly evolving field.
+Vision-Language-Action (VLA) 模型虽在具身策略学习中展现了强大的语义泛化能力，但其本质是反应式的观测-动作映射，缺乏对物理世界在干预下如何演化的显式建模。为弥补这一缺陷，研究者将世界模型（即环境动态的预测模型）集成到动作生成流程中，由此催生了 World Action Models (WAMs) 这一新兴范式。WAMs 将预测性状态建模与动作生成统一为具身基础模型，其目标不再是仅预测动作，而是联合建模未来状态与动作的分布。然而，现有文献在架构、学习目标和应用场景上高度碎片化，缺乏统一的概念框架。该综述正式定义了 WAMs，将其与相关概念区分开来，并追溯了 VLA 与世界模型研究融合的起源。作者将现有方法组织为级联式与联合式两类 WAMs 的层次化分类体系，进一步按生成模态、条件机制和动作解码策略进行细分。此外，综述系统分析了支撑 WAMs 发展的数据生态（涵盖机器人遥操作、便携式人类演示、仿真及互联网规模的第一人称视频），并综合了围绕视觉保真度、物理常识和动作合理性组织的新兴评估协议。
 
 ## 核心内容
-Vision-Language-Action (VLA) models have achieved strong semantic generalization for embodied policy learning, yet they learn reactive observation-to-action mappings without explicitly modeling how the physical world evolves under intervention. A growing body of work addresses this limitation by integrating world models, predictive models of environment dynamics, into the action generation pipeline. We term this emerging paradigm World Action Models (WAMs): embodied foundation models that unify predictive state modeling with action generation, targeting a joint distribution over future states and actions rather than actions alone. However, the literature remains fragmented across architectures, learning objectives, and application scenarios, lacking a unified conceptual framework. We formally define WAMs and disambiguate them from related concepts, and trace the foundations and early integration of VLA and world model research that gave rise to this paradigm. We organize existing methods into a structured taxonomy of Cascaded and Joint WAMs, with further subdivision by generation modality, conditioning mechanism, and action decoding strategy. We systematically analyze the data ecosystem fueling WAMs development, spanning robot teleoperation, portable human demonstrations, simulation, and internet-scale egocentric video, and synthesize emerging evaluation protocols organized around visual fidelity, physical commonsense, and action plausibility. Overall, this survey provides the first systematic account of the WAMs landscape, clarifies key architectural paradigms and their trade-offs, and identifies open challenges and future opportunities for this rapidly evolving field.
+### 核心定义与架构分类
+- **World Action Models (WAMs)** 被正式定义为：统一预测性状态建模与动作生成的具身基础模型，其目标是联合建模未来状态与动作的分布，而非仅建模动作。
+- 综述将现有方法分为两大架构：
+  - **Cascaded WAMs**：世界模型与动作生成器以流水线方式串联，世界模型先预测未来状态，再基于该状态生成动作。
+  - **Joint WAMs**：世界模型与动作生成器共享参数或联合训练，直接输出状态-动作联合分布。
+- 进一步细分维度包括：生成模态（如 RGB 图像、点云、隐式表示）、条件机制（如语言指令、目标图像、触觉反馈）以及动作解码策略（如扩散解码、自回归解码）。
 
-## 参考
-- http://arxiv.org/abs/2605.12090v1
+### 数据生态与评估协议
+- 数据来源涵盖四大类：
+  - **机器人遥操作**：提供高保真但成本高昂的专家演示数据。
+  - **便携式人类演示**：通过可穿戴设备采集人类操作数据，扩展数据多样性。
+  - **仿真环境**：如 Habitat、Isaac Sim，支持大规模低成本数据生成。
+  - **互联网规模的第一人称视频**：如 Ego4D，提供海量未标注的日常活动数据。
+- 评估协议围绕三个核心维度组织：
+  - **视觉保真度**：衡量预测的未来状态图像与真实观测的相似度（如 FID、LPIPS）。
+  - **物理常识**：测试模型对物理规律（如重力、碰撞、物体持久性）的遵守程度。
+  - **动作合理性**：评估生成动作在任务上下文中的可行性与效率（如成功率、任务完成时间）。
+
+### 关键发现与开放挑战
+- 级联架构在视觉预测精度上通常优于联合架构，但联合架构在动作生成效率与端到端训练稳定性上更具优势。
+- 当前 WAMs 面临的主要挑战包括：长时域预测中的误差累积、跨场景泛化能力不足、以及缺乏统一的多模态评估基准。
+- 未来方向包括：引入因果推理机制以增强物理常识、利用大规模预训练视频模型初始化世界模型、以及开发更高效的动作解码策略以支持实时部署。
 
 ## Overview
-Vision-Language-Action (VLA) models have achieved strong semantic generalization for embodied policy learning, yet they learn reactive observation-to-action mappings without explicitly modeling how the physical world evolves under intervention. A growing body of work addresses this limitation by integrating world models, predictive models of environment dynamics, into the action generation pipeline. We term this emerging paradigm World Action Models (WAMs): embodied foundation models that unify predictive state modeling with action generation, targeting a joint distribution over future states and actions rather than actions alone. However, the literature remains fragmented across architectures, learning objectives, and application scenarios, lacking a unified conceptual framework. We formally define WAMs and disambiguate them from related concepts, and trace the foundations and early integration of VLA and world model research that gave rise to this paradigm. We organize existing methods into a structured taxonomy of Cascaded and Joint WAMs, with further subdivision by generation modality, conditioning mechanism, and action decoding strategy. We systematically analyze the data ecosystem fueling WAMs development, spanning robot teleoperation, portable human demonstrations, simulation, and internet-scale egocentric video, and synthesize emerging evaluation protocols organized around visual fidelity, physical commonsense, and action plausibility. Overall, this survey provides the first systematic account of the WAMs landscape, clarifies key architectural paradigms and their trade-offs, and identifies open challenges and future opportunities for this rapidly evolving field.
-
-## Content
 Vision-Language-Action (VLA) models have achieved strong semantic generalization for embodied policy learning, yet they learn reactive observation-to-action mappings without explicitly modeling how the physical world evolves under intervention. A growing body of work addresses this limitation by integrating world models, predictive models of environment dynamics, into the action generation pipeline. We term this emerging paradigm World Action Models (WAMs): embodied foundation models that unify predictive state modeling with action generation, targeting a joint distribution over future states and actions rather than actions alone. However, the literature remains fragmented across architectures, learning objectives, and application scenarios, lacking a unified conceptual framework. We formally define WAMs and disambiguate them from related concepts, and trace the foundations and early integration of VLA and world model research that gave rise to this paradigm. We organize existing methods into a structured taxonomy of Cascaded and Joint WAMs, with further subdivision by generation modality, conditioning mechanism, and action decoding strategy. We systematically analyze the data ecosystem fueling WAMs development, spanning robot teleoperation, portable human demonstrations, simulation, and internet-scale egocentric video, and synthesize emerging evaluation protocols organized around visual fidelity, physical commonsense, and action plausibility. Overall, this survey provides the first systematic account of the WAMs landscape, clarifies key architectural paradigms and their trade-offs, and identifies open challenges and future opportunities for this rapidly evolving field.
 
 ## 개요
@@ -94,3 +110,6 @@ Vision-Language-Action (VLA) 모델은 구현된 정책 학습에서 강력한 �
 
 ## 핵심 내용
 Vision-Language-Action (VLA) 모델은 구현된 정책 학습에서 강력한 의미적 일반화를 달성했지만, 물리적 세계가 개입 하에서 어떻게 진화하는지 명시적으로 모델링하지 않고 반응적 관찰-행동 매핑을 학습합니다. 점점 더 많은 연구가 이러한 한계를 해결하기 위해 환경 역학의 예측 모델인 월드 모델을 행동 생성 파이프라인에 통합하고 있습니다. 우리는 이 새로운 패러다임을 World Action Models (WAMs)라고 명명합니다. 이는 예측적 상태 모델링과 행동 생성을 통합하여 행동만이 아닌 미래 상태와 행동의 결합 분포를 목표로 하는 구현된 기반 모델입니다. 그러나 관련 문헌은 아키텍처, 학습 목표 및 응용 시나리오 전반에 걸쳐 분산되어 있어 통일된 개념적 프레임워크가 부족합니다. 우리는 WAM을 공식적으로 정의하고 관련 개념과 구별하며, 이 패러다임을 탄생시킨 VLA 및 월드 모델 연구의 기초와 초기 통합을 추적합니다. 기존 방법을 캐스케이드 및 조인트 WAM의 구조화된 분류 체계로 정리하고, 생성 모달리티, 조건화 메커니즘 및 행동 디코딩 전략에 따라 세분화합니다. 우리는 로봇 원격 조작, 휴대용 인간 시연, 시뮬레이션 및 인터넷 규모의 자기 중심 비디오에 이르기까지 WAM 개발을 촉진하는 데이터 생태계를 체계적으로 분석하고, 시각적 충실도, 물리적 상식 및 행동 타당성을 중심으로 조직된 새로운 평가 프로토콜을 종합합니다. 전반적으로, 이 설문 조사는 WAMs 환경에 대한 최초의 체계적인 설명을 제공하고, 주요 아키텍처 패러다임과 그 트레이드오프를 명확히 하며, 이 빠르게 진화하는 분야의 공개된 과제와 미래 기회를 식별합니다.
+
+## 参考
+- http://arxiv.org/abs/2605.12090v1

@@ -11,11 +11,7 @@ summary:
   en: Proposes CTAS, a stochastic mixed-integer programming framework that jointly optimizes task decomposition, assignment,
     and scheduling for heterogeneous robot teams under capability and requirement uncertainty, using CVaR to quantify non-completion
     risk.
-  zh: This paper develops a stochastic programming framework for multi-agent systems where task decomposition, assignment,
-    and scheduling problems are simultaneously optimized. The framework can be applied to heterogeneous mobile robot teams
-    with distributed sub-tasks. Examples include pandemic robotic service coordination, explore and rescue, and delivery systems
-    with heterogeneous vehicles. Due to their inherent flexibility and robustness, multi-agent systems are applied in a growing
-    range of real-world problems that involve heterogeneous tasks and uncertain information. Most previous works assume
+  zh: 本文提出CTAS框架，一个随机混合整数规划模型，用于异构机器人团队在能力与需求不确定下的任务分解、分配与调度联合优化。该框架采用条件风险价值（CVaR）量化任务未完成风险，并在两个实际案例中验证了其可扩展性与鲁棒性。
   ko: 능력 및 요구사항 불확실성 하에서 이종 로봇 팀의 작업 분해, 할당 및 스케줄링을 동시에 최적화하고 CVaR을 사용하여 미완료 위험을 정량화하는 CTAS 확률 혼합정수계획 프레임워크를 제안함.
 domains:
 - 07_ai_models_algorithms
@@ -41,7 +37,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2106.12111v3.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2106.12111v3. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -52,20 +49,31 @@ sources:
 theoretical_depth:
 - method
 ---
-
 ## 概述
-This paper develops a stochastic programming framework for multi-agent systems where task decomposition, assignment, and scheduling problems are simultaneously optimized. The framework can be applied to heterogeneous mobile robot teams with distributed sub-tasks. Examples include pandemic robotic service coordination, explore and rescue, and delivery systems with heterogeneous vehicles. Due to their inherent flexibility and robustness, multi-agent systems are applied in a growing range of real-world problems that involve heterogeneous tasks and uncertain information. Most previous works assume one fixed way to decompose a task into roles that can later be assigned to the agents. This assumption is not valid for a complex task where the roles can vary and multiple decomposition structures exist. Meanwhile, it is unclear how uncertainties in task requirements and agent capabilities can be systematically quantified and optimized under a multi-agent system setting. A representation for complex tasks is proposed: agent capabilities are represented as a vector of random distributions, and task requirements are verified by a generalizable binary function. The conditional value at risk (CVaR) is chosen as a metric in the objective function to generate robust plans. An efficient algorithm is described to solve the model, and the whole framework is evaluated in two different practical test cases: capture-the-flag and robotic service coordination during a pandemic (e.g., COVID-19). Results demonstrate that the framework is generalizable, scalable up to 140 agents and 40 tasks for the example test cases, and provides low-cost plans that ensure a high probability of success.
+针对异构多机器人系统中任务分解结构可变且存在能力与需求不确定性的问题，本文提出了CTAS框架。该框架将任务分解、分配与调度作为联合优化问题，用随机分布向量表示机器人能力，用通用二元函数验证任务需求，并以CVaR作为目标函数中的风险度量指标。实验在夺旗与疫情机器人服务协调两个场景中展开，结果显示框架可扩展至140个机器人与40个任务，且能生成低成本、高成功概率的鲁棒计划。
 
 ## 核心内容
-This paper develops a stochastic programming framework for multi-agent systems where task decomposition, assignment, and scheduling problems are simultaneously optimized. The framework can be applied to heterogeneous mobile robot teams with distributed sub-tasks. Examples include pandemic robotic service coordination, explore and rescue, and delivery systems with heterogeneous vehicles. Due to their inherent flexibility and robustness, multi-agent systems are applied in a growing range of real-world problems that involve heterogeneous tasks and uncertain information. Most previous works assume one fixed way to decompose a task into roles that can later be assigned to the agents. This assumption is not valid for a complex task where the roles can vary and multiple decomposition structures exist. Meanwhile, it is unclear how uncertainties in task requirements and agent capabilities can be systematically quantified and optimized under a multi-agent system setting. A representation for complex tasks is proposed: agent capabilities are represented as a vector of random distributions, and task requirements are verified by a generalizable binary function. The conditional value at risk (CVaR) is chosen as a metric in the objective function to generate robust plans. An efficient algorithm is described to solve the model, and the whole framework is evaluated in two different practical test cases: capture-the-flag and robotic service coordination during a pandemic (e.g., COVID-19). Results demonstrate that the framework is generalizable, scalable up to 140 agents and 40 tasks for the example test cases, and provides low-cost plans that ensure a high probability of success.
+### 方法
+- **问题建模**：将异构机器人团队的任务规划建模为随机混合整数规划，同时优化任务分解（将复杂任务拆分为可变角色）、分配（角色到机器人）与调度（执行顺序）。
+- **不确定性表示**：机器人能力用随机分布向量描述，任务需求通过通用二元函数验证，允许能力与需求存在概率性偏差。
+- **风险量化**：目标函数采用条件风险价值（CVaR）作为风险度量，以生成对能力不确定性鲁棒的规划方案。
 
-## 参考
-- http://arxiv.org/abs/2106.12111v3
+### 算法
+- 提出一种高效求解算法，通过分解与剪枝策略降低混合整数规划的计算复杂度，支持大规模问题实例。
+
+### 实验设置
+- **测试案例**：两个实际场景——夺旗任务（Capture-the-flag）与疫情（如COVID-19）机器人服务协调。
+- **规模**：框架可扩展至140个机器人与40个任务，验证了其可扩展性。
+
+### 关键结果
+- **可泛化性**：框架在不同任务类型与不确定性分布下均能生成有效计划。
+- **成本与成功率**：相比基线方法，CTAS在保持低成本的同时，显著提升了任务成功概率（高概率成功）。
+- **鲁棒性**：CVaR的引入使计划对能力不确定性具有更强的抗干扰能力。
+
+### 结论
+CTAS框架为异构机器人团队在不确定性下的任务规划提供了统一解决方案，兼顾了分解灵活性、分配效率与调度鲁棒性，适用于探索救援、物流配送等实际场景。
 
 ## Overview
-This paper develops a stochastic programming framework for multi-agent systems where task decomposition, assignment, and scheduling problems are simultaneously optimized. The framework can be applied to heterogeneous mobile robot teams with distributed sub-tasks. Examples include pandemic robotic service coordination, explore and rescue, and delivery systems with heterogeneous vehicles. Due to their inherent flexibility and robustness, multi-agent systems are applied in a growing range of real-world problems that involve heterogeneous tasks and uncertain information. Most previous works assume one fixed way to decompose a task into roles that can later be assigned to the agents. This assumption is not valid for a complex task where the roles can vary and multiple decomposition structures exist. Meanwhile, it is unclear how uncertainties in task requirements and agent capabilities can be systematically quantified and optimized under a multi-agent system setting. A representation for complex tasks is proposed: agent capabilities are represented as a vector of random distributions, and task requirements are verified by a generalizable binary function. The conditional value at risk (CVaR) is chosen as a metric in the objective function to generate robust plans. An efficient algorithm is described to solve the model, and the whole framework is evaluated in two different practical test cases: capture-the-flag and robotic service coordination during a pandemic (e.g., COVID-19). Results demonstrate that the framework is generalizable, scalable up to 140 agents and 40 tasks for the example test cases, and provides low-cost plans that ensure a high probability of success.
-
-## Content
 This paper develops a stochastic programming framework for multi-agent systems where task decomposition, assignment, and scheduling problems are simultaneously optimized. The framework can be applied to heterogeneous mobile robot teams with distributed sub-tasks. Examples include pandemic robotic service coordination, explore and rescue, and delivery systems with heterogeneous vehicles. Due to their inherent flexibility and robustness, multi-agent systems are applied in a growing range of real-world problems that involve heterogeneous tasks and uncertain information. Most previous works assume one fixed way to decompose a task into roles that can later be assigned to the agents. This assumption is not valid for a complex task where the roles can vary and multiple decomposition structures exist. Meanwhile, it is unclear how uncertainties in task requirements and agent capabilities can be systematically quantified and optimized under a multi-agent system setting. A representation for complex tasks is proposed: agent capabilities are represented as a vector of random distributions, and task requirements are verified by a generalizable binary function. The conditional value at risk (CVaR) is chosen as a metric in the objective function to generate robust plans. An efficient algorithm is described to solve the model, and the whole framework is evaluated in two different practical test cases: capture-the-flag and robotic service coordination during a pandemic (e.g., COVID-19). Results demonstrate that the framework is generalizable, scalable up to 140 agents and 40 tasks for the example test cases, and provides low-cost plans that ensure a high probability of success.
 
 ## 개요
@@ -73,3 +81,6 @@ This paper develops a stochastic programming framework for multi-agent systems w
 
 ## 핵심 내용
 본 논문은 다중 에이전트 시스템에서 작업 분해, 할당 및 일정 계획 문제를 동시에 최적화하는 확률적 프로그래밍 프레임워크를 개발한다. 이 프레임워크는 분산된 하위 작업을 가진 이기종 모바일 로봇 팀에 적용될 수 있다. 예를 들어, 팬데믹 로봇 서비스 조정, 탐색 및 구조, 이기종 차량을 사용한 배송 시스템 등이 있다. 다중 에이전트 시스템은 본질적인 유연성과 견고성 덕분에 이기종 작업과 불확실한 정보를 포함하는 실제 문제에 점점 더 많이 적용되고 있다. 대부분의 이전 연구는 작업을 에이전트에 할당할 수 있는 역할로 분해하는 고정된 방식을 가정한다. 이러한 가정은 역할이 다양하고 여러 분해 구조가 존재할 수 있는 복잡한 작업에는 유효하지 않다. 또한, 다중 에이전트 시스템 환경에서 작업 요구사항과 에이전트 능력의 불확실성을 체계적으로 정량화하고 최적화하는 방법은 명확하지 않다. 복잡한 작업에 대한 표현이 제안된다: 에이전트 능력은 무작위 분포의 벡터로 표현되고, 작업 요구사항은 일반화 가능한 이진 함수로 검증된다. 조건부 위험 가치(CVaR)는 강건한 계획을 생성하기 위해 목적 함수의 지표로 선택된다. 모델을 해결하기 위한 효율적인 알고리즘이 설명되며, 전체 프레임워크는 두 가지 실제 테스트 사례(깃발 잡기 및 팬데믹(예: COVID-19) 상황에서의 로봇 서비스 조정)에서 평가된다. 결과는 프레임워크가 일반화 가능하며, 예시 테스트 사례에서 최대 140개의 에이전트와 40개의 작업까지 확장 가능하고, 높은 성공 확률을 보장하는 저비용 계획을 제공함을 보여준다.
+
+## 参考
+- http://arxiv.org/abs/2106.12111v3

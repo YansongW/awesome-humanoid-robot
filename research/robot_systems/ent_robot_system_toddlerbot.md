@@ -8,9 +8,14 @@ names:
   zh: ToddlerBot 幼儿机器人
   ko: ToddlerBot
 summary:
-  en: An open-source child-size humanoid robot from Stanford University, 0.56 m tall and 3.4 kg, with 30 active degrees of freedom, a bill of materials of about 6,000 USD, ROBOTIS Dynamixel bus servos and an onboard Jetson Orin NX, designed for reproducible machine-learning loco-manipulation research at home.
-  zh: ToddlerBot 是斯坦福大学开源的幼儿尺寸人形机器人，身高 0.56 m、重 3.4 kg，全身 30 个主动自由度，BOM 约 6,000 美元，采用 ROBOTIS Dynamixel 总线舵机与 Jetson Orin NX 机载电脑，纯 Python 软件栈，目标是在家可复现的机器学习全身运动操作研究平台。
-  ko: An open-source child-size humanoid robot from Stanford University, 0.56 m tall and 3.4 kg, with 30 active degrees of freedom, a bill of materials of about 6,000 USD, ROBOTIS Dynamixel bus servos and an onboard Jetson Orin NX, designed for reproducible machine-learning loco-manipulation research at home.
+  en: An open-source child-size humanoid robot from Stanford University, 0.56 m tall and 3.4 kg, with 30 active degrees of
+    freedom, a bill of materials of about 6,000 USD, ROBOTIS Dynamixel bus servos and an onboard Jetson Orin NX, designed
+    for reproducible machine-learning loco-manipulation research at home.
+  zh: ToddlerBot 是斯坦福大学开源的幼儿尺寸人形机器人，身高 0.56 m、重 3.4 kg，全身 30 个主动自由度，BOM 约 6,000 美元，采用 ROBOTIS Dynamixel 总线舵机与 Jetson Orin
+    NX 机载电脑，纯 Python 软件栈，目标是在家可复现的机器学习全身运动操作研究平台。
+  ko: An open-source child-size humanoid robot from Stanford University, 0.56 m tall and 3.4 kg, with 30 active degrees of
+    freedom, a bill of materials of about 6,000 USD, ROBOTIS Dynamixel bus servos and an onboard Jetson Orin NX, designed
+    for reproducible machine-learning loco-manipulation research at home.
 domains:
 - 02_components
 - 06_design_engineering
@@ -36,7 +41,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: '内容整理自调研档案 data/roadmap/research/toddlerbot.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页与论文 arXiv:2502.00893。'
+  notes: 内容整理自调研档案 data/roadmap/research/toddlerbot.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页与论文 arXiv:2502.00893。
 sources:
 - id: src_001
   type: website
@@ -101,3 +106,44 @@ ToddlerBot 是斯坦福大学（TML 与 REALab，作者 Haochen Shi、Weizhuo Wa
 - [hshi74/toddlerbot GitHub 仓库](https://github.com/hshi74/toddlerbot)
 - [ToddlerBot 项目主页](https://toddlerbot.github.io/)
 - [论文 arXiv:2502.00893v2](https://arxiv.org/html/2502.00893v2)
+
+## 개요
+
+ToddlerBot은 스탠포드 대학교(TML 및 REALab, 저자 Haochen Shi, Weizhuo Wang, Shuran Song, C. Karen Liu)에서 개발한 오픈소스 유아 크기 휴머노이드 로봇으로, 논문은 CoRL 2025(arXiv:2502.00893)에 게재되었습니다. 전체 높이 0.56m, 무게 3.4kg이며, 전신에 30개의 능동 자유도(각 팔 7개, 각 다리 6개, 목 2개, 허리 2개, 말단 조작기 제외)를 갖추고 있습니다. 총 BOM은 약 6,000달러이며, 이 중 약 90%가 모터와 컴퓨터에 사용됩니다(출처: 조사 파일 toddlerbot.md, 이하 동일).
+
+라이선스 측면에서 코드와 문서는 MIT License를 따릅니다. 설계 파일(Onshape, STL)은 비상업적 CC 라이선스로 상업적 사용이 제한됩니다. 프로젝트 설계 목표는 "집에서 재현 가능"입니다: 3D 프린팅 구조 부품, 기성 서보 모터, pip 한 번 설치로 가능한 순수 Python 소프트웨어 스택, 그리고 논문 수준의 재현 검증이 포함됩니다. 하드웨어 경험이 없는 컴퓨터공학 학생이 3일 만에(프린팅 포함) 독립적으로 전체 조립을 완료했습니다. GitHub 저장소 `hshi74/toddlerbot`은 약 718 stars / 88 forks(2026-07-01 스냅샷, 매우 활발)이며, Discord 및 WeChat 커뮤니티가 운영 중입니다.
+
+## 핵심 내용
+
+### 주요 사양
+
+| 항목 | 수치 | 출처 |
+|---|---|---|
+| 키 / 무게 | 0.56m / 3.4kg(3,484g) | 논문 arXiv:2502.00893 |
+| 능동 자유도 | 30(팔 7×2, 다리 6×2, 목 2, 허리 2) | 프로젝트 홈페이지 / 논문 |
+| 하드웨어 비용(BOM) | 약 $6,000(90%는 모터 및 컴퓨터) | 논문 |
+| 메인 컨트롤러 | NVIDIA Jetson Orin NX 16GB | 논문 |
+| 센서 | 듀얼 피쉬아이 카메라, 흉부 IMU, 스피커, 듀얼 마이크 | 프로젝트 홈페이지 |
+| 배터리 지속 시간 | 보행 RL 정책 기준 약 19분(과열로 인한 성능 저하까지) | 프로젝트 홈페이지 |
+| 초보자 친화도 | 4.5 / 5(조사 파일 평가) | 조사 파일 |
+
+### 액추에이터 및 기계 설계
+
+- ROBOTIS Dynamixel 버스 서보 모터 사용, 총 5가지 모델을 관절 공간/토크/비용에 따라 선정(구체적인 모델 목록은 논문 부록 VIII-E에 있으며, 파일에는 개별 나열되지 않음).
+- 통신은 5V TTL 직렬 프로토콜, 2Mbps 전송 속도, 30개 모터 전체 상태 피드백 50Hz, 기성 통신 보드 사용 가능.
+- 구동 설계: 평기어(팔 축 정렬), 커플링 베벨 기어(허리 yaw/roll 두 모터 커플링), 평행 링크(무릎, 목 pitch, 관성 감소).
+- 말단 조작기는 2분 내로 빠르게 교체 가능: 평행 그리퍼와 유연한 손바닥; 리더 암(leader arms) 그립에는 FSR 힘 감지 저항 내장.
+- 손상 수리 비용 낮음: 약 7회 낙하 견딤, 수리는 21분 프린팅 + 14분 조립으로 완료.
+
+### 컴퓨팅 플랫폼 및 소프트웨어 스택
+
+- 메인 컨트롤러 Jetson Orin NX 16GB에서 실시간 추론: 300M 파라미터 확산 정책 약 100ms 지연; 2.0 버전은 Foundation Stereo를 사용하여 10Hz 스테레오 깊이 추정.
+- 순수 Python, pip 한 번 설치(>= 3.10), 저수준 제어, RL 훈련(MuJoCo / MJX, PPO), 확산 정책 훈련, 실제 로봇 배포 코드 모두 포함; ROS 의존성 없음.
+- 디지털 트윈: 3D 프린팅 영점 교정 지그(1분 내 완료) + 전이 가능한 모터 시스템 식별(동일 모델 모터는 1회 sysID만 수행), 제로샷 sim-to-real 지원; 정책은 두 인스턴스 간 제로샷 전이 가능, 양팔 조작 90% 성공률 재현.
+- 원격 조작: 동형 리더 암 + 핸드헬드(Steam Deck / ROG Ally X); 2.0은 Meta Quest 2 VR 원격 조작 지원.
+- 버전 연혁: 2025-08-25 ToddlerBot 2.0 발표; 2026-01 다중 스킬 전신 운동 시스템(깊이 맵 스킬 분류기 + 다중 정책 전환) 발표.
+
+### 적합한 사용자
+
+- 적합: 전신 loco-manipulation, 모방/강화 학습 데이터 수집을 원하는 대학원생 및 고급 애호가; 기초가 없지만 손재주가 있는 사람도 매뉴얼 따라 완성 가능; Python 스택은 ML 배경 초보자에게 매우 친숙; 3.4kg 소형 체형으로 집에서 안전하게 조작 가능.
+- 진입 장벽: BOM $6,000으로 저렴하지 않음; 설계 파일은 비상업적 라이선스; Dynamixel 서보 모터 성능 한계(속도/토크/통신)가 고속 동작을 제한(논문 자체 언급).

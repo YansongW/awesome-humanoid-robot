@@ -20,18 +20,7 @@ summary:
     to support scalable simulation, dynamic scheduling, visual augmentation, and real-time data filtering. We argue that cloud-native
     simulation infrastructure provides a unified foundation for data generation, model training, standardized evaluation,
     and real-world deployment, and will play a key role in the future development of embodied intelligence.'
-  zh: 'arXiv:2606.27962v2 Announce Type: replace Abstract: This paper presents a cloud-native simulation infrastructure framework
-    for embodied intelligence that supports large-scale training, standardized evaluation, and simulation-based data collection.
-    The framework unifies simulation environment generation, task execution, trajectory collection, model evaluation, data
-    management, and cloud services into a scalable and reproducible platform. To address the high cost, limited scalability,
-    and poor reproducibility of real-world robotic data collection, the framework adopts cloud-native technologies including
-    elastic resource scheduling, containerized simulation, unified data management, and service-oriented system design, enabling
-    efficient large-scale simulation for multi-model and multi-task workloads. Built on a four-layer architecture, the framework
-    provides standardized environment assets, automated task generation, trajectory collection, benchmark evaluation, and
-    closed-loop data optimization. It further integrates representative systems including D-VLA, RL-VLA3, Sword, and Pre-VLA
-    to support scalable simulation, dynamic scheduling, visual augmentation, and real-time data filtering. We argue that cloud-native
-    simulation infrastructure provides a unified foundation for data generation, model training, standardized evaluation,
-    and real-world deployment, and will play a key role in the future development of embodied intelligence.'
+  zh: 本文提出一个面向具身智能的云原生仿真基础设施框架，由研究团队构建，旨在解决真实机器人数据采集成本高、可扩展性差和可重复性低的问题。该框架通过四层架构统一了仿真环境生成、任务执行、轨迹收集、模型评估与数据管理，并集成了D-VLA、RL-VLA3、Sword和Pre-VLA等代表性系统，支持大规模训练与标准化评估。
   ko: 'arXiv:2606.27962v2 Announce Type: replace Abstract: This paper presents a cloud-native simulation infrastructure framework
     for embodied intelligence that supports large-scale training, standardized evaluation, and simulation-based data collection.
     The framework unifies simulation environment generation, task execution, trajectory collection, model evaluation, data
@@ -63,7 +52,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.27962v2.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.27962v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -74,18 +64,38 @@ sources:
   accessed_at: '2026-07-03'
 ---
 ## 概述
-This paper presents a cloud-native simulation infrastructure framework for embodied intelligence that supports large-scale training, standardized evaluation, and simulation-based data collection. The framework unifies simulation environment generation, task execution, trajectory collection, model evaluation, data management, and cloud services into a scalable and reproducible platform. To address the high cost, limited scalability, and poor reproducibility of real-world robotic data collection, the framework adopts cloud-native technologies including elastic resource scheduling, containerized simulation, unified data management, and service-oriented system design, enabling efficient large-scale simulation for multi-model and multi-task workloads. Built on a four-layer architecture, the framework provides standardized environment assets, automated task generation, trajectory collection, benchmark evaluation, and closed-loop data optimization. It further integrates representative systems including D-VLA, RL-VLA3, Sword, and Pre-VLA to support scalable simulation, dynamic scheduling, visual augmentation, and real-time data filtering. We argue that cloud-native simulation infrastructure provides a unified foundation for data generation, model training, standardized evaluation, and real-world deployment, and will play a key role in the future development of embodied intelligence.
+该框架采用云原生技术，包括弹性资源调度、容器化仿真、统一数据管理和面向服务的系统设计，实现了多模型、多任务工作负载的高效大规模仿真。其四层架构提供标准化环境资产、自动化任务生成、轨迹收集、基准评估和闭环数据优化功能。通过集成D-VLA、RL-VLA3、Sword和Pre-VLA等系统，框架支持可扩展仿真、动态调度、视觉增强和实时数据过滤。研究团队认为，云原生仿真基础设施将为数据生成、模型训练、标准化评估和真实世界部署提供统一基础，在具身智能的未来发展中发挥关键作用。
 
 ## 核心内容
-This paper presents a cloud-native simulation infrastructure framework for embodied intelligence that supports large-scale training, standardized evaluation, and simulation-based data collection. The framework unifies simulation environment generation, task execution, trajectory collection, model evaluation, data management, and cloud services into a scalable and reproducible platform. To address the high cost, limited scalability, and poor reproducibility of real-world robotic data collection, the framework adopts cloud-native technologies including elastic resource scheduling, containerized simulation, unified data management, and service-oriented system design, enabling efficient large-scale simulation for multi-model and multi-task workloads. Built on a four-layer architecture, the framework provides standardized environment assets, automated task generation, trajectory collection, benchmark evaluation, and closed-loop data optimization. It further integrates representative systems including D-VLA, RL-VLA3, Sword, and Pre-VLA to support scalable simulation, dynamic scheduling, visual augmentation, and real-time data filtering. We argue that cloud-native simulation infrastructure provides a unified foundation for data generation, model training, standardized evaluation, and real-world deployment, and will play a key role in the future development of embodied intelligence.
+### 核心问题与解决方案
+- 真实机器人数据采集面临高成本、有限可扩展性和差可重复性的挑战。
+- 框架采用云原生技术（弹性资源调度、容器化仿真、统一数据管理、面向服务设计）来应对这些挑战。
 
-## 参考
-- http://arxiv.org/abs/2606.27962v2
+### 架构设计
+- 基于四层架构构建，提供：
+  - 标准化环境资产
+  - 自动化任务生成
+  - 轨迹收集
+  - 基准评估
+  - 闭环数据优化
+
+### 集成系统
+- 框架集成了多个代表性系统：
+  - D-VLA：支持可扩展仿真
+  - RL-VLA3：支持动态调度
+  - Sword：支持视觉增强
+  - Pre-VLA：支持实时数据过滤
+
+### 关键能力
+- 统一仿真环境生成、任务执行、轨迹收集、模型评估、数据管理和云服务。
+- 支持多模型和多任务工作负载的高效大规模仿真。
+- 提供标准化评估和仿真数据收集功能。
+
+### 结论与展望
+- 云原生仿真基础设施为数据生成、模型训练、标准化评估和真实世界部署提供了统一基础。
+- 将在具身智能的未来发展中扮演关键角色。
 
 ## Overview
-This paper presents a cloud-native simulation infrastructure framework for embodied intelligence that supports large-scale training, standardized evaluation, and simulation-based data collection. The framework unifies simulation environment generation, task execution, trajectory collection, model evaluation, data management, and cloud services into a scalable and reproducible platform. To address the high cost, limited scalability, and poor reproducibility of real-world robotic data collection, the framework adopts cloud-native technologies including elastic resource scheduling, containerized simulation, unified data management, and service-oriented system design, enabling efficient large-scale simulation for multi-model and multi-task workloads. Built on a four-layer architecture, the framework provides standardized environment assets, automated task generation, trajectory collection, benchmark evaluation, and closed-loop data optimization. It further integrates representative systems including D-VLA, RL-VLA3, Sword, and Pre-VLA to support scalable simulation, dynamic scheduling, visual augmentation, and real-time data filtering. We argue that cloud-native simulation infrastructure provides a unified foundation for data generation, model training, standardized evaluation, and real-world deployment, and will play a key role in the future development of embodied intelligence.
-
-## Content
 This paper presents a cloud-native simulation infrastructure framework for embodied intelligence that supports large-scale training, standardized evaluation, and simulation-based data collection. The framework unifies simulation environment generation, task execution, trajectory collection, model evaluation, data management, and cloud services into a scalable and reproducible platform. To address the high cost, limited scalability, and poor reproducibility of real-world robotic data collection, the framework adopts cloud-native technologies including elastic resource scheduling, containerized simulation, unified data management, and service-oriented system design, enabling efficient large-scale simulation for multi-model and multi-task workloads. Built on a four-layer architecture, the framework provides standardized environment assets, automated task generation, trajectory collection, benchmark evaluation, and closed-loop data optimization. It further integrates representative systems including D-VLA, RL-VLA3, Sword, and Pre-VLA to support scalable simulation, dynamic scheduling, visual augmentation, and real-time data filtering. We argue that cloud-native simulation infrastructure provides a unified foundation for data generation, model training, standardized evaluation, and real-world deployment, and will play a key role in the future development of embodied intelligence.
 
 ## 개요
@@ -93,3 +103,6 @@ This paper presents a cloud-native simulation infrastructure framework for embod
 
 ## 핵심 내용
 본 논문은 대규모 훈련, 표준화된 평가, 시뮬레이션 기반 데이터 수집을 지원하는 체화 지능을 위한 클라우드 네이티브 시뮬레이션 인프라 프레임워크를 제시합니다. 이 프레임워크는 시뮬레이션 환경 생성, 작업 실행, 궤적 수집, 모델 평가, 데이터 관리, 클라우드 서비스를 확장 가능하고 재현 가능한 플랫폼으로 통합합니다. 실제 로봇 데이터 수집의 높은 비용, 제한된 확장성, 낮은 재현성을 해결하기 위해, 이 프레임워크는 탄력적 자원 스케줄링, 컨테이너화된 시뮬레이션, 통합 데이터 관리, 서비스 지향 시스템 설계를 포함한 클라우드 네이티브 기술을 채택하여 다중 모델 및 다중 작업 워크로드에 대한 효율적인 대규모 시뮬레이션을 가능하게 합니다. 4계층 아키텍처를 기반으로 구축된 이 프레임워크는 표준화된 환경 자산, 자동화된 작업 생성, 궤적 수집, 벤치마크 평가, 폐쇄 루프 데이터 최적화를 제공합니다. 또한 D-VLA, RL-VLA3, Sword, Pre-VLA를 포함한 대표적인 시스템을 통합하여 확장 가능한 시뮬레이션, 동적 스케줄링, 시각적 증강, 실시간 데이터 필터링을 지원합니다. 우리는 클라우드 네이티브 시뮬레이션 인프라가 데이터 생성, 모델 훈련, 표준화된 평가, 실제 배포를 위한 통합 기반을 제공하며, 체화 지능의 미래 발전에 핵심적인 역할을 할 것이라고 주장합니다.
+
+## 参考
+- http://arxiv.org/abs/2606.27962v2

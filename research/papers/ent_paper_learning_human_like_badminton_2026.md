@@ -10,8 +10,7 @@ names:
 summary:
   en: Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control
     for humanoid robots.
-  zh: Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control
-    for humanoid robots.
+  zh: 《Learning Human-Like Badminton Skills for Humanoid Robots》是2026年关于人形机器人全身控制与操作的研究。作者提出Imitation-to-Interaction强化学习框架，使机器人从模仿者进化为击球手，首次实现零样本的仿真到现实迁移，在物理世界中复现了人类运动员的动力学优雅与功能精度。
   ko: Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control
     for humanoid robots.
 domains:
@@ -34,7 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.08370v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.08370v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -44,18 +44,25 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Realizing versatile and human-like performance in high-demand sports like badminton remains a formidable challenge for humanoid robotics. Unlike standard locomotion or static manipulation, this task demands a seamless integration of explosive whole-body coordination and precise, timing-critical interception. While recent advances have achieved lifelike motion mimicry, bridging the gap between kinematic imitation and functional, physics-aware striking without compromising stylistic naturalness is non-trivial. To address this, we propose Imitation-to-Interaction, a progressive reinforcement learning framework designed to evolve a robot from a "mimic" to a capable "striker." Our approach establishes a robust motor prior from human data, distills it into a compact, model-based state representation, and stabilizes dynamics via adversarial priors. Crucially, to overcome the sparsity of expert demonstrations, we introduce a manifold expansion strategy that generalizes discrete strike points into a dense interaction volume. We validate our framework through the mastery of diverse skills, including lifts and drop shots, in simulation. Furthermore, we demonstrate the first zero-shot sim-to-real transfer of anthropomorphic badminton skills to a humanoid robot, successfully replicating the kinetic elegance and functional precision of human athletes in the physical world.
+这项研究针对人形机器人在羽毛球等高动态运动中实现类人表现的核心挑战，提出了渐进式强化学习框架Imitation-to-Interaction。该框架从人类数据中建立稳健的运动先验，将其蒸馏为紧凑的模型化状态表征，并通过对抗先验稳定动力学。为解决专家演示稀疏性问题，作者引入流形扩展策略，将离散击球点泛化为密集交互体积。在仿真中验证了包括挑球和吊球在内的多种技能，并首次展示了人形机器人羽毛球技能的零样本仿真到现实迁移。
 
 ## 核心内容
-Realizing versatile and human-like performance in high-demand sports like badminton remains a formidable challenge for humanoid robotics. Unlike standard locomotion or static manipulation, this task demands a seamless integration of explosive whole-body coordination and precise, timing-critical interception. While recent advances have achieved lifelike motion mimicry, bridging the gap between kinematic imitation and functional, physics-aware striking without compromising stylistic naturalness is non-trivial. To address this, we propose Imitation-to-Interaction, a progressive reinforcement learning framework designed to evolve a robot from a "mimic" to a capable "striker." Our approach establishes a robust motor prior from human data, distills it into a compact, model-based state representation, and stabilizes dynamics via adversarial priors. Crucially, to overcome the sparsity of expert demonstrations, we introduce a manifold expansion strategy that generalizes discrete strike points into a dense interaction volume. We validate our framework through the mastery of diverse skills, including lifts and drop shots, in simulation. Furthermore, we demonstrate the first zero-shot sim-to-real transfer of anthropomorphic badminton skills to a humanoid robot, successfully replicating the kinetic elegance and functional precision of human athletes in the physical world.
+### 核心挑战
+- 羽毛球要求全身协调爆发与精确时机拦截的融合，远超标准运动或静态操作
+- 现有运动模仿虽实现逼真动作，但难以在保持风格自然性的同时实现功能性的物理感知击球
 
-## 参考
-- http://arxiv.org/abs/2602.08370v1
+### 方法：Imitation-to-Interaction框架
+- **运动先验建立**：从人类演示数据中提取稳健的运动先验
+- **状态表征蒸馏**：将先验压缩为紧凑的模型化状态表征
+- **动力学稳定**：通过对抗先验（adversarial priors）稳定动力学过程
+- **流形扩展策略**：针对专家演示稀疏性，将离散击球点泛化为密集交互体积，扩大可学习空间
+
+### 实验设置与结果
+- **仿真验证**：成功掌握挑球（lifts）和吊球（drop shots）等多种技能
+- **零样本迁移**：首次实现人形机器人羽毛球技能的零样本仿真到现实迁移（zero-shot sim-to-real transfer）
+- **物理世界表现**：在真实环境中复现了人类运动员的动力学优雅（kinetic elegance）与功能精度（functional precision）
 
 ## Overview
-Realizing versatile and human-like performance in high-demand sports like badminton remains a formidable challenge for humanoid robotics. Unlike standard locomotion or static manipulation, this task demands a seamless integration of explosive whole-body coordination and precise, timing-critical interception. While recent advances have achieved lifelike motion mimicry, bridging the gap between kinematic imitation and functional, physics-aware striking without compromising stylistic naturalness is non-trivial. To address this, we propose Imitation-to-Interaction, a progressive reinforcement learning framework designed to evolve a robot from a "mimic" to a capable "striker." Our approach establishes a robust motor prior from human data, distills it into a compact, model-based state representation, and stabilizes dynamics via adversarial priors. Crucially, to overcome the sparsity of expert demonstrations, we introduce a manifold expansion strategy that generalizes discrete strike points into a dense interaction volume. We validate our framework through the mastery of diverse skills, including lifts and drop shots, in simulation. Furthermore, we demonstrate the first zero-shot sim-to-real transfer of anthropomorphic badminton skills to a humanoid robot, successfully replicating the kinetic elegance and functional precision of human athletes in the physical world.
-
-## Content
 Realizing versatile and human-like performance in high-demand sports like badminton remains a formidable challenge for humanoid robotics. Unlike standard locomotion or static manipulation, this task demands a seamless integration of explosive whole-body coordination and precise, timing-critical interception. While recent advances have achieved lifelike motion mimicry, bridging the gap between kinematic imitation and functional, physics-aware striking without compromising stylistic naturalness is non-trivial. To address this, we propose Imitation-to-Interaction, a progressive reinforcement learning framework designed to evolve a robot from a "mimic" to a capable "striker." Our approach establishes a robust motor prior from human data, distills it into a compact, model-based state representation, and stabilizes dynamics via adversarial priors. Crucially, to overcome the sparsity of expert demonstrations, we introduce a manifold expansion strategy that generalizes discrete strike points into a dense interaction volume. We validate our framework through the mastery of diverse skills, including lifts and drop shots, in simulation. Furthermore, we demonstrate the first zero-shot sim-to-real transfer of anthropomorphic badminton skills to a humanoid robot, successfully replicating the kinetic elegance and functional precision of human athletes in the physical world.
 
 ## 개요
@@ -63,3 +70,6 @@ Realizing versatile and human-like performance in high-demand sports like badmin
 
 ## 핵심 내용
 배드민턴과 같은 고난도 스포츠에서 다재다능하고 인간다운 성능을 구현하는 것은 휴머노이드 로봇 공학에게 여전히 어려운 과제입니다. 표준적인 보행이나 정적 조작과 달리, 이 작업은 폭발적인 전신 협응과 정밀하고 타이밍이 중요한 차단 동작의 완벽한 통합을 요구합니다. 최근의 발전이 생생한 동작 모방을 달성했지만, 운동학적 모방과 기능적이고 물리학을 인식한 타격 사이의 간극을 스타일의 자연스러움을 희생하지 않고 메우는 것은 쉽지 않습니다. 이를 해결하기 위해, 우리는 로봇을 '모방자'에서 유능한 '타격자'로 진화시키도록 설계된 점진적 강화 학습 프레임워크인 Imitation-to-Interaction을 제안합니다. 우리의 접근 방식은 인간 데이터로부터 강건한 운동 사전 지식을 구축하고, 이를 컴팩트한 모델 기반 상태 표현으로 증류하며, 적대적 사전 지식을 통해 동역학을 안정화합니다. 결정적으로, 전문가 시연의 희소성을 극복하기 위해, 우리는 이산적인 타격 지점을 밀집된 상호작용 공간으로 일반화하는 다양체 확장 전략을 도입합니다. 우리는 시뮬레이션에서 리프트와 드롭샷을 포함한 다양한 기술의 숙달을 통해 프레임워크를 검증합니다. 또한, 우리는 인간형 로봇에 대한 의인화된 배드민턴 기술의 최초의 제로샷 시뮬레이션-실제 전이를 시연하여, 물리적 세계에서 인간 운동선수의 운동학적 우아함과 기능적 정밀성을 성공적으로 재현합니다.
+
+## 参考
+- http://arxiv.org/abs/2602.08370v1

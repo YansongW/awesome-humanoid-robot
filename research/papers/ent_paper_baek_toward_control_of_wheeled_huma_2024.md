@@ -11,7 +11,7 @@ summary:
   en: This paper presents a framework that estimates the total mass and center of mass of a wheeled-legged robot from its
     proprioceptive response to unknown payloads, explicitly predicts the new equilibrium point, and uses a nonlinear dynamics
     model injected into RaiSim whose parameters are optimized by Particle Swarm Optimization for real-to-sim adaptation.
-  zh: 本文提出了一种框架，该框架根据轮腿机器人对未知载荷的本体感觉响应估计系统总质量和质心，显式预测新的平衡点，并将经粒子群优化参数化后的非线性动力学模型嵌入RaiSim以实现实到仿自适应。
+  zh: 本文提出一种框架，用于在轮式人形机器人搬运未知负载时，通过本体感知响应估计系统总质量与质心，并显式预测新的平衡点。该框架采用基于Particle Swarm Optimization优化的非线性动力学模型注入RaiSim仿真，通过real-to-sim自适应缩小仿真与现实差距，无需额外力/力矩传感器即可提升模型控制器对未知动态的适应能力。
   ko: 본 논문은 휠-다리 로봇이 미지의 페이로드에 대한 본체감각 응답으로부터 전체 질량과 질량 중심을 추정하고, 새로운 평형점을 명시적으로 예측하며, 입자 군집 최적화로 매개변수를 최적화한 비선형 동역학 모델을 RaiSim에
     주입하여 실제-시뮬레이션 적응을 실현하는 프레임워크를 제시한다.
 domains:
@@ -42,7 +42,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.10948v2.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.10948v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -54,13 +55,32 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Model-based controllers using a linearized model around the system's equilibrium point is a common approach in the control of a wheeled humanoid due to their less computational load and ease of stability analysis. However, controlling a wheeled humanoid robot while it lifts an unknown object presents significant challenges, primarily due to the lack of knowledge in object dynamics. This paper presents a framework designed for predicting the new equilibrium point explicitly to control a wheeled-legged robot with unknown dynamics. We estimated the total mass and center of mass of the system from its response to initially unknown dynamics, then calculated the new equilibrium point accordingly. To avoid using additional sensors (e.g., force torque sensor) and reduce the effort of obtaining expensive real data, a data-driven approach is utilized with a novel real-to-sim adaptation. A more accurate nonlinear dynamics model, offering a closer representation of real-world physics, is injected into a rigid-body simulation for real-to-sim adaptation. The nonlinear dynamics model parameters were optimized using Particle Swarm Optimization. The efficacy of this framework was validated on a physical wheeled inverted pendulum, a simplified model of a wheeled-legged robot. The experimental results indicate that employing a more precise analytical model with optimized parameters significantly reduces the gap between simulation and reality, thus improving the efficiency of a model-based controller in controlling a wheeled robot with unknown dynamics
+针对轮式人形机器人搬运未知物体时因缺乏动力学知识导致的控制难题，本文提出一种无需额外传感器的平衡点预测框架。该方法通过机器人对未知负载的本体感知响应，实时估计系统总质量与质心位置，并据此显式计算新的平衡点。为降低对昂贵真实数据的依赖，研究团队采用数据驱动方法实现real-to-sim自适应，将经Particle Swarm Optimization优化的非线性动力学模型注入RaiSim物理引擎。实验在轮式倒立摆（轮式人形机器人的简化模型）上验证，结果表明优化后的精确解析模型能显著缩小仿真与现实的差距，从而提升模型控制器对未知动态的控制效率。
 
 ## 核心内容
-Model-based controllers using a linearized model around the system's equilibrium point is a common approach in the control of a wheeled humanoid due to their less computational load and ease of stability analysis. However, controlling a wheeled humanoid robot while it lifts an unknown object presents significant challenges, primarily due to the lack of knowledge in object dynamics. This paper presents a framework designed for predicting the new equilibrium point explicitly to control a wheeled-legged robot with unknown dynamics. We estimated the total mass and center of mass of the system from its response to initially unknown dynamics, then calculated the new equilibrium point accordingly. To avoid using additional sensors (e.g., force torque sensor) and reduce the effort of obtaining expensive real data, a data-driven approach is utilized with a novel real-to-sim adaptation. A more accurate nonlinear dynamics model, offering a closer representation of real-world physics, is injected into a rigid-body simulation for real-to-sim adaptation. The nonlinear dynamics model parameters were optimized using Particle Swarm Optimization. The efficacy of this framework was validated on a physical wheeled inverted pendulum, a simplified model of a wheeled-legged robot. The experimental results indicate that employing a more precise analytical model with optimized parameters significantly reduces the gap between simulation and reality, thus improving the efficiency of a model-based controller in controlling a wheeled robot with unknown dynamics
+### 核心挑战与解决方案
+- 传统模型控制器依赖平衡点附近的线性化模型，虽计算量小且便于稳定性分析，但面对未知负载时因缺乏动力学知识而失效。
+- 本文提出显式预测新平衡点的框架，通过估计系统总质量与质心位置，直接计算平衡点变化。
 
-## 参考
-- http://arxiv.org/abs/2403.10948v2
+### 方法架构
+- **参数估计**：利用机器人对未知负载的本体感知响应（如关节力矩、姿态变化），实时估计总质量与质心位置，无需额外力/力矩传感器。
+- **平衡点计算**：基于估计参数显式计算新的平衡点，为控制器提供参考。
+- **Real-to-Sim自适应**：
+  - 将更接近真实物理的非线性动力学模型注入RaiSim刚体仿真环境。
+  - 采用Particle Swarm Optimization优化模型参数，最小化仿真与真实机器人响应之间的差异。
+  - 该数据驱动方法减少了对昂贵真实数据的采集需求。
+
+### 实验验证
+- **平台**：物理轮式倒立摆（作为轮式人形机器人的简化模型）。
+- **关键结果**：
+  - 优化后的非线性模型显著缩小了仿真与现实的差距。
+  - 模型控制器在未知动态下的控制效率得到提升，验证了框架的有效性。
+
+### 结论
+本文通过real-to-sim自适应与参数优化，使模型控制器能够有效应对未知负载带来的动力学变化，为轮式人形机器人在实际场景中的鲁棒控制提供了可行方案。
+
+## Overview
+Model-based controllers using a linearized model around the system's equilibrium point is a common approach in the control of a wheeled humanoid due to their less computational load and ease of stability analysis. However, controlling a wheeled humanoid robot while it lifts an unknown object presents significant challenges, primarily due to the lack of knowledge in object dynamics. This paper presents a framework designed for predicting the new equilibrium point explicitly to control a wheeled-legged robot with unknown dynamics. We estimated the total mass and center of mass of the system from its response to initially unknown dynamics, then calculated the new equilibrium point accordingly. To avoid using additional sensors (e.g., force torque sensor) and reduce the effort of obtaining expensive real data, a data-driven approach is utilized with a novel real-to-sim adaptation. A more accurate nonlinear dynamics model, offering a closer representation of real-world physics, is injected into a rigid-body simulation for real-to-sim adaptation. The nonlinear dynamics model parameters were optimized using Particle Swarm Optimization. The efficacy of this framework was validated on a physical wheeled inverted pendulum, a simplified model of a wheeled-legged robot. The experimental results indicate that employing a more precise analytical model with optimized parameters significantly reduces the gap between simulation and reality, thus improving the efficiency of a model-based controller in controlling a wheeled robot with unknown dynamics
 
 ## Overview
 Model-based controllers using a linearized model around the system's equilibrium point is a common approach in the control of a wheeled humanoid due to their less computational load and ease of stability analysis. However, controlling a wheeled humanoid robot while it lifts an unknown object presents significant challenges, primarily due to the lack of knowledge in object dynamics. This paper presents a framework designed for predicting the new equilibrium point explicitly to control a wheeled-legged robot with unknown dynamics. We estimated the total mass and center of mass of the system from its response to initially unknown dynamics, then calculated the new equilibrium point accordingly. To avoid using additional sensors (e.g., force torque sensor) and reduce the effort of obtaining expensive real data, a data-driven approach is utilized with a novel real-to-sim adaptation. A more accurate nonlinear dynamics model, offering a closer representation of real-world physics, is injected into a rigid-body simulation for real-to-sim adaptation. The nonlinear dynamics model parameters were optimized using Particle Swarm Optimization. The efficacy of this framework was validated on a physical wheeled inverted pendulum, a simplified model of a wheeled-legged robot. The experimental results indicate that employing a more precise analytical model with optimized parameters significantly reduces the gap between simulation and reality, thus improving the efficiency of a model-based controller in controlling a wheeled robot with unknown dynamics.
@@ -73,3 +93,6 @@ Model-based controllers using a linearized model around the system's equilibrium
 
 ## 핵심 내용
 시스템의 평형점 주변에서 선형화된 모델을 사용하는 모델 기반 제어기는 계산 부하가 적고 안정성 분석이 용이하기 때문에 바퀴 달린 휴머노이드 제어에서 일반적인 접근 방식입니다. 그러나 미지의 물체를 들어 올리는 동안 바퀴 달린 휴머노이드 로봇을 제어하는 것은 주로 물체 동역학에 대한 지식 부족으로 인해 상당한 어려움을 제기합니다. 본 논문은 미지의 동역학을 가진 바퀴 달린 다리 로봇을 제어하기 위해 새로운 평형점을 명시적으로 예측하도록 설계된 프레임워크를 제시합니다. 우리는 초기에 미지의 동역학에 대한 시스템의 응답으로부터 시스템의 총 질량과 질량 중심을 추정한 다음, 이에 따라 새로운 평형점을 계산했습니다. 추가 센서(예: 힘 토크 센서) 사용을 피하고 고가의 실제 데이터를 얻는 노력을 줄이기 위해, 새로운 실제-시뮬레이션 적응을 활용한 데이터 기반 접근 방식을 사용했습니다. 실제 세계 물리학을 더 가깝게 표현하는 더 정확한 비선형 동역학 모델을 강체 시뮬레이션에 주입하여 실제-시뮬레이션 적응을 수행했습니다. 비선형 동역학 모델 매개변수는 입자 떼 최적화를 사용하여 최적화되었습니다. 이 프레임워크의 효용성은 바퀴 달린 다리 로봇의 단순화된 모델인 물리적 바퀴 달린 역진자에서 검증되었습니다. 실험 결과는 최적화된 매개변수를 가진 더 정밀한 해석 모델을 사용하면 시뮬레이션과 현실 간의 격차를 크게 줄여, 미지의 동역학을 가진 바퀴 달린 로봇을 제어하는 모델 기반 제어기의 효율성을 향상시킨다는 것을 보여줍니다.
+
+## 参考
+- http://arxiv.org/abs/2403.10948v2

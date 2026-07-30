@@ -12,8 +12,8 @@ summary:
     controlled by learned LSTM+MLP models trained on MANUS motion-capture glove data. The open-source design costs under $1,300
     USD and is evaluated against LEAP and Allegro hands on reachability, durability, and strength, with demonstrations in
     teleoperation and imitation learning.
-  zh: RUKA 是一种低成本的3D打印肌腱驱动拟人手，具有15个欠驱动自由度和11个执行器，通过从 MANUS 动作捕捉手套数据训练的 LSTM+MLP 模型进行控制。该开源设计成本低于1300美元，并在可达性、耐久性和力量方面与 LEAP
-    和 Allegro 手进行了评估，同时展示了遥操作和模仿学习应用。
+  zh: RUKA 是一款低成本、3D 打印、肌腱驱动的仿人灵巧手，拥有 15 个欠驱动自由度和 11 个执行器，通过基于 MANUS 动作捕捉手套数据训练的 LSTM+MLP 模型进行控制。其开源设计成本低于 1,300 美元，在可达性、耐用性和强度方面与
+    LEAP 和 Allegro 手进行了对比评估，并展示了遥操作和模仿学习的应用。
   ko: RUKA는 15개의 과소 구동 자유도와 11개의 액추에이터를 갖춘 저렴한 3D 프린팅 틴돈 구동 의인화 손으로, MANUS 모션 캡처 장갑 데이터로 학습한 LSTM+MLP 모델로 제어됩니다. 오픈소스 설계 비용은
     1,300달러 미만이며, 도달성, 내구성 및 힘에 대해 LEAP 및 Allegro 손과 비교 평가되었고 원격 조작 및 모방 학습 응용도 시연되었습니다.
 domains:
@@ -45,7 +45,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.13165v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.13165v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -112,18 +113,24 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Dexterous manipulation is a fundamental capability for robotic systems, yet progress has been limited by hardware trade-offs between precision, compactness, strength, and affordability. Existing control methods impose compromises on hand designs and applications. However, learning-based approaches present opportunities to rethink these trade-offs, particularly to address challenges with tendon-driven actuation and low-cost materials. This work presents RUKA, a tendon-driven humanoid hand that is compact, affordable, and capable. Made from 3D-printed parts and off-the-shelf components, RUKA has 5 fingers with 15 underactuated degrees of freedom enabling diverse human-like grasps. Its tendon-driven actuation allows powerful grasping in a compact, human-sized form factor. To address control challenges, we learn joint-to-actuator and fingertip-to-actuator models from motion-capture data collected by the MANUS glove, leveraging the hand's morphological accuracy. Extensive evaluations demonstrate RUKA's superior reachability, durability, and strength compared to other robotic hands. Teleoperation tasks further showcase RUKA's dexterous movements. The open-source design and assembly instructions of RUKA, code, and data are available at https://ruka-hand.github.io/.
+RUKA 旨在解决机器人灵巧操作中硬件在精度、紧凑性、强度和成本之间的权衡问题。该手采用 3D 打印部件和现成组件制造，具有 5 根手指和 15 个欠驱动自由度，能够实现多样化的类人抓取。其肌腱驱动机制在紧凑的人形尺寸内实现了强力抓取。为应对控制挑战，研究团队利用 MANUS 手套收集的动作捕捉数据，学习了关节到执行器和指尖到执行器的模型。广泛评估表明，RUKA 在可达性、耐用性和强度方面优于其他机器人手，遥操作任务进一步展示了其灵巧运动能力。
 
 ## 核心内容
-Dexterous manipulation is a fundamental capability for robotic systems, yet progress has been limited by hardware trade-offs between precision, compactness, strength, and affordability. Existing control methods impose compromises on hand designs and applications. However, learning-based approaches present opportunities to rethink these trade-offs, particularly to address challenges with tendon-driven actuation and low-cost materials. This work presents RUKA, a tendon-driven humanoid hand that is compact, affordable, and capable. Made from 3D-printed parts and off-the-shelf components, RUKA has 5 fingers with 15 underactuated degrees of freedom enabling diverse human-like grasps. Its tendon-driven actuation allows powerful grasping in a compact, human-sized form factor. To address control challenges, we learn joint-to-actuator and fingertip-to-actuator models from motion-capture data collected by the MANUS glove, leveraging the hand's morphological accuracy. Extensive evaluations demonstrate RUKA's superior reachability, durability, and strength compared to other robotic hands. Teleoperation tasks further showcase RUKA's dexterous movements. The open-source design and assembly instructions of RUKA, code, and data are available at https://ruka-hand.github.io/.
+### 方法与架构
+- **硬件设计**：RUKA 采用 3D 打印和现成组件，成本低于 1,300 美元。具有 5 根手指、15 个欠驱动自由度和 11 个执行器，通过肌腱驱动实现紧凑人形尺寸下的强力抓取。
+- **控制模型**：使用 LSTM+MLP 模型，基于 MANUS 动作捕捉手套收集的数据进行训练。模型学习关节到执行器和指尖到执行器的映射，以应对肌腱驱动的控制挑战。
 
-## 参考
-- http://arxiv.org/abs/2504.13165v1
+### 实验设置
+- **对比基准**：与 LEAP 手和 Allegro 手进行对比评估，测试指标包括可达性、耐用性和强度。
+- **任务演示**：通过遥操作任务展示 RUKA 的灵巧运动能力，并应用于模仿学习场景。
+
+### 关键数字与结论
+- **成本**：低于 1,300 美元，显著低于同类产品。
+- **自由度**：15 个欠驱动自由度，实现多样化类人抓取。
+- **评估结果**：在可达性、耐用性和强度方面优于 LEAP 和 Allegro 手。
+- **开源资源**：设计、组装说明、代码和数据均公开于 https://ruka-hand.github.io/。
 
 ## Overview
-Dexterous manipulation is a fundamental capability for robotic systems, yet progress has been limited by hardware trade-offs between precision, compactness, strength, and affordability. Existing control methods impose compromises on hand designs and applications. However, learning-based approaches present opportunities to rethink these trade-offs, particularly to address challenges with tendon-driven actuation and low-cost materials. This work presents RUKA, a tendon-driven humanoid hand that is compact, affordable, and capable. Made from 3D-printed parts and off-the-shelf components, RUKA has 5 fingers with 15 underactuated degrees of freedom enabling diverse human-like grasps. Its tendon-driven actuation allows powerful grasping in a compact, human-sized form factor. To address control challenges, we learn joint-to-actuator and fingertip-to-actuator models from motion-capture data collected by the MANUS glove, leveraging the hand's morphological accuracy. Extensive evaluations demonstrate RUKA's superior reachability, durability, and strength compared to other robotic hands. Teleoperation tasks further showcase RUKA's dexterous movements. The open-source design and assembly instructions of RUKA, code, and data are available at https://ruka-hand.github.io/.
-
-## Content
 Dexterous manipulation is a fundamental capability for robotic systems, yet progress has been limited by hardware trade-offs between precision, compactness, strength, and affordability. Existing control methods impose compromises on hand designs and applications. However, learning-based approaches present opportunities to rethink these trade-offs, particularly to address challenges with tendon-driven actuation and low-cost materials. This work presents RUKA, a tendon-driven humanoid hand that is compact, affordable, and capable. Made from 3D-printed parts and off-the-shelf components, RUKA has 5 fingers with 15 underactuated degrees of freedom enabling diverse human-like grasps. Its tendon-driven actuation allows powerful grasping in a compact, human-sized form factor. To address control challenges, we learn joint-to-actuator and fingertip-to-actuator models from motion-capture data collected by the MANUS glove, leveraging the hand's morphological accuracy. Extensive evaluations demonstrate RUKA's superior reachability, durability, and strength compared to other robotic hands. Teleoperation tasks further showcase RUKA's dexterous movements. The open-source design and assembly instructions of RUKA, code, and data are available at https://ruka-hand.github.io/.
 
 ## 개요
@@ -131,3 +138,6 @@ Dexterous manipulation is a fundamental capability for robotic systems, yet prog
 
 ## 핵심 내용
 정밀한 조작은 로봇 시스템의 핵심 능력이지만, 정밀성, 소형화, 강도, 경제성 간의 하드웨어 트레이드오프로 인해 발전이 제한되어 왔습니다. 기존 제어 방법은 손 설계와 응용에 타협을 강요합니다. 그러나 학습 기반 접근 방식은 이러한 트레이드오프를 재고할 기회를 제공하며, 특히 텐던 구동 방식과 저비용 재료의 문제를 해결하는 데 중점을 둡니다. 본 연구는 소형화, 경제성, 성능을 갖춘 텐던 구동 휴머노이드 손인 RUKA를 제시합니다. 3D 프린팅 부품과 기성 부품으로 제작된 RUKA는 5개의 손가락과 15개의 언더액추에이티드 자유도를 가지며, 다양한 인간형 파지를 가능하게 합니다. 텐던 구동 방식은 소형의 인간 크기 폼팩터에서 강력한 파지를 가능하게 합니다. 제어 문제를 해결하기 위해 MANUS 장갑으로 수집한 모션 캡처 데이터를 활용하여 관절-액추에이터 및 손끝-액추에이터 모델을 학습하며, 손의 형태학적 정확성을 활용합니다. 광범위한 평가를 통해 RUKA가 다른 로봇 손에 비해 뛰어난 도달성, 내구성, 강도를 보여줍니다. 원격 조작 작업은 RUKA의 정밀한 움직임을 추가로 입증합니다. RUKA의 오픈소스 설계 및 조립 지침, 코드, 데이터는 https://ruka-hand.github.io/에서 확인할 수 있습니다.
+
+## 参考
+- http://arxiv.org/abs/2504.13165v1

@@ -11,11 +11,7 @@ summary:
   en: This paper proposes an online cascaded planning framework in which multiple quadrupedal robots collaboratively tow a
     cable-suspended load to a goal while avoiding obstacles, combining parallelized centralized hybrid-mode trajectory optimization
     with decentralized per-robot planners.
-  zh: This paper tackles the problem of robots collaboratively towing a load with cables to a specified goal location while
-    avoiding collisions in real time. The introduction of cables (as opposed to rigid links) enables the robotic team to travel
-    through narrow spaces by changing its intrinsic dimensions through slack/taut switches of the cable. However, this is
-    a challenging problem because of the hybrid mode switches and the dynamical coupling among multiple robots and the load.
-    Previous attempts at addressing such a problem were performed offline and do not consider avoiding obstacles online. In
+  zh: 本文提出一种在线级联规划框架，使多台四足机器人协作拖拽缆绳悬挂负载到达目标，同时避开障碍物。该框架结合了并行化集中式混合模式轨迹优化与分散式单机器人规划器，首次实现实时反应式规划下的缆绳拖拽负载协同操作。
   ko: 본 논문은 다수의 사족 로봇이 케이블로 연결된 하중을 목표 지점으로 협업하여 견인하면서 실시간으로 장애물을 회피할 수 있는 온라인 캐스케이드 계획 프레임워크를 제안하며, 병렬화된 중앙집중식 하이브리드 모드 궤적
     최적화와 로봇별 분산 계획기를 결합한다.
 domains:
@@ -43,7 +39,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.14424v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.14424v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -54,20 +51,29 @@ sources:
 theoretical_depth:
 - method
 ---
-
 ## 概述
-This paper tackles the problem of robots collaboratively towing a load with cables to a specified goal location while avoiding collisions in real time. The introduction of cables (as opposed to rigid links) enables the robotic team to travel through narrow spaces by changing its intrinsic dimensions through slack/taut switches of the cable. However, this is a challenging problem because of the hybrid mode switches and the dynamical coupling among multiple robots and the load. Previous attempts at addressing such a problem were performed offline and do not consider avoiding obstacles online. In this paper, we introduce a cascaded planning scheme with a parallelized centralized trajectory optimization that deals with hybrid mode switches. We additionally develop a set of decentralized planners per robot, which enables our approach to solve the problem of collaborative load manipulation online. We develop and demonstrate one of the first collaborative autonomy framework that is able to move a cable-towed load, which is too heavy to move by a single robot, through narrow spaces with real-time feedback and reactive planning in experiments.
+针对多机器人通过缆绳协作拖拽负载并实时避障的问题，本文引入缆绳替代刚性连杆，使机器人团队能通过缆绳松弛/绷紧切换改变整体尺寸，从而穿越狭窄空间。为解决混合模式切换与多机器人-负载动态耦合的挑战，作者提出级联规划方案：包含处理混合模式切换的并行化集中式轨迹优化，以及为每台机器人开发的分散式规划器。实验证明，该框架是首个能实时反馈并反应式规划、使单机器人无法移动的重负载通过狭窄空间的协同自主系统。
 
 ## 核心内容
-This paper tackles the problem of robots collaboratively towing a load with cables to a specified goal location while avoiding collisions in real time. The introduction of cables (as opposed to rigid links) enables the robotic team to travel through narrow spaces by changing its intrinsic dimensions through slack/taut switches of the cable. However, this is a challenging problem because of the hybrid mode switches and the dynamical coupling among multiple robots and the load. Previous attempts at addressing such a problem were performed offline and do not consider avoiding obstacles online. In this paper, we introduce a cascaded planning scheme with a parallelized centralized trajectory optimization that deals with hybrid mode switches. We additionally develop a set of decentralized planners per robot, which enables our approach to solve the problem of collaborative load manipulation online. We develop and demonstrate one of the first collaborative autonomy framework that is able to move a cable-towed load, which is too heavy to move by a single robot, through narrow spaces with real-time feedback and reactive planning in experiments.
+### 核心问题与挑战
+- 多机器人通过缆绳协作拖拽负载至指定目标，需实时避障
+- 缆绳替代刚性连杆的优势：通过松弛/绷紧切换改变系统整体尺寸，可穿越狭窄空间
+- 主要挑战：混合模式切换（缆绳状态变化）与多机器人-负载动态耦合
 
-## 参考
-- http://arxiv.org/abs/2206.14424v1
+### 方法架构
+- **级联规划框架**：包含两层规划器
+  - **并行化集中式轨迹优化**：处理混合模式切换，生成全局轨迹
+  - **分散式单机器人规划器**：每台机器人独立运行，实现实时反应式避障
+
+### 实验设置与关键结果
+- 首次实现多机器人协作拖拽缆绳负载的实时反应式规划
+- 负载重量超过单机器人承载能力，需多机器人协同移动
+- 实验验证：系统能在实时反馈下通过狭窄空间，并动态调整缆绳状态（松弛/绷紧）
+
+### 结论
+本文提出的框架是首个能在线解决多机器人缆绳拖拽负载避障问题的协同自主系统，通过级联规划与混合模式优化实现实时性能。
 
 ## Overview
-This paper tackles the problem of robots collaboratively towing a load with cables to a specified goal location while avoiding collisions in real time. The introduction of cables (as opposed to rigid links) enables the robotic team to travel through narrow spaces by changing its intrinsic dimensions through slack/taut switches of the cable. However, this is a challenging problem because of the hybrid mode switches and the dynamical coupling among multiple robots and the load. Previous attempts at addressing such a problem were performed offline and do not consider avoiding obstacles online. In this paper, we introduce a cascaded planning scheme with a parallelized centralized trajectory optimization that deals with hybrid mode switches. We additionally develop a set of decentralized planners per robot, which enables our approach to solve the problem of collaborative load manipulation online. We develop and demonstrate one of the first collaborative autonomy framework that is able to move a cable-towed load, which is too heavy to move by a single robot, through narrow spaces with real-time feedback and reactive planning in experiments.
-
-## Content
 This paper tackles the problem of robots collaboratively towing a load with cables to a specified goal location while avoiding collisions in real time. The introduction of cables (as opposed to rigid links) enables the robotic team to travel through narrow spaces by changing its intrinsic dimensions through slack/taut switches of the cable. However, this is a challenging problem because of the hybrid mode switches and the dynamical coupling among multiple robots and the load. Previous attempts at addressing such a problem were performed offline and do not consider avoiding obstacles online. In this paper, we introduce a cascaded planning scheme with a parallelized centralized trajectory optimization that deals with hybrid mode switches. We additionally develop a set of decentralized planners per robot, which enables our approach to solve the problem of collaborative load manipulation online. We develop and demonstrate one of the first collaborative autonomy framework that is able to move a cable-towed load, which is too heavy to move by a single robot, through narrow spaces with real-time feedback and reactive planning in experiments.
 
 ## 개요
@@ -75,3 +81,6 @@ This paper tackles the problem of robots collaboratively towing a load with cabl
 
 ## 핵심 내용
 본 논문은 로봇들이 케이블을 이용해 협력하여 화물을 지정된 목표 위치로 견인하면서 실시간으로 충돌을 회피하는 문제를 다룹니다. 케이블(강체 링크와 달리)을 도입함으로써 로봇 팀은 케이블의 느슨함/팽팽함 전환을 통해 내부 치수를 변경하여 좁은 공간을 통과할 수 있습니다. 그러나 이는 하이브리드 모드 전환과 여러 로봇 및 화물 간의 동적 결합으로 인해 도전적인 문제입니다. 이전의 이러한 문제 해결 시도는 오프라인에서 수행되었으며 온라인 장애물 회피를 고려하지 않았습니다. 본 논문에서는 하이브리드 모드 전환을 처리하는 병렬화된 중앙 집중식 궤적 최적화를 포함한 계층적 계획 방식을 도입합니다. 또한 로봇별 분산 계획기를 추가로 개발하여 협력적 화물 조작 문제를 온라인으로 해결할 수 있게 합니다. 우리는 단일 로봇으로는 이동하기 너무 무거운 케이블 견인 화물을 실시간 피드백과 반응형 계획을 통해 좁은 공간으로 이동할 수 있는 최초의 협력 자율성 프레임워크 중 하나를 개발하고 실험에서 시연합니다.
+
+## 参考
+- http://arxiv.org/abs/2206.14424v1

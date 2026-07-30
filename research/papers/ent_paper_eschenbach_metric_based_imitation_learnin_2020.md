@@ -11,12 +11,7 @@ summary:
   en: This paper introduces a distance measure between dissimilar robotic embodiments to solve the correspondence problem
     in imitation learning, applying it to static-pose imitation via neural networks and dynamic-motion imitation via PPO-based
     reinforcement learning in simulation.
-  zh: 'The development of autonomous robotic systems that can learn from human demonstrations to imitate a desired behavior
-    - rather than being manually programmed - has huge technological potential. One major challenge in imitation learning
-    is the correspondence problem: how to establish corresponding states and actions between expert and learner, when the
-    embodiments of the agents are different (morphology, dynamics, degrees of freedom, etc.). Many existing approaches in
-    imitation learning circumvent the correspondence problem, for example, kinesthetic teaching or teleoperation, which are
-    performed'
+  zh: 本文提出了一种用于解决模仿学习中对应问题的距离度量，该度量适用于不同形态的机器人实体。研究将该度量作为损失函数用于静态姿态模仿，并作为反馈信号用于基于PPO的强化学习动态运动模仿。实验在两个不同形态的仿人机械臂之间进行仿真验证。
   ko: 본 논문은 모방 학습의 대응 문제를 해결하기 위해 상이한 로봇 실체 간 거리 측정을 제안하고, 이를 신경망 기반 정적 자세 모방 및 PPO 강화 학습 기반 동적 동작 모방에 적용한다.
 domains:
 - 07_ai_models_algorithms
@@ -39,7 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2003.02638v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2003.02638v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -50,20 +46,28 @@ sources:
 theoretical_depth:
 - method
 ---
-
 ## 概述
-The development of autonomous robotic systems that can learn from human demonstrations to imitate a desired behavior - rather than being manually programmed - has huge technological potential. One major challenge in imitation learning is the correspondence problem: how to establish corresponding states and actions between expert and learner, when the embodiments of the agents are different (morphology, dynamics, degrees of freedom, etc.). Many existing approaches in imitation learning circumvent the correspondence problem, for example, kinesthetic teaching or teleoperation, which are performed on the robot. In this work we explicitly address the correspondence problem by introducing a distance measure between dissimilar embodiments. This measure is then used as a loss function for static pose imitation and as a feedback signal within a model-free deep reinforcement learning framework for dynamic movement imitation between two anthropomorphic robotic arms in simulation. We find that the measure is well suited for describing the similarity between embodiments and for learning imitation policies by distance minimization.
+本文针对模仿学习中的对应问题，提出了一种能够衡量不同机器人实体之间相似性的距离度量。该度量被应用于两个不同形态的仿人机械臂的模仿任务中：对于静态姿态模仿，将其作为神经网络训练的损失函数；对于动态运动模仿，则将其作为基于PPO的无模型深度强化学习框架中的反馈信号。实验结果表明，该距离度量能够有效描述不同实体之间的相似性，并通过距离最小化学习到有效的模仿策略。
 
 ## 核心内容
-The development of autonomous robotic systems that can learn from human demonstrations to imitate a desired behavior - rather than being manually programmed - has huge technological potential. One major challenge in imitation learning is the correspondence problem: how to establish corresponding states and actions between expert and learner, when the embodiments of the agents are different (morphology, dynamics, degrees of freedom, etc.). Many existing approaches in imitation learning circumvent the correspondence problem, for example, kinesthetic teaching or teleoperation, which are performed on the robot. In this work we explicitly address the correspondence problem by introducing a distance measure between dissimilar embodiments. This measure is then used as a loss function for static pose imitation and as a feedback signal within a model-free deep reinforcement learning framework for dynamic movement imitation between two anthropomorphic robotic arms in simulation. We find that the measure is well suited for describing the similarity between embodiments and for learning imitation policies by distance minimization.
+### 研究背景与问题
+- 模仿学习面临的核心挑战是**对应问题**：当专家和学习者的机器人实体不同（如形态、动力学、自由度等差异）时，如何建立对应的状态和动作。
+- 现有方法如**kinesthetic teaching**（动觉示教）和**teleoperation**（遥操作）通常绕开对应问题，直接在目标机器人上操作。
 
-## 参考
-- http://arxiv.org/abs/2003.02638v1
+### 方法
+- 提出一种**距离度量**，用于量化两个不同机器人实体之间的相似性。
+- **静态姿态模仿**：将该距离度量作为神经网络的损失函数，通过最小化距离来学习姿态映射。
+- **动态运动模仿**：将该距离度量作为反馈信号，集成到**PPO-based**（基于近端策略优化）的无模型深度强化学习框架中，通过距离最小化学习运动策略。
+
+### 实验设置
+- 在仿真环境中进行实验，使用两个**不同形态的仿人机械臂**（anthropomorphic robotic arms）。
+- 分别测试静态姿态模仿和动态运动模仿任务。
+
+### 关键结果与结论
+- 该距离度量能够有效描述不同机器人实体之间的相似性。
+- 通过距离最小化，成功学习到有效的模仿策略，验证了方法的可行性。
 
 ## Overview
-The development of autonomous robotic systems that can learn from human demonstrations to imitate a desired behavior - rather than being manually programmed - has huge technological potential. One major challenge in imitation learning is the correspondence problem: how to establish corresponding states and actions between expert and learner, when the embodiments of the agents are different (morphology, dynamics, degrees of freedom, etc.). Many existing approaches in imitation learning circumvent the correspondence problem, for example, kinesthetic teaching or teleoperation, which are performed on the robot. In this work we explicitly address the correspondence problem by introducing a distance measure between dissimilar embodiments. This measure is then used as a loss function for static pose imitation and as a feedback signal within a model-free deep reinforcement learning framework for dynamic movement imitation between two anthropomorphic robotic arms in simulation. We find that the measure is well suited for describing the similarity between embodiments and for learning imitation policies by distance minimization.
-
-## Content
 The development of autonomous robotic systems that can learn from human demonstrations to imitate a desired behavior - rather than being manually programmed - has huge technological potential. One major challenge in imitation learning is the correspondence problem: how to establish corresponding states and actions between expert and learner, when the embodiments of the agents are different (morphology, dynamics, degrees of freedom, etc.). Many existing approaches in imitation learning circumvent the correspondence problem, for example, kinesthetic teaching or teleoperation, which are performed on the robot. In this work we explicitly address the correspondence problem by introducing a distance measure between dissimilar embodiments. This measure is then used as a loss function for static pose imitation and as a feedback signal within a model-free deep reinforcement learning framework for dynamic movement imitation between two anthropomorphic robotic arms in simulation. We find that the measure is well suited for describing the similarity between embodiments and for learning imitation policies by distance minimization.
 
 ## 개요
@@ -71,3 +75,6 @@ The development of autonomous robotic systems that can learn from human demonstr
 
 ## 핵심 내용
 인간의 시연을 통해 학습하여 원하는 행동을 모방할 수 있는 자율 로봇 시스템의 개발(수동 프로그래밍 대신)은 엄청난 기술적 잠재력을 지니고 있습니다. 모방 학습의 주요 과제 중 하나는 대응 문제(correspondence problem)입니다. 즉, 에이전트의 구현체(형태, 동역학, 자유도 등)가 다를 때 전문가와 학습자 간의 상태와 행동을 어떻게 대응시킬 것인가 하는 문제입니다. 모방 학습의 많은 기존 접근 방식은 로봇에서 수행되는 운동 감각 교육(kinaesthetic teaching)이나 원격 조작(teleoperation)과 같이 대응 문제를 우회합니다. 본 연구에서는 서로 다른 구현체 간의 거리 측정(distance measure)을 도입하여 대응 문제를 명시적으로 해결합니다. 이 측정값은 정적 자세 모방을 위한 손실 함수로, 그리고 시뮬레이션에서 두 인간형 로봇 팔 간의 동적 움직임 모방을 위한 모델 프리 심층 강화 학습(model-free deep reinforcement learning) 프레임워크 내에서 피드백 신호로 사용됩니다. 우리는 이 측정값이 구현체 간의 유사성을 설명하고 거리 최소화를 통해 모방 정책을 학습하는 데 적합하다는 것을 발견했습니다.
+
+## 参考
+- http://arxiv.org/abs/2003.02638v1

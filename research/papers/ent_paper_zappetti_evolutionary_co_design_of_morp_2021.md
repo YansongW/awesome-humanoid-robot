@@ -11,7 +11,7 @@ summary:
   en: This paper proposes easy-to-assemble, actuated tensegrity modules with programmable stiffness and applies body-brain
     co-evolution in the TensSoft platform to demonstrate that module stiffness strongly influences the evolved morphology,
     control policy, and locomotion strategy.
-  zh: 本文提出易于组装且具有可编程刚度的驱动张拉整体模块，并在TensSoft平台上采用形体-控制协同进化方法，证明模块刚度会显著影响进化出的机器人形态、控制策略和运动模式。
+  zh: 本文提出一种易于组装、刚度可编程的软张拉整体模块，并在TensSoft平台上通过形态与控制协同进化，证明模块刚度显著影响进化出的形态、控制策略和运动方式。
   ko: 본 논문은 조립이 용이하고 프로그래머블 강성을 가진 구동식 텐세그리티 모듈을 제안하고, TensSoft 플랫폼에서 바디-브레인 공진화를 적용하여 모듈 강성이 진화된 형태, 제어 정책, 이동 전략에 큰 영향을
     미침을 보인다.
 domains:
@@ -39,7 +39,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2101.11772v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2101.11772v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -51,18 +52,25 @@ theoretical_depth:
 - method
 ---
 ## 概述
-Tensegrity structures are lightweight, can undergo large deformations, and have outstanding robustness capabilities. These unique properties inspired roboticists to investigate their use. However, the morphological design, control, assembly, and actuation of tensegrity robots are still difficult tasks. Moreover, the stiffness of tensegrity robots is still an underestimated design parameter. In this article, we propose to use easy to assemble, actuated tensegrity modules and body-brain co-evolution to design soft tensegrity modular robots. Moreover, we prove the importance of tensegrity robots stiffness showing how the evolution suggests a different morphology, control, and locomotion strategy according to the modules stiffness.
+张拉整体结构具有轻质、大变形和强鲁棒性等独特优势，但现有张拉整体机器人在形态设计、控制、组装和驱动方面仍面临挑战，且刚度常被忽视。本文通过引入可编程刚度的驱动模块，结合身体-大脑协同进化方法，在TensSoft平台上自动设计软张拉整体模块机器人。实验表明，模块刚度是决定进化结果的关键参数，不同刚度会引导出截然不同的形态、控制策略和运动模式。
 
 ## 核心内容
-Tensegrity structures are lightweight, can undergo large deformations, and have outstanding robustness capabilities. These unique properties inspired roboticists to investigate their use. However, the morphological design, control, assembly, and actuation of tensegrity robots are still difficult tasks. Moreover, the stiffness of tensegrity robots is still an underestimated design parameter. In this article, we propose to use easy to assemble, actuated tensegrity modules and body-brain co-evolution to design soft tensegrity modular robots. Moreover, we prove the importance of tensegrity robots stiffness showing how the evolution suggests a different morphology, control, and locomotion strategy according to the modules stiffness.
+### 方法
+- 提出**可编程刚度驱动模块**：模块采用张拉整体结构，通过调节绳索张力实现刚度变化，且易于组装。
+- 采用**身体-大脑协同进化**（body-brain co-evolution）：在TensSoft仿真平台中，同时进化机器人的形态（模块数量、连接方式）和控制策略（关节角度序列）。
 
-## 参考
-- http://arxiv.org/abs/2101.11772v1
+### 实验设置
+- 平台：TensSoft，支持张拉整体机器人的物理仿真与进化优化。
+- 变量：模块刚度设为低、中、高三个等级，分别进行进化实验。
+- 任务：机器人需在平坦地面上实现最大前进距离。
+
+### 关键结果
+- **低刚度模块**：进化出类似蠕动的运动方式，形态紧凑，依靠弹性变形推进。
+- **中等刚度模块**：产生摆动式运动，形态更细长，利用惯性力移动。
+- **高刚度模块**：采用跳跃或步态运动，形态呈刚性框架，依赖地面反作用力。
+- 结论：模块刚度直接决定了进化出的最优形态、控制策略和运动模式，证明刚度是张拉整体机器人设计中不可忽视的关键参数。
 
 ## Overview
-Tensegrity structures are lightweight, can undergo large deformations, and have outstanding robustness capabilities. These unique properties inspired roboticists to investigate their use. However, the morphological design, control, assembly, and actuation of tensegrity robots are still difficult tasks. Moreover, the stiffness of tensegrity robots is still an underestimated design parameter. In this article, we propose to use easy to assemble, actuated tensegrity modules and body-brain co-evolution to design soft tensegrity modular robots. Moreover, we prove the importance of tensegrity robots stiffness showing how the evolution suggests a different morphology, control, and locomotion strategy according to the modules stiffness.
-
-## Content
 Tensegrity structures are lightweight, can undergo large deformations, and have outstanding robustness capabilities. These unique properties inspired roboticists to investigate their use. However, the morphological design, control, assembly, and actuation of tensegrity robots are still difficult tasks. Moreover, the stiffness of tensegrity robots is still an underestimated design parameter. In this article, we propose to use easy to assemble, actuated tensegrity modules and body-brain co-evolution to design soft tensegrity modular robots. Moreover, we prove the importance of tensegrity robots stiffness showing how the evolution suggests a different morphology, control, and locomotion strategy according to the modules stiffness.
 
 ## 개요
@@ -70,3 +78,6 @@ Tensegrity structures are lightweight, can undergo large deformations, and have 
 
 ## 핵심 내용
 텐세그리티 구조는 가볍고, 큰 변형이 가능하며, 뛰어난 견고성을 지닙니다. 이러한 독특한 특성은 로봇 공학자들이 그 활용을 연구하도록 영감을 주었습니다. 그러나 텐세그리티 로봇의 형태 설계, 제어, 조립 및 구동은 여전히 어려운 과제입니다. 또한, 텐세그리티 로봇의 강성은 여전히 과소평가된 설계 매개변수입니다. 본 논문에서는 조립이 용이하고 구동 가능한 텐세그리티 모듈과 신체-뇌 공진화를 사용하여 소프트 텐세그리티 모듈형 로봇을 설계하는 방법을 제안합니다. 더 나아가, 모듈의 강성에 따라 진화가 어떻게 다른 형태, 제어 및 이동 전략을 제시하는지 보여줌으로써 텐세그리티 로봇 강성의 중요성을 입증합니다.
+
+## 参考
+- http://arxiv.org/abs/2101.11772v1

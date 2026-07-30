@@ -10,8 +10,8 @@ names:
 summary:
   en: 'IN-N-ON: SCALING EGOCENTRIC MANIPULATION WITH IN-THE-WILD AND ON-TASK DATA is a 2026 work on manipulation for humanoid
     robots.'
-  zh: 'IN-N-ON: SCALING EGOCENTRIC MANIPULATION WITH IN-THE-WILD AND ON-TASK DATA is a 2026 work on manipulation for humanoid
-    robots.'
+  zh: IN-N-ON 是 2026 年面向人形机器人操作的研究，由团队提出。其核心贡献在于将人类第一人称视频数据系统分为 in-the-wild 与 on-task 两类，并基于此构建了包含 1000 小时野外数据与 20 小时任务数据的
+    PHSD 数据集，训练出语言条件流匹配策略 Human0。通过域适应技术，Human0 实现了从人类数据到人形机器人的有效迁移，展现出指令跟随、少样本学习与鲁棒性提升等特性。
   ko: 'IN-N-ON: SCALING EGOCENTRIC MANIPULATION WITH IN-THE-WILD AND ON-TASK DATA is a 2026 work on manipulation for humanoid
     robots.'
 domains:
@@ -33,7 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15704v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15704v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: website
@@ -43,18 +44,30 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Egocentric videos are a valuable and scalable data source to learn manipulation policies. However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential. This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on-task alongside with systematic analysis on how to use the data. We first curate a dataset, PHSD, which contains over 1,000 hours of diverse in-the-wild egocentric data and over 20 hours of on-task data directly aligned to the target manipulation tasks. This enables learning a large egocentric language-conditioned flow matching policy, Human0. With domain adaptation techniques, Human0 minimizes the gap between humans and humanoids. Empirically, we show Human0 achieves several novel properties from scaling human data, including language following of instructions from only human data, few-shot learning, and improved robustness using on-task data. Project website: https://xiongyicai.github.io/In-N-On/
+该工作首先提出了一种可扩展的第一人称数据收集与使用方案，将人类操作视频明确划分为 in-the-wild（野外）与 on-task（任务）两类，并系统分析了如何利用这些数据。基于此分类，团队构建了 PHSD 数据集，包含超过 1000 小时的多样化野外数据与 20 小时直接对齐目标操作任务的任务数据。利用该数据集，他们训练了一个大规模的语言条件流匹配策略 Human0，并通过域适应技术缩小人类与人形机器人之间的差距。实验表明，Human0 仅从人类数据中学习即可实现语言指令跟随、少样本学习，并借助任务数据提升了鲁棒性。
 
 ## 核心内容
-Egocentric videos are a valuable and scalable data source to learn manipulation policies. However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential. This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on-task alongside with systematic analysis on how to use the data. We first curate a dataset, PHSD, which contains over 1,000 hours of diverse in-the-wild egocentric data and over 20 hours of on-task data directly aligned to the target manipulation tasks. This enables learning a large egocentric language-conditioned flow matching policy, Human0. With domain adaptation techniques, Human0 minimizes the gap between humans and humanoids. Empirically, we show Human0 achieves several novel properties from scaling human data, including language following of instructions from only human data, few-shot learning, and improved robustness using on-task data. Project website: https://xiongyicai.github.io/In-N-On/
+### 方法
+- 将人类第一人称视频数据分为两类：**in-the-wild**（多样化、非结构化场景）与 **on-task**（直接对齐目标操作任务）。
+- 基于此分类，提出可扩展的数据收集与使用方案，并系统分析两类数据在策略学习中的不同作用。
 
-## 参考
-- http://arxiv.org/abs/2511.15704v1
+### 数据集
+- 构建 **PHSD** 数据集，包含：
+  - 超过 **1000 小时** 的 in-the-wild 第一人称数据。
+  - 超过 **20 小时** 的 on-task 数据，直接对齐目标操作任务。
+
+### 模型
+- 训练 **Human0**，一个大规模的语言条件流匹配策略（language-conditioned flow matching policy）。
+- 采用 **域适应技术**，最小化人类数据与人形机器人数据之间的分布差异，实现从人类到人形机器人的知识迁移。
+
+### 实验设置与关键结果
+- 实验验证 Human0 具备以下特性：
+  - **语言指令跟随**：仅从人类数据中学习即可理解并执行自然语言指令。
+  - **少样本学习**：在少量新任务数据上快速适应。
+  - **鲁棒性提升**：利用 on-task 数据显著增强了策略在真实场景中的稳定性。
+- 项目网站提供更多细节与演示：https://xiongyicai.github.io/In-N-On/
 
 ## Overview
-Egocentric videos are a valuable and scalable data source to learn manipulation policies. However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential. This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on-task alongside with systematic analysis on how to use the data. We first curate a dataset, PHSD, which contains over 1,000 hours of diverse in-the-wild egocentric data and over 20 hours of on-task data directly aligned to the target manipulation tasks. This enables learning a large egocentric language-conditioned flow matching policy, Human0. With domain adaptation techniques, Human0 minimizes the gap between humans and humanoids. Empirically, we show Human0 achieves several novel properties from scaling human data, including language following of instructions from only human data, few-shot learning, and improved robustness using on-task data. Project website: https://xiongyicai.github.io/In-N-On/
-
-## Content
 Egocentric videos are a valuable and scalable data source to learn manipulation policies. However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential. This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on-task alongside with systematic analysis on how to use the data. We first curate a dataset, PHSD, which contains over 1,000 hours of diverse in-the-wild egocentric data and over 20 hours of on-task data directly aligned to the target manipulation tasks. This enables learning a large egocentric language-conditioned flow matching policy, Human0. With domain adaptation techniques, Human0 minimizes the gap between humans and humanoids. Empirically, we show Human0 achieves several novel properties from scaling human data, including language following of instructions from only human data, few-shot learning, and improved robustness using on-task data. Project website: https://xiongyicai.github.io/In-N-On/
 
 ## 개요
@@ -62,3 +75,6 @@ Egocentric videos are a valuable and scalable data source to learn manipulation 
 
 ## 핵심 내용
 에고센트릭 비디오는 조작 정책을 학습하기 위한 가치 있고 확장 가능한 데이터 소스입니다. 그러나 상당한 데이터 이질성으로 인해 대부분의 기존 접근 방식은 인간 데이터를 단순한 사전 학습에만 활용하여 그 잠재력을 완전히 발휘하지 못합니다. 본 논문은 먼저 인간 데이터를 인더와일드(in-the-wild)와 온태스크(on-task)의 두 가지 범주로 분류하고 데이터 사용 방법에 대한 체계적인 분석을 제공함으로써 에고센트릭 데이터를 수집하고 사용하기 위한 확장 가능한 레시피를 제시합니다. 우리는 먼저 1,000시간 이상의 다양한 인더와일드 에고센트릭 데이터와 대상 조작 작업에 직접 정렬된 20시간 이상의 온태스크 데이터를 포함하는 데이터셋 PHSD를 큐레이션합니다. 이를 통해 대규모 에고센트릭 언어 조건부 흐름 매칭 정책인 Human0을 학습할 수 있습니다. 도메인 적응 기술을 통해 Human0은 인간과 휴머노이드 간의 격차를 최소화합니다. 실험적으로, 우리는 Human0이 인간 데이터 스케일링을 통해 언어 지시 따르기(인간 데이터만으로), 퓨샷 학습, 온태스크 데이터를 사용한 향상된 견고성 등 여러 새로운 특성을 달성함을 보여줍니다. 프로젝트 웹사이트: https://xiongyicai.github.io/In-N-On/
+
+## 参考
+- http://arxiv.org/abs/2511.15704v1

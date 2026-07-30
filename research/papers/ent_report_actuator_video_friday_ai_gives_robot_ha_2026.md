@@ -35,33 +35,8 @@ summary:
     [ SwitchBot ] You probably know the answers to these questions already, but this ELI5 from Aaron Ames is still fun. [
     Wired ] Jim Fan, who leads the embodied autonomous research group at Nvidia, returns to AI Ascent to argue that robotics
     is entering its endgame—and that the playbook is already written. [ Sequoia ]'
-  zh: 'Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
-    We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
-    ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4
-    August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO Enjoy today’s videos! Introducing GENE-26.5—the first
-    AI brain to give robots human-level physical manipulation capabilities. Cooking a full meal. Cracking an egg one-handed.
-    Conducting lab experiments. Wire harnessing. Even playing the piano. Tasks that were impossible for robots. Until now.
-    [ Genesis AI ] via [ TechCrunch ] This is Labububot—one of the rarest monsters on Earth. Twelve Labubu heads are reconstituted
-    into a single spherical form: a Frankenstein’s Monster of pop culture iconography. Labububot is a playful critique of
-    social robots , and a question made physical—what do the monsters we make reveal about the monsters we are? [ MIT Media
-    Lab ] Watch Spot crouch, jump, climb boxes, and leap across gaps, controlled by a neural network trained with reinforcement
-    learning (RL) and multi-expert distillation. [ Robotics and AI Institute ] Good, now there is a robot that can take over
-    exercise for me. [ Kepler ] Additive manufacturing has become an enabling technology, but existing techniques are not
-    capable of directly 3D printing high-current electromagnetic actuators due to material and design limitations. In this
-    work, a novel 3D-printable, multilayer, wave-winding topology is created for high-efficiency electric motors. [ Sensing
-    Technologies Laboratory ] NASA is pushing the limits of flight on Mars —by spinning helicopter rotor blades so fast, they’re
-    breaking the sound barrier. During recent tests at NASA’s Jet Propulsion Laboratory, engineers accelerated the tips of
-    next-generation rotor blades beyond Mach 1 inside a special chamber that simulates the atmospheric conditions of the Red
-    Planet. [ NASA Jet Propulsion Laboratory ] Balancing commercial goals and robotics research can be tricky, but with Atlas,
-    we’re making it work. [ Boston Dynamics ] Open Duck Mini is an open-source version of Disney’s BDX droids, and you can
-    play with it in your browser. [ Open Duck Mini Viewer ] Thanks, Masato! Automated inspection of steel structures using
-    magnetic climbing robots can reduce costs and improve safety, but many such structures feature interior corners that are
-    challenging for wheeled or tracked robots to traverse. We present the first magnetic-wheeled robot to use X-ray fluorescence
-    for steel structure inspection, Sally, capable of overcoming all interior corner transition types, traversing small obstacles,
-    and maneuvering in tight spaces. [ Robomechanics Lab ] I don’t know what this is, but it’s coming soon from SwitchBot.
-    [ SwitchBot ] You probably know the answers to these questions already, but this ELI5 from Aaron Ames is still fun. [
-    Wired ] Jim Fan, who leads the embodied autonomous research group at Nvidia, returns to AI Ascent to argue that robotics
-    is entering its endgame—and that the playbook is already written. [ Sequoia ]'
+  zh: 本周的Video Friday由IEEE Spectrum机器人团队精选，展示了多项机器人领域的最新突破。核心亮点包括Genesis AI推出的GENE-26.5，这是首个赋予机器人人类级灵巧操作能力的AI大脑，以及MIT Media
+    Lab的Labububot、通过强化学习训练的Spot机器人、用于火星探测的超音速旋翼叶片等创新成果。
   ko: 'Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
     We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
     ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4
@@ -116,6 +91,7 @@ verification:
   reviewed_at: '2026-07-15'
   confidence: medium
   notes: Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/video-friday-robotic-hand-dexterity.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: website
@@ -125,18 +101,50 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Your weekly selection of awesome robot videos Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
+本期Video Friday汇集了从灵巧操作到火星探索的多元机器人视频。Genesis AI的GENE-26.5实现了烹饪、单手打蛋、弹钢琴等复杂任务，标志着机器人物理操作能力的重大飞跃。MIT Media Lab的Labububot以12个Labubu头部重构为球形，对社会机器人进行趣味批判。Boston Dynamics的Atlas展示了商业与研究的平衡，而NASA JPL则测试了突破音障的火星直升机旋翼叶片。此外，还有基于强化学习的Spot跳跃、磁爬壁检测机器人Sally，以及开源版Disney BDX机器人Open Duck Mini等精彩内容。
 
 ## 核心内容
-Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO Enjoy today’s videos! Introducing GENE-26.5—the first AI brain to give robots human-level physical manipulation capabilities. Cooking a full meal. Cracking an egg one-handed. Conducting lab experiments. Wire harnessing. Even playing the piano. Tasks that were impossible for robots. Until now. [ Genesis AI ] via [ TechCrunch ] This is Labububot—one of the rarest monsters on Earth. Twelve Labubu heads are reconstituted into a single spherical form: a Frankenstein’s Monster of pop culture iconography. Labububot is a playful critique of social robots , and a question made physical—what do the monsters we make reveal about the monsters we are? [ MIT Media Lab ] Watch Spot crouch, jump, climb boxes, and leap across gaps, controlled by a neural network trained with reinforcement learning (RL) and multi-expert distillation. [ Robotics and AI Institute ] Good, now there is a robot that can take over exercise for me. [ Kepler ] Additive manufacturing has become an enabling technology, but existing techniques are not capable of directly 3D printing high-current electromagnetic actuators due to material and design limitations. In this work, a novel 3D-printable, multilayer, wave-winding topology is created for high-efficiency electric motors. [ Sensing Technologies Laboratory ] NASA is pushing the limits of flight on Mars —by spinning helicopter rotor blades so fast, they’re breaking the sound barrier. During recent tests at NASA’s Jet Propulsion Laboratory, engineers accelerated the tips of next-generation rotor blades beyond Mach 1 inside a special chamber that simulates the atmospheric conditions of the Red Planet. [ NASA Jet Propulsion Laboratory ] Balancing commercial goals and robotics research can be tricky, but with Atlas, we’re making it work. [ Boston Dynamics ] Open Duck Mini is an open-source version of Disney’s BDX droids, and you can play with it in your browser. [ Open Duck Mini Viewer ] Thanks, Masato! Automated inspection of steel structures using magnetic climbing robots can reduce costs and improve safety, but many such structures feature interior corners that are challenging for wheeled or tracked robots to traverse. We present the first magnetic-wheeled robot to use X-ray fluorescence for steel structure inspection, Sally, capable of overcoming all interior corner transition types, traversing small obstacles, and maneuvering in tight spaces. [ Robomechanics Lab ] I don’t know what this is, but it’s coming soon from SwitchBot. [ SwitchBot ] You probably know the answers to these questions already, but this ELI5 from Aaron Ames is still fun. [ Wired ] Jim Fan, who leads the embodied autonomous research group at Nvidia, returns to AI Ascent to argue that robotics is entering its endgame—and that the playbook is already written. [ Sequoia ] Your weekly selection of awesome robot videos Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
+### 本周精选机器人视频
 
-## 参考
-- https://spectrum.ieee.org/video-friday-robotic-hand-dexterity
+- **GENE-26.5：首个赋予机器人人类级灵巧操作的AI大脑**  
+  Genesis AI推出的GENE-26.5能够完成烹饪全餐、单手打蛋、进行实验室实验、线束整理甚至弹钢琴等此前对机器人而言不可能的任务。该成果经TechCrunch报道，展示了AI在物理操作领域的突破性进展。
+
+- **Labububot：社会机器人的趣味批判**  
+  MIT Media Lab创造的Labububot由12个Labubu头部重构为单一球形，形似流行文化中的弗兰肯斯坦怪物。它通过物理形态提出疑问：我们制造的怪物揭示了怎样的自我？
+
+- **Spot机器人：强化学习与多专家蒸馏**  
+  Robotics and AI Institute展示了Spot通过神经网络控制，实现蹲伏、跳跃、攀爬箱体及跨越间隙等动作。该网络采用强化学习（RL）和多专家蒸馏技术训练。
+
+- **Kepler运动机器人**  
+  Kepler推出了一款可替代人类进行锻炼的机器人，为健身场景提供自动化解决方案。
+
+- **3D打印高效电机拓扑**  
+  Sensing Technologies Laboratory开发了一种新型3D可打印多层波绕组拓扑结构，解决了现有技术无法直接打印高电流电磁致动器的材料与设计限制，用于制造高效电机。
+
+- **NASA火星直升机超音速旋翼测试**  
+  NASA JPL在模拟火星大气条件的特殊舱室内，将下一代旋翼叶片尖端加速至超过Mach 1（音速），突破了火星飞行的极限。
+
+- **Atlas：商业与研究的平衡**  
+  Boston Dynamics表示，Atlas项目在商业目标与机器人研究之间找到了平衡点，并持续推进。
+
+- **Open Duck Mini：开源版Disney BDX机器人**  
+  Open Duck Mini是Disney BDX机器人的开源版本，用户可直接在浏览器中交互体验。
+
+- **Sally：磁爬壁检测机器人**  
+  Robomechanics Lab推出了首款使用X射线荧光（XRF）进行钢结构检测的磁轮机器人Sally。它能克服所有内角过渡类型、穿越小型障碍物并在狭小空间内机动，降低了检测成本并提升了安全性。
+
+- **SwitchBot新品预告**  
+  SwitchBot发布了一款未命名的新产品预告，具体功能尚待揭晓。
+
+- **ELI5机器人问答**  
+  Aaron Ames在Wired上以“像对五岁孩子解释”的方式回答了机器人相关问题，趣味性十足。
+
+- **Jim Fan：机器人学的终局**  
+  Nvidia具身自主研究组负责人Jim Fan在Sequoia的AI Ascent节目中表示，机器人学正进入终局阶段，且其发展剧本已经写好。
 
 ## Overview
 Your weekly selection of awesome robot videos Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
 
-## Content
 Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO Enjoy today’s videos! Introducing GENE-26.5—the first AI brain to give robots human-level physical manipulation capabilities. Cooking a full meal. Cracking an egg one-handed. Conducting lab experiments. Wire harnessing. Even playing the piano. Tasks that were impossible for robots. Until now. [ Genesis AI ] via [ TechCrunch ] This is Labububot—one of the rarest monsters on Earth. Twelve Labubu heads are reconstituted into a single spherical form: a Frankenstein’s Monster of pop culture iconography. Labububot is a playful critique of social robots , and a question made physical—what do the monsters we make reveal about the monsters we are? [ MIT Media Lab ] Watch Spot crouch, jump, climb boxes, and leap across gaps, controlled by a neural network trained with reinforcement learning (RL) and multi-expert distillation. [ Robotics and AI Institute ] Good, now there is a robot that can take over exercise for me. [ Kepler ] Additive manufacturing has become an enabling technology, but existing techniques are not capable of directly 3D printing high-current electromagnetic actuators due to material and design limitations. In this work, a novel 3D-printable, multilayer, wave-winding topology is created for high-efficiency electric motors. [ Sensing Technologies Laboratory ] NASA is pushing the limits of flight on Mars —by spinning helicopter rotor blades so fast, they’re breaking the sound barrier. During recent tests at NASA’s Jet Propulsion Laboratory, engineers accelerated the tips of next-generation rotor blades beyond Mach 1 inside a special chamber that simulates the atmospheric conditions of the Red Planet. [ NASA Jet Propulsion Laboratory ] Balancing commercial goals and robotics research can be tricky, but with Atlas, we’re making it work. [ Boston Dynamics ] Open Duck Mini is an open-source version of Disney’s BDX droids, and you can play with it in your browser. [ Open Duck Mini Viewer ] Thanks, Masato! Automated inspection of steel structures using magnetic climbing robots can reduce costs and improve safety, but many such structures feature interior corners that are challenging for wheeled or tracked robots to traverse. We present the first magnetic-wheeled robot to use X-ray fluorescence for steel structure inspection, Sally, capable of overcoming all interior corner transition types, traversing small obstacles, and maneuvering in tight spaces. [ Robomechanics Lab ] I don’t know what this is, but it’s coming soon from SwitchBot. [ SwitchBot ] You probably know the answers to these questions already, but this ELI5 from Aaron Ames is still fun. [ Wired ] Jim Fan, who leads the embodied autonomous research group at Nvidia, returns to AI Ascent to argue that robotics is entering its endgame—and that the playbook is already written. [ Sequoia ] Your weekly selection of awesome robot videos Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
 
 ## 개요
@@ -195,3 +203,6 @@ Nvidia의 구현 자율 연구 그룹을 이끄는 Jim Fan이 AI Ascent에 돌�
 [ Sequoia ]  
 
 당신의 주간 멋진 로봇 영상 모음입니다. Video Friday는 IEEE Spectrum 로보틱스 팀이 모은 멋진 로봇 영상들을 소개합니다. 또한 향후 몇 개월간의 로봇 관련 행사 일정을 주간 달력으로 게시합니다. 행사 포함을 원하시면 저희에게 보내주세요.
+
+## 参考
+- https://spectrum.ieee.org/video-friday-robotic-hand-dexterity

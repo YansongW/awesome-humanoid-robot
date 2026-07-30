@@ -10,7 +10,7 @@ names:
 summary:
   en: TWIST2 introduces a portable, mocap-free whole-body humanoid teleoperation and data collection system using PICO4U VR
     tracking and a low-cost 2-DoF neck, together with a hierarchical visuomotor policy for autonomous full-body control.
-  zh: TWIST2 介绍了一种使用 PICO4U VR 追踪与低成本二自由度颈部的便携、无动作捕捉全身人形机器人遥操作与数据采集系统，并提出了用于自主全身控制的分层视觉运动策略。
+  zh: TWIST2 是由研究团队提出的一套便携式、无需动作捕捉的全身人形机器人遥操作与数据采集系统。该系统利用 PICO4U VR 追踪和低成本 2-DoF 颈部模块实现全身控制，并配套提出分层视觉运动策略用于自主全身控制，核心贡献在于提升了数据采集的可扩展性与可复现性。
   ko: TWIST2는 PICO4U VR 추적과 저비용 2-DoF 목을 활용한 휴대 가능하고 mocap이 불필요한 전신 휴머노이드 원격 조작 및 데이터 수집 시스템을 제안하며, 자율 전신 제어를 위한 계층적 시각-운동
     정책을 함께 소개한다.
 domains:
@@ -41,7 +41,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.02832v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.02832v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -53,18 +54,30 @@ theoretical_depth:
 - method
 ---
 ## 概述
-Large-scale data has driven breakthroughs in robotics, from language models to vision-language-action models in bimanual manipulation. However, humanoid robotics lacks equally effective data collection frameworks. Existing humanoid teleoperation systems either use decoupled control or depend on expensive motion capture setups. We introduce TWIST2, a portable, mocap-free humanoid teleoperation and data collection system that preserves full whole-body control while advancing scalability. Our system leverages PICO4U VR for obtaining real-time whole-body human motions, with a custom 2-DoF robot neck (cost around $250) for egocentric vision, enabling holistic human-to-humanoid control. We demonstrate long-horizon dexterous and mobile humanoid skills and we can collect 100 demonstrations in 15 minutes with an almost 100% success rate. Building on this pipeline, we propose a hierarchical visuomotor policy framework that autonomously controls the full humanoid body based on egocentric vision. Our visuomotor policy successfully demonstrates whole-body dexterous manipulation and dynamic kicking tasks. The entire system is fully reproducible and open-sourced at https://yanjieze.com/TWIST2 . Our collected dataset is also open-sourced at https://twist-data.github.io .
+TWIST2 解决了人形机器人领域缺乏高效数据采集框架的问题，通过 PICO4U VR 设备实时获取全身人体运动，并设计了一个成本约 250 美元的 2-DoF 机器人颈部模块用于第一人称视觉，实现了完整的人到人形机器人的全身映射。该系统能在 15 分钟内以接近 100% 的成功率采集 100 组演示数据，并在此基础上提出了基于第一人称视觉的分层视觉运动策略，成功完成了全身灵巧操作和动态踢球等任务。整个系统完全开源，数据集也已公开。
 
 ## 核心内容
-Large-scale data has driven breakthroughs in robotics, from language models to vision-language-action models in bimanual manipulation. However, humanoid robotics lacks equally effective data collection frameworks. Existing humanoid teleoperation systems either use decoupled control or depend on expensive motion capture setups. We introduce TWIST2, a portable, mocap-free humanoid teleoperation and data collection system that preserves full whole-body control while advancing scalability. Our system leverages PICO4U VR for obtaining real-time whole-body human motions, with a custom 2-DoF robot neck (cost around $250) for egocentric vision, enabling holistic human-to-humanoid control. We demonstrate long-horizon dexterous and mobile humanoid skills and we can collect 100 demonstrations in 15 minutes with an almost 100% success rate. Building on this pipeline, we propose a hierarchical visuomotor policy framework that autonomously controls the full humanoid body based on egocentric vision. Our visuomotor policy successfully demonstrates whole-body dexterous manipulation and dynamic kicking tasks. The entire system is fully reproducible and open-sourced at https://yanjieze.com/TWIST2 . Our collected dataset is also open-sourced at https://twist-data.github.io .
+### 系统架构
+TWIST2 的核心设计围绕便携性与全身控制展开：
+- **遥操作模块**：采用 PICO4U VR 头显进行实时全身运动追踪，无需外部动作捕捉设备，降低了部署成本与复杂度。
+- **颈部模块**：定制 2-DoF 机器人颈部（成本约 250 美元），用于承载第一人称视觉传感器，实现与人类头部运动同步的 egocentric 视角。
+- **全身控制**：通过 VR 追踪数据直接映射到人形机器人全身关节，支持长时程灵巧操作与移动任务。
 
-## 参考
-- http://arxiv.org/abs/2511.02832v1
+### 数据采集性能
+- **效率**：在 15 分钟内可采集 100 组演示数据，成功率接近 100%。
+- **可扩展性**：系统设计强调便携与低成本，便于大规模部署与数据积累。
+
+### 自主控制策略
+基于采集的数据，提出分层视觉运动策略：
+- **底层**：基于 egocentric 视觉输入，学习全身运动映射。
+- **上层**：实现全身灵巧操作（如抓取、搬运）与动态任务（如踢球）。
+- **实验验证**：在真实人形机器人上成功演示了上述任务，证明了策略的有效性。
+
+### 开源与数据
+- 系统完整代码与硬件设计已开源：https://yanjieze.com/TWIST2
+- 采集的数据集公开于：https://twist-data.github.io
 
 ## Overview
-Large-scale data has driven breakthroughs in robotics, from language models to vision-language-action models in bimanual manipulation. However, humanoid robotics lacks equally effective data collection frameworks. Existing humanoid teleoperation systems either use decoupled control or depend on expensive motion capture setups. We introduce TWIST2, a portable, mocap-free humanoid teleoperation and data collection system that preserves full whole-body control while advancing scalability. Our system leverages PICO4U VR for obtaining real-time whole-body human motions, with a custom 2-DoF robot neck (cost around $250) for egocentric vision, enabling holistic human-to-humanoid control. We demonstrate long-horizon dexterous and mobile humanoid skills and we can collect 100 demonstrations in 15 minutes with an almost 100% success rate. Building on this pipeline, we propose a hierarchical visuomotor policy framework that autonomously controls the full humanoid body based on egocentric vision. Our visuomotor policy successfully demonstrates whole-body dexterous manipulation and dynamic kicking tasks. The entire system is fully reproducible and open-sourced at https://yanjieze.com/TWIST2 . Our collected dataset is also open-sourced at https://twist-data.github.io .
-
-## Content
 Large-scale data has driven breakthroughs in robotics, from language models to vision-language-action models in bimanual manipulation. However, humanoid robotics lacks equally effective data collection frameworks. Existing humanoid teleoperation systems either use decoupled control or depend on expensive motion capture setups. We introduce TWIST2, a portable, mocap-free humanoid teleoperation and data collection system that preserves full whole-body control while advancing scalability. Our system leverages PICO4U VR for obtaining real-time whole-body human motions, with a custom 2-DoF robot neck (cost around $250) for egocentric vision, enabling holistic human-to-humanoid control. We demonstrate long-horizon dexterous and mobile humanoid skills and we can collect 100 demonstrations in 15 minutes with an almost 100% success rate. Building on this pipeline, we propose a hierarchical visuomotor policy framework that autonomously controls the full humanoid body based on egocentric vision. Our visuomotor policy successfully demonstrates whole-body dexterous manipulation and dynamic kicking tasks. The entire system is fully reproducible and open-sourced at https://yanjieze.com/TWIST2 . Our collected dataset is also open-sourced at https://twist-data.github.io .
 
 ## 개요
@@ -72,3 +85,6 @@ Large-scale data has driven breakthroughs in robotics, from language models to v
 
 ## 핵심 내용
 대규모 데이터는 로봇 공학에서 언어 모델부터 양손 조작을 위한 시각-언어-행동 모델에 이르기까지 혁신을 이끌어 왔습니다. 그러나 휴머노이드 로봇 공학은 이와 동등하게 효과적인 데이터 수집 프레임워크가 부족합니다. 기존의 휴머노이드 원격 조작 시스템은 분리된 제어를 사용하거나 고가의 모션 캡처 장비에 의존합니다. 우리는 확장성을 향상시키면서 전신 제어를 유지하는 휴대용 모션 캡처 없는 휴머노이드 원격 조작 및 데이터 수집 시스템인 TWIST2를 소개합니다. 우리 시스템은 PICO4U VR을 활용하여 실시간 전신 인간 동작을 획득하고, 자체 제작한 2자유도 로봇 목(약 $250 비용)을 통해 자기중심 시야를 확보하여 인간에서 휴머노이드로의 통합적 제어를 가능하게 합니다. 우리는 장기간의 정밀하고 이동 가능한 휴머노이드 기술을 시연하며, 15분 안에 거의 100%의 성공률로 100개의 시연을 수집할 수 있습니다. 이 파이프라인을 기반으로, 우리는 자기중심 시야에 기반하여 전체 휴머노이드 몸체를 자율적으로 제어하는 계층적 시각운동 정책 프레임워크를 제안합니다. 우리의 시각운동 정책은 전신 정밀 조작 및 동적 발차기 작업을 성공적으로 시연합니다. 전체 시스템은 완전히 재현 가능하며 https://yanjieze.com/TWIST2 에서 오픈소스로 제공됩니다. 수집된 데이터셋도 https://twist-data.github.io 에서 오픈소스로 제공됩니다.
+
+## 参考
+- http://arxiv.org/abs/2511.02832v1

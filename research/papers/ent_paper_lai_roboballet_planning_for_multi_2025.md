@@ -11,7 +11,7 @@ summary:
   en: RoboBallet trains a graph neural network policy via deep reinforcement learning to jointly allocate, schedule, and plan
     collision-free motions for multiple robots in shared, obstacle-rich workcells, demonstrating zero-shot generalization
     to unseen layouts and real-time inference.
-  zh: RoboBallet 通过深度强化学习训练图神经网络策略，在共享的、充满障碍的工作单元中联合为多台机器人分配任务、调度并规划无碰撞运动，展现出对未见过布局的零样本泛化能力与实时推理能力。
+  zh: RoboBallet 提出一种基于图神经网络（GNN）与深度强化学习（RL）的框架，用于多机器人在共享、障碍密集工作单元中的联合任务分配、调度与无碰撞运动规划。该策略在程序化生成的环境上训练，可零样本泛化至未见过的布局，并支持实时推理。
   ko: RoboBallet는 심층 강화학습으로 그래프 신경망 정책을 학습시켜 장애물이 많은 공유 워크셀에서 여러 로봇의 작업 할당, 스케줄링 및 충돌 없는 모션 계획을 통합적으로 수행하며, 보지 못한 레이아웃에 대한
     제로샷 일반화와 실시간 추론을 보여준다.
 domains:
@@ -40,7 +40,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05397v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05397v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -53,18 +54,26 @@ theoretical_depth:
 - method
 ---
 ## 概述
-Modern robotic manufacturing requires collision-free coordination of multiple robots to complete numerous tasks in shared, obstacle-rich workspaces. Although individual tasks may be simple in isolation, automated joint task allocation, scheduling, and motion planning under spatio-temporal constraints remain computationally intractable for classical methods at real-world scales. Existing multi-arm systems deployed in the industry rely on human intuition and experience to design feasible trajectories manually in a labor-intensive process. To address this challenge, we propose a reinforcement learning (RL) framework to achieve automated task and motion planning, tested in an obstacle-rich environment with eight robots performing 40 reaching tasks in a shared workspace, where any robot can perform any task in any order. Our approach builds on a graph neural network (GNN) policy trained via RL on procedurally-generated environments with diverse obstacle layouts, robot configurations, and task distributions. It employs a graph representation of scenes and a graph policy neural network trained through reinforcement learning to generate trajectories of multiple robots, jointly solving the sub-problems of task allocation, scheduling, and motion planning. Trained on large randomly generated task sets in simulation, our policy generalizes zero-shot to unseen settings with varying robot placements, obstacle geometries, and task poses. We further demonstrate that the high-speed capability of our solution enables its use in workcell layout optimization, improving solution times. The speed and scalability of our planner also open the door to new capabilities such as fault-tolerant planning and online perception-based re-planning, where rapid adaptation to dynamic task sets is required.
+现代机器人制造中，多机器人在共享且障碍密集的工作空间内协调完成大量任务，其联合任务分配、调度与运动规划在时空约束下对经典方法而言计算上难以处理。现有工业多臂系统依赖人工经验手动设计轨迹，过程繁琐。RoboBallet 通过强化学习训练图神经网络策略，在包含八台机器人执行四十个到达任务的障碍密集环境中进行测试，任何机器人可任意顺序执行任何任务。该策略在程序化生成的不同障碍布局、机器人配置与任务分布上训练，采用场景图表示与图策略网络，联合求解任务分配、调度与运动规划子问题。训练后的策略可零样本泛化至机器人位置、障碍几何与任务姿态均变化的新场景，其高速能力还可用于工作单元布局优化，并支持容错规划与基于感知的在线重规划。
 
 ## 核心内容
-Modern robotic manufacturing requires collision-free coordination of multiple robots to complete numerous tasks in shared, obstacle-rich workspaces. Although individual tasks may be simple in isolation, automated joint task allocation, scheduling, and motion planning under spatio-temporal constraints remain computationally intractable for classical methods at real-world scales. Existing multi-arm systems deployed in the industry rely on human intuition and experience to design feasible trajectories manually in a labor-intensive process. To address this challenge, we propose a reinforcement learning (RL) framework to achieve automated task and motion planning, tested in an obstacle-rich environment with eight robots performing 40 reaching tasks in a shared workspace, where any robot can perform any task in any order. Our approach builds on a graph neural network (GNN) policy trained via RL on procedurally-generated environments with diverse obstacle layouts, robot configurations, and task distributions. It employs a graph representation of scenes and a graph policy neural network trained through reinforcement learning to generate trajectories of multiple robots, jointly solving the sub-problems of task allocation, scheduling, and motion planning. Trained on large randomly generated task sets in simulation, our policy generalizes zero-shot to unseen settings with varying robot placements, obstacle geometries, and task poses. We further demonstrate that the high-speed capability of our solution enables its use in workcell layout optimization, improving solution times. The speed and scalability of our planner also open the door to new capabilities such as fault-tolerant planning and online perception-based re-planning, where rapid adaptation to dynamic task sets is required.
+### 方法
+- 采用**图神经网络（GNN）** 作为策略网络，将场景表示为图：节点代表机器人与任务目标，边编码空间关系与约束。
+- 通过**深度强化学习（RL）** 训练策略，在程序化生成的环境上学习联合决策，环境包含多样化的障碍布局、机器人配置与任务分布。
+- 策略输出多机器人轨迹，同时解决三个子问题：任务分配（哪个机器人执行哪个任务）、调度（任务执行顺序）与运动规划（无碰撞路径）。
 
-## 参考
-- http://arxiv.org/abs/2509.05397v1
+### 实验设置
+- 测试环境：共享工作空间中部署**八台机器人**，需完成**四十个到达任务**，工作空间内布满障碍物。
+- 任何机器人可执行任何任务，且任务顺序不限，增加了组合复杂度。
+- 训练在仿真中进行，使用大规模随机生成的任务集，确保策略的泛化能力。
+
+### 关键结果
+- **零样本泛化**：训练后的策略可直接应用于未见过的场景，包括不同的机器人位置、障碍物几何形状与任务姿态，无需重新训练。
+- **实时推理**：策略推理速度极快，支持实时在线应用。
+- **布局优化**：高速求解能力可用于工作单元布局优化，显著缩短方案设计时间。
+- **扩展能力**：支持容错规划（如机器人故障时快速重分配任务）与基于感知的在线重规划，适应动态任务集变化。
 
 ## Overview
-Modern robotic manufacturing requires collision-free coordination of multiple robots to complete numerous tasks in shared, obstacle-rich workspaces. Although individual tasks may be simple in isolation, automated joint task allocation, scheduling, and motion planning under spatio-temporal constraints remain computationally intractable for classical methods at real-world scales. Existing multi-arm systems deployed in the industry rely on human intuition and experience to design feasible trajectories manually in a labor-intensive process. To address this challenge, we propose a reinforcement learning (RL) framework to achieve automated task and motion planning, tested in an obstacle-rich environment with eight robots performing 40 reaching tasks in a shared workspace, where any robot can perform any task in any order. Our approach builds on a graph neural network (GNN) policy trained via RL on procedurally-generated environments with diverse obstacle layouts, robot configurations, and task distributions. It employs a graph representation of scenes and a graph policy neural network trained through reinforcement learning to generate trajectories of multiple robots, jointly solving the sub-problems of task allocation, scheduling, and motion planning. Trained on large randomly generated task sets in simulation, our policy generalizes zero-shot to unseen settings with varying robot placements, obstacle geometries, and task poses. We further demonstrate that the high-speed capability of our solution enables its use in workcell layout optimization, improving solution times. The speed and scalability of our planner also open the door to new capabilities such as fault-tolerant planning and online perception-based re-planning, where rapid adaptation to dynamic task sets is required.
-
-## Content
 Modern robotic manufacturing requires collision-free coordination of multiple robots to complete numerous tasks in shared, obstacle-rich workspaces. Although individual tasks may be simple in isolation, automated joint task allocation, scheduling, and motion planning under spatio-temporal constraints remain computationally intractable for classical methods at real-world scales. Existing multi-arm systems deployed in the industry rely on human intuition and experience to design feasible trajectories manually in a labor-intensive process. To address this challenge, we propose a reinforcement learning (RL) framework to achieve automated task and motion planning, tested in an obstacle-rich environment with eight robots performing 40 reaching tasks in a shared workspace, where any robot can perform any task in any order. Our approach builds on a graph neural network (GNN) policy trained via RL on procedurally-generated environments with diverse obstacle layouts, robot configurations, and task distributions. It employs a graph representation of scenes and a graph policy neural network trained through reinforcement learning to generate trajectories of multiple robots, jointly solving the sub-problems of task allocation, scheduling, and motion planning. Trained on large randomly generated task sets in simulation, our policy generalizes zero-shot to unseen settings with varying robot placements, obstacle geometries, and task poses. We further demonstrate that the high-speed capability of our solution enables its use in workcell layout optimization, improving solution times. The speed and scalability of our planner also open the door to new capabilities such as fault-tolerant planning and online perception-based re-planning, where rapid adaptation to dynamic task sets is required.
 
 ## 개요
@@ -72,3 +81,6 @@ Modern robotic manufacturing requires collision-free coordination of multiple ro
 
 ## 핵심 내용
 현대 로봇 제조는 장애물이 많은 공유 작업 공간에서 여러 로봇이 충돌 없이 협력하여 수많은 작업을 완료해야 합니다. 개별 작업은 단독으로는 단순할 수 있지만, 시공간적 제약 하에서 자동화된 공동 작업 할당, 스케줄링 및 모션 플래닝은 실제 규모에서 고전적 방법으로는 계산적으로 다루기 어렵습니다. 산업 현장에 배치된 기존 다중 암 시스템은 인간의 직관과 경험에 의존하여 노동 집약적인 과정을 통해 수동으로 실행 가능한 궤적을 설계합니다. 이 문제를 해결하기 위해 우리는 강화 학습(RL) 프레임워크를 제안하여 자동화된 작업 및 모션 플래닝을 달성하며, 8대의 로봇이 공유 작업 공간에서 40개의 도달 작업을 수행하는 장애물이 많은 환경에서 테스트되었습니다. 여기서 모든 로봇은 모든 작업을 어떤 순서로든 수행할 수 있습니다. 우리의 접근 방식은 다양한 장애물 배치, 로봇 구성 및 작업 분포를 가진 절차적으로 생성된 환경에서 RL을 통해 훈련된 그래프 신경망(GNN) 정책을 기반으로 합니다. 이는 장면의 그래프 표현과 강화 학습을 통해 훈련된 그래프 정책 신경망을 사용하여 여러 로봇의 궤적을 생성하며, 작업 할당, 스케줄링 및 모션 플래닝의 하위 문제를 공동으로 해결합니다. 시뮬레이션에서 대규모 무작위 생성 작업 세트로 훈련된 우리의 정책은 다양한 로봇 배치, 장애물 형상 및 작업 자세를 가진 보이지 않는 설정에 제로샷 일반화를 보여줍니다. 또한 우리 솔루션의 고속 기능이 작업 셀 레이아웃 최적화에 사용될 수 있음을 입증하여 솔루션 시간을 개선합니다. 플래너의 속도와 확장성은 동적 작업 세트에 대한 빠른 적응이 필요한 내결함성 플래닝 및 온라인 인식 기반 재플래닝과 같은 새로운 기능의 문을 열어줍니다.
+
+## 参考
+- http://arxiv.org/abs/2509.05397v1

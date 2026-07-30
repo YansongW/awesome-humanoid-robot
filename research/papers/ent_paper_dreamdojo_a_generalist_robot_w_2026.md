@@ -10,13 +10,7 @@ names:
 summary:
   en: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is a knowledge node related to paper in the
     humanoid robot value chain.'
-  zh: Being able to simulate the outcomes of actions in varied environments will revolutionize the development of generalist
-    agents at scale. However, modeling these world dynamics, especially for dexterous robotics tasks, poses significant challenges
-    due to limited data coverage and scarce action labels. As an endeavor towards this end, we introduce DreamDojo, a foundation
-    world model that learns diverse interactions and dexterous controls from 44k hours of egocentric human videos. Our data
-    mixture represents the largest video dataset to date for world model pretraining, spanning a wide range of daily scenarios
-    with diverse objects and skills. To address the scarcity of action labels, we introduce continuous latent actions as unified
-    proxy actions, enhancing interaction knowledge transfer from
+  zh: DreamDojo 是一个通用机器人世界模型，由研究团队基于 44,000 小时的第一人称人类视频训练而成。其核心贡献在于通过连续潜在动作解决动作标签稀缺问题，并实现了实时推理速度（10.81 FPS），支持远程操控、策略评估和基于模型的规划等应用。
   ko: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is a knowledge node related to paper in the
     humanoid robot value chain.'
 domains:
@@ -38,7 +32,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.06949v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.06949v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -56,18 +51,30 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Being able to simulate the outcomes of actions in varied environments will revolutionize the development of generalist agents at scale. However, modeling these world dynamics, especially for dexterous robotics tasks, poses significant challenges due to limited data coverage and scarce action labels. As an endeavor towards this end, we introduce DreamDojo, a foundation world model that learns diverse interactions and dexterous controls from 44k hours of egocentric human videos. Our data mixture represents the largest video dataset to date for world model pretraining, spanning a wide range of daily scenarios with diverse objects and skills. To address the scarcity of action labels, we introduce continuous latent actions as unified proxy actions, enhancing interaction knowledge transfer from unlabeled videos. After post-training on small-scale target robot data, DreamDojo demonstrates a strong understanding of physics and precise action controllability. We also devise a distillation pipeline that accelerates DreamDojo to a real-time speed of 10.81 FPS and further improves context consistency. Our work enables several important applications based on generative world models, including live teleoperation, policy evaluation, and model-based planning. Systematic evaluation on multiple challenging out-of-distribution (OOD) benchmarks verifies the significance of our method for simulating open-world, contact-rich tasks, paving the way for general-purpose robot world models.
+DreamDojo 旨在从大规模无标注人类视频中学习通用世界动态，尤其针对灵巧机器人任务。该模型利用 44,000 小时的第一人称视频作为预训练数据，覆盖了丰富的日常场景和技能，是迄今为止用于世界模型预训练的最大视频数据集。为解决动作标签不足的问题，DreamDojo 引入了连续潜在动作作为统一代理动作，从而从无标签视频中迁移交互知识。在少量目标机器人数据上进行后训练后，模型展现出对物理规律的理解和精确的动作控制能力。此外，研究团队设计了一个蒸馏流程，将模型加速至实时速度（10.81 FPS），并提升了上下文一致性。
 
 ## 核心内容
-Being able to simulate the outcomes of actions in varied environments will revolutionize the development of generalist agents at scale. However, modeling these world dynamics, especially for dexterous robotics tasks, poses significant challenges due to limited data coverage and scarce action labels. As an endeavor towards this end, we introduce DreamDojo, a foundation world model that learns diverse interactions and dexterous controls from 44k hours of egocentric human videos. Our data mixture represents the largest video dataset to date for world model pretraining, spanning a wide range of daily scenarios with diverse objects and skills. To address the scarcity of action labels, we introduce continuous latent actions as unified proxy actions, enhancing interaction knowledge transfer from unlabeled videos. After post-training on small-scale target robot data, DreamDojo demonstrates a strong understanding of physics and precise action controllability. We also devise a distillation pipeline that accelerates DreamDojo to a real-time speed of 10.81 FPS and further improves context consistency. Our work enables several important applications based on generative world models, including live teleoperation, policy evaluation, and model-based planning. Systematic evaluation on multiple challenging out-of-distribution (OOD) benchmarks verifies the significance of our method for simulating open-world, contact-rich tasks, paving the way for general-purpose robot world models.
+### 方法
+- **数据驱动**：使用 44,000 小时的第一人称人类视频作为预训练数据，涵盖多样化的日常场景、物体和技能，旨在覆盖广泛的世界动态。
+- **动作标签缺失解决方案**：引入连续潜在动作作为统一代理动作，从无标签视频中提取交互知识，实现跨任务的知识迁移。
+- **后训练**：在少量目标机器人数据上进行微调，使模型适应具体机器人平台，同时保持对物理规律的理解。
 
-## 参考
-- http://arxiv.org/abs/2602.06949v1
+### 架构
+- 基于生成式世界模型框架，能够模拟不同环境中的动作结果。
+- 蒸馏流程将模型加速至 10.81 FPS 的实时推理速度，并提升上下文一致性。
+
+### 实验设置
+- 在多个具有挑战性的分布外（OOD）基准上进行系统评估，重点测试开放世界和接触密集型任务。
+- 对比基线包括现有世界模型方法，验证 DreamDojo 在模拟复杂交互方面的优势。
+
+### 关键数字
+- 预训练数据规模：44,000 小时第一人称视频，为当前最大世界模型预训练数据集。
+- 推理速度：蒸馏后达到 10.81 FPS，满足实时应用需求。
+
+### 结论
+DreamDojo 展示了从大规模人类视频中学习通用世界模型的可行性，尤其在灵巧机器人任务中。其应用包括实时远程操控、策略评估和基于模型的规划，为通用机器人世界模型的发展奠定了基础。
 
 ## Overview
-Being able to simulate the outcomes of actions in varied environments will revolutionize the development of generalist agents at scale. However, modeling these world dynamics, especially for dexterous robotics tasks, poses significant challenges due to limited data coverage and scarce action labels. As an endeavor towards this end, we introduce DreamDojo, a foundation world model that learns diverse interactions and dexterous controls from 44k hours of egocentric human videos. Our data mixture represents the largest video dataset to date for world model pretraining, spanning a wide range of daily scenarios with diverse objects and skills. To address the scarcity of action labels, we introduce continuous latent actions as unified proxy actions, enhancing interaction knowledge transfer from unlabeled videos. After post-training on small-scale target robot data, DreamDojo demonstrates a strong understanding of physics and precise action controllability. We also devise a distillation pipeline that accelerates DreamDojo to a real-time speed of 10.81 FPS and further improves context consistency. Our work enables several important applications based on generative world models, including live teleoperation, policy evaluation, and model-based planning. Systematic evaluation on multiple challenging out-of-distribution (OOD) benchmarks verifies the significance of our method for simulating open-world, contact-rich tasks, paving the way for general-purpose robot world models.
-
-## Content
 Being able to simulate the outcomes of actions in varied environments will revolutionize the development of generalist agents at scale. However, modeling these world dynamics, especially for dexterous robotics tasks, poses significant challenges due to limited data coverage and scarce action labels. As an endeavor towards this end, we introduce DreamDojo, a foundation world model that learns diverse interactions and dexterous controls from 44k hours of egocentric human videos. Our data mixture represents the largest video dataset to date for world model pretraining, spanning a wide range of daily scenarios with diverse objects and skills. To address the scarcity of action labels, we introduce continuous latent actions as unified proxy actions, enhancing interaction knowledge transfer from unlabeled videos. After post-training on small-scale target robot data, DreamDojo demonstrates a strong understanding of physics and precise action controllability. We also devise a distillation pipeline that accelerates DreamDojo to a real-time speed of 10.81 FPS and further improves context consistency. Our work enables several important applications based on generative world models, including live teleoperation, policy evaluation, and model-based planning. Systematic evaluation on multiple challenging out-of-distribution (OOD) benchmarks verifies the significance of our method for simulating open-world, contact-rich tasks, paving the way for general-purpose robot world models.
 
 ## 개요
@@ -75,3 +82,6 @@ Being able to simulate the outcomes of actions in varied environments will revol
 
 ## 핵심 내용
 다양한 환경에서 행동의 결과를 시뮬레이션할 수 있다면, 대규모 범용 에이전트 개발에 혁신을 가져올 것입니다. 그러나 특히 정교한 로봇 작업을 위한 이러한 세계 역학 모델링은 제한된 데이터 범위와 부족한 행동 레이블로 인해 상당한 어려움을 겪습니다. 이러한 목표를 향한 노력의 일환으로, 우리는 44,000시간의 자기중심적 인간 비디오로부터 다양한 상호작용과 정교한 제어를 학습하는 기초 세계 모델인 DreamDojo를 소개합니다. 우리의 데이터 혼합은 세계 모델 사전 학습을 위한 현재까지 가장 큰 비디오 데이터셋을 대표하며, 다양한 객체와 기술을 포함한 광범위한 일상 시나리오를 포괄합니다. 행동 레이블 부족 문제를 해결하기 위해, 우리는 연속 잠재 행동을 통합 프록시 행동으로 도입하여 레이블이 없는 비디오로부터의 상호작용 지식 전이를 향상시킵니다. 소규모 대상 로봇 데이터에 대한 사후 학습 후, DreamDojo는 물리학에 대한 강력한 이해와 정밀한 행동 제어 능력을 보여줍니다. 또한, 우리는 DreamDojo를 실시간 속도인 10.81 FPS로 가속화하고 맥락 일관성을 더욱 개선하는 증류 파이프라인을 고안했습니다. 우리의 연구는 실시간 원격 조작, 정책 평가, 모델 기반 계획을 포함한 생성적 세계 모델 기반의 여러 중요한 응용을 가능하게 합니다. 여러 도전적인 분포 외(OOD) 벤치마크에 대한 체계적인 평가는 개방형 접촉이 많은 작업을 시뮬레이션하는 우리 방법의 중요성을 검증하며, 범용 로봇 세계 모델을 위한 길을 열어줍니다.
+
+## 参考
+- http://arxiv.org/abs/2602.06949v1

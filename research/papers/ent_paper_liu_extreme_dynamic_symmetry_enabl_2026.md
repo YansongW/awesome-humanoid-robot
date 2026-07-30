@@ -12,7 +12,7 @@ summary:
     validates its benefits across more than 1,000 simulated Argus spherical-robot morphologies, and demonstrates a 20-leg
     physical prototype that achieves near-extreme dynamic isotropy for omnidirectional locomotion, terrain traversal, self-stabilization,
     and whole-body loco-manipulation.
-  zh: 本文提出了动态各向同性作为衡量机器人质心加速度能力均匀性的全身性指标，在1,000多种模拟Argus球形机器人形态上验证了其优势，并展示了一个20腿物理样机，实现了近极端动态各向同性及全向运动、地形穿越、自稳定和全身运动操作。
+  zh: 本文提出动态各向同性作为衡量机器人质心加速度均匀性的全身指标，通过超过1000种模拟的Argus球形机器人形态验证其优势，并制造了一个20腿物理原型，实现了近乎极致的动态各向同性，用于全向运动、地形穿越、自稳定和全身运动操控。
   ko: 본 논문은 로봇의 달성 가능한 질량 중심 가속도의 균일성을 측정하는 전신 측정법인 동적 등방성을 제안하고, 1,000개 이상의 시뮬레이션된 Argus 구형 로봇 형태에서 그 이점을 검증하며, 전방향 이동, 지형
     주행, 자기 안정화 및 전신 운동-조작을 위한 극단적 동적 등방성에 근접한 20다리 물리적 프로토타입을 시연한다.
 domains:
@@ -42,7 +42,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.29254v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.29254v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -56,18 +57,30 @@ theoretical_depth:
 - method
 ---
 ## 概述
-Symmetry is a central organizing principle in natural systems, yet its use as a unifying design strategy in robotics has largely remained limited to geometric form. We show that symmetry can instead be leveraged at the level of dynamic actuation capability. We introduce dynamic symmetry, the uniformity of a robot's attainable center-of-mass accelerations, and formalize it through a measure coined as dynamic isotropy. Across more than 1000 simulated morphologies, we found that higher dynamic symmetry consistently improved trajectory tracking, task success, robustness, resiliency, and energy efficiency, with the benefits becoming most pronounced as dynamic isotropy approached its theoretical limit. To study this regime systematically, we developed Argus, a family of spherical robots designed to explore the effects of increasing dynamic symmetry. Members of the Argus family vary in their actuation geometry and dynamic symmetry level while sharing a common architectural principle: radially oriented linear actuators that directly shape the robot's center-of-mass dynamics. Among them, we built a physical 20-leg Argus variant that achieved near-extreme dynamic isotropy and demonstrated orientation-invariant locomotion, agile traversal of cluttered and deformable terrain, rapid self-stabilization, and resilience to partial actuator failures. Its distributed sensing further enabled omnidirectional perception and object interaction during continuous motion. These results show that designing robots for symmetry not only in morphology but also in their attainable dynamics provides a powerful and general pathway toward agility, robustness, and multifunctionality in uncertain terrestrial and extraterrestrial environments.
+对称性在自然界中是核心组织原则，但在机器人设计中主要局限于几何形态。本文将其扩展到动态驱动能力层面，提出动态对称性概念，并通过动态各向同性指标量化。在超过1000种模拟形态中，动态对称性越高，轨迹跟踪、任务成功率、鲁棒性、恢复力和能效表现越好，尤其在接近理论极限时优势显著。为系统研究这一领域，作者开发了Argus球形机器人系列，其成员在驱动几何和动态对称性水平上变化，但共享径向线性驱动器的架构原则。其中，20腿物理原型实现了近乎极致的动态各向同性，展示了方向无关的运动、在杂乱和可变形地形上的敏捷穿越、快速自稳定以及对部分驱动器故障的恢复力。其分布式感知还支持连续运动中的全向感知和物体交互。
 
 ## 核心内容
-Symmetry is a central organizing principle in natural systems, yet its use as a unifying design strategy in robotics has largely remained limited to geometric form. We show that symmetry can instead be leveraged at the level of dynamic actuation capability. We introduce dynamic symmetry, the uniformity of a robot's attainable center-of-mass accelerations, and formalize it through a measure coined as dynamic isotropy. Across more than 1000 simulated morphologies, we found that higher dynamic symmetry consistently improved trajectory tracking, task success, robustness, resiliency, and energy efficiency, with the benefits becoming most pronounced as dynamic isotropy approached its theoretical limit. To study this regime systematically, we developed Argus, a family of spherical robots designed to explore the effects of increasing dynamic symmetry. Members of the Argus family vary in their actuation geometry and dynamic symmetry level while sharing a common architectural principle: radially oriented linear actuators that directly shape the robot's center-of-mass dynamics. Among them, we built a physical 20-leg Argus variant that achieved near-extreme dynamic isotropy and demonstrated orientation-invariant locomotion, agile traversal of cluttered and deformable terrain, rapid self-stabilization, and resilience to partial actuator failures. Its distributed sensing further enabled omnidirectional perception and object interaction during continuous motion. These results show that designing robots for symmetry not only in morphology but also in their attainable dynamics provides a powerful and general pathway toward agility, robustness, and multifunctionality in uncertain terrestrial and extraterrestrial environments.
+### 核心概念与贡献
+- **动态对称性**：将对称性从几何形态扩展到动态驱动能力，定义为机器人质心可达加速度的均匀性。
+- **动态各向同性**：量化动态对称性的新指标，衡量质心加速度在所有方向上的均匀程度。
+- **理论极限**：动态各向同性接近理论极限时，性能提升最为显著。
 
-## 参考
-- http://arxiv.org/abs/2605.29254v1
+### Argus机器人系列
+- **架构原则**：所有Argus变体采用径向线性驱动器，直接塑造机器人质心动力学。
+- **模拟研究**：在超过1000种模拟形态中，验证了动态对称性对轨迹跟踪、任务成功率、鲁棒性、恢复力和能效的持续提升。
+- **物理原型**：20腿Argus变体实现了近乎极致的动态各向同性。
+
+### 实验验证
+- **全向运动**：方向无关的 locomotion，适应任意朝向。
+- **地形穿越**：在杂乱和可变形地形（如碎石、沙地）上敏捷移动。
+- **自稳定**：快速恢复平衡，抵抗外部扰动。
+- **故障恢复**：部分驱动器失效时仍能保持功能。
+- **感知与交互**：分布式感知支持连续运动中的全向感知和物体操控。
+
+### 结论
+- 设计机器人时不仅考虑形态对称性，更关注可达动态的对称性，为在不确定的地球和地外环境中实现敏捷性、鲁棒性和多功能性提供了通用路径。
 
 ## Overview
-Symmetry is a central organizing principle in natural systems, yet its use as a unifying design strategy in robotics has largely remained limited to geometric form. We show that symmetry can instead be leveraged at the level of dynamic actuation capability. We introduce dynamic symmetry, the uniformity of a robot's attainable center-of-mass accelerations, and formalize it through a measure coined as dynamic isotropy. Across more than 1000 simulated morphologies, we found that higher dynamic symmetry consistently improved trajectory tracking, task success, robustness, resiliency, and energy efficiency, with the benefits becoming most pronounced as dynamic isotropy approached its theoretical limit. To study this regime systematically, we developed Argus, a family of spherical robots designed to explore the effects of increasing dynamic symmetry. Members of the Argus family vary in their actuation geometry and dynamic symmetry level while sharing a common architectural principle: radially oriented linear actuators that directly shape the robot's center-of-mass dynamics. Among them, we built a physical 20-leg Argus variant that achieved near-extreme dynamic isotropy and demonstrated orientation-invariant locomotion, agile traversal of cluttered and deformable terrain, rapid self-stabilization, and resilience to partial actuator failures. Its distributed sensing further enabled omnidirectional perception and object interaction during continuous motion. These results show that designing robots for symmetry not only in morphology but also in their attainable dynamics provides a powerful and general pathway toward agility, robustness, and multifunctionality in uncertain terrestrial and extraterrestrial environments.
-
-## Content
 Symmetry is a central organizing principle in natural systems, yet its use as a unifying design strategy in robotics has largely remained limited to geometric form. We show that symmetry can instead be leveraged at the level of dynamic actuation capability. We introduce dynamic symmetry, the uniformity of a robot's attainable center-of-mass accelerations, and formalize it through a measure coined as dynamic isotropy. Across more than 1000 simulated morphologies, we found that higher dynamic symmetry consistently improved trajectory tracking, task success, robustness, resiliency, and energy efficiency, with the benefits becoming most pronounced as dynamic isotropy approached its theoretical limit. To study this regime systematically, we developed Argus, a family of spherical robots designed to explore the effects of increasing dynamic symmetry. Members of the Argus family vary in their actuation geometry and dynamic symmetry level while sharing a common architectural principle: radially oriented linear actuators that directly shape the robot's center-of-mass dynamics. Among them, we built a physical 20-leg Argus variant that achieved near-extreme dynamic isotropy and demonstrated orientation-invariant locomotion, agile traversal of cluttered and deformable terrain, rapid self-stabilization, and resilience to partial actuator failures. Its distributed sensing further enabled omnidirectional perception and object interaction during continuous motion. These results show that designing robots for symmetry not only in morphology but also in their attainable dynamics provides a powerful and general pathway toward agility, robustness, and multifunctionality in uncertain terrestrial and extraterrestrial environments.
 
 ## 개요
@@ -75,3 +88,6 @@ Symmetry is a central organizing principle in natural systems, yet its use as a 
 
 ## 핵심 내용
 대칭은 자연계에서 핵심적인 조직 원리이지만, 로봇 공학에서 통합적인 설계 전략으로서의 활용은 주로 기하학적 형태에 국한되어 왔습니다. 우리는 대칭이 대신 동적 구동 능력 수준에서 활용될 수 있음을 보여줍니다. 우리는 동적 대칭, 즉 로봇이 달성 가능한 질량 중심 가속도의 균일성을 도입하고, 이를 동적 등방성(dynamic isotropy)이라는 측정 지표를 통해 공식화합니다. 1000개 이상의 시뮬레이션된 형태를 대상으로 한 실험에서, 더 높은 동적 대칭이 궤적 추적, 작업 성공률, 강건성, 회복 탄력성 및 에너지 효율성을 일관되게 향상시켰으며, 동적 등방성이 이론적 한계에 가까워질수록 그 이점이 가장 두드러짐을 발견했습니다. 이러한 영역을 체계적으로 연구하기 위해, 우리는 증가하는 동적 대칭의 효과를 탐구하도록 설계된 구형 로봇 제품군인 Argus를 개발했습니다. Argus 제품군의 구성원들은 구동 기하학과 동적 대칭 수준이 다양하지만, 로봇의 질량 중심 동역학을 직접적으로 형성하는 방사형 선형 액추에이터라는 공통된 아키텍처 원리를 공유합니다. 그중에서 우리는 거의 극한에 가까운 동적 등방성을 달성한 물리적 20-다리 Argus 변형을 제작했으며, 이는 방향에 무관한 이동, 복잡하고 변형 가능한 지형의 민첩한 주행, 빠른 자가 안정화, 그리고 부분적인 액추에이터 고장에 대한 회복 탄력성을 입증했습니다. 또한 분산 센싱을 통해 연속적인 움직임 중에도 전방향 인식과 객체 상호작용이 가능했습니다. 이러한 결과는 형태뿐만 아니라 달성 가능한 동역학에서도 대칭을 위해 로봇을 설계하는 것이 불확실한 지상 및 지구 외 환경에서 민첩성, 강건성 및 다기능성을 향한 강력하고 일반적인 경로를 제공함을 보여줍니다.
+
+## 参考
+- http://arxiv.org/abs/2605.29254v1

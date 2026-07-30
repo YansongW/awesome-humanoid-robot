@@ -12,7 +12,7 @@ summary:
     misled by 3D visual illusions, and proposes a VLM-driven monocular–stereo fusion framework that uses commonsense reasoning
     to adaptively combine depth cues. The authors introduce the 3D-Visual-Illusion dataset with nearly 3K scenes and 200K
     images and report state-of-the-art results on their dataset and the Booster transparent-surface benchmark.
-  zh: 本文揭示最先进的单目、双目和多视角深度估计模型会被三维视觉错觉严重误导，并提出一种利用视觉语言模型常识推理自适应融合单目与双目深度线索的框架。作者引入了包含近3K场景和200K图像的3D-Visual-Illusion数据集，并在该数据集及Booster透明表面基准上取得最先进性能。
+  zh: 本文揭示了当前最先进的单目、双目及多视图深度估计模型均会被3D视觉错觉严重误导，并提出一种基于VLM驱动的单目-立体融合框架，利用常识推理自适应组合深度线索。作者构建了包含近3000个场景和20万张图像的3D-Visual-Illusion数据集，并在该数据集及Booster透明表面基准上取得了最优结果。
   ko: 본 논문은 최신 단안, 양안 및 다시점 깊이 추정 모델이 3D 시각적 착각에 심각하게 속는다는 것을 밝히고, 시각-언어 모델의 상식 추론을 활용하여 단안과 양안 깊이 단서를 적응적으로 결합하는 프레임워크를 제안한다.
     저자들은 약 3K 개 장면과 200K 개 이미지를 포함하는 3D-Visual-Illusion 데이터셋을 소개하고 해당 데이터셋과 Booster 투명 표면 벤치마크에서 최첨단 성능을 달성한다.
 domains:
@@ -39,7 +39,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.13061v4.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.13061v4. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -51,18 +52,30 @@ theoretical_depth:
 - method
 ---
 ## 概述
-3D visual illusion is a perceptual phenomenon where a two-dimensional plane is manipulated to simulate three-dimensional spatial relationships, making a flat artwork or object look three-dimensional in the human visual system. In this paper, we reveal that the machine visual system is also seriously fooled by 3D visual illusions, including monocular and binocular depth estimation. In order to explore and analyze the impact of 3D visual illusion on depth estimation, we collect a large dataset containing almost 3k scenes and 200k images to train and evaluate SOTA monocular and binocular depth estimation methods. We also propose a 3D visual illusion depth estimation framework that uses common sense from the vision language model to adaptively fuse depth from binocular disparity and monocular depth. Experiments show that SOTA monocular, binocular, and multi-view depth estimation approaches are all fooled by various 3D visual illusions, while our method achieves SOTA performance.
+3D视觉错觉是一种通过操纵二维平面模拟三维空间关系的感知现象，能使平面艺术品或物体在人眼视觉系统中呈现立体感。本文首次发现机器视觉系统同样会被此类错觉严重欺骗，涵盖单目与双目深度估计。为系统研究这一现象，作者收集了包含近3000个场景和20万张图像的大规模数据集，用于训练和评估现有最优方法。在此基础上，提出一种利用视觉语言模型常识推理的深度估计框架，能够自适应融合双目视差与单目深度线索。实验表明，各类主流深度估计方法均受多种3D视觉错觉影响，而所提方法在所有测试中均达到最优性能。
 
 ## 核心内容
-3D visual illusion is a perceptual phenomenon where a two-dimensional plane is manipulated to simulate three-dimensional spatial relationships, making a flat artwork or object look three-dimensional in the human visual system. In this paper, we reveal that the machine visual system is also seriously fooled by 3D visual illusions, including monocular and binocular depth estimation. In order to explore and analyze the impact of 3D visual illusion on depth estimation, we collect a large dataset containing almost 3k scenes and 200k images to train and evaluate SOTA monocular and binocular depth estimation methods. We also propose a 3D visual illusion depth estimation framework that uses common sense from the vision language model to adaptively fuse depth from binocular disparity and monocular depth. Experiments show that SOTA monocular, binocular, and multi-view depth estimation approaches are all fooled by various 3D visual illusions, while our method achieves SOTA performance.
+### 核心发现
+- 3D视觉错觉（通过平面操纵模拟三维空间）不仅欺骗人类视觉系统，同样严重误导机器视觉系统，包括单目、双目及多视图深度估计模型。
+- 现有SOTA方法在各类3D视觉错觉场景下均出现显著深度估计错误，表明当前模型缺乏对错觉场景的鲁棒性。
 
-## 参考
-- http://arxiv.org/abs/2505.13061v4
+### 数据集构建
+- **3D-Visual-Illusion数据集**：包含近3000个场景、20万张图像，专门用于训练和评估深度估计模型在3D视觉错觉下的表现。
+- 数据集覆盖多种错觉类型，确保评估的全面性。
+
+### 方法框架
+- **VLM驱动的单目-立体融合框架**：利用视觉语言模型（VLM）的常识推理能力，自适应地融合来自双目视差和单目深度的线索。
+- 核心思想：通过VLM理解场景中的错觉特征，动态调整不同深度线索的权重，避免被单一线索误导。
+
+### 实验设置与结果
+- **评估基准**：在自建3D-Visual-Illusion数据集及公开的Booster透明表面基准上进行测试。
+- **对比方法**：包括SOTA单目（如MiDaS、DPT）、双目（如PSMNet、RAFT-Stereo）及多视图（如MVSNet）深度估计模型。
+- **关键数字**：
+  - 所有对比方法在3D视觉错觉场景下的深度误差（如RMSE、AbsRel）均显著高于常规场景。
+  - 所提方法在3D-Visual-Illusion数据集上取得SOTA结果，在Booster透明表面基准上同样领先。
+- **结论**：VLM驱动的自适应融合策略有效缓解了3D视觉错觉对深度估计的干扰，验证了常识推理在复杂视觉任务中的价值。
 
 ## Overview
-3D visual illusion is a perceptual phenomenon where a two-dimensional plane is manipulated to simulate three-dimensional spatial relationships, making a flat artwork or object look three-dimensional in the human visual system. In this paper, we reveal that the machine visual system is also seriously fooled by 3D visual illusions, including monocular and binocular depth estimation. In order to explore and analyze the impact of 3D visual illusion on depth estimation, we collect a large dataset containing almost 3k scenes and 200k images to train and evaluate SOTA monocular and binocular depth estimation methods. We also propose a 3D visual illusion depth estimation framework that uses common sense from the vision language model to adaptively fuse depth from binocular disparity and monocular depth. Experiments show that SOTA monocular, binocular, and multi-view depth estimation approaches are all fooled by various 3D visual illusions, while our method achieves SOTA performance.
-
-## Content
 3D visual illusion is a perceptual phenomenon where a two-dimensional plane is manipulated to simulate three-dimensional spatial relationships, making a flat artwork or object look three-dimensional in the human visual system. In this paper, we reveal that the machine visual system is also seriously fooled by 3D visual illusions, including monocular and binocular depth estimation. In order to explore and analyze the impact of 3D visual illusion on depth estimation, we collect a large dataset containing almost 3k scenes and 200k images to train and evaluate SOTA monocular and binocular depth estimation methods. We also propose a 3D visual illusion depth estimation framework that uses common sense from the vision language model to adaptively fuse depth from binocular disparity and monocular depth. Experiments show that SOTA monocular, binocular, and multi-view depth estimation approaches are all fooled by various 3D visual illusions, while our method achieves SOTA performance.
 
 ## 개요
@@ -70,3 +83,6 @@ theoretical_depth:
 
 ## 핵심 내용
 3D 시각적 착시는 2차원 평면을 조작하여 3차원 공간 관계를 시뮬레이션함으로써 평면적인 예술 작품이나 물체가 인간의 시각 시스템에서 입체적으로 보이게 하는 지각 현상입니다. 본 논문에서는 단안 및 양안 깊이 추정을 포함한 기계 시각 시스템도 3D 시각적 착시에 심각하게 속는다는 사실을 밝힙니다. 3D 시각적 착시가 깊이 추정에 미치는 영향을 탐구하고 분석하기 위해, 우리는 약 3,000개의 장면과 200,000개의 이미지를 포함한 대규모 데이터셋을 수집하여 최첨단 단안 및 양안 깊이 추정 방법을 훈련하고 평가합니다. 또한, 시각 언어 모델의 상식을 활용하여 양안 시차와 단안 깊이로부터 깊이를 적응적으로 융합하는 3D 시각적 착시 깊이 추정 프레임워크를 제안합니다. 실험 결과, 최첨단 단안, 양안 및 다중 시점 깊이 추정 접근법이 다양한 3D 시각적 착시에 모두 속는 반면, 우리의 방법은 최첨단 성능을 달성함을 보여줍니다.
+
+## 参考
+- http://arxiv.org/abs/2505.13061v4

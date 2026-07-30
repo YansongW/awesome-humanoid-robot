@@ -11,7 +11,7 @@ summary:
   en: HOMIE is a low-cost, open-source semi-autonomous teleoperation cockpit for humanoid loco-manipulation that combines
     an RL-trained lower-body policy, isomorphic 7-DoF exoskeleton arms, and Hall-sensor motion-sensing gloves, and validates
     a real-world data flywheel for imitation learning.
-  zh: HOMIE是一种低成本、开源的半自主遥操作驾驶舱，用于人形机器人移动操作，结合了强化学习训练的下半身策略、同构7自由度外骨骼手臂以及霍尔传感器运动感知手套，并验证了用于模仿学习的真实数据飞轮。
+  zh: HOMIE 是一个低成本、开源的人形机器人半自主遥操作驾驶舱，用于全身协调操作。它结合了强化学习训练的下半身策略、同构 7 自由度外骨骼手臂和霍尔传感器运动感应手套，并验证了用于模仿学习的真实世界数据飞轮。该系统由团队开发，核心贡献在于实现了高效、低成本且工作范围广的人形机器人遥操作。
   ko: HOMIE는 강화학습으로 학습된 하반신 정책, 동형 7자유도 외골격 팔, 그리고 홀 센서 동작 감지 장갑을 결합한 저비용 오픈소스 반자율 원격조종 조종석으로, 휴머노이드 이동-조작을 위한 모방학습 데이터 플라이휠을
     실제로 검증하였다.
 domains:
@@ -42,7 +42,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.13013v2.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.13013v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -55,18 +56,28 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Generalizable humanoid loco-manipulation poses significant challenges, requiring coordinated whole-body control and precise, contact-rich object manipulation. To address this, this paper introduces HOMIE, a semi-autonomous teleoperation system that combines a reinforcement learning policy for body control mapped to a pedal, an isomorphic exoskeleton arm for arm control, and motion-sensing gloves for hand control, forming a unified cockpit to freely operate humanoids and establish a data flywheel. The policy incorporates novel designs, including an upper-body pose curriculum, a height-tracking reward, and symmetry utilization. These features enable the system to perform walking and squatting to specific heights while seamlessly adapting to arbitrary upper-body poses. The exoskeleton, by eliminating the reliance on inverse dynamics, delivers faster and more precise arm control. The gloves utilize Hall sensors instead of servos, allowing even compact devices to achieve 15 or more degrees of freedom and freely adapt to any model of dexterous hands. Compared to previous teleoperation systems, HOMIE stands out for its exceptional efficiency, completing tasks in half the time; its expanded working range, allowing users to freely reach high and low areas as well as interact with any objects; and its affordability, with a price of just $500. The system is fully open-source, demos and code can be found in our https://homietele.github.io/.
+HOMIE 系统通过一个统一的驾驶舱设计，解决了人形机器人全身协调操作和精细物体操控的挑战。它采用强化学习策略控制下半身（通过踏板映射），同构外骨骼手臂控制手臂，以及运动感应手套控制手部，从而实现了半自主遥操作。系统引入了新颖的设计，包括上半身姿态课程、高度跟踪奖励和对称性利用，使其能够执行行走和蹲伏到特定高度的任务，同时无缝适应任意上半身姿态。外骨骼通过消除对逆动力学的依赖，实现了更快、更精确的手臂控制；手套则利用霍尔传感器替代伺服电机，在紧凑设备上实现 15 个或更多自由度，并适配任意型号的灵巧手。
 
 ## 核心内容
-Generalizable humanoid loco-manipulation poses significant challenges, requiring coordinated whole-body control and precise, contact-rich object manipulation. To address this, this paper introduces HOMIE, a semi-autonomous teleoperation system that combines a reinforcement learning policy for body control mapped to a pedal, an isomorphic exoskeleton arm for arm control, and motion-sensing gloves for hand control, forming a unified cockpit to freely operate humanoids and establish a data flywheel. The policy incorporates novel designs, including an upper-body pose curriculum, a height-tracking reward, and symmetry utilization. These features enable the system to perform walking and squatting to specific heights while seamlessly adapting to arbitrary upper-body poses. The exoskeleton, by eliminating the reliance on inverse dynamics, delivers faster and more precise arm control. The gloves utilize Hall sensors instead of servos, allowing even compact devices to achieve 15 or more degrees of freedom and freely adapt to any model of dexterous hands. Compared to previous teleoperation systems, HOMIE stands out for its exceptional efficiency, completing tasks in half the time; its expanded working range, allowing users to freely reach high and low areas as well as interact with any objects; and its affordability, with a price of just $500. The system is fully open-source, demos and code can be found in our https://homietele.github.io/.
+### 方法
+- **整体架构**：HOMIE 将人形机器人的控制分解为三个部分：下半身（行走与蹲伏）由强化学习策略控制，通过踏板映射用户输入；手臂由同构外骨骼直接控制；手部由运动感应手套控制。
+- **强化学习策略**：策略包含三个关键设计：
+  - **上半身姿态课程**：训练过程中逐步引入复杂的上半身姿态，使策略学会在保持平衡的同时适应任意上半身动作。
+  - **高度跟踪奖励**：奖励函数鼓励机器人达到并维持特定的身体高度，从而支持蹲伏等动作。
+  - **对称性利用**：利用人体和机器人的对称性，减少训练复杂度并提升泛化能力。
+- **外骨骼设计**：采用同构 7 自由度设计，直接映射到机器人手臂，无需计算逆动力学，从而降低延迟并提高精度。
+- **手套设计**：使用霍尔传感器替代传统伺服电机，实现 15 个或更多自由度的紧凑设计，并能自由适配任意型号的灵巧手。
 
-## 参考
-- http://arxiv.org/abs/2502.13013v2
+### 实验设置与关键数字
+- **成本**：系统总成本仅为 500 美元，远低于同类遥操作设备。
+- **效率**：相比之前的遥操作系统，HOMIE 完成任务的时间缩短了一半。
+- **工作范围**：用户可自由触及高、低区域，并与任意物体交互，工作范围显著扩大。
+- **开源**：系统完全开源，演示和代码可在 https://homietele.github.io/ 获取。
+
+### 结论
+HOMIE 通过低成本、高效率且工作范围广的遥操作驾驶舱，为人形机器人全身协调操作提供了一种实用解决方案。其开源特性有望推动模仿学习的数据飞轮构建，加速人形机器人领域的应用发展。
 
 ## Overview
-Generalizable humanoid loco-manipulation poses significant challenges, requiring coordinated whole-body control and precise, contact-rich object manipulation. To address this, this paper introduces HOMIE, a semi-autonomous teleoperation system that combines a reinforcement learning policy for body control mapped to a pedal, an isomorphic exoskeleton arm for arm control, and motion-sensing gloves for hand control, forming a unified cockpit to freely operate humanoids and establish a data flywheel. The policy incorporates novel designs, including an upper-body pose curriculum, a height-tracking reward, and symmetry utilization. These features enable the system to perform walking and squatting to specific heights while seamlessly adapting to arbitrary upper-body poses. The exoskeleton, by eliminating the reliance on inverse dynamics, delivers faster and more precise arm control. The gloves utilize Hall sensors instead of servos, allowing even compact devices to achieve 15 or more degrees of freedom and freely adapt to any model of dexterous hands. Compared to previous teleoperation systems, HOMIE stands out for its exceptional efficiency, completing tasks in half the time; its expanded working range, allowing users to freely reach high and low areas as well as interact with any objects; and its affordability, with a price of just $500. The system is fully open-source, demos and code can be found in our https://homietele.github.io/.
-
-## Content
 Generalizable humanoid loco-manipulation poses significant challenges, requiring coordinated whole-body control and precise, contact-rich object manipulation. To address this, this paper introduces HOMIE, a semi-autonomous teleoperation system that combines a reinforcement learning policy for body control mapped to a pedal, an isomorphic exoskeleton arm for arm control, and motion-sensing gloves for hand control, forming a unified cockpit to freely operate humanoids and establish a data flywheel. The policy incorporates novel designs, including an upper-body pose curriculum, a height-tracking reward, and symmetry utilization. These features enable the system to perform walking and squatting to specific heights while seamlessly adapting to arbitrary upper-body poses. The exoskeleton, by eliminating the reliance on inverse dynamics, delivers faster and more precise arm control. The gloves utilize Hall sensors instead of servos, allowing even compact devices to achieve 15 or more degrees of freedom and freely adapt to any model of dexterous hands. Compared to previous teleoperation systems, HOMIE stands out for its exceptional efficiency, completing tasks in half the time; its expanded working range, allowing users to freely reach high and low areas as well as interact with any objects; and its affordability, with a price of just $500. The system is fully open-source, demos and code can be found in our https://homietele.github.io/.
 
 ## 개요
@@ -74,3 +85,6 @@ Generalizable humanoid loco-manipulation poses significant challenges, requiring
 
 ## 핵심 내용
 일반화 가능한 휴머노이드 로코-매니퓰레이션은 조화로운 전신 제어와 정밀하고 접촉이 많은 물체 조작을 필요로 하여 상당한 도전 과제를 제시합니다. 이를 해결하기 위해, 본 논문은 HOMIE를 소개합니다. HOMIE는 페달에 매핑된 신체 제어를 위한 강화 학습 정책, 팔 제어를 위한 동형 외골격 팔, 손 제어를 위한 모션 센싱 장갑을 결합한 반자율 원격 조작 시스템으로, 통합된 조종석을 형성하여 휴머노이드를 자유롭게 작동하고 데이터 플라이휠을 구축합니다. 이 정책은 상체 자세 커리큘럼, 높이 추적 보상, 대칭 활용을 포함한 새로운 설계를 통합합니다. 이러한 기능을 통해 시스템은 특정 높이로 걷기와 스쿼트를 수행하면서 임의의 상체 자세에 원활하게 적응할 수 있습니다. 외골격은 역동역학에 대한 의존성을 제거하여 더 빠르고 정밀한 팔 제어를 제공합니다. 장갑은 서보 대신 홀 센서를 사용하여 소형 장치에서도 15자유도 이상을 달성하고 모든 모델의 다지 손에 자유롭게 적응할 수 있습니다. 이전 원격 조작 시스템과 비교하여 HOMIE는 작업을 절반 시간에 완료하는 뛰어난 효율성, 사용자가 높은 곳과 낮은 곳에 자유롭게 도달하고 모든 물체와 상호작용할 수 있는 확장된 작업 범위, 그리고 단 500달러의 가격으로 경제성을 자랑합니다. 이 시스템은 완전히 오픈 소스이며, 데모와 코드는 https://homietele.github.io/에서 확인할 수 있습니다.
+
+## 参考
+- http://arxiv.org/abs/2502.13013v2

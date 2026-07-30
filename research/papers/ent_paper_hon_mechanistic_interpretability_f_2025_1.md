@@ -11,9 +11,7 @@ summary:
   en: Mechanistic interpretability for steering vision-language-action models (Mechanistic interpretability for steering vision-language-action
     models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Electrical
     Engineering and Computer Sciences, University of California, Berkeley.
-  zh: Mechanistic interpretability for steering vision-language-action models (Mechanistic interpretability for steering vision-language-action
-    models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Electrical
-    Engineering and Computer Sciences, University of California, Berkeley.
+  zh: 本文由加州大学伯克利分校电气工程与计算机科学系提出，首次为视觉-语言-动作模型（VLA）建立了可解释性与操控框架。核心贡献在于通过激活干预技术，在不微调、无奖励信号或环境交互的情况下，实时调控机器人行为，并在Pi0和OpenVLA模型上验证了零样本控制能力。
   ko: Mechanistic interpretability for steering vision-language-action models (Mechanistic interpretability for steering vision-language-action
     models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Electrical
     Engineering and Computer Sciences, University of California, Berkeley.
@@ -38,7 +36,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.00328v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.00328v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -54,18 +53,26 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Vision-Language-Action (VLA) models are a promising path to realizing generalist embodied agents that can quickly adapt to new tasks, modalities, and environments. However, methods for interpreting and steering VLAs fall far short of classical robotics pipelines, which are grounded in explicit models of kinematics, dynamics, and control. This lack of mechanistic insight is a central challenge for deploying learned policies in real-world robotics, where robustness and explainability are critical. Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time. We project feedforward activations within transformer layers onto the token embedding basis, identifying sparse semantic directions - such as speed and direction - that are causally linked to action selection. Leveraging these findings, we introduce a general-purpose activation steering method that modulates behavior in real time, without fine-tuning, reward signals, or environment interaction. We evaluate this method on two recent open-source VLAs, Pi0 and OpenVLA, and demonstrate zero-shot behavioral control in simulation (LIBERO) and on a physical robot (UR5). This work demonstrates that interpretable components of embodied VLAs can be systematically harnessed for control - establishing a new paradigm for transparent and steerable foundation models in robotics.
+传统机器人管线依赖显式的运动学、动力学与控制模型，而VLA模型虽能快速适应新任务与环境，却缺乏可解释性与鲁棒性。本研究借鉴大语言模型的可解释性方法，将Transformer层的前馈激活投影到词元嵌入空间，识别出与动作选择因果关联的稀疏语义方向（如速度、方向）。基于此，作者提出通用激活操控方法，无需额外训练即可在推理时直接干预模型行为，并在LIBERO仿真环境与UR5实体机器人上实现零样本行为控制。
 
 ## 核心内容
-Vision-Language-Action (VLA) models are a promising path to realizing generalist embodied agents that can quickly adapt to new tasks, modalities, and environments. However, methods for interpreting and steering VLAs fall far short of classical robotics pipelines, which are grounded in explicit models of kinematics, dynamics, and control. This lack of mechanistic insight is a central challenge for deploying learned policies in real-world robotics, where robustness and explainability are critical. Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time. We project feedforward activations within transformer layers onto the token embedding basis, identifying sparse semantic directions - such as speed and direction - that are causally linked to action selection. Leveraging these findings, we introduce a general-purpose activation steering method that modulates behavior in real time, without fine-tuning, reward signals, or environment interaction. We evaluate this method on two recent open-source VLAs, Pi0 and OpenVLA, and demonstrate zero-shot behavioral control in simulation (LIBERO) and on a physical robot (UR5). This work demonstrates that interpretable components of embodied VLAs can be systematically harnessed for control - establishing a new paradigm for transparent and steerable foundation models in robotics.
+### 方法架构
+- **内部表征投影**：将VLA模型Transformer层的前馈激活值投影到词元嵌入基（token embedding basis），通过稀疏编码提取语义方向。
+- **因果关联验证**：识别出的方向（如速度、方向）与动作选择存在直接因果联系，可通过激活干预（activation steering）调整行为。
 
-## 参考
-- http://arxiv.org/abs/2509.00328v1
+### 实验设置
+- **模型**：Pi0与OpenVLA两个开源VLA模型。
+- **环境**：LIBERO仿真平台与UR5实体机器人。
+- **干预方式**：零样本（zero-shot）激活操控，无需微调、奖励信号或环境交互。
+
+### 关键结果
+- 在仿真与实体机器人上均实现实时行为调控，验证了方法的通用性。
+- 干预效果可解释：例如调整“速度”方向激活值可改变机器人运动快慢，调整“方向”激活值可改变运动轨迹。
+
+### 结论
+本研究首次证明，VLA模型中的可解释组件可被系统化用于控制，为机器人领域透明化、可操控的基础模型建立了新范式。
 
 ## Overview
-Vision-Language-Action (VLA) models are a promising path to realizing generalist embodied agents that can quickly adapt to new tasks, modalities, and environments. However, methods for interpreting and steering VLAs fall far short of classical robotics pipelines, which are grounded in explicit models of kinematics, dynamics, and control. This lack of mechanistic insight is a central challenge for deploying learned policies in real-world robotics, where robustness and explainability are critical. Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time. We project feedforward activations within transformer layers onto the token embedding basis, identifying sparse semantic directions - such as speed and direction - that are causally linked to action selection. Leveraging these findings, we introduce a general-purpose activation steering method that modulates behavior in real time, without fine-tuning, reward signals, or environment interaction. We evaluate this method on two recent open-source VLAs, Pi0 and OpenVLA, and demonstrate zero-shot behavioral control in simulation (LIBERO) and on a physical robot (UR5). This work demonstrates that interpretable components of embodied VLAs can be systematically harnessed for control - establishing a new paradigm for transparent and steerable foundation models in robotics.
-
-## Content
 Vision-Language-Action (VLA) models are a promising path to realizing generalist embodied agents that can quickly adapt to new tasks, modalities, and environments. However, methods for interpreting and steering VLAs fall far short of classical robotics pipelines, which are grounded in explicit models of kinematics, dynamics, and control. This lack of mechanistic insight is a central challenge for deploying learned policies in real-world robotics, where robustness and explainability are critical. Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time. We project feedforward activations within transformer layers onto the token embedding basis, identifying sparse semantic directions - such as speed and direction - that are causally linked to action selection. Leveraging these findings, we introduce a general-purpose activation steering method that modulates behavior in real time, without fine-tuning, reward signals, or environment interaction. We evaluate this method on two recent open-source VLAs, Pi0 and OpenVLA, and demonstrate zero-shot behavioral control in simulation (LIBERO) and on a physical robot (UR5). This work demonstrates that interpretable components of embodied VLAs can be systematically harnessed for control - establishing a new paradigm for transparent and steerable foundation models in robotics.
 
 ## 개요
@@ -73,3 +80,6 @@ Vision-Language-Action (VLA) 모델은 새로운 작업, 양식 및 환경에 �
 
 ## 핵심 내용
 Vision-Language-Action (VLA) 모델은 새로운 작업, 양식 및 환경에 빠르게 적응할 수 있는 범용 임베디드 에이전트를 구현하는 유망한 경로입니다. 그러나 VLA를 해석하고 조종하는 방법은 운동학, 동역학 및 제어의 명시적 모델에 기반한 고전적 로봇공학 파이프라인에 크게 미치지 못합니다. 이러한 메커니즘적 통찰력의 부족은 강건성과 설명 가능성이 중요한 실제 로봇공학에서 학습된 정책을 배포하는 데 핵심적인 과제입니다. 대규모 언어 모델에 대한 메커니즘적 해석 가능성의 발전에 힘입어, 우리는 VLA의 내부 표현을 통해 해석하고 조종하는 최초의 프레임워크를 소개하며, 추론 시간에 모델 행동에 직접 개입할 수 있게 합니다. 트랜스포머 레이어 내의 피드포워드 활성화를 토큰 임베딩 기저에 투영하여, 행동 선택과 인과적으로 연결된 속도 및 방향과 같은 희소 의미 방향을 식별합니다. 이러한 발견을 활용하여, 미세 조정, 보상 신호 또는 환경 상호작용 없이 실시간으로 행동을 조절하는 범용 활성화 조종 방법을 소개합니다. 이 방법을 두 개의 최신 오픈소스 VLA인 Pi0와 OpenVLA에서 평가하고, 시뮬레이션(LIBERO) 및 실제 로봇(UR5)에서 제로샷 행동 제어를 입증합니다. 이 연구는 임베디드 VLA의 해석 가능한 구성 요소가 제어를 위해 체계적으로 활용될 수 있음을 보여주며, 로봇공학에서 투명하고 조종 가능한 기초 모델을 위한 새로운 패러다임을 확립합니다.
+
+## 参考
+- http://arxiv.org/abs/2509.00328v1

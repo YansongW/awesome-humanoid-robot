@@ -11,7 +11,8 @@ summary:
   en: Kawaharazuka et al. present MEVIUS2, a Spot-sized open-source quadruped robot built primarily with sheet-metal-welded
     and machined aluminum components that can all be procured through e-commerce, and validate its rough-terrain locomotion
     and LiDAR/HDR-camera perception capabilities.
-  zh: Kawaharazuka等人提出了MEVIUS2，一种与Spot尺寸相当的开源四足机器人，主要由可通过电子商务采购的钣金焊接和机加工铝制部件构成，并验证其在崎岖地形运动和LiDAR/HDR相机感知方面的能力。
+  zh: Kawaharazuka 等人提出了 MEVIUS2，一款尺寸与 Boston Dynamics Spot 相当的开源四足机器人。其结构主要采用钣金焊接和机加工铝材，所有部件均可通过电商平台采购。核心贡献在于实现了大型、高耐久性的机器人本体，并集成了
+    LiDAR 与高动态范围相机，具备粗糙地形行走与多模态感知能力。
   ko: Kawaharazuka 등은 전자상거래를 통해 조달 가능한 판금 용접 및 가공 알루미늄 부품으로 주로 제작된 Spot 크기의 오픈소스 사족 로봇 MEVIUS2를 제시하고 거친 지형 이동 및 LiDAR/HDR
     카메라 지각 능력을 검증하였다.
 domains:
@@ -44,7 +45,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.22031v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.22031v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -56,18 +58,25 @@ theoretical_depth:
 - method
 ---
 ## 概述
-Various quadruped robots have been developed to date, and thanks to reinforcement learning, they are now capable of traversing diverse types of rough terrain. In parallel, there is a growing trend of releasing these robot designs as open-source, enabling researchers to freely build and modify robots themselves. However, most existing open-source quadruped robots have been designed with 3D printing in mind, resulting in structurally fragile systems that do not scale well in size, leading to the construction of relatively small robots. Although a few open-source quadruped robots constructed with metal components exist, they still tend to be small in size and lack multimodal sensors for perception, making them less practical. In this study, we developed MEVIUS2, an open-source quadruped robot with a size comparable to Boston Dynamics' Spot, whose structural components can all be ordered through e-commerce services. By leveraging sheet metal welding and metal machining, we achieved a large, highly durable body structure while reducing the number of individual parts. Furthermore, by integrating sensors such as LiDARs and a high dynamic range camera, the robot is capable of detailed perception of its surroundings, making it more practical than previous open-source quadruped robots. We experimentally validated that MEVIUS2 can traverse various types of rough terrain and demonstrated its environmental perception capabilities. All hardware, software, and training environments can be obtained from Supplementary Materials or https://github.com/haraduka/mevius2.
+现有开源四足机器人多依赖 3D 打印，导致结构脆弱且难以放大尺寸，通常体型较小。少数金属构件机器人也缺乏多模态传感器，实用性不足。MEVIUS2 通过钣金焊接与金属加工技术，在减少零件数量的同时实现了大型且坚固的机身，其尺寸与 Spot 相当。该机器人集成了 LiDAR 和高动态范围相机，能够详细感知周围环境。实验验证了其在多种粗糙地形上的行走能力及环境感知能力，所有硬件、软件和训练环境均已开源。
 
 ## 核心内容
-Various quadruped robots have been developed to date, and thanks to reinforcement learning, they are now capable of traversing diverse types of rough terrain. In parallel, there is a growing trend of releasing these robot designs as open-source, enabling researchers to freely build and modify robots themselves. However, most existing open-source quadruped robots have been designed with 3D printing in mind, resulting in structurally fragile systems that do not scale well in size, leading to the construction of relatively small robots. Although a few open-source quadruped robots constructed with metal components exist, they still tend to be small in size and lack multimodal sensors for perception, making them less practical. In this study, we developed MEVIUS2, an open-source quadruped robot with a size comparable to Boston Dynamics' Spot, whose structural components can all be ordered through e-commerce services. By leveraging sheet metal welding and metal machining, we achieved a large, highly durable body structure while reducing the number of individual parts. Furthermore, by integrating sensors such as LiDARs and a high dynamic range camera, the robot is capable of detailed perception of its surroundings, making it more practical than previous open-source quadruped robots. We experimentally validated that MEVIUS2 can traverse various types of rough terrain and demonstrated its environmental perception capabilities. All hardware, software, and training environments can be obtained from Supplementary Materials or https://github.com/haraduka/mevius2.
+### 背景与动机
+- 现有开源四足机器人多采用 3D 打印，结构脆弱，难以放大尺寸，导致体型普遍较小。
+- 少数金属构件机器人仍存在体型小、缺乏多模态传感器的问题，实用性受限。
 
-## 参考
-- http://arxiv.org/abs/2603.22031v1
+### MEVIUS2 设计
+- **结构**：主要采用钣金焊接与机加工铝材，所有结构部件均可通过电商平台订购。该设计在减少零件数量的同时，实现了与 Boston Dynamics Spot 相当的大型、高耐久性机身。
+- **感知**：集成了 LiDAR 与高动态范围（HDR）相机，能够对周围环境进行详细感知，提升了实用性。
+
+### 实验验证
+- 实验验证了 MEVIUS2 在多种粗糙地形上的行走能力。
+- 同时展示了其环境感知能力。
+
+### 开源信息
+- 所有硬件、软件和训练环境均可从补充材料或 GitHub 仓库（https://github.com/haraduka/mevius2）获取。
 
 ## Overview
-Various quadruped robots have been developed to date, and thanks to reinforcement learning, they are now capable of traversing diverse types of rough terrain. In parallel, there is a growing trend of releasing these robot designs as open-source, enabling researchers to freely build and modify robots themselves. However, most existing open-source quadruped robots have been designed with 3D printing in mind, resulting in structurally fragile systems that do not scale well in size, leading to the construction of relatively small robots. Although a few open-source quadruped robots constructed with metal components exist, they still tend to be small in size and lack multimodal sensors for perception, making them less practical. In this study, we developed MEVIUS2, an open-source quadruped robot with a size comparable to Boston Dynamics' Spot, whose structural components can all be ordered through e-commerce services. By leveraging sheet metal welding and metal machining, we achieved a large, highly durable body structure while reducing the number of individual parts. Furthermore, by integrating sensors such as LiDARs and a high dynamic range camera, the robot is capable of detailed perception of its surroundings, making it more practical than previous open-source quadruped robots. We experimentally validated that MEVIUS2 can traverse various types of rough terrain and demonstrated its environmental perception capabilities. All hardware, software, and training environments can be obtained from Supplementary Materials or https://github.com/haraduka/mevius2.
-
-## Content
 Various quadruped robots have been developed to date, and thanks to reinforcement learning, they are now capable of traversing diverse types of rough terrain. In parallel, there is a growing trend of releasing these robot designs as open-source, enabling researchers to freely build and modify robots themselves. However, most existing open-source quadruped robots have been designed with 3D printing in mind, resulting in structurally fragile systems that do not scale well in size, leading to the construction of relatively small robots. Although a few open-source quadruped robots constructed with metal components exist, they still tend to be small in size and lack multimodal sensors for perception, making them less practical. In this study, we developed MEVIUS2, an open-source quadruped robot with a size comparable to Boston Dynamics' Spot, whose structural components can all be ordered through e-commerce services. By leveraging sheet metal welding and metal machining, we achieved a large, highly durable body structure while reducing the number of individual parts. Furthermore, by integrating sensors such as LiDARs and a high dynamic range camera, the robot is capable of detailed perception of its surroundings, making it more practical than previous open-source quadruped robots. We experimentally validated that MEVIUS2 can traverse various types of rough terrain and demonstrated its environmental perception capabilities. All hardware, software, and training environments can be obtained from Supplementary Materials or https://github.com/haraduka/mevius2.
 
 ## 개요
@@ -75,3 +84,6 @@ Various quadruped robots have been developed to date, and thanks to reinforcemen
 
 ## 핵심 내용
 현재까지 다양한 사족 보행 로봇이 개발되었으며, 강화 학습 덕분에 이들은 다양한 종류의 험지에서 이동할 수 있게 되었습니다. 이와 동시에, 이러한 로봇 설계를 오픈소스로 공개하는 추세가 증가하여 연구자들이 자유롭게 로봇을 제작하고 수정할 수 있게 되었습니다. 그러나 기존의 대부분 오픈소스 사족 보행 로봇은 3D 프린팅을 염두에 두고 설계되어 구조적으로 취약하고 크기 확장성이 좋지 않아 비교적 작은 로봇만 제작되었습니다. 금속 부품으로 제작된 몇몇 오픈소스 사족 보행 로봇이 존재하지만, 여전히 크기가 작고 인식을 위한 다중 모달 센서가 부족하여 실용성이 떨어집니다. 본 연구에서는 Boston Dynamics의 Spot과 유사한 크기의 오픈소스 사족 보행 로봇 MEVIUS2를 개발했습니다. 이 로봇의 구조 부품은 모두 전자상거래 서비스를 통해 주문할 수 있습니다. 판금 용접과 금속 가공을 활용하여 개별 부품 수를 줄이면서도 크고 내구성이 뛰어난 본체 구조를 구현했습니다. 또한 LiDAR 및 고동적 범위 카메라와 같은 센서를 통합하여 주변 환경을 세밀하게 인식할 수 있어 기존 오픈소스 사족 보행 로봇보다 실용적입니다. 우리는 MEVIUS2가 다양한 종류의 험지를 이동할 수 있음을 실험적으로 검증하고 환경 인식 능력을 입증했습니다. 모든 하드웨어, 소프트웨어 및 훈련 환경은 Supplementary Materials 또는 https://github.com/haraduka/mevius2에서 얻을 수 있습니다.
+
+## 参考
+- http://arxiv.org/abs/2603.22031v1

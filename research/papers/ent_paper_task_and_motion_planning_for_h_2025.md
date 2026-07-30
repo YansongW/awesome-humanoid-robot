@@ -10,8 +10,7 @@ names:
 summary:
   en: Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for
     humanoid robots.
-  zh: Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for
-    humanoid robots.
+  zh: 这是一项2025年关于人形机器人全身控制与移动操作的研究，提出了基于优化的任务与运动规划（TAMP）框架。其核心贡献在于通过共享接触模式表示，统一了移动与操作的规划过程，并首次在完全非循环规划中整合了全身动力学与驱动约束。
   ko: Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for
     humanoid robots.
 domains:
@@ -34,7 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14099v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14099v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -44,18 +44,25 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-This work presents an optimization-based task and motion planning (TAMP) framework that unifies planning for locomotion and manipulation through a shared representation of contact modes. We define symbolic actions as contact mode changes, grounding high-level planning in low-level motion. This enables a unified search that spans task, contact, and motion planning while incorporating whole-body dynamics, as well as all constraints between the robot, the manipulated object, and the environment. Results on a humanoid platform show that our method can generate a broad range of physically consistent loco-manipulation behaviors over long action sequences requiring complex reasoning. To the best of our knowledge, this is the first work that enables the resolution of an integrated TAMP formulation with fully acyclic planning and whole body dynamics with actuation constraints for the humanoid loco-manipulation problem.
+该工作将符号动作定义为接触模式的变化，从而将高层任务规划与低层运动规划联系起来。通过这种统一表示，框架能够同时处理任务、接触和运动规划，并纳入机器人、操作对象与环境之间的全部约束。在人形平台上的实验表明，该方法能够生成长序列、复杂推理下的多种物理一致移动操作行为。
 
 ## 核心内容
-This work presents an optimization-based task and motion planning (TAMP) framework that unifies planning for locomotion and manipulation through a shared representation of contact modes. We define symbolic actions as contact mode changes, grounding high-level planning in low-level motion. This enables a unified search that spans task, contact, and motion planning while incorporating whole-body dynamics, as well as all constraints between the robot, the manipulated object, and the environment. Results on a humanoid platform show that our method can generate a broad range of physically consistent loco-manipulation behaviors over long action sequences requiring complex reasoning. To the best of our knowledge, this is the first work that enables the resolution of an integrated TAMP formulation with fully acyclic planning and whole body dynamics with actuation constraints for the humanoid loco-manipulation problem.
+### 方法架构
+- 提出基于优化的TAMP框架，通过**共享接触模式表示**统一移动与操作规划。
+- 将**符号动作**定义为接触模式的变化，实现高层任务规划与低层运动规划的衔接。
+- 采用**统一搜索**策略，同时覆盖任务、接触和运动规划三个层次。
 
-## 参考
-- http://arxiv.org/abs/2508.14099v1
+### 关键特性
+- 整合**全身动力学**模型，包含机器人、操作对象与环境之间的所有约束。
+- 支持**完全非循环规划**，无需预设规划顺序。
+- 考虑**驱动约束**，确保生成的运动在物理上可行。
+
+### 实验设置与结果
+- 在人形机器人平台上验证，能够生成**长动作序列**下的复杂移动操作行为。
+- 行为在**物理一致性**上表现良好，涵盖多种操作场景。
+- 据作者称，这是首个解决**人形机器人移动操作**中集成TAMP公式的工作，同时满足非循环规划与全身动力学约束。
 
 ## Overview
-This work presents an optimization-based task and motion planning (TAMP) framework that unifies planning for locomotion and manipulation through a shared representation of contact modes. We define symbolic actions as contact mode changes, grounding high-level planning in low-level motion. This enables a unified search that spans task, contact, and motion planning while incorporating whole-body dynamics, as well as all constraints between the robot, the manipulated object, and the environment. Results on a humanoid platform show that our method can generate a broad range of physically consistent loco-manipulation behaviors over long action sequences requiring complex reasoning. To the best of our knowledge, this is the first work that enables the resolution of an integrated TAMP formulation with fully acyclic planning and whole body dynamics with actuation constraints for the humanoid loco-manipulation problem.
-
-## Content
 This work presents an optimization-based task and motion planning (TAMP) framework that unifies planning for locomotion and manipulation through a shared representation of contact modes. We define symbolic actions as contact mode changes, grounding high-level planning in low-level motion. This enables a unified search that spans task, contact, and motion planning while incorporating whole-body dynamics, as well as all constraints between the robot, the manipulated object, and the environment. Results on a humanoid platform show that our method can generate a broad range of physically consistent loco-manipulation behaviors over long action sequences requiring complex reasoning. To the best of our knowledge, this is the first work that enables the resolution of an integrated TAMP formulation with fully acyclic planning and whole body dynamics with actuation constraints for the humanoid loco-manipulation problem.
 
 ## 개요
@@ -63,3 +70,6 @@ This work presents an optimization-based task and motion planning (TAMP) framewo
 
 ## 핵심 내용
 본 연구는 접촉 모드의 공유 표현을 통해 보행과 조작 계획을 통합하는 최적화 기반의 작업 및 운동 계획(TAMP) 프레임워크를 제시합니다. 상징적 행동을 접촉 모드 변화로 정의함으로써, 고수준 계획을 저수준 운동에 기반을 둡니다. 이를 통해 전신 동역학은 물론, 로봇, 조작 대상 물체, 환경 간의 모든 제약 조건을 포함하면서 작업, 접촉, 운동 계획을 아우르는 통합 탐색이 가능해집니다. 휴머노이드 플랫폼에서의 실험 결과는 본 방법이 복잡한 추론을 요구하는 긴 행동 시퀀스에 걸쳐 광범위한 물리적으로 일관된 보행-조작 행동을 생성할 수 있음을 보여줍니다. 본 연구는 저희가 아는 한, 완전한 비순환 계획과 구동 제약 조건을 갖춘 전신 동역학을 통합한 TAMP 정식화를 휴머노이드 보행-조작 문제에 대해 해결할 수 있는 최초의 연구입니다.
+
+## 参考
+- http://arxiv.org/abs/2508.14099v1

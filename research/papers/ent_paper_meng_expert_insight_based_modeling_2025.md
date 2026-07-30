@@ -12,7 +12,7 @@ summary:
   en: Wei Meng's 2025 arXiv paper proposes a simulation-driven REG-CAP framework that maps rare-earth resource dependencies
     to military equipment, technology generations, and combat capabilities, using HGNN, LSTM, ODEs, and strategic signal functions
     to model non-kinetic deterrence trajectories under supply disruption.
-  zh: Wei Meng 于 2025 年在 arXiv 发表本文，提出一种仿真驱动的 REG-CAP 框架，将稀土资源依赖映射至军事装备、技术代际与作战能力，并结合 HGNN、LSTM、常微分方程与战略信号函数，对供应中断情境下的非动能威慑路径进行建模。
+  zh: Wei Meng 在 2025 年 arXiv 论文中提出 REG-CAP 框架，基于专家访谈数据，通过 HGNN、LSTM、ODE 及战略信号函数，模拟稀土供应中断下的非动能战略威慑轨迹。该框架首次将资源依赖映射至军事装备与技术代际，为政策制定者提供量化分析工具。
   ko: Wei Meng의 2025년 arXiv 논문은 희토류 자원 의존성을 군사 장비·기술 세대·전투 능력에 매핑하는 REG-CAP 프레임워크를 제안하고, HGNN·LSTM·상미분방정식·전략 신호 함수를 활용해 공급
     중단 상황에서 비동력 억제 궤적을 모델링한다.
 domains:
@@ -42,7 +42,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.11645v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.11645v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -55,18 +56,30 @@ theoretical_depth:
 - system
 ---
 ## 概述
-This study constructs a quantifiable modelling framework to simulate non-kinetic strategic deterrence pathways in rare earth supply disruption scenarios, based on structured responses from expert interviews led by Dr. Daniel O'Connor, CEO of the Rare Earth Exchange (REE). Focusing on disruption impacts on national security systems, the study proposes four core modelling components: Security Critical Zones (SCZ), Strategic Signal Injection Function (SSIF), System-Capability Migration Function (SCIF), and Policy-Capability Transfer Function (PCTF). The framework integrates parametric ODEs, segmented function modelling, path-overlapping covariance matrices, and LSTM networks to simulate nonlinear suppression trajectories triggered by regime signals. Data is derived from expert interviews and scenario analyses centered on U.S.-China dynamics in ISR, electronic warfare, and rare earth control. Results show institutional signals have strong tempo and path-coupling effects, capable of causing rapid degradation of strategic capabilities. The model is adaptable across national resource frameworks and extendable to AI sandbox engines for situational simulation and counterfactual reasoning. This research introduces the first unified system for modelling, visualizing, and forecasting non-kinetic deterrence, offering methodological support to policymakers and analysts navigating institutionalized strategic competition.
+该研究以稀土交易所（REE）CEO Daniel O'Connor 博士主导的专家访谈为基础，构建了可量化的建模框架，模拟稀土供应中断场景下的非动能战略威慑路径。框架包含四个核心组件：安全关键区（SCZ）、战略信号注入函数（SSIF）、系统-能力迁移函数（SCIF）及政策-能力传递函数（PCTF）。通过集成参数化 ODE、分段函数建模、路径重叠协方差矩阵及 LSTM 网络，模拟制度信号触发的非线性抑制轨迹。数据来源于聚焦美中在 ISR、电子战及稀土控制领域动态的专家访谈与情景分析。
 
 ## 核心内容
-This study constructs a quantifiable modelling framework to simulate non-kinetic strategic deterrence pathways in rare earth supply disruption scenarios, based on structured responses from expert interviews led by Dr. Daniel O'Connor, CEO of the Rare Earth Exchange (REE). Focusing on disruption impacts on national security systems, the study proposes four core modelling components: Security Critical Zones (SCZ), Strategic Signal Injection Function (SSIF), System-Capability Migration Function (SCIF), and Policy-Capability Transfer Function (PCTF). The framework integrates parametric ODEs, segmented function modelling, path-overlapping covariance matrices, and LSTM networks to simulate nonlinear suppression trajectories triggered by regime signals. Data is derived from expert interviews and scenario analyses centered on U.S.-China dynamics in ISR, electronic warfare, and rare earth control. Results show institutional signals have strong tempo and path-coupling effects, capable of causing rapid degradation of strategic capabilities. The model is adaptable across national resource frameworks and extendable to AI sandbox engines for situational simulation and counterfactual reasoning. This research introduces the first unified system for modelling, visualizing, and forecasting non-kinetic deterrence, offering methodological support to policymakers and analysts navigating institutionalized strategic competition.
+### 核心贡献
+- 提出首个统一系统，用于建模、可视化及预测非动能威慑，支持政策制定者与分析师应对制度化战略竞争。
+- 框架可适配不同国家资源体系，并扩展至 AI 沙盒引擎，用于情景模拟与反事实推理。
 
-## 参考
-- http://arxiv.org/abs/2506.11645v1
+### 方法架构
+- **四大组件**：
+  - **安全关键区（SCZ）**：定义资源依赖与军事装备、技术代际及作战能力的映射关系。
+  - **战略信号注入函数（SSIF）**：模拟制度信号（如政策声明、制裁）对系统状态的冲击。
+  - **系统-能力迁移函数（SCIF）**：描述资源中断后能力退化路径的非线性动态。
+  - **政策-能力传递函数（PCTF）**：量化政策干预对能力恢复的传递效应。
+- **技术集成**：参数化 ODE 处理连续时间动态，分段函数建模非线性阈值效应，路径重叠协方差矩阵捕捉多信号耦合，LSTM 网络学习时序依赖。
+
+### 实验设置
+- **数据来源**：基于专家访谈与情景分析，聚焦美中在 ISR（情报、监视与侦察）、电子战及稀土控制领域的战略互动。
+- **关键发现**：制度信号具有强节奏与路径耦合效应，可导致战略能力快速退化。
+
+### 结论
+- 模型验证了非动能威慑的量化可行性，为资源安全与军事战略交叉领域提供方法论支撑。
+- 未来可集成至 AI 沙盒引擎，支持实时情景推演与反事实分析。
 
 ## Overview
-This study constructs a quantifiable modelling framework to simulate non-kinetic strategic deterrence pathways in rare earth supply disruption scenarios, based on structured responses from expert interviews led by Dr. Daniel O'Connor, CEO of the Rare Earth Exchange (REE). Focusing on disruption impacts on national security systems, the study proposes four core modelling components: Security Critical Zones (SCZ), Strategic Signal Injection Function (SSIF), System-Capability Migration Function (SCIF), and Policy-Capability Transfer Function (PCTF). The framework integrates parametric ODEs, segmented function modelling, path-overlapping covariance matrices, and LSTM networks to simulate nonlinear suppression trajectories triggered by regime signals. Data is derived from expert interviews and scenario analyses centered on U.S.-China dynamics in ISR, electronic warfare, and rare earth control. Results show institutional signals have strong tempo and path-coupling effects, capable of causing rapid degradation of strategic capabilities. The model is adaptable across national resource frameworks and extendable to AI sandbox engines for situational simulation and counterfactual reasoning. This research introduces the first unified system for modelling, visualizing, and forecasting non-kinetic deterrence, offering methodological support to policymakers and analysts navigating institutionalized strategic competition.
-
-## Content
 This study constructs a quantifiable modelling framework to simulate non-kinetic strategic deterrence pathways in rare earth supply disruption scenarios, based on structured responses from expert interviews led by Dr. Daniel O'Connor, CEO of the Rare Earth Exchange (REE). Focusing on disruption impacts on national security systems, the study proposes four core modelling components: Security Critical Zones (SCZ), Strategic Signal Injection Function (SSIF), System-Capability Migration Function (SCIF), and Policy-Capability Transfer Function (PCTF). The framework integrates parametric ODEs, segmented function modelling, path-overlapping covariance matrices, and LSTM networks to simulate nonlinear suppression trajectories triggered by regime signals. Data is derived from expert interviews and scenario analyses centered on U.S.-China dynamics in ISR, electronic warfare, and rare earth control. Results show institutional signals have strong tempo and path-coupling effects, capable of causing rapid degradation of strategic capabilities. The model is adaptable across national resource frameworks and extendable to AI sandbox engines for situational simulation and counterfactual reasoning. This research introduces the first unified system for modelling, visualizing, and forecasting non-kinetic deterrence, offering methodological support to policymakers and analysts navigating institutionalized strategic competition.
 
 ## 개요
@@ -74,3 +87,6 @@ This study constructs a quantifiable modelling framework to simulate non-kinetic
 
 ## 핵심 내용
 본 연구는 Rare Earth Exchange(REE)의 CEO인 Daniel O'Connor 박사가 주도한 전문가 인터뷰의 구조화된 응답을 기반으로, 희토류 공급 중단 시나리오에서 비물리적 전략적 억제 경로를 시뮬레이션하기 위한 정량화 가능한 모델링 프레임워크를 구축합니다. 국가 안보 시스템에 대한 중단 영향을 중심으로, 본 연구는 네 가지 핵심 모델링 구성 요소를 제안합니다: 보안 중요 구역(SCZ), 전략 신호 주입 함수(SSIF), 시스템-능력 이동 함수(SCIF), 정책-능력 전이 함수(PCTF). 이 프레임워크는 매개변수 ODE, 분할 함수 모델링, 경로 중첩 공분산 행렬 및 LSTM 네트워크를 통합하여 체제 신호에 의해 촉발된 비선형 억제 궤적을 시뮬레이션합니다. 데이터는 ISR, 전자전 및 희토류 통제에서 미중 역학에 초점을 맞춘 전문가 인터뷰 및 시나리오 분석에서 도출됩니다. 결과는 제도적 신호가 강한 템포와 경로 결합 효과를 가지며, 전략적 능력의 급속한 저하를 초래할 수 있음을 보여줍니다. 이 모델은 국가 자원 프레임워크 전반에 걸쳐 적응 가능하며, 상황 시뮬레이션 및 반사실적 추론을 위한 AI 샌드박스 엔진으로 확장 가능합니다. 본 연구는 비물리적 억제를 모델링, 시각화 및 예측하기 위한 최초의 통합 시스템을 도입하여, 제도화된 전략적 경쟁을 탐색하는 정책 입안자 및 분석가에게 방법론적 지원을 제공합니다.
+
+## 参考
+- http://arxiv.org/abs/2506.11645v1

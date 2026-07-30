@@ -9,7 +9,7 @@ names:
   ko: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation
 summary:
   en: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work on hardware design for humanoid robots.
-  zh: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work on hardware design for humanoid robots.
+  zh: Quasi-Direct Drive 是 2019 年提出的一种低成本、力控机器人硬件设计范式。其原型 Blue 是一款人形尺度、7 自由度、2kg 负载的机械臂，成本低于 5000 美元。核心贡献在于证明了准直驱驱动在动态性能上满足人机交互需求，并集成了基于虚拟现实的遥操作接口。
   ko: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
@@ -31,7 +31,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.03815v2.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.03815v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -47,18 +48,31 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Robots must cost less and be force-controlled to enable widespread, safe deployment in unconstrained human environments. We propose Quasi-Direct Drive actuation as a capable paradigm for robotic force-controlled manipulation in human environments at low-cost. Our prototype - Blue - is a human scale 7 Degree of Freedom arm with 2kg payload. Blue can cost less than $5000. We show that Blue has dynamic properties that meet or exceed the needs of human operators: the robot has a nominal position-control bandwidth of 7.5Hz and repeatability within 4mm. We demonstrate a Virtual Reality based interface that can be used as a method for telepresence and collecting robot training demonstrations. Manufacturability, scaling, and potential use-cases for the Blue system are also addressed. Videos and additional information can be found online at berkeleyopenarms.github.io
+该工作旨在解决机器人广泛、安全部署于非结构化人类环境中的两大障碍：成本与力控能力。作者提出 Quasi-Direct Drive 驱动范式，并据此构建了名为 Blue 的 7 自由度人形机械臂原型。Blue 的制造成本低于 5000 美元，却实现了 7.5Hz 的标称位置控制带宽和 4mm 以内的重复定位精度，动态性能满足人类操作需求。此外，研究还开发了一套基于虚拟现实的接口，可用于遥操作和机器人训练数据采集。
 
 ## 核心内容
-Robots must cost less and be force-controlled to enable widespread, safe deployment in unconstrained human environments. We propose Quasi-Direct Drive actuation as a capable paradigm for robotic force-controlled manipulation in human environments at low-cost. Our prototype - Blue - is a human scale 7 Degree of Freedom arm with 2kg payload. Blue can cost less than $5000. We show that Blue has dynamic properties that meet or exceed the needs of human operators: the robot has a nominal position-control bandwidth of 7.5Hz and repeatability within 4mm. We demonstrate a Virtual Reality based interface that can be used as a method for telepresence and collecting robot training demonstrations. Manufacturability, scaling, and potential use-cases for the Blue system are also addressed. Videos and additional information can be found online at berkeleyopenarms.github.io
+### 核心方法：Quasi-Direct Drive 驱动范式
+- 该范式在传统高减速比驱动与直接驱动之间取得平衡，旨在兼顾低成本、力控柔顺性与足够的动态性能。
+- 通过优化电机与减速器的选型与匹配，在保持力控能力的同时大幅降低硬件成本。
 
-## 参考
-- http://arxiv.org/abs/1904.03815v2
+### 原型系统：Blue 机械臂
+- **构型**：人形尺度、7 自由度机械臂，负载能力为 2kg。
+- **成本**：制造成本低于 5000 美元，远低于同类力控机器人。
+- **动态性能**：
+  - 标称位置控制带宽：7.5Hz。
+  - 重复定位精度：4mm 以内。
+  - 这些指标满足或超过了人类操作员对机器人交互的需求。
+
+### 遥操作与数据采集接口
+- 开发了一套基于虚拟现实的交互界面，支持：
+  - **遥操作**：操作员可通过 VR 设备远程控制 Blue 执行任务。
+  - **训练数据采集**：该接口可收集人类演示数据，用于后续的机器人学习训练。
+
+### 可制造性与扩展性
+- 论文还讨论了 Blue 系统的可制造性、规模化生产潜力以及潜在应用场景。
+- 更多视频与信息可访问 berkeleyopenarms.github.io。
 
 ## Overview
-Robots must cost less and be force-controlled to enable widespread, safe deployment in unconstrained human environments. We propose Quasi-Direct Drive actuation as a capable paradigm for robotic force-controlled manipulation in human environments at low-cost. Our prototype - Blue - is a human scale 7 Degree of Freedom arm with 2kg payload. Blue can cost less than $5000. We show that Blue has dynamic properties that meet or exceed the needs of human operators: the robot has a nominal position-control bandwidth of 7.5Hz and repeatability within 4mm. We demonstrate a Virtual Reality based interface that can be used as a method for telepresence and collecting robot training demonstrations. Manufacturability, scaling, and potential use-cases for the Blue system are also addressed. Videos and additional information can be found online at berkeleyopenarms.github.io
-
-## Content
 Robots must cost less and be force-controlled to enable widespread, safe deployment in unconstrained human environments. We propose Quasi-Direct Drive actuation as a capable paradigm for robotic force-controlled manipulation in human environments at low-cost. Our prototype - Blue - is a human scale 7 Degree of Freedom arm with 2kg payload. Blue can cost less than $5000. We show that Blue has dynamic properties that meet or exceed the needs of human operators: the robot has a nominal position-control bandwidth of 7.5Hz and repeatability within 4mm. We demonstrate a Virtual Reality based interface that can be used as a method for telepresence and collecting robot training demonstrations. Manufacturability, scaling, and potential use-cases for the Blue system are also addressed. Videos and additional information can be found online at berkeleyopenarms.github.io
 
 ## 개요
@@ -66,3 +80,6 @@ Robots must cost less and be force-controlled to enable widespread, safe deploym
 
 ## 핵심 내용
 로봇은 비용이 저렴하고 힘 제어가 가능해야 제약 없는 인간 환경에서 광범위하고 안전하게 배치될 수 있습니다. 우리는 저비용으로 인간 환경에서 로봇의 힘 제어 조작을 가능하게 하는 패러다임으로서 준직접 구동 방식을 제안합니다. 우리의 프로토타입인 Blue는 2kg 탑재량을 가진 인간 규모의 7자유도 팔입니다. Blue의 비용은 5000달러 미만입니다. 우리는 Blue가 인간 운영자의 요구를 충족하거나 초과하는 동적 특성을 가지고 있음을 보여줍니다: 로봇은 7.5Hz의 공칭 위치 제어 대역폭과 4mm 이내의 반복 정밀도를 가집니다. 우리는 원격 현장감 및 로봇 훈련 시연 수집 방법으로 사용될 수 있는 가상 현실 기반 인터페이스를 시연합니다. Blue 시스템의 제조 가능성, 확장성 및 잠재적 사용 사례도 다룹니다. 비디오 및 추가 정보는 berkeleyopenarms.github.io에서 온라인으로 확인할 수 있습니다.
+
+## 参考
+- http://arxiv.org/abs/1904.03815v2

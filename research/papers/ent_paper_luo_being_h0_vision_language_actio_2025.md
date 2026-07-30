@@ -10,8 +10,7 @@ names:
 summary:
   en: 'Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos (Being-H0), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Peking University, Renmin University of China, BeingBeyond.'
-  zh: 'Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos (Being-H0), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by Peking University, Renmin University of China, BeingBeyond.'
+  zh: Being-H0 是北京大学、中国人民大学与 BeingBeyond 于 2025 年提出的灵巧视觉-语言-动作模型（VLA），通过大规模人类视频预训练解决机器人操作中的数据瓶颈。其核心贡献在于物理指令调优范式与部件级运动标记化方法，实现了毫米级重建精度，并在真实机器人操作中展现出优异的指令跟随与泛化能力。
   ko: 'Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos (Being-H0), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Peking University, Renmin University of China, BeingBeyond.'
 domains:
@@ -35,7 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.15597v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.15597v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -51,18 +51,33 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-We introduce Being-H0, a dexterous Vision-Language-Action model (VLA) trained on large-scale human videos. Existing VLAs struggle with complex manipulation tasks requiring high dexterity and generalize poorly to novel scenarios and tasks, primarily due to their reliance on synthetic data with significant sim-to-real gaps or teleoperated demonstrations lacking scale and diversity. To address this data bottleneck, we propose leveraging human hands as a foundation manipulator, capitalizing on the rich dexterity and scalability present in web data. Our approach centers on physical instruction tuning, a novel training paradigm that combines large-scale VLA pretraining from human videos, physical space alignment for 3D reasoning, and post-training adaptation for robotic tasks. Additionally, we introduce a part-level motion tokenization method which achieves millimeter-level reconstruction accuracy to model precise hand trajectories for action learning. To support our proposed paradigm, we further develop a comprehensive data curation pipeline that integrates heterogeneous sources -- including motion capture, VR, and RGB-only videos -- into a large-scale dataset with millions of motion-based instructional instances. We empirically show the excellence of Being-H0 in hand motion generation and instruction following, and it also scales well with model and data sizes. Importantly, we observe the expected gains of Being-H0 in real-world robotic manipulation as physical instruction tuning is applied. More details are available at https://beingbeyond.github.io/Being-H0.
+现有 VLA 模型因依赖合成数据或遥操作演示，在复杂灵巧操作与跨场景泛化上表现不佳。Being-H0 创新性地将人类手部作为基础操作器，利用网络视频中丰富的灵巧性与可扩展性进行预训练。该模型通过物理指令调优三阶段流程（大规模人类视频预训练、物理空间对齐实现 3D 推理、后训练适配机器人任务），结合部件级运动标记化方法（毫米级重建精度），并构建了融合动捕、VR 与 RGB 视频的百万级运动指令数据集。实验表明，该模型在手部运动生成与指令跟随上表现优异，且随模型与数据规模提升而扩展，物理指令调优在真实机器人操作中带来预期增益。
 
 ## 核心内容
-We introduce Being-H0, a dexterous Vision-Language-Action model (VLA) trained on large-scale human videos. Existing VLAs struggle with complex manipulation tasks requiring high dexterity and generalize poorly to novel scenarios and tasks, primarily due to their reliance on synthetic data with significant sim-to-real gaps or teleoperated demonstrations lacking scale and diversity. To address this data bottleneck, we propose leveraging human hands as a foundation manipulator, capitalizing on the rich dexterity and scalability present in web data. Our approach centers on physical instruction tuning, a novel training paradigm that combines large-scale VLA pretraining from human videos, physical space alignment for 3D reasoning, and post-training adaptation for robotic tasks. Additionally, we introduce a part-level motion tokenization method which achieves millimeter-level reconstruction accuracy to model precise hand trajectories for action learning. To support our proposed paradigm, we further develop a comprehensive data curation pipeline that integrates heterogeneous sources -- including motion capture, VR, and RGB-only videos -- into a large-scale dataset with millions of motion-based instructional instances. We empirically show the excellence of Being-H0 in hand motion generation and instruction following, and it also scales well with model and data sizes. Importantly, we observe the expected gains of Being-H0 in real-world robotic manipulation as physical instruction tuning is applied. More details are available at https://beingbeyond.github.io/Being-H0.
+### 方法架构
+- **物理指令调优**：三阶段训练范式
+  - 阶段一：从大规模人类视频进行 VLA 预训练
+  - 阶段二：物理空间对齐，实现 3D 推理能力
+  - 阶段三：后训练适配，针对机器人任务进行微调
+- **部件级运动标记化**：将手部运动分解为部件级 token，实现毫米级重建精度，用于建模精确手部轨迹以支持动作学习
 
-## 参考
-- http://arxiv.org/abs/2507.15597v1
+### 数据构建
+- 开发综合数据整理流水线，整合异构数据源：
+  - 运动捕捉数据
+  - VR 交互数据
+  - RGB 视频数据
+- 最终形成包含数百万运动指令实例的大规模数据集
+
+### 实验设置与关键结果
+- **手部运动生成**：在指令跟随任务中表现优异
+- **模型扩展性**：随模型参数与数据规模增加，性能持续提升
+- **真实机器人操作**：应用物理指令调优后，在真实操作任务中观察到预期增益
+- **关键数字**：部件级运动标记化实现毫米级重建精度；数据集包含数百万运动指令实例
+
+### 结论
+Being-H0 通过利用人类视频的灵巧性与可扩展性，结合物理指令调优范式，有效解决了 VLA 模型的数据瓶颈问题，在复杂灵巧操作与跨场景泛化上取得突破。
 
 ## Overview
-We introduce Being-H0, a dexterous Vision-Language-Action model (VLA) trained on large-scale human videos. Existing VLAs struggle with complex manipulation tasks requiring high dexterity and generalize poorly to novel scenarios and tasks, primarily due to their reliance on synthetic data with significant sim-to-real gaps or teleoperated demonstrations lacking scale and diversity. To address this data bottleneck, we propose leveraging human hands as a foundation manipulator, capitalizing on the rich dexterity and scalability present in web data. Our approach centers on physical instruction tuning, a novel training paradigm that combines large-scale VLA pretraining from human videos, physical space alignment for 3D reasoning, and post-training adaptation for robotic tasks. Additionally, we introduce a part-level motion tokenization method which achieves millimeter-level reconstruction accuracy to model precise hand trajectories for action learning. To support our proposed paradigm, we further develop a comprehensive data curation pipeline that integrates heterogeneous sources -- including motion capture, VR, and RGB-only videos -- into a large-scale dataset with millions of motion-based instructional instances. We empirically show the excellence of Being-H0 in hand motion generation and instruction following, and it also scales well with model and data sizes. Importantly, we observe the expected gains of Being-H0 in real-world robotic manipulation as physical instruction tuning is applied. More details are available at https://beingbeyond.github.io/Being-H0.
-
-## Content
 We introduce Being-H0, a dexterous Vision-Language-Action model (VLA) trained on large-scale human videos. Existing VLAs struggle with complex manipulation tasks requiring high dexterity and generalize poorly to novel scenarios and tasks, primarily due to their reliance on synthetic data with significant sim-to-real gaps or teleoperated demonstrations lacking scale and diversity. To address this data bottleneck, we propose leveraging human hands as a foundation manipulator, capitalizing on the rich dexterity and scalability present in web data. Our approach centers on physical instruction tuning, a novel training paradigm that combines large-scale VLA pretraining from human videos, physical space alignment for 3D reasoning, and post-training adaptation for robotic tasks. Additionally, we introduce a part-level motion tokenization method which achieves millimeter-level reconstruction accuracy to model precise hand trajectories for action learning. To support our proposed paradigm, we further develop a comprehensive data curation pipeline that integrates heterogeneous sources -- including motion capture, VR, and RGB-only videos -- into a large-scale dataset with millions of motion-based instructional instances. We empirically show the excellence of Being-H0 in hand motion generation and instruction following, and it also scales well with model and data sizes. Importantly, we observe the expected gains of Being-H0 in real-world robotic manipulation as physical instruction tuning is applied. More details are available at https://beingbeyond.github.io/Being-H0.
 
 ## 개요
@@ -70,3 +85,6 @@ We introduce Being-H0, a dexterous Vision-Language-Action model (VLA) trained on
 
 ## 핵심 내용
 우리는 대규모 인간 비디오로 훈련된 고도로 정밀한 Vision-Language-Action 모델(VLA)인 Being-H0를 소개합니다. 기존 VLA는 높은 손재주가 필요한 복잡한 조작 작업에 어려움을 겪고, 새로운 시나리오와 작업에 대한 일반화 성능이 낮습니다. 이는 주로 시뮬레이션과 실제 환경 간의 큰 차이가 있는 합성 데이터나 규모와 다양성이 부족한 원격 조작 시연에 의존하기 때문입니다. 이러한 데이터 병목 현상을 해결하기 위해, 우리는 인간의 손을 기반 조작기로 활용하여 웹 데이터에 존재하는 풍부한 손재주와 확장성을 활용할 것을 제안합니다. 우리의 접근 방식은 물리적 명령 튜닝(physical instruction tuning)이라는 새로운 훈련 패러다임에 중점을 둡니다. 이는 인간 비디오로부터의 대규모 VLA 사전 훈련, 3D 추론을 위한 물리적 공간 정렬, 로봇 작업을 위한 사후 훈련 적응을 결합합니다. 또한, 우리는 행동 학습을 위한 정밀한 손 궤적을 모델링하기 위해 밀리미터 수준의 재구성 정확도를 달성하는 부분 수준 동작 토큰화 방법(part-level motion tokenization method)을 소개합니다. 제안된 패러다임을 지원하기 위해, 우리는 모션 캡처, VR, RGB 전용 비디오를 포함한 이질적 소스를 통합하여 수백만 개의 동작 기반 명령 인스턴스로 구성된 대규모 데이터셋을 구축하는 포괄적인 데이터 큐레이션 파이프라인을 추가로 개발했습니다. 우리는 Being-H0가 손 동작 생성 및 명령 수행에서 뛰어난 성능을 보이며, 모델 및 데이터 크기에 따라 잘 확장됨을 실증적으로 보여줍니다. 중요하게도, 물리적 명령 튜닝이 적용됨에 따라 실제 로봇 조작에서 Being-H0의 기대된 성능 향상을 관찰했습니다. 자세한 내용은 https://beingbeyond.github.io/Being-H0에서 확인할 수 있습니다.
+
+## 参考
+- http://arxiv.org/abs/2507.15597v1

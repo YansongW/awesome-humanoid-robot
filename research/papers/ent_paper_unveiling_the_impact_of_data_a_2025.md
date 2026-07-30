@@ -15,7 +15,7 @@ summary:
     we introduce Humanoid-Union, a large-scale dataset generated through an autonomous pipeline, comprising over 260 hours
     of diverse, high-quality humanoid robot motion data with semantic annotations derived from human motion videos. The dataset
     can be further expanded via the same pipeline. Building on this data resource
-  zh: 这篇工作先从人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+  zh: 本文针对人形机器人学习中数据规模瓶颈问题，提出Humanoid-Union大规模数据集和SCHUR可扩展学习框架。该工作通过自主管道从人类运动视频中提取260小时以上带语义标注的人形机器人运动数据，并验证了数据和模型规模对高层控制性能的提升作用。
   ko: 这篇工作先从人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
@@ -35,7 +35,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: Unveiling the Impact of
-    Data and Model Scaling on High-Level Control for Humanoid Robots.'
+    Data and Model Scaling on High-Level Control for Humanoid Robots. [2026-07-29] zh content backfilled from English abstract
+    via scripts/sinicize_english_cards.py'
 sources:
 - id: src_001
   type: website
@@ -47,18 +48,19 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Data scaling has long remained a critical bottleneck in robot learning. For humanoid robots, human videos and motion data are abundant and widely available, offering a free and large-scale data source. Besides, the semantics related to the motions enable modality alignment and high-level robot control learning. However, how to effectively mine raw video, extract robot-learnable representations, and leverage them for scalable learning remains an open problem. To address this, we introduce Humanoid-Union, a large-scale dataset generated through an autonomous pipeline, comprising over 260 hours of diverse, high-quality humanoid robot motion data with semantic annotations derived from human motion videos. The dataset can be further expanded via the same pipeline. Building on this data resource, we propose SCHUR, a scalable learning framework designed to explore the impact of large-scale data on high-level control in humanoid robots. Experimental results demonstrate that SCHUR achieves high robot motion generation quality and strong text-motion alignment under data and model scaling, with 37\% reconstruction improvement under MPJPE and 25\% alignment improvement under FID comparing with previous methods. Its effectiveness is further validated through deployment in real-world humanoid robot.
+数据规模长期制约机器人学习发展，而人类视频和运动数据为人形机器人提供了丰富且免费的大规模数据源。这些数据蕴含的运动语义有助于模态对齐和高级控制学习，但如何有效挖掘原始视频、提取机器人可学习的表征并用于可扩展学习仍是开放问题。为此，研究者构建了Humanoid-Union数据集，包含超过260小时多样化高质量人形机器人运动数据及语义标注，并可通过相同管道持续扩展。基于该数据资源提出的SCHUR框架，系统探索了大规模数据对人形机器人高层控制的影响。
 
 ## 核心内容
-Data scaling has long remained a critical bottleneck in robot learning. For humanoid robots, human videos and motion data are abundant and widely available, offering a free and large-scale data source. Besides, the semantics related to the motions enable modality alignment and high-level robot control learning. However, how to effectively mine raw video, extract robot-learnable representations, and leverage them for scalable learning remains an open problem. To address this, we introduce Humanoid-Union, a large-scale dataset generated through an autonomous pipeline, comprising over 260 hours of diverse, high-quality humanoid robot motion data with semantic annotations derived from human motion videos. The dataset can be further expanded via the same pipeline. Building on this data resource, we propose SCHUR, a scalable learning framework designed to explore the impact of large-scale data on high-level control in humanoid robots. Experimental results demonstrate that SCHUR achieves high robot motion generation quality and strong text-motion alignment under data and model scaling, with 37\% reconstruction improvement under MPJPE and 25\% alignment improvement under FID comparing with previous methods. Its effectiveness is further validated through deployment in real-world humanoid robot.
+### 核心方法
+- **Humanoid-Union数据集**：通过自主管道从人类运动视频自动生成，包含260小时以上多样化高质量人形机器人运动数据，每条数据附带语义标注。该管道支持持续扩展，为大规模学习提供基础。
+- **SCHUR框架**：可扩展学习框架，专门设计用于研究数据规模和模型规模对人形机器人高层控制的影响。框架整合了运动生成与文本-运动对齐能力。
 
-## 参考
-- Semantic Scholar search: Unveiling the Impact of Data and Model Scaling on High-Level Control for Humanoid Robots
+### 实验设置与关键结果
+- **性能提升**：与先前方法相比，SCHUR在MPJPE指标上实现37%的重建改进，在FID指标上实现25%的对齐改进。
+- **实际部署验证**：在真实人形机器人上部署SCHUR，进一步验证了其有效性。
+- **可扩展性**：实验表明，随着数据和模型规模增大，SCHUR的运动生成质量和文本-运动对齐能力持续提升，证实了规模扩展的有效性。
 
 ## Overview
-Data scaling has long remained a critical bottleneck in robot learning. For humanoid robots, human videos and motion data are abundant and widely available, offering a free and large-scale data source. Besides, the semantics related to the motions enable modality alignment and high-level robot control learning. However, how to effectively mine raw video, extract robot-learnable representations, and leverage them for scalable learning remains an open problem. To address this, we introduce Humanoid-Union, a large-scale dataset generated through an autonomous pipeline, comprising over 260 hours of diverse, high-quality humanoid robot motion data with semantic annotations derived from human motion videos. The dataset can be further expanded via the same pipeline. Building on this data resource, we propose SCHUR, a scalable learning framework designed to explore the impact of large-scale data on high-level control in humanoid robots. Experimental results demonstrate that SCHUR achieves high robot motion generation quality and strong text-motion alignment under data and model scaling, with 37\% reconstruction improvement under MPJPE and 25\% alignment improvement under FID comparing with previous methods. Its effectiveness is further validated through deployment in real-world humanoid robot.
-
-## Content
 Data scaling has long remained a critical bottleneck in robot learning. For humanoid robots, human videos and motion data are abundant and widely available, offering a free and large-scale data source. Besides, the semantics related to the motions enable modality alignment and high-level robot control learning. However, how to effectively mine raw video, extract robot-learnable representations, and leverage them for scalable learning remains an open problem. To address this, we introduce Humanoid-Union, a large-scale dataset generated through an autonomous pipeline, comprising over 260 hours of diverse, high-quality humanoid robot motion data with semantic annotations derived from human motion videos. The dataset can be further expanded via the same pipeline. Building on this data resource, we propose SCHUR, a scalable learning framework designed to explore the impact of large-scale data on high-level control in humanoid robots. Experimental results demonstrate that SCHUR achieves high robot motion generation quality and strong text-motion alignment under data and model scaling, with 37\% reconstruction improvement under MPJPE and 25\% alignment improvement under FID comparing with previous methods. Its effectiveness is further validated through deployment in real-world humanoid robot.
 
 ## 개요
@@ -66,3 +68,6 @@ Data scaling has long remained a critical bottleneck in robot learning. For huma
 
 ## 핵심 내용
 데이터 스케일링은 오랫동안 로봇 학습에서 중요한 병목 현상으로 남아 있었습니다. 휴머노이드 로봇의 경우, 인간의 비디오와 모션 데이터는 풍부하고 널리 이용 가능하여 무료이면서 대규모 데이터 소스를 제공합니다. 또한, 모션과 관련된 의미 정보는 모달리티 정렬 및 고수준 로봇 제어 학습을 가능하게 합니다. 그러나 원시 비디오를 효과적으로 마이닝하고, 로봇이 학습 가능한 표현을 추출하며, 이를 확장 가능한 학습에 활용하는 방법은 여전히 해결되지 않은 문제입니다. 이를 해결하기 위해, 우리는 자율 파이프라인을 통해 생성된 대규모 데이터셋인 Humanoid-Union을 소개합니다. 이 데이터셋은 인간 모션 비디오에서 추출된 의미 주석과 함께 260시간 이상의 다양하고 고품질의 휴머노이드 로봇 모션 데이터로 구성됩니다. 동일한 파이프라인을 통해 데이터셋을 더 확장할 수 있습니다. 이 데이터 자원을 기반으로, 우리는 휴머노이드 로봇의 고수준 제어에 대한 대규모 데이터의 영향을 탐구하도록 설계된 확장 가능한 학습 프레임워크인 SCHUR을 제안합니다. 실험 결과는 SCHUR이 데이터 및 모델 스케일링 하에서 높은 로봇 모션 생성 품질과 강력한 텍스트-모션 정렬을 달성하며, 이전 방법과 비교하여 MPJPE에서 37%의 재구성 개선 및 FID에서 25%의 정렬 개선을 보여줍니다. 그 효과성은 실제 휴머노이드 로봇에 배치하여 추가로 검증되었습니다.
+
+## 参考
+- Semantic Scholar search: Unveiling the Impact of Data and Model Scaling on High-Level Control for Humanoid Robots

@@ -11,9 +11,8 @@ summary:
   en: 'MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning (MindDrive), is
     a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology,
     Xiaomi EV.'
-  zh: 'MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning (MindDrive), is
-    a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology,
-    Xiaomi EV.'
+  zh: MindDrive 是华中科技大学与小米汽车于 2025 年提出的视觉-语言-动作（VLA）模型，用于自动驾驶。其核心贡献在于将在线强化学习引入 VLA 框架，通过将轨迹级奖励反馈至推理空间，在离散语言决策空间中进行试错学习，从而解决连续动作空间探索效率低下的问题。基于
+    Qwen-0.5B 轻量级大语言模型，MindDrive 在 Bench2Drive 基准上取得了 78.04 的驾驶分数和 55.09% 的成功率。
   ko: 'MindDrive: A Vision-Language-Action Model for Autonomous Driving via Online Reinforcement Learning (MindDrive), is
     a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology,
     Xiaomi EV.'
@@ -38,7 +37,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13636v3.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13636v3. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -54,18 +54,24 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion. Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning. However, applying online reinforcement learning to VLA models in autonomous driving is hindered by inefficient exploration in continuous action spaces. To overcome this limitation, we propose MindDrive, a VLA framework comprising a large language model (LLM) with two distinct sets of LoRA parameters. The one LLM serves as a Decision Expert for scenario reasoning and driving decision-making, while the other acts as an Action Expert that dynamically maps linguistic decisions into feasible trajectories. By feeding trajectory-level rewards back into the reasoning space, MindDrive enables trial-and-error learning over a finite set of discrete linguistic driving decisions, instead of operating directly in a continuous action space. This approach effectively balances optimal decision-making in complex scenarios, human-like driving behavior, and efficient exploration in online reinforcement learning. Using the lightweight Qwen-0.5B LLM, MindDrive achieves Driving Score (DS) of 78.04 and Success Rate (SR) of 55.09% on the challenging Bench2Drive benchmark. To the best of our knowledge, this is the first work to demonstrate the effectiveness of online reinforcement learning for the VLA model in autonomous driving.
+当前自动驾驶中的 VLA 范式主要依赖模仿学习，这会导致分布偏移和因果混淆等问题。在线强化学习虽能通过试错学习解决这些难题，但在连续动作空间中应用时面临探索效率低下的瓶颈。MindDrive 提出了一种创新框架，利用同一大语言模型的两组独立 LoRA 参数，分别作为决策专家和动作专家。决策专家负责场景推理与驾驶决策，动作专家则将语言决策动态映射为可行轨迹。通过将轨迹级奖励反馈至推理空间，模型在离散语言决策空间中进行试错学习，而非直接操作连续动作空间，从而在复杂场景中平衡了最优决策、类人驾驶行为与高效探索。
 
 ## 核心内容
-Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion. Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning. However, applying online reinforcement learning to VLA models in autonomous driving is hindered by inefficient exploration in continuous action spaces. To overcome this limitation, we propose MindDrive, a VLA framework comprising a large language model (LLM) with two distinct sets of LoRA parameters. The one LLM serves as a Decision Expert for scenario reasoning and driving decision-making, while the other acts as an Action Expert that dynamically maps linguistic decisions into feasible trajectories. By feeding trajectory-level rewards back into the reasoning space, MindDrive enables trial-and-error learning over a finite set of discrete linguistic driving decisions, instead of operating directly in a continuous action space. This approach effectively balances optimal decision-making in complex scenarios, human-like driving behavior, and efficient exploration in online reinforcement learning. Using the lightweight Qwen-0.5B LLM, MindDrive achieves Driving Score (DS) of 78.04 and Success Rate (SR) of 55.09% on the challenging Bench2Drive benchmark. To the best of our knowledge, this is the first work to demonstrate the effectiveness of online reinforcement learning for the VLA model in autonomous driving.
+### 方法架构
+- **双专家 LoRA 设计**：基于同一大语言模型（LLM）部署两组独立 LoRA 参数，分别实现决策专家与动作专家功能。
+- **决策专家**：负责场景推理与驾驶决策生成，输出离散语言决策（如“左转”、“减速”）。
+- **动作专家**：将语言决策动态映射为连续轨迹，实现从推理到执行的闭环。
+- **奖励反馈机制**：将轨迹级奖励（如碰撞惩罚、行驶效率）反馈至推理空间，使模型在离散语言决策空间中进行试错学习，避免直接探索连续动作空间。
 
-## 参考
-- http://arxiv.org/abs/2512.13636v3
+### 实验设置与关键结果
+- **基准测试**：在 Bench2Drive 基准上评估，该基准包含复杂驾驶场景。
+- **模型配置**：采用 Qwen-0.5B 轻量级 LLM，兼顾性能与计算效率。
+- **关键指标**：
+  - 驾驶分数（DS）：78.04
+  - 成功率（SR）：55.09%
+- **核心结论**：这是首个验证在线强化学习在自动驾驶 VLA 模型中有效性的工作，通过离散化决策空间解决了连续动作探索效率低下的问题。
 
 ## Overview
-Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion. Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning. However, applying online reinforcement learning to VLA models in autonomous driving is hindered by inefficient exploration in continuous action spaces. To overcome this limitation, we propose MindDrive, a VLA framework comprising a large language model (LLM) with two distinct sets of LoRA parameters. The one LLM serves as a Decision Expert for scenario reasoning and driving decision-making, while the other acts as an Action Expert that dynamically maps linguistic decisions into feasible trajectories. By feeding trajectory-level rewards back into the reasoning space, MindDrive enables trial-and-error learning over a finite set of discrete linguistic driving decisions, instead of operating directly in a continuous action space. This approach effectively balances optimal decision-making in complex scenarios, human-like driving behavior, and efficient exploration in online reinforcement learning. Using the lightweight Qwen-0.5B LLM, MindDrive achieves Driving Score (DS) of 78.04 and Success Rate (SR) of 55.09% on the challenging Bench2Drive benchmark. To the best of our knowledge, this is the first work to demonstrate the effectiveness of online reinforcement learning for the VLA model in autonomous driving.
-
-## Content
 Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily rely on Imitation Learning (IL), which introduces inherent challenges such as distribution shift and causal confusion. Online Reinforcement Learning offers a promising pathway to address these issues through trial-and-error learning. However, applying online reinforcement learning to VLA models in autonomous driving is hindered by inefficient exploration in continuous action spaces. To overcome this limitation, we propose MindDrive, a VLA framework comprising a large language model (LLM) with two distinct sets of LoRA parameters. The one LLM serves as a Decision Expert for scenario reasoning and driving decision-making, while the other acts as an Action Expert that dynamically maps linguistic decisions into feasible trajectories. By feeding trajectory-level rewards back into the reasoning space, MindDrive enables trial-and-error learning over a finite set of discrete linguistic driving decisions, instead of operating directly in a continuous action space. This approach effectively balances optimal decision-making in complex scenarios, human-like driving behavior, and efficient exploration in online reinforcement learning. Using the lightweight Qwen-0.5B LLM, MindDrive achieves Driving Score (DS) of 78.04 and Success Rate (SR) of 55.09% on the challenging Bench2Drive benchmark. To the best of our knowledge, this is the first work to demonstrate the effectiveness of online reinforcement learning for the VLA model in autonomous driving.
 
 ## 개요
@@ -73,3 +79,6 @@ Current Vision-Language-Action (VLA) paradigms in autonomous driving primarily r
 
 ## 핵심 내용
 현재 자율주행 분야의 Vision-Language-Action (VLA) 패러다임은 주로 모방 학습(IL)에 의존하며, 이는 분포 변화(distribution shift)와 인과 혼란(causal confusion)과 같은 본질적인 문제를 야기합니다. 온라인 강화 학습(Online Reinforcement Learning)은 시행착오 학습을 통해 이러한 문제를 해결할 유망한 접근법을 제공합니다. 그러나 자율주행에서 VLA 모델에 온라인 강화 학습을 적용하는 것은 연속적인 행동 공간에서의 비효율적인 탐색으로 인해 어려움을 겪습니다. 이러한 한계를 극복하기 위해, 우리는 두 개의 서로 다른 LoRA 파라미터 세트를 가진 대규모 언어 모델(LLM)로 구성된 VLA 프레임워크인 MindDrive를 제안합니다. 하나의 LLM은 시나리오 추론 및 주행 의사 결정을 위한 Decision Expert 역할을 하고, 다른 하나는 언어적 결정을 실행 가능한 궤적으로 동적으로 매핑하는 Action Expert 역할을 합니다. 궤적 수준의 보상을 추론 공간에 피드백함으로써, MindDrive는 연속적인 행동 공간에서 직접 작동하는 대신 유한한 이산적 언어 주행 결정 집합에 대해 시행착오 학습을 가능하게 합니다. 이 접근법은 복잡한 시나리오에서의 최적 의사 결정, 인간과 유사한 주행 행동, 그리고 온라인 강화 학습에서의 효율적인 탐색을 효과적으로 균형 있게 조정합니다. 경량화된 Qwen-0.5B LLM을 사용하여, MindDrive는 까다로운 Bench2Drive 벤치마크에서 주행 점수(DS) 78.04와 성공률(SR) 55.09%를 달성했습니다. 우리가 아는 한, 이는 자율주행에서 VLA 모델에 대한 온라인 강화 학습의 효과를 입증한 최초의 연구입니다.
+
+## 参考
+- http://arxiv.org/abs/2512.13636v3

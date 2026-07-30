@@ -20,18 +20,7 @@ summary:
     promptness, and passive medium coupling. This perspective clarifies why aerial manipulation is difficult, why biological
     flyers remain broader than robotic systems, and how future platforms may command forces while also shaping how the medium
     acts back on them.'
-  zh: 'arXiv:2607.04719v1 Announce Type: new Abstract: Aerial robots are increasingly moving from remote observation toward
-    physical interaction with objects, surfaces, structures, loads, and surrounding flows. This review argues that aerial
-    manipulation cannot be understood as classical manipulation simply mounted on a flying base. Because flying agents remain
-    aloft through continuous momentum and energy exchange with the surrounding medium, support, locomotion, stabilization,
-    and task-directed interaction are intrinsically coupled. Building on broad views of manipulation as intentional environmental
-    regulation through physical interaction, we propose a medium-aware interpretation of aerial manipulation in which interaction
-    may be mediated by contact, by the surrounding fluid, or by both. The review organizes biological and robotic examples
-    into a repertoire of interaction modes and a capability ladder, then develops an actuation-geometric viewpoint in which
-    redundancy induces task-equivalent fibers. Internal motion along these fibers can trade energy for active readiness, aerodynamic
-    promptness, and passive medium coupling. This perspective clarifies why aerial manipulation is difficult, why biological
-    flyers remain broader than robotic systems, and how future platforms may command forces while also shaping how the medium
-    acts back on them.'
+  zh: 本文提出空中操作不能简单视为将经典操作安装在飞行基座上，因为飞行器通过与周围介质的连续动量和能量交换保持悬停，支撑、运动、稳定和任务导向交互本质上是耦合的。作者提出一种介质感知的空中操作解释，并发展出驱动-几何视角，其中冗余产生任务等效纤维，沿这些纤维的内部运动可以交换能量以换取主动准备、气动敏捷性和被动介质耦合。
   ko: 'arXiv:2607.04719v1 Announce Type: new Abstract: Aerial robots are increasingly moving from remote observation toward
     physical interaction with objects, surfaces, structures, loads, and surrounding flows. This review argues that aerial
     manipulation cannot be understood as classical manipulation simply mounted on a flying base. Because flying agents remain
@@ -63,7 +52,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04719v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04719v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -73,18 +63,27 @@ sources:
   accessed_at: '2026-07-08'
 ---
 ## 概述
-Aerial robots are increasingly moving from remote observation toward physical interaction with objects, surfaces, structures, loads, and surrounding flows. This review argues that aerial manipulation cannot be understood as classical manipulation simply mounted on a flying base. Because flying agents remain aloft through continuous momentum and energy exchange with the surrounding medium, support, locomotion, stabilization, and task-directed interaction are intrinsically coupled. Building on broad views of manipulation as intentional environmental regulation through physical interaction, we propose a medium-aware interpretation of aerial manipulation in which interaction may be mediated by contact, by the surrounding fluid, or by both. The review organizes biological and robotic examples into a repertoire of interaction modes and a capability ladder, then develops an actuation-geometric viewpoint in which redundancy induces task-equivalent fibers. Internal motion along these fibers can trade energy for active readiness, aerodynamic promptness, and passive medium coupling. This perspective clarifies why aerial manipulation is difficult, why biological flyers remain broader than robotic systems, and how future platforms may command forces while also shaping how the medium acts back on them.
+空中机器人正从远程观测转向与物体、表面、结构、载荷和周围流场的物理交互。本文论证空中操作不能理解为经典操作简单安装在飞行基座上，因为飞行器通过与周围介质的连续动量和能量交换保持悬停，支撑、运动、稳定和任务导向交互本质上是耦合的。基于将操作视为通过物理交互进行有意环境调节的广泛观点，作者提出一种介质感知的空中操作解释，其中交互可能通过接触、周围流体或两者共同介导。该综述将生物和机器人示例组织成交互模式库和能力阶梯，然后发展出驱动-几何视角，其中冗余产生任务等效纤维，沿这些纤维的内部运动可以交换能量以换取主动准备、气动敏捷性和被动介质耦合。
 
 ## 核心内容
-Aerial robots are increasingly moving from remote observation toward physical interaction with objects, surfaces, structures, loads, and surrounding flows. This review argues that aerial manipulation cannot be understood as classical manipulation simply mounted on a flying base. Because flying agents remain aloft through continuous momentum and energy exchange with the surrounding medium, support, locomotion, stabilization, and task-directed interaction are intrinsically coupled. Building on broad views of manipulation as intentional environmental regulation through physical interaction, we propose a medium-aware interpretation of aerial manipulation in which interaction may be mediated by contact, by the surrounding fluid, or by both. The review organizes biological and robotic examples into a repertoire of interaction modes and a capability ladder, then develops an actuation-geometric viewpoint in which redundancy induces task-equivalent fibers. Internal motion along these fibers can trade energy for active readiness, aerodynamic promptness, and passive medium coupling. This perspective clarifies why aerial manipulation is difficult, why biological flyers remain broader than robotic systems, and how future platforms may command forces while also shaping how the medium acts back on them.
+### 核心论点
+- 空中操作不能视为经典操作简单安装在飞行基座上，因为飞行器通过与周围介质的连续动量和能量交换保持悬停，支撑、运动、稳定和任务导向交互本质上是耦合的。
+- 提出一种介质感知的空中操作解释，其中交互可能通过接触、周围流体或两者共同介导。
 
-## 参考
-- http://arxiv.org/abs/2607.04719v1
+### 交互模式与能力阶梯
+- 将生物和机器人示例组织成交互模式库和能力阶梯，涵盖从简单接触到复杂介质耦合的多种交互方式。
+
+### 驱动-几何视角
+- 发展出驱动-几何视角，其中冗余产生任务等效纤维。
+- 沿这些纤维的内部运动可以交换能量以换取：
+  - 主动准备（active readiness）
+  - 气动敏捷性（aerodynamic promptness）
+  - 被动介质耦合（passive medium coupling）
+
+### 结论与展望
+- 该视角阐明为什么空中操作困难，为什么生物飞行器比机器人系统更广泛，以及未来平台如何既能指挥力又能塑造介质对它们的反作用。
 
 ## Overview
-Aerial robots are increasingly moving from remote observation toward physical interaction with objects, surfaces, structures, loads, and surrounding flows. This review argues that aerial manipulation cannot be understood as classical manipulation simply mounted on a flying base. Because flying agents remain aloft through continuous momentum and energy exchange with the surrounding medium, support, locomotion, stabilization, and task-directed interaction are intrinsically coupled. Building on broad views of manipulation as intentional environmental regulation through physical interaction, we propose a medium-aware interpretation of aerial manipulation in which interaction may be mediated by contact, by the surrounding fluid, or by both. The review organizes biological and robotic examples into a repertoire of interaction modes and a capability ladder, then develops an actuation-geometric viewpoint in which redundancy induces task-equivalent fibers. Internal motion along these fibers can trade energy for active readiness, aerodynamic promptness, and passive medium coupling. This perspective clarifies why aerial manipulation is difficult, why biological flyers remain broader than robotic systems, and how future platforms may command forces while also shaping how the medium acts back on them.
-
-## Content
 Aerial robots are increasingly moving from remote observation toward physical interaction with objects, surfaces, structures, loads, and surrounding flows. This review argues that aerial manipulation cannot be understood as classical manipulation simply mounted on a flying base. Because flying agents remain aloft through continuous momentum and energy exchange with the surrounding medium, support, locomotion, stabilization, and task-directed interaction are intrinsically coupled. Building on broad views of manipulation as intentional environmental regulation through physical interaction, we propose a medium-aware interpretation of aerial manipulation in which interaction may be mediated by contact, by the surrounding fluid, or by both. The review organizes biological and robotic examples into a repertoire of interaction modes and a capability ladder, then develops an actuation-geometric viewpoint in which redundancy induces task-equivalent fibers. Internal motion along these fibers can trade energy for active readiness, aerodynamic promptness, and passive medium coupling. This perspective clarifies why aerial manipulation is difficult, why biological flyers remain broader than robotic systems, and how future platforms may command forces while also shaping how the medium acts back on them.
 
 ## 개요
@@ -92,3 +91,6 @@ Aerial robots are increasingly moving from remote observation toward physical in
 
 ## 핵심 내용
 공중 로봇은 점차 원격 관찰에서 물체, 표면, 구조물, 하중 및 주변 유체와의 물리적 상호작용으로 나아가고 있습니다. 본 리뷰는 공중 조작이 단순히 비행 기체에 장착된 고전적 조작으로 이해될 수 없다고 주장합니다. 비행체는 주변 매체와의 지속적인 운동량 및 에너지 교환을 통해 공중에 머무르기 때문에, 지지, 이동, 안정화 및 작업 지향적 상호작용이 본질적으로 결합되어 있습니다. 조작을 물리적 상호작용을 통한 의도적 환경 조절이라는 광범위한 관점에 기반하여, 우리는 접촉, 주변 유체 또는 이 둘 모두에 의해 매개될 수 있는 상호작용을 포함하는 매체 인식 공중 조작 해석을 제안합니다. 본 리뷰는 생물학적 및 로봇 공학적 사례를 상호작용 모드 레퍼토리와 능력 사다리로 체계화한 후, 중복성이 작업 등가 섬유를 유도하는 작동-기하학적 관점을 발전시킵니다. 이러한 섬유를 따른 내부 운동은 에너지를 능동적 준비성, 공기역학적 신속성 및 수동적 매체 결합과 교환할 수 있습니다. 이 관점은 공중 조작이 어려운 이유, 생물학적 비행체가 로봇 시스템보다 더 광범위한 이유, 그리고 미래 플랫폼이 힘을 명령하면서도 매체가 그들에게 작용하는 방식을 형성할 수 있는 방법을 명확히 합니다.
+
+## 参考
+- http://arxiv.org/abs/2607.04719v1

@@ -11,11 +11,7 @@ summary:
   en: Proposes a duality-based nonsmooth control barrier function framework that reformulates minimum-distance constraints
     between polytopes into a convex quadratic program, enabling real-time safety-critical obstacle avoidance for control-affine
     nonlinear systems.
-  zh: Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation
-    in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem.
-    To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier
-    functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem.
-    A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian
+  zh: 本文提出一种基于对偶的非光滑控制屏障函数框架，将多面体间最小距离约束重构为凸二次规划问题，实现控制仿射非线性系统的实时安全关键避障。该方法由团队提出，核心贡献在于将传统离线优化问题转化为可实时求解的QP形式，并通过L形（沙发形）机器人在走廊环境中的实验验证了非保守机动能力。
   ko: 제어 아핀 비선형 시스템을 위해 다면체 간 최소 거리 제약을 볼록 이차 계획법으로 재구성하는 이중성 기반 비연속 제어 장벽 함수 프레임워크를 제안하여 실시간 안전 필수 장애물 회피를 가능하게 함.
 domains:
 - 07_ai_models_algorithms
@@ -44,7 +40,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.08360v4.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.08360v4. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -55,20 +52,29 @@ sources:
 theoretical_depth:
 - method
 ---
-
 ## 概述
-Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem. To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem. A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian function for the dual form is applied to construct a control barrier function. We validate the obstacle avoidance with the proposed dual formulation for L-shaped (sofa-shaped) controlled robot in a corridor environment. We demonstrate real-time tight obstacle avoidance with non-conservative maneuvers on a moving sofa (piano) problem with nonlinear dynamics.
+针对多面体间避障这一导航难题，传统方法仅能进行离线优化。本文创新性地引入对偶优化问题表示多面体间最小距离，并利用对偶形式的拉格朗日函数构建控制屏障函数，从而将避障约束转化为可实时求解的凸二次规划。该方法在具有非线性动力学的移动沙发（钢琴）问题上实现了紧贴障碍物的非保守机动，并在走廊环境中对L形受控机器人进行了验证。
 
 ## 核心内容
-Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem. To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem. A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian function for the dual form is applied to construct a control barrier function. We validate the obstacle avoidance with the proposed dual formulation for L-shaped (sofa-shaped) controlled robot in a corridor environment. We demonstrate real-time tight obstacle avoidance with non-conservative maneuvers on a moving sofa (piano) problem with nonlinear dynamics.
+### 方法架构
+- 提出基于对偶的非光滑控制屏障函数（CBF）框架，将多面体间最小距离约束转化为凸二次规划（QP）问题
+- 通过引入对偶优化问题表示多面体间最小距离，利用对偶形式的拉格朗日函数构造CBF
+- 将传统离线优化问题转化为实时可解的QP形式，适用于控制仿射非线性系统
 
-## 参考
-- http://arxiv.org/abs/2107.08360v4
+### 实验设置
+- 验证场景：走廊环境中的L形（沙发形）受控机器人
+- 测试任务：移动沙发（钢琴）问题，涉及非线性动力学
+- 关键指标：实时性、非保守机动能力
+
+### 关键结果
+- 成功实现实时紧贴障碍物的避障控制
+- 在非线性动力学条件下完成非保守机动，避免传统方法的保守性
+- 通过QP求解器实现实时优化，满足安全关键控制需求
+
+### 结论
+该对偶框架有效解决了多面体间实时避障的优化难题，为导航系统提供了可在线部署的安全保障方案。
 
 ## Overview
-Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem. To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem. A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian function for the dual form is applied to construct a control barrier function. We validate the obstacle avoidance with the proposed dual formulation for L-shaped (sofa-shaped) controlled robot in a corridor environment. We demonstrate real-time tight obstacle avoidance with non-conservative maneuvers on a moving sofa (piano) problem with nonlinear dynamics.
-
-## Content
 Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem. To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem. A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian function for the dual form is applied to construct a control barrier function. We validate the obstacle avoidance with the proposed dual formulation for L-shaped (sofa-shaped) controlled robot in a corridor environment. We demonstrate real-time tight obstacle avoidance with non-conservative maneuvers on a moving sofa (piano) problem with nonlinear dynamics.
 
 ## 개요
@@ -76,3 +82,6 @@ Developing controllers for obstacle avoidance between polytopes is a challenging
 
 ## 핵심 내용
 폴리토프 간 장애물 회피를 위한 제어기 개발은 좁은 공간에서의 내비게이션을 위해 도전적이면서도 필수적인 문제입니다. 전통적인 접근 방식은 장애물 회피 문제를 오프라인 최적화 문제로만 공식화할 수 있습니다. 이러한 도전 과제를 해결하기 위해, 우리는 폴리토프 간 장애물 회피를 위한 비평활 제어 장벽 함수를 사용한 이중성 기반의 안전 중요 최적 제어를 제안하며, 이는 QP 기반 최적화 문제로 실시간으로 해결할 수 있습니다. 폴리토프 간 최소 거리를 나타내기 위해 이중 최적화 문제를 도입하고, 이중 형태에 대한 라그랑지안 함수를 적용하여 제어 장벽 함수를 구성합니다. 우리는 복도 환경에서 L자형(소파형) 제어 로봇에 대해 제안된 이중 공식을 사용하여 장애물 회피를 검증합니다. 비선형 동역학을 가진 움직이는 소파(피아노) 문제에서 비보수적 기동을 통한 실시간 밀착 장애물 회피를 시연합니다.
+
+## 参考
+- http://arxiv.org/abs/2107.08360v4

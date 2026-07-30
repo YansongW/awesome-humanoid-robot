@@ -60,58 +60,8 @@ summary:
     with repetitive lifting, Doc Ock–style. Legend has it there’s a fro-yo robot in the cafeteria. [ LANL ] Here are a couple
     of talks from the recent Humanoids Summit in Japan, from Ali Agha of Field AI as well as Hiroshi Ishiguro. [ Humanoids
     Summit ]'
-  zh: 'Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
-    We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
-    RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 :
-    18–19 August 2026, SAN FRANCISCO IROS 2026 : 27 September–1 October 2026, PITTSBURGH Enjoy today’s videos! NASA is considering
-    a mission concept for an advanced, nuclear-powered rover to be deployed to the Moon’s South Pole as part of the agency’s
-    Moon Base plans. The PROMISE (Polar Rover for Observation, Mapping, and In-Situ Exploration) mission concept relies on
-    the Curiosity Mars rover mission’s testbed rover. Some elements of the Perseverance Mars testbed rover shown in this video
-    could be used as well. As exact duplicates of Curiosity and Perseverance, the testbed rovers are equipped with flight-proven
-    engineering systems capable of carrying technology as well as science instruments that would advance Moon Base efforts.
-    A Mars rover for the Moon? That’s some OPTIMISM right there. [ JPL ] This is the absolute best thing since Festo’s AirPenguin
-    . The project explores soft, lightweight robots that can gently float around people in indoor environments and invite
-    playful, affectionate, and everyday interactions. Unlike conventional drones, our robot is designed to be quiet, soft,
-    touch-safe, and socially approachable. Through this work, we ask what future indoor companion robots might feel like if
-    they were not rigid machines, but gentle floating beings that share space with us. [ Paper ] Thanks, Mingyang! Today,
-    we’re launching our home robot, Isaac 1. Deliveries will begin this fall. US $500 per month, with some basic task autonomy
-    plus teleoperation. [ Weave Robotics ] A couple things from this new Figure video—thing one is that the cart pulling is
-    a good illustration of how clumsy humanoid robots still are at basic tasks relative to humans. Thing two is that there
-    are absolutey no humans anywhere near these robots. You can see one guy at 0:19, which I can only assume is an accident,
-    because these robots are not safe to be around from an industrial safety perspective. [ Figure ] Our very own Kohava Mendelsohn
-    met some robots at ICRA in Vienna, and only one of them was murderous. [ ICRA 2026 ] Welcome to Robot Park, where we’re
-    building the future with Apollo 2. Robot Park is where Apollo learns today, getting the experience needed to make a difference
-    tomorrow. Today we’re announcing Robot Park, our nearly 90,000-square-foot facility where Apollo 2 is collecting real-world
-    training data needed to advance autonomous humanoid robots. [ Apptronik ] UBTech Robotics, the world’s first publicly
-    traded humanoid robot-maker, has launched a humanlike robot that features lifelike silicone skin and “emotional AI”, as
-    Chinese tech firms increasingly transition robots from the factory floor to the family living room. [ SCMP ] Spherephones
-    are redefining how we experience sound. Created at Georgia Tech, this wearable uses spatial audio to alert users to movement
-    from every direction—including behind and below. Built for safer human-robot collaboration, the technology is expanding
-    into gaming and accessibility applications. See how music is becoming a new language for awareness and interaction. [
-    Georgia Tech ] Humanoid robots are meant to carry out long-horizon autonomous missions in a world built for humans. This
-    is hard. These missions consist of many steps, each of which requires them to perceive, navigate, and interact with the
-    environment. This is exactly Flexion’s goal: building the general-purpose intelligence that turns any robot into a useful
-    helper. [ Flexion ] We’re introducing KinetIQ Ascend — our reinforcement learning approach designed to reach 99.9% manipulation
-    reliability at human speed and beyond. [ Humanoid ] Dr. Sebastian “Basti” Scherer has worked in field robotics since the
-    first DARPA Grand Challenge in 2004. He runs the AirLab at Carnegie Mellon’s Robotics Institute and is the Director of
-    Safe Embodied AI at FieldAI. While much of the industry is focused on local skills like tabletop manipulation, Dr. Scherer
-    sees the greatest value in solving dirty, dull, and dangerous tasks that require operating in uncertain environments where
-    the robot needs to “just work.” When robots “just work” they become less like robots and more like tools. “That’s the
-    big challenge that we have to overcome,” he says, “and that’s the challenge that FieldAI is really primed to solve.” [
-    Field AI ] Look, I really appreciate how valuable robots like ElliQ can be, and robots that do good work and offer a financial
-    benefit are incredibly important, especially in the context of family care. But in my opinion, you really shouldn’t suggest
-    that a robot with FaceTime or whatever is an equal replacement for in-person human companionship, nor should you suggest
-    that AI can replace a human wellness coach. If you can’t afford those things, then sure, ElliQ can offer some of those
-    capabilities in a very limited way, but that’s all. [ ElliQ ] Very cool moves! Now get a job! [ DEEP Robotics ] Drawing
-    inspiration from restaurant waiters in Morocco and Turkey, among other places, we equip a robot with a hanging tray to
-    transport objects from one location to another without dropping them or spilling their contents. We incorporate this approach
-    into an interactive robot waiter demonstration, which uses computer vision and visual servoing to steer toward a person
-    with a raised hand to serve them. [ Paper ] If you’re going to make robots wear skirts or shorts or pants, you have to
-    give them butts, or it’s just not going to work. That is all. [ TechShare ] via [ Kazumichi Moriyama ] It’s Los Alamos,
-    so of course we have robots. Some work inside gloveboxes, while others probe unexploded ordnance in the field and aid
-    with repetitive lifting, Doc Ock–style. Legend has it there’s a fro-yo robot in the cafeteria. [ LANL ] Here are a couple
-    of talks from the recent Humanoids Summit in Japan, from Ali Agha of Field AI as well as Hiroshi Ishiguro. [ Humanoids
-    Summit ]'
+  zh: 本周的Video Friday由IEEE Spectrum机器人团队精选，汇集了多个前沿机器人项目。核心内容包括NASA考虑将火星车技术用于月球南极核动力探测车PROMISE，以及软体漂浮机器人、家用机器人Isaac 1、人形机器人Apollo
+    2训练设施等多项进展。此外还涉及情感AI机器人、空间音频可穿戴设备、强化学习操控技术KinetIQ Ascend等。
   ko: 'Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
     We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
     RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 :
@@ -189,6 +139,7 @@ verification:
   reviewed_at: '2026-07-15'
   confidence: medium
   notes: Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/video-friday-nasa-lunar-rover.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: website
@@ -198,13 +149,41 @@ sources:
   accessed_at: '2026-07-06'
 ---
 ## 概述
-Your weekly selection of awesome robot videos Video Friday is your weekly selection of awesome robotics videos , collected by your friends at IEEE Spectrum robotics.
+本期Video Friday涵盖从太空探索到家庭陪伴的广泛机器人应用。NASA的PROMISE概念计划利用Curiosity和Perseverance火星车的测试平台，为月球基地开发核动力探测车。软体机器人项目探索了类似Festo AirPenguin的轻量化漂浮机器人，旨在实现安全、安静的室内人机互动。Weave Robotics推出了月租500美元的家用机器人Isaac 1，具备基础自主任务和远程操作能力。Apptronik宣布了占地近9万平方英尺的Robot Park，用于Apollo 2人形机器人的真实世界训练数据收集。UBTech Robotics发布了配备仿生硅胶皮肤和情感AI的人形机器人，标志着中国机器人从工厂向家庭场景的转型。Georgia Tech的Spherephone利用空间音频增强人机协作安全性。Flexion致力于构建通用智能，使机器人能执行长时域自主任务。Humanoid公司推出了强化学习方法KinetIQ Ascend，目标达到99.9%的操控可靠性。FieldAI的Sebastian Scherer博士强调解决脏、累、危险任务的价值。此外还有机器人服务员、Los Alamos实验室的多种机器人应用等。
 
 ## 核心内容
-Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO IROS 2026 : 27 September–1 October 2026, PITTSBURGH Enjoy today’s videos! NASA is considering a mission concept for an advanced, nuclear-powered rover to be deployed to the Moon’s South Pole as part of the agency’s Moon Base plans. The PROMISE (Polar Rover for Observation, Mapping, and In-Situ Exploration) mission concept relies on the Curiosity Mars rover mission’s testbed rover. Some elements of the Perseverance Mars testbed rover shown in this video could be used as well. As exact duplicates of Curiosity and Perseverance, the testbed rovers are equipped with flight-proven engineering systems capable of carrying technology as well as science instruments that would advance Moon Base efforts. A Mars rover for the Moon? That’s some OPTIMISM right there. [ JPL ] This is the absolute best thing since Festo’s AirPenguin . The project explores soft, lightweight robots that can gently float around people in indoor environments and invite playful, affectionate, and everyday interactions. Unlike conventional drones, our robot is designed to be quiet, soft, touch-safe, and socially approachable. Through this work, we ask what future indoor companion robots might feel like if they were not rigid machines, but gentle floating beings that share space with us. [ Paper ] Thanks, Mingyang! Today, we’re launching our home robot, Isaac 1. Deliveries will begin this fall. US $500 per month, with some basic task autonomy plus teleoperation. [ Weave Robotics ] A couple things from this new Figure video—thing one is that the cart pulling is a good illustration of how clumsy humanoid robots still are at basic tasks relative to humans. Thing two is that there are absolutey no humans anywhere near these robots. You can see one guy at 0:19, which I can only assume is an accident, because these robots are not safe to be around from an industrial safety perspective. [ Figure ] Our very own Kohava Mendelsohn met some robots at ICRA in Vienna, and only one of them was murderous. [ ICRA 2026 ] Welcome to Robot Park, where we’re building the future with Apollo 2. Robot Park is where Apollo learns today, getting the experience needed to make a difference tomorrow. Today we’re announcing Robot Park, our nearly 90,000-square-foot facility where Apollo 2 is collecting real-world training data needed to advance autonomous humanoid robots. [ Apptronik ] UBTech Robotics, the world’s first publicly traded humanoid robot-maker, has launched a humanlike robot that features lifelike silicone skin and “emotional AI”, as Chinese tech firms increasingly transition robots from the factory floor to the family living room. [ SCMP ] Spherephones are redefining how we experience sound. Created at Georgia Tech, this wearable uses spatial audio to alert users to movement from every direction—including behind and below. Built for safer human-robot collaboration, the technology is expanding into gaming and accessibility applications. See how music is becoming a new language for awareness and interaction. [ Georgia Tech ] Humanoid robots are meant to carry out long-horizon autonomous missions in a world built for humans. This is hard. These missions consist of many steps, each of which requires them to perceive, navigate, and interact with the environment. This is exactly Flexion’s goal: building the general-purpose intelligence that turns any robot into a useful helper. [ Flexion ] We’re introducing KinetIQ Ascend — our reinforcement learning approach designed to reach 99.9% manipulation reliability at human speed and beyond. [ Humanoid ] Dr. Sebastian “Basti” Scherer has worked in field robotics since the first DARPA Grand Challenge in 2004. He runs the AirLab at Carnegie Mellon’s Robotics Institute and is the Director of Safe Embodied AI at FieldAI. While much of the industry is focused on local skills like tabletop manipulation, Dr. Scherer sees the greatest value in solving dirty, dull, and dangerous tasks that require operating in uncertain environments where the robot needs to “just work.” When robots “just work” they become less like robots and more like tools. “That’s the big challenge that we have to overcome,” he says, “and that’s the challenge that FieldAI is really primed to solve.” [ Field AI ] Look, I really appreciate how valuable robots like ElliQ can be, and robots that do good work and offer a financial benefit are incredibly important, especially in the context of family care. But in my opinion, you really shouldn’t suggest that a robot with FaceTime or whatever is an equal replacement for in-person human companionship, nor should you suggest that AI can replace a human wellness coach. If you can’t afford those things, then sure, ElliQ can offer some of those capabilities in a very limited way, but that’s all. [ ElliQ ] Very cool moves! Now get a job! [ DEEP Robotics ] Drawing inspiration from restaurant waiters in Morocco and Turkey, among other places, we equip a robot with a hanging tray to transport objects from one location to another without dropping them or spilling their contents. We incorporate this approach into an interactive robot waiter demonstration, which uses computer vision and visual servoing to steer toward a person with a raised hand to serve them. [ Paper ] If you’re going to make robots wear skirts or shorts or pants, you have to give them butts, or it’s just not going to work. That is all. [ TechShare ] via [ Kazumichi Moriyama ] It’s Los Alamos, so of course we have robots. Some work inside gloveboxes, while others probe unexploded ordnance in the field and aid with repetitive lifting, Doc Ock–style. Legend has it there’s a fro-yo robot in the cafeteria. [ LANL ] Here are a couple of talks from the recent Humanoids Summit in Japan, from Ali Agha of Field AI as well as Hiroshi Ishiguro. [ Humanoids Summit ] Your weekly selection of awesome robot videos Video Friday is your weekly selection of awesome robotics videos , collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
+### 本周亮点
 
-## 参考
-- https://spectrum.ieee.org/video-friday-nasa-lunar-rover
+- **NASA月球探测车概念**：PROMISE（Polar Rover for Observation, Mapping, and In-Situ Exploration）任务概念计划使用Curiosity火星车的测试平台，并可能借鉴Perseverance火星车测试平台的元素。这些测试车是真实火星车的精确复制品，配备经过飞行验证的工程系统，可搭载技术和科学仪器以推进月球基地建设。
+
+- **软体漂浮机器人**：该项目探索可在室内环境中轻柔漂浮的软体轻量化机器人，设计目标是安静、柔软、触感安全且具有社交亲和力，不同于传统无人机，旨在引发有趣、亲密和日常的互动。
+
+- **家用机器人Isaac 1**：Weave Robotics宣布推出月租500美元的家用机器人，具备基础任务自主性和远程操作功能，将于今年秋季开始交付。
+
+- **Figure人形机器人视频分析**：视频展示了人形机器人在基本任务（如拉车）上仍显笨拙，且操作环境中无人类在场（0:19处出现一人被认为是意外），从工业安全角度看这些机器人不适合与人近距离共处。
+
+- **Apollo 2训练设施**：Apptronik宣布建立近9万平方英尺的Robot Park，用于Apollo 2人形机器人收集真实世界训练数据，以推进自主人形机器人技术。
+
+- **UBTech情感AI人形机器人**：作为全球首家上市的人形机器人制造商，UBTech推出了配备仿生硅胶皮肤和情感AI的人形机器人，反映中国科技公司正将机器人从工厂转向家庭场景。
+
+- **Spherephone空间音频可穿戴**：Georgia Tech开发的这款可穿戴设备利用空间音频，从包括后方和下方的所有方向提醒用户移动，最初为更安全的人机协作设计，现扩展至游戏和无障碍应用。
+
+- **Flexion通用智能**：目标是为长时域自主任务构建通用智能，使机器人能感知、导航并与环境交互，将任何机器人转变为有用的助手。
+
+- **KinetIQ Ascend强化学习**：Humanoid公司推出的强化学习方法，旨在达到99.9%的操控可靠性，速度达到或超过人类水平。
+
+- **FieldAI的Sebastian Scherer博士观点**：他认为行业过度关注桌面操作等局部技能，而最大价值在于解决脏、累、危险任务，使机器人在不确定环境中“正常工作”，从而更像工具而非机器人。
+
+- **ElliQ机器人评论**：虽然认可ElliQ等机器人在家庭护理中的价值和经济效益，但强调不应将其视为人类陪伴或AI健康教练的同等替代品，只能提供有限功能。
+
+- **机器人服务员**：受摩洛哥和土耳其餐厅服务员启发，机器人配备悬挂托盘，通过计算机视觉和视觉伺服向举手的人移动并服务。
+
+- **Los Alamos国家实验室机器人**：包括手套箱内操作、野外未爆弹药探测、重复性举升辅助（类似Doc Ock风格），传说还有冻酸奶机器人。
+
+## Overview
+Your weekly selection of awesome robot videos Video Friday is your weekly selection of awesome robotics videos , collected by your friends at IEEE Spectrum robotics.
+
+Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO IROS 2026 : 27 September–1 October 2026, PITTSBURGH Enjoy today’s videos! NASA is considering a mission concept for an advanced, nuclear-powered rover to be deployed to the Moon’s South Pole as part of the agency’s Moon Base plans. The PROMISE (Polar Rover for Observation, Mapping, and In-Situ Exploration) mission concept relies on the Curiosity Mars rover mission’s testbed rover. Some elements of the Perseverance Mars testbed rover shown in this video could be used as well. As exact duplicates of Curiosity and Perseverance, the testbed rovers are equipped with flight-proven engineering systems capable of carrying technology as well as science instruments that would advance Moon Base efforts. A Mars rover for the Moon? That’s some OPTIMISM right there. [ JPL ] This is the absolute best thing since Festo’s AirPenguin . The project explores soft, lightweight robots that can gently float around people in indoor environments and invite playful, affectionate, and everyday interactions. Unlike conventional drones, our robot is designed to be quiet, soft, touch-safe, and socially approachable. Through this work, we ask what future indoor companion robots might feel like if they were not rigid machines, but gentle floating beings that share space with us. [ Paper ] Thanks, Mingyang! Today, we’re launching our home robot, Isaac 1. Deliveries will begin this fall. US $500 per month, with some basic task autonomy plus teleoperation. [ Weave Robotics ] A couple things from this new Figure video—thing one is that the cart pulling is a good illustration of how clumsy humanoid robots still are at basic tasks relative to humans. Thing two is that there are absolutey no humans anywhere near these robots. You can see one guy at 0:19, which I can only assume is an accident, because these robots are not safe to be around from an industrial safety perspective. [ Figure ] Our very own Kohava Mendelsohn met some robots at ICRA in Vienna, and only one of them was murderous. [ ICRA 2026 ] Welcome to Robot Park, where we’re building the future with Apollo 2. Robot Park is where Apollo learns today, getting the experience needed to make a difference tomorrow. Today we’re announcing Robot Park, our nearly 90,000-square-foot facility where Apollo 2 is collecting real-world training data needed to advance autonomous humanoid robots. [ Apptronik ] UBTech Robotics, the world’s first publicly traded humanoid robot-maker, has launched a humanlike robot that features lifelike silicone skin and “emotional AI”, as Chinese tech firms increasingly transition robots from the factory floor to the family living room. [ SCMP ] Spherephones are redefining how we experience sound. Created at Georgia Tech, this wearable uses spatial audio to alert users to movement from every direction—including behind and below. Built for safer human-robot collaboration, the technology is expanding into gaming and accessibility applications. See how music is becoming a new language for awareness and interaction. [ Georgia Tech ] Humanoid robots are meant to carry out long-horizon autonomous missions in a world built for humans. This is hard. These missions consist of many steps, each of which requires them to perceive, navigate, and interact with the environment. This is exactly Flexion’s goal: building the general-purpose intelligence that turns any robot into a useful helper. [ Flexion ] We’re introducing KinetIQ Ascend — our reinforcement learning approach designed to reach 99.9% manipulation reliability at human speed and beyond. [ Humanoid ] Dr. Sebastian “Basti” Scherer has worked in field robotics since the first DARPA Grand Challenge in 2004. He runs the AirLab at Carnegie Mellon’s Robotics Institute and is the Director of Safe Embodied AI at FieldAI. While much of the industry is focused on local skills like tabletop manipulation, Dr. Scherer sees the greatest value in solving dirty, dull, and dangerous tasks that require operating in uncertain environments where the robot needs to “just work.” When robots “just work” they become less like robots and more like tools. “That’s the big challenge that we have to overcome,” he says, “and that’s the challenge that FieldAI is really primed to solve.” [ Field AI ] Look, I really appreciate how valuable robots like ElliQ can be, and robots that do good work and offer a financial benefit are incredibly important, especially in the context of family care. But in my opinion, you really shouldn’t suggest that a robot with FaceTime or whatever is an equal replacement for in-person human companionship, nor should you suggest that AI can replace a human wellness coach. If you can’t afford those things, then sure, ElliQ can offer some of those capabilities in a very limited way, but that’s all. [ ElliQ ] Very cool moves! Now get a job! [ DEEP Robotics ] Drawing inspiration from restaurant waiters in Morocco and Turkey, among other places, we equip a robot with a hanging tray to transport objects from one location to another without dropping them or spilling their contents. We incorporate this approach into an interactive robot waiter demonstration, which uses computer vision and visual servoing to steer toward a person with a raised hand to serve them. [ Paper ] If you’re going to make robots wear skirts or shorts or pants, you have to give them butts, or it’s just not going to work. That is all. [ TechShare ] via [ Kazumichi Moriyama ] It’s Los Alamos, so of course we have robots. Some work inside gloveboxes, while others probe unexploded ordnance in the field and aid with repetitive lifting, Doc Ock–style. Legend has it there’s a fro-yo robot in the cafeteria. [ LANL ] Here are a couple of talks from the recent Humanoids Summit in Japan, from Ali Agha of Field AI as well as Hiroshi Ishiguro. [ Humanoids Summit ] Your weekly selection of awesome robot videos Video Friday is your weekly selection of awesome robotics videos , collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
 
 ## Overview
 Your weekly selection of awesome robot videos. Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
@@ -302,3 +281,6 @@ Sebastian "Basti" Scherer 박사는 2004년 첫 DARPA Grand Challenge 이후로 
 다음은 최근 일본에서 열린 Humanoids Summit의 강연 두 개입니다. Field AI의 Ali Agha와 Hiroshi Ishiguro의 강연입니다. [Humanoids Summit](https://humanoidssummit.com)
 
 당신의 주간 멋진 로봇 영상 모음입니다. Video Friday는 IEEE Spectrum 로보틱스 팀이 수집한 멋진 로봇 영상들의 주간 선정입니다. 또한 앞으로 몇 달간의 로봇 관련 행사 일정을 주간 달력으로 게시합니다. 행사 포함을 원하시면 저희에게 보내주세요.
+
+## 参考
+- https://spectrum.ieee.org/video-friday-nasa-lunar-rover

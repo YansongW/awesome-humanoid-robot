@@ -10,8 +10,7 @@ names:
 summary:
   en: 'Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Shanghai Jiao Tong University.'
-  zh: 'Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by Shanghai Jiao Tong University.'
+  zh: Dejavu 是上海交通大学于 2025 年提出的一种面向机器人操作的大型视觉-语言-动作模型。其核心贡献在于提出了一种部署后学习框架，通过经验反馈网络（EFN）让冻结的 VLA 策略能够利用检索到的历史执行记忆来提升任务表现。
   ko: 'Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Shanghai Jiao Tong University.'
 domains:
@@ -35,7 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10181v3.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10181v3. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -45,18 +45,23 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Embodied agents face a fundamental limitation: once deployed in real-world environments, they cannot easily acquire new knowledge to improve task performance. In this paper, we propose Dejavu, a general post-deployment learning framework that augments a frozen Vision-Language-Action (VLA) policy with retrieved execution memories through an Experience Feedback Network (EFN). EFN identifies contextually relevant prior action experiences and conditions action prediction on the retrieved guidance. We train EFN with reinforcement learning and semantic similarity rewards, encouraging the predicted actions to align with past behaviors under the current observation. During deployment, EFN continually expands its memory with new trajectories, enabling the agent to exhibit ``learning from experience.'' Experiments across diverse embodied tasks show that EFN improves adaptability, robustness, and success rates over frozen baselines. Our Project Page is https://dejavu2025.github.io/.
+Dejavu 旨在解决具身智能体在真实环境中部署后难以获取新知识以改进性能的根本限制。该框架通过一个经验反馈网络（EFN）来增强冻结的视觉-语言-动作（VLA）策略，EFN 能够检索与当前上下文相关的过往动作经验，并基于这些检索到的指导来调节动作预测。EFN 通过强化学习和语义相似度奖励进行训练，鼓励预测动作与当前观测下的历史行为对齐。在部署过程中，EFN 会持续用新轨迹扩充其记忆库，使智能体能够展现“从经验中学习”的能力。
 
 ## 核心内容
-Embodied agents face a fundamental limitation: once deployed in real-world environments, they cannot easily acquire new knowledge to improve task performance. In this paper, we propose Dejavu, a general post-deployment learning framework that augments a frozen Vision-Language-Action (VLA) policy with retrieved execution memories through an Experience Feedback Network (EFN). EFN identifies contextually relevant prior action experiences and conditions action prediction on the retrieved guidance. We train EFN with reinforcement learning and semantic similarity rewards, encouraging the predicted actions to align with past behaviors under the current observation. During deployment, EFN continually expands its memory with new trajectories, enabling the agent to exhibit ``learning from experience.'' Experiments across diverse embodied tasks show that EFN improves adaptability, robustness, and success rates over frozen baselines. Our Project Page is https://dejavu2025.github.io/.
+### 方法概述
+Dejavu 提出了一种通用的部署后学习框架，其核心组件是经验反馈网络（EFN）。该网络在冻结的 VLA 策略基础上工作，通过检索与当前观测上下文相关的历史执行记忆来辅助动作预测。
 
-## 参考
-- http://arxiv.org/abs/2510.10181v3
+### 架构细节
+- **经验反馈网络（EFN）**：负责从记忆库中检索与当前观测语义相似的历史动作经验，并将这些检索到的指导信息作为条件输入到动作预测过程中。
+- **训练机制**：EFN 采用强化学习进行训练，奖励函数基于语义相似度。该机制鼓励模型预测的动作与当前观测下过去成功的行为模式保持一致。
+- **记忆扩展**：在部署阶段，EFN 会持续将新执行的任务轨迹添加到记忆库中，实现记忆的动态扩充，从而让智能体能够不断“从经验中学习”。
+
+### 实验设置与结果
+- **任务范围**：实验覆盖了多种具身操作任务，用于评估框架的适应性、鲁棒性和成功率。
+- **关键发现**：与冻结的基线模型相比，EFN 在各项指标上均表现出显著提升。具体而言，EFN 增强了模型对未知环境的适应性，提高了面对干扰时的鲁棒性，并取得了更高的任务成功率。
+- **项目页面**：更多细节可访问 https://dejavu2025.github.io/。
 
 ## Overview
-Embodied agents face a fundamental limitation: once deployed in real-world environments, they cannot easily acquire new knowledge to improve task performance. In this paper, we propose Dejavu, a general post-deployment learning framework that augments a frozen Vision-Language-Action (VLA) policy with retrieved execution memories through an Experience Feedback Network (EFN). EFN identifies contextually relevant prior action experiences and conditions action prediction on the retrieved guidance. We train EFN with reinforcement learning and semantic similarity rewards, encouraging the predicted actions to align with past behaviors under the current observation. During deployment, EFN continually expands its memory with new trajectories, enabling the agent to exhibit ``learning from experience.'' Experiments across diverse embodied tasks show that EFN improves adaptability, robustness, and success rates over frozen baselines. Our Project Page is https://dejavu2025.github.io/.
-
-## Content
 Embodied agents face a fundamental limitation: once deployed in real-world environments, they cannot easily acquire new knowledge to improve task performance. In this paper, we propose Dejavu, a general post-deployment learning framework that augments a frozen Vision-Language-Action (VLA) policy with retrieved execution memories through an Experience Feedback Network (EFN). EFN identifies contextually relevant prior action experiences and conditions action prediction on the retrieved guidance. We train EFN with reinforcement learning and semantic similarity rewards, encouraging the predicted actions to align with past behaviors under the current observation. During deployment, EFN continually expands its memory with new trajectories, enabling the agent to exhibit ``learning from experience.'' Experiments across diverse embodied tasks show that EFN improves adaptability, robustness, and success rates over frozen baselines. Our Project Page is https://dejavu2025.github.io/.
 
 ## 개요
@@ -64,3 +69,6 @@ Embodied agents face a fundamental limitation: once deployed in real-world envir
 
 ## 핵심 내용
 임베디드 에이전트는 근본적인 한계에 직면합니다: 실제 환경에 배포된 후에는 작업 성능을 개선하기 위해 새로운 지식을 쉽게 습득할 수 없습니다. 본 논문에서는 Dejavu를 제안합니다. 이는 경험 피드백 네트워크(EFN)를 통해 검색된 실행 메모리로 고정된 Vision-Language-Action(VLA) 정책을 보강하는 일반적인 배포 후 학습 프레임워크입니다. EFN은 맥락적으로 관련된 이전 행동 경험을 식별하고 검색된 지침에 따라 행동 예측을 조건화합니다. 우리는 강화 학습과 의미 유사성 보상을 사용하여 EFN을 훈련하며, 현재 관찰 하에서 예측된 행동이 과거 행동과 일치하도록 장려합니다. 배포 중에 EFN은 새로운 궤적으로 메모리를 지속적으로 확장하여 에이전트가 "경험을 통한 학습"을 나타낼 수 있도록 합니다. 다양한 임베디드 작업에 걸친 실험은 EFN이 고정된 기준선보다 적응성, 견고성 및 성공률을 향상시킴을 보여줍니다. 프로젝트 페이지는 https://dejavu2025.github.io/입니다.
+
+## 参考
+- http://arxiv.org/abs/2510.10181v3

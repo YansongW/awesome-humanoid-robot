@@ -8,9 +8,14 @@ names:
   zh: 伯克利轻量人形机器人
   ko: Berkeley Humanoid Lite
 summary:
-  en: An open-source 0.8 m, 16 kg humanoid robot from UC Berkeley with 22 active degrees of freedom and a sub-5,000 USD bill of materials, built around self-designed quasi-direct-drive actuators with 3D-printed cycloidal reducers, trained in NVIDIA Isaac Lab with zero-shot sim-to-real reinforcement learning.
-  zh: Berkeley Humanoid Lite 是 UC Berkeley 开源的轻量人形机器人，身高 0.8 m、重 16 kg，22 个主动自由度，整机 BOM 美国采购约 4,312 美元、中国采购约 3,236 美元，核心为 3D 打印摆线针轮减速的自研准直驱执行器，基于 NVIDIA Isaac Lab 训练并实现零样本 sim-to-real 的 RL 行走。
-  ko: An open-source 0.8 m, 16 kg humanoid robot from UC Berkeley with 22 active degrees of freedom and a sub-5,000 USD bill of materials, built around self-designed quasi-direct-drive actuators with 3D-printed cycloidal reducers, trained in NVIDIA Isaac Lab with zero-shot sim-to-real reinforcement learning.
+  en: An open-source 0.8 m, 16 kg humanoid robot from UC Berkeley with 22 active degrees of freedom and a sub-5,000 USD bill
+    of materials, built around self-designed quasi-direct-drive actuators with 3D-printed cycloidal reducers, trained in NVIDIA
+    Isaac Lab with zero-shot sim-to-real reinforcement learning.
+  zh: Berkeley Humanoid Lite 是 UC Berkeley 开源的轻量人形机器人，身高 0.8 m、重 16 kg，22 个主动自由度，整机 BOM 美国采购约 4,312 美元、中国采购约 3,236 美元，核心为
+    3D 打印摆线针轮减速的自研准直驱执行器，基于 NVIDIA Isaac Lab 训练并实现零样本 sim-to-real 的 RL 行走。
+  ko: An open-source 0.8 m, 16 kg humanoid robot from UC Berkeley with 22 active degrees of freedom and a sub-5,000 USD bill
+    of materials, built around self-designed quasi-direct-drive actuators with 3D-printed cycloidal reducers, trained in NVIDIA
+    Isaac Lab with zero-shot sim-to-real reinforcement learning.
 domains:
 - 02_components
 - 06_design_engineering
@@ -36,7 +41,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: '内容整理自调研档案 data/roadmap/research/berkeley-humanoid-lite.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页、论文 arXiv:2504.17249 与 Berkeley EECS 技术报告 EECS-2025-207。'
+  notes: 内容整理自调研档案 data/roadmap/research/berkeley-humanoid-lite.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页、论文 arXiv:2504.17249
+    与 Berkeley EECS 技术报告 EECS-2025-207。
 sources:
 - id: src_001
   type: website
@@ -100,3 +106,42 @@ Berkeley Humanoid Lite 是 UC Berkeley 混合机器人实验室（Hybrid Robotic
 - [项目主页](https://lite.berkeley-humanoid.org/)
 - [论文 arXiv:2504.17249](https://arxiv.org/abs/2504.17249)
 - [Berkeley EECS 技术报告 EECS-2025-207（完整 BOM 表）](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf)
+
+## 개요
+
+Berkeley Humanoid Lite는 UC Berkeley 혼합 로봇 연구실(Hybrid Robotics Group, Koushil Sreenath 팀)과 SLICE 연구소가 시작한 오픈소스 경량 휴머노이드 로봇으로, BAIR Commons HIC 저장소에 속하며 논문 arXiv:2504.17249(2025-04)에 해당합니다. 전체 기계 높이 0.8m, 무게 16kg, 22개의 능동 자유도(다리 각 6개, 팔 각 5개)를 가지며, 전체 BOM은 미국 조달 시 약 4,312달러, 중국 조달 시 약 3,236달러로, 공식 홍보 문구는 "5,000달러 미만"입니다(출처: 조사 파일 berkeley-humanoid-lite.md, 이하 동일).
+
+라이선스 측면에서 코드는 MIT License를, CAD 등 기타 자산은 CC BY-SA 4.0을 따릅니다. 프로젝트의 가성비는 오픈소스 휴머노이드 중 최상위권에 속합니다. GitHub 저장소 `HybridRobotics/Berkeley-Humanoid-Lite`는 약 1,417 stars / 215 forks(2026-07-01 스냅샷, 활성 상태)이며, Discord 커뮤니티와 위챗 그룹이 있습니다. 모든 구조 부품은 일반 데스크탑 FDM 프린터(PLA)로 제작 가능하며, 조립 주기는 약 3일입니다(재고 부품은 일주일 내 도착, 출력은 약 일주일 소요).
+
+## 핵심 내용
+
+### 주요 파라미터
+
+| 항목 | 수치 | 출처 |
+|---|---|---|
+| 키 / 무게 | 0.8 m / 16 kg | 논문 arXiv:2504.17249 |
+| 능동 자유도 | 22(다리 6×2, 팔 5×2) | 기술 보고서 비교표 |
+| 하드웨어 비용(BOM) | 미국 약 $4,312 / 중국 약 $3,236(공식 문구 sub-$5,000) | EECS-2025-207 기술 보고서 |
+| 메인 컨트롤러 | Intel N95 미니 PC(약 $129) | 논문 |
+| 통신 | 사지 각각 하나의 CAN 2.0 버스(1 Mbps), 액추에이터 및 IMU 250 Hz | 논문 |
+| 센서 | BNO085 IMU(Arduino를 통해 USB 연결); SteamVR 베이스 스테이션 + 컨트롤러 원격 조작 | 논문 |
+| 배터리 | 6S 4000 mAh LiPo, 약 30분 사용 시간 | 논문 |
+| 초보자 친화도 | 3.5 / 5(조사 파일 평가) | 조사 파일 |
+
+### 액추에이터 솔루션
+
+- 두 가지 사양의 자체 개발 준직접 구동(quasi-direct-drive) 액추에이터: 6512(10대) 및 5010(12대), 핵심은 3D 프린팅 사이클로이드 감속기(cycloidal reducer)이며, 모든 구조 부품은 데스크탑 FDM 프린터(PLA)로 제작 가능.
+- 6512 액추에이터 BOM 약 $188(미국) / $157(중국): MAD Components M6C12 150KV 드론 브러시리스 모터($129) + ST B-G431B-ESC1 드라이버 보드($19) + AS5600 자기 엔코더($3) + 베어링/체결구/출력물.
+- 사이클로이드 기어는 다중 톱니가 하중을 분담하며, 논문에서는 60시간 내구성 테스트로 플라스틱 기어의 신뢰성을 검증; Moteus / ODrive / VESC 등 타사 드라이버와 호환.
+- 단일 CAN 버스는 최대 64개 장치를 지원하여, 사족/이족/켄타우로스 등 다양한 형태로 재구성 용이; 성인 크기 확장 구성(7자유도 다리 + 다관절 손)도 있음.
+
+### 소프트웨어 스택
+
+- 훈련 및 시뮬레이션은 NVIDIA Isaac Lab 기반으로 디렉토리 구조를 구성하며, URDF / MJCF / USD 세 가지 설명 형식을 모두 갖추어 정책 훈련 및 sim2sim 검증 지원.
+- RL 운동 제어 정책은 제로샷 sim-to-real 구현; 배포 코드 `berkeley_humanoid_lite_lowlevel`은 실제 기계 저수준 C 코드로, 훈련 스택과 독립적이며 기계에 별도로 복사하여 배포 가능.
+- 모션 캡처, SteamVR 원격 조작 양팔(큐브 맞추기, 글쓰기, 블록 쌓기 데모) 지원.
+
+### 적합한 대상
+
+- 적합: 어느 정도 실무 능력을 갖추고 RL 운동 제어 연구를 목표로 하는 개인/연구실 — $4–5k로 RL 보행이 가능한 22자유도 휴머노이드를 제작할 수 있으며, 문서 + BOM + 출력 파일이 완비되고 커뮤니티가 활성화되어 있음.
+- 진입 장벽: 사이클로이드 감속기를 직접 출력하고 22대의 액추에이터를 조립하며, CAN 버스를 납땜하고 FOC 펌웨어를 플래싱해야 하므로, 임베디드 및 3D 프린팅 경험이 부족한 경우 어려움을 겪을 수 있음; 16kg 기종은 이미 일정 수준의 작업 안전 의식이 필요; 초보자에게 친화적이지 않음.

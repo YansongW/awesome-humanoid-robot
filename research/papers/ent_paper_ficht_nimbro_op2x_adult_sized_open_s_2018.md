@@ -11,7 +11,8 @@ summary:
   en: NimbRo-OP2X is a 135 cm, 19 kg open-source adult-sized humanoid robot built with 3D-printed parts and commercial off-the-shelf
     actuators, integrating GPU-accelerated onboard computing, a deep-learning vision system, and simulation-assisted gait
     optimization; it won all awards in the Humanoid AdultSize class at RoboCup 2018.
-  zh: NimbRo-OP2X 是一款身高135厘米、重19公斤的开源成人尺寸人形机器人，采用3D打印部件和商用执行器，集成GPU加速的机载计算、深度学习视觉系统以及仿真辅助的步态优化，并在2018年机器人世界杯人形成人组比赛中获得所有奖项。
+  zh: NimbRo-OP2X 是一款身高 135 cm、重 19 kg 的开源成人尺寸人形机器人，采用 3D 打印部件与商用现成执行器构建，集成了 GPU 加速板载计算、深度学习视觉系统与仿真辅助步态优化。该机器人在 2018 年 RoboCup
+    成人尺寸组中赢得了所有奖项。
   ko: NimbRo-OP2X는 키 135cm, 무게 19kg의 오픈소스 성인 크기 휴머노이드 로봇으로, 3D 프린팅 부품과 상용 액추에이터를 사용하고 GPU 가속 온보드 컴퓨팅, 딥러닝 비전 시스템 및 시뮬레이션 보조
     보행 최적화를 통합했으며 2018년 로보컵 휴머노이드 성인부에서 모든 상을 수상했다.
 domains:
@@ -42,7 +43,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1810.08395v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1810.08395v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -54,18 +56,26 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Humanoid robotics research depends on capable robot platforms, but recently developed advanced platforms are often not available to other research groups, expensive, dangerous to operate, or closed-source. The lack of available platforms forces researchers to work with smaller robots, which have less strict dynamic constraints or with simulations, which lack many real-world effects. We developed NimbRo-OP2X to address this need. At a height of 135 cm our robot is large enough to interact in a human environment. Its low weight of only 19 kg makes the operation of the robot safe and easy, as no special operational equipment is necessary. Our robot is equipped with a fast onboard computer and a GPU to accelerate parallel computations. We extend our already open-source software by a deep-learning based vision system and gait parameter optimisation. The NimbRo-OP2X was evaluated during RoboCup 2018 in Montréal, Canada, where it won all possible awards in the Humanoid AdultSize class.
+NimbRo-OP2X 旨在解决当前人形机器人研究中平台可用性不足的问题，许多先进平台要么昂贵、危险，要么闭源，迫使研究者只能使用小型机器人或仿真环境。该机器人身高 135 cm，足以在人类环境中交互，而仅 19 kg 的重量使其操作安全简便，无需特殊设备。它配备了快速板载计算机与 GPU 以加速并行计算，并扩展了开源软件，加入了基于深度学习的视觉系统与步态参数优化。在 2018 年加拿大蒙特利尔举办的 RoboCup 中，NimbRo-OP2X 在成人尺寸组中赢得了所有奖项。
 
 ## 核心内容
-Humanoid robotics research depends on capable robot platforms, but recently developed advanced platforms are often not available to other research groups, expensive, dangerous to operate, or closed-source. The lack of available platforms forces researchers to work with smaller robots, which have less strict dynamic constraints or with simulations, which lack many real-world effects. We developed NimbRo-OP2X to address this need. At a height of 135 cm our robot is large enough to interact in a human environment. Its low weight of only 19 kg makes the operation of the robot safe and easy, as no special operational equipment is necessary. Our robot is equipped with a fast onboard computer and a GPU to accelerate parallel computations. We extend our already open-source software by a deep-learning based vision system and gait parameter optimisation. The NimbRo-OP2X was evaluated during RoboCup 2018 in Montréal, Canada, where it won all possible awards in the Humanoid AdultSize class.
+### 背景与动机
+人形机器人研究依赖于高性能平台，但近年来开发的先进平台往往难以被其他研究团队获取，存在成本高、操作危险或闭源等问题。这迫使研究者只能使用动态约束较宽松的小型机器人，或缺乏真实世界效应的仿真环境。NimbRo-OP2X 的开发正是为了填补这一空白。
 
-## 参考
-- http://arxiv.org/abs/1810.08395v1
+### 硬件设计
+- **尺寸与重量**：身高 135 cm，重 19 kg，足够大以在人类环境中交互，同时轻量化设计确保操作安全，无需特殊设备。
+- **执行器**：采用商用现成执行器，降低开发门槛。
+- **计算平台**：配备快速板载计算机与 GPU，用于加速并行计算任务，如深度学习推理。
+
+### 软件与算法
+- **开源软件**：在已有开源软件基础上扩展，新增基于深度学习的视觉系统，用于目标检测与场景理解。
+- **步态优化**：通过仿真辅助的步态参数优化，提升行走稳定性与效率。
+
+### 实验与评估
+- **竞赛表现**：在 2018 年加拿大蒙特利尔举办的 RoboCup 中，NimbRo-OP2X 在 Humanoid AdultSize 类中赢得了所有奖项，验证了其综合性能。
+- **关键优势**：开源设计、低成本、安全易操作，且具备实时深度学习能力，适合作为研究平台。
 
 ## Overview
-Humanoid robotics research depends on capable robot platforms, but recently developed advanced platforms are often not available to other research groups, expensive, dangerous to operate, or closed-source. The lack of available platforms forces researchers to work with smaller robots, which have less strict dynamic constraints or with simulations, which lack many real-world effects. We developed NimbRo-OP2X to address this need. At a height of 135 cm our robot is large enough to interact in a human environment. Its low weight of only 19 kg makes the operation of the robot safe and easy, as no special operational equipment is necessary. Our robot is equipped with a fast onboard computer and a GPU to accelerate parallel computations. We extend our already open-source software by a deep-learning based vision system and gait parameter optimisation. The NimbRo-OP2X was evaluated during RoboCup 2018 in Montréal, Canada, where it won all possible awards in the Humanoid AdultSize class.
-
-## Content
 Humanoid robotics research depends on capable robot platforms, but recently developed advanced platforms are often not available to other research groups, expensive, dangerous to operate, or closed-source. The lack of available platforms forces researchers to work with smaller robots, which have less strict dynamic constraints or with simulations, which lack many real-world effects. We developed NimbRo-OP2X to address this need. At a height of 135 cm our robot is large enough to interact in a human environment. Its low weight of only 19 kg makes the operation of the robot safe and easy, as no special operational equipment is necessary. Our robot is equipped with a fast onboard computer and a GPU to accelerate parallel computations. We extend our already open-source software by a deep-learning based vision system and gait parameter optimisation. The NimbRo-OP2X was evaluated during RoboCup 2018 in Montréal, Canada, where it won all possible awards in the Humanoid AdultSize class.
 
 ## 개요
@@ -73,3 +83,6 @@ Humanoid robotics research depends on capable robot platforms, but recently deve
 
 ## 핵심 내용
 휴머노이드 로봇 연구는 성능이 뛰어난 로봇 플랫폼에 의존하지만, 최근 개발된 고급 플랫폼은 종종 다른 연구 그룹이 이용할 수 없거나, 비싸고, 운영하기에 위험하거나, 폐쇄 소스인 경우가 많습니다. 이용 가능한 플랫폼의 부족으로 인해 연구자들은 동적 제약 조건이 덜 엄격한 소형 로봇이나 실제 세계의 많은 효과가 부족한 시뮬레이션을 사용해야 합니다. 우리는 이러한 필요를 해결하기 위해 NimbRo-OP2X를 개발했습니다. 높이 135cm로 우리 로봇은 인간 환경에서 상호작용하기에 충분히 큽니다. 무게가 19kg에 불과해 특별한 운영 장비 없이도 로봇을 안전하고 쉽게 조작할 수 있습니다. 우리 로봇에는 빠른 온보드 컴퓨터와 병렬 계산을 가속화하는 GPU가 장착되어 있습니다. 우리는 이미 오픈 소스인 소프트웨어를 딥러닝 기반 비전 시스템과 보행 매개변수 최적화로 확장했습니다. NimbRo-OP2X는 캐나다 몬트리올에서 열린 RoboCup 2018에서 평가되었으며, Humanoid AdultSize 클래스에서 가능한 모든 상을 수상했습니다.
+
+## 参考
+- http://arxiv.org/abs/1810.08395v1

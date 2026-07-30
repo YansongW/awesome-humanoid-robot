@@ -21,19 +21,8 @@ summary:
     of our dataset by performing robot planning tasks on deformable objects. Our analysis reveals key insights into the trade-offs
     between structural priors and scalability, providing a solid benchmark for future research in generalizable deformable
     object-centric world modeling. Project website: https://deform360.lhy.xyz'
-  zh: 'arXiv:2607.05390v1 Announce Type: new Abstract: Predicting object dynamics (i.e., world modeling) is a fundamental
-    challenge for robotic manipulation, and modeling deformable objects presents a particularly difficult case due to their
-    high-dimensional state spaces and complex material properties. While current world models approach this through two distinct
-    paradigms: learning the dynamics over the 2D pixel space or more explicit 3D geometric space. A systematic understanding
-    of their relative strengths and limitations remains elusive due to the lack of diverse, large-scale real-world data. To
-    address this, we present Deform360, a large-scale visuotactile dataset featuring 198 daily-life objects, 1,980 interaction
-    sequences, and over 215 hours of observations from 41 surround-view cameras and bimanual tactile grippers to capture both
-    global motion and contact-induced local deformations. Leveraging a novel markerless visuotactile 3D tracking pipeline
-    to extract dense geometry and motion, we systematically evaluate current state-of-the-art world models, comparing 2D video
-    models against 3D particle models. Finally, we provide a preliminary demonstration indicating the real-world applicability
-    of our dataset by performing robot planning tasks on deformable objects. Our analysis reveals key insights into the trade-offs
-    between structural priors and scalability, providing a solid benchmark for future research in generalizable deformable
-    object-centric world modeling. Project website: https://deform360.lhy.xyz'
+  zh: Deform360 是一个大规模多视角视觉触觉数据集，由研究团队提出，用于推动可变形物体的世界模型研究。该数据集包含 198 个日常物体、1,980 次交互序列及超过 215 小时的观测数据，通过 41 个环绕相机和双手触觉夹爪捕获全局运动与接触变形，并利用无标记视觉触觉
+    3D 追踪管线提取密集几何与运动信息。
   ko: 'arXiv:2607.05390v1 Announce Type: new Abstract: Predicting object dynamics (i.e., world modeling) is a fundamental
     challenge for robotic manipulation, and modeling deformable objects presents a particularly difficult case due to their
     high-dimensional state spaces and complex material properties. While current world models approach this through two distinct
@@ -66,7 +55,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.05390v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.05390v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -76,18 +66,23 @@ sources:
   accessed_at: '2026-07-08'
 ---
 ## 概述
-Predicting object dynamics (i.e., world modeling) is a fundamental challenge for robotic manipulation, and modeling deformable objects presents a particularly difficult case due to their high-dimensional state spaces and complex material properties. While current world models approach this through two distinct paradigms: learning the dynamics over the 2D pixel space or more explicit 3D geometric space. A systematic understanding of their relative strengths and limitations remains elusive due to the lack of diverse, large-scale real-world data. To address this, we present Deform360, a large-scale visuotactile dataset featuring 198 daily-life objects, 1,980 interaction sequences, and over 215 hours of observations from 41 surround-view cameras and bimanual tactile grippers to capture both global motion and contact-induced local deformations. Leveraging a novel markerless visuotactile 3D tracking pipeline to extract dense geometry and motion, we systematically evaluate current state-of-the-art world models, comparing 2D video models against 3D particle models. Finally, we provide a preliminary demonstration indicating the real-world applicability of our dataset by performing robot planning tasks on deformable objects. Our analysis reveals key insights into the trade-offs between structural priors and scalability, providing a solid benchmark for future research in generalizable deformable object-centric world modeling. Project website: https://deform360.lhy.xyz
+Deform360 旨在解决可变形物体动力学预测中因缺乏大规模真实数据而难以系统比较 2D 像素空间与 3D 几何空间世界模型的问题。该数据集覆盖 198 个日常物体，包含 1,980 次交互序列，总观测时长超过 215 小时，由 41 个环绕相机和双手触觉夹爪同步采集，以捕捉全局运动与接触引起的局部变形。研究团队开发了一种新颖的无标记视觉触觉 3D 追踪管线，用于提取密集几何与运动数据，并基于此系统评估了当前最先进的 2D 视频模型与 3D 粒子模型。初步演示表明，该数据集可用于可变形物体的机器人规划任务，揭示了结构先验与可扩展性之间的权衡，为未来可泛化的可变形物体世界模型研究提供了坚实基准。
 
 ## 核心内容
-Predicting object dynamics (i.e., world modeling) is a fundamental challenge for robotic manipulation, and modeling deformable objects presents a particularly difficult case due to their high-dimensional state spaces and complex material properties. While current world models approach this through two distinct paradigms: learning the dynamics over the 2D pixel space or more explicit 3D geometric space. A systematic understanding of their relative strengths and limitations remains elusive due to the lack of diverse, large-scale real-world data. To address this, we present Deform360, a large-scale visuotactile dataset featuring 198 daily-life objects, 1,980 interaction sequences, and over 215 hours of observations from 41 surround-view cameras and bimanual tactile grippers to capture both global motion and contact-induced local deformations. Leveraging a novel markerless visuotactile 3D tracking pipeline to extract dense geometry and motion, we systematically evaluate current state-of-the-art world models, comparing 2D video models against 3D particle models. Finally, we provide a preliminary demonstration indicating the real-world applicability of our dataset by performing robot planning tasks on deformable objects. Our analysis reveals key insights into the trade-offs between structural priors and scalability, providing a solid benchmark for future research in generalizable deformable object-centric world modeling. Project website: https://deform360.lhy.xyz
+### 数据集构成
+- **规模**：包含 198 个日常物体，1,980 次交互序列，总观测时长超过 215 小时。
+- **采集设备**：使用 41 个环绕相机和双手触觉夹爪，同步捕获全局运动与接触引起的局部变形。
+- **追踪技术**：采用新颖的无标记视觉触觉 3D 追踪管线，从多模态数据中提取密集几何与运动信息。
 
-## 参考
-- http://arxiv.org/abs/2607.05390v1
+### 实验设置与评估
+- **模型对比**：系统评估了当前最先进的 2D 视频模型与 3D 粒子模型，比较两者在可变形物体动力学预测上的表现。
+- **关键发现**：分析揭示了结构先验与可扩展性之间的权衡，2D 模型在像素空间上更易扩展，但 3D 模型在几何精度上更具优势。
+- **应用验证**：通过可变形物体的机器人规划任务进行初步演示，验证了数据集在真实世界中的适用性。
+
+### 结论与意义
+Deform360 为可变形物体世界模型研究提供了大规模、多模态的真实数据基准，填补了现有数据集的空白。其系统评估结果有助于指导未来研究在结构先验与可扩展性之间做出合理选择，推动可泛化的物体中心世界模型的发展。项目网站：https://deform360.lhy.xyz
 
 ## Overview
-Predicting object dynamics (i.e., world modeling) is a fundamental challenge for robotic manipulation, and modeling deformable objects presents a particularly difficult case due to their high-dimensional state spaces and complex material properties. While current world models approach this through two distinct paradigms: learning the dynamics over the 2D pixel space or more explicit 3D geometric space. A systematic understanding of their relative strengths and limitations remains elusive due to the lack of diverse, large-scale real-world data. To address this, we present Deform360, a large-scale visuotactile dataset featuring 198 daily-life objects, 1,980 interaction sequences, and over 215 hours of observations from 41 surround-view cameras and bimanual tactile grippers to capture both global motion and contact-induced local deformations. Leveraging a novel markerless visuotactile 3D tracking pipeline to extract dense geometry and motion, we systematically evaluate current state-of-the-art world models, comparing 2D video models against 3D particle models. Finally, we provide a preliminary demonstration indicating the real-world applicability of our dataset by performing robot planning tasks on deformable objects. Our analysis reveals key insights into the trade-offs between structural priors and scalability, providing a solid benchmark for future research in generalizable deformable object-centric world modeling. Project website: https://deform360.lhy.xyz
-
-## Content
 Predicting object dynamics (i.e., world modeling) is a fundamental challenge for robotic manipulation, and modeling deformable objects presents a particularly difficult case due to their high-dimensional state spaces and complex material properties. While current world models approach this through two distinct paradigms: learning the dynamics over the 2D pixel space or more explicit 3D geometric space. A systematic understanding of their relative strengths and limitations remains elusive due to the lack of diverse, large-scale real-world data. To address this, we present Deform360, a large-scale visuotactile dataset featuring 198 daily-life objects, 1,980 interaction sequences, and over 215 hours of observations from 41 surround-view cameras and bimanual tactile grippers to capture both global motion and contact-induced local deformations. Leveraging a novel markerless visuotactile 3D tracking pipeline to extract dense geometry and motion, we systematically evaluate current state-of-the-art world models, comparing 2D video models against 3D particle models. Finally, we provide a preliminary demonstration indicating the real-world applicability of our dataset by performing robot planning tasks on deformable objects. Our analysis reveals key insights into the trade-offs between structural priors and scalability, providing a solid benchmark for future research in generalizable deformable object-centric world modeling. Project website: https://deform360.lhy.xyz
 
 ## 개요
@@ -95,3 +90,6 @@ Predicting object dynamics (i.e., world modeling) is a fundamental challenge for
 
 ## 핵심 내용
 객체 역학 예측(즉, 세계 모델링)은 로봇 조작의 근본적인 과제이며, 변형 가능한 객체 모델링은 고차원 상태 공간과 복잡한 재료 특성으로 인해 특히 어려운 경우에 해당합니다. 현재 세계 모델은 2D 픽셀 공간 또는 보다 명시적인 3D 기하학적 공간에서 역학을 학습하는 두 가지 뚜렷한 패러다임을 통해 이에 접근하고 있습니다. 다양하고 대규모의 실제 데이터가 부족하기 때문에 이들의 상대적 강점과 한계에 대한 체계적인 이해는 여전히 어렵습니다. 이를 해결하기 위해 우리는 Deform360을 제시합니다. 이는 198개의 일상 생활 객체, 1,980개의 상호작용 시퀀스, 그리고 41대의 전방위 카메라와 양손 촉각 그리퍼로부터 얻은 215시간 이상의 관측 데이터를 특징으로 하는 대규모 시각-촉각 데이터셋으로, 전역 움직임과 접촉으로 인한 국소 변형을 모두 포착합니다. 새로운 마커리스 시각-촉각 3D 추적 파이프라인을 활용하여 밀집 기하학과 움직임을 추출하고, 현재 최첨단 세계 모델을 체계적으로 평가하여 2D 비디오 모델과 3D 입자 모델을 비교합니다. 마지막으로, 변형 가능한 객체에 대한 로봇 계획 작업을 수행함으로써 데이터셋의 실제 적용 가능성을 보여주는 예비 시연을 제공합니다. 우리의 분석은 구조적 사전 지식과 확장성 간의 균형에 대한 핵심 통찰력을 밝혀내며, 일반화 가능한 변형 가능 객체 중심 세계 모델링을 위한 향후 연구의 견고한 벤치마크를 제공합니다. 프로젝트 웹사이트: https://deform360.lhy.xyz
+
+## 参考
+- http://arxiv.org/abs/2607.05390v1

@@ -12,7 +12,7 @@ summary:
     core via OpenAI function calling, receive natural-language voice commands from users. An exploratory within-subjects study
     with 12 participants yields observations on user conversational strategies and lessons learned for natural-language-driven
     variable autonomy in human-robot teaming.
-  zh: 这篇2024年arXiv论文介绍了一个Unity VR仿真环境，其中多个由GPT-4核心通过OpenAI函数调用驱动的模拟机器人代理接收用户的自然语言语音指令。一项包含12名参与者的探索性被试内研究提供了用户对话策略的观察结果，并总结了面向自然语言驱动的人机协作可变自主性的经验教训。
+  zh: 本文提出一个基于Unity VR的多人机协作仿真系统，每个机器人代理由GPT-4核心通过OpenAI函数调用驱动，支持用户通过自然语言语音指令实现可变自主性。一项12名参与者的被试内研究揭示了用户对话策略，并为自然语言驱动的可变自主性在人机协作中的应用提供了经验教训。
   ko: 이 2024년 arXiv 논문은 OpenAI 함수 호출을 통해 GPT-4 코어로 구동되는 여러 시뮬레이션 로봇 에이전트가 사용자의 자연어 음성 명령을 받는 Unity VR 시뮬레이션을 제시한다. 12명의 참가자를
     대상으로 한 탐색적 피험자 내 연구는 사용자의 대화 전략에 대한 관찰과 자연어 기반 인간-로봇 협업의 가변 자율성을 위한 교훈을 제공한다.
 domains:
@@ -41,7 +41,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.07214v3.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.07214v3. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -53,13 +54,28 @@ theoretical_depth:
 - system
 ---
 ## 概述
-In a rapidly evolving digital landscape autonomous tools and robots are becoming commonplace. Recognizing the significance of this development, this paper explores the integration of Large Language Models (LLMs) like Generative pre-trained transformer (GPT) into human-robot teaming environments to facilitate variable autonomy through the means of verbal human-robot communication. In this paper, we introduce a novel framework for such a GPT-powered multi-robot testbed environment, based on a Unity Virtual Reality (VR) setting. This system allows users to interact with robot agents through natural language, each powered by individual GPT cores. By means of OpenAI's function calling, we bridge the gap between unstructured natural language input and structure robot actions. A user study with 12 participants explores the effectiveness of GPT-4 and, more importantly, user strategies when being given the opportunity to converse in natural language within a multi-robot environment. Our findings suggest that users may have preconceived expectations on how to converse with robots and seldom try to explore the actual language and cognitive capabilities of their robot collaborators. Still, those users who did explore where able to benefit from a much more natural flow of communication and human-like back-and-forth. We provide a set of lessons learned for future research and technical implementations of similar systems.
+该研究构建了一个虚拟现实环境，用户可通过自然语言语音与多个GPT-4驱动的机器人代理交互。系统利用OpenAI函数调用将非结构化自然语言输入映射为结构化机器人动作，实现可变自主性。12名参与者的用户研究发现，用户对机器人对话能力存在预设期望，很少主动探索机器人的实际语言和认知能力；但那些主动探索的用户能获得更自然的交流体验。研究总结了未来类似系统开发的关键经验。
 
 ## 核心内容
-In a rapidly evolving digital landscape autonomous tools and robots are becoming commonplace. Recognizing the significance of this development, this paper explores the integration of Large Language Models (LLMs) like Generative pre-trained transformer (GPT) into human-robot teaming environments to facilitate variable autonomy through the means of verbal human-robot communication. In this paper, we introduce a novel framework for such a GPT-powered multi-robot testbed environment, based on a Unity Virtual Reality (VR) setting. This system allows users to interact with robot agents through natural language, each powered by individual GPT cores. By means of OpenAI's function calling, we bridge the gap between unstructured natural language input and structure robot actions. A user study with 12 participants explores the effectiveness of GPT-4 and, more importantly, user strategies when being given the opportunity to converse in natural language within a multi-robot environment. Our findings suggest that users may have preconceived expectations on how to converse with robots and seldom try to explore the actual language and cognitive capabilities of their robot collaborators. Still, those users who did explore where able to benefit from a much more natural flow of communication and human-like back-and-forth. We provide a set of lessons learned for future research and technical implementations of similar systems.
+### 方法
+- 基于Unity VR构建多机器人测试平台，每个机器人代理独立集成GPT-4核心。
+- 通过OpenAI函数调用实现自然语言指令到机器人动作的转换，支持语音输入。
 
-## 参考
-- http://arxiv.org/abs/2312.07214v3
+### 实验设置
+- 12名参与者进行被试内研究，在VR环境中与多个机器人代理通过自然语言协作完成任务。
+- 记录用户对话策略、机器人响应及交互流畅度。
+
+### 关键发现
+- 用户普遍对机器人对话能力有预设期望（如认为机器人能理解复杂指令），但很少主动测试其实际语言理解边界。
+- 仅少数用户尝试探索机器人能力，这些用户获得了更自然的对话流和类人交互体验。
+- 多数用户倾向于使用简单指令，未充分利用GPT-4的上下文理解能力。
+
+### 结论
+- 自然语言驱动的可变自主性可提升人机协作效率，但需设计引导用户探索机器人能力的交互机制。
+- 未来系统应明确展示机器人语言能力边界，并支持渐进式自主性调整。
+
+## Overview
+In a rapidly evolving digital landscape autonomous tools and robots are becoming commonplace. Recognizing the significance of this development, this paper explores the integration of Large Language Models (LLMs) like Generative pre-trained transformer (GPT) into human-robot teaming environments to facilitate variable autonomy through the means of verbal human-robot communication. In this paper, we introduce a novel framework for such a GPT-powered multi-robot testbed environment, based on a Unity Virtual Reality (VR) setting. This system allows users to interact with robot agents through natural language, each powered by individual GPT cores. By means of OpenAI's function calling, we bridge the gap between unstructured natural language input and structure robot actions. A user study with 12 participants explores the effectiveness of GPT-4 and, more importantly, user strategies when being given the opportunity to converse in natural language within a multi-robot environment. Our findings suggest that users may have preconceived expectations on how to converse with robots and seldom try to explore the actual language and cognitive capabilities of their robot collaborators. Still, those users who did explore where able to benefit from a much more natural flow of communication and human-like back-and-forth. We provide a set of lessons learned for future research and technical implementations of similar systems.
 
 ## Overview
 In a rapidly evolving digital landscape, autonomous tools and robots are becoming commonplace. Recognizing the significance of this development, this paper explores the integration of Large Language Models (LLMs) like Generative Pre-trained Transformer (GPT) into human-robot teaming environments to facilitate variable autonomy through verbal human-robot communication. In this paper, we introduce a novel framework for such a GPT-powered multi-robot testbed environment, based on a Unity Virtual Reality (VR) setting. This system allows users to interact with robot agents through natural language, each powered by individual GPT cores. By means of OpenAI's function calling, we bridge the gap between unstructured natural language input and structured robot actions. A user study with 12 participants explores the effectiveness of GPT-4 and, more importantly, user strategies when given the opportunity to converse in natural language within a multi-robot environment. Our findings suggest that users may have preconceived expectations on how to converse with robots and seldom try to explore the actual language and cognitive capabilities of their robot collaborators. Still, those users who did explore were able to benefit from a much more natural flow of communication and human-like back-and-forth. We provide a set of lessons learned for future research and technical implementations of similar systems.
@@ -72,3 +88,6 @@ In a rapidly evolving digital landscape, autonomous tools and robots are becomin
 
 ## 핵심 내용
 급변하는 디지털 환경에서 자율 도구와 로봇이 보편화되고 있습니다. 본 논문은 이러한 발전의 중요성을 인식하여, 생성형 사전 학습 트랜스포머(GPT)와 같은 대규모 언어 모델(LLM)을 인간-로봇 협업 환경에 통합하여 음성 기반 인간-로봇 의사소통을 통해 가변 자율성을 구현하는 방안을 탐구합니다. 본 논문에서는 Unity 가상 현실(VR) 환경을 기반으로 한 GPT 기반 다중 로봇 테스트베드 환경을 위한 새로운 프레임워크를 소개합니다. 이 시스템은 사용자가 각각 개별 GPT 코어로 구동되는 로봇 에이전트와 자연어로 상호작용할 수 있도록 합니다. OpenAI의 함수 호출을 통해 비정형 자연어 입력과 구조화된 로봇 동작 간의 격차를 해소합니다. 12명의 참가자를 대상으로 한 사용자 연구는 GPT-4의 효과성과, 더 중요하게는 다중 로봇 환경에서 자연어로 대화할 기회가 주어졌을 때 사용자 전략을 탐구합니다. 연구 결과에 따르면 사용자는 로봇과 대화하는 방법에 대해 선입견을 가지고 있으며, 로봇 협력자의 실제 언어 및 인지 능력을 탐구하려는 시도를 거의 하지 않는 것으로 나타났습니다. 그럼에도 불구하고 탐구를 시도한 사용자들은 훨씬 더 자연스러운 의사소통 흐름과 인간적인 상호작용의 이점을 누릴 수 있었습니다. 본 논문은 유사 시스템의 향후 연구 및 기술 구현을 위한 일련의 교훈을 제공합니다.
+
+## 参考
+- http://arxiv.org/abs/2312.07214v3

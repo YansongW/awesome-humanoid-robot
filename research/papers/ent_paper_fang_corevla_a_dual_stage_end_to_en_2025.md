@@ -11,9 +11,8 @@ summary:
   en: 'CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine (CoReVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced by College of Transportation, Tongji
     University.'
-  zh: 'CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine (CoReVLA),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced by College of Transportation, Tongji
-    University.'
+  zh: CoReVLA 是同济大学交通运输学院于 2025 年提出的双阶段端到端自动驾驶框架，专为长尾安全关键场景设计。其核心贡献在于通过“收集-优化”双阶段流程，结合驾驶接管数据与 Direct Preference Optimization
+    (DPO) 算法，持续提升模型在罕见危险场景下的表现。在 Bench2Drive 基准上，CoReVLA 的驾驶得分达 72.18，成功率 50%，分别超越现有最优方法 7.96 分和 15%。
   ko: 'CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine (CoReVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced by College of Transportation, Tongji
     University.'
@@ -38,7 +37,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.15968v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.15968v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -54,13 +54,30 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Autonomous Driving (AD) systems have made notable progress, but their performance in long-tail, safety-critical scenarios remains limited. These rare cases contribute a disproportionate number of accidents. Vision-Language Action (VLA) models have strong reasoning abilities and offer a potential solution, but their effectiveness is limited by the lack of high-quality data and inefficient learning in such conditions. To address these challenges, we propose CoReVLA, a continual learning end-to-end autonomous driving framework that improves the performance in long-tail scenarios through a dual-stage process of data Collection and behavior Refinement. First, the model is jointly fine-tuned on a mixture of open-source driving QA datasets, allowing it to acquire a foundational understanding of driving scenarios. Next, CoReVLA is deployed within the Cave Automatic Virtual Environment (CAVE) simulation platform, where driver takeover data is collected from real-time interactions. Each takeover indicates a long-tail scenario that CoReVLA fails to handle reliably. Finally, the model is refined via Direct Preference Optimization (DPO), allowing it to learn directly from human preferences and thereby avoid reward hacking caused by manually designed rewards. Extensive open-loop and closed-loop experiments demonstrate that the proposed CoReVLA model can accurately perceive driving scenarios and make appropriate decisions. On the Bench2Drive benchmark, CoReVLA achieves a Driving Score (DS) of 72.18 and a Success Rate (SR) of 50%, outperforming state-of-the-art methods by 7.96 DS and 15% SR under long-tail, safety-critical scenarios. Furthermore, case studies demonstrate the model's ability to continually improve its performance in similar failure-prone scenarios by leveraging past takeover experiences. All codea and preprocessed datasets are available at: https://github.com/FanGShiYuu/CoReVLA
+CoReVLA 是一个面向长尾场景的持续学习端到端自动驾驶框架，由同济大学提出。该框架首先在开源驾驶问答数据集上联合微调，使模型获得基础驾驶场景理解能力；随后在 CAVE 仿真平台中部署，通过实时交互收集驾驶员接管数据——每次接管都标记了模型无法可靠处理的长尾场景。最后，利用 Direct Preference Optimization (DPO) 从人类偏好中直接学习，避免手动设计奖励带来的奖励破解问题。实验表明，CoReVLA 在 Bench2Drive 基准的长尾安全关键场景下，驾驶得分和成功率均显著超越现有方法，并能通过历史接管经验持续改进类似故障场景的表现。
 
 ## 核心内容
-Autonomous Driving (AD) systems have made notable progress, but their performance in long-tail, safety-critical scenarios remains limited. These rare cases contribute a disproportionate number of accidents. Vision-Language Action (VLA) models have strong reasoning abilities and offer a potential solution, but their effectiveness is limited by the lack of high-quality data and inefficient learning in such conditions. To address these challenges, we propose CoReVLA, a continual learning end-to-end autonomous driving framework that improves the performance in long-tail scenarios through a dual-stage process of data Collection and behavior Refinement. First, the model is jointly fine-tuned on a mixture of open-source driving QA datasets, allowing it to acquire a foundational understanding of driving scenarios. Next, CoReVLA is deployed within the Cave Automatic Virtual Environment (CAVE) simulation platform, where driver takeover data is collected from real-time interactions. Each takeover indicates a long-tail scenario that CoReVLA fails to handle reliably. Finally, the model is refined via Direct Preference Optimization (DPO), allowing it to learn directly from human preferences and thereby avoid reward hacking caused by manually designed rewards. Extensive open-loop and closed-loop experiments demonstrate that the proposed CoReVLA model can accurately perceive driving scenarios and make appropriate decisions. On the Bench2Drive benchmark, CoReVLA achieves a Driving Score (DS) of 72.18 and a Success Rate (SR) of 50%, outperforming state-of-the-art methods by 7.96 DS and 15% SR under long-tail, safety-critical scenarios. Furthermore, case studies demonstrate the model's ability to continually improve its performance in similar failure-prone scenarios by leveraging past takeover experiences. All codea and preprocessed datasets are available at: https://github.com/FanGShiYuu/CoReVLA
+### 方法架构
+CoReVLA 采用双阶段“收集-优化”流程：
+- **第一阶段（基础理解）**：在混合开源驾驶问答数据集上联合微调大视觉-语言-动作模型，使其掌握驾驶场景的基础推理能力。
+- **第二阶段（长尾优化）**：
+  1. 在 CAVE 仿真平台中部署模型，实时记录驾驶员接管事件。
+  2. 每次接管对应一个模型无法可靠处理的长尾场景。
+  3. 使用 Direct Preference Optimization (DPO) 从人类偏好中直接学习，避免手动设计奖励函数导致的奖励破解问题。
 
-## 参考
-- http://arxiv.org/abs/2509.15968v1
+### 实验设置与关键结果
+- **基准测试**：在 Bench2Drive 基准上进行开环与闭环实验。
+- **关键指标**：
+  - 驾驶得分 (DS)：72.18
+  - 成功率 (SR)：50%
+  - 在长尾安全关键场景下，DS 超越现有最优方法 7.96 分，SR 提升 15%。
+- **持续学习能力**：案例研究显示，模型能利用历史接管经验，在类似故障场景中持续改进性能。
+
+### 结论
+CoReVLA 通过双阶段流程有效解决了长尾场景数据稀缺与学习效率低下的问题，在安全关键场景下显著优于现有方法。所有代码和预处理数据集已开源。
+
+## Overview
+Autonomous Driving (AD) systems have made notable progress, but their performance in long-tail, safety-critical scenarios remains limited. These rare cases contribute a disproportionate number of accidents. Vision-Language Action (VLA) models have strong reasoning abilities and offer a potential solution, but their effectiveness is limited by the lack of high-quality data and inefficient learning in such conditions. To address these challenges, we propose CoReVLA, a continual learning end-to-end autonomous driving framework that improves the performance in long-tail scenarios through a dual-stage process of data Collection and behavior Refinement. First, the model is jointly fine-tuned on a mixture of open-source driving QA datasets, allowing it to acquire a foundational understanding of driving scenarios. Next, CoReVLA is deployed within the Cave Automatic Virtual Environment (CAVE) simulation platform, where driver takeover data is collected from real-time interactions. Each takeover indicates a long-tail scenario that CoReVLA fails to handle reliably. Finally, the model is refined via Direct Preference Optimization (DPO), allowing it to learn directly from human preferences and thereby avoid reward hacking caused by manually designed rewards. Extensive open-loop and closed-loop experiments demonstrate that the proposed CoReVLA model can accurately perceive driving scenarios and make appropriate decisions. On the Bench2Drive benchmark, CoReVLA achieves a Driving Score (DS) of 72.18 and a Success Rate (SR) of 50%, outperforming state-of-the-art methods by 7.96 DS and 15% SR under long-tail, safety-critical scenarios. Furthermore, case studies demonstrate the model's ability to continually improve its performance in similar failure-prone scenarios by leveraging past takeover experiences. All codea and preprocessed datasets are available at: https://github.com/FanGShiYuu/CoReVLA
 
 ## Overview
 Autonomous Driving (AD) systems have made notable progress, but their performance in long-tail, safety-critical scenarios remains limited. These rare cases contribute a disproportionate number of accidents. Vision-Language Action (VLA) models have strong reasoning abilities and offer a potential solution, but their effectiveness is limited by the lack of high-quality data and inefficient learning in such conditions. To address these challenges, we propose CoReVLA, a continual learning end-to-end autonomous driving framework that improves the performance in long-tail scenarios through a dual-stage process of data Collection and behavior Refinement. First, the model is jointly fine-tuned on a mixture of open-source driving QA datasets, allowing it to acquire a foundational understanding of driving scenarios. Next, CoReVLA is deployed within the Cave Automatic Virtual Environment (CAVE) simulation platform, where driver takeover data is collected from real-time interactions. Each takeover indicates a long-tail scenario that CoReVLA fails to handle reliably. Finally, the model is refined via Direct Preference Optimization (DPO), allowing it to learn directly from human preferences and thereby avoid reward hacking caused by manually designed rewards. Extensive open-loop and closed-loop experiments demonstrate that the proposed CoReVLA model can accurately perceive driving scenarios and make appropriate decisions. On the Bench2Drive benchmark, CoReVLA achieves a Driving Score (DS) of 72.18 and a Success Rate (SR) of 50%, outperforming state-of-the-art methods by 7.96 DS and 15% SR under long-tail, safety-critical scenarios. Furthermore, case studies demonstrate the model's ability to continually improve its performance in similar failure-prone scenarios by leveraging past takeover experiences. All code and preprocessed datasets are available at: https://github.com/FanGShiYuu/CoReVLA
@@ -73,3 +90,6 @@ Autonomous Driving (AD) systems have made notable progress, but their performanc
 
 ## 핵심 내용
 자율주행(AD) 시스템은 눈에 띄는 발전을 이루었지만, 장기 꼬리(long-tail) 안전 중요 시나리오에서의 성능은 여전히 제한적입니다. 이러한 드문 사례들은 불균형적으로 많은 사고를 유발합니다. Vision-Language Action(VLA) 모델은 강력한 추론 능력을 갖추고 있어 잠재적인 해결책을 제공하지만, 이러한 조건에서 고품질 데이터 부족과 비효율적인 학습으로 인해 효과성이 제한됩니다. 이러한 문제를 해결하기 위해, 우리는 데이터 수집(Collection)과 행동 개선(Refinement)의 이중 단계 과정을 통해 장기 꼬리 시나리오에서 성능을 향상시키는 지속 학습 종단간 자율주행 프레임워크인 CoReVLA를 제안합니다. 첫째, 모델은 오픈소스 주행 QA 데이터셋 혼합에 대해 공동 미세 조정되어 주행 시나리오에 대한 기초적인 이해를 습득합니다. 다음으로, CoReVLA는 Cave Automatic Virtual Environment(CAVE) 시뮬레이션 플랫폼에 배포되어 실시간 상호작용으로부터 운전자 개입 데이터를 수집합니다. 각 개입은 CoReVLA가 안정적으로 처리하지 못하는 장기 꼬리 시나리오를 나타냅니다. 마지막으로, 모델은 직접 선호 최적화(DPO)를 통해 개선되어 인간의 선호로부터 직접 학습함으로써 수동 설계 보상으로 인한 보상 해킹을 방지합니다. 광범위한 개방 루프 및 폐쇄 루프 실험을 통해 제안된 CoReVLA 모델이 주행 시나리오를 정확히 인식하고 적절한 결정을 내릴 수 있음을 입증했습니다. Bench2Drive 벤치마크에서 CoReVLA는 장기 꼬리 안전 중요 시나리오에서 주행 점수(DS) 72.18, 성공률(SR) 50%를 달성하여 최신 방법보다 DS 7.96, SR 15% 더 우수한 성능을 보였습니다. 또한, 사례 연구를 통해 모델이 과거 개입 경험을 활용하여 유사한 실패 가능 시나리오에서 지속적으로 성능을 향상시킬 수 있는 능력을 입증했습니다. 모든 코드와 전처리된 데이터셋은 https://github.com/FanGShiYuu/CoReVLA 에서 확인할 수 있습니다.
+
+## 参考
+- http://arxiv.org/abs/2509.15968v1

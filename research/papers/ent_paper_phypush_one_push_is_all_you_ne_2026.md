@@ -17,15 +17,7 @@ summary:
     consistently achieves highly accurate estimations in challenging out-of-domain conditions. In simulation, it reduces error
     by over 10% compared to a baseline with privileged force data, while in real-world experiments, it successfully zero-shot
     transfers from simulation to outperform a purely data-driven baseline.'
-  zh: 'arXiv:2605.26284v2 Announce Type: replace Abstract: Accurately estimating object mass and friction is fundamental to
-    reliable robotic manipulation. While interactive perception is powerful, most approaches rely on specialized hardware
-    like force/torque sensors, limiting scalability. This paper introduces PhyPush, a physics-guided Transformer that estimates
-    an object''s mass and friction coefficient using only end-effector velocity from a single push, data readily available
-    on standard robotic arms. By incorporating Newton''s second law and the Coulomb friction model through a physics-guided
-    loss, the model improves physical consistency and generalizes to unseen objects and surfaces. Across diverse setups, PhyPush
-    consistently achieves highly accurate estimations in challenging out-of-domain conditions. In simulation, it reduces error
-    by over 10% compared to a baseline with privileged force data, while in real-world experiments, it successfully zero-shot
-    transfers from simulation to outperform a purely data-driven baseline.'
+  zh: PhyPush 是一种物理引导的 Transformer 模型，由研究团队提出，仅利用标准机械臂末端执行器在一次推动中的速度数据，即可估计物体的质量和摩擦系数。其核心贡献在于通过物理引导损失函数融入牛顿第二定律和库仑摩擦模型，提升了物理一致性，并实现了对未见物体和表面的泛化。
   ko: 'arXiv:2605.26284v2 Announce Type: replace Abstract: Accurately estimating object mass and friction is fundamental to
     reliable robotic manipulation. While interactive perception is powerful, most approaches rely on specialized hardware
     like force/torque sensors, limiting scalability. This paper introduces PhyPush, a physics-guided Transformer that estimates
@@ -54,7 +46,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.26284v2.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.26284v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -64,18 +57,28 @@ sources:
   accessed_at: '2026-07-03'
 ---
 ## 概述
-Accurately estimating object mass and friction is fundamental to reliable robotic manipulation. While interactive perception is powerful, most approaches rely on specialized hardware like force/torque sensors, limiting scalability. This paper introduces PhyPush, a physics-guided Transformer that estimates an object's mass and friction coefficient using only end-effector velocity from a single push, data readily available on standard robotic arms. By incorporating Newton's second law and the Coulomb friction model through a physics-guided loss, the model improves physical consistency and generalizes to unseen objects and surfaces. Across diverse setups, PhyPush consistently achieves highly accurate estimations in challenging out-of-domain conditions. In simulation, it reduces error by over 10% compared to a baseline with privileged force data, while in real-world experiments, it successfully zero-shot transfers from simulation to outperform a purely data-driven baseline.
+PhyPush 解决了机器人操作中依赖力/力矩传感器进行质量与摩擦估计的局限性。该模型仅需单次推动的末端速度作为输入，通过物理引导损失函数将牛顿第二定律和库仑摩擦模型嵌入 Transformer 架构，从而增强估计的物理合理性。在仿真实验中，PhyPush 相比使用特权力数据的基线方法误差降低超过 10%；在真实世界实验中，它成功实现了从仿真到现实的零样本迁移，性能优于纯数据驱动基线。
 
 ## 核心内容
-Accurately estimating object mass and friction is fundamental to reliable robotic manipulation. While interactive perception is powerful, most approaches rely on specialized hardware like force/torque sensors, limiting scalability. This paper introduces PhyPush, a physics-guided Transformer that estimates an object's mass and friction coefficient using only end-effector velocity from a single push, data readily available on standard robotic arms. By incorporating Newton's second law and the Coulomb friction model through a physics-guided loss, the model improves physical consistency and generalizes to unseen objects and surfaces. Across diverse setups, PhyPush consistently achieves highly accurate estimations in challenging out-of-domain conditions. In simulation, it reduces error by over 10% compared to a baseline with privileged force data, while in real-world experiments, it successfully zero-shot transfers from simulation to outperform a purely data-driven baseline.
+### 方法
+- **输入**：仅使用标准机械臂末端执行器在一次推动中的速度数据，无需力/力矩传感器。
+- **架构**：基于 Transformer 模型，通过物理引导损失函数（physics-guided loss）将牛顿第二定律和库仑摩擦模型显式嵌入训练过程。
+- **物理约束**：损失函数强制模型输出满足物理定律的质量和摩擦系数估计，提升物理一致性和泛化能力。
 
-## 参考
-- http://arxiv.org/abs/2605.26284v2
+### 实验设置
+- **仿真环境**：使用多样化物体和表面进行训练与测试，基线方法使用特权力数据（即直接访问真实力信息）。
+- **真实世界实验**：将仿真训练的模型直接迁移到真实机器人平台，无需额外微调（零样本迁移）。
+- **对比基线**：纯数据驱动模型（无物理引导）和基于特权力数据的模型。
+
+### 关键结果
+- **仿真性能**：PhyPush 相比使用特权力数据的基线方法，误差降低超过 10%。
+- **真实世界性能**：零样本迁移后，PhyPush 在真实实验中优于纯数据驱动基线，验证了物理引导的有效性。
+- **泛化能力**：模型成功泛化到训练中未见的物体和表面，在挑战性的域外条件下保持高精度。
+
+### 结论
+PhyPush 通过物理引导的 Transformer 架构，仅利用单次推动的末端速度数据，实现了无需传感器的质量与摩擦估计。其物理一致性损失函数显著提升了泛化能力，并在仿真和真实实验中均优于基线方法，为可扩展的机器人操作提供了新思路。
 
 ## Overview
-Accurately estimating object mass and friction is fundamental to reliable robotic manipulation. While interactive perception is powerful, most approaches rely on specialized hardware like force/torque sensors, limiting scalability. This paper introduces PhyPush, a physics-guided Transformer that estimates an object's mass and friction coefficient using only end-effector velocity from a single push, data readily available on standard robotic arms. By incorporating Newton's second law and the Coulomb friction model through a physics-guided loss, the model improves physical consistency and generalizes to unseen objects and surfaces. Across diverse setups, PhyPush consistently achieves highly accurate estimations in challenging out-of-domain conditions. In simulation, it reduces error by over 10% compared to a baseline with privileged force data, while in real-world experiments, it successfully zero-shot transfers from simulation to outperform a purely data-driven baseline.
-
-## Content
 Accurately estimating object mass and friction is fundamental to reliable robotic manipulation. While interactive perception is powerful, most approaches rely on specialized hardware like force/torque sensors, limiting scalability. This paper introduces PhyPush, a physics-guided Transformer that estimates an object's mass and friction coefficient using only end-effector velocity from a single push, data readily available on standard robotic arms. By incorporating Newton's second law and the Coulomb friction model through a physics-guided loss, the model improves physical consistency and generalizes to unseen objects and surfaces. Across diverse setups, PhyPush consistently achieves highly accurate estimations in challenging out-of-domain conditions. In simulation, it reduces error by over 10% compared to a baseline with privileged force data, while in real-world experiments, it successfully zero-shot transfers from simulation to outperform a purely data-driven baseline.
 
 ## 개요
@@ -83,3 +86,6 @@ Accurately estimating object mass and friction is fundamental to reliable roboti
 
 ## 핵심 내용
 물체의 질량과 마찰력을 정확하게 추정하는 것은 신뢰할 수 있는 로봇 조작의 기본입니다. 상호작용 인식은 강력하지만, 대부분의 접근 방식은 힘/토크 센서와 같은 특수 하드웨어에 의존하여 확장성이 제한됩니다. 본 논문은 PhyPush를 소개합니다. 이는 물리 기반 트랜스포머로, 단일 밀기에서 얻은 엔드 이펙터 속도만을 사용하여 물체의 질량과 마찰 계수를 추정하며, 이 데이터는 표준 로봇 팔에서 쉽게 얻을 수 있습니다. 물리 기반 손실 함수를 통해 뉴턴의 제2법칙과 쿨롱 마찰 모델을 통합함으로써, 모델은 물리적 일관성을 개선하고 보지 못한 물체와 표면에 일반화됩니다. 다양한 설정에서 PhyPush는 까다로운 도메인 외 조건에서도 일관되게 높은 정확도의 추정을 달성합니다. 시뮬레이션에서는 특권 힘 데이터를 사용한 기준선보다 오차를 10% 이상 줄였으며, 실제 실험에서는 시뮬레이션에서 제로샷 전이를 성공적으로 수행하여 순수 데이터 기반 기준선을 능가합니다.
+
+## 参考
+- http://arxiv.org/abs/2605.26284v2

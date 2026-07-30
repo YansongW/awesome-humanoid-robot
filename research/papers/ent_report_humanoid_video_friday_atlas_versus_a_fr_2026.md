@@ -50,48 +50,8 @@ summary:
     everything end to end. In the dark. Lights out. Guess what? GM dreamed the same 40 years ago, and they spent an estimated
     US $60 billion to try to make it reality. In today’s video, we look at General Motors and their dreams of the automated,
     all-robot factory. [ Asianometry ]'
-  zh: 'Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
-    We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
-    ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4
-    August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO Enjoy today’s videos! Just months after its debut,
-    Atlas is proving why it is the world’s most capable and dynamic humanoid robot, ready for real work. Lifting a mini-fridge
-    is a feat of strength, but the true breakthrough is in the underlying reinforcement learning and controls systems. The
-    robot is learning to navigate real world adaptability: handling heavy objects by bracing and accounting for the mass and
-    inertia; using whole-body control, not just hands to maneuver; and demonstrating superhuman range of motion and balance.
-    This marks a critical shift in robotics where humanoids move beyond the lab and into dynamic industrial settings. Watching
-    Atlas move a fridge may be less impressive than whatever the heck it does at 4:10. [ Boston Dynamics ] SpikerBot is a
-    robot you teach by wiring neurons, not writing code. Drag spiking neurons in the app, connect them to sensors and motors,
-    then press play. It moves, reacts, and changes behavior based on the brain you built. Already funded on Kickstarter with
-    a robot kit starting at US $219. [ Kickstarter ] via [ Backyard Brains ] Thanks, Greg! Wheeled-legged robots, which have
-    wheels at their feet and achieve high mobility by coordinating wheel drive and leg drive, have been developed. In this
-    paper, we address the problem of how to draw out the potential task-execution capability of the legs by freeing them from
-    the roles of locomotion through external body support. [ WiXus ] from [ JSK Robotics Laboratory ] via [ ICRA 2026 ] A
-    very clever idea for electronics-free, multi-dimensional touch sensing. [ Nature Communications ] Using external voice
-    commands, G1 is directly controlled to generate a wide range of actions in real time. This video was recorded in a single
-    take, with on‑site audio recording. [ Unitree ] Hummingbirds are impressive flyers, and advancements in high-speed photography,
-    instrumentation, and measurement techniques have revealed much about their aerodynamics, flight behaviors, and wing and
-    body kinematics. However, comparatively less is known about their natural flight dynamics, which is the relationship among
-    a bird’s flight velocities, the control actions of its wings, and the acceleration of the bird in flight. To investigate
-    this, at the Advanced Vertical Flight Laboratory we have designed, built, and flight tested a biomimetic robotic hummingbird
-    on which is implemented the same techniques for flight control as observed in hummingbirds. [ Advanced Vertical Flight
-    Laboratory ] I guess if you’re going to make a robot dog , it’s only fair to give it the ability to frolic in the water.
-    [ MagicLab ] The original automated layout robot—the one that showed up when the construction industry was pretty sure
-    robots were lame and then proved otherwise. It has printed millions of square feet of layout across thousands of projects.
-    It built an entire category of construction technology. The category of: Stuff That Actually Does Helpful Work on Real
-    Jobsites. But FieldPrinter 2 is here. It’s faster, tougher, smaller, and smarter. So for FieldPrinter 1, it’s time. Time
-    for a quiet retirement. A mug. Maybe a plaque... But nay, good knight! Thou shalt expire in a blaze of thunderous glory!!
-    [ Dusty Robotics ] Here’s an interesting idea for an inflatable monocopter drone . [ AIRLAB ] Meet the Lynx S10—a compact
-    all-terrain robot built to deliver industry-grade performance in a lightweight form factor under 20kg. [ DE Robotics ]
-    Noble Machines builds general-purpose robots for heavy industry, supporting people with the most hazardous and physically
-    demanding tasks. Attendees at NVIDIA GTC 2026 witnessed the power of autonomous industrial work with Noble Machines Moby.
-    [ Noble Machines ] I’m sorry, but Lego bricks should be for humans only. [ LimX Dynamics ] Need a robot that can go places?
-    Huskies were around way before legged humanoids, and I bet they’ll be around way after, too. [ Clearpath Robotics ] I
-    know this little dude is just a research platform at Disney, but I still want one to be my friend. [ Paper ] In March
-    1982, General Motors announced a rapid and aggressive conversion to robotics. By 1990, GM wanted 14,000 robots in their
-    factories doing everything from painting to welding to assembly. Nowadays, we dream of robots in the factories, doing
-    everything end to end. In the dark. Lights out. Guess what? GM dreamed the same 40 years ago, and they spent an estimated
-    US $60 billion to try to make it reality. In today’s video, we look at General Motors and their dreams of the automated,
-    all-robot factory. [ Asianometry ]'
+  zh: 本期Video Friday由IEEE Spectrum机器人团队精选，展示了波士顿动力Atlas人形机器人搬运冰箱的突破性进展，其核心在于强化学习与全身控制系统的结合。同时收录了SpikerBot神经元编程机器人、轮腿混合机器人、仿生蜂鸟飞行器等多项前沿成果，并预告了ICRA
+    2026、RSS 2026等未来机器人会议日程。
   ko: 'Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics.
     We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.
     ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4
@@ -160,6 +120,7 @@ verification:
   reviewed_at: '2026-07-15'
   confidence: medium
   notes: Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/video-friday-humanoid-robot-learning.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: website
@@ -169,19 +130,58 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Your weekly selection of awesome robot videos We also post a weekly calendar of upcoming robotics events for the next few months.
+本期视频集锦以波士顿动力Atlas人形机器人搬运迷你冰箱的壮举开场，强调其真正的突破在于强化学习与控制系统，使机器人能通过全身协调、质量惯性补偿和超人类运动范围实现真实世界适应性。其他亮点包括：SpikerBot通过拖拽脉冲神经元而非编写代码来训练机器人；JSK Robotics Laboratory开发的轮腿混合机器人释放腿部任务执行潜力；Advanced Vertical Flight Laboratory的仿生蜂鸟飞行器；以及Dusty Robotics的FieldPrinter 2建筑布局机器人等。此外还包含Unitree G1语音控制、MagicLab机器狗涉水、Noble Machines工业机器人等展示，最后回顾了通用汽车40年前耗资600亿美元的全自动化工厂梦想。
 
 ## 核心内容
-Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO Enjoy today’s videos! Just months after its debut, Atlas is proving why it is the world’s most capable and dynamic humanoid robot, ready for real work. Lifting a mini-fridge is a feat of strength, but the true breakthrough is in the underlying reinforcement learning and controls systems. The robot is learning to navigate real world adaptability: handling heavy objects by bracing and accounting for the mass and inertia; using whole-body control, not just hands to maneuver; and demonstrating superhuman range of motion and balance. This marks a critical shift in robotics where humanoids move beyond the lab and into dynamic industrial settings. Watching Atlas move a fridge may be less impressive than whatever the heck it does at 4:10. [ Boston Dynamics ] SpikerBot is a robot you teach by wiring neurons, not writing code. Drag spiking neurons in the app, connect them to sensors and motors, then press play. It moves, reacts, and changes behavior based on the brain you built. Already funded on Kickstarter with a robot kit starting at US $219. [ Kickstarter ] via [ Backyard Brains ] Thanks, Greg! Wheeled-legged robots, which have wheels at their feet and achieve high mobility by coordinating wheel drive and leg drive, have been developed. In this paper, we address the problem of how to draw out the potential task-execution capability of the legs by freeing them from the roles of locomotion through external body support. [ WiXus ] from [ JSK Robotics Laboratory ] via [ ICRA 2026 ] A very clever idea for electronics-free, multi-dimensional touch sensing. [ Nature Communications ] Using external voice commands, G1 is directly controlled to generate a wide range of actions in real time. This video was recorded in a single take, with on‑site audio recording. [ Unitree ] Hummingbirds are impressive flyers, and advancements in high-speed photography, instrumentation, and measurement techniques have revealed much about their aerodynamics, flight behaviors, and wing and body kinematics. However, comparatively less is known about their natural flight dynamics, which is the relationship among a bird’s flight velocities, the control actions of its wings, and the acceleration of the bird in flight. To investigate this, at the Advanced Vertical Flight Laboratory we have designed, built, and flight tested a biomimetic robotic hummingbird on which is implemented the same techniques for flight control as observed in hummingbirds. [ Advanced Vertical Flight Laboratory ] I guess if you’re going to make a robot dog , it’s only fair to give it the ability to frolic in the water. [ MagicLab ] The original automated layout robot—the one that showed up when the construction industry was pretty sure robots were lame and then proved otherwise. It has printed millions of square feet of layout across thousands of projects. It built an entire category of construction technology. The category of: Stuff That Actually Does Helpful Work on Real Jobsites. But FieldPrinter 2 is here. It’s faster, tougher, smaller, and smarter. So for FieldPrinter 1, it’s time. Time for a quiet retirement. A mug. Maybe a plaque... But nay, good knight! Thou shalt expire in a blaze of thunderous glory!! [ Dusty Robotics ] Here’s an interesting idea for an inflatable monocopter drone . [ AIRLAB ] Meet the Lynx S10—a compact all-terrain robot built to deliver industry-grade performance in a lightweight form factor under 20kg. [ DE Robotics ] Noble Machines builds general-purpose robots for heavy industry, supporting people with the most hazardous and physically demanding tasks. Attendees at NVIDIA GTC 2026 witnessed the power of autonomous industrial work with Noble Machines Moby. [ Noble Machines ] I’m sorry, but Lego bricks should be for humans only. [ LimX Dynamics ] Need a robot that can go places? Huskies were around way before legged humanoids, and I bet they’ll be around way after, too. [ Clearpath Robotics ] I know this little dude is just a research platform at Disney, but I still want one to be my friend. [ Paper ] In March 1982, General Motors announced a rapid and aggressive conversion to robotics. By 1990, GM wanted 14,000 robots in their factories doing everything from painting to welding to assembly. Nowadays, we dream of robots in the factories, doing everything end to end. In the dark. Lights out. Guess what? GM dreamed the same 40 years ago, and they spent an estimated US $60 billion to try to make it reality. In today’s video, we look at General Motors and their dreams of the automated, all-robot factory. [ Asianometry ] Your weekly selection of awesome robot videos We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. Watching Atlas move a fridge may be less impressive than whatever the heck it does at 4:10.
+### 本期亮点
 
-## 参考
-- https://spectrum.ieee.org/video-friday-humanoid-robot-learning
+- **Atlas vs. 冰箱（Boston Dynamics）**：Atlas在首次亮相仅数月后，通过搬运迷你冰箱展示了其作为世界最强大动态人形机器人的实力。真正的突破在于底层强化学习与控制系统，使机器人能够：
+  - 通过支撑和考虑质量与惯性来处理重物
+  - 使用全身控制（而非仅用手部）进行操纵
+  - 展现超人类的运动范围与平衡能力
+  这标志着人形机器人从实验室走向动态工业环境的关键转变。视频4:10处还有更令人惊叹的表现。
+
+- **SpikerBot（Backyard Brains / Kickstarter）**：通过拖拽脉冲神经元连接传感器和电机来训练机器人，无需编写代码。已在Kickstarter上获得资金，机器人套件起价219美元。
+
+- **轮腿混合机器人（JSK Robotics Laboratory / WiXus）**：脚部装有轮子的机器人通过协调轮驱动和腿驱动实现高机动性。论文解决了如何通过外部身体支撑释放腿部运动角色，挖掘其任务执行潜力的问题。
+
+- **电子无源多维触觉传感（Nature Communications）**：一种无需电子元件的巧妙多维触觉传感方法。
+
+- **Unitree G1语音控制**：通过外部语音命令实时直接控制G1生成多种动作，视频为单次拍摄并现场录音。
+
+- **仿生蜂鸟飞行器（Advanced Vertical Flight Laboratory）**：设计、建造并试飞了仿生机器人蜂鸟，实现了与真实蜂鸟相同的飞行控制技术，用于研究自然飞行动力学（速度、翅膀控制动作与加速度之间的关系）。
+
+- **MagicLab机器狗涉水**：为机器狗赋予在水中嬉戏的能力。
+
+- **Dusty Robotics FieldPrinter 2**：第一代自动布局机器人已打印数百万平方英尺布局，覆盖数千个项目。第二代更快、更坚固、更小巧、更智能，第一代光荣退役。
+
+- **AIRLAB充气单旋翼无人机**：一种可充气的单旋翼无人机概念。
+
+- **DE Robotics Lynx S10**：紧凑型全地形机器人，重量低于20公斤，提供工业级性能。
+
+- **Noble Machines Moby（NVIDIA GTC 2026）**：用于重工业的通用机器人，在NVIDIA GTC 2026上展示了自主工业工作的能力。
+
+- **LimX Dynamics乐高警告**：乐高积木应仅供人类使用。
+
+- **Clearpath Robotics Husky**：轮式机器人Husky在腿式人形机器人出现之前就已存在，预计将持续存在。
+
+- **迪士尼研究平台**：一个可爱的研究平台，但尚未商业化。
+
+- **通用汽车自动化工厂回顾（Asianometry）**：1982年3月，通用汽车宣布快速激进地转向机器人化，计划到1990年在工厂部署14,000台机器人。40年前他们已梦想全自动无人工厂，并为此花费了约600亿美元。
+
+### 未来会议日历
+- ICRA 2026：2026年6月1-5日，维也纳
+- RSS 2026：2026年7月13-17日，悉尼
+- 多机器人系统暑期学校：2026年7月29日-8月4日，布拉格
+- Actuate 2026：2026年8月18-19日，旧金山
+
+## Overview
+Your weekly selection of awesome robot videos We also post a weekly calendar of upcoming robotics events for the next few months.
+
+Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO Enjoy today’s videos! Just months after its debut, Atlas is proving why it is the world’s most capable and dynamic humanoid robot, ready for real work. Lifting a mini-fridge is a feat of strength, but the true breakthrough is in the underlying reinforcement learning and controls systems. The robot is learning to navigate real world adaptability: handling heavy objects by bracing and accounting for the mass and inertia; using whole-body control, not just hands to maneuver; and demonstrating superhuman range of motion and balance. This marks a critical shift in robotics where humanoids move beyond the lab and into dynamic industrial settings. Watching Atlas move a fridge may be less impressive than whatever the heck it does at 4:10. [ Boston Dynamics ] SpikerBot is a robot you teach by wiring neurons, not writing code. Drag spiking neurons in the app, connect them to sensors and motors, then press play. It moves, reacts, and changes behavior based on the brain you built. Already funded on Kickstarter with a robot kit starting at US $219. [ Kickstarter ] via [ Backyard Brains ] Thanks, Greg! Wheeled-legged robots, which have wheels at their feet and achieve high mobility by coordinating wheel drive and leg drive, have been developed. In this paper, we address the problem of how to draw out the potential task-execution capability of the legs by freeing them from the roles of locomotion through external body support. [ WiXus ] from [ JSK Robotics Laboratory ] via [ ICRA 2026 ] A very clever idea for electronics-free, multi-dimensional touch sensing. [ Nature Communications ] Using external voice commands, G1 is directly controlled to generate a wide range of actions in real time. This video was recorded in a single take, with on‑site audio recording. [ Unitree ] Hummingbirds are impressive flyers, and advancements in high-speed photography, instrumentation, and measurement techniques have revealed much about their aerodynamics, flight behaviors, and wing and body kinematics. However, comparatively less is known about their natural flight dynamics, which is the relationship among a bird’s flight velocities, the control actions of its wings, and the acceleration of the bird in flight. To investigate this, at the Advanced Vertical Flight Laboratory we have designed, built, and flight tested a biomimetic robotic hummingbird on which is implemented the same techniques for flight control as observed in hummingbirds. [ Advanced Vertical Flight Laboratory ] I guess if you’re going to make a robot dog , it’s only fair to give it the ability to frolic in the water. [ MagicLab ] The original automated layout robot—the one that showed up when the construction industry was pretty sure robots were lame and then proved otherwise. It has printed millions of square feet of layout across thousands of projects. It built an entire category of construction technology. The category of: Stuff That Actually Does Helpful Work on Real Jobsites. But FieldPrinter 2 is here. It’s faster, tougher, smaller, and smarter. So for FieldPrinter 1, it’s time. Time for a quiet retirement. A mug. Maybe a plaque... But nay, good knight! Thou shalt expire in a blaze of thunderous glory!! [ Dusty Robotics ] Here’s an interesting idea for an inflatable monocopter drone . [ AIRLAB ] Meet the Lynx S10—a compact all-terrain robot built to deliver industry-grade performance in a lightweight form factor under 20kg. [ DE Robotics ] Noble Machines builds general-purpose robots for heavy industry, supporting people with the most hazardous and physically demanding tasks. Attendees at NVIDIA GTC 2026 witnessed the power of autonomous industrial work with Noble Machines Moby. [ Noble Machines ] I’m sorry, but Lego bricks should be for humans only. [ LimX Dynamics ] Need a robot that can go places? Huskies were around way before legged humanoids, and I bet they’ll be around way after, too. [ Clearpath Robotics ] I know this little dude is just a research platform at Disney, but I still want one to be my friend. [ Paper ] In March 1982, General Motors announced a rapid and aggressive conversion to robotics. By 1990, GM wanted 14,000 robots in their factories doing everything from painting to welding to assembly. Nowadays, we dream of robots in the factories, doing everything end to end. In the dark. Lights out. Guess what? GM dreamed the same 40 years ago, and they spent an estimated US $60 billion to try to make it reality. In today’s video, we look at General Motors and their dreams of the automated, all-robot factory. [ Asianometry ] Your weekly selection of awesome robot videos We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. Watching Atlas move a fridge may be less impressive than whatever the heck it does at 4:10.
 
 ## Overview
 Your weekly selection of awesome robot videos. We also post a weekly calendar of upcoming robotics events for the next few months.
-
-## Content
-Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. ICRA 2026 : 1–5 June 2026, VIENNA RSS 2026 : 13–17 July 2026, SYDNEY Summer School on Multi-Robot Systems : 29 July–4 August 2026, PRAGUE Actuate 2026 : 18–19 August 2026, SAN FRANCISCO Enjoy today’s videos! Just months after its debut, Atlas is proving why it is the world’s most capable and dynamic humanoid robot, ready for real work. Lifting a mini-fridge is a feat of strength, but the true breakthrough is in the underlying reinforcement learning and controls systems. The robot is learning to navigate real world adaptability: handling heavy objects by bracing and accounting for the mass and inertia; using whole-body control, not just hands to maneuver; and demonstrating superhuman range of motion and balance. This marks a critical shift in robotics where humanoids move beyond the lab and into dynamic industrial settings. Watching Atlas move a fridge may be less impressive than whatever the heck it does at 4:10. [ Boston Dynamics ] SpikerBot is a robot you teach by wiring neurons, not writing code. Drag spiking neurons in the app, connect them to sensors and motors, then press play. It moves, reacts, and changes behavior based on the brain you built. Already funded on Kickstarter with a robot kit starting at US $219. [ Kickstarter ] via [ Backyard Brains ] Thanks, Greg! Wheeled-legged robots, which have wheels at their feet and achieve high mobility by coordinating wheel drive and leg drive, have been developed. In this paper, we address the problem of how to draw out the potential task-execution capability of the legs by freeing them from the roles of locomotion through external body support. [ WiXus ] from [ JSK Robotics Laboratory ] via [ ICRA 2026 ] A very clever idea for electronics-free, multi-dimensional touch sensing. [ Nature Communications ] Using external voice commands, G1 is directly controlled to generate a wide range of actions in real time. This video was recorded in a single take, with on‑site audio recording. [ Unitree ] Hummingbirds are impressive flyers, and advancements in high-speed photography, instrumentation, and measurement techniques have revealed much about their aerodynamics, flight behaviors, and wing and body kinematics. However, comparatively less is known about their natural flight dynamics, which is the relationship among a bird’s flight velocities, the control actions of its wings, and the acceleration of the bird in flight. To investigate this, at the Advanced Vertical Flight Laboratory we have designed, built, and flight tested a biomimetic robotic hummingbird on which is implemented the same techniques for flight control as observed in hummingbirds. [ Advanced Vertical Flight Laboratory ] I guess if you’re going to make a robot dog , it’s only fair to give it the ability to frolic in the water. [ MagicLab ] The original automated layout robot—the one that showed up when the construction industry was pretty sure robots were lame and then proved otherwise. It has printed millions of square feet of layout across thousands of projects. It built an entire category of construction technology. The category of: Stuff That Actually Does Helpful Work on Real Jobsites. But FieldPrinter 2 is here. It’s faster, tougher, smaller, and smarter. So for FieldPrinter 1, it’s time. Time for a quiet retirement. A mug. Maybe a plaque... But nay, good knight! Thou shalt expire in a blaze of thunderous glory!! [ Dusty Robotics ] Here’s an interesting idea for an inflatable monocopter drone . [ AIRLAB ] Meet the Lynx S10—a compact all-terrain robot built to deliver industry-grade performance in a lightweight form factor under 20kg. [ DE Robotics ] Noble Machines builds general-purpose robots for heavy industry, supporting people with the most hazardous and physically demanding tasks. Attendees at NVIDIA GTC 2026 witnessed the power of autonomous industrial work with Noble Machines Moby. [ Noble Machines ] I’m sorry, but Lego bricks should be for humans only. [ LimX Dynamics ] Need a robot that can go places? Huskies were around way before legged humanoids, and I bet they’ll be around way after, too. [ Clearpath Robotics ] I know this little dude is just a research platform at Disney, but I still want one to be my friend. [ Paper ] In March 1982, General Motors announced a rapid and aggressive conversion to robotics. By 1990, GM wanted 14,000 robots in their factories doing everything from painting to welding to assembly. Nowadays, we dream of robots in the factories, doing everything end to end. In the dark. Lights out. Guess what? GM dreamed the same 40 years ago, and they spent an estimated US $60 billion to try to make it reality. In today’s video, we look at General Motors and their dreams of the automated, all-robot factory. [ Asianometry ] Your weekly selection of awesome robot videos We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion. Watching Atlas move a fridge may be less impressive than whatever the heck it does at 4:10.
 
 ## 개요
 당신의 주간 로봇 영상 선별집입니다. 또한 앞으로 몇 달간의 로봇 공학 관련 행사 일정을 주간 달력으로 게시합니다.
@@ -209,3 +209,6 @@ Noble Machines는 중공업을 위한 범용 로봇을 구축하여 가장 위�
 이 작은 녀석이 Disney의 연구 플랫폼에 불과하다는 것을 알고 있지만, 여전히 내 친구가 되길 바랍니다. [ Paper ]  
 1982년 3월, General Motors는 로봇 공학으로의 빠르고 공격적인 전환을 발표했습니다. 1990년까지 GM은 공장에서 페인팅부터 용접, 조립까지 모든 작업을 수행하는 14,000대의 로봇을 원했습니다. 오늘날 우리는 공장에서 로봇이 모든 것을 처음부터 끝까지 수행하는 것을 꿈꿉니다. 어둠 속에서. 소등 상태로. 무엇일까요? GM은 40년 전에 같은 꿈을 꾸었고, 이를 실현하기 위해 약 600억 달러를 지출했습니다. 오늘의 비디오에서는 General Motors와 그들의 자동화된 전 로봇 공장의 꿈을 살펴봅니다. [ Asianometry ]  
 당신의 주간 로봇 영상 선별집입니다. 또한 앞으로 몇 달간의 로봇 공학 관련 행사 일정을 주간 달력으로 게시합니다. 행사 포함을 원하시면 저희에게 보내주세요. Atlas가 냉장고를 옮기는 모습은 4:10에 하는 그 무엇보다 덜 인상적일 수 있습니다.
+
+## 参考
+- https://spectrum.ieee.org/video-friday-humanoid-robot-learning

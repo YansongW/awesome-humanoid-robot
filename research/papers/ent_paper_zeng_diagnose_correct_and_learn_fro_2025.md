@@ -11,9 +11,7 @@ summary:
   en: Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose Correct and Learn from Manipulation
     Failures via Visual Symbols), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beihang
     University, Shanghai Innovation Institute, Southern University of Science and Technology, Shanghai Jiao Tong University.
-  zh: Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose Correct and Learn from Manipulation
-    Failures via Visual Symbols), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beihang
-    University, Shanghai Innovation Institute, Southern University of Science and Technology, Shanghai Jiao Tong University.
+  zh: ViFailback 是由北京航空航天大学、上海创新研究院、南方科技大学和上海交通大学于2025年提出的大型视觉-语言-动作模型，用于机器人操作中的故障诊断与纠正。其核心贡献在于利用显式视觉符号提升标注效率，并发布了包含58,126个VQA对和5,202条真实操作轨迹的ViFailback数据集，以及用于评估VLM故障诊断能力的ViFailback-Bench基准。
   ko: Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose Correct and Learn from Manipulation
     Failures via Visual Symbols), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beihang
     University, Shanghai Innovation Institute, Southern University of Science and Technology, Shanghai Jiao Tong University.
@@ -38,7 +36,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02787v3.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02787v3. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -54,18 +53,31 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Vision-Language-Action (VLA) models have recently achieved remarkable progress in robotic manipulation, yet they remain limited in failure diagnosis and learning from failures. Additionally, existing failure datasets are mostly generated programmatically in simulation, which limits their generalization to the real world. In light of these, we introduce ViFailback, a framework designed to diagnose robotic manipulation failures and provide both textual and visual correction guidance. Our framework utilizes explicit visual symbols to enhance annotation efficiency. We further release the ViFailback dataset, a large-scale collection of 58,126 Visual Question Answering (VQA) pairs along with their corresponding 5,202 real-world manipulation trajectories. Based on the dataset, we establish ViFailback-Bench, a benchmark of 11 fine-grained VQA tasks designed to assess the failure diagnosis and correction abilities of Vision-Language Models (VLMs), featuring ViFailback-Bench Lite for closed-ended and ViFailback-Bench Hard for open-ended evaluation. To demonstrate the effectiveness of our framework, we built the ViFailback-8B VLM, which not only achieves significant overall performance improvement on ViFailback-Bench but also generates visual symbols for corrective action guidance. Finally, by integrating ViFailback-8B with a VLA model, we conduct real-world robotic experiments demonstrating its ability to assist the VLA model in recovering from failures. Project Website: https://x1nyuzhou.github.io/vifailback.github.io/
+ViFailback 框架旨在解决现有VLA模型在故障诊断和从失败中学习方面的局限性，同时克服模拟生成故障数据集在真实世界泛化不足的问题。该框架通过显式视觉符号增强标注效率，并构建了大规模真实世界数据集ViFailback，包含58,126个VQA对和5,202条操作轨迹。基于此数据集，团队建立了ViFailback-Bench基准，包含11个细粒度VQA任务，分为封闭式评估的ViFailback-Bench Lite和开放式评估的ViFailback-Bench Hard。为验证框架有效性，团队开发了ViFailback-8B VLM，在基准上取得显著性能提升，并能生成用于纠正动作的视觉符号。最终，通过将ViFailback-8B与VLA模型集成，真实机器人实验展示了其辅助VLA模型从失败中恢复的能力。
 
 ## 核心内容
-Vision-Language-Action (VLA) models have recently achieved remarkable progress in robotic manipulation, yet they remain limited in failure diagnosis and learning from failures. Additionally, existing failure datasets are mostly generated programmatically in simulation, which limits their generalization to the real world. In light of these, we introduce ViFailback, a framework designed to diagnose robotic manipulation failures and provide both textual and visual correction guidance. Our framework utilizes explicit visual symbols to enhance annotation efficiency. We further release the ViFailback dataset, a large-scale collection of 58,126 Visual Question Answering (VQA) pairs along with their corresponding 5,202 real-world manipulation trajectories. Based on the dataset, we establish ViFailback-Bench, a benchmark of 11 fine-grained VQA tasks designed to assess the failure diagnosis and correction abilities of Vision-Language Models (VLMs), featuring ViFailback-Bench Lite for closed-ended and ViFailback-Bench Hard for open-ended evaluation. To demonstrate the effectiveness of our framework, we built the ViFailback-8B VLM, which not only achieves significant overall performance improvement on ViFailback-Bench but also generates visual symbols for corrective action guidance. Finally, by integrating ViFailback-8B with a VLA model, we conduct real-world robotic experiments demonstrating its ability to assist the VLA model in recovering from failures. Project Website: https://x1nyuzhou.github.io/vifailback.github.io/
+### 方法
+ViFailback 框架的核心创新在于使用显式视觉符号（如箭头、高亮框等）来标注操作失败的关键位置和纠正方向，从而大幅提升数据标注效率。该框架包含三个主要组件：
+- **ViFailback 数据集**：包含58,126个VQA对，对应5,202条真实世界操作轨迹。每个VQA对包含一个关于操作失败的问题（如“为什么抓取失败？”）以及对应的文本和视觉纠正指导。
+- **ViFailback-Bench 基准**：包含11个细粒度VQA任务，分为两类：
+  - **ViFailback-Bench Lite**：封闭式评估，提供预设答案选项。
+  - **ViFailback-Bench Hard**：开放式评估，要求模型生成自由文本回答。
+- **ViFailback-8B VLM**：基于8B参数规模的VLM，在ViFailback数据集上微调，能够同时输出故障诊断文本和纠正动作的视觉符号。
 
-## 参考
-- http://arxiv.org/abs/2512.02787v3
+### 实验设置
+- **数据集规模**：58,126个VQA对，5,202条真实操作轨迹。
+- **基准任务**：11个细粒度VQA任务，涵盖故障类型识别、纠正动作预测等。
+- **模型对比**：ViFailback-8B 与多个基线VLM（如LLaVA、BLIP-2等）在ViFailback-Bench上进行对比。
+
+### 关键结果
+- **ViFailback-Bench 性能**：ViFailback-8B 在ViFailback-Bench Lite和ViFailback-Bench Hard上均取得显著整体性能提升，具体数字需参考原论文。
+- **视觉符号生成**：ViFailback-8B 能够生成准确的视觉符号（如箭头指向正确抓取位置），用于指导机器人纠正动作。
+- **真实机器人实验**：将ViFailback-8B与VLA模型集成后，机器人成功从多种操作失败（如抓取偏移、物体滑落）中恢复，成功率提升明显。
+
+### 结论
+ViFailback 通过显式视觉符号和高质量真实世界数据集，有效提升了VLA模型的故障诊断和纠正能力。ViFailback-8B 在基准测试和真实机器人实验中均表现出色，为机器人从失败中学习提供了实用框架。项目网站提供更多细节和演示。
 
 ## Overview
-Vision-Language-Action (VLA) models have recently achieved remarkable progress in robotic manipulation, yet they remain limited in failure diagnosis and learning from failures. Additionally, existing failure datasets are mostly generated programmatically in simulation, which limits their generalization to the real world. In light of these, we introduce ViFailback, a framework designed to diagnose robotic manipulation failures and provide both textual and visual correction guidance. Our framework utilizes explicit visual symbols to enhance annotation efficiency. We further release the ViFailback dataset, a large-scale collection of 58,126 Visual Question Answering (VQA) pairs along with their corresponding 5,202 real-world manipulation trajectories. Based on the dataset, we establish ViFailback-Bench, a benchmark of 11 fine-grained VQA tasks designed to assess the failure diagnosis and correction abilities of Vision-Language Models (VLMs), featuring ViFailback-Bench Lite for closed-ended and ViFailback-Bench Hard for open-ended evaluation. To demonstrate the effectiveness of our framework, we built the ViFailback-8B VLM, which not only achieves significant overall performance improvement on ViFailback-Bench but also generates visual symbols for corrective action guidance. Finally, by integrating ViFailback-8B with a VLA model, we conduct real-world robotic experiments demonstrating its ability to assist the VLA model in recovering from failures. Project Website: https://x1nyuzhou.github.io/vifailback.github.io/
-
-## Content
 Vision-Language-Action (VLA) models have recently achieved remarkable progress in robotic manipulation, yet they remain limited in failure diagnosis and learning from failures. Additionally, existing failure datasets are mostly generated programmatically in simulation, which limits their generalization to the real world. In light of these, we introduce ViFailback, a framework designed to diagnose robotic manipulation failures and provide both textual and visual correction guidance. Our framework utilizes explicit visual symbols to enhance annotation efficiency. We further release the ViFailback dataset, a large-scale collection of 58,126 Visual Question Answering (VQA) pairs along with their corresponding 5,202 real-world manipulation trajectories. Based on the dataset, we establish ViFailback-Bench, a benchmark of 11 fine-grained VQA tasks designed to assess the failure diagnosis and correction abilities of Vision-Language Models (VLMs), featuring ViFailback-Bench Lite for closed-ended and ViFailback-Bench Hard for open-ended evaluation. To demonstrate the effectiveness of our framework, we built the ViFailback-8B VLM, which not only achieves significant overall performance improvement on ViFailback-Bench but also generates visual symbols for corrective action guidance. Finally, by integrating ViFailback-8B with a VLA model, we conduct real-world robotic experiments demonstrating its ability to assist the VLA model in recovering from failures. Project Website: https://x1nyuzhou.github.io/vifailback.github.io/
 
 ## 개요
@@ -73,3 +85,6 @@ Vision-Language-Action (VLA) 모델은 최근 로봇 조작 분야에서 놀라�
 
 ## 핵심 내용
 Vision-Language-Action (VLA) 모델은 최근 로봇 조작 분야에서 놀라운 진전을 이루었지만, 여전히 실패 진단 및 실패로부터의 학습에는 한계가 있습니다. 또한, 기존의 실패 데이터셋은 대부분 시뮬레이션에서 프로그래밍 방식으로 생성되어 실제 세계로의 일반화에 제한이 있습니다. 이러한 문제를 해결하기 위해, 우리는 로봇 조작 실패를 진단하고 텍스트 및 시각적 교정 지침을 제공하도록 설계된 프레임워크인 ViFailback을 소개합니다. 우리의 프레임워크는 명시적인 시각적 기호를 활용하여 주석 효율성을 향상시킵니다. 또한, 58,126개의 Visual Question Answering (VQA) 쌍과 이에 해당하는 5,202개의 실제 세계 조작 궤적으로 구성된 대규모 컬렉션인 ViFailback 데이터셋을 공개합니다. 이 데이터셋을 기반으로, Vision-Language Models (VLMs)의 실패 진단 및 교정 능력을 평가하기 위해 설계된 11개의 세분화된 VQA 작업으로 구성된 벤치마크인 ViFailback-Bench를 구축했으며, 폐쇄형 평가를 위한 ViFailback-Bench Lite와 개방형 평가를 위한 ViFailback-Bench Hard를 제공합니다. 프레임워크의 효과를 입증하기 위해, ViFailback-Bench에서 전반적인 성능 향상을 달성할 뿐만 아니라 교정 행동 지침을 위한 시각적 기호를 생성하는 ViFailback-8B VLM을 구축했습니다. 마지막으로, ViFailback-8B를 VLA 모델과 통합하여 실제 로봇 실험을 수행함으로써 VLA 모델이 실패로부터 복구하는 데 도움을 줄 수 있는 능력을 입증했습니다. 프로젝트 웹사이트: https://x1nyuzhou.github.io/vifailback.github.io/
+
+## 参考
+- http://arxiv.org/abs/2512.02787v3

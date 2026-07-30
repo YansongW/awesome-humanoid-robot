@@ -15,7 +15,7 @@ summary:
     policy can achieve a combination of tracking accuracy, large workspace, and robustness for humanoid loco-manipulation.
     We propose the Unified Loco-Manipulation Controller (ULC), a single-policy framework that simultaneously tracks root velocity,
     root height, torso rotation, and dual-arm joint positions in a
-  zh: ULC 把本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、全身控制器/WBC/MPC、分层技能/专家策略训练或组合全身策略，最终输出关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+  zh: ULC（统一移动操作控制器）是一个单策略框架，用于人形机器人的全身协调控制。由研究团队提出，核心贡献在于通过单一策略同时跟踪根部速度、根部高度、躯干旋转和双臂关节位置，实现了高精度、大工作空间和鲁棒性，验证了统一控制在不牺牲性能下的可行性。
   ko: ULC 把本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、全身控制器/WBC/MPC、分层技能/专家策略训练或组合全身策略，最终输出关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 06_design_engineering
@@ -38,7 +38,7 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: ULC: A Unified and Fine-Grained
-    Controller for Humanoid Loco-Manipulation.'
+    Controller for Humanoid Loco-Manipulation. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
 sources:
 - id: src_001
   type: website
@@ -50,18 +50,34 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Loco-Manipulation for humanoid robots aims to enable robots to integrate mobility with upper-body tracking capabilities. Most existing approaches adopt hierarchical architectures that decompose control into isolated upper-body (manipulation) and lower-body (locomotion) policies. While this decomposition reduces training complexity, it inherently limits coordination between subsystems and contradicts the unified whole-body control exhibited by humans. We demonstrate that a single unified policy can achieve a combination of tracking accuracy, large workspace, and robustness for humanoid loco-manipulation. We propose the Unified Loco-Manipulation Controller (ULC), a single-policy framework that simultaneously tracks root velocity, root height, torso rotation, and dual-arm joint positions in an end-to-end manner, proving the feasibility of unified control without sacrificing performance. We achieve this unified control through key technologies: sequence skill acquisition for progressive learning complexity, residual action modeling for fine-grained control adjustments, command polynomial interpolation for smooth motion transitions, random delay release for robustness to deploy variations, load randomization for generalization to external disturbances, and center-of-gravity tracking for providing explicit policy gradients to maintain stability. We validate our method on the Unitree G1 humanoid robot with 3-DOF (degrees-of-freedom) waist. Compared with strong baselines, ULC shows better tracking performance to disentangled methods and demonstrating larger workspace coverage. The unified dual-arm tracking enables precise manipulation under external loads while maintaining coordinated whole-body control for complex loco-manipulation tasks.
+现有的人形机器人移动操作大多采用分层架构，将控制分解为孤立的上半身（操作）和下半身（移动）策略，这限制了子系统间的协调，与人类的统一全身控制相悖。ULC 提出了一种端到端的单策略框架，通过序列技能获取、残差动作建模、命令多项式插值、随机延迟释放、负载随机化和重心跟踪等关键技术，实现了对多个运动目标的同步跟踪。在 Unitree G1 人形机器人（3-DOF 腰部）上的实验表明，ULC 在跟踪精度和工作空间覆盖上优于解耦方法，并能在外负载下保持精确的双臂操作和协调的全身控制。
 
 ## 核心内容
-Loco-Manipulation for humanoid robots aims to enable robots to integrate mobility with upper-body tracking capabilities. Most existing approaches adopt hierarchical architectures that decompose control into isolated upper-body (manipulation) and lower-body (locomotion) policies. While this decomposition reduces training complexity, it inherently limits coordination between subsystems and contradicts the unified whole-body control exhibited by humans. We demonstrate that a single unified policy can achieve a combination of tracking accuracy, large workspace, and robustness for humanoid loco-manipulation. We propose the Unified Loco-Manipulation Controller (ULC), a single-policy framework that simultaneously tracks root velocity, root height, torso rotation, and dual-arm joint positions in an end-to-end manner, proving the feasibility of unified control without sacrificing performance. We achieve this unified control through key technologies: sequence skill acquisition for progressive learning complexity, residual action modeling for fine-grained control adjustments, command polynomial interpolation for smooth motion transitions, random delay release for robustness to deploy variations, load randomization for generalization to external disturbances, and center-of-gravity tracking for providing explicit policy gradients to maintain stability. We validate our method on the Unitree G1 humanoid robot with 3-DOF (degrees-of-freedom) waist. Compared with strong baselines, ULC shows better tracking performance to disentangled methods and demonstrating larger workspace coverage. The unified dual-arm tracking enables precise manipulation under external loads while maintaining coordinated whole-body control for complex loco-manipulation tasks.
+### 方法概述
+ULC 是一个单策略框架，旨在实现人形机器人移动操作的统一控制。其核心思想是摒弃传统的分层架构，通过一个端到端的策略同时跟踪多个运动目标，包括根部速度、根部高度、躯干旋转和双臂关节位置。
 
-## 参考
-- Semantic Scholar search: ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation
+### 关键技术
+- **序列技能获取**：通过渐进式学习复杂度，使策略逐步掌握从简单到复杂的技能组合。
+- **残差动作建模**：对基础动作进行细粒度调整，提升控制精度。
+- **命令多项式插值**：实现平滑的运动过渡，避免动作突变。
+- **随机延迟释放**：模拟部署中的延迟变化，增强策略的鲁棒性。
+- **负载随机化**：训练时随机施加外部负载，使策略能泛化到未知干扰。
+- **重心跟踪**：提供显式策略梯度，帮助维持机器人稳定性。
+
+### 实验设置
+- **平台**：Unitree G1 人形机器人，配备 3-DOF 腰部。
+- **基线**：与多种强基线方法（包括解耦方法）进行比较。
+- **任务**：包括移动操作任务，如在外负载下进行双臂跟踪。
+
+### 关键结果
+- **跟踪性能**：ULC 在跟踪精度上显著优于解耦方法，特别是在多目标同步跟踪场景中。
+- **工作空间覆盖**：ULC 展示了更大的工作空间覆盖范围，能够执行更复杂的移动操作任务。
+- **鲁棒性**：在外负载干扰下，ULC 仍能保持精确的双臂操作和协调的全身控制，验证了其鲁棒性。
+
+### 结论
+ULC 证明了单策略框架在人形机器人移动操作中的可行性，通过统一控制实现了高精度、大工作空间和强鲁棒性，为未来人形机器人的全身协调控制提供了新思路。
 
 ## Overview
-Loco-Manipulation for humanoid robots aims to enable robots to integrate mobility with upper-body tracking capabilities. Most existing approaches adopt hierarchical architectures that decompose control into isolated upper-body (manipulation) and lower-body (locomotion) policies. While this decomposition reduces training complexity, it inherently limits coordination between subsystems and contradicts the unified whole-body control exhibited by humans. We demonstrate that a single unified policy can achieve a combination of tracking accuracy, large workspace, and robustness for humanoid loco-manipulation. We propose the Unified Loco-Manipulation Controller (ULC), a single-policy framework that simultaneously tracks root velocity, root height, torso rotation, and dual-arm joint positions in an end-to-end manner, proving the feasibility of unified control without sacrificing performance. We achieve this unified control through key technologies: sequence skill acquisition for progressive learning complexity, residual action modeling for fine-grained control adjustments, command polynomial interpolation for smooth motion transitions, random delay release for robustness to deploy variations, load randomization for generalization to external disturbances, and center-of-gravity tracking for providing explicit policy gradients to maintain stability. We validate our method on the Unitree G1 humanoid robot with 3-DOF (degrees-of-freedom) waist. Compared with strong baselines, ULC shows better tracking performance to disentangled methods and demonstrating larger workspace coverage. The unified dual-arm tracking enables precise manipulation under external loads while maintaining coordinated whole-body control for complex loco-manipulation tasks.
-
-## Content
 Loco-Manipulation for humanoid robots aims to enable robots to integrate mobility with upper-body tracking capabilities. Most existing approaches adopt hierarchical architectures that decompose control into isolated upper-body (manipulation) and lower-body (locomotion) policies. While this decomposition reduces training complexity, it inherently limits coordination between subsystems and contradicts the unified whole-body control exhibited by humans. We demonstrate that a single unified policy can achieve a combination of tracking accuracy, large workspace, and robustness for humanoid loco-manipulation. We propose the Unified Loco-Manipulation Controller (ULC), a single-policy framework that simultaneously tracks root velocity, root height, torso rotation, and dual-arm joint positions in an end-to-end manner, proving the feasibility of unified control without sacrificing performance. We achieve this unified control through key technologies: sequence skill acquisition for progressive learning complexity, residual action modeling for fine-grained control adjustments, command polynomial interpolation for smooth motion transitions, random delay release for robustness to deploy variations, load randomization for generalization to external disturbances, and center-of-gravity tracking for providing explicit policy gradients to maintain stability. We validate our method on the Unitree G1 humanoid robot with 3-DOF (degrees-of-freedom) waist. Compared with strong baselines, ULC shows better tracking performance to disentangled methods and demonstrating larger workspace coverage. The unified dual-arm tracking enables precise manipulation under external loads while maintaining coordinated whole-body control for complex loco-manipulation tasks.
 
 ## 개요
@@ -69,3 +85,6 @@ Loco-Manipulation for humanoid robots aims to enable robots to integrate mobilit
 
 ## 핵심 내용
 휴머노이드 로봇을 위한 로코-조작(Loco-Manipulation)은 로봇이 이동성과 상체 추적 기능을 통합할 수 있도록 하는 것을 목표로 합니다. 대부분의 기존 접근 방식은 제어를 분리된 상체(조작) 및 하체(보행) 정책으로 분해하는 계층적 아키텍처를 채택합니다. 이러한 분해는 훈련 복잡성을 줄이지만, 본질적으로 하위 시스템 간의 조정을 제한하고 인간이 보이는 통합된 전신 제어와 모순됩니다. 우리는 단일 통합 정책이 휴머노이드 로코-조작을 위한 추적 정확도, 넓은 작업 공간 및 강건성의 조합을 달성할 수 있음을 보여줍니다. 우리는 통합 로코-조작 컨트롤러(ULC)를 제안합니다. 이는 루트 속도, 루트 높이, 몸통 회전 및 양팔 관절 위치를 종단 간 방식으로 동시에 추적하는 단일 정책 프레임워크로, 성능 저하 없이 통합 제어의 실현 가능성을 입증합니다. 우리는 핵심 기술을 통해 이 통합 제어를 달성합니다: 점진적 학습 복잡성을 위한 시퀀스 스킬 획득, 세밀한 제어 조정을 위한 잔여 동작 모델링, 부드러운 동작 전환을 위한 명령 다항식 보간, 배포 변동에 대한 강건성을 위한 무작위 지연 해제, 외부 교란에 대한 일반화를 위한 부하 무작위화, 안정성 유지를 위한 명시적 정책 기울기 제공을 위한 무게 중심 추적. 우리는 3-DOF(자유도) 허리를 가진 Unitree G1 휴머노이드 로봇에서 우리의 방법을 검증합니다. 강력한 기준선과 비교하여 ULC는 분리된 방법보다 더 나은 추적 성능을 보여주고 더 넓은 작업 공간 범위를 입증합니다. 통합된 양팔 추적은 외부 부하 하에서 정밀한 조작을 가능하게 하면서 복잡한 로코-조작 작업을 위한 조정된 전신 제어를 유지합니다.
+
+## 参考
+- Semantic Scholar search: ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation

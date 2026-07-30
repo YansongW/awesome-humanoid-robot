@@ -10,8 +10,7 @@ names:
 summary:
   en: 'RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized vision-language-action model
     for robotic manipulation, introduced by NVIDIA, and published at CoRL 2023.'
-  zh: 'RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized vision-language-action model
-    for robotic manipulation, introduced by NVIDIA, and published at CoRL 2023.'
+  zh: RVT（Robotic View Transformer）是NVIDIA于2023年提出的通用视觉-语言-动作模型，用于3D物体操作。其核心贡献在于通过多视图注意力机制和虚拟视角重渲染技术，在保持高精度的同时显著提升计算效率，在RLBench基准的18个任务上相对成功率比现有最优方法PerAct高26%，训练速度快36倍。
   ko: 'RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized vision-language-action model
     for robotic manipulation, introduced by NVIDIA, and published at CoRL 2023.'
 domains:
@@ -35,7 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.14896v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.14896v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -45,18 +45,27 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-For 3D object manipulation, methods that build an explicit 3D representation perform better than those relying only on camera images. But using explicit 3D representations like voxels comes at large computing cost, adversely affecting scalability. In this work, we propose RVT, a multi-view transformer for 3D manipulation that is both scalable and accurate. Some key features of RVT are an attention mechanism to aggregate information across views and re-rendering of the camera input from virtual views around the robot workspace. In simulations, we find that a single RVT model works well across 18 RLBench tasks with 249 task variations, achieving 26% higher relative success than the existing state-of-the-art method (PerAct). It also trains 36X faster than PerAct for achieving the same performance and achieves 2.3X the inference speed of PerAct. Further, RVT can perform a variety of manipulation tasks in the real world with just a few ($\sim$10) demonstrations per task. Visual results, code, and trained model are provided at https://robotic-view-transformer.github.io/.
+针对3D物体操作任务，现有方法虽能通过显式3D表示（如体素）获得更好性能，但计算成本高昂。RVT提出一种多视图transformer架构，通过跨视图注意力聚合信息，并对机器人工作空间周围的虚拟视角进行重渲染，从而在保持精度的同时大幅提升可扩展性。在RLBench基准的249个任务变体上，单个RVT模型表现优异，相对成功率比PerAct高26%，训练速度快36倍，推理速度快2.3倍。此外，RVT仅需约10次真实世界演示即可完成多种操作任务。
 
 ## 核心内容
-For 3D object manipulation, methods that build an explicit 3D representation perform better than those relying only on camera images. But using explicit 3D representations like voxels comes at large computing cost, adversely affecting scalability. In this work, we propose RVT, a multi-view transformer for 3D manipulation that is both scalable and accurate. Some key features of RVT are an attention mechanism to aggregate information across views and re-rendering of the camera input from virtual views around the robot workspace. In simulations, we find that a single RVT model works well across 18 RLBench tasks with 249 task variations, achieving 26% higher relative success than the existing state-of-the-art method (PerAct). It also trains 36X faster than PerAct for achieving the same performance and achieves 2.3X the inference speed of PerAct. Further, RVT can perform a variety of manipulation tasks in the real world with just a few ($\sim$10) demonstrations per task. Visual results, code, and trained model are provided at https://robotic-view-transformer.github.io/.
+### 方法架构
+- **多视图注意力机制**：RVT采用transformer架构，通过跨视图注意力聚合不同视角的信息，避免显式3D表示（如体素）带来的高计算开销。
+- **虚拟视角重渲染**：对机器人工作空间周围的虚拟视角进行重渲染，增强模型对3D空间的理解能力。
 
-## 参考
-- http://arxiv.org/abs/2306.14896v1
+### 实验设置与结果
+- **仿真实验**：在RLBench基准的18个任务（共249个任务变体）上测试，单个RVT模型表现稳定。
+  - 相对成功率比PerAct高26%。
+  - 训练速度比PerAct快36倍（达到相同性能时）。
+  - 推理速度是PerAct的2.3倍。
+- **真实世界实验**：仅需约10次演示即可完成多种操作任务，展示出强大的泛化能力。
+
+### 关键结论
+RVT通过多视图transformer架构，在3D物体操作任务中实现了精度与效率的平衡，显著优于依赖显式3D表示的方法。其快速训练和推理能力使其更适合实际部署。
+
+### 资源链接
+- 视觉结果、代码和预训练模型：https://robotic-view-transformer.github.io/
 
 ## Overview
-For 3D object manipulation, methods that build an explicit 3D representation perform better than those relying only on camera images. But using explicit 3D representations like voxels comes at large computing cost, adversely affecting scalability. In this work, we propose RVT, a multi-view transformer for 3D manipulation that is both scalable and accurate. Some key features of RVT are an attention mechanism to aggregate information across views and re-rendering of the camera input from virtual views around the robot workspace. In simulations, we find that a single RVT model works well across 18 RLBench tasks with 249 task variations, achieving 26% higher relative success than the existing state-of-the-art method (PerAct). It also trains 36X faster than PerAct for achieving the same performance and achieves 2.3X the inference speed of PerAct. Further, RVT can perform a variety of manipulation tasks in the real world with just a few ($\sim$10) demonstrations per task. Visual results, code, and trained model are provided at https://robotic-view-transformer.github.io/.
-
-## Content
 For 3D object manipulation, methods that build an explicit 3D representation perform better than those relying only on camera images. But using explicit 3D representations like voxels comes at large computing cost, adversely affecting scalability. In this work, we propose RVT, a multi-view transformer for 3D manipulation that is both scalable and accurate. Some key features of RVT are an attention mechanism to aggregate information across views and re-rendering of the camera input from virtual views around the robot workspace. In simulations, we find that a single RVT model works well across 18 RLBench tasks with 249 task variations, achieving 26% higher relative success than the existing state-of-the-art method (PerAct). It also trains 36X faster than PerAct for achieving the same performance and achieves 2.3X the inference speed of PerAct. Further, RVT can perform a variety of manipulation tasks in the real world with just a few ($\sim$10) demonstrations per task. Visual results, code, and trained model are provided at https://robotic-view-transformer.github.io/.
 
 ## 개요
@@ -64,3 +73,6 @@ For 3D object manipulation, methods that build an explicit 3D representation per
 
 ## 핵심 내용
 3D 객체 조작을 위해 명시적 3D 표현을 구축하는 방법은 카메라 이미지만 사용하는 방법보다 더 나은 성능을 보입니다. 하지만 복셀과 같은 명시적 3D 표현을 사용하면 큰 계산 비용이 발생하여 확장성에 부정적인 영향을 미칩니다. 본 연구에서는 확장성과 정확성을 모두 갖춘 3D 조작용 멀티뷰 트랜스포머인 RVT를 제안합니다. RVT의 주요 특징으로는 뷰 간 정보를 통합하는 어텐션 메커니즘과 로봇 작업 공간 주변의 가상 뷰에서 카메라 입력을 재렌더링하는 기능이 있습니다. 시뮬레이션에서 단일 RVT 모델이 249개의 작업 변형을 포함한 18개의 RLBench 작업에서 잘 작동하며, 기존 최첨단 방법(PerAct)보다 상대적 성공률이 26% 더 높은 것을 확인했습니다. 또한 동일한 성능을 달성하는 데 PerAct보다 36배 빠르게 훈련되며, PerAct의 2.3배 추론 속도를 보입니다. 더 나아가 RVT는 실제 세계에서 작업당 몇 개(약 10개)의 시연만으로 다양한 조작 작업을 수행할 수 있습니다. 시각적 결과, 코드 및 훈련된 모델은 https://robotic-view-transformer.github.io/에서 제공됩니다.
+
+## 参考
+- http://arxiv.org/abs/2306.14896v1

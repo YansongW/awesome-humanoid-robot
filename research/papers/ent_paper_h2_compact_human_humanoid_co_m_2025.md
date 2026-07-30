@@ -10,8 +10,7 @@ names:
 summary:
   en: 'H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  zh: 'H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies is a 2025 work on loco-manipulation
-    and whole-body-control for humanoid robots.'
+  zh: H2-COMPACT 是 2025 年提出的一种分层策略学习框架，旨在让腿式人形机器人仅通过触觉线索与人类伙伴协作搬运长形负载。其核心贡献在于将意图推断（力→速度）与腿部运动（速度→关节）解耦，首次实现了基于学习触觉引导的全身控制协同操作。
   ko: 'H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
 domains:
@@ -34,7 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.17627v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.17627v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: website
@@ -44,18 +44,28 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-We present a hierarchical policy-learning framework that enables a legged humanoid to cooperatively carry extended loads with a human partner using only haptic cues for intent inference. At the upper tier, a lightweight behavior-cloning network consumes six-axis force/torque streams from dual wrist-mounted sensors and outputs whole-body planar velocity commands that capture the leader's applied forces. At the lower tier, a deep-reinforcement-learning policy, trained under randomized payloads (0-3 kg) and friction conditions in Isaac Gym and validated in MuJoCo and on a real Unitree G1, maps these high-level twists to stable, under-load joint trajectories. By decoupling intent interpretation (force -> velocity) from legged locomotion (velocity -> joints), our method combines intuitive responsiveness to human inputs with robust, load-adaptive walking. We collect training data without motion-capture or markers, only synchronized RGB video and F/T readings, employing SAM2 and WHAM to extract 3D human pose and velocity. In real-world trials, our humanoid achieves cooperative carry-and-move performance (completion time, trajectory deviation, velocity synchrony, and follower-force) on par with a blindfolded human-follower baseline. This work is the first to demonstrate learned haptic guidance fused with full-body legged control for fluid human-humanoid co-manipulation. Code and videos are available on the H2-COMPACT website.
+该框架包含两层策略：上层使用轻量级行为克隆网络，从双腕部六轴力/扭矩传感器数据中推断人类意图，输出全身平面速度指令；下层采用深度强化学习策略，在 Isaac Gym 中针对随机负载（0-3 kg）和摩擦条件训练，并在 MuJoCo 及真实 Unitree G1 机器人上验证，将速度指令映射为稳定的负载关节轨迹。训练数据无需动作捕捉，仅需同步 RGB 视频和力/扭矩读数，利用 SAM2 和 WHAM 提取 3D 人体姿态与速度。真实实验表明，该机器人在完成时间、轨迹偏差、速度同步性和跟随力等指标上，与蒙眼人类跟随者基线表现相当。
 
 ## 核心内容
-We present a hierarchical policy-learning framework that enables a legged humanoid to cooperatively carry extended loads with a human partner using only haptic cues for intent inference. At the upper tier, a lightweight behavior-cloning network consumes six-axis force/torque streams from dual wrist-mounted sensors and outputs whole-body planar velocity commands that capture the leader's applied forces. At the lower tier, a deep-reinforcement-learning policy, trained under randomized payloads (0-3 kg) and friction conditions in Isaac Gym and validated in MuJoCo and on a real Unitree G1, maps these high-level twists to stable, under-load joint trajectories. By decoupling intent interpretation (force -> velocity) from legged locomotion (velocity -> joints), our method combines intuitive responsiveness to human inputs with robust, load-adaptive walking. We collect training data without motion-capture or markers, only synchronized RGB video and F/T readings, employing SAM2 and WHAM to extract 3D human pose and velocity. In real-world trials, our humanoid achieves cooperative carry-and-move performance (completion time, trajectory deviation, velocity synchrony, and follower-force) on par with a blindfolded human-follower baseline. This work is the first to demonstrate learned haptic guidance fused with full-body legged control for fluid human-humanoid co-manipulation. Code and videos are available on the H2-COMPACT website.
+### 方法架构
+- **上层策略**：轻量级行为克隆网络，输入为双腕部六轴力/扭矩传感器数据，输出全身平面速度指令（线速度与角速度），用于推断人类意图。
+- **下层策略**：深度强化学习策略，在 Isaac Gym 中训练，负载范围 0-3 kg，摩擦条件随机化，并在 MuJoCo 和真实 Unitree G1 上验证。该策略将上层输出的速度指令映射为稳定的负载关节轨迹。
+- **解耦设计**：将意图推断（力→速度）与腿部运动（速度→关节）分离，使机器人既能直观响应人类输入，又能实现鲁棒的负载自适应行走。
 
-## 参考
-- http://arxiv.org/abs/2505.17627v1
+### 实验设置
+- **训练数据收集**：无需动作捕捉或标记点，仅使用同步 RGB 视频和力/扭矩读数，通过 SAM2 和 WHAM 提取 3D 人体姿态与速度。
+- **真实实验**：在真实 Unitree G1 机器人上进行协作搬运任务，评估指标包括完成时间、轨迹偏差、速度同步性和跟随力。
+- **基线对比**：与蒙眼人类跟随者基线进行对比，机器人在所有指标上表现相当。
+
+### 关键结果
+- 机器人能够仅通过触觉线索（力/扭矩传感器）推断人类意图，并实现流畅的协作搬运。
+- 在随机负载和摩擦条件下，下层策略能够生成稳定的负载关节轨迹，确保行走鲁棒性。
+- 这是首个将学习触觉引导与全身腿式控制相结合，实现人机协同操作的工作。
+
+### 结论
+H2-COMPACT 通过分层策略框架，成功实现了人形机器人仅凭触觉线索与人类协作搬运负载，无需视觉或动作捕捉。该方法在真实实验中达到与人类跟随者基线相当的性能，为未来人机协同操作提供了新范式。代码和视频已公开在 H2-COMPACT 网站。
 
 ## Overview
-We present a hierarchical policy-learning framework that enables a legged humanoid to cooperatively carry extended loads with a human partner using only haptic cues for intent inference. At the upper tier, a lightweight behavior-cloning network consumes six-axis force/torque streams from dual wrist-mounted sensors and outputs whole-body planar velocity commands that capture the leader's applied forces. At the lower tier, a deep-reinforcement-learning policy, trained under randomized payloads (0-3 kg) and friction conditions in Isaac Gym and validated in MuJoCo and on a real Unitree G1, maps these high-level twists to stable, under-load joint trajectories. By decoupling intent interpretation (force -> velocity) from legged locomotion (velocity -> joints), our method combines intuitive responsiveness to human inputs with robust, load-adaptive walking. We collect training data without motion-capture or markers, only synchronized RGB video and F/T readings, employing SAM2 and WHAM to extract 3D human pose and velocity. In real-world trials, our humanoid achieves cooperative carry-and-move performance (completion time, trajectory deviation, velocity synchrony, and follower-force) on par with a blindfolded human-follower baseline. This work is the first to demonstrate learned haptic guidance fused with full-body legged control for fluid human-humanoid co-manipulation. Code and videos are available on the H2-COMPACT website.
-
-## Content
 We present a hierarchical policy-learning framework that enables a legged humanoid to cooperatively carry extended loads with a human partner using only haptic cues for intent inference. At the upper tier, a lightweight behavior-cloning network consumes six-axis force/torque streams from dual wrist-mounted sensors and outputs whole-body planar velocity commands that capture the leader's applied forces. At the lower tier, a deep-reinforcement-learning policy, trained under randomized payloads (0-3 kg) and friction conditions in Isaac Gym and validated in MuJoCo and on a real Unitree G1, maps these high-level twists to stable, under-load joint trajectories. By decoupling intent interpretation (force -> velocity) from legged locomotion (velocity -> joints), our method combines intuitive responsiveness to human inputs with robust, load-adaptive walking. We collect training data without motion-capture or markers, only synchronized RGB video and F/T readings, employing SAM2 and WHAM to extract 3D human pose and velocity. In real-world trials, our humanoid achieves cooperative carry-and-move performance (completion time, trajectory deviation, velocity synchrony, and follower-force) on par with a blindfolded human-follower baseline. This work is the first to demonstrate learned haptic guidance fused with full-body legged control for fluid human-humanoid co-manipulation. Code and videos are available on the H2-COMPACT website.
 
 ## 개요
@@ -63,3 +73,6 @@ We present a hierarchical policy-learning framework that enables a legged humano
 
 ## 핵심 내용
 본 연구에서는 촉각 신호만을 이용하여 의도를 추론함으로써, 보행형 휴머노이드가 인간 파트너와 협력하여 긴 물체를 운반할 수 있도록 하는 계층적 정책 학습 프레임워크를 제시합니다. 상위 계층에서는 가벼운 행동 복제 네트워크가 양쪽 손목에 장착된 센서로부터 6축 힘/토크 데이터를 입력받아, 리더가 가하는 힘을 반영하는 전신 평면 속도 명령을 출력합니다. 하위 계층에서는 Isaac Gym에서 무작위화된 페이로드(0-3kg) 및 마찰 조건 하에 훈련되고 MuJoCo 및 실제 Unitree G1에서 검증된 심층 강화 학습 정책이 이러한 고수준 회전 명령을 안정적이고 하중을 견디는 관절 궤적으로 매핑합니다. 의도 해석(힘 -> 속도)과 보행 운동(속도 -> 관절)을 분리함으로써, 본 방법은 인간 입력에 대한 직관적인 반응성과 하중에 적응하는 강건한 보행을 결합합니다. 모션 캡처나 마커 없이 동기화된 RGB 비디오와 F/T 데이터만으로 훈련 데이터를 수집하며, SAM2와 WHAM을 사용하여 3D 인간 자세와 속도를 추출합니다. 실제 실험에서, 우리의 휴머노이드는 완료 시간, 궤적 편차, 속도 동기화 및 추종자 힘 측면에서 눈을 가린 인간 추종자 기준과 동등한 협력적 운반 및 이동 성능을 달성했습니다. 이 연구는 학습된 촉각 안내와 전신 보행 제어를 융합하여 원활한 인간-휴머노이드 공동 조작을 최초로 시연한 것입니다. 코드와 비디오는 H2-COMPACT 웹사이트에서 확인할 수 있습니다.
+
+## 参考
+- http://arxiv.org/abs/2505.17627v1

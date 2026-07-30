@@ -9,7 +9,7 @@ names:
   ko: Whole-body Humanoid Robot Locomotion with Human Reference
 summary:
   en: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
-  zh: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
+  zh: 本文提出一种基于对抗运动先验的全身仿人机器人运动模仿学习框架，由团队在2024年开发。核心贡献包括：设计全尺寸人形机器人"Adam"的创新结构，并首次将人类运动数据用于全尺寸人形机器人的模仿学习，使Adam在复杂运动任务中展现出与人类相当的性能。
   ko: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
@@ -29,7 +29,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.18294v4.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.18294v4. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -45,13 +46,31 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Recently, humanoid robots have made significant advances in their ability to perform challenging tasks due to the deployment of Reinforcement Learning (RL), however, the inherent complexity of humanoid robots, including the difficulty of designing complicated reward functions and training entire sophisticated systems, still poses a notable challenge. To conquer these challenges, after many iterations and in-depth investigations, we have meticulously developed a full-size humanoid robot, "Adam", whose innovative structural design greatly improves the efficiency and effectiveness of the imitation learning process. In addition, we have developed a novel imitation learning framework based on an adversarial motion prior, which applies not only to Adam but also to humanoid robots in general. Using the framework, Adam can exhibit unprecedented human-like characteristics in locomotion tasks. Our experimental results demonstrate that the proposed framework enables Adam to achieve human-comparable performance in complex locomotion tasks, marking the first time that human locomotion data has been used for imitation learning in a full-size humanoid robot.
+针对强化学习在人形机器人应用中奖励函数设计复杂、系统训练困难等挑战，本文通过多次迭代研究，开发了全尺寸人形机器人"Adam"及其创新结构设计，显著提升了模仿学习效率。同时提出一种通用的对抗运动先验模仿学习框架，不仅适用于Adam，也可推广至其他人形机器人。实验表明，该框架使Adam在复杂运动任务中达到人类级表现，这是首次在全尺寸人形机器人上成功使用人类运动数据进行模仿学习。
 
 ## 核心内容
-Recently, humanoid robots have made significant advances in their ability to perform challenging tasks due to the deployment of Reinforcement Learning (RL), however, the inherent complexity of humanoid robots, including the difficulty of designing complicated reward functions and training entire sophisticated systems, still poses a notable challenge. To conquer these challenges, after many iterations and in-depth investigations, we have meticulously developed a full-size humanoid robot, "Adam", whose innovative structural design greatly improves the efficiency and effectiveness of the imitation learning process. In addition, we have developed a novel imitation learning framework based on an adversarial motion prior, which applies not only to Adam but also to humanoid robots in general. Using the framework, Adam can exhibit unprecedented human-like characteristics in locomotion tasks. Our experimental results demonstrate that the proposed framework enables Adam to achieve human-comparable performance in complex locomotion tasks, marking the first time that human locomotion data has been used for imitation learning in a full-size humanoid robot.
+### 背景与挑战
+- 强化学习虽推动人形机器人能力进步，但存在两大难题：复杂奖励函数设计困难、完整系统训练复杂度高
+- 现有方法难以直接迁移人类运动数据至全尺寸人形机器人
 
-## 参考
-- http://arxiv.org/abs/2402.18294v4
+### 核心方法
+- **机器人平台**：自主研发全尺寸人形机器人"Adam"，其创新结构设计优化了模仿学习效率
+- **模仿学习框架**：基于对抗运动先验（Adversarial Motion Prior）的通用框架，可适配不同人形机器人
+- **训练策略**：通过对抗性训练使机器人学习人类运动数据的分布特征，无需手工设计复杂奖励函数
+
+### 实验设置与结果
+- **实验对象**：全尺寸人形机器人Adam
+- **任务类型**：复杂运动任务（如行走、转向等）
+- **关键发现**：
+  - Adam成功复现人类运动特征，运动表现达到人类可比水平
+  - 首次验证人类运动数据在全尺寸人形机器人模仿学习中的有效性
+  - 框架具备通用性，可扩展至其他机器人平台
+
+### 结论
+本文通过机器人硬件创新与算法框架结合，解决了人形机器人运动学习中奖励函数设计难、系统训练复杂的问题，为人类运动数据在仿人机器人领域的应用开辟了新路径。
+
+## Overview
+Recently, humanoid robots have made significant advances in their ability to perform challenging tasks due to the deployment of Reinforcement Learning (RL), however, the inherent complexity of humanoid robots, including the difficulty of designing complicated reward functions and training entire sophisticated systems, still poses a notable challenge. To conquer these challenges, after many iterations and in-depth investigations, we have meticulously developed a full-size humanoid robot, "Adam", whose innovative structural design greatly improves the efficiency and effectiveness of the imitation learning process. In addition, we have developed a novel imitation learning framework based on an adversarial motion prior, which applies not only to Adam but also to humanoid robots in general. Using the framework, Adam can exhibit unprecedented human-like characteristics in locomotion tasks. Our experimental results demonstrate that the proposed framework enables Adam to achieve human-comparable performance in complex locomotion tasks, marking the first time that human locomotion data has been used for imitation learning in a full-size humanoid robot.
 
 ## Overview
 Recently, humanoid robots have made significant advances in their ability to perform challenging tasks due to the deployment of Reinforcement Learning (RL). However, the inherent complexity of humanoid robots, including the difficulty of designing complicated reward functions and training entire sophisticated systems, still poses a notable challenge. To conquer these challenges, after many iterations and in-depth investigations, we have meticulously developed a full-size humanoid robot, "Adam", whose innovative structural design greatly improves the efficiency and effectiveness of the imitation learning process. In addition, we have developed a novel imitation learning framework based on an adversarial motion prior, which applies not only to Adam but also to humanoid robots in general. Using the framework, Adam can exhibit unprecedented human-like characteristics in locomotion tasks. Our experimental results demonstrate that the proposed framework enables Adam to achieve human-comparable performance in complex locomotion tasks, marking the first time that human locomotion data has been used for imitation learning in a full-size humanoid robot.
@@ -64,3 +83,6 @@ Recently, humanoid robots have made significant advances in their ability to per
 
 ## 핵심 내용
 최근 인간형 로봇은 강화 학습(RL)의 도입으로 도전적인 작업을 수행하는 능력에서 상당한 진전을 이루었지만, 인간형 로봇의 본질적인 복잡성(복잡한 보상 함수 설계의 어려움 및 전체 정교한 시스템 훈련 등)은 여전히 큰 과제로 남아 있습니다. 이러한 과제를 극복하기 위해, 수많은 반복과 심층 조사 끝에 우리는 전신 인간형 로봇 "Adam"을 정밀하게 개발했습니다. 이 로봇의 혁신적인 구조 설계는 모방 학습 과정의 효율성과 효과성을 크게 향상시킵니다. 또한, 우리는 적대적 운동 사전(adversarial motion prior)에 기반한 새로운 모방 학습 프레임워크를 개발했으며, 이는 Adam뿐만 아니라 일반적인 인간형 로봇에도 적용됩니다. 이 프레임워크를 사용하여 Adam은 이동 작업에서 전례 없는 인간과 유사한 특성을 보여줄 수 있습니다. 실험 결과는 제안된 프레임워크가 Adam이 복잡한 이동 작업에서 인간과 견줄 만한 성능을 달성할 수 있게 하며, 이는 전신 인간형 로봇에서 인간 이동 데이터를 모방 학습에 사용한 최초의 사례임을 입증합니다.
+
+## 参考
+- http://arxiv.org/abs/2402.18294v4

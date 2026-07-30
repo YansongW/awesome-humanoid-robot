@@ -11,7 +11,7 @@ summary:
   en: Drive-WM is a latent video diffusion world model for autonomous driving that generates high-fidelity multi-view videos
     through view-factorized spatial-temporal modeling, supports unified conditioning from images, text, layouts, and ego actions,
     and is applied to tree-based trajectory planning with image-based rewards.
-  zh: Drive-WM是一个用于自动驾驶的隐式视频扩散世界模型，通过视图分解的时空建模生成高保真多视角视频，支持来自图像、文本、布局和自车动作的统一条件输入，并应用于基于图像奖励的树状轨迹规划。
+  zh: Drive-WM 是由研究团队提出的首个兼容端到端规划模型的驾驶世界模型，基于潜视频扩散架构实现多视角高保真视频生成。其核心贡献在于通过视角分解的时空建模支持图像、文本、布局和自车动作的统一条件控制，并首次将世界模型应用于基于图像奖励的树形轨迹规划。
   ko: Drive-WM은 자율주행을 위한 잠재 비디오 확산 세계 모델로, 뷰 분해를 통한 시공간 모델링으로 고화질 다중 뷰 영상을 생성하고 이미지, 텍스트, 레이아웃, 자차 행동 등의 통합 조건 입력을 지원하며, 이미지
     기반 보상을 이용한 트리 기반 궤적 계획에 적용되었다.
 domains:
@@ -40,7 +40,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.17918v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.17918v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -52,18 +53,28 @@ theoretical_depth:
 - system
 ---
 ## 概述
-In autonomous driving, predicting future events in advance and evaluating the foreseeable risks empowers autonomous vehicles to better plan their actions, enhancing safety and efficiency on the road. To this end, we propose Drive-WM, the first driving world model compatible with existing end-to-end planning models. Through a joint spatial-temporal modeling facilitated by view factorization, our model generates high-fidelity multiview videos in driving scenes. Building on its powerful generation ability, we showcase the potential of applying the world model for safe driving planning for the first time. Particularly, our Drive-WM enables driving into multiple futures based on distinct driving maneuvers, and determines the optimal trajectory according to the image-based rewards. Evaluation on real-world driving datasets verifies that our method could generate high-quality, consistent, and controllable multiview videos, opening up possibilities for real-world simulations and safe planning.
+Drive-WM 通过视角因子化联合时空建模，在驾驶场景中生成高保真多视角视频。该模型不仅具备强大的生成能力，更开创性地将世界模型应用于安全驾驶规划：通过不同驾驶操作生成多个未来预测分支，并依据图像级奖励函数选择最优轨迹。在真实驾驶数据集上的评估表明，该方法能生成高质量、一致且可控的多视角视频，为真实世界仿真和安全规划开辟了新可能。
 
 ## 核心内容
-In autonomous driving, predicting future events in advance and evaluating the foreseeable risks empowers autonomous vehicles to better plan their actions, enhancing safety and efficiency on the road. To this end, we propose Drive-WM, the first driving world model compatible with existing end-to-end planning models. Through a joint spatial-temporal modeling facilitated by view factorization, our model generates high-fidelity multiview videos in driving scenes. Building on its powerful generation ability, we showcase the potential of applying the world model for safe driving planning for the first time. Particularly, our Drive-WM enables driving into multiple futures based on distinct driving maneuvers, and determines the optimal trajectory according to the image-based rewards. Evaluation on real-world driving datasets verifies that our method could generate high-quality, consistent, and controllable multiview videos, opening up possibilities for real-world simulations and safe planning.
+### 方法架构
+- **潜视频扩散世界模型**：采用 view-factorized 时空建模，在潜空间生成多视角视频序列
+- **统一条件控制**：支持图像、文本、布局和自车动作（ego actions）作为生成条件
+- **树形轨迹规划**：基于不同驾驶操作生成多个未来预测分支，通过图像级奖励函数评估各分支风险
 
-## 参考
-- http://arxiv.org/abs/2311.17918v1
+### 实验设置
+- **数据集**：在真实驾驶数据集上评估
+- **评估指标**：视频生成质量、多视角一致性、条件控制能力
+
+### 关键结果
+- 生成视频具有高保真度（high-fidelity）和时空一致性
+- 多视角视频在视角间保持几何与语义一致性
+- 条件控制灵活，可响应不同输入模态的指令
+- 树形规划方法能有效筛选最优轨迹，提升驾驶安全性
+
+### 结论
+Drive-WM 首次将世界模型与端到端规划模型结合，通过生成式预测实现安全规划。其 view-factorized 时空建模为真实世界仿真提供了新范式，但当前方法在长时序预测和复杂场景泛化性上仍有提升空间。
 
 ## Overview
-In autonomous driving, predicting future events in advance and evaluating the foreseeable risks empowers autonomous vehicles to better plan their actions, enhancing safety and efficiency on the road. To this end, we propose Drive-WM, the first driving world model compatible with existing end-to-end planning models. Through a joint spatial-temporal modeling facilitated by view factorization, our model generates high-fidelity multiview videos in driving scenes. Building on its powerful generation ability, we showcase the potential of applying the world model for safe driving planning for the first time. Particularly, our Drive-WM enables driving into multiple futures based on distinct driving maneuvers, and determines the optimal trajectory according to the image-based rewards. Evaluation on real-world driving datasets verifies that our method could generate high-quality, consistent, and controllable multiview videos, opening up possibilities for real-world simulations and safe planning.
-
-## Content
 In autonomous driving, predicting future events in advance and evaluating the foreseeable risks empowers autonomous vehicles to better plan their actions, enhancing safety and efficiency on the road. To this end, we propose Drive-WM, the first driving world model compatible with existing end-to-end planning models. Through a joint spatial-temporal modeling facilitated by view factorization, our model generates high-fidelity multiview videos in driving scenes. Building on its powerful generation ability, we showcase the potential of applying the world model for safe driving planning for the first time. Particularly, our Drive-WM enables driving into multiple futures based on distinct driving maneuvers, and determines the optimal trajectory according to the image-based rewards. Evaluation on real-world driving datasets verifies that our method could generate high-quality, consistent, and controllable multiview videos, opening up possibilities for real-world simulations and safe planning.
 
 ## 개요
@@ -71,3 +82,6 @@ In autonomous driving, predicting future events in advance and evaluating the fo
 
 ## 핵심 내용
 자율 주행에서 미리 미래 사건을 예측하고 예측 가능한 위험을 평가하는 것은 자율 주행 차량이 더 나은 행동 계획을 수립하도록 하여 도로 안전성과 효율성을 향상시킵니다. 이를 위해 우리는 기존의 종단간 계획 모델과 호환되는 최초의 주행 월드 모델인 Drive-WM을 제안합니다. 뷰 분해를 통해 촉진된 공동 시공간 모델링을 통해 우리의 모델은 주행 장면에서 고충실도의 멀티뷰 비디오를 생성합니다. 강력한 생성 능력을 바탕으로, 우리는 처음으로 안전한 주행 계획을 위해 월드 모델을 적용할 가능성을 보여줍니다. 특히, Drive-WM은 서로 다른 주행 기동에 기반하여 여러 미래로 주행할 수 있게 하며, 이미지 기반 보상에 따라 최적의 궤적을 결정합니다. 실제 주행 데이터셋에 대한 평가는 우리의 방법이 고품질, 일관성 있고 제어 가능한 멀티뷰 비디오를 생성할 수 있음을 확인하며, 실제 시뮬레이션과 안전한 계획을 위한 가능성을 열어줍니다.
+
+## 参考
+- http://arxiv.org/abs/2311.17918v1

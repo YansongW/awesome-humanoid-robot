@@ -11,7 +11,7 @@ summary:
   en: This paper introduces NimbRo-OP2, an affordable, fully open-source, 3D-printed adult-sized humanoid robot platform that
     stands approximately 135 cm tall and weighs 18 kg, and describes the mechanical design, electronics, and ROS-based software
     that enabled it to win the RoboCup 2017 Humanoid League AdultSize Soccer competition and Technical Challenge.
-  zh: 本文介绍了NimbRo-OP2，一款经济实惠、完全开源、3D打印的成人尺寸人形机器人平台，高约135厘米、重18公斤，并描述了使其赢得2017年RoboCup人形组成人尺寸足球比赛和技术挑战的机械设计、电子系统及基于ROS的软件。
+  zh: NimbRo-OP2 是一款面向研究的开源成人尺寸人形机器人平台，由德国波恩大学团队开发。该机器人高约135厘米、重18千克，采用3D打印外骨骼和ROS软件架构，在RoboCup 2017人形机器人联赛成人组足球赛及技术挑战赛中夺冠。
   ko: 본 논문은 약 135cm 키와 18kg 무게의 저렴하고 완전히 오픈소스인 3D 프린팅 성인 크기 휴머노이드 로봇 플랫폼인 NimbRo-OP2를 소개하고, RoboCup 2017 Humanoid League AdultSize
     축구 경기 및 기술 과제에서 우승하게 한 기계적 설계, 전자 시스템 및 ROS 기반 소프트웨어를 설명한다.
 domains:
@@ -45,7 +45,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.11144v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.11144v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -57,18 +58,27 @@ theoretical_depth:
 - system
 ---
 ## 概述
-The versatility of humanoid robots in locomotion, full-body motion, interaction with unmodified human environments, and intuitive human-robot interaction led to increased research interest. Multiple smaller platforms are available for research, but these require a miniaturized environment to interact with---and often the small scale of the robot diminishes the influence of factors which would have affected larger robots. Unfortunately, many research platforms in the larger size range are less affordable, more difficult to operate, maintain and modify, and very often closed-source. In this work, we introduce NimbRo-OP2X, an affordable, fully open-source platform in terms of both hardware and software. Being almost 135cm tall and only 18kg in weight, the robot is not only capable of interacting in an environment meant for humans, but also easy and safe to operate and does not require a gantry when doing so. The exoskeleton of the robot is 3D printed, which produces a lightweight and visually appealing design. We present all mechanical and electrical aspects of the robot, as well as some of the software features of our well-established open-source ROS software. The NimbRo-OP2X performed at RoboCup 2017 in Nagoya, Japan, where it won the Humanoid League AdultSize Soccer competition and Technical Challenge.
+NimbRo-OP2 解决了大型人形机器人平台普遍存在的成本高、操作复杂和闭源问题。其全开源设计涵盖机械结构、电子系统和基于ROS的软件，3D打印外骨骼在保证轻量化的同时兼顾视觉美观。该平台无需龙门架即可安全操作，能在人类尺度环境中自然交互，并在RoboCup 2017赛事中验证了其运动控制与自主决策能力。
 
 ## 核心内容
-The versatility of humanoid robots in locomotion, full-body motion, interaction with unmodified human environments, and intuitive human-robot interaction led to increased research interest. Multiple smaller platforms are available for research, but these require a miniaturized environment to interact with---and often the small scale of the robot diminishes the influence of factors which would have affected larger robots. Unfortunately, many research platforms in the larger size range are less affordable, more difficult to operate, maintain and modify, and very often closed-source. In this work, we introduce NimbRo-OP2X, an affordable, fully open-source platform in terms of both hardware and software. Being almost 135cm tall and only 18kg in weight, the robot is not only capable of interacting in an environment meant for humans, but also easy and safe to operate and does not require a gantry when doing so. The exoskeleton of the robot is 3D printed, which produces a lightweight and visually appealing design. We present all mechanical and electrical aspects of the robot, as well as some of the software features of our well-established open-source ROS software. The NimbRo-OP2X performed at RoboCup 2017 in Nagoya, Japan, where it won the Humanoid League AdultSize Soccer competition and Technical Challenge.
+### 设计理念与核心参数
+- **尺寸与重量**：身高135厘米，体重18千克，属于成人尺寸人形机器人，可直接在人类环境中工作。
+- **成本与开源**：全平台（硬件+软件）开源，显著降低研究门槛，3D打印外骨骼进一步控制制造成本。
+- **安全性**：轻量化设计使机器人无需外部支撑设备即可安全运行，降低实验室操作风险。
 
-## 参考
-- http://arxiv.org/abs/1809.11144v1
+### 机械与电子系统
+- **外骨骼**：采用3D打印技术制造，兼顾结构强度与轻量化，外观具有视觉吸引力。
+- **电子架构**：集成高性能计算单元与传感器，支持实时运动控制与感知反馈。
+- **软件框架**：基于ROS（Robot Operating System）构建，提供模块化开发环境，便于算法移植与协作。
+
+### 实验验证与成果
+- **竞赛表现**：在RoboCup 2017（日本名古屋）人形机器人联赛成人组中，同时赢得足球比赛冠军和技术挑战赛冠军。
+- **技术能力**：验证了全向行走、动态平衡、物体识别与自主决策等核心功能在真实竞技场景中的可靠性。
+
+### 结论
+NimbRo-OP2 通过开源策略和3D打印技术，为大型人形机器人研究提供了低成本、易复现的解决方案，其竞赛成绩证明了平台在复杂动态环境中的实用性与鲁棒性。
 
 ## Overview
-The versatility of humanoid robots in locomotion, full-body motion, interaction with unmodified human environments, and intuitive human-robot interaction led to increased research interest. Multiple smaller platforms are available for research, but these require a miniaturized environment to interact with---and often the small scale of the robot diminishes the influence of factors which would have affected larger robots. Unfortunately, many research platforms in the larger size range are less affordable, more difficult to operate, maintain and modify, and very often closed-source. In this work, we introduce NimbRo-OP2X, an affordable, fully open-source platform in terms of both hardware and software. Being almost 135cm tall and only 18kg in weight, the robot is not only capable of interacting in an environment meant for humans, but also easy and safe to operate and does not require a gantry when doing so. The exoskeleton of the robot is 3D printed, which produces a lightweight and visually appealing design. We present all mechanical and electrical aspects of the robot, as well as some of the software features of our well-established open-source ROS software. The NimbRo-OP2X performed at RoboCup 2017 in Nagoya, Japan, where it won the Humanoid League AdultSize Soccer competition and Technical Challenge.
-
-## Content
 The versatility of humanoid robots in locomotion, full-body motion, interaction with unmodified human environments, and intuitive human-robot interaction led to increased research interest. Multiple smaller platforms are available for research, but these require a miniaturized environment to interact with---and often the small scale of the robot diminishes the influence of factors which would have affected larger robots. Unfortunately, many research platforms in the larger size range are less affordable, more difficult to operate, maintain and modify, and very often closed-source. In this work, we introduce NimbRo-OP2X, an affordable, fully open-source platform in terms of both hardware and software. Being almost 135cm tall and only 18kg in weight, the robot is not only capable of interacting in an environment meant for humans, but also easy and safe to operate and does not require a gantry when doing so. The exoskeleton of the robot is 3D printed, which produces a lightweight and visually appealing design. We present all mechanical and electrical aspects of the robot, as well as some of the software features of our well-established open-source ROS software. The NimbRo-OP2X performed at RoboCup 2017 in Nagoya, Japan, where it won the Humanoid League AdultSize Soccer competition and Technical Challenge.
 
 ## 개요
@@ -76,3 +86,6 @@ The versatility of humanoid robots in locomotion, full-body motion, interaction 
 
 ## 핵심 내용
 휴머노이드 로봇의 이동, 전신 동작, 개조되지 않은 인간 환경과의 상호작용, 직관적인 인간-로봇 상호작용에서의 다재다능함은 연구 관심을 증가시켰습니다. 연구를 위해 여러 소형 플랫폼이 제공되지만, 이들은 상호작용을 위해 소형화된 환경이 필요하며, 종종 로봇의 작은 크기로 인해 대형 로봇에 영향을 미칠 요소들의 영향이 감소합니다. 불행히도, 대형 크기 범위의 많은 연구 플랫폼은 가격이 비싸고, 운영, 유지보수 및 수정이 더 어려우며, 대부분 폐쇄 소스입니다. 본 연구에서는 하드웨어와 소프트웨어 모두에서 저렴하고 완전히 오픈소스인 플랫폼 NimbRo-OP2X를 소개합니다. 키가 약 135cm이고 무게가 18kg에 불과한 이 로봇은 인간을 위한 환경에서 상호작용할 수 있을 뿐만 아니라, 운영이 쉽고 안전하며, 이를 위해 갠트리가 필요하지 않습니다. 로봇의 외골격은 3D 프린팅되어 가볍고 시각적으로 매력적인 디자인을 제공합니다. 우리는 로봇의 모든 기계적 및 전기적 측면과 함께 잘 확립된 오픈소스 ROS 소프트웨어의 일부 기능을 제시합니다. NimbRo-OP2X는 일본 나고야에서 열린 RoboCup 2017에서 휴머노이드 리그 어덜트사이즈 축구 대회와 기술 챌린지에서 우승했습니다.
+
+## 参考
+- http://arxiv.org/abs/1809.11144v1

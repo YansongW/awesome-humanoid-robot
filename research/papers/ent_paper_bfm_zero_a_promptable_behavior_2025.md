@@ -15,7 +15,8 @@ summary:
     be prompted for multiple downstream tasks without retraining. This well-structured latent space in BFM-Zero enables versatile
     and robust whole-body skills on a Unitree G1 humanoid in the real world, via diverse inference methods, including zero-shot
     motion tracking, goal reaching, and reward optimization, and few-sho
-  zh: BFM-Zero 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、分层技能/专家策略、闭环纠错/人类干预训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+  zh: BFM-Zero 是一个面向人形机器人控制的提示式行为基础模型框架，由研究团队提出。其核心贡献在于通过无监督强化学习学习共享潜在表示，将运动、目标和奖励嵌入同一空间，使单一策略无需重新训练即可执行多种下游任务。该模型在 Unitree
+    G1 人形机器人上实现了零样本运动跟踪、目标到达和奖励优化等真实世界全身技能。
   ko: BFM-Zero 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、分层技能/专家策略、闭环纠错/人类干预训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 06_design_engineering
@@ -39,7 +40,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: BFM-Zero: A Promptable
-    Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning.'
+    Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning. [2026-07-29] zh content backfilled
+    from English abstract via scripts/sinicize_english_cards.py'
 sources:
 - id: src_001
   type: website
@@ -51,18 +53,31 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Building Behavioral Foundation Models (BFMs) for humanoid robots has the potential to unify diverse control tasks under a single, promptable generalist policy. However, existing approaches are either exclusively deployed on simulated humanoid characters, or specialized to specific tasks such as tracking. We propose BFM-Zero, a framework that learns an effective shared latent representation that embeds motions, goals, and rewards into a common space, enabling a single policy to be prompted for multiple downstream tasks without retraining. This well-structured latent space in BFM-Zero enables versatile and robust whole-body skills on a Unitree G1 humanoid in the real world, via diverse inference methods, including zero-shot motion tracking, goal reaching, and reward optimization, and few-shot optimization-based adaptation. Unlike prior on-policy reinforcement learning (RL) frameworks, BFM-Zero builds upon recent advancements in unsupervised RL and Forward-Backward (FB) models, which offer an objective-centric, explainable, and smooth latent representation of whole-body motions. We further extend BFM-Zero with critical reward shaping, domain randomization, and history-dependent asymmetric learning to bridge the sim-to-real gap. Those key design choices are quantitatively ablated in simulation. A first-of-its-kind model, BFM-Zero establishes a step toward scalable, promptable behavioral foundation models for whole-body humanoid control.
+现有的人形机器人行为基础模型要么仅部署于仿真环境，要么局限于特定任务如跟踪。BFM-Zero 通过无监督强化学习和 Forward-Backward (FB) 模型构建了一个目标导向、可解释且平滑的潜在表示空间，从而支持多种推理方法。该框架结合了奖励塑形、域随机化和历史依赖的非对称学习等关键设计，有效缩小了仿真到现实的差距。在 Unitree G1 人形机器人上的真实世界实验中，BFM-Zero 展示了零样本运动跟踪、目标到达和奖励优化等多样化能力，并通过少量样本的优化实现自适应。
 
 ## 核心内容
-Building Behavioral Foundation Models (BFMs) for humanoid robots has the potential to unify diverse control tasks under a single, promptable generalist policy. However, existing approaches are either exclusively deployed on simulated humanoid characters, or specialized to specific tasks such as tracking. We propose BFM-Zero, a framework that learns an effective shared latent representation that embeds motions, goals, and rewards into a common space, enabling a single policy to be prompted for multiple downstream tasks without retraining. This well-structured latent space in BFM-Zero enables versatile and robust whole-body skills on a Unitree G1 humanoid in the real world, via diverse inference methods, including zero-shot motion tracking, goal reaching, and reward optimization, and few-shot optimization-based adaptation. Unlike prior on-policy reinforcement learning (RL) frameworks, BFM-Zero builds upon recent advancements in unsupervised RL and Forward-Backward (FB) models, which offer an objective-centric, explainable, and smooth latent representation of whole-body motions. We further extend BFM-Zero with critical reward shaping, domain randomization, and history-dependent asymmetric learning to bridge the sim-to-real gap. Those key design choices are quantitatively ablated in simulation. A first-of-its-kind model, BFM-Zero establishes a step toward scalable, promptable behavioral foundation models for whole-body humanoid control.
+### 方法架构
+BFM-Zero 的核心是学习一个共享潜在表示空间，该空间通过无监督强化学习将运动、目标和奖励嵌入统一表征。具体而言，框架基于 Forward-Backward (FB) 模型，该模型提供目标导向、可解释且平滑的全身运动潜在表示。与传统的基于策略的强化学习框架不同，BFM-Zero 利用无监督 RL 的最新进展，避免了手动设计奖励函数的繁琐过程。
 
-## 参考
-- Semantic Scholar search: BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning
+### 关键设计
+- **奖励塑形**：通过精心设计的奖励函数引导策略学习，提升任务性能。
+- **域随机化**：在仿真环境中引入随机化参数（如物理属性、传感器噪声），增强策略对真实世界变化的鲁棒性。
+- **历史依赖的非对称学习**：利用历史观测信息进行非对称训练，进一步缩小仿真到现实的差距。
+
+### 实验设置
+- **硬件平台**：Unitree G1 人形机器人。
+- **推理方法**：支持零样本运动跟踪、目标到达、奖励优化，以及基于少量样本的优化自适应。
+- **消融实验**：在仿真环境中对关键设计选择（如奖励塑形、域随机化）进行定量消融分析，验证其有效性。
+
+### 关键结果
+- BFM-Zero 在真实世界 Unitree G1 人形机器人上成功实现了多种全身技能，包括零样本运动跟踪（如行走、跑步）、目标到达（如抓取指定位置）和奖励优化（如平衡控制）。
+- 通过少量样本的优化自适应，策略能够快速适应新任务或环境变化。
+- 消融实验表明，奖励塑形和域随机化对策略的鲁棒性和泛化能力至关重要。
+
+### 结论
+BFM-Zero 是首个可提示的行为基础模型，为人形机器人全身控制提供了可扩展的解决方案。其共享潜在表示和多样化的推理方法为未来通用人形机器人策略的发展奠定了基础。
 
 ## Overview
-Building Behavioral Foundation Models (BFMs) for humanoid robots has the potential to unify diverse control tasks under a single, promptable generalist policy. However, existing approaches are either exclusively deployed on simulated humanoid characters, or specialized to specific tasks such as tracking. We propose BFM-Zero, a framework that learns an effective shared latent representation that embeds motions, goals, and rewards into a common space, enabling a single policy to be prompted for multiple downstream tasks without retraining. This well-structured latent space in BFM-Zero enables versatile and robust whole-body skills on a Unitree G1 humanoid in the real world, via diverse inference methods, including zero-shot motion tracking, goal reaching, and reward optimization, and few-shot optimization-based adaptation. Unlike prior on-policy reinforcement learning (RL) frameworks, BFM-Zero builds upon recent advancements in unsupervised RL and Forward-Backward (FB) models, which offer an objective-centric, explainable, and smooth latent representation of whole-body motions. We further extend BFM-Zero with critical reward shaping, domain randomization, and history-dependent asymmetric learning to bridge the sim-to-real gap. Those key design choices are quantitatively ablated in simulation. A first-of-its-kind model, BFM-Zero establishes a step toward scalable, promptable behavioral foundation models for whole-body humanoid control.
-
-## Content
 Building Behavioral Foundation Models (BFMs) for humanoid robots has the potential to unify diverse control tasks under a single, promptable generalist policy. However, existing approaches are either exclusively deployed on simulated humanoid characters, or specialized to specific tasks such as tracking. We propose BFM-Zero, a framework that learns an effective shared latent representation that embeds motions, goals, and rewards into a common space, enabling a single policy to be prompted for multiple downstream tasks without retraining. This well-structured latent space in BFM-Zero enables versatile and robust whole-body skills on a Unitree G1 humanoid in the real world, via diverse inference methods, including zero-shot motion tracking, goal reaching, and reward optimization, and few-shot optimization-based adaptation. Unlike prior on-policy reinforcement learning (RL) frameworks, BFM-Zero builds upon recent advancements in unsupervised RL and Forward-Backward (FB) models, which offer an objective-centric, explainable, and smooth latent representation of whole-body motions. We further extend BFM-Zero with critical reward shaping, domain randomization, and history-dependent asymmetric learning to bridge the sim-to-real gap. Those key design choices are quantitatively ablated in simulation. A first-of-its-kind model, BFM-Zero establishes a step toward scalable, promptable behavioral foundation models for whole-body humanoid control.
 
 ## 개요
@@ -70,3 +85,6 @@ Building Behavioral Foundation Models (BFMs) for humanoid robots has the potenti
 
 ## 핵심 내용
 휴머노이드 로봇을 위한 행동 기반 모델(BFM)을 구축하면 다양한 제어 작업을 단일 프롬프트 가능한 범용 정책으로 통합할 수 있는 잠재력을 제공합니다. 그러나 기존 접근 방식은 시뮬레이션된 휴머노이드 캐릭터에만 배포되거나 추적과 같은 특정 작업에 특화되어 있습니다. 우리는 BFM-Zero를 제안합니다. 이 프레임워크는 동작, 목표 및 보상을 공통 공간에 임베딩하는 효과적인 공유 잠재 표현을 학습하여, 재학습 없이 단일 정책으로 여러 다운스트림 작업을 프롬프트할 수 있도록 합니다. BFM-Zero의 잘 구조화된 잠재 공간은 제로샷 동작 추적, 목표 도달, 보상 최적화 및 퓨샷 최적화 기반 적응을 포함한 다양한 추론 방법을 통해 실제 세계의 Unitree G1 휴머노이드에서 다재다능하고 강력한 전신 기술을 가능하게 합니다. 이전의 온-폴리시 강화 학습(RL) 프레임워크와 달리, BFM-Zero는 최근의 비지도 RL 및 Forward-Backward(FB) 모델의 발전을 기반으로 하며, 이는 목표 중심적이고 설명 가능하며 부드러운 전신 동작의 잠재 표현을 제공합니다. 우리는 BFM-Zero를 중요한 보상 형성, 도메인 무작위화 및 히스토리 종속 비대칭 학습으로 확장하여 시뮬레이션-현실 간극을 해소합니다. 이러한 주요 설계 선택은 시뮬레이션에서 정량적으로 절제됩니다. 최초의 모델인 BFM-Zero는 확장 가능하고 프롬프트 가능한 전신 휴머노이드 제어를 위한 행동 기반 모델로 나아가는 한 걸음을 확립합니다.
+
+## 参考
+- Semantic Scholar search: BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning

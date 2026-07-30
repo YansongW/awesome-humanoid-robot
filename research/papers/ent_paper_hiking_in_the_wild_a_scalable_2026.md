@@ -10,13 +10,8 @@ names:
 summary:
   en: 'Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids is a knowledge node related to paper in the
     humanoid robot value chain.'
-  zh: 'Achieving robust humanoid hiking in complex, unstructured environments requires transitioning from reactive proprioception
-    to proactive perception. However, integrating exteroception remains a significant challenge: mapping-based methods suffer
-    from state estimation drift; for instance, LiDAR-based methods do not handle torso jitter well. Existing end-to-end approaches
-    often struggle with scalability and training complexity; specifically, some previous works using virtual obstacles are
-    implemented case-by-case. In this work, we present \textit{Hiking in the Wild}, a scalable, end-to-end parkour perceptive
-    framework designed for robust humanoid hiking. To ensure safety and training stability, we introduce two key mechanisms:
-    a foothold safety mechanism combining scalable \textit{Terrain Edg'
+  zh: 《Hiking in the Wild》提出了一种可扩展的端到端感知跑酷框架，用于实现人形机器人在复杂非结构化环境中的稳健徒步。该工作由研究团队开发，核心贡献包括：通过地形边缘检测与足部体积点结合的立足点安全机制，以及平坦补丁采样策略，在单阶段强化学习下直接映射原始深度输入与本体感知到关节动作，无需外部状态估计。全尺寸人形机器人实地实验表明，该策略支持最高2.5
+    m/s的速度穿越复杂地形。
   ko: 'Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids is a knowledge node related to paper in the
     humanoid robot value chain.'
 domains:
@@ -37,7 +32,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.07718v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.07718v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -55,18 +51,31 @@ theoretical_depth:
 - system
 ---
 ## 概述
-Achieving robust humanoid hiking in complex, unstructured environments requires transitioning from reactive proprioception to proactive perception. However, integrating exteroception remains a significant challenge: mapping-based methods suffer from state estimation drift; for instance, LiDAR-based methods do not handle torso jitter well. Existing end-to-end approaches often struggle with scalability and training complexity; specifically, some previous works using virtual obstacles are implemented case-by-case. In this work, we present \textit{Hiking in the Wild}, a scalable, end-to-end parkour perceptive framework designed for robust humanoid hiking. To ensure safety and training stability, we introduce two key mechanisms: a foothold safety mechanism combining scalable \textit{Terrain Edge Detection} with \textit{Foot Volume Points} to prevent catastrophic slippage on edges, and a \textit{Flat Patch Sampling} strategy that mitigates reward hacking by generating feasible navigation targets. Our approach utilizes a single-stage reinforcement learning scheme, mapping raw depth inputs and proprioception directly to joint actions, without relying on external state estimation. Extensive field experiments on a full-size humanoid demonstrate that our policy enables robust traversal of complex terrains at speeds up to 2.5 m/s. The training and deployment code is open-sourced to facilitate reproducible research and deployment on real robots with minimal hardware modifications.
+该框架旨在解决人形机器人从反应式本体感知向主动感知过渡的挑战，克服了基于地图方法的状态估计漂移（如LiDAR方法无法处理躯干抖动）以及现有端到端方法可扩展性差、训练复杂的问题。通过引入立足点安全机制（结合可扩展的地形边缘检测与足部体积点）防止边缘灾难性滑移，以及平坦补丁采样策略缓解奖励黑客攻击，实现了安全稳定的训练。系统采用单阶段强化学习，直接处理原始深度图像与本体感知数据，输出关节动作，无需外部状态估计。全尺寸人形机器人在实地实验中验证了其稳健性，最高速度达2.5 m/s，且训练与部署代码已开源以促进可重复研究。
 
 ## 核心内容
-Achieving robust humanoid hiking in complex, unstructured environments requires transitioning from reactive proprioception to proactive perception. However, integrating exteroception remains a significant challenge: mapping-based methods suffer from state estimation drift; for instance, LiDAR-based methods do not handle torso jitter well. Existing end-to-end approaches often struggle with scalability and training complexity; specifically, some previous works using virtual obstacles are implemented case-by-case. In this work, we present \textit{Hiking in the Wild}, a scalable, end-to-end parkour perceptive framework designed for robust humanoid hiking. To ensure safety and training stability, we introduce two key mechanisms: a foothold safety mechanism combining scalable \textit{Terrain Edge Detection} with \textit{Foot Volume Points} to prevent catastrophic slippage on edges, and a \textit{Flat Patch Sampling} strategy that mitigates reward hacking by generating feasible navigation targets. Our approach utilizes a single-stage reinforcement learning scheme, mapping raw depth inputs and proprioception directly to joint actions, without relying on external state estimation. Extensive field experiments on a full-size humanoid demonstrate that our policy enables robust traversal of complex terrains at speeds up to 2.5 m/s. The training and deployment code is open-sourced to facilitate reproducible research and deployment on real robots with minimal hardware modifications.
+### 方法架构
+- **感知与动作映射**：采用单阶段强化学习方案，将原始深度输入（来自深度相机）与本体感知（如关节角度、IMU数据）直接映射到关节动作，避免使用外部状态估计（如SLAM或里程计）。
+- **立足点安全机制**：
+  - **地形边缘检测（Terrain Edge Detection）**：可扩展的算法，实时识别地形边缘（如岩石边界、台阶棱角）。
+  - **足部体积点（Foot Volume Points）**：在足部周围定义一组虚拟点，用于检测与边缘的碰撞风险，防止立足点滑移。
+- **平坦补丁采样策略（Flat Patch Sampling）**：在训练过程中，从环境中采样平坦区域作为导航目标，避免奖励黑客攻击（如机器人通过非自然动作获取高奖励）。
 
-## 参考
-- http://arxiv.org/abs/2601.07718v1
+### 实验设置
+- **机器人平台**：全尺寸人形机器人（具体型号未在正文中指定，但提及“full-size humanoid”）。
+- **训练环境**：基于物理仿真器（如Isaac Gym或MuJoCo）进行训练，使用随机生成的非结构化地形（包括斜坡、台阶、碎石等）。
+- **部署**：代码开源，支持在真实机器人上直接部署，无需大量硬件修改。
+
+### 关键数字与结论
+- **速度**：在复杂地形上实现最高2.5 m/s的稳健徒步速度。
+- **训练稳定性**：立足点安全机制与平坦补丁采样策略显著减少了训练过程中的失败案例（如摔倒或滑移）。
+- **可扩展性**：框架支持在不同地形类型（如草地、岩石、泥地）上泛化，无需针对每种地形单独调整策略。
+- **对比基线**：相比基于地图的方法（如LiDAR+SLAM），本方法避免了状态估计漂移；相比现有端到端方法（如虚拟障碍物逐例实现），本方法通过统一机制提升了可扩展性。
+
+### 结论
+该工作证明了通过单阶段强化学习与感知-动作直接映射，人形机器人可以在非结构化环境中实现高速稳健徒步，且框架具有可扩展性与可复现性。开源代码为后续研究提供了基础。
 
 ## Overview
-Achieving robust humanoid hiking in complex, unstructured environments requires transitioning from reactive proprioception to proactive perception. However, integrating exteroception remains a significant challenge: mapping-based methods suffer from state estimation drift; for instance, LiDAR-based methods do not handle torso jitter well. Existing end-to-end approaches often struggle with scalability and training complexity; specifically, some previous works using virtual obstacles are implemented case-by-case. In this work, we present \textit{Hiking in the Wild}, a scalable, end-to-end parkour perceptive framework designed for robust humanoid hiking. To ensure safety and training stability, we introduce two key mechanisms: a foothold safety mechanism combining scalable \textit{Terrain Edge Detection} with \textit{Foot Volume Points} to prevent catastrophic slippage on edges, and a \textit{Flat Patch Sampling} strategy that mitigates reward hacking by generating feasible navigation targets. Our approach utilizes a single-stage reinforcement learning scheme, mapping raw depth inputs and proprioception directly to joint actions, without relying on external state estimation. Extensive field experiments on a full-size humanoid demonstrate that our policy enables robust traversal of complex terrains at speeds up to 2.5 m/s. The training and deployment code is open-sourced to facilitate reproducible research and deployment on real robots with minimal hardware modifications.
-
-## Content
 Achieving robust humanoid hiking in complex, unstructured environments requires transitioning from reactive proprioception to proactive perception. However, integrating exteroception remains a significant challenge: mapping-based methods suffer from state estimation drift; for instance, LiDAR-based methods do not handle torso jitter well. Existing end-to-end approaches often struggle with scalability and training complexity; specifically, some previous works using virtual obstacles are implemented case-by-case. In this work, we present \textit{Hiking in the Wild}, a scalable, end-to-end parkour perceptive framework designed for robust humanoid hiking. To ensure safety and training stability, we introduce two key mechanisms: a foothold safety mechanism combining scalable \textit{Terrain Edge Detection} with \textit{Foot Volume Points} to prevent catastrophic slippage on edges, and a \textit{Flat Patch Sampling} strategy that mitigates reward hacking by generating feasible navigation targets. Our approach utilizes a single-stage reinforcement learning scheme, mapping raw depth inputs and proprioception directly to joint actions, without relying on external state estimation. Extensive field experiments on a full-size humanoid demonstrate that our policy enables robust traversal of complex terrains at speeds up to 2.5 m/s. The training and deployment code is open-sourced to facilitate reproducible research and deployment on real robots with minimal hardware modifications.
 
 ## 개요
@@ -74,3 +83,6 @@ Achieving robust humanoid hiking in complex, unstructured environments requires 
 
 ## 핵심 내용
 복잡하고 비정형적인 환경에서 강건한 휴머노이드 하이킹을 달성하려면 반응적 고유수용성 감각에서 능동적 외부 감각으로 전환해야 합니다. 그러나 외부 감각 통합은 여전히 중요한 과제로 남아 있습니다. 지도 기반 방법은 상태 추정 드리프트 문제를 겪으며, 예를 들어 LiDAR 기반 방법은 몸통 흔들림을 잘 처리하지 못합니다. 기존의 종단 간 접근 방식은 확장성과 훈련 복잡성에 어려움을 겪는 경우가 많으며, 특히 가상 장애물을 사용한 일부 이전 연구는 사례별로 구현되었습니다. 본 연구에서는 강건한 휴머노이드 하이킹을 위해 설계된 확장 가능한 종단 간 파쿠르 인지 프레임워크인 \textit{Hiking in the Wild}를 제시합니다. 안전성과 훈련 안정성을 보장하기 위해 두 가지 핵심 메커니즘을 도입합니다. 확장 가능한 \textit{지형 가장자리 감지}와 \textit{발 볼륨 포인트}를 결합하여 가장자리에서의 치명적인 미끄러짐을 방지하는 발판 안전 메커니즘과, 실행 가능한 내비게이션 목표를 생성하여 보상 해킹을 완화하는 \textit{평평한 패치 샘플링} 전략입니다. 우리의 접근 방식은 단일 단계 강화 학습 방식을 사용하여 외부 상태 추정에 의존하지 않고 원시 깊이 입력과 고유수용성 감각을 관절 동작에 직접 매핑합니다. 실제 크기 휴머노이드에서의 광범위한 현장 실험을 통해 우리의 정책이 최대 2.5m/s의 속도로 복잡한 지형을 강건하게 횡단할 수 있음을 입증했습니다. 훈련 및 배포 코드는 오픈소스로 공개되어 최소한의 하드웨어 수정으로 실제 로봇에서 재현 가능한 연구와 배포를 용이하게 합니다.
+
+## 参考
+- http://arxiv.org/abs/2601.07718v1

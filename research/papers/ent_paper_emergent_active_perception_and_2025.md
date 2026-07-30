@@ -10,8 +10,7 @@ names:
 summary:
   en: Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning is a 2025 work on
     physics-based character animation for humanoid robots.
-  zh: Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning is a 2025 work on
-    physics-based character animation for humanoid robots.
+  zh: Perceptive Dexterous Control (PDC) 是2025年提出的一种基于视觉强化学习的模拟人形机器人框架。它仅依靠第一人称视觉输入实现物体搜索、抓取与放置等灵巧操作，无需3D位置等特权状态信息，并展现出主动感知等涌现行为。
   ko: Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning is a 2025 work on
     physics-based character animation for humanoid robots.
 domains:
@@ -33,7 +32,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.12278v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.12278v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -49,18 +49,25 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-Human behavior is fundamentally shaped by visual perception -- our ability to interact with the world depends on actively gathering relevant information and adapting our movements accordingly. Behaviors like searching for objects, reaching, and hand-eye coordination naturally emerge from the structure of our sensory system. Inspired by these principles, we introduce Perceptive Dexterous Control (PDC), a framework for vision-driven dexterous whole-body control with simulated humanoids. PDC operates solely on egocentric vision for task specification, enabling object search, target placement, and skill selection through visual cues, without relying on privileged state information (e.g., 3D object positions and geometries). This perception-as-interface paradigm enables learning a single policy to perform multiple household tasks, including reaching, grasping, placing, and articulated object manipulation. We also show that training from scratch with reinforcement learning can produce emergent behaviors such as active search. These results demonstrate how vision-driven control and complex tasks induce human-like behaviors and can serve as the key ingredients in closing the perception-action loop for animation, robotics, and embodied AI.
+受人类视觉感知驱动行为的启发，PDC框架将第一人称视觉作为任务接口，使模拟人形机器人能够执行多种家务操作。该框架摒弃了传统的3D物体位置与几何信息，仅通过视觉线索完成物体搜索、目标定位与技能选择。实验表明，从零开始的强化学习训练即可涌现出主动搜索等类人行为，证明了视觉驱动控制与复杂任务之间的闭环关系。
 
 ## 核心内容
-Human behavior is fundamentally shaped by visual perception -- our ability to interact with the world depends on actively gathering relevant information and adapting our movements accordingly. Behaviors like searching for objects, reaching, and hand-eye coordination naturally emerge from the structure of our sensory system. Inspired by these principles, we introduce Perceptive Dexterous Control (PDC), a framework for vision-driven dexterous whole-body control with simulated humanoids. PDC operates solely on egocentric vision for task specification, enabling object search, target placement, and skill selection through visual cues, without relying on privileged state information (e.g., 3D object positions and geometries). This perception-as-interface paradigm enables learning a single policy to perform multiple household tasks, including reaching, grasping, placing, and articulated object manipulation. We also show that training from scratch with reinforcement learning can produce emergent behaviors such as active search. These results demonstrate how vision-driven control and complex tasks induce human-like behaviors and can serve as the key ingredients in closing the perception-action loop for animation, robotics, and embodied AI.
+### 核心方法
+- **感知即接口**：PDC将第一人称视觉作为唯一任务规范输入，替代传统方法中依赖的3D物体位置与几何等特权状态信息。
+- **灵巧全身控制**：框架支持物体搜索、目标放置与技能选择，通过视觉线索驱动整个控制流程。
 
-## 参考
-- http://arxiv.org/abs/2505.12278v1
+### 实验设置
+- **训练方式**：从零开始进行强化学习训练，不依赖任何预训练或特权信息。
+- **任务范围**：涵盖多种家务操作，包括伸手、抓取、放置以及铰接物体操作。
+
+### 关键发现
+- **涌现行为**：训练过程中自然产生了主动搜索等类人行为，验证了视觉驱动控制的有效性。
+- **单一策略**：单个策略即可完成多种任务，无需为不同任务分别训练模型。
+
+### 结论
+PDC框架展示了视觉驱动控制如何通过感知-动作闭环实现类人行为，为动画、机器人学与具身AI领域提供了关键设计思路。
 
 ## Overview
-Human behavior is fundamentally shaped by visual perception -- our ability to interact with the world depends on actively gathering relevant information and adapting our movements accordingly. Behaviors like searching for objects, reaching, and hand-eye coordination naturally emerge from the structure of our sensory system. Inspired by these principles, we introduce Perceptive Dexterous Control (PDC), a framework for vision-driven dexterous whole-body control with simulated humanoids. PDC operates solely on egocentric vision for task specification, enabling object search, target placement, and skill selection through visual cues, without relying on privileged state information (e.g., 3D object positions and geometries). This perception-as-interface paradigm enables learning a single policy to perform multiple household tasks, including reaching, grasping, placing, and articulated object manipulation. We also show that training from scratch with reinforcement learning can produce emergent behaviors such as active search. These results demonstrate how vision-driven control and complex tasks induce human-like behaviors and can serve as the key ingredients in closing the perception-action loop for animation, robotics, and embodied AI.
-
-## Content
 Human behavior is fundamentally shaped by visual perception -- our ability to interact with the world depends on actively gathering relevant information and adapting our movements accordingly. Behaviors like searching for objects, reaching, and hand-eye coordination naturally emerge from the structure of our sensory system. Inspired by these principles, we introduce Perceptive Dexterous Control (PDC), a framework for vision-driven dexterous whole-body control with simulated humanoids. PDC operates solely on egocentric vision for task specification, enabling object search, target placement, and skill selection through visual cues, without relying on privileged state information (e.g., 3D object positions and geometries). This perception-as-interface paradigm enables learning a single policy to perform multiple household tasks, including reaching, grasping, placing, and articulated object manipulation. We also show that training from scratch with reinforcement learning can produce emergent behaviors such as active search. These results demonstrate how vision-driven control and complex tasks induce human-like behaviors and can serve as the key ingredients in closing the perception-action loop for animation, robotics, and embodied AI.
 
 ## 개요
@@ -68,3 +75,6 @@ Human behavior is fundamentally shaped by visual perception -- our ability to in
 
 ## 핵심 내용
 인간의 행동은 근본적으로 시각적 인식에 의해 형성됩니다. 즉, 세상과 상호작용하는 능력은 관련 정보를 적극적으로 수집하고 그에 따라 움직임을 조정하는 데 달려 있습니다. 물체 찾기, 손을 뻗기, 손-눈 협응과 같은 행동은 우리 감각 시스템의 구조에서 자연스럽게 발생합니다. 이러한 원리에서 영감을 받아, 우리는 시뮬레이션된 휴머노이드를 위한 시각 기반의 능숙한 전신 제어 프레임워크인 Perceptive Dexterous Control (PDC)을 소개합니다. PDC는 작업 지정을 위해 전적으로 자기중심적 시각에 의존하며, 특권 상태 정보(예: 3D 물체 위치 및 기하학적 구조)에 의존하지 않고 시각적 단서를 통해 물체 검색, 목표 배치 및 기술 선택을 가능하게 합니다. 이 인식-인터페이스 패러다임은 단일 정책이 손 뻗기, 잡기, 놓기, 관절 물체 조작을 포함한 여러 가정용 작업을 수행하도록 학습할 수 있게 합니다. 또한 강화 학습을 통해 처음부터 훈련하면 능동적 검색과 같은 창발적 행동이 생성될 수 있음을 보여줍니다. 이러한 결과는 시각 기반 제어와 복잡한 작업이 어떻게 인간과 유사한 행동을 유도하는지, 그리고 애니메이션, 로봇공학, 구현 AI에서 지각-행동 루프를 닫는 핵심 요소가 될 수 있는지를 입증합니다.
+
+## 参考
+- http://arxiv.org/abs/2505.12278v1

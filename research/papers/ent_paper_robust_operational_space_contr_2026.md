@@ -21,19 +21,7 @@ summary:
     employ a sliding-window conformal prediction mechanism to estimate the bound online in a distribution-free manner, thereby
     achieving practical probabilistic safety guarantees. Experiments on a 7-DoF Franka Research 3 manipulator demonstrate
     millimeter-level tracking accuracy and real-time safe control at 1~kHz under various disturbances.'
-  zh: 'arXiv:2607.00424v1 Announce Type: new Abstract: Redundant robotic manipulators operating in constrained and human-interactive
-    environments require accurate task-space tracking together with rigorous safety guarantees under dynamic uncertainties.
-    Classical operational space computed torque controller (OSCTC) relies on accurate dynamic models and degrades in the presence
-    of disturbances. In contrast, the data-driven paradigm of residual learning approximates disturbances as functions learned
-    from full-state measurements, which are often noisy in practice, lack rigorous theoretical guarantees, and introduce additional
-    design complexity. This paper proposes a robust OSCTC framework that integrates an extended state observer (ESO) with
-    conformal prediction to combine model-based robustness and data-driven adaptability. The ESO estimates lumped disturbances
-    directly in operational space without requiring full-state measurements as in residual learning, and a robust control
-    barrier function (CBF) is constructed to enforce safety under uncertainty. However, robust CBFs require a known disturbance-variation
-    bound to guarantee absolute safety, which often leads to conservatism in practice. To address this limitation, we further
-    employ a sliding-window conformal prediction mechanism to estimate the bound online in a distribution-free manner, thereby
-    achieving practical probabilistic safety guarantees. Experiments on a 7-DoF Franka Research 3 manipulator demonstrate
-    millimeter-level tracking accuracy and real-time safe control at 1~kHz under various disturbances.'
+  zh: 本文提出一种鲁棒操作空间控制框架，将扩展状态观测器（ESO）与保形预测相结合，用于冗余机械臂的安全控制。该框架在7-DoF Franka Research 3机械臂上实现了毫米级跟踪精度和1 kHz实时安全控制，无需全状态测量即可处理动态不确定性。
   ko: 'arXiv:2607.00424v1 Announce Type: new Abstract: Redundant robotic manipulators operating in constrained and human-interactive
     environments require accurate task-space tracking together with rigorous safety guarantees under dynamic uncertainties.
     Classical operational space computed torque controller (OSCTC) relies on accurate dynamic models and degrades in the presence
@@ -66,7 +54,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00424v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00424v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -76,18 +65,30 @@ sources:
   accessed_at: '2026-07-03'
 ---
 ## 概述
-Redundant robotic manipulators operating in constrained and human-interactive environments require accurate task-space tracking together with rigorous safety guarantees under dynamic uncertainties. Classical operational space computed torque controller (OSCTC) relies on accurate dynamic models and degrades in the presence of disturbances. In contrast, the data-driven paradigm of residual learning approximates disturbances as functions learned from full-state measurements, which are often noisy in practice, lack rigorous theoretical guarantees, and introduce additional design complexity. This paper proposes a robust OSCTC framework that integrates an extended state observer (ESO) with conformal prediction to combine model-based robustness and data-driven adaptability. The ESO estimates lumped disturbances directly in operational space without requiring full-state measurements as in residual learning, and a robust control barrier function (CBF) is constructed to enforce safety under uncertainty. However, robust CBFs require a known disturbance-variation bound to guarantee absolute safety, which often leads to conservatism in practice. To address this limitation, we further employ a sliding-window conformal prediction mechanism to estimate the bound online in a distribution-free manner, thereby achieving practical probabilistic safety guarantees. Experiments on a 7-DoF Franka Research 3 manipulator demonstrate millimeter-level tracking accuracy and real-time safe control at 1~kHz under various disturbances.
+针对冗余机械臂在约束与人机交互环境中的任务空间跟踪与安全需求，本文提出一种融合扩展状态观测器（ESO）与保形预测的鲁棒操作空间控制框架。ESO直接在操作空间估计集总扰动，避免了残差学习对全状态测量的依赖；同时构建鲁棒控制屏障函数（CBF）以保障不确定性下的安全性。为解决鲁棒CBF需已知扰动变化边界导致的保守性问题，采用滑动窗口保形预测机制在线估计该边界，实现无分布假设下的实用概率安全保证。
 
 ## 核心内容
-Redundant robotic manipulators operating in constrained and human-interactive environments require accurate task-space tracking together with rigorous safety guarantees under dynamic uncertainties. Classical operational space computed torque controller (OSCTC) relies on accurate dynamic models and degrades in the presence of disturbances. In contrast, the data-driven paradigm of residual learning approximates disturbances as functions learned from full-state measurements, which are often noisy in practice, lack rigorous theoretical guarantees, and introduce additional design complexity. This paper proposes a robust OSCTC framework that integrates an extended state observer (ESO) with conformal prediction to combine model-based robustness and data-driven adaptability. The ESO estimates lumped disturbances directly in operational space without requiring full-state measurements as in residual learning, and a robust control barrier function (CBF) is constructed to enforce safety under uncertainty. However, robust CBFs require a known disturbance-variation bound to guarantee absolute safety, which often leads to conservatism in practice. To address this limitation, we further employ a sliding-window conformal prediction mechanism to estimate the bound online in a distribution-free manner, thereby achieving practical probabilistic safety guarantees. Experiments on a 7-DoF Franka Research 3 manipulator demonstrate millimeter-level tracking accuracy and real-time safe control at 1~kHz under various disturbances.
+### 方法架构
+- **核心问题**：经典操作空间计算力矩控制器（OSCTC）依赖精确动力学模型，在扰动下性能退化；残差学习需全状态测量且缺乏理论保证。
+- **ESO设计**：扩展状态观测器直接在操作空间估计集总扰动，无需全状态测量，保留模型基鲁棒性。
+- **鲁棒CBF**：构建鲁棒控制屏障函数，在不确定性下强制执行安全约束，但需已知扰动变化边界以避免保守性。
+- **保形预测机制**：采用滑动窗口保形预测在线估计扰动变化边界，无需分布假设，实现实用概率安全保证。
 
-## 参考
-- http://arxiv.org/abs/2607.00424v1
+### 实验设置
+- **平台**：7-DoF Franka Research 3机械臂
+- **扰动类型**：多种动态不确定性（未具体说明）
+- **控制频率**：1 kHz实时控制
+- **性能指标**：毫米级跟踪精度
+
+### 关键结果
+- 在各类扰动下实现毫米级任务空间跟踪精度
+- 实时安全控制频率达1 kHz
+- 保形预测机制有效降低鲁棒CBF的保守性，同时维持安全保证
+
+### 结论
+该框架通过ESO与保形预测的协同，在无需全状态测量和分布假设的前提下，兼顾了模型基鲁棒性与数据驱动适应性，为冗余机械臂在动态不确定环境中的安全操作提供了实用解决方案。
 
 ## Overview
-Redundant robotic manipulators operating in constrained and human-interactive environments require accurate task-space tracking together with rigorous safety guarantees under dynamic uncertainties. Classical operational space computed torque controller (OSCTC) relies on accurate dynamic models and degrades in the presence of disturbances. In contrast, the data-driven paradigm of residual learning approximates disturbances as functions learned from full-state measurements, which are often noisy in practice, lack rigorous theoretical guarantees, and introduce additional design complexity. This paper proposes a robust OSCTC framework that integrates an extended state observer (ESO) with conformal prediction to combine model-based robustness and data-driven adaptability. The ESO estimates lumped disturbances directly in operational space without requiring full-state measurements as in residual learning, and a robust control barrier function (CBF) is constructed to enforce safety under uncertainty. However, robust CBFs require a known disturbance-variation bound to guarantee absolute safety, which often leads to conservatism in practice. To address this limitation, we further employ a sliding-window conformal prediction mechanism to estimate the bound online in a distribution-free manner, thereby achieving practical probabilistic safety guarantees. Experiments on a 7-DoF Franka Research 3 manipulator demonstrate millimeter-level tracking accuracy and real-time safe control at 1~kHz under various disturbances.
-
-## Content
 Redundant robotic manipulators operating in constrained and human-interactive environments require accurate task-space tracking together with rigorous safety guarantees under dynamic uncertainties. Classical operational space computed torque controller (OSCTC) relies on accurate dynamic models and degrades in the presence of disturbances. In contrast, the data-driven paradigm of residual learning approximates disturbances as functions learned from full-state measurements, which are often noisy in practice, lack rigorous theoretical guarantees, and introduce additional design complexity. This paper proposes a robust OSCTC framework that integrates an extended state observer (ESO) with conformal prediction to combine model-based robustness and data-driven adaptability. The ESO estimates lumped disturbances directly in operational space without requiring full-state measurements as in residual learning, and a robust control barrier function (CBF) is constructed to enforce safety under uncertainty. However, robust CBFs require a known disturbance-variation bound to guarantee absolute safety, which often leads to conservatism in practice. To address this limitation, we further employ a sliding-window conformal prediction mechanism to estimate the bound online in a distribution-free manner, thereby achieving practical probabilistic safety guarantees. Experiments on a 7-DoF Franka Research 3 manipulator demonstrate millimeter-level tracking accuracy and real-time safe control at 1~kHz under various disturbances.
 
 ## 개요
@@ -95,3 +96,6 @@ Redundant robotic manipulators operating in constrained and human-interactive en
 
 ## 핵심 내용
 제약이 있는 환경과 인간 상호작용 환경에서 작동하는 리던던트 로봇 매니퓰레이터는 동적 불확실성 하에서 정확한 작업 공간 추적과 엄격한 안전 보장을 필요로 합니다. 고전적인 작업 공간 계산 토크 제어기(OSCTC)는 정확한 동적 모델에 의존하며 외란이 존재할 때 성능이 저하됩니다. 반면, 잔차 학습의 데이터 기반 패러다임은 전 상태 측정값으로부터 학습된 함수로 외란을 근사화하지만, 실제로는 종종 잡음이 많고 엄격한 이론적 보장이 부족하며 추가적인 설계 복잡성을 초래합니다. 본 논문은 확장 상태 관측기(ESO)와 컨포멀 예측을 통합하여 모델 기반 강건성과 데이터 기반 적응성을 결합한 강건한 OSCTC 프레임워크를 제안합니다. ESO는 잔차 학습에서처럼 전 상태 측정값을 필요로 하지 않고 작업 공간에서 직접 집합 외란을 추정하며, 불확실성 하에서 안전을 강제하기 위해 강건한 제어 장벽 함수(CBF)가 구축됩니다. 그러나 강건한 CBF는 절대적 안전을 보장하기 위해 알려진 외란 변동 경계를 필요로 하며, 이는 실제로 보수성을 초래하는 경우가 많습니다. 이 한계를 해결하기 위해, 우리는 슬라이딩 윈도우 컨포멀 예측 메커니즘을 추가로 사용하여 분포 무관 방식으로 온라인에서 경계를 추정함으로써 실용적인 확률적 안전 보장을 달성합니다. 7-DOF Franka Research 3 매니퓰레이터에 대한 실험은 다양한 외란 하에서 밀리미터 수준의 추적 정확도와 1kHz에서의 실시간 안전 제어를 입증합니다.
+
+## 参考
+- http://arxiv.org/abs/2607.00424v1

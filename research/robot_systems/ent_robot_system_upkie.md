@@ -8,9 +8,14 @@ names:
   zh: Upkie 轮足双足机器人
   ko: Upkie Wheeled Biped Robot
 summary:
-  en: A fully open-source wheeled biped robot built from about 3,000 USD of off-the-shelf components plus 3D-printed parts, using mjbots quasi-direct-drive actuators and a Raspberry Pi 4, with Python-first software and out-of-the-box PID, MPC and reinforcement-learning balancing examples.
-  zh: Upkie 是社区驱动的全开源轮足双足机器人（wheeled biped），约 3,000 美元现成组件加 60 小时以上 3D 打印即可复现，采用 mjbots qdd100 准直驱执行器与树莓派 4 主控，Python 优先的软件栈开箱自带 PID、MPC、强化学习三种平衡控制示例，是个人在真实硬件上学习平衡控制的低门槛路径。
-  ko: A fully open-source wheeled biped robot built from about 3,000 USD of off-the-shelf components plus 3D-printed parts, using mjbots quasi-direct-drive actuators and a Raspberry Pi 4, with Python-first software and out-of-the-box PID, MPC and reinforcement-learning balancing examples.
+  en: A fully open-source wheeled biped robot built from about 3,000 USD of off-the-shelf components plus 3D-printed parts,
+    using mjbots quasi-direct-drive actuators and a Raspberry Pi 4, with Python-first software and out-of-the-box PID, MPC
+    and reinforcement-learning balancing examples.
+  zh: Upkie 是社区驱动的全开源轮足双足机器人（wheeled biped），约 3,000 美元现成组件加 60 小时以上 3D 打印即可复现，采用 mjbots qdd100 准直驱执行器与树莓派 4 主控，Python 优先的软件栈开箱自带
+    PID、MPC、强化学习三种平衡控制示例，是个人在真实硬件上学习平衡控制的低门槛路径。
+  ko: A fully open-source wheeled biped robot built from about 3,000 USD of off-the-shelf components plus 3D-printed parts,
+    using mjbots quasi-direct-drive actuators and a Raspberry Pi 4, with Python-first software and out-of-the-box PID, MPC
+    and reinforcement-learning balancing examples.
 domains:
 - 02_components
 - 06_design_engineering
@@ -36,7 +41,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: '内容整理自调研档案 data/roadmap/research/upkie.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、Hackaday 项目页、PyPI 文档与 FOSDEM 2026 演讲页。身高/重量未见官方统一数值，标注为未知。'
+  notes: 内容整理自调研档案 data/roadmap/research/upkie.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、Hackaday 项目页、PyPI 文档与 FOSDEM 2026 演讲页。身高/重量未见官方统一数值，标注为未知。
 sources:
 - id: src_001
   type: website
@@ -101,3 +106,43 @@ Upkie 是社区驱动的开源轮足双足机器人（wheeled biped），核心�
 - [Hackaday 官方项目页（$3,000 组件、60+ 小时打印）](https://hackaday.io/project/185729-upkie-wheeled-biped-robots)
 - [PyPI 文档](https://pypi.org/project/upkie/)
 - [FOSDEM 2026 演讲页](https://fosdem.org/2026/schedule/event/8PUMMD-open-source-robotics-practice-upkie-wheeled-bipeds/)
+
+## 개요
+
+Upkie는 커뮤니티 주도의 오픈소스 바퀴 달린 이족 보행 로봇(wheeled biped)으로, 핵심 저자는 Stéphane Caron(Inria) 등이며, mjbots 오픈소스 액추에이터 생태계를 기반으로 구축되었습니다. Upkie Zero / Upkie Standard / 2026 하드웨어 v2 등의 구성을 포함합니다. 약 3,000달러의 기성 부품과 60시간 이상의 3D 프린팅으로 재현 가능합니다(공식 Hackaday 기준). 6자유도(각 다리당 3개: 엉덩이, 무릎, 구동 휠); 키/무게에 대한 공식 통일 값은 없습니다(출처: 조사 파일 upkie.md, 이하 동일).
+
+라이선스는 Apache-2.0(타이어 메시 CC BY 4.0)이며, 사용된 mjbots 액추에이터의 펌웨어/하드웨어/소프트웨어 역시 모두 오픈소스입니다——모터 펌웨어부터 상위 제어까지 전체 체인을 수정할 수 있습니다. GitHub 저장소 `upkie/upkie`는 386 stars / 52 forks(2026-07-01 스냅샷, 여전히 높은 업데이트 빈도), `upkie/parts`(CAD/출력물)와 `upkie/upkie_description`(URDF)이 함께 유지 관리되며, awesome-open-source-robots 등의 유명 목록에 포함되어 있습니다. 바퀴 달린 이족 형태는 바퀴로 균형을 유지하고 다리로 불규칙한 지형에 대응하며, 순수 보행 이족 로봇에 비해 제어 난이도와 기계적 위험이 크게 낮습니다.
+
+## 핵심 내용
+
+### 주요 파라미터
+
+| 항목 | 값 | 출처 |
+|---|---|---|
+| 자유도 | 6(각 다리당 3개: 엉덩이, 무릎, 구동 휠) | 조사 파일 |
+| 하드웨어 비용 | 약 $3,000 기성 부품 + 60시간 이상 3D 프린팅 | Hackaday 공식 프로젝트 페이지 |
+| 메인 컨트롤러 | Raspberry Pi 4 + mjbots pi3hat(CAN 확장 보드) + 전원 분배 보드 | 조사 파일 |
+| 센서 | IMU가 pi3hat에 통합됨; 선택적 OAK-D Lite 카메라 마운트 등 커뮤니티 액세서리 | 조사 파일 |
+| 키 / 무게 | 알 수 없음(데스크톱급 바퀴 달린 이족, 구성에 따라 다름) | 조사 파일 |
+| 초보자 친화도 | 4 / 5(조사 파일 평가) | 조사 파일 |
+
+### 액추에이터 방식
+
+- mjbots qdd100 준직접 구동(quasi-direct-drive) 브러시리스 서보 ×4(엉덩이/무릎) + moteus 드라이버(휠), 모두 펌웨어 오픈소스, 힘 제어 가능.
+- 바퀴-다리 혼합 형태: 바퀴로 균형 유지, 다리로 불규칙한 지형 대응, 추락 위험이 적고 성공률이 높음.
+
+### 소프트웨어 스택
+
+- Python 또는 C++, Linux/macOS에서 개발하여 온보드 Raspberry Pi에 배포; `pixi`/`uv` 한 줄 명령으로 시뮬레이션 예제(PyBullet) 실행 가능, 시뮬레이션은 비용 없이 시작 가능, 하드웨어를 먼저 구매할 필요 없음.
+- 기본적으로 세 가지 균형 제어 패러다임 예제 제공: PID, MPC(qpmpc), 강화 학습(Stable-Baselines3); Gymnasium 표준 인터페이스; 별도 커뮤니티 GPU RL 솔루션(MjLab Upkie)도 있음.
+- ROS에 의존하지 않음(xacro/URDF 설명 사용 가능, Pinocchio 등 라이브러리와 호환).
+
+### 문서 및 커뮤니티
+
+- 단계별 구축 가이드(step-by-step build instructions) + Hackaday 프로젝트 페이지 + GitHub Discussions/채팅방; FOSDEM 2026에서 공식 경험 공유 발표 및 하드웨어 v2 현장 출시(본체 일체형 프린팅, 다리 재설계, 폭 6cm 축소).
+- 중국어 메이커 커뮤니티(DFRobot 등)에서 번역 보도 있음.
+
+### 적합한 대상
+
+- 적합: 실제 하드웨어에서 균형 제어/RL 배포를 배우고자 하는 개인 개발자 및 코스 프로젝트; 고급 순수 이족 로봇(예: Berkeley Humanoid Lite)으로 가기 전 연습 플랫폼으로 사용 가능.
+- 진입 장벽: 60시간 이상의 프린팅 및 조립에 인내심 필요; 바퀴 달린 이족은 "걷는" 휴머노이드가 아니므로, 인간형 보행 연구가 목표라면 적합하지 않음.

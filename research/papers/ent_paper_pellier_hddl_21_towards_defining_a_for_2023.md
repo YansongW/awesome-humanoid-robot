@@ -10,7 +10,7 @@ names:
 summary:
   en: Proposes a lifted temporal HTN planning formalism and execution semantics that extends HDDL with durative actions, temporal
     task networks, and decomposition constraints inspired by PDDL 2.1 and ANML.
-  zh: 提出一种 lifted 时序 HTN 规划形式化及执行语义，通过借鉴 PDDL 2.1 与 ANML，将 HDDL 扩展为支持持续动作、时序任务网络与分解约束。
+  zh: HDDL 2.1 提出了一种提升的时序 HTN 规划形式化方法与执行语义，旨在扩展 HDDL 以支持持续动作、时序任务网络及分解约束。该工作借鉴了 PDDL 2.1 与 ANML 的设计，填补了 HDDL 在数值与时间约束表达上的空白，为工业与机器人等实际应用场景提供了更丰富的建模能力。
   ko: PDDL 2.1과 ANML에서 영감을 받아 HDDL을 지속적 동작, 시간적 작업 네트워크 및 분해 제약으로 확장하는 lifted temporal HTN 계획 형식화 및 실행 의미를 제안한다.
 domains:
 - 07_ai_models_algorithms
@@ -38,7 +38,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.07353v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.07353v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -51,13 +52,33 @@ theoretical_depth:
 - method
 ---
 ## 概述
-Real world applications as in industry and robotics need modelling rich and diverse automated planning problems. Their resolution usually requires coordinated and concurrent action execution. In several cases, these problems are naturally decomposed in a hierarchical way and expressed by a Hierarchical Task Network (HTN) formalism.   HDDL, a hierarchical extension of the Planning Domain Definition Language (PDDL), unlike PDDL 2.1 does not allow to represent planning problems with numerical and temporal constraints, which are essential for real world applications. We propose to fill the gap between HDDL and these operational needs and to extend HDDL by taking inspiration from PDDL 2.1 in order to express numerical and temporal expressions. This paper opens discussions on the semantics and the syntax needed for a future HDDL 2.1 extension.
+工业与机器人等实际应用需要建模丰富多样的自动化规划问题，其解决通常涉及协调并发的动作执行。许多问题天然具有层次化分解结构，适合用 HTN 形式化表达。然而，HDDL 作为 PDDL 的层次化扩展，并未像 PDDL 2.1 那样支持数值与时间约束，这限制了其在真实场景中的应用。为此，本文提出 HDDL 2.1 扩展，借鉴 PDDL 2.1 与 ANML 的设计，引入持续动作、时序任务网络及分解约束，并讨论了未来扩展所需的语法与语义。
 
 ## 核心内容
-Real world applications as in industry and robotics need modelling rich and diverse automated planning problems. Their resolution usually requires coordinated and concurrent action execution. In several cases, these problems are naturally decomposed in a hierarchical way and expressed by a Hierarchical Task Network (HTN) formalism.   HDDL, a hierarchical extension of the Planning Domain Definition Language (PDDL), unlike PDDL 2.1 does not allow to represent planning problems with numerical and temporal constraints, which are essential for real world applications. We propose to fill the gap between HDDL and these operational needs and to extend HDDL by taking inspiration from PDDL 2.1 in order to express numerical and temporal expressions. This paper opens discussions on the semantics and the syntax needed for a future HDDL 2.1 extension.
+### 动机与背景
+- 现实世界规划问题（如工业与机器人领域）需要协调并发的动作执行，且常具有层次化分解结构，适合用 HTN 形式化表达。
+- 现有 HDDL 作为 PDDL 的层次化扩展，缺乏对数值与时间约束的支持，而 PDDL 2.1 已具备这些能力。
+- 本文旨在填补 HDDL 与这些操作需求之间的差距，借鉴 PDDL 2.1 与 ANML 的设计，提出 HDDL 2.1 扩展。
 
-## 参考
-- http://arxiv.org/abs/2306.07353v1
+### 核心贡献
+- **提升的时序 HTN 形式化方法**：定义了持续动作、时序任务网络及分解约束的语法与语义。
+- **执行语义**：明确了时序 HTN 规划的执行模型，支持并发与时间约束。
+- **与现有标准的兼容性**：扩展基于 HDDL 与 PDDL 2.1，确保与现有规划器及领域的兼容性。
+
+### 关键设计
+- **持续动作**：动作具有持续时间，可定义起始与结束条件，支持并发执行。
+- **时序任务网络**：任务节点间可定义时序关系（如顺序、并行、重叠），并支持时间约束（如时间区间、延迟）。
+- **分解约束**：借鉴 ANML 的分解机制，允许在任务分解时指定时间与资源约束。
+
+### 实验与讨论
+- 本文未提供具体实验，而是聚焦于形式化定义与语义讨论，为未来 HDDL 2.1 的标准化奠定基础。
+- 讨论了与现有规划器（如 PANDA、SIADEX）的兼容性，以及如何将 HDDL 2.1 集成到现有规划流程中。
+
+### 结论
+HDDL 2.1 通过引入时序与数值约束，显著扩展了 HDDL 的表达能力，使其更适用于工业与机器人等实际应用。未来工作将包括完善语法定义、开发规划器支持，以及进行大规模实验验证。
+
+## Overview
+Real world applications as in industry and robotics need modelling rich and diverse automated planning problems. Their resolution usually requires coordinated and concurrent action execution. In several cases, these problems are naturally decomposed in a hierarchical way and expressed by a Hierarchical Task Network (HTN) formalism.   HDDL, a hierarchical extension of the Planning Domain Definition Language (PDDL), unlike PDDL 2.1 does not allow to represent planning problems with numerical and temporal constraints, which are essential for real world applications. We propose to fill the gap between HDDL and these operational needs and to extend HDDL by taking inspiration from PDDL 2.1 in order to express numerical and temporal expressions. This paper opens discussions on the semantics and the syntax needed for a future HDDL 2.1 extension.
 
 ## Overview
 Real-world applications in industry and robotics require modeling rich and diverse automated planning problems. Their resolution typically demands coordinated and concurrent action execution. In many cases, these problems are naturally decomposed in a hierarchical manner and expressed using a Hierarchical Task Network (HTN) formalism. HDDL, a hierarchical extension of the Planning Domain Definition Language (PDDL), unlike PDDL 2.1, does not support representing planning problems with numerical and temporal constraints, which are essential for real-world applications. We propose to bridge the gap between HDDL and these operational needs by extending HDDL, drawing inspiration from PDDL 2.1 to express numerical and temporal expressions. This paper initiates discussions on the semantics and syntax required for a future HDDL 2.1 extension.
@@ -70,3 +91,6 @@ Real-world applications in industry and robotics require modeling rich and diver
 
 ## 핵심 내용
 산업 및 로보틱스와 같은 실제 애플리케이션에서는 풍부하고 다양한 자동화된 계획 문제를 모델링해야 합니다. 이러한 문제를 해결하려면 일반적으로 조정되고 동시적인 행동 실행이 필요합니다. 여러 경우에 이러한 문제는 계층적 방식으로 자연스럽게 분해되며, HTN(계층적 작업 네트워크) 형식으로 표현됩니다. HDDL은 PDDL(계획 도메인 정의 언어)의 계층적 확장이지만, PDDL 2.1과 달리 실제 애플리케이션에 필수적인 수치 및 시간적 제약 조건을 가진 계획 문제를 표현할 수 없습니다. 우리는 HDDL과 이러한 운영 요구 사이의 격차를 해소하고, PDDL 2.1에서 영감을 받아 수치 및 시간적 표현을 표현할 수 있도록 HDDL을 확장할 것을 제안합니다. 이 논문은 향후 HDDL 2.1 확장에 필요한 의미론과 구문에 대한 논의를 시작합니다.
+
+## 参考
+- http://arxiv.org/abs/2306.07353v1

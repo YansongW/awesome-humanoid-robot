@@ -18,16 +18,8 @@ summary:
     critic improves validation success from 46.0% to 56.0%, while the locked held-out test gain is positive but modest, from
     65.0% to 67.5%. These results support the feasibility of Q-guided inference for frozen flow-matching VLA policies, while
     showing that critic generalization and uncertainty-aware guidance remain the central bottlenecks.'
-  zh: 'arXiv:2607.02092v2 Announce Type: replace Abstract: Flow-matching vision-language-action policies generate robot action
-    chunks through an iterative transport process, creating an opportunity for test-time guidance without retraining the base
-    policy. We study this opportunity in Guided Action Flow, an inference-time framework that keeps a pretrained SmolVLA policy
-    frozen and uses a learned action-chunk critic to guide its reverse-time flow sampler. The critic is trained from real
-    success and failure rollouts, can condition on task-description features from the frozen SmolVLA language pathway, and
-    is used only through action gradients during sampling. We evaluate the approach on LIBERO manipulation tasks. A single-task
-    critic improves success from 68.0% to 82.0% on one seed window and from 82.0% to 86.0% on another. A multi-family task-description
-    critic improves validation success from 46.0% to 56.0%, while the locked held-out test gain is positive but modest, from
-    65.0% to 67.5%. These results support the feasibility of Q-guided inference for frozen flow-matching VLA policies, while
-    showing that critic generalization and uncertainty-aware guidance remain the central bottlenecks.'
+  zh: Guided Action Flow 是一种面向流匹配视觉-语言-动作策略的推理时引导框架，由研究者提出。其核心贡献在于：保持预训练 SmolVLA 策略冻结，通过一个从真实成功/失败轨迹中学习的动作块评判器，在反向流采样过程中提供梯度引导。在
+    LIBERO 操作任务上，单任务评判器将成功率从 68.0% 提升至 82.0%，多任务评判器在验证集上从 46.0% 提升至 56.0%。
   ko: 'arXiv:2607.02092v2 Announce Type: replace Abstract: Flow-matching vision-language-action policies generate robot action
     chunks through an iterative transport process, creating an opportunity for test-time guidance without retraining the base
     policy. We study this opportunity in Guided Action Flow, an inference-time framework that keeps a pretrained SmolVLA policy
@@ -57,7 +49,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02092v2.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02092v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -67,18 +60,26 @@ sources:
   accessed_at: '2026-07-08'
 ---
 ## 概述
-Flow-matching vision-language-action policies generate robot action chunks through an iterative transport process, creating an opportunity for test-time guidance without retraining the base policy. We study this opportunity in Guided Action Flow, an inference-time framework that keeps a pretrained SmolVLA policy frozen and uses a learned action-chunk critic to guide its reverse-time flow sampler. The critic is trained from real success and failure rollouts, can condition on task-description features from the frozen SmolVLA language pathway, and is used only through action gradients during sampling. We evaluate the approach on LIBERO manipulation tasks. A single-task critic improves success from 68.0% to 82.0% on one seed window and from 82.0% to 86.0% on another. A multi-family task-description critic improves validation success from 46.0% to 56.0%, while the locked held-out test gain is positive but modest, from 65.0% to 67.5%. These results support the feasibility of Q-guided inference for frozen flow-matching VLA policies, while showing that critic generalization and uncertainty-aware guidance remain the central bottlenecks.
+Guided Action Flow 是一种无需重新训练基础策略的推理时引导方法，专门针对流匹配视觉-语言-动作策略设计。该方法保持预训练的 SmolVLA 策略完全冻结，仅通过一个额外学习的动作块评判器来指导反向流采样过程。该评判器从真实的成功和失败轨迹中训练，能够利用 SmolVLA 语言通路中的任务描述特征，并在采样过程中仅通过动作梯度发挥作用。在 LIBERO 操作任务上的实验表明，单任务评判器能显著提升成功率，而多任务评判器在验证集上也有明显改善，但在测试集上的提升较为有限。
 
 ## 核心内容
-Flow-matching vision-language-action policies generate robot action chunks through an iterative transport process, creating an opportunity for test-time guidance without retraining the base policy. We study this opportunity in Guided Action Flow, an inference-time framework that keeps a pretrained SmolVLA policy frozen and uses a learned action-chunk critic to guide its reverse-time flow sampler. The critic is trained from real success and failure rollouts, can condition on task-description features from the frozen SmolVLA language pathway, and is used only through action gradients during sampling. We evaluate the approach on LIBERO manipulation tasks. A single-task critic improves success from 68.0% to 82.0% on one seed window and from 82.0% to 86.0% on another. A multi-family task-description critic improves validation success from 46.0% to 56.0%, while the locked held-out test gain is positive but modest, from 65.0% to 67.5%. These results support the feasibility of Q-guided inference for frozen flow-matching VLA policies, while showing that critic generalization and uncertainty-aware guidance remain the central bottlenecks.
+### 方法概述
+Guided Action Flow 的核心思想是在流匹配视觉-语言-动作策略的推理阶段引入引导机制，而无需修改或重新训练基础策略。具体而言：
+- **基础策略**：使用预训练的 SmolVLA 策略，该策略通过流匹配过程生成机器人动作块。
+- **评判器**：学习一个动作块评判器，该评判器从真实的成功和失败轨迹中训练，能够利用 SmolVLA 语言通路中的任务描述特征。
+- **引导机制**：在反向流采样过程中，评判器通过动作梯度提供引导，从而优化生成的动作块。
 
-## 参考
-- http://arxiv.org/abs/2607.02092v2
+### 实验设置
+- **任务**：在 LIBERO 操作任务上进行评估。
+- **评判器类型**：
+  - **单任务评判器**：针对特定任务训练，在单个种子窗口上将成功率从 68.0% 提升至 82.0%，在另一个种子窗口上从 82.0% 提升至 86.0%。
+  - **多任务评判器**：基于多家族任务描述特征训练，在验证集上将成功率从 46.0% 提升至 56.0%，在测试集上从 65.0% 提升至 67.5%。
+
+### 关键结论
+- **可行性验证**：实验结果表明，Q 引导推理对于冻结的流匹配 VLA 策略是可行的，能够在不重新训练基础策略的情况下提升性能。
+- **主要瓶颈**：评判器的泛化能力和不确定性感知引导仍然是当前方法的核心限制，导致多任务场景下的测试集提升较为有限。
 
 ## Overview
-Flow-matching vision-language-action policies generate robot action chunks through an iterative transport process, creating an opportunity for test-time guidance without retraining the base policy. We study this opportunity in Guided Action Flow, an inference-time framework that keeps a pretrained SmolVLA policy frozen and uses a learned action-chunk critic to guide its reverse-time flow sampler. The critic is trained from real success and failure rollouts, can condition on task-description features from the frozen SmolVLA language pathway, and is used only through action gradients during sampling. We evaluate the approach on LIBERO manipulation tasks. A single-task critic improves success from 68.0% to 82.0% on one seed window and from 82.0% to 86.0% on another. A multi-family task-description critic improves validation success from 46.0% to 56.0%, while the locked held-out test gain is positive but modest, from 65.0% to 67.5%. These results support the feasibility of Q-guided inference for frozen flow-matching VLA policies, while showing that critic generalization and uncertainty-aware guidance remain the central bottlenecks.
-
-## Content
 Flow-matching vision-language-action policies generate robot action chunks through an iterative transport process, creating an opportunity for test-time guidance without retraining the base policy. We study this opportunity in Guided Action Flow, an inference-time framework that keeps a pretrained SmolVLA policy frozen and uses a learned action-chunk critic to guide its reverse-time flow sampler. The critic is trained from real success and failure rollouts, can condition on task-description features from the frozen SmolVLA language pathway, and is used only through action gradients during sampling. We evaluate the approach on LIBERO manipulation tasks. A single-task critic improves success from 68.0% to 82.0% on one seed window and from 82.0% to 86.0% on another. A multi-family task-description critic improves validation success from 46.0% to 56.0%, while the locked held-out test gain is positive but modest, from 65.0% to 67.5%. These results support the feasibility of Q-guided inference for frozen flow-matching VLA policies, while showing that critic generalization and uncertainty-aware guidance remain the central bottlenecks.
 
 ## 개요
@@ -86,3 +87,6 @@ Flow-matching vision-language-action 정책은 반복적인 전송 과정을 통
 
 ## 핵심 내용
 Flow-matching vision-language-action 정책은 반복적인 전송 과정을 통해 로봇의 행동 청크를 생성하며, 이는 기본 정책을 재훈련하지 않고도 테스트 시점에서의 안내(guidance)를 가능하게 하는 기회를 제공합니다. 우리는 Guided Action Flow에서 이러한 기회를 연구합니다. 이는 사전 훈련된 SmolVLA 정책을 고정(frozen) 상태로 유지하고, 학습된 행동 청크 비평가(critic)를 사용하여 역방향 시간 흐름 샘플러를 안내하는 추론 시점 프레임워크입니다. 비평가는 실제 성공 및 실패 롤아웃 데이터로 훈련되며, 고정된 SmolVLA 언어 경로의 작업 설명 특징을 조건으로 사용할 수 있고, 샘플링 중 행동 그래디언트를 통해서만 활용됩니다. 우리는 이 접근법을 LIBERO 조작 작업에서 평가했습니다. 단일 작업 비평가는 한 시드 윈도우에서 성공률을 68.0%에서 82.0%로, 다른 시드에서는 82.0%에서 86.0%로 향상시켰습니다. 다중 패밀리 작업 설명 비평가는 검증 성공률을 46.0%에서 56.0%로 개선했으며, 고정된 홀드아웃 테스트 성능 향상은 긍정적이지만 미미하여 65.0%에서 67.5%로 증가했습니다. 이러한 결과는 고정된 flow-matching VLA 정책에 대한 Q-안내 추론의 실현 가능성을 지지하는 동시에, 비평가의 일반화와 불확실성 인식 안내가 여전히 주요 병목 현상임을 보여줍니다.
+
+## 参考
+- http://arxiv.org/abs/2607.02092v2

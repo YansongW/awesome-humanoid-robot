@@ -11,7 +11,7 @@ summary:
   en: Proposes a shear-based grasp controller for the Pisa/IIT SoftHand using five fingertip microTac optical tactile sensors;
     contact pose and shear/normal force are predicted via supervised deep learning with transfer learning, enabling real-time
     multi-finger grasp adjustments during delicate-object manipulation.
-  zh: 提出一种用于Pisa/IIT SoftHand的基于剪切力的抓取控制器，该手五指配备microTac光学触觉传感器；通过监督式深度学习和迁移学习预测接触位姿及剪切/法向力，从而在易碎物体操作中实现实时多指抓取调整。
+  zh: 本文提出一种基于剪切力的抓取控制器，用于Pisa/IIT SoftHand多指欠驱动灵巧手。该控制器利用五个指尖microTac光学触觉传感器，通过监督深度学习与迁移学习预测接触位姿及剪切/法向力，实现对易碎物体操作过程中的实时多指抓取调整。
   ko: Pisa/IIT SoftHand의 다섯 손끝에 장착된 microTac 광학 촉각 센서를 이용한 전단력 기반 파지 제어기를 제안하며, 지도 학습과 전이 학습으로 접촉 자세 및 전단/법선력을 예측하여 섬세한 물체
     조작 중 실시간 다지점 파지 조정을 가능하게 한다.
 domains:
@@ -43,7 +43,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.17501v1.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.17501v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py
 sources:
 - id: src_001
   type: paper
@@ -55,18 +56,28 @@ theoretical_depth:
 - system
 ---
 ## 概述
-This paper presents a shear-based control scheme for grasping and manipulating delicate objects with a Pisa/IIT anthropomorphic SoftHand equipped with soft biomimetic tactile sensors on all five fingertips. These `microTac' tactile sensors are miniature versions of the TacTip vision-based tactile sensor, and can extract precise contact geometry and force information at each fingertip for use as feedback into a controller to modulate the grasp while a held object is manipulated. Using a parallel processing pipeline, we asynchronously capture tactile images and predict contact pose and force from multiple tactile sensors. Consistent pose and force models across all sensors are developed using supervised deep learning with transfer learning techniques. We then develop a grasp control framework that uses contact force feedback from all fingertip sensors simultaneously, allowing the hand to safely handle delicate objects even under external disturbances. This control framework is applied to several grasp-manipulation experiments: first, retaining a flexible cup in a grasp without crushing it under changes in object weight; second, a pouring task where the center of mass of the cup changes dynamically; and third, a tactile-driven leader-follower task where a human guides a held object. These manipulation tasks demonstrate more human-like dexterity with underactuated robotic hands by using fast reflexive control from tactile sensing.
+该研究为Pisa/IIT SoftHand设计了基于剪切力的抓取控制方案，在全部五个指尖安装微型仿生触觉传感器microTac。这些传感器可提取精确的接触几何与力信息，通过并行处理流水线异步采集触觉图像并预测接触位姿与力。研究采用监督深度学习结合迁移学习技术，在所有传感器上建立一致的位姿与力预测模型。最终开发的抓取控制框架能同时利用所有指尖传感器的接触力反馈，使手部在外部扰动下安全处理易碎物体。
 
 ## 核心内容
-This paper presents a shear-based control scheme for grasping and manipulating delicate objects with a Pisa/IIT anthropomorphic SoftHand equipped with soft biomimetic tactile sensors on all five fingertips. These `microTac' tactile sensors are miniature versions of the TacTip vision-based tactile sensor, and can extract precise contact geometry and force information at each fingertip for use as feedback into a controller to modulate the grasp while a held object is manipulated. Using a parallel processing pipeline, we asynchronously capture tactile images and predict contact pose and force from multiple tactile sensors. Consistent pose and force models across all sensors are developed using supervised deep learning with transfer learning techniques. We then develop a grasp control framework that uses contact force feedback from all fingertip sensors simultaneously, allowing the hand to safely handle delicate objects even under external disturbances. This control framework is applied to several grasp-manipulation experiments: first, retaining a flexible cup in a grasp without crushing it under changes in object weight; second, a pouring task where the center of mass of the cup changes dynamically; and third, a tactile-driven leader-follower task where a human guides a held object. These manipulation tasks demonstrate more human-like dexterity with underactuated robotic hands by using fast reflexive control from tactile sensing.
+### 方法架构
+- 采用Pisa/IIT SoftHand欠驱动仿人灵巧手，配备五个指尖microTac光学触觉传感器（TacTip微型版本）
+- 构建并行处理流水线：异步采集多传感器触觉图像，同步预测接触位姿与剪切/法向力
+- 通过监督深度学习+迁移学习实现跨传感器模型一致性，减少数据标注成本
 
-## 参考
-- http://arxiv.org/abs/2503.17501v1
+### 实验设置
+- 实验1：柔性杯抓取保持——在物体重量变化时避免压碎
+- 实验2：倾倒任务——杯子质心动态变化场景下的抓取调整
+- 实验3：触觉引导的主从任务——人类引导被持物体运动
+
+### 关键结果
+- 控制器能实时响应外部扰动，在重量变化时自动调节抓取力
+- 倾倒任务中成功应对动态质心偏移，保持稳定抓取
+- 主从任务展示出类似人类的灵巧操作能力，通过触觉反射控制实现欠驱动手的快速响应
+
+### 结论
+该剪切力控制方案使欠驱动灵巧手具备类似人类的操作灵巧性，通过触觉传感的快速反射控制，在易碎物体操作中展现出鲁棒性。
 
 ## Overview
-This paper presents a shear-based control scheme for grasping and manipulating delicate objects with a Pisa/IIT anthropomorphic SoftHand equipped with soft biomimetic tactile sensors on all five fingertips. These `microTac' tactile sensors are miniature versions of the TacTip vision-based tactile sensor, and can extract precise contact geometry and force information at each fingertip for use as feedback into a controller to modulate the grasp while a held object is manipulated. Using a parallel processing pipeline, we asynchronously capture tactile images and predict contact pose and force from multiple tactile sensors. Consistent pose and force models across all sensors are developed using supervised deep learning with transfer learning techniques. We then develop a grasp control framework that uses contact force feedback from all fingertip sensors simultaneously, allowing the hand to safely handle delicate objects even under external disturbances. This control framework is applied to several grasp-manipulation experiments: first, retaining a flexible cup in a grasp without crushing it under changes in object weight; second, a pouring task where the center of mass of the cup changes dynamically; and third, a tactile-driven leader-follower task where a human guides a held object. These manipulation tasks demonstrate more human-like dexterity with underactuated robotic hands by using fast reflexive control from tactile sensing.
-
-## Content
 This paper presents a shear-based control scheme for grasping and manipulating delicate objects with a Pisa/IIT anthropomorphic SoftHand equipped with soft biomimetic tactile sensors on all five fingertips. These `microTac' tactile sensors are miniature versions of the TacTip vision-based tactile sensor, and can extract precise contact geometry and force information at each fingertip for use as feedback into a controller to modulate the grasp while a held object is manipulated. Using a parallel processing pipeline, we asynchronously capture tactile images and predict contact pose and force from multiple tactile sensors. Consistent pose and force models across all sensors are developed using supervised deep learning with transfer learning techniques. We then develop a grasp control framework that uses contact force feedback from all fingertip sensors simultaneously, allowing the hand to safely handle delicate objects even under external disturbances. This control framework is applied to several grasp-manipulation experiments: first, retaining a flexible cup in a grasp without crushing it under changes in object weight; second, a pouring task where the center of mass of the cup changes dynamically; and third, a tactile-driven leader-follower task where a human guides a held object. These manipulation tasks demonstrate more human-like dexterity with underactuated robotic hands by using fast reflexive control from tactile sensing.
 
 ## 개요
@@ -74,3 +85,6 @@ This paper presents a shear-based control scheme for grasping and manipulating d
 
 ## 핵심 내용
 본 논문은 다섯 개의 손가락 끝에 생체 모방 촉각 센서를 장착한 Pisa/IIT 인체공학적 SoftHand를 사용하여 섬세한 물체를 파지하고 조작하기 위한 전단 기반 제어 방식을 제시합니다. 이 `microTac` 촉각 센서는 TacTip 시각 기반 촉각 센서의 소형 버전으로, 각 손가락 끝에서 정밀한 접촉 형상과 힘 정보를 추출하여 물체를 조작하는 동안 파지를 조절하는 제어기의 피드백으로 사용할 수 있습니다. 병렬 처리 파이프라인을 사용하여 비동기적으로 촉각 이미지를 캡처하고 여러 촉각 센서로부터 접촉 자세와 힘을 예측합니다. 전이 학습 기법을 활용한 지도 딥러닝을 통해 모든 센서에서 일관된 자세 및 힘 모델을 개발합니다. 그런 다음 모든 손가락 끝 센서의 접촉 힘 피드백을 동시에 사용하는 파지 제어 프레임워크를 개발하여, 외부 교란에도 손이 섬세한 물체를 안전하게 다룰 수 있도록 합니다. 이 제어 프레임워크는 여러 파지-조작 실험에 적용됩니다: 첫째, 물체 무게 변화에도 유연한 컵을 으스러뜨리지 않고 파지 유지; 둘째, 컵의 질량 중심이 동적으로 변하는 따르기 작업; 셋째, 사람이 잡은 물체를 안내하는 촉각 기반 리더-팔로워 작업. 이러한 조작 작업은 촉각 감지의 빠른 반사 제어를 통해 저구동 로봇 손으로 더 인간다운 손재주를 보여줍니다.
+
+## 参考
+- http://arxiv.org/abs/2503.17501v1

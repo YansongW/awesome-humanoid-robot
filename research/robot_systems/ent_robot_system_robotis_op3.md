@@ -8,9 +8,14 @@ names:
   zh: ROBOTIS OP3 人形机器人（DARwIn-OP 系列）
   ko: ROBOTIS OP3 (DARwIn-OP Series)
 summary:
-  en: A 510 mm, 3.5 kg open-platform humanoid robot from ROBOTIS, the third generation of the NSF-funded DARwIn-OP line, with 20 degrees of freedom driven by DYNAMIXEL XM430-W350-R smart servos, an Intel NUC onboard computer and a ROS2-native software stack, widely used in education and RoboCup.
-  zh: ROBOTIS OP3 是韩国 ROBOTIS 推出的开放平台人形机器人，为 NSF 资助的 DARwIn-OP（达尔文开放平台）产品线第三代，身高约 510 mm、重约 3.5 kg，20 个自由度由 20 台 DYNAMIXEL XM430-W350-R 智能舵机驱动，主控 Intel NUC + OpenCR，2025 年复刻版原生转向 ROS2，教学文档与 RoboCup 生态成熟。
-  ko: A 510 mm, 3.5 kg open-platform humanoid robot from ROBOTIS, the third generation of the NSF-funded DARwIn-OP line, with 20 degrees of freedom driven by DYNAMIXEL XM430-W350-R smart servos, an Intel NUC onboard computer and a ROS2-native software stack, widely used in education and RoboCup.
+  en: A 510 mm, 3.5 kg open-platform humanoid robot from ROBOTIS, the third generation of the NSF-funded DARwIn-OP line, with
+    20 degrees of freedom driven by DYNAMIXEL XM430-W350-R smart servos, an Intel NUC onboard computer and a ROS2-native software
+    stack, widely used in education and RoboCup.
+  zh: ROBOTIS OP3 是韩国 ROBOTIS 推出的开放平台人形机器人，为 NSF 资助的 DARwIn-OP（达尔文开放平台）产品线第三代，身高约 510 mm、重约 3.5 kg，20 个自由度由 20 台 DYNAMIXEL
+    XM430-W350-R 智能舵机驱动，主控 Intel NUC + OpenCR，2025 年复刻版原生转向 ROS2，教学文档与 RoboCup 生态成熟。
+  ko: A 510 mm, 3.5 kg open-platform humanoid robot from ROBOTIS, the third generation of the NSF-funded DARwIn-OP line, with
+    20 degrees of freedom driven by DYNAMIXEL XM430-W350-R smart servos, an Intel NUC onboard computer and a ROS2-native software
+    stack, widely used in education and RoboCup.
 domains:
 - 02_components
 - 06_design_engineering
@@ -36,7 +41,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: '内容整理自调研档案 data/roadmap/research/robotis-op3-darwin-op.md（访问日期 2026-07-01）。该平台本质是"开放平台的商业整机"而非社区开源硬件项目：ROS 软件包 Apache-2.0，整机只能购买成品。'
+  notes: 内容整理自调研档案 data/roadmap/research/robotis-op3-darwin-op.md（访问日期 2026-07-01）。该平台本质是"开放平台的商业整机"而非社区开源硬件项目：ROS 软件包 Apache-2.0，整机只能购买成品。
 sources:
 - id: src_001
   type: website
@@ -92,3 +97,40 @@ ROBOTIS OP3 是韩国 ROBOTIS 主导的开放平台人形机器人，其前身�
 - [ROBOTIS OP3 e-Manual](https://emanual.robotis.com/docs/en/platform/op3/introduction/)
 - [ROBOTIS-GIT/ROBOTIS-OP3 GitHub 仓库](https://github.com/ROBOTIS-GIT/ROBOTIS-OP3)
 - [DARwIn-OP 项目页（RoMeLa）](https://www.romela.org/darwin-op-open-platform-humanoid-robot-for-research-and-education/)
+
+## 개요
+
+ROBOTIS OP3는 한국 ROBOTIS가 주도하는 오픈 플랫폼 휴머노이드 로봇으로, 그 전신은 DARwIn-OP(Dynamic Anthropomorphic Robot with Intelligence – Open Platform, 다윈 오픈 플랫폼)입니다. 2010년 Virginia Tech RoMeLa(Dennis Hong 팀)가 주도하고 University of Pennsylvania, Purdue University 및 ROBOTIS가 공동 개발했으며, 미국 NSF의 지원을 받았습니다. OP3의 높이는 약 510mm, 무게는 약 3.5kg(외장 미포함), 20자유도를 가집니다(출처: 조사 파일 robotis-op3-darwin-op.md, 이하 동일).
+
+오픈소스 속성: OP3 ROS 소프트웨어 패키지는 Apache-2.0 라이선스(GitHub ROBOTIS-GIT)입니다. DARwIn-OP 하드웨어 CAD와 소프트웨어는 역사적으로 무료로 공개되었습니다(SourceForge `darwinop` 프로젝트 페이지는 여전히 접근 가능). 본질적으로는 "오픈 플랫폼의 상용 완제품"이며, 커뮤니티 기반 오픈소스 하드웨어 프로젝트는 아닙니다. 가격: OP3 현재 가격 $13,764.35(robotis.us, 2026년 페이지 스냅샷 기준); Generation Robots 약 €12,113(세금 포함); DARwIn-OP 2010년 판매 가격 $12,000(교육 할인 $9,600), 서드파티 3D 프린팅 클론 약 $6,100. OP(DARwIn-OP)와 OP2는 단종되었으며(e-Manual 공식 WARNING), OP3가 현재 판매 중인 모델입니다.
+
+## 핵심 내용
+
+### 주요 사양
+
+| 항목 | 수치 | 출처 |
+|---|---|---|
+| 높이 / 무게 | OP3 약 510mm / 약 3.5kg; DARwIn-OP 455mm / 2.8kg | e-Manual / RoMeLa |
+| 자유도 | 20 | e-Manual |
+| 가격 | OP3 $13,764.35(미국) / 약 €12,113(유럽) | robotis.us / Generation Robots |
+| 메인 컨트롤러 | Intel NUC(Core i3 듀얼코어, 8GB DDR4, 250GB M.2 SSD); 서브 컨트롤러 OpenCR | e-Manual |
+| 센서 | Logitech C920 카메라, IMU(자이로+가속도계+자력계 각 3축), 스피커, RGB LED, 4버튼 | e-Manual |
+| 배터리 | 3셀 11.1V LiPo(신형 3300mAh), 핫스왑 배터리 교체 지원 | e-Manual |
+| 초보자 친화도 | 3 / 5(조사 파일 평가) | 조사 파일 |
+
+### 액추에이터 구성
+
+- OP3: 20대 DYNAMIXEL XM430-W350-R 스마트 서보모터(감속비 353.5:1, 스톨 토크 4.1 N·m, 전류 제어 힘 제어 지원, DYNAMIXEL Protocol 2.0).
+- DARwIn-OP: 20대 MX-28(내장 maxon RE-max 모터, 스톨 토크 2.5 N·m, Protocol 1.0).
+- 고감속비 서보모터 방식: 위치 제어 정밀도가 높고 사용이 간편하지만, 본체 감지 힘 제어 능력이 없어 고동적 운동 제어 연구에는 부적합합니다.
+
+### 소프트웨어 스택 및 문서
+
+- 2025년 OP3 리메이크 버전은 기본적으로 ROS2를 지원하며(e-Manual 기준), DYNAMIXEL SDK를 함께 제공하고 C++로 개발되며 Ubuntu 64비트를 사용합니다. 공식적으로 보행/동작 편집(op3_action_editor), Gazebo 시뮬레이션 모델 등의 ROS 패키지를 제공합니다.
+- ROBOTIS e-Manual은 매우 완벽하여(사양, 조립, 튜토리얼, ROS 패키지별 문서) 업계 문서의 기준으로 꼽힙니다. RoboCup 축구 생태계의 축적이 깊습니다(DARwIn-OP는 RoboCup 2011, 2012 아동 그룹 챔피언을 차지했습니다).
+- GitHub `ROBOTIS-GIT/ROBOTIS-OP3` 약 157 stars / 65 forks, 최근 push 2025-02-26(2025 ROS2 리메이크 업데이트 동반).
+
+### 적합한 사용자
+
+- 적합: 예산이 충분한 학교/연구소의 교육 및 RoboCup 참가 – 개봉 즉시 사용 가능한 성숙한 제품, 최고 수준의 문서, 서보모터 플러그 앤 플레이, ROS2 생태계 입문 경로가 명확함; 상위 알고리즘만 작성하고 하드웨어를 직접 만들고 싶지 않은 사용자에게 편리함.
+- 진입 장벽: 약 $14,000의 가격은 개인 애호가에게 너무 높음; "오픈소스"는 주로 소프트웨어와 CAD 수준에 국한되며, 완제품만 구매 가능; 서보모터 방식으로는 준직구동/힘 제어 등 현재 주류 기술을 배울 수 없음.
