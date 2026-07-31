@@ -1,5 +1,5 @@
 ---
-$id: ent_paper_zeroth_bot_https_github_com_zeroth
+$id: ent_paper_zeroth_01_bot_open_source_humanoid
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
@@ -8,12 +8,14 @@ names:
   zh: '[Zeroth Bot](https://github.com/zeroth-robotics/zeroth-bot)'
   ko: '[Zeroth Bot](https://github.com/zeroth-robotics/zeroth-bot)'
 summary:
-  en: "<div align=\"center\" style=\"text-align: center;\">\n\n  <h1>Zeroth-01 Bot</h1> \n\n<p> Super hackable, affordable,\
-    \ and end-to-end (sim2real, RL) 3D-printed open-source humanoid robot platform."
-  zh: Zeroth-01 Bot 是一个完全开源、高度可定制且价格亲民（物料清单起价 350 美元）的 3D 打印人形机器人平台，由开源社区构建。其核心贡献在于提供了端到端的 sim2real 与强化学习训练能力，并集成了机器人操作系统
-    KOS-ZBot 和 RL 训练环境 K-Sim Gym ZBot，支持从基础运动到视觉、语音的完整功能。
-  ko: "<div align=\"center\" style=\"text-align: center;\">\n\n  <h1>Zeroth-01 Bot</h1> \n\n<p> Super hackable, affordable,\
-    \ and end-to-end (sim2real, RL) 3D-printed open-source humanoid robot platform."
+  en: "<div align=\"center\" style=\"text-align: center;\">\n\n  <h1>Zeroth-01 Bot</h1>\
+    \ \n\n<p> Super hackable, affordable, and end-to-end (sim2real, RL) 3D-printed\
+    \ open-source humanoid robot platform."
+  zh: Zeroth-01 Bot 是一个完全开源、高度可定制且价格亲民（物料清单起价 350 美元）的 3D 打印人形机器人平台，由开源社区构建。其核心贡献在于提供了端到端的
+    sim2real 与强化学习训练能力，并集成了机器人操作系统 KOS-ZBot 和 RL 训练环境 K-Sim Gym ZBot，支持从基础运动到视觉、语音的完整功能。
+  ko: "<div align=\"center\" style=\"text-align: center;\">\n\n  <h1>Zeroth-01 Bot</h1>\
+    \ \n\n<p> Super hackable, affordable, and end-to-end (sim2real, RL) 3D-printed\
+    \ open-source humanoid robot platform."
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -35,9 +37,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: Full ingest from Yuanxq lab paper list row 671 (.staging/ingest_yuanxq). Tier B->page. Content compiled by DeepSeek
-    from the fetched project page (https://raw.githubusercontent.com/zeroth-robotics/zeroth-bot/HEAD/README.md). Institutions
-    unknown.
+  notes: Full ingest from Yuanxq lab paper list row 671 (.staging/ingest_yuanxq).
+    Tier B->page. Content compiled by DeepSeek from the fetched project page (https://raw.githubusercontent.com/zeroth-robotics/zeroth-bot/HEAD/README.md).
+    Institutions unknown. [2026-07-31] id renamed from ent_paper_zeroth_bot_https_github_com_zeroth
+    (non-compliant slug) by ingest_yuanxq id-fix.
 sources:
 - id: src_001
   type: website
@@ -55,6 +58,7 @@ sources:
   url: https://github.com/ImChong/Robotics_Notebooks
   accessed_at: '2026-07-31'
 ---
+
 
 ## 概述
 

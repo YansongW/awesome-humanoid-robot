@@ -1,5 +1,5 @@
 ---
-$id: ent_paper_error_humanoid_parallel_ankle_kinematics
+$id: ent_paper_humanoid_parallel_ankle_kinematics
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
@@ -8,11 +8,11 @@ names:
   zh: '[ERROR] humanoid_parallel_ankle_kinematics_ingest.md'
   ko: '[ERROR] humanoid_parallel_ankle_kinematics_ingest.md'
 summary:
-  en: 'Conservative card from a lab paper list entry: [ERROR] humanoid_parallel_ankle_kinematics_ingest.md. No fetchable paper
-    URL was recorded; content to be supplemented.'
+  en: 'Conservative card from a lab paper list entry: [ERROR] humanoid_parallel_ankle_kinematics_ingest.md.
+    No fetchable paper URL was recorded; content to be supplemented.'
   zh: 【内容待补】据实验室论文清单登记：[ERROR] humanoid_parallel_ankle_kinematics_ingest.md，发表机构未知。清单未登记可抓取的论文页（待补充/空），本卡仅收录清单登记信息，概述与核心内容待补充。
-  ko: 'Conservative card from a lab paper list entry: [ERROR] humanoid_parallel_ankle_kinematics_ingest.md. No fetchable paper
-    URL was recorded; content to be supplemented.'
+  ko: 'Conservative card from a lab paper list entry: [ERROR] humanoid_parallel_ankle_kinematics_ingest.md.
+    No fetchable paper URL was recorded; content to be supplemented.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -34,8 +34,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 414 (.staging/ingest_yuanxq). Tier C->conservative. Conservative card:
-    清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.'
+  notes: 'Full ingest from Yuanxq lab paper list row 414 (.staging/ingest_yuanxq).
+    Tier C->conservative. Conservative card: 清单未登记可抓取的论文页（待补充/空）; only list-registered
+    fields recorded, content to be supplemented. [2026-07-31] id renamed from ent_paper_error_humanoid_parallel_ankle_kinematics
+    (non-compliant slug) by ingest_yuanxq id-fix.'
 sources:
 - id: src_001
   type: website
@@ -43,6 +45,7 @@ sources:
   url: https://github.com/ImChong/Robotics_Notebooks
   accessed_at: '2026-07-31'
 ---
+
 
 ## 概述
 

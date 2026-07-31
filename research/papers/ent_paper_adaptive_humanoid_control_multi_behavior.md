@@ -1,5 +1,5 @@
 ---
-$id: ent_paper_error_humanoid_amp_survey_11_adaptive
+$id: ent_paper_adaptive_humanoid_control_multi_behavior
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
@@ -34,8 +34,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 413 (.staging/ingest_yuanxq). Tier C->conservative. Conservative card:
-    清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.'
+  notes: 'Full ingest from Yuanxq lab paper list row 413 (.staging/ingest_yuanxq).
+    Tier C->conservative. Conservative card: 清单未登记可抓取的论文页（待补充/空）; only list-registered
+    fields recorded, content to be supplemented. [2026-07-31] id renamed from ent_paper_error_humanoid_amp_survey_11_adaptive
+    (non-compliant slug) by ingest_yuanxq id-fix.'
 sources:
 - id: src_001
   type: website
@@ -43,6 +45,7 @@ sources:
   url: https://github.com/ImChong/Robotics_Notebooks
   accessed_at: '2026-07-31'
 ---
+
 
 ## 概述
 

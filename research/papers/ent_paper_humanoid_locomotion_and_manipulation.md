@@ -1,5 +1,5 @@
 ---
-$id: ent_paper_yuanxq_219
+$id: ent_paper_humanoid_locomotion_and_manipulation
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
@@ -8,12 +8,14 @@ names:
   zh: 人形机器人运动与操作
   ko: 人形机器人运动与操作
 summary:
-  en: 'Conservative card from a lab paper list entry: 人形机器人运动与操作 (Georgia Institute of Technology、The University of Southern
-    California、Google DeepMind、The AI Institute). No fetchable paper URL was recorded; content to be supplemented.'
-  zh: 【内容待补】据实验室论文清单登记：人形机器人运动与操作，发表机构：Georgia Institute of Technology、The University of Southern California、Google DeepMind、The
-    AI Institute。清单仅提供微信公众号来源文章（未抓取），本卡仅收录清单登记信息，概述与核心内容待补充。
-  ko: 'Conservative card from a lab paper list entry: 人形机器人运动与操作 (Georgia Institute of Technology、The University of Southern
-    California、Google DeepMind、The AI Institute). No fetchable paper URL was recorded; content to be supplemented.'
+  en: 'Conservative card from a lab paper list entry: 人形机器人运动与操作 (Georgia Institute
+    of Technology、The University of Southern California、Google DeepMind、The AI Institute).
+    No fetchable paper URL was recorded; content to be supplemented.'
+  zh: 【内容待补】据实验室论文清单登记：人形机器人运动与操作，发表机构：Georgia Institute of Technology、The University
+    of Southern California、Google DeepMind、The AI Institute。清单仅提供微信公众号来源文章（未抓取），本卡仅收录清单登记信息，概述与核心内容待补充。
+  ko: 'Conservative card from a lab paper list entry: 人形机器人运动与操作 (Georgia Institute
+    of Technology、The University of Southern California、Google DeepMind、The AI Institute).
+    No fetchable paper URL was recorded; content to be supplemented.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,8 +33,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 219 (.staging/ingest_yuanxq). Tier C->conservative. Conservative card:
-    清单仅提供微信公众号来源文章（未抓取）; only list-registered fields recorded, content to be supplemented.'
+  notes: 'Full ingest from Yuanxq lab paper list row 219 (.staging/ingest_yuanxq).
+    Tier C->conservative. Conservative card: 清单仅提供微信公众号来源文章（未抓取）; only list-registered
+    fields recorded, content to be supplemented. [2026-07-31] id renamed from ent_paper_yuanxq_219
+    (non-compliant slug) by ingest_yuanxq id-fix.'
 sources:
 - id: src_001
   type: website
@@ -40,6 +44,7 @@ sources:
   url: https://mp.weixin.qq.com/s/pACh9EhsISiyPGdiiR0C3A
   accessed_at: '2026-07-31'
 ---
+
 
 ## 概述
 
