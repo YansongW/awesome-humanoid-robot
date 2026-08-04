@@ -79,3 +79,4 @@ DeepSeek：endpoint `https://api.deepseek.com/chat/completions`，model `deepsee
 - `ent_component_lidar_livox_mid360` 已并入 `ent_component_livox_mid_360_lidar_2024`（2026-07-20，见 `.staging/merge_livox_manifest_*.json`）。
 - en/ko 的 Wiki 章节与路线图页是机翻/回退中文，翻译管线同实体正文。
 - 路线图/Wiki 是面向公众的客观知识产品：页面只讲方法与可溯源事实，不挂统一免责声明，也不记录任何团队的实机建造过程；具体的实机建造（指标表、选型决策、实测数据）在独立工作区进行，不回写公共页面。
+- **ko 译文排版纪律**：方括号记号（数学式/数组）后禁止紧跟半角括号 `](`（会被 Markdown 解析成链接 → 404；zh 用全角（）、en 用空格，ko 历史上三次中招）。生成/翻译管线须保持 `](` 不相邻；推送前必跑 `python3 scripts/audit_site_dist.py`（broken=0 才推）。
