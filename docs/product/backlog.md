@@ -40,3 +40,11 @@
 - [ ] 12 reports + 2 companies 卡的英文全文 Overview 段瘦身评估
 - [ ] ko 的 summary.ko 翻译（当前只译了正文段）
 - [ ] 触屏端图谱面板拖拽（touchstart）与 iOS 键盘遮挡
+
+## 发现层（2026-08-04 boss 指出 Ego2Robot 漏网后的整改）
+
+- [x] 每周定时管线（arXiv）— 建成但**因缺 secret 从未成功运行**（2026-08-03 首跑失败）
+- [ ] **激活**：repo secrets 配 DEEPSEEK_API_KEY（用户操作）→ 手动触发补跑验证
+- [ ] **策展网**：跟踪策展型仓库更新（RealXiaoze/humanoid-motion-intelligence 等），新解读 → 建卡挂链 — P0
+- [ ] **"丢链接即建卡"通道**：用户转发链接（微信/arXiv/项目页）→ 1 小时内深读建卡——高信号源是用户自己；微信文机器不可抓，人是最强雷达 — P0（也是 OpenSci4X「收进图谱」功能原型）
+- [ ] 发现层三源合一：arXiv 宽网 + 策展网 + 用户雷达，统一进 staging → 审阅 — P1
