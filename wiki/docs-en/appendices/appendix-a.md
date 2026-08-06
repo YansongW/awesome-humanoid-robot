@@ -143,7 +143,7 @@ An overview of entity types, relationship types, and core entities in the knowle
 | 39 | [π0: A Vision-Language-Action Flow Model for General Robot Control](/entry/ent_paper_pi0_2024/) | Paper | 14 |
 | 40 | [BeyondMimic｜From Motion Tracking to Diverse Humanoid Control via Guided Diffusion](/entry/ent_paper_beyondmimic_from_motion_tracki_2025/) | Paper | 14 |
 | 41 | [LIBERO](/entry/ent_benchmark_libero/) | Benchmark | 14 |
-| 42 | [Exploring Variable Autonomy in VR-Based Human-Robot Collaboration Simulation Using GPT Large Language Models](/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/) | Paper | 14 |
+| 42 | [Exploring Variable Autonomy in VR-Based Human-Robot Collaboration Simulation Using GPT Large Language Models](/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/) | Paper | 14 |
 | 43 | [Drive-WM: Multi-View Visual Prediction and World Model Planning for Autonomous Driving](/entry/ent_paper_wang_driving_into_the_future_multiv_2023/) | Paper | 14 |
 | 44 | [Gemini Robotics｜Bringing AI into the Physical World](/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/) | Paper | 13 |
 | 45 | [The Reality Gap in Robotics: Challenges, Solutions, and Best Practices](/entry/ent_paper_aljalbout_reality_gap_2025/) | Paper | 13 |

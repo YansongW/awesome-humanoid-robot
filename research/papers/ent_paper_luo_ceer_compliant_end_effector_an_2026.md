@@ -40,13 +40,20 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.19981v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.19981v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
+    ent_paper_luo_ceer_compliant_end_effector_an_2026 into this card (rules: same_title_same_year). Backup+manifest: .staging/cleanup_wp12/.'
 sources:
 - id: src_001
   type: paper
   title: 'CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation'
   url: https://arxiv.org/abs/2605.19981
+  date: '2026'
+  accessed_at: '2026-06-26'
+- id: src_002
+  type: website
+  title: CEER project page
+  url: https://robotproject8.github.io/ceer_page/
   date: '2026'
   accessed_at: '2026-06-26'
 theoretical_depth:

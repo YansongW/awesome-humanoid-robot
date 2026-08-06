@@ -144,7 +144,7 @@
 | 39 | [π0: 범용 로봇 제어를 위한 비전-언어-행동 흐름 모델](/entry/ent_paper_pi0_2024/) | 논문 | 14 |
 | 40 | [BeyondMimic｜모션 추적에서 유도 확산을 통한 다양한 휴머노이드 제어까지](/entry/ent_paper_beyondmimic_from_motion_tracki_2025/) | 논문 | 14 |
 | 41 | [LIBERO](/entry/ent_benchmark_libero/) | 평가 기준 | 14 |
-| 42 | [VR 기반 인간-로봇 협업 시뮬레이션에서 GPT 기반 대규모 언어 모델을 통한 가변 자율성 구현 탐구](/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/) | 논문 | 14 |
+| 42 | [VR 기반 인간-로봇 협업 시뮬레이션에서 GPT 기반 대규모 언어 모델을 통한 가변 자율성 구현 탐구](/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/) | 논문 | 14 |
 | 43 | [Drive-WM: 자율 주행을 위한 다중 시점 비전 예측 및 세계 모델 계획](/entry/ent_paper_wang_driving_into_the_future_multiv_2023/) | 논문 | 14 |
 | 44 | [Gemini Robotics｜인공지능을 물리적 세계로](/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/) | 논문 | 13 |
 | 45 | [로봇의 현실 격차: 도전 과제, 해결책 및 모범 사례](/entry/ent_paper_aljalbout_reality_gap_2025/) | 논문 | 13 |

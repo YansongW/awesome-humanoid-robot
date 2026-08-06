@@ -41,12 +41,19 @@ verification:
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: BFM-Zero: A Promptable
     Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning. [2026-07-29] zh content backfilled
-    from English abstract via scripts/sinicize_english_cards.py'
+    from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged ent_paper_bfm_zero_a_promptable_behavior_2025
+    into this card (rules: same_title_same_year). Backup+manifest: .staging/cleanup_wp12/.'
 sources:
 - id: src_001
   type: website
   title: BFM-Zero project page
   url: https://lecar-lab.github.io/BFM-Zero/
+  date: '2025'
+  accessed_at: '2026-06-26'
+- id: src_002
+  type: paper
+  title: 'BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning'
+  url: https://arxiv.org/abs/2511.04131
   date: '2025'
   accessed_at: '2026-06-26'
 theoretical_depth:

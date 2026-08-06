@@ -32,13 +32,20 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.06286v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.06286v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
+    ent_paper_walk_the_planc_physicsguided_r_2026 into this card (rules: same_title_same_year). Backup+manifest: .staging/cleanup_wp12/.'
 sources:
 - id: src_001
   type: website
   title: 'Walk the PLANC: Physics‑Guided RL for Agile Humanoid LocomotioN on Constrained Footholds project page'
   url: https://caltech-amber.github.io/planc/
+  date: '2026'
+  accessed_at: '2026-07-01'
+- id: src_002
+  type: paper
+  title: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds (arXiv)'
+  url: https://arxiv.org/abs/2601.06286
   date: '2026'
   accessed_at: '2026-07-01'
 ---

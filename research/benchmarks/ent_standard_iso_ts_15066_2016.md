@@ -18,7 +18,6 @@ layers:
 - validation_markets
 functional_roles:
 - knowledge
-- validation
 tags:
 - standard
 - iso
@@ -32,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-13'
   confidence: medium
-  notes: Stub entity created during wiki-chapter-mapping repair; body under construction. Body backfilled from entity metadata
-    by scripts/backfill_critical_entities.py.
+  notes: 'Stub entity created during wiki-chapter-mapping repair; body under construction. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP2 2026-08-06: removed ''validation'' from functional_roles (not in entry_schema
+    enum; schema-invalid value). Manifest: .staging/cleanup_wp12/manifest_wp2_residual_schema_fix.json.'
 sources:
 - id: src_001
   type: website
@@ -42,7 +42,6 @@ sources:
   date: '2016'
   accessed_at: '2026-07-13'
 ---
-
 ## 概述
 定义协作机器人系统安全要求的技术规范，包括人机接触时的力与压力限值。
 

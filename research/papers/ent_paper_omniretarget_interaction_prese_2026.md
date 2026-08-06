@@ -40,12 +40,20 @@ verification:
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: OmniRetarget: Interaction-Preserving
     Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction. [2026-07-29] zh content backfilled from
-    English abstract via scripts/sinicize_english_cards.py'
+    English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged ent_paper_omniretarget_interaction_prese_2026,
+    ent_paper_omniretarget_interaction_prese_2026 into this card (rules: same_title_same_year, suffix_reingest). Backup+manifest:
+    .staging/cleanup_wp12/.'
 sources:
 - id: src_001
   type: website
   title: OmniRetarget project page
   url: https://omniretarget.github.io
+  date: '2026'
+  accessed_at: '2026-06-26'
+- id: src_002
+  type: paper
+  title: 'OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction'
+  url: https://arxiv.org/abs/2509.26633
   date: '2026'
   accessed_at: '2026-06-26'
 theoretical_depth:

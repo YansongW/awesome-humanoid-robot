@@ -144,7 +144,7 @@
 | 39 | [π0：用于通用机器人控制的视觉-语言-动作流模型](/entry/ent_paper_pi0_2024/) | 论文 | 14 |
 | 40 | [BeyondMimic｜从运动跟踪到通过引导扩散的多样化人形控制](/entry/ent_paper_beyondmimic_from_motion_tracki_2025/) | 论文 | 14 |
 | 41 | [LIBERO](/entry/ent_benchmark_libero/) | 评测基准 | 14 |
-| 42 | [在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性](/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2024/) | 论文 | 14 |
+| 42 | [在基于VR的人机协作模拟中探索基于GPT的大型语言模型实现可变自主性](/entry/ent_paper_lakhnati_exploring_a_gpt_based_large_la_2023/) | 论文 | 14 |
 | 43 | [Drive-WM：面向自动驾驶的多视角视觉预测与世界模型规划](/entry/ent_paper_wang_driving_into_the_future_multiv_2023/) | 论文 | 14 |
 | 44 | [Gemini Robotics｜将人工智能带入物理世界](/entry/ent_paper_gemini_robotics_bringing_ai_in_2025/) | 论文 | 13 |
 | 45 | [机器人中的现实鸿沟：挑战、解决方案与最佳实践](/entry/ent_paper_aljalbout_reality_gap_2025/) | 论文 | 13 |

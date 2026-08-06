@@ -45,10 +45,11 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.16591v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py [2026-08-04] body rewritten as full-text
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.16591v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py [2026-08-04] body rewritten as full-text
     six-section deep read (.staging/deep_read, DeepSeek deepseek-chat T<=0.3, arXiv HTML full text); en/ko sections regenerated
-    by translate pipeline.
+    by translate pipeline. | WP1 dedup merge 2026-08-06: merged ent_paper_zhu_cycloidal_quasi_direct_drive_a_2024 into this
+    card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
 sources:
 - id: src_001
   type: paper
@@ -59,7 +60,6 @@ sources:
 theoretical_depth:
 - system
 ---
-
 ## 概述
 
 本文提出一种集成10:1摆线齿轮箱的准直驱（QDD）执行器（C-QDD），并开发基于门控循环单元（GRU）的扭矩估计框架，以建模摆线齿轮引入的非线性扭矩波动，缩小强化学习中的sim-to-real差距。硬件验证表明C-QDD在扭矩密度（64.21 Nm/kg）和背隙（7.03 arcmin）上优于同类QDD，PVA-GRU扭矩估计RMSE达0.966 Nm，较调优MLP改善43.54%。

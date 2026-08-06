@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.05310v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.05310v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
+    ent_paper_learning_soccer_skills_for_hum_2026_1 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.'
 sources:
 - id: src_001
   type: paper
@@ -42,6 +43,12 @@ sources:
   url: https://arxiv.org/abs/2602.05310
   date: '2026'
   accessed_at: '2026-07-01'
+- id: src_002
+  type: website
+  title: 学习人形机器人的足球技能：渐进式感知-行动框架 project page
+  url: https://soccer-humanoid.github.io/
+  date: '2026'
+  accessed_at: '2026-06-26'
 ---
 ## 概述
 针对人形机器人足球任务中模块化流水线的不稳定性与端到端框架的训练目标冲突问题，本文提出了PAiD（Perception-Action integrated Decision-making）渐进式架构。该架构将足球技能学习分解为三个有序阶段：首先通过人体运动跟踪获取基础运动技能，然后进行轻量级感知-动作集成以实现位置泛化，最后通过物理感知的sim-to-real迁移缩小仿真与现实差距。这种分治策略有效避免了感知集成过程中的奖励冲突，并最小化了sim-to-real迁移的差距。在Unitree G1机器人上的实验表明，该方法能够生成高保真的人形踢球动作，并在静态球、滚动球、不同位置及外部干扰等多种条件下保持鲁棒性能，同时确保室内外场景的一致性执行。
